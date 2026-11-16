@@ -1,24 +1,70 @@
 {
-  "updatedAt": "2026-11-16T00:00:00Z",
+  "updatedAt": "2026-11-16T18:00:00Z",
   "events": {
-    "114": {
-      "checkedAt": "2026-11-16T00:00:00Z",
-      "source": "https://mammutmarsch.de/events",
+    "1": {
+      "checkedAt": "2026-11-16T18:00:00Z",
+      "source": "https://marathondessables.com/en/events",
       "status": "verified",
       "routes": {
         "0": {
-          "date": "2027-07-31",
+          "date": "2027-01-08",
+          "verified": true
+        },
+        "1": {
+          "date": "2027-01-08",
           "verified": true
         }
       }
     },
-    "115": {
-      "checkedAt": "2026-11-16T00:00:00Z",
-      "source": "https://www.megamarsch.de/m%C3%BCnchen",
+    "5": {
+      "checkedAt": "2026-11-16T18:00:00Z",
+      "source": "https://transgrancanaria.net/en/regulations/",
       "status": "verified",
       "routes": {
         "0": {
-          "date": "2027-05-15",
+          "date": "2027-02-26",
+          "verified": true
+        },
+        "1": {
+          "date": "2027-02-27",
+          "verified": true
+        }
+      }
+    },
+    "49": {
+      "checkedAt": "2026-11-16T18:00:00Z",
+      "source": "https://zugspitz.utmb.world/races",
+      "status": "verified",
+      "routes": {
+        "0": {
+          "date": "2027-06-19",
+          "verified": true
+        },
+        "1": {
+          "date": "2027-06-19",
+          "verified": true
+        },
+        "2": {
+          "date": "2027-06-18",
+          "verified": true
+        },
+        "3": {
+          "date": "2027-06-18",
+          "verified": true
+        },
+        "4": {
+          "date": "2027-06-17",
+          "verified": true
+        }
+      }
+    },
+    "51": {
+      "checkedAt": "2026-11-16T18:00:00Z",
+      "source": "https://www.tirol.at/aktivitaeten/events/trailrun-events",
+      "status": "verified",
+      "routes": {
+        "0": {
+          "date": "2027-06-12",
           "verified": true
         }
       }
