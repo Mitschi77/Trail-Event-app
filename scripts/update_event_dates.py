@@ -104,6 +104,7 @@ for event in events:
             source_status.append({"url": url, "status": "unavailable", "error": str(error)[:160]})
 
     route_dates = {}
+    conflicting_routes = set()
     for url, route_list in route_sources.items():
         records = pages[url]
         for route_index, route in route_list:
@@ -116,10 +117,14 @@ for event in events:
             if len(matches) == 1:
                 date = next(iter(matches))
                 existing = route_dates.get(str(route_index))
+                route_key = str(route_index)
+                if route_key in conflicting_routes:
+                    continue
                 if existing is None or existing == date:
-                    route_dates[str(route_index)] = date
+                    route_dates[route_key] = date
                 else:
-                    route_dates.pop(str(route_index), None)
+                    route_dates.pop(route_key, None)
+                    conflicting_routes.add(route_key)
 
     route_entries = {}
     for route_index, date in route_dates.items():
