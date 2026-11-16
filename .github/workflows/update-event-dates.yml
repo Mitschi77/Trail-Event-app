@@ -35,5 +35,5 @@ jobs:
           if ! git diff --cached --quiet; then
             git commit -m "Update verified official event dates"
             git pull --rebase origin main
-          git push
+            git push
           fi
