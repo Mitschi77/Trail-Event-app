@@ -9,6 +9,8 @@ CURATED_2027 = {
     "5": {"source": "https://transgrancanaria.net/en/regulations/", "routes": {"0": "2027-02-26", "1": "2027-02-27"}},
     "49": {"source": "https://zugspitz.utmb.world/races", "routes": {"0": "2027-06-19", "1": "2027-06-19", "2": "2027-06-18", "3": "2027-06-18", "4": "2027-06-17"}},
     "51": {"source": "https://www.tirol.at/aktivitaeten/events/trailrun-events", "routes": {"0": "2027-06-12"}},
+    "12": {"source": "https://istria.utmb.world/", "routes": {"0": "2027-04-03", "1": "2027-04-03"}},
+    "43": {"source": "https://mozart.utmb.world/races/mozart100", "routes": {"0": "2027-06-05", "1": "2027-06-05", "2": "2027-06-05", "3": "2027-06-05"}},
 }
 
 ROOT = Path(__file__).resolve().parents[1]
