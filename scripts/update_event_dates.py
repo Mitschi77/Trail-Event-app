@@ -84,11 +84,17 @@ def extract_events(page):
             found.extend(walk_events(json.loads(block.strip())))
         except (ValueError, TypeError):
             continue
-    return [(str(item.get("name", "")).strip().casefold(), parse_date(item.get("startDate")))
-            for item in found if parse_date(item.get("startDate"))]
+    return [
+        {
+            "name": str(item.get("name", "")).strip().casefold(),
+            "start": parse_date(item.get("startDate")),
+            "end": parse_date(item.get("endDate"))
+        }
+        for item in found if parse_date(item.get("startDate"))
+    ]
 
 updated = datetime.now(timezone.utc).isoformat()
-feed = {"updatedAt": updated, "schemaVersion": 2, "events": {}}
+feed = {"updatedAt": updated, "schemaVersion": 3, "events": {}}
 
 for event in events:
     route_sources = {}
@@ -111,22 +117,29 @@ for event in events:
             pages[url] = records
             source_status.append(status_item)
 
+    event_name = str(event.get("name") or "").strip().casefold()
+    event_matches = {
+        (record["start"], record["end"])
+        for records in pages.values()
+        for record in records
+        if record["name"] == event_name
+    }
+    event_period = None
+    if len(event_matches) == 1:
+        start_date, end_date = next(iter(event_matches))
+        event_period = {"startDate": start_date, "endDate": end_date, "verified": True}
+
     route_dates = {}
     conflicting_routes = set()
     for url, route_list in route_sources.items():
         records = pages[url]
         for route_index, route in route_list:
             route_name = str(route.get("route") or route.get("name") or "").strip().casefold()
-            event_name = str(event.get("name") or "").strip().casefold()
-            matches = {date for name, date in records if route_name and name == route_name}
-            # Do not assign an event-period date to a differently named placeholder route.
-            # Event-title matching is valid only when the route itself has that exact name.
-            if not matches and route_name == event_name and event_name:
-                matches = {date for name, date in records if name == event_name}
+            matches = {record["start"] for record in records if route_name and record["name"] == route_name}
             if len(matches) == 1:
                 date = next(iter(matches))
-                existing = route_dates.get(str(route_index))
                 route_key = str(route_index)
+                existing = route_dates.get(route_key)
                 if route_key in conflicting_routes:
                     continue
                 if existing is None or existing == date:
@@ -144,7 +157,7 @@ for event in events:
             "verified": True
         }
 
-    status = "verified" if route_entries else (
+    status = "verified" if route_entries or event_period else (
         "unavailable" if source_status and all(x["status"] == "unavailable" for x in source_status)
         else "unconfirmed"
     )
@@ -154,6 +167,7 @@ for event in events:
             "checkedAt": updated,
             "status": status,
             "sources": source_status,
+            "eventPeriod": event_period,
             "routes": route_entries
         }
 
