@@ -96,6 +96,30 @@ def extract_events(page):
 updated = datetime.now(timezone.utc).isoformat()
 feed = {"updatedAt": updated, "schemaVersion": 3, "events": {}}
 
+# Manually checked official event pages. Keep these verified periods even when a
+# page does not expose machine-readable schema.org Event data.
+MANUAL_EVENT_PERIODS = {
+    "wien-marathon": ("2027-04-18", "2027-04-18", "https://www2.vienna-marathon.com/?go=marathon&lang=de", {"0": "2027-04-18"}),
+    "hamburg-marathon": ("2027-04-25", "2027-04-25", "https://haspa-marathon-hamburg.de/teilnehmerinfos-marathon/", {"0": "2027-04-25"}),
+    "tcs-london-marathon-major": ("2027-04-24", "2027-04-25", "https://www.londonmarathonevents.co.uk/london-marathon/road-closures", {}),
+    "mozart": ("2027-06-05", "2027-06-05", "https://mozart.utmb.world/de/races/mozart100", {"0": "2027-06-05"}),
+    "piut": ("2027-07-09", "2027-07-10", "https://www.ischgl.com/de/veranstaltungen-erlebnisse/veranstaltungskalender/piut-paznaun-ischgl-ultra-trail_event_135487129", {}),
+    "dolomyths-run": ("2027-07-09", "2027-07-11", "https://dolomythsrun.it/en/", {"0": "2027-07-10", "1": "2027-07-11"}),
+    "allgau-panorama-marathon": ("2027-08-07", "2027-08-08", "https://www.allgaeu-panorama-marathon.de/", {"0": "2027-08-08"}),
+    "berlin-marathon-major": ("2027-09-26", "2027-09-26", "https://www.generali-berlin-marathon.com/", {"0": "2027-09-26"}),
+    "mammutmarsch": ("2027-07-31", "2027-07-31", "https://mammutmarsch.de/events/muenchen", {"0": "2027-07-31"}),
+    "megamarsch": ("2027-05-15", "2027-05-16", "https://www.megamarsch.de/m%C3%BCnchen", {"0": "2027-05-15"}),
+    "hoka-xtrail-kenting-by-utmb": ("2027-03-05", "2027-03-07", "https://xtrail.utmb.world/registrations", {}),
+    "hiroshima-by-utmb": ("2027-04-09", "2027-04-11", "https://hiroshima.utmb.world/runners/event-schedule", {}),
+    "the-canyons-endurance-runs-by-utmb": ("2027-04-22", "2027-04-25", "https://canyons.utmb.world/runners/registration", {}),
+    "trail-du-saint-jacques-by-utmb": ("2027-06-18", "2027-06-20", "https://saint-jacques.utmb.world/", {}),
+    "torrencial-valdivia-by-utmb": ("2027-06-24", "2027-06-27", "https://torrencial.utmb.world/registrations", {}),
+    "hoka-val-d-aran-by-utmb": ("2027-07-07", "2027-07-11", "https://valdaran.utmb.world/?page_id=1259", {}),
+    "monte-rosa-walser-waeg-by-utmb": ("2027-07-15", "2027-07-18", "https://mrww.utmb.world/", {}),
+    "wildstrubel-by-utmb": ("2027-09-09", "2027-09-12", "https://wildstrubel.utmb.world/de", {}),
+    "puerto-vallarta-mexico-by-utmb": ("2027-03-04", "2027-03-06", "https://puerto-vallarta.utmb.world/races-runners/runners/registration", {}),
+}
+
 for event in events:
     route_sources = {}
     for route_index, route in enumerate(event.get("routes", [])):
@@ -170,6 +194,35 @@ for event in events:
             "eventPeriod": event_period,
             "routes": route_entries
         }
+
+
+for event_id, (start_date, end_date, source_url, route_dates) in MANUAL_EVENT_PERIODS.items():
+    event = next((item for item in events if item["id"] == event_id), None)
+    if event is None:
+        continue
+    record = feed["events"].setdefault(event_id, {
+        "eventId": event_id, "checkedAt": updated, "status": "unconfirmed",
+        "sources": [], "eventPeriod": None, "routes": {}
+    })
+    record["status"] = "verified"
+    record["eventPeriod"] = {
+        "startDate": start_date, "endDate": end_date, "verified": True
+    }
+    record["sources"] = [
+        item for item in record.get("sources", [])
+        if item.get("url") != source_url
+    ]
+    record.setdefault("sources", []).append({
+        "url": source_url, "status": "read", "verification": "manual-official-page"
+    })
+    record["checkedAt"] = updated
+    for route_index, route_date in route_dates.items():
+        index = int(route_index)
+        if index < len(event.get("routes", [])):
+            route = event["routes"][index]
+            record.setdefault("routes", {})[route_index] = {
+                "routeId": route["id"], "date": route_date, "verified": True
+            }
 
 (ROOT / "event-dates.json").write_text(
     json.dumps(feed, ensure_ascii=False, indent=2) + "\n",
