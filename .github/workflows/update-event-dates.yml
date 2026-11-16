@@ -1,0 +1,29 @@
+name: Check official trail event dates
+
+on:
+  schedule:
+    - cron: "17 4 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  update-dates:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.x"
+      - name: Read official event pages
+        run: python scripts/update_event_dates.py
+      - name: Commit date feed when changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add event-dates.json
+          if ! git diff --cached --quiet; then
+            git commit -m "Update verified official event dates"
+            git push
+          fi
