@@ -51,6 +51,13 @@ for event_id, event in enumerate(events):
             exact = [d for name, d in usable if name.strip().lower() == route_name and route_name]
             if not exact:
                 exact = [d for name, d in usable if name.strip().lower() == event_name and event_name]
+            # For the two Munich 100 km series entries, match the official city/distance
+            # event title rather than assigning dates from other cities in the series.
+            if not exact and event.get("name") in ("Mammutmarsch", "Megamarsch") and "100" in route_name and "münchen" in route_name:
+                prefix = event.get("name", "").lower()
+                exact = [d for name, d in usable
+                         if prefix in name.lower() and "münchen" in name.lower()
+                         and ("100" in name or "75/100" in name)]
             if len(set(exact)) == 1:
                 entry["routes"][str(route_index)] = {"date": exact[0], "verified": True}
         if entry["routes"]:
