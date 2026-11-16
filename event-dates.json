@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-16T18:30:00Z",
+  "updatedAt": "2026-11-16T19:00:00Z",
   "events": {
     "1": {
       "checkedAt": "2026-11-16T18:00:00Z",
@@ -103,6 +103,25 @@
       "routes": {
         "0": {
           "date": "2027-06-12",
+          "verified": true
+        }
+      }
+    },
+    "70": {
+      "checkedAt": "2026-11-16T19:00:00Z",
+      "source": "https://www.3kings-3hills.com/fakten/",
+      "status": "verified",
+      "routes": {
+        "0": {
+          "date": "2027-07-24",
+          "verified": true
+        },
+        "1": {
+          "date": "2027-07-24",
+          "verified": true
+        },
+        "2": {
+          "date": "2027-07-23",
           "verified": true
         }
       }
