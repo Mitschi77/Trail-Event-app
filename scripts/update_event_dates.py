@@ -1,6 +1,7 @@
 import json
 import re
 import urllib.request
+import unicodedata
 from datetime import datetime, timezone
 from pathlib import Path
 from urllib.parse import urlparse
@@ -13,7 +14,7 @@ if not match:
 events = json.loads(match.group(1))
 
 def slug(value):
-    value = str(value or "item").lower()
+    value = unicodedata.normalize("NFKD", str(value or "item")).encode("ascii", "ignore").decode("ascii").lower()
     value = value.replace("ß", "ss")
     value = re.sub(r"[^a-z0-9]+", "-", value).strip("-")
     return value or "item"
