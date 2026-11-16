@@ -5,14 +5,15 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 HTML = (ROOT / "index.html").read_text(encoding="utf-8")
-match = re.search(r"const EVENTS=(\[.*?\]);\s*let userAddedEvents", HTML, re.S)
+match = re.search(r"const EVENTS=(\\[.*?\\]);\\s*let userAddedEvents", HTML, re.S)
 if not match:
     raise SystemExit("EVENTS array not found")
 events = json.loads(match.group(1))
 
 def slug(value):
     value = str(value or "item").replace("ß", "ss")
-    value = "".join(ch for ch in unicodedata.normalize("NFD", value) if unicodedata.category(ch) != "Mn")
+    value = "".join(ch for ch in unicodedata.normalize("NFD", value)
+                    if unicodedata.category(ch) != "Mn")
     return re.sub(r"[^a-z0-9]+", "-", value.lower()).strip("-") or "item"
 
 errors = []
@@ -24,10 +25,21 @@ for event_index, event in enumerate(events):
     name = str(event.get("name") or "").strip()
     if not name:
         errors.append(f"Event {event_index}: missing name")
-    event_id = slug(name)
+    expected_base = slug(name)
+    expected_id = expected_base
+    suffix = 2
+    while expected_id in event_ids:
+        expected_id = f"{expected_base}-{suffix}"
+        suffix += 1
+    event_id = event.get("id")
+    if not event_id:
+        errors.append(f"{name}: missing persisted event ID")
+    elif event_id != expected_id:
+        errors.append(f"{name}: event ID {event_id!r} does not match stable sequence {expected_id!r}")
     if event_id in event_ids:
-        errors.append(f"Event {event_index}: duplicate stable ID {event_id}")
+        errors.append(f"{name}: duplicate event ID {event_id!r}")
     event_ids.add(event_id)
+
     routes = event.get("routes")
     if not isinstance(routes, list) or not routes:
         errors.append(f"{name}: no routes")
@@ -40,13 +52,18 @@ for event_index, event in enumerate(events):
             str(route.get("km") if route.get("km") is not None else ""),
             str(route.get("hm") if route.get("hm") is not None else "")
         ]))
-        route_id = base
-        suffix = 2
-        while route_id in route_ids:
-            route_id = f"{base}-{suffix}"
-            suffix += 1
+        expected_route_id = base
+        route_suffix = 2
+        while expected_route_id in route_ids:
+            expected_route_id = f"{base}-{route_suffix}"
+            route_suffix += 1
+        route_id = route.get("id")
+        if not route_id:
+            errors.append(f"{name} / route {route_index}: missing persisted route ID")
+        elif route_id != expected_route_id:
+            errors.append(f"{name} / route {route_index}: route ID {route_id!r} does not match {expected_route_id!r}")
         if route_id in route_ids:
-            errors.append(f"{name} / route {route_index}: duplicate stable route ID {route_id}")
+            errors.append(f"{name} / route {route_index}: duplicate route ID {route_id!r}")
         route_ids.add(route_id)
         for field in ("km", "hm", "maxh"):
             value = route.get(field)
@@ -59,7 +76,7 @@ for event_index, event in enumerate(events):
                     errors.append(f"{name} / {route_id}: invalid {field}={value!r}")
         date = route.get("date")
         if date:
-            if not re.fullmatch(r"\d{4}-\d{2}-\d{2}", str(date)):
+            if not re.fullmatch(r"\\d{4}-\\d{2}-\\d{2}", str(date)):
                 errors.append(f"{name} / {route_id}: invalid date format {date!r}")
             else:
                 filled["date"] += 1
@@ -68,8 +85,8 @@ for event_index, event in enumerate(events):
                 filled[field] += 1
 
 if errors:
-    print("\n".join(errors))
+    print("\\n".join(errors))
     raise SystemExit(f"Data validation failed with {len(errors)} error(s)")
 
-print(f"Validated {len(events)} events and {route_total} routes.")
+print(f"Validated {len(events)} events and {route_total} routes with persisted unique IDs.")
 print("Available route data: " + ", ".join(f"{key}={value}" for key, value in filled.items()))
