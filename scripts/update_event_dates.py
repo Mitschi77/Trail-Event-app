@@ -143,7 +143,7 @@ for event in events:
         }
 
 (ROOT / "event-dates.json").write_text(
-    json.dumps(feed, ensure_ascii=False, indent=2) + "\\n",
+    json.dumps(feed, ensure_ascii=False, indent=2) + "\n",
     encoding="utf-8"
 )
 print(f"Checked {len(feed['events'])} events; verified {sum(1 for x in feed['events'].values() if x['status'] == 'verified')} with exact official route matches")
