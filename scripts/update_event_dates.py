@@ -7,7 +7,7 @@ from urllib.parse import urlparse
 
 ROOT = Path(__file__).resolve().parents[1]
 HTML = (ROOT / "index.html").read_text(encoding="utf-8")
-match = re.search(r"const EVENTS=(\\[.*?\\]);\\s*(?:let userAddedEvents|const userAddedEvents)", HTML, re.S)
+match = re.search(r"const EVENTS=(\[.*?\]);\s*(?:let userAddedEvents|const userAddedEvents)", HTML, re.S)
 if not match:
     raise SystemExit("EVENTS array not found")
 events = json.loads(match.group(1))
