@@ -1,0 +1,17 @@
+{
+  "name": "Trail Event Planner",
+  "short_name": "Trail Events",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#f4f5f0",
+  "theme_color": "#14251f",
+  "icons": [
+    {
+      "src": "./trail-apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ]
+}
