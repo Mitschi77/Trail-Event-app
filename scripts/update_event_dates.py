@@ -205,9 +205,7 @@ MANUAL_DISCONTINUED_EVENTS = {
         "Die offiziellen Veranstalterinformationen erklären, dass die Trail-Läufe seit 2022 nicht mehr organisiert werden."
     )
 }
-MANUAL_UNCONFIRMED_SOURCES = {
-    "paris-marathon": "https://www.schneiderelectricparismarathon.com/en/"
-}
+MANUAL_UNCONFIRMED_SOURCES = {}
 
 for event_id, (start_date, end_date, source_url, route_dates) in MANUAL_EVENT_PERIODS.items():
     event = next((item for item in events if item["id"] == event_id), None)
