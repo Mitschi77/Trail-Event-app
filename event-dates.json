@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-16T19:00:00Z",
+  "updatedAt": "2026-11-16T20:10:00Z",
   "events": {
     "1": {
       "checkedAt": "2026-11-16T18:00:00Z",
@@ -122,6 +122,25 @@
         },
         "2": {
           "date": "2027-07-23",
+          "verified": true
+        }
+      }
+    },
+    "96": {
+      "checkedAt": "2026-11-16T20:10:00Z",
+      "source": "https://julianalps.utmb.world/races",
+      "status": "verified",
+      "routes": {
+        "0": {
+          "date": "2027-09-17",
+          "verified": true
+        },
+        "1": {
+          "date": "2027-09-17",
+          "verified": true
+        },
+        "2": {
+          "date": "2027-09-18",
           "verified": true
         }
       }
