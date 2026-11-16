@@ -117,6 +117,7 @@ MANUAL_EVENT_PERIODS = {
     "hoka-val-d-aran-by-utmb": ("2027-07-07", "2027-07-11", "https://valdaran.utmb.world/?page_id=1259", {}),
     "monte-rosa-walser-waeg-by-utmb": ("2027-07-15", "2027-07-18", "https://mrww.utmb.world/", {}),
     "wildstrubel-by-utmb": ("2027-09-09", "2027-09-12", "https://wildstrubel.utmb.world/de", {}),
+    "u-tlw": ("2027-07-03", "2027-07-03", "https://utlw.de/en/", {"0": "2027-07-03", "1": "2027-07-03"}),
     "puerto-vallarta-mexico-by-utmb": ("2027-03-04", "2027-03-06", "https://puerto-vallarta.utmb.world/races-runners/runners/registration", {}),
 }
 
@@ -196,6 +197,17 @@ for event in events:
         }
 
 
+
+MANUAL_DISCONTINUED_EVENTS = {
+    "brixen-marathon": (
+        "https://www.brixenmarathon.com/",
+        "Die offiziellen Veranstalterinformationen erklären, dass die Trail-Läufe seit 2022 nicht mehr organisiert werden."
+    )
+}
+MANUAL_UNCONFIRMED_SOURCES = {
+    "paris-marathon": "https://www.schneiderelectricparismarathon.com/en/"
+}
+
 for event_id, (start_date, end_date, source_url, route_dates) in MANUAL_EVENT_PERIODS.items():
     event = next((item for item in events if item["id"] == event_id), None)
     if event is None:
@@ -223,6 +235,35 @@ for event_id, (start_date, end_date, source_url, route_dates) in MANUAL_EVENT_PE
             record.setdefault("routes", {})[route_index] = {
                 "routeId": route["id"], "date": route_date, "verified": True
             }
+
+
+for event_id, (source_url, note) in MANUAL_DISCONTINUED_EVENTS.items():
+    record = feed["events"].setdefault(event_id, {
+        "eventId": event_id, "checkedAt": updated, "sources": [], "routes": {}
+    })
+    record["checkedAt"] = updated
+    record["status"] = "discontinued"
+    record["eventPeriod"] = None
+    record["routes"] = {}
+    record["note"] = note
+    record["sources"] = [item for item in record.get("sources", []) if item.get("url") != source_url]
+    record["sources"].append({
+        "url": source_url, "status": "read", "verification": "manual-official-page"
+    })
+
+for event_id, source_url in MANUAL_UNCONFIRMED_SOURCES.items():
+    record = feed["events"].setdefault(event_id, {
+        "eventId": event_id, "checkedAt": updated, "sources": [], "routes": {}
+    })
+    record["checkedAt"] = updated
+    record["status"] = "unconfirmed"
+    record["eventPeriod"] = None
+    record["routes"] = {}
+    record["note"] = "Auf der offiziellen Veranstalterseite wurde noch kein eindeutiger Termin für 2027 gefunden."
+    record["sources"] = [item for item in record.get("sources", []) if item.get("url") != source_url]
+    record["sources"].append({
+        "url": source_url, "status": "read", "verification": "manual-official-page"
+    })
 
 (ROOT / "event-dates.json").write_text(
     json.dumps(feed, ensure_ascii=False, indent=2) + "\n",
