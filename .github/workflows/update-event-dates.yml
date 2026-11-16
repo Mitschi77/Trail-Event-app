@@ -5,6 +5,7 @@ on:
     paths:
       - "index.html"
       - "scripts/update_event_dates.py"
+      - "scripts/validate_event_data.py"
       - ".github/workflows/update-event-dates.yml"
   schedule:
     - cron: "17 4 * * *"
