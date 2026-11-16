@@ -63,25 +63,6 @@ function renderYearOverview(){
   return '<section class="year-group"><div class="year-heading"><h3>'+esc(year==='Jahr offen'?year:'🏔️ '+year)+'</h3><div class="year-summary">'+races.length+' '+(races.length===1?'Rennen':'Rennen')+'</div></div>'+races.map((x,i)=>'<div class="year-race"><strong>'+esc(x.e.name)+'</strong><div class="year-race-meta">'+esc(x.r.route||'Strecke')+' · '+num(x.r.km)+' km · '+num(x.r.hm)+' hm · '+(x.date?dateLabel(x.date):'Datum offen')+'</div></div>').join('')+'<div class="year-totals">Jahressumme: '+num(km.toFixed(1))+' km · '+num(hm)+' Höhenmeter</div></section>';
  }).join('');
 }
-function renderYearOverview(){
- const root=document.getElementById('yearOverview');if(!root)return;
- if(!plannedEventIds.length){root.innerHTML='<div class="plan-empty">Noch keine Events geplant. Füge zuerst im Eventplaner Rennen hinzu.</div>';return;}
- const groups={};
- plannedEventIds.forEach((id,index)=>{
-  const e=EVENTS[id];if(!e)return;
-  const ri=Number.isInteger(plannedRouteIndices[id])?plannedRouteIndices[id]:(index===0?plannedBaseRouteIndex:0);
-  const r=e.routes[ri]||e.routes[0];if(!r)return;
-  const date=plannerDate(r.date)||eventEnd(e);
-  const year=String(plannedYears[id]||r.year||r.date?.slice(0,4)||e.date?.slice(0,4)||'Jahr offen');
-  (groups[year]||(groups[year]=[])).push({e,r,date,index});
- });
- const years=Object.keys(groups).sort((a,b)=>{if(a==='Jahr offen')return 1;if(b==='Jahr offen')return -1;return Number(a)-Number(b);});
- root.innerHTML=years.map(year=>{
-  const races=groups[year].sort((a,b)=>(a.date?.getTime()??Infinity)-(b.date?.getTime()??Infinity)||a.e.name.localeCompare(b.e.name,'de'));
-  const km=races.reduce((n,x)=>n+(Number(x.r.km)||0),0),hm=races.reduce((n,x)=>n+(Number(x.r.hm)||0),0);
-  return '<section class="year-group"><div class="year-heading"><h3>'+esc(year==='Jahr offen'?year:'🏔️ '+year)+'</h3><div class="year-summary">'+races.length+' '+(races.length===1?'Rennen':'Rennen')+'</div></div>'+races.map((x,i)=>'<div class="year-race"><strong>'+esc(x.e.name)+'</strong><div class="year-race-meta">'+esc(x.r.route||'Strecke')+' · '+num(x.r.km)+' km · '+num(x.r.hm)+' hm · '+(x.date?dateLabel(x.date):'Datum offen')+'</div></div>').join('')+'<div class="year-totals">Jahressumme: '+num(km.toFixed(1))+' km · '+num(hm)+' Höhenmeter</div></section>';
- }).join('');
-}
 function renderPlanner(){renderYearOverview();const status=document.getElementById('plannerStatus'),suggestions=document.getElementById('suggestions'),plan=document.getElementById('myPlan'),weeks=Math.max(1,Math.min(52,Number(document.getElementById('recoveryWeeks').value)||1));document.getElementById('recoveryWeeks').value=weeks;
  if(!plannedEventIds.length){status.innerHTML='Wähle dein Ausgangsevent und tippe auf <b>Planung starten</b>.';suggestions.innerHTML='Noch keine Vorschläge. Starte deine Planung.';plan.innerHTML='Dein persönlicher Eventplan erscheint hier.';return;}
  const lastId=plannedEventIds[plannedEventIds.length-1],last=EVENTS[lastId],lastRi=Number.isInteger(plannedRouteIndices[lastId])?plannedRouteIndices[lastId]:(plannedEventIds.length===1?plannedBaseRouteIndex:0),lastRoute=last.routes[lastRi]||last.routes[0],end=plannerDate(lastRoute?.date)||eventEnd(last);
