@@ -14,8 +14,8 @@ if not match:
 events = json.loads(match.group(1))
 
 def slug(value):
-    value = unicodedata.normalize("NFKD", str(value or "item")).encode("ascii", "ignore").decode("ascii").lower()
-    value = value.replace("ß", "ss")
+    value = str(value or "item").replace("ß", "ss")
+    value = unicodedata.normalize("NFKD", value).encode("ascii", "ignore").decode("ascii").lower()
     value = re.sub(r"[^a-z0-9]+", "-", value).strip("-")
     return value or "item"
 
@@ -31,7 +31,7 @@ for event in events:
     used_events.add(event_id)
     used_routes = set()
     for route in event.get("routes", []):
-        route_base = slug("-".join(str(route.get(k) or "") for k in ("route", "km", "hm")))
+        route_base = slug("-".join([str(route.get("route") or route.get("name") or "strecke"), str(route.get("km") if route.get("km") is not None else ""), str(route.get("hm") if route.get("hm") is not None else "")]))
         route_id = route_base
         route_suffix = 2
         while route_id in used_routes:
@@ -72,7 +72,7 @@ def fetch_page(url):
 
 def extract_events(page):
     blocks = re.findall(
-        r"<script[^>]+type=['\\"]application/ld[+]json['\\"][^>]*>(.*?)</script>",
+        r"""<script[^>]+type=['"]application/ld[+]json['"][^>]*>(.*?)</script>""",
         page, re.I | re.S
     )
     found = []
