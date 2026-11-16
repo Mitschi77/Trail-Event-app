@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-16T18:00:00Z",
+  "updatedAt": "2026-11-16T18:30:00Z",
   "events": {
     "1": {
       "checkedAt": "2026-11-16T18:00:00Z",
@@ -27,6 +27,44 @@
         },
         "1": {
           "date": "2027-02-27",
+          "verified": true
+        }
+      }
+    },
+    "12": {
+      "checkedAt": "2026-11-16T18:30:00Z",
+      "source": "https://istria.utmb.world/",
+      "status": "verified",
+      "routes": {
+        "0": {
+          "date": "2027-04-03",
+          "verified": true
+        },
+        "1": {
+          "date": "2027-04-03",
+          "verified": true
+        }
+      }
+    },
+    "43": {
+      "checkedAt": "2026-11-16T18:30:00Z",
+      "source": "https://mozart.utmb.world/races/mozart100",
+      "status": "verified",
+      "routes": {
+        "0": {
+          "date": "2027-06-05",
+          "verified": true
+        },
+        "1": {
+          "date": "2027-06-05",
+          "verified": true
+        },
+        "2": {
+          "date": "2027-06-05",
+          "verified": true
+        },
+        "3": {
+          "date": "2027-06-05",
           "verified": true
         }
       }
