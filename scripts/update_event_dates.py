@@ -120,6 +120,9 @@ MANUAL_EVENT_PERIODS = {
     "wildstrubel-by-utmb": ("2027-09-09", "2027-09-12", "https://wildstrubel.utmb.world/de", {}),
     "u-tlw": ("2027-07-03", "2027-07-03", "https://utlw.de/en/", {"0": "2027-07-03", "1": "2027-07-03"}),
     "puerto-vallarta-mexico-by-utmb": ("2027-03-04", "2027-03-06", "https://puerto-vallarta.utmb.world/races-runners/runners/registration", {}),
+    "transgrancanaria": ("2027-02-23", "2027-02-27", "https://transgrancanaria.net/en/regulations/", {"0": "2027-02-26", "1": "2027-02-27"}),
+    "zugspitz-ultratrail": ("2027-06-17", "2027-06-20", "https://zugspitz.utmb.world/", {"0": "2027-06-19", "1": "2027-06-19", "2": "2027-06-18", "3": "2027-06-18", "4": "2027-06-17", "5": "2027-06-18", "6": "2027-06-19"}),
+    "3kings-3hills": ("2027-07-23", "2027-07-24", "https://www.3kings-3hills.com/fakten/", {"0": "2027-07-24", "1": "2027-07-24", "2": "2027-07-24", "3": "2027-07-24", "4": "2027-07-24", "5": "2027-07-24", "6": "2027-07-23", "7": "2027-07-23"}),
 }
 
 for event in events:
