@@ -2,6 +2,15 @@ import json, re, urllib.request, urllib.error
 from datetime import datetime, timezone
 from pathlib import Path
 
+# Official 2027 dates checked against organizer/regional event listings.
+# Route indexes refer to the order in EVENTS in index.html.
+CURATED_2027 = {
+    "1": {"source": "https://marathondessables.com/en/events", "routes": {"0": "2027-01-08", "1": "2027-01-08"}},
+    "5": {"source": "https://transgrancanaria.net/en/regulations/", "routes": {"0": "2027-02-26", "1": "2027-02-27"}},
+    "49": {"source": "https://zugspitz.utmb.world/races", "routes": {"0": "2027-06-19", "1": "2027-06-19", "2": "2027-06-18", "3": "2027-06-18", "4": "2027-06-17"}},
+    "51": {"source": "https://www.tirol.at/aktivitaeten/events/trailrun-events", "routes": {"0": "2027-06-12"}},
+}
+
 ROOT = Path(__file__).resolve().parents[1]
 HTML = (ROOT / "index.html").read_text(encoding="utf-8")
 match = re.search(r"const EVENTS=(\[.*?\]);\s*(?:const|let|function)", HTML, re.S)
@@ -68,6 +77,18 @@ for event_id, event in enumerate(events):
         entry["status"] = "unavailable"
         entry["error"] = str(exc)[:180]
     out["events"][str(event_id)] = entry
+
+# Preserve manually verified official dates even when an event page has no machine-readable JSON-LD.
+for event_id, curated in CURATED_2027.items():
+    entry = out["events"].setdefault(event_id, {
+        "checkedAt": datetime.now(timezone.utc).isoformat(),
+        "source": curated["source"], "status": "verified", "routes": {}
+    })
+    entry["source"] = curated["source"]
+    entry["status"] = "verified"
+    entry.setdefault("routes", {})
+    for route_index, date in curated["routes"].items():
+        entry["routes"][route_index] = {"date": date, "verified": True}
 
 (ROOT / "event-dates.json").write_text(json.dumps(out, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
 print(f"Processed {len(out['events'])} events with official URLs")
