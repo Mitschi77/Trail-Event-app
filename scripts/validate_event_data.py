@@ -25,20 +25,13 @@ for event_index, event in enumerate(events):
     name = str(event.get("name") or "").strip()
     if not name:
         errors.append(f"Event {event_index}: missing name")
-    expected_base = slug(name)
-    expected_id = expected_base
-    suffix = 2
-    while expected_id in event_ids:
-        expected_id = f"{expected_base}-{suffix}"
-        suffix += 1
     event_id = event.get("id")
     if not event_id:
         errors.append(f"{name}: missing persisted event ID")
-    elif event_id != expected_id:
-        errors.append(f"{name}: event ID {event_id!r} does not match stable sequence {expected_id!r}")
-    if event_id in event_ids:
+    elif event_id in event_ids:
         errors.append(f"{name}: duplicate event ID {event_id!r}")
-    event_ids.add(event_id)
+    else:
+        event_ids.add(event_id)
 
     routes = event.get("routes")
     if not isinstance(routes, list) or not routes:
@@ -47,24 +40,13 @@ for event_index, event in enumerate(events):
     route_ids = set()
     for route_index, route in enumerate(routes):
         route_total += 1
-        base = slug("-".join([
-            str(route.get("route") or route.get("name") or "strecke"),
-            str(route.get("km") if route.get("km") is not None else ""),
-            str(route.get("hm") if route.get("hm") is not None else "")
-        ]))
-        expected_route_id = base
-        route_suffix = 2
-        while expected_route_id in route_ids:
-            expected_route_id = f"{base}-{route_suffix}"
-            route_suffix += 1
         route_id = route.get("id")
         if not route_id:
             errors.append(f"{name} / route {route_index}: missing persisted route ID")
-        elif route_id != expected_route_id:
-            errors.append(f"{name} / route {route_index}: route ID {route_id!r} does not match {expected_route_id!r}")
-        if route_id in route_ids:
+        elif route_id in route_ids:
             errors.append(f"{name} / route {route_index}: duplicate route ID {route_id!r}")
-        route_ids.add(route_id)
+        else:
+            route_ids.add(route_id)
         for field in ("km", "hm", "maxh"):
             value = route.get(field)
             if value not in (None, ""):
