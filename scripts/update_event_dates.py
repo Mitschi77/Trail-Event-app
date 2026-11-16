@@ -1,4 +1,5 @@
 import json
+from concurrent.futures import ThreadPoolExecutor, as_completed
 import re
 import urllib.request
 import unicodedata
@@ -67,7 +68,7 @@ def fetch_page(url):
         url,
         headers={"User-Agent": "Mozilla/5.0 (compatible; TrailEventPlanner/1.0)"}
     )
-    with urllib.request.urlopen(request, timeout=20) as response:
+    with urllib.request.urlopen(request, timeout=12) as response:
         return response.read(4_000_000).decode("utf-8", "replace")
 
 def extract_events(page):
@@ -95,13 +96,18 @@ for event in events:
             route_sources.setdefault(url, []).append((route_index, route))
     pages = {}
     source_status = []
-    for url, route_list in route_sources.items():
+    def read_source(item):
+        url, route_list = item
         try:
-            pages[url] = extract_events(fetch_page(url))
-            source_status.append({"url": url, "status": "read"})
+            return url, extract_events(fetch_page(url)), {"url": url, "status": "read"}
         except Exception as error:
-            pages[url] = []
-            source_status.append({"url": url, "status": "unavailable", "error": str(error)[:160]})
+            return url, [], {"url": url, "status": "unavailable", "error": str(error)[:160]}
+    with ThreadPoolExecutor(max_workers=8) as pool:
+        futures = [pool.submit(read_source, item) for item in route_sources.items()]
+        for future in as_completed(futures):
+            url, records, status_item = future.result()
+            pages[url] = records
+            source_status.append(status_item)
 
     route_dates = {}
     conflicting_routes = set()
