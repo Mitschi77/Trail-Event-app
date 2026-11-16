@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-16T21:40:23.226Z",
+  "updatedAt": "2026-11-16T21:41:29.453Z",
   "schemaVersion": 3,
   "events": {
     "wien-marathon": {
@@ -32,17 +32,23 @@
     },
     "paris-marathon": {
       "eventId": "paris-marathon",
-      "checkedAt": "2026-11-16T21:36:43.302370+00:00",
-      "status": "unavailable",
+      "checkedAt": "2026-11-16T21:41:29.453Z",
+      "status": "unconfirmed",
       "sources": [
         {
           "url": "https://www.schneiderelectricparismarathon.com/en/event/presentation",
           "status": "unavailable",
           "error": "HTTP Error 500: Domain Not Found"
+        },
+        {
+          "url": "https://www.schneiderelectricparismarathon.com/en/",
+          "status": "read",
+          "verification": "manual-official-page"
         }
       ],
       "eventPeriod": null,
-      "routes": {}
+      "routes": {},
+      "note": "Auf der offiziellen Veranstalterseite wurde noch kein eindeutiger Termin für 2027 gefunden."
     },
     "hamburg-marathon": {
       "eventId": "hamburg-marathon",
@@ -137,29 +143,47 @@
     },
     "brixen-marathon": {
       "eventId": "brixen-marathon",
-      "checkedAt": "2026-11-16T21:36:43.302370+00:00",
-      "status": "unconfirmed",
+      "checkedAt": "2026-11-16T21:41:29.453Z",
+      "status": "discontinued",
       "sources": [
         {
-          "url": "https://www.brixenmarathon.com/dolomites-ultra-trail/",
-          "status": "read"
+          "url": "https://www.brixenmarathon.com/",
+          "status": "read",
+          "verification": "manual-official-page"
         }
       ],
       "eventPeriod": null,
-      "routes": {}
+      "routes": {},
+      "note": "Die offizielle Veranstalterseite erklärt, dass die Trail-Läufe seit 2022 nicht mehr organisiert werden."
     },
     "u-tlw": {
       "eventId": "u-tlw",
-      "checkedAt": "2026-11-16T21:36:43.302370+00:00",
-      "status": "unconfirmed",
+      "checkedAt": "2026-11-16T21:41:29.453Z",
+      "status": "verified",
       "sources": [
         {
-          "url": "https://utlw.de/de/",
-          "status": "read"
+          "url": "https://utlw.de/en/",
+          "status": "read",
+          "verification": "manual-official-page"
         }
       ],
-      "eventPeriod": null,
-      "routes": {}
+      "eventPeriod": {
+        "startDate": "2027-07-03",
+        "endDate": "2027-07-03",
+        "verified": true
+      },
+      "routes": {
+        "0": {
+          "routeId": "u-tlw-24-1200",
+          "date": "2027-07-03",
+          "verified": true
+        },
+        "1": {
+          "routeId": "u-tlw-54-2700",
+          "date": "2027-07-03",
+          "verified": true
+        }
+      }
     },
     "piut": {
       "eventId": "piut",
