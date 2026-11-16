@@ -1,6 +1,10 @@
 name: Check official trail event dates
 
 on:
+  push:
+    paths:
+      - "index.html"
+      - "scripts/update_event_dates.py"
   schedule:
     - cron: "17 4 * * *"
   workflow_dispatch:
