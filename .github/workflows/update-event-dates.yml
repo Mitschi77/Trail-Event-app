@@ -38,9 +38,22 @@ jobs:
             git commit -m "Update verified official event dates"
             for attempt in 1 2 3 4 5; do
               git fetch origin main
-              git rebase origin/main
-              if git push origin HEAD:main; then
-                exit 0
+              if git rebase origin/main; then
+                if git push origin HEAD:main; then
+                  exit 0
+                fi
+              else
+                echo "Date feed changed during the run; recomputing against the latest main branch."
+                git rebase --abort
+                git reset --hard origin/main
+                python scripts/validate_event_data.py
+                python scripts/update_event_dates.py
+                git add event-dates.json
+                if git diff --cached --quiet; then
+                  echo "The latest branch already contains the current date feed."
+                  exit 0
+                fi
+                git commit -m "Update verified official event dates"
               fi
               sleep 3
             done
