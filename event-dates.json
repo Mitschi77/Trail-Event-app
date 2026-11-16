@@ -1,10 +1,10 @@
 {
-  "updatedAt": "2026-11-16T21:19:27.403300+00:00",
-  "schemaVersion": 2,
+  "updatedAt": "2026-11-16T21:21:58.161853+00:00",
+  "schemaVersion": 3,
   "events": {
     "wien-marathon": {
       "eventId": "wien-marathon",
-      "checkedAt": "2026-11-16T21:19:27.403300+00:00",
+      "checkedAt": "2026-11-16T21:21:58.161853+00:00",
       "status": "unconfirmed",
       "sources": [
         {
@@ -12,11 +12,12 @@
           "status": "read"
         }
       ],
+      "eventPeriod": null,
       "routes": {}
     },
     "paris-marathon": {
       "eventId": "paris-marathon",
-      "checkedAt": "2026-11-16T21:19:27.403300+00:00",
+      "checkedAt": "2026-11-16T21:21:58.161853+00:00",
       "status": "unavailable",
       "sources": [
         {
@@ -25,11 +26,12 @@
           "error": "HTTP Error 500: Domain Not Found"
         }
       ],
+      "eventPeriod": null,
       "routes": {}
     },
     "hamburg-marathon": {
       "eventId": "hamburg-marathon",
-      "checkedAt": "2026-11-16T21:19:27.403300+00:00",
+      "checkedAt": "2026-11-16T21:21:58.161853+00:00",
       "status": "unconfirmed",
       "sources": [
         {
@@ -37,11 +39,12 @@
           "status": "read"
         }
       ],
+      "eventPeriod": null,
       "routes": {}
     },
     "tcs-london-marathon-major": {
       "eventId": "tcs-london-marathon-major",
-      "checkedAt": "2026-11-16T21:19:27.403300+00:00",
+      "checkedAt": "2026-11-16T21:21:58.161853+00:00",
       "status": "unconfirmed",
       "sources": [
         {
@@ -49,11 +52,12 @@
           "status": "read"
         }
       ],
+      "eventPeriod": null,
       "routes": {}
     },
     "oh-meu-deus": {
       "eventId": "oh-meu-deus",
-      "checkedAt": "2026-11-16T21:19:27.403300+00:00",
+      "checkedAt": "2026-11-16T21:21:58.161853+00:00",
       "status": "verified",
       "sources": [
         {
@@ -61,6 +65,7 @@
           "status": "read"
         }
       ],
+      "eventPeriod": null,
       "routes": {
         "0": {
           "routeId": "oh-meu-deus-100m-167-8900",
@@ -71,7 +76,7 @@
     },
     "mozart": {
       "eventId": "mozart",
-      "checkedAt": "2026-11-16T21:19:27.403300+00:00",
+      "checkedAt": "2026-11-16T21:21:58.161853+00:00",
       "status": "unconfirmed",
       "sources": [
         {
@@ -79,11 +84,12 @@
           "status": "read"
         }
       ],
+      "eventPeriod": null,
       "routes": {}
     },
     "brixen-marathon": {
       "eventId": "brixen-marathon",
-      "checkedAt": "2026-11-16T21:19:27.403300+00:00",
+      "checkedAt": "2026-11-16T21:21:58.161853+00:00",
       "status": "unconfirmed",
       "sources": [
         {
@@ -91,11 +97,12 @@
           "status": "read"
         }
       ],
+      "eventPeriod": null,
       "routes": {}
     },
     "u-tlw": {
       "eventId": "u-tlw",
-      "checkedAt": "2026-11-16T21:19:27.403300+00:00",
+      "checkedAt": "2026-11-16T21:21:58.161853+00:00",
       "status": "unconfirmed",
       "sources": [
         {
@@ -103,11 +110,12 @@
           "status": "read"
         }
       ],
+      "eventPeriod": null,
       "routes": {}
     },
     "piut": {
       "eventId": "piut",
-      "checkedAt": "2026-11-16T21:19:27.403300+00:00",
+      "checkedAt": "2026-11-16T21:21:58.161853+00:00",
       "status": "unconfirmed",
       "sources": [
         {
@@ -115,11 +123,12 @@
           "status": "read"
         }
       ],
+      "eventPeriod": null,
       "routes": {}
     },
     "dolomyths-run": {
       "eventId": "dolomyths-run",
-      "checkedAt": "2026-11-16T21:19:27.403300+00:00",
+      "checkedAt": "2026-11-16T21:21:58.161853+00:00",
       "status": "unconfirmed",
       "sources": [
         {
@@ -127,11 +136,12 @@
           "status": "read"
         }
       ],
+      "eventPeriod": null,
       "routes": {}
     },
     "allgau-panorama-marathon": {
       "eventId": "allgau-panorama-marathon",
-      "checkedAt": "2026-11-16T21:19:27.403300+00:00",
+      "checkedAt": "2026-11-16T21:21:58.161853+00:00",
       "status": "unconfirmed",
       "sources": [
         {
@@ -139,11 +149,12 @@
           "status": "read"
         }
       ],
+      "eventPeriod": null,
       "routes": {}
     },
     "berlin-marathon-major": {
       "eventId": "berlin-marathon-major",
-      "checkedAt": "2026-11-16T21:19:27.403300+00:00",
+      "checkedAt": "2026-11-16T21:21:58.161853+00:00",
       "status": "unconfirmed",
       "sources": [
         {
@@ -151,11 +162,12 @@
           "status": "read"
         }
       ],
+      "eventPeriod": null,
       "routes": {}
     },
     "munchen-marathon": {
       "eventId": "munchen-marathon",
-      "checkedAt": "2026-11-16T21:19:27.403300+00:00",
+      "checkedAt": "2026-11-16T21:21:58.161853+00:00",
       "status": "unconfirmed",
       "sources": [
         {
@@ -163,11 +175,12 @@
           "status": "read"
         }
       ],
+      "eventPeriod": null,
       "routes": {}
     },
     "mammutmarsch": {
       "eventId": "mammutmarsch",
-      "checkedAt": "2026-11-16T21:19:27.403300+00:00",
+      "checkedAt": "2026-11-16T21:21:58.161853+00:00",
       "status": "unconfirmed",
       "sources": [
         {
@@ -175,11 +188,12 @@
           "status": "read"
         }
       ],
+      "eventPeriod": null,
       "routes": {}
     },
     "megamarsch": {
       "eventId": "megamarsch",
-      "checkedAt": "2026-11-16T21:19:27.403300+00:00",
+      "checkedAt": "2026-11-16T21:21:58.161853+00:00",
       "status": "unconfirmed",
       "sources": [
         {
@@ -187,35 +201,46 @@
           "status": "read"
         }
       ],
+      "eventPeriod": null,
       "routes": {}
     },
     "vietnam-highlands-trail-by-utmb": {
       "eventId": "vietnam-highlands-trail-by-utmb",
-      "checkedAt": "2026-11-16T21:19:27.403300+00:00",
-      "status": "unconfirmed",
+      "checkedAt": "2026-11-16T21:21:58.161853+00:00",
+      "status": "verified",
       "sources": [
         {
           "url": "https://vietnamhighlands.utmb.world/",
           "status": "read"
         }
       ],
+      "eventPeriod": {
+        "startDate": "2027-01-07",
+        "endDate": "2027-01-10",
+        "verified": true
+      },
       "routes": {}
     },
     "tarawera-ultra-trail-by-utmb": {
       "eventId": "tarawera-ultra-trail-by-utmb",
-      "checkedAt": "2026-11-16T21:19:27.403300+00:00",
-      "status": "unconfirmed",
+      "checkedAt": "2026-11-16T21:21:58.161853+00:00",
+      "status": "verified",
       "sources": [
         {
           "url": "https://tarawera.utmb.world/",
           "status": "read"
         }
       ],
+      "eventPeriod": {
+        "startDate": "2027-02-13",
+        "endDate": "2027-02-14",
+        "verified": true
+      },
       "routes": {}
     },
     "puerto-vallarta-mexico-by-utmb": {
       "eventId": "puerto-vallarta-mexico-by-utmb",
-      "checkedAt": "2026-11-16T21:19:27.403300+00:00",
+      "checkedAt": "2026-11-16T21:21:58.161853+00:00",
       "status": "unavailable",
       "sources": [
         {
@@ -224,11 +249,12 @@
           "error": "HTTP Error 401: Unauthorized"
         }
       ],
+      "eventPeriod": null,
       "routes": {}
     },
     "hoka-xtrail-kenting-by-utmb": {
       "eventId": "hoka-xtrail-kenting-by-utmb",
-      "checkedAt": "2026-11-16T21:19:27.403300+00:00",
+      "checkedAt": "2026-11-16T21:21:58.161853+00:00",
       "status": "unconfirmed",
       "sources": [
         {
@@ -236,23 +262,29 @@
           "status": "read"
         }
       ],
+      "eventPeriod": null,
       "routes": {}
     },
     "desert-rats-trail-running-festival-by-utmb": {
       "eventId": "desert-rats-trail-running-festival-by-utmb",
-      "checkedAt": "2026-11-16T21:19:27.403300+00:00",
-      "status": "unconfirmed",
+      "checkedAt": "2026-11-16T21:21:58.161853+00:00",
+      "status": "verified",
       "sources": [
         {
           "url": "https://desertrats.utmb.world/",
           "status": "read"
         }
       ],
+      "eventPeriod": {
+        "startDate": "2027-04-08",
+        "endDate": "2027-04-11",
+        "verified": true
+      },
       "routes": {}
     },
     "hiroshima-by-utmb": {
       "eventId": "hiroshima-by-utmb",
-      "checkedAt": "2026-11-16T21:19:27.403300+00:00",
+      "checkedAt": "2026-11-16T21:21:58.161853+00:00",
       "status": "unconfirmed",
       "sources": [
         {
@@ -260,11 +292,12 @@
           "status": "read"
         }
       ],
+      "eventPeriod": null,
       "routes": {}
     },
     "the-canyons-endurance-runs-by-utmb": {
       "eventId": "the-canyons-endurance-runs-by-utmb",
-      "checkedAt": "2026-11-16T21:19:27.403300+00:00",
+      "checkedAt": "2026-11-16T21:21:58.161853+00:00",
       "status": "unconfirmed",
       "sources": [
         {
@@ -272,23 +305,29 @@
           "status": "read"
         }
       ],
+      "eventPeriod": null,
       "routes": {}
     },
     "rothrock-by-utmb": {
       "eventId": "rothrock-by-utmb",
-      "checkedAt": "2026-11-16T21:19:27.403300+00:00",
-      "status": "unconfirmed",
+      "checkedAt": "2026-11-16T21:21:58.161853+00:00",
+      "status": "verified",
       "sources": [
         {
           "url": "https://rothrock.utmb.world/",
           "status": "read"
         }
       ],
+      "eventPeriod": {
+        "startDate": "2027-05-14",
+        "endDate": "2027-05-16",
+        "verified": true
+      },
       "routes": {}
     },
     "trail-du-saint-jacques-by-utmb": {
       "eventId": "trail-du-saint-jacques-by-utmb",
-      "checkedAt": "2026-11-16T21:19:27.403300+00:00",
+      "checkedAt": "2026-11-16T21:21:58.161853+00:00",
       "status": "unconfirmed",
       "sources": [
         {
@@ -296,11 +335,12 @@
           "status": "read"
         }
       ],
+      "eventPeriod": null,
       "routes": {}
     },
     "torrencial-valdivia-by-utmb": {
       "eventId": "torrencial-valdivia-by-utmb",
-      "checkedAt": "2026-11-16T21:19:27.403300+00:00",
+      "checkedAt": "2026-11-16T21:21:58.161853+00:00",
       "status": "unconfirmed",
       "sources": [
         {
@@ -308,11 +348,12 @@
           "status": "read"
         }
       ],
+      "eventPeriod": null,
       "routes": {}
     },
     "hoka-val-d-aran-by-utmb": {
       "eventId": "hoka-val-d-aran-by-utmb",
-      "checkedAt": "2026-11-16T21:19:27.403300+00:00",
+      "checkedAt": "2026-11-16T21:21:58.161853+00:00",
       "status": "unconfirmed",
       "sources": [
         {
@@ -320,11 +361,12 @@
           "status": "read"
         }
       ],
+      "eventPeriod": null,
       "routes": {}
     },
     "monte-rosa-walser-waeg-by-utmb": {
       "eventId": "monte-rosa-walser-waeg-by-utmb",
-      "checkedAt": "2026-11-16T21:19:27.403300+00:00",
+      "checkedAt": "2026-11-16T21:21:58.161853+00:00",
       "status": "unconfirmed",
       "sources": [
         {
@@ -332,11 +374,12 @@
           "status": "read"
         }
       ],
+      "eventPeriod": null,
       "routes": {}
     },
     "wildstrubel-by-utmb": {
       "eventId": "wildstrubel-by-utmb",
-      "checkedAt": "2026-11-16T21:19:27.403300+00:00",
+      "checkedAt": "2026-11-16T21:21:58.161853+00:00",
       "status": "unconfirmed",
       "sources": [
         {
@@ -344,6 +387,7 @@
           "status": "read"
         }
       ],
+      "eventPeriod": null,
       "routes": {}
     }
   }
