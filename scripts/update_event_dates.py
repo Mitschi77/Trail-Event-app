@@ -111,8 +111,9 @@ for event in events:
             route_name = str(route.get("route") or route.get("name") or "").strip().casefold()
             event_name = str(event.get("name") or "").strip().casefold()
             matches = {date for name, date in records if route_name and name == route_name}
-            # An event-level title is only accepted when there is exactly one route.
-            if not matches and len(event.get("routes", [])) == 1 and event_name:
+            # Do not assign an event-period date to a differently named placeholder route.
+            # Event-title matching is valid only when the route itself has that exact name.
+            if not matches and route_name == event_name and event_name:
                 matches = {date for name, date in records if name == event_name}
             if len(matches) == 1:
                 date = next(iter(matches))
