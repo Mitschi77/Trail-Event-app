@@ -1,20 +1,19 @@
 import json
 import math
 import re
-import unicodedata
 from datetime import date
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 HTML = (ROOT / "index.html").read_text(encoding="utf-8")
-match = re.search(r"const EVENTS=(\\[.*?\\]);\\s*let userAddedEvents", HTML, re.S)
+match = re.search(r"const EVENTS=(\[.*?\]);\s*let userAddedEvents", HTML, re.S)
 if not match:
     raise SystemExit("EVENTS array not found")
 events = json.loads(match.group(1))
 
 
 def valid_date(value):
-    if not isinstance(value, str) or not re.fullmatch(r"\\d{4}-\\d{2}-\\d{2}", value):
+    if not isinstance(value, str) or not re.fullmatch(r"\d{4}-\d{2}-\d{2}", value):
         return False
     try:
         date.fromisoformat(value)
@@ -117,7 +116,7 @@ for event_index, event in enumerate(events):
         errors.append(f"{name}: maxHm summary {event.get('maxHm')!r} does not match route maximum {expected_max_hm!r}")
 
 if errors:
-    print("\\n".join(errors))
+    print("\n".join(errors))
     raise SystemExit(f"Data validation failed with {len(errors)} error(s)")
 
 print(f"Validated {len(events)} events and {route_total} routes with persisted unique IDs.")
