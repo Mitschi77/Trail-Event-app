@@ -16,7 +16,7 @@ events = json.loads(match.group(1))
 
 def slug(value):
     value = str(value or "item").replace("ß", "ss")
-    value = unicodedata.normalize("NFKD", value).encode("ascii", "ignore").decode("ascii").lower()
+    value = "".join(ch for ch in unicodedata.normalize("NFD", value) if unicodedata.category(ch) != "Mn").lower()
     value = re.sub(r"[^a-z0-9]+", "-", value).strip("-")
     return value or "item"
 
