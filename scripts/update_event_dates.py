@@ -28,6 +28,7 @@ for event in events:
     while event_id in used_events:
         event_id = f"{base}-{suffix}"
         suffix += 1
+    event_id = event.get("id") or event_id
     event["id"] = event_id
     used_events.add(event_id)
     used_routes = set()
@@ -38,6 +39,7 @@ for event in events:
         while route_id in used_routes:
             route_id = f"{route_base}-{route_suffix}"
             route_suffix += 1
+        route_id = route.get("id") or route_id
         route["id"] = route_id
         used_routes.add(route_id)
 
