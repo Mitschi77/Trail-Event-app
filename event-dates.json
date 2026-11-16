@@ -1,5 +1,374 @@
 {
-  "updatedAt": "2026-11-16T21:07:49.481Z",
+  "updatedAt": "2026-11-16T21:09:22.729878+00:00",
   "schemaVersion": 2,
-  "events": {}
+  "events": {
+    "wien-marathon": {
+      "eventId": "wien-marathon",
+      "checkedAt": "2026-11-16T21:09:22.729878+00:00",
+      "status": "unconfirmed",
+      "sources": [
+        {
+          "url": "https://www.vienna-marathon.com/?go=news&newsid=4145",
+          "status": "read"
+        }
+      ],
+      "routes": {}
+    },
+    "paris-marathon": {
+      "eventId": "paris-marathon",
+      "checkedAt": "2026-11-16T21:09:22.729878+00:00",
+      "status": "unavailable",
+      "sources": [
+        {
+          "url": "https://www.schneiderelectricparismarathon.com/en/event/presentation",
+          "status": "unavailable",
+          "error": "HTTP Error 500: Domain Not Found"
+        }
+      ],
+      "routes": {}
+    },
+    "hamburg-marathon": {
+      "eventId": "hamburg-marathon",
+      "checkedAt": "2026-11-16T21:09:22.729878+00:00",
+      "status": "unconfirmed",
+      "sources": [
+        {
+          "url": "https://haspa-marathon-hamburg.de/",
+          "status": "read"
+        }
+      ],
+      "routes": {}
+    },
+    "tcs-london-marathon-major": {
+      "eventId": "tcs-london-marathon-major",
+      "checkedAt": "2026-11-16T21:09:22.729878+00:00",
+      "status": "unconfirmed",
+      "sources": [
+        {
+          "url": "https://www.tcslondonmarathon.com/the-event/the-course",
+          "status": "read"
+        }
+      ],
+      "routes": {}
+    },
+    "oh-meu-deus": {
+      "eventId": "oh-meu-deus",
+      "checkedAt": "2026-11-16T21:09:22.729878+00:00",
+      "status": "verified",
+      "sources": [
+        {
+          "url": "https://ohmeudeus.utmb.world/races/omd100m",
+          "status": "read"
+        }
+      ],
+      "routes": {
+        "0": {
+          "routeId": "oh-meu-deus-100m-167-8900",
+          "date": "2027-04-30",
+          "verified": true
+        }
+      }
+    },
+    "mozart": {
+      "eventId": "mozart",
+      "checkedAt": "2026-11-16T21:09:22.729878+00:00",
+      "status": "unconfirmed",
+      "sources": [
+        {
+          "url": "https://mozart.utmb.world/de",
+          "status": "read"
+        }
+      ],
+      "routes": {}
+    },
+    "brixen-marathon": {
+      "eventId": "brixen-marathon",
+      "checkedAt": "2026-11-16T21:09:22.729878+00:00",
+      "status": "unconfirmed",
+      "sources": [
+        {
+          "url": "https://www.brixenmarathon.com/dolomites-ultra-trail/",
+          "status": "read"
+        }
+      ],
+      "routes": {}
+    },
+    "u-tlw": {
+      "eventId": "u-tlw",
+      "checkedAt": "2026-11-16T21:09:22.729878+00:00",
+      "status": "unconfirmed",
+      "sources": [
+        {
+          "url": "https://utlw.de/de/",
+          "status": "read"
+        }
+      ],
+      "routes": {}
+    },
+    "piut": {
+      "eventId": "piut",
+      "checkedAt": "2026-11-16T21:09:22.729878+00:00",
+      "status": "unconfirmed",
+      "sources": [
+        {
+          "url": "https://www.paznaun-ischgl.com/de/piut-startseite/challenges/piut",
+          "status": "read"
+        }
+      ],
+      "routes": {}
+    },
+    "dolomyths-run": {
+      "eventId": "dolomyths-run",
+      "checkedAt": "2026-11-16T21:09:22.729878+00:00",
+      "status": "unconfirmed",
+      "sources": [
+        {
+          "url": "https://www.dolomythsrun.it/fassa-trail.html",
+          "status": "read"
+        }
+      ],
+      "routes": {}
+    },
+    "allgau-panorama-marathon": {
+      "eventId": "allgau-panorama-marathon",
+      "checkedAt": "2026-11-16T21:09:22.729878+00:00",
+      "status": "unconfirmed",
+      "sources": [
+        {
+          "url": "https://www.allgaeu-panorama-marathon.de/content/strecken/ultra/",
+          "status": "read"
+        }
+      ],
+      "routes": {}
+    },
+    "berlin-marathon-major": {
+      "eventId": "berlin-marathon-major",
+      "checkedAt": "2026-11-16T21:09:22.729878+00:00",
+      "status": "unconfirmed",
+      "sources": [
+        {
+          "url": "https://www.bmw-berlin-marathon.com/",
+          "status": "read"
+        }
+      ],
+      "routes": {}
+    },
+    "munchen-marathon": {
+      "eventId": "munchen-marathon",
+      "checkedAt": "2026-11-16T21:09:22.729878+00:00",
+      "status": "unconfirmed",
+      "sources": [
+        {
+          "url": "https://www.generalimuenchenmarathon.de/",
+          "status": "read"
+        }
+      ],
+      "routes": {}
+    },
+    "mammutmarsch": {
+      "eventId": "mammutmarsch",
+      "checkedAt": "2026-11-16T21:09:22.729878+00:00",
+      "status": "unconfirmed",
+      "sources": [
+        {
+          "url": "https://mammutmarsch.de/events",
+          "status": "read"
+        }
+      ],
+      "routes": {}
+    },
+    "megamarsch": {
+      "eventId": "megamarsch",
+      "checkedAt": "2026-11-16T21:09:22.729878+00:00",
+      "status": "unconfirmed",
+      "sources": [
+        {
+          "url": "https://www.megamarsch.de/m%C3%BCnchen",
+          "status": "read"
+        }
+      ],
+      "routes": {}
+    },
+    "vietnam-highlands-trail-by-utmb": {
+      "eventId": "vietnam-highlands-trail-by-utmb",
+      "checkedAt": "2026-11-16T21:09:22.729878+00:00",
+      "status": "verified",
+      "sources": [
+        {
+          "url": "https://vietnamhighlands.utmb.world/",
+          "status": "read"
+        }
+      ],
+      "routes": {
+        "0": {
+          "routeId": "veranstaltungszeitraum-streckentermine-noch-offen",
+          "date": "2027-01-07",
+          "verified": true
+        }
+      }
+    },
+    "tarawera-ultra-trail-by-utmb": {
+      "eventId": "tarawera-ultra-trail-by-utmb",
+      "checkedAt": "2026-11-16T21:09:22.729878+00:00",
+      "status": "verified",
+      "sources": [
+        {
+          "url": "https://tarawera.utmb.world/",
+          "status": "read"
+        }
+      ],
+      "routes": {
+        "0": {
+          "routeId": "veranstaltungszeitraum-streckentermine-noch-offen",
+          "date": "2027-02-13",
+          "verified": true
+        }
+      }
+    },
+    "puerto-vallarta-mexico-by-utmb": {
+      "eventId": "puerto-vallarta-mexico-by-utmb",
+      "checkedAt": "2026-11-16T21:09:22.729878+00:00",
+      "status": "unavailable",
+      "sources": [
+        {
+          "url": "https://puertovallarta.utmb.world/",
+          "status": "unavailable",
+          "error": "HTTP Error 401: Unauthorized"
+        }
+      ],
+      "routes": {}
+    },
+    "hoka-xtrail-kenting-by-utmb": {
+      "eventId": "hoka-xtrail-kenting-by-utmb",
+      "checkedAt": "2026-11-16T21:09:22.729878+00:00",
+      "status": "unconfirmed",
+      "sources": [
+        {
+          "url": "https://xtrail.utmb.world/",
+          "status": "read"
+        }
+      ],
+      "routes": {}
+    },
+    "desert-rats-trail-running-festival-by-utmb": {
+      "eventId": "desert-rats-trail-running-festival-by-utmb",
+      "checkedAt": "2026-11-16T21:09:22.729878+00:00",
+      "status": "verified",
+      "sources": [
+        {
+          "url": "https://desertrats.utmb.world/",
+          "status": "read"
+        }
+      ],
+      "routes": {
+        "0": {
+          "routeId": "veranstaltungszeitraum-streckentermine-noch-offen",
+          "date": "2027-04-08",
+          "verified": true
+        }
+      }
+    },
+    "hiroshima-by-utmb": {
+      "eventId": "hiroshima-by-utmb",
+      "checkedAt": "2026-11-16T21:09:22.729878+00:00",
+      "status": "unconfirmed",
+      "sources": [
+        {
+          "url": "https://hiroshima.utmb.world/",
+          "status": "read"
+        }
+      ],
+      "routes": {}
+    },
+    "the-canyons-endurance-runs-by-utmb": {
+      "eventId": "the-canyons-endurance-runs-by-utmb",
+      "checkedAt": "2026-11-16T21:09:22.729878+00:00",
+      "status": "unconfirmed",
+      "sources": [
+        {
+          "url": "https://canyons.utmb.world/",
+          "status": "read"
+        }
+      ],
+      "routes": {}
+    },
+    "rothrock-by-utmb": {
+      "eventId": "rothrock-by-utmb",
+      "checkedAt": "2026-11-16T21:09:22.729878+00:00",
+      "status": "verified",
+      "sources": [
+        {
+          "url": "https://rothrock.utmb.world/",
+          "status": "read"
+        }
+      ],
+      "routes": {
+        "0": {
+          "routeId": "veranstaltungszeitraum-streckentermine-noch-offen",
+          "date": "2027-05-14",
+          "verified": true
+        }
+      }
+    },
+    "trail-du-saint-jacques-by-utmb": {
+      "eventId": "trail-du-saint-jacques-by-utmb",
+      "checkedAt": "2026-11-16T21:09:22.729878+00:00",
+      "status": "unconfirmed",
+      "sources": [
+        {
+          "url": "https://saint-jacques.utmb.world/",
+          "status": "read"
+        }
+      ],
+      "routes": {}
+    },
+    "torrencial-valdivia-by-utmb": {
+      "eventId": "torrencial-valdivia-by-utmb",
+      "checkedAt": "2026-11-16T21:09:22.729878+00:00",
+      "status": "unconfirmed",
+      "sources": [
+        {
+          "url": "https://torrencial.utmb.world/",
+          "status": "read"
+        }
+      ],
+      "routes": {}
+    },
+    "hoka-val-d-aran-by-utmb": {
+      "eventId": "hoka-val-d-aran-by-utmb",
+      "checkedAt": "2026-11-16T21:09:22.729878+00:00",
+      "status": "unconfirmed",
+      "sources": [
+        {
+          "url": "https://valdaran.utmb.world/",
+          "status": "read"
+        }
+      ],
+      "routes": {}
+    },
+    "monte-rosa-walser-waeg-by-utmb": {
+      "eventId": "monte-rosa-walser-waeg-by-utmb",
+      "checkedAt": "2026-11-16T21:09:22.729878+00:00",
+      "status": "unconfirmed",
+      "sources": [
+        {
+          "url": "https://mrww.utmb.world/",
+          "status": "read"
+        }
+      ],
+      "routes": {}
+    },
+    "wildstrubel-by-utmb": {
+      "eventId": "wildstrubel-by-utmb",
+      "checkedAt": "2026-11-16T21:09:22.729878+00:00",
+      "status": "unconfirmed",
+      "sources": [
+        {
+          "url": "https://wildstrubel.utmb.world/",
+          "status": "read"
+        }
+      ],
+      "routes": {}
+    }
+  }
 }
