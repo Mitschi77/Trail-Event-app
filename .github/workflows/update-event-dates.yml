@@ -5,12 +5,17 @@ on:
     paths:
       - "index.html"
       - "scripts/update_event_dates.py"
+      - ".github/workflows/update-event-dates.yml"
   schedule:
     - cron: "17 4 * * *"
   workflow_dispatch:
 
 permissions:
   contents: write
+
+concurrency:
+  group: official-event-date-feed
+  cancel-in-progress: false
 
 jobs:
   update-dates:
@@ -29,5 +34,6 @@ jobs:
           git add event-dates.json
           if ! git diff --cached --quiet; then
             git commit -m "Update verified official event dates"
-            git push
+            git pull --rebase origin main
+          git push
           fi
