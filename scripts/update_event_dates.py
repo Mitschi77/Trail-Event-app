@@ -11,6 +11,7 @@ CURATED_2027 = {
     "51": {"source": "https://www.tirol.at/aktivitaeten/events/trailrun-events", "routes": {"0": "2027-06-12"}},
     "12": {"source": "https://istria.utmb.world/", "routes": {"0": "2027-04-03", "1": "2027-04-03"}},
     "43": {"source": "https://mozart.utmb.world/races/mozart100", "routes": {"0": "2027-06-05", "1": "2027-06-05", "2": "2027-06-05", "3": "2027-06-05"}},
+    "70": {"source": "https://www.3kings-3hills.com/fakten/", "routes": {"0": "2027-07-24", "1": "2027-07-24", "2": "2027-07-23"}},
 }
 
 ROOT = Path(__file__).resolve().parents[1]
