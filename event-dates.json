@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-16T21:41:38.830696+00:00",
+  "updatedAt": "2026-11-16T21:43:06.578Z",
   "schemaVersion": 3,
   "events": {
     "wien-marathon": {
@@ -32,23 +32,32 @@
     },
     "paris-marathon": {
       "eventId": "paris-marathon",
-      "checkedAt": "2026-11-16T21:41:38.830696+00:00",
-      "status": "unconfirmed",
+      "checkedAt": "2026-11-16T21:43:06.578Z",
+      "status": "verified",
       "sources": [
         {
-          "url": "https://www.schneiderelectricparismarathon.com/en/event/presentation",
-          "status": "unavailable",
-          "error": "HTTP Error 500: Domain Not Found"
+          "url": "https://www.asicsmarathondeparis.com/en/rules-of-the-asics-marathon-de-paris",
+          "status": "read",
+          "verification": "manual-official-page"
         },
         {
-          "url": "https://www.schneiderelectricparismarathon.com/en/",
+          "url": "https://www.asicsmarathondeparis.com/en",
           "status": "read",
           "verification": "manual-official-page"
         }
       ],
-      "eventPeriod": null,
-      "routes": {},
-      "note": "Auf der offiziellen Veranstalterseite wurde noch kein eindeutiger Termin für 2027 gefunden."
+      "eventPeriod": {
+        "startDate": "2027-04-04",
+        "endDate": "2027-04-04",
+        "verified": true
+      },
+      "routes": {
+        "0": {
+          "routeId": "paris-marathon-42-2",
+          "date": "2027-04-04",
+          "verified": true
+        }
+      }
     },
     "hamburg-marathon": {
       "eventId": "hamburg-marathon",
