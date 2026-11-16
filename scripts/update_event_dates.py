@@ -99,6 +99,7 @@ feed = {"updatedAt": updated, "schemaVersion": 3, "events": {}}
 # Manually checked official event pages. Keep these verified periods even when a
 # page does not expose machine-readable schema.org Event data.
 MANUAL_EVENT_PERIODS = {
+    "paris-marathon": ("2027-04-04", "2027-04-04", "https://www.asicsmarathondeparis.com/en/rules-of-the-asics-marathon-de-paris", {"0": "2027-04-04"}),
     "wien-marathon": ("2027-04-18", "2027-04-18", "https://www2.vienna-marathon.com/?go=marathon&lang=de", {"0": "2027-04-18"}),
     "hamburg-marathon": ("2027-04-25", "2027-04-25", "https://haspa-marathon-hamburg.de/teilnehmerinfos-marathon/", {"0": "2027-04-25"}),
     "tcs-london-marathon-major": ("2027-04-24", "2027-04-25", "https://www.londonmarathonevents.co.uk/london-marathon/road-closures", {}),
