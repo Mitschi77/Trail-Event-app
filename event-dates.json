@@ -1,19 +1,34 @@
 {
-  "updatedAt": "2026-11-16T21:36:43.302370+00:00",
+  "updatedAt": "2026-11-16T21:40:23.226Z",
   "schemaVersion": 3,
   "events": {
     "wien-marathon": {
       "eventId": "wien-marathon",
-      "checkedAt": "2026-11-16T21:36:43.302370+00:00",
-      "status": "unconfirmed",
+      "checkedAt": "2026-11-16T21:40:23.226Z",
+      "status": "verified",
       "sources": [
         {
           "url": "https://www.vienna-marathon.com/?go=news&newsid=4145",
           "status": "read"
+        },
+        {
+          "url": "https://www2.vienna-marathon.com/?go=marathon&lang=de",
+          "status": "read",
+          "verification": "manual-official-page"
         }
       ],
-      "eventPeriod": null,
-      "routes": {}
+      "eventPeriod": {
+        "startDate": "2027-04-18",
+        "endDate": "2027-04-18",
+        "verified": true
+      },
+      "routes": {
+        "0": {
+          "routeId": "wien-marathon-42-2",
+          "date": "2027-04-18",
+          "verified": true
+        }
+      }
     },
     "paris-marathon": {
       "eventId": "paris-marathon",
@@ -31,28 +46,52 @@
     },
     "hamburg-marathon": {
       "eventId": "hamburg-marathon",
-      "checkedAt": "2026-11-16T21:36:43.302370+00:00",
-      "status": "unconfirmed",
+      "checkedAt": "2026-11-16T21:40:23.226Z",
+      "status": "verified",
       "sources": [
         {
           "url": "https://haspa-marathon-hamburg.de/",
           "status": "read"
+        },
+        {
+          "url": "https://haspa-marathon-hamburg.de/teilnehmerinfos-marathon/",
+          "status": "read",
+          "verification": "manual-official-page"
         }
       ],
-      "eventPeriod": null,
-      "routes": {}
+      "eventPeriod": {
+        "startDate": "2027-04-25",
+        "endDate": "2027-04-25",
+        "verified": true
+      },
+      "routes": {
+        "0": {
+          "routeId": "hamburg-marathon-42-2",
+          "date": "2027-04-25",
+          "verified": true
+        }
+      }
     },
     "tcs-london-marathon-major": {
       "eventId": "tcs-london-marathon-major",
-      "checkedAt": "2026-11-16T21:36:43.302370+00:00",
-      "status": "unconfirmed",
+      "checkedAt": "2026-11-16T21:40:23.226Z",
+      "status": "verified",
       "sources": [
         {
           "url": "https://www.tcslondonmarathon.com/the-event/the-course",
           "status": "read"
+        },
+        {
+          "url": "https://www.londonmarathonevents.co.uk/london-marathon/road-closures",
+          "status": "read",
+          "verification": "manual-official-page"
         }
       ],
-      "eventPeriod": null,
+      "eventPeriod": {
+        "startDate": "2027-04-24",
+        "endDate": "2027-04-25",
+        "verified": true
+      },
       "routes": {}
     },
     "oh-meu-deus": {
@@ -76,15 +115,24 @@
     },
     "mozart": {
       "eventId": "mozart",
-      "checkedAt": "2026-11-16T21:36:43.302370+00:00",
-      "status": "unconfirmed",
+      "checkedAt": "2026-11-16T21:40:23.226Z",
+      "status": "verified",
       "sources": [
         {
           "url": "https://mozart.utmb.world/de",
           "status": "read"
+        },
+        {
+          "url": "https://mozart.utmb.world/de/races/mozart100",
+          "status": "read",
+          "verification": "manual-official-page"
         }
       ],
-      "eventPeriod": null,
+      "eventPeriod": {
+        "startDate": "2027-06-05",
+        "endDate": "2027-06-05",
+        "verified": true
+      },
       "routes": {}
     },
     "brixen-marathon": {
@@ -115,55 +163,114 @@
     },
     "piut": {
       "eventId": "piut",
-      "checkedAt": "2026-11-16T21:36:43.302370+00:00",
-      "status": "unconfirmed",
+      "checkedAt": "2026-11-16T21:40:23.226Z",
+      "status": "verified",
       "sources": [
         {
           "url": "https://www.paznaun-ischgl.com/de/piut-startseite/challenges/piut",
           "status": "read"
+        },
+        {
+          "url": "https://www.ischgl.com/de/veranstaltungen-erlebnisse/veranstaltungskalender/piut-paznaun-ischgl-ultra-trail_event_135487129",
+          "status": "read",
+          "verification": "manual-official-page"
         }
       ],
-      "eventPeriod": null,
+      "eventPeriod": {
+        "startDate": "2027-07-09",
+        "endDate": "2027-07-10",
+        "verified": true
+      },
       "routes": {}
     },
     "dolomyths-run": {
       "eventId": "dolomyths-run",
-      "checkedAt": "2026-11-16T21:36:43.302370+00:00",
-      "status": "unconfirmed",
+      "checkedAt": "2026-11-16T21:40:23.226Z",
+      "status": "verified",
       "sources": [
         {
           "url": "https://www.dolomythsrun.it/fassa-trail.html",
           "status": "read"
+        },
+        {
+          "url": "https://dolomythsrun.it/en/",
+          "status": "read",
+          "verification": "manual-official-page"
         }
       ],
-      "eventPeriod": null,
-      "routes": {}
+      "eventPeriod": {
+        "startDate": "2027-07-09",
+        "endDate": "2027-07-11",
+        "verified": true
+      },
+      "routes": {
+        "0": {
+          "routeId": "trail",
+          "date": "2027-07-10",
+          "verified": true
+        },
+        "1": {
+          "routeId": "sky",
+          "date": "2027-07-11",
+          "verified": true
+        }
+      }
     },
     "allgau-panorama-marathon": {
       "eventId": "allgau-panorama-marathon",
-      "checkedAt": "2026-11-16T21:36:43.302370+00:00",
-      "status": "unconfirmed",
+      "checkedAt": "2026-11-16T21:40:23.226Z",
+      "status": "verified",
       "sources": [
         {
           "url": "https://www.allgaeu-panorama-marathon.de/content/strecken/ultra/",
           "status": "read"
+        },
+        {
+          "url": "https://www.allgaeu-panorama-marathon.de/",
+          "status": "read",
+          "verification": "manual-official-page"
         }
       ],
-      "eventPeriod": null,
-      "routes": {}
+      "eventPeriod": {
+        "startDate": "2027-08-07",
+        "endDate": "2027-08-08",
+        "verified": true
+      },
+      "routes": {
+        "0": {
+          "routeId": "ultra-69-7-3125",
+          "date": "2027-08-08",
+          "verified": true
+        }
+      }
     },
     "berlin-marathon-major": {
       "eventId": "berlin-marathon-major",
-      "checkedAt": "2026-11-16T21:36:43.302370+00:00",
-      "status": "unconfirmed",
+      "checkedAt": "2026-11-16T21:40:23.226Z",
+      "status": "verified",
       "sources": [
         {
           "url": "https://www.bmw-berlin-marathon.com/",
           "status": "read"
+        },
+        {
+          "url": "https://www.generali-berlin-marathon.com/",
+          "status": "read",
+          "verification": "manual-official-page"
         }
       ],
-      "eventPeriod": null,
-      "routes": {}
+      "eventPeriod": {
+        "startDate": "2027-09-26",
+        "endDate": "2027-09-26",
+        "verified": true
+      },
+      "routes": {
+        "0": {
+          "routeId": "berlin-marathon-major-42-2",
+          "date": "2027-09-26",
+          "verified": true
+        }
+      }
     },
     "munchen-marathon": {
       "eventId": "munchen-marathon",
@@ -180,29 +287,55 @@
     },
     "mammutmarsch": {
       "eventId": "mammutmarsch",
-      "checkedAt": "2026-11-16T21:36:43.302370+00:00",
-      "status": "unconfirmed",
+      "checkedAt": "2026-11-16T21:40:23.226Z",
+      "status": "verified",
       "sources": [
         {
           "url": "https://mammutmarsch.de/events",
           "status": "read"
+        },
+        {
+          "url": "https://mammutmarsch.de/events/muenchen",
+          "status": "read",
+          "verification": "manual-official-page"
         }
       ],
-      "eventPeriod": null,
-      "routes": {}
+      "eventPeriod": {
+        "startDate": "2027-07-31",
+        "endDate": "2027-07-31",
+        "verified": true
+      },
+      "routes": {
+        "0": {
+          "routeId": "munchen-100-km-100",
+          "date": "2027-07-31",
+          "verified": true
+        }
+      }
     },
     "megamarsch": {
       "eventId": "megamarsch",
-      "checkedAt": "2026-11-16T21:36:43.302370+00:00",
-      "status": "unconfirmed",
+      "checkedAt": "2026-11-16T21:40:23.226Z",
+      "status": "verified",
       "sources": [
         {
           "url": "https://www.megamarsch.de/m%C3%BCnchen",
-          "status": "read"
+          "status": "read",
+          "verification": "manual-official-page"
         }
       ],
-      "eventPeriod": null,
-      "routes": {}
+      "eventPeriod": {
+        "startDate": "2027-05-15",
+        "endDate": "2027-05-16",
+        "verified": true
+      },
+      "routes": {
+        "0": {
+          "routeId": "munchen-100-km-100",
+          "date": "2027-05-15",
+          "verified": true
+        }
+      }
     },
     "vietnam-highlands-trail-by-utmb": {
       "eventId": "vietnam-highlands-trail-by-utmb",
@@ -240,29 +373,47 @@
     },
     "puerto-vallarta-mexico-by-utmb": {
       "eventId": "puerto-vallarta-mexico-by-utmb",
-      "checkedAt": "2026-11-16T21:36:43.302370+00:00",
-      "status": "unavailable",
+      "checkedAt": "2026-11-16T21:40:23.226Z",
+      "status": "verified",
       "sources": [
         {
           "url": "https://puertovallarta.utmb.world/",
           "status": "unavailable",
           "error": "HTTP Error 401: Unauthorized"
+        },
+        {
+          "url": "https://puerto-vallarta.utmb.world/races-runners/runners/registration",
+          "status": "read",
+          "verification": "manual-official-page"
         }
       ],
-      "eventPeriod": null,
+      "eventPeriod": {
+        "startDate": "2027-03-04",
+        "endDate": "2027-03-06",
+        "verified": true
+      },
       "routes": {}
     },
     "hoka-xtrail-kenting-by-utmb": {
       "eventId": "hoka-xtrail-kenting-by-utmb",
-      "checkedAt": "2026-11-16T21:36:43.302370+00:00",
-      "status": "unconfirmed",
+      "checkedAt": "2026-11-16T21:40:23.226Z",
+      "status": "verified",
       "sources": [
         {
           "url": "https://xtrail.utmb.world/",
           "status": "read"
+        },
+        {
+          "url": "https://xtrail.utmb.world/registrations",
+          "status": "read",
+          "verification": "manual-official-page"
         }
       ],
-      "eventPeriod": null,
+      "eventPeriod": {
+        "startDate": "2027-03-05",
+        "endDate": "2027-03-07",
+        "verified": true
+      },
       "routes": {}
     },
     "desert-rats-trail-running-festival-by-utmb": {
@@ -284,28 +435,46 @@
     },
     "hiroshima-by-utmb": {
       "eventId": "hiroshima-by-utmb",
-      "checkedAt": "2026-11-16T21:36:43.302370+00:00",
-      "status": "unconfirmed",
+      "checkedAt": "2026-11-16T21:40:23.226Z",
+      "status": "verified",
       "sources": [
         {
           "url": "https://hiroshima.utmb.world/",
           "status": "read"
+        },
+        {
+          "url": "https://hiroshima.utmb.world/runners/event-schedule",
+          "status": "read",
+          "verification": "manual-official-page"
         }
       ],
-      "eventPeriod": null,
+      "eventPeriod": {
+        "startDate": "2027-04-09",
+        "endDate": "2027-04-11",
+        "verified": true
+      },
       "routes": {}
     },
     "the-canyons-endurance-runs-by-utmb": {
       "eventId": "the-canyons-endurance-runs-by-utmb",
-      "checkedAt": "2026-11-16T21:36:43.302370+00:00",
-      "status": "unconfirmed",
+      "checkedAt": "2026-11-16T21:40:23.226Z",
+      "status": "verified",
       "sources": [
         {
           "url": "https://canyons.utmb.world/",
           "status": "read"
+        },
+        {
+          "url": "https://canyons.utmb.world/runners/registration",
+          "status": "read",
+          "verification": "manual-official-page"
         }
       ],
-      "eventPeriod": null,
+      "eventPeriod": {
+        "startDate": "2027-04-22",
+        "endDate": "2027-04-25",
+        "verified": true
+      },
       "routes": {}
     },
     "rothrock-by-utmb": {
@@ -327,67 +496,104 @@
     },
     "trail-du-saint-jacques-by-utmb": {
       "eventId": "trail-du-saint-jacques-by-utmb",
-      "checkedAt": "2026-11-16T21:36:43.302370+00:00",
-      "status": "unconfirmed",
+      "checkedAt": "2026-11-16T21:40:23.226Z",
+      "status": "verified",
       "sources": [
         {
           "url": "https://saint-jacques.utmb.world/",
-          "status": "read"
+          "status": "read",
+          "verification": "manual-official-page"
         }
       ],
-      "eventPeriod": null,
+      "eventPeriod": {
+        "startDate": "2027-06-18",
+        "endDate": "2027-06-20",
+        "verified": true
+      },
       "routes": {}
     },
     "torrencial-valdivia-by-utmb": {
       "eventId": "torrencial-valdivia-by-utmb",
-      "checkedAt": "2026-11-16T21:36:43.302370+00:00",
-      "status": "unconfirmed",
+      "checkedAt": "2026-11-16T21:40:23.226Z",
+      "status": "verified",
       "sources": [
         {
           "url": "https://torrencial.utmb.world/",
           "status": "read"
+        },
+        {
+          "url": "https://torrencial.utmb.world/registrations",
+          "status": "read",
+          "verification": "manual-official-page"
         }
       ],
-      "eventPeriod": null,
+      "eventPeriod": {
+        "startDate": "2027-06-24",
+        "endDate": "2027-06-27",
+        "verified": true
+      },
       "routes": {}
     },
     "hoka-val-d-aran-by-utmb": {
       "eventId": "hoka-val-d-aran-by-utmb",
-      "checkedAt": "2026-11-16T21:36:43.302370+00:00",
-      "status": "unconfirmed",
+      "checkedAt": "2026-11-16T21:40:23.226Z",
+      "status": "verified",
       "sources": [
         {
           "url": "https://valdaran.utmb.world/",
           "status": "read"
+        },
+        {
+          "url": "https://valdaran.utmb.world/?page_id=1259",
+          "status": "read",
+          "verification": "manual-official-page"
         }
       ],
-      "eventPeriod": null,
+      "eventPeriod": {
+        "startDate": "2027-07-07",
+        "endDate": "2027-07-11",
+        "verified": true
+      },
       "routes": {}
     },
     "monte-rosa-walser-waeg-by-utmb": {
       "eventId": "monte-rosa-walser-waeg-by-utmb",
-      "checkedAt": "2026-11-16T21:36:43.302370+00:00",
-      "status": "unconfirmed",
+      "checkedAt": "2026-11-16T21:40:23.226Z",
+      "status": "verified",
       "sources": [
         {
           "url": "https://mrww.utmb.world/",
-          "status": "read"
+          "status": "read",
+          "verification": "manual-official-page"
         }
       ],
-      "eventPeriod": null,
+      "eventPeriod": {
+        "startDate": "2027-07-15",
+        "endDate": "2027-07-18",
+        "verified": true
+      },
       "routes": {}
     },
     "wildstrubel-by-utmb": {
       "eventId": "wildstrubel-by-utmb",
-      "checkedAt": "2026-11-16T21:36:43.302370+00:00",
-      "status": "unconfirmed",
+      "checkedAt": "2026-11-16T21:40:23.226Z",
+      "status": "verified",
       "sources": [
         {
           "url": "https://wildstrubel.utmb.world/",
           "status": "read"
+        },
+        {
+          "url": "https://wildstrubel.utmb.world/de",
+          "status": "read",
+          "verification": "manual-official-page"
         }
       ],
-      "eventPeriod": null,
+      "eventPeriod": {
+        "startDate": "2027-09-09",
+        "endDate": "2027-09-12",
+        "verified": true
+      },
       "routes": {}
     }
   }
