@@ -35,7 +35,7 @@ for event_id, event in enumerate(events):
         req = urllib.request.Request(urls[0], headers={"User-Agent": "Mozilla/5.0 (compatible; TrailEventPlanner/1.0)"})
         with urllib.request.urlopen(req, timeout=18) as response:
             page = response.read(3_000_000).decode("utf-8", "replace")
-        blocks = re.findall(r'<script[^>]+type=["\\']application/ld\\+json["\\'][^>]*>(.*?)</script>', page, re.I | re.S)
+        blocks = re.findall(r"<script[^>]+type=['\"]application/ld\\+json['\"][^>]*>(.*?)</script>", page, re.I | re.S)
         found = []
         for block in blocks:
             try: found.extend(walk(json.loads(block.strip())))
