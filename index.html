@@ -40,7 +40,7 @@ function saveRouteData(id,ri,button){const panel=button.closest('.route-edit'),r
 let runRecords={};
 function saveRunRecords(){try{localStorage.setItem('trailEventRunRecords',JSON.stringify(runRecords));queuePlannerCloudSave();}catch(e){console.error('Laufdaten konnten nicht lokal gespeichert werden',e);}}
 function routeKey(id,ri){const e=EVENTS[id],r=e?.routes?.[ri];return e&&r?e.id+'::'+r.id:`${id}_${ri}`;}
-function setRunDone(id,ri,done){const key=routeKey(id,ri);runRecords[key]=runRecords[key]||{};runRecords[key].done=!!done;if(!done){delete runRecords[key].rating;delete runRecords[key].year;delete runRecords[key].result;delete runRecords[key].place;delete runRecords[key].rounds;delete runRecords[key].km;}saveRunRecords();render();}
+function setRunDone(id,ri,done){const key=routeKey(id,ri);runRecords[key]=runRecords[key]||{};runRecords[key].done=!!done;saveRunRecords();render();}
 function setRunRating(id,ri,rating){const key=routeKey(id,ri);runRecords[key]=runRecords[key]||{};runRecords[key].rating=rating;saveRunRecords();render();}
 function setRunField(id,ri,field,value){const key=routeKey(id,ri);runRecords[key]=runRecords[key]||{};runRecords[key][field]=value;if(field==='rounds'){runRecords[key].km=value===''?'':Math.round(Number(value)*6.7*10)/10;}saveRunRecords();render();}
 function renderOverviewOnly(){render();}
