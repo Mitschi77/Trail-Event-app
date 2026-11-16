@@ -5,7 +5,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 HTML = (ROOT / "index.html").read_text(encoding="utf-8")
-match = re.search(r"const EVENTS=(\\[.*?\\]);\\s*let userAddedEvents", HTML, re.S)
+match = re.search(r"const EVENTS=(\[.*?\]);\s*let userAddedEvents", HTML, re.S)
 if not match:
     raise SystemExit("EVENTS array not found")
 events = json.loads(match.group(1))
@@ -76,7 +76,7 @@ for event_index, event in enumerate(events):
                     errors.append(f"{name} / {route_id}: invalid {field}={value!r}")
         date = route.get("date")
         if date:
-            if not re.fullmatch(r"\\d{4}-\\d{2}-\\d{2}", str(date)):
+            if not re.fullmatch(r"\d{4}-\d{2}-\d{2}", str(date)):
                 errors.append(f"{name} / {route_id}: invalid date format {date!r}")
             else:
                 filled["date"] += 1
@@ -85,7 +85,7 @@ for event_index, event in enumerate(events):
                 filled[field] += 1
 
 if errors:
-    print("\\n".join(errors))
+    print("\n".join(errors))
     raise SystemExit(f"Data validation failed with {len(errors)} error(s)")
 
 print(f"Validated {len(events)} events and {route_total} routes with persisted unique IDs.")
