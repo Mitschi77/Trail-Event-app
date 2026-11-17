@@ -3,9 +3,9 @@
 ## Bereits umgesetzt
 
 - Strecken- und Höhenprofilimport aus GPX-Dateien.
-- Zusätzlich werden Garmin-/Training-Center-XML-Dateien (TCX) eingelesen.
+- Zusätzlich werden Garmin-/Training-Center-XML-Dateien (TCX) und native Garmin-FIT-Aktivitätsdateien eingelesen.
 - Aus den Trackpunkten berechnet die App Distanz, Aufstieg, Abstieg, Streckenkarte und Höhenprofil.
-- Die Dateien werden lokal in der Streckendatenpflege verarbeitet; es werden dafür keine Zugangsdaten zu Strava oder Garmin benötigt.
+- Dateien können in der Streckenpflege für Karte/Höhenprofil oder in der Laufhistorie als absolvierte Aktivität importiert werden. Für die Laufhistorie werden Startdatum, Distanz, Aufstieg und – soweit in der Datei enthalten – Laufzeit übernommen. Es werden dafür keine Zugangsdaten zu Strava oder Garmin benötigt.
 
 ## Zielbild für automatische Synchronisierung
 
@@ -26,7 +26,7 @@ Strava-Client-Secret und Refresh-Tokens dürfen niemals in der App-Oberfläche, 
 
 1. Für persönliche Nutzung kann Garmin einen persönlichen API-Zugang bereitstellen; die persönliche API ist auf Abruf (Pull) ausgerichtet.
 2. Eine Integration für weitere Nutzer benötigt die Freigabe und den passenden Zugang des Garmin Connect Developer Program.
-3. Garmin-Aktivitäten können als FIT/GPX/TCX-Dateien bereitgestellt werden. TCX-Import ist bereits vorbereitet; FIT-Import und die offizielle API-Anbindung sind separate Ausbauschritte.
+3. Garmin-Aktivitäten können als FIT/GPX/TCX-Dateien bereitgestellt werden. FIT-, TCX- und GPX-Dateiimport sind bereits eingebaut; die offizielle API-Anbindung ist ein separater Ausbauschritt.
 4. Für eine öffentliche App müssen Garmin-Zugang, Datenumfang, Nutzungsbedingungen und Freigabe vor dem Start geklärt werden.
 
 ## Einheitliches Aktivitätsmodell
