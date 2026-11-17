@@ -3,82 +3,59 @@
   "checkedAt": "2026-11-17",
   "scope": "Top-level events 66-70 in current EVENTS order",
   "status": "saved",
-  "appCommit": "4cb44a19c109aad687e3d9f4697a2e75423337b4",
+  "appCommit": "da8d203e93384b6275a15e1eab83250bdc3e56e5",
   "events": [
     {
       "order": 66,
       "name": "Engadin Ultra Trail",
-      "gpxStatus": "All four official 2027 GPX downloads confirmed on the organizer's individual race pages and linked in app.",
+      "gpxStatus": "All four official 2027 GPX files linked in app: EUT102, EUT53, ET23, ET16.",
+      "source": "https://www.engadinultratrail.ch/",
       "routes": [
-        "EUT102 102.7 km",
-        "EUT53 53.3 km",
-        "ET23 22.8 km",
-        "ET16 16.3 km"
+        "EUT102",
+        "EUT53",
+        "ET23",
+        "ET16"
       ],
-      "source": "https://www.engadinultratrail.ch/eut102",
-      "followUp": "Use one-click import for each direct GPX."
+      "followUp": "Use app GPX import control to load each track."
     },
     {
       "order": 67,
       "name": "Maintal Ultratrail",
-      "gpxStatus": "T30 direct official GPX URL added. Ultratrail and T13 official pages list GPX downloads but direct file endpoints could not be extracted, so app links to organizer pages.",
-      "routes": [
-        "Ultratrail 64 km / 1,700 hm",
-        "T30 30 km / 720 hm",
-        "T13 13 km / 230 hm"
-      ],
+      "gpxStatus": "Official organizer download pages confirmed for Ultratrail (64 km), T30 (30 km), T13 (13 km). T30 direct GPX URL added; Ultra and T13 organizer pages linked.",
       "sources": [
         "https://www.mtut.de/trails/ultratrail/",
         "https://www.mtut.de/trails/trail-t30/",
         "https://www.mtut.de/trails/trail-t13/"
       ],
-      "followUp": "Download Ultratrail and T13 from organizer pages, then import manually. T30 direct import available."
+      "followUp": "Download Ultra and T13 from organizer pages; T30 can be imported directly."
     },
     {
       "order": 68,
       "name": "Dolomyths Run",
-      "gpxStatus": "2027 route data corrected: Fassa Trail 42.5 km / 2,240 hm; Sky 22 km / 1,750 hm; new V-Rodella 4.9 km / 932 hm. Official Fassa Trail GPX link still resolves to a 2025 file, rejected. Sky and V-Rodella GPX not yet published.",
+      "gpxStatus": "Official 2027 route pages linked for Fassa Trail, SkyRace and V-Rodella. No current 2027 GPX files published; V-Rodella page explicitly says GPX will come later.",
       "sources": [
-        "https://www.dolomythsrun.it/fassa-trail-percorso.html",
-        "https://www.dolomythsrun.it/sky-percorso.html",
-        "https://www.dolomythsrun.it/en/v-rodella.html"
+        "https://dolomythsrun.it/en/fassa-trail-route.html",
+        "https://dolomythsrun.it/en/sky-route.html",
+        "https://dolomythsrun.it/en/v-rodella.html"
       ],
-      "followUp": "Wait for 2027 Fassa Trail, Sky and V-Rodella GPX releases."
+      "followUp": "Recheck when organizer publishes GPX tracks."
     },
     {
       "order": 69,
       "name": "Eiger Ultratrail",
-      "gpxStatus": "Official 2027 E101 and E51 pages confirm distances and Map + GPX, but visible download buttons still point to GPX 2026 files. Those files were not added.",
-      "routes": [
-        "E101 101 km / 6,700 hm",
-        "E51 51 km / 3,100 hm"
-      ],
+      "gpxStatus": "Official 2027 E101/E51 pages provide Map + GPX, but current download buttons resolve to E101_2026 and E51_2026. Stale files rejected for 2027; official route pages linked in app.",
       "sources": [
-        "https://eiger.utmb.world/races/e101",
-        "https://eiger.utmb.world/races/e51"
+        "https://eiger.utmb.world/races/E101",
+        "https://eiger.utmb.world/races/E51"
       ],
-      "followUp": "Recheck for new 2027 GPX files; do not use 2026 files."
+      "followUp": "Wait for UTMB 2027 GPX files; do not import 2026 files."
     },
     {
       "order": 70,
       "name": "Bucovina Ultra Rocks by UTMB",
-      "gpxStatus": "Five official direct 2027 GPX files linked (Ultra Rocks, Four Summits, Lady's Rocks, Rocky, Radical). Rumble Rock 16.5 km / 700 hm page says GPX AVAILABLE SOON. Added missing Runc Challenge 5 km / 550 hm; official page has GPX download, but file has no year tag and may be older, so candidate only.",
-      "routes": [
-        "Ultra Rocks 114K",
-        "Four Summits 72K",
-        "Lady's Rocks 48K",
-        "Rocky 33K",
-        "Radical 20K",
-        "Rumble Rock 16.5K",
-        "Runc Challenge 5K"
-      ],
-      "sources": [
-        "https://bucovina.utmb.world/races/UR100M",
-        "https://bucovina.utmb.world/races/FS100K",
-        "https://bucovina.utmb.world/races/RR20M",
-        "https://bucovina.utmb.world/races/RC5K"
-      ],
-      "followUp": "Import five direct 2027 files; wait for Rumble Rock; validate Runc Challenge candidate against 2027 map before import."
+      "gpxStatus": "2027 direct GPX links remain for Ultra Rocks, Four Summits, Lady's Rocks, Rocky and Radical. Rumble Rock GPX says available soon; RUNC Challenge old file lacks 2027 confirmation.",
+      "source": "https://bucovina.utmb.world/races",
+      "followUp": "Recheck Rumble Rock and RUNC Challenge official GPX publication."
     }
   ],
   "nextBatch": "Continue with events 71-75 after package 14 checkpoint."
