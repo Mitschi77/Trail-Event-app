@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-17T13:00:00+01:00",
+  "updatedAt": "2026-11-17T07:46:15.123Z",
   "schemaVersion": 3,
   "events": {
     "transgrancanaria": {
@@ -2938,6 +2938,232 @@
         "1": {
           "routeId": "falkenstein-sprint-7-21-2027",
           "date": "2027-07-17",
+          "verified": true
+        }
+      }
+    },
+    "stubai-ultra-trail": {
+      "eventId": "stubai-ultra-trail",
+      "checkedAt": "2026-11-17T07:46:15.123Z",
+      "status": "verified",
+      "sources": [
+        {
+          "url": "https://stubai.utmb.world/de/",
+          "status": "read",
+          "verification": "official-2027-race-pages"
+        },
+        {
+          "url": "https://stubai.utmb.world/de/races",
+          "status": "read",
+          "verification": "official-2027-race-pages"
+        }
+      ],
+      "eventPeriod": {
+        "startDate": "2027-07-02",
+        "endDate": "2027-07-03",
+        "verified": true
+      },
+      "routes": {
+        "0": {
+          "routeId": "stubai-ultra-57-4200",
+          "date": "2027-07-03",
+          "verified": true
+        },
+        "1": {
+          "routeId": "stubai-100-101-5800",
+          "date": "2027-07-02",
+          "verified": true
+        },
+        "2": {
+          "routeId": "stubai-classic-31-2300",
+          "date": "2027-07-03",
+          "verified": true
+        },
+        "3": {
+          "routeId": "stubai-express-23-1240",
+          "date": "2027-07-03",
+          "verified": true
+        },
+        "4": {
+          "routeId": "stubai-sunnenseitn-14-700",
+          "date": "2027-07-02",
+          "verified": true
+        }
+      }
+    },
+    "kackar-by-utmb": {
+      "eventId": "kackar-by-utmb",
+      "checkedAt": "2026-11-17T07:46:15.123Z",
+      "status": "verified",
+      "sources": [
+        {
+          "url": "https://kackar.utmb.world/",
+          "status": "read",
+          "verification": "official-2027-race-pages"
+        },
+        {
+          "url": "https://kackar.utmb.world/runners/schedule",
+          "status": "read",
+          "verification": "official-2027-race-pages"
+        },
+        {
+          "url": "https://kackar.utmb.world/races/100K",
+          "status": "read",
+          "verification": "official-2027-race-pages"
+        },
+        {
+          "url": "https://kackar.utmb.world/races/50K",
+          "status": "read",
+          "verification": "official-2027-race-pages"
+        },
+        {
+          "url": "https://kackar.utmb.world/races/20K",
+          "status": "read",
+          "verification": "official-2027-race-pages"
+        },
+        {
+          "url": "https://kackar.utmb.world/races/4K",
+          "status": "read",
+          "verification": "official-2027-race-pages"
+        }
+      ],
+      "eventPeriod": {
+        "startDate": "2027-09-10",
+        "endDate": "2027-09-12",
+        "verified": true
+      },
+      "routes": {
+        "0": {
+          "routeId": "kackar-100k-82-5600",
+          "date": "2027-09-11",
+          "verified": true
+        },
+        "1": {
+          "routeId": "kackar-50k-44-3000",
+          "date": "2027-09-11",
+          "verified": true
+        },
+        "2": {
+          "routeId": "kackar-20k-20-1400",
+          "date": "2027-09-11",
+          "verified": true
+        },
+        "3": {
+          "routeId": "ayder-4k-4-230",
+          "date": "2027-09-11",
+          "verified": true
+        }
+      }
+    },
+    "wild-strubel": {
+      "eventId": "wild-strubel",
+      "checkedAt": "2026-11-17T07:46:15.123Z",
+      "status": "verified",
+      "sources": [
+        {
+          "url": "https://wildstrubel.utmb.world/de/",
+          "status": "read",
+          "verification": "official-2027-race-pages"
+        },
+        {
+          "url": "https://wildstrubel.utmb.world/de/discover/the-event/agenda",
+          "status": "read",
+          "verification": "official-2027-race-pages"
+        }
+      ],
+      "eventPeriod": {
+        "startDate": "2027-09-09",
+        "endDate": "2027-09-12",
+        "verified": true
+      },
+      "routes": {
+        "0": {
+          "routeId": "wild70-70-4600",
+          "date": "2027-09-10",
+          "verified": true
+        },
+        "1": {
+          "routeId": "wild110-113-6600",
+          "date": "2027-09-10",
+          "verified": true
+        },
+        "2": {
+          "routeId": "wild55-55-3300",
+          "date": "2027-09-11",
+          "verified": true
+        },
+        "3": {
+          "routeId": "wild-glacier-marathon-41-2500",
+          "date": "2027-09-10",
+          "verified": true
+        },
+        "4": {
+          "routeId": "wild25-26-1200",
+          "date": "2027-09-12",
+          "verified": true
+        },
+        "5": {
+          "routeId": "wild10-10-500",
+          "date": "2027-09-11",
+          "verified": true
+        }
+      }
+    },
+    "julian-alps-trail-run": {
+      "eventId": "julian-alps-trail-run",
+      "checkedAt": "2026-11-17T07:46:15.123Z",
+      "status": "verified",
+      "sources": [
+        {
+          "url": "https://julianalps.utmb.world/",
+          "status": "read",
+          "verification": "official-2027-race-pages"
+        },
+        {
+          "url": "https://julianalps.utmb.world/registration",
+          "status": "read",
+          "verification": "official-2027-race-pages"
+        },
+        {
+          "url": "https://julianalps.utmb.world/races-runners/runners/event-schedule",
+          "status": "read",
+          "verification": "official-2027-race-pages"
+        }
+      ],
+      "eventPeriod": {
+        "startDate": "2027-09-16",
+        "endDate": "2027-09-19",
+        "verified": true
+      },
+      "routes": {
+        "0": {
+          "routeId": "120km-120-5893",
+          "date": "2027-09-17",
+          "verified": true
+        },
+        "1": {
+          "routeId": "50km-53-2700",
+          "date": "2027-09-17",
+          "verified": true
+        },
+        "2": {
+          "routeId": "80km-80-3826",
+          "date": "2027-09-18",
+          "verified": true
+        },
+        "3": {
+          "routeId": "julian-alps-kranjska-gora-25k-25-1090",
+          "date": "2027-09-19",
+          "verified": true
+        },
+        "4": {
+          "routeId": "julian-alps-intersport-15k-17-583",
+          "date": "2027-09-19",
+          "verified": true
+        },
+        "5": {
+          "routeId": "julian-alps-vitranc-10k-11-329",
+          "date": "2027-09-19",
           "verified": true
         }
       }
