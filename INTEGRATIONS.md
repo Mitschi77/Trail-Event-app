@@ -24,8 +24,8 @@ Strava-Client-Secret und Refresh-Tokens dürfen niemals in der App-Oberfläche, 
 
 ### Garmin Connect
 
-1. Für persönliche Nutzung kann Garmin einen persönlichen API-Zugang bereitstellen; die persönliche API ist auf Abruf (Pull) ausgerichtet.
-2. Eine Integration für weitere Nutzer benötigt die Freigabe und den passenden Zugang des Garmin Connect Developer Program.
+1. Garmin bietet eine Personal API für die eigenen Aktivitäten an (JSON und FIT, Abruf/Pull). Sie ist ausdrücklich für persönliche Nutzung gedacht und nicht für eine App mit mehreren Endnutzern.
+2. Wenn Freunde ihre Garmin-Daten direkt verbinden sollen, ist der Garmin Connect Developer Program-Zugang für Organisationen erforderlich; Starter-Zugang ist auf Push-Übermittlung und begrenzte Nutzerzahlen ausgelegt. Umfangreichere Pull-/Historienfunktionen hängen von Enterprise-Zugang und Freigabe ab.
 3. Garmin-Aktivitäten können als FIT/GPX/TCX-Dateien bereitgestellt werden. FIT-, TCX- und GPX-Dateiimport sind bereits eingebaut; die offizielle API-Anbindung ist ein separater Ausbauschritt.
 4. Für eine öffentliche App müssen Garmin-Zugang, Datenumfang, Nutzungsbedingungen und Freigabe vor dem Start geklärt werden.
 
@@ -53,7 +53,7 @@ Externe Aktivitäts-IDs verhindern doppelte Einträge bei wiederholter Synchroni
 
 ## Voraussetzungen vor dem Livegang
 
-- Strava-API-App mit Client-ID, Client-Secret und registrierter Callback-Domain durch den App-Betreiber.
+- Strava-API-App mit Client-ID, Client-Secret und registrierter Callback-Domain durch den App-Betreiber. Strava verlangt derzeit ein aktives Abo zum Erstellen der App; neue Apps starten im Einzelmodus und können im Dashboard zunächst auf bis zu 10 Athleten erweitert werden. Darüber hinaus ist eine Prüfung durch Strava erforderlich.
 - Garmin-Zugang bzw. schriftliche Freigabe für den beabsichtigten Nutzerkreis.
 - Produktions-Callback-URLs, Supabase-Secrets und Token-Verschlüsselung konfigurieren.
 - Import mit Testkonten prüfen: doppelte Aktivitäten, widerrufene Freigabe, abgelaufene Tokens, Zeitzonen, DNF/Mehrtagesevents und Löschung.
