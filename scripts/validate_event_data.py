@@ -6,10 +6,13 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 HTML = (ROOT / "index.html").read_text(encoding="utf-8")
-match = re.search(r"const EVENTS=(\[.*?\]);\s*let userAddedEvents", HTML, re.S)
+match = re.search(r"const EVENTS=", HTML)
 if not match:
     raise SystemExit("EVENTS array not found")
-events = json.loads(match.group(1))
+try:
+    events, _ = json.JSONDecoder().raw_decode(HTML[match.end():])
+except json.JSONDecodeError as exc:
+    raise SystemExit(f"EVENTS array is not valid JSON: {exc}")
 feed = json.loads((ROOT / 'event-dates.json').read_text(encoding='utf-8'))
 feed_events = feed.get('events', {})
 
