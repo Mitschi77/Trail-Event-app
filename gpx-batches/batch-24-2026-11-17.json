@@ -3,83 +3,65 @@
   "checkedAt": "2026-11-17",
   "scope": "Top-level events 116-120 in current EVENTS order",
   "status": "saved",
-  "appCommit": "668a1a50bc32d8d07ded82cdfb1b82eeded1d489",
+  "appCommit": "62d2f6ff203b2e9ccacdc952190d02b81112b13c",
   "events": [
     {
       "order": 116,
       "name": "Megamarsch",
-      "gpxStatus": "Official München event 15–16 May 2027, 100 km / approx. 990 hm. Organizer publishes Komoot route download about two weeks before event; route may still change shortly before start.",
+      "gpxStatus": "Official Megamarsch München confirmed 15-16 May 2027, 100 km / approx. 990 hm. Organizer publishes the route as Komoot download about two weeks before event and may change it shortly before start; app now links official page and marks GPX pending.",
       "source": "https://www.megamarsch.de/m%C3%BCnchen",
-      "followUp": "Recheck around 1 May 2027 for the official route/GPX download."
+      "followUp": "Recheck around 1 May 2027 for official Komoot/GPX download."
     },
     {
       "order": 117,
       "name": "Vietnam Highlands Trail by UTMB",
-      "gpxStatus": "All four official 2027 GPX files are directly linked from their UTMB race pages and stored in Google Drive. App now links to each official Drive file; download it, then import manually in the app's GPX file field (Google Drive view links cannot be auto-parsed).",
-      "downloads": [
-        {
-          "route": "100K Langbiang",
-          "file": "100_VHT_301026.gpx",
-          "url": "https://drive.google.com/file/d/1lVYRPLrZ9q_yEwbgYXzMSGRneBDLj3FD/view?usp=drive_link"
-        },
-        {
-          "route": "50K Elephant",
-          "file": "50_VHT_151126 4.gpx",
-          "url": "https://drive.google.com/file/d/1J2n44XVJAHD5d6fZ8z0KLzEagKnIbn42/view?usp=drive_link"
-        },
-        {
-          "route": "20K Pinhatt",
-          "file": "20_VHT_191026.gpx",
-          "url": "https://drive.google.com/file/d/1wShDSlhFtoqJthAwvO5xx4W86gX8fxIb/view?usp=drive_link"
-        },
-        {
-          "route": "10K Tuyen Lam",
-          "file": "10_VHT_2009.gpx",
-          "url": "https://drive.google.com/file/d/1FzbqiHhyOtOGRVgy6bNXmZIRtYRbQ7VI/view?usp=drive_link"
-        }
-      ],
+      "gpxStatus": "All four official 2027 races confirmed (100K Langbiang, 50K Elephant, 20K Pinhatt, 10K Tuyen Lam). Google Drive GPX links are already present in the app but could not be independently opened publicly; app now links each official UTMB race page and flags the Drive links for access verification.",
       "sources": [
         "https://vietnamhighlands.utmb.world/races/100Klangbiang",
         "https://vietnamhighlands.utmb.world/races/50Kelephant",
         "https://vietnamhighlands.utmb.world/races/20Kpinhatt",
         "https://vietnamhighlands.utmb.world/races/10Ktuyenlam"
       ],
-      "followUp": "Download each GPX from Google Drive and use the app's existing GPX file import."
+      "followUp": "Test the Drive links manually and compare file contents with official runner guide."
     },
     {
       "order": 118,
       "name": "Tarawera Ultra-Trail by UTMB",
-      "gpxStatus": "All five official 2027 race pages provide Map + GPX panels, but no direct .gpx download URL was exposed in page text. App links each route to its official UTMB page.",
-      "routes": [
-        "TMiler 163 km",
-        "T102 102 km",
-        "T50 52 km",
-        "T21 23 km",
-        "T14 14 km"
+      "gpxStatus": "All five official 2027 race pages (TMiler, T102, T50, T21, T14) show Map + GPX panels; app links each route page. Direct .gpx endpoints are not exposed in page text; course maps are subject to change.",
+      "sources": [
+        "https://tarawera.utmb.world/races/t-miler",
+        "https://tarawera.utmb.world/races/t-102",
+        "https://tarawera.utmb.world/races/t-50",
+        "https://tarawera.utmb.world/races/t-21",
+        "https://tarawera.utmb.world/races/t-14"
       ],
-      "source": "https://tarawera.utmb.world/",
-      "followUp": "Export the GPX from each official UTMB map."
+      "followUp": "Export official GPX from each UTMB map and recheck for course updates."
     },
     {
       "order": 119,
       "name": "Puerto Vallarta México by UTMB",
-      "gpxStatus": "UTMB event period 04–06 March 2027 confirmed; individual race distances, route profiles and GPX files are not yet published.",
-      "source": "https://puertovallarta.utmb.world/",
-      "followUp": "Recheck when race pages and maps are released."
+      "gpxStatus": "Placeholder route replaced with five official 2027 races: Hikuri 81K/3,900hm, Nakawé 53K/2,500hm, Haramara 37K/1,600hm, Ereno 20K/1,050hm, Pata Salada 5K/200hm. Each official race page shows Map + GPX; pages linked in app.",
+      "sources": [
+        "https://puerto-vallarta.utmb.world/races/hikuri",
+        "https://puerto-vallarta.utmb.world/races/nakawe",
+        "https://puerto-vallarta.utmb.world/races/haramara",
+        "https://puerto-vallarta.utmb.world/races/ereno",
+        "https://puerto-vallarta.utmb.world/races/patasalada"
+      ],
+      "followUp": "Export all five GPX files from official UTMB race pages."
     },
     {
       "order": 120,
       "name": "HOKA Xtrail Kenting by UTMB",
-      "gpxStatus": "All five official 2027 race pages provide Map + GPX panels. No direct .gpx file URL publicly extracted; app links each route to its official page.",
-      "routes": [
-        "Xtrail 100K",
-        "Xtrail 50K",
-        "Xtrail 25K",
-        "Xtrail 10K",
-        "Xtrail Kids Family Run"
+      "gpxStatus": "All five official 2027 UTMB race pages (100K, 50K, 25K, 10K, Kids Family Run) show Map + GPX panels; app links each page. Direct .gpx endpoints not exposed in page text.",
+      "sources": [
+        "https://xtrail.utmb.world/races/Top-100K",
+        "https://xtrail.utmb.world/races/Top-50K",
+        "https://xtrail.utmb.world/races/Top-25k",
+        "https://xtrail.utmb.world/races/Top-10K",
+        "https://xtrail.utmb.world/races/Top-2K"
       ],
-      "source": "https://xtrail.utmb.world/",
-      "followUp": "Export GPX from each official UTMB map."
+      "followUp": "Export GPX from the official Map + GPX panels and verify imported tracks."
     }
   ],
   "nextBatch": "Continue with events 121-125 after package 24 checkpoint."
