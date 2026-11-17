@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-17T07:37:48.695Z",
+  "updatedAt": "2026-11-17T07:40:54.392Z",
   "schemaVersion": 3,
   "events": {
     "transgrancanaria": {
@@ -2009,6 +2009,127 @@
         "verified": true
       },
       "routes": {}
+    },
+    "jenaer-backyard-ultra": {
+      "eventId": "jenaer-backyard-ultra",
+      "checkedAt": "2026-11-17T07:40:54.392Z",
+      "status": "verified",
+      "sources": [
+        {
+          "url": "https://jenaerbackyardultra.de/",
+          "status": "read",
+          "verification": "official-2027-page"
+        }
+      ],
+      "eventPeriod": {
+        "startDate": "2027-06-05",
+        "endDate": "2027-06-05",
+        "verified": true
+      },
+      "routes": {
+        "0": {
+          "routeId": "jenaer-backyard-ultra-6-7",
+          "date": "2027-06-05",
+          "verified": true
+        }
+      }
+    },
+    "greenloop-backyard-ultra": {
+      "eventId": "greenloop-backyard-ultra",
+      "checkedAt": "2026-11-17T07:40:54.392Z",
+      "status": "verified",
+      "sources": [
+        {
+          "url": "https://www.greenloopbackyard.de/",
+          "status": "read",
+          "verification": "official-2027-page"
+        }
+      ],
+      "eventPeriod": {
+        "startDate": "2027-05-15",
+        "endDate": "2027-05-15",
+        "verified": true
+      },
+      "routes": {
+        "0": {
+          "routeId": "greenloop-backyard-ultra-6-7",
+          "date": "2027-05-15",
+          "verified": true
+        }
+      }
+    },
+    "mountain-ultra-trail": {
+      "eventId": "mountain-ultra-trail",
+      "checkedAt": "2026-11-17T07:40:54.392Z",
+      "status": "verified",
+      "sources": [
+        {
+          "url": "https://mut.utmb.world/",
+          "status": "read",
+          "verification": "official-2027-page"
+        }
+      ],
+      "eventPeriod": {
+        "startDate": "2027-05-28",
+        "endDate": "2027-05-30",
+        "verified": true
+      },
+      "routes": {
+        "0": {
+          "routeId": "mut-miler-168-8014",
+          "date": "2027-05-28",
+          "verified": true
+        },
+        "1": {
+          "routeId": "mut-100-100-4717",
+          "date": "2027-05-29",
+          "verified": true
+        },
+        "2": {
+          "routeId": "mut-60-58-3005",
+          "date": "2027-05-29",
+          "verified": true
+        },
+        "3": {
+          "routeId": "mut-marathon-43-2312",
+          "date": "2027-05-29",
+          "verified": true
+        },
+        "4": {
+          "routeId": "mut-challenge-25-1043",
+          "date": "2027-05-30",
+          "verified": true
+        },
+        "5": {
+          "routeId": "mut-lite-11-9-312",
+          "date": "2027-05-30",
+          "verified": true
+        }
+      }
+    },
+    "alpenstadt-city-trail": {
+      "eventId": "alpenstadt-city-trail",
+      "checkedAt": "2026-11-17T07:40:54.392Z",
+      "status": "verified",
+      "sources": [
+        {
+          "url": "https://dare2b.cityundtrail.de/",
+          "status": "read",
+          "verification": "official-2027-page"
+        }
+      ],
+      "eventPeriod": {
+        "startDate": "2027-06-05",
+        "endDate": "2027-06-05",
+        "verified": true
+      },
+      "routes": {
+        "0": {
+          "routeId": "staufen-19-1350",
+          "date": "2027-06-05",
+          "verified": true
+        }
+      }
     }
   }
 }
