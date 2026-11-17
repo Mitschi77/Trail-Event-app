@@ -1,0 +1,53 @@
+{
+  "batch": 26,
+  "checkedAt": "2026-11-17",
+  "scope": "Final four records in original list (events 126-129); Wildstrubel duplicate placeholder removed",
+  "status": "saved",
+  "appCommit": "2a5fbdcce92a460d708c6f8724a88fb35011fe92",
+  "events": [
+    {
+      "order": 126,
+      "name": "Torrencial Valdivia by UTMB",
+      "gpxStatus": "Placeholder replaced by all six official 2027 races: PILOLCURA 101K/4,100hm, ONCOL 65K/2,600hm, LLANCAHUE 45K/1,600hm, COLLICO 20K/800hm, CAU CAU 12K/400hm, ISLA TEJA 6.5K/200hm. Official route pages linked; accessible page text did not expose GPX download or Map + GPX.",
+      "source": "https://torrencial.utmb.world/races",
+      "followUp": "Recheck official race pages for GPX export once the organizer publishes course maps."
+    },
+    {
+      "order": 127,
+      "name": "HOKA Val d'Aran by UTMB",
+      "gpxStatus": "Placeholder replaced by eight official 2027 races (VDA 163K/10,000hm; CDH 110K/6,400hm; TDL 75K/5,100hm; PDA 55K/3,300hm; EXP 32K/2,100hm; SKY 18K/900hm; SKY Promesas 18K/900hm; Vielha 10K/500hm). All official race pages show Map + GPX or GPX download; links added.",
+      "sources": [
+        "https://valdaran.utmb.world/races/VDA",
+        "https://valdaran.utmb.world/races/cdh",
+        "https://valdaran.utmb.world/races/TDL",
+        "https://valdaran.utmb.world/races/PDA",
+        "https://valdaran.utmb.world/races/EXP",
+        "https://valdaran.utmb.world/races/sky",
+        "https://valdaran.utmb.world/races/skyp",
+        "https://valdaran.utmb.world/races/10K"
+      ],
+      "followUp": "Export all eight tracks from official UTMB race pages and validate distances after import."
+    },
+    {
+      "order": 128,
+      "name": "Monte Rosa Walser Waeg by UTMB",
+      "gpxStatus": "Placeholder replaced by seven official 2027 routes: Les sentiers des Valdôtains 120K/8,200hm; Monte Rosa Trail 82K/6,300hm; Walserwaeg Trail 43K/3,100hm; Gressoney Lys Trail 35K/1,700hm; Regina Margherita Trail 15K/650hm; Junior Walser Trail 9K/600hm; Becca Pink 4K community run. Five competitive/Junior routes and Becca Pink show Map + GPX; Gressoney Lys page has no GPX panel.",
+      "sources": [
+        "https://mrww.utmb.world/races/SDV",
+        "https://mrww.utmb.world/races/MRT",
+        "https://mrww.utmb.world/races/WWT",
+        "https://mrww.utmb.world/races/GLT",
+        "https://mrww.utmb.world/races/RMT",
+        "https://mrww.utmb.world/races/JWT",
+        "https://mrww.utmb.world/races/BP"
+      ],
+      "followUp": "Export GPX from official pages where available; do not invent a Gressoney Lys file."
+    },
+    {
+      "order": 129,
+      "name": "Wildstrubel by UTMB (duplicate placeholder)",
+      "gpxStatus": "Removed duplicate one-route placeholder because the complete Wildstrubel event with six race routes and official links is already present earlier in the event database (original event 94)."
+    }
+  ],
+  "nextBatch": "The original event list is complete after removing the duplicate Wildstrubel placeholder."
+}
