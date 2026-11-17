@@ -3,59 +3,50 @@
   "checkedAt": "2026-11-17",
   "scope": "Top-level events 86-90 in current EVENTS order",
   "status": "saved",
-  "appCommit": "887f3ffa47687a793315d78a7231a8379d75384b",
+  "appCommit": "8463146e88df749ed5483a4e2a40565281449b41",
   "events": [
     {
       "order": 86,
       "name": "Fränkischer Backyard Ultra",
-      "gpxStatus": "Official website currently shows only the 2026 edition (6.7 km / approx. 90 hm) with a GPX link. No 2027 date or current GPX is published; removed the 2026 link from active download field.",
+      "gpxStatus": "Official organizer page shows 6.7 km course and GPX, but page is the 2026 announcement (4 September 2026). No 2027 date/GPX confirmed; 2026 track rejected.",
       "source": "https://www.fraenkischerbackyard.de/",
-      "followUp": "Wait for 2027 announcement and route file."
+      "followUp": "Wait for 2027 organizer announcement."
     },
     {
       "order": 87,
       "name": "Dolomiti di Brenta Trail",
-      "gpxStatus": "Official 2027 event confirmed for 11 September; routes 64K/4,200 hm, 45K/2,850 hm, 21K/1,250 hm. Organizer states final GPS tracks will be published on 31 July 2027. App links to the official route/regulation page.",
-      "source": "https://www.dolomitidibrentatrail.it/en/routes/regulation/",
-      "followUp": "Recheck on or after 31 July 2027 for final official GPX tracks."
+      "gpxStatus": "Official 2027 route pages document maps, route descriptions and GPS tracks for 64K, 45K and 21K. Organizer allows changes until 31 July 2027, when final official route is published.",
+      "sources": [
+        "https://www.dolomitidibrentatrail.it/en/routes/64k/",
+        "https://www.dolomitidibrentatrail.it/en/routes/xterra45k/",
+        "https://www.dolomitidibrentatrail.it/en/routes/21k/"
+      ],
+      "followUp": "Import only after 31 July 2027 final GPX publication."
     },
     {
       "order": 88,
       "name": "adidas INFINITE TRAILS Gastein",
-      "gpxStatus": "The public race map currently exposes 2026 GPX/course data only. Removed stale 2026 tracks from active GPX download fields; 2027 tracks not verified.",
-      "source": "https://infinite-trails.com/en/gpx-racemap/",
-      "followUp": "Wait for official 2027 course map and GPX release."
+      "gpxStatus": "Official 2027 event date and course formats confirmed, but organizer GPX platform still identifies its download pack as 2026. No 2027 GPX imported.",
+      "source": "https://infinite-trails.com/gpx-racemap-2/",
+      "followUp": "Recheck after 2027 Trailbook and course pack release."
     },
     {
       "order": 89,
       "name": "Mayrhofen Ultraks",
-      "gpxStatus": "Official 2027 routes confirmed, but each linked GPX file still points to an older 2025/2026 filename. Removed old files from active download fields and linked official route pages.",
-      "routes": [
-        "RK50 50 km / 3,200 hm",
-        "TUX070 70 km / 4,400 hm",
-        "Z101 101+ km / 7,600 hm",
-        "MUZ30 30.3 km / 2,000 hm",
-        "MUZ14 14.5 km / 900 hm",
-        "Mountopolis Vertical 8.5 km / 1,250 hm",
-        "Sprint 7 km / 350 hm"
-      ],
+      "gpxStatus": "Official 2027 route pages confirmed for all seven races. Current GPX links point to older files (Z101 2025; TUX070/RK50 2026); rejected as stale for 2027.",
       "sources": [
-        "https://mayrhofen.ultraks.com/rk50/",
-        "https://mayrhofen.ultraks.com/tux070/",
         "https://mayrhofen.ultraks.com/z101/",
-        "https://mayrhofen.ultraks.com/muz30/",
-        "https://mayrhofen.ultraks.com/muz14/",
-        "https://mayrhofen.ultraks.com/mountopolis-vertical/",
-        "https://mayrhofen.ultraks.com/sprint/"
+        "https://mayrhofen.ultraks.com/tux070/",
+        "https://mayrhofen.ultraks.com/rk50/"
       ],
-      "followUp": "Wait for 2027 GPX files; do not use the visible older files."
+      "followUp": "Wait for 2027 GPX updates and verify all seven route files."
     },
     {
       "order": 90,
       "name": "München Backyard Ultra",
-      "gpxStatus": "Official current AGBs confirm a marked 6.706 km loop and that the organizer provides a GPX track. Public direct file and 2027 date are not yet confirmed; cleared unverified elevation gain.",
+      "gpxStatus": "Organizer AGB confirms a marked 6.706 km route and GPX track; public direct download URL not extracted.",
       "source": "https://www.munichbackyard.de/agbs",
-      "followUp": "Request/obtain GPX from organizer once 2027 event date and entry details are released."
+      "followUp": "Ask organizer for the direct GPX download or retrieve it from the participant area."
     }
   ],
   "nextBatch": "Continue with events 91-95 after package 18 checkpoint."
