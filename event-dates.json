@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-17T07:43:25.439Z",
+  "updatedAt": "2026-11-17T07:43:46.802Z",
   "schemaVersion": 3,
   "events": {
     "transgrancanaria": {
@@ -708,7 +708,7 @@
     },
     "megamarsch": {
       "eventId": "megamarsch",
-      "checkedAt": "2026-11-17T07:28:22.234638+00:00",
+      "checkedAt": "2026-11-17T07:43:46.802Z",
       "status": "verified",
       "sources": [
         {
@@ -724,7 +724,7 @@
       },
       "routes": {
         "0": {
-          "routeId": "munchen-100-km-100",
+          "routeId": "megamarsch-munchen-100-km-100",
           "date": "2027-05-15",
           "verified": true
         }
