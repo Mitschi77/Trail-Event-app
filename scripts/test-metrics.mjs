@@ -181,6 +181,9 @@ const phaseFn = new Function(phaseMatch[0].replace(/\nfunction seasonActualRecor
 const phases = phaseFn(70,"A");
 assert.ok(phases.some(p=>p.kind==="base") && phases.some(p=>p.kind==="build") && phases.some(p=>p.kind==="taper"), "A-race training block must include base, build and taper");
 assert.ok(!phases.some(p=>p.kind==="recovery"), "Post-race recovery must be accounted for separately from the training block");
+assert.ok(phaseFn(70,"A").some(p=>p.kind==="taper"), "A races must include a taper phase");
+assert.ok(!phaseFn(70,"C").some(p=>p.kind==="taper"), "C races should not force a taper phase");
+assert.ok(phaseFn(70,"A").find(p=>p.kind==="base").days < phaseFn(70,"C").find(p=>p.kind==="base").days, "C races should preserve a larger base-training share than A races");
 assert.equal(phaseFn(0,"B").length,0,"Overlapping races must not create a negative training block");
 
 console.log("Validated race priorities, training phases and actual-race recovery.");
