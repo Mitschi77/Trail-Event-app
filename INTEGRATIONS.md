@@ -53,7 +53,7 @@ Externe Aktivitäts-IDs verhindern doppelte Einträge bei wiederholter Synchroni
 
 ## Voraussetzungen vor dem Livegang
 
-- Strava-API-App mit Client-ID, Client-Secret und registrierter Callback-Domain durch den App-Betreiber. Strava verlangt derzeit ein aktives Abo zum Erstellen der App; neue Apps starten im Einzelmodus und können im Dashboard zunächst auf bis zu 10 Athleten erweitert werden. Darüber hinaus ist eine Prüfung durch Strava erforderlich.
+- Strava-API-App mit Client-ID, Client-Secret und registrierter Callback-Domain durch den App-Betreiber. Strava verlangt derzeit ein aktives Abo zum Erstellen der App; neue Apps starten im Einzelmodus und können im Dashboard zunächst auf bis zu 10 Athleten erweitert werden. Darüber hinaus ist eine Prüfung durch Strava erforderlich. Strava verlangt derzeit ein aktives Abo zum Erstellen der App; neue Apps starten im Einzelmodus und können im Dashboard zunächst auf bis zu 10 Athleten erweitert werden. Darüber hinaus ist eine Prüfung durch Strava erforderlich.
 - Garmin-Zugang bzw. schriftliche Freigabe für den beabsichtigten Nutzerkreis.
 - Produktions-Callback-URLs, Supabase-Secrets und Token-Verschlüsselung konfigurieren.
 - Import mit Testkonten prüfen: doppelte Aktivitäten, widerrufene Freigabe, abgelaufene Tokens, Zeitzonen, DNF/Mehrtagesevents und Löschung.
