@@ -8,7 +8,8 @@
     "ios:add": "npm run build && cap add ios",
     "ios:sync": "npm run build && cap sync ios",
     "ios:open": "cap open ios",
-    "ios:run": "cap run ios"
+    "ios:run": "cap run ios",
+    "test:syntax": "node scripts/check-inline.mjs"
   },
   "dependencies": {
     "@capacitor/core": "^7.4.3",
