@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-17T13:00:00+01:00",
+  "updatedAt": "2026-11-17T07:52:37.589Z",
   "schemaVersion": 3,
   "events": {
     "transgrancanaria": {
@@ -3555,40 +3555,54 @@
     },
     "backyard-ultra": {
       "eventId": "backyard-ultra",
-      "checkedAt": "2026-11-17T13:00:00+01:00",
+      "checkedAt": "2026-11-17T07:52:37.589Z",
       "status": "verified",
       "sources": [
         {
+          "url": "https://www.hofer-backyard-ultra.de/",
+          "status": "read",
+          "verification": "official-2027-source"
+        },
+        {
           "url": "https://www.hofer-backyard-ultra.de/ausschreibung-2027/",
           "status": "read",
-          "verification": "official-2027-page"
+          "verification": "official-2027-source"
         }
       ],
+      "eventPeriod": {
+        "startDate": "2027-06-26",
+        "endDate": "2027-06-26",
+        "verified": true
+      },
       "routes": {
         "0": {
           "routeId": "backyard-ultra-6-7-100",
           "date": "2027-06-26",
           "verified": true
         }
-      },
-      "notes": "Nur der Hofer Backyard Ultra hat bereits einen offiziellen 2027-Termin. Für Fränkischen, Tuttlinger und Kuckuck Backyard sind die Termine noch offen."
+      }
     },
     "austria-backyard-ultra": {
       "eventId": "austria-backyard-ultra",
-      "checkedAt": "2026-11-17T13:00:00+01:00",
+      "checkedAt": "2026-11-17T07:52:37.589Z",
       "status": "verified",
       "sources": [
         {
           "url": "https://www.austriabackyardultra.com/frankenmarkt",
           "status": "read",
-          "verification": "official-2027-page"
+          "verification": "official-2027-source"
         },
         {
-          "url": "https://www.austriabackyardultra.com/kirchdorf",
+          "url": "https://www.austriabackyardultra.com/upcoming",
           "status": "read",
-          "verification": "official-2027-page"
+          "verification": "official-2027-source"
         }
       ],
+      "eventPeriod": {
+        "startDate": "2027-06-19",
+        "endDate": "2027-09-26",
+        "verified": true
+      },
       "routes": {
         "0": {
           "routeId": "austria-backyard-ultra-6-7-111",
@@ -3605,33 +3619,34 @@
           "date": "2027-09-26",
           "verified": true
         }
-      }
+      },
+      "note": "Dies ist eine Veranstaltungsserie mit getrennten Wochenenden (Frankenmarkt im Juni, Kirchdorf im September), kein durchgehendes Event."
     },
     "ultra-x-110-finnland": {
       "eventId": "ultra-x-110-finnland",
-      "checkedAt": "2026-11-17T13:00:00+01:00",
+      "checkedAt": "2026-11-17T07:52:37.589Z",
       "status": "unconfirmed",
       "sources": [
         {
           "url": "https://ultra-x.co/ultra-marathon-races/",
           "status": "read",
-          "verification": "official-calendar-no-2027-finland-date"
+          "verification": "official-calendar-checked"
         }
       ],
-      "notes": "Kein offizieller 2027-Termin veröffentlicht. Eine finnische Laufkalenderseite nennt den 27.06.2027 ausdrücklich nur als Schätzung."
+      "note": "Die offizielle Ultra-X-Übersicht listet derzeit keine Ausgabe Finnland 2027; die auffindbaren Streckenunterlagen beziehen sich auf 2026."
     },
     "ultra-x-110-slowenien": {
       "eventId": "ultra-x-110-slowenien",
-      "checkedAt": "2026-11-17T13:00:00+01:00",
+      "checkedAt": "2026-11-17T07:52:37.589Z",
       "status": "unconfirmed",
       "sources": [
         {
           "url": "https://ultra-x.co/ultra-marathon-races/",
           "status": "read",
-          "verification": "official-calendar-no-2027-slovenia-date"
+          "verification": "official-calendar-checked"
         }
       ],
-      "notes": "Ein offizieller Termin für 2027 ist derzeit nicht veröffentlicht."
+      "note": "Die offizielle Ultra-X-Übersicht listet derzeit keine Ausgabe Slowenien 2027; die auffindbaren Streckenunterlagen beziehen sich auf 2026."
     },
     "last-soul-ultra": {
       "eventId": "last-soul-ultra",
@@ -3645,6 +3660,319 @@
         }
       ],
       "notes": "Für 2027 ist ein Finale in Deutschland im August angekündigt; genauer Tag und Austragungsort sind noch offen."
+    },
+    "taubertal-100": {
+      "eventId": "taubertal-100",
+      "checkedAt": "2026-11-17T07:52:37.589Z",
+      "status": "verified",
+      "sources": [
+        {
+          "url": "https://www.tauberbischofsheim.de/site/Tauberbischofsheim-Tourismus/node/1465350/zmdetail_4782907/Taubertal100PunktzuPunktLaufTauberbischofsheimbei70km.html",
+          "status": "read",
+          "verification": "official-2027-source"
+        },
+        {
+          "url": "https://www.taubertal100.de/",
+          "status": "read",
+          "verification": "official-2027-source"
+        }
+      ],
+      "eventPeriod": {
+        "startDate": "2027-10-02",
+        "endDate": "2027-10-02",
+        "verified": true
+      },
+      "routes": {
+        "0": {
+          "routeId": "70-71-320",
+          "date": "2027-10-02",
+          "verified": true
+        },
+        "1": {
+          "routeId": "100-100-570",
+          "date": "2027-10-02",
+          "verified": true
+        }
+      },
+      "note": "Der Termin 2. Oktober 2027 ist im städtischen Veranstaltungskalender bestätigt. Die 10,5-h-Grenze für 70 km ist belegt; die bisherige 100-km-Maximalzeit wurde nicht erneut offiziell bestätigt."
+    },
+    "karnisches-ungetum": {
+      "eventId": "karnisches-ungetum",
+      "checkedAt": "2026-11-17T07:52:37.589Z",
+      "status": "verified",
+      "sources": [
+        {
+          "url": "https://www.ungetuem.at/kut/",
+          "status": "read",
+          "verification": "official-2027-source"
+        }
+      ],
+      "eventPeriod": {
+        "startDate": "2027-08-14",
+        "endDate": "2027-08-14",
+        "verified": true
+      },
+      "routes": {
+        "0": {
+          "routeId": "karnisches-ungetum-75-5200",
+          "date": "2027-08-14",
+          "verified": true
+        },
+        "1": {
+          "routeId": "karnisches-ungetum-short-25-1500",
+          "date": "2027-08-14",
+          "verified": true
+        }
+      }
+    },
+    "oberaudorf-trailfestival": {
+      "eventId": "oberaudorf-trailfestival",
+      "checkedAt": "2026-11-17T07:52:37.589Z",
+      "status": "verified",
+      "sources": [
+        {
+          "url": "https://www.oberaudorftrailfestival.com/",
+          "status": "read",
+          "verification": "official-2027-source"
+        },
+        {
+          "url": "https://saltytrailrunning.com/en-de/pages/otf-100",
+          "status": "read",
+          "verification": "official-2027-source"
+        },
+        {
+          "url": "https://saltytrailrunning.com/en-de/pages/otf-ultra",
+          "status": "read",
+          "verification": "official-2027-source"
+        },
+        {
+          "url": "https://saltytrailrunning.com/en-de/pages/otf-sudelfeld",
+          "status": "read",
+          "verification": "official-2027-source"
+        },
+        {
+          "url": "https://saltytrailrunning.com/en-de/pages/otf-speed",
+          "status": "read",
+          "verification": "official-2027-source"
+        },
+        {
+          "url": "https://saltytrailrunning.com/en-de/pages/otf-short",
+          "status": "read",
+          "verification": "official-2027-source"
+        }
+      ],
+      "eventPeriod": {
+        "startDate": "2027-09-30",
+        "endDate": "2027-10-03",
+        "verified": true
+      },
+      "routes": {
+        "0": {
+          "routeId": "brunnstein-speed-24-1473",
+          "date": "2027-10-02",
+          "verified": true
+        },
+        "1": {
+          "routeId": "sudelfeld-ultra-42-8-2395",
+          "date": "2027-10-02",
+          "verified": true
+        },
+        "2": {
+          "routeId": "wendelstein-ultra-56-5-3228",
+          "date": "2027-10-02",
+          "verified": true
+        },
+        "3": {
+          "routeId": "otf-100-102-5500",
+          "date": "2027-10-01",
+          "verified": true
+        },
+        "4": {
+          "routeId": "hocheck-short-12-4-506",
+          "date": "2027-10-02",
+          "verified": true
+        }
+      }
+    },
+    "3trail-ibiza": {
+      "eventId": "3trail-ibiza",
+      "checkedAt": "2026-11-17T07:52:37.589Z",
+      "status": "verified",
+      "sources": [
+        {
+          "url": "https://aristaeventos.es/",
+          "status": "read",
+          "verification": "official-2027-source"
+        },
+        {
+          "url": "https://3diastrailibiza.com/",
+          "status": "read",
+          "verification": "official-2027-source"
+        }
+      ],
+      "eventPeriod": {
+        "startDate": "2027-11-26",
+        "endDate": "2027-11-28",
+        "verified": true
+      },
+      "routes": {},
+      "note": "Der Veranstaltungszeitraum 26.–28. November 2027 ist auf der offiziellen Arista-Eventseite gelistet. Die konkreten Tagesstarts und die 2027-Strecken sind noch nicht veröffentlicht."
+    },
+    "adamello-ultratrail": {
+      "eventId": "adamello-ultratrail",
+      "checkedAt": "2026-11-17T07:52:37.589Z",
+      "status": "unconfirmed",
+      "sources": [
+        {
+          "url": "https://www.adamelloultratrail.it/en/",
+          "status": "read",
+          "verification": "official-calendar-checked"
+        }
+      ],
+      "note": "Die Veranstalterseite veröffentlicht derzeit Programm und Anmeldedaten für 2026; ein offizieller Termin für 2027 ist noch nicht veröffentlicht."
+    },
+    "nice-cote-d-azur": {
+      "eventId": "nice-cote-d-azur",
+      "checkedAt": "2026-11-17T07:52:37.589Z",
+      "status": "unconfirmed",
+      "sources": [
+        {
+          "url": "https://nice.utmb.world/",
+          "status": "read",
+          "verification": "official-calendar-checked"
+        }
+      ],
+      "note": "Ein offizieller 2027-Termin ist auf der geprüften UTMB-Veranstalterseite noch nicht veröffentlicht."
+    },
+    "chihuahua-by-utmb": {
+      "eventId": "chihuahua-by-utmb",
+      "checkedAt": "2026-11-17T07:52:37.589Z",
+      "status": "unconfirmed",
+      "sources": [
+        {
+          "url": "https://chihuahua.utmb.world/races",
+          "status": "read",
+          "verification": "official-calendar-checked"
+        }
+      ],
+      "note": "Die geprüften offiziellen Angaben beziehen sich auf die Ausgabe 2026; ein 2027-Kalender ist noch nicht veröffentlicht."
+    },
+    "mallorca-serra-de-tramuntana": {
+      "eventId": "mallorca-serra-de-tramuntana",
+      "checkedAt": "2026-11-17T07:52:37.589Z",
+      "status": "unconfirmed",
+      "sources": [
+        {
+          "url": "https://mallorca.utmb.world/races",
+          "status": "read",
+          "verification": "official-calendar-checked"
+        }
+      ],
+      "note": "Die offizielle Rennliste zeigt derzeit die Ausgabe 30. Oktober bis 1. November 2026; ein 2027-Termin ist noch nicht veröffentlicht."
+    },
+    "frankischer-backyard-ultra": {
+      "eventId": "frankischer-backyard-ultra",
+      "checkedAt": "2026-11-17T07:52:37.589Z",
+      "status": "unconfirmed",
+      "sources": [
+        {
+          "url": "https://backyardultra.de/rennen/",
+          "status": "read",
+          "verification": "official-calendar-checked"
+        }
+      ],
+      "note": "Für die Ausgabe 2027 wurde noch kein bestätigter Veranstaltertermin gefunden; der alte Eintrag bezieht sich auf 2026."
+    },
+    "munchen-backyard-ultra": {
+      "eventId": "munchen-backyard-ultra",
+      "checkedAt": "2026-11-17T07:52:37.589Z",
+      "status": "unconfirmed",
+      "sources": [
+        {
+          "url": "https://backyardultra.de/rennen/",
+          "status": "read",
+          "verification": "official-calendar-checked"
+        }
+      ],
+      "note": "Für die Ausgabe 2027 wurde noch kein bestätigter Veranstaltertermin gefunden; der alte Eintrag bezieht sich auf 2026."
+    },
+    "alpin-team-trailrun": {
+      "eventId": "alpin-team-trailrun",
+      "checkedAt": "2026-11-17T07:52:37.589Z",
+      "status": "unconfirmed",
+      "sources": [
+        {
+          "url": "https://www.trailrunning-verband.at/trailrunning-kalender",
+          "status": "read",
+          "verification": "official-calendar-checked"
+        }
+      ],
+      "note": "Ein offizieller Termin für 2027 ist noch nicht belegt; die hinterlegte Datumsangabe stammt aus 2026."
+    },
+    "stundenrundenlauf": {
+      "eventId": "stundenrundenlauf",
+      "checkedAt": "2026-11-17T07:52:37.589Z",
+      "status": "unconfirmed",
+      "sources": [
+        {
+          "url": "https://www.austriabackyardultra.com/upcoming",
+          "status": "read",
+          "verification": "official-calendar-checked"
+        }
+      ],
+      "note": "Ein bestätigter Termin für die nächste Ausgabe ist auf den geprüften Veranstalterkalendern noch nicht veröffentlicht."
+    },
+    "24-1-challenge": {
+      "eventId": "24-1-challenge",
+      "checkedAt": "2026-11-17T07:52:37.589Z",
+      "status": "unconfirmed",
+      "sources": [
+        {
+          "url": "https://www.austriabackyardultra.com/upcoming",
+          "status": "read",
+          "verification": "official-calendar-checked"
+        }
+      ],
+      "note": "Ein bestätigter Termin für 2027 ist noch nicht veröffentlicht; der bisherige Eintrag bezieht sich auf 2026."
+    },
+    "trail-tarmac-pursuit": {
+      "eventId": "trail-tarmac-pursuit",
+      "checkedAt": "2026-11-17T07:52:37.589Z",
+      "status": "unconfirmed",
+      "sources": [
+        {
+          "url": "https://www.trailrunning-verband.at/trailrunning-kalender",
+          "status": "read",
+          "verification": "official-calendar-checked"
+        }
+      ],
+      "note": "Ein offizieller Termin für 2027 ist noch nicht belegt; der hinterlegte Termin ist aus 2026."
+    },
+    "puglia-terra-delle-gravine": {
+      "eventId": "puglia-terra-delle-gravine",
+      "checkedAt": "2026-11-17T07:52:37.589Z",
+      "status": "unconfirmed",
+      "sources": [
+        {
+          "url": "https://www.pugliaterra.it/",
+          "status": "read",
+          "verification": "official-calendar-checked"
+        }
+      ],
+      "note": "Ein offizieller Lauf-Termin für 2027 konnte auf der geprüften Veranstalterseite nicht bestätigt werden."
+    },
+    "ultra-trail-great-wall": {
+      "eventId": "ultra-trail-great-wall",
+      "checkedAt": "2026-11-17T07:52:37.589Z",
+      "status": "unconfirmed",
+      "sources": [
+        {
+          "url": "https://ultratrailgreatwall.com/",
+          "status": "read",
+          "verification": "official-calendar-checked"
+        }
+      ],
+      "note": "Ein offizieller Termin für die Ausgabe 2027 ist auf der geprüften Veranstalterseite noch nicht veröffentlicht."
     }
   }
 }
