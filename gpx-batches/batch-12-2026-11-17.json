@@ -1,0 +1,51 @@
+{
+  "batch": 12,
+  "checkedAt": "2026-11-17",
+  "scope": "Top-level events 56-60 in current EVENTS order",
+  "status": "saved",
+  "appCommit": "48d8618947ba7e4daf756b5881aad28550c5e0f3",
+  "events": [
+    {
+      "order": 56,
+      "name": "Kaiserkrone",
+      "gpxStatus": "Five official Wilder Kaiser route pages with GPX/PDF download and interactive maps linked (Ultra, Skyrace, Panorama, Medium, Short). Kids route has no separate GPX verified.",
+      "sources": [
+        "https://www.wilderkaiser.info/de/tours/kaiserkrone-trail-ultra-offizielle-wettkampfroute-trailrunning-event.html",
+        "https://www.wilderkaiser.info/de/tours/kaiserkrone-trail-skyrace-offizielle-wettkampfroute-trailrunning-event.html",
+        "https://www.wilderkaiser.info/de/tours/kaiserkrone-trail-panorama-offizielle-wettkampfroute-trailrunning-event.html",
+        "https://www.wilderkaiser.info/de/tours/kaiserkrone-trail-medium-offizielle-wettkampfroute-trailrunning-event.html",
+        "https://www.wilderkaiser.info/de/tours/kaiserkrone-trail-short-offizielle-wettkampfroute-trailrunning-event.html"
+      ],
+      "followUp": "Download from each official route page and import into app if direct browser download is available."
+    },
+    {
+      "order": 57,
+      "name": "Stubai Ultra Trail by UTMB",
+      "gpxStatus": "Official UTMB 2027 map+GPX areas available, but no direct GPX file URL publicly extracted.",
+      "source": "https://stubai.utmb.world/de",
+      "followUp": "Export from official map when final route is released."
+    },
+    {
+      "order": 58,
+      "name": "Brixen marathon",
+      "gpxStatus": "App entry is for 2026 edition; no 2027 GPX file published.",
+      "source": "https://www.brixenmarathon.com/dolomites-ultra-trail/",
+      "followUp": "Recheck for 2027 edition."
+    },
+    {
+      "order": 59,
+      "name": "U.TLW",
+      "gpxStatus": "App event date 5 July 2026 is past; official downloadable ZIP currently names 2025 files.",
+      "source": "https://utlw.de/de/",
+      "followUp": "Wait for next edition's official GPX."
+    },
+    {
+      "order": 60,
+      "name": "Grossglockner Mountain Run",
+      "gpxStatus": "Official 2027 event page confirms 13.3 km / 1,300 hm and embeds Komoot map; no direct GPX file URL extracted.",
+      "source": "https://grossglockner-mountainrun.at/strecke/",
+      "followUp": "Export GPX from the official embedded Komoot map."
+    }
+  ],
+  "nextBatch": "Continue with events 61-65 after package 12 checkpoint."
+}
