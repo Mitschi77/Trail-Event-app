@@ -212,12 +212,13 @@ assert.equal(attemptDateFn({e:{end:"2027-06-03T12:00:00Z"},ri:0,rec:{actualRaceD
 const actualRecordMatch = html.match(/function seasonActualRecord\(x\)\{[\s\S]*?\nfunction seasonActualEnd/);
 assert.ok(actualRecordMatch, "Season record merge must be testable");
 const seasonActualRecord = new Function("runAttempts", "seasonAttemptRaceDate", actualRecordMatch[0].replace(/\nfunction seasonActualEnd[\s\S]*$/, "") + "; return seasonActualRecord;")(
-  { race: [{ done: true, date: "2027-06-01", hours: 8, minutes: 30, actualKm: 80, actualHm: 3000 }] },
+  { race: [{ done: true, date: "2027-06-01", result: "DNF", hours: 8, minutes: 30, actualKm: 80, actualHm: 3000 }] },
   (x, a) => x.rec.actualRaceDate || a.date
 );
 const actualRecord = seasonActualRecord({ key: "race", rec: { actualRaceDate: "2027-06-03", actualDurationHours: 10 } });
 assert.equal(actualRecord.actualRaceDate, "2027-06-03", "Manual actual finish date must override the imported activity start date");
 assert.equal(actualRecord.actualDurationHours, 10, "Manual duration adjustment must override imported duration");
+assert.equal(actualRecord.raceStatus, "dnf", "Recorded DNF results must inform recovery planning");
 
 
 
