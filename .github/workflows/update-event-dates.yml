@@ -3,8 +3,10 @@ name: Check official trail event dates
 on:
   push:
     paths:
+      - "index.html"
       - "scripts/update_event_dates.py"
       - "scripts/validate_event_data.py"
+      - "scripts/test-metrics.mjs"
       - ".github/workflows/update-event-dates.yml"
   schedule:
     - cron: "17 4 * * *"
