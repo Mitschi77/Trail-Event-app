@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-17T16:55:45.592008+00:00",
+  "updatedAt": "2026-11-17T16:00:00+00:00",
   "schemaVersion": 3,
   "events": {
     "la-corsa-della-bora": {
@@ -229,13 +229,13 @@
     },
     "psyland-backyard-ultra": {
       "eventId": "psyland-backyard-ultra",
-      "checkedAt": "2026-11-17T07:27:44.741Z",
+      "checkedAt": "2026-11-17T16:00:00+00:00",
       "status": "verified",
       "sources": [
         {
           "url": "https://www.insane-backyard-ultra.com/de/rennen/",
           "status": "read",
-          "verification": "manual-official-page"
+          "verification": "official-2027-event-date"
         }
       ],
       "eventPeriod": {
@@ -448,13 +448,13 @@
     },
     "ultratrail-frankische-schweiz": {
       "eventId": "ultratrail-frankische-schweiz",
-      "checkedAt": "2026-11-17T16:55:45.592008+00:00",
+      "checkedAt": "2026-11-17T16:00:00+00:00",
       "status": "verified",
       "sources": [
         {
           "url": "https://www.ultratrail-fraenkische-schweiz.de/",
           "status": "read",
-          "verification": "manual-official-page"
+          "verification": "official-2027-event-period-and-race-offer"
         }
       ],
       "eventPeriod": {
@@ -614,17 +614,18 @@
     },
     "trail-menorca-cami-de-cavalls": {
       "eventId": "trail-menorca-cami-de-cavalls",
-      "checkedAt": "2026-11-17T16:55:45.592008+00:00",
+      "checkedAt": "2026-11-17T16:00:00+00:00",
       "status": "verified",
       "sources": [
         {
-          "url": "https://www.trailmenorca.es/de/",
+          "url": "https://www.trailmenorca.es/en/inscripcion/",
           "status": "read",
-          "verification": "manual-official-page"
+          "verification": "official-2027-event-period"
         },
         {
-          "url": "https://trailmenorca.es/de/",
-          "status": "read"
+          "url": "https://www.trailmenorca.es/en/reglamento/",
+          "status": "read",
+          "verification": "official-2027-race-regulations"
         }
       ],
       "eventPeriod": {
@@ -675,13 +676,13 @@
     },
     "ultra-x-110-scotland": {
       "eventId": "ultra-x-110-scotland",
-      "checkedAt": "2026-11-17T07:32:56.662Z",
+      "checkedAt": "2026-11-17T16:00:00+00:00",
       "status": "verified",
       "sources": [
         {
-          "url": "https://ultra-x.co/ultra-marathon-races/",
+          "url": "https://ultra-x.co/event/ultra-marathon-in-scotland/",
           "status": "read",
-          "verification": "manual-official-page"
+          "verification": "official-2027-event-period"
         }
       ],
       "eventPeriod": {
