@@ -17,6 +17,8 @@ assert.ok(html.includes("sourceFile:file.name,sourceFileSize:file.size,updatedAt
 
 assert.ok(html.includes('accept=".gpx,.tcx,.fit,'), "Import controls must accept FIT, GPX and TCX files");
 assert.ok(html.includes("async function importActivityToHistory()"), "Activity history import must be available");
+assert.ok(html.includes("async function activityFileFingerprint(file)"), "Activity imports must fingerprint files for duplicate detection");
+assert.ok(html.includes("sourceFileHash:fileHash"), "Imported activity records must persist their file fingerprint");
 assert.ok(html.includes("const data=await parseActivityTrack(file),route=event.routes[ri]"), "Route file import must await async FIT/TCX parsing");
 assert.ok(html.includes("async function importGpxForRoute(id,ri,input)"), "Planned route detail import must support asynchronous FIT/TCX parsing");
 assert.ok(html.includes("const data=await parseActivityTrack(file);if(data.track.length<2)"), "Planned route detail import must await parsed track data");
