@@ -5,9 +5,10 @@ Stand: 17.11.2026
 ## Umfang
 
 - 128 unterschiedliche Veranstaltungen in der aktuellen Event-Datenbank geprüft.
-- 451 Strecken-Einträge mit einem GPX-Status versehen.
+- 454 Strecken-Einträge mit einem GPX-Status versehen.
 - 26 Arbeitsprotokolle in `batch-01-2026-11-17.json` bis `batch-26-2026-11-17.json`.
-- 59 direkte `.gpx`-Download-URLs in den Streckendaten hinterlegt. Davon sind 53 als direkte Veranstalter-/Download-Links markiert; 6 bleiben Kandidaten, historische Dateien oder benötigen eine zusätzliche Prüfung.
+- 60 direkte `.gpx`-URLs in den Streckendaten: 54 aktuelle Direktdateien, 3 historische/veraltete Dateien und 3 Kandidaten, die vor dem Import noch geprüft werden müssen.
+- Zusätzlich 4 offizielle Google-Drive-GPX-Dateien verlinkt.
 - Weitere offizielle Veranstalter- und UTMB-Rennseiten mit Karten-/GPX-Export sind direkt bei den Strecken hinterlegt.
 
 ## Qualitätsregeln
@@ -20,7 +21,11 @@ Stand: 17.11.2026
 
 ## Import in der App
 
-Bei direkten `.gpx`-URLs zeigt die Streckendetailansicht die Schaltfläche **„GPX in Streckenkarte übernehmen“**. Die App lädt die Datei, parst GPS-Punkte und Höhenwerte und speichert sie lokal für die jeweilige Strecke. Falls der Veranstalterserver den Browserzugriff per CORS blockiert, kann die GPX-Datei über den Download-Link geladen und anschließend über **„Daten ergänzen / bearbeiten“ → „GPX-Datei für Höhenprofil“** manuell importiert werden.
+Bei aktuellen direkten `.gpx`-URLs zeigt die Streckendetailansicht die Schaltfläche **„GPX in Streckenkarte übernehmen“**. Die App lädt die Datei, parst GPS-Punkte und Höhenwerte und speichert sie lokal für die jeweilige Strecke.
+
+Offizielle Google-Drive-Dateien erhalten ebenfalls einen Importversuch über den Drive-Download-Endpunkt. Falls der Veranstalterserver oder Google Drive den Browserzugriff per CORS/Bestätigung blockiert, kann die GPX-Datei über den Download-Link geladen und anschließend über **„Daten ergänzen / bearbeiten“ → „GPX-Datei für Höhenprofil“** manuell importiert werden.
+
+Veraltete, historische oder noch nicht verifizierte GPX-Dateien sind bewusst von der automatischen Import-Schaltfläche ausgeschlossen.
 
 ## Einschränkung
 
