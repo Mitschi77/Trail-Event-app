@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-17T07:36:19.420Z",
+  "updatedAt": "2026-11-17T07:37:48.695Z",
   "schemaVersion": 3,
   "events": {
     "transgrancanaria": {
@@ -1851,6 +1851,164 @@
           "verified": true
         }
       }
+    },
+    "ultra-mediterrania": {
+      "eventId": "ultra-mediterrania",
+      "checkedAt": "2026-11-17T07:37:48.695Z",
+      "status": "verified",
+      "sources": [
+        {
+          "url": "https://ultramediterrania.com/",
+          "status": "read",
+          "verification": "manual-official-page"
+        }
+      ],
+      "eventPeriod": {
+        "startDate": "2027-01-21",
+        "endDate": "2027-01-24",
+        "verified": true
+      },
+      "routes": {
+        "0": {
+          "routeId": "ultra-mediterrania",
+          "date": "2027-01-22",
+          "verified": true
+        }
+      }
+    },
+    "grand-raid-ventoux": {
+      "eventId": "grand-raid-ventoux",
+      "checkedAt": "2026-11-17T07:37:48.695Z",
+      "status": "verified",
+      "sources": [
+        {
+          "url": "https://grandraidventoux.com/",
+          "status": "read",
+          "verification": "manual-official-page"
+        }
+      ],
+      "eventPeriod": {
+        "startDate": "2027-04-23",
+        "endDate": "2027-04-25",
+        "verified": true
+      },
+      "routes": {
+        "0": {
+          "routeId": "ugp-125-5700",
+          "date": "2027-04-23",
+          "verified": true
+        },
+        "1": {
+          "routeId": "ugp-87-4200",
+          "date": "2027-04-24",
+          "verified": true
+        },
+        "2": {
+          "routeId": "ugp-51-2500",
+          "date": "2027-04-25",
+          "verified": true
+        }
+      }
+    },
+    "malcesine-baldo-trail": {
+      "eventId": "malcesine-baldo-trail",
+      "checkedAt": "2026-11-17T07:37:48.695Z",
+      "status": "verified",
+      "sources": [
+        {
+          "url": "https://www.malcesinebaldotrail.com/",
+          "status": "read",
+          "verification": "manual-official-page"
+        }
+      ],
+      "eventPeriod": {
+        "startDate": "2027-04-24",
+        "endDate": "2027-04-25",
+        "verified": true
+      },
+      "routes": {
+        "0": {
+          "routeId": "52k-ultra-52-3541",
+          "date": "2027-04-24",
+          "verified": true
+        },
+        "1": {
+          "routeId": "malcesine-41k-41-unknown",
+          "date": "2027-04-24",
+          "verified": true
+        },
+        "2": {
+          "routeId": "malcesine-26-4k-unknown",
+          "date": "2027-04-24",
+          "verified": true
+        },
+        "3": {
+          "routeId": "malcesine-16k-16-unknown",
+          "date": "2027-04-25",
+          "verified": true
+        }
+      }
+    },
+    "rennsteiglauf": {
+      "eventId": "rennsteiglauf",
+      "checkedAt": "2026-11-17T07:37:48.695Z",
+      "status": "verified",
+      "sources": [
+        {
+          "url": "https://www.rennsteiglauf.de/",
+          "status": "read",
+          "verification": "manual-official-page"
+        }
+      ],
+      "eventPeriod": {
+        "startDate": "2027-05-22",
+        "endDate": "2027-05-22",
+        "verified": true
+      },
+      "routes": {
+        "0": {
+          "routeId": "supermarathon-73-9-3260",
+          "date": "2027-05-22",
+          "verified": true
+        }
+      }
+    },
+    "mountainman": {
+      "eventId": "mountainman",
+      "checkedAt": "2026-11-17T07:37:48.695Z",
+      "status": "verified",
+      "sources": [
+        {
+          "url": "https://www.mountainman.de/",
+          "status": "read",
+          "verification": "manual-official-page"
+        }
+      ],
+      "eventPeriod": {
+        "startDate": "2027-05-07",
+        "endDate": "2027-05-08",
+        "verified": true
+      },
+      "routes": {},
+      "note": "2027 Nesselwang event dates confirmed, but the current route records contain several 2026 dates from different Mountainman events. Route-to-event assignment must be checked before reusing them."
+    },
+    "dolomiti-extreme-trail": {
+      "eventId": "dolomiti-extreme-trail",
+      "checkedAt": "2026-11-17T07:37:48.695Z",
+      "status": "verified",
+      "sources": [
+        {
+          "url": "https://www.dolomitiextremetrail.com/",
+          "status": "read",
+          "verification": "manual-official-page"
+        }
+      ],
+      "eventPeriod": {
+        "startDate": "2027-06-11",
+        "endDate": "2027-06-13",
+        "verified": true
+      },
+      "routes": {}
     }
   }
 }
