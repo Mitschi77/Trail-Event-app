@@ -14,6 +14,7 @@ on:
       - "capacitor.config.json"
       - "scripts/prepare-native.mjs"
       - "scripts/check-inline.mjs"
+      - "scripts/test-metrics.mjs"
       - ".github/workflows/build-ios.yml"
   workflow_dispatch:
 
