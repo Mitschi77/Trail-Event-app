@@ -1,0 +1,51 @@
+{
+  "batch": 21,
+  "checkedAt": "2026-11-17",
+  "scope": "Top-level events 101-105 in current EVENTS order",
+  "status": "saved",
+  "appCommit": "66168525ae3d5a68070183211ad116a634979e6d",
+  "events": [
+    {
+      "order": 101,
+      "name": "Alpin Team Trailrun",
+      "gpxStatus": "Official download page provides GPX K10/K23/K50, but current race pages refer to 25/26 September 2026. No 2027 date or new files found; app date cleared and historical files rejected.",
+      "source": "https://www.alpinteamtrail.at/en/download/",
+      "followUp": "Wait for 2027 event announcement and GPX files."
+    },
+    {
+      "order": 102,
+      "name": "Chihuahua by UTMB",
+      "gpxStatus": "Official UTMB race pages and maps currently refer to the 2026 edition; no confirmed 2027 date or new course files found. App date cleared and 2026 tracks rejected.",
+      "source": "https://chihuahua.utmb.world/",
+      "followUp": "Recheck when UTMB announces the 2027 edition."
+    },
+    {
+      "order": 103,
+      "name": "Trail&Tarmac Pursuit",
+      "gpxStatus": "Official 2027 event confirmed 1-3 October, 240-270 km from St. Gallen to St. Moritz. The route is explicitly self-planned by each team and checkpoints 1-5 are published before the event; final secret checkpoint only 30 minutes before start. No single organizer GPX exists.",
+      "source": "https://trailtarmacpursuit.com/",
+      "followUp": "Build a personal route from the published checkpoints when they become available."
+    },
+    {
+      "order": 104,
+      "name": "Oberaudorf Trail Festival",
+      "gpxStatus": "All five official 2027 route pages linked with GPX track availability. OTF100 page's current file name OTF100_Distanz_OTF26.gpx is stale 2026 and rejected; other route pages list GPX tracks but direct file endpoints were not exposed.",
+      "sources": [
+        "https://saltytrailrunning.com/en-de/pages/otf-100",
+        "https://saltytrailrunning.com/en-eu/pages/otf-ultra",
+        "https://saltytrailrunning.com/en-en/pages/otf-sudelfeld",
+        "https://saltytrailrunning.com/en-en/pages/otf-speed",
+        "https://saltytrailrunning.com/en-de/pages/otf-short"
+      ],
+      "followUp": "Download the 2027 files from official course pages; verify the OTF100 file is updated before importing."
+    },
+    {
+      "order": 105,
+      "name": "Taubertal 100",
+      "gpxStatus": "Current publicly discoverable organizer information is old (2022 flyer and 2025 results); no confirmed 2027 date or updated GPX found. App date cleared and old GPS route not reused.",
+      "source": "https://www.taubertal100.de/",
+      "followUp": "Recheck with organizer for next edition date and official GPX files."
+    }
+  ],
+  "nextBatch": "Continue with events 106-110 after package 21 checkpoint."
+}
