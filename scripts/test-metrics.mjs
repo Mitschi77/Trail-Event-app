@@ -35,18 +35,20 @@ assert.ok(html.includes("initActivityImport();"), "Activity import controls must
 assert.ok(html.includes("durationSeconds"), "Imported activities must retain elapsed time");
 const metricHelper = html.match(/function routeMetricLabel\(route,eventRef\)\{[^}]*\}/);
 assert.ok(metricHelper, "Race type metric formatter must exist");
-const routeMetricLabel = new Function("num", "routeMetricType", metricHelper[0] + "; return routeMetricLabel;")(
+const routeMetricLabel = new Function("num", "routeMetricType", "routeTypeRequiresTrailMetrics", metricHelper[0] + "; return routeMetricLabel;")(
   value => String(value),
-  value => value === "marathon" ? "Marathon" : value === "backyard" ? "Backyard" : "Trailrunning / Ultra"
+  value => value === "marathon" ? "Marathon" : value === "backyard" ? "Backyard" : "Trailrunning / Ultra",
+  type => !["Marathon", "Halbmarathon", "Straßenlauf"].includes(type)
 );
 assert.equal(routeMetricLabel({ km: 42.2, hm: "", maxh: "" }, "marathon"), "42.2 km");
 assert.equal(routeMetricLabel({ km: 50, hm: 2400, maxh: 12 }, "trail"), "50 km · 2400 hm · Max. Zeit 12 h");
 assert.equal(routeMetricLabel({ km: 6.7, hm: 120, maxh: 24 }, "backyard"), "6.7 km · 120 hm");
 const markupHelper = html.match(/function routeMetricMarkup\(route,eventRef\)\{[^}]*\}/);
 assert.ok(markupHelper, "Race type metric markup must exist");
-const routeMetricMarkup = new Function("num", "routeMetricType", markupHelper[0] + "; return routeMetricMarkup;")(
+const routeMetricMarkup = new Function("num", "routeMetricType", "routeTypeRequiresTrailMetrics", markupHelper[0] + "; return routeMetricMarkup;")(
   value => String(value),
-  value => value === "marathon" ? "Marathon" : value === "backyard" ? "Backyard" : "Trailrunning / Ultra"
+  value => value === "marathon" ? "Marathon" : value === "backyard" ? "Backyard" : "Trailrunning / Ultra",
+  type => !["Marathon", "Halbmarathon", "Straßenlauf"].includes(type)
 );
 assert.equal(routeMetricMarkup({ km: 42.2, hm: "", maxh: "" }, "marathon"), "<span><b>42.2</b> km</span>");
 
