@@ -57,3 +57,7 @@ Externe Aktivitäts-IDs verhindern doppelte Einträge bei wiederholter Synchroni
 - Garmin-Zugang bzw. schriftliche Freigabe für den beabsichtigten Nutzerkreis.
 - Produktions-Callback-URLs, Supabase-Secrets und Token-Verschlüsselung konfigurieren.
 - Import mit Testkonten prüfen: doppelte Aktivitäten, widerrufene Freigabe, abgelaufene Tokens, Zeitzonen, DNF/Mehrtagesevents und Löschung.
+
+## Current Strava access limitation
+
+New Strava API apps start in single-player mode. A Strava subscription is required to create an API app. For friends to connect, the developer must request the appropriate access level (initially limited to 10 athletes) and comply with Strava review requirements before scaling. References: https://developers.strava.com/docs/getting-started/ and https://developers.strava.com/docs/authentication/.
