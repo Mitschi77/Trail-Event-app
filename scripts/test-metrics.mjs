@@ -209,6 +209,17 @@ assert.equal(attemptDateFn({e:{end:"2027-06-03T12:00:00Z"},ri:0,rec:{}},{date:"2
 assert.equal(attemptDateFn({e:{end:"2027-06-01T12:00:00Z"},ri:0,rec:{}},{date:"2027-06-01"}), "2027-06-01", "Single-day activity dates may supply the actual race date");
 assert.equal(attemptDateFn({e:{end:"2027-06-03T12:00:00Z"},ri:0,rec:{actualRaceDate:"2027-06-04"}},{date:"2027-06-01"}), "2027-06-04", "Manually entered actual finish dates must take precedence");
 
+const actualRecordMatch = html.match(/function seasonActualRecord\\(x\\)\\{[\\s\\S]*?\\nfunction seasonActualEnd/);
+assert.ok(actualRecordMatch, "Season record merge must be testable");
+const seasonActualRecord = new Function("runAttempts", "seasonAttemptRaceDate", actualRecordMatch[0].replace(/\\nfunction seasonActualEnd[\\s\\S]*$/, "") + "; return seasonActualRecord;")(
+  { race: [{ done: true, date: "2027-06-01", hours: 8, minutes: 30, actualKm: 80, actualHm: 3000 }] },
+  (x, a) => x.rec.actualRaceDate || a.date
+);
+const actualRecord = seasonActualRecord({ key: "race", rec: { actualRaceDate: "2027-06-03", actualDurationHours: 10 } });
+assert.equal(actualRecord.actualRaceDate, "2027-06-03", "Manual actual finish date must override the imported activity start date");
+assert.equal(actualRecord.actualDurationHours, 10, "Manual duration adjustment must override imported duration");
+
+
 
 
 console.log("Validated race priorities, training phases and actual-race recovery.");
