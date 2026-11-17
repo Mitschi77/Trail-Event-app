@@ -4,7 +4,7 @@ on:
   push:
     branches: [main]
     paths:
-      - "package.json"
+      - "index.html"\n      - "event-dates.json"\n      - "manifest.webmanifest"\n      - "trail-icon.svg"\n      - "trail-apple-touch-icon.png"\n      - "package.json"
       - "capacitor.config.json"
       - "scripts/prepare-native.mjs"
       - "scripts/check-inline.mjs"
