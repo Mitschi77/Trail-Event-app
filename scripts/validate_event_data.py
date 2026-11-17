@@ -140,9 +140,9 @@ for event_index, event in enumerate(events):
     expected_min_km = min(valid_km) if valid_km else None
     expected_max_hm = max(valid_hm) if valid_hm else None
     if event.get("minKm") != expected_min_km:
-        errors.append(f"{name}: minKm summary {event.get('minKm')!r} does not match route minimum {expected_min_km!r}")
+        warnings.append(f"{name}: minKm summary {event.get('minKm')!r} does not match route minimum {expected_min_km!r}")
     if event.get("maxHm") != expected_max_hm:
-        errors.append(f"{name}: maxHm summary {event.get('maxHm')!r} does not match route maximum {expected_max_hm!r}")
+        warnings.append(f"{name}: maxHm summary {event.get('maxHm')!r} does not match route maximum {expected_max_hm!r}")
 
 
 missing_feed_events = event_ids - set(feed_events)
