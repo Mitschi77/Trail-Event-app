@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-17T07:43:46.802Z",
+  "updatedAt": "2026-11-17T07:43:53.820Z",
   "schemaVersion": 3,
   "events": {
     "transgrancanaria": {
@@ -708,7 +708,7 @@
     },
     "megamarsch": {
       "eventId": "megamarsch",
-      "checkedAt": "2026-11-17T07:43:46.802Z",
+      "checkedAt": "2026-11-17T07:43:53.820Z",
       "status": "verified",
       "sources": [
         {
