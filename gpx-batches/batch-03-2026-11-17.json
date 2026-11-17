@@ -1,0 +1,88 @@
+{
+  "batch": 3,
+  "checkedAt": "2026-11-17",
+  "scope": "Events 11–15 in top-level EVENTS array",
+  "status": "saved",
+  "appCommit": "0975b627f5e73144ea32bcfcfa3aaad47ce2e61a",
+  "events": [
+    {
+      "order": 11,
+      "name": "Ötzi Trairun",
+      "officialSource": "https://www.merano-suedtirol.it/de/oetzi-trailrun-naturns/dein-lauf/sunny-mountain-trail/2.html",
+      "routes": [
+        {
+          "name": "Sunny Mountain Trail",
+          "gpxStatus": "direct-download",
+          "gpxUrl": "https://www.merano-suedtirol.it/media/20ed251a-0d81-4b8a-a13d-2164258490f4/t123182821-sunny-mountain-trail-30km-2100hm.gpx"
+        }
+      ],
+      "note": "Official route page links a 166.87 KB GPX file; track metrics match 30 km / 2,100 m."
+    },
+    {
+      "order": 12,
+      "name": "Wien Marathon",
+      "officialSource": "https://www.vienna-marathon.com/var/upload/public/2027/VCM-Streckenplaene_2027_SO_v1.pdf",
+      "gpxStatus": "map-only",
+      "note": "Official 2027 course plan PDF was found; no GPX download link in the document."
+    },
+    {
+      "order": 13,
+      "name": "Istrien",
+      "officialSources": [
+        "https://istria.utmb.world/races/110k",
+        "https://istria.utmb.world/races/69K",
+        "https://istria.utmb.world/races-runners/runners/gpx-tracks"
+      ],
+      "routes": [
+        {
+          "name": "110 Tausend",
+          "gpxStatus": "direct-download",
+          "gpxUrl": "https://pdf.utmb.world/raw/upload/v1781524088/istria/.gpx/ISTRIA_111k_2027_43ca9de8f1.gpx"
+        },
+        {
+          "name": "69 Tausend",
+          "gpxStatus": "direct-download",
+          "gpxUrl": "https://pdf.utmb.world/raw/upload/v1781524084/istria/.gpx/ISTRIA_69k_2027_f18764744b.gpx"
+        }
+      ],
+      "note": "Official UTMB GPX tracks page links both 2027 files. The 110K page reports 111 km / 4,200 m+ in headline data but 4,074 m+ in its descriptive text; the app currently records 4,074 m. The 69K page reports 69.6 km / 2,400 m+ in headline data but 69 km / 2,331 m+ in descriptive text; app records 70 km / 2,331 m. Keep this inconsistency flagged for later validation."
+    },
+    {
+      "order": 14,
+      "name": "Paris Marathon",
+      "officialSource": "https://www.schneiderelectricparismarathon.com/en/event/presentation",
+      "gpxStatus": "not-verified",
+      "note": "Official event page could not be loaded during this check; no official GPX download was verified."
+    },
+    {
+      "order": 15,
+      "name": "Grand Raid Ventoux",
+      "officialSources": [
+        "https://ventoux.utmb.world/races/grv100m",
+        "https://ventoux.utmb.world/races/grv100k",
+        "https://ventoux.utmb.world/races/GRV50K"
+      ],
+      "routes": [
+        {
+          "name": "UGP 125K",
+          "gpxStatus": "interactive-map"
+        },
+        {
+          "name": "UGP 87K",
+          "gpxStatus": "interactive-map"
+        },
+        {
+          "name": "UGP 51K",
+          "gpxStatus": "interactive-map"
+        }
+      ],
+      "note": "Official UTMB pages expose a Map + GPX section for each race; no separate direct file link was exposed by the page reader."
+    }
+  ],
+  "followUps": [
+    "Ötzi Trail: validate the downloaded file's route bounds and elevation against the official 2027 course.",
+    "Istria: compare GPX-calculated distance/elevation with conflicting official page figures.",
+    "Grand Raid Ventoux: inspect the interactive map's GPX export to retrieve direct files.",
+    "Paris Marathon: retry official page and check for a 2027 route download."
+  ]
+}
