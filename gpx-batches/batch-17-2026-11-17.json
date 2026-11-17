@@ -3,45 +3,52 @@
   "checkedAt": "2026-11-17",
   "scope": "Top-level events 81-85 in current EVENTS order",
   "status": "saved",
-  "appCommit": "1b18608e1b86aa4d831b1ecb2270dd45d478074e",
+  "appCommit": "76db6c9ec5d5ed68c6ac7afa037a225ac8b844f0",
   "events": [
     {
       "order": 81,
       "name": "Last Soul Ultra",
-      "gpxStatus": "Official 2027 site confirms one 6.706 km loop, but no GPX or route map is published. App now reflects 6.706 km and marks GPX unavailable.",
+      "gpxStatus": "2027 Season 3 is confirmed and official loop length is 6.706 km. No public GPX file found; organizer withholds course location/route.",
       "source": "https://www.lastsoulultra.com/",
-      "followUp": "Ask organizer for a GPX or check again when the 2027 World Series locations/routes are published."
+      "followUp": "Ask organizer for participant route if entered; no public GPX."
     },
     {
       "order": 82,
       "name": "Karnisches Ungetüm",
-      "gpxStatus": "2027 75K route confirmed at 75 km / 5,200 hm and 25K Short Trail confirmed at 25 km / 1,500 hm. The visible official GPX is KUT2026final.gpx; a separate collection points to a 2025 file. Both rejected as stale; app links organizer page and awaits 2027 file.",
+      "gpxStatus": "2027 event confirmed for 14 August. Main route 75 km / 5,200 hm. The only visible GPX link still points to KUT2026final.gpx, so rejected for 2027. Added new Short Trail 25 km / 1,500 hm; no GPX published.",
       "source": "https://www.ungetuem.at/kut/",
-      "followUp": "Recheck official GPX download before importing."
+      "staleFile": "https://drive.google.com/file/d/1pbldWeJm1bfET8QANJc2dj8QZjTfMsGo/view?usp=drive_link",
+      "followUp": "Wait for a 2027 GPX file for both routes."
     },
     {
       "order": 83,
       "name": "TREK Matterhorn Ultraks",
-      "gpxStatus": "Official site explicitly says the 2027 date will be announced later. All currently visible route GPX links are for 2026; app event date cleared and route files marked stale.",
+      "gpxStatus": "Organizer says the date for 2027 will be announced soon. Current race pages and GPX links are 2026 files; they are marked stale and not used as 2027 routes.",
+      "routes": [
+        "SKY 49 km / 3,600 hm",
+        "EXTREME 26 km / 3,066 hm",
+        "MOUNTAIN 32 km / 2,000 hm",
+        "RELAY 32 km / 2,000 hm",
+        "ACTIVE 19 km / 1,150 hm",
+        "VERTINIGHT 4.9 km / 691 hm"
+      ],
       "source": "https://www.matterhorn-ultraks.ch/home",
-      "followUp": "Recheck when 2027 date and course files are published."
+      "followUp": "Recheck after organizer announces 2027 dates and publishes new GPX files."
     },
     {
       "order": 84,
       "name": "Trans Alpine Run",
-      "gpxStatus": "2027 event dates confirmed 18-24 September. Official course map still shows 2026; organizer FAQ says GPX data are sent only to registered participants. App now links to official page and rejects 2026 GPX.",
-      "sources": [
-        "https://www.transalpine-run.com/en/",
-        "https://www.transalpine-run.com/en/information/faq/"
-      ],
-      "followUp": "Use the participant GPX files when the organizer sends them after registration."
+      "gpxStatus": "Official FAQ confirms the route map is public but GPX data are sent only to registered participants. No public GPX download.",
+      "source": "https://www.transalpine-run.com/en/information/faq/",
+      "routeMap": "https://www.transalpine-run.com/en/course/",
+      "followUp": "Registered participants can obtain the GPX directly from the organizer."
     },
     {
       "order": 85,
       "name": "UTMB Mont Blanc",
-      "gpxStatus": "Official website currently shows 24-30 August 2026 only. 2027 event dates and course files not yet published; app event date cleared and historical GPX not reused.",
-      "source": "https://montblanc.utmb.world/",
-      "followUp": "Recheck once the official 2027 edition is announced."
+      "gpxStatus": "Official UTMB FAQ says 2027 dates and registration details are still forthcoming. App routes and downloadable GPX links currently correspond to 2026; event date and GPX fields cleared rather than presenting them as current.",
+      "source": "https://montblanc.utmb.world/races-runners/runners/infos-pratiques",
+      "followUp": "Recheck once the 2027 edition is announced."
     }
   ],
   "nextBatch": "Continue with events 86-90 after package 17 checkpoint."
