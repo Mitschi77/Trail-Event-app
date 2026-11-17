@@ -3,30 +3,23 @@
 Stand: 17.11.2026
 
 ## Umfang
+- 128 Hauptevents in der Reihenfolge der App-Datenbank geprüft.
+- 454 Streckenvarianten erfasst.
+- 26 Arbeitspaket-Checkpoints gespeichert (jeweils fünf Events; letztes Paket umfasst die restlichen drei).
+- 53 direkte GPX-Datei-Links sind aktuell in den Streckendaten hinterlegt.
+- Zusätzlich sind offizielle Veranstalterseiten mit Map + GPX, Komoot-/Garmin-Downloads und angekündigte spätere Freigaben vermerkt.
 
-- 128 unterschiedliche Veranstaltungen in der aktuellen Event-Datenbank geprüft.
-- 454 Strecken-Einträge mit einem GPX-Status versehen.
-- 26 Arbeitsprotokolle in `batch-01-2026-11-17.json` bis `batch-26-2026-11-17.json`.
-- 60 direkte `.gpx`-URLs in den Streckendaten: 54 aktuelle Direktdateien, 3 historische/veraltete Dateien und 3 Kandidaten, die vor dem Import noch geprüft werden müssen.
-- Zusätzlich 4 offizielle Google-Drive-GPX-Dateien verlinkt.
-- Weitere offizielle Veranstalter- und UTMB-Rennseiten mit Karten-/GPX-Export sind direkt bei den Strecken hinterlegt.
-
-## Qualitätsregeln
-
-1. Nur Veranstalterseiten, offizielle UTMB-Rennseiten und dort verlinkte Kursdateien gelten als offizielle Quelle.
-2. Dateien mit falschem Editionsjahr (z. B. 2025/2026 statt 2027) werden nicht als aktuelle Strecke importiert.
-3. Wenn der Veranstalter GPX erst später freigibt, wird der Status als ausstehend markiert und die offizielle Seite verlinkt.
-4. Wenn ein direkter Dateilink nicht öffentlich auslesbar ist, wird die offizielle Karte/Map+GPX-Seite verlinkt, statt einen Dateipfad zu erraten.
-5. Bei gesperrter Weitergabe oder privaten Strecken wird keine GPX-Datei in das Repository kopiert.
+## Arbeitspakete
+Die Detailergebnisse liegen in `batch-01-2026-11-17.json` bis `batch-26-2026-11-17.json`. Jeder Checkpoint enthält den Status je Event, Quellen und den nächsten Prüfschritt.
 
 ## Import in der App
+In der Streckendetailansicht:
+1. Bei einer Strecke mit direktem GPX-Link **GPX in Streckenkarte übernehmen** wählen.
+2. Die App lädt und parst den Track und speichert ihn in den lokalen Streckendaten des verwendeten Browsers.
+3. Falls der Veranstalter-Server den Browser-Download wegen CORS blockiert, GPX über den Download-Link speichern und anschließend über **Daten ergänzen / bearbeiten → GPX-Datei für Höhenprofil** importieren.
 
-Bei aktuellen direkten `.gpx`-URLs zeigt die Streckendetailansicht die Schaltfläche **„GPX in Streckenkarte übernehmen“**. Die App lädt die Datei, parst GPS-Punkte und Höhenwerte und speichert sie lokal für die jeweilige Strecke.
+## Wichtige Abgrenzung
+Die GPX-URLs und Importfunktion sind in der App hinterlegt. Die GPX-Dateien selbst wurden in diesem Arbeitsschritt **nicht als Dateien in das GitHub-Repository kopiert**. Die verfügbaren GitHub- und Laufzeitwerkzeuge konnten die externen GPX-Dateien nicht direkt herunterladen; deshalb wird kein Download oder Import als bereits abgeschlossen ausgegeben. Veraltete 2025/2026-Tracks wurden ausdrücklich als veraltet markiert oder aus dem direkten Import entfernt. Unversionierte Kandidaten sind als solche gekennzeichnet.
 
-Offizielle Google-Drive-Dateien erhalten ebenfalls einen Importversuch über den Drive-Download-Endpunkt. Falls der Veranstalterserver oder Google Drive den Browserzugriff per CORS/Bestätigung blockiert, kann die GPX-Datei über den Download-Link geladen und anschließend über **„Daten ergänzen / bearbeiten“ → „GPX-Datei für Höhenprofil“** manuell importiert werden.
-
-Veraltete, historische oder noch nicht verifizierte GPX-Dateien sind bewusst von der automatischen Import-Schaltfläche ausgeschlossen.
-
-## Einschränkung
-
-Die GPX-Dateien werden überwiegend direkt vom Veranstalterserver geladen und nicht als Binärdateien in dieses Repository kopiert. Die automatische Browser-Importfunktion ist implementiert, aber der Laufzeittest muss in Safari bzw. im Browser der App noch für jede Quelle erfolgen. Eine verlinkte Datei ist deshalb nicht automatisch als erfolgreich importiert zu verstehen.
+## Sicherheitsregel
+Nur Dateien mit passendem Veranstalter-/Jahresstand als aktuelle Strecke übernehmen. Bei GPX-Links mit altem Jahr, unklarer Distanz oder noch nicht finaler Strecke zuerst Veranstalterseite prüfen.
