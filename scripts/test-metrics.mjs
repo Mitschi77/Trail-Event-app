@@ -63,6 +63,16 @@ assert.equal(routeTypeRequiresTrailMetrics("Halbmarathon"), false);
 assert.equal(routeTypeRequiresTrailMetrics("Straßenlauf"), false);
 assert.equal(routeTypeRequiresTrailMetrics("Trailrunning / Ultra"), true);
 
+const calendarHelper = html.match(/function calendarEventDescription\\(route,type\\)\\{[^}]*\\}/);
+assert.ok(calendarHelper, "Calendar export must format race-specific metrics");
+const calendarEventDescription = new Function("routeTypeRequiresTrailMetrics", calendarHelper[0] + "; return calendarEventDescription;")(routeTypeRequiresTrailMetrics);
+assert.equal(calendarEventDescription({ route: "Marathon", km: 42.2, hm: 300, maxh: 5 }, "Marathon"), "Marathon · 42.2 km");
+assert.equal(calendarEventDescription({ route: "Halbmarathon", km: 21.1, hm: 100, maxh: 4 }, "Halbmarathon"), "Halbmarathon · 21.1 km");
+assert.equal(calendarEventDescription({ route: "Backyard", km: 6.7, hm: 100, maxh: 24 }, "Backyard"), "Backyard · 6.7 km · 100 hm");
+assert.equal(calendarEventDescription({ route: "Ultra", km: 50, hm: 2400, maxh: 12 }, "Trailrunning / Ultra"), "Ultra · 50 km · 2400 hm · Maximale Laufzeit: 12 h");
+assert.ok((html.match(/routeTypeRequiresTrailMetrics\\(routeMetricType\\(x\\.id\\)\\)\\?\\(Number\\(x\\.r\\.hm\\)\\|\\|0\\):0/g)||[]).length>=2, "Road race elevation must not inflate planned elevation totals");
+
+
 
 
 assert.ok(html.includes("avgHeartRate:data.avgHeartRate||0"), "Imported FIT activities must retain average heart rate");
