@@ -451,4 +451,4 @@ document.addEventListener('change',e=>{const t=e.target;if(t.matches('[data-seas
 const seasonRoot=document.getElementById('yearOverview');if(seasonRoot){new MutationObserver(()=>renderSeasonEnhancements()).observe(seasonRoot,{childList:true,subtree:true});}
 renderSeasonEnhancements();
 if('serviceWorker' in navigator&&location.protocol==='https:'){window.addEventListener('load',()=>navigator.serviceWorker.register('./sw.js').catch(()=>{}));}
-refreshStorageHealth();</script></body></html>
+refreshStorageHealth();</script><script src="./race-tools.js"></script></body></html>
