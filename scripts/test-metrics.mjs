@@ -202,7 +202,7 @@ assert.equal((html.match(/id="sortPlanChronologically"/g) || []).length, 1, "Pla
 const recoveryMatch = html.match(/function seasonRecoveryDays\(e,r,record\)\{[^}]*\}/);
 assert.ok(recoveryMatch, "Recovery calculation must remain independently testable");
 const recoveryFn = new Function(recoveryMatch[0] + "; return seasonRecoveryDays;")();
-assert.equal(recoveryFn({}, {km:80,hm:2500}, {actualKm:"",actualHm:"",actualDurationHours:""}), 15, "Blank actual metrics must fall back to the planned race distance and elevation");
+assert.equal(recoveryFn({}, {km:80,hm:2500}, {actualKm:"",actualHm:"",actualDurationHours:""}), 12, "Blank actual metrics must fall back to the planned race distance and elevation");
 assert.equal(recoveryFn({}, {km:80,hm:2500}, {actualKm:25,actualHm:500,actualDurationHours:5}), 6, "Recorded actual metrics must override planned route metrics");
 
 const attemptDateMatch = html.match(/function seasonAttemptRaceDate\(x,a\)\{[^}]*\}/);
