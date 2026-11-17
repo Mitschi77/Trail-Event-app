@@ -1,5 +1,6 @@
 import { mkdir, copyFile } from "node:fs/promises";
 import { join } from "node:path";
+import sharp from "sharp";
 
 const root = process.cwd();
 const webDir = join(root, "www");
@@ -17,4 +18,19 @@ for (const file of requiredFiles) {
   await copyFile(join(root, file), join(webDir, file));
 }
 
-console.log(`Prepared ${requiredFiles.length} web assets in www/ for Capacitor.`);
+// Use the designed Trail Events mountain-runner artwork as the actual iOS icon.
+const iconPng = join(webDir, "trail-app-icon-1024.png");
+await sharp(join(root, "trail-icon.svg"))
+  .resize(1024, 1024, { fit: "contain", background: "#14251f" })
+  .png()
+  .toFile(iconPng);
+
+const iosIconSet = join(root, "ios", "App", "App", "Assets.xcassets", "AppIcon.appiconset");
+try {
+  await mkdir(iosIconSet, { recursive: true });
+  await copyFile(iconPng, join(iosIconSet, "AppIcon-512@2x.png"));
+} catch (error) {
+  if (error.code !== "ENOENT") throw error;
+}
+
+console.log("Prepared web assets and Trail Events iOS app icon.");
