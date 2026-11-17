@@ -1,0 +1,45 @@
+{
+  "batch": 17,
+  "checkedAt": "2026-11-17",
+  "scope": "Top-level events 81-85 in current EVENTS order",
+  "status": "saved",
+  "appCommit": "abd99ed2cacc752cb0382d5f11d3bc7ba3c20d65",
+  "events": [
+    {
+      "order": 81,
+      "name": "Last Soul Ultra",
+      "gpxStatus": "Official 2027 World Series page confirms a 6.706 km loop, but the organizer withholds location and does not publish a GPX file.",
+      "source": "https://www.lastsoulultra.com/",
+      "followUp": "Ask organizer for route file when venue and event location are released."
+    },
+    {
+      "order": 82,
+      "name": "Karnisches Ungetüm",
+      "gpxStatus": "2027 event and new 25K Short Trail confirmed. The only official GPX link found points to KUT2026final.gpx (2026), so it is rejected for 2027.",
+      "source": "https://www.ungetuem.at/kut/",
+      "followUp": "Wait for 2027 GPX for both 75K and 25K."
+    },
+    {
+      "order": 83,
+      "name": "TREK Matterhorn Ultraks",
+      "gpxStatus": "Organizer has not announced the 2027 date yet. Current official route pages and GPX links are for the 2026 edition.",
+      "source": "https://www.matterhorn-ultraks.ch/home",
+      "followUp": "Recheck when 2027 event is announced."
+    },
+    {
+      "order": 84,
+      "name": "Trans Alpine Run",
+      "gpxStatus": "2027 dates confirmed (18-24 September), but the official route overview and GPX links still show the 2026 route.",
+      "source": "https://www.transalpine-run.com/",
+      "followUp": "Wait for 2027 stage route and GPX files."
+    },
+    {
+      "order": 85,
+      "name": "UTMB Mont Blanc",
+      "gpxStatus": "2027 event calendar is visible, but OCC/CCC/UTMB race pages still show 2026 dates and course data; no valid 2027 GPX verified.",
+      "source": "https://montblanc.utmb.world/races",
+      "followUp": "Recheck when 2027 race pages and course files are published."
+    }
+  ],
+  "nextBatch": "Continue with events 86-90 after package 17 checkpoint."
+}
