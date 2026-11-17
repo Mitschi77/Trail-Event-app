@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-17T07:45:11.578Z",
+  "updatedAt": "2026-11-17T13:00:00+01:00",
   "schemaVersion": 3,
   "events": {
     "transgrancanaria": {
@@ -2873,6 +2873,74 @@
         }
       },
       "note": "Die offizielle Race-Seite nennt für Old Capital Trail 32 km, der Event-Zeitplan führt den Lauf als 20K. Distanzangabe ist deshalb als widersprüchlich markiert und sollte vor Anmeldung nochmals beim Veranstalter geprüft werden."
+    },
+    "der-watz-mountainman": {
+      "eventId": "der-watz-mountainman",
+      "checkedAt": "2026-11-17T13:00:00+01:00",
+      "status": "verified",
+      "sources": [
+        {
+          "url": "https://mountainman.de/trailrunning-events/alps/berchtesgaden/",
+          "status": "read",
+          "verification": "official-2027-page"
+        }
+      ],
+      "eventPeriod": {
+        "startDate": "2027-06-02",
+        "endDate": "2027-06-06",
+        "verified": true
+      },
+      "routes": {
+        "0": {
+          "routeId": "der-watz-4-tage-111-5500",
+          "date": "2027-06-03",
+          "verified": true
+        },
+        "1": {
+          "routeId": "watz-double-57-2500",
+          "date": "2027-06-05",
+          "verified": true
+        },
+        "2": {
+          "routeId": "watz-final-25-1300",
+          "date": "2027-06-06",
+          "verified": true
+        }
+      }
+    },
+    "falkensteinlauf": {
+      "eventId": "falkensteinlauf",
+      "checkedAt": "2026-11-17T13:00:00+01:00",
+      "status": "verified",
+      "sources": [
+        {
+          "url": "https://www.falkensteinlauf.de/",
+          "status": "read",
+          "verification": "official-2027-date"
+        },
+        {
+          "url": "https://www.inzell.de/inzeller-falkensteinlauf",
+          "status": "read",
+          "verification": "municipal-event-page"
+        }
+      ],
+      "eventPeriod": {
+        "startDate": "2027-07-17",
+        "endDate": "2027-07-17",
+        "verified": true
+      },
+      "routes": {
+        "0": {
+          "routeId": "hm-21-1",
+          "date": "2027-07-17",
+          "verified": true
+        },
+        "1": {
+          "routeId": "falkenstein-sprint-7-21-2027",
+          "date": "2027-07-17",
+          "verified": true
+        }
+      }
     }
   }
 }
