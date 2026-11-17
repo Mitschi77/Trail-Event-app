@@ -70,7 +70,7 @@ assert.equal(calendarEventDescription({ route: "Marathon", km: 42.2, hm: 300, ma
 assert.equal(calendarEventDescription({ route: "Halbmarathon", km: 21.1, hm: 100, maxh: 4 }, "Halbmarathon"), "Halbmarathon · 21.1 km");
 assert.equal(calendarEventDescription({ route: "Backyard", km: 6.7, hm: 100, maxh: 24 }, "Backyard"), "Backyard · 6.7 km · 100 hm");
 assert.equal(calendarEventDescription({ route: "Ultra", km: 50, hm: 2400, maxh: 12 }, "Trailrunning / Ultra"), "Ultra · 50 km · 2400 hm · Maximale Laufzeit: 12 h");
-assert.ok((html.match(/routeTypeRequiresTrailMetrics\\(routeMetricType\\(x\\.id\\)\\)\\?\\(Number\\(x\\.r\\.hm\\)\\|\\|0\\):0/g)||[]).length>=2, "Road race elevation must not inflate planned elevation totals");
+assert.ok((html.match(/routeTypeRequiresTrailMetrics\(routeMetricType\(x\.id\)\)\?\(Number\(x\.r\.hm\)\|\|0\):0/g)||[]).length>=2, "Road race elevation must not inflate planned elevation totals");
 
 
 
