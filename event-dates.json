@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-17T07:29:52.698Z",
+  "updatedAt": "2026-11-17T07:30:48.484Z",
   "schemaVersion": 3,
   "events": {
     "transgrancanaria": {
@@ -1245,6 +1245,210 @@
         "0": {
           "routeId": "sunny-mountain-trail-30-2100",
           "date": "2027-04-10",
+          "verified": true
+        }
+      }
+    },
+    "swiss-alps-100": {
+      "eventId": "swiss-alps-100",
+      "checkedAt": "2026-11-17T07:30:48.484Z",
+      "status": "verified",
+      "sources": [
+        {
+          "url": "https://www.swissalps100.com/de/info/schedule",
+          "status": "read",
+          "verification": "manual-official-page"
+        }
+      ],
+      "eventPeriod": {
+        "startDate": "2027-08-06",
+        "endDate": "2027-08-08",
+        "verified": true
+      },
+      "routes": {
+        "0": {
+          "routeId": "swiss-alps-100-50-3210",
+          "date": "2027-08-07",
+          "verified": true
+        },
+        "1": {
+          "routeId": "swiss-alps-100-100-6242",
+          "date": "2027-08-06",
+          "verified": true
+        },
+        "2": {
+          "routeId": "swiss-alps-100-160-10004",
+          "date": "2027-08-06",
+          "verified": true
+        }
+      }
+    },
+    "ultra-tail-australia-by-utmb": {
+      "eventId": "ultra-tail-australia-by-utmb",
+      "checkedAt": "2026-11-17T07:30:48.484Z",
+      "status": "verified",
+      "sources": [
+        {
+          "url": "https://uta.utmb.world/runners/entry-info",
+          "status": "read",
+          "verification": "manual-official-page"
+        }
+      ],
+      "eventPeriod": {
+        "startDate": "2027-05-13",
+        "endDate": "2027-05-16",
+        "verified": true
+      },
+      "routes": {
+        "0": {
+          "routeId": "utamiler-161-7200",
+          "date": "2027-05-14",
+          "verified": true
+        },
+        "1": {
+          "routeId": "uta100-101-4400",
+          "date": "2027-05-15",
+          "verified": true
+        }
+      }
+    },
+    "trail-alsace-by-utmb": {
+      "eventId": "trail-alsace-by-utmb",
+      "checkedAt": "2026-11-17T07:30:48.484Z",
+      "status": "verified",
+      "sources": [
+        {
+          "url": "https://alsace.utmb.world/de",
+          "status": "read",
+          "verification": "manual-official-page"
+        }
+      ],
+      "eventPeriod": {
+        "startDate": "2027-05-13",
+        "endDate": "2027-05-16",
+        "verified": true
+      },
+      "routes": {
+        "0": {
+          "routeId": "ultra-trail-des-paiens-109-3900",
+          "date": "2027-05-14",
+          "verified": true
+        },
+        "1": {
+          "routeId": "ultra-trail-des-chevaliers-156-5100",
+          "date": "2027-05-14",
+          "verified": true
+        },
+        "2": {
+          "routeId": "trail-des-celtes-47-1600",
+          "date": "2027-05-16",
+          "verified": true
+        }
+      }
+    },
+    "pitz-alpine-glacier-trail": {
+      "eventId": "pitz-alpine-glacier-trail",
+      "checkedAt": "2026-11-17T07:30:48.484Z",
+      "status": "verified",
+      "sources": [
+        {
+          "url": "https://www.pitztal.com/en/pitz-alpine-programme.html",
+          "status": "read",
+          "verification": "manual-official-page"
+        }
+      ],
+      "eventPeriod": {
+        "startDate": "2027-07-30",
+        "endDate": "2027-08-01",
+        "verified": true
+      },
+      "routes": {
+        "0": {
+          "routeId": "p45g-44-2800",
+          "date": "2027-07-31",
+          "verified": true
+        },
+        "1": {
+          "routeId": "p45r-44-2450",
+          "date": "2027-07-31",
+          "verified": true
+        },
+        "2": {
+          "routeId": "p60-62-4000",
+          "date": "2027-07-31",
+          "verified": true
+        },
+        "3": {
+          "routeId": "p90-90-5400",
+          "date": "2027-07-31",
+          "verified": true
+        },
+        "4": {
+          "routeId": "p105-105-6100",
+          "date": "2027-07-31",
+          "verified": true
+        }
+      }
+    },
+    "eiger-ultratrail": {
+      "eventId": "eiger-ultratrail",
+      "checkedAt": "2026-11-17T07:30:48.484Z",
+      "status": "verified",
+      "sources": [
+        {
+          "url": "https://eiger.utmb.world/de",
+          "status": "read",
+          "verification": "manual-official-page"
+        }
+      ],
+      "eventPeriod": {
+        "startDate": "2027-07-14",
+        "endDate": "2027-07-18",
+        "verified": true
+      },
+      "routes": {
+        "0": {
+          "routeId": "panorama-trail-50-3100",
+          "date": "2027-07-17",
+          "verified": true
+        },
+        "1": {
+          "routeId": "ultratrail-100-6700",
+          "date": "2027-07-17",
+          "verified": true
+        }
+      }
+    },
+    "ultra-trail-snowdonia-eryri": {
+      "eventId": "ultra-trail-snowdonia-eryri",
+      "checkedAt": "2026-11-17T07:30:48.484Z",
+      "status": "verified",
+      "sources": [
+        {
+          "url": "https://eryri.utmb.world/",
+          "status": "read",
+          "verification": "manual-official-page"
+        }
+      ],
+      "eventPeriod": {
+        "startDate": "2027-05-14",
+        "endDate": "2027-05-16",
+        "verified": true
+      },
+      "routes": {
+        "0": {
+          "routeId": "uts-80k-78-2500",
+          "date": "2027-05-14",
+          "verified": true
+        },
+        "1": {
+          "routeId": "uts-100m-163-9200",
+          "date": "2027-05-14",
+          "verified": true
+        },
+        "2": {
+          "routeId": "uts-100k-106-5400",
+          "date": "2027-05-15",
           "verified": true
         }
       }
