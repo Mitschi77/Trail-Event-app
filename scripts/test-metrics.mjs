@@ -64,9 +64,9 @@ assert.equal(completedRunDistance({ r: { actualKm: 12.35, rounds: 3 }, route: { 
 assert.equal(completedRunDistance({ r: {}, route: { km: 42.195 }, ev: {} }), 42.195);
 
 
-const trackHelper = html.match(/function calculateTrackData\\(raw\\)\\{[\\s\\S]*?\\nfunction parseGpxData/);
+const trackHelper = html.match(/function calculateTrackData\(raw\)\{[\s\S]*?\nfunction parseGpxData/);
 assert.ok(trackHelper, "Shared GPX/TCX/FIT track calculator must exist");
-const calculateTrackData = new Function(trackHelper[0].replace(/\\nfunction parseGpxData[\\s\\S]*$/, "") + "; return calculateTrackData;")();
+const calculateTrackData = new Function(trackHelper[0].replace(/\nfunction parseGpxData[\s\S]*$/, "") + "; return calculateTrackData;")();
 const track = calculateTrackData([
   { lat: 48, lon: 11, ele: 500, time: "2026-05-01T08:00:00Z" },
   { lat: 48.001, lon: 11, ele: 510, time: "2026-05-01T08:02:00Z" },
