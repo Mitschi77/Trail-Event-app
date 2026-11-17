@@ -13,6 +13,11 @@ Prüfstand: 17. November 2026. Diese Übersicht beschreibt den Quellcode und die
 - Dateiimporte werden mit SHA-256-Fingerprints gegen erneuten Import derselben Datei abgesichert.
 - Manuelle Platzierung und Bewertung bleiben bei der Ergänzung eines Laufs durch eine Aktivitätsdatei erhalten.
 - Automatischer Abgleich offizieller Eventdaten über einen GitHub-Actions-Workflow.
+- Saisonsteuerung mit A/B/C-Rennprioritäten, Trainingsphasen und Erholungsfenstern; die Berechnung berücksichtigt das tatsächliche Event-Enddatum, Laufdauer und DNF.
+- Export geplanter Rennen in den Kalender (iCalendar/ICS), inklusive mehrtägiger Events.
+- Offline-App-Shell mit lokalem Cache für App-Oberfläche, Symbole und offiziellen Datumsfeed; der Datumsfeed wird online aktualisiert und offline aus dem Cache geladen.
+- Saisonprioritäten werden in privaten JSON-Backups und im persönlichen Supabase-Cloudstand mitgesichert.
+- Marathon, Halbmarathon und Straßenlauf werden bei geplanten Trail-Höhenmetern und Maximalzeiten passend behandelt; Backyard ohne Maximalzeit.
 
 ## Datenprüfung
 
@@ -49,7 +54,7 @@ Der Datumsfeed enthielt bei der Prüfung 109 als verifiziert, 19 als unbestätig
 - Event- und Streckendaten nach jeder Änderung automatisch validieren: Datum, Distanz, Höhenmeter, Zeitlimit, Zielort und eindeutige IDs.
 - Für jeden Wert die offizielle Quelle und den Prüfzeitpunkt anzeigen.
 - GPX-/FIT-Höhenprofile mit offiziellen Höhenprofilen vergleichen; GPS-Höhenwerte können verrauscht sein und Aufstieg überschätzen.
-- Bei Mehrtagesveranstaltungen Starttag pro Strecke statt nur Eventzeitraum verwenden.
+- Bei Mehrtagesveranstaltungen wird der jeweilige Streckentag für den Rennstart verwendet; die Regeneration beginnt nach dem gesamten Event-Enddatum.
 
 ### P1 – Strava und Garmin
 
@@ -60,12 +65,10 @@ Der Datumsfeed enthielt bei der Prüfung 109 als verifiziert, 19 als unbestätig
 
 ### P2 – Bedienbarkeit und neue Funktionen
 
-- Importvorschau vor dem Speichern: Datum, Strecke, Distanz, Höhenmeter, Dauer und Puls prüfen lassen.
 - Aktivität nach dem Import einer anderen Strecke zuordnen oder Zuordnung korrigieren können.
-- Aktivitätsimport auch ohne GPS-Track zulassen, wenn eine FIT-Datei wenigstens Datum und Distanz enthält.
 - Export der gesamten Laufhistorie als CSV/JSON ergänzen.
-- Trainingsbelastung und Regenerationszeit aus tatsächlicher Dauer, Höhenmetern und subjektiver Belastung ableiten; Empfehlungen transparent und veränderbar halten.
-- Offline-Hinweis und Status für Kartenkacheln einführen; OpenStreetMap-Karten benötigen eine Internetverbindung.
+- Trainingssteuerung weiter verfeinern: aktuelle Erholungswerte sind bewusst eine grobe Heuristik aus Distanz, Höhenmetern, Dauer und DNF; subjektive Belastung, Schlaf und individuelle Trainingshistorie fehlen noch.
+- Offline-Kartenkacheln und ein klarer Offline-Status fehlen noch. Supabase-Cloud, Karten von OpenStreetMap und das Laden des Garmin-FIT-Decoders benötigen weiterhin eine Internetverbindung.
 
 ## Grenzen der Prüfung
 
