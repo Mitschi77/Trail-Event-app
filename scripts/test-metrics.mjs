@@ -3,6 +3,8 @@ import assert from "node:assert/strict";
 
 const html = await readFile(new URL("../index.html", import.meta.url), "utf8");
 const serviceWorker = await readFile(new URL("../sw.js", import.meta.url), "utf8");
+const raceTools = await readFile(new URL("../race-tools.js", import.meta.url), "utf8");
+const seasonTools = await readFile(new URL("../season-tools.js", import.meta.url), "utf8");
 assert.ok(serviceWorker.includes("'./event-dates.json'"), "Offline app shell must cache the official event feed");
 assert.ok(serviceWorker.includes("url.pathname.endsWith('/event-dates.json')"), "Official event feed must use a network-first cache strategy");
 assert.ok(serviceWorker.includes("cache.put(cacheKey, copy)") && serviceWorker.includes("caches.match(cacheKey)"), "Official event feed must remain available offline without retaining timestamp query variants");
@@ -10,12 +12,19 @@ assert.ok(serviceWorker.includes("cache.put(cacheKey, copy)") && serviceWorker.i
 assert.ok(html.includes("'trailRacePriorities'"), "Season priorities must be included in private backups and cloud snapshots");
 assert.ok(html.includes("function collectLocalPlannerData(){const data={};CLOUD_KEYS.forEach"), "Backup and cloud snapshots must collect every registered local data key");
 assert.ok(html.includes("function seasonSave()"), "Season priorities must have a dedicated persistence function");
-assert.ok(html.includes("function renderRaceStrategy(id,ri)"), "Per-race strategy planner must exist");
-assert.ok(html.includes("function saveRaceStrategy(id,ri)"), "Race strategy values must be persisted");
-assert.ok(html.includes("function renderRaceChecklist(id,ri)"), "Per-race checklist must exist");
-assert.ok(html.includes("function trainingLoadSummary()"), "Training load summary must be derived from recorded runs");
-assert.ok(html.includes("function renderSegmentPlanner(id,ri)"), "GPX segment planner must exist");
-assert.ok(html.includes("function trackSegmentAnalysis(route,id,ri)"), "GPX elevation segments must be analyzed");
+assert.ok(raceTools.includes("function strategy(id,ri,r)"), "Per-race strategy planner must exist");
+assert.ok(raceTools.includes("function save(id,ri,patch)"), "Race preparation values must be persisted");
+assert.ok(raceTools.includes("function checklist(id,ri)"), "Per-race checklist must exist");
+assert.ok(raceTools.includes("function training()"), "Recorded training history must be summarized");
+assert.ok(raceTools.includes("function segmentUi(id,ri,r)"), "GPX segment planner must exist");
+assert.ok(raceTools.includes("function segments(r,id,ri)"), "GPX elevation segments must be analyzed");
+assert.ok(html.includes('src="./race-tools.js"'), "Race preparation module must load");
+assert.ok(html.includes('src="./season-tools.js"'), "Season training module must load");
+assert.ok(seasonTools.includes("function load()"), "Weekly training load must use recorded activities");
+assert.ok(seasonTools.includes("function panel()"), "Weekly training goal dashboard must exist");
+assert.ok(seasonTools.includes("seasonPriorities[STORE]=next"), "Training goals must persist with season priorities");
+assert.ok(seasonTools.includes("v.current.km") && seasonTools.includes("v.previous.km"), "Training load must compare current and previous weeks");
+assert.ok(serviceWorker.includes("./season-tools.js") && serviceWorker.includes("trail-event-planner-v23"), "Offline app shell must cache season tools");
 
 assert.ok(html.includes("function localStorageBytes(replacementKey,replacementValue)"), "Local storage size guard must exist");
 assert.ok(html.includes("async function refreshStorageHealth()"), "Storage usage and persistence status must be visible");
