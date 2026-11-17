@@ -1,0 +1,74 @@
+{
+  "batch": 22,
+  "checkedAt": "2026-11-17",
+  "scope": "Top-level events 106-110 in current EVENTS order",
+  "status": "saved",
+  "appCommit": "17df8a3845fb0c985c445e315c75870aad98e732",
+  "events": [
+    {
+      "order": 106,
+      "name": "Hoka Kodiak Ultra Marathons",
+      "gpxStatus": "Official final 2026 GPX files directly linked for 100M and 100K; app route metrics corrected to 161 km/4,876 hm and 101.1 km/3,143 hm.",
+      "downloads": [
+        {
+          "route": "100M",
+          "url": "https://pdf.utmb.world/raw/upload/v1791089380/kodiak/GPX%20FILES/2026/2026_Kodiak_100_M_Official_Final_Course_Map_fce94a53e2.gpx"
+        },
+        {
+          "route": "100K",
+          "url": "https://pdf.utmb.world/raw/upload/v1791089369/kodiak/GPX%20FILES/2026/2026_Kodiak_100_K_Official_Final_Course_Map_bc042760b4.gpx"
+        }
+      ],
+      "source": "https://kodiak.utmb.world/races",
+      "followUp": "Historical 2026 only; wait for 2027 course publication."
+    },
+    {
+      "order": 107,
+      "name": "München Marathon",
+      "gpxStatus": "App entry is for 11 October 2026, now past; no official GPX download verified.",
+      "source": "https://www.generalimuenchenmarathon.de/",
+      "followUp": "Recheck when 2027 route is published."
+    },
+    {
+      "order": 108,
+      "name": "StundenRundenLauf",
+      "gpxStatus": "Official organizer confirms 6.7 km / 58 hm and requires runners to navigate with GPX. Linked official Outdooractive route supports GPX export; historical 2026 edition.",
+      "source": "https://www.outdooractive.com/de/route/trailrunning/chiemgau/3.-chiemgauer100-stundenrundenlauf-2026/262145937/",
+      "followUp": "Export GPX from Outdooractive; use only for 2026 historical route."
+    },
+    {
+      "order": 109,
+      "name": "Kullamannen",
+      "gpxStatus": "All four official 2027 UTMB race pages provide Map + GPX; route metrics corrected: 168/2,020, 108/749, 53/727, 22/96.",
+      "sources": [
+        "https://kullamannen.utmb.world/races/ultra-100-miles",
+        "https://kullamannen.utmb.world/races/sprint-ultra-100-km",
+        "https://kullamannen.utmb.world/races/seventh-seal",
+        "https://kullamannen.utmb.world/races/north-shore"
+      ],
+      "followUp": "Export all four GPX tracks from official maps."
+    },
+    {
+      "order": 110,
+      "name": "Mallorca Serra de Tramuntana",
+      "gpxStatus": "Official final 2026 GPX files directly linked for all three app routes: Serra de Tramuntana 100M, Camins de pedra seca 100K and Els Tres Mils 50K. Event 30 Oct-1 Nov 2026 is past.",
+      "downloads": [
+        {
+          "route": "Serra de Tramuntana 100M",
+          "url": "https://pdf.utmb.world/raw/upload/v1792652353/mallorca/GPX%20TRACKS/TRACKS%20DEFINITIVOS%20WEB%2022.10.26/SDT_100_M_9b608c9377.gpx"
+        },
+        {
+          "route": "Camins de pedra seca 100K",
+          "url": "https://pdf.utmb.world/raw/upload/v1792652353/mallorca/GPX%20TRACKS/TRACKS%20DEFINITIVOS%20WEB%2022.10.26/CPS_100_K_2c050f02cb.gpx"
+        },
+        {
+          "route": "Els Tres Mils 50K",
+          "url": "https://pdf.utmb.world/raw/upload/v1792652352/mallorca/GPX%20TRACKS/TRACKS%20DEFINITIVOS%20WEB%2022.10.26/ETM_50_K_ea7a69720b.gpx"
+        }
+      ],
+      "source": "https://mallorca.utmb.world/races",
+      "followUp": "Historical 2026 tracks only; wait for next edition's GPX."
+    }
+  ],
+  "nextBatch": "Continue with events 111-115 after package 22 checkpoint."
+}
