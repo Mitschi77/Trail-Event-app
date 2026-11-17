@@ -25,6 +25,8 @@ jobs:
           node-version: 22
       - name: Install dependencies
         run: npm install
+      - name: Validate app JavaScript
+        run: npm run test:syntax
       - name: Generate native iOS project
         run: |
           if [ -d ios/App/App.xcodeproj ]; then npm run ios:sync; else npm run ios:add; fi
