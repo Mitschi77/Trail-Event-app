@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-17T13:00:00+01:00",
+  "updatedAt": "2026-11-17T07:47:23.029Z",
   "schemaVersion": 3,
   "events": {
     "transgrancanaria": {
@@ -2524,13 +2524,18 @@
     },
     "ternberg-trail": {
       "eventId": "ternberg-trail",
-      "checkedAt": "2026-11-17T13:00:00+01:00",
+      "checkedAt": "2026-11-17T07:47:23.029Z",
       "status": "verified",
       "sources": [
         {
           "url": "https://www.austriabackyardultra.com/ternberg",
           "status": "read",
-          "verification": "official-2027-page"
+          "verification": "official-2027-event-page"
+        },
+        {
+          "url": "https://www.austriabackyardultra.com/en/ternberg",
+          "status": "read",
+          "verification": "official-2027-event-page"
         }
       ],
       "eventPeriod": {
@@ -2587,16 +2592,16 @@
     },
     "chiemgau-trail": {
       "eventId": "chiemgau-trail",
-      "checkedAt": "2026-11-17T13:00:00+01:00",
+      "checkedAt": "2026-11-17T07:47:23.029Z",
       "status": "unconfirmed",
       "sources": [
         {
           "url": "https://chiemgau-trail-run.de/",
           "status": "read",
-          "verification": "official-site-2026-only"
+          "verification": "official-site-current-edition"
         }
       ],
-      "notes": "Offizielle Website nennt derzeit die Ausgabe 2026 (24.10.2026); ein Termin für 2027 ist noch nicht veröffentlicht."
+      "note": "Die offizielle Veranstalterseite bestätigt derzeit nur die Ausgabe am 24. Oktober 2026. Ein Termin und die Strecken für 2027 sind noch nicht offiziell veröffentlicht. Die bisherigen Streckendaten stammen aus einer älteren Ausgabe und sind nicht als bestätigte 2027-Angaben zu verwenden."
     },
     "bucovina-ultra-rocks": {
       "eventId": "bucovina-ultra-rocks",
@@ -2910,18 +2915,13 @@
     },
     "falkensteinlauf": {
       "eventId": "falkensteinlauf",
-      "checkedAt": "2026-11-17T13:00:00+01:00",
+      "checkedAt": "2026-11-17T07:47:23.029Z",
       "status": "verified",
       "sources": [
         {
           "url": "https://www.falkensteinlauf.de/",
           "status": "read",
-          "verification": "official-2027-date"
-        },
-        {
-          "url": "https://www.inzell.de/inzeller-falkensteinlauf",
-          "status": "read",
-          "verification": "municipal-event-page"
+          "verification": "official-2027-save-the-date"
         }
       ],
       "eventPeriod": {
