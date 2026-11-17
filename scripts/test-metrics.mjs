@@ -99,6 +99,10 @@ assert.ok(html.includes("activityLocalDate(data.startTime)"), "Activity import m
 assert.ok(html.includes('id="exportPlanCalendar"'), "Planner must offer calendar export");
 assert.ok(html.includes('id="sortPlanChronologically"'), "Planner must expose chronological sorting");
 assert.ok(html.includes("onclick=\"sortPlannedEventsChronologically()\""), "Chronological sort button must be wired");
+assert.ok(html.includes("const plannerRecoveryEnd=(event,routeIndex)=>"), "Multi-day races must expose a final-day recovery helper");
+assert.ok(html.includes("end=plannerRecoveryEnd(last,lastRi)"), "Next-race suggestions must start recovery after the event end");
+assert.ok(html.includes("(b.date-a.recoveryEnd)/86400000"), "Season check must compare next start to previous event end");
+assert.ok(html.includes("selectedEnd&&nextDate&&nextDate<plusDays(selectedEnd,weeks*7)"), "Route selection must enforce recovery after multi-day events");
 assert.ok(html.includes("function exportPlannedCalendar()"), "Calendar export handler must exist");
 assert.ok(html.includes("text/calendar;charset=utf-8"), "Calendar export must use the iCalendar MIME type");
 assert.ok(html.includes("DTSTART;VALUE=DATE:"), "Calendar export must create all-day race events");
