@@ -1,0 +1,54 @@
+{
+  "batch": 18,
+  "checkedAt": "2026-11-17",
+  "scope": "Top-level events 86-90 in current EVENTS order",
+  "status": "saved",
+  "appCommit": "e7b7eec8075852a5c6c3efb100e4a3944d2e7239",
+  "events": [
+    {
+      "order": 86,
+      "name": "Fränkischer Backyard Ultra",
+      "gpxStatus": "App entry is for 4 September 2026, already past; no GPX for next edition verified.",
+      "source": "https://www.fraenkischerbackyard.de/",
+      "followUp": "Recheck when next edition is announced."
+    },
+    {
+      "order": 87,
+      "name": "Dolomiti di Brenta Trail",
+      "gpxStatus": "Organizer confirms GPS tracks on official route pages, but reserves the right to change courses until 31 July 2027, when final official routes are published.",
+      "source": "https://www.dolomitidibrentatrail.it/en/routes/regulation/",
+      "followUp": "Import final GPX after 31 July 2027."
+    },
+    {
+      "order": 88,
+      "name": "adidas INFINITE TRAILS Gastein",
+      "gpxStatus": "Official central GPX/Trailbook platform linked for all 7 race distances. Current visible edition is the 2026 Trailbook; 2027 GPX not yet published.",
+      "source": "https://infinite-trails.com/en/gpx-racemap/",
+      "followUp": "Recheck when 2027 Trailbook/GPX platform goes live."
+    },
+    {
+      "order": 89,
+      "name": "Mayrhofen Ultraks",
+      "gpxStatus": "All seven official 2027 route pages show GPX-Daten sections and are linked in app.",
+      "routes": [
+        "RK50",
+        "TUX070",
+        "Z101",
+        "MUZ30",
+        "MUZ14",
+        "MOUNTOPOLIS Vertical",
+        "Sprint"
+      ],
+      "source": "https://mayrhofen.ultraks.com/strecken/",
+      "followUp": "Download GPX from each official route page; direct file endpoints not separately extracted."
+    },
+    {
+      "order": 90,
+      "name": "München Backyard Ultra",
+      "gpxStatus": "App entry is for 6 September 2026, already past; no GPX for next edition verified.",
+      "source": "https://muenchenbackyardultra.de/",
+      "followUp": "Recheck when next edition is announced."
+    }
+  ],
+  "nextBatch": "Continue with events 91-95 after package 18 checkpoint."
+}
