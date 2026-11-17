@@ -2521,6 +2521,82 @@
           "verified": true
         }
       }
+    },
+    "ternberg-trail": {
+      "eventId": "ternberg-trail",
+      "checkedAt": "2026-11-17T13:00:00+01:00",
+      "status": "verified",
+      "sources": [
+        {
+          "url": "https://www.austriabackyardultra.com/ternberg",
+          "status": "read",
+          "verification": "official-2027-page"
+        }
+      ],
+      "eventPeriod": {
+        "startDate": "2027-05-06",
+        "endDate": "2027-05-06",
+        "verified": true
+      },
+      "routes": {
+        "0": {
+          "routeId": "ternberg-trail-6-7-354",
+          "date": "2027-05-06",
+          "verified": true
+        }
+      }
+    },
+    "otscher-trail": {
+      "eventId": "otscher-trail",
+      "checkedAt": "2026-11-17T13:00:00+01:00",
+      "status": "verified",
+      "sources": [
+        {
+          "url": "https://www.oetschertrail.run/",
+          "status": "read",
+          "verification": "official-2027-page"
+        }
+      ],
+      "eventPeriod": {
+        "startDate": "2027-06-04",
+        "endDate": "2027-06-06",
+        "verified": true
+      },
+      "routes": {
+        "1": {
+          "routeId": "oetscher-vertical-2027",
+          "date": "2027-06-04",
+          "verified": true
+        },
+        "2": {
+          "routeId": "oetscher-easy-trail-2027",
+          "date": null,
+          "verified": false
+        },
+        "3": {
+          "routeId": "oetscher-speed-trail-2027",
+          "date": "2027-06-05",
+          "verified": true
+        },
+        "4": {
+          "routeId": "oetscher-skyrace-2027",
+          "date": "2027-06-06",
+          "verified": true
+        }
+      }
+    },
+    "chiemgau-trail": {
+      "eventId": "chiemgau-trail",
+      "checkedAt": "2026-11-17T13:00:00+01:00",
+      "status": "unconfirmed",
+      "sources": [
+        {
+          "url": "https://chiemgau-trail-run.de/",
+          "status": "read",
+          "verification": "official-site-2026-only"
+        }
+      ],
+      "notes": "Offizielle Website nennt derzeit die Ausgabe 2026 (24.10.2026); ein Termin für 2027 ist noch nicht veröffentlicht."
     }
   }
 }
