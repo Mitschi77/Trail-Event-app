@@ -3552,6 +3552,99 @@
           "verified": true
         }
       }
+    },
+    "backyard-ultra": {
+      "eventId": "backyard-ultra",
+      "checkedAt": "2026-11-17T13:00:00+01:00",
+      "status": "verified",
+      "sources": [
+        {
+          "url": "https://www.hofer-backyard-ultra.de/ausschreibung-2027/",
+          "status": "read",
+          "verification": "official-2027-page"
+        }
+      ],
+      "routes": {
+        "0": {
+          "routeId": "backyard-ultra-6-7-100",
+          "date": "2027-06-26",
+          "verified": true
+        }
+      },
+      "notes": "Nur der Hofer Backyard Ultra hat bereits einen offiziellen 2027-Termin. Für Fränkischen, Tuttlinger und Kuckuck Backyard sind die Termine noch offen."
+    },
+    "austria-backyard-ultra": {
+      "eventId": "austria-backyard-ultra",
+      "checkedAt": "2026-11-17T13:00:00+01:00",
+      "status": "verified",
+      "sources": [
+        {
+          "url": "https://www.austriabackyardultra.com/frankenmarkt",
+          "status": "read",
+          "verification": "official-2027-page"
+        },
+        {
+          "url": "https://www.austriabackyardultra.com/kirchdorf",
+          "status": "read",
+          "verification": "official-2027-page"
+        }
+      ],
+      "routes": {
+        "0": {
+          "routeId": "austria-backyard-ultra-6-7-111",
+          "date": "2027-06-19",
+          "verified": true
+        },
+        "1": {
+          "routeId": "austria-backyard-ultra-6-7-8",
+          "date": "2027-09-25",
+          "verified": true
+        },
+        "2": {
+          "routeId": "austria-backyard-7-plus-1-kirchdorf-2027",
+          "date": "2027-09-26",
+          "verified": true
+        }
+      }
+    },
+    "ultra-x-110-finnland": {
+      "eventId": "ultra-x-110-finnland",
+      "checkedAt": "2026-11-17T13:00:00+01:00",
+      "status": "unconfirmed",
+      "sources": [
+        {
+          "url": "https://ultra-x.co/ultra-marathon-races/",
+          "status": "read",
+          "verification": "official-calendar-no-2027-finland-date"
+        }
+      ],
+      "notes": "Kein offizieller 2027-Termin veröffentlicht. Eine finnische Laufkalenderseite nennt den 27.06.2027 ausdrücklich nur als Schätzung."
+    },
+    "ultra-x-110-slowenien": {
+      "eventId": "ultra-x-110-slowenien",
+      "checkedAt": "2026-11-17T13:00:00+01:00",
+      "status": "unconfirmed",
+      "sources": [
+        {
+          "url": "https://ultra-x.co/ultra-marathon-races/",
+          "status": "read",
+          "verification": "official-calendar-no-2027-slovenia-date"
+        }
+      ],
+      "notes": "Ein offizieller Termin für 2027 ist derzeit nicht veröffentlicht."
+    },
+    "last-soul-ultra": {
+      "eventId": "last-soul-ultra",
+      "checkedAt": "2026-11-17T13:00:00+01:00",
+      "status": "unconfirmed",
+      "sources": [
+        {
+          "url": "https://www.lastsoulultra.com/world-series",
+          "status": "read",
+          "verification": "official-2027-season-details"
+        }
+      ],
+      "notes": "Für 2027 ist ein Finale in Deutschland im August angekündigt; genauer Tag und Austragungsort sind noch offen."
     }
   }
 }
