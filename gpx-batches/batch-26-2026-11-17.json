@@ -1,29 +1,22 @@
 {
   "batch": 26,
   "checkedAt": "2026-11-17",
-  "scope": "Final top-level events 126-128 plus consolidated Wildstrubel event",
+  "scope": "Remaining top-level events 126-128 in current EVENTS order",
   "status": "saved",
-  "appCommit": "e2b731262e3fc8357046f88ad2dbaf61d067f1f7",
+  "appCommit": "e19395cfa2cc4d0e1a6853126de2404dac5c7281",
   "events": [
     {
       "order": 126,
       "name": "Torrencial Valdivia by UTMB",
-      "gpxStatus": "All six 2027 races and exact distances/elevations/start dates verified on individual official UTMB race pages. Pages provide course profiles but no GPX download or Map+GPX export; app now links each route page.",
-      "routes": [
-        "Pilolcura 100K 101 km / 4,100 hm (24 June)",
-        "Oncol 65K 65 km / 2,600 hm (25 June)",
-        "Llancahue 45K 45 km / 1,600 hm (27 June)",
-        "Collico 20K 20 km / 800 hm (27 June)",
-        "Cau Cau 12K 12 km / 400 hm (26 June)",
-        "Isla Teja 6K 6.5 km / 200 hm (26 June)"
-      ],
+      "gpxStatus": "Official UTMB 2027 race pages confirmed for six courses (PILOLCURA 100K, ONCOL 65K, LLANCAHUE 45K, COLLICO 20K, CAU CAU 12K, ISLA TEJA 6K). Public race pages currently show route profile but no GPX download or Map + GPX section.",
       "source": "https://torrencial.utmb.world/races",
-      "followUp": "No official GPX download is currently offered."
+      "followUp": "Recheck when official GPX downloads are added."
     },
     {
       "order": 127,
       "name": "HOKA Val d'Aran by UTMB",
-      "gpxStatus": "Three direct 2027 GPX files verified and linked: VDA 163K, TDL 75K and PDA 55K. CDH 110K, EXP 30K, SKY 18K and Vielha 10K pages still link 2026 GPX files and are marked stale. SKY Promesas has no separate 2027 GPX.",
+      "gpxStatus": "Official direct 2027 GPX files added for VDA 163K, TDL 75K and PDA 55K. Current official downloads for CDH 110K, EXP 30K, SKY 18K, SKY Promises and Vielha 10K are explicitly 2026 files; rejected as stale.",
+      "source": "https://valdaran.utmb.world/race/tracks",
       "downloads": [
         {
           "route": "VDA 163K",
@@ -38,65 +31,16 @@
           "url": "https://pdf.utmb.world/raw/upload/v1790060783/valdaran/Races/GPX%202026%20DEFINTIVOS%20EVENTO/NORMALES/PDA_2027_COLOMERS_a0831fb556.gpx"
         }
       ],
-      "source": "https://valdaran.utmb.world/races",
-      "followUp": "Import the three 2027 files; wait for updated GPX for the remaining distances."
+      "followUp": "Import the three confirmed 2027 files; wait for updated files for remaining five races."
     },
     {
       "order": 128,
       "name": "Monte Rosa Walser Waeg by UTMB",
-      "gpxStatus": "Seven 2027 races confirmed. SDV 120K, MRT 82K and RMT 15K still link to files explicitly named 2026. WWT 43K and Junior Walser 9K have official direct GPX links without year tags; marked as candidates requiring comparison with 2027 maps. GLT 35K and Becca Pink 4K have no direct GPX link.",
-      "routes": [
-        "Les sentiers des Valdôtains 120 km / 8,200 hm",
-        "Monte Rosa Trail 82 km / 6,300 hm",
-        "Walserwaeg Trail 43 km / 3,100 hm",
-        "Gressoney Lys Trail 35 km / 1,700 hm",
-        "Regina Margherita Trail 15 km / 650 hm",
-        "Junior Walser Trail 9 km / 600 hm",
-        "Becca Pink 4 km"
-      ],
-      "candidateDownloads": [
-        {
-          "route": "WWT",
-          "url": "https://pdf.utmb.world/raw/upload/v1784039996/mrww/WWT_50k_by_UTMB_dbcbe317ee.gpx"
-        },
-        {
-          "route": "Junior Walser",
-          "url": "https://pdf.utmb.world/raw/upload/v1770978779/mrww/Junior_Walser_Trail_v3_67a087f33d.gpx"
-        }
-      ],
-      "source": "https://mrww.utmb.world/",
-      "followUp": "Validate the two unversioned GPX files against 2027 maps before importing; wait for updated SDV/MRT/RMT files."
-    },
-    {
-      "order": 93,
-      "name": "Wildstrubel by UTMB (consolidated)",
-      "gpxStatus": "Updated existing event to the complete 2027 race list: six main races plus Wild NextGen and Kids Ycoor. All 2027 pages have Map + GPX panels, but no separate public direct GPX file links were extracted.",
-      "routes": [
-        "Wild 110 113 km / 6,600 hm",
-        "Wild 70 72 km / 4,600 hm",
-        "Wild 55 55 km / 3,300 hm",
-        "Wild Glacier Marathon 41 km / 2,500 hm",
-        "Wild 25 26 km / 1,200 hm",
-        "Wild 10 10 km / 500 hm",
-        "Wild NextGen 10 km / 500 hm",
-        "Wild Kids Ycoor 1 km"
-      ],
-      "source": "https://wildstrubel.utmb.world/races",
-      "followUp": "Export GPX from each official UTMB map when the map control is available."
+      "gpxStatus": "Official 2027 Map + GPX pages exist. Direct links for SDV 120K, MRT 82K and WWT 43K resolve to files explicitly labelled 2026 and are rejected. Gressoney Lys, Regina Margherita, Junior Walser and Becca Pink have no verified 2027-versioned GPX; Junior Walser's unversioned GPX was not accepted as 2027.",
+      "source": "https://mrww.utmb.world/races",
+      "followUp": "Wait for 2027 GPX updates and recheck all seven courses."
     }
   ],
-  "nextBatch": "All 128 top-level event records have now been checked in 26 small packages. Continue with a full consistency and functionality audit.",
-  "finalAudit": {
-    "events": 128,
-    "routes": 454,
-    "allRoutesHaveGpxStatus": true,
-    "activeDirectGpxUrls": 54,
-    "officialGoogleDriveGpxLinks": 4,
-    "staleOrHistoricalRoutes": 92,
-    "unversionedOrValidationCandidates": 3,
-    "automaticImportBlockedForStaleHistoricalAndCandidates": true,
-    "duplicateEventNames": 0,
-    "duplicateRouteIds": 0
-  },
-  "importImplementation": "One-click import attempts for direct .gpx and official Google Drive links; Drive uses a download endpoint conversion and falls back to manual upload if browser access is blocked."
+  "completedTopLevelEvents": 128,
+  "nextBatch": null
 }
