@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-17T13:00:00+01:00",
+  "updatedAt": "2026-11-17T07:45:11.578Z",
   "schemaVersion": 3,
   "events": {
     "transgrancanaria": {
@@ -2597,6 +2597,282 @@
         }
       ],
       "notes": "Offizielle Website nennt derzeit die Ausgabe 2026 (24.10.2026); ein Termin für 2027 ist noch nicht veröffentlicht."
+    },
+    "bucovina-ultra-rocks": {
+      "eventId": "bucovina-ultra-rocks",
+      "checkedAt": "2026-11-17T07:45:11.578Z",
+      "status": "verified",
+      "sources": [
+        {
+          "url": "https://bucovina.utmb.world/discover/event-schedule",
+          "status": "read",
+          "verification": "official-calendar-and-race-pages"
+        },
+        {
+          "url": "https://bucovina.utmb.world/races",
+          "status": "read",
+          "verification": "official-calendar-and-race-pages"
+        }
+      ],
+      "eventPeriod": {
+        "startDate": "2027-07-23",
+        "endDate": "2027-07-25",
+        "verified": true
+      },
+      "routes": {
+        "0": {
+          "routeId": "ultra-rocks-114-7000",
+          "date": "2027-07-23",
+          "verified": true
+        },
+        "1": {
+          "routeId": "four-summits-72-4600",
+          "date": "2027-07-24",
+          "verified": true
+        },
+        "2": {
+          "routeId": "bucovina-ladys-rocks-48-3200",
+          "date": "2027-07-24",
+          "verified": true
+        },
+        "3": {
+          "routeId": "bucovina-rocky-33-2000",
+          "date": "2027-07-24",
+          "verified": true
+        },
+        "4": {
+          "routeId": "bucovina-radical-20-1100",
+          "date": "2027-07-25",
+          "verified": true
+        },
+        "5": {
+          "routeId": "bucovina-rumble-rock-16-5-700",
+          "date": "2027-07-25",
+          "verified": true
+        }
+      }
+    },
+    "gauja-trail-by-utmb": {
+      "eventId": "gauja-trail-by-utmb",
+      "checkedAt": "2026-11-17T07:45:11.578Z",
+      "status": "verified",
+      "sources": [
+        {
+          "url": "https://gauja.utmb.world/",
+          "status": "read",
+          "verification": "official-calendar-and-race-pages"
+        },
+        {
+          "url": "https://gauja.utmb.world/agenda",
+          "status": "read",
+          "verification": "official-calendar-and-race-pages"
+        }
+      ],
+      "eventPeriod": {
+        "startDate": "2027-08-06",
+        "endDate": "2027-08-08",
+        "verified": true
+      },
+      "routes": {
+        "0": {
+          "routeId": "gauja-trail-100k-91-2200",
+          "date": "2027-08-07",
+          "verified": true
+        },
+        "1": {
+          "routeId": "gauja-trail-50k-53-1200",
+          "date": "2027-08-08",
+          "verified": true
+        },
+        "2": {
+          "routeId": "gauja-trail-20k-21-500",
+          "date": "2027-08-07",
+          "verified": true
+        },
+        "3": {
+          "routeId": "gauja-trail-10k-13-5-300",
+          "date": "2027-08-08",
+          "verified": true
+        },
+        "4": {
+          "routeId": "sigulda-three-castles-12-300",
+          "date": "2027-08-06",
+          "verified": true
+        }
+      }
+    },
+    "quito-trail-ecuador": {
+      "eventId": "quito-trail-ecuador",
+      "checkedAt": "2026-11-17T07:45:11.578Z",
+      "status": "verified",
+      "sources": [
+        {
+          "url": "https://quito.utmb.world/",
+          "status": "read",
+          "verification": "official-calendar-and-race-pages"
+        },
+        {
+          "url": "https://quito.utmb.world/runers/registration",
+          "status": "read",
+          "verification": "official-calendar-and-race-pages"
+        }
+      ],
+      "eventPeriod": {
+        "startDate": "2027-07-30",
+        "endDate": "2027-08-01",
+        "verified": true
+      },
+      "routes": {
+        "0": {
+          "routeId": "80k-oso-76-4400",
+          "date": "2027-07-31",
+          "verified": true
+        },
+        "1": {
+          "routeId": "quito-50k-nutria-53-2800",
+          "date": "2027-07-31",
+          "verified": true
+        },
+        "2": {
+          "routeId": "quito-30k-tucan-31-1600",
+          "date": "2027-07-31",
+          "verified": true
+        },
+        "3": {
+          "routeId": "quito-20k-quinde-20-1000",
+          "date": "2027-08-01",
+          "verified": true
+        },
+        "4": {
+          "routeId": "quito-12k-humboldt-13-850",
+          "date": "2027-08-01",
+          "verified": true
+        },
+        "5": {
+          "routeId": "quito-6k-rana-6-5-300",
+          "date": "2027-08-01",
+          "verified": true
+        }
+      }
+    },
+    "paraty-brazil": {
+      "eventId": "paraty-brazil",
+      "checkedAt": "2026-11-17T07:45:11.578Z",
+      "status": "verified",
+      "sources": [
+        {
+          "url": "https://paraty.utmb.world/news/inscricoes-paraty-brazil-by-utmb-2027",
+          "status": "read",
+          "verification": "official-calendar-and-race-pages"
+        },
+        {
+          "url": "https://paraty.utmb.world/races-runners/other-information/faq",
+          "status": "read",
+          "verification": "official-calendar-and-race-pages"
+        }
+      ],
+      "eventPeriod": {
+        "startDate": "2027-09-23",
+        "endDate": "2027-09-26",
+        "verified": true
+      },
+      "routes": {
+        "0": {
+          "routeId": "ptr108-108-4850",
+          "date": "2027-09-24",
+          "verified": true
+        },
+        "1": {
+          "routeId": "paraty-ptr55-53-3200",
+          "date": "2027-09-25",
+          "verified": true
+        },
+        "2": {
+          "routeId": "paraty-ptr34-34-1100",
+          "date": "2027-09-25",
+          "verified": true
+        },
+        "3": {
+          "routeId": "paraty-ptr25-25-750",
+          "date": "2027-09-25",
+          "verified": true
+        },
+        "4": {
+          "routeId": "paraty-ptr17-17-550",
+          "date": "2027-09-25",
+          "verified": true
+        },
+        "5": {
+          "routeId": "paraty-night10-10-270",
+          "date": "2027-09-25",
+          "verified": true
+        },
+        "6": {
+          "routeId": "paraty-run7-7-50",
+          "date": "2027-09-26",
+          "verified": true
+        }
+      }
+    },
+    "oman-by-utmb": {
+      "eventId": "oman-by-utmb",
+      "checkedAt": "2026-11-17T07:45:11.578Z",
+      "status": "verified",
+      "sources": [
+        {
+          "url": "https://oman.utmb.world/",
+          "status": "read",
+          "verification": "official-calendar-and-race-pages"
+        },
+        {
+          "url": "https://oman.utmb.world/shuttle",
+          "status": "read",
+          "verification": "official-calendar-and-race-pages"
+        },
+        {
+          "url": "https://oman.utmb.world/runners/event-schedule",
+          "status": "read",
+          "verification": "official-calendar-and-race-pages"
+        },
+        {
+          "url": "https://oman.utmb.world/races/HAJ",
+          "status": "read",
+          "verification": "official-calendar-and-race-pages"
+        }
+      ],
+      "eventPeriod": {
+        "startDate": "2026-12-10",
+        "endDate": "2026-12-12",
+        "verified": true
+      },
+      "routes": {
+        "0": {
+          "routeId": "jabal-classic-103-5000",
+          "date": "2026-12-10",
+          "verified": true
+        },
+        "1": {
+          "routeId": "hajar-ultra-154-8000",
+          "date": "2026-12-10",
+          "verified": true
+        },
+        "2": {
+          "routeId": "oman-skyward-canyon-50-2400",
+          "date": "2026-12-11",
+          "verified": true
+        },
+        "3": {
+          "routeId": "oman-old-capital-trail-32-1400",
+          "date": "2026-12-12",
+          "verified": true
+        },
+        "4": {
+          "routeId": "oman-scenic-ascent-21-5-550",
+          "date": "2026-12-12",
+          "verified": true
+        }
+      },
+      "note": "Die offizielle Race-Seite nennt für Old Capital Trail 32 km, der Event-Zeitplan führt den Lauf als 20K. Distanzangabe ist deshalb als widersprüchlich markiert und sollte vor Anmeldung nochmals beim Veranstalter geprüft werden."
     }
   }
 }
