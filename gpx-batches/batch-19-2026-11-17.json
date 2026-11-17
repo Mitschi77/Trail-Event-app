@@ -3,45 +3,86 @@
   "checkedAt": "2026-11-17",
   "scope": "Top-level events 91-95 in current EVENTS order",
   "status": "saved",
-  "appCommit": "ff7454a8a26264013e8983c3b12535e8a6e4406e",
+  "appCommit": "c0af970df55dec70dd17e84ec2b592d7c104b74c",
   "events": [
     {
       "order": 91,
       "name": "Torlauf Dachstein",
-      "gpxStatus": "All five 2027 official routes (Ultra 72K/4,300hm, Marathon 42K/2,500hm, Half Marathon 24K/510hm, Skyrace 24K/2,220hm, 10K/150hm) have organizer-listed GPX downloads. Existing Outdooractive GPX URLs are retained and flagged for one-click import.",
+      "gpxStatus": "Five official 2027 direct GPX downloads verified and retained in app: Marathon, Ultra, Half Marathon, Skyrace and 10K. Parent event date corrected to 4 September 2027.",
+      "downloads": [
+        {
+          "route": "Marathon",
+          "url": "https://www.outdooractive.com/download.tour.gpx?i=109515786&lang=de&project=outdooractive"
+        },
+        {
+          "route": "Ultra",
+          "url": "https://www.outdooractive.com/download.tour.gpx?i=334299958&lang=de&project=outdooractive"
+        },
+        {
+          "route": "Halbmarathon",
+          "url": "https://www.outdooractive.com/download.tour.gpx?i=109516152&lang=de&project=outdooractive"
+        },
+        {
+          "route": "Skyrace",
+          "url": "https://www.outdooractive.com/download.tour.gpx?i=333179794&lang=de&project=outdooractive"
+        },
+        {
+          "route": "10 KM Lauf",
+          "url": "https://www.outdooractive.com/de/download.tour.gpx?i=235239301&project=outdooractive"
+        }
+      ],
       "source": "https://www.torlauf-dachstein.info/infos",
-      "followUp": "Import all five GPX files and verify their track length/elevation against the 2027 event page."
+      "followUp": "Use the app's GPX import button to import all five direct files."
     },
     {
       "order": 92,
       "name": "Ultra Trail Great Wall",
-      "gpxStatus": "The last official edition was 11-13 September 2026. No official 2027 date or GPX files found; app date cleared and historical 2026 route is not reused.",
+      "gpxStatus": "Official UTMB page currently shows only 11–13 September 2026 edition. No 2027 edition or valid 2027 GPX confirmed; 2026 course removed from active downloads.",
       "source": "https://dajingmen.utmb.world/",
-      "followUp": "Recheck when UTMB publishes the 2027 edition."
+      "followUp": "Recheck if/when a 2027 edition is announced."
     },
     {
       "order": 93,
       "name": "Kaçkar by UTMB",
-      "gpxStatus": "All four official 2027 race pages (100K, 50K, 20K, Ayder 4K) confirm course distances/elevation and are linked in app. Direct GPX file URLs are not exposed; use official race-page map.",
-      "source": "https://kackar.utmb.world/races",
-      "followUp": "Export each GPX from the official UTMB course page."
+      "gpxStatus": "All four 2027 race pages are available with Map + GPX sections. No direct .gpx file endpoint publicly extracted; app links to each official route page.",
+      "routes": [
+        "Kaçkar 100K",
+        "Kaçkar 50K",
+        "Kaçkar 20K",
+        "Ayder 4K"
+      ],
+      "source": "https://kackar.utmb.world/",
+      "followUp": "Export GPX from each official UTMB map."
     },
     {
       "order": 94,
       "name": "Wildstrubel by UTMB",
-      "gpxStatus": "Official 2027 event (09-12 September) and six race pages verified; app links all official pages with Map + GPX. Direct .gpx endpoints are not exposed in page text.",
-      "source": "https://wildstrubel.utmb.world/de",
-      "followUp": "Export each route from its official UTMB Map + GPX panel."
+      "gpxStatus": "All six 2027 race pages provide Map + GPX panels. No direct .gpx file URL publicly extracted; app links to the official route pages.",
+      "routes": [
+        "Wild 70 Kandersteg",
+        "Wild 110 Crans-Montana",
+        "Wild 55 Adelboden",
+        "Wild Glacier Marathon",
+        "Wild 25 Leukerbad",
+        "Wild 10 Crans-Montana"
+      ],
+      "source": "https://wildstrubel.utmb.world/",
+      "followUp": "Export GPX from the official UTMB route maps."
     },
     {
       "order": 95,
       "name": "Paraty Brazil by UTMB",
-      "gpxStatus": "All seven official 2027 race pages are linked. UTMB FAQ explicitly confirms that GPX files are available on each individual race page; direct file URLs not exposed in text.",
-      "sources": [
-        "https://paraty.utmb.world/pt/races",
-        "https://paraty.utmb.world/pt/races-runners/other-information/faq"
+      "gpxStatus": "All seven 2027 race pages are available with Map + GPX sections. No direct .gpx file URL publicly extracted; app links to the official route pages.",
+      "routes": [
+        "PTR 100",
+        "PTR 55",
+        "PTR 34",
+        "PTR 25",
+        "NIGHT 10",
+        "RUN 7"
       ],
-      "followUp": "Open each race page and download its official GPX; respect private property access restrictions outside race days."
+      "source": "https://paraty.utmb.world/",
+      "followUp": "Export GPX from each official UTMB race map."
     }
   ],
   "nextBatch": "Continue with events 96-100 after package 19 checkpoint."
