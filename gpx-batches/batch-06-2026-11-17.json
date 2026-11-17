@@ -1,0 +1,69 @@
+{
+  "batch": 6,
+  "checkedAt": "2026-11-17",
+  "scope": "Events 26–30 in top-level EVENTS array",
+  "status": "saved",
+  "appCommit": "9284253738344ae7d724eef520fa3e12b6e40b95",
+  "events": [
+    {
+      "order": 26,
+      "name": "Transvulcania adidas",
+      "officialSource": "https://transvulcania.com/de/",
+      "routes": [
+        "Ultramarathon",
+        "Marathon",
+        "Halbmarathon",
+        "Vertical Kilometer",
+        "12K Light"
+      ],
+      "gpxStatus": "not-published-yet",
+      "note": "Official 2027 route pages were checked; no public GPX download was found."
+    },
+    {
+      "order": 27,
+      "name": "Ultra Trail Australia by UTMB",
+      "officialSources": [
+        "https://uta.utmb.world/races/UTAMiler",
+        "https://uta.utmb.world/races/UTA100"
+      ],
+      "gpxStatus": "stale-2026-course",
+      "note": "UTMB pages show Map + GPX, but explicitly state that the courses displayed are 2026. Do not use these as 2027 files; wait for updated 2027 tracks."
+    },
+    {
+      "order": 28,
+      "name": "Trail Alsace by UTMB",
+      "officialSources": [
+        "https://alsace.utmb.world/races/utdp",
+        "https://alsace.utmb.world/races/utdc",
+        "https://alsace.utmb.world/races/tdc"
+      ],
+      "gpxStatus": "not-published-yet",
+      "note": "Official UTMB race pages checked; no separate downloadable 2027 GPX file could be verified."
+    },
+    {
+      "order": 29,
+      "name": "Ultra Trail Snowdonia Eryri",
+      "officialSources": [
+        "https://eryri.utmb.world/races/Eryri-80K",
+        "https://eryri.utmb.world/races/Eryri-100M",
+        "https://eryri.utmb.world/races/Eryri-100K"
+      ],
+      "gpxStatus": "not-published-yet",
+      "note": "Organizer explicitly states that final GPX downloads will be available two weeks before the event."
+    },
+    {
+      "order": 30,
+      "name": "Alpenstadt City&Trail",
+      "officialSource": "https://www.cityundtrail.de/",
+      "gpxStatus": "not-verified",
+      "note": "Official organizer website could not be loaded in the browser; no GPX download verified."
+    }
+  ],
+  "followUps": [
+    "Transvulcania: request official GPX or recheck when organizers publish route files.",
+    "Ultra Trail Australia: recheck after 2027 GPX replaces the 2026 course map.",
+    "Trail Alsace: check for official GPX export on race pages or in runner guide.",
+    "Eryri: recheck two weeks before each 2027 race.",
+    "Alpenstadt City&Trail: retry official site and contact organizer if no download is listed."
+  ]
+}
