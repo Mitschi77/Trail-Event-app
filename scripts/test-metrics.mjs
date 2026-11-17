@@ -192,9 +192,10 @@ assert.ok(phaseFn(70,"A").find(p=>p.kind==="base").days < phaseFn(70,"C").find(p
 assert.equal(phaseFn(0,"B").length,0,"Overlapping races must not create a negative training block");
 const timelineGapMatch = html.match(/function seasonTrainingGapDays\(prev,next\)\{[\s\S]*?\}/);
 assert.ok(timelineGapMatch, "Season training gap must be calculated across calendar years");
-const timelineGapFn = new Function("seasonActualEnd", "seasonRecoveryDays", timelineGapMatch[0] + "; return seasonTrainingGapDays;")(
+const timelineGapFn = new Function("seasonActualEnd", "seasonRecoveryDays", "seasonActualRecord", timelineGapMatch[0] + "; return seasonTrainingGapDays;")(
   () => new Date("2026-12-20T12:00:00Z"),
-  () => 7
+  () => 7,
+  () => ({})
 );
 assert.equal(timelineGapFn({}, { date: new Date("2027-01-05T12:00:00Z") }), 9, "Training blocks must continue across New Year");
 assert.equal((html.match(/id="sortPlanChronologically"/g) || []).length, 1, "Planner control IDs must be unique");
