@@ -4,17 +4,9 @@ concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: true
 
+# Dieser Workflow wird nur noch manuell gestartet.
+# Die Web-App/PWA benötigt keine automatische native iOS-Projektgenerierung.
 on:
-  push:
-    branches: [main]
-    paths:
-      - "trail-icon.svg"
-      - "trail-apple-touch-icon.png"
-      - "package.json"
-      - "package-lock.json"
-      - "capacitor.config.json"
-      - "scripts/prepare-native.mjs"
-      - ".github/workflows/prepare-ios-project.yml"
   workflow_dispatch:
 
 permissions:
