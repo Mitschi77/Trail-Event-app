@@ -42,6 +42,14 @@ const routeMetricLabel = new Function("num", "routeMetricType", metricHelper[0] 
 assert.equal(routeMetricLabel({ km: 42.2, hm: "", maxh: "" }, "marathon"), "42.2 km");
 assert.equal(routeMetricLabel({ km: 50, hm: 2400, maxh: 12 }, "trail"), "50 km · 2400 hm · Max. Zeit 12 h");
 assert.equal(routeMetricLabel({ km: 6.7, hm: 120, maxh: 24 }, "backyard"), "6.7 km · 120 hm");
+const markupHelper = html.match(/function routeMetricMarkup\(route,eventRef\)\{[^}]*\}/);
+assert.ok(markupHelper, "Race type metric markup must exist");
+const routeMetricMarkup = new Function("num", "routeMetricType", markupHelper[0] + "; return routeMetricMarkup;")(
+  value => String(value),
+  value => value === "marathon" ? "Marathon" : value === "backyard" ? "Backyard" : "Trailrunning / Ultra"
+);
+assert.equal(routeMetricMarkup({ km: 42.2, hm: "", maxh: "" }, "marathon"), "<span><b>42.2</b> km</span>");
+
 
 assert.ok(html.includes("avgHeartRate:data.avgHeartRate||0"), "Imported FIT activities must retain average heart rate");
 assert.ok(html.includes("maxHeartRate:data.maxHeartRate||0"), "Imported FIT activities must retain maximum heart rate");
