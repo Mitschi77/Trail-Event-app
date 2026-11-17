@@ -8,9 +8,6 @@ on:
   push:
     branches: [main]
     paths:
-      - "index.html"
-      - "event-dates.json"
-      - "manifest.webmanifest"
       - "trail-icon.svg"
       - "trail-apple-touch-icon.png"
       - "package.json"
