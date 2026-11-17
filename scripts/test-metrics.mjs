@@ -3,11 +3,9 @@ import assert from "node:assert/strict";
 
 const html = await readFile(new URL("../index.html", import.meta.url), "utf8");
 assert.match(html, /function parseTcxData\(xmlText\)/, "TCX parser must remain available for Garmin exports");
-assert.match(html, /function parseActivityTrack\\(file\\)/, "Activity file parser must be available");
-assert.match(html, /@garmin\\/fitsdk@21\\.221\\.0/, "FIT imports must use a pinned Garmin SDK version");
-assert.match(html, /\\.fit,application\\/gpx\\+xml/, "Import controls must accept FIT, GPX and TCX files");
-
-assert.match(html, /\.tcx,application\/gpx\+xml,application\/vnd\.garmin\.tcx\+xml/, "route import controls must accept TCX and GPX files");
+assert.ok(html.includes("function parseActivityTrack(file)"), "Activity file parser must be available");
+assert.ok(html.includes("@garmin/fitsdk@21.221.0"), "FIT imports must use a pinned Garmin SDK version");
+assert.ok(html.includes('accept=".gpx,.tcx,.fit,'), "Import controls must accept FIT, GPX and TCX files");
 
 const match = html.match(/function completedRunDistance\(x\)\{[\s\S]*?\}/);
 assert.ok(match, "completedRunDistance helper must exist");
