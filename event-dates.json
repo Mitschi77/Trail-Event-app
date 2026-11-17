@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-17T07:43:19.952Z",
+  "updatedAt": "2026-11-17T07:43:25.439Z",
   "schemaVersion": 3,
   "events": {
     "transgrancanaria": {
@@ -2361,6 +2361,133 @@
         "0": {
           "routeId": "schwarzach-trail-47",
           "date": "2027-05-22",
+          "verified": true
+        }
+      }
+    },
+    "engadin-ut": {
+      "eventId": "engadin-ut",
+      "checkedAt": "2026-11-17T07:43:25.439Z",
+      "status": "verified",
+      "sources": [
+        {
+          "url": "https://www.engadinultratrail.ch/",
+          "status": "read",
+          "verification": "official-2027-page"
+        },
+        {
+          "url": "https://www.engadinultratrail.ch/eut102",
+          "status": "read",
+          "verification": "official-2027-page"
+        },
+        {
+          "url": "https://www.engadinultratrail.ch/eut-53",
+          "status": "read",
+          "verification": "official-2027-page"
+        },
+        {
+          "url": "https://www.engadinultratrail.ch/eut-23",
+          "status": "read",
+          "verification": "official-2027-page"
+        },
+        {
+          "url": "https://www.engadinultratrail.ch/eut-16",
+          "status": "read",
+          "verification": "official-2027-page"
+        }
+      ],
+      "eventPeriod": {
+        "startDate": "2027-07-16",
+        "endDate": "2027-07-17",
+        "verified": true
+      },
+      "routes": {
+        "0": {
+          "routeId": "eut102-102-5677",
+          "date": "2027-07-16",
+          "verified": true
+        },
+        "1": {
+          "routeId": "eut53-53-2639",
+          "date": "2027-07-17",
+          "verified": true
+        },
+        "2": {
+          "routeId": "engadin-et23-22-8-1064",
+          "date": "2027-07-17",
+          "verified": true
+        },
+        "3": {
+          "routeId": "engadin-et16-16-3-791",
+          "date": "2027-07-17",
+          "verified": true
+        }
+      }
+    },
+    "ultraks-matterhorn": {
+      "eventId": "ultraks-matterhorn",
+      "checkedAt": "2026-11-17T07:43:25.439Z",
+      "status": "verified",
+      "sources": [
+        {
+          "url": "https://www.myswitzerland.com/en-us/experiences/events/trek-matterhorn-ultraks/",
+          "status": "read",
+          "verification": "official-2027-page"
+        },
+        {
+          "url": "https://www.matterhorn-ultraks.ch/home",
+          "status": "read",
+          "verification": "official-2027-page"
+        }
+      ],
+      "eventPeriod": {
+        "startDate": "2027-08-20",
+        "endDate": "2027-08-22",
+        "verified": true
+      },
+      "routes": {},
+      "note": "Der Veranstaltungszeitraum 20.–22. August 2027 und die Distanzen/Höhenmeter sind belegt. Die einzelnen Starttage der Rennen sind in den geprüften Quellen noch nicht eindeutig angegeben."
+    },
+    "torlauf-dachstein": {
+      "eventId": "torlauf-dachstein",
+      "checkedAt": "2026-11-17T07:43:25.439Z",
+      "status": "verified",
+      "sources": [
+        {
+          "url": "https://www.torlauf-dachstein.info/infos",
+          "status": "read",
+          "verification": "official-2027-page"
+        }
+      ],
+      "eventPeriod": {
+        "startDate": "2027-09-03",
+        "endDate": "2027-09-04",
+        "verified": true
+      },
+      "routes": {
+        "0": {
+          "routeId": "marathon-41-4-2336",
+          "date": "2027-09-04",
+          "verified": true
+        },
+        "1": {
+          "routeId": "torlauf-ultra-72-4300",
+          "date": "2027-09-04",
+          "verified": true
+        },
+        "2": {
+          "routeId": "torlauf-half-24-510",
+          "date": "2027-09-04",
+          "verified": true
+        },
+        "3": {
+          "routeId": "torlauf-skyrace-24-2220",
+          "date": "2027-09-04",
+          "verified": true
+        },
+        "4": {
+          "routeId": "torlauf-10k-10-150",
+          "date": "2027-09-04",
           "verified": true
         }
       }
