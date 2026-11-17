@@ -151,4 +151,24 @@ assert.ok(html.includes("lines.join('\\r\\n')+'\\r\\n'"), "Calendar file must us
 assert.ok(html.includes("concat(plannedRepeatEntries.map(x=>"), "Season check must include repeated planned races");
 assert.ok(html.includes("plannedRepeatEntries=[];savePlannerState();renderPlanner();"), "Reset must clear repeat entries as well as the main plan");
 
-console.log("Validated round-based and manually recorded run distances.");
+
+assert.ok(html.includes('id="seasonEnhancements"'), "Season steering panel must exist");
+assert.ok(html.includes("function seasonRecoveryDays(e,r,record)"), "Recovery estimator must exist");
+assert.ok(html.includes("function seasonPhaseSegments(gapDays,priority)"), "Training phase planner must exist");
+assert.ok(html.includes("data-season-priority"), "Race priority selector must be wired");
+assert.ok(html.includes("data-season-date"), "Actual race date must be editable");
+assert.ok(html.includes("data-season-hours"), "Actual race duration must be editable");
+assert.ok(html.includes("function seasonActualRecord(x)"), "Completed race attempts must feed actual recovery data");
+const recoveryMatch = html.match(/function seasonRecoveryDays\(e,r,record\)\{[\s\S]*?\nfunction seasonPhaseSegments/);
+assert.ok(recoveryMatch, "Recovery estimator must be isolated for regression tests");
+const recoveryFn = new Function(recoveryMatch[0].replace(/\nfunction seasonPhaseSegments[\s\S]*$/, "") + "; return seasonRecoveryDays;")();
+assert.ok(recoveryFn({}, {km:100,hm:3000}, {}) >= 19, "100 km mountain races must receive a substantial recovery window");
+assert.ok(recoveryFn({}, {km:10,hm:0}, {}) < recoveryFn({}, {km:100,hm:3000}, {}), "Long mountain races must receive more recovery than short races");
+const phaseMatch = html.match(/function seasonPhaseSegments\(gapDays,priority\)\{[\s\S]*?\nfunction seasonActualRecord/);
+assert.ok(phaseMatch, "Training phase segmentation must be isolated for regression tests");
+const phaseFn = new Function(phaseMatch[0].replace(/\nfunction seasonActualRecord[\s\S]*$/, "") + "; return seasonPhaseSegments;")();
+const phases = phaseFn(70,"A");
+assert.ok(phases.some(p=>p.kind==="recovery") && phases.some(p=>p.kind==="base") && phases.some(p=>p.kind==="build") && phases.some(p=>p.kind==="taper"), "A-race training block must include recovery, base, build and taper");
+assert.equal(phaseFn(0,"B").length,0,"Overlapping races must not create a negative training block");
+
+console.log("Validated race priorities, training phases and actual-race recovery.");
