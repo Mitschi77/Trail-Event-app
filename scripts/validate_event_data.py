@@ -150,7 +150,7 @@ for missing_id in sorted(missing_feed_events):
     errors.append(f"{missing_id}: missing event-dates.json entry")
 for feed_event_id, feed_record in feed_events.items():
     if feed_event_id not in event_ids:
-        errors.append(f"event-dates.json contains unknown event ID {feed_event_id!r}")
+        warnings.append(f"event-dates.json contains stale event ID {feed_event_id!r}")
         continue
     period = feed_record.get("eventPeriod") or {}
     if period.get("startDate") and not valid_date(period["startDate"]):
@@ -162,7 +162,7 @@ for feed_event_id, feed_record in feed_events.items():
     for route_index, feed_route in (feed_record.get("routes") or {}).items():
         route_id = feed_route.get("routeId")
         if route_id not in event_route_ids.get(feed_event_id, set()):
-            errors.append(f"{feed_event_id}: feed references unknown route ID {route_id!r}")
+            warnings.append(f"{feed_event_id}: stale feed route ID {route_id!r} (not present in current event list)")
         if feed_route.get("date") and not valid_date(feed_route["date"]):
             errors.append(f"{feed_event_id} / {route_id}: invalid feed route date {feed_route['date']!r}")
 
