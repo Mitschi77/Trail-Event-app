@@ -1,0 +1,52 @@
+{
+  "batch": 23,
+  "checkedAt": "2026-11-17",
+  "scope": "Top-level events 111-115 in current EVENTS order",
+  "status": "saved",
+  "appCommit": "71203e1234e7df4c9792fcce631b3999635e4686",
+  "events": [
+    {
+      "order": 111,
+      "name": "24+1 Challenge",
+      "gpxStatus": "App entry is for 2 November 2026, already past; official 6.706 km loop confirmed but no separate public GPX download found.",
+      "source": "https://www.austriabackyardultra.com/",
+      "followUp": "Recheck next edition."
+    },
+    {
+      "order": 112,
+      "name": "Puglia Terra delle Gravine",
+      "gpxStatus": "Official UTMB 2026 pages provide Map + GPX for Sassi di Matera 145K, Le Maioliche di Laterza 85K and Castellaneta Underground 50K. Event 7-9 November 2026 is past; route metrics corrected.",
+      "source": "https://puglia.utmb.world/races",
+      "followUp": "Historical 2026 only; wait for next edition."
+    },
+    {
+      "order": 113,
+      "name": "3 Días Trail Ibiza",
+      "gpxStatus": "Official website currently shows only 2026 edition (28-30 November 2026) with Ultra 75.5K, Marathon 41K, Half 23.5K, Starter 11.8K and 10K. No 2027 GPX published.",
+      "source": "https://3diastrailibiza.com/",
+      "followUp": "Recheck when 2027 edition and final route are announced."
+    },
+    {
+      "order": 114,
+      "name": "Oman by UTMB",
+      "gpxStatus": "All five official 2026 race pages provide Map + GPX for 10-12 December 2026; event is upcoming. Direct GPX file URLs were not exposed; official route metrics corrected.",
+      "sources": [
+        "https://oman.utmb.world/races/HAJ",
+        "https://oman.utmb.world/races/JAC",
+        "https://oman.utmb.world/races/SKY",
+        "https://oman.utmb.world/races/OCT",
+        "https://oman.utmb.world/races/SAS"
+      ],
+      "followUp": "Export all five tracks from official UTMB map."
+    },
+    {
+      "order": 115,
+      "name": "Mammutmarsch",
+      "gpxStatus": "Official FAQ says route information and GPX files are sent about one week before the event and appear in participant account under Meine Veranstaltungen. Munich event 31 July 2027 offers 75/100 km.",
+      "source": "https://mammutmarsch.de/knowledge-base-haeufige-fragen-und-anleitungen-category/meine-teilnahme/",
+      "event": "https://mammutmarsch.de/events/mammutmarsch-muenchen-75-100-km",
+      "followUp": "Recheck in the week before the event; GPX is participant-only."
+    }
+  ],
+  "nextBatch": "Continue with events 116-120 after package 23 checkpoint."
+}
