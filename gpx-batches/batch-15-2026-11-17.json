@@ -3,55 +3,76 @@
   "checkedAt": "2026-11-17",
   "scope": "Top-level events 71-75 in current EVENTS order",
   "status": "saved",
-  "appCommit": "ce382aec998f7b72571800309d5396335febcbbb",
+  "appCommit": "2c99a58eec8509223b8390d2b946f4304fbc6604",
   "events": [
     {
       "order": 71,
       "name": "3Kings 3Hills",
-      "gpxStatus": "2027 routes confirmed (168M, 117K, 85K, 58K, 40K, 26K, 16K, 5K) but organizer states exact GPX tracks are released only two weeks before the event for nature-conservation reasons. All route detail links in app now state GPX pending.",
-      "source": "https://www.3kings-3hills.com/",
-      "followUp": "Recheck 9 July 2027 for official GPX release."
+      "gpxStatus": "All eight 2027 routes are linked to their official route pages. Organizer explicitly says exact GPX tracks are published only two weeks before the event for nature conservation; no old tracks imported.",
+      "routes": [
+        "Traily 5K",
+        "Shorty 16K",
+        "Base 26K",
+        "Marathon 40K",
+        "Trail Ultra 58K",
+        "Endurance 85K",
+        "Ultra Trail XL 117K",
+        "100 Miles 168K"
+      ],
+      "source": "https://www.3kings-3hills.com/fakten/",
+      "followUp": "Recheck around 9 July 2027 for official GPX files; exact course lines currently withheld."
     },
     {
       "order": 72,
       "name": "Davos X-Trail",
-      "gpxStatus": "Official 2027 Diamond course confirmed at 68.37 km / 3,309 hm. Official route page has topographic map but no public GPX download link; app now links to organizer map.",
+      "gpxStatus": "Official 2027 Diamond race is 68.37 km / 3,309 hm. The currently downloadable GPX is StreckeDiamond2026.gpx and is rejected as stale.",
       "source": "https://www.davos-xtrails.ch/diamond-68-km",
-      "followUp": "Recheck organizer page or request GPX from event office."
+      "followUp": "Wait for 2027 GPX. Do not use the 2026 track."
     },
     {
       "order": 73,
       "name": "The North Face Großglockner Ultra-Trail",
-      "gpxStatus": "Official 2027 route pages confirm distances and elevation, but no public GPX download on organizer pages. App links each of five route details pages.",
-      "source": "https://www.ultratrail.at/de/distanzen/grossglockner-ultra-trail",
-      "followUp": "Check official event app or ask organizer for files; do not use unofficial maps as organizer GPX."
+      "gpxStatus": "Five official 2027 races and their distances confirmed; public pages currently provide route descriptions and elevation-profile PDFs but no official GPX download found.",
+      "routes": [
+        "GGUT 110K / 6,500 hm",
+        "Osttirol Trail 84K / 5,000 hm",
+        "Großglockner Trail 57K / 3,500 hm",
+        "Weißsee Gletscherwelt Trail 37K / 1,500 hm",
+        "Kaprun Scenic Trail 16K / 1,000 hm"
+      ],
+      "source": "https://www.ultratrail.at/de/distanzen",
+      "followUp": "Recheck organizer downloads closer to event; no unofficial tracks substituted."
     },
     {
       "order": 74,
       "name": "SachsenTrail",
-      "gpxStatus": "Official pages link GPX files, but visible data stamps and actual download for UltraTrail show 2026 or 2025. These are stale for 2027 and rejected; all nine routes now link to their official route pages with GPX status pending.",
-      "sources": [
-        "https://www.sachsentrail.de/trails/ultratrail",
-        "https://www.sachsentrail.de/trails/halftrail",
-        "https://www.sachsentrail.de/trails/quartertrail",
-        "https://www.sachsentrail.de/trails/basetrail",
-        "https://www.sachsentrail.de/trails/funtrail",
-        "https://www.sachsentrail.de/trails/uphill-prolog"
-      ],
-      "followUp": "Recheck for newly dated 2027 GPX files."
+      "gpxStatus": "Organizer race pages currently offer GPX links with data status 20.05.2026; these are not verified as 2027 and have been removed from active GPX download fields.",
+      "source": "https://www.sachsentrail.de/trails/ultratrail",
+      "followUp": "Wait for new 2027 GPX files and compare each route before import."
     },
     {
       "order": 75,
       "name": "Gauja Trail by UTMB",
-      "gpxStatus": "Official 2027 pages confirm 91K, 53K, 21K, 13.5K and Sigulda Three Castles 12K. All have Map + GPX panels; direct .gpx file URLs are not exposed in page text. App now links directly to the official race pages.",
+      "gpxStatus": "Official UTMB race pages provide Map + GPX panels but no direct downloadable .gpx URL could be extracted. Added missing official 2027 Youth (6 km / 100 hm) and Kids (1.6 km / 30 hm) races to the app; dates set to 8 and 7 August respectively per organizer agenda.",
+      "routes": [
+        "100K 91 km / 2,200 hm",
+        "50K 53 km / 1,200 hm",
+        "20K 21 km / 500 hm",
+        "10K 13.5 km / 300 hm",
+        "Three Castles 12 km / 300 hm",
+        "Youth 6 km / 100 hm",
+        "Kids 1.6 km / 30 hm"
+      ],
       "sources": [
         "https://gauja.utmb.world/races/100K",
         "https://gauja.utmb.world/races/50K",
         "https://gauja.utmb.world/races/20K",
         "https://gauja.utmb.world/races/10K",
-        "https://gauja.utmb.world/races/ThreeCastles"
+        "https://gauja.utmb.world/races/ThreeCastles",
+        "https://gauja.utmb.world/races/Youth",
+        "https://gauja.utmb.world/races/Kids"
       ],
-      "followUp": "Export tracks from the official UTMB Map + GPX panels when available."
+      "followUp": "Export from official race map when GPX links are available."
     }
   ],
   "nextBatch": "Continue with events 76-80 after package 15 checkpoint."
