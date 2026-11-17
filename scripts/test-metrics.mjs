@@ -24,6 +24,11 @@ assert.ok(html.includes("const data=await parseActivityTrack(file);if(data.track
 
 assert.ok(html.includes("initActivityImport();"), "Activity import controls must initialize");
 assert.ok(html.includes("durationSeconds"), "Imported activities must retain elapsed time");
+assert.ok(html.includes("avgHeartRate:data.avgHeartRate||0"), "Imported FIT activities must retain average heart rate");
+assert.ok(html.includes("maxHeartRate:data.maxHeartRate||0"), "Imported FIT activities must retain maximum heart rate");
+assert.ok(html.includes("calories:data.calories||0"), "Imported FIT activities must retain calories");
+assert.ok(html.includes("Trainingsdaten:"), "Run history must display available imported training metrics");
+
 assert.ok(html.includes("function activityLocalDate(value)"), "Activity date conversion must be synchronous");
 assert.ok(html.includes("const data=await parseActivityTrack(file)"), "Route imports must await asynchronous file parsing");
 assert.ok(html.includes("eventValue!==''?EVENTS[Number(eventValue)]:null"), "Activity event selector must not silently choose the first event");
