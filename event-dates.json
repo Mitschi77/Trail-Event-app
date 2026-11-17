@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-17T07:26:57.869976+00:00",
+  "updatedAt": "2026-11-17T07:27:44.741Z",
   "schemaVersion": 3,
   "events": {
     "transgrancanaria": {
@@ -988,6 +988,248 @@
         "verified": true
       },
       "routes": {}
+    },
+    "la-corsa-della-bora": {
+      "eventId": "la-corsa-della-bora",
+      "checkedAt": "2026-11-17T07:27:44.741Z",
+      "status": "verified",
+      "sources": [
+        {
+          "url": "https://www.s1trail.com/de/dati-ufficiali-corsa-della-bora-2027/",
+          "status": "read",
+          "verification": "manual-official-page"
+        }
+      ],
+      "eventPeriod": {
+        "startDate": "2027-01-09",
+        "endDate": "2027-01-10",
+        "verified": true
+      },
+      "routes": {},
+      "note": "Offizielle 2027-Strecken und Distanzen weichen von den bisherigen App-Einträgen ab. Alte Streckenangaben nicht als aktuelle 2027-Strecken übernehmen; Streckenliste muss anhand der offiziellen Tabelle erneuert werden."
+    },
+    "arc-of-attrition-by-utmb": {
+      "eventId": "arc-of-attrition-by-utmb",
+      "checkedAt": "2026-11-17T07:27:44.741Z",
+      "status": "verified",
+      "sources": [
+        {
+          "url": "https://arcofattrition.utmb.world/en/races",
+          "status": "read",
+          "verification": "manual-official-page"
+        }
+      ],
+      "eventPeriod": {
+        "startDate": "2027-01-22",
+        "endDate": "2027-01-24",
+        "verified": true
+      },
+      "routes": {
+        "0": {
+          "routeId": "arc-100m-173-5507",
+          "date": "2027-01-22",
+          "verified": true
+        },
+        "1": {
+          "routeId": "arc-100k-82-7-2708",
+          "date": "2027-01-23",
+          "verified": true
+        }
+      }
+    },
+    "istrien": {
+      "eventId": "istrien",
+      "checkedAt": "2026-11-17T07:27:44.741Z",
+      "status": "verified",
+      "sources": [
+        {
+          "url": "https://istria.utmb.world/",
+          "status": "read",
+          "verification": "manual-official-page"
+        }
+      ],
+      "eventPeriod": {
+        "startDate": "2027-04-01",
+        "endDate": "2027-04-04",
+        "verified": true
+      },
+      "routes": {
+        "0": {
+          "routeId": "110-tausend-111-4074",
+          "date": "2027-04-03",
+          "verified": true
+        },
+        "1": {
+          "routeId": "69-tausend-70-2331",
+          "date": "2027-04-03",
+          "verified": true
+        }
+      }
+    },
+    "psyland-backyard-ultra": {
+      "eventId": "psyland-backyard-ultra",
+      "checkedAt": "2026-11-17T07:27:44.741Z",
+      "status": "verified",
+      "sources": [
+        {
+          "url": "https://www.insane-backyard-ultra.com/de/rennen/",
+          "status": "read",
+          "verification": "manual-official-page"
+        }
+      ],
+      "eventPeriod": {
+        "startDate": "2027-07-10",
+        "endDate": "2027-07-10",
+        "verified": true
+      },
+      "routes": {
+        "0": {
+          "routeId": "psyland-backyard-ultra-6-7",
+          "date": "2027-07-10",
+          "verified": true
+        }
+      }
+    },
+    "donautrail": {
+      "eventId": "donautrail",
+      "checkedAt": "2026-11-17T07:27:44.741Z",
+      "status": "verified",
+      "sources": [
+        {
+          "url": "https://donautrail.at/",
+          "status": "read",
+          "verification": "manual-official-page"
+        }
+      ],
+      "eventPeriod": {
+        "startDate": "2027-03-13",
+        "endDate": "2027-03-13",
+        "verified": true
+      },
+      "routes": {
+        "0": {
+          "routeId": "linz55-55-1-1429",
+          "date": "2027-03-13",
+          "verified": true
+        },
+        "1": {
+          "routeId": "linz75-76-1835",
+          "date": "2027-03-13",
+          "verified": true
+        },
+        "2": {
+          "routeId": "linz100-100-2150",
+          "date": "2027-03-13",
+          "verified": true
+        }
+      }
+    },
+    "marathon-de-sables": {
+      "eventId": "marathon-de-sables",
+      "checkedAt": "2026-11-17T07:27:44.741Z",
+      "status": "verified",
+      "sources": [
+        {
+          "url": "https://marathondessables.com/en",
+          "status": "read",
+          "verification": "manual-official-page"
+        }
+      ],
+      "eventPeriod": {
+        "startDate": "2027-01-08",
+        "endDate": "2027-01-13",
+        "verified": true
+      },
+      "routes": {
+        "0": {
+          "routeId": "mds-ultra-100-570",
+          "date": "2027-01-08",
+          "verified": true
+        },
+        "1": {
+          "routeId": "mds-ultra-miles-164-700",
+          "date": "2027-01-08",
+          "verified": true
+        }
+      }
+    },
+    "mountain-man-winter": {
+      "eventId": "mountain-man-winter",
+      "checkedAt": "2026-11-17T07:27:44.741Z",
+      "status": "verified",
+      "sources": [
+        {
+          "url": "https://www.reitimwinkl.de/mountainman-winterloop",
+          "status": "read",
+          "verification": "manual-official-page"
+        }
+      ],
+      "eventPeriod": null,
+      "routes": {
+        "0": {
+          "routeId": "12h-7-5-110",
+          "date": "2027-01-23",
+          "verified": true
+        },
+        "1": {
+          "routeId": "6h-7-5-110",
+          "date": "2027-01-23",
+          "verified": true
+        }
+      }
+    },
+    "chianti-ultra-trail": {
+      "eventId": "chianti-ultra-trail",
+      "checkedAt": "2026-11-17T07:27:44.741Z",
+      "status": "verified",
+      "sources": [
+        {
+          "url": "https://chianti.utmb.world/",
+          "status": "read",
+          "verification": "manual-official-page"
+        }
+      ],
+      "eventPeriod": {
+        "startDate": "2027-03-19",
+        "endDate": "2027-03-21",
+        "verified": true
+      },
+      "routes": {
+        "0": {
+          "routeId": "cut-73-3000",
+          "date": "2027-03-20",
+          "verified": true
+        },
+        "1": {
+          "routeId": "utcc-124-5200",
+          "date": "2027-03-20",
+          "verified": true
+        }
+      }
+    },
+    "otzi-trairun": {
+      "eventId": "otzi-trairun",
+      "checkedAt": "2026-11-17T07:27:44.741Z",
+      "status": "verified",
+      "sources": [
+        {
+          "url": "https://www.merano-suedtirol.it/de/oetzi-trailrun-naturns/anmeldung.html",
+          "status": "read",
+          "verification": "manual-official-page"
+        }
+      ],
+      "eventPeriod": {
+        "startDate": "2027-04-09",
+        "endDate": "2027-04-10",
+        "verified": true
+      },
+      "routes": {
+        "0": {
+          "routeId": "sunny-mountain-trail-30-2100",
+          "date": "2027-04-10",
+          "verified": true
+        }
+      }
     }
   }
 }
