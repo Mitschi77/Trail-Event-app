@@ -113,4 +113,12 @@ assert.equal(track.descentHm, 5);
 assert.equal(track.startTime, "2026-05-01T08:00:00.000Z");
 assert.equal(track.durationSeconds, 240);
 
+assert.ok(html.includes('id="exportPlanCalendar"'), "Planner must offer calendar export");
+assert.ok(html.includes("function exportPlannedCalendar()"), "Calendar export handler must exist");
+assert.ok(html.includes("text/calendar;charset=utf-8"), "Calendar export must use iCalendar MIME type");
+assert.ok(html.includes("DTSTART;VALUE=DATE:"), "Calendar export must create all-day race events");
+assert.ok(html.includes("lines.join('\\r\\n')+'\\r\\n'"), "Calendar file must use CRLF line endings");
+assert.ok(html.includes("concat(plannedRepeatEntries.map(x=>"), "Season check must include repeated planned races");
+assert.ok(html.includes("plannedRepeatEntries=[];savePlannerState();renderPlanner();"), "Reset must clear repeat entries as well as the main plan");
+
 console.log("Validated round-based and manually recorded run distances.");
