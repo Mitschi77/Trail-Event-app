@@ -52,7 +52,30 @@ jobs:
           git add ios package-lock.json
           if ! git diff --cached --quiet; then
             git commit -m "Generate native Capacitor iOS project"
-            git push
+            for attempt in 1 2 3 4 5; do
+              git fetch origin main
+              if git rebase origin/main; then
+                if git push origin HEAD:main; then
+                  exit 0
+                fi
+              else
+                echo "Main changed during generation; regenerating against latest main."
+                git rebase --abort
+                git reset --hard origin/main
+                npm install
+                npm run ios:sync
+                npm run build
+                git add ios package-lock.json
+                if git diff --cached --quiet; then
+                  echo "Latest main already contains the generated native project and lockfile."
+                  exit 0
+                fi
+                git commit -m "Generate native Capacitor iOS project"
+              fi
+              sleep 3
+            done
+            echo "Could not publish generated iOS project and lockfile after five attempts."
+            exit 1
           else
             echo "No native project changes to commit."
           fi
