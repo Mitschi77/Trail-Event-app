@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-17T07:28:22.234638+00:00",
+  "updatedAt": "2026-11-17T07:29:37.388Z",
   "schemaVersion": 3,
   "events": {
     "transgrancanaria": {
@@ -985,6 +985,24 @@
       "eventPeriod": {
         "startDate": "2027-09-09",
         "endDate": "2027-09-12",
+        "verified": true
+      },
+      "routes": {}
+    },
+    "tenerife-bluetrail": {
+      "eventId": "tenerife-bluetrail",
+      "checkedAt": "2026-11-17T07:29:37.388Z",
+      "status": "verified",
+      "sources": [
+        {
+          "url": "https://pdf.utmb.world/image/upload/v1780042781/tenerife/DOCUMENTOS/Reglamento%202027/Reglamento_TBT_2027_DEFINITIVO_es_ae4b5e7367.pdf.pdf",
+          "status": "read",
+          "verification": "official-2027-regulations"
+        }
+      ],
+      "eventPeriod": {
+        "startDate": "2027-04-08",
+        "endDate": "2027-04-10",
         "verified": true
       },
       "routes": {}
