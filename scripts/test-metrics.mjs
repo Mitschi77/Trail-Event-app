@@ -119,7 +119,7 @@ assert.equal(seasonRecoveryDays({}, { km: 50, hm: 1500 }, { actualDurationHours:
 assert.equal(seasonRecoveryDays({}, { km: 6.7, hm: 0 }, { raceStatus: "dnf" }), 7);
 assert.equal(seasonRecoveryDays({}, { km: 100, hm: 3000 }, { actualDurationHours: 24 }), 21);
 assert.ok(html.includes("esc(routeMetricLabel(x.r,x.id))"), "Season cards must respect race-specific metric display");
-assert.ok(html.includes("plannerRecoveryEnd(prev.e,prev.ri)||prev.date"), "Training timeline must begin recovery after the full event");
+assert.ok(html.includes("seasonActualEnd(prev).getTime()+seasonRecoveryDays"), "Training timeline must begin recovery after the actual finish date or planned event end");
 assert.ok(html.includes("grobe Planungsheuristik"), "Recovery estimate must be clearly described as a heuristic");
 
 assert.ok(html.includes("const plannerRecoveryEnd=(event,routeIndex)=>"), "Multi-day races must expose a final-day recovery helper");
