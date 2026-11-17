@@ -118,7 +118,8 @@ for event_index, event in enumerate(events):
             if route.get(field):
                 filled[field] += 1
         profile_url = str(route.get("profileUrl") or "")
-        has_profile = bool(route.get("elevationProfile") or route.get("profilePoints") or re.search(r"\\.(?:png|jpe?g|webp|svg)(?:[?#].*)?$", profile_url, re.I))
+        profile_path = profile_url.split("?", 1)[0].split("#", 1)[0].lower()
+        has_profile = bool(route.get("elevationProfile") or route.get("profilePoints") or profile_path.endswith((".png", ".jpg", ".jpeg", ".webp", ".svg")))
         if has_profile:
             filled["profileData"] += 1
         else:
