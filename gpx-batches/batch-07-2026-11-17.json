@@ -1,76 +1,52 @@
 {
   "batch": 7,
   "checkedAt": "2026-11-17",
-  "scope": "Events 31–35 in top-level EVENTS array",
+  "scope": "Top-level events 31-35 in current EVENTS order",
   "status": "saved",
-  "appCommit": "547cc7e63f27002efbc038e7a4ecbdad85580f1b",
+  "appCommit": "f4995e93a660be1eda5f9c778348aead3ffd47e8",
   "events": [
     {
       "order": 31,
       "name": "Garda Trentino Trail Extra",
-      "officialSource": "https://www.gardatrentinotrail.it/en-us/p/30",
-      "officialStats": {
-        "distanceKm": 100,
-        "elevationM": 5800
-      },
-      "gpxStatus": "needs-validation",
-      "note": "Official page shows Race GPX section but no direct file link could be extracted."
+      "gpxStatus": "No direct 2027 GPX found; official sources conflict on elevation gain (overview 7,000 hm vs regulation approx. 5,800 hm).",
+      "source": "https://www.gardatrentinotrail.it/de-de/p/32/garda-trentino-trail-extra",
+      "followUp": "Ask organizer or wait for final GPX and resolve elevation discrepancy before importing."
     },
     {
       "order": 32,
       "name": "Garda Trentino Trail Extra 100",
-      "officialSource": "https://www.gardatrentinotrail.it/de-de/p/32/garda-trentino-trail-extra",
-      "officialStats": {
-        "distanceKm": 100,
-        "elevationM": 7000
-      },
-      "gpxStatus": "needs-validation",
-      "note": "Official page says Extra 100 is 100 km / 7,000 m, while the 2027 race rules for Garda Trentino Trail Extra say 100 km / 5,800 m. This conflicts with event 31; no direct GPX file verified."
+      "gpxStatus": "Same official event as order 31, duplicate database entry with conflicting elevation values. No direct 2027 GPX found.",
+      "source": "https://www.gardatrentinotrail.it/de-de/p/32/garda-trentino-trail-extra",
+      "followUp": "Merge or reconcile duplicate event entries and confirm official elevation."
     },
     {
       "order": 33,
       "name": "Garda Trentino Trail",
-      "officialSource": "https://www.gardatrentinotrail.it/en-us/p/13/garda-trentino-trail",
-      "officialStats": {
-        "distanceKm": 75,
-        "elevationM": 4000
-      },
-      "gpxStatus": "official-route-link",
-      "routeFile": "https://drive.google.com/file/d/1Wru8LQLbkKR4xQ3vucRI66Y_IvPkWv6G/view?usp=sharing",
-      "note": "Organizer provides a Google Drive route-file link and a Race GPX section; exact file format and 2027 status not yet verified. Older 2024 GPX link exists and must not be reused."
+      "gpxStatus": "Official Race GPX link exists but points to Garda_Trentino_Trail_2024.gpx; rejected as stale for 2027.",
+      "source": "https://www.gardatrentinotrail.it/de-de/p/13/garda-trentino-trail",
+      "followUp": "Wait for 2027 file."
     },
     {
       "order": 34,
-      "name": "Mountainman",
-      "officialSource": "https://mountainman.de/trailrunning-events/alps/reit-im-winkl/streckendetails-reit-im-winkl/",
-      "gpxStatus": "stale-or-misassigned",
-      "official2027Routes": [
-        "XXL 73 km",
-        "XL 52 km",
-        "L 40 km",
-        "M 26 km",
-        "S 11 km"
+      "name": "Mountainman Reit im Winkl",
+      "gpxStatus": "Official 2027 event page links course maps through Komoot; GPX download requires organizer's route/Komoot access and coupon close to event. App route list is not aligned to five official distances.",
+      "source": "https://mountainman.de/trailrunning-events/alps/reit-im-winkl/streckendetails-reit-im-winkl/",
+      "officialRoutes": [
+        "XXL 73K",
+        "XL 52K",
+        "L 40K",
+        "M 26K",
+        "S 11K"
       ],
-      "observed2026Files": [
-        "https://mountainman.de/wp-content/uploads/2026/09/RIW26_XXL-Trail-neu.zip",
-        "https://mountainman.de/wp-content/uploads/2026/09/RIW26_XL-Trail-neu.zip",
-        "https://mountainman.de/wp-content/uploads/2026/09/RIW26_L-Trail-neu.zip",
-        "https://mountainman.de/wp-content/uploads/2026/09/RIW26_M.Trail_.zip",
-        "https://mountainman.de/wp-content/uploads/2026/09/RIW26_S-Trail.zip"
-      ],
-      "note": "The current Reit-im-Winkl page offers 2026 ZIP tracks, not 2027. App route list is mismatched: it contains 42/50/52/73 km, omits 40/26/11 km, and the 50 km record points to Grossarltal. Route-to-event assignment must be corrected before attaching tracks."
+      "followUp": "Correct app's route list to the five official distances and import GPX after organizer/Komoot release."
     },
     {
       "order": 35,
       "name": "Rennsteiglauf",
-      "officialSource": "https://www.rennsteiglauf.de/wettkampf/strecken/supermarathon/",
-      "gpxStatus": "map-only",
-      "note": "Official page confirms 73.9 km from Eisenach to Schmiedefeld. Organizer downloads page was checked; no GPX download found."
+      "gpxStatus": "Official route description and Outdooractive route profile available; no direct organizer GPX file link found.",
+      "source": "https://www.rennsteiglauf.de/wettkampf/strecken/supermarathon/",
+      "followUp": "Use official Outdooractive route profile or recheck for a direct GPX export."
     }
   ],
-  "followUps": [
-    "Garda Trentino: reconcile duplicate Extra records and obtain current GPX files from the Race GPX section or organizer.",
-    "Mountainman: correct event/venue assignment, then request 2027 tracks; do not use RIW26 ZIP files as 2027 tracks.",
-    "Rennsteiglauf: request GPX from organizer or check participant documents."
-  ]
+  "nextBatch": "Continue with events 36-40 after package 7 checkpoint."
 }
