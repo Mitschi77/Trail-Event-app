@@ -10,6 +10,13 @@ assert.ok(serviceWorker.includes("cache.put(cacheKey, copy)") && serviceWorker.i
 assert.ok(html.includes("'trailRacePriorities'"), "Season priorities must be included in private backups and cloud snapshots");
 assert.ok(html.includes("function collectLocalPlannerData(){const data={};CLOUD_KEYS.forEach"), "Backup and cloud snapshots must collect every registered local data key");
 assert.ok(html.includes("function seasonSave()"), "Season priorities must have a dedicated persistence function");
+assert.ok(html.includes("function localStorageBytes(replacementKey,replacementValue)"), "Local storage size guard must exist");
+assert.ok(html.includes("async function refreshStorageHealth()"), "Storage usage and persistence status must be visible");
+assert.ok(html.includes("async function requestPersistentStorage()"), "Users must be able to request persistent browser storage");
+assert.ok(html.includes("async function compressRouteImage(file)"), "Uploaded route PNGs must be optimized before local storage");
+assert.ok(html.includes("STORAGE_WARNING_BYTES"), "Route image writes must be guarded against localStorage quota exhaustion");
+assert.ok(html.includes("if(file.size>8*1024*1024)"), "Route image uploads must have a safe source-file size limit");
+
 assert.ok(html.includes("function renderOfficialQualitySummary()"), "Official event data quality dashboard must exist");
 assert.ok(html.includes("window.officialEventFeed=feed"), "Official feed audit must use the loaded official event data");
 assert.ok(html.includes("Maximalzeit / Cut-off-Daten"), "A verified cutoff list may satisfy the race time-limit completeness check");
