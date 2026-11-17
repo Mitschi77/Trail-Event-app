@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-17T07:30:48.484Z",
+  "updatedAt": "2026-11-17T07:31:36.870Z",
   "schemaVersion": 3,
   "events": {
     "transgrancanaria": {
@@ -1449,6 +1449,200 @@
         "2": {
           "routeId": "uts-100k-106-5400",
           "date": "2027-05-15",
+          "verified": true
+        }
+      }
+    },
+    "grossglockner-mountain-run": {
+      "eventId": "grossglockner-mountain-run",
+      "checkedAt": "2026-11-17T07:31:36.870Z",
+      "status": "verified",
+      "sources": [
+        {
+          "url": "https://grossglockner-mountainrun.at/",
+          "status": "read",
+          "verification": "manual-official-page"
+        }
+      ],
+      "eventPeriod": {
+        "startDate": "2027-07-02",
+        "endDate": "2027-07-04",
+        "verified": true
+      },
+      "routes": {
+        "0": {
+          "routeId": "grossglockner-mountain-run-13-3-1300",
+          "date": "2027-07-04",
+          "verified": true
+        }
+      }
+    },
+    "kullamannen": {
+      "eventId": "kullamannen",
+      "checkedAt": "2026-11-17T07:31:36.870Z",
+      "status": "verified",
+      "sources": [
+        {
+          "url": "https://kullamannen.utmb.world/registration",
+          "status": "read",
+          "verification": "manual-official-page"
+        }
+      ],
+      "eventPeriod": {
+        "startDate": "2027-11-05",
+        "endDate": "2027-11-06",
+        "verified": true
+      },
+      "routes": {
+        "0": {
+          "routeId": "sprint-ultra-100km-108-749",
+          "date": "2027-11-05",
+          "verified": true
+        },
+        "1": {
+          "routeId": "ultra-100-miles-173-2300",
+          "date": "2027-11-05",
+          "verified": true
+        },
+        "2": {
+          "routeId": "seventh-seal-53-727",
+          "date": "2027-11-06",
+          "verified": true
+        },
+        "3": {
+          "routeId": "north-shore-22-96",
+          "date": "2027-11-06",
+          "verified": true
+        }
+      }
+    },
+    "restonica-trail-corsica": {
+      "eventId": "restonica-trail-corsica",
+      "checkedAt": "2026-11-17T07:31:36.870Z",
+      "status": "verified",
+      "sources": [
+        {
+          "url": "https://restonica.utmb.world/",
+          "status": "read",
+          "verification": "manual-official-page"
+        }
+      ],
+      "eventPeriod": {
+        "startDate": "2027-07-08",
+        "endDate": "2027-07-10",
+        "verified": true
+      },
+      "routes": {
+        "0": {
+          "routeId": "rt100k-67-3900",
+          "date": "2027-07-10",
+          "verified": true
+        },
+        "1": {
+          "routeId": "utc100m-110-7200",
+          "date": "2027-07-08",
+          "verified": true
+        },
+        "2": {
+          "routeId": "pm50k-52-2900",
+          "date": "2027-07-10",
+          "verified": true
+        },
+        "3": {
+          "routeId": "tt50k-33-2400",
+          "date": "2027-07-10",
+          "verified": true
+        },
+        "4": {
+          "routeId": "gt20k-17-650",
+          "date": "2027-07-09",
+          "verified": true
+        }
+      }
+    },
+    "davos-x-trail": {
+      "eventId": "davos-x-trail",
+      "checkedAt": "2026-11-17T07:31:36.870Z",
+      "status": "verified",
+      "sources": [
+        {
+          "url": "https://www.davos-xtrails.ch/",
+          "status": "read",
+          "verification": "manual-official-page"
+        }
+      ],
+      "eventPeriod": {
+        "startDate": "2027-07-23",
+        "endDate": "2027-07-24",
+        "verified": true
+      },
+      "routes": {
+        "0": {
+          "routeId": "davos-x-trail-68-2606",
+          "date": "2027-07-24",
+          "verified": true
+        }
+      }
+    },
+    "trans-alpine-run": {
+      "eventId": "trans-alpine-run",
+      "checkedAt": "2026-11-17T07:31:36.870Z",
+      "status": "verified",
+      "sources": [
+        {
+          "url": "https://www.transalpine-run.com/en",
+          "status": "read",
+          "verification": "manual-official-page"
+        }
+      ],
+      "eventPeriod": {
+        "startDate": "2027-09-18",
+        "endDate": "2027-09-24",
+        "verified": true
+      },
+      "routes": {
+        "0": {
+          "routeId": "2run-2-tage-80-4500",
+          "date": "2027-09-18",
+          "verified": true
+        },
+        "1": {
+          "routeId": "solo-7-tage-250-18000",
+          "date": "2027-09-18",
+          "verified": true
+        }
+      }
+    },
+    "obertauern-trailrun-summit": {
+      "eventId": "obertauern-trailrun-summit",
+      "checkedAt": "2026-11-17T07:31:36.870Z",
+      "status": "verified",
+      "sources": [
+        {
+          "url": "https://www.trailrun-summit.com/",
+          "status": "read",
+          "verification": "manual-official-page"
+        }
+      ],
+      "eventPeriod": {
+        "startDate": "2027-07-09",
+        "endDate": "2027-07-11",
+        "verified": true
+      },
+      "routes": {
+        "0": {
+          "routeId": "endurance-trail-2-summits-53-3061",
+          "date": "2027-07-10",
+          "verified": true
+        },
+        "1": {
+          "routeId": "trail-ultra-8-summits-77-5080",
+          "date": "2027-07-10",
+          "verified": true
+        },
+        "2": {
+          "routeId": "extreme-100-trail-8-summits-108-6677",
+          "date": "2027-07-10",
           "verified": true
         }
       }
