@@ -24,6 +24,16 @@ assert.ok(html.includes("const data=await parseActivityTrack(file);if(data.track
 
 assert.ok(html.includes("initActivityImport();"), "Activity import controls must initialize");
 assert.ok(html.includes("durationSeconds"), "Imported activities must retain elapsed time");
+const metricHelper = html.match(/function routeMetricLabel\(route,eventRef\)\{[^}]*\}/);
+assert.ok(metricHelper, "Race type metric formatter must exist");
+const routeMetricLabel = new Function("num", "routeMetricType", metricHelper[0] + "; return routeMetricLabel;")(
+  value => String(value),
+  value => value === "marathon" ? "Marathon" : value === "backyard" ? "Backyard" : "Trailrunning / Ultra"
+);
+assert.equal(routeMetricLabel({ km: 42.2, hm: "", maxh: "" }, "marathon"), "42.2 km");
+assert.equal(routeMetricLabel({ km: 50, hm: 2400, maxh: 12 }, "trail"), "50 km · 2400 hm · Max. Zeit 12 h");
+assert.equal(routeMetricLabel({ km: 6.7, hm: 120, maxh: 24 }, "backyard"), "6.7 km · 120 hm");
+
 assert.ok(html.includes("avgHeartRate:data.avgHeartRate||0"), "Imported FIT activities must retain average heart rate");
 assert.ok(html.includes("maxHeartRate:data.maxHeartRate||0"), "Imported FIT activities must retain maximum heart rate");
 assert.ok(html.includes("calories:data.calories||0"), "Imported FIT activities must retain calories");
