@@ -3,84 +3,66 @@
   "checkedAt": "2026-11-17",
   "scope": "Top-level events 121-125 in current EVENTS order",
   "status": "saved",
-  "appCommit": "9a3ce27ec87052a9ba3e1945c073ef92b592f349",
+  "appCommit": "82f63a892e84f373f07fc4a0aae73c7ccc1de269",
   "events": [
     {
       "order": 121,
       "name": "Desert Rats Trail Running Festival by UTMB",
-      "gpxStatus": "All four official 2027 race pages offer GPX download controls, but the linked files are explicitly from /2025/ (2025_Desert_Rats...). Stale files removed from active GPX download fields.",
-      "routes": [
-        "100K 100 km / 2,050 hm",
-        "50K 48 km / 1,050 hm",
-        "21K 21 km / 700 hm",
-        "10K 9 km / 200 hm"
-      ],
+      "gpxStatus": "Official 2027 race pages exist for 100K, 50K, 21K and 10K, but the current GPX section says last updated 2026. All 2026 files rejected for 2027; official race pages linked.",
       "sources": [
-        "https://desertrats.utmb.world/races/100k",
-        "https://desertrats.utmb.world/races/50k",
-        "https://desertrats.utmb.world/races/21k",
-        "https://desertrats.utmb.world/races/10k"
+        "https://desertrats.utmb.world/races/100K",
+        "https://desertrats.utmb.world/races/50K",
+        "https://desertrats.utmb.world/races/21K",
+        "https://desertrats.utmb.world/races/10K"
       ],
-      "followUp": "Wait for 2027 GPX files; do not use 2025 files."
+      "followUp": "Recheck when UTMB publishes updated 2027 GPX files."
     },
     {
       "order": 122,
       "name": "Hiroshima by UTMB",
-      "gpxStatus": "All three official 2027 race pages are live and show Map + GPX panels, but no direct .gpx download URL is exposed. App links to official race pages.",
-      "routes": [
-        "HIROSHIMA 100K 95 km / 5,600 hm",
-        "HIROSHIMA 50K 48.7 km / 2,755 hm",
-        "HIROSHIMA 25K 25 km / 880 hm"
+      "gpxStatus": "Official 2027 race pages for 100K, 50K and 25K confirmed. 100K page confirms 95 km / 5,600 hm and Map + GPX panel. App links all three official pages; direct .gpx endpoints are not exposed.",
+      "sources": [
+        "https://hiroshima.utmb.world/races/HIROSHIMA100K",
+        "https://hiroshima.utmb.world/races/HIROSHIMA50K",
+        "https://hiroshima.utmb.world/races/HIROSHIMA25K"
       ],
-      "source": "https://hiroshima.utmb.world/",
-      "followUp": "Export GPX from official map if the tab becomes available."
+      "followUp": "Export each track from official UTMB Map + GPX panels."
     },
     {
       "order": 123,
       "name": "The Canyons Endurance Runs by UTMB",
-      "gpxStatus": "All four 2027 race pages currently label their GPX downloads as 2026 files and explicitly say they may change for 2027. No 2026 files imported.",
-      "routes": [
-        "100M 161 km / 5,550 hm",
-        "100K 100 km / 3,750 hm",
-        "50K 50 km / 1,700 hm",
-        "25K 25 km / 850 hm"
-      ],
+      "gpxStatus": "Official 2027 race pages exist, but the 100M page explicitly says the available GPX is the 2026 file and subject to change for 2027. App links each route page and rejects all 2026 files.",
       "sources": [
         "https://canyons.utmb.world/races/100M",
         "https://canyons.utmb.world/races/100K",
         "https://canyons.utmb.world/races/50K",
         "https://canyons.utmb.world/races/25K"
       ],
-      "followUp": "Recheck for official 2027 GPX replacements."
+      "followUp": "Recheck each distance for new 2027 GPX files."
     },
     {
       "order": 124,
       "name": "Rothrock by UTMB",
-      "gpxStatus": "Official 2027 pages for 50K and 25K currently link GPX files explicitly labeled 2026 and subject to change for 2027. Stale tracks removed from active downloads.",
-      "routes": [
-        "50K 53.3 km / 1,550 hm",
-        "25K 26.9 km / 1,180 hm"
-      ],
+      "gpxStatus": "Official 2027 race pages confirm 50K (53.3 km / 1,550 hm) and 25K. Both currently label their GPX downloads as 2026 files that may change for 2027; old files rejected.",
       "sources": [
         "https://rothrock.utmb.world/races/50K",
         "https://rothrock.utmb.world/races/25K"
       ],
-      "followUp": "Wait for 2027 GPX files."
+      "followUp": "Recheck when the 2027 GPX files are published."
     },
     {
       "order": 125,
       "name": "Trail du Saint-Jacques by UTMB",
-      "gpxStatus": "All six official 2027 race pages are available. The FAQ's GPX date (11 June) is in the 2026 FAQ and is not confirmed for 2027; no current 2027 GPX files verified.",
-      "routes": [
-        "Ultra 100M",
-        "Grand Trail 100K",
-        "Monistrail 50K",
-        "Les Chibottes 20K",
-        "Le 12 du Dolaizon",
-        "Rando 28KM"
+      "gpxStatus": "All six official 2027 route pages linked. Direct public GPX file links or explicit Map + GPX downloads could not be verified from the accessible page text; no third-party tracks added.",
+      "sources": [
+        "https://saint-jacques.utmb.world/races/100M",
+        "https://saint-jacques.utmb.world/races/100K",
+        "https://saint-jacques.utmb.world/races/50K",
+        "https://saint-jacques.utmb.world/races/20K",
+        "https://saint-jacques.utmb.world/en/races/Le-12-du-Dolaizon",
+        "https://saint-jacques.utmb.world/en/races/R28"
       ],
-      "source": "https://saint-jacques.utmb.world/faq",
-      "followUp": "Recheck 2027 FAQ and race pages near June 2027 for final GPX release."
+      "followUp": "Check each official course page or contact organizer for the 2027 GPX export."
     }
   ],
   "nextBatch": "Continue with events 126-129 after package 25 checkpoint."
