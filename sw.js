@@ -1,5 +1,5 @@
 const CACHE_NAME = 'trail-event-planner-v22';
-const APP_SHELL = ['./', './index.html', './event-dates.json', './manifest.webmanifest', './trail-icon.svg', './trail-apple-touch-icon.png'];
+const APP_SHELL = ['./', './index.html', './race-tools.js', './event-dates.json', './manifest.webmanifest', './trail-icon.svg', './trail-apple-touch-icon.png'];
 
 self.addEventListener('install', event => {
   event.waitUntil(
