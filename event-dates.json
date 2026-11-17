@@ -3353,6 +3353,79 @@
           "verified": true
         }
       }
+    },
+    "utmb-mont-blanc": {
+      "eventId": "utmb-mont-blanc",
+      "checkedAt": "2026-11-17T07:47:59.247Z",
+      "status": "unconfirmed",
+      "sources": [
+        {
+          "url": "https://montblanc.utmb.world/races-runners/runners/infos-pratiques",
+          "status": "read",
+          "verification": "official-page-says-2027-dates-coming-soon"
+        }
+      ],
+      "eventPeriod": {
+        "verified": false,
+        "startDate": null,
+        "endDate": null
+      },
+      "routes": {
+        "0": {
+          "routeId": "occ-57-3500",
+          "verified": false,
+          "date": null
+        },
+        "1": {
+          "routeId": "ccc-101-6050",
+          "verified": false,
+          "date": null
+        },
+        "2": {
+          "routeId": "utmb-176-9900",
+          "verified": false,
+          "date": null
+        }
+      }
+    },
+    "infinite-trails": {
+      "eventId": "infinite-trails",
+      "checkedAt": "2026-11-17T07:47:59.247Z",
+      "status": "unconfirmed",
+      "sources": [
+        {
+          "url": "https://infinite-trails.com/",
+          "status": "read",
+          "verification": "official-2027-edition-announced-date-not-published-on-page"
+        }
+      ],
+      "eventPeriod": {
+        "verified": false,
+        "startDate": null,
+        "endDate": null
+      },
+      "routes": {
+        "0": {
+          "routeId": "30k-30-1900",
+          "verified": false,
+          "date": null
+        },
+        "1": {
+          "routeId": "45k-44-3146",
+          "verified": false,
+          "date": null
+        },
+        "2": {
+          "routeId": "60k-62-5200",
+          "verified": false,
+          "date": null
+        },
+        "3": {
+          "routeId": "infinite-trails-15k-13-6-871",
+          "verified": false,
+          "date": null
+        }
+      }
     }
   }
 }
