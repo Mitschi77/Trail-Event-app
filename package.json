@@ -9,7 +9,7 @@
     "ios:sync": "npm run build && cap sync ios",
     "ios:open": "cap open ios",
     "ios:run": "cap run ios",
-    "test:syntax": "node scripts/check-inline.mjs && node scripts/test-metrics.mjs"
+    "test:syntax": "node --check sw.js && node scripts/check-inline.mjs && node scripts/test-metrics.mjs"
   },
   "dependencies": {
     "@capacitor/core": "^7.4.3",
