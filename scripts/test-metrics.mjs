@@ -10,6 +10,13 @@ assert.ok(serviceWorker.includes("cache.put(cacheKey, copy)") && serviceWorker.i
 assert.ok(html.includes("'trailRacePriorities'"), "Season priorities must be included in private backups and cloud snapshots");
 assert.ok(html.includes("function collectLocalPlannerData(){const data={};CLOUD_KEYS.forEach"), "Backup and cloud snapshots must collect every registered local data key");
 assert.ok(html.includes("function seasonSave()"), "Season priorities must have a dedicated persistence function");
+assert.ok(html.includes("function renderRaceStrategy(id,ri)"), "Per-race strategy planner must exist");
+assert.ok(html.includes("function saveRaceStrategy(id,ri)"), "Race strategy values must be persisted");
+assert.ok(html.includes("function renderRaceChecklist(id,ri)"), "Per-race checklist must exist");
+assert.ok(html.includes("function trainingLoadSummary()"), "Training load summary must be derived from recorded runs");
+assert.ok(html.includes("function renderSegmentPlanner(id,ri)"), "GPX segment planner must exist");
+assert.ok(html.includes("function trackSegmentAnalysis(route,id,ri)"), "GPX elevation segments must be analyzed");
+
 assert.ok(html.includes("function localStorageBytes(replacementKey,replacementValue)"), "Local storage size guard must exist");
 assert.ok(html.includes("async function refreshStorageHealth()"), "Storage usage and persistence status must be visible");
 assert.ok(html.includes("async function requestPersistentStorage()"), "Users must be able to request persistent browser storage");
