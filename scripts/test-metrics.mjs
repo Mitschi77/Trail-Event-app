@@ -2,6 +2,11 @@ import { readFile } from "node:fs/promises";
 import assert from "node:assert/strict";
 
 const html = await readFile(new URL("../index.html", import.meta.url), "utf8");
+
+assert.ok(html.includes("'trailRacePriorities'"), "Season priorities must be included in private backups and cloud snapshots");
+assert.ok(html.includes("function collectLocalPlannerData(){const data={};CLOUD_KEYS.forEach"), "Backup and cloud snapshots must collect every registered local data key");
+assert.ok(html.includes("function seasonSave()"), "Season priorities must have a dedicated persistence function");
+
 assert.match(html, /function parseTcxData\(xmlText\)/, "TCX parser must remain available for Garmin exports");
 assert.ok(html.includes("async function parseActivityTrack(file)"), "Activity file parser must be async for FIT decoding");
 assert.ok(html.includes("function validateActivityFileSize(file)"), "Activity file size validation must exist");
