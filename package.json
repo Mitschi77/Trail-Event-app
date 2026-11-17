@@ -11,7 +11,8 @@
     "ios:run": "cap run ios"
   },
   "dependencies": {
-    "@capacitor/core": "^7.4.3"
+    "@capacitor/core": "^7.4.3",
+    "sharp": "^0.34.3"
   },
   "devDependencies": {
     "@capacitor/cli": "^7.4.3",
