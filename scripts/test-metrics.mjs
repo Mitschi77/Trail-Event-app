@@ -18,6 +18,14 @@ assert.ok(raceTools.includes("function checklist(id,ri)"), "Per-race checklist m
 assert.ok(raceTools.includes("function training()"), "Recorded training history must be summarized");
 assert.ok(raceTools.includes("function segmentUi(id,ri,r)"), "GPX segment planner must exist");
 assert.ok(raceTools.includes("function segments(r,id,ri)"), "GPX elevation segments must be analyzed");
+
+assert.ok(raceTools.includes("Verpflegungs-Erinnerungen"), "Race strategy must calculate fueling reminders");
+assert.ok(raceTools.includes("angegebenen Maximalzeit"), "Race strategy must compare the estimate with the route cutoff");
+assert.ok(raceTools.includes("raceCheckCount"), "Checklist must show completed-item progress");
+assert.ok(raceTools.includes("groupDone"), "Checklist must show progress per category");
+assert.ok(raceTools.includes("Saisonpriorität:"), "Race preparation must display the season priority");
+assert.ok(raceTools.includes("Noch '+days+' Tage bis zum Start"), "Race preparation must show a countdown to the event");
+
 assert.ok(html.includes('src="./race-tools.js"'), "Race preparation module must load");
 assert.ok(html.includes('src="./season-tools.js"'), "Season training module must load");
 assert.ok(seasonTools.includes("function load()"), "Weekly training load must use recorded activities");
