@@ -1,0 +1,96 @@
+{
+  "batch": 4,
+  "checkedAt": "2026-11-17",
+  "scope": "Events 16–20 in top-level EVENTS array",
+  "status": "saved",
+  "appCommit": "2841ac6e3ee7e3d080c47cb65786e609d24d1a01",
+  "events": [
+    {
+      "order": 16,
+      "name": "Ultratrail Fränkische Schweiz",
+      "officialSources": [
+        "https://www.ultratrail-fraenkische-schweiz.de/trailrunning-strecke/66km-longtrail/",
+        "https://www.ultratrail-fraenkische-schweiz.de/trailrunning-strecke/100km-ultratrail/"
+      ],
+      "routes": [
+        "Longtrail 66K",
+        "Ultratrail 100K",
+        "Speedtrail 33K",
+        "Shorttrail 15K"
+      ],
+      "gpxStatus": "not-verified",
+      "note": "Official route pages show distances and event information but no public GPX download link was found."
+    },
+    {
+      "order": 17,
+      "name": "Hamburg Marathon",
+      "officialSource": "https://haspa-marathon-hamburg.de/strecke/",
+      "gpxStatus": "stale-official-link",
+      "observedFiles": [
+        "https://haspa-marathon-hamburg.de/download/strecke/HMH26_Marathon.gpx",
+        "https://haspa-marathon-hamburg.de/download/strecke/HMH26_Halbmarathon.gpx"
+      ],
+      "note": "Official page says GPX is available but both files are explicitly HMH26 (2026); do not use as 2027 track."
+    },
+    {
+      "order": 18,
+      "name": "TCS London Marathon - Major",
+      "officialSource": "https://www.londonmarathonevents.co.uk/london-marathon/course",
+      "gpxStatus": "map-only",
+      "note": "Official course page has route information but no GPX download link was found."
+    },
+    {
+      "order": 19,
+      "name": "Oh Meu Deus",
+      "officialSources": [
+        "https://ohmeudeus.utmb.world/races/omd100m",
+        "https://ohmeudeus.utmb.world/races/omd100k"
+      ],
+      "routes": [
+        {
+          "name": "100M",
+          "gpxStatus": "not-published-yet",
+          "note": "No GPX download found on official 100M page."
+        },
+        {
+          "name": "100K",
+          "gpxStatus": "interactive-map",
+          "note": "Official page shows Map + GPX tab, but no direct file link was exposed."
+        }
+      ]
+    },
+    {
+      "order": 20,
+      "name": "innsbruck Alpine",
+      "officialSources": [
+        "https://www.innsbruckalpine.at/rennen/alle-bewerbe/",
+        "https://www.innsbruckalpine.at/race/panorama-ultra-trail/"
+      ],
+      "gpxStatus": "stale-official-link for 11 of 12 routes; Young Talents not verified",
+      "note": "Official 2027 route pages currently link GPX files whose path/name says IATF26 (2026). They were not attached as 2027 files. Young Talents page mentions a GPX service but no direct file link was verified.",
+      "observedStaleFiles": [
+        "https://assets.innsbruckalpine.at/innsbruckalpine/2026/04/IATF26_Trail-Hunt_260429.gpx",
+        "https://assets.innsbruckalpine.at/innsbruckalpine/2026/02/IATF26_K7_251021.gpx",
+        "https://assets.innsbruckalpine.at/innsbruckalpine/2026/04/IATF26_VTC_260423.gpx",
+        "https://assets.innsbruckalpine.at/innsbruckalpine/2026/04/IATF26_K15_260423.gpx",
+        "https://assets.innsbruckalpine.at/innsbruckalpine/2026/04/IAT26_K25_260429.gpx",
+        "https://assets.innsbruckalpine.at/innsbruckalpine/2026/04/IATF26_K35_260429.gpx",
+        "https://assets.innsbruckalpine.at/innsbruckalpine/2026/04/IATF26_K42_260429.gpx",
+        "https://assets.innsbruckalpine.at/innsbruckalpine/2026/04/IATF26_K65_260429.gpx",
+        "https://assets.innsbruckalpine.at/innsbruckalpine/2026/04/IATF26_K85_260429.gpx",
+        "https://assets.innsbruckalpine.at/innsbruckalpine/2026/04/IATF26_K110_260429.gpx"
+      ]
+    }
+  ],
+  "followUps": [
+    "UTFS: ask organizer for official 2027 GPX or recheck route pages when released.",
+    "Hamburg: recheck official page for HMH27 GPX files.",
+    "Oh Meu Deus: inspect map export for 100K and ask organizer about 100M GPX.",
+    "Innsbruck Alpine: recheck all event routes for IATF27 GPX files; never use IATF26 tracks as 2027 routes."
+  ],
+  "dataQualityFlags": [
+    "Hamburg Marathon app date is 2026-04-27 while official page lists the 2027 race on 2027-04-25.",
+    "London Marathon app date is 2026-04-27; current event-year date needs reconciliation.",
+    "UTFS route dates differ by distance: Longtrail 24 Apr 2027, 100K 23 Apr 2027."
+  ]
+}
