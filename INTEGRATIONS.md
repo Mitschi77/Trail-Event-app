@@ -1,71 +1,63 @@
-# Strava- und Garmin-Integration
+# Strava- und Garmin-Anbindung
 
-## Bereits umgesetzt
+## Bereits verfügbar: Dateiimport
 
-- Strecken- und Höhenprofilimport aus GPX-Dateien.
-- Zusätzlich werden Garmin-/Training-Center-XML-Dateien (TCX) und native Garmin-FIT-Aktivitätsdateien eingelesen.
-- Aus den Trackpunkten berechnet die App Distanz, Aufstieg, Abstieg, Streckenkarte und Höhenprofil.
-- Dateien können in der Streckenpflege für Karte/Höhenprofil oder in der Laufhistorie als absolvierte Aktivität importiert werden. Für die Laufhistorie werden Startdatum, Distanz, Aufstieg und – soweit in der Datei enthalten – Laufzeit übernommen. Es werden dafür keine Zugangsdaten zu Strava oder Garmin benötigt.
+- Garmin FIT, Garmin/Training Center TCX und GPX werden unterstützt.
+- Eine Aktivität kann in der Laufhistorie einem Event und einer Strecke zugeordnet werden.
+- Übernommene Werte: Startdatum, Distanz, Höhenmeter, Dauer und – sofern in der FIT-Datei enthalten – durchschnittlicher/maximaler Puls sowie Kalorien.
+- Eine Streckendatei kann außerdem direkt an einer Eventstrecke hinterlegt werden; daraus entstehen Streckenkarte und Höhenprofil.
+- Der Import funktioniert ohne Strava- oder Garmin-Passwort und ohne API-Freischaltung.
+- Wiederholte Importe werden anhand eines SHA-256-Dateifingerprints erkannt. Bereits manuell eingetragene Platzierung und Bewertung bleiben bei einer Ergänzung erhalten.
 
-## Zielbild für automatische Synchronisierung
+## Strava: direkte Verbindung
 
-Die Synchronisierung soll Aktivitäten importieren, nicht ungefragt Trainingsdaten an die Plattformen zurückschreiben.
+Technisch ist die Strava-API geeignet, um Aktivitäten nach Zustimmung des jeweiligen Nutzers zu lesen. Die Verbindung muss über OAuth 2.0 erfolgen. Die App erhält nur die freigegebenen Berechtigungen; Passwörter werden niemals in der Trail-App abgefragt.
 
-### Strava
+**Einschränkungen für diese App:**
 
-1. Nutzer startet „Mit Strava verbinden“.
-2. Anmeldung und Zustimmung erfolgen über Stravas OAuth-Seite, nicht in einem eingebetteten Passwortformular.
-3. Die App fordert nur Leserechte für Aktivitäten an.
-4. Ein Supabase-Edge-Backend tauscht den Autorisierungscode aus und verwaltet Access-/Refresh-Tokens serverseitig.
-5. Aktivitäten werden anhand der externen Aktivitäts-ID dedupliziert und als Laufhistorie übernommen.
-6. Nutzer kann Zeitraum, Aktivitätstyp und Importumfang wählen und einzelne Importe rückgängig machen.
+- Neue Strava-API-Anwendungen starten im Single-Player-Modus und können zunächst nur das eigene Konto verbinden.
+- Für weitere Nutzer muss der Entwickler den passenden Zugriff im Strava-Dashboard beantragen. Die erste Erweiterung ist auf bis zu 10 Athleten begrenzt; für mehr Nutzer ist eine Strava-Prüfung erforderlich.
+- Strava verlangt derzeit ein aktives Strava-Abo, um eine API-Anwendung zu erstellen.
+- Strava-Client-Secret, Access- und Refresh-Tokens gehören ausschließlich in ein serverseitiges Backend, nicht in die App oder nach GitHub.
 
-Strava-Client-Secret und Refresh-Tokens dürfen niemals in der App-Oberfläche, im Browser-Speicher oder in GitHub abgelegt werden.
+**Geplante Umsetzung:**
 
-### Garmin Connect
+1. „Mit Strava verbinden“ startet den offiziellen OAuth-Ablauf.
+2. Eine Supabase-Edge-Function tauscht den Autorisierungscode serverseitig gegen Tokens.
+3. Aktivitäten werden nur mit Leseberechtigung abgerufen und anhand der Strava-Aktivitäts-ID dedupliziert.
+4. Nutzer wählen, welche Läufe importiert und welchen Trail-Events sie zugeordnet werden.
+5. Widerruf der Strava-Freigabe und Löschung der Tokens werden unterstützt.
 
-1. Garmin bietet eine Personal API für die eigenen Aktivitäten an (JSON und FIT, Abruf/Pull). Sie ist ausdrücklich für persönliche Nutzung gedacht und nicht für eine App mit mehreren Endnutzern.
-2. Wenn Freunde ihre Garmin-Daten direkt verbinden sollen, ist der Garmin Connect Developer Program-Zugang für Organisationen erforderlich; Starter-Zugang ist auf Push-Übermittlung und begrenzte Nutzerzahlen ausgelegt. Umfangreichere Pull-/Historienfunktionen hängen von Enterprise-Zugang und Freigabe ab.
-3. Garmin-Aktivitäten können als FIT/GPX/TCX-Dateien bereitgestellt werden. FIT-, TCX- und GPX-Dateiimport sind bereits eingebaut; die offizielle API-Anbindung ist ein separater Ausbauschritt.
-4. Für eine öffentliche App müssen Garmin-Zugang, Datenumfang, Nutzungsbedingungen und Freigabe vor dem Start geklärt werden.
+## Garmin Connect: direkte Verbindung
 
-## Einheitliches Aktivitätsmodell
+Garmin unterscheidet klar zwischen persönlicher und geschäftlicher Nutzung:
 
-Für jeden importierten Lauf sollten mindestens gespeichert werden:
+- **Personal API:** für die eigenen Garmin-Daten eines einzelnen Nutzers; Abruf (Pull) ist möglich. Sie ist nicht für eine App mit mehreren Endnutzern gedacht.
+- **Business Starter:** für Organisationen und begrenzte Nutzerzahlen; Aktivitätsdaten werden per Push bereitgestellt, historische Daten sind nicht enthalten.
+- **Enterprise:** kann je nach Freigabe Push oder Ping/Pull und historische Daten ermöglichen; Zugang und Konditionen legt Garmin fest.
 
-- Quelle (manual, strava, garmin, file)
-- Externe Aktivitäts-ID und Importzeitpunkt
-- Startzeit mit Zeitzone
-- Distanz, Höhengewinn, Dauer und Aktivitätstyp
-- Optional Herzfrequenz und GPX-/FIT-Streckenpunkte, nur wenn der Nutzer dies ausdrücklich freigibt
-- Zugeordnete Veranstaltung/Strecke und Importstatus
+Für Freunde ist daher nicht der persönliche Garmin-API-Schlüssel des App-Betreibers zu verwenden. Eine direkte Mehrnutzer-Anbindung setzt eine passende Garmin-Business-Freigabe voraus. Bis dahin ist der Dateiimport der zuverlässige Weg: Garmin FIT/TCX exportieren und in der Trail-App importieren.
 
-Externe Aktivitäts-IDs verhindern doppelte Einträge bei wiederholter Synchronisierung. Ein manuell erfasster Lauf darf durch einen später importierten Datensatz nicht stillschweigend überschrieben werden.
+## Sicherheits- und Datenregeln
 
-## Sicherheits- und Datenschutzregeln
+- Nur ausdrücklich freigegebene Daten importieren; standardmäßig keine Trainingsdaten an Anbieter zurückschreiben.
+- Provider-Secrets und Tokens nur serverseitig speichern und verschlüsseln.
+- Supabase-Zugriff mit Authentifizierung und Row Level Security strikt auf den jeweiligen Nutzer begrenzen.
+- Verbindung jederzeit trennbar machen; Tokens widerrufen/löschen und dem Nutzer die Wahl lassen, ob importierte Aktivitäten ebenfalls entfernt werden.
+- Externe Aktivitäts-IDs für API-Importe und Dateifingerprints für Dateiimporte zur Duplikaterkennung verwenden.
+- Herzfrequenz, Kalorien und GPS-Tracks nur speichern, wenn der Nutzer den Import ausdrücklich auslöst.
 
-- OAuth ausschließlich über den offiziellen Anbieter-Flow.
-- Provider-Secrets und Tokens ausschließlich serverseitig; verschlüsselte Speicherung und Zugriff nur über authentifizierte Edge Functions.
-- Datenbankzeilen strikt an den angemeldeten Nutzer binden (RLS).
-- Verbindung jederzeit trennbar; dabei Tokens widerrufen/löschen und importierte Daten nach Wahl des Nutzers behalten oder entfernen.
-- Nur Datenfelder abrufen, die für Laufhistorie und Trainingsplanung benötigt werden.
-- Vor Veröffentlichung Datenschutzhinweise und Anbieterbedingungen aktualisieren.
+## Offizielle Informationen
 
-## Current Garmin access limitation
+- Strava Getting Started: https://developers.strava.com/docs/getting-started/
+- Strava OAuth: https://developers.strava.com/docs/authentication/
+- Garmin Connect Developer Program: https://developer.garmin.com/gc-developer-program/overview/
+- Garmin Personal API: https://developer.garmin.com/gc-developer-program/personal/personal-api/
+- Garmin FIT SDK: https://developer.garmin.com/fit/get-the-sdk/
 
-- Personal access is intended for the developer's own Garmin Connect data and supports pull-only access.
-- Garmin's business Starter tier is push-only and does not include historical data; it is limited to a defined user capacity.
-- Enterprise access can support push or ping/pull and historical data, subject to Garmin's approval and commercial terms.
+## Voraussetzungen für eine automatische Synchronisierung
 
-This means a public multi-user app should not be designed around the assumption that every user can simply connect Garmin with a personal API key. The exact access tier must be approved for the intended product and user count.
-
-## Voraussetzungen vor dem Livegang
-
-- Strava-API-App mit Client-ID, Client-Secret und registrierter Callback-Domain durch den App-Betreiber. Strava verlangt derzeit ein aktives Abo zum Erstellen der App; neue Apps starten im Einzelmodus und können im Dashboard zunächst auf bis zu 10 Athleten erweitert werden. Darüber hinaus ist eine Prüfung durch Strava erforderlich. Strava verlangt derzeit ein aktives Abo zum Erstellen der App; neue Apps starten im Einzelmodus und können im Dashboard zunächst auf bis zu 10 Athleten erweitert werden. Darüber hinaus ist eine Prüfung durch Strava erforderlich.
-- Garmin-Zugang bzw. schriftliche Freigabe für den beabsichtigten Nutzerkreis.
-- Produktions-Callback-URLs, Supabase-Secrets und Token-Verschlüsselung konfigurieren.
-- Import mit Testkonten prüfen: doppelte Aktivitäten, widerrufene Freigabe, abgelaufene Tokens, Zeitzonen, DNF/Mehrtagesevents und Löschung.
-
-## Current Strava access limitation
-
-New Strava API apps start in single-player mode. A Strava subscription is required to create an API app. For friends to connect, the developer must request the appropriate access level (initially limited to 10 athletes) and comply with Strava review requirements before scaling. References: https://developers.strava.com/docs/getting-started/ and https://developers.strava.com/docs/authentication/.
+1. Strava-API-App anlegen und den passenden Athletenzugriff freischalten lassen.
+2. Garmin-Zugang für den gewünschten Nutzerkreis beantragen, falls eine direkte Garmin-Verbindung gewünscht ist.
+3. OAuth-Callback-Domains und Supabase-Server-Secrets konfigurieren.
+4. Mit Testkonten Import, Duplikaterkennung, widerrufene Freigaben, abgelaufene Tokens, Zeitzonen und Datenlöschung prüfen.
