@@ -199,6 +199,16 @@ const timelineGapFn = new Function("seasonActualEnd", "seasonRecoveryDays", "sea
 );
 assert.equal(timelineGapFn({}, { date: new Date("2027-01-05T12:00:00Z") }), 9, "Training blocks must continue across New Year");
 assert.equal((html.match(/id="sortPlanChronologically"/g) || []).length, 1, "Planner control IDs must be unique");
+const attemptDateMatch = html.match(/function seasonAttemptRaceDate\(x,a\)\{[^}]*\}/);
+assert.ok(attemptDateMatch, "Imported activity dates must distinguish multi-day events");
+const attemptDateFn = new Function("seasonDate", "plannerRecoveryEnd", attemptDateMatch[0] + "; return seasonAttemptRaceDate;")(
+  () => new Date("2027-06-01T12:00:00Z"),
+  event => new Date(event.end)
+);
+assert.equal(attemptDateFn({e:{end:"2027-06-03T12:00:00Z"},ri:0,rec:{}},{date:"2027-06-01"}), "", "Multi-day activity start dates must not replace the actual event finish date");
+assert.equal(attemptDateFn({e:{end:"2027-06-01T12:00:00Z"},ri:0,rec:{}},{date:"2027-06-01"}), "2027-06-01", "Single-day activity dates may supply the actual race date");
+assert.equal(attemptDateFn({e:{end:"2027-06-03T12:00:00Z"},ri:0,rec:{actualRaceDate:"2027-06-04"}},{date:"2027-06-01"}), "2027-06-04", "Manually entered actual finish dates must take precedence");
+
 
 
 console.log("Validated race priorities, training phases and actual-race recovery.");
