@@ -209,9 +209,9 @@ assert.equal(attemptDateFn({e:{end:"2027-06-03T12:00:00Z"},ri:0,rec:{}},{date:"2
 assert.equal(attemptDateFn({e:{end:"2027-06-01T12:00:00Z"},ri:0,rec:{}},{date:"2027-06-01"}), "2027-06-01", "Single-day activity dates may supply the actual race date");
 assert.equal(attemptDateFn({e:{end:"2027-06-03T12:00:00Z"},ri:0,rec:{actualRaceDate:"2027-06-04"}},{date:"2027-06-01"}), "2027-06-04", "Manually entered actual finish dates must take precedence");
 
-const actualRecordMatch = html.match(/function seasonActualRecord\\(x\\)\\{[\\s\\S]*?\\nfunction seasonActualEnd/);
+const actualRecordMatch = html.match(/function seasonActualRecord\(x\)\{[\s\S]*?\nfunction seasonActualEnd/);
 assert.ok(actualRecordMatch, "Season record merge must be testable");
-const seasonActualRecord = new Function("runAttempts", "seasonAttemptRaceDate", actualRecordMatch[0].replace(/\\nfunction seasonActualEnd[\\s\\S]*$/, "") + "; return seasonActualRecord;")(
+const seasonActualRecord = new Function("runAttempts", "seasonAttemptRaceDate", actualRecordMatch[0].replace(/\nfunction seasonActualEnd[\s\S]*$/, "") + "; return seasonActualRecord;")(
   { race: [{ done: true, date: "2027-06-01", hours: 8, minutes: 30, actualKm: 80, actualHm: 3000 }] },
   (x, a) => x.rec.actualRaceDate || a.date
 );
