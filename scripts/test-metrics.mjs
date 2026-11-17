@@ -99,6 +99,10 @@ assert.ok(html.includes("text/calendar;charset=utf-8"), "Calendar export must us
 assert.ok(html.includes("DTSTART;VALUE=DATE:"), "Calendar export must create all-day race events");
 assert.ok(html.includes("lines.join('\\r\\n')+'\\r\\n'"), "Calendar file must use CRLF line endings");
 
+assert.match(html, /function sortPlannedEventsChronologically\(\)/, "planner must provide chronological sorting");
+assert.match(html, /items\.forEach\(\(\{e,r,date,id\}\)/, "calendar export must bind each event id");
+assert.match(html, /eventLast&&eventLast>=date/, "calendar export must preserve multi-day event duration");
+
 const match = html.match(/function completedRunDistance\(x\)\{[\s\S]*?\}/);
 assert.ok(match, "completedRunDistance helper must exist");
 const completedRunDistance = new Function("return (" + match[0] + ")")();
