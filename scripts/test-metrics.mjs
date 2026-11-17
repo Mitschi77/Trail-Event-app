@@ -81,6 +81,12 @@ assert.ok(html.includes("activityLocalDate(data.startTime)"), "Activity import m
 
 
 
+assert.ok(html.includes('id="exportPlanCalendar"'), "Planner must offer calendar export");
+assert.ok(html.includes("function exportPlannedCalendar()"), "Calendar export handler must exist");
+assert.ok(html.includes("text/calendar;charset=utf-8"), "Calendar export must use the iCalendar MIME type");
+assert.ok(html.includes("DTSTART;VALUE=DATE:"), "Calendar export must create all-day race events");
+assert.ok(html.includes("lines.join('\\r\\n')+'\\r\\n'"), "Calendar file must use CRLF line endings");
+
 const match = html.match(/function completedRunDistance\(x\)\{[\s\S]*?\}/);
 assert.ok(match, "completedRunDistance helper must exist");
 const completedRunDistance = new Function("return (" + match[0] + ")")();
