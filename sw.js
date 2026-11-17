@@ -31,7 +31,7 @@ self.addEventListener('fetch', event => {
         .then(response => {
           if (response && response.ok) {
             const copy = response.clone();
-            caches.open(CACHE_NAME).then(cache => cache.put(cacheKey, copy));
+            return caches.open(CACHE_NAME).then(cache => cache.put(cacheKey, copy)).then(() => response);
           }
           return response;
         })
@@ -46,7 +46,7 @@ self.addEventListener('fetch', event => {
         .then(response => {
           if (response && response.ok) {
             const copy = response.clone();
-            caches.open(CACHE_NAME).then(cache => cache.put('./index.html', copy));
+            return caches.open(CACHE_NAME).then(cache => cache.put('./index.html', copy)).then(() => response);
           }
           return response;
         })
@@ -61,7 +61,7 @@ self.addEventListener('fetch', event => {
       return fetch(request).then(response => {
         if (response && response.ok) {
           const copy = response.clone();
-          caches.open(CACHE_NAME).then(cache => cache.put(request, copy));
+          return caches.open(CACHE_NAME).then(cache => cache.put(request, copy)).then(() => response);
         }
         return response;
       });
