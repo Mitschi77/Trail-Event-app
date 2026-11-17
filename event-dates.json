@@ -1,20 +1,168 @@
 {
-  "updatedAt": "2026-11-17T07:58:26.800218+00:00",
+  "updatedAt": "2026-11-17T08:05:19.673Z",
   "schemaVersion": 3,
   "events": {
     "la-corsa-della-bora": {
       "eventId": "la-corsa-della-bora",
       "checkedAt": "2026-11-17T07:58:26.800218+00:00",
-      "status": "unavailable",
+      "status": "verified",
       "sources": [
         {
           "url": "https://www.s1trail.com/de/dati-ufficiali-corsa-della-bora-2027/",
           "status": "unavailable",
+          "verification": "official-2027-route-list",
           "error": "HTTP Error 520: <none>"
         }
       ],
+      "eventPeriod": {
+        "startDate": "2027-01-09",
+        "endDate": "2027-01-10",
+        "verified": true
+      },
+      "routes": {
+        "0": {
+          "routeId": "explorer-85-2993",
+          "date": "2027-01-10",
+          "verified": true
+        },
+        "1": {
+          "routeId": "bora-ultra-105-3837",
+          "date": "2027-01-09",
+          "verified": true
+        },
+        "2": {
+          "routeId": "transkarst-ultra-59-1814",
+          "date": "2027-01-10",
+          "verified": true
+        },
+        "3": {
+          "routeId": "trieste-ultra-61-2-2323",
+          "date": "2027-01-09",
+          "verified": true
+        },
+        "4": {
+          "routeId": "half-trail-23-3-700",
+          "date": "2027-01-10",
+          "verified": true
+        },
+        "5": {
+          "routeId": "family-hike-trail-14-8-419",
+          "date": "2027-01-10",
+          "verified": true
+        },
+        "6": {
+          "routeId": "borin-5-5-100",
+          "date": "2027-01-10",
+          "verified": true
+        }
+      }
+    },
+    "marathon-de-sables": {
+      "eventId": "marathon-de-sables",
+      "checkedAt": "2026-11-17T07:27:44.741Z",
+      "status": "verified",
+      "sources": [
+        {
+          "url": "https://marathondessables.com/en",
+          "status": "read",
+          "verification": "manual-official-page"
+        }
+      ],
+      "eventPeriod": {
+        "startDate": "2027-01-08",
+        "endDate": "2027-01-13",
+        "verified": true
+      },
+      "routes": {
+        "0": {
+          "routeId": "mds-ultra-100-570",
+          "date": "2027-01-08",
+          "verified": true
+        },
+        "1": {
+          "routeId": "mds-ultra-miles-164-700",
+          "date": "2027-01-08",
+          "verified": true
+        }
+      }
+    },
+    "arc-of-attrition-by-utmb": {
+      "eventId": "arc-of-attrition-by-utmb",
+      "checkedAt": "2026-11-17T07:27:44.741Z",
+      "status": "verified",
+      "sources": [
+        {
+          "url": "https://arcofattrition.utmb.world/en/races",
+          "status": "read",
+          "verification": "manual-official-page"
+        }
+      ],
+      "eventPeriod": {
+        "startDate": "2027-01-22",
+        "endDate": "2027-01-24",
+        "verified": true
+      },
+      "routes": {
+        "0": {
+          "routeId": "arc-100m-173-5507",
+          "date": "2027-01-22",
+          "verified": true
+        },
+        "1": {
+          "routeId": "arc-100k-82-7-2708",
+          "date": "2027-01-23",
+          "verified": true
+        }
+      }
+    },
+    "mountain-man-winter": {
+      "eventId": "mountain-man-winter",
+      "checkedAt": "2026-11-17T07:27:44.741Z",
+      "status": "verified",
+      "sources": [
+        {
+          "url": "https://www.reitimwinkl.de/mountainman-winterloop",
+          "status": "read",
+          "verification": "manual-official-page"
+        }
+      ],
       "eventPeriod": null,
-      "routes": {}
+      "routes": {
+        "0": {
+          "routeId": "12h-7-5-110",
+          "date": "2027-01-23",
+          "verified": true
+        },
+        "1": {
+          "routeId": "6h-7-5-110",
+          "date": "2027-01-23",
+          "verified": true
+        }
+      }
+    },
+    "ultra-mediterrania": {
+      "eventId": "ultra-mediterrania",
+      "checkedAt": "2026-11-17T07:37:48.695Z",
+      "status": "verified",
+      "sources": [
+        {
+          "url": "https://ultramediterrania.com/",
+          "status": "read",
+          "verification": "manual-official-page"
+        }
+      ],
+      "eventPeriod": {
+        "startDate": "2027-01-21",
+        "endDate": "2027-01-24",
+        "verified": true
+      },
+      "routes": {
+        "0": {
+          "routeId": "ultra-mediterrania",
+          "date": "2027-01-22",
+          "verified": true
+        }
+      }
     },
     "transgrancanaria": {
       "eventId": "transgrancanaria",
@@ -45,18 +193,138 @@
         }
       }
     },
+    "donautrail": {
+      "eventId": "donautrail",
+      "checkedAt": "2026-11-17T07:27:44.741Z",
+      "status": "verified",
+      "sources": [
+        {
+          "url": "https://donautrail.at/",
+          "status": "read",
+          "verification": "manual-official-page"
+        }
+      ],
+      "eventPeriod": {
+        "startDate": "2027-03-13",
+        "endDate": "2027-03-13",
+        "verified": true
+      },
+      "routes": {
+        "0": {
+          "routeId": "linz55-55-1-1429",
+          "date": "2027-03-13",
+          "verified": true
+        },
+        "1": {
+          "routeId": "linz75-76-1835",
+          "date": "2027-03-13",
+          "verified": true
+        },
+        "2": {
+          "routeId": "linz100-100-2150",
+          "date": "2027-03-13",
+          "verified": true
+        }
+      }
+    },
+    "psyland-backyard-ultra": {
+      "eventId": "psyland-backyard-ultra",
+      "checkedAt": "2026-11-17T07:27:44.741Z",
+      "status": "verified",
+      "sources": [
+        {
+          "url": "https://www.insane-backyard-ultra.com/de/rennen/",
+          "status": "read",
+          "verification": "manual-official-page"
+        }
+      ],
+      "eventPeriod": {
+        "startDate": "2027-07-10",
+        "endDate": "2027-07-10",
+        "verified": true
+      },
+      "routes": {
+        "0": {
+          "routeId": "psyland-backyard-ultra-6-7",
+          "date": "2027-07-10",
+          "verified": true
+        }
+      }
+    },
     "tenerife-bluetrail": {
       "eventId": "tenerife-bluetrail",
       "checkedAt": "2026-11-17T07:58:26.800218+00:00",
-      "status": "unconfirmed",
+      "status": "verified",
       "sources": [
+        {
+          "url": "https://pdf.utmb.world/image/upload/v1780042781/tenerife/DOCUMENTOS/Reglamento%202027/Reglamento_TBT_2027_DEFINITIVO_es_ae4b5e7367.pdf.pdf",
+          "status": "read",
+          "verification": "official-2027-regulations"
+        },
         {
           "url": "https://tenerife.utmb.world/",
           "status": "read"
         }
       ],
-      "eventPeriod": null,
+      "eventPeriod": {
+        "startDate": "2027-04-08",
+        "endDate": "2027-04-10",
+        "verified": true
+      },
       "routes": {}
+    },
+    "chianti-ultra-trail": {
+      "eventId": "chianti-ultra-trail",
+      "checkedAt": "2026-11-17T07:27:44.741Z",
+      "status": "verified",
+      "sources": [
+        {
+          "url": "https://chianti.utmb.world/",
+          "status": "read",
+          "verification": "manual-official-page"
+        }
+      ],
+      "eventPeriod": {
+        "startDate": "2027-03-19",
+        "endDate": "2027-03-21",
+        "verified": true
+      },
+      "routes": {
+        "0": {
+          "routeId": "cut-73-3000",
+          "date": "2027-03-20",
+          "verified": true
+        },
+        "1": {
+          "routeId": "utcc-124-5200",
+          "date": "2027-03-20",
+          "verified": true
+        }
+      }
+    },
+    "otzi-trairun": {
+      "eventId": "otzi-trairun",
+      "checkedAt": "2026-11-17T07:27:44.741Z",
+      "status": "verified",
+      "sources": [
+        {
+          "url": "https://www.merano-suedtirol.it/de/oetzi-trailrun-naturns/anmeldung.html",
+          "status": "read",
+          "verification": "manual-official-page"
+        }
+      ],
+      "eventPeriod": {
+        "startDate": "2027-04-09",
+        "endDate": "2027-04-10",
+        "verified": true
+      },
+      "routes": {
+        "0": {
+          "routeId": "sunny-mountain-trail-30-2100",
+          "date": "2027-04-10",
+          "verified": true
+        }
+      }
     },
     "wien-marathon": {
       "eventId": "wien-marathon",
@@ -82,6 +350,35 @@
         "0": {
           "routeId": "wien-marathon-42-2",
           "date": "2027-04-18",
+          "verified": true
+        }
+      }
+    },
+    "istrien": {
+      "eventId": "istrien",
+      "checkedAt": "2026-11-17T07:27:44.741Z",
+      "status": "verified",
+      "sources": [
+        {
+          "url": "https://istria.utmb.world/",
+          "status": "read",
+          "verification": "manual-official-page"
+        }
+      ],
+      "eventPeriod": {
+        "startDate": "2027-04-01",
+        "endDate": "2027-04-04",
+        "verified": true
+      },
+      "routes": {
+        "0": {
+          "routeId": "110-tausend-111-4074",
+          "date": "2027-04-03",
+          "verified": true
+        },
+        "1": {
+          "routeId": "69-tausend-70-2331",
+          "date": "2027-04-03",
           "verified": true
         }
       }
@@ -115,17 +412,56 @@
         }
       }
     },
+    "grand-raid-ventoux": {
+      "eventId": "grand-raid-ventoux",
+      "checkedAt": "2026-11-17T07:37:48.695Z",
+      "status": "verified",
+      "sources": [
+        {
+          "url": "https://grandraidventoux.com/",
+          "status": "read",
+          "verification": "manual-official-page"
+        }
+      ],
+      "eventPeriod": {
+        "startDate": "2027-04-23",
+        "endDate": "2027-04-25",
+        "verified": true
+      },
+      "routes": {
+        "0": {
+          "routeId": "ugp-125-5700",
+          "date": "2027-04-23",
+          "verified": true
+        },
+        "1": {
+          "routeId": "ugp-87-4200",
+          "date": "2027-04-24",
+          "verified": true
+        },
+        "2": {
+          "routeId": "ugp-51-2500",
+          "date": "2027-04-25",
+          "verified": true
+        }
+      }
+    },
     "ultratrail-frankische-schweiz": {
       "eventId": "ultratrail-frankische-schweiz",
       "checkedAt": "2026-11-17T07:58:26.800218+00:00",
-      "status": "unconfirmed",
+      "status": "verified",
       "sources": [
         {
           "url": "https://www.ultratrail-fraenkische-schweiz.de/",
-          "status": "read"
+          "status": "read",
+          "verification": "manual-official-page"
         }
       ],
-      "eventPeriod": null,
+      "eventPeriod": {
+        "startDate": "2027-04-23",
+        "endDate": "2027-04-24",
+        "verified": true
+      },
       "routes": {}
     },
     "hamburg-marathon": {
@@ -279,54 +615,487 @@
     "trail-menorca-cami-de-cavalls": {
       "eventId": "trail-menorca-cami-de-cavalls",
       "checkedAt": "2026-11-17T07:58:26.800218+00:00",
-      "status": "unconfirmed",
+      "status": "verified",
       "sources": [
+        {
+          "url": "https://www.trailmenorca.es/de/",
+          "status": "read",
+          "verification": "manual-official-page"
+        },
         {
           "url": "https://trailmenorca.es/de/",
           "status": "read"
         }
       ],
-      "eventPeriod": null,
+      "eventPeriod": {
+        "startDate": "2027-04-30",
+        "endDate": "2027-05-02",
+        "verified": true
+      },
       "routes": {}
     },
     "malcesine-baldo-trail": {
       "eventId": "malcesine-baldo-trail",
       "checkedAt": "2026-11-17T07:58:26.800218+00:00",
-      "status": "unconfirmed",
+      "status": "verified",
       "sources": [
         {
           "url": "https://www.malcesinebaldotrail.com/",
-          "status": "read"
+          "status": "read",
+          "verification": "manual-official-page"
         }
       ],
-      "eventPeriod": null,
+      "eventPeriod": {
+        "startDate": "2027-04-24",
+        "endDate": "2027-04-25",
+        "verified": true
+      },
+      "routes": {
+        "0": {
+          "routeId": "52k-ultra-52-3541",
+          "date": "2027-04-24",
+          "verified": true
+        },
+        "1": {
+          "routeId": "malcesine-41k-41-unknown",
+          "date": "2027-04-24",
+          "verified": true
+        },
+        "2": {
+          "routeId": "malcesine-26-4k-unknown",
+          "date": "2027-04-24",
+          "verified": true
+        },
+        "3": {
+          "routeId": "malcesine-16k-16-unknown",
+          "date": "2027-04-25",
+          "verified": true
+        }
+      }
+    },
+    "ultra-x-110-scotland": {
+      "eventId": "ultra-x-110-scotland",
+      "checkedAt": "2026-11-17T07:32:56.662Z",
+      "status": "verified",
+      "sources": [
+        {
+          "url": "https://ultra-x.co/ultra-marathon-races/",
+          "status": "read",
+          "verification": "manual-official-page"
+        }
+      ],
+      "eventPeriod": {
+        "startDate": "2027-05-01",
+        "endDate": "2027-05-02",
+        "verified": true
+      },
       "routes": {}
     },
     "ternberg-trail": {
       "eventId": "ternberg-trail",
       "checkedAt": "2026-11-17T07:58:26.800218+00:00",
-      "status": "unconfirmed",
+      "status": "verified",
       "sources": [
         {
           "url": "https://www.austriabackyardultra.com/ternberg",
-          "status": "read"
+          "status": "read",
+          "verification": "official-2027-event-page"
+        },
+        {
+          "url": "https://www.austriabackyardultra.com/en/ternberg",
+          "status": "read",
+          "verification": "official-2027-event-page"
+        }
+      ],
+      "eventPeriod": {
+        "startDate": "2027-05-06",
+        "endDate": "2027-05-06",
+        "verified": true
+      },
+      "routes": {
+        "0": {
+          "routeId": "ternberg-trail-6-7-354",
+          "date": "2027-05-06",
+          "verified": true
+        }
+      }
+    },
+    "chiemgau-trail": {
+      "eventId": "chiemgau-trail",
+      "checkedAt": "2026-11-17T07:47:23.029Z",
+      "status": "unconfirmed",
+      "sources": [
+        {
+          "url": "https://chiemgau-trail-run.de/",
+          "status": "read",
+          "verification": "official-site-current-edition"
         }
       ],
       "eventPeriod": null,
-      "routes": {}
+      "routes": {},
+      "note": "Die offizielle Veranstalterseite bestätigt derzeit nur die Ausgabe am 24. Oktober 2026. Ein Termin und die Strecken für 2027 sind noch nicht offiziell veröffentlicht. Die bisherigen Streckendaten stammen aus einer älteren Ausgabe und sind nicht als bestätigte 2027-Angaben zu verwenden."
     },
     "transvulcania-la-palma": {
       "eventId": "transvulcania-la-palma",
       "checkedAt": "2026-11-17T07:58:26.800218+00:00",
-      "status": "unconfirmed",
+      "status": "verified",
       "sources": [
+        {
+          "url": "https://transvulcania.com/de/regelwerk/",
+          "status": "read",
+          "verification": "official-2027-regulation"
+        },
+        {
+          "url": "https://transvulcania.com/de/modalidades/transvulcania-ultramarathon/",
+          "status": "read",
+          "verification": "official-2027-course"
+        },
+        {
+          "url": "https://transvulcania.com/de/modalidades/transvulcania-vertikaler-kilometer/",
+          "status": "read",
+          "verification": "official-2027-course"
+        },
+        {
+          "url": "https://transvulcania.com/de/modalidades/transvulcania-12k-light/",
+          "status": "read",
+          "verification": "official-2027-course"
+        },
         {
           "url": "https://transvulcania.com/de/",
           "status": "read"
         }
       ],
+      "eventPeriod": {
+        "startDate": "2027-05-08",
+        "endDate": "2027-05-08",
+        "verified": true
+      },
+      "routes": {
+        "0": {
+          "routeId": "ultramarathon-73-06-4350",
+          "date": "2027-05-08",
+          "verified": true
+        },
+        "1": {
+          "routeId": "transvulcania-marathon-43-2-1884",
+          "date": "2027-05-08",
+          "verified": true
+        },
+        "2": {
+          "routeId": "transvulcania-half-24-8-2097",
+          "date": "2027-05-08",
+          "verified": true
+        },
+        "3": {
+          "routeId": "transvulcania-vertical-7-28-1164",
+          "date": "2027-05-06",
+          "verified": true
+        },
+        "4": {
+          "routeId": "transvulcania-12k-light-11-6-774",
+          "date": "2027-05-08",
+          "verified": true
+        }
+      }
+    },
+    "ultra-tail-australia-by-utmb": {
+      "eventId": "ultra-tail-australia-by-utmb",
+      "checkedAt": "2026-11-17T07:30:48.484Z",
+      "status": "verified",
+      "sources": [
+        {
+          "url": "https://uta.utmb.world/runners/entry-info",
+          "status": "read",
+          "verification": "manual-official-page"
+        }
+      ],
+      "eventPeriod": {
+        "startDate": "2027-05-13",
+        "endDate": "2027-05-16",
+        "verified": true
+      },
+      "routes": {
+        "0": {
+          "routeId": "utamiler-161-7200",
+          "date": "2027-05-14",
+          "verified": true
+        },
+        "1": {
+          "routeId": "uta100-101-4400",
+          "date": "2027-05-15",
+          "verified": true
+        }
+      }
+    },
+    "trail-alsace-by-utmb": {
+      "eventId": "trail-alsace-by-utmb",
+      "checkedAt": "2026-11-17T07:30:48.484Z",
+      "status": "verified",
+      "sources": [
+        {
+          "url": "https://alsace.utmb.world/de",
+          "status": "read",
+          "verification": "manual-official-page"
+        }
+      ],
+      "eventPeriod": {
+        "startDate": "2027-05-13",
+        "endDate": "2027-05-16",
+        "verified": true
+      },
+      "routes": {
+        "0": {
+          "routeId": "ultra-trail-des-paiens-109-3900",
+          "date": "2027-05-14",
+          "verified": true
+        },
+        "1": {
+          "routeId": "ultra-trail-des-chevaliers-156-5100",
+          "date": "2027-05-14",
+          "verified": true
+        },
+        "2": {
+          "routeId": "trail-des-celtes-47-1600",
+          "date": "2027-05-16",
+          "verified": true
+        }
+      }
+    },
+    "ultra-trail-snowdonia-eryri": {
+      "eventId": "ultra-trail-snowdonia-eryri",
+      "checkedAt": "2026-11-17T07:30:48.484Z",
+      "status": "verified",
+      "sources": [
+        {
+          "url": "https://eryri.utmb.world/",
+          "status": "read",
+          "verification": "manual-official-page"
+        }
+      ],
+      "eventPeriod": {
+        "startDate": "2027-05-14",
+        "endDate": "2027-05-16",
+        "verified": true
+      },
+      "routes": {
+        "0": {
+          "routeId": "uts-80k-78-2500",
+          "date": "2027-05-14",
+          "verified": true
+        },
+        "1": {
+          "routeId": "uts-100m-163-9200",
+          "date": "2027-05-14",
+          "verified": true
+        },
+        "2": {
+          "routeId": "uts-100k-106-5400",
+          "date": "2027-05-15",
+          "verified": true
+        }
+      }
+    },
+    "alpenstadt-city-trail": {
+      "eventId": "alpenstadt-city-trail",
+      "checkedAt": "2026-11-17T07:40:54.392Z",
+      "status": "verified",
+      "sources": [
+        {
+          "url": "https://dare2b.cityundtrail.de/",
+          "status": "read",
+          "verification": "official-2027-page"
+        }
+      ],
+      "eventPeriod": {
+        "startDate": "2027-06-05",
+        "endDate": "2027-06-05",
+        "verified": true
+      },
+      "routes": {
+        "0": {
+          "routeId": "staufen-19-1350",
+          "date": "2027-06-05",
+          "verified": true
+        }
+      }
+    },
+    "garda-trentino-trail-extra": {
+      "eventId": "garda-trentino-trail-extra",
+      "checkedAt": "2026-11-17T07:32:56.662Z",
+      "status": "verified",
+      "sources": [
+        {
+          "url": "https://www.gardatrentinotrail.it/en-us/p/30",
+          "status": "read",
+          "verification": "manual-official-page"
+        }
+      ],
+      "eventPeriod": {
+        "startDate": "2027-05-14",
+        "endDate": "2027-05-16",
+        "verified": true
+      },
+      "routes": {
+        "0": {
+          "routeId": "garda-trentino-trail-extra-150-10000",
+          "date": "2027-05-14",
+          "verified": true
+        }
+      }
+    },
+    "garda-trentino-trail-extra-100": {
+      "eventId": "garda-trentino-trail-extra-100",
+      "checkedAt": "2026-11-17T07:32:56.662Z",
+      "status": "verified",
+      "sources": [
+        {
+          "url": "https://www.gardatrentinotrail.it/en-us/p/32",
+          "status": "read",
+          "verification": "manual-official-page"
+        }
+      ],
+      "eventPeriod": {
+        "startDate": "2027-05-14",
+        "endDate": "2027-05-16",
+        "verified": true
+      },
+      "routes": {
+        "0": {
+          "routeId": "garda-trentino-trail-extra-100-7000",
+          "date": "2027-05-14",
+          "verified": true
+        }
+      }
+    },
+    "garda-trentino-trail": {
+      "eventId": "garda-trentino-trail",
+      "checkedAt": "2026-11-17T07:32:56.662Z",
+      "status": "verified",
+      "sources": [
+        {
+          "url": "https://www.gardatrentinotrail.it/en-us/p/13",
+          "status": "read",
+          "verification": "manual-official-page"
+        }
+      ],
+      "eventPeriod": {
+        "startDate": "2027-05-14",
+        "endDate": "2027-05-16",
+        "verified": true
+      },
+      "routes": {
+        "0": {
+          "routeId": "garda-trentino-trail-62-3800",
+          "date": "2027-05-15",
+          "verified": true
+        }
+      }
+    },
+    "mountainman": {
+      "eventId": "mountainman",
+      "checkedAt": "2026-11-17T07:37:48.695Z",
+      "status": "verified",
+      "sources": [
+        {
+          "url": "https://www.mountainman.de/",
+          "status": "read",
+          "verification": "manual-official-page"
+        }
+      ],
+      "eventPeriod": {
+        "startDate": "2027-05-07",
+        "endDate": "2027-05-08",
+        "verified": true
+      },
+      "routes": {},
+      "note": "2027 Nesselwang event dates confirmed, but the current route records contain several 2026 dates from different Mountainman events. Route-to-event assignment must be checked before reusing them."
+    },
+    "rennsteiglauf": {
+      "eventId": "rennsteiglauf",
+      "checkedAt": "2026-11-17T07:37:48.695Z",
+      "status": "verified",
+      "sources": [
+        {
+          "url": "https://www.rennsteiglauf.de/",
+          "status": "read",
+          "verification": "manual-official-page"
+        }
+      ],
+      "eventPeriod": {
+        "startDate": "2027-05-22",
+        "endDate": "2027-05-22",
+        "verified": true
+      },
+      "routes": {
+        "0": {
+          "routeId": "supermarathon-73-9-3260",
+          "date": "2027-05-22",
+          "verified": true
+        }
+      }
+    },
+    "greenloop-backyard-ultra": {
+      "eventId": "greenloop-backyard-ultra",
+      "checkedAt": "2026-11-17T07:40:54.392Z",
+      "status": "verified",
+      "sources": [
+        {
+          "url": "https://www.greenloopbackyard.de/",
+          "status": "read",
+          "verification": "official-2027-page"
+        }
+      ],
+      "eventPeriod": {
+        "startDate": "2027-05-15",
+        "endDate": "2027-05-15",
+        "verified": true
+      },
+      "routes": {
+        "0": {
+          "routeId": "greenloop-backyard-ultra-6-7",
+          "date": "2027-05-15",
+          "verified": true
+        }
+      }
+    },
+    "schwarzach-trail": {
+      "eventId": "schwarzach-trail",
+      "checkedAt": "2026-11-17T07:41:55.385Z",
+      "status": "verified",
+      "sources": [
+        {
+          "url": "https://www.triundrun.at/de/",
+          "status": "read",
+          "verification": "official-2027-page-or-regulations"
+        }
+      ],
+      "eventPeriod": {
+        "startDate": "2027-05-22",
+        "endDate": "2027-05-22",
+        "verified": true
+      },
+      "routes": {
+        "0": {
+          "routeId": "schwarzach-trail-47",
+          "date": "2027-05-22",
+          "verified": true
+        }
+      }
+    },
+    "ultra-x-110-finnland": {
+      "eventId": "ultra-x-110-finnland",
+      "checkedAt": "2026-11-17T07:52:37.589Z",
+      "status": "unconfirmed",
+      "sources": [
+        {
+          "url": "https://ultra-x.co/ultra-marathon-races/",
+          "status": "read",
+          "verification": "official-calendar-checked"
+        }
+      ],
       "eventPeriod": null,
-      "routes": {}
+      "routes": {},
+      "note": "Die offizielle Ultra-X-Übersicht listet derzeit keine Ausgabe Finnland 2027; die auffindbaren Streckenunterlagen beziehen sich auf 2026."
     },
     "mountain-ultra-trail": {
       "eventId": "mountain-ultra-trail",
@@ -335,41 +1104,192 @@
       "sources": [
         {
           "url": "https://mut.utmb.world/",
-          "status": "read"
+          "status": "read",
+          "verification": "official-2027-page"
         }
       ],
       "eventPeriod": {
-        "startDate": "2027-05-27",
+        "startDate": "2027-05-28",
         "endDate": "2027-05-30",
         "verified": true
       },
-      "routes": {}
+      "routes": {
+        "0": {
+          "routeId": "mut-miler-168-8014",
+          "date": "2027-05-28",
+          "verified": true
+        },
+        "1": {
+          "routeId": "mut-100-100-4717",
+          "date": "2027-05-29",
+          "verified": true
+        },
+        "2": {
+          "routeId": "mut-60-58-3005",
+          "date": "2027-05-29",
+          "verified": true
+        },
+        "3": {
+          "routeId": "mut-marathon-43-2312",
+          "date": "2027-05-29",
+          "verified": true
+        },
+        "4": {
+          "routeId": "mut-challenge-25-1043",
+          "date": "2027-05-30",
+          "verified": true
+        },
+        "5": {
+          "routeId": "mut-lite-11-9-312",
+          "date": "2027-05-30",
+          "verified": true
+        }
+      }
     },
     "der-watz-mountainman": {
       "eventId": "der-watz-mountainman",
       "checkedAt": "2026-11-17T07:58:26.800218+00:00",
-      "status": "unconfirmed",
+      "status": "verified",
       "sources": [
         {
           "url": "https://mountainman.de/trailrunning-events/alps/berchtesgaden/",
-          "status": "read"
+          "status": "read",
+          "verification": "official-2027-page"
         }
       ],
-      "eventPeriod": null,
+      "eventPeriod": {
+        "startDate": "2027-06-02",
+        "endDate": "2027-06-06",
+        "verified": true
+      },
+      "routes": {
+        "0": {
+          "routeId": "der-watz-4-tage-111-5500",
+          "date": "2027-06-03",
+          "verified": true
+        },
+        "1": {
+          "routeId": "watz-double-57-2500",
+          "date": "2027-06-05",
+          "verified": true
+        },
+        "2": {
+          "routeId": "watz-final-25-1300",
+          "date": "2027-06-06",
+          "verified": true
+        }
+      }
+    },
+    "jenaer-backyard-ultra": {
+      "eventId": "jenaer-backyard-ultra",
+      "checkedAt": "2026-11-17T07:40:54.392Z",
+      "status": "verified",
+      "sources": [
+        {
+          "url": "https://jenaerbackyardultra.de/",
+          "status": "read",
+          "verification": "official-2027-page"
+        }
+      ],
+      "eventPeriod": {
+        "startDate": "2027-06-05",
+        "endDate": "2027-06-05",
+        "verified": true
+      },
+      "routes": {
+        "0": {
+          "routeId": "jenaer-backyard-ultra-6-7",
+          "date": "2027-06-05",
+          "verified": true
+        }
+      }
+    },
+    "dolomiti-extreme-trail": {
+      "eventId": "dolomiti-extreme-trail",
+      "checkedAt": "2026-11-17T07:37:48.695Z",
+      "status": "verified",
+      "sources": [
+        {
+          "url": "https://www.dolomitiextremetrail.com/",
+          "status": "read",
+          "verification": "manual-official-page"
+        }
+      ],
+      "eventPeriod": {
+        "startDate": "2027-06-11",
+        "endDate": "2027-06-13",
+        "verified": true
+      },
       "routes": {}
     },
     "hochkonigman": {
       "eventId": "hochkonigman",
       "checkedAt": "2026-11-17T07:58:26.800218+00:00",
-      "status": "unconfirmed",
+      "status": "verified",
       "sources": [
         {
           "url": "https://www.hochkoenig-ultraks.at/",
-          "status": "read"
+          "status": "read",
+          "verification": "official-2027-page"
+        },
+        {
+          "url": "https://www.hochkoenig-ultraks.at/de/programm.html",
+          "status": "read",
+          "verification": "official-2027-schedule"
         }
       ],
-      "eventPeriod": null,
-      "routes": {}
+      "eventPeriod": {
+        "startDate": "2027-06-04",
+        "endDate": "2027-06-06",
+        "verified": true
+      },
+      "routes": {
+        "0": {
+          "routeId": "hk30-panorama-trail-32-5-2094",
+          "date": "2027-06-05",
+          "verified": true
+        },
+        "1": {
+          "routeId": "hk48-48-6-2940",
+          "date": "2027-06-05",
+          "verified": true
+        },
+        "2": {
+          "routeId": "hk70-71-5-4150",
+          "date": "2027-06-05",
+          "verified": true
+        },
+        "3": {
+          "routeId": "hochkoenig-hk30-extreme-34-2680",
+          "date": "2027-06-06",
+          "verified": true
+        },
+        "4": {
+          "routeId": "hochkoenig-hk20-20-5-1020",
+          "date": "2027-06-06",
+          "verified": true
+        },
+        "5": {
+          "routeId": "hochkoenig-sprint-10-310",
+          "date": "2027-06-05",
+          "verified": true
+        },
+        "6": {
+          "routeId": "hochkoenig-vertical-5-9-1080",
+          "date": "2027-06-04",
+          "verified": true
+        },
+        "7": {
+          "routeId": "hochkoenig-team-trail-3-6-120",
+          "date": "2027-06-04",
+          "verified": true
+        },
+        "8": {
+          "routeId": "hochkoenig-mini-ultraks-2027",
+          "date": "2027-06-04",
+          "verified": true
+        }
+      }
     },
     "mozart": {
       "eventId": "mozart",
@@ -402,28 +1322,60 @@
     "ultra-scotland": {
       "eventId": "ultra-scotland",
       "checkedAt": "2026-11-17T07:58:26.800218+00:00",
-      "status": "unconfirmed",
+      "status": "verified",
       "sources": [
         {
           "url": "https://www.gbultras.com/ultra-scotland-100/",
-          "status": "read"
+          "status": "read",
+          "verification": "official-2027-page-or-regulations"
         }
       ],
-      "eventPeriod": null,
-      "routes": {}
+      "eventPeriod": {
+        "startDate": "2027-06-04",
+        "endDate": "2027-06-06",
+        "verified": true
+      },
+      "routes": {
+        "0": {
+          "routeId": "ultra-scotland-50-90-2560",
+          "date": "2027-06-05",
+          "verified": true
+        },
+        "1": {
+          "routeId": "ultra-scotland-100-167-4611",
+          "date": "2027-06-05",
+          "verified": true
+        }
+      }
     },
     "falkensteinlauf": {
       "eventId": "falkensteinlauf",
       "checkedAt": "2026-11-17T07:58:26.800218+00:00",
-      "status": "unconfirmed",
+      "status": "verified",
       "sources": [
         {
           "url": "https://www.falkensteinlauf.de/",
-          "status": "read"
+          "status": "read",
+          "verification": "official-2027-save-the-date"
         }
       ],
-      "eventPeriod": null,
-      "routes": {}
+      "eventPeriod": {
+        "startDate": "2027-07-17",
+        "endDate": "2027-07-17",
+        "verified": true
+      },
+      "routes": {
+        "0": {
+          "routeId": "hm-21-1",
+          "date": "2027-07-17",
+          "verified": true
+        },
+        "1": {
+          "routeId": "falkenstein-sprint-7-21-2027",
+          "date": "2027-07-17",
+          "verified": true
+        }
+      }
     },
     "trail-100-andorra": {
       "eventId": "trail-100-andorra",
@@ -432,28 +1384,91 @@
       "sources": [
         {
           "url": "https://andorra.utmb.world/",
-          "status": "read"
+          "status": "read",
+          "verification": "official-2027-page"
         }
       ],
       "eventPeriod": {
-        "startDate": "2027-06-10",
+        "startDate": "2027-06-11",
         "endDate": "2027-06-13",
         "verified": true
       },
-      "routes": {}
+      "routes": {
+        "0": {
+          "routeId": "trail-80k-79-3900",
+          "date": "2027-06-11",
+          "verified": true
+        },
+        "1": {
+          "routeId": "ultra-105k-105-6800",
+          "date": "2027-06-12",
+          "verified": true
+        },
+        "2": {
+          "routeId": "trail-100-andorra-50k-50-3400",
+          "date": "2027-06-12",
+          "verified": true
+        },
+        "3": {
+          "routeId": "trail-100-andorra-25k-24-9-1350",
+          "date": "2027-06-13",
+          "verified": true
+        },
+        "4": {
+          "routeId": "trail-100-andorra-10k-10-500",
+          "date": "2027-06-13",
+          "verified": true
+        }
+      }
     },
     "otscher-trail": {
       "eventId": "otscher-trail",
       "checkedAt": "2026-11-17T07:58:26.800218+00:00",
-      "status": "unconfirmed",
+      "status": "verified",
       "sources": [
         {
           "url": "https://www.oetschertrail.run/",
-          "status": "read"
+          "status": "read",
+          "verification": "official-2027-page"
+        }
+      ],
+      "eventPeriod": {
+        "startDate": "2027-06-04",
+        "endDate": "2027-06-06",
+        "verified": true
+      },
+      "routes": {
+        "1": {
+          "routeId": "oetscher-vertical-2027",
+          "date": "2027-06-04",
+          "verified": true
+        },
+        "3": {
+          "routeId": "oetscher-speed-trail-2027",
+          "date": "2027-06-05",
+          "verified": true
+        },
+        "4": {
+          "routeId": "oetscher-skyrace-2027",
+          "date": "2027-06-06",
+          "verified": true
+        }
+      }
+    },
+    "ultra-x-110-slowenien": {
+      "eventId": "ultra-x-110-slowenien",
+      "checkedAt": "2026-11-17T07:52:37.589Z",
+      "status": "unconfirmed",
+      "sources": [
+        {
+          "url": "https://ultra-x.co/ultra-marathon-races/",
+          "status": "read",
+          "verification": "official-calendar-checked"
         }
       ],
       "eventPeriod": null,
-      "routes": {}
+      "routes": {},
+      "note": "Die offizielle Ultra-X-Übersicht listet derzeit keine Ausgabe Slowenien 2027; die auffindbaren Streckenunterlagen beziehen sich auf 2026."
     },
     "zugspitz-ultratrail": {
       "eventId": "zugspitz-ultratrail",
@@ -516,16 +1531,23 @@
     "schluchthof": {
       "eventId": "schluchthof",
       "checkedAt": "2026-11-17T07:58:26.800218+00:00",
-      "status": "unavailable",
+      "status": "unconfirmed",
       "sources": [
         {
           "url": "https://www.schluchthof.de/",
           "status": "unavailable",
+          "verification": "official-organizer-update",
           "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'www.schluchthof.de'. (_ssl.c:1147)>"
+        },
+        {
+          "url": "https://statistik.d-u-v.org/eventdetail.php?event=123239",
+          "status": "read",
+          "verification": "race-history-statistics"
         }
       ],
       "eventPeriod": null,
-      "routes": {}
+      "routes": {},
+      "note": "Der Veranstalter schreibt, dass der Schluchthof Backyard 2027 in Planung ist, nennt aber noch keinen Termin. Die letzte dokumentierte Ausgabe fand am 20. Juni 2026 statt. Streckenangaben: ca. 6,6 km und 80 Hm pro Runde; die Runde ist laut DUV nicht offiziell vermessen und nicht rankingfähig."
     },
     "tschirgant-sky": {
       "eventId": "tschirgant-sky",
@@ -554,16 +1576,22 @@
     "backyard-ultra": {
       "eventId": "backyard-ultra",
       "checkedAt": "2026-11-17T07:58:26.800218+00:00",
-      "status": "unconfirmed",
+      "status": "verified",
       "sources": [
+        {
+          "url": "https://www.hofer-backyard-ultra.de/",
+          "status": "read",
+          "verification": "official-2027-source"
+        },
+        {
+          "url": "https://www.hofer-backyard-ultra.de/ausschreibung-2027/",
+          "status": "read",
+          "verification": "official-2027-source"
+        },
         {
           "url": "https://www.fraenkischerbackyard.de/",
           "status": "unavailable",
           "error": "HTTP Error 403: Forbidden"
-        },
-        {
-          "url": "https://www.hofer-backyard-ultra.de/",
-          "status": "read"
         },
         {
           "url": "https://www.tsftut.de/index.php/veranstaltungen/tuttlinger-backyard-ultra",
@@ -574,8 +1602,18 @@
           "status": "read"
         }
       ],
-      "eventPeriod": null,
-      "routes": {}
+      "eventPeriod": {
+        "startDate": "2027-06-26",
+        "endDate": "2027-06-26",
+        "verified": true
+      },
+      "routes": {
+        "0": {
+          "routeId": "backyard-ultra-6-7-100",
+          "date": "2027-06-26",
+          "verified": true
+        }
+      }
     },
     "lavardedo-trail": {
       "eventId": "lavardedo-trail",
@@ -584,7 +1622,8 @@
       "sources": [
         {
           "url": "https://lavaredo.utmb.world/",
-          "status": "read"
+          "status": "read",
+          "verification": "manual-official-page"
         }
       ],
       "eventPeriod": {
@@ -592,24 +1631,77 @@
         "endDate": "2027-06-27",
         "verified": true
       },
-      "routes": {}
+      "routes": {
+        "0": {
+          "routeId": "50k-50-2800",
+          "date": "2027-06-25",
+          "verified": true
+        },
+        "1": {
+          "routeId": "80k-80-4600",
+          "date": "2027-06-26",
+          "verified": true
+        },
+        "2": {
+          "routeId": "120k-120-5800",
+          "date": "2027-06-25",
+          "verified": true
+        },
+        "3": {
+          "routeId": "lavaredo-20k-20-1000",
+          "date": "2027-06-24",
+          "verified": true
+        },
+        "4": {
+          "routeId": "lavaredo-10k-10-300",
+          "date": "2027-06-23",
+          "verified": true
+        }
+      }
     },
     "austria-backyard-ultra": {
       "eventId": "austria-backyard-ultra",
       "checkedAt": "2026-11-17T07:58:26.800218+00:00",
-      "status": "unconfirmed",
+      "status": "verified",
       "sources": [
+        {
+          "url": "https://www.austriabackyardultra.com/frankenmarkt",
+          "status": "read",
+          "verification": "official-2027-source"
+        },
+        {
+          "url": "https://www.austriabackyardultra.com/upcoming",
+          "status": "read",
+          "verification": "official-2027-source"
+        },
         {
           "url": "https://www.austriabackyardultra.com/kirchdorf",
           "status": "read"
-        },
-        {
-          "url": "https://www.austriabackyardultra.com/frankenmarkt",
-          "status": "read"
         }
       ],
-      "eventPeriod": null,
-      "routes": {}
+      "eventPeriod": {
+        "startDate": "2027-06-19",
+        "endDate": "2027-09-26",
+        "verified": true
+      },
+      "routes": {
+        "0": {
+          "routeId": "austria-backyard-ultra-6-7-111",
+          "date": "2027-06-19",
+          "verified": true
+        },
+        "1": {
+          "routeId": "austria-backyard-ultra-6-7-8",
+          "date": "2027-09-25",
+          "verified": true
+        },
+        "2": {
+          "routeId": "austria-backyard-7-plus-1-kirchdorf-2027",
+          "date": "2027-09-26",
+          "verified": true
+        }
+      },
+      "note": "Dies ist eine Veranstaltungsserie mit getrennten Wochenenden (Frankenmarkt im Juni, Kirchdorf im September), kein durchgehendes Event."
     },
     "kaiserkrone": {
       "eventId": "kaiserkrone",
@@ -667,7 +1759,13 @@
       "sources": [
         {
           "url": "https://stubai.utmb.world/de",
-          "status": "read"
+          "status": "read",
+          "verification": "official-2027-page"
+        },
+        {
+          "url": "https://stubai.utmb.world/de/races",
+          "status": "read",
+          "verification": "official-2027-race-list"
         }
       ],
       "eventPeriod": {
@@ -675,7 +1773,38 @@
         "endDate": "2027-07-03",
         "verified": true
       },
-      "routes": {}
+      "routes": {
+        "0": {
+          "routeId": "stubai-ultra-57-4200",
+          "date": "2027-07-03",
+          "verified": true
+        },
+        "1": {
+          "routeId": "stubai-100-101-5800",
+          "date": "2027-07-02",
+          "verified": true
+        },
+        "2": {
+          "routeId": "stubai-classic-31-2300",
+          "date": "2027-07-03",
+          "verified": true
+        },
+        "3": {
+          "routeId": "stubai-express-23-1240",
+          "date": "2027-07-03",
+          "verified": true
+        },
+        "4": {
+          "routeId": "stubai-sunnenseitn-14-700",
+          "date": "2027-07-02",
+          "verified": true
+        },
+        "5": {
+          "routeId": "stubai-kids-trail-2027",
+          "date": "2027-07-03",
+          "verified": true
+        }
+      }
     },
     "brixen-marathon": {
       "eventId": "brixen-marathon",
@@ -729,31 +1858,161 @@
         }
       }
     },
+    "grossglockner-mountain-run": {
+      "eventId": "grossglockner-mountain-run",
+      "checkedAt": "2026-11-17T07:32:04.290Z",
+      "status": "verified",
+      "sources": [
+        {
+          "url": "https://grossglockner-mountainrun.at/",
+          "status": "read",
+          "verification": "manual-official-page"
+        }
+      ],
+      "eventPeriod": {
+        "startDate": "2027-07-02",
+        "endDate": "2027-07-04",
+        "verified": true
+      },
+      "routes": {
+        "0": {
+          "routeId": "grossglockner-mountain-run-13-3-1300",
+          "date": "2027-07-04",
+          "verified": true
+        }
+      }
+    },
+    "obertauern-trailrun-summit": {
+      "eventId": "obertauern-trailrun-summit",
+      "checkedAt": "2026-11-17T07:32:04.290Z",
+      "status": "verified",
+      "sources": [
+        {
+          "url": "https://www.trailrun-summit.com/",
+          "status": "read",
+          "verification": "manual-official-page"
+        }
+      ],
+      "eventPeriod": {
+        "startDate": "2027-07-09",
+        "endDate": "2027-07-11",
+        "verified": true
+      },
+      "routes": {
+        "0": {
+          "routeId": "endurance-trail-2-summits-53-3061",
+          "date": "2027-07-10",
+          "verified": true
+        },
+        "1": {
+          "routeId": "trail-ultra-8-summits-77-5080",
+          "date": "2027-07-10",
+          "verified": true
+        },
+        "2": {
+          "routeId": "extreme-100-trail-8-summits-108-6677",
+          "date": "2027-07-10",
+          "verified": true
+        }
+      }
+    },
     "restonica-trail-corsica": {
       "eventId": "restonica-trail-corsica",
       "checkedAt": "2026-11-17T07:58:26.800218+00:00",
-      "status": "unconfirmed",
+      "status": "verified",
       "sources": [
         {
           "url": "https://restonica.utmb.world/",
-          "status": "read"
+          "status": "read",
+          "verification": "manual-official-page"
         }
       ],
-      "eventPeriod": null,
-      "routes": {}
+      "eventPeriod": {
+        "startDate": "2027-07-08",
+        "endDate": "2027-07-10",
+        "verified": true
+      },
+      "routes": {
+        "0": {
+          "routeId": "rt100k-67-3900",
+          "date": "2027-07-10",
+          "verified": true
+        },
+        "1": {
+          "routeId": "utc100m-110-7200",
+          "date": "2027-07-08",
+          "verified": true
+        },
+        "2": {
+          "routeId": "pm50k-52-2900",
+          "date": "2027-07-10",
+          "verified": true
+        },
+        "3": {
+          "routeId": "tt50k-33-2400",
+          "date": "2027-07-10",
+          "verified": true
+        },
+        "4": {
+          "routeId": "gt20k-17-650",
+          "date": "2027-07-09",
+          "verified": true
+        }
+      }
     },
     "trai-verbier-st-bernhard": {
       "eventId": "trai-verbier-st-bernhard",
       "checkedAt": "2026-11-17T07:58:26.800218+00:00",
-      "status": "unconfirmed",
+      "status": "verified",
       "sources": [
         {
           "url": "https://verbier.utmb.world/",
-          "status": "read"
+          "status": "read",
+          "verification": "official-2027-page"
         }
       ],
-      "eventPeriod": null,
-      "routes": {}
+      "eventPeriod": {
+        "startDate": "2027-07-09",
+        "endDate": "2027-07-11",
+        "verified": true
+      },
+      "routes": {
+        "0": {
+          "routeId": "verbier-marathon-43-3000",
+          "date": "2027-07-09",
+          "verified": true
+        },
+        "1": {
+          "routeId": "x-traversee-77-5000",
+          "date": "2027-07-10",
+          "verified": true
+        },
+        "2": {
+          "routeId": "x-alpine-140-8900",
+          "date": "2027-07-09",
+          "verified": true
+        },
+        "3": {
+          "routeId": "verbier-marathon-x-treme-43-3000",
+          "date": "2027-07-09",
+          "verified": true
+        },
+        "4": {
+          "routeId": "verbier-x-plore-28-1700",
+          "date": "2027-07-11",
+          "verified": true
+        },
+        "5": {
+          "routeId": "verbier-trail-decouverte-2027",
+          "date": "2027-07-11",
+          "verified": true
+        },
+        "6": {
+          "routeId": "verbier-x-orient-2027",
+          "date": "2027-07-11",
+          "verified": true
+        }
+      }
     },
     "piut": {
       "eventId": "piut",
@@ -780,53 +2039,148 @@
     "der-gletscher-trailrun": {
       "eventId": "der-gletscher-trailrun",
       "checkedAt": "2026-11-17T07:58:26.800218+00:00",
-      "status": "unconfirmed",
+      "status": "verified",
       "sources": [
         {
           "url": "https://www.oetztal-trailrunning.at/die-running-events/glacier-trailrun-alpine-race/",
-          "status": "read"
+          "status": "read",
+          "verification": "official-2027-page"
         }
       ],
-      "eventPeriod": null,
-      "routes": {}
+      "eventPeriod": {
+        "startDate": "2027-07-22",
+        "endDate": "2027-07-25",
+        "verified": true
+      },
+      "routes": {
+        "0": {
+          "routeId": "gletscher-trail-42k-42-5-2800",
+          "date": "2027-07-24",
+          "verified": true
+        },
+        "1": {
+          "routeId": "gletscher-trail-62k-61-1-3600",
+          "date": "2027-07-24",
+          "verified": true
+        },
+        "2": {
+          "routeId": "gletscher-trail-14k-14-800",
+          "date": "2027-07-24",
+          "verified": true
+        },
+        "3": {
+          "routeId": "gletscher-trail-26k-25-8-1900",
+          "date": "2027-07-24",
+          "verified": true
+        },
+        "4": {
+          "routeId": "top-mountain-run-6-3-750",
+          "date": "2027-07-23",
+          "verified": true
+        }
+      }
     },
     "engadin-ut": {
       "eventId": "engadin-ut",
       "checkedAt": "2026-11-17T07:58:26.800218+00:00",
-      "status": "unconfirmed",
+      "status": "verified",
       "sources": [
         {
-          "url": "https://www.engadinultratrail.ch/eut-23",
-          "status": "read"
-        },
-        {
-          "url": "https://www.engadinultratrail.ch/eut-16",
-          "status": "read"
-        },
-        {
-          "url": "https://www.engadinultratrail.ch/eut-53",
-          "status": "read"
+          "url": "https://www.engadinultratrail.ch/",
+          "status": "read",
+          "verification": "official-2027-page"
         },
         {
           "url": "https://www.engadinultratrail.ch/eut102",
-          "status": "read"
+          "status": "read",
+          "verification": "official-2027-page"
+        },
+        {
+          "url": "https://www.engadinultratrail.ch/eut-53",
+          "status": "read",
+          "verification": "official-2027-page"
+        },
+        {
+          "url": "https://www.engadinultratrail.ch/eut-23",
+          "status": "read",
+          "verification": "official-2027-page"
+        },
+        {
+          "url": "https://www.engadinultratrail.ch/eut-16",
+          "status": "read",
+          "verification": "official-2027-page"
         }
       ],
-      "eventPeriod": null,
-      "routes": {}
+      "eventPeriod": {
+        "startDate": "2027-07-16",
+        "endDate": "2027-07-17",
+        "verified": true
+      },
+      "routes": {
+        "0": {
+          "routeId": "eut102-102-5677",
+          "date": "2027-07-16",
+          "verified": true
+        },
+        "1": {
+          "routeId": "eut53-53-2639",
+          "date": "2027-07-17",
+          "verified": true
+        },
+        "2": {
+          "routeId": "engadin-et23-22-8-1064",
+          "date": "2027-07-17",
+          "verified": true
+        },
+        "3": {
+          "routeId": "engadin-et16-16-3-791",
+          "date": "2027-07-17",
+          "verified": true
+        }
+      }
     },
     "maintal-ultratrail": {
       "eventId": "maintal-ultratrail",
       "checkedAt": "2026-11-17T07:58:26.800218+00:00",
-      "status": "unconfirmed",
+      "status": "verified",
       "sources": [
+        {
+          "url": "https://www.mtut.de/anmeldung/",
+          "status": "read",
+          "verification": "official-2027-registration"
+        },
+        {
+          "url": "https://www.mtut.de/informationen/reglement/",
+          "status": "read",
+          "verification": "official-course-data"
+        },
         {
           "url": "https://www.mtut.de/",
           "status": "read"
         }
       ],
-      "eventPeriod": null,
-      "routes": {}
+      "eventPeriod": {
+        "startDate": "2027-07-17",
+        "endDate": "2027-07-17",
+        "verified": true
+      },
+      "routes": {
+        "0": {
+          "routeId": "ultratrail-64-1700",
+          "date": "2027-07-17",
+          "verified": true
+        },
+        "1": {
+          "routeId": "maintal-trail-t30-30-720",
+          "date": "2027-07-17",
+          "verified": true
+        },
+        "2": {
+          "routeId": "maintal-trail-t13-13-230",
+          "date": "2027-07-17",
+          "verified": true
+        }
+      }
     },
     "dolomyths-run": {
       "eventId": "dolomyths-run",
@@ -861,11 +2215,50 @@
         }
       }
     },
+    "eiger-ultratrail": {
+      "eventId": "eiger-ultratrail",
+      "checkedAt": "2026-11-17T07:30:48.484Z",
+      "status": "verified",
+      "sources": [
+        {
+          "url": "https://eiger.utmb.world/de",
+          "status": "read",
+          "verification": "manual-official-page"
+        }
+      ],
+      "eventPeriod": {
+        "startDate": "2027-07-14",
+        "endDate": "2027-07-18",
+        "verified": true
+      },
+      "routes": {
+        "0": {
+          "routeId": "panorama-trail-50-3100",
+          "date": "2027-07-17",
+          "verified": true
+        },
+        "1": {
+          "routeId": "ultratrail-100-6700",
+          "date": "2027-07-17",
+          "verified": true
+        }
+      }
+    },
     "bucovina-ultra-rocks": {
       "eventId": "bucovina-ultra-rocks",
       "checkedAt": "2026-11-17T07:58:26.800218+00:00",
       "status": "verified",
       "sources": [
+        {
+          "url": "https://bucovina.utmb.world/discover/event-schedule",
+          "status": "read",
+          "verification": "official-calendar-and-race-pages"
+        },
+        {
+          "url": "https://bucovina.utmb.world/races",
+          "status": "read",
+          "verification": "official-calendar-and-race-pages"
+        },
         {
           "url": "https://bucovina.utmb.world/",
           "status": "read"
@@ -876,7 +2269,38 @@
         "endDate": "2027-07-25",
         "verified": true
       },
-      "routes": {}
+      "routes": {
+        "0": {
+          "routeId": "ultra-rocks-114-7000",
+          "date": "2027-07-23",
+          "verified": true
+        },
+        "1": {
+          "routeId": "four-summits-72-4600",
+          "date": "2027-07-24",
+          "verified": true
+        },
+        "2": {
+          "routeId": "bucovina-ladys-rocks-48-3200",
+          "date": "2027-07-24",
+          "verified": true
+        },
+        "3": {
+          "routeId": "bucovina-rocky-33-2000",
+          "date": "2027-07-24",
+          "verified": true
+        },
+        "4": {
+          "routeId": "bucovina-radical-20-1100",
+          "date": "2027-07-25",
+          "verified": true
+        },
+        "5": {
+          "routeId": "bucovina-rumble-rock-16-5-700",
+          "date": "2027-07-25",
+          "verified": true
+        }
+      }
     },
     "3kings-3hills": {
       "eventId": "3kings-3hills",
@@ -941,31 +2365,126 @@
         }
       }
     },
+    "davos-x-trail": {
+      "eventId": "davos-x-trail",
+      "checkedAt": "2026-11-17T07:32:04.290Z",
+      "status": "verified",
+      "sources": [
+        {
+          "url": "https://www.davos-xtrails.ch/",
+          "status": "read",
+          "verification": "manual-official-page"
+        }
+      ],
+      "eventPeriod": {
+        "startDate": "2027-07-23",
+        "endDate": "2027-07-24",
+        "verified": true
+      },
+      "routes": {
+        "0": {
+          "routeId": "davos-x-trail-68-2606",
+          "date": "2027-07-24",
+          "verified": true
+        }
+      }
+    },
     "ggut": {
       "eventId": "ggut",
       "checkedAt": "2026-11-17T07:58:26.800218+00:00",
-      "status": "unconfirmed",
+      "status": "verified",
       "sources": [
         {
           "url": "https://www.ultratrail.at/de",
-          "status": "read"
+          "status": "read",
+          "verification": "official-2027-event-period-and-routes"
+        },
+        {
+          "url": "https://www.ultratrail.at/de/distanzen/grossglockner-ultra-trail",
+          "status": "read",
+          "verification": "official-2027-ultra-details"
         }
       ],
-      "eventPeriod": null,
-      "routes": {}
+      "eventPeriod": {
+        "startDate": "2027-07-22",
+        "endDate": "2027-07-25",
+        "verified": true
+      },
+      "routes": {
+        "3": {
+          "routeId": "grossglockener-ultratrail-110-6500",
+          "date": "2027-07-23",
+          "verified": true
+        }
+      }
     },
     "sachsentrail-erzgebirge": {
       "eventId": "sachsentrail-erzgebirge",
       "checkedAt": "2026-11-17T07:58:26.800218+00:00",
-      "status": "unconfirmed",
+      "status": "verified",
       "sources": [
+        {
+          "url": "https://www.sachsentrail.de/informationen/ausschreibung",
+          "status": "read",
+          "verification": "official-2027-timetable-and-routes"
+        },
         {
           "url": "https://www.sachsentrail.de/",
           "status": "read"
         }
       ],
-      "eventPeriod": null,
-      "routes": {}
+      "eventPeriod": {
+        "startDate": "2027-06-25",
+        "endDate": "2027-06-27",
+        "verified": true
+      },
+      "routes": {
+        "0": {
+          "routeId": "ultratrail-75-5-2120",
+          "date": "2027-06-26",
+          "verified": true
+        },
+        "1": {
+          "routeId": "sachsentrail-halftrail-36-843",
+          "date": "2027-06-26",
+          "verified": true
+        },
+        "2": {
+          "routeId": "sachsentrail-basetrail-16-357",
+          "date": "2027-06-26",
+          "verified": true
+        },
+        "3": {
+          "routeId": "sachsentrail-quartertrail-20-506",
+          "date": "2027-06-27",
+          "verified": true
+        },
+        "4": {
+          "routeId": "sachsentrail-funtrail-12-6-347",
+          "date": "2027-06-27",
+          "verified": true
+        },
+        "5": {
+          "routeId": "sachsentrail-uphill-4-2-255",
+          "date": "2027-06-25",
+          "verified": true
+        },
+        "6": {
+          "routeId": "sachsentrail-bambini-0-4",
+          "date": "2027-06-27",
+          "verified": true
+        },
+        "7": {
+          "routeId": "sachsentrail-kids-1-10",
+          "date": "2027-06-27",
+          "verified": true
+        },
+        "8": {
+          "routeId": "sachsentrail-teen-4-70",
+          "date": "2027-06-27",
+          "verified": true
+        }
+      }
     },
     "gauja-trail-by-utmb": {
       "eventId": "gauja-trail-by-utmb",
@@ -974,7 +2493,13 @@
       "sources": [
         {
           "url": "https://gauja.utmb.world/",
-          "status": "read"
+          "status": "read",
+          "verification": "official-calendar-and-race-pages"
+        },
+        {
+          "url": "https://gauja.utmb.world/agenda",
+          "status": "read",
+          "verification": "official-calendar-and-race-pages"
         }
       ],
       "eventPeriod": {
@@ -982,20 +2507,131 @@
         "endDate": "2027-08-08",
         "verified": true
       },
-      "routes": {}
+      "routes": {
+        "0": {
+          "routeId": "gauja-trail-100k-91-2200",
+          "date": "2027-08-07",
+          "verified": true
+        },
+        "1": {
+          "routeId": "gauja-trail-50k-53-1200",
+          "date": "2027-08-08",
+          "verified": true
+        },
+        "2": {
+          "routeId": "gauja-trail-20k-21-500",
+          "date": "2027-08-07",
+          "verified": true
+        },
+        "3": {
+          "routeId": "gauja-trail-10k-13-5-300",
+          "date": "2027-08-08",
+          "verified": true
+        },
+        "4": {
+          "routeId": "sigulda-three-castles-12-300",
+          "date": "2027-08-06",
+          "verified": true
+        }
+      }
     },
     "quito-trail-ecuador": {
       "eventId": "quito-trail-ecuador",
       "checkedAt": "2026-11-17T07:58:26.800218+00:00",
-      "status": "unconfirmed",
+      "status": "verified",
       "sources": [
         {
           "url": "https://quito.utmb.world/",
-          "status": "read"
+          "status": "read",
+          "verification": "official-calendar-and-race-pages"
+        },
+        {
+          "url": "https://quito.utmb.world/runers/registration",
+          "status": "read",
+          "verification": "official-calendar-and-race-pages"
         }
       ],
-      "eventPeriod": null,
-      "routes": {}
+      "eventPeriod": {
+        "startDate": "2027-07-30",
+        "endDate": "2027-08-01",
+        "verified": true
+      },
+      "routes": {
+        "0": {
+          "routeId": "80k-oso-76-4400",
+          "date": "2027-07-31",
+          "verified": true
+        },
+        "1": {
+          "routeId": "quito-50k-nutria-53-2800",
+          "date": "2027-07-31",
+          "verified": true
+        },
+        "2": {
+          "routeId": "quito-30k-tucan-31-1600",
+          "date": "2027-07-31",
+          "verified": true
+        },
+        "3": {
+          "routeId": "quito-20k-quinde-20-1000",
+          "date": "2027-08-01",
+          "verified": true
+        },
+        "4": {
+          "routeId": "quito-12k-humboldt-13-850",
+          "date": "2027-08-01",
+          "verified": true
+        },
+        "5": {
+          "routeId": "quito-6k-rana-6-5-300",
+          "date": "2027-08-01",
+          "verified": true
+        }
+      }
+    },
+    "pitz-alpine-glacier-trail": {
+      "eventId": "pitz-alpine-glacier-trail",
+      "checkedAt": "2026-11-17T07:30:48.484Z",
+      "status": "verified",
+      "sources": [
+        {
+          "url": "https://www.pitztal.com/en/pitz-alpine-programme.html",
+          "status": "read",
+          "verification": "manual-official-page"
+        }
+      ],
+      "eventPeriod": {
+        "startDate": "2027-07-30",
+        "endDate": "2027-08-01",
+        "verified": true
+      },
+      "routes": {
+        "0": {
+          "routeId": "p45g-44-2800",
+          "date": "2027-07-31",
+          "verified": true
+        },
+        "1": {
+          "routeId": "p45r-44-2450",
+          "date": "2027-07-31",
+          "verified": true
+        },
+        "2": {
+          "routeId": "p60-62-4000",
+          "date": "2027-07-31",
+          "verified": true
+        },
+        "3": {
+          "routeId": "p90-90-5400",
+          "date": "2027-07-31",
+          "verified": true
+        },
+        "4": {
+          "routeId": "p105-105-6100",
+          "date": "2027-07-31",
+          "verified": true
+        }
+      }
     },
     "kat100": {
       "eventId": "kat100",
@@ -1041,6 +2677,40 @@
         }
       }
     },
+    "swiss-alps-100": {
+      "eventId": "swiss-alps-100",
+      "checkedAt": "2026-11-17T07:30:48.484Z",
+      "status": "verified",
+      "sources": [
+        {
+          "url": "https://www.swissalps100.com/de/info/schedule",
+          "status": "read",
+          "verification": "manual-official-page"
+        }
+      ],
+      "eventPeriod": {
+        "startDate": "2027-08-06",
+        "endDate": "2027-08-08",
+        "verified": true
+      },
+      "routes": {
+        "0": {
+          "routeId": "swiss-alps-100-50-3210",
+          "date": "2027-08-07",
+          "verified": true
+        },
+        "1": {
+          "routeId": "swiss-alps-100-100-6242",
+          "date": "2027-08-06",
+          "verified": true
+        },
+        "2": {
+          "routeId": "swiss-alps-100-160-10004",
+          "date": "2027-08-06",
+          "verified": true
+        }
+      }
+    },
     "allgau-panorama-marathon": {
       "eventId": "allgau-panorama-marathon",
       "checkedAt": "2026-11-17T07:58:26.800218+00:00",
@@ -1069,83 +2739,319 @@
         }
       }
     },
-    "karnisches-ungetum": {
-      "eventId": "karnisches-ungetum",
-      "checkedAt": "2026-11-17T07:58:26.800218+00:00",
+    "last-soul-ultra": {
+      "eventId": "last-soul-ultra",
+      "checkedAt": "2026-11-17T13:00:00+01:00",
       "status": "unconfirmed",
       "sources": [
         {
-          "url": "https://www.ungetuem.at/kut/",
-          "status": "read"
+          "url": "https://www.lastsoulultra.com/world-series",
+          "status": "read",
+          "verification": "official-2027-season-details"
         }
       ],
       "eventPeriod": null,
       "routes": {}
+    },
+    "karnisches-ungetum": {
+      "eventId": "karnisches-ungetum",
+      "checkedAt": "2026-11-17T07:58:26.800218+00:00",
+      "status": "verified",
+      "sources": [
+        {
+          "url": "https://www.ungetuem.at/kut/",
+          "status": "read",
+          "verification": "official-2027-source"
+        }
+      ],
+      "eventPeriod": {
+        "startDate": "2027-08-14",
+        "endDate": "2027-08-14",
+        "verified": true
+      },
+      "routes": {
+        "0": {
+          "routeId": "karnisches-ungetum-75-5200",
+          "date": "2027-08-14",
+          "verified": true
+        },
+        "1": {
+          "routeId": "karnisches-ungetum-short-25-1500",
+          "date": "2027-08-14",
+          "verified": true
+        }
+      }
     },
     "ultraks-matterhorn": {
       "eventId": "ultraks-matterhorn",
       "checkedAt": "2026-11-17T07:58:26.800218+00:00",
+      "status": "verified",
+      "sources": [
+        {
+          "url": "https://www.myswitzerland.com/en-us/experiences/events/trek-matterhorn-ultraks/",
+          "status": "read",
+          "verification": "official-2027-page"
+        },
+        {
+          "url": "https://www.matterhorn-ultraks.ch/home",
+          "status": "read",
+          "verification": "official-2027-page"
+        }
+      ],
+      "eventPeriod": {
+        "startDate": "2027-08-20",
+        "endDate": "2027-08-22",
+        "verified": true
+      },
+      "routes": {},
+      "note": "Der Veranstaltungszeitraum 20.–22. August 2027 und die Distanzen/Höhenmeter sind belegt. Die einzelnen Starttage der Rennen sind in den geprüften Quellen noch nicht eindeutig angegeben."
+    },
+    "trans-alpine-run": {
+      "eventId": "trans-alpine-run",
+      "checkedAt": "2026-11-17T07:32:04.290Z",
+      "status": "verified",
+      "sources": [
+        {
+          "url": "https://www.transalpine-run.com/en",
+          "status": "read",
+          "verification": "manual-official-page"
+        }
+      ],
+      "eventPeriod": {
+        "startDate": "2027-09-18",
+        "endDate": "2027-09-24",
+        "verified": true
+      },
+      "routes": {
+        "0": {
+          "routeId": "2run-2-tage-80-4500",
+          "date": "2027-09-18",
+          "verified": true
+        },
+        "1": {
+          "routeId": "solo-7-tage-250-18000",
+          "date": "2027-09-18",
+          "verified": true
+        }
+      }
+    },
+    "utmb-mont-blanc": {
+      "eventId": "utmb-mont-blanc",
+      "checkedAt": "2026-11-17T07:47:59.247Z",
+      "status": "verified",
+      "sources": [
+        {
+          "url": "https://montblanc.utmb.world/races-runners/runners/infos-pratiques",
+          "status": "read",
+          "verification": "official-page-says-2027-dates-coming-soon"
+        }
+      ],
+      "eventPeriod": {
+        "verified": false,
+        "startDate": null,
+        "endDate": null
+      },
+      "routes": {}
+    },
+    "frankischer-backyard-ultra": {
+      "eventId": "frankischer-backyard-ultra",
+      "checkedAt": "2026-11-17T07:52:37.589Z",
       "status": "unconfirmed",
       "sources": [
         {
-          "url": "https://www.matterhorn-ultraks.ch/home",
-          "status": "read"
+          "url": "https://backyardultra.de/rennen/",
+          "status": "read",
+          "verification": "official-calendar-checked"
         }
       ],
       "eventPeriod": null,
-      "routes": {}
+      "routes": {},
+      "note": "Für die Ausgabe 2027 wurde noch kein bestätigter Veranstaltertermin gefunden; der alte Eintrag bezieht sich auf 2026."
     },
     "dolomiti-di-brenta": {
       "eventId": "dolomiti-di-brenta",
       "checkedAt": "2026-11-17T07:58:26.800218+00:00",
-      "status": "unconfirmed",
+      "status": "verified",
       "sources": [
         {
           "url": "https://www.dolomitidibrentatrail.it/en/homepage/",
-          "status": "read"
+          "status": "read",
+          "verification": "official-2027-page"
+        },
+        {
+          "url": "https://www.dolomitidibrentatrail.it/en/routes/regulation/",
+          "status": "read",
+          "verification": "official-2027-regulation"
         }
       ],
-      "eventPeriod": null,
-      "routes": {}
+      "eventPeriod": {
+        "startDate": "2027-09-11",
+        "endDate": "2027-09-11",
+        "verified": true
+      },
+      "routes": {
+        "0": {
+          "routeId": "64km-64-4200",
+          "date": "2027-09-11",
+          "verified": true
+        },
+        "1": {
+          "routeId": "dolomiti-medium-45-2850",
+          "date": "2027-09-11",
+          "verified": true
+        },
+        "2": {
+          "routeId": "dolomiti-short-21-1250",
+          "date": "2027-09-11",
+          "verified": true
+        }
+      }
     },
     "infinite-trails": {
       "eventId": "infinite-trails",
       "checkedAt": "2026-11-17T07:58:26.800218+00:00",
-      "status": "unconfirmed",
+      "status": "verified",
       "sources": [
         {
           "url": "https://www.gastein.com/erlebnisse-events/veranstaltungen/top-events/adidas-infinite-trails/",
-          "status": "read"
+          "status": "read",
+          "verification": "official-2027-event-period-and-course-details"
         }
       ],
-      "eventPeriod": null,
+      "eventPeriod": {
+        "startDate": "2027-09-03",
+        "endDate": "2027-09-05",
+        "verified": true
+      },
       "routes": {}
     },
     "mayrhofen-ultraks": {
       "eventId": "mayrhofen-ultraks",
       "checkedAt": "2026-11-17T07:58:26.800218+00:00",
-      "status": "unconfirmed",
+      "status": "verified",
       "sources": [
         {
           "url": "https://mayrhofen.ultraks.com/",
-          "status": "read"
+          "status": "read",
+          "verification": "official-2027-page"
+        }
+      ],
+      "eventPeriod": {
+        "startDate": "2027-09-03",
+        "endDate": "2027-09-04",
+        "verified": true
+      },
+      "routes": {
+        "0": {
+          "routeId": "rk50-50-3200",
+          "date": "2027-09-04",
+          "verified": true
+        },
+        "1": {
+          "routeId": "tux070-70-4000",
+          "date": "2027-09-04",
+          "verified": true
+        },
+        "2": {
+          "routeId": "z101-101-7600",
+          "date": "2027-09-03",
+          "verified": true
+        },
+        "3": {
+          "routeId": "mayrhofen-muz30-30-3-2000",
+          "date": "2027-09-03",
+          "verified": true
+        },
+        "4": {
+          "routeId": "mayrhofen-muz14-14-5-900",
+          "date": "2027-09-04",
+          "verified": true
+        },
+        "5": {
+          "routeId": "mayrhofen-vertical-8-5-1250",
+          "date": "2027-09-04",
+          "verified": true
+        },
+        "6": {
+          "routeId": "mayrhofen-sprint-7-350",
+          "date": "2027-09-04",
+          "verified": true
+        }
+      }
+    },
+    "munchen-backyard-ultra": {
+      "eventId": "munchen-backyard-ultra",
+      "checkedAt": "2026-11-17T07:52:37.589Z",
+      "status": "unconfirmed",
+      "sources": [
+        {
+          "url": "https://backyardultra.de/rennen/",
+          "status": "read",
+          "verification": "official-calendar-checked"
         }
       ],
       "eventPeriod": null,
-      "routes": {}
+      "routes": {},
+      "note": "Für die Ausgabe 2027 wurde noch kein bestätigter Veranstaltertermin gefunden; der alte Eintrag bezieht sich auf 2026."
     },
     "torlauf-dachstein": {
       "eventId": "torlauf-dachstein",
       "checkedAt": "2026-11-17T07:58:26.800218+00:00",
-      "status": "unconfirmed",
+      "status": "verified",
       "sources": [
         {
           "url": "https://www.torlauf-dachstein.info/infos",
-          "status": "read"
+          "status": "read",
+          "verification": "official-2027-page"
+        }
+      ],
+      "eventPeriod": {
+        "startDate": "2027-09-03",
+        "endDate": "2027-09-04",
+        "verified": true
+      },
+      "routes": {
+        "0": {
+          "routeId": "marathon-41-4-2336",
+          "date": "2027-09-04",
+          "verified": true
+        },
+        "1": {
+          "routeId": "torlauf-ultra-72-4300",
+          "date": "2027-09-04",
+          "verified": true
+        },
+        "2": {
+          "routeId": "torlauf-half-24-510",
+          "date": "2027-09-04",
+          "verified": true
+        },
+        "3": {
+          "routeId": "torlauf-skyrace-24-2220",
+          "date": "2027-09-04",
+          "verified": true
+        },
+        "4": {
+          "routeId": "torlauf-10k-10-150",
+          "date": "2027-09-04",
+          "verified": true
+        }
+      }
+    },
+    "ultra-trail-great-wall": {
+      "eventId": "ultra-trail-great-wall",
+      "checkedAt": "2026-11-17T07:52:37.589Z",
+      "status": "unconfirmed",
+      "sources": [
+        {
+          "url": "https://ultratrailgreatwall.com/",
+          "status": "read",
+          "verification": "official-calendar-checked"
         }
       ],
       "eventPeriod": null,
-      "routes": {}
+      "routes": {},
+      "note": "Ein offizieller Termin für die Ausgabe 2027 ist auf der geprüften Veranstalterseite noch nicht veröffentlicht."
     },
     "kackar-by-utmb": {
       "eventId": "kackar-by-utmb",
@@ -1154,7 +3060,33 @@
       "sources": [
         {
           "url": "https://kackar.utmb.world/",
-          "status": "read"
+          "status": "read",
+          "verification": "official-2027-race-pages"
+        },
+        {
+          "url": "https://kackar.utmb.world/runners/schedule",
+          "status": "read",
+          "verification": "official-2027-race-pages"
+        },
+        {
+          "url": "https://kackar.utmb.world/races/100K",
+          "status": "read",
+          "verification": "official-2027-race-pages"
+        },
+        {
+          "url": "https://kackar.utmb.world/races/50K",
+          "status": "read",
+          "verification": "official-2027-race-pages"
+        },
+        {
+          "url": "https://kackar.utmb.world/races/20K",
+          "status": "read",
+          "verification": "official-2027-race-pages"
+        },
+        {
+          "url": "https://kackar.utmb.world/races/4K",
+          "status": "read",
+          "verification": "official-2027-race-pages"
         }
       ],
       "eventPeriod": {
@@ -1162,26 +3094,102 @@
         "endDate": "2027-09-12",
         "verified": true
       },
-      "routes": {}
+      "routes": {
+        "0": {
+          "routeId": "kackar-100k-82-5600",
+          "date": "2027-09-11",
+          "verified": true
+        },
+        "1": {
+          "routeId": "kackar-50k-44-3000",
+          "date": "2027-09-11",
+          "verified": true
+        },
+        "2": {
+          "routeId": "kackar-20k-20-1400",
+          "date": "2027-09-11",
+          "verified": true
+        },
+        "3": {
+          "routeId": "ayder-4k-4-230",
+          "date": "2027-09-11",
+          "verified": true
+        }
+      }
     },
     "wild-strubel": {
       "eventId": "wild-strubel",
       "checkedAt": "2026-11-17T07:58:26.800218+00:00",
-      "status": "unconfirmed",
+      "status": "verified",
       "sources": [
+        {
+          "url": "https://wildstrubel.utmb.world/de/",
+          "status": "read",
+          "verification": "official-2027-race-pages"
+        },
+        {
+          "url": "https://wildstrubel.utmb.world/de/discover/the-event/agenda",
+          "status": "read",
+          "verification": "official-2027-race-pages"
+        },
         {
           "url": "https://wildstrubel.utmb.world/",
           "status": "read"
         }
       ],
-      "eventPeriod": null,
-      "routes": {}
+      "eventPeriod": {
+        "startDate": "2027-09-09",
+        "endDate": "2027-09-12",
+        "verified": true
+      },
+      "routes": {
+        "0": {
+          "routeId": "wild70-70-4600",
+          "date": "2027-09-10",
+          "verified": true
+        },
+        "1": {
+          "routeId": "wild110-113-6600",
+          "date": "2027-09-10",
+          "verified": true
+        },
+        "2": {
+          "routeId": "wild55-55-3300",
+          "date": "2027-09-11",
+          "verified": true
+        },
+        "3": {
+          "routeId": "wild-glacier-marathon-41-2500",
+          "date": "2027-09-10",
+          "verified": true
+        },
+        "4": {
+          "routeId": "wild25-26-1200",
+          "date": "2027-09-12",
+          "verified": true
+        },
+        "5": {
+          "routeId": "wild10-10-500",
+          "date": "2027-09-11",
+          "verified": true
+        }
+      }
     },
     "paraty-brazil": {
       "eventId": "paraty-brazil",
       "checkedAt": "2026-11-17T07:58:26.800218+00:00",
       "status": "verified",
       "sources": [
+        {
+          "url": "https://paraty.utmb.world/news/inscricoes-paraty-brazil-by-utmb-2027",
+          "status": "read",
+          "verification": "official-calendar-and-race-pages"
+        },
+        {
+          "url": "https://paraty.utmb.world/races-runners/other-information/faq",
+          "status": "read",
+          "verification": "official-calendar-and-race-pages"
+        },
         {
           "url": "https://paraty.utmb.world/",
           "status": "read"
@@ -1192,33 +3200,146 @@
         "endDate": "2027-09-26",
         "verified": true
       },
-      "routes": {}
+      "routes": {
+        "0": {
+          "routeId": "ptr108-108-4850",
+          "date": "2027-09-24",
+          "verified": true
+        },
+        "1": {
+          "routeId": "paraty-ptr55-53-3200",
+          "date": "2027-09-25",
+          "verified": true
+        },
+        "2": {
+          "routeId": "paraty-ptr34-34-1100",
+          "date": "2027-09-25",
+          "verified": true
+        },
+        "3": {
+          "routeId": "paraty-ptr25-25-750",
+          "date": "2027-09-25",
+          "verified": true
+        },
+        "4": {
+          "routeId": "paraty-ptr17-17-550",
+          "date": "2027-09-25",
+          "verified": true
+        },
+        "5": {
+          "routeId": "paraty-night10-10-270",
+          "date": "2027-09-25",
+          "verified": true
+        },
+        "6": {
+          "routeId": "paraty-run7-7-50",
+          "date": "2027-09-26",
+          "verified": true
+        }
+      }
     },
     "arberland-ultratrail": {
       "eventId": "arberland-ultratrail",
       "checkedAt": "2026-11-17T07:58:26.800218+00:00",
-      "status": "unconfirmed",
+      "status": "verified",
       "sources": [
         {
           "url": "https://www.woidlaeufer.de/",
-          "status": "read"
+          "status": "read",
+          "verification": "official-2027-page"
         }
       ],
-      "eventPeriod": null,
-      "routes": {}
+      "eventPeriod": {
+        "startDate": "2027-09-18",
+        "endDate": "2027-09-18",
+        "verified": true
+      },
+      "routes": {
+        "0": {
+          "routeId": "auerhahn-trail-43-1500",
+          "date": "2027-09-18",
+          "verified": true
+        },
+        "1": {
+          "routeId": "classic-trail-68-2500",
+          "date": "2027-09-18",
+          "verified": true
+        },
+        "2": {
+          "routeId": "arberland-ultra-102-3900",
+          "date": "2027-09-18",
+          "verified": true
+        },
+        "3": {
+          "routeId": "arberland-schachtenbach-36-1500",
+          "date": "2027-09-18",
+          "verified": true
+        },
+        "4": {
+          "routeId": "arberland-arbersee-20-900",
+          "date": "2027-09-18",
+          "verified": true
+        }
+      }
     },
     "julian-alps-trail-run": {
       "eventId": "julian-alps-trail-run",
       "checkedAt": "2026-11-17T07:58:26.800218+00:00",
-      "status": "unconfirmed",
+      "status": "verified",
       "sources": [
         {
           "url": "https://julianalps.utmb.world/",
-          "status": "read"
+          "status": "read",
+          "verification": "official-2027-race-pages"
+        },
+        {
+          "url": "https://julianalps.utmb.world/registration",
+          "status": "read",
+          "verification": "official-2027-race-pages"
+        },
+        {
+          "url": "https://julianalps.utmb.world/races-runners/runners/event-schedule",
+          "status": "read",
+          "verification": "official-2027-race-pages"
         }
       ],
-      "eventPeriod": null,
-      "routes": {}
+      "eventPeriod": {
+        "startDate": "2027-09-16",
+        "endDate": "2027-09-19",
+        "verified": true
+      },
+      "routes": {
+        "0": {
+          "routeId": "120km-120-5893",
+          "date": "2027-09-17",
+          "verified": true
+        },
+        "1": {
+          "routeId": "50km-53-2700",
+          "date": "2027-09-17",
+          "verified": true
+        },
+        "2": {
+          "routeId": "80km-80-3826",
+          "date": "2027-09-18",
+          "verified": true
+        },
+        "3": {
+          "routeId": "julian-alps-kranjska-gora-25k-25-1090",
+          "date": "2027-09-19",
+          "verified": true
+        },
+        "4": {
+          "routeId": "julian-alps-intersport-15k-17-583",
+          "date": "2027-09-19",
+          "verified": true
+        },
+        "5": {
+          "routeId": "julian-alps-vitranc-10k-11-329",
+          "date": "2027-09-19",
+          "verified": true
+        }
+      }
     },
     "berlin-marathon-major": {
       "eventId": "berlin-marathon-major",
@@ -1248,18 +3369,204 @@
         }
       }
     },
-    "oberaudorf-trailfestival": {
-      "eventId": "oberaudorf-trailfestival",
-      "checkedAt": "2026-11-17T07:58:26.800218+00:00",
+    "adamello-ultratrail": {
+      "eventId": "adamello-ultratrail",
+      "checkedAt": "2026-11-17T07:52:37.589Z",
       "status": "unconfirmed",
       "sources": [
         {
-          "url": "https://www.oberaudorftrailfestival.com/",
-          "status": "read"
+          "url": "https://www.adamelloultratrail.it/en/",
+          "status": "read",
+          "verification": "official-calendar-checked"
         }
       ],
       "eventPeriod": null,
-      "routes": {}
+      "routes": {},
+      "note": "Die Veranstalterseite veröffentlicht derzeit Programm und Anmeldedaten für 2026; ein offizieller Termin für 2027 ist noch nicht veröffentlicht."
+    },
+    "nice-cote-d-azur": {
+      "eventId": "nice-cote-d-azur",
+      "checkedAt": "2026-11-17T07:52:37.589Z",
+      "status": "unconfirmed",
+      "sources": [
+        {
+          "url": "https://nice.utmb.world/",
+          "status": "read",
+          "verification": "official-calendar-checked"
+        }
+      ],
+      "eventPeriod": null,
+      "routes": {},
+      "note": "Ein offizieller 2027-Termin ist auf der geprüften UTMB-Veranstalterseite noch nicht veröffentlicht."
+    },
+    "alpin-team-trailrun": {
+      "eventId": "alpin-team-trailrun",
+      "checkedAt": "2026-11-17T07:52:37.589Z",
+      "status": "unconfirmed",
+      "sources": [
+        {
+          "url": "https://www.trailrunning-verband.at/trailrunning-kalender",
+          "status": "read",
+          "verification": "official-calendar-checked"
+        }
+      ],
+      "eventPeriod": null,
+      "routes": {},
+      "note": "Ein offizieller Termin für 2027 ist noch nicht belegt; die hinterlegte Datumsangabe stammt aus 2026."
+    },
+    "chihuahua-by-utmb": {
+      "eventId": "chihuahua-by-utmb",
+      "checkedAt": "2026-11-17T07:52:37.589Z",
+      "status": "unconfirmed",
+      "sources": [
+        {
+          "url": "https://chihuahua.utmb.world/races",
+          "status": "read",
+          "verification": "official-calendar-checked"
+        }
+      ],
+      "eventPeriod": null,
+      "routes": {},
+      "note": "Die geprüften offiziellen Angaben beziehen sich auf die Ausgabe 2026; ein 2027-Kalender ist noch nicht veröffentlicht."
+    },
+    "trail-tarmac-pursuit": {
+      "eventId": "trail-tarmac-pursuit",
+      "checkedAt": "2026-11-17T07:52:37.589Z",
+      "status": "unconfirmed",
+      "sources": [
+        {
+          "url": "https://www.trailrunning-verband.at/trailrunning-kalender",
+          "status": "read",
+          "verification": "official-calendar-checked"
+        }
+      ],
+      "eventPeriod": null,
+      "routes": {},
+      "note": "Ein offizieller Termin für 2027 ist noch nicht belegt; der hinterlegte Termin ist aus 2026."
+    },
+    "oberaudorf-trailfestival": {
+      "eventId": "oberaudorf-trailfestival",
+      "checkedAt": "2026-11-17T07:58:26.800218+00:00",
+      "status": "verified",
+      "sources": [
+        {
+          "url": "https://www.oberaudorftrailfestival.com/",
+          "status": "read",
+          "verification": "official-2027-source"
+        },
+        {
+          "url": "https://saltytrailrunning.com/en-de/pages/otf-100",
+          "status": "read",
+          "verification": "official-2027-source"
+        },
+        {
+          "url": "https://saltytrailrunning.com/en-de/pages/otf-ultra",
+          "status": "read",
+          "verification": "official-2027-source"
+        },
+        {
+          "url": "https://saltytrailrunning.com/en-de/pages/otf-sudelfeld",
+          "status": "read",
+          "verification": "official-2027-source"
+        },
+        {
+          "url": "https://saltytrailrunning.com/en-de/pages/otf-speed",
+          "status": "read",
+          "verification": "official-2027-source"
+        },
+        {
+          "url": "https://saltytrailrunning.com/en-de/pages/otf-short",
+          "status": "read",
+          "verification": "official-2027-source"
+        }
+      ],
+      "eventPeriod": {
+        "startDate": "2027-09-30",
+        "endDate": "2027-10-03",
+        "verified": true
+      },
+      "routes": {
+        "0": {
+          "routeId": "brunnstein-speed-24-1473",
+          "date": "2027-10-02",
+          "verified": true
+        },
+        "1": {
+          "routeId": "sudelfeld-ultra-42-8-2395",
+          "date": "2027-10-02",
+          "verified": true
+        },
+        "2": {
+          "routeId": "wendelstein-ultra-56-5-3228",
+          "date": "2027-10-02",
+          "verified": true
+        },
+        "3": {
+          "routeId": "otf-100-102-5500",
+          "date": "2027-10-01",
+          "verified": true
+        },
+        "4": {
+          "routeId": "hocheck-short-12-4-506",
+          "date": "2027-10-02",
+          "verified": true
+        }
+      }
+    },
+    "taubertal-100": {
+      "eventId": "taubertal-100",
+      "checkedAt": "2026-11-17T07:52:37.589Z",
+      "status": "verified",
+      "sources": [
+        {
+          "url": "https://www.tauberbischofsheim.de/site/Tauberbischofsheim-Tourismus/node/1465350/zmdetail_4782907/Taubertal100PunktzuPunktLaufTauberbischofsheimbei70km.html",
+          "status": "read",
+          "verification": "official-2027-source"
+        },
+        {
+          "url": "https://www.taubertal100.de/",
+          "status": "read",
+          "verification": "official-2027-source"
+        }
+      ],
+      "eventPeriod": {
+        "startDate": "2027-10-02",
+        "endDate": "2027-10-02",
+        "verified": true
+      },
+      "routes": {
+        "0": {
+          "routeId": "70-71-320",
+          "date": "2027-10-02",
+          "verified": true
+        },
+        "1": {
+          "routeId": "100-100-570",
+          "date": "2027-10-02",
+          "verified": true
+        }
+      },
+      "note": "Der Termin 2. Oktober 2027 ist im städtischen Veranstaltungskalender bestätigt. Die 10,5-h-Grenze für 70 km ist belegt; die bisherige 100-km-Maximalzeit wurde nicht erneut offiziell bestätigt."
+    },
+    "hoka-kodiak-ultra-marathons": {
+      "eventId": "hoka-kodiak-ultra-marathons",
+      "checkedAt": "2026-11-17T07:53:34.872Z",
+      "status": "unconfirmed",
+      "sources": [
+        {
+          "url": "https://kodiak.utmb.world/register",
+          "status": "read",
+          "verification": "official-2027-registration-page"
+        },
+        {
+          "url": "https://kodiak.utmb.world/",
+          "status": "read",
+          "verification": "official-event-page"
+        }
+      ],
+      "eventPeriod": null,
+      "routes": {},
+      "note": "Die offizielle Seite hat eine 2027-Registrierungsseite veröffentlicht, zeigt dort aber noch keinen konkreten Veranstaltungstag. Die angezeigten Renndaten auf der Event-Startseite beziehen sich noch auf 2026; diese dürfen nicht als 2027-Termine übernommen werden."
     },
     "munchen-marathon": {
       "eventId": "munchen-marathon",
@@ -1274,44 +3581,192 @@
       "eventPeriod": null,
       "routes": {}
     },
+    "stundenrundenlauf": {
+      "eventId": "stundenrundenlauf",
+      "checkedAt": "2026-11-17T07:52:37.589Z",
+      "status": "unconfirmed",
+      "sources": [
+        {
+          "url": "https://www.austriabackyardultra.com/upcoming",
+          "status": "read",
+          "verification": "official-calendar-checked"
+        }
+      ],
+      "eventPeriod": null,
+      "routes": {},
+      "note": "Ein bestätigter Termin für die nächste Ausgabe ist auf den geprüften Veranstalterkalendern noch nicht veröffentlicht."
+    },
     "kullamannen": {
       "eventId": "kullamannen",
       "checkedAt": "2026-11-17T07:58:26.800218+00:00",
-      "status": "unconfirmed",
+      "status": "verified",
       "sources": [
+        {
+          "url": "https://kullamannen.utmb.world/registration",
+          "status": "read",
+          "verification": "manual-official-page"
+        },
         {
           "url": "https://kullamannen.utmb.world/",
           "status": "read"
         }
       ],
+      "eventPeriod": {
+        "startDate": "2027-11-05",
+        "endDate": "2027-11-06",
+        "verified": true
+      },
+      "routes": {
+        "0": {
+          "routeId": "sprint-ultra-100km-108-749",
+          "date": "2027-11-05",
+          "verified": true
+        },
+        "1": {
+          "routeId": "ultra-100-miles-173-2300",
+          "date": "2027-11-05",
+          "verified": true
+        },
+        "2": {
+          "routeId": "seventh-seal-53-727",
+          "date": "2027-11-06",
+          "verified": true
+        },
+        "3": {
+          "routeId": "north-shore-22-96",
+          "date": "2027-11-06",
+          "verified": true
+        }
+      }
+    },
+    "mallorca-serra-de-tramuntana": {
+      "eventId": "mallorca-serra-de-tramuntana",
+      "checkedAt": "2026-11-17T07:52:37.589Z",
+      "status": "unconfirmed",
+      "sources": [
+        {
+          "url": "https://mallorca.utmb.world/races",
+          "status": "read",
+          "verification": "official-calendar-checked"
+        }
+      ],
       "eventPeriod": null,
-      "routes": {}
+      "routes": {},
+      "note": "Die offizielle Rennliste zeigt derzeit die Ausgabe 30. Oktober bis 1. November 2026; ein 2027-Termin ist noch nicht veröffentlicht."
+    },
+    "24-1-challenge": {
+      "eventId": "24-1-challenge",
+      "checkedAt": "2026-11-17T07:52:37.589Z",
+      "status": "unconfirmed",
+      "sources": [
+        {
+          "url": "https://www.austriabackyardultra.com/upcoming",
+          "status": "read",
+          "verification": "official-calendar-checked"
+        }
+      ],
+      "eventPeriod": null,
+      "routes": {},
+      "note": "Ein bestätigter Termin für 2027 ist noch nicht veröffentlicht; der bisherige Eintrag bezieht sich auf 2026."
+    },
+    "puglia-terra-delle-gravine": {
+      "eventId": "puglia-terra-delle-gravine",
+      "checkedAt": "2026-11-17T07:52:37.589Z",
+      "status": "unconfirmed",
+      "sources": [
+        {
+          "url": "https://www.pugliaterra.it/",
+          "status": "read",
+          "verification": "official-calendar-checked"
+        }
+      ],
+      "eventPeriod": null,
+      "routes": {},
+      "note": "Ein offizieller Lauf-Termin für 2027 konnte auf der geprüften Veranstalterseite nicht bestätigt werden."
     },
     "3trail-ibiza": {
       "eventId": "3trail-ibiza",
       "checkedAt": "2026-11-17T07:58:26.800218+00:00",
-      "status": "unconfirmed",
+      "status": "verified",
       "sources": [
         {
+          "url": "https://aristaeventos.es/",
+          "status": "read",
+          "verification": "official-2027-source"
+        },
+        {
           "url": "https://3diastrailibiza.com/",
-          "status": "read"
+          "status": "read",
+          "verification": "official-2027-source"
         }
       ],
-      "eventPeriod": null,
-      "routes": {}
+      "eventPeriod": {
+        "startDate": "2027-11-26",
+        "endDate": "2027-11-28",
+        "verified": true
+      },
+      "routes": {},
+      "note": "Der Veranstaltungszeitraum 26.–28. November 2027 ist auf der offiziellen Arista-Eventseite gelistet. Die konkreten Tagesstarts und die 2027-Strecken sind noch nicht veröffentlicht."
     },
     "oman-by-utmb": {
       "eventId": "oman-by-utmb",
       "checkedAt": "2026-11-17T07:58:26.800218+00:00",
-      "status": "unconfirmed",
+      "status": "verified",
       "sources": [
         {
           "url": "https://oman.utmb.world/",
-          "status": "read"
+          "status": "read",
+          "verification": "official-calendar-and-race-pages"
+        },
+        {
+          "url": "https://oman.utmb.world/shuttle",
+          "status": "read",
+          "verification": "official-calendar-and-race-pages"
+        },
+        {
+          "url": "https://oman.utmb.world/runners/event-schedule",
+          "status": "read",
+          "verification": "official-calendar-and-race-pages"
+        },
+        {
+          "url": "https://oman.utmb.world/races/HAJ",
+          "status": "read",
+          "verification": "official-calendar-and-race-pages"
         }
       ],
-      "eventPeriod": null,
-      "routes": {}
+      "eventPeriod": {
+        "startDate": "2026-12-10",
+        "endDate": "2026-12-12",
+        "verified": true
+      },
+      "routes": {
+        "0": {
+          "routeId": "jabal-classic-103-5000",
+          "date": "2026-12-10",
+          "verified": true
+        },
+        "1": {
+          "routeId": "hajar-ultra-154-8000",
+          "date": "2026-12-10",
+          "verified": true
+        },
+        "2": {
+          "routeId": "oman-skyward-canyon-50-2400",
+          "date": "2026-12-11",
+          "verified": true
+        },
+        "3": {
+          "routeId": "oman-old-capital-trail-32-1400",
+          "date": "2026-12-12",
+          "verified": true
+        },
+        "4": {
+          "routeId": "oman-scenic-ascent-21-5-550",
+          "date": "2026-12-12",
+          "verified": true
+        }
+      },
+      "note": "Die offizielle Race-Seite nennt für Old Capital Trail 32 km, der Event-Zeitplan führt den Lauf als 20K. Distanzangabe ist deshalb als widersprüchlich markiert und sollte vor Anmeldung nochmals beim Veranstalter geprüft werden."
     },
     "mammutmarsch": {
       "eventId": "mammutmarsch",

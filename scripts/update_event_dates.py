@@ -94,7 +94,31 @@ def extract_events(page):
     ]
 
 updated = datetime.now(timezone.utc).isoformat()
+today = datetime.now(timezone.utc).date().isoformat()
+previous_feed_path = ROOT / "event-dates.json"
+try:
+    previous_feed = json.loads(previous_feed_path.read_text(encoding="utf-8"))
+except (OSError, ValueError):
+    previous_feed = {}
+previous_events = previous_feed.get("events", {})
 feed = {"updatedAt": updated, "schemaVersion": 3, "events": {}}
+for event in events:
+    previous = previous_events.get(event["id"])
+    if not previous:
+        continue
+    previous = dict(previous)
+    valid_route_ids = {route.get("id") for route in event.get("routes", [])}
+    previous_routes = {
+        key: value for key, value in (previous.get("routes") or {}).items()
+        if value.get("routeId") in valid_route_ids and value.get("date") and value["date"] >= today
+    }
+    previous["routes"] = previous_routes
+    previous_period = previous.get("eventPeriod")
+    if previous_period and previous_period.get("endDate") and previous_period["endDate"] < today:
+        previous["eventPeriod"] = None
+    if previous.get("status") == "verified" and not previous.get("eventPeriod") and not previous_routes:
+        previous["status"] = "unconfirmed"
+    feed["events"][event["id"]] = previous
 
 # Manually checked official event pages. Keep these verified periods even when a
 # page does not expose machine-readable schema.org Event data.
@@ -160,7 +184,8 @@ for event in events:
     event_period = None
     if len(event_matches) == 1:
         start_date, end_date = next(iter(event_matches))
-        event_period = {"startDate": start_date, "endDate": end_date, "verified": True}
+        if end_date and end_date >= today:
+            event_period = {"startDate": start_date, "endDate": end_date, "verified": True}
 
     route_dates = {}
     conflicting_routes = set()
@@ -168,7 +193,7 @@ for event in events:
         records = pages[url]
         for route_index, route in route_list:
             route_name = str(route.get("route") or route.get("name") or "").strip().casefold()
-            matches = {record["start"] for record in records if route_name and record["name"] == route_name}
+            matches = {record["start"] for record in records if route_name and record["name"] == route_name and record["start"] and record["start"] >= today}
             if len(matches) == 1:
                 date = next(iter(matches))
                 route_key = str(route_index)
@@ -190,19 +215,64 @@ for event in events:
             "verified": True
         }
 
-    status = "verified" if route_entries or event_period else (
-        "unavailable" if source_status and all(x["status"] == "unavailable" for x in source_status)
-        else "unconfirmed"
-    )
     if source_status or route_entries:
-        feed["events"][event["id"]] = {
+        previous = feed["events"].get(event["id"], {})
+        previous_period = previous.get("eventPeriod")
+        merged_period = event_period or previous_period
+        if event_period and previous_period and event_period.get("startDate", "") < previous_period.get("startDate", ""):
+            merged_period = previous_period
+        if merged_period and merged_period.get("endDate") and merged_period["endDate"] < today:
+            merged_period = None
+
+        merged_routes = dict(previous.get("routes") or {})
+        for route_key, route_entry in route_entries.items():
+            old_route = merged_routes.get(route_key)
+            if (
+                old_route
+                and old_route.get("routeId") == route_entry.get("routeId")
+                and old_route.get("date")
+                and old_route["date"] > route_entry["date"]
+            ):
+                continue
+            merged_routes[route_key] = route_entry
+
+        valid_route_ids = {route.get("id") for route in event.get("routes", [])}
+        merged_routes = {
+            key: value for key, value in merged_routes.items()
+            if value.get("routeId") in valid_route_ids and value.get("date") and value["date"] >= today
+        }
+
+        merged_sources = {}
+        for source in previous.get("sources", []):
+            if source.get("url"):
+                merged_sources[source["url"]] = dict(source)
+        for source in source_status:
+            url = source.get("url")
+            if url:
+                merged_sources[url] = {**merged_sources.get(url, {}), **source}
+
+        if merged_period or merged_routes:
+            status = "verified"
+        elif previous.get("status") == "discontinued":
+            status = "discontinued"
+        elif previous.get("status") in ("unconfirmed", "unavailable"):
+            status = previous["status"]
+        elif source_status and all(x["status"] == "unavailable" for x in source_status):
+            status = "unavailable"
+        else:
+            status = "unconfirmed"
+
+        record = {
             "eventId": event["id"],
             "checkedAt": updated,
             "status": status,
-            "sources": source_status,
-            "eventPeriod": event_period,
-            "routes": route_entries
+            "sources": list(merged_sources.values()),
+            "eventPeriod": merged_period,
+            "routes": merged_routes
         }
+        if previous.get("note"):
+            record["note"] = previous["note"]
+        feed["events"][event["id"]] = record
 
 
 
