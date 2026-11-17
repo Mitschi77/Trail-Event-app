@@ -2,6 +2,9 @@ import { readFile } from "node:fs/promises";
 import assert from "node:assert/strict";
 
 const html = await readFile(new URL("../index.html", import.meta.url), "utf8");
+assert.match(html, /function parseTcxData\\(xmlText\\)/, "TCX parser must remain available for Garmin exports");
+assert.match(html, /\.tcx,application\\/gpx\\+xml,application\\/vnd\\.garmin\\.tcx\\+xml/, "route import controls must accept TCX and GPX files");
+
 const match = html.match(/function completedRunDistance\(x\)\{[\s\S]*?\}/);
 assert.ok(match, "completedRunDistance helper must exist");
 const completedRunDistance = new Function("return (" + match[0] + ")")();
