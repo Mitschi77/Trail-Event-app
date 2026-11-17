@@ -1,113 +1,71 @@
 {
   "batch": 2,
   "checkedAt": "2026-11-17",
-  "scope": "Events 6–10 in top-level EVENTS array",
+  "scope": "Top-level events 6-10 in current EVENTS order",
   "status": "saved",
-  "appCommit": "ba0767a278cbcaa6401ee5ba2b04694c1a9a121b",
+  "appCommit": "5eeb1c7d8561e6f9e135743be6edb75b95162fdf",
   "events": [
     {
       "order": 6,
       "name": "Transgrancanaria",
-      "officialSources": [
-        "https://transgrancanaria.net/en/classic-126km/",
-        "https://transgrancanaria.net/en/advanced-84km/"
-      ],
+      "gpxStatus": "No current 2027 GPX. Official Classic page currently exposes a 2026 file; rejected as stale.",
       "routes": [
-        {
-          "name": "Classic 126km",
-          "official2027DistanceKm": 126,
-          "officialHm": 6764,
-          "gpxStatus": "stale-official-link",
-          "observedGpx": "https://transgrancanaria.net/wp-content/uploads/TGCC-2026-28052025-1-1.gpx"
-        },
-        {
-          "name": "Advanced 82km",
-          "official2027DistanceKm": 82,
-          "officialHm": 4314,
-          "gpxStatus": "stale-official-link",
-          "observedGpx": "https://transgrancanaria.net/wp-content/uploads/TGCA-2026-18072025-1.gpx"
-        }
+        "Classic 126km",
+        "Advanced 82km"
       ],
-      "note": "Both official 2027 race pages currently link to GPX files whose filenames and embedded track names identify them as 2026. No stale track was added to the app."
+      "followUp": "Wait for official 2027 GPX links. Do not use 2026 GPX."
     },
     {
       "order": 7,
       "name": "Donautrail",
-      "officialSource": "https://donautrail.at/strecken/",
-      "gpxStatus": "registration-email",
-      "note": "Organizer sends a GPX download link by email after registration and publishes updated tracks a few days before the event. No public direct GPX file."
+      "gpxStatus": "Organizer download page found, but reuse/upload is prohibited by its terms.",
+      "routes": [
+        "Linz55",
+        "Linz75",
+        "Linz100"
+      ],
+      "officialDownloadPage": "https://donautrail.at/downlaod-gpx-track-donautrail/",
+      "followUp": "App links users to the organizer page only; do not copy files into repository. User must accept organizer terms."
     },
     {
       "order": 8,
       "name": "Psyland Backyard Ultra",
-      "officialSource": "https://www.insane-backyard-ultra.com/de/rennen/",
-      "gpxStatus": "not-published-yet",
-      "note": "Official page confirms 6.7 km every hour and the 2027 race date but contains no GPX download."
+      "gpxStatus": "Historical event from 14 March 2026; no official GPX found for this past edition.",
+      "followUp": "Do not substitute tracks from a different 2027 event or similarly named race."
     },
     {
       "order": 9,
       "name": "Tenerife Bluetrail by UTMB",
-      "officialSource": "https://tenerife.utmb.world/race/tracks",
-      "routes": [
+      "gpxStatus": "Official 2027 direct downloads linked for 82K and 68K; 110K, 47K and 24K page links still resolve to 2025 files and are rejected as stale.",
+      "officialDownloadPage": "https://tenerife.utmb.world/race/tracks",
+      "downloads": [
         {
-          "name": "110k",
-          "gpxStatus": "stale-official-link",
-          "observedGpx": "https://pdf.utmb.world/raw/upload/v1740503518/tenerife/Races/TRACKS/DESCARGA%202025/Bluetrail_2025_Chanajiga_Directo_Ultra_Cristianos_e6e1f0a1ce.gpx"
+          "route": "82K",
+          "url": "https://pdf.utmb.world/raw/upload/v1779958614/tenerife/2027_TBT_VILAFLOR_82km_3300m_15dda65079.gpx"
         },
         {
-          "name": "82k",
-          "gpxStatus": "direct-download",
-          "gpxUrl": "https://pdf.utmb.world/raw/upload/v1779958614/tenerife/2027_TBT_VILAFLOR_82km_3300m_15dda65079.gpx"
-        },
-        {
-          "name": "68k",
-          "gpxStatus": "direct-download",
-          "gpxUrl": "https://pdf.utmb.world/raw/upload/v1779958611/tenerife/2027_TBT_LA_ESPERANZA_68km_3600m_d784b08256.gpx"
-        },
-        {
-          "name": "47k",
-          "gpxStatus": "stale-official-link",
-          "observedGpx": "https://pdf.utmb.world/raw/upload/v1740503514/tenerife/Races/TRACKS/DESCARGA%202025/Bluetrail_2025_Chanajiga_Directo_Maraton_cf28ffb9d4.gpx"
-        },
-        {
-          "name": "24k",
-          "gpxStatus": "stale-official-link",
-          "observedGpx": "https://pdf.utmb.world/raw/upload/v1740510019/tenerife/Races/TRACKS/DESCARGA%202025/Bluetrail_2025_24k_75757e7711.gpx"
+          "route": "68K",
+          "url": "https://pdf.utmb.world/raw/upload/v1779958611/tenerife/2027_TBT_LA_ESPERANZA_68km_3600m_d784b08256.gpx"
         }
       ],
-      "note": "Only the 82k and 68k downloads are explicitly 2027 files; the 110k, 47k and 24k links still point to 2025 files and were not added as 2027 tracks."
+      "followUp": "Use app one-click import and check CORS; wait for updated 110K/47K/24K GPX."
     },
     {
       "order": 10,
       "name": "Chianti Ultra Trail",
-      "officialSources": [
-        "https://chianti.utmb.world/races/cut",
-        "https://chianti.utmb.world/races/utcc"
-      ],
-      "routes": [
+      "gpxStatus": "Official UTMB direct 2027 GPX links verified and added.",
+      "downloads": [
         {
-          "name": "CUT",
-          "officialDistanceKm": 73,
-          "officialHm": 3000,
-          "gpxStatus": "direct-download",
-          "gpxUrl": "https://pdf.utmb.world/raw/upload/v1777382308/chianti/Races/gpx%20files/2027/CUT_73_K_2027_a4e001e60a.gpx"
+          "route": "CUT 73K",
+          "url": "https://pdf.utmb.world/raw/upload/v1777382308/chianti/Races/gpx%20files/2027/CUT_73_K_2027_a4e001e60a.gpx"
         },
         {
-          "name": "UTCC",
-          "officialDistanceKm": 123,
-          "officialHm": 5200,
-          "gpxStatus": "direct-download",
-          "gpxUrl": "https://pdf.utmb.world/raw/upload/v1780669402/chianti/Races/gpx%20files/UTCC_120_K_2027_01_8d79fda70b.gpx"
+          "route": "UTCC 120K",
+          "url": "https://pdf.utmb.world/raw/upload/v1780669402/chianti/Races/gpx%20files/UTCC_120_K_2027_01_8d79fda70b.gpx"
         }
       ],
-      "note": "Official 2027 GPX files linked; app route distance for UTCC corrected from 124 km to the official page's 123 km."
+      "followUp": "Use app one-click import and verify route metrics against official course details."
     }
   ],
-  "followUps": [
-    "Transgrancanaria: recheck for 2027 GPX links; do not use 2026 files.",
-    "Donautrail: obtain the GPX from the registration email or official late-release page.",
-    "Psyland: recheck for a route download or request the organizer's GPX.",
-    "Tenerife: wait for updated 2027 files for 110k, 47k and 24k.",
-    "Chianti: validate both official GPX files against route profiles/elevation before relying on them."
-  ]
+  "nextBatch": "Continue with events 11-15 after package 2 checkpoint."
 }
