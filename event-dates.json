@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-17T07:46:15.123Z",
+  "updatedAt": "2026-11-17T13:00:00+01:00",
   "schemaVersion": 3,
   "events": {
     "transgrancanaria": {
@@ -2944,18 +2944,18 @@
     },
     "stubai-ultra-trail": {
       "eventId": "stubai-ultra-trail",
-      "checkedAt": "2026-11-17T07:46:15.123Z",
+      "checkedAt": "2026-11-17T13:00:00+01:00",
       "status": "verified",
       "sources": [
         {
-          "url": "https://stubai.utmb.world/de/",
+          "url": "https://stubai.utmb.world/de",
           "status": "read",
-          "verification": "official-2027-race-pages"
+          "verification": "official-2027-page"
         },
         {
           "url": "https://stubai.utmb.world/de/races",
           "status": "read",
-          "verification": "official-2027-race-pages"
+          "verification": "official-2027-race-list"
         }
       ],
       "eventPeriod": {
@@ -2987,6 +2987,11 @@
         "4": {
           "routeId": "stubai-sunnenseitn-14-700",
           "date": "2027-07-02",
+          "verified": true
+        },
+        "5": {
+          "routeId": "stubai-kids-trail-2027",
+          "date": "2027-07-03",
           "verified": true
         }
       }
@@ -3164,6 +3169,75 @@
         "5": {
           "routeId": "julian-alps-vitranc-10k-11-329",
           "date": "2027-09-19",
+          "verified": true
+        }
+      }
+    },
+    "hochkonigman": {
+      "eventId": "hochkonigman",
+      "checkedAt": "2026-11-17T13:00:00+01:00",
+      "status": "verified",
+      "sources": [
+        {
+          "url": "https://www.hochkoenig-ultraks.at/",
+          "status": "read",
+          "verification": "official-2027-page"
+        },
+        {
+          "url": "https://www.hochkoenig-ultraks.at/de/programm.html",
+          "status": "read",
+          "verification": "official-2027-schedule"
+        }
+      ],
+      "eventPeriod": {
+        "startDate": "2027-06-04",
+        "endDate": "2027-06-06",
+        "verified": true
+      },
+      "routes": {
+        "0": {
+          "routeId": "hk30-panorama-trail-32-5-2094",
+          "date": "2027-06-05",
+          "verified": true
+        },
+        "1": {
+          "routeId": "hk48-48-6-2940",
+          "date": "2027-06-05",
+          "verified": true
+        },
+        "2": {
+          "routeId": "hk70-71-5-4150",
+          "date": "2027-06-05",
+          "verified": true
+        },
+        "3": {
+          "routeId": "hochkoenig-hk30-extreme-34-2680",
+          "date": "2027-06-06",
+          "verified": true
+        },
+        "4": {
+          "routeId": "hochkoenig-hk20-20-5-1020",
+          "date": "2027-06-06",
+          "verified": true
+        },
+        "5": {
+          "routeId": "hochkoenig-sprint-10-310",
+          "date": "2027-06-05",
+          "verified": true
+        },
+        "6": {
+          "routeId": "hochkoenig-vertical-5-9-1080",
+          "date": "2027-06-04",
+          "verified": true
+        },
+        "7": {
+          "routeId": "hochkoenig-team-trail-3-6-120",
+          "date": "2027-06-04",
+          "verified": true
+        },
+        "8": {
+          "routeId": "hochkoenig-mini-ultraks-2027",
+          "date": "2027-06-04",
           "verified": true
         }
       }
