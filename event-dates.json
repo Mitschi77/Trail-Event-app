@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-17T07:47:23.029Z",
+  "updatedAt": "2026-11-17T13:00:00+01:00",
   "schemaVersion": 3,
   "events": {
     "transgrancanaria": {
@@ -3238,6 +3238,118 @@
         "8": {
           "routeId": "hochkoenig-mini-ultraks-2027",
           "date": "2027-06-04",
+          "verified": true
+        }
+      }
+    },
+    "der-gletscher-trailrun": {
+      "eventId": "der-gletscher-trailrun",
+      "checkedAt": "2026-11-17T13:00:00+01:00",
+      "status": "verified",
+      "sources": [
+        {
+          "url": "https://www.oetztal-trailrunning.at/die-running-events/glacier-trailrun-alpine-race/",
+          "status": "read",
+          "verification": "official-2027-page"
+        }
+      ],
+      "eventPeriod": {
+        "startDate": "2027-07-22",
+        "endDate": "2027-07-25",
+        "verified": true
+      },
+      "routes": {
+        "0": {
+          "routeId": "gletscher-trail-42k-42-5-2800",
+          "date": "2027-07-24",
+          "verified": true
+        },
+        "1": {
+          "routeId": "gletscher-trail-62k-61-1-3600",
+          "date": "2027-07-24",
+          "verified": true
+        },
+        "2": {
+          "routeId": "gletscher-trail-14k-14-800",
+          "date": "2027-07-24",
+          "verified": true
+        },
+        "3": {
+          "routeId": "gletscher-trail-26k-25-8-1900",
+          "date": "2027-07-24",
+          "verified": true
+        },
+        "4": {
+          "routeId": "top-mountain-run-6-3-750",
+          "date": "2027-07-23",
+          "verified": true
+        }
+      }
+    },
+    "maintal-ultratrail": {
+      "eventId": "maintal-ultratrail",
+      "checkedAt": "2026-11-17T13:00:00+01:00",
+      "status": "verified",
+      "sources": [
+        {
+          "url": "https://www.mtut.de/anmeldung/",
+          "status": "read",
+          "verification": "official-2027-registration"
+        },
+        {
+          "url": "https://www.mtut.de/informationen/reglement/",
+          "status": "read",
+          "verification": "official-course-data"
+        }
+      ],
+      "eventPeriod": {
+        "startDate": "2027-07-17",
+        "endDate": "2027-07-17",
+        "verified": true
+      },
+      "routes": {
+        "0": {
+          "routeId": "ultratrail-64-1700",
+          "date": "2027-07-17",
+          "verified": true
+        },
+        "1": {
+          "routeId": "maintal-trail-t30-30-720",
+          "date": "2027-07-17",
+          "verified": true
+        },
+        "2": {
+          "routeId": "maintal-trail-t13-13-230",
+          "date": "2027-07-17",
+          "verified": true
+        }
+      }
+    },
+    "ggut": {
+      "eventId": "ggut",
+      "checkedAt": "2026-11-17T13:00:00+01:00",
+      "status": "verified",
+      "sources": [
+        {
+          "url": "https://www.ultratrail.at/de",
+          "status": "read",
+          "verification": "official-2027-event-period-and-routes"
+        },
+        {
+          "url": "https://www.ultratrail.at/de/distanzen/grossglockner-ultra-trail",
+          "status": "read",
+          "verification": "official-2027-ultra-details"
+        }
+      ],
+      "eventPeriod": {
+        "startDate": "2027-07-22",
+        "endDate": "2027-07-25",
+        "verified": true
+      },
+      "routes": {
+        "3": {
+          "routeId": "grossglockener-ultratrail-110-6500",
+          "date": "2027-07-23",
           "verified": true
         }
       }
