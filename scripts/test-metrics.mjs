@@ -107,9 +107,9 @@ const plannerRecoveryEnd = new Function("plannerRouteDate", "eventEnd", "return 
 );
 assert.equal(plannerRecoveryEnd({}, 0).toISOString().slice(0, 10), "2026-08-04");
 
-const seasonRecoveryHelper = html.match(/function seasonRecoveryDays\\(e,r,record\\)\\{[\\s\\S]*?\\nfunction seasonPhaseSegments/);
+const seasonRecoveryHelper = html.match(/function seasonRecoveryDays\(e,r,record\)\{[\s\S]*?\nfunction seasonPhaseSegments/);
 assert.ok(seasonRecoveryHelper, "Season recovery heuristic must be testable");
-const seasonRecoveryDays = new Function(seasonRecoveryHelper[0].replace(/\\nfunction seasonPhaseSegments[\\s\\S]*$/, "") + "; return seasonRecoveryDays;")();
+const seasonRecoveryDays = new Function(seasonRecoveryHelper[0].replace(/\nfunction seasonPhaseSegments[\s\S]*$/, "") + "; return seasonRecoveryDays;")();
 assert.equal(seasonRecoveryDays({}, { km: 50, hm: 1500 }, { actualDurationHours: 8 }), 14);
 assert.equal(seasonRecoveryDays({}, { km: 6.7, hm: 0 }, { raceStatus: "dnf" }), 7);
 assert.equal(seasonRecoveryDays({}, { km: 100, hm: 3000 }, { actualDurationHours: 24 }), 21);
