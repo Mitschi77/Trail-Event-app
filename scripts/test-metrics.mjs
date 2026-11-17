@@ -20,6 +20,9 @@ assert.ok(html.includes("const data=await parseActivityTrack(file);if(data.track
 
 assert.ok(html.includes("initActivityImport();"), "Activity import controls must initialize");
 assert.ok(html.includes("durationSeconds"), "Imported activities must retain elapsed time");
+assert.ok(html.includes("function activityLocalDate(value)"), "Activity date conversion must be synchronous");
+assert.ok(html.includes("const data=await parseActivityTrack(file)"), "Route imports must await asynchronous file parsing");
+assert.ok(html.includes("eventValue!==''?EVENTS[Number(eventValue)]:null"), "Activity event selector must not silently choose the first event");
 assert.ok(html.includes("function activityLocalDate(value)"), "Imported activity dates must use the device's local calendar");
 assert.ok(html.includes("activityLocalDate(data.startTime)"), "Activity import must normalize timestamps to local dates");
 
