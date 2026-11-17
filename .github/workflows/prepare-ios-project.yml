@@ -14,8 +14,6 @@ on:
       - "package-lock.json"
       - "capacitor.config.json"
       - "scripts/prepare-native.mjs"
-      - "scripts/check-inline.mjs"
-      - "scripts/test-metrics.mjs"
       - ".github/workflows/prepare-ios-project.yml"
   workflow_dispatch:
 
