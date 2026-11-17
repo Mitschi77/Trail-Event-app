@@ -9,6 +9,9 @@ assert.ok(html.includes('accept=".gpx,.tcx,.fit,'), "Import controls must accept
 assert.ok(html.includes("async function importActivityToHistory()"), "Activity history import must be available");
 assert.ok(html.includes("initActivityImport();"), "Activity import controls must initialize");
 assert.ok(html.includes("durationSeconds"), "Imported activities must retain elapsed time");
+assert.ok(html.includes("function activityLocalDate(value)"), "Imported activity dates must use the device's local calendar");
+assert.ok(html.includes("activityLocalDate(data.startTime)"), "Activity import must normalize timestamps to local dates");
+
 
 
 const match = html.match(/function completedRunDistance\(x\)\{[\s\S]*?\}/);
