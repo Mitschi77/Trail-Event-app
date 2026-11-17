@@ -3,49 +3,49 @@
   "checkedAt": "2026-11-17",
   "scope": "Top-level events 111-115 in current EVENTS order",
   "status": "saved",
-  "appCommit": "71203e1234e7df4c9792fcce631b3999635e4686",
+  "appCommit": "26eed7f916093685bda6f017869ec556997d8b4d",
   "events": [
     {
       "order": 111,
       "name": "24+1 Challenge",
-      "gpxStatus": "App entry is for 2 November 2026, already past; official 6.706 km loop confirmed but no separate public GPX download found.",
-      "source": "https://www.austriabackyardultra.com/",
-      "followUp": "Recheck next edition."
+      "gpxStatus": "Updated to the official Austria Backyard 24+1 Hochkönig 2027 event: 25 October 2027, start 16:00, 6.706 km loop. No public GPX download; organizer page linked.",
+      "source": "https://www.austriabackyardultra.com/hochkoenig",
+      "followUp": "Request/export the official GPX from organizer when released."
     },
     {
       "order": 112,
       "name": "Puglia Terra delle Gravine",
-      "gpxStatus": "Official UTMB 2026 pages provide Map + GPX for Sassi di Matera 145K, Le Maioliche di Laterza 85K and Castellaneta Underground 50K. Event 7-9 November 2026 is past; route metrics corrected.",
+      "gpxStatus": "Official UTMB site currently shows 23–25 October 2026 edition only and says 2027 information will be available a few months before the event. Cleared future date and retained organizer link; no 2026 GPX as 2027.",
       "source": "https://puglia.utmb.world/races",
-      "followUp": "Historical 2026 only; wait for next edition."
+      "followUp": "Recheck once 2027 details are published."
     },
     {
       "order": 113,
       "name": "3 Días Trail Ibiza",
-      "gpxStatus": "Official website currently shows only 2026 edition (28-30 November 2026) with Ultra 75.5K, Marathon 41K, Half 23.5K, Starter 11.8K and 10K. No 2027 GPX published.",
+      "gpxStatus": "Official website currently shows the 13th edition on 27–29 November 2026. No 2027 date or GPX published; cleared speculative 2027 date.",
       "source": "https://3diastrailibiza.com/",
-      "followUp": "Recheck when 2027 edition and final route are announced."
+      "followUp": "Wait for the 2027 edition announcement and course files."
     },
     {
       "order": 114,
       "name": "Oman by UTMB",
-      "gpxStatus": "All five official 2026 race pages provide Map + GPX for 10-12 December 2026; event is upcoming. Direct GPX file URLs were not exposed; official route metrics corrected.",
-      "sources": [
-        "https://oman.utmb.world/races/HAJ",
-        "https://oman.utmb.world/races/JAC",
-        "https://oman.utmb.world/races/SKY",
-        "https://oman.utmb.world/races/OCT",
-        "https://oman.utmb.world/races/SAS"
+      "gpxStatus": "Five official race pages for 10–12 December 2026 confirm Map + GPX panels. Direct .gpx file endpoints not publicly extractable; each route now links to its own official UTMB page.",
+      "routes": [
+        "Hajar Ultra 100M",
+        "Jabal Classic 100K",
+        "Skyward Canyon 50K",
+        "Old Capital Trail 30K",
+        "Scenic Ascent 20K"
       ],
-      "followUp": "Export all five tracks from official UTMB map."
+      "source": "https://oman.utmb.world/",
+      "followUp": "Export GPX from each official UTMB race map."
     },
     {
       "order": 115,
       "name": "Mammutmarsch",
-      "gpxStatus": "Official FAQ says route information and GPX files are sent about one week before the event and appear in participant account under Meine Veranstaltungen. Munich event 31 July 2027 offers 75/100 km.",
-      "source": "https://mammutmarsch.de/knowledge-base-haeufige-fragen-und-anleitungen-category/meine-teilnahme/",
-      "event": "https://mammutmarsch.de/events/mammutmarsch-muenchen-75-100-km",
-      "followUp": "Recheck in the week before the event; GPX is participant-only."
+      "gpxStatus": "Official Mammutmarsch München page confirms 31 July 2027 with 75 km and 100 km routes. Organizer FAQ says GPX/GPS data for booked distance are made available before the event in the participant account under 'Meine Veranstaltungen'. Added missing 75 km route.",
+      "source": "https://mammutmarsch.de/events/muenchen",
+      "followUp": "Obtain GPX from participant account after booking and before event."
     }
   ],
   "nextBatch": "Continue with events 116-120 after package 23 checkpoint."
