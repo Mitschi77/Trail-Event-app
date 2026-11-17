@@ -3,29 +3,33 @@
   "checkedAt": "2026-11-17",
   "scope": "Top-level events 76-80 in current EVENTS order",
   "status": "saved",
-  "appCommit": "e3f682c3ad3e418b23afd092baf3469cc2ac478a",
+  "appCommit": "5a01873f53d597099c4d57d74f7a0837b3776eb2",
   "events": [
     {
       "order": 76,
       "name": "Quito Trail by UTMB",
-      "gpxStatus": "Official 2027 event and six distances confirmed; Map + GPX is available on the UTMB pages, but direct GPX file URLs are not exposed.",
-      "source": "https://quito.utmb.world/races",
-      "followUp": "Export each distance from the official map when final course files are released."
+      "gpxStatus": "All six 2027 official UTMB race pages now linked in app (80K Oso, 50K Nutria, 30K Tucán, 20K Quinde, 12K Humboldt, 6K Rana). Official pages confirm distances/elevation; direct GPX download files not publicly exposed in page text.",
+      "sources": [
+        "https://quito.utmb.world/races/80k-Oso",
+        "https://quito.utmb.world/races/50K-nutria",
+        "https://quito.utmb.world/races/30k-tucan",
+        "https://quito.utmb.world/races/20k-quinde",
+        "https://quito.utmb.world/races/12k-humboldt",
+        "https://quito.utmb.world/es/races/6k-rana"
+      ],
+      "followUp": "Recheck after UTMB opens registration and publishes the route maps/GPX exports."
     },
     {
       "order": 77,
       "name": "Pitz Alpine Glacier Trail",
-      "gpxStatus": "Official P45/P105 pages show GPX downloads but are still dated 2025; no 2027 files verified.",
-      "sources": [
-        "https://www.pitz-alpine.at/de/rennen/p45-glacier/",
-        "https://www.pitz-alpine.at/de/rennen/p105/"
-      ],
-      "followUp": "Wait for updated 2027 race pages and GPX files."
+      "gpxStatus": "App route list expanded and corrected to all eight official 2027 competitions: P105 103K/6,000hm, P90 87K/5,200hm, P60 63K/4,300hm, P45 Glacier 45K/2,900hm, P45 Rifflsee 43K/2,100hm, P30 27K/1,300hm, P15 16K/800hm, Young Talents 7.6K/260hm. All eight official route pages provide a map with GPX download via Pitztal interactive map; links added.",
+      "source": "https://www.pitztal.com/de/salomon-pitz-alpine-glacier-trail.html",
+      "followUp": "Export GPX from each official Pitztal map; verify route geometry and elevation after import."
     },
     {
       "order": 78,
-      "name": "KAT100",
-      "gpxStatus": "Official UTMB pages confirm 2027 race details and GPX download on each race page. 100 Miles, Endurance and Marathon route pages linked; Speed/Easy map pages linked, no direct file URL extracted.",
+      "name": "kat100",
+      "gpxStatus": "Official 2027 UTMB race pages linked for all five distances. 100 Miles and Endurance pages have Map + GPX panels; Marathon Trail GPX is visible online but UTMB explicitly says download is not yet available due to possible route adjustments. Speed and Easy pages linked for official map checks.",
       "sources": [
         "https://kat.utmb.world/de/races/100-miles",
         "https://kat.utmb.world/de/races/endurance-trail",
@@ -33,25 +37,25 @@
         "https://kat.utmb.world/de/races/speed-trail",
         "https://kat.utmb.world/de/races/easy-trail"
       ],
-      "followUp": "Download GPX from 100M, Endurance and Marathon pages; use official map for Speed/Easy."
+      "followUp": "Download official GPX files from race pages when released; especially recheck Marathon Trail."
     },
     {
       "order": 79,
       "name": "Swiss Alps 100",
-      "gpxStatus": "Official 2027 course pages offer downloadable GPX for 50K, 100K and 160K. App route metrics corrected to official measured values: 51.6/3,210; 100.8/6,250; 159.4/10,150.",
+      "gpxStatus": "Official 50K, 100K and 160K course pages state GPX downloads are available; links added to app. Direct file endpoints could not be extracted from the dynamic pages.",
       "sources": [
         "https://www.swissalps100.com/courses/50k",
         "https://www.swissalps100.com/courses/100k",
         "https://www.swissalps100.com/courses/160k"
       ],
-      "followUp": "Download from course pages and import into app; validate profile."
+      "followUp": "Download GPX files from each official course page and import into the app."
     },
     {
       "order": 80,
       "name": "Allgäu Panorama Marathon",
-      "gpxStatus": "App event date 10 August 2026 is in the past; no official GPX for a next edition verified.",
+      "gpxStatus": "App event updated from the past 2026 edition to the official 20th edition on 08 August 2027. Ultra course page has official interactive map; direct GPX file not verified.",
       "source": "https://www.allgaeu-panorama-marathon.de/content/strecken/ultra/",
-      "followUp": "Recheck after next edition is announced."
+      "followUp": "Recheck official interactive map for a GPX export; reconcile exact 2027 route metrics."
     }
   ],
   "nextBatch": "Continue with events 81-85 after package 16 checkpoint."
