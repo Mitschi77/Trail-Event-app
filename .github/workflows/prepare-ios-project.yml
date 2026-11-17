@@ -36,6 +36,8 @@ jobs:
           node-version: 22
       - name: Install dependencies
         run: npm install
+      - name: Audit npm dependencies
+        run: npm audit --audit-level=high
       - name: Validate app JavaScript
         run: npm run test:syntax
       - name: Generate native iOS project
