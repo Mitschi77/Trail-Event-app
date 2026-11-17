@@ -15,9 +15,9 @@
     {
       "order": 117,
       "name": "Vietnam Highlands Trail by UTMB",
-      "gpxStatus": "Official UTMB 2027 pages for 100K Langbiang, 50K Elephant, 20K Pinhatt and 10K Tuyen Lam have Map + GPX sections. Linked in app; direct file endpoints not extracted.",
+      "gpxStatus": "All four official 2027 GPX files are linked from the UTMB race pages and stored in Google Drive. App now provides a one-click import attempt by converting each official Drive file ID to its download endpoint; if Google Drive CORS or confirmation blocks it, download manually and use the GPX file import.",
       "source": "https://vietnamhighlands.utmb.world/",
-      "followUp": "Export from each official Map + GPX panel; check final course changes."
+      "followUp": "Try the one-click import button; if it fails, download the .gpx file from Drive and use the app's GPX file import field."
     },
     {
       "order": 118,
