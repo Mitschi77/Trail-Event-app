@@ -63,4 +63,19 @@ assert.equal(completedRunDistance({ r: { rounds: 2 }, route: { km: 8.4 }, ev: {}
 assert.equal(completedRunDistance({ r: { actualKm: 12.35, rounds: 3 }, route: { roundKm: 6.706, km: 6.706 }, ev: {} }), 12.35);
 assert.equal(completedRunDistance({ r: {}, route: { km: 42.195 }, ev: {} }), 42.195);
 
+
+const trackHelper = html.match(/function calculateTrackData\\(raw\\)\\{[\\s\\S]*?\\nfunction parseGpxData/);
+assert.ok(trackHelper, "Shared GPX/TCX/FIT track calculator must exist");
+const calculateTrackData = new Function(trackHelper[0].replace(/\\nfunction parseGpxData[\\s\\S]*$/, "") + "; return calculateTrackData;")();
+const track = calculateTrackData([
+  { lat: 48, lon: 11, ele: 500, time: "2026-05-01T08:00:00Z" },
+  { lat: 48.001, lon: 11, ele: 510, time: "2026-05-01T08:02:00Z" },
+  { lat: 48.002, lon: 11, ele: 505, time: "2026-05-01T08:04:00Z" }
+]);
+assert.ok(track.distanceKm > 0.2 && track.distanceKm < 0.23, "Track distance must be calculated from GPS points");
+assert.equal(track.ascentHm, 10);
+assert.equal(track.descentHm, 5);
+assert.equal(track.startTime, "2026-05-01T08:00:00.000Z");
+assert.equal(track.durationSeconds, 240);
+
 console.log("Validated round-based and manually recorded run distances.");
