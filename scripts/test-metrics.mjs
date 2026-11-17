@@ -6,6 +6,10 @@ assert.match(html, /function parseTcxData\(xmlText\)/, "TCX parser must remain a
 assert.ok(html.includes("function parseActivityTrack(file)"), "Activity file parser must be available");
 assert.ok(html.includes("@garmin/fitsdk@21.221.0"), "FIT imports must use a pinned Garmin SDK version");
 assert.ok(html.includes('accept=".gpx,.tcx,.fit,'), "Import controls must accept FIT, GPX and TCX files");
+assert.ok(html.includes("async function importActivityToHistory()"), "Activity history import must be available");
+assert.ok(html.includes("initActivityImport();"), "Activity import controls must initialize");
+assert.ok(html.includes("durationSeconds"), "Imported activities must retain elapsed time");
+
 
 const match = html.match(/function completedRunDistance\(x\)\{[\s\S]*?\}/);
 assert.ok(match, "completedRunDistance helper must exist");
