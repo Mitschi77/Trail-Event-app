@@ -51,6 +51,14 @@ Externe Aktivitäts-IDs verhindern doppelte Einträge bei wiederholter Synchroni
 - Nur Datenfelder abrufen, die für Laufhistorie und Trainingsplanung benötigt werden.
 - Vor Veröffentlichung Datenschutzhinweise und Anbieterbedingungen aktualisieren.
 
+## Current Garmin access limitation
+
+- Personal access is intended for the developer's own Garmin Connect data and supports pull-only access.
+- Garmin's business Starter tier is push-only and does not include historical data; it is limited to a defined user capacity.
+- Enterprise access can support push or ping/pull and historical data, subject to Garmin's approval and commercial terms.
+
+This means a public multi-user app should not be designed around the assumption that every user can simply connect Garmin with a personal API key. The exact access tier must be approved for the intended product and user count.
+
 ## Voraussetzungen vor dem Livegang
 
 - Strava-API-App mit Client-ID, Client-Secret und registrierter Callback-Domain durch den App-Betreiber. Strava verlangt derzeit ein aktives Abo zum Erstellen der App; neue Apps starten im Einzelmodus und können im Dashboard zunächst auf bis zu 10 Athleten erweitert werden. Darüber hinaus ist eine Prüfung durch Strava erforderlich. Strava verlangt derzeit ein aktives Abo zum Erstellen der App; neue Apps starten im Einzelmodus und können im Dashboard zunächst auf bis zu 10 Athleten erweitert werden. Darüber hinaus ist eine Prüfung durch Strava erforderlich.
