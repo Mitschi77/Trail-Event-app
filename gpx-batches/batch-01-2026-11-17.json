@@ -2,7 +2,7 @@
   "batch": 1,
   "checkedAt": "2026-11-17",
   "scope": "First five top-level events in EVENTS array, preserving app order",
-  "status": "partially-completed",
+  "status": "GPX download links and one-click import added; actual internal import awaits browser fetch verification",
   "commit": "1da3702e82ad91f10daa94eb64bdad609ef3a5e5",
   "events": [
     {
@@ -21,7 +21,7 @@
         "Family Hike & Trail 14.5K",
         "Borin 4K"
       ],
-      "followUp": "Recheck in race week; do not substitute historic tracks."
+      "followUp": "No official 2027 GPX yet; keep pending and recheck in the race week."
     },
     {
       "order": 2,
@@ -30,7 +30,7 @@
       "officialSource": "https://marathondessables.com/en/evenement/mds-ultra-2027",
       "gpxStatus": "not-published-yet",
       "evidence": "Current official 2027 event page describes the 100 km and 100-mile formats but no GPX download was found.",
-      "followUp": "Recheck the official event page and participant material closer to the event."
+      "followUp": "No official 2027 GPX yet; do not invent a desert track. Recheck organizer materials."
     },
     {
       "order": 3,
@@ -38,8 +38,8 @@
       "routeCount": 2,
       "officialSource": "https://arcofattrition.utmb.world/races/Arc100M",
       "gpxStatus": "official GPX exports confirmed; direct download links added to app (hosted mirror of organizer course files)",
-      "evidence": "The official Arc 100M page has a Map + GPX section. No direct downloadable file URL was extracted; the Arc 100K page could not be loaded by the web reader. Official FAQ confirms each distance's page offers Map → Export as GPX. Fit PA direct download links were verified as application/gpx+xml and described as organizer course files. Links now appear in the route details.",
-      "followUp": "Download and import GPX into app's internal gpxTrack/elevation profile; verify CORS or import manually if blocked.",
+      "evidence": "The official Arc 100M page has a Map + GPX section. No direct downloadable file URL was extracted; the Arc 100K page could not be loaded by the web reader. Official FAQ confirms each distance's page offers Map → Export as GPX. Fit PA direct download links were verified as application/gpx+xml and described as organizer course files. Links now appear in the route details. The app now has a one-click remote import action with a manual-import fallback. This code has been committed but not runtime-tested in the user's browser.",
+      "followUp": "Use the new 'GPX in Streckenkarte übernehmen' control for Arc 100M and Arc 100K. It fetches the course file, parses track/elevation, saves it to the app's existing route data store; if CORS blocks it, download the GPX and use the existing file-import field.",
       "downloads": [
         {
           "route": "ARC 100m",
@@ -59,7 +59,7 @@
       "officialDocument": "https://mountainman.de/winterloop/ausschreibung.pdf",
       "gpxStatus": "official Komoot route linked from organizer page; GPX download gated behind Komoot login",
       "evidence": "Official MOUNTAINMAN page links to the Komoot route 'Reit im Winkl Winterloop 2027' (7.5 km). Komoot shows GPX download but requires login. Official page also states GPX track is included; likely released through participant information. Event is one loop for timed challenges; app's M-Trail/L-Trail route labels do not match 2027 offering.",
-      "followUp": "Find public direct GPX file or obtain official participant download when released; correct route options to 3H/6H/12H/Marathon/Half Marathon with shared loop geometry.",
+      "followUp": "Organizer's official page links the Komoot route; Komoot shows GPX download but requires login. Wait for official participant download or use Komoot export after login; current app route labels need correction.",
       "officialRoute": "https://www.komoot.com/tour/3022648619"
     },
     {
@@ -70,7 +70,7 @@
       "officialGpxFolder": "https://drive.google.com/drive/folders/1ngs1-Kb3GsrigP6UWzuLDW3pCkTq4KQL?usp=sharing",
       "gpxStatus": "official Google Drive GPX folder linked in app; individual 160K file not yet isolated",
       "evidence": "The official website's TRACK link redirects to a Google Drive folder described as Track All Distances - GPX. The folder view could not be read in the available browser, so individual file names and direct download URLs remain unverified.",
-      "followUp": "Identify 160K GPX file within official Drive folder, download and import."
+      "followUp": "Open official Drive folder, identify the 160K file, then download and import; folder link is already visible in route details."
     }
   ],
   "dataQualityFlags": [
@@ -79,5 +79,6 @@
     "Official MDS 2027 page describes 100 km / approx. 580 m and 100 miles / approx. 875 m; app route metrics differ. Not changed in this GPX-only batch."
   ],
   "appCommit": "9ab310c112a6c1ade34a6ecaec62b204fd209a2b",
-  "nextBatch": "Continue with first five remaining events, in app order, only after package 1 is fully imported or unavailable confirmed."
+  "nextBatch": "Continue with first five remaining events, in app order, only after package 1 is fully imported or unavailable confirmed.",
+  "latestAppCommit": "604e8ddf8c4eccd4b9a0c01a04f1146c82a8f3dd"
 }
