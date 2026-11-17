@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-17T07:32:04.290Z",
+  "updatedAt": "2026-11-17T07:32:56.662Z",
   "schemaVersion": 3,
   "events": {
     "transgrancanaria": {
@@ -1643,6 +1643,176 @@
         "2": {
           "routeId": "extreme-100-trail-8-summits-108-6677",
           "date": "2027-07-10",
+          "verified": true
+        }
+      }
+    },
+    "ultratrail-frankische-schweiz": {
+      "eventId": "ultratrail-frankische-schweiz",
+      "checkedAt": "2026-11-17T07:32:56.662Z",
+      "status": "verified",
+      "sources": [
+        {
+          "url": "https://www.ultratrail-fraenkische-schweiz.de/",
+          "status": "read",
+          "verification": "manual-official-page"
+        }
+      ],
+      "eventPeriod": {
+        "startDate": "2027-04-23",
+        "endDate": "2027-04-24",
+        "verified": true
+      },
+      "routes": {}
+    },
+    "trail-menorca-cami-de-cavalls": {
+      "eventId": "trail-menorca-cami-de-cavalls",
+      "checkedAt": "2026-11-17T07:32:56.662Z",
+      "status": "verified",
+      "sources": [
+        {
+          "url": "https://www.trailmenorca.es/de/",
+          "status": "read",
+          "verification": "manual-official-page"
+        }
+      ],
+      "eventPeriod": {
+        "startDate": "2027-04-30",
+        "endDate": "2027-05-02",
+        "verified": true
+      },
+      "routes": {}
+    },
+    "garda-trentino-trail-extra": {
+      "eventId": "garda-trentino-trail-extra",
+      "checkedAt": "2026-11-17T07:32:56.662Z",
+      "status": "verified",
+      "sources": [
+        {
+          "url": "https://www.gardatrentinotrail.it/en-us/p/30",
+          "status": "read",
+          "verification": "manual-official-page"
+        }
+      ],
+      "eventPeriod": {
+        "startDate": "2027-05-14",
+        "endDate": "2027-05-16",
+        "verified": true
+      },
+      "routes": {
+        "0": {
+          "routeId": "garda-trentino-trail-extra-150-10000",
+          "date": "2027-05-14",
+          "verified": true
+        }
+      }
+    },
+    "garda-trentino-trail-extra-100": {
+      "eventId": "garda-trentino-trail-extra-100",
+      "checkedAt": "2026-11-17T07:32:56.662Z",
+      "status": "verified",
+      "sources": [
+        {
+          "url": "https://www.gardatrentinotrail.it/en-us/p/32",
+          "status": "read",
+          "verification": "manual-official-page"
+        }
+      ],
+      "eventPeriod": {
+        "startDate": "2027-05-14",
+        "endDate": "2027-05-16",
+        "verified": true
+      },
+      "routes": {
+        "0": {
+          "routeId": "garda-trentino-trail-extra-100-7000",
+          "date": "2027-05-14",
+          "verified": true
+        }
+      }
+    },
+    "garda-trentino-trail": {
+      "eventId": "garda-trentino-trail",
+      "checkedAt": "2026-11-17T07:32:56.662Z",
+      "status": "verified",
+      "sources": [
+        {
+          "url": "https://www.gardatrentinotrail.it/en-us/p/13",
+          "status": "read",
+          "verification": "manual-official-page"
+        }
+      ],
+      "eventPeriod": {
+        "startDate": "2027-05-14",
+        "endDate": "2027-05-16",
+        "verified": true
+      },
+      "routes": {
+        "0": {
+          "routeId": "garda-trentino-trail-62-3800",
+          "date": "2027-05-15",
+          "verified": true
+        }
+      }
+    },
+    "ultra-x-110-scotland": {
+      "eventId": "ultra-x-110-scotland",
+      "checkedAt": "2026-11-17T07:32:56.662Z",
+      "status": "verified",
+      "sources": [
+        {
+          "url": "https://ultra-x.co/ultra-marathon-races/",
+          "status": "read",
+          "verification": "manual-official-page"
+        }
+      ],
+      "eventPeriod": {
+        "startDate": "2027-05-01",
+        "endDate": "2027-05-02",
+        "verified": true
+      },
+      "routes": {}
+    },
+    "lavardedo-trail": {
+      "eventId": "lavardedo-trail",
+      "checkedAt": "2026-11-17T07:32:56.662Z",
+      "status": "verified",
+      "sources": [
+        {
+          "url": "https://lavaredo.utmb.world/",
+          "status": "read",
+          "verification": "manual-official-page"
+        }
+      ],
+      "eventPeriod": {
+        "startDate": "2027-06-23",
+        "endDate": "2027-06-27",
+        "verified": true
+      },
+      "routes": {
+        "0": {
+          "routeId": "50k-50-2800",
+          "date": "2027-06-25",
+          "verified": true
+        },
+        "1": {
+          "routeId": "80k-80-4600",
+          "date": "2027-06-26",
+          "verified": true
+        },
+        "2": {
+          "routeId": "120k-120-5800",
+          "date": "2027-06-25",
+          "verified": true
+        },
+        "3": {
+          "routeId": "lavaredo-20k-20-1000",
+          "date": "2027-06-24",
+          "verified": true
+        },
+        "4": {
+          "routeId": "lavaredo-10k-10-300",
+          "date": "2027-06-23",
           "verified": true
         }
       }
