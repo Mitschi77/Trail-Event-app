@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-17T07:41:55.385Z",
+  "updatedAt": "2026-11-17T07:43:19.952Z",
   "schemaVersion": 3,
   "events": {
     "transgrancanaria": {
@@ -2275,13 +2275,13 @@
     },
     "transvulcania-la-palma": {
       "eventId": "transvulcania-la-palma",
-      "checkedAt": "2026-11-17T07:41:55.385Z",
+      "checkedAt": "2026-11-17T07:43:19.952Z",
       "status": "verified",
       "sources": [
         {
           "url": "https://www.avaibooksports.com/inscripcion/lista-de-espera-media-maraton-transvulcania-2027/ficheros/?filetype=reglamento&lang=es",
           "status": "read",
-          "verification": "official-2027-page-or-regulations"
+          "verification": "official-2027-regulations"
         }
       ],
       "eventPeriod": {
@@ -2306,7 +2306,7 @@
           "verified": true
         },
         "3": {
-          "routeId": "transvulcania-vertical-7-26-1160",
+          "routeId": "transvulcania-vertical-7-28-1164",
           "date": "2027-05-06",
           "verified": true
         }
