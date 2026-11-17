@@ -63,6 +63,9 @@ assert.equal(routeTypeRequiresTrailMetrics("Halbmarathon"), false);
 assert.equal(routeTypeRequiresTrailMetrics("Straßenlauf"), false);
 assert.equal(routeTypeRequiresTrailMetrics("Trailrunning / Ultra"), true);
 
+assert.ok(html.includes("routeTypeRequiresTrailMetrics(routeMetricType(x.id))&&(x.r.hm===null||x.r.hm===undefined||x.r.hm==='')"), "Season review must require elevation only for trail race types");
+
+
 const calendarHelper = html.match(/function calendarEventDescription\\(route,type\\)\\{[^}]*\\}/);
 assert.ok(calendarHelper, "Calendar export must format race-specific metrics");
 const calendarEventDescription = new Function("routeTypeRequiresTrailMetrics", calendarHelper[0] + "; return calendarEventDescription;")(routeTypeRequiresTrailMetrics);
