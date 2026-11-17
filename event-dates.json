@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-17T07:41:29.615Z",
+  "updatedAt": "2026-11-17T07:41:55.385Z",
   "schemaVersion": 3,
   "events": {
     "transgrancanaria": {
@@ -2275,43 +2275,13 @@
     },
     "transvulcania-la-palma": {
       "eventId": "transvulcania-la-palma",
-      "checkedAt": "2026-11-17T07:41:29.615Z",
+      "checkedAt": "2026-11-17T07:41:55.385Z",
       "status": "verified",
       "sources": [
         {
-          "url": "https://transvulcania.com/de/",
+          "url": "https://www.avaibooksports.com/inscripcion/lista-de-espera-media-maraton-transvulcania-2027/ficheros/?filetype=reglamento&lang=es",
           "status": "read",
-          "verification": "official-2027-page"
-        },
-        {
-          "url": "https://transvulcania.com/de/modalidades/transvulcania-ultramarathon/",
-          "status": "read",
-          "verification": "official-2027-page"
-        },
-        {
-          "url": "https://transvulcania.com/de/modalidades/transvulcania-marathon/",
-          "status": "read",
-          "verification": "official-2027-page"
-        },
-        {
-          "url": "https://transvulcania.com/de/modalidades/transvulcania-halbmarathon/",
-          "status": "read",
-          "verification": "official-2027-page"
-        },
-        {
-          "url": "https://transvulcania.com/de/modalidades/transvulcania-vertikaler-kilometer/",
-          "status": "read",
-          "verification": "official-2027-page"
-        },
-        {
-          "url": "https://transvulcania.com/de/modalidades/transvulcania-12k-light/",
-          "status": "read",
-          "verification": "official-2027-page"
-        },
-        {
-          "url": "https://transvulcania.com/de/die-transvulcania-adidas-sorgt-erneut-fuer-trailrunning-begeisterung-ueber-2-000-anmeldungen-in-weniger-als-24-stunden/",
-          "status": "read",
-          "verification": "official-2027-page"
+          "verification": "official-2027-page-or-regulations"
         }
       ],
       "eventPeriod": {
@@ -2320,13 +2290,80 @@
         "verified": true
       },
       "routes": {
-        "4": {
-          "routeId": "transvulcania-12k-light-11-6-774",
+        "0": {
+          "routeId": "ultramarathon-73-06-4350",
           "date": "2027-05-08",
           "verified": true
+        },
+        "1": {
+          "routeId": "transvulcania-marathon-43-2-1884",
+          "date": "2027-05-08",
+          "verified": true
+        },
+        "2": {
+          "routeId": "transvulcania-half-24-8-2097",
+          "date": "2027-05-08",
+          "verified": true
+        },
+        "3": {
+          "routeId": "transvulcania-vertical-7-26-1160",
+          "date": "2027-05-06",
+          "verified": true
         }
+      }
+    },
+    "ultra-scotland": {
+      "eventId": "ultra-scotland",
+      "checkedAt": "2026-11-17T07:41:55.385Z",
+      "status": "verified",
+      "sources": [
+        {
+          "url": "https://www.gbultras.com/ultra-scotland-100/",
+          "status": "read",
+          "verification": "official-2027-page-or-regulations"
+        }
+      ],
+      "eventPeriod": {
+        "startDate": "2027-06-04",
+        "endDate": "2027-06-06",
+        "verified": true
       },
-      "note": "Der Veranstaltungszeitraum 6.–8. Mai ist bestätigt. Der 12K-Light-Start ist für den 8. Mai belegt; die konkreten Starttage der übrigen Disziplinen bleiben bis zur offiziellen Zeitplantabelle offen."
+      "routes": {
+        "0": {
+          "routeId": "ultra-scotland-50-90-2560",
+          "date": "2027-06-05",
+          "verified": true
+        },
+        "1": {
+          "routeId": "ultra-scotland-100-167-4611",
+          "date": "2027-06-05",
+          "verified": true
+        }
+      }
+    },
+    "schwarzach-trail": {
+      "eventId": "schwarzach-trail",
+      "checkedAt": "2026-11-17T07:41:55.385Z",
+      "status": "verified",
+      "sources": [
+        {
+          "url": "https://www.triundrun.at/de/",
+          "status": "read",
+          "verification": "official-2027-page-or-regulations"
+        }
+      ],
+      "eventPeriod": {
+        "startDate": "2027-05-22",
+        "endDate": "2027-05-22",
+        "verified": true
+      },
+      "routes": {
+        "0": {
+          "routeId": "schwarzach-trail-47",
+          "date": "2027-05-22",
+          "verified": true
+        }
+      }
     }
   }
 }
