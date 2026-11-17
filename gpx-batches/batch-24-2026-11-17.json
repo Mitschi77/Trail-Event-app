@@ -1,0 +1,75 @@
+{
+  "batch": 24,
+  "checkedAt": "2026-11-17",
+  "scope": "Top-level events 116-120 in current EVENTS order",
+  "status": "saved",
+  "appCommit": "98841335059734f224366060658a0630957aa61c",
+  "events": [
+    {
+      "order": 116,
+      "name": "Megamarsch",
+      "gpxStatus": "Official 2027 Munich event offers 100 km / approx. 990 hm. Organizer publishes provisional Komoot route about two weeks before the event; it may change until two days before start.",
+      "source": "https://www.megamarsch.de/m%C3%BCnchen",
+      "followUp": "Recheck about two weeks before the event."
+    },
+    {
+      "order": 117,
+      "name": "Vietnam Highlands Trail by UTMB",
+      "gpxStatus": "Four official 2027 GPX files linked via Google Drive: 100K Langbiang (101.5/5,722), 50K Elephant (54.6/3,106), 20K Pinhatt (22.2/1,171), 10K Tuyen Lam (10.6/435). Must download from Drive then import manually. Organizer warns route crosses private land and must not be run outside event.",
+      "downloads": [
+        {
+          "route": "100K Langbiang",
+          "url": "https://drive.google.com/file/d/1lVYRPLrZ9q_yEwbgYXzMSGRneBDLj3FD/view?usp=drive_link"
+        },
+        {
+          "route": "50K Elephant",
+          "url": "https://drive.google.com/file/d/1J2n44XVJAHD5d6fZ8z0KLzEagKnIbn42/view?usp=drive_link"
+        },
+        {
+          "route": "20K Pinhatt",
+          "url": "https://drive.google.com/file/d/1wShDSlhFtoqJthAwvO5xx4W86gX8fxIb/view?usp=drive_link"
+        },
+        {
+          "route": "10K Tuyen Lam",
+          "url": "https://drive.google.com/file/d/1FzbqiHhyOtOGRVgy6bNXmZIRtYRbQ7VI/view?usp=drive_link"
+        }
+      ],
+      "source": "https://vietnamhighlands.utmb.world/races",
+      "followUp": "Download from Google Drive and import manually; do not train on private route outside event."
+    },
+    {
+      "order": 118,
+      "name": "Tarawera Ultra-Trail by UTMB",
+      "gpxStatus": "Five official 2027 race pages provide Map + GPX: TMiler 163/3,800; T102 102/2,300; T50 52/1,150; T21 23/400; T14 14/161. Direct files not extracted.",
+      "sources": [
+        "https://tarawera.utmb.world/races/t-miler",
+        "https://tarawera.utmb.world/races/t-102",
+        "https://tarawera.utmb.world/races/t-50",
+        "https://tarawera.utmb.world/races/t-21",
+        "https://tarawera.utmb.world/races/t-14"
+      ],
+      "followUp": "Export each GPX from the official map."
+    },
+    {
+      "order": 119,
+      "name": "Puerto Vallarta México by UTMB",
+      "gpxStatus": "2027 event date 4-6 March confirmed, but no race distances, route profiles or GPX published yet.",
+      "source": "https://puertovallarta.utmb.world/",
+      "followUp": "Recheck after race pages are published."
+    },
+    {
+      "order": 120,
+      "name": "HOKA Xtrail Kenting by UTMB",
+      "gpxStatus": "Five official 2027 race pages provide Map + GPX: 100K 98/3,291; 50K 50/1,496; 25K 26/589; 10K 11/201; Kids 2/10. Direct files not extracted.",
+      "sources": [
+        "https://xtrail.utmb.world/races/Top-100K",
+        "https://xtrail.utmb.world/races/Top-50K",
+        "https://xtrail.utmb.world/races/Top-25k",
+        "https://xtrail.utmb.world/races/Top-10K",
+        "https://xtrail.utmb.world/races/Top-2K"
+      ],
+      "followUp": "Export each track from official UTMB map."
+    }
+  ],
+  "nextBatch": "Continue with events 121-125 after package 24 checkpoint."
+}
