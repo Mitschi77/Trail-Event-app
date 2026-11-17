@@ -13,12 +13,12 @@ for (const [index, source] of inlineScripts.entries()) {
   try {
     new Function(source);
   } catch (error) {
-    throw new Error(\`Inline script \${index + 1} has a syntax error: \${error.message}\`);
+    throw new Error("Inline script " + (index + 1) + " has a syntax error: " + error.message);
   }
 }
 
 for (const required of ["parseGpx", "persistGpxData", "connectPlannerCloud"]) {
-  if (!html.includes(required)) throw new Error(\`Required app feature is missing: \${required}\`);
+  if (!html.includes(required)) throw new Error("Required app feature is missing: " + required);
 }
 
-console.log(\`Validated \${inlineScripts.length} inline script(s) and key app features.\`);
+console.log("Validated " + inlineScripts.length + " inline script(s) and key app features.");
