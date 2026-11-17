@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-17T07:40:54.392Z",
+  "updatedAt": "2026-11-17T07:41:29.615Z",
   "schemaVersion": 3,
   "events": {
     "transgrancanaria": {
@@ -2130,6 +2130,203 @@
           "verified": true
         }
       }
+    },
+    "trail-100-andorra": {
+      "eventId": "trail-100-andorra",
+      "checkedAt": "2026-11-17T07:41:29.615Z",
+      "status": "verified",
+      "sources": [
+        {
+          "url": "https://andorra.utmb.world/",
+          "status": "read",
+          "verification": "official-2027-page"
+        }
+      ],
+      "eventPeriod": {
+        "startDate": "2027-06-10",
+        "endDate": "2027-06-13",
+        "verified": true
+      },
+      "routes": {
+        "0": {
+          "routeId": "trail-80k-79-3900",
+          "date": "2027-06-11",
+          "verified": true
+        },
+        "1": {
+          "routeId": "ultra-105k-105-6800",
+          "date": "2027-06-12",
+          "verified": true
+        },
+        "2": {
+          "routeId": "trail-100-andorra-50k-50-3400",
+          "date": "2027-06-12",
+          "verified": true
+        },
+        "3": {
+          "routeId": "trail-100-andorra-25k-24-9-1350",
+          "date": "2027-06-13",
+          "verified": true
+        },
+        "4": {
+          "routeId": "trail-100-andorra-10k-10-500",
+          "date": "2027-06-13",
+          "verified": true
+        }
+      }
+    },
+    "trai-verbier-st-bernhard": {
+      "eventId": "trai-verbier-st-bernhard",
+      "checkedAt": "2026-11-17T07:41:29.615Z",
+      "status": "verified",
+      "sources": [
+        {
+          "url": "https://verbier.utmb.world/",
+          "status": "read",
+          "verification": "official-2027-page"
+        }
+      ],
+      "eventPeriod": {
+        "startDate": "2027-07-09",
+        "endDate": "2027-07-11",
+        "verified": true
+      },
+      "routes": {
+        "0": {
+          "routeId": "verbier-marathon-43-3000",
+          "date": "2027-07-09",
+          "verified": true
+        },
+        "1": {
+          "routeId": "x-traversee-77-5000",
+          "date": "2027-07-10",
+          "verified": true
+        },
+        "2": {
+          "routeId": "x-alpine-140-8900",
+          "date": "2027-07-09",
+          "verified": true
+        },
+        "3": {
+          "routeId": "verbier-marathon-x-treme-43-3000",
+          "date": "2027-07-09",
+          "verified": true
+        },
+        "4": {
+          "routeId": "verbier-x-plore-28-1700",
+          "date": "2027-07-11",
+          "verified": true
+        }
+      }
+    },
+    "mayrhofen-ultraks": {
+      "eventId": "mayrhofen-ultraks",
+      "checkedAt": "2026-11-17T07:41:29.615Z",
+      "status": "verified",
+      "sources": [
+        {
+          "url": "https://mayrhofen.ultraks.com/",
+          "status": "read",
+          "verification": "official-2027-page"
+        }
+      ],
+      "eventPeriod": {
+        "startDate": "2027-09-03",
+        "endDate": "2027-09-04",
+        "verified": true
+      },
+      "routes": {
+        "0": {
+          "routeId": "rk50-50-3200",
+          "date": "2027-09-04",
+          "verified": true
+        },
+        "1": {
+          "routeId": "tux070-70-4000",
+          "date": "2027-09-04",
+          "verified": true
+        },
+        "2": {
+          "routeId": "z101-101-7600",
+          "date": "2027-09-03",
+          "verified": true
+        },
+        "3": {
+          "routeId": "mayrhofen-muz30-30-3-2000",
+          "date": "2027-09-03",
+          "verified": true
+        },
+        "4": {
+          "routeId": "mayrhofen-muz14-14-5-900",
+          "date": "2027-09-04",
+          "verified": true
+        },
+        "5": {
+          "routeId": "mayrhofen-vertical-8-5-1250",
+          "date": "2027-09-04",
+          "verified": true
+        },
+        "6": {
+          "routeId": "mayrhofen-sprint-7-350",
+          "date": "2027-09-04",
+          "verified": true
+        }
+      }
+    },
+    "transvulcania-la-palma": {
+      "eventId": "transvulcania-la-palma",
+      "checkedAt": "2026-11-17T07:41:29.615Z",
+      "status": "verified",
+      "sources": [
+        {
+          "url": "https://transvulcania.com/de/",
+          "status": "read",
+          "verification": "official-2027-page"
+        },
+        {
+          "url": "https://transvulcania.com/de/modalidades/transvulcania-ultramarathon/",
+          "status": "read",
+          "verification": "official-2027-page"
+        },
+        {
+          "url": "https://transvulcania.com/de/modalidades/transvulcania-marathon/",
+          "status": "read",
+          "verification": "official-2027-page"
+        },
+        {
+          "url": "https://transvulcania.com/de/modalidades/transvulcania-halbmarathon/",
+          "status": "read",
+          "verification": "official-2027-page"
+        },
+        {
+          "url": "https://transvulcania.com/de/modalidades/transvulcania-vertikaler-kilometer/",
+          "status": "read",
+          "verification": "official-2027-page"
+        },
+        {
+          "url": "https://transvulcania.com/de/modalidades/transvulcania-12k-light/",
+          "status": "read",
+          "verification": "official-2027-page"
+        },
+        {
+          "url": "https://transvulcania.com/de/die-transvulcania-adidas-sorgt-erneut-fuer-trailrunning-begeisterung-ueber-2-000-anmeldungen-in-weniger-als-24-stunden/",
+          "status": "read",
+          "verification": "official-2027-page"
+        }
+      ],
+      "eventPeriod": {
+        "startDate": "2027-05-06",
+        "endDate": "2027-05-08",
+        "verified": true
+      },
+      "routes": {
+        "4": {
+          "routeId": "transvulcania-12k-light-11-6-774",
+          "date": "2027-05-08",
+          "verified": true
+        }
+      },
+      "note": "Der Veranstaltungszeitraum 6.–8. Mai ist bestätigt. Der 12K-Light-Start ist für den 8. Mai belegt; die konkreten Starttage der übrigen Disziplinen bleiben bis zur offiziellen Zeitplantabelle offen."
     }
   }
 }
