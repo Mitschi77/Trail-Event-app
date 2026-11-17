@@ -1,4 +1,4 @@
-const CACHE_NAME = 'trail-event-planner-v19';
+const CACHE_NAME = 'trail-event-planner-v20';
 const APP_SHELL = ['./', './index.html', './event-dates.json', './manifest.webmanifest', './trail-icon.svg', './trail-apple-touch-icon.png'];
 
 self.addEventListener('install', event => {
