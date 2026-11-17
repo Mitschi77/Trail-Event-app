@@ -175,11 +175,11 @@ assert.ok(html.includes("data-season-priority"), "Race priority selector must be
 assert.ok(html.includes("data-season-date"), "Actual race date must be editable");
 assert.ok(html.includes("data-season-hours"), "Actual race duration must be editable");
 assert.ok(html.includes("function seasonActualRecord(x)"), "Completed race attempts must feed actual recovery data");
-const recoveryMatch = html.match(/function seasonRecoveryDays\(e,r,record\)\{[\s\S]*?\nfunction seasonPhaseSegments/);
-assert.ok(recoveryMatch, "Recovery estimator must be isolated for regression tests");
-const recoveryFn = new Function(recoveryMatch[0].replace(/\nfunction seasonPhaseSegments[\s\S]*$/, "") + "; return seasonRecoveryDays;")();
-assert.ok(recoveryFn({}, {km:100,hm:3000}, {}) >= 17, "100 km mountain races must receive a substantial recovery window");
-assert.ok(recoveryFn({}, {km:10,hm:0}, {}) < recoveryFn({}, {km:100,hm:3000}, {}), "Long mountain races must receive more recovery than short races");
+const seasonRecoveryFunctionMatch = html.match(/function seasonRecoveryDays\(e,r,record\)\{[\s\S]*?\nfunction seasonPhaseSegments/);
+assert.ok(seasonRecoveryFunctionMatch, "Recovery estimator must be isolated for regression tests");
+const seasonRecoveryFunction = new Function(seasonRecoveryFunctionMatch[0].replace(/\nfunction seasonPhaseSegments[\s\S]*$/, "") + "; return seasonRecoveryDays;")();
+assert.ok(seasonRecoveryFunction({}, {km:100,hm:3000}, {}) >= 17, "100 km mountain races must receive a substantial recovery window");
+assert.ok(seasonRecoveryFunction({}, {km:10,hm:0}, {}) < seasonRecoveryFunction({}, {km:100,hm:3000}, {}), "Long mountain races must receive more recovery than short races");
 const phaseMatch = html.match(/function seasonPhaseSegments\(gapDays,priority\)\{[\s\S]*?\nfunction seasonActualRecord/);
 assert.ok(phaseMatch, "Training phase segmentation must be isolated for regression tests");
 const phaseFn = new Function(phaseMatch[0].replace(/\nfunction seasonActualRecord[\s\S]*$/, "") + "; return seasonPhaseSegments;")();
@@ -199,11 +199,11 @@ const timelineGapFn = new Function("seasonActualEnd", "seasonRecoveryDays", "sea
 );
 assert.equal(timelineGapFn({}, { date: new Date("2027-01-05T12:00:00Z") }), 9, "Training blocks must continue across New Year");
 assert.equal((html.match(/id="sortPlanChronologically"/g) || []).length, 1, "Planner control IDs must be unique");
-const recoveryMatch = html.match(/function seasonRecoveryDays\(e,r,record\)\{[^}]*\}/);
-assert.ok(recoveryMatch, "Recovery calculation must remain independently testable");
-const recoveryFn = new Function(recoveryMatch[0] + "; return seasonRecoveryDays;")();
-assert.equal(recoveryFn({}, {km:80,hm:2500}, {actualKm:"",actualHm:"",actualDurationHours:""}), 12, "Blank actual metrics must fall back to the planned race distance and elevation");
-assert.equal(recoveryFn({}, {km:80,hm:2500}, {actualKm:25,actualHm:500,actualDurationHours:5}), 6, "Recorded actual metrics must override planned route metrics");
+const seasonRecoveryFunctionMatch = html.match(/function seasonRecoveryDays\(e,r,record\)\{[^}]*\}/);
+assert.ok(seasonRecoveryFunctionMatch, "Recovery calculation must remain independently testable");
+const seasonRecoveryFunction = new Function(seasonRecoveryFunctionMatch[0] + "; return seasonRecoveryDays;")();
+assert.equal(seasonRecoveryFunction({}, {km:80,hm:2500}, {actualKm:"",actualHm:"",actualDurationHours:""}), 12, "Blank actual metrics must fall back to the planned race distance and elevation");
+assert.equal(seasonRecoveryFunction({}, {km:80,hm:2500}, {actualKm:25,actualHm:500,actualDurationHours:5}), 6, "Recorded actual metrics must override planned route metrics");
 
 const attemptDateMatch = html.match(/function seasonAttemptRaceDate\(x,a\)\{[^}]*\}/);
 assert.ok(attemptDateMatch, "Imported activity dates must distinguish multi-day events");
