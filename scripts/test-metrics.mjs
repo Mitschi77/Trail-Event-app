@@ -2,7 +2,7 @@ import { readFile } from "node:fs/promises";
 import assert from "node:assert/strict";
 
 const html = await readFile(new URL("../index.html", import.meta.url), "utf8");
-const match = html.match(/function completedRunDistance\\(x\\)\\{[\\s\\S]*?\\}/);
+const match = html.match(/function completedRunDistance\(x\)\{[\s\S]*?\}/);
 assert.ok(match, "completedRunDistance helper must exist");
 const completedRunDistance = new Function("return (" + match[0] + ")")();
 
