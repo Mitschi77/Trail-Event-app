@@ -14,6 +14,7 @@ on:
       - "trail-icon.svg"
       - "trail-apple-touch-icon.png"
       - "package.json"
+      - "package-lock.json"
       - "capacitor.config.json"
       - "scripts/prepare-native.mjs"
       - "scripts/check-inline.mjs"
@@ -48,7 +49,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add ios
+          git add ios package-lock.json
           if ! git diff --cached --quiet; then
             git commit -m "Generate native Capacitor iOS project"
             git push
