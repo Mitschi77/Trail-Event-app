@@ -7,6 +7,7 @@ on:
       - "package.json"
       - "capacitor.config.json"
       - "scripts/prepare-native.mjs"
+      - "scripts/check-inline.mjs"
       - ".github/workflows/prepare-ios-project.yml"
   workflow_dispatch:
 
