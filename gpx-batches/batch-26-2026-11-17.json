@@ -3,7 +3,7 @@
   "checkedAt": "2026-11-17",
   "scope": "Final top-level events 126-128 plus consolidated Wildstrubel event",
   "status": "saved",
-  "appCommit": "1f27501205e370b4a18301b573d4dd0bf5ffe86f",
+  "appCommit": "e2b731262e3fc8357046f88ad2dbaf61d067f1f7",
   "events": [
     {
       "order": 126,
@@ -85,5 +85,18 @@
       "followUp": "Export GPX from each official UTMB map when the map control is available."
     }
   ],
-  "nextBatch": "All 128 top-level event records have now been checked in 26 small packages. Continue with a full consistency and functionality audit."
+  "nextBatch": "All 128 top-level event records have now been checked in 26 small packages. Continue with a full consistency and functionality audit.",
+  "finalAudit": {
+    "events": 128,
+    "routes": 454,
+    "allRoutesHaveGpxStatus": true,
+    "activeDirectGpxUrls": 54,
+    "officialGoogleDriveGpxLinks": 4,
+    "staleOrHistoricalRoutes": 92,
+    "unversionedOrValidationCandidates": 3,
+    "automaticImportBlockedForStaleHistoricalAndCandidates": true,
+    "duplicateEventNames": 0,
+    "duplicateRouteIds": 0
+  },
+  "importImplementation": "One-click import attempts for direct .gpx and official Google Drive links; Drive uses a download endpoint conversion and falls back to manual upload if browser access is blocked."
 }
