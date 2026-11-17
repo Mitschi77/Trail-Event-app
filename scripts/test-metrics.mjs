@@ -99,6 +99,13 @@ assert.ok(html.includes("activityLocalDate(data.startTime)"), "Activity import m
 assert.ok(html.includes('id="exportPlanCalendar"'), "Planner must offer calendar export");
 assert.ok(html.includes('id="sortPlanChronologically"'), "Planner must expose chronological sorting");
 assert.ok(html.includes("onclick=\"sortPlannedEventsChronologically()\""), "Chronological sort button must be wired");
+const recoveryHelper = html.match(/const plannerRecoveryEnd=\\(event,routeIndex\\)=>\\{[^}]*\\};/);
+assert.ok(recoveryHelper, "Multi-day recovery helper must be testable");
+const plannerRecoveryEnd = new Function("plannerRouteDate", "eventEnd", "return (" + recoveryHelper[0].replace(/^const plannerRecoveryEnd=/, "").replace(/;$/, "") + ");")(
+  (_event, _index) => new Date("2026-08-01T12:00:00Z"),
+  () => new Date("2026-08-04T12:00:00Z")
+);
+assert.equal(plannerRecoveryEnd({}, 0).toISOString().slice(0, 10), "2026-08-04");
 assert.ok(html.includes("const plannerRecoveryEnd=(event,routeIndex)=>"), "Multi-day races must expose a final-day recovery helper");
 assert.ok(html.includes("end=plannerRecoveryEnd(last,lastRi)"), "Next-race suggestions must start recovery after the event end");
 assert.ok(html.includes("(b.date-a.recoveryEnd)/86400000"), "Season check must compare next start to previous event end");
