@@ -199,6 +199,12 @@ const timelineGapFn = new Function("seasonActualEnd", "seasonRecoveryDays", "sea
 );
 assert.equal(timelineGapFn({}, { date: new Date("2027-01-05T12:00:00Z") }), 9, "Training blocks must continue across New Year");
 assert.equal((html.match(/id="sortPlanChronologically"/g) || []).length, 1, "Planner control IDs must be unique");
+const recoveryMatch = html.match(/function seasonRecoveryDays\(e,r,record\)\{[^}]*\}/);
+assert.ok(recoveryMatch, "Recovery calculation must remain independently testable");
+const recoveryFn = new Function(recoveryMatch[0] + "; return seasonRecoveryDays;")();
+assert.equal(recoveryFn({}, {km:80,hm:2500}, {actualKm:"",actualHm:"",actualDurationHours:""}), 15, "Blank actual metrics must fall back to the planned race distance and elevation");
+assert.equal(recoveryFn({}, {km:80,hm:2500}, {actualKm:25,actualHm:500,actualDurationHours:5}), 6, "Recorded actual metrics must override planned route metrics");
+
 const attemptDateMatch = html.match(/function seasonAttemptRaceDate\(x,a\)\{[^}]*\}/);
 assert.ok(attemptDateMatch, "Imported activity dates must distinguish multi-day events");
 const attemptDateFn = new Function("seasonDate", "plannerRecoveryEnd", attemptDateMatch[0] + "; return seasonAttemptRaceDate;")(
