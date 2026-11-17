@@ -1,4 +1,4 @@
-import { mkdir, copyFile } from "node:fs/promises";
+import { mkdir, copyFile, readFile } from "node:fs/promises";
 import { join } from "node:path";
 import sharp from "sharp";
 
@@ -20,8 +20,10 @@ for (const file of requiredFiles) {
 
 // Use the designed Trail Events mountain-runner artwork as the actual iOS icon.
 const iconPng = join(webDir, "trail-app-icon-1024.png");
-await sharp(join(root, "trail-icon.svg"))
-  .resize(1024, 1024, { fit: "contain", background: "#14251f" })
+const iconSvg = (await readFile(join(root, "trail-icon.svg"), "utf8"))
+  .replace(' clip-path="url(#round)"', "");
+await sharp(Buffer.from(iconSvg))
+  .resize(1024, 1024, { fit: "cover", background: "#14251f" })
   .png()
   .toFile(iconPng);
 
