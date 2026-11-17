@@ -2133,7 +2133,7 @@
     },
     "trail-100-andorra": {
       "eventId": "trail-100-andorra",
-      "checkedAt": "2026-11-17T07:41:29.615Z",
+      "checkedAt": "2026-11-17T07:46:15.123Z",
       "status": "verified",
       "sources": [
         {
@@ -2143,7 +2143,7 @@
         }
       ],
       "eventPeriod": {
-        "startDate": "2027-06-10",
+        "startDate": "2027-06-11",
         "endDate": "2027-06-13",
         "verified": true
       },
@@ -2177,7 +2177,7 @@
     },
     "trai-verbier-st-bernhard": {
       "eventId": "trai-verbier-st-bernhard",
-      "checkedAt": "2026-11-17T13:00:00+01:00",
+      "checkedAt": "2026-11-17T07:46:15.123Z",
       "status": "verified",
       "sources": [
         {
@@ -2285,7 +2285,7 @@
     },
     "transvulcania-la-palma": {
       "eventId": "transvulcania-la-palma",
-      "checkedAt": "2026-11-17T13:00:00+01:00",
+      "checkedAt": "2026-11-17T07:46:15.123Z",
       "status": "verified",
       "sources": [
         {
@@ -2310,7 +2310,7 @@
         }
       ],
       "eventPeriod": {
-        "startDate": "2027-05-06",
+        "startDate": "2027-05-08",
         "endDate": "2027-05-08",
         "verified": true
       },
