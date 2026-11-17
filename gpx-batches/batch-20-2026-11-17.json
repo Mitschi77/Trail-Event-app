@@ -3,32 +3,20 @@
   "checkedAt": "2026-11-17",
   "scope": "Top-level events 96-100 in current EVENTS order",
   "status": "saved",
-  "appCommit": "f9e6f28e62cee073a735ec81e208b9c2b3ab65ef",
+  "appCommit": "9338bd634ecc98c8fc66150fbbd707195b9acb26",
   "events": [
     {
       "order": 96,
       "name": "Arberland Ultra Trail",
-      "gpxStatus": "All five official 2027 races and their route pages are confirmed for 18.09.2027. Each currently available downloadable GPX file is explicitly named AUT/Arberland-2026; all stale files were removed from active GPX downloads.",
-      "routes": [
-        "Arberland Ultra Trail 102 km / 3,900 hm",
-        "Arberland Classic Trail 66 km / 2,400 hm",
-        "Auerhahn Trail 47 km / 1,900 hm",
-        "Schachtenbach Trail 36 km / 1,500 hm",
-        "Arbersee Trail 20 km / 900 hm"
-      ],
-      "sources": [
-        "https://www.woidlaeufer.de/home/arberland-ultra-trail-elite-race",
-        "https://www.woidlaeufer.de/home/arberland-classic-trail-66k",
-        "https://www.woidlaeufer.de/home/auerhahn-trail-45k",
-        "https://www.woidlaeufer.de/home/schachtenbach-trail-35k",
-        "https://www.woidlaeufer.de/home/abersee-trail-20k"
-      ],
-      "followUp": "Wait for 2027 GPX files. Do not import the 2026 tracks."
+      "gpxStatus": "Official 2027 event confirmed for 18 September 2027 with five distances. Organizer pages currently expose GPX files named for the 2026 edition; rejected as stale for 2027.",
+      "source": "https://www.woidlaeufer.de/",
+      "followUp": "Wait for 2027 GPX files; don't import 2026 tracks."
     },
     {
       "order": 97,
       "name": "I Feel Slovenia Julian Alps Trail Run by UTMB",
-      "gpxStatus": "All seven official 2027 race pages have GPX buttons, but the currently linked files are explicitly 2026 GPX files. Official FAQ states final 2027 GPX files will be uploaded at the end of August. Removed stale 2026 files from active downloads.",
+      "gpxStatus": "Official UTMB pages confirm 2027 courses and GPX availability on each race page. FAQ says final GPX versions will be uploaded at end of August 2027 due to possible small route changes.",
+      "source": "https://julianalps.utmb.world/races",
       "routes": [
         "120K",
         "80K",
@@ -38,29 +26,28 @@
         "10K",
         "NextGen 10K"
       ],
-      "source": "https://julianalps.utmb.world/races-runners/runners/faq",
-      "followUp": "Recheck at the end of August 2027 for final 2027 GPX files."
+      "followUp": "Recheck final GPX after end-August publication."
     },
     {
       "order": 98,
       "name": "Berlin Marathon - Major",
-      "gpxStatus": "Official course information page available, but no confirmed direct 2027 GPX download found. Do not use 2026 course file as 2027.",
-      "source": "https://www.bmw-berlin-marathon.com/your-race/course/",
-      "followUp": "Recheck when 2027 course is published."
+      "gpxStatus": "Official organizer offers GPX downloads, but current course map is the 2026 edition. No 2027 GPX confirmed.",
+      "source": "https://www.bmw-berlin-marathon.com/en/your-race/course/",
+      "followUp": "Wait for the 2027 course map/GPX."
     },
     {
       "order": 99,
       "name": "Adamello Ultratrail",
-      "gpxStatus": "Official organizer site currently shows 2026 race information/results. No 2027 event date or 2027 GPX files confirmed; date cleared in app.",
-      "source": "https://www.adamelloultratrail.it/en/",
-      "followUp": "Recheck when 2027 edition is announced."
+      "gpxStatus": "No confirmed 2027 edition or current official GPX found for the app entry.",
+      "source": "https://www.adamelloultratrail.it/",
+      "followUp": "Confirm the next edition date with organizer before using any track."
     },
     {
       "order": 100,
-      "name": "Nice Cote d'Azur by UTMB",
-      "gpxStatus": "Official UTMB calendar currently shows the 25–27 September 2026 edition only. No 2027 date confirmed; date and GPX fields cleared. Organizer FAQ says GPX appears on race pages 1–2 weeks before the event.",
-      "source": "https://nice.utmb.world/races-runners/runners/infos-pratiques",
-      "followUp": "Recheck when a 2027 edition is announced."
+      "name": "Nice Cote D'Azur",
+      "gpxStatus": "Official UTMB FAQ says GPX files are posted on individual race pages 1-2 weeks before race. The current UTMB event calendar does not list a 2027 Nice Côte d'Azur edition; no 2027 GPX imported.",
+      "source": "https://nice.utmb.world/races",
+      "followUp": "Recheck only if organizer confirms a 2027 edition."
     }
   ],
   "nextBatch": "Continue with events 101-105 after package 20 checkpoint."
