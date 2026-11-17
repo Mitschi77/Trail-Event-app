@@ -14,6 +14,9 @@ assert.ok(html.includes("Ergebnis, Platz und Bewertung bleiben erhalten."), "Act
 assert.ok(html.includes('accept=".gpx,.tcx,.fit,'), "Import controls must accept FIT, GPX and TCX files");
 assert.ok(html.includes("async function importActivityToHistory()"), "Activity history import must be available");
 assert.ok(html.includes("const data=await parseActivityTrack(file),route=event.routes[ri]"), "Route file import must await async FIT/TCX parsing");
+assert.ok(html.includes("async function importGpxForRoute(id,ri,input)"), "Planned route detail import must support asynchronous FIT/TCX parsing");
+assert.ok(html.includes("const data=await parseActivityTrack(file);if(data.track.length<2)"), "Planned route detail import must await parsed track data");
+
 
 assert.ok(html.includes("initActivityImport();"), "Activity import controls must initialize");
 assert.ok(html.includes("durationSeconds"), "Imported activities must retain elapsed time");
