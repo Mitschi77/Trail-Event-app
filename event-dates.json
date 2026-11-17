@@ -3390,40 +3390,166 @@
     },
     "infinite-trails": {
       "eventId": "infinite-trails",
-      "checkedAt": "2026-11-17T07:47:59.247Z",
-      "status": "unconfirmed",
+      "checkedAt": "2026-11-17T13:00:00+01:00",
+      "status": "verified",
       "sources": [
         {
-          "url": "https://infinite-trails.com/",
+          "url": "https://www.gastein.com/erlebnisse-events/veranstaltungen/top-events/adidas-infinite-trails/",
           "status": "read",
-          "verification": "official-2027-edition-announced-date-not-published-on-page"
+          "verification": "official-2027-event-period-and-course-details"
         }
       ],
       "eventPeriod": {
-        "verified": false,
-        "startDate": null,
-        "endDate": null
+        "startDate": "2027-09-03",
+        "endDate": "2027-09-05",
+        "verified": true
+      },
+      "notes": "Einzelrennen und Team-Race-Loops sind mit offiziellen Distanzen/Höhenmetern hinterlegt; konkrete Starttage je Strecke sind auf der Eventseite noch nicht ausgewiesen."
+    },
+    "sachsentrail-erzgebirge": {
+      "eventId": "sachsentrail-erzgebirge",
+      "checkedAt": "2026-11-17T13:00:00+01:00",
+      "status": "verified",
+      "sources": [
+        {
+          "url": "https://www.sachsentrail.de/informationen/ausschreibung",
+          "status": "read",
+          "verification": "official-2027-timetable-and-routes"
+        }
+      ],
+      "eventPeriod": {
+        "startDate": "2027-06-25",
+        "endDate": "2027-06-27",
+        "verified": true
       },
       "routes": {
         "0": {
-          "routeId": "30k-30-1900",
-          "verified": false,
-          "date": null
+          "routeId": "ultratrail-75-5-2120",
+          "date": "2027-06-26",
+          "verified": true
         },
         "1": {
-          "routeId": "45k-44-3146",
-          "verified": false,
-          "date": null
+          "routeId": "sachsentrail-halftrail-36-843",
+          "date": "2027-06-26",
+          "verified": true
         },
         "2": {
-          "routeId": "60k-62-5200",
-          "verified": false,
-          "date": null
+          "routeId": "sachsentrail-basetrail-16-357",
+          "date": "2027-06-26",
+          "verified": true
         },
         "3": {
-          "routeId": "infinite-trails-15k-13-6-871",
-          "verified": false,
-          "date": null
+          "routeId": "sachsentrail-quartertrail-20-506",
+          "date": "2027-06-27",
+          "verified": true
+        },
+        "4": {
+          "routeId": "sachsentrail-funtrail-12-6-347",
+          "date": "2027-06-27",
+          "verified": true
+        },
+        "5": {
+          "routeId": "sachsentrail-uphill-4-2-255",
+          "date": "2027-06-25",
+          "verified": true
+        },
+        "6": {
+          "routeId": "sachsentrail-bambini-0-4",
+          "date": "2027-06-27",
+          "verified": true
+        },
+        "7": {
+          "routeId": "sachsentrail-kids-1-10",
+          "date": "2027-06-27",
+          "verified": true
+        },
+        "8": {
+          "routeId": "sachsentrail-teen-4-70",
+          "date": "2027-06-27",
+          "verified": true
+        }
+      }
+    },
+    "dolomiti-di-brenta": {
+      "eventId": "dolomiti-di-brenta",
+      "checkedAt": "2026-11-17T13:00:00+01:00",
+      "status": "verified",
+      "sources": [
+        {
+          "url": "https://www.dolomitidibrentatrail.it/en/homepage/",
+          "status": "read",
+          "verification": "official-2027-page"
+        },
+        {
+          "url": "https://www.dolomitidibrentatrail.it/en/routes/regulation/",
+          "status": "read",
+          "verification": "official-2027-regulation"
+        }
+      ],
+      "eventPeriod": {
+        "startDate": "2027-09-11",
+        "endDate": "2027-09-11",
+        "verified": true
+      },
+      "routes": {
+        "0": {
+          "routeId": "64km-64-4200",
+          "date": "2027-09-11",
+          "verified": true
+        },
+        "1": {
+          "routeId": "dolomiti-medium-45-2850",
+          "date": "2027-09-11",
+          "verified": true
+        },
+        "2": {
+          "routeId": "dolomiti-short-21-1250",
+          "date": "2027-09-11",
+          "verified": true
+        }
+      }
+    },
+    "arberland-ultratrail": {
+      "eventId": "arberland-ultratrail",
+      "checkedAt": "2026-11-17T13:00:00+01:00",
+      "status": "verified",
+      "sources": [
+        {
+          "url": "https://www.woidlaeufer.de/",
+          "status": "read",
+          "verification": "official-2027-page"
+        }
+      ],
+      "eventPeriod": {
+        "startDate": "2027-09-18",
+        "endDate": "2027-09-18",
+        "verified": true
+      },
+      "routes": {
+        "0": {
+          "routeId": "auerhahn-trail-43-1500",
+          "date": "2027-09-18",
+          "verified": true
+        },
+        "1": {
+          "routeId": "classic-trail-68-2500",
+          "date": "2027-09-18",
+          "verified": true
+        },
+        "2": {
+          "routeId": "arberland-ultra-102-3900",
+          "date": "2027-09-18",
+          "verified": true
+        },
+        "3": {
+          "routeId": "arberland-schachtenbach-36-1500",
+          "date": "2027-09-18",
+          "verified": true
+        },
+        "4": {
+          "routeId": "arberland-arbersee-20-900",
+          "date": "2027-09-18",
+          "verified": true
         }
       }
     }
