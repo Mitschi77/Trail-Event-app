@@ -3,53 +3,41 @@
   "checkedAt": "2026-11-17",
   "scope": "Top-level events 111-115 in current EVENTS order",
   "status": "saved",
-  "appCommit": "9ef453e4adfdbf5124aa70639cd7ac413dc44533",
+  "appCommit": "f783eeacd698cba311cd0f0adc701fa5c13062bc",
   "events": [
     {
       "order": 111,
       "name": "24+1 Challenge",
-      "gpxStatus": "Official Munderfing page describes the 6.706 km loop and 24+1 format but no GPX download or confirmed 2027 date. App marks historical/next edition pending; not confused with separate Hochkönig 24+1 on 25 October 2027.",
-      "source": "https://www.austriabackyardultra.com/241munderfing",
-      "followUp": "Recheck for a new Munderfing date and GPX."
+      "gpxStatus": "Official Austria Backyard Ultra Hochkönig 2027 confirmed for 25 October 2027, 6.706 km loop. Organizer says route map/track still follows; no GPX published.",
+      "source": "https://www.austriabackyardultra.com/hochkoenig",
+      "followUp": "Recheck when organizer releases the course."
     },
     {
       "order": 112,
       "name": "Puglia Terra delle Gravine",
-      "gpxStatus": "Official UTMB race list confirms 2026 event 23-25 October with five distances (100M, 100K, 50K, 20K, 10K). App's former 7 November date was wrong; date cleared pending 2027 announcement. No 2027 GPX available.",
-      "source": "https://puglia.utmb.world/races",
-      "followUp": "Recheck when the 2027 edition is announced."
+      "gpxStatus": "No current 2027 Puglia UTMB edition listed in the official UTMB calendar; no current organizer GPX verified.",
+      "followUp": "Do not use historic Puglia GPX unless a new edition is confirmed."
     },
     {
       "order": 113,
       "name": "3 Días Trail Ibiza",
-      "gpxStatus": "Official organizer confirms the 13th edition 27-29 November 2026; the app date corrected from 2027 to 2026. Official route pages cover nocturnal 10K, Ultra/Marathon/Half/10K second stage, and diurnal 10K third stage, but none contains a GPX download link.",
-      "sources": [
-        "https://3diastrailibiza.com/",
-        "https://3diastrailibiza.com/nocturna-10km/",
-        "https://3diastrailibiza.com/ultra-trail-maraton-media-maraton-y-10k/",
-        "https://3diastrailibiza.com/diurna-10km/"
-      ],
-      "followUp": "Ask organizer for GPX files or recheck if participant route files are published."
+      "gpxStatus": "Official 2026 edition runs 27-29 November 2026. Organizer says tracks for the Saturday stage are sent by email one week before the event because the route crosses private/protected land; no public direct GPX link.",
+      "source": "https://3diastrailibiza.com/ultra-trail-maraton-media-maraton-y-10k/",
+      "followUp": "Check participant email around one week before the race."
     },
     {
       "order": 114,
       "name": "Oman by UTMB",
-      "gpxStatus": "All five official 2026 race pages (Hajar 154K, Jabal Classic 103K, Skyward Canyon 50K, Old Capital Trail 32K, Scenic Ascent 21.5K) show Map + GPX panels; official links added to app. Event runs 10-12 December 2026.",
-      "sources": [
-        "https://oman.utmb.world/races/HAJ",
-        "https://oman.utmb.world/races/JAC",
-        "https://oman.utmb.world/races/SKY",
-        "https://oman.utmb.world/races/OCT",
-        "https://oman.utmb.world/races/SAS"
-      ],
-      "followUp": "Export each track from the official UTMB Map + GPX panel."
+      "gpxStatus": "Official UTMB 2026 pages provide Map + GPX for all five courses: Hajar Ultra, Jabal Classic, Skyward Canyon, Old Capital Trail, Scenic Ascent. Individual pages linked in app; direct file endpoints not extracted.",
+      "source": "https://oman.utmb.world/races",
+      "followUp": "Export each current 2026 GPX from the official Map + GPX section."
     },
     {
       "order": 115,
       "name": "Mammutmarsch",
-      "gpxStatus": "Mammutmarsch München confirmed for 31 July 2027 with 75K and 100K routes. App route list corrected to two distinct distances. Organizer states GPX files are available in the participant account under 'Meine Veranstaltungen' before the event; no public GPX file yet.",
+      "gpxStatus": "Official organizer confirms Munich 75K and 100K on 31 July 2027. No public organizer GPX download is shown on the official event page.",
       "source": "https://mammutmarsch.de/events/muenchen",
-      "followUp": "Download the 75K and 100K GPX from the participant account once released."
+      "followUp": "Ask organizer or check participant portal for GPX files."
     }
   ],
   "nextBatch": "Continue with events 116-120 after package 23 checkpoint."
