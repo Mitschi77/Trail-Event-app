@@ -3,51 +3,50 @@
   "checkedAt": "2026-11-17",
   "scope": "Top-level events 86-90 in current EVENTS order",
   "status": "saved",
-  "appCommit": "e7b7eec8075852a5c6c3efb100e4a3944d2e7239",
+  "appCommit": "c0dba3bfb2114c5f79ce5b3358482be011d383b6",
   "events": [
     {
       "order": 86,
       "name": "Fränkischer Backyard Ultra",
-      "gpxStatus": "App entry is for 4 September 2026, already past; no GPX for next edition verified.",
+      "gpxStatus": "Official GPX exists on organizer page but is for the 04.09.2026 event. No 2027 date found; 2026 track rejected as stale. App date cleared.",
       "source": "https://www.fraenkischerbackyard.de/",
-      "followUp": "Recheck when next edition is announced."
+      "followUp": "Recheck when organizer announces the next edition."
     },
     {
       "order": 87,
       "name": "Dolomiti di Brenta Trail",
-      "gpxStatus": "Organizer confirms GPS tracks on official route pages, but reserves the right to change courses until 31 July 2027, when final official routes are published.",
+      "gpxStatus": "Official 2027 routes confirmed: 64K/4,200hm, 45K/2,850hm, 21K/1,250hm. Regulation says final official routes and GPS tracks will be published on 31.07.2027; app links official regulation and marks tracks pending.",
       "source": "https://www.dolomitidibrentatrail.it/en/routes/regulation/",
-      "followUp": "Import final GPX after 31 July 2027."
+      "followUp": "Recheck after 31 July 2027 and import final GPX tracks."
     },
     {
       "order": 88,
       "name": "adidas INFINITE TRAILS Gastein",
-      "gpxStatus": "Official central GPX/Trailbook platform linked for all 7 race distances. Current visible edition is the 2026 Trailbook; 2027 GPX not yet published.",
+      "gpxStatus": "Official GPX racemap page currently offers 2026 files for all distances, including bad-weather alternatives. These are stale for 2027; app links the official download page but does not import old files.",
       "source": "https://infinite-trails.com/en/gpx-racemap/",
-      "followUp": "Recheck when 2027 Trailbook/GPX platform goes live."
+      "followUp": "Wait for 2027 Trailbook and GPX download platform."
     },
     {
       "order": 89,
       "name": "Mayrhofen Ultraks",
-      "gpxStatus": "All seven official 2027 route pages show GPX-Daten sections and are linked in app.",
-      "routes": [
-        "RK50",
-        "TUX070",
-        "Z101",
-        "MUZ30",
-        "MUZ14",
-        "MOUNTOPOLIS Vertical",
-        "Sprint"
+      "gpxStatus": "Official 2027 race pages and metrics verified for all seven routes. Current visible GPX files are 2025 (Z101) or 2026 (other routes), so all are rejected as stale. App route metrics/dates corrected and official route pages linked.",
+      "sources": [
+        "https://mayrhofen.ultraks.com/z101/",
+        "https://mayrhofen.ultraks.com/tux070/",
+        "https://mayrhofen.ultraks.com/rk50/",
+        "https://mayrhofen.ultraks.com/muz30/",
+        "https://mayrhofen.ultraks.com/muz14/",
+        "https://mayrhofen.ultraks.com/mountopolis-vertical/",
+        "https://mayrhofen.ultraks.com/sprint/"
       ],
-      "source": "https://mayrhofen.ultraks.com/strecken/",
-      "followUp": "Download GPX from each official route page; direct file endpoints not separately extracted."
+      "followUp": "Recheck for 2027 GPX updates and import when available."
     },
     {
       "order": 90,
       "name": "München Backyard Ultra",
-      "gpxStatus": "App entry is for 6 September 2026, already past; no GPX for next edition verified.",
-      "source": "https://muenchenbackyardultra.de/",
-      "followUp": "Recheck when next edition is announced."
+      "gpxStatus": "Official page offers 2027 tickets and confirms 6.7 km loop format, but no 2027 date or GPX published yet. App date cleared; 2026 event date not reused.",
+      "source": "https://www.munichbackyard.de/",
+      "followUp": "Recheck for the 2027 event date and route GPX."
     }
   ],
   "nextBatch": "Continue with events 91-95 after package 18 checkpoint."
