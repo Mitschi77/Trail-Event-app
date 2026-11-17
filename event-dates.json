@@ -4113,28 +4113,6 @@
         "verified": true
       },
       "routes": {}
-    },
-    "wildstrubel-by-utmb": {
-      "eventId": "wildstrubel-by-utmb",
-      "checkedAt": "2026-11-17T16:13:42.139219+00:00",
-      "status": "verified",
-      "sources": [
-        {
-          "url": "https://wildstrubel.utmb.world/",
-          "status": "read"
-        },
-        {
-          "url": "https://wildstrubel.utmb.world/de",
-          "status": "read",
-          "verification": "manual-official-page"
-        }
-      ],
-      "eventPeriod": {
-        "startDate": "2027-09-09",
-        "endDate": "2027-09-12",
-        "verified": true
-      },
-      "routes": {}
     }
   }
 }
