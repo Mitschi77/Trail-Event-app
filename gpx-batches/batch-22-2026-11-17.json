@@ -3,47 +3,57 @@
   "checkedAt": "2026-11-17",
   "scope": "Top-level events 106-110 in current EVENTS order",
   "status": "saved",
-  "appCommit": "be2f6165ba2a93afa7356bbbd34fd21a0c26bf65",
+  "appCommit": "66e17ea724dbca9197e965b2b91b3afd74230a7",
   "events": [
     {
       "order": 106,
       "name": "Hoka Kodiak Ultra Marathons",
-      "gpxStatus": "2027 registration page says registration will open soon, but event date and 2027 course files are not published. Current direct UTMB GPX links explicitly name 2026; app date cleared and old files rejected.",
+      "gpxStatus": "2027 registration announced but current course pages and direct GPX files are explicitly 2026. Historical GPX URLs moved to historical metadata and removed from active 2027 import links. No 2027 GPX or race dates confirmed.",
+      "routes": [
+        "100M 161 km / 4,876 hm",
+        "100K 101.1 km / 3,143 hm"
+      ],
       "source": "https://kodiak.utmb.world/register",
-      "followUp": "Recheck when 2027 date and route files are announced."
+      "followUp": "Wait for 2027 course and GPX publication; do not import 2026 files."
     },
     {
       "order": 107,
       "name": "München Marathon",
-      "gpxStatus": "Official GPX download page lists 11 October 2026 files for marathon, half marathon and 10K. No 2027 date or files confirmed; app date cleared and 2026 GPX not reused.",
-      "source": "https://marathonmuenchen.org/gpx-downloads/",
-      "followUp": "Recheck when the 2027 event date and updated GPX downloads are published."
+      "gpxStatus": "2026 entry is historical; no official GPX file verified for that edition and no 2027 course/GPX confirmed. Date cleared pending next edition details.",
+      "source": "https://www.generalimuenchenmarathon.de/",
+      "followUp": "Recheck when 2027 event page is published."
     },
     {
       "order": 108,
       "name": "StundenRundenLauf",
-      "gpxStatus": "Official organizer says the 3rd C100 StundenRundenLauf took place 17-18 October 2026 and is now history. No 2027 announcement found; app date cleared and historical Outdooractive track not reused.",
-      "source": "https://chiemgauer100.de/aktuell/",
-      "followUp": "Wait for an organizer announcement before adding a new event/GPX."
+      "gpxStatus": "Outdooractive route link belongs to the 17.10.2026 edition and is retained as historical reference only. No 2027 edition or track confirmed.",
+      "source": "https://www.outdooractive.com/de/route/trailrunning/chiemgau/3.-chiemgauer100-stundenrundenlauf-2026/262145937/",
+      "followUp": "Wait for the 2027 event and route announcement."
     },
     {
       "order": 109,
       "name": "Kullamannen",
-      "gpxStatus": "All four official 2027 UTMB race pages (100 Miles, Sprint Ultra 100K, Seventh Seal 50K, North Shore 20K) confirm dates/distances and show Map + GPX panels. App links each official page; direct .gpx file endpoints are not exposed.",
-      "sources": [
-        "https://kullamannen.utmb.world/races/ultra-100-miles",
-        "https://kullamannen.utmb.world/races/sprint-ultra-100-km",
-        "https://kullamannen.utmb.world/races/seventh-seal",
-        "https://kullamannen.utmb.world/races/north-shore"
+      "gpxStatus": "All four 2027 race pages confirm race distances and dates (5–6 November 2027). Public race pages do not currently expose a GPX file download; app links to the official route pages.",
+      "routes": [
+        "Ultra 100 Miles 168 km / 2,020 hm",
+        "Sprint Ultra 100K 108 km / 749 hm",
+        "Seventh Seal 50K 53 km / 727 hm",
+        "North Shore 20K 22 km / 96 hm"
       ],
-      "followUp": "Export the four official tracks from their UTMB Map + GPX panels."
+      "source": "https://kullamannen.utmb.world/",
+      "followUp": "Recheck race pages for GPX availability closer to race week."
     },
     {
       "order": 110,
       "name": "Mallorca Serra de Tramuntana",
-      "gpxStatus": "2026 edition ran 30 October-1 November 2026; final 2026 GPX files were published shortly before the event. No 2027 date or tracks announced; app date cleared and old files rejected. Do not confuse with separate Travessa Mallorca in April 2027.",
-      "source": "https://mallorca.utmb.world/",
-      "followUp": "Recheck when UTMB announces the 2027 edition."
+      "gpxStatus": "Official UTMB page offers direct 2026 GPX files for 100M, 100K and 50K. Event is past (30 Oct–1 Nov 2026); files retained as historical only. No 2027 date/GPX confirmed.",
+      "downloads": [
+        "ETM_50_K",
+        "CPS_100_K",
+        "SDT_100_M"
+      ],
+      "source": "https://mallorca.utmb.world/race/tracks",
+      "followUp": "Recheck when the 2027 edition is announced."
     }
   ],
   "nextBatch": "Continue with events 111-115 after package 22 checkpoint."
