@@ -1,0 +1,55 @@
+{
+  "batch": 11,
+  "checkedAt": "2026-11-17",
+  "scope": "Top-level events 51-55 in current EVENTS order",
+  "status": "saved",
+  "appCommit": "dcbf5aa2cbe1fb76fd6d759892d5f12b2d767503",
+  "events": [
+    {
+      "order": 51,
+      "name": "Schluchthof Backyard",
+      "gpxStatus": "Organizer website timed out during inspection; no official GPX link verified.",
+      "source": "https://www.schluchthof.de/",
+      "followUp": "Recheck organizer site or request file from event organizer."
+    },
+    {
+      "order": 52,
+      "name": "Tschirgant Sky",
+      "gpxStatus": "Official TS52 page links a GPX file named ts 52 2024, so it is stale for 2027. App metrics also differ from current organizer values (app 54 km/3,340 hm; organizer 52.2 km/3,532 hm).",
+      "source": "https://tschirgant-sky.run/trailrun-tirol-imst-ts52-ultra/",
+      "followUp": "Wait for 2027 GPX and correct route metrics from organizer."
+    },
+    {
+      "order": 53,
+      "name": "Backyard Ultra",
+      "gpxStatus": "Hofer Backyard Ultra 2027 official page confirms 6.706 km / approx. 80 hm and links Komoot route. Fränkischer page blocked 403; Tuttlingen 2027 info promised in spring; Kuckuck page is 2026 and GPX is emailed shortly before race.",
+      "routes": [
+        "Hofer Backyard Ultra",
+        "Fränkischer Backyard",
+        "Tuttlinger Backyard Ultra",
+        "Kuckuck Backyard Ultra"
+      ],
+      "komoot": "https://www.komoot.com/de-de/tour/1359448087",
+      "followUp": "Import Hofer route via Komoot export; recheck other organizers when new information is published."
+    },
+    {
+      "order": 54,
+      "name": "La Sportiva Lavaredo Ultra Trail by UTMB",
+      "gpxStatus": "Official UTMB pages offer Map + GPX for 2027 distances, but no direct .gpx file URL was extracted.",
+      "source": "https://lavaredo.utmb.world/races",
+      "followUp": "Export from official race map after final route release."
+    },
+    {
+      "order": 55,
+      "name": "Austria Backyard Ultra",
+      "gpxStatus": "Frankenmarkt 2027 organizer page confirms 6.706 km loop and GPX download, but direct file link is not exposed in page text. Kirchdorf 2027 confirms 6.706 km / 9 hm and links Garmin Connect course; ABU 7+1 uses same route.",
+      "sources": [
+        "https://www.austriabackyardultra.com/frankenmarkt",
+        "https://www.austriabackyardultra.com/kirchdorf"
+      ],
+      "garminCourse": "https://connect.garmin.com/app/course/245916329",
+      "followUp": "Export Frankenmarkt/Kirchdorf route from organizer page/Garmin Connect and add route files."
+    }
+  ],
+  "nextBatch": "Continue with events 56-60 after package 11 checkpoint."
+}
