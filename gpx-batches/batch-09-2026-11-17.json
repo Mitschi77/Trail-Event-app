@@ -1,0 +1,62 @@
+{
+  "batch": 9,
+  "checkedAt": "2026-11-17",
+  "scope": "Top-level events 41-45 in current EVENTS order",
+  "status": "saved",
+  "appCommit": "2664f7c4c4b0d1888ba82d8365def081181440c7",
+  "events": [
+    {
+      "order": 41,
+      "name": "Jenaer Backyard Ultra",
+      "gpxStatus": "Official organizer confirms a 6.7 km loop for 2027, but no GPX download is published.",
+      "source": "https://jenaerbackyardultra.de/",
+      "followUp": "Ask organizer for GPX or recheck later."
+    },
+    {
+      "order": 42,
+      "name": "Dolomiti Extreme Trail",
+      "gpxStatus": "Official 2027 GPX files linked for DXT 55K (58 km / 3,600 hm) and DXT 72K (76 km / 4,800 hm). The 103K page currently links to a 2026 file, so it is rejected; official 2027 metrics are 102 km / 6,500 hm.",
+      "downloads": [
+        {
+          "route": "55K",
+          "url": "https://dolomitiextremetrail.com/assets/gpx/dolomiti-extreme-trail-2027-dxt-55k.gpx"
+        },
+        {
+          "route": "72K",
+          "url": "https://dolomitiextremetrail.com/assets/gpx/dolomiti-extreme-trail-2027-dxt-72k.gpx"
+        }
+      ],
+      "sources": [
+        "https://dolomitiextremetrail.com/gara/dxt-55k",
+        "https://dolomitiextremetrail.com/gara/dxt-72k",
+        "https://dolomitiextremetrail.com/gara/dxt-103k"
+      ],
+      "followUp": "Use one-click import for 55K and 72K; wait for 2027 103K file."
+    },
+    {
+      "order": 43,
+      "name": "Hochkönig Ultraks",
+      "gpxStatus": "Official route pages provide GPS-Track links, but all inspected files point to /media/gpx/2026/; rejected for 2027.",
+      "source": "https://www.hochkoenig-ultraks.at/",
+      "followUp": "Wait for updated 2027 files."
+    },
+    {
+      "order": 44,
+      "name": "Mozart",
+      "gpxStatus": "2027 UTMB race pages exist, but no direct official 2027 GPX download was verified for the listed routes.",
+      "source": "https://mozart.utmb.world/de",
+      "followUp": "Recheck each race page when map data is published."
+    },
+    {
+      "order": 45,
+      "name": "Ultra Scotland",
+      "gpxStatus": "Organizer provides High Level GPX from the interactive map; 100-mile route also has Low Level GPX for severe weather. Direct file URL is not exposed in page text.",
+      "sources": [
+        "https://www.gbultras.com/ultra-scotland-50/",
+        "https://www.gbultras.com/ultra-scotland-100/"
+      ],
+      "followUp": "Use organizer map download manually or capture direct GPX link from map."
+    }
+  ],
+  "nextBatch": "Continue with events 46-50 after package 9 checkpoint."
+}
