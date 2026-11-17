@@ -219,7 +219,11 @@ for event in events:
         previous = feed["events"].get(event["id"], {})
         previous_period = previous.get("eventPeriod")
         merged_period = event_period or previous_period
-        if event_period and previous_period and event_period.get("startDate", "") < previous_period.get("startDate", ""):
+        if (
+            event_period
+            and previous_period
+            and event_period.get("startDate", "")[:4] < previous_period.get("startDate", "")[:4]
+        ):
             merged_period = previous_period
         if merged_period and merged_period.get("endDate") and merged_period["endDate"] < today:
             merged_period = None
@@ -231,7 +235,7 @@ for event in events:
                 old_route
                 and old_route.get("routeId") == route_entry.get("routeId")
                 and old_route.get("date")
-                and old_route["date"] > route_entry["date"]
+                and old_route["date"][:4] > route_entry["date"][:4]
             ):
                 continue
             merged_routes[route_key] = route_entry
@@ -292,10 +296,12 @@ for event_id, (start_date, end_date, source_url, route_dates) in MANUAL_EVENT_PE
         "eventId": event_id, "checkedAt": updated, "status": "unconfirmed",
         "sources": [], "eventPeriod": None, "routes": {}
     })
-    record["status"] = "verified"
-    record["eventPeriod"] = {
-        "startDate": start_date, "endDate": end_date, "verified": True
-    }
+    existing_period = record.get("eventPeriod") or {}
+    if not existing_period.get("startDate") or start_date[:4] >= existing_period.get("startDate", "")[:4]:
+        record["status"] = "verified"
+        record["eventPeriod"] = {
+            "startDate": start_date, "endDate": end_date, "verified": True
+        }
     record["sources"] = [
         item for item in record.get("sources", [])
         if item.get("url") != source_url
@@ -308,9 +314,11 @@ for event_id, (start_date, end_date, source_url, route_dates) in MANUAL_EVENT_PE
         index = int(route_index)
         if index < len(event.get("routes", [])):
             route = event["routes"][index]
-            record.setdefault("routes", {})[route_index] = {
-                "routeId": route["id"], "date": route_date, "verified": True
-            }
+            existing_route = (record.get("routes") or {}).get(route_index, {})
+            if not existing_route.get("date") or route_date[:4] >= existing_route.get("date", "")[:4]:
+                record.setdefault("routes", {})[route_index] = {
+                    "routeId": route["id"], "date": route_date, "verified": True
+                }
 
 
 for event_id, (source_url, note) in MANUAL_DISCONTINUED_EVENTS.items():
