@@ -99,7 +99,7 @@ assert.ok(html.includes("activityLocalDate(data.startTime)"), "Activity import m
 assert.ok(html.includes('id="exportPlanCalendar"'), "Planner must offer calendar export");
 assert.ok(html.includes('id="sortPlanChronologically"'), "Planner must expose chronological sorting");
 assert.ok(html.includes("onclick=\"sortPlannedEventsChronologically()\""), "Chronological sort button must be wired");
-const recoveryHelper = html.match(/const plannerRecoveryEnd=\\(event,routeIndex\\)=>\\{[^}]*\\};/);
+const recoveryHelper = html.match(/const plannerRecoveryEnd=\(event,routeIndex\)=>\{[^}]*\};/);
 assert.ok(recoveryHelper, "Multi-day recovery helper must be testable");
 const plannerRecoveryEnd = new Function("plannerRouteDate", "eventEnd", "return (" + recoveryHelper[0].replace(/^const plannerRecoveryEnd=/, "").replace(/;$/, "") + ");")(
   (_event, _index) => new Date("2026-08-01T12:00:00Z"),
