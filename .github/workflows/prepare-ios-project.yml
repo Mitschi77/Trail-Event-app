@@ -27,7 +27,7 @@ jobs:
         run: npm install
       - name: Generate native iOS project
         run: |
-          npm run ios:add
+          if [ -d ios/App/App.xcodeproj ]; then npm run ios:sync; else npm run ios:add; fi
           npm run build
       - name: Commit generated Xcode project
         run: |
