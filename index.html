@@ -67,62 +67,26 @@
   .detail{padding:10px}
 }
 
-/* Einheitliches zweispaltiges Kartenraster für Events und Übersichten */
-#events,
-#missingEvents,
-#historyList,
-#yearOverview{
+/* Zweispaltig bleibt die Hauptnavigation; die eigentlichen Rennen und Strecken stehen untereinander. */
+#events,#missingEvents,#historyList,#yearOverview,#suggestions{
   display:grid;
-  grid-template-columns:repeat(2,minmax(0,1fr));
+  grid-template-columns:minmax(0,1fr);
   gap:12px;
   align-items:start;
 }
-#events>.event,
-#missingEvents>.year-group,
-#historyList>.plan-card,
-#yearOverview>.year-group,
-#yearOverview>.plan-card{
-  min-width:0;
+#events>.event,#missingEvents>.year-group,#historyList>.plan-card,
+#yearOverview>.year-group,#yearOverview>.plan-card,#suggestions>.plan-card{
   width:100%;
+  min-width:0;
   margin:0;
 }
-#missingEvents>.year-group{height:100%}
-#events .eventhead{min-width:0}
-#events .eventtitle,#missingEvents .year-heading h3{overflow-wrap:anywhere}
-#missingEvents .year-heading{align-items:flex-start;flex-direction:column}
-#missingEvents .year-summary{text-align:left}
-#suggestions{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;align-items:start}
-#suggestions>.plan-card{min-width:0;margin:0}
-#suggestions>.plan-empty{grid-column:1/-1}
-#suggestions .plan-card{overflow-wrap:anywhere}
+#events .routes{grid-template-columns:minmax(0,1fr)}
+#missingEvents .year-race{display:block}
+#suggestions>.plan-empty{grid-column:1}
 @media(max-width:700px){
-  #events,#missingEvents,#historyList,#yearOverview,#suggestions{
-    grid-template-columns:repeat(2,minmax(0,1fr));
-    gap:8px;
-  }
-  #events .eventhead{grid-template-columns:minmax(0,1fr);gap:6px;padding:11px}
-  #events .eventhead>div:last-child{align-items:flex-start}
-  #events .date{text-align:left}
-  #events .eventtitle{font-size:14px}
-  #events .meta{font-size:10px;gap:4px}
-  #events .detail{padding:9px}
+  #events,#missingEvents,#historyList,#yearOverview,#suggestions{grid-template-columns:minmax(0,1fr);gap:9px}
   #events .routes{grid-template-columns:minmax(0,1fr)}
-  #missingEvents>.year-group{padding:9px}
-  #missingEvents .year-heading h3{font-size:15px}
-  #missingEvents .year-race{padding:8px 0}
-  #missingEvents .year-race strong{font-size:12px}
-  #missingEvents .year-race-meta{font-size:11px}
-  #missingEvents .plan-actions button{width:100%;padding:8px 5px;font-size:11px}
-  #suggestions>.plan-card{padding:10px}
 }
-@media(max-width:359px){
-  #events,#missingEvents,#historyList,#yearOverview,#suggestions{grid-template-columns:minmax(0,1fr)}
-  #events .eventhead{grid-template-columns:minmax(0,1fr) auto}
-  #events .eventhead>div:last-child{align-items:flex-end}
-  #events .date{text-align:right}
-}
-\n:focus-visible{outline:3px solid #8aaa45;outline-offset:2px}
-button,.eventhead,.link{touch-action:manipulation}
 </style></head><body>
 <header><div class="top"><div class="brand">⛰ TRAIL EVENT PLANNER</div><div class="pill">Persönlicher Laufkalender <button id="cloudProfileButton" type="button" aria-label="Cloud-Konto öffnen" title="Cloud-Konto öffnen" style="margin-left:8px;border:0;background:transparent;padding:0;vertical-align:middle;cursor:pointer"><svg width="24" height="24" viewBox="0 0 24 24" role="img" aria-label="Grünes Strichmännchen"><circle cx="12" cy="5" r="2.5" fill="none" stroke="#70e29a" stroke-width="2"/><path d="M12 8v7m0-4-5 3m5-3 5 3m-5 1-4 6m4-6 4 6" fill="none" stroke="#70e29a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button><button id="appMenuButton" class="app-menu-button" type="button" aria-label="Weitere Funktionen öffnen" aria-haspopup="true" aria-expanded="false" aria-controls="appMenuDropdown" title="Datensicherung und weitere Funktionen">⋮</button><div id="appMenuDropdown" class="app-menu-dropdown" role="menu" hidden><div class="app-menu-heading">Datensicherung &amp; Datenverwaltung</div><button id="cloudAccountMenuToggle" class="secondary app-menu-item" type="button" aria-expanded="false" aria-controls="accountPanel">☁️ Cloud-Konto öffnen</button><div id="accountPanel" class="app-menu-account" hidden><div style="font-weight:700;margin-bottom:5px">☁️ Cloud-Konto</div><div id="cloudStatus" style="font-size:13px;color:#d4e2d9;margin-bottom:10px">Melde dich an, um deine Laufplanung sicher in deiner Cloud zu speichern.</div><form id="cloudAuthForm" style="display:flex;gap:8px;flex-wrap:wrap"><input id="cloudEmail" type="email" required autocomplete="email" placeholder="E-Mail-Adresse" style="flex:1 1 190px;min-width:0;padding:11px;border-radius:9px;border:1px solid #789084;font:inherit"><input id="cloudPassword" type="password" required minlength="8" autocomplete="current-password" placeholder="Passwort (mind. 8 Zeichen)" style="flex:1 1 190px;min-width:0;padding:11px;border-radius:9px;border:1px solid #789084;font:inherit"><button class="primary" type="submit">Anmelden</button><button class="secondary" id="cloudSignup" type="button">Konto erstellen</button><button class="secondary" id="cloudLogout" type="button" hidden>Abmelden</button></form><div style="font-size:11px;color:#c4d5c9;margin-top:8px">Deine persönlichen Daten werden nur für dein angemeldetes Konto gespeichert. Verwende ein eigenes, sicheres Passwort.</div>
 </div><div class="app-menu-info"><strong>☁️ Laufdaten geräteübergreifend</strong><p>Mit deinem Konto werden deine Laufplanung und gespeicherten Ergebnisse zwischen deinen Geräten synchronisiert. Melde dich dazu über den Bereich „Cloud-Konto“ an.</p><div id="appMenuCloudInfo" class="app-menu-hint">Noch nicht angemeldet – Synchronisierung ist nicht aktiv.</div></div><button class="secondary app-menu-item" id="exportBackup" type="button" role="menuitem">Datensicherung herunterladen</button><button class="secondary app-menu-item" id="downloadPreRestoreBackup" type="button" role="menuitem" hidden>Vorherigen Stand herunterladen</button><label class="secondary app-menu-item app-menu-label" for="importBackup" role="menuitem">Datensicherung wiederherstellen<input id="importBackup" type="file" accept="application/json,.json" hidden></label><div class="app-menu-hint">Sichere deine Planungen regelmäßig als JSON-Datei. Beim Wiederherstellen werden nur Daten aus einer gültigen Sicherung übernommen.</div><div id="cloudConflictActions" class="app-menu-conflict" style="display:none"><button class="secondary app-menu-item" id="downloadCloudBackup" type="button">Cloud-Sicherung herunterladen</button><button class="secondary app-menu-item" id="useCloudDataLocally" type="button">Cloud-Daten auf dieses Gerät übernehmen</button><button class="secondary app-menu-item" id="useLocalCloudData" type="button">Lokale Daten in Cloud übernehmen</button></div></div></div></div><div class="hero"><h1>Dein nächstes<br>Trail-Abenteuer.</h1><div class="stats"><div class="stat"><b id="eventCount">—</b><span>Hauptevents</span></div><div class="stat"><b id="routeCount">—</b><span>Strecken</span></div><div class="stat"><b>5 km</b><span>Unterkunftsradius</span></div></div></div></header>
