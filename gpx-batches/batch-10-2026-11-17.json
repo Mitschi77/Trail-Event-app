@@ -1,0 +1,66 @@
+{
+  "batch": 10,
+  "checkedAt": "2026-11-17",
+  "scope": "Top-level events 46-50 in current EVENTS order",
+  "status": "saved",
+  "appCommit": "4577e9700fc04ffab55288c1bcd910db8cc64311",
+  "events": [
+    {
+      "order": 46,
+      "name": "Falkensteinlauf",
+      "gpxStatus": "Official site still shows the 2026 edition; no 2027 GPX published.",
+      "source": "https://www.falkensteinlauf.de/",
+      "followUp": "Wait for 2027 event page and GPX."
+    },
+    {
+      "order": 47,
+      "name": "Trail 100 Andorra by UTMB",
+      "gpxStatus": "Official 2027 race pages and Map + GPX sections are available; no direct GPX file URL was extracted.",
+      "source": "https://andorra.utmb.world/races",
+      "followUp": "Export from official map after final route release."
+    },
+    {
+      "order": 48,
+      "name": "Ötscher Trail",
+      "gpxStatus": "Five official route pages link to GPX files (Marathon, Vertical, Easy, Speed, Skyrace). Files have no clear 2027 version tag, so they are marked as candidates pending comparison with the 2027 course map.",
+      "downloads": [
+        {
+          "route": "Marathon Trail",
+          "url": "https://f5b2b23a-39a9-471a-aa92-dad164c32ad4.filesusr.com/ugd/afb1d3_82f4e594ac7741ab9107443bd68f7b99.gpx?dn=oetscher-marathon-trail%20%281%29.gpx"
+        },
+        {
+          "route": "Vertical Race",
+          "url": "https://f5b2b23a-39a9-471a-aa92-dad164c32ad4.filesusr.com/ugd/afb1d3_041ffa4ce430487696c7df0d73aad437.gpx?dn=%C3%96tscher_Trail_Vertical_Race.gpx"
+        },
+        {
+          "route": "Easy Trail",
+          "url": "https://f5b2b23a-39a9-471a-aa92-dad164c32ad4.filesusr.com/ugd/afb1d3_62b5e76db07b49f187db724412f9f8d3.gpx?dn=oetscher-easy-trail.gpx"
+        },
+        {
+          "route": "Speed Trail",
+          "url": "https://f5b2b23a-39a9-471a-aa92-dad164c32ad4.filesusr.com/ugd/afb1d3_d276590d4ed04f139d897798d2b180a9.gpx?dn=oetscher-speed-trail-01.gpx"
+        },
+        {
+          "route": "Skyrace",
+          "url": "https://f5b2b23a-39a9-471a-aa92-dad164c32ad4.filesusr.com/ugd/afb1d3_bde3abfb974f43b5913c55b4c9963760.gpx?dn=oetscher-skyrace%20%281%29.gpx"
+        }
+      ],
+      "followUp": "Compare each GPX geometry and distance against 2027 route map before treating as final."
+    },
+    {
+      "order": 49,
+      "name": "Ultra X 110 Slowenien",
+      "gpxStatus": "No public official GPX found; date and exact event edition need confirmation.",
+      "source": "https://ultra-x.co/",
+      "followUp": "Recheck when race pack is issued."
+    },
+    {
+      "order": 50,
+      "name": "Zugspitz Ultratrail",
+      "gpxStatus": "2027 official UTMB pages provide route information and Map + GPX sections, but Runner Guide says 2027 information will be published closer to event and 2026 data are only reference. No 2026 track imported.",
+      "source": "https://zugspitz.utmb.world/de/races",
+      "followUp": "Recheck near event for final 2027 GPX exports."
+    }
+  ],
+  "nextBatch": "Continue with events 51-55 after package 10 checkpoint."
+}
