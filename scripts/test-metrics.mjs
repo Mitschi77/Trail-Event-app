@@ -3,7 +3,7 @@ import assert from "node:assert/strict";
 
 const html = await readFile(new URL("../index.html", import.meta.url), "utf8");
 assert.match(html, /function parseTcxData\(xmlText\)/, "TCX parser must remain available for Garmin exports");
-assert.ok(html.includes("function parseActivityTrack(file)"), "Activity file parser must be available");
+assert.ok(html.includes("async function parseActivityTrack(file)"), "Activity file parser must be async for FIT decoding");
 assert.ok(html.includes("@garmin/fitsdk@21.221.0"), "FIT imports must use a pinned Garmin SDK version");
 assert.ok(html.includes("result.messages?.recordMesgs"), "FIT parser must read Garmin recordMesgs");
 assert.ok(html.includes("result.messages?.sessionMesgs"), "FIT parser must read Garmin sessionMesgs");
