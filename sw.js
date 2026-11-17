@@ -1,5 +1,5 @@
 const CACHE_NAME = 'trail-event-planner-v1';
-const APP_SHELL = ['./', './index.html', './manifest.webmanifest', './trail-icon.svg'];
+const APP_SHELL = ['./', './index.html', './event-dates.json', './manifest.webmanifest', './trail-icon.svg', './trail-apple-touch-icon.png'];
 
 self.addEventListener('install', event => {
   event.waitUntil(
@@ -23,6 +23,22 @@ self.addEventListener('fetch', event => {
   if (request.method !== 'GET') return;
   const url = new URL(request.url);
   if (url.origin !== self.location.origin) return;
+
+  if (url.pathname.endsWith('/event-dates.json')) {
+    const cacheKey = new URL(url.pathname, self.location.origin).href;
+    event.respondWith(
+      fetch(request)
+        .then(response => {
+          if (response && response.ok) {
+            const copy = response.clone();
+            caches.open(CACHE_NAME).then(cache => cache.put(cacheKey, copy));
+          }
+          return response;
+        })
+        .catch(() => caches.match(cacheKey))
+    );
+    return;
+  }
 
   if (request.mode === 'navigate') {
     event.respondWith(
