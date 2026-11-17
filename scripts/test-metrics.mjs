@@ -20,6 +20,10 @@ assert.ok(html.includes("sourceFile:file.name,sourceFileSize:file.size,sourceFil
 
 assert.ok(html.includes('accept=".gpx,.tcx,.fit,'), "Import controls must accept FIT, GPX and TCX files");
 assert.ok(html.includes("async function importActivityToHistory()"), "Activity history import must be available");
+assert.ok(html.includes("Aktivität prüfen:"), "Activity import must show a preview before saving");
+assert.ok(html.includes("distanceDelta>=.15"), "Activity import must flag material distance differences");
+assert.ok(html.includes("Jetzt übernehmen?"), "Activity import preview must require confirmation");
+
 assert.ok(html.includes("async function activityFileFingerprint(file)"), "Activity imports must fingerprint files for duplicate detection");
 assert.ok(html.includes("sourceFileHash:fileHash"), "Imported activity records must persist their file fingerprint");
 assert.ok(html.includes("const data=await parseActivityTrack(file),route=event.routes[ri]"), "Route file import must await async FIT/TCX parsing");
