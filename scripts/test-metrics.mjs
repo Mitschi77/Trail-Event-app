@@ -50,12 +50,16 @@ const routeMetricMarkup = new Function("num", "routeMetricType", markupHelper[0]
 );
 assert.equal(routeMetricMarkup({ km: 42.2, hm: "", maxh: "" }, "marathon"), "<span><b>42.2</b> km</span>");
 
-const detailKeysHelper = html.match(/function routeDetailMetricKeys\(type\)\{return \{[^}]*\};\}/);
-assert.ok(detailKeysHelper, "Event detail fields must respect the race type");
-const routeDetailMetricKeys = new Function(detailKeysHelper[0] + "; return routeDetailMetricKeys;")();
-assert.deepEqual(routeDetailMetricKeys("Marathon"), { event: [], route: [] });
-assert.deepEqual(routeDetailMetricKeys("Backyard"), { event: ["maxHm"], route: ["hm"] });
-assert.deepEqual(routeDetailMetricKeys("Trailrunning / Ultra"), { event: ["maxHm"], route: ["hm", "maxh"] });
+assert.ok(html.includes("function routeDetailMetricKeys(type)"), "Event detail fields must respect the race type");
+assert.ok(html.includes("if(!routeTypeRequiresTrailMetrics(type))return {event:[],route:[]}"), "Road races must omit trail-only event detail fields");
+assert.ok(html.includes("if(type==='Backyard')return {event:['maxHm'],route:['hm']}"), "Backyard details must omit maximum time");
+const trailMetricHelper = html.match(/function routeTypeRequiresTrailMetrics\(type\)\{[^}]*\}/);
+assert.ok(trailMetricHelper, "Trail metric requirement helper must exist");
+const routeTypeRequiresTrailMetrics = new Function(trailMetricHelper[0] + "; return routeTypeRequiresTrailMetrics;")();
+assert.equal(routeTypeRequiresTrailMetrics("Marathon"), false);
+assert.equal(routeTypeRequiresTrailMetrics("Halbmarathon"), false);
+assert.equal(routeTypeRequiresTrailMetrics("Straßenlauf"), false);
+assert.equal(routeTypeRequiresTrailMetrics("Trailrunning / Ultra"), true);
 
 
 
