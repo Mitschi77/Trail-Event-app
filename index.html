@@ -121,7 +121,7 @@ function assignStableIds(){const usedEvents=new Set();EVENTS.forEach((event,inde
 assignStableIds();
 try{if(userAddedEvents.length)localStorage.setItem('trailUserAddedEvents',JSON.stringify(userAddedEvents));}catch(e){}
 function findEventIndexById(id){return EVENTS.findIndex(e=>e.id===id);}
-function findRouteIndexById(eventId,routeId){const ei=findEventIndexById(eventId);return ei<0?-1:EVENTS[ei].routes.findIndex(r=>r.id===routeId);}
+function findRouteIndexById(eventId,routeId){const ei=findEventIndexById(eventId);if(ei<0)return -1;const routes=EVENTS[ei].routes;let ri=routes.findIndex(r=>r.id===routeId);if(ri<0&&routeId==='veranstaltungszeitraum-streckentermine-noch-offen')ri=routes.findIndex(r=>r.id===eventId+'-placeholder-route');if(ri<0&&eventId==='megamarsch'&&routeId==='munchen-100-km-100')ri=routes.findIndex(r=>r.id==='megamarsch-munchen-100-km-100');return ri;}
 function migrateRouteMap(map){const out={};Object.entries(map||{}).forEach(([key,value])=>{const m=key.match(/^(\d+)_(\d+)$/);if(m){const e=EVENTS[Number(m[1])],r=e?.routes?.[Number(m[2])];if(e&&r)out[e.id+"::"+r.id]=value;}else if(key.includes("::"))out[key]=value;});return out;}
 
 
