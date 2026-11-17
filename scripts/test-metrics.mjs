@@ -10,6 +10,11 @@ assert.ok(serviceWorker.includes("cache.put(cacheKey, copy)") && serviceWorker.i
 assert.ok(html.includes("'trailRacePriorities'"), "Season priorities must be included in private backups and cloud snapshots");
 assert.ok(html.includes("function collectLocalPlannerData(){const data={};CLOUD_KEYS.forEach"), "Backup and cloud snapshots must collect every registered local data key");
 assert.ok(html.includes("function seasonSave()"), "Season priorities must have a dedicated persistence function");
+assert.ok(html.includes("function renderOfficialQualitySummary()"), "Official event data quality dashboard must exist");
+assert.ok(html.includes("window.officialEventFeed=feed"), "Official feed audit must use the loaded official event data");
+assert.ok(html.includes("Maximalzeit / Cut-off-Daten"), "A verified cutoff list may satisfy the race time-limit completeness check");
+assert.ok(html.includes("officialQualitySummary"), "Missing-data view must display a quality summary");
+
 
 assert.match(html, /function parseTcxData\(xmlText\)/, "TCX parser must remain available for Garmin exports");
 assert.ok(html.includes("async function parseActivityTrack(file)"), "Activity file parser must be async for FIT decoding");
