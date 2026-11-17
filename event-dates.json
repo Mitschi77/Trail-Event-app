@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-17T07:43:53.820Z",
+  "updatedAt": "2026-11-17T13:00:00+01:00",
   "schemaVersion": 3,
   "events": {
     "transgrancanaria": {
@@ -2177,7 +2177,7 @@
     },
     "trai-verbier-st-bernhard": {
       "eventId": "trai-verbier-st-bernhard",
-      "checkedAt": "2026-11-17T07:41:29.615Z",
+      "checkedAt": "2026-11-17T13:00:00+01:00",
       "status": "verified",
       "sources": [
         {
@@ -2214,6 +2214,16 @@
         },
         "4": {
           "routeId": "verbier-x-plore-28-1700",
+          "date": "2027-07-11",
+          "verified": true
+        },
+        "5": {
+          "routeId": "verbier-trail-decouverte-2027",
+          "date": "2027-07-11",
+          "verified": true
+        },
+        "6": {
+          "routeId": "verbier-x-orient-2027",
           "date": "2027-07-11",
           "verified": true
         }
@@ -2275,13 +2285,28 @@
     },
     "transvulcania-la-palma": {
       "eventId": "transvulcania-la-palma",
-      "checkedAt": "2026-11-17T07:43:19.952Z",
+      "checkedAt": "2026-11-17T13:00:00+01:00",
       "status": "verified",
       "sources": [
         {
-          "url": "https://www.avaibooksports.com/inscripcion/lista-de-espera-media-maraton-transvulcania-2027/ficheros/?filetype=reglamento&lang=es",
+          "url": "https://transvulcania.com/de/regelwerk/",
           "status": "read",
-          "verification": "official-2027-regulations"
+          "verification": "official-2027-regulation"
+        },
+        {
+          "url": "https://transvulcania.com/de/modalidades/transvulcania-ultramarathon/",
+          "status": "read",
+          "verification": "official-2027-course"
+        },
+        {
+          "url": "https://transvulcania.com/de/modalidades/transvulcania-vertikaler-kilometer/",
+          "status": "read",
+          "verification": "official-2027-course"
+        },
+        {
+          "url": "https://transvulcania.com/de/modalidades/transvulcania-12k-light/",
+          "status": "read",
+          "verification": "official-2027-course"
         }
       ],
       "eventPeriod": {
@@ -2308,6 +2333,11 @@
         "3": {
           "routeId": "transvulcania-vertical-7-28-1164",
           "date": "2027-05-06",
+          "verified": true
+        },
+        "4": {
+          "routeId": "transvulcania-12k-light-11-6-774",
+          "date": "2027-05-08",
           "verified": true
         }
       }
