@@ -1,4 +1,4 @@
-name: Check official trail event dates
+name: Prepare official event-date review proposals
 
 on:
   push:
@@ -13,7 +13,7 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: write
+  contents: read
 
 concurrency:
   group: official-event-date-feed
@@ -38,34 +38,19 @@ jobs:
         run: python scripts/validate_event_data.py
       - name: Read official event pages
         run: python scripts/update_event_dates.py
-      - name: Commit date feed when changed
+      - name: Report proposed date-feed changes (never publish automatically)
         run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add event-dates.json
-          if ! git diff --cached --quiet; then
-            git commit -m "Update verified official event dates"
-            for attempt in 1 2 3 4 5; do
-              git fetch origin main
-              if git rebase origin/main; then
-                if git push origin HEAD:main; then
-                  exit 0
-                fi
-              else
-                echo "Date feed changed during the run; recomputing against the latest main branch."
-                git rebase --abort
-                git reset --hard origin/main
-                python scripts/validate_event_data.py
-                python scripts/update_event_dates.py
-                git add event-dates.json
-                if git diff --cached --quiet; then
-                  echo "The latest branch already contains the current date feed."
-                  exit 0
-                fi
-                git commit -m "Update verified official event dates"
-              fi
-              sleep 3
-            done
-            echo "Could not push the date feed after five attempts"
-            exit 1
+          if git diff --quiet -- event-dates.json; then
+            echo "No event-date changes detected."
+          else
+            echo "Event-date changes detected. They remain local to this workflow run and are not committed or published."
+            git diff --stat -- event-dates.json
           fi
+      - name: Store proposed date feed for manual review
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: event-date-review
+          path: event-dates.json
+          if-no-files-found: ignore
+          retention-days: 14
