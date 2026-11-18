@@ -33,6 +33,8 @@ jobs:
         with:
           python-version: "3.x"
       - name: Compile Python data scripts
-        run: python -m py_compile scripts/find_missing_event_data.py scripts/submit_event_data_proposals.py scripts/update_event_dates.py scripts/validate_event_data.py
+        run: python -m py_compile scripts/find_missing_event_data.py scripts/event_data_candidates.py scripts/test_event_data_candidates.py scripts/submit_event_data_proposals.py scripts/update_event_dates.py scripts/validate_event_data.py
+      - name: Test conservative event data candidate extraction
+        run: python -m unittest discover -s scripts -p 'test_*.py'
       - name: Validate event and route data feed
         run: python scripts/validate_event_data.py
