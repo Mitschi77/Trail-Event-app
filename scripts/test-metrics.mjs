@@ -5,7 +5,7 @@ const html = await readFile(new URL("../index.html", import.meta.url), "utf8");
 const serviceWorker = await readFile(new URL("../sw.js", import.meta.url), "utf8");
 const raceTools = await readFile(new URL("../race-tools.js", import.meta.url), "utf8");
 const seasonTools = await readFile(new URL("../season-tools.js", import.meta.url), "utf8");
-const eventDataMatch = html.match(/const EVENTS=(\[[\s\S]*?\]);\s*function enrichUtmbRouteCategories/);
+const eventDataMatch = html.match(/const EVENTS=(\[[\s\S]*?\]);?\s*function enrichUtmbRouteCategories/);
 assert.ok(eventDataMatch, "Event data must remain parseable");
 const appEvents = JSON.parse(eventDataMatch[1]);
 const appRoutes = appEvents.flatMap(event => event.routes || []);
