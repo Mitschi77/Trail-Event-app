@@ -1,6 +1,3 @@
-create unique index if not exists planner_data_one_row_per_user
-  on public.planner_data(user_id);
-
 create or replace function public.protect_planner_data_row()
 returns trigger
 language plpgsql
