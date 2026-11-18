@@ -18,8 +18,8 @@ assert.ok(html.includes('"route":"mozart Ultra","km":84'), "2027 Mozart route mu
 assert.ok(html.includes("Storage.prototype.removeItem=function(key)"), "Removing a planner data key must trigger cloud synchronization");
 assert.ok(html.includes("Storage.prototype.clear=function()") && html.includes("hadPlannerData"), "Clearing local planner data must trigger cloud synchronization");
 
-const cloudSignatureHelper = html.match(/function cloudSnapshotSignatures\\(data\\)\\{[^\\n]*\\}/);
-const cloudMergeHelper = html.match(/function mergeCloudSnapshots\\(local,remote\\)\\{[^\\n]*\\}/);
+const cloudSignatureHelper = html.match(/function cloudSnapshotSignatures\(data\)\{[^\n]*\}/);
+const cloudMergeHelper = html.match(/function mergeCloudSnapshots\(local,remote\)\{[^\n]*\}/);
 assert.ok(cloudSignatureHelper && cloudMergeHelper, "Cloud snapshot merge helpers must remain testable");
 const cloudSignature = new Function(cloudSignatureHelper[0] + "; return cloudSnapshotSignatures;")();
 const mergeCloudSnapshots = new Function(
