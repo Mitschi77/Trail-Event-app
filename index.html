@@ -1528,12 +1528,12 @@ const KRANJSKA_AIRBNB_BOOKING={title:'Wohnung mit kostenlosen Parkplätzen im Ze
 const MOZART_AIRBNB_BOOKING={title:'Ferienwohnung Aubichl',host:'Michael',address:'Aubichlweg 4, Hof bei Salzburg, Österreich',checkIn:'2027-06-04',checkOut:'2027-06-06',checkInTime:'14:00',checkOutTime:'11:00',guests:'',price:420.48,paidAmount:0,remainingAmount:420.48,dueDate:'2027-04-27',currency:'EUR',source:'Airbnb',status:'Gebucht · noch nicht bezahlt'};
 const bookingPdfLink=(file)=>'<p class="plan-meta"><a href="https://raw.githubusercontent.com/Mitschi77/Trail-Event-app/main/docs/'+file+'" target="_blank" rel="noopener">Buchungsbeleg als PDF öffnen ↗</a></p>';
 function renderEventInvoices(e,r,id,ri){
- const key=[id,e?.name,r?.name].filter(Boolean).join(' ').toLowerCase();
+ const key=[e?.id,e?.name,r?.name,id].filter(Boolean).join(' ').toLowerCase();
  const docs=[];
- if(id==='istrien'||/istria/.test(key))docs.push(['Zahlungsbeleg_Istria_110K.pdf','Istria 110K · 296,44 € · bezahlt']);
- if(id==='mozart'||/mozart/.test(key))docs.push(['Zahlungsbeleg_Mozart_Ultra.pdf','mozart Ultra · 248,18 € · bezahlt']);
+ if(e?.id==='istrien'||/istria|istrien/.test(key))docs.push(['Zahlungsbeleg_Istria_110K.pdf','Istria 110K · 296,44 € · bezahlt']);
+ if(e?.id==='mozart'||/mozart/.test(key))docs.push(['Zahlungsbeleg_Mozart_Ultra.pdf','mozart Ultra · 248,18 € · bezahlt']);
  if(/3kings|3 kings|3hills/.test(key))docs.push(['Rechnung_3Kings3Hills_2027.pdf','3KINGS 3HILLS ULTRA 54 km · 79,00 € · bezahlt']);
- if(id==='mountain-man-winter'||/mountainman winterloop/.test(key))docs.push(['Rechnung_MOUNTAINMAN_Winterloop_2027.pdf','MOUNTAINMAN Winterloop 6H · 83,90 € · bezahlt']);
+ if(e?.id==='mountain-man-winter'||/mountainman winterloop|mountain man winter/.test(key))docs.push(['Rechnung_MOUNTAINMAN_Winterloop_2027.pdf','MOUNTAINMAN Winterloop 6H · 83,90 € · bezahlt']);
  if(!docs.length)return '<p class="plan-meta">Für dieses Event ist derzeit kein Rechnungsbeleg hinterlegt.</p>';
  return '<div class="stay stay-booked"><h3>🧾 Startgeld &amp; Rechnungen</h3>'+docs.map(([file,label])=>'<p class="plan-meta"><a href="https://raw.githubusercontent.com/Mitschi77/Trail-Event-app/main/docs/'+file+'" target="_blank" rel="noopener">'+esc(label)+' · PDF öffnen ↗</a></p>').join('')+'<p class="plan-meta">Die UTMB-Belege sind aus den Zahlungsbestätigungs-E-Mails erstellt. Die 3KINGS- und MOUNTAINMAN-Einträge sind Belegkopien mit den Daten aus den Originalrechnungen.</p></div>';
 }
