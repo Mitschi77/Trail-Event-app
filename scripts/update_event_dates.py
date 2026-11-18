@@ -350,8 +350,7 @@ for event_id, (start_date, end_date, source_url, route_dates) in MANUAL_EVENT_PE
         "url": source_url, "status": "read", "verification": "manual-official-page"
     })
     record["checkedAt"] = updated
-    record["sourceCheckStatus"] = "read"
-    record["lastSuccessfulSourceCheckAt"] = updated
+    record["sourceCheckStatus"] = "manual"
     for route_index, route_date in route_dates.items():
         index = int(route_index)
         if index < len(event.get("routes", [])):
@@ -368,6 +367,7 @@ for event_id, (source_url, note) in MANUAL_DISCONTINUED_EVENTS.items():
         "eventId": event_id, "checkedAt": updated, "sources": [], "routes": {}
     })
     record["checkedAt"] = updated
+    record["sourceCheckStatus"] = "manual"
     record["status"] = "discontinued"
     record["eventPeriod"] = None
     record["routes"] = {}
@@ -382,6 +382,7 @@ for event_id, source_url in MANUAL_UNCONFIRMED_SOURCES.items():
         "eventId": event_id, "checkedAt": updated, "sources": [], "routes": {}
     })
     record["checkedAt"] = updated
+    record["sourceCheckStatus"] = "manual"
     record["status"] = "unconfirmed"
     record["eventPeriod"] = None
     record["routes"] = {}
