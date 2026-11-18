@@ -1,6 +1,14 @@
 import { readFile } from "node:fs/promises";
 
 const html = await readFile(new URL("../index.html", import.meta.url), "utf8");
+const htmlClosings = [...html.matchAll(/<\\/html>/gi)];
+const bodyClosings = [...html.matchAll(/<\\/body>/gi)];
+if (htmlClosings.length !== 1 || bodyClosings.length !== 1) {
+  throw new Error("index.html must contain exactly one closing body and html tag.");
+}
+if (html.slice(htmlClosings[0].index + htmlClosings[0][0].length).trim()) {
+  throw new Error("Unexpected content found after the closing html tag.");
+}
 const inlineScripts = [...html.matchAll(/<script(?:\s[^>]*)?>([\s\S]*?)<\/script>/gi)]
   .map(match => match[1].trim())
   .filter(Boolean);
