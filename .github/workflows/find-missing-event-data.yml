@@ -26,6 +26,7 @@ jobs:
       - name: Search GPX, elevation, cut-off, date, start-time and entry-fee candidates
         run: python scripts/find_missing_event_data.py
       - name: Submit candidates to owner review queue
+        if: github.ref == 'refs/heads/main'
         run: python scripts/submit_event_data_proposals.py
       - name: Keep scan report for diagnostics
         if: always()
