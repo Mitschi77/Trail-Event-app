@@ -20,7 +20,7 @@ drop trigger if exists event_change_proposals_lock_decision on public.event_chan
 create or replace function public.protect_event_change_proposal()
 returns trigger
 language plpgsql
-security definer
+security invoker
 set search_path = public, pg_catalog
 as $function$
 begin
@@ -78,7 +78,7 @@ create or replace function public.mark_event_proposal_published(
 )
 returns jsonb
 language plpgsql
-security definer
+security invoker
 set search_path = public, pg_catalog
 as $function$
 declare
@@ -119,8 +119,11 @@ revoke all on function public.mark_event_proposal_published(uuid, text) from pub
 grant execute on function public.mark_event_proposal_published(uuid, text) to authenticated;
 
 revoke update on public.event_change_proposals from authenticated;
-grant update (status, reviewer_note, decided_by, decided_at)
+grant update (status, reviewer_note, decided_by, decided_at, published_at, published_by, publication_ref)
   on public.event_change_proposals to authenticated;
+
+create index if not exists event_change_proposals_published_by_idx
+  on public.event_change_proposals(published_by);
 
 drop policy if exists "owner and submitter read proposals" on public.event_change_proposals;
 create policy "owner and submitter read proposals"
