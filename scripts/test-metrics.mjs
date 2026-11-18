@@ -437,3 +437,11 @@ assert.deepEqual(malcesine60k.aidStations.filter(station => station.approximate)
 assert.ok(malcesine60k.aidStations.every(station => station.km >= 0 && station.km <= Number(malcesine60k.km)), "Malcesine aid stations must be inside the 60K route");
 
 console.log("Validated race priorities, training phases and actual-race recovery.");
+
+assert.ok(html.includes('data-newroute="gpxUrl"'), "New race form must accept a discovered GPX download URL");
+assert.ok(html.includes('data-newroute="utmbScore"'), "New race form must accept a discovered UTMB score");
+assert.ok(html.includes('data-newroute="cutoffs"'), "New race form must retain automatically detected cutoff data");
+assert.ok(html.includes('data-newroute="aidStations"'), "New race form must retain automatically detected aid stations");
+assert.ok(html.includes("cutoffs:parseJson('cutoffs'),aidStations:parseJson('aidStations')"), "Cutoffs and aid stations must be saved in the review proposal");
+assert.ok(html.includes("gpxUrl:get('gpxUrl')||null,utmbScore:"), "GPX URL and UTMB score must be saved with each proposed route");
+assert.ok(html.includes("GPX-Datei / Download-Link") && html.includes("UTMB Score"), "New race form must visibly label the additional automatic data fields");
