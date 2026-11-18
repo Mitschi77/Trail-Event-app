@@ -5,14 +5,34 @@ const html = await readFile(new URL("../index.html", import.meta.url), "utf8");
 const serviceWorker = await readFile(new URL("../sw.js", import.meta.url), "utf8");
 const raceTools = await readFile(new URL("../race-tools.js", import.meta.url), "utf8");
 const seasonTools = await readFile(new URL("../season-tools.js", import.meta.url), "utf8");
+const eventDataMatch = html.match(/const EVENTS=(\[[\s\S]*?\]);?\s*function enrichUtmbRouteCategories/);
+assert.ok(eventDataMatch, "Event data must remain parseable");
+const appEvents = JSON.parse(eventDataMatch[1]);
+const appRoutes = appEvents.flatMap(event => event.routes || []);
+const routeById = id => appRoutes.find(route => route.id === id);
+const serializedRecordById = id => {
+  const index = html.indexOf('"id":"' + id + '"');
+  if (index < 0) return "";
+  const start = html.lastIndexOf("{", index);
+  const end = html.indexOf("}", index);
+  return start >= 0 && end > start ? html.slice(start, end + 1) : "";
+};
+
+
 assert.ok(serviceWorker.includes("'./event-dates.json'"), "Offline app shell must cache the official event feed");
 assert.ok(serviceWorker.includes("trail-event-planner-v52"), "App shell cache must be versioned for the aid-station parser update");
 assert.ok(serviceWorker.includes("url.pathname.endsWith('/event-dates.json')"), "Official event feed must use a network-first cache strategy");
 assert.ok(serviceWorker.includes("cache.put(cacheKey, copy)") && serviceWorker.includes("caches.match(cacheKey)"), "Official event feed must remain available offline without retaining timestamp query variants");
 
 assert.ok(html.includes("'trailRacePriorities'"), "Season priorities must be included in private backups and cloud snapshots");
-assert.ok(html.includes('"id":"mozart-100-84-4800","raceCost":"208,20 € (Startgeld inkl. 20 % USt.; ohne Zusatzleistungen und Servicegebühren)","paidCost":"248,18 €","paidCostDate":"2026-07-15","paidCostStatus":"Bezahlt"'), "Mozart 2027 paid entry cost must match the UTMB payment receipt");
-assert.ok(html.includes('"id":"3kings-3hills-54-2300","raceCost":"79,00 €","paidCost":"79,00 €","paidCostDate":"2026-08-17","paidCostStatus":"Bezahlt"'), "3Kings 2027 paid entry cost must match the paid invoice");
+assert.equal(routeById("mozart-100-84-4800")?.raceCost, "208,20 € (Startgeld inkl. 20 % USt.; ohne Zusatzleistungen und Servicegebühren)", "Mozart 2027 entry fee must match the UTMB payment receipt");
+assert.equal(routeById("mozart-100-84-4800")?.paidCost, "248,18 €", "Mozart 2027 paid total must match the UTMB payment receipt");
+assert.equal(routeById("mozart-100-84-4800")?.paidCostDate, "2026-07-15", "Mozart payment date must remain recorded");
+assert.equal(routeById("mozart-100-84-4800")?.paidCostStatus, "Bezahlt", "Mozart paid status must remain recorded");
+assert.equal(routeById("3kings-3hills-54-2300")?.raceCost, "79,00 €", "3Kings 2027 entry fee must match the paid invoice");
+assert.equal(routeById("3kings-3hills-54-2300")?.paidCost, "79,00 €", "3Kings 2027 paid total must match the paid invoice");
+assert.equal(routeById("3kings-3hills-54-2300")?.paidCostDate, "2026-08-17", "3Kings payment date must remain recorded");
+assert.equal(routeById("3kings-3hills-54-2300")?.paidCostStatus, "Bezahlt", "3Kings paid status must remain recorded");
 assert.ok(html.includes("const storedStatus=runRecords[routeKey(id,ri)]?.raceStatus;const currentStatus=storedStatus||(r.paidCostStatus==='Bezahlt'?'paid':'planned')"), "A verified paid receipt must set the displayed default race status to paid without overriding a saved user status");
 assert.ok(html.includes('"date":"2027-01-23","web":null,"starttime":null,"registration":null,"overnight":null,"hotelCost":null,"raceCost":"69,00 €","paidCost":"83,90 €","paidCostDate":"2026-09-17","paidCostStatus":"Bezahlt","paidCostDetails":"MOUNTAINMAN-Rechnung'), "MOUNTAINMAN 2027 date and paid total must match the invoice");
 assert.ok(html.includes('"route":"mozart Ultra","km":84'), "2027 Mozart route must use the verified event name");
@@ -41,23 +61,26 @@ const concurrentEditMerge = mergeCloudSnapshots(
   () => unchangedBaseline
 )({}, { plannerTestKey: "changed remotely" });
 assert.deepEqual(concurrentEditMerge.conflicts, ["plannerTestKey"], "A local deletion must not overwrite a concurrent remote edit");
-assert.ok(html.includes('"id":"110-tausend-111-4074","raceCost":"215,00 € (inkl. 25 % MwSt.)","paidCost":"296,44 €","paidCostDate":"2026-07-05","paidCostStatus":"Bezahlt"'), "Istria 2027 paid entry cost must remain recorded with its receipt total");
-assert.ok(html.includes('"paidCostDetails":"Startgeld 215,00 € inkl. MwSt.; Sportograf-Fotos 33,52 €; Bus-Transfer 18,75 € inkl. MwSt.; Servicegebühren inkl. Steuer 29,17 €"'), "Istria 2027 receipt breakdown must remain recorded");
-assert.ok(html.includes("\"id\":\"tmcdc-185-3500\",\"raceCost\":\"177–213 € (Startgeld laut Veranstalter, abhängig von Anmeldephase; Bearbeitungsgebühren ggf. zusätzlich)\""), "tmcdc-185-3500 2027 published entry fee must remain recorded");
-assert.ok(html.includes("\"id\":\"tmcn-100-2300\",\"raceCost\":\"127–153 € (Startgeld laut Veranstalter, abhängig von Anmeldephase; Bearbeitungsgebühren ggf. zusätzlich)\""), "tmcn-100-2300 2027 published entry fee must remain recorded");
-assert.ok(html.includes("\"id\":\"tmcs-85-1200\",\"raceCost\":\"117–143 € (Startgeld laut Veranstalter, abhängig von Anmeldephase; Bearbeitungsgebühren ggf. zusätzlich)\""), "tmcs-85-1200 2027 published entry fee must remain recorded");
-assert.ok(html.includes("\"id\":\"ptcn-58-1200\",\"raceCost\":\"75–98 € (Startgeld laut Veranstalter, abhängig von Anmeldephase; Bearbeitungsgebühren ggf. zusätzlich)\""), "ptcn-58-1200 2027 published entry fee must remain recorded");
-assert.ok(html.includes("\"id\":\"ugp-125-5700\",\"raceCost\":\"240–270 € (100M-Tarif laut UTMB; zzgl. 8 % Verwaltungsgebühr)\""), "ugp-125-5700 2027 published entry fee must remain recorded");
-assert.ok(html.includes("\"id\":\"ugp-87-4200\",\"raceCost\":\"169–199 € (100K-Tarif laut UTMB; zzgl. 8 % Verwaltungsgebühr)\""), "ugp-87-4200 2027 published entry fee must remain recorded");
-assert.ok(html.includes("\"id\":\"ugp-51-2500\",\"raceCost\":\"95 € (50K-Tarif laut UTMB; zzgl. 8 % Verwaltungsgebühr)\""), "ugp-51-2500 2027 published entry fee must remain recorded");
-assert.ok(html.includes("\"id\":\"ultra-trail-des-chevaliers-156-5100\",\"raceCost\":\"275–305 € (UTDC 100M, dynamischer Tarif laut UTMB)\""), "ultra-trail-des-chevaliers-156-5100 2027 official fee must remain recorded");
-assert.ok(html.includes("\"id\":\"trail-des-celtes-47-1600\",\"raceCost\":\"140–170 € (TDC 50K, dynamischer Tarif laut UTMB; 5 % FFA-Rabatt möglich)\""), "trail-des-celtes-47-1600 2027 official fee must remain recorded");
-assert.ok(html.includes("\"id\":\"ultra-105k-105-6800\",\"raceCost\":\"315,10 € (aktueller UTMB-Tarif 2027; inklusive Bearbeitungsgebühr und MwSt.)\""), "ultra-105k-105-6800 2027 official fee must remain recorded");
-assert.ok(html.includes("\"id\":\"120k-120-5800\",\"raceCost\":\"320,31 €\""), "120k-120-5800 official 2027 fee must remain recorded");
-assert.ok(html.includes("\"id\":\"80k-80-4600\",\"raceCost\":\"224,49 €\""), "80k-80-4600 official 2027 fee must remain recorded");
-assert.ok(html.includes("\"id\":\"50k-50-2800\",\"raceCost\":\"173,84 €\""), "50k-50-2800 official 2027 fee must remain recorded");
-assert.ok(html.includes("\"id\":\"lavaredo-20k-20-1000\",\"raceCost\":\"83,50 €\""), "lavaredo-20k-20-1000 official 2027 fee must remain recorded");
-assert.ok(html.includes("\"id\":\"lavaredo-10k-10-300\",\"raceCost\":\"39,70 €\""), "lavaredo-10k-10-300 official 2027 fee must remain recorded");
+assert.equal(routeById("110-tausend-111-4074")?.raceCost, "215,00 € (inkl. 25 % MwSt.)", "Istria 2027 published entry fee must remain recorded");
+assert.equal(routeById("110-tausend-111-4074")?.paidCost, "296,44 €", "Istria 2027 paid receipt total must remain recorded");
+assert.equal(routeById("110-tausend-111-4074")?.paidCostDate, "2026-07-05", "Istria 2027 payment date must remain recorded");
+assert.equal(routeById("110-tausend-111-4074")?.paidCostStatus, "Bezahlt", "Istria 2027 paid status must remain recorded");
+assert.equal(routeById("110-tausend-111-4074")?.paidCostDetails, "Startgeld 215,00 € inkl. MwSt.; Sportograf-Fotos 33,52 €; Bus-Transfer 18,75 € inkl. MwSt.; Servicegebühren inkl. Steuer 29,17 €", "Istria 2027 receipt breakdown must remain recorded");
+assert.equal(routeById("tmcdc-185-3500")?.raceCost, "177–213 € (Startgeld laut Veranstalter, abhängig von Anmeldephase; Bearbeitungsgebühren ggf. zusätzlich)", "tmcdc-185-3500 published entry fee must remain recorded");
+assert.equal(routeById("tmcn-100-2300")?.raceCost, "127–153 € (Startgeld laut Veranstalter, abhängig von Anmeldephase; Bearbeitungsgebühren ggf. zusätzlich)", "tmcn-100-2300 published entry fee must remain recorded");
+assert.equal(routeById("tmcs-85-1200")?.raceCost, "117–143 € (Startgeld laut Veranstalter, abhängig von Anmeldephase; Bearbeitungsgebühren ggf. zusätzlich)", "tmcs-85-1200 published entry fee must remain recorded");
+assert.equal(routeById("ptcn-58-1200")?.raceCost, "75–98 € (Startgeld laut Veranstalter, abhängig von Anmeldephase; Bearbeitungsgebühren ggf. zusätzlich)", "ptcn-58-1200 published entry fee must remain recorded");
+assert.equal(routeById("ugp-125-5700")?.raceCost, "240–270 € (100M-Tarif laut UTMB; zzgl. 8 % Verwaltungsgebühr)", "ugp-125-5700 published entry fee must remain recorded");
+assert.equal(routeById("ugp-87-4200")?.raceCost, "169–199 € (100K-Tarif laut UTMB; zzgl. 8 % Verwaltungsgebühr)", "ugp-87-4200 published entry fee must remain recorded");
+assert.equal(routeById("ugp-51-2500")?.raceCost, "95 € (50K-Tarif laut UTMB; zzgl. 8 % Verwaltungsgebühr)", "ugp-51-2500 published entry fee must remain recorded");
+assert.equal(routeById("ultra-trail-des-chevaliers-156-5100")?.raceCost, "275–305 € (UTDC 100M, dynamischer Tarif laut UTMB)", "ultra-trail-des-chevaliers-156-5100 published entry fee must remain recorded");
+assert.equal(routeById("trail-des-celtes-47-1600")?.raceCost, "140–170 € (TDC 50K, dynamischer Tarif laut UTMB; 5 % FFA-Rabatt möglich)", "trail-des-celtes-47-1600 published entry fee must remain recorded");
+assert.equal(routeById("ultra-105k-105-6800")?.raceCost, "315,10 € (aktueller UTMB-Tarif 2027; inklusive Bearbeitungsgebühr und MwSt.)", "ultra-105k-105-6800 published entry fee must remain recorded");
+assert.equal(routeById("120k-120-5800")?.raceCost, "320,31 €", "120k-120-5800 published entry fee must remain recorded");
+assert.equal(routeById("80k-80-4600")?.raceCost, "224,49 €", "80k-80-4600 published entry fee must remain recorded");
+assert.equal(routeById("50k-50-2800")?.raceCost, "173,84 €", "50k-50-2800 published entry fee must remain recorded");
+assert.equal(routeById("lavaredo-20k-20-1000")?.raceCost, "83,50 €", "lavaredo-20k-20-1000 published entry fee must remain recorded");
+assert.ok(serializedRecordById("lavaredo-10k-10-300").includes('"raceCost":"39,70 €"'), "lavaredo-10k-10-300 published entry fee must remain recorded");
 assert.ok(html.includes("function collectLocalPlannerData(){const data={};CLOUD_KEYS.forEach"), "Backup and cloud snapshots must collect every registered local data key");
 assert.ok(html.includes("function seasonSave()"), "Season priorities must have a dedicated persistence function");
 assert.ok(raceTools.includes("function strategy(id,ri,r)"), "Per-race strategy planner must exist");
@@ -321,5 +344,25 @@ assert.ok(raceTools.includes("stationText.split(/\\r?\\n/)"), "Aid-station input
 assert.ok(raceTools.includes("stationText.trim().split(/\\r?\\n/)"), "Aid-station validation must count real input lines");
 assert.ok(raceTools.includes("].join(' | ')).join('\\n')"), "Saved aid stations must be joined with real line breaks");
 assert.ok(html.includes("function saveRacePlanData(id,ri,patch)") && html.includes("localStorage.setItem('trailEventDataEdits',raw)") && html.includes("queuePlannerCloudSave()"), "Race plan edits must persist locally and queue cloud synchronization");
+
+
+const eventData = appEvents;
+const boraEvent = eventData.find(event => event.name === "La Corsa della Bora");
+assert.ok(boraEvent, "La Corsa della Bora event must exist");
+const boraRoute = id => boraEvent.routes.find(route => route.id === id);
+const expectedBoraStations = {
+  "bora-ultra-105-3837": [["Bagnoli",13.2],["Basovizza",25.6],["Obelisk",35.3],["Contovello",46.7],["PortoPiccolo — Basislager",61.2],["Medeazza",71],["Sela na Krasu",88.6],["San Pelagio",101.7],["Santa Croce",107.4]],
+  "transkarst-ultra-59-1814": [["Medeazza",9.8],["Sela na Krasu",27.4],["San Pelagio",40.6],["Santa Croce",46.2]],
+  "trieste-ultra-61-2-2323": [["Bagnoli",13.2],["Basovizza",25.6],["Obelisk",35.3],["Contovello",46.7]],
+  "explorer-85-2993": [["Medeazza",9.8],["San Pelagio",21.4],["Santa Croce",27]],
+  "half-trail-23-3-700": [["Duino",5.5],["Medeazza",10.1],["Visogliano",19.6]]
+};
+for (const [id, expected] of Object.entries(expectedBoraStations)) {
+  const route = boraRoute(id);
+  assert.ok(route, "Every Corsa della Bora route must remain present: " + id);
+  assert.deepEqual(route.aidStations.map(station => [station.name,station.km]), expected, "Official aid-station positions must match the organizer's 2027 route page: " + id);
+  assert.ok(route.aidStationsSource && route.aidStations.every(station => station.verified && station.source === route.aidStationsSource), "Every imported aid station must retain its official source and verified status: " + id);
+  assert.ok(route.aidStations.every(station => station.km >= 0 && station.km <= Number(route.km)), "Aid stations must be inside their route distance: " + id);
+}
 
 console.log("Validated race priorities, training phases and actual-race recovery.");
