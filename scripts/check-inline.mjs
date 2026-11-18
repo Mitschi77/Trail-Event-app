@@ -1,8 +1,8 @@
 import { readFile } from "node:fs/promises";
 
 const html = await readFile(new URL("../index.html", import.meta.url), "utf8");
-const htmlClosings = [...html.matchAll(/<\\/html>/gi)];
-const bodyClosings = [...html.matchAll(/<\\/body>/gi)];
+const htmlClosings = [...html.matchAll(new RegExp("</html>", "gi"))];
+const bodyClosings = [...html.matchAll(new RegExp("</body>", "gi"))];
 if (htmlClosings.length !== 1 || bodyClosings.length !== 1) {
   throw new Error("index.html must contain exactly one closing body and html tag.");
 }
