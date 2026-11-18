@@ -47,7 +47,7 @@ Deno.serve(async (req) => {
         payload?.source === "automated_event_data_finder" &&
         typeof payload.eventId === "string" &&
         typeof payload.routeId === "string" &&
-        ["gpxMetrics", "cutoffCandidate"].includes(payload.field) &&
+        ["gpxMetrics", "cutoffCandidate", "profileData", "timeChartData"].includes(payload.field) &&
         typeof payload.sourceUrl === "string" &&
         payload.requiresOwnerApproval === true;
       if (!p || !["event_change", "route_change", "data_correction"].includes(p.proposal_type) ||
