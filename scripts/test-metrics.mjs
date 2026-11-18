@@ -74,7 +74,7 @@ assert.ok(html.includes("if(file.size>8*1024*1024)"), "Route image uploads must 
 
 assert.ok(html.includes("function renderOfficialQualitySummary()"), "Official event data quality dashboard must exist");
 assert.ok(html.includes("window.officialEventFeed=feed"), "Official feed audit must use the loaded official event data");
-assert.ok(html.includes("Maximalzeit / Cut-off-Daten"), "A verified cutoff list may satisfy the race time-limit completeness check");
+assert.ok(html.includes("Maximalzeit/Cut-offs") && html.includes("Array.isArray(x.r.cutoffs)&&x.r.cutoffs.length"), "A verified cutoff list may satisfy the race time-limit completeness check");
 assert.ok(html.includes("officialQualitySummary"), "Missing-data view must display a quality summary");
 
 
