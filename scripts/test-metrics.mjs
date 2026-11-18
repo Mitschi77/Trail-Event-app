@@ -413,4 +413,17 @@ for (const [id, expected] of Object.entries(transvulcaniaExpected)) {
   assert.ok(route.aidStations.every(station => station.km >= 0 && station.km <= Number(route.km)), "Transvulcania stations must be inside each route distance: " + id);
 }
 
+
+const malcesine = appEvents.find(event => event.name === "Malcesine Baldo Trail");
+assert.ok(malcesine, "Malcesine Baldo Trail event must exist");
+const malcesine60k = malcesine.routes.find(route => route.id === "52k-ultra-52-3541");
+assert.ok(malcesine60k, "Malcesine 60K Ultra route must exist");
+assert.deepEqual(malcesine60k.aidStations.map(station => [station.name,station.km]), [
+  ["Bocca di Navene",8.6],["Monte Altissimo di Nago",12.3],["Rifugio Fos-Ce",26.8],["Passo Pozza della Cola",32.4],
+  ["Madonna della Neve",36],["Dossioli",42],["Tratto Spino",44.5],["San Michele",55.6]
+], "Malcesine 60K aid stations must match the organizer's published route description");
+assert.ok(malcesine60k.aidStationsSource === "https://malcesinebaldotrail.run/de/60k/" && malcesine60k.aidStations.every(station => station.verified && station.source === malcesine60k.aidStationsSource), "Malcesine stations must retain the organizer source and verified status");
+assert.deepEqual(malcesine60k.aidStations.filter(station => station.approximate).map(station => station.name), ["Madonna della Neve","Dossioli","Tratto Spino"], "Organizer's approximate kilometer positions must remain marked approximate");
+assert.ok(malcesine60k.aidStations.every(station => station.km >= 0 && station.km <= Number(malcesine60k.km)), "Malcesine aid stations must be inside the 60K route");
+
 console.log("Validated race priorities, training phases and actual-race recovery.");
