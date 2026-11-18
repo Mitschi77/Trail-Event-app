@@ -49,6 +49,9 @@ assert.ok(html.includes("\"id\":\"ptcn-58-1200\",\"raceCost\":\"75–98 € (Sta
 assert.ok(html.includes("\"id\":\"ugp-125-5700\",\"raceCost\":\"240–270 € (100M-Tarif laut UTMB; zzgl. 8 % Verwaltungsgebühr)\""), "ugp-125-5700 2027 published entry fee must remain recorded");
 assert.ok(html.includes("\"id\":\"ugp-87-4200\",\"raceCost\":\"169–199 € (100K-Tarif laut UTMB; zzgl. 8 % Verwaltungsgebühr)\""), "ugp-87-4200 2027 published entry fee must remain recorded");
 assert.ok(html.includes("\"id\":\"ugp-51-2500\",\"raceCost\":\"95 € (50K-Tarif laut UTMB; zzgl. 8 % Verwaltungsgebühr)\""), "ugp-51-2500 2027 published entry fee must remain recorded");
+assert.ok(html.includes("\"id\":\"ultra-trail-des-chevaliers-156-5100\",\"raceCost\":\"275–305 € (UTDC 100M, dynamischer Tarif laut UTMB)\""), "ultra-trail-des-chevaliers-156-5100 2027 official fee must remain recorded");
+assert.ok(html.includes("\"id\":\"trail-des-celtes-47-1600\",\"raceCost\":\"140–170 € (TDC 50K, dynamischer Tarif laut UTMB; 5 % FFA-Rabatt möglich)\""), "trail-des-celtes-47-1600 2027 official fee must remain recorded");
+assert.ok(html.includes("\"id\":\"ultra-105k-105-6800\",\"raceCost\":\"315,10 € (aktueller UTMB-Tarif 2027; inklusive Bearbeitungsgebühr und MwSt.)\""), "ultra-105k-105-6800 2027 official fee must remain recorded");
 assert.ok(html.includes("function collectLocalPlannerData(){const data={};CLOUD_KEYS.forEach"), "Backup and cloud snapshots must collect every registered local data key");
 assert.ok(html.includes("function seasonSave()"), "Season priorities must have a dedicated persistence function");
 assert.ok(raceTools.includes("function strategy(id,ri,r)"), "Per-race strategy planner must exist");
