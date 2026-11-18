@@ -250,14 +250,7 @@ button,.primary,.secondary,.tab-button,.link{touch-action:manipulation}
 #events .route .gpx-status{display:block;margin-top:5px;font-size:11px}
 @media(max-width:520px){#events .route .routegrid{display:grid;grid-template-columns:1fr 1fr;gap:7px}#events .route .edit-grid{grid-template-columns:minmax(0,1fr)}#events .route .route-info-panel{padding:9px}}
 
-/* Consistent visual language across light and dark themes */
-:root{--ui-radius:12px;--ui-space:12px}
-:where(.planner-panel,.planner-status,.year-group,.plan-card,.route,.event,.planner,.integration-provider){border-radius:var(--ui-radius)}
-:where(.primary,.secondary,.tab-button,.more-nav-item,.year-detail-button){font-family:inherit;letter-spacing:0;touch-action:manipulation}
-:where(input,select,textarea,.field){border-radius:9px}
-:where(button,a,input,select,textarea,[role="button"]):focus-visible{outline:3px solid #a8d94d;outline-offset:2px}
-:where(.planner-intro,.plan-meta,.note,.planner-status){line-height:1.55}
-:where(.planner h2,.planner h3,.eventtitle,.year-heading h3){letter-spacing:-.025em}
+/* Reduced-motion and platform theme details retained separately. */
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;transition-duration:.01ms!important;animation-duration:.01ms!important;animation-iteration-count:1!important}}
 @media(prefers-color-scheme:dark){#events .date{background:#263b2e;color:#d9f3df}#events .meta .tag{background:#202d25;color:var(--ink)}#events .route .routegrid{background:#202d25}}
 
@@ -1176,6 +1169,54 @@ body{
   .tabbar{margin:0 -12px 14px;padding:7px 10px;gap:5px;border-radius:0 0 13px 13px}
   .tab-button{min-width:84px;padding:10px 11px;font-size:12px}
   .more-nav-trigger{min-width:72px}
+}
+</style>
+
+<style id="trail-visual-consistency-v1">
+/* Punkt 6: letzte visuelle Vereinheitlichung und zugängliche Interaktionen */
+:root{
+  --ui-radius:14px;
+  --ui-radius-small:10px;
+  --ui-space:12px;
+}
+:where(.planner,.planner-panel,.planner-status,.year-group,.plan-card,.route,.event,.integration-provider){
+  border-radius:var(--ui-radius);
+}
+:where(.primary,.secondary,.tab-button,.more-nav-item,.year-detail-button,.link){
+  font-family:inherit;
+  letter-spacing:normal;
+  touch-action:manipulation;
+}
+:where(input,select,textarea,.field){
+  border-radius:var(--ui-radius-small);
+  color:var(--ink);
+  accent-color:var(--green);
+}
+:where(button,a,input,select,textarea,[role="button"]):focus-visible{
+  outline:3px solid var(--lime);
+  outline-offset:2px;
+}
+:where(.planner-intro,.plan-meta,.note,.planner-status){
+  line-height:1.55;
+  overflow-wrap:anywhere;
+}
+:where(.primary,.secondary,.tab-button,.more-nav-item){
+  min-height:44px;
+}
+:where(button:disabled,input:disabled,select:disabled,textarea:disabled){
+  opacity:.58;
+  cursor:not-allowed;
+}
+:where(.planner-status,[role="status"],[aria-live="polite"]){
+  overflow-wrap:anywhere;
+}
+@media(max-width:520px){
+  :where(.planner-panel,.planner-status,.year-group,.plan-card,.route,.event){
+    min-width:0;
+  }
+  :where(.planner-intro,.plan-meta,.note){
+    overflow-wrap:anywhere;
+  }
 }
 </style>
 </head><script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script><body>
