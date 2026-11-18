@@ -21,19 +21,19 @@ Prüfstand: 17. November 2026. Diese Übersicht beschreibt den Quellcode und die
 
 ## Datenprüfung
 
-Im Hauptdatensatz befinden sich 129 Events und 387 Strecken. Es wurden keine doppelten Event- oder Strecken-IDs gefunden. Alle 129 Events besitzen einen passenden Eintrag im offiziellen Datumsfeed; es gibt keine verwaisten Feed-Einträge.
+Im aktuell veröffentlichten Hauptdatensatz befinden sich 125 Events und 363 Strecken. Der offizielle Datumsfeed enthält 125 Einträge: 108 mit zuletzt bestätigten Terminen, 16 ungeklärte und 1 eingestellten Event. Die Zählung wurde am 18. November 2026 direkt aus `index.html` und `event-dates.json` ermittelt. Frühere Prüfberichte mit 129 Events / 387 Strecken sind veraltet und dürfen nicht als aktueller Bestand verwendet werden.
 
-| Feld | Fehlende Streckenangaben |
+| Feld | Fehlende Angaben im aktuellen Hauptdatensatz |
 |---|---:|
-| Distanz | 25 |
-| Höhenmeter | 57 |
-| Maximalzeit/Cut-off | 282 |
-| Streckentag | 61 |
-| Zielort | 2 |
-| Separater Startpunkt | 186 |
+| Distanz | 9 |
+| Höhenmeter | 34 |
+| Maximalzeit | 265 |
+| Streckendatum | 72 |
+| Startzeit / Startangabe | 2 |
+| Separater Startpunkt | 207 |
 | Land | 3 |
-| Höhenprofil | 318 |
-| Cut-off-Daten | 280 |
+| Höhenprofil | 191 |
+| Cut-off-Daten | 263 |
 
 Fehlende Werte sind nicht automatisch Fehler: Manche Veranstalter veröffentlichen Cut-off-Zeiten, GPX-Dateien oder Höhenprofile erst spät oder gar nicht. Nicht belegte Werte dürfen nicht geschätzt werden. Marathonstrecken werden in der Anzeige bewusst ohne Höhenmeter und Maximalzeit dargestellt; Backyard-Läufe ohne Maximalzeit.
 
