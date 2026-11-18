@@ -1,6 +1,7 @@
 name: Find missing event and route data
 on:
   push:
+    branches: [main]
     paths:
       - "scripts/find_missing_event_data.py"
       - "scripts/submit_event_data_proposals.py"

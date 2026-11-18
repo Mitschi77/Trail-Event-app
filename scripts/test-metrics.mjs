@@ -447,3 +447,11 @@ assert.ok(html.includes("gpxUrl:get('gpxUrl')||null,utmbScore:"), "GPX URL and U
 assert.ok(html.includes("GPX-Datei / Download-Link") && html.includes("UTMB Score"), "New race form must visibly label the additional automatic data fields");
 assert.ok(html.includes("utmb-category-mark") && html.includes("utmb-category-label"), "UTMB categories must use the colored category label and mountain M marker");
 assert.ok(!html.includes("'20K':{color:'#f1d34f',symbol:'🟡'"), "UTMB category badges must not use emoji category symbols");
+
+// Owner approval and public publication must remain separate.
+assert.ok(html.includes("function markProposalPublished(id)"), "Owner review must provide a separate publication-documentation step");
+assert.ok(html.includes("mark_event_proposal_published"), "Publication must be recorded through the owner-only database RPC");
+assert.ok(html.includes("Freigegeben – wartet auf Veröffentlichung"), "Approved proposals must remain visibly distinct from published proposals");
+assert.ok(html.includes("Veröffentlichung dokumentieren") && html.includes("Pages-Veröffentlichung erfolgreich"), "Publication documentation must require an explicit post-deployment confirmation");
+assert.ok(html.includes("row.published_at") && html.includes("row.publication_ref"), "Review queue must display publication timestamp and evidence");
+assert.ok(html.includes("github[.]com"), "Publication reference validation must accept only this repository's GitHub references or a commit SHA");

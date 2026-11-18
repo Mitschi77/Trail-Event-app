@@ -2,6 +2,7 @@ name: Prepare official event-date review proposals
 
 on:
   push:
+    branches: [main]
     paths:
       - "index.html"
       - "scripts/update_event_dates.py"
