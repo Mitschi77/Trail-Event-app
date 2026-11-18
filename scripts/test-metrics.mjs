@@ -445,3 +445,5 @@ assert.ok(html.includes('data-newroute="aidStations"'), "New race form must reta
 assert.ok(html.includes("cutoffs:parseJson('cutoffs'),aidStations:parseJson('aidStations')"), "Cutoffs and aid stations must be saved in the review proposal");
 assert.ok(html.includes("gpxUrl:get('gpxUrl')||null,utmbScore:"), "GPX URL and UTMB score must be saved with each proposed route");
 assert.ok(html.includes("GPX-Datei / Download-Link") && html.includes("UTMB Score"), "New race form must visibly label the additional automatic data fields");
+assert.ok(html.includes("utmb-category-mark") && html.includes("utmb-category-label"), "UTMB categories must use the colored category label and mountain M marker");
+assert.ok(!html.includes("'20K':{color:'#f1d34f',symbol:'🟡'"), "UTMB category badges must not use emoji category symbols");
