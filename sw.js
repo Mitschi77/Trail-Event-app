@@ -1,4 +1,4 @@
-const CACHE_NAME = 'trail-event-planner-v50';
+const CACHE_NAME = 'trail-event-planner-v51';
 const APP_SHELL = ['./', './index.html', './race-tools.js', './season-tools.js', './event-dates.json', './manifest.webmanifest', './trail-icon.svg', './trail-apple-touch-icon.png'];
 
 self.addEventListener('install', event => {
@@ -40,7 +40,7 @@ self.addEventListener('fetch', event => {
     return;
   }
 
-  const isAppCode = /\\.(?:js|mjs|css|html|webmanifest)$/.test(url.pathname) || request.mode === 'navigate';
+  const isAppCode = /\.(?:js|mjs|css|html|webmanifest)$/.test(url.pathname) || request.mode === 'navigate';
   if (isAppCode) {
     event.respondWith(
       fetch(request, { cache: 'no-store' })
