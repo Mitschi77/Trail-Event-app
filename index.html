@@ -1069,6 +1069,47 @@ body{
   *,*::before,*::after{scroll-behavior:auto!important;transition-duration:.01ms!important;animation-duration:.01ms!important;animation-iteration-count:1!important}
 }
 
+
+/* Safari-Korrektur: Metadaten-Chips bleiben auch bei absolvierten Events dunkel */
+#events .event .meta .tag{
+  background:#26382d!important;
+  color:#dce9df!important;
+  border:1px solid #405648!important;
+}
+#events .event .meta .type-select{
+  background:#1b2a21!important;
+  color:#edf4ee!important;
+  border:1px solid #405648!important;
+  color-scheme:dark;
+}
+#events .event.event-done .meta .tag,
+#events .event.event-done .meta .type-select{
+  background:#26382d!important;
+  color:#e5f0e8!important;
+  border-color:#786735!important;
+}
+#events .event .run-tools,
+#events .event .run-record-summary{
+  background:#202e25!important;
+  color:#edf4ee!important;
+  border-color:#405648!important;
+}
+#events .event .run-tools input:not([type="checkbox"]),
+#events .event .run-tools select,
+#events .event .edit-grid input,
+#events .event .edit-grid select,
+#events .event .edit-grid textarea{
+  background:#17231b!important;
+  color:#edf4ee!important;
+  border-color:#405648!important;
+  color-scheme:dark;
+}
+#events .event .run-tools input::placeholder,
+#events .event .edit-grid input::placeholder,
+#events .event .edit-grid textarea::placeholder{
+  color:#a7b6ab!important;
+  opacity:1;
+}
 </style>
 
 
