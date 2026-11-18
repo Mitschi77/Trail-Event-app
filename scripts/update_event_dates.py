@@ -226,7 +226,7 @@ for event in events:
         if key in route_entries:
             continue
         previous_edition_date = str(route.get("date") or "")
-        if re.fullmatch(r"2026-\\d{2}-\\d{2}", previous_edition_date):
+        if re.fullmatch(r"2026-\d{2}-\d{2}", previous_edition_date):
             route_entries[key] = {
                 "routeId": route["id"],
                 "date": previous_edition_date,
