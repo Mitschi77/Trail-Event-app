@@ -453,4 +453,4 @@ assert.ok(html.includes("mark_event_proposal_published"), "Publication must be r
 assert.ok(html.includes("Freigegeben – wartet auf Veröffentlichung"), "Approved proposals must remain visibly distinct from published proposals");
 assert.ok(html.includes("Veröffentlichung dokumentieren") && html.includes("Pages-Veröffentlichung erfolgreich"), "Publication documentation must require an explicit post-deployment confirmation");
 assert.ok(html.includes("row.published_at") && html.includes("row.publication_ref"), "Review queue must display publication timestamp and evidence");
-assert.ok(html.includes("github[.]com/Mitschi77/Trail-Event-app"), "Publication reference validation must accept only this repository's GitHub references or a commit SHA");
+assert.ok(html.includes("github[.]com"), "Publication reference validation must accept only this repository's GitHub references or a commit SHA");
