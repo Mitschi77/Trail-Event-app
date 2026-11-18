@@ -320,5 +320,6 @@ assert.equal(actualRecord.raceStatus, "dnf", "Recorded DNF results must inform r
 assert.ok(raceTools.includes("stationText.split(/\\r?\\n/)"), "Aid-station input must split on real line breaks");
 assert.ok(raceTools.includes("stationText.trim().split(/\\r?\\n/)"), "Aid-station validation must count real input lines");
 assert.ok(raceTools.includes("].join(' | ')).join('\\n')"), "Saved aid stations must be joined with real line breaks");
+assert.ok(html.includes("function saveRacePlanData(id,ri,patch)") && html.includes("localStorage.setItem('trailEventDataEdits',raw)") && html.includes("queuePlannerCloudSave()"), "Race plan edits must persist locally and queue cloud synchronization");
 
 console.log("Validated race priorities, training phases and actual-race recovery.");
