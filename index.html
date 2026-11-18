@@ -749,6 +749,165 @@ body{
   #yearOverview .year-totals{padding:10px;font-size:11px}
 }
 </style>
+
+<style id="trail-route-details-v1">
+/* Punkt 4: Streckendetails – Kennzahlen, Datenqualität und Streckenressourcen */
+#events .route{
+  display:grid;
+  gap:10px;
+  padding:14px;
+  border:1px solid var(--line);
+  border-radius:14px;
+  background:var(--card);
+  color:var(--ink);
+}
+#events .route>strong{
+  display:block;
+  margin:0;
+  color:var(--ink);
+  font-size:16px;
+  font-weight:800;
+  line-height:1.3;
+}
+#events .route>.routegrid{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:7px;
+  margin:0;
+  padding:0;
+  background:transparent;
+}
+#events .route>.routegrid>span{
+  min-width:0;
+  padding:8px 9px;
+  border:1px solid var(--line);
+  border-radius:9px;
+  background:var(--surface);
+  color:var(--muted);
+  font-size:11px;
+  line-height:1.4;
+  overflow-wrap:anywhere;
+}
+#events .route .routegrid b{color:var(--ink);font-weight:800}
+#events .route .route-data-status{
+  display:inline-flex;
+  align-items:center;
+  justify-self:start;
+  min-height:25px;
+  padding:4px 9px;
+  border:1px solid #75643a;
+  border-radius:20px;
+  background:#302a1a;
+  color:#f1d995;
+  font-size:11px;
+  font-weight:750;
+}
+#events .route .route-data-status.complete{
+  border-color:#477a58;
+  background:#1c3827;
+  color:#bce6c7;
+}
+#events .route .route-info-tools{
+  margin:0;
+  border:1px solid var(--line);
+  border-radius:12px;
+  background:var(--surface);
+  overflow:hidden;
+}
+#events .route .route-info-heading{
+  padding:11px 12px;
+  border-bottom:1px solid var(--line);
+  background:#26382c;
+  color:#d9f3df;
+  font-size:13px;
+}
+#events .route .route-info-panel{
+  margin:0;
+  padding:12px;
+  border:0;
+  border-radius:0;
+  background:var(--surface);
+  color:var(--ink);
+}
+#events .route .route-info-panel .plan-meta,
+#events .route .route-info-panel .rating-label{color:var(--muted)}
+#events .route .route-info-panel .link{
+  display:inline-flex;
+  align-items:center;
+  min-height:38px;
+  margin:4px 5px 4px 0;
+  padding:7px 10px;
+  border:1px solid var(--line);
+  border-radius:9px;
+  background:#18271f;
+  color:#bce6c7;
+  text-decoration:none;
+}
+#events .route .route-edit{
+  margin:0;
+  padding:12px;
+  border:1px solid var(--line);
+  border-radius:11px;
+  background:var(--surface);
+}
+#events .route .edit-grid{gap:10px}
+#events .route .edit-grid label{color:var(--muted);font-size:12px;font-weight:700}
+#events .route .edit-grid input,
+#events .route .edit-grid select,
+#events .route .edit-grid textarea{
+  width:100%;
+  min-width:0;
+  margin-top:5px;
+  padding:9px 10px;
+  border:1px solid var(--line);
+  border-radius:9px;
+  background:#111b15;
+  color:var(--ink);
+}
+#events .route .run-tools,
+#events .route .run-record-summary{
+  padding:11px 12px;
+  margin:0;
+  border:1px solid var(--line);
+  border-radius:11px;
+  background:var(--surface);
+  color:var(--ink);
+}
+#events .route .run-record-summary>strong{color:#d9f3df}
+#events .route .routefoot{
+  display:flex;
+  flex-wrap:wrap;
+  gap:7px;
+  padding-top:3px;
+  border-top:1px solid var(--line);
+}
+#events .route .routefoot .link,
+#events .route .routefoot button{flex:1 1 145px;justify-content:center;min-height:40px}
+#events .route .route-png-tools{margin-top:10px;padding-top:10px;border-top:1px solid var(--line)}
+#events .route .route-png-preview{margin:10px 0 0;padding:9px;border:1px solid var(--line);border-radius:10px;background:#111b15}
+#events .route .route-png-preview img{display:block;width:100%;max-height:240px;object-fit:contain;border-radius:7px}
+#events .route .route-png-preview figcaption{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:8px;margin-top:8px;color:var(--muted);font-size:11px}
+#events .route .gpx-map{border-color:var(--line);border-radius:12px;background:#17241b}
+#events .route .gpx-stats{display:flex;flex-wrap:wrap;gap:6px}
+#events .route .gpx-stats span{padding:6px 8px;border:1px solid var(--line);border-radius:8px;background:var(--surface);color:var(--ink);font-size:11px}
+#events .route.route-done{
+  background:#17231c!important;
+  color:#edf5ef!important;
+  border-color:#597362!important;
+}
+#events .route.route-done>.routegrid>span{background:#202f26!important;border-color:#52695a!important;color:#d5e3d9!important}
+#events .route.route-done .route-info-heading{background:#263c2e!important;color:#e7f1e9!important}
+@media(max-width:520px){
+  #events .route{gap:9px;padding:11px}
+  #events .route>strong{font-size:15px}
+  #events .route>.routegrid{grid-template-columns:repeat(2,minmax(0,1fr));gap:6px}
+  #events .route>.routegrid>span{padding:7px;font-size:10px}
+  #events .route .routefoot{display:grid;grid-template-columns:1fr}
+  #events .route .routefoot .link,
+  #events .route .routefoot button{width:100%}
+  #events .route .route-info-panel{padding:10px}
+}
+</style>
 </head><script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script><body>
 <header><div class="top"><div class="brand">⛰ TRAIL EVENT PLANNER</div><div class="pill">Persönlicher Laufkalender <button id="cloudProfileButton" type="button" aria-label="Anmelden – Cloud-Konto öffnen" title="Anmelden – Cloud-Konto öffnen" style="margin-left:6px;min-width:44px;min-height:44px;display:inline-flex;align-items:center;justify-content:center;gap:5px;border:1px solid #668074;border-radius:24px;background:#20372d;color:#fff;padding:5px 9px;text-decoration:none;cursor:pointer;touch-action:manipulation" onclick="event.preventDefault();event.stopPropagation();const d=document.getElementById('appMenuDropdown'),m=document.getElementById('appMenuButton'),p=document.getElementById('accountPanel'),t=document.getElementById('cloudAccountMenuToggle');d.hidden=false;m.setAttribute('aria-expanded','true');p.hidden=false;t.setAttribute('aria-expanded','true');t.textContent='☁️ Cloud-Konto schließen';const e=document.getElementById('cloudEmail');if(e)e.focus({preventScroll:true});"><svg id="cloudProfileIcon" width="24" height="24" viewBox="0 0 24 24" role="img" aria-label="Rotes Strichmännchen – abgemeldet"><circle cx="12" cy="5" r="2.5" fill="none" stroke="#ff6262" stroke-width="2"/><path d="M12 8v7m0-4-5 3m5-3 5 3m-5 1-4 6m4-6 4 6" fill="none" stroke="#ff6262" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span id="cloudProfileLabel" style="font-size:12px;font-weight:700;white-space:nowrap">Anmelden</span></button><button id="appMenuButton" type="button" class="app-menu-button" aria-label="Weitere Funktionen öffnen" aria-haspopup="true" aria-expanded="false" aria-controls="appMenuDropdown" title="Datensicherung und weitere Funktionen">⋮</button><div id="appMenuDropdown" class="app-menu-dropdown" role="menu" hidden><div class="app-menu-heading" style="display:flex;align-items:center;justify-content:space-between;gap:10px"><span>Datensicherung &amp; Datenverwaltung</span><button id="closeAppMenuButton" type="button" class="secondary" aria-label="Menü schließen" style="min-height:36px;padding:5px 10px">Schließen ✕</button></div><button id="cloudAccountMenuToggle" class="secondary app-menu-item" type="button" aria-expanded="false" aria-controls="accountPanel">☁️ Cloud-Konto öffnen</button><div id="accountPanel" class="app-menu-account" hidden><div style="font-weight:700;margin-bottom:5px">☁️ Cloud-Konto</div><div id="cloudStatus" style="font-size:13px;color:#d4e2d9;margin-bottom:10px">Melde dich an, um deine Laufplanung sicher in deiner Cloud zu speichern.</div><div id="cloudCheckStatus" role="status" aria-live="polite" style="font-size:11px;color:#b8d0c2;margin:-5px 0 10px">Automatischer Abruf noch nicht gestartet.</div><form id="cloudAuthForm" style="display:flex;gap:8px;flex-wrap:wrap"><input id="cloudEmail" type="email" required autocomplete="email" placeholder="E-Mail-Adresse" style="flex:1 1 190px;min-width:0;padding:11px;border-radius:9px;border:1px solid #789084;font:inherit"><input id="cloudPassword" type="password" required minlength="8" autocomplete="current-password" placeholder="Passwort (mind. 8 Zeichen)" style="flex:1 1 190px;min-width:0;padding:11px;border-radius:9px;border:1px solid #789084;font:inherit"><button class="primary" id="cloudLoginButton" type="button" onclick="event.preventDefault();if(typeof window.plannerLoginClick==='function')window.plannerLoginClick();else document.getElementById('cloudStatus').textContent='Cloud-Anmeldung wird initialisiert. Bitte kurz warten und erneut versuchen.'">Anmelden</button><button class="secondary" id="cloudSignup" type="button" onclick="plannerSignupClick()">Konto erstellen</button></form><div id="cloudAccountActions" hidden style="gap:8px;margin-top:8px"><button class="primary" id="restoreCloudData" type="button">Laufplanung und Laufhistorie aus der Cloud laden</button><button class="secondary" id="cloudLogout" type="button">Abmelden</button><button class="secondary" id="deleteCloudAccount" type="button" style="border-color:#d66;color:#ffb8b8">Konto endgültig löschen</button></div><div style="font-size:11px;color:#c4d5c9;margin-top:8px">Deine persönlichen Daten werden nur für dein angemeldetes Konto gespeichert. Verwende ein eigenes, sicheres Passwort.</div>
 </div><div class="app-menu-info"><strong>☁️ Laufdaten geräteübergreifend</strong><p>Mit deinem Konto werden deine Laufplanung und gespeicherten Ergebnisse zwischen deinen Geräten synchronisiert. Melde dich dazu über den Bereich „Cloud-Konto“ an.</p><div id="appMenuCloudInfo" class="app-menu-hint">Noch nicht angemeldet – Synchronisierung ist nicht aktiv.</div></div><div class="app-menu-info"><strong>Gerätespeicher</strong><p id="storageHealth" aria-live="polite">Speicherstatus wird geprüft …</p><button class="secondary app-menu-item" id="protectStorageButton" type="button" onclick="requestPersistentStorage()">Speicherung auf diesem Gerät schützen</button></div><button class="secondary app-menu-item" id="exportBackup" type="button" role="menuitem">Datensicherung herunterladen</button><button class="secondary app-menu-item" id="downloadPreRestoreBackup" type="button" role="menuitem" hidden>Vorherigen Stand herunterladen</button><label class="secondary app-menu-item app-menu-label" for="importBackup" role="menuitem">Datensicherung wiederherstellen<input id="importBackup" type="file" accept="application/json,.json" hidden></label><div class="app-menu-hint">Sichere deine Planungen regelmäßig als JSON-Datei. Beim Wiederherstellen werden nur Daten aus einer gültigen Sicherung übernommen.</div><div id="cloudConflictActions" class="app-menu-conflict" style="display:none"><button class="secondary app-menu-item" id="downloadCloudBackup" type="button">Cloud-Sicherung herunterladen</button><button class="secondary app-menu-item" id="useCloudDataLocally" type="button">Cloud-Daten auf dieses Gerät übernehmen</button><button class="secondary app-menu-item" id="useLocalCloudData" type="button">Lokale Daten in Cloud übernehmen</button></div></div></div></div><div class="hero"><h1>Dein nächstes<br>Trail-Abenteuer.</h1><div class="stats"><div class="stat"><b id="eventCount">—</b><span>Hauptevents</span></div><div class="stat"><b id="routeCount">—</b><span>Strecken</span></div><div class="stat"><b>5 km</b><span>Unterkunftsradius</span></div></div></div></header>
