@@ -381,4 +381,20 @@ for (const [id, expected] of Object.entries(expectedTgcStations)) {
   assert.ok(route.aidStations.every(station => station.km >= 0 && station.km <= Number(route.km)), "Transgrancanaria stations must be inside the route distance: " + id);
 }
 
+
+const donautrail = appEvents.find(event => event.name === "Donautrail");
+assert.ok(donautrail, "Donautrail must remain present");
+const donautrailExpected = {
+  "linz55-55-1-1429": [["Gasthaus zur GIS",11.7],["Freiseder am Pöstlingberg",22],["Port:O Bar Ottensheim",54]],
+  "linz75-76-1835": [["Pfenningberg – Mountaincamp",12],["Höllmühlstraße 67",26.5],["Gasthaus zur GIS",33],["Freiseder am Pöstlingberg",43],["Port:O Bar Ottensheim",54]],
+  "linz100-100-2150": [["Pfenningberg – Mountaincamp",12],["Höllmühlstraße 67",26.5],["Gasthaus zur GIS",33],["Freiseder am Pöstlingberg",43],["Port:O Bar Ottensheim",54],["Freiwillige Feuerwehr Landshaag",75],["Stift Wilhering",90]]
+};
+for (const [id, expected] of Object.entries(donautrailExpected)) {
+  const route = routeById(id);
+  assert.ok(route, "Every Donautrail route must remain present: " + id);
+  assert.deepEqual(route.aidStations.map(station => [station.name,station.km]), expected, "Donautrail aid-station positions must match the organizer's current published list: " + id);
+  assert.ok(route.aidStationsSource === "https://donautrail.at/verpflegung/" && route.aidStations.every(station => station.verified && station.source === route.aidStationsSource), "Donautrail stations must retain the organizer source and verified status: " + id);
+  assert.ok(route.aidStations.every(station => station.km >= 0 && station.km <= Number(route.km)), "Donautrail stations must be within each route distance: " + id);
+}
+
 console.log("Validated race priorities, training phases and actual-race recovery.");
