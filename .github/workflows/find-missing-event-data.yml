@@ -1,5 +1,10 @@
 name: Find missing event and route data
 on:
+  push:
+    paths:
+      - "scripts/find_missing_event_data.py"
+      - "scripts/submit_event_data_proposals.py"
+      - ".github/workflows/find-missing-event-data.yml"
   schedule:
     - cron: "43 5 * * *"
   workflow_dispatch:
@@ -20,9 +25,6 @@ jobs:
       - name: Search missing GPX, elevation and cut-off evidence
         run: python scripts/find_missing_event_data.py
       - name: Submit candidates to owner review queue
-        env:
-          ACTIONS_ID_TOKEN_REQUEST_URL: \${{ secrets.ACTIONS_ID_TOKEN_REQUEST_URL }}
-          ACTIONS_ID_TOKEN_REQUEST_TOKEN: \${{ secrets.ACTIONS_ID_TOKEN_REQUEST_TOKEN }}
         run: python scripts/submit_event_data_proposals.py
       - name: Keep scan report for diagnostics
         if: always()
