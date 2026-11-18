@@ -5,14 +5,26 @@ const html = await readFile(new URL("../index.html", import.meta.url), "utf8");
 const serviceWorker = await readFile(new URL("../sw.js", import.meta.url), "utf8");
 const raceTools = await readFile(new URL("../race-tools.js", import.meta.url), "utf8");
 const seasonTools = await readFile(new URL("../season-tools.js", import.meta.url), "utf8");
+const eventDataMatch = html.match(/const EVENTS=(\[[\s\S]*?\]);\s*function enrichUtmbRouteCategories/);
+assert.ok(eventDataMatch, "Event data must remain parseable");
+const appEvents = JSON.parse(eventDataMatch[1]);
+const appRoutes = appEvents.flatMap(event => event.routes || []);
+const routeById = id => appRoutes.find(route => route.id === id);
+
 assert.ok(serviceWorker.includes("'./event-dates.json'"), "Offline app shell must cache the official event feed");
 assert.ok(serviceWorker.includes("trail-event-planner-v52"), "App shell cache must be versioned for the aid-station parser update");
 assert.ok(serviceWorker.includes("url.pathname.endsWith('/event-dates.json')"), "Official event feed must use a network-first cache strategy");
 assert.ok(serviceWorker.includes("cache.put(cacheKey, copy)") && serviceWorker.includes("caches.match(cacheKey)"), "Official event feed must remain available offline without retaining timestamp query variants");
 
 assert.ok(html.includes("'trailRacePriorities'"), "Season priorities must be included in private backups and cloud snapshots");
-assert.ok(html.includes('"id":"mozart-100-84-4800","raceCost":"208,20 € (Startgeld inkl. 20 % USt.; ohne Zusatzleistungen und Servicegebühren)","paidCost":"248,18 €","paidCostDate":"2026-07-15","paidCostStatus":"Bezahlt"'), "Mozart 2027 paid entry cost must match the UTMB payment receipt");
-assert.ok(html.includes('"id":"3kings-3hills-54-2300","raceCost":"79,00 €","paidCost":"79,00 €","paidCostDate":"2026-08-17","paidCostStatus":"Bezahlt"'), "3Kings 2027 paid entry cost must match the paid invoice");
+assert.equal(routeById("mozart-100-84-4800")?.raceCost, "208,20 € (Startgeld inkl. 20 % USt.; ohne Zusatzleistungen und Servicegebühren)", "Mozart 2027 entry fee must match the UTMB payment receipt");
+assert.equal(routeById("mozart-100-84-4800")?.paidCost, "248,18 €", "Mozart 2027 paid total must match the UTMB payment receipt");
+assert.equal(routeById("mozart-100-84-4800")?.paidCostDate, "2026-07-15", "Mozart payment date must remain recorded");
+assert.equal(routeById("mozart-100-84-4800")?.paidCostStatus, "Bezahlt", "Mozart paid status must remain recorded");
+assert.equal(routeById("3kings-3hills-54-2300")?.raceCost, "79,00 €", "3Kings 2027 entry fee must match the paid invoice");
+assert.equal(routeById("3kings-3hills-54-2300")?.paidCost, "79,00 €", "3Kings 2027 paid total must match the paid invoice");
+assert.equal(routeById("3kings-3hills-54-2300")?.paidCostDate, "2026-08-17", "3Kings payment date must remain recorded");
+assert.equal(routeById("3kings-3hills-54-2300")?.paidCostStatus, "Bezahlt", "3Kings paid status must remain recorded");
 assert.ok(html.includes("const storedStatus=runRecords[routeKey(id,ri)]?.raceStatus;const currentStatus=storedStatus||(r.paidCostStatus==='Bezahlt'?'paid':'planned')"), "A verified paid receipt must set the displayed default race status to paid without overriding a saved user status");
 assert.ok(html.includes('"date":"2027-01-23","web":null,"starttime":null,"registration":null,"overnight":null,"hotelCost":null,"raceCost":"69,00 €","paidCost":"83,90 €","paidCostDate":"2026-09-17","paidCostStatus":"Bezahlt","paidCostDetails":"MOUNTAINMAN-Rechnung'), "MOUNTAINMAN 2027 date and paid total must match the invoice");
 assert.ok(html.includes('"route":"mozart Ultra","km":84'), "2027 Mozart route must use the verified event name");
