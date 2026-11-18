@@ -239,6 +239,10 @@ assert.ok(html.includes("function latestYearPlanRace()"), "Planner must use the 
 assert.ok(html.includes("eventSelect.dataset.manual==='1'"), "Planner must preserve an explicit manual event selection");
 assert.ok(html.includes("(b.date-a.recoveryEnd)/86400000"), "Season check must compare next start to previous event end");
 assert.ok(html.includes("selectedEnd&&nextDate&&nextDate<plusDays(selectedEnd,weeks*7)"), "Route selection must enforce recovery after multi-day events");
+assert.ok(html.includes("inspectNewEventWebsite()"), "New race entry must support automatic website inspection");
+assert.ok(html.includes("inspect-event-website"), "Website extraction must use the authenticated inspection function");
+assert.ok(html.includes("Erkannte Angaben prüfen und ergänzen"), "Imported race data must remain manually reviewable and editable");
+assert.ok(html.includes("setIfEmpty('newEventName',fields.name)"), "Website import must not overwrite manually entered event fields");
 assert.ok(html.includes("function findPotentialDuplicateEvents(candidate)"), "New event proposals must be checked against the existing event database");
 assert.ok(html.includes("Möglicher doppelter Eintrag"), "Review queue must visibly warn about possible duplicate races");
 assert.ok(html.includes("duplicate_check:{checked_at:"), "Duplicate check results must be stored with the proposal for review");
