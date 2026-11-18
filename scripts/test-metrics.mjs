@@ -455,3 +455,15 @@ assert.ok(html.includes("Freigegeben – wartet auf Veröffentlichung"), "Approv
 assert.ok(html.includes("Veröffentlichung dokumentieren") && html.includes("Pages-Veröffentlichung erfolgreich"), "Publication documentation must require an explicit post-deployment confirmation");
 assert.ok(html.includes("row.published_at") && html.includes("row.publication_ref"), "Review queue must display publication timestamp and evidence");
 assert.ok(html.includes("github[.]com"), "Publication reference validation must accept only this repository's GitHub references or a commit SHA");
+
+assert.ok(html.includes("schemaVersion:2") && html.includes("integrity:cloudSnapshotSignatures"), "Local and cloud backups must carry an integrity signature");
+assert.ok(html.includes("parsed.schemaVersion===2") && html.includes("parsed.integrity"), "Version 2 backup imports must verify their integrity signature");
+assert.ok(html.includes("applyPlannerSnapshot(restoredData)"), "Cloud restore must use the verified atomic snapshot writer");
+assert.ok(html.includes("Speichern nicht bestätigt") && html.includes("Der vorherige lokale Datenstand wurde zurückgespielt"), "Snapshot writes must verify readback and roll back on failure");
+const snapshotValidatorSource = html.match(/function validatePlannerSnapshot\(snapshot\)\{[^\n]*\}/);
+assert.ok(snapshotValidatorSource, "Cloud and backup snapshots must have a shared validator");
+const validatePlannerSnapshot = new Function("CLOUD_KEYS", snapshotValidatorSource[0] + "; return validatePlannerSnapshot;")(["plannerKey"]);
+assert.deepEqual(validatePlannerSnapshot({plannerKey: JSON.stringify({ok:true})}), {plannerKey: JSON.stringify({ok:true})});
+assert.throws(() => validatePlannerSnapshot({unknownKey: "{}"}), /Unbekannter oder ungültiger Datenbereich/);
+assert.throws(() => validatePlannerSnapshot({plannerKey: "{"}), /Beschädigte Daten/);
+assert.notDeepEqual(cloudSignature({plannerKey:"old"}), cloudSignature({plannerKey:"new"}), "Backup integrity signatures must change when stored data changes");
