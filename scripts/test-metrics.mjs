@@ -20,7 +20,7 @@ const serializedRecordById = id => {
 
 
 assert.ok(serviceWorker.includes("'./event-dates.json'"), "Offline app shell must cache the official event feed");
-assert.match(serviceWorker, /const CACHE_NAME = 'trail-event-planner-v\\d+'/ , "App shell cache must use a versioned cache name");
+assert.match(serviceWorker, /const CACHE_NAME = 'trail-event-planner-v\d+'/ , "App shell cache must use a versioned cache name");
 assert.ok(serviceWorker.includes("url.pathname.endsWith('/event-dates.json')"), "Official event feed must use a network-first cache strategy");
 assert.ok(serviceWorker.includes("cache.put(cacheKey, copy)") && serviceWorker.includes("caches.match(cacheKey)"), "Official event feed must remain available offline without retaining timestamp query variants");
 
