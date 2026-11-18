@@ -153,7 +153,7 @@ for feed_event_id, feed_record in feed_events.items():
     if checked_at and not isinstance(checked_at, str):
         errors.append(f"{feed_event_id}: checkedAt must be an ISO timestamp")
     source_check = feed_record.get("sourceCheckStatus")
-    if source_check and source_check not in ("read", "partial", "unavailable", "not-checked"):
+    if source_check and source_check not in ("read", "partial", "unavailable", "not-checked", "manual"):
         errors.append(f"{feed_event_id}: invalid sourceCheckStatus {source_check!r}")
     if feed_record.get("status") == "verified":
         has_verified_period = bool((feed_record.get("eventPeriod") or {}).get("verified") and (feed_record.get("eventPeriod") or {}).get("startDate"))
