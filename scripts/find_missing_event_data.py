@@ -74,6 +74,32 @@ def route_scan(event, ri, route):
                 "field":"cutoffCandidate","oldValue":None,"newValue":hits[:5],"sourceUrl":final_url,
                 "evidence":"Texttreffer auf der hinterlegten Veranstalter-/Streckenseite. Kein automatischer Zahlenimport; Zuordnung und Bedeutung manuell prüfen.",
                 "checkedAt":NOW,"requiresOwnerApproval":True}})
+    # Candidate extraction for missing route date, start time and entry fee.
+    # Keep the original text fragment as evidence; never normalize or auto-apply it.
+    def contexts(pattern, limit=4):
+        found=[]
+        for match in re.finditer(pattern, plain, re.I):
+            left=max(0,match.start()-100); right=min(len(plain),match.end()+140)
+            snippet=plain[left:right].strip()
+            if snippet and snippet not in found: found.append(snippet)
+            if len(found)>=limit: break
+        return found
+    candidate_fields = [
+        ("date", not route.get("date"), r"\b(?:\d{1,2}[./]\d{1,2}[./](?:20)?\d{2}|\d{1,2}\.\s*(?:jan(?:uar)?|feb(?:ruar)?|märz|mar(?:ch)?|apr(?:il)?|mai|may|jun(?:i|e)?|jul(?:i|y)?|aug(?:ust)?|sep(?:tember)?|okt(?:ober)?|oct(?:ober)?|nov(?:ember)?|dez(?:ember)?|dec(?:ember)?)(?:\s+20\d{2})?)\b"),
+        ("starttime", not route.get("starttime"), r"\b(?:startzeit|start time|startschuss|wave start|mass start|start)\b[^.!?]{0,100}\b\d{1,2}[:.]\d{2}\s*(?:uhr|am|pm)?"),
+        ("raceCost", route.get("raceCost") in (None, "", 0), r"\b(?:startgeld|nenngeld|teilnahmegebühr|entry fee|registration fee|race fee|registration|early bird)\b[^.!?]{0,120}(?:\d{2,4}(?:[.,]\d{1,2})?\s?(?:€|eur|chf|usd|\$)|(?:€|eur|chf|usd|\$)\s?\d{2,4}(?:[.,]\d{1,2})?)")
+    ]
+    for field, missing, pattern in candidate_fields:
+        if not missing: continue
+        snippets=contexts(pattern)
+        if not snippets: continue
+        props.append({"proposal_type":"data_correction",
+          "title":f"{field}-Angabe prüfen: {event.get('name')} · {route.get('name') or route.get('route') or ri}",
+          "payload":{"source":"automated_event_data_finder","eventId":event.get("id"),"eventName":event.get("name"),
+            "routeId":route.get("id"),"routeIndex":ri,"field":field+"Candidate","oldValue":route.get(field),
+            "newValue":snippets,"sourceUrl":final_url,
+            "evidence":"Textkandidat von der hinterlegten Veranstalter-/Streckenseite. Originalkontext bleibt erhalten; Jahr, Strecke, Preisstaffel und Gültigkeit müssen manuell geprüft werden.",
+            "checkedAt":NOW,"requiresOwnerApproval":True}})
     return props
 
 proposals=[]
