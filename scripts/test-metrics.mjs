@@ -346,10 +346,7 @@ assert.ok(raceTools.includes("].join(' | ')).join('\\n')"), "Saved aid stations 
 assert.ok(html.includes("function saveRacePlanData(id,ri,patch)") && html.includes("localStorage.setItem('trailEventDataEdits',raw)") && html.includes("queuePlannerCloudSave()"), "Race plan edits must persist locally and queue cloud synchronization");
 
 
-const eventArrayStart = html.indexOf("const EVENTS=") + "const EVENTS=".length;
-const eventArrayEnd = html.indexOf("];", eventArrayStart) + 1;
-assert.ok(eventArrayStart >= "const EVENTS=".length && eventArrayEnd > eventArrayStart, "Event data must remain parseable");
-const eventData = JSON.parse(html.slice(eventArrayStart, eventArrayEnd));
+const eventData = appEvents;
 const boraEvent = eventData.find(event => event.name === "La Corsa della Bora");
 assert.ok(boraEvent, "La Corsa della Bora event must exist");
 const boraRoute = id => boraEvent.routes.find(route => route.id === id);
