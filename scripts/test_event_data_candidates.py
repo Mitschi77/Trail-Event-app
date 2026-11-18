@@ -18,8 +18,10 @@ class CandidateExtractionTests(unittest.TestCase):
         self.assertFalse(extract_contexts("Hotel: 120 € pro Nacht", CANDIDATE_PATTERNS["raceCost"]))
 
     def test_context_is_original_text_and_limited(self):
-        text = "Startgeld 50 €. Startgeld 60 €. Startgeld 70 €."
-        self.assertEqual(len(extract_contexts(text, CANDIDATE_PATTERNS["raceCost"], limit=2)), 2)
+        text = "Startgeld 50 €. " + ("x" * 300) + "Startgeld 60 €. " + ("y" * 300) + "Startgeld 70 €."
+        snippets = extract_contexts(text, CANDIDATE_PATTERNS["raceCost"], limit=2)
+        self.assertEqual(len(snippets), 2)
+        self.assertTrue(all("Startgeld" in snippet for snippet in snippets))
 
     def test_zero_entry_fee_is_not_missing(self):
         self.assertFalse(missing_candidate_fields({"raceCost": 0})["raceCost"])
