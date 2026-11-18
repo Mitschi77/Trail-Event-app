@@ -57,16 +57,8 @@ Deno.serve(async (req: Request) => {
     if (!allowed) return json({ error: "Zu viele Benachrichtigungen. Bitte in zehn Minuten erneut versuchen." }, 429);
   }
 
-  const { data: claimed, error: claimError } = await admin
-    .from("event_change_proposals")
-    .update({ push_notified_at: new Date().toISOString() })
-    .eq("id", proposal.id)
-    .is("push_notified_at", null)
-    .select("id")
-    .maybeSingle();
-  if (claimError) return json({ error: "Benachrichtigung konnte nicht reserviert werden." }, 500);
-  if (!claimed) return json({ sent: 0, duplicate: true });
-
+  // Validate delivery prerequisites before claiming the proposal. A missing VAPID
+  // config or subscription must not permanently suppress a later retry.
   const { data: config, error: configError } = await admin.rpc("get_trail_push_vapid_config");
   if (configError || !config?.private_key || !config?.subject) return json({ error: "VAPID-Konfiguration im Vault nicht verfügbar." }, 503);
   webpush.setVapidDetails(config.subject, VAPID_PUBLIC_KEY, config.private_key);
@@ -76,6 +68,17 @@ Deno.serve(async (req: Request) => {
     .select("id, endpoint, p256dh, auth_secret")
     .eq("user_id", OWNER_ID);
   if (error) return json({ error: "Abonnements konnten nicht geladen werden." }, 500);
+  if (!subscriptions?.length) return json({ sent: 0, removed: 0, failed: 0, noSubscriptions: true }, 503);
+
+  const { data: claimed, error: claimError } = await admin
+    .from("event_change_proposals")
+    .update({ push_notified_at: new Date().toISOString() })
+    .eq("id", proposal.id)
+    .is("push_notified_at", null)
+    .select("id")
+    .maybeSingle();
+  if (claimError) return json({ error: "Benachrichtigung konnte nicht reserviert werden." }, 500);
+  if (!claimed) return json({ sent: 0, duplicate: true });
 
   const payload = JSON.stringify({
     title: "Neuer Änderungsvorschlag",
@@ -95,6 +98,14 @@ Deno.serve(async (req: Request) => {
         removed++;
       } else failed++;
     }
+  }
+  if (sent === 0) {
+    // Keep failed deliveries retryable; successful or partially successful batches stay claimed.
+    const { error: releaseError } = await admin
+      .from("event_change_proposals")
+      .update({ push_notified_at: null })
+      .eq("id", proposal.id);
+    if (releaseError) console.error("Could not release failed push claim", releaseError);
   }
   return json({ sent, removed, failed });
 });
