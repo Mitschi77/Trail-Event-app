@@ -32,7 +32,7 @@ assert.ok(seasonTools.includes("function load()"), "Weekly training load must us
 assert.ok(seasonTools.includes("function panel()"), "Weekly training goal dashboard must exist");
 assert.ok(seasonTools.includes("seasonPriorities[STORE]=next"), "Training goals must persist with season priorities");
 assert.ok(seasonTools.includes("v.current.km") && seasonTools.includes("v.previous.km"), "Training load must compare current and previous weeks");
-assert.ok(serviceWorker.includes("./season-tools.js") && serviceWorker.includes("trail-event-planner-v23"), "Offline app shell must cache season tools");
+assert.ok(serviceWorker.includes("./season-tools.js") && /const CACHE_NAME = 'trail-event-planner-v\d+'/.test(serviceWorker), "Offline app shell must cache season tools and use a versioned cache");
 
 assert.ok(html.includes("function localStorageBytes(replacementKey,replacementValue)"), "Local storage size guard must exist");
 assert.ok(html.includes("async function refreshStorageHealth()"), "Storage usage and persistence status must be visible");
