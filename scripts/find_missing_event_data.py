@@ -37,8 +37,9 @@ def parse_gpx(data):
     gain=sum(max(0,b-a) for a,b in zip(elevations,elevations[1:])) if len(elevations)>1 else None
     return {"km":round(distance,2),"hm":round(gain) if gain is not None else None,"trackPoints":len(pts),"hasElevation":gain is not None}
 def route_scan(event, ri, route):
-    source=route.get("web") or route.get("profileUrl") or route.get("cutoffUrl") or event.get("web")
-    if not isinstance(source,str) or urlparse(source).scheme not in ("http","https"): return []
+    candidates=[route.get("web"),route.get("profileUrl"),route.get("cutoffUrl"),event.get("web")]
+    source=next((u for u in candidates if isinstance(u,str) and urlparse(u).scheme in ("http","https")),None)
+    if not source: return []
     try: raw, final_url, ctype=fetch(source)
     except Exception as e: return []
     page=raw.decode("utf-8","replace")
@@ -59,7 +60,7 @@ def route_scan(event, ri, route):
             metrics=parse_gpx(data)
             if not metrics: continue
             props.append({"proposal_type":"data_correction","title":f"GPX-Daten prüfen: {event.get('name')} · {route.get('name') or route.get('route') or ri}",
-              "payload":{"source":"automated_event_data_finder","eventId":event.get("id"),"eventName":event.get("name"),"routeId":route.get("id"),"routeIndex":ri,
+              "payload":{"source":"automated_event_data_finder","eventId":event.get("id"),"eventName":event.get("name"),"routeId":str(route.get("id") or ri),"routeIndex":ri,
                 "field":"gpxMetrics","oldValue":{"km":route.get("km"),"hm":route.get("hm")},"newValue":metrics,"sourceUrl":actual,
                 "evidence":"Öffentlich erreichbare GPX-Datei von der verknüpften Strecken-/Veranstalterseite; Werte lokal aus Trackpunkten berechnet.",
                 "checkedAt":NOW,"requiresOwnerApproval":True}})
