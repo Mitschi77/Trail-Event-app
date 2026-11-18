@@ -41,6 +41,7 @@ const concurrentEditMerge = mergeCloudSnapshots(
 )({}, { plannerTestKey: "changed remotely" });
 assert.deepEqual(concurrentEditMerge.conflicts, ["plannerTestKey"], "A local deletion must not overwrite a concurrent remote edit");
 assert.ok(html.includes('"id":"110-tausend-111-4074","raceCost":"215,00 € (inkl. 25 % MwSt.)","paidCost":"296,44 €","paidCostDate":"2026-07-05","paidCostStatus":"Bezahlt"'), "Istria 2027 paid entry cost must remain recorded with its receipt total");
+assert.ok(html.includes('"paidCostDetails":"Startgeld 215,00 € inkl. MwSt.; Sportograf-Fotos 33,52 €; Bus-Transfer 18,75 € inkl. MwSt.; Servicegebühren inkl. Steuer 29,17 €"'), "Istria 2027 receipt breakdown must remain recorded");
 assert.ok(html.includes("function collectLocalPlannerData(){const data={};CLOUD_KEYS.forEach"), "Backup and cloud snapshots must collect every registered local data key");
 assert.ok(html.includes("function seasonSave()"), "Season priorities must have a dedicated persistence function");
 assert.ok(raceTools.includes("function strategy(id,ri,r)"), "Per-race strategy planner must exist");
