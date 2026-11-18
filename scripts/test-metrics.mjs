@@ -322,4 +322,27 @@ assert.ok(raceTools.includes("stationText.trim().split(/\\r?\\n/)"), "Aid-statio
 assert.ok(raceTools.includes("].join(' | ')).join('\\n')"), "Saved aid stations must be joined with real line breaks");
 assert.ok(html.includes("function saveRacePlanData(id,ri,patch)") && html.includes("localStorage.setItem('trailEventDataEdits',raw)") && html.includes("queuePlannerCloudSave()"), "Race plan edits must persist locally and queue cloud synchronization");
 
+
+const eventArrayStart = html.indexOf("const EVENTS=") + "const EVENTS=".length;
+const eventArrayEnd = html.indexOf("];", eventArrayStart) + 1;
+assert.ok(eventArrayStart >= "const EVENTS=".length && eventArrayEnd > eventArrayStart, "Event data must remain parseable");
+const eventData = JSON.parse(html.slice(eventArrayStart, eventArrayEnd));
+const boraEvent = eventData.find(event => event.name === "La Corsa della Bora");
+assert.ok(boraEvent, "La Corsa della Bora event must exist");
+const boraRoute = id => boraEvent.routes.find(route => route.id === id);
+const expectedBoraStations = {
+  "bora-ultra-105-3837": [["Bagnoli",13.2],["Basovizza",25.6],["Obelisk",35.3],["Contovello",46.7],["PortoPiccolo — Basislager",61.2],["Medeazza",71],["Sela na Krasu",88.6],["San Pelagio",101.7],["Santa Croce",107.4]],
+  "transkarst-ultra-59-1814": [["Medeazza",9.8],["Sela na Krasu",27.4],["San Pelagio",40.6],["Santa Croce",46.2]],
+  "trieste-ultra-61-2-2323": [["Bagnoli",13.2],["Basovizza",25.6],["Obelisk",35.3],["Contovello",46.7]],
+  "explorer-85-2993": [["Medeazza",9.8],["San Pelagio",21.4],["Santa Croce",27]],
+  "half-trail-23-3-700": [["Duino",5.5],["Medeazza",10.1],["Visogliano",19.6]]
+};
+for (const [id, expected] of Object.entries(expectedBoraStations)) {
+  const route = boraRoute(id);
+  assert.ok(route, "Every Corsa della Bora route must remain present: " + id);
+  assert.deepEqual(route.aidStations.map(station => [station.name,station.km]), expected, "Official aid-station positions must match the organizer's 2027 route page: " + id);
+  assert.ok(route.aidStationsSource && route.aidStations.every(station => station.verified && station.source === route.aidStationsSource), "Every imported aid station must retain its official source and verified status: " + id);
+  assert.ok(route.aidStations.every(station => station.km >= 0 && station.km <= Number(route.km)), "Aid stations must be inside their route distance: " + id);
+}
+
 console.log("Validated race priorities, training phases and actual-race recovery.");
