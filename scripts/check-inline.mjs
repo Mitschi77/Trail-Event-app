@@ -25,7 +25,16 @@ for (const [index, source] of inlineScripts.entries()) {
   }
 }
 
-for (const required of ["parseGpx", "persistGpxData", "connectPlannerCloud"]) {
+for (const required of [
+  "parseGpx",
+  "persistGpxData",
+  "connectPlannerCloud",
+  'id="reviewTabButton"',
+  'id="reviewTab"',
+  "async function renderReviewQueue()",
+  "if(name==='review')renderReviewQueue()",
+  "function updateReviewAccess()",
+]) {
   if (!html.includes(required)) throw new Error("Required app feature is missing: " + required);
 }
 
