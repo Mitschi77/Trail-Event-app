@@ -192,15 +192,17 @@ for event in events:
             event_period = {"startDate": start_date, "endDate": end_date, "verified": True}
 
     route_dates = {}
+    route_fallback_dates = {}
     conflicting_routes = set()
     for url, route_list in route_sources.items():
         records = pages[url]
         for route_index, route in route_list:
             route_name = str(route.get("route") or route.get("name") or "").strip().casefold()
-            matches = {record["start"] for record in records if route_name and record["name"] == route_name and record["start"] and record["start"] >= today}
+            matches = {record["start"] for record in records if route_name and record["name"] == route_name and record["start"] and record["start"] >= today and record["start"].startswith("2027-")}
+            fallback_matches = {record["start"] for record in records if route_name and record["name"] == route_name and record["start"] and record["start"].startswith("2026-")}
+            route_key = str(route_index)
             if len(matches) == 1:
                 date = next(iter(matches))
-                route_key = str(route_index)
                 existing = route_dates.get(route_key)
                 if route_key in conflicting_routes:
                     continue
@@ -209,6 +211,8 @@ for event in events:
                 else:
                     route_dates.pop(route_key, None)
                     conflicting_routes.add(route_key)
+            elif not matches and len(fallback_matches) == 1 and route_key not in conflicting_routes:
+                route_fallback_dates[route_key] = next(iter(fallback_matches))
 
     route_entries = {}
     for route_index, date in route_dates.items():
@@ -225,7 +229,7 @@ for event in events:
         key = str(route_index)
         if key in route_entries:
             continue
-        previous_edition_date = str(route.get("date") or "")
+        previous_edition_date = route_fallback_dates.get(key) or str(route.get("date") or "")
         if re.fullmatch(r"2026-\d{2}-\d{2}", previous_edition_date):
             route_entries[key] = {
                 "routeId": route["id"],
