@@ -11,6 +11,8 @@ assert.ok(serviceWorker.includes("cache.put(cacheKey, copy)") && serviceWorker.i
 
 assert.ok(html.includes("'trailRacePriorities'"), "Season priorities must be included in private backups and cloud snapshots");
 assert.ok(html.includes('"id":"mozart-100-84-4800","raceCost":"208,20 € (Startgeld inkl. 20 % USt.; ohne Zusatzleistungen und Servicegebühren)","paidCost":"248,18 €","paidCostDate":"2026-07-15","paidCostStatus":"Bezahlt"'), "Mozart 2027 paid entry cost must match the UTMB payment receipt");
+assert.ok(html.includes("Storage.prototype.removeItem=function(key)"), "Removing a planner data key must trigger cloud synchronization");
+assert.ok(html.includes("Storage.prototype.clear=function()") && html.includes("hadPlannerData"), "Clearing local planner data must trigger cloud synchronization");
 assert.ok(html.includes('"id":"110-tausend-111-4074","raceCost":"215,00 € (inkl. 25 % MwSt.)","paidCost":"296,44 €","paidCostDate":"2026-07-05","paidCostStatus":"Bezahlt"'), "Istria 2027 paid entry cost must remain recorded with its receipt total");
 assert.ok(html.includes("function collectLocalPlannerData(){const data={};CLOUD_KEYS.forEach"), "Backup and cloud snapshots must collect every registered local data key");
 assert.ok(html.includes("function seasonSave()"), "Season priorities must have a dedicated persistence function");
