@@ -1,29 +1,8 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-<defs>
- <linearGradient id="sky" x2="0" y2="1"><stop stop-color="#f6a45e"/><stop offset=".48" stop-color="#496a79"/><stop offset="1" stop-color="#152b2b"/></linearGradient>
- <linearGradient id="trail" x2="0" y2="1"><stop stop-color="#e9efdb"/><stop offset="1" stop-color="#d9f36a"/></linearGradient>
- <clipPath id="round"><rect width="512" height="512" rx="112"/></clipPath>
-</defs>
-<g clip-path="url(#round)">
- <rect width="512" height="512" fill="url(#sky)"/>
- <circle cx="92" cy="154" r="49" fill="#ffd18a" opacity=".9"/>
- <path d="m-25 327 112-139 52 63 95-136 80 107 57-68 166 190v190H-25Z" fill="#526c70"/>
- <path d="m139 251 95-136 48 65-31-13-20 25-20-10-23 32-22-6-17 26Z M314 222l57-68 49 56-28-8-19 17-21-9-17 20Z" fill="#f5f1df"/>
- <path d="m-20 370 140-119 75 64 104-111 82 92 70-54 92 93v197H-20Z" fill="#294a43"/>
- <path d="M-20 512c82-87 141-125 211-111 42 8 65 42 105 37 56-8 92-62 236-31v105Z" fill="#142c28"/>
- <path d="M-15 512c80-50 134-90 194-91 56-1 80 30 122 24 48-7 88-49 226-35" fill="none" stroke="url(#trail)" stroke-width="20" stroke-linecap="round"/>
- <path d="M-8 512c88-48 139-72 195-70 38 1 65 17 100 13" fill="none" stroke="#f7f4e8" stroke-width="4" opacity=".75"/>
- <!-- trail runner silhouette -->
- <circle cx="206" cy="217" r="18" fill="#101d20"/>
- <path d="m193 239 29 8 18 48-18 10-19-37-14 38-18-6 14-49Z" fill="#101d20"/>
- <path d="m207 249-37 22-23 36-13-9 19-47 42-34Z" fill="#101d20"/>
- <path d="m224 252 34 20 23 31-13 10-29-23-32-16Z" fill="#101d20"/>
- <path d="m199 303-23 48-39 29-11-13 31-36 17-45Z M225 305l24 44 36 22-9 15-47-20-27-46Z" fill="#101d20"/>
- <path d="m157 373-29 7-10-8 9-12 30-12 12 10Z M278 373l28 7 5 11-13 7-32-10-5-9Z" fill="#101d20"/>
- <path d="m178 251 37 8-9 33-35-8Z" fill="#d94b3d"/>
- <path d="M360 346h70" stroke="#fff" stroke-width="7" stroke-linecap="round"/>
- <path d="M360 361h70" stroke="#d94b3d" stroke-width="13" stroke-linecap="round"/>
- <text x="256" y="425" text-anchor="middle" fill="#fff" font-family="Arial,sans-serif" font-size="49" font-weight="900" letter-spacing="2">TRAIL</text>
- <path d="M116 440h280" stroke="#d94b3d" stroke-width="8" stroke-linecap="round"/>
- <text x="256" y="475" text-anchor="middle" fill="#f3f2e8" font-family="Arial,sans-serif" font-size="22" font-weight="700" letter-spacing="8">EVENTS</text>
-</g></svg>
+<defs><linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#202a3a"/><stop offset="1" stop-color="#0b1019"/></linearGradient><linearGradient id="peak" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#fff"/><stop offset="1" stop-color="#9ca8b8"/></linearGradient></defs>
+<rect width="512" height="512" rx="112" fill="url(#bg)"/>
+<path d="M58 287 180 132l54 65 78-103 143 193" fill="none" stroke="url(#peak)" stroke-width="19" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M88 361c82-34 130-68 195-81 50-10 91-2 145-23" fill="none" stroke="#a9ef27" stroke-width="13" stroke-linecap="round"/>
+<g fill="#f7f9fc"><circle cx="248" cy="190" r="18"/><path d="m231 214 32 8 18 45-18 10-19-31-16 38-18-7 17-47z"/><path d="m240 222-36 17-23 32-13-9 18-42 40-24z"/><path d="m262 223 31 17 25 29-13 11-29-22-29-15z"/><path d="m225 276-22 43-34 26-11-13 27-34 17-34z M255 278l22 39 33 24-9 15-43-21-20-41z"/></g>
+<path d="M70 404h372" stroke="#a9ef27" stroke-width="8" stroke-linecap="round"/>
+</svg>
