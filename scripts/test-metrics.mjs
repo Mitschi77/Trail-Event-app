@@ -52,6 +52,11 @@ assert.ok(html.includes("\"id\":\"ugp-51-2500\",\"raceCost\":\"95 € (50K-Tarif
 assert.ok(html.includes("\"id\":\"ultra-trail-des-chevaliers-156-5100\",\"raceCost\":\"275–305 € (UTDC 100M, dynamischer Tarif laut UTMB)\""), "ultra-trail-des-chevaliers-156-5100 2027 official fee must remain recorded");
 assert.ok(html.includes("\"id\":\"trail-des-celtes-47-1600\",\"raceCost\":\"140–170 € (TDC 50K, dynamischer Tarif laut UTMB; 5 % FFA-Rabatt möglich)\""), "trail-des-celtes-47-1600 2027 official fee must remain recorded");
 assert.ok(html.includes("\"id\":\"ultra-105k-105-6800\",\"raceCost\":\"315,10 € (aktueller UTMB-Tarif 2027; inklusive Bearbeitungsgebühr und MwSt.)\""), "ultra-105k-105-6800 2027 official fee must remain recorded");
+assert.ok(html.includes("\"id\":\"120k-120-5800\",\"raceCost\":\"320,31 €\""), "120k-120-5800 official 2027 fee must remain recorded");
+assert.ok(html.includes("\"id\":\"80k-80-4600\",\"raceCost\":\"224,49 €\""), "80k-80-4600 official 2027 fee must remain recorded");
+assert.ok(html.includes("\"id\":\"50k-50-2800\",\"raceCost\":\"173,84 €\""), "50k-50-2800 official 2027 fee must remain recorded");
+assert.ok(html.includes("\"id\":\"lavaredo-20k-20-1000\",\"raceCost\":\"83,50 €\""), "lavaredo-20k-20-1000 official 2027 fee must remain recorded");
+assert.ok(html.includes("\"id\":\"lavaredo-10k-10-300\",\"raceCost\":\"39,70 €\""), "lavaredo-10k-10-300 official 2027 fee must remain recorded");
 assert.ok(html.includes("function collectLocalPlannerData(){const data={};CLOUD_KEYS.forEach"), "Backup and cloud snapshots must collect every registered local data key");
 assert.ok(html.includes("function seasonSave()"), "Season priorities must have a dedicated persistence function");
 assert.ok(raceTools.includes("function strategy(id,ri,r)"), "Per-race strategy planner must exist");
