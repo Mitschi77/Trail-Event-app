@@ -388,7 +388,7 @@ button,.primary,.secondary,.tab-button,.link{touch-action:manipulation}
 #events .route.route-done .star-btn.active{color:#ffd15c!important}
 </style>
 
-<style id="trail-design-system-v1">
+<style id="trail-design-system-final">
 /* Einheitliches Alpine-Trail-Designsystem – zentrale Tokens und Grundelemente */
 :root{
   color-scheme:dark;
@@ -457,9 +457,7 @@ body{
 @media(prefers-reduced-motion:reduce){
   :where(.primary,.secondary,.tab-button,.more-nav-item){transition:none}
 }
-</style>
 
-<style id="trail-event-cards-v1">
 /* Punkt 2: Eventübersicht – klare Kartenhierarchie und kompakte Metadaten */
 #events{display:grid;gap:12px}
 #events .event{
@@ -608,9 +606,7 @@ body{
   #events .date{min-width:0;width:100%;padding:7px 5px;font-size:11px}
   #events .detail{padding:11px}
 }
-</style>
 
-<style id="trail-year-overview-v1">
 /* Punkt 3: Jahresübersicht – Saisonblöcke, Rennkarten und Kennzahlen */
 #yearOverview{display:grid;gap:16px}
 #yearOverview .year-group{
@@ -748,9 +744,7 @@ body{
   #yearOverview .year-race-status{grid-template-columns:1fr;gap:5px}
   #yearOverview .year-totals{padding:10px;font-size:11px}
 }
-</style>
 
-<style id="trail-route-details-v1">
 /* Punkt 4: Streckendetails – Kennzahlen, Datenqualität und Streckenressourcen */
 #events .route{
   display:grid;
@@ -907,9 +901,7 @@ body{
   #events .route .routefoot button{width:100%}
   #events .route .route-info-panel{padding:10px}
 }
-</style>
 
-<style id="trail-navigation-v1">
 /* Punkt 5: Navigation – klarer aktiver Bereich und konsistente Menüs */
 .tabbar{
   position:sticky;
@@ -1035,7 +1027,64 @@ body{
   .more-nav-menu{right:0;min-width:min(230px,calc(100vw - 28px))}
   .app-menu-dropdown{position:fixed;top:74px;right:12px;left:auto;width:min(340px,calc(100vw - 24px));max-height:calc(100dvh - 92px);z-index:140}
 }
+
+/* Zentrale Designregeln – konsolidierte Komponenten- und Kontrastschicht */
+:root{
+  --success:#9bd8aa;
+  --success-bg:#1c3827;
+  --warning:#f0d58c;
+  --warning-bg:#342d1c;
+  --danger:#ffaaa1;
+  --danger-bg:#3b2421;
+  --focus:var(--lime);
+}
+:where(.primary){
+  min-height:44px;
+  padding:10px 14px;
+  border:1px solid #7fba91;
+  border-radius:10px;
+  background:#397a55;
+  color:#fff;
+  font-weight:750;
+  box-shadow:0 3px 10px #00000020;
+}
+:where(.primary:hover){background:#468b63}
+:where(.secondary){
+  min-height:40px;
+  padding:8px 11px;
+  border:1px solid var(--line);
+  border-radius:10px;
+  background:var(--surface);
+  color:var(--ink);
+  font-weight:650;
+}
+:where(.link){color:#bce6c7;border-color:#496552}
+:where(.planner-status,[role="status"],[aria-live="polite"]){overflow-wrap:anywhere}
+.planner-status{border:1px solid var(--line);background:var(--surface);color:var(--ink)}
+.planner-review-warning{color:var(--warning)}
+.planner-review-ok{color:var(--success)}
+:where(.route-data-status.complete,.integration-dot.active){color:var(--success)}
+:where(.year-profile-empty,.gpx-map-status,.equipment-source-note){color:var(--muted)}
+:where(.field,select,input,textarea):disabled{opacity:.62;color:var(--muted)}
+:where(.primary,.secondary,.tab-button,.more-nav-item,.app-menu-button):active{transform:translateY(1px)}
+:where(button,a,input,select,textarea,[role="button"]):focus-visible{outline:3px solid var(--focus);outline-offset:2px}
+@media(max-width:700px){
+  :where(.primary,.secondary,.link,.year-detail-button){min-height:44px}
+  :where(input,select,textarea,.field){font-size:16px}
+}
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{scroll-behavior:auto!important;transition-duration:.01ms!important;animation-duration:.01ms!important;animation-iteration-count:1!important}
+}
+
 </style>
+
+
+
+
+
+
+
+
 
 <style id="trail-navigation-polish-v1">
 /* Punkt 5: Navigation – klare aktive Position und ruhiges Mehr-Menü */
