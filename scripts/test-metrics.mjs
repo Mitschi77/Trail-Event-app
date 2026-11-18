@@ -234,7 +234,9 @@ assert.ok(html.includes("seasonActualEnd(prev).getTime()+seasonRecoveryDays"), "
 assert.ok(html.includes("grobe Planungsheuristik"), "Recovery estimate must be clearly described as a heuristic");
 
 assert.ok(html.includes("const plannerRecoveryEnd=(event,routeIndex)=>"), "Multi-day races must expose a final-day recovery helper");
-assert.ok(html.includes("end=plannerRecoveryEnd(last,lastRi)"), "Next-race suggestions must start recovery after the event end");
+assert.ok(html.includes("end=last?plannerRecoveryEnd(last,lastRi):null"), "Next-race suggestions must start recovery after the selected or latest annual-plan event end");
+assert.ok(html.includes("function latestYearPlanRace()"), "Planner must use the latest dated race from the annual plan as its default basis");
+assert.ok(html.includes("eventSelect.dataset.manual==='1'"), "Planner must preserve an explicit manual event selection");
 assert.ok(html.includes("(b.date-a.recoveryEnd)/86400000"), "Season check must compare next start to previous event end");
 assert.ok(html.includes("selectedEnd&&nextDate&&nextDate<plusDays(selectedEnd,weeks*7)"), "Route selection must enforce recovery after multi-day events");
 assert.ok(html.includes("function exportPlannedCalendar()"), "Calendar export handler must exist");
