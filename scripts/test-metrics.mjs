@@ -16,6 +16,29 @@ assert.ok(html.includes('"date":"2027-01-23","web":null,"starttime":null,"regist
 assert.ok(html.includes('"route":"mozart Ultra","km":84'), "2027 Mozart route must use the verified event name");
 assert.ok(html.includes("Storage.prototype.removeItem=function(key)"), "Removing a planner data key must trigger cloud synchronization");
 assert.ok(html.includes("Storage.prototype.clear=function()") && html.includes("hadPlannerData"), "Clearing local planner data must trigger cloud synchronization");
+
+const cloudSignatureHelper = html.match(/function cloudSnapshotSignatures\\(data\\)\\{[^\\n]*\\}/);
+const cloudMergeHelper = html.match(/function mergeCloudSnapshots\\(local,remote\\)\\{[^\\n]*\\}/);
+assert.ok(cloudSignatureHelper && cloudMergeHelper, "Cloud snapshot merge helpers must remain testable");
+const cloudSignature = new Function(cloudSignatureHelper[0] + "; return cloudSnapshotSignatures;")();
+const mergeCloudSnapshots = new Function(
+  "CLOUD_KEYS",
+  "readCloudBaselineSignatures",
+  cloudSignatureHelper[0] + cloudMergeHelper[0] + "; return mergeCloudSnapshots;"
+);
+const unchangedCloudData = { plannerTestKey: "previous value" };
+const unchangedBaseline = cloudSignature(unchangedCloudData);
+const deletionMerge = mergeCloudSnapshots(
+  ["plannerTestKey"],
+  () => unchangedBaseline
+)({}, unchangedCloudData);
+assert.deepEqual(deletionMerge.snapshot, {}, "A local deletion must be retained when the cloud copy is unchanged");
+assert.equal(deletionMerge.remoteNeedsWrite, true, "A local deletion must be propagated to the cloud");
+const concurrentEditMerge = mergeCloudSnapshots(
+  ["plannerTestKey"],
+  () => unchangedBaseline
+)({}, { plannerTestKey: "changed remotely" });
+assert.deepEqual(concurrentEditMerge.conflicts, ["plannerTestKey"], "A local deletion must not overwrite a concurrent remote edit");
 assert.ok(html.includes('"id":"110-tausend-111-4074","raceCost":"215,00 € (inkl. 25 % MwSt.)","paidCost":"296,44 €","paidCostDate":"2026-07-05","paidCostStatus":"Bezahlt"'), "Istria 2027 paid entry cost must remain recorded with its receipt total");
 assert.ok(html.includes("function collectLocalPlannerData(){const data={};CLOUD_KEYS.forEach"), "Backup and cloud snapshots must collect every registered local data key");
 assert.ok(html.includes("function seasonSave()"), "Season priorities must have a dedicated persistence function");
