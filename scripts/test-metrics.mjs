@@ -365,4 +365,20 @@ for (const [id, expected] of Object.entries(expectedBoraStations)) {
   assert.ok(route.aidStations.every(station => station.km >= 0 && station.km <= Number(route.km)), "Aid stations must be inside their route distance: " + id);
 }
 
+
+const transgrancanaria = appEvents.find(event => event.name === "Transgrancanaria");
+assert.ok(transgrancanaria, "Transgrancanaria event must exist");
+const tgcRoute = id => transgrancanaria.routes.find(route => route.id === id);
+const expectedTgcStations = {
+  "classic-125km-125-6764": [["Tenoya",10.7],["Arucas (Barreto)",19.3],["Teror",31.6],["Moya (Fontanales)",43.1],["El Hornillo",52.7],["Artenara",66.8],["Tejeda",79.2],["El Garañón Lodge – Vivac Aventura",90.8],["Tunte",98.4],["Ayagaures",112]],
+  "advanced-81km-81-4314": [["Moya (Fontanales)",12.2],["Artenara",22.4],["Tejeda",34.8],["El Garañón – Vivac Aventura",46.4],["Tunte",55.3],["Ayagaures",66.9]]
+};
+for (const [id, expected] of Object.entries(expectedTgcStations)) {
+  const route = tgcRoute(id);
+  assert.ok(route, "Every Transgrancanaria route must remain present: " + id);
+  assert.deepEqual(route.aidStations.map(station => [station.name,station.km]), expected, "Official Transgrancanaria aid-station positions must match the organizer's 2027 route page: " + id);
+  assert.ok(route.aidStationsSource && route.aidStations.every(station => station.verified && station.source === route.aidStationsSource), "Every Transgrancanaria station must retain its official source and verified status: " + id);
+  assert.ok(route.aidStations.every(station => station.km >= 0 && station.km <= Number(route.km)), "Transgrancanaria stations must be inside the route distance: " + id);
+}
+
 console.log("Validated race priorities, training phases and actual-race recovery.");
