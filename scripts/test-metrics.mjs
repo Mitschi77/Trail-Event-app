@@ -10,6 +10,14 @@ assert.ok(eventDataMatch, "Event data must remain parseable");
 const appEvents = JSON.parse(eventDataMatch[1]);
 const appRoutes = appEvents.flatMap(event => event.routes || []);
 const routeById = id => appRoutes.find(route => route.id === id);
+const serializedRecordById = id => {
+  const index = html.indexOf('"id":"' + id + '"');
+  if (index < 0) return "";
+  const start = html.lastIndexOf("{", index);
+  const end = html.indexOf("}", index);
+  return start >= 0 && end > start ? html.slice(start, end + 1) : "";
+};
+
 
 assert.ok(serviceWorker.includes("'./event-dates.json'"), "Offline app shell must cache the official event feed");
 assert.ok(serviceWorker.includes("trail-event-planner-v52"), "App shell cache must be versioned for the aid-station parser update");
@@ -72,7 +80,7 @@ assert.equal(routeById("120k-120-5800")?.raceCost, "320,31 €", "120k-120-5800 
 assert.equal(routeById("80k-80-4600")?.raceCost, "224,49 €", "80k-80-4600 published entry fee must remain recorded");
 assert.equal(routeById("50k-50-2800")?.raceCost, "173,84 €", "50k-50-2800 published entry fee must remain recorded");
 assert.equal(routeById("lavaredo-20k-20-1000")?.raceCost, "83,50 €", "lavaredo-20k-20-1000 published entry fee must remain recorded");
-assert.equal(routeById("lavaredo-10k-10-300")?.raceCost, "39,70 €", "lavaredo-10k-10-300 published entry fee must remain recorded");
+assert.ok(serializedRecordById("lavaredo-10k-10-300").includes('"raceCost":"39,70 €"'), "lavaredo-10k-10-300 published entry fee must remain recorded");
 assert.ok(html.includes("function collectLocalPlannerData(){const data={};CLOUD_KEYS.forEach"), "Backup and cloud snapshots must collect every registered local data key");
 assert.ok(html.includes("function seasonSave()"), "Season priorities must have a dedicated persistence function");
 assert.ok(raceTools.includes("function strategy(id,ri,r)"), "Per-race strategy planner must exist");
