@@ -397,4 +397,20 @@ for (const [id, expected] of Object.entries(donautrailExpected)) {
   assert.ok(route.aidStations.every(station => station.km >= 0 && station.km <= Number(route.km)), "Donautrail stations must be within each route distance: " + id);
 }
 
+
+const transvulcania = appEvents.find(event => event.name === "Transvulcania adidas");
+assert.ok(transvulcania, "Transvulcania event must exist");
+const transvulcaniaExpected = {
+  "ultramarathon-73-06-4350": [["Los Canarios",7.4],["Las Deseadas",17],["El Pilar",24.8],["El Reventón",31.53],["Pico de la Cruz",46.5],["Roque de Los Muchachos",50.7],["Torre de El Time",60.7],["Puerto de Tazacorte",68]],
+  "transvulcania-marathon-43-2-1884": [["El Reventón",6.8],["Pico de la Cruz",21.7],["Roque de Los Muchachos",25.9],["Torre de El Time",35.9]],
+  "transvulcania-half-24-8-2097": [["Los Canarios",7.4],["Las Deseadas",17]]
+};
+for (const [id, expected] of Object.entries(transvulcaniaExpected)) {
+  const route = transvulcania.routes.find(item => item.id === id);
+  assert.ok(route, "Every Transvulcania route must remain present: " + id);
+  assert.deepEqual(route.aidStations.map(station => [station.name,station.km]), expected, "Transvulcania aid-station positions must match the organizer's 2027 route pages: " + id);
+  assert.ok(route.aidStationsSource && route.aidStations.every(station => station.verified && station.source === route.aidStationsSource), "Transvulcania stations must retain their official source and verified status: " + id);
+  assert.ok(route.aidStations.every(station => station.km >= 0 && station.km <= Number(route.km)), "Transvulcania stations must be inside each route distance: " + id);
+}
+
 console.log("Validated race priorities, training phases and actual-race recovery.");
