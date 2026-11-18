@@ -114,7 +114,7 @@ for event in events:
     valid_route_ids = {route.get("id") for route in event.get("routes", [])}
     previous_routes = {
         key: value for key, value in (previous.get("routes") or {}).items()
-        if value.get("routeId") in valid_route_ids and value.get("date") and (value.get("fallback") or value["date"] >= today)
+        if value.get("routeId") in valid_route_ids and value.get("date")
     }
     previous["routes"] = previous_routes
     previous_period = previous.get("eventPeriod")
@@ -127,6 +127,8 @@ for event in events:
 # Manually checked official event pages. Keep these verified periods even when a
 # page does not expose machine-readable schema.org Event data.
 MANUAL_EVENT_PERIODS = {
+    "tenerife-bluetrail-by-utmb": ("2027-04-08", "2027-04-10", "https://tenerife.utmb.world/", {"0": "2027-04-09", "1": "2027-04-10", "2": "2027-04-09", "3": "2027-04-10", "4": "2027-04-10"}),
+    "chianti-ultra-trail": ("2027-03-18", "2027-03-21", "https://chianti.utmb.world/", {"0": "2027-03-20", "1": "2027-03-20"}),
     "paris-marathon": ("2027-04-04", "2027-04-04", "https://www.asicsmarathondeparis.com/en/rules-of-the-asics-marathon-de-paris", {"0": "2027-04-04"}),
     "wien-marathon": ("2027-04-18", "2027-04-18", "https://www2.vienna-marathon.com/?go=marathon&lang=de", {"0": "2027-04-18"}),
     "hamburg-marathon": ("2027-04-25", "2027-04-25", "https://haspa-marathon-hamburg.de/teilnehmerinfos-marathon/", {"0": "2027-04-25"}),
