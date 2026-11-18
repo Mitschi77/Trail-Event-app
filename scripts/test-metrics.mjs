@@ -467,3 +467,6 @@ assert.deepEqual(validatePlannerSnapshot({plannerKey: JSON.stringify({ok:true})}
 assert.throws(() => validatePlannerSnapshot({unknownKey: "{}"}), /Unbekannter oder ungültiger Datenbereich/);
 assert.throws(() => validatePlannerSnapshot({plannerKey: "{"}), /Beschädigte Daten/);
 assert.notDeepEqual(cloudSignature({plannerKey:"old"}), cloudSignature({plannerKey:"new"}), "Backup integrity signatures must change when stored data changes");
+
+assert.ok(html.includes("id=\"testReviewNotifications\"") && html.includes("send-owner-test-push"), "Owner review panel must offer a real server-side push test");
+assert.ok(html.includes("Push auf diesem Gerät einrichten") && html.includes("Test-Push senden"), "Push setup and delivery test must be separate actions");
