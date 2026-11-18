@@ -37,8 +37,9 @@ def parse_gpx(data):
     gain=sum(max(0,b-a) for a,b in zip(elevations,elevations[1:])) if len(elevations)>1 else None
     return {"km":round(distance,2),"hm":round(gain) if gain is not None else None,"trackPoints":len(pts),"hasElevation":gain is not None}
 def route_scan(event, ri, route):
-    source=route.get("web") or route.get("profileUrl") or route.get("cutoffUrl") or event.get("web")
-    if not isinstance(source,str) or urlparse(source).scheme not in ("http","https"): return []
+    candidates=[route.get("web"),route.get("profileUrl"),route.get("cutoffUrl"),event.get("web")]
+    source=next((u for u in candidates if isinstance(u,str) and urlparse(u).scheme in ("http","https")),None)
+    if not source: return []
     try: raw, final_url, ctype=fetch(source)
     except Exception as e: return []
     page=raw.decode("utf-8","replace")
@@ -46,6 +47,39 @@ def route_scan(event, ri, route):
     plain=unescape(re.sub(r"<script\b.*?</script>|<style\b.*?</style>"," ",page,flags=re.I|re.S))
     plain=re.sub(r"<[^>]+>"," ",plain); plain=re.sub(r"\s+"," ",plain)
     props=[]
+    route_id=str(route.get("id") or ri)
+    route_label=route.get("name") or route.get("route") or f"Strecke {ri+1}"
+    # Profile: collect compact, source-grounded SVG/chart traces embedded in the official page.
+    # These remain review candidates; the finder never writes route fields directly.
+    if not (route.get("elevationProfile") or route.get("profilePoints")):
+        profile=[]
+        for svg in re.findall(r"<svg\\b[^>]*>.*?</svg>",page,flags=re.I|re.S):
+            if not re.search(r"(?i)elev|profile|altitude|height|höhen",svg): continue
+            for pts in re.findall(r"""points\\s*=\\s*["']([^"']{1,12000})["']""",svg,re.I)[:3]:
+                nums=re.findall(r"-?\\d+(?:\\.\\d+)?",pts)
+                if len(nums)>=4: profile.append({"type":"svg_points","values":[float(x) for x in nums[:400]]})
+            for d in re.findall(r"""\\bd\\s*=\\s*["']([^"']{1,12000})["']""",svg,re.I)[:2]:
+                if re.search(r"[MLCQ]",d) and len(d)>40: profile.append({"type":"svg_path","path":d[:6000]})
+        if profile:
+            props.append({"proposal_type":"data_correction","title":f"Höhenprofil prüfen: {event.get('name')} · {route_label}",
+              "payload":{"source":"automated_event_data_finder","eventId":str(event.get("id")),"eventName":event.get("name"),"routeId":route_id,"routeIndex":ri,
+                "field":"profileData","oldValue":None,"newValue":profile[:5],"sourceUrl":final_url,
+                "evidence":"Eingebettete SVG-Kurven/Koordinaten von der verknüpften Streckenseite. Achsenskalierung und Distanzzuordnung manuell prüfen.",
+                "checkedAt":NOW,"requiresOwnerApproval":True}})
+    # Time charts / checkpoints: capture short contextual text fragments, not inferred times.
+    if not (route.get("cutoffs") or route.get("timeChart") or route.get("checkpoints")):
+        fragments=[]
+        patterns=[r"(?i)(?:time\\s*chart|cut[\\s-]?off|checkpoint|aid\\s*station|verpflegung|kontrollstelle|zeitlimit)[^.!?]{0,180}",
+                  r"(?i)(?:\\d{1,3}(?:[.,]\\d+)?\\s*km)[^.!?]{0,100}(?:\\d{1,2}:\\d{2}|\\d{1,2}\\s*(?:h|hours?))"]
+        for pat in patterns:
+            fragments.extend(re.findall(pat,plain)[:10])
+        fragments=list(dict.fromkeys(x.strip() for x in fragments if len(x.strip())>12))[:12]
+        if fragments:
+            props.append({"proposal_type":"data_correction","title":f"Zeitplan/Kontrollstellen prüfen: {event.get('name')} · {route_label}",
+              "payload":{"source":"automated_event_data_finder","eventId":str(event.get("id")),"eventName":event.get("name"),"routeId":route_id,"routeIndex":ri,
+                "field":"timeChartData","oldValue":None,"newValue":fragments,"sourceUrl":final_url,
+                "evidence":"Textfragmente mit Kontrollstellen-/Zeitplanbezug von der verknüpften Seite. Reihenfolge, km-Zuordnung und Cut-offs manuell verifizieren.",
+                "checkedAt":NOW,"requiresOwnerApproval":True}})
     links=[]
     for href in re.findall(r"""(?:href|src)\s*=\s*["']([^"']+)["']""",page,re.I):
         absolute=urljoin(final_url,unescape(href))
@@ -59,7 +93,7 @@ def route_scan(event, ri, route):
             metrics=parse_gpx(data)
             if not metrics: continue
             props.append({"proposal_type":"data_correction","title":f"GPX-Daten prüfen: {event.get('name')} · {route.get('name') or route.get('route') or ri}",
-              "payload":{"source":"automated_event_data_finder","eventId":event.get("id"),"eventName":event.get("name"),"routeId":route.get("id"),"routeIndex":ri,
+              "payload":{"source":"automated_event_data_finder","eventId":event.get("id"),"eventName":event.get("name"),"routeId":route_id,"routeIndex":ri,
                 "field":"gpxMetrics","oldValue":{"km":route.get("km"),"hm":route.get("hm")},"newValue":metrics,"sourceUrl":actual,
                 "evidence":"Öffentlich erreichbare GPX-Datei von der verknüpften Strecken-/Veranstalterseite; Werte lokal aus Trackpunkten berechnet.",
                 "checkedAt":NOW,"requiresOwnerApproval":True}})
