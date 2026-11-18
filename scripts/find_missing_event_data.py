@@ -37,8 +37,15 @@ def parse_gpx(data):
     gain=sum(max(0,b-a) for a,b in zip(elevations,elevations[1:])) if len(elevations)>1 else None
     return {"km":round(distance,2),"hm":round(gain) if gain is not None else None,"trackPoints":len(pts),"hasElevation":gain is not None}
 def route_scan(event, ri, route):
-    source=route.get("web") or route.get("profileUrl") or route.get("cutoffUrl") or event.get("web")
-    if not isinstance(source,str) or urlparse(source).scheme not in ("http","https"): return []
+    # Prefer a usable URL, not a display title stored in a field named "web".
+    source_candidates = (
+        route.get("web"), route.get("profileUrl"), route.get("cutoffUrl"),
+        route.get("gpxSource"), route.get("registration"), event.get("web"),
+    )
+    source = next((value for value in source_candidates
+                   if isinstance(value, str) and urlparse(value).scheme in ("http", "https")
+                   and urlparse(value).netloc), None)
+    if not source: return []
     try: raw, final_url, ctype=fetch(source)
     except Exception as e: return []
     page=raw.decode("utf-8","replace")
