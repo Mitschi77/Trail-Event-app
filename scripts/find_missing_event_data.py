@@ -53,12 +53,12 @@ def route_scan(event, ri, route):
     # These remain review candidates; the finder never writes route fields directly.
     if not (route.get("elevationProfile") or route.get("profilePoints")):
         profile=[]
-        for svg in re.findall(r"<svg\\b[^>]*>.*?</svg>",page,flags=re.I|re.S):
+        for svg in re.findall(r"<svg\b[^>]*>.*?</svg>",page,flags=re.I|re.S):
             if not re.search(r"(?i)elev|profile|altitude|height|höhen",svg): continue
-            for pts in re.findall(r"""points\\s*=\\s*["']([^"']{1,12000})["']""",svg,re.I)[:3]:
-                nums=re.findall(r"-?\\d+(?:\\.\\d+)?",pts)
+            for pts in re.findall(r"""points\s*=\s*["']([^"']{1,12000})["']""",svg,re.I)[:3]:
+                nums=re.findall(r"-?\d+(?:\.\d+)?",pts)
                 if len(nums)>=4: profile.append({"type":"svg_points","values":[float(x) for x in nums[:400]]})
-            for d in re.findall(r"""\\bd\\s*=\\s*["']([^"']{1,12000})["']""",svg,re.I)[:2]:
+            for d in re.findall(r"""\bd\s*=\s*["']([^"']{1,12000})["']""",svg,re.I)[:2]:
                 if re.search(r"[MLCQ]",d) and len(d)>40: profile.append({"type":"svg_path","path":d[:6000]})
         if profile:
             props.append({"proposal_type":"data_correction","title":f"Höhenprofil prüfen: {event.get('name')} · {route_label}",
@@ -69,8 +69,8 @@ def route_scan(event, ri, route):
     # Time charts / checkpoints: capture short contextual text fragments, not inferred times.
     if not (route.get("cutoffs") or route.get("timeChart") or route.get("checkpoints")):
         fragments=[]
-        patterns=[r"(?i)(?:time\\s*chart|cut[\\s-]?off|checkpoint|aid\\s*station|verpflegung|kontrollstelle|zeitlimit)[^.!?]{0,180}",
-                  r"(?i)(?:\\d{1,3}(?:[.,]\\d+)?\\s*km)[^.!?]{0,100}(?:\\d{1,2}:\\d{2}|\\d{1,2}\\s*(?:h|hours?))"]
+        patterns=[r"(?i)(?:time\s*chart|cut[\s-]?off|checkpoint|aid\s*station|verpflegung|kontrollstelle|zeitlimit)[^.!?]{0,180}",
+                  r"(?i)(?:\d{1,3}(?:[.,]\d+)?\s*km)[^.!?]{0,100}(?:\d{1,2}:\d{2}|\d{1,2}\s*(?:h|hours?))"]
         for pat in patterns:
             fragments.extend(re.findall(pat,plain)[:10])
         fragments=list(dict.fromkeys(x.strip() for x in fragments if len(x.strip())>12))[:12]
@@ -93,7 +93,7 @@ def route_scan(event, ri, route):
             metrics=parse_gpx(data)
             if not metrics: continue
             props.append({"proposal_type":"data_correction","title":f"GPX-Daten prüfen: {event.get('name')} · {route.get('name') or route.get('route') or ri}",
-              "payload":{"source":"automated_event_data_finder","eventId":event.get("id"),"eventName":event.get("name"),"routeId":route_id,"routeIndex":ri,
+              "payload":{"source":"automated_event_data_finder","eventId":str(event.get("id")),"eventName":event.get("name"),"routeId":route_id,"routeIndex":ri,
                 "field":"gpxMetrics","oldValue":{"km":route.get("km"),"hm":route.get("hm")},"newValue":metrics,"sourceUrl":actual,
                 "evidence":"Öffentlich erreichbare GPX-Datei von der verknüpften Strecken-/Veranstalterseite; Werte lokal aus Trackpunkten berechnet.",
                 "checkedAt":NOW,"requiresOwnerApproval":True}})
@@ -104,7 +104,7 @@ def route_scan(event, ri, route):
         hits=CUTOFF_RE.findall(plain)
         if hits:
             props.append({"proposal_type":"data_correction","title":f"Cut-off prüfen: {event.get('name')} · {route.get('name') or route.get('route') or ri}",
-              "payload":{"source":"automated_event_data_finder","eventId":event.get("id"),"eventName":event.get("name"),"routeId":route.get("id"),"routeIndex":ri,
+              "payload":{"source":"automated_event_data_finder","eventId":event.get("id"),"eventName":event.get("name"),"routeId":route_id,"routeIndex":ri,
                 "field":"cutoffCandidate","oldValue":None,"newValue":hits[:5],"sourceUrl":final_url,
                 "evidence":"Texttreffer auf der hinterlegten Veranstalter-/Streckenseite. Kein automatischer Zahlenimport; Zuordnung und Bedeutung manuell prüfen.",
                 "checkedAt":NOW,"requiresOwnerApproval":True}})
