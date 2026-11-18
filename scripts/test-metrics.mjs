@@ -6,6 +6,7 @@ const serviceWorker = await readFile(new URL("../sw.js", import.meta.url), "utf8
 const raceTools = await readFile(new URL("../race-tools.js", import.meta.url), "utf8");
 const seasonTools = await readFile(new URL("../season-tools.js", import.meta.url), "utf8");
 assert.ok(serviceWorker.includes("'./event-dates.json'"), "Offline app shell must cache the official event feed");
+assert.ok(serviceWorker.includes("trail-event-planner-v52"), "App shell cache must be versioned for the aid-station parser update");
 assert.ok(serviceWorker.includes("url.pathname.endsWith('/event-dates.json')"), "Official event feed must use a network-first cache strategy");
 assert.ok(serviceWorker.includes("cache.put(cacheKey, copy)") && serviceWorker.includes("caches.match(cacheKey)"), "Official event feed must remain available offline without retaining timestamp query variants");
 
