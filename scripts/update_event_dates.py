@@ -219,6 +219,23 @@ for event in events:
             "verified": True
         }
 
+    # If no official 2027 route date is available, retain the previous
+    # edition's 2026 date as an explicitly provisional fallback.
+    for route_index, route in enumerate(event.get("routes", [])):
+        key = str(route_index)
+        if key in route_entries:
+            continue
+        previous_edition_date = str(route.get("date") or "")
+        if re.fullmatch(r"2026-\\d{2}-\\d{2}", previous_edition_date):
+            route_entries[key] = {
+                "routeId": route["id"],
+                "date": previous_edition_date,
+                "verified": False,
+                "fallback": True,
+                "fallbackYear": 2026,
+                "note": "Vorläufiger Ersatztermin aus der Ausgabe 2026; kein offizieller Starttermin 2027 gefunden."
+            }
+
     if source_status or route_entries:
         previous = feed["events"].get(event["id"], {})
         previous_period = previous.get("eventPeriod")
