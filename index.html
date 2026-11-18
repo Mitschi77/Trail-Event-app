@@ -387,6 +387,77 @@ button,.primary,.secondary,.tab-button,.link{touch-action:manipulation}
 #events .route.route-done .star-btn{color:#aebdb3}
 #events .route.route-done .star-btn.active{color:#ffd15c!important}
 </style>
+
+<style id="trail-design-system-v1">
+/* Einheitliches Alpine-Trail-Designsystem – zentrale Tokens und Grundelemente */
+:root{
+  color-scheme:dark;
+  --bg:#0e1712;
+  --ink:#edf4ee;
+  --muted:#a7b6ab;
+  --green:#8bc9a0;
+  --green-strong:#397a55;
+  --lime:#d9f36a;
+  --line:#34483b;
+  --card:#18241c;
+  --surface:#202e25;
+  --soft:#1d2b22;
+  --shadow:0 10px 28px #0000002b;
+  --ui-radius:14px;
+  --ui-radius-small:10px;
+  --ui-space:12px;
+}
+html{background:var(--bg);scroll-padding-top:76px}
+body{
+  background:var(--bg);
+  color:var(--ink);
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  -webkit-font-smoothing:antialiased;
+  text-rendering:optimizeLegibility;
+}
+:where(.planner,.planner-panel,.year-group,.plan-card,.event,.route,.stay,.integration-provider,.planner-status){
+  border-color:var(--line);
+  border-radius:var(--ui-radius);
+  box-shadow:var(--shadow);
+}
+:where(.planner,.planner-panel,.year-group,.plan-card,.event,.route,.stay,.integration-provider){
+  background:var(--card);
+  color:var(--ink);
+}
+:where(.planner h2,.planner h3,.planner-panel h3,.year-heading h3,.eventtitle){
+  color:var(--ink);
+  letter-spacing:-.025em;
+  line-height:1.25;
+}
+:where(.planner-intro,.plan-meta,.note,.empty,.plan-empty,.year-race-meta){color:var(--muted)}
+:where(.primary,.secondary,.tab-button,.more-nav-item,.year-detail-button,.link){
+  font-family:inherit;
+  letter-spacing:0;
+  touch-action:manipulation;
+  border-radius:var(--ui-radius-small);
+}
+:where(.secondary,.more-nav-item){
+  background:var(--surface);
+  color:var(--ink);
+  border-color:var(--line);
+}
+:where(input,select,textarea,.field){
+  color:var(--ink);
+  background:var(--surface);
+  border-color:var(--line);
+  border-radius:var(--ui-radius-small);
+  accent-color:var(--green);
+}
+:where(button,a,input,select,textarea,[role="button"]):focus-visible{
+  outline:3px solid var(--lime);
+  outline-offset:2px;
+}
+:where(.planner-intro,.plan-meta,.note,.planner-status){line-height:1.55}
+:where(.primary,.secondary,.tab-button,.more-nav-item){transition:background-color .16s ease,border-color .16s ease,transform .12s ease}
+@media(prefers-reduced-motion:reduce){
+  :where(.primary,.secondary,.tab-button,.more-nav-item){transition:none}
+}
+</style>
 </head><script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script><body>
 <header><div class="top"><div class="brand">⛰ TRAIL EVENT PLANNER</div><div class="pill">Persönlicher Laufkalender <button id="cloudProfileButton" type="button" aria-label="Anmelden – Cloud-Konto öffnen" title="Anmelden – Cloud-Konto öffnen" style="margin-left:6px;min-width:44px;min-height:44px;display:inline-flex;align-items:center;justify-content:center;gap:5px;border:1px solid #668074;border-radius:24px;background:#20372d;color:#fff;padding:5px 9px;text-decoration:none;cursor:pointer;touch-action:manipulation" onclick="event.preventDefault();event.stopPropagation();const d=document.getElementById('appMenuDropdown'),m=document.getElementById('appMenuButton'),p=document.getElementById('accountPanel'),t=document.getElementById('cloudAccountMenuToggle');d.hidden=false;m.setAttribute('aria-expanded','true');p.hidden=false;t.setAttribute('aria-expanded','true');t.textContent='☁️ Cloud-Konto schließen';const e=document.getElementById('cloudEmail');if(e)e.focus({preventScroll:true});"><svg id="cloudProfileIcon" width="24" height="24" viewBox="0 0 24 24" role="img" aria-label="Rotes Strichmännchen – abgemeldet"><circle cx="12" cy="5" r="2.5" fill="none" stroke="#ff6262" stroke-width="2"/><path d="M12 8v7m0-4-5 3m5-3 5 3m-5 1-4 6m4-6 4 6" fill="none" stroke="#ff6262" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span id="cloudProfileLabel" style="font-size:12px;font-weight:700;white-space:nowrap">Anmelden</span></button><button id="appMenuButton" type="button" class="app-menu-button" aria-label="Weitere Funktionen öffnen" aria-haspopup="true" aria-expanded="false" aria-controls="appMenuDropdown" title="Datensicherung und weitere Funktionen">⋮</button><div id="appMenuDropdown" class="app-menu-dropdown" role="menu" hidden><div class="app-menu-heading" style="display:flex;align-items:center;justify-content:space-between;gap:10px"><span>Datensicherung &amp; Datenverwaltung</span><button id="closeAppMenuButton" type="button" class="secondary" aria-label="Menü schließen" style="min-height:36px;padding:5px 10px">Schließen ✕</button></div><button id="cloudAccountMenuToggle" class="secondary app-menu-item" type="button" aria-expanded="false" aria-controls="accountPanel">☁️ Cloud-Konto öffnen</button><div id="accountPanel" class="app-menu-account" hidden><div style="font-weight:700;margin-bottom:5px">☁️ Cloud-Konto</div><div id="cloudStatus" style="font-size:13px;color:#d4e2d9;margin-bottom:10px">Melde dich an, um deine Laufplanung sicher in deiner Cloud zu speichern.</div><div id="cloudCheckStatus" role="status" aria-live="polite" style="font-size:11px;color:#b8d0c2;margin:-5px 0 10px">Automatischer Abruf noch nicht gestartet.</div><form id="cloudAuthForm" style="display:flex;gap:8px;flex-wrap:wrap"><input id="cloudEmail" type="email" required autocomplete="email" placeholder="E-Mail-Adresse" style="flex:1 1 190px;min-width:0;padding:11px;border-radius:9px;border:1px solid #789084;font:inherit"><input id="cloudPassword" type="password" required minlength="8" autocomplete="current-password" placeholder="Passwort (mind. 8 Zeichen)" style="flex:1 1 190px;min-width:0;padding:11px;border-radius:9px;border:1px solid #789084;font:inherit"><button class="primary" id="cloudLoginButton" type="button" onclick="event.preventDefault();if(typeof window.plannerLoginClick==='function')window.plannerLoginClick();else document.getElementById('cloudStatus').textContent='Cloud-Anmeldung wird initialisiert. Bitte kurz warten und erneut versuchen.'">Anmelden</button><button class="secondary" id="cloudSignup" type="button" onclick="plannerSignupClick()">Konto erstellen</button></form><div id="cloudAccountActions" hidden style="gap:8px;margin-top:8px"><button class="primary" id="restoreCloudData" type="button">Laufplanung und Laufhistorie aus der Cloud laden</button><button class="secondary" id="cloudLogout" type="button">Abmelden</button><button class="secondary" id="deleteCloudAccount" type="button" style="border-color:#d66;color:#ffb8b8">Konto endgültig löschen</button></div><div style="font-size:11px;color:#c4d5c9;margin-top:8px">Deine persönlichen Daten werden nur für dein angemeldetes Konto gespeichert. Verwende ein eigenes, sicheres Passwort.</div>
 </div><div class="app-menu-info"><strong>☁️ Laufdaten geräteübergreifend</strong><p>Mit deinem Konto werden deine Laufplanung und gespeicherten Ergebnisse zwischen deinen Geräten synchronisiert. Melde dich dazu über den Bereich „Cloud-Konto“ an.</p><div id="appMenuCloudInfo" class="app-menu-hint">Noch nicht angemeldet – Synchronisierung ist nicht aktiv.</div></div><div class="app-menu-info"><strong>Gerätespeicher</strong><p id="storageHealth" aria-live="polite">Speicherstatus wird geprüft …</p><button class="secondary app-menu-item" id="protectStorageButton" type="button" onclick="requestPersistentStorage()">Speicherung auf diesem Gerät schützen</button></div><button class="secondary app-menu-item" id="exportBackup" type="button" role="menuitem">Datensicherung herunterladen</button><button class="secondary app-menu-item" id="downloadPreRestoreBackup" type="button" role="menuitem" hidden>Vorherigen Stand herunterladen</button><label class="secondary app-menu-item app-menu-label" for="importBackup" role="menuitem">Datensicherung wiederherstellen<input id="importBackup" type="file" accept="application/json,.json" hidden></label><div class="app-menu-hint">Sichere deine Planungen regelmäßig als JSON-Datei. Beim Wiederherstellen werden nur Daten aus einer gültigen Sicherung übernommen.</div><div id="cloudConflictActions" class="app-menu-conflict" style="display:none"><button class="secondary app-menu-item" id="downloadCloudBackup" type="button">Cloud-Sicherung herunterladen</button><button class="secondary app-menu-item" id="useCloudDataLocally" type="button">Cloud-Daten auf dieses Gerät übernehmen</button><button class="secondary app-menu-item" id="useLocalCloudData" type="button">Lokale Daten in Cloud übernehmen</button></div></div></div></div><div class="hero"><h1>Dein nächstes<br>Trail-Abenteuer.</h1><div class="stats"><div class="stat"><b id="eventCount">—</b><span>Hauptevents</span></div><div class="stat"><b id="routeCount">—</b><span>Strecken</span></div><div class="stat"><b>5 km</b><span>Unterkunftsradius</span></div></div></div></header>
