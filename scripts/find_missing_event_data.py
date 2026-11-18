@@ -37,7 +37,7 @@ def parse_gpx(data):
     gain=sum(max(0,b-a) for a,b in zip(elevations,elevations[1:])) if len(elevations)>1 else None
     return {"km":round(distance,2),"hm":round(gain) if gain is not None else None,"trackPoints":len(pts),"hasElevation":gain is not None}
 def route_scan(event, ri, route):
-    candidates=[route.get("web"),route.get("profileUrl"),route.get("cutoffUrl"),event.get("web")]
+    candidates=[route.get("profileUrl"),route.get("cutoffUrl"),route.get("gpxSource"),route.get("gpxDownloadUrl"),route.get("web"),event.get("web")]
     source=next((u for u in candidates if isinstance(u,str) and urlparse(u).scheme in ("http","https")),None)
     if not source: return []
     try: raw, final_url, ctype=fetch(source)
@@ -67,7 +67,7 @@ def route_scan(event, ri, route):
                 "evidence":"Eingebettete SVG-Kurven/Koordinaten von der verknüpften Streckenseite. Achsenskalierung und Distanzzuordnung manuell prüfen.",
                 "checkedAt":NOW,"requiresOwnerApproval":True}})
     # Time charts / checkpoints: capture short contextual text fragments, not inferred times.
-    if not (route.get("cutoffs") or route.get("timeChart") or route.get("checkpoints")):
+    if not (route.get("cutoffs") or route.get("timeChart") or route.get("checkpoints") or route.get("maxh")):
         fragments=[]
         patterns=[r"(?i)(?:time\s*chart|cut[\s-]?off|checkpoint|aid\s*station|verpflegung|kontrollstelle|zeitlimit)[^.!?]{0,180}",
                   r"(?i)(?:\d{1,3}(?:[.,]\d+)?\s*km)[^.!?]{0,100}(?:\d{1,2}:\d{2}|\d{1,2}\s*(?:h|hours?))"]
@@ -104,7 +104,7 @@ def route_scan(event, ri, route):
         hits=CUTOFF_RE.findall(plain)
         if hits:
             props.append({"proposal_type":"data_correction","title":f"Cut-off prüfen: {event.get('name')} · {route.get('name') or route.get('route') or ri}",
-              "payload":{"source":"automated_event_data_finder","eventId":event.get("id"),"eventName":event.get("name"),"routeId":route_id,"routeIndex":ri,
+              "payload":{"source":"automated_event_data_finder","eventId":str(event.get("id")),"eventName":event.get("name"),"routeId":route_id,"routeIndex":ri,
                 "field":"cutoffCandidate","oldValue":None,"newValue":hits[:5],"sourceUrl":final_url,
                 "evidence":"Texttreffer auf der hinterlegten Veranstalter-/Streckenseite. Kein automatischer Zahlenimport; Zuordnung und Bedeutung manuell prüfen.",
                 "checkedAt":NOW,"requiresOwnerApproval":True}})
