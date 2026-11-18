@@ -114,7 +114,7 @@ for event in events:
     valid_route_ids = {route.get("id") for route in event.get("routes", [])}
     previous_routes = {
         key: value for key, value in (previous.get("routes") or {}).items()
-        if value.get("routeId") in valid_route_ids and value.get("date") and value["date"] >= today
+        if value.get("routeId") in valid_route_ids and value.get("date") and (value.get("fallback") or value["date"] >= today)
     }
     previous["routes"] = previous_routes
     previous_period = previous.get("eventPeriod")
@@ -264,7 +264,7 @@ for event in events:
         valid_route_ids = {route.get("id") for route in event.get("routes", [])}
         merged_routes = {
             key: value for key, value in merged_routes.items()
-            if value.get("routeId") in valid_route_ids and value.get("date") and value["date"] >= today
+            if value.get("routeId") in valid_route_ids and value.get("date") and (value.get("fallback") or value["date"] >= today)
         }
 
         merged_sources = {}
