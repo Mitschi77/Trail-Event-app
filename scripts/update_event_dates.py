@@ -128,7 +128,7 @@ for event in events:
 # page does not expose machine-readable schema.org Event data.
 MANUAL_EVENT_PERIODS = {
     "ultra-x-110-scotland": ("2027-05-01", "2027-05-02", "https://ultra-x.co/event/ultra-marathon-in-scotland/", {}),
-    "ultratrail-frankische-schweiz": ("2027-04-23", "2027-04-24", "https://www.ultratrail-fraenkische-schweiz.de/", {"0": "2027-04-24", "1": "2027-04-23", "2": "2027-04-24"}),
+    "ultratrail-frankische-schweiz": ("2027-04-23", "2027-04-24", "https://www.ultratrail-fraenkische-schweiz.de/", {"0": "2027-04-24", "1": "2027-04-23"}),
     "istrien": ("2027-04-02", "2027-04-04", "https://istria.utmb.world/races", {"0": "2027-04-03", "1": "2027-04-03"}),
     "tenerife-bluetrail-by-utmb": ("2027-04-08", "2027-04-10", "https://tenerife.utmb.world/", {"0": "2027-04-09", "1": "2027-04-10", "2": "2027-04-09", "3": "2027-04-10", "4": "2027-04-10"}),
     "chianti-ultra-trail": ("2027-03-18", "2027-03-21", "https://chianti.utmb.world/", {"0": "2027-03-20", "1": "2027-03-20"}),
