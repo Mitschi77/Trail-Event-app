@@ -7,6 +7,7 @@ on:
       - "scripts/update_event_dates.py"
       - "scripts/validate_event_data.py"
       - "scripts/test-metrics.mjs"
+      - "scripts/submit_event_date_proposals.py"
       - ".github/workflows/update-event-dates.yml"
   schedule:
     - cron: "17 4 * * *"
@@ -14,6 +15,7 @@ on:
 
 permissions:
   contents: read
+  id-token: write
 
 concurrency:
   group: official-event-date-feed
@@ -38,14 +40,8 @@ jobs:
         run: python scripts/validate_event_data.py
       - name: Read official event pages
         run: python scripts/update_event_dates.py
-      - name: Report proposed date-feed changes (never publish automatically)
-        run: |
-          if git diff --quiet -- event-dates.json; then
-            echo "No event-date changes detected."
-          else
-            echo "Event-date changes detected. They remain local to this workflow run and are not committed or published."
-            git diff --stat -- event-dates.json
-          fi
+      - name: Submit verified date changes as owner review proposals
+        run: python scripts/submit_event_date_proposals.py
       - name: Store proposed date feed for manual review
         if: always()
         uses: actions/upload-artifact@v4
