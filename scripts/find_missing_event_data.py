@@ -67,7 +67,7 @@ def route_scan(event, ri, route):
                 "evidence":"Eingebettete SVG-Kurven/Koordinaten von der verknüpften Streckenseite. Achsenskalierung und Distanzzuordnung manuell prüfen.",
                 "checkedAt":NOW,"requiresOwnerApproval":True}})
     # Time charts / checkpoints: capture short contextual text fragments, not inferred times.
-    if not (route.get("cutoffs") or route.get("timeChart") or route.get("checkpoints") or route.get("maxh")):
+    if not (route.get("cutoffs") or route.get("timeChart") or route.get("checkpoints")):
         fragments=[]
         patterns=[r"(?i)(?:time\s*chart|cut[\s-]?off|checkpoint|aid\s*station|verpflegung|kontrollstelle|zeitlimit)[^.!?]{0,180}",
                   r"(?i)(?:\d{1,3}(?:[.,]\d+)?\s*km)[^.!?]{0,100}(?:\d{1,2}:\d{2}|\d{1,2}\s*(?:h|hours?))"]
