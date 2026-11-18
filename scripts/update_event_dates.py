@@ -296,10 +296,20 @@ for event in events:
         else:
             status = "unconfirmed"
 
+        current_sources_read = any(item.get("status") == "read" for item in source_status)
+        current_sources_failed = bool(source_status) and all(item.get("status") == "unavailable" for item in source_status)
+        source_check_status = (
+            "unavailable" if current_sources_failed
+            else "partial" if any(item.get("status") == "unavailable" for item in source_status)
+            else "read" if current_sources_read
+            else "not-checked"
+        )
         record = {
             "eventId": event["id"],
             "checkedAt": updated,
             "status": status,
+            "sourceCheckStatus": source_check_status,
+            "lastSuccessfulSourceCheckAt": updated if current_sources_read else previous.get("lastSuccessfulSourceCheckAt"),
             "sources": list(merged_sources.values()),
             "eventPeriod": merged_period,
             "routes": merged_routes
@@ -340,6 +350,8 @@ for event_id, (start_date, end_date, source_url, route_dates) in MANUAL_EVENT_PE
         "url": source_url, "status": "read", "verification": "manual-official-page"
     })
     record["checkedAt"] = updated
+    record["sourceCheckStatus"] = "read"
+    record["lastSuccessfulSourceCheckAt"] = updated
     for route_index, route_date in route_dates.items():
         index = int(route_index)
         if index < len(event.get("routes", [])):
