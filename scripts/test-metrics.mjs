@@ -239,6 +239,10 @@ assert.ok(html.includes("function latestYearPlanRace()"), "Planner must use the 
 assert.ok(html.includes("eventSelect.dataset.manual==='1'"), "Planner must preserve an explicit manual event selection");
 assert.ok(html.includes("(b.date-a.recoveryEnd)/86400000"), "Season check must compare next start to previous event end");
 assert.ok(html.includes("selectedEnd&&nextDate&&nextDate<plusDays(selectedEnd,weeks*7)"), "Route selection must enforce recovery after multi-day events");
+assert.ok(html.includes("function findPotentialDuplicateEvents(candidate)"), "New event proposals must be checked against the existing event database");
+assert.ok(html.includes("Möglicher doppelter Eintrag"), "Review queue must visibly warn about possible duplicate races");
+assert.ok(html.includes("duplicate_check:{checked_at:"), "Duplicate check results must be stored with the proposal for review");
+assert.ok(html.includes("Trotzdem als neuen Prüfungsvorschlag einreichen?"), "Possible duplicates must be confirmed before submission");
 assert.ok(html.includes("function exportPlannedCalendar()"), "Calendar export handler must exist");
 assert.ok(html.includes("text/calendar;charset=utf-8"), "Calendar export must use the iCalendar MIME type");
 assert.ok(html.includes("DTSTART;VALUE=DATE:"), "Calendar export must create all-day race events");
