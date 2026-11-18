@@ -61,6 +61,34 @@ const concurrentEditMerge = mergeCloudSnapshots(
   () => unchangedBaseline
 )({}, { plannerTestKey: "changed remotely" });
 assert.deepEqual(concurrentEditMerge.conflicts, ["plannerTestKey"], "A local deletion must not overwrite a concurrent remote edit");
+const localOnlyMerge = mergeCloudSnapshots(
+  ["plannerTestKey"],
+  () => unchangedBaseline
+)({ plannerTestKey: "changed locally" }, unchangedCloudData);
+assert.deepEqual(localOnlyMerge.snapshot, { plannerTestKey: "changed locally" }, "A local-only edit must be retained");
+assert.equal(localOnlyMerge.remoteNeedsWrite, true, "A local-only edit must be scheduled for cloud upload");
+const remoteOnlyMerge = mergeCloudSnapshots(
+  ["plannerTestKey"],
+  () => unchangedBaseline
+)(unchangedCloudData, { plannerTestKey: "changed remotely" });
+assert.deepEqual(remoteOnlyMerge.snapshot, { plannerTestKey: "changed remotely" }, "A remote-only edit must be adopted locally");
+assert.equal(remoteOnlyMerge.localNeedsApply, true, "A remote-only edit must be applied to local storage");
+const simultaneousEditMerge = mergeCloudSnapshots(
+  ["plannerTestKey"],
+  () => unchangedBaseline
+)({ plannerTestKey: "changed locally" }, { plannerTestKey: "changed remotely" });
+assert.deepEqual(simultaneousEditMerge.conflicts, ["plannerTestKey"], "Concurrent edits to the same key must require manual resolution");
+const missingBaselineMerge = mergeCloudSnapshots(
+  ["plannerTestKey"],
+  () => null
+)({}, unchangedCloudData);
+assert.deepEqual(missingBaselineMerge.conflicts, ["plannerTestKey"], "A missing baseline must not guess which copy is newer");
+const remoteDeletionMerge = mergeCloudSnapshots(
+  ["plannerTestKey"],
+  () => unchangedBaseline
+)(unchangedCloudData, {});
+assert.deepEqual(remoteDeletionMerge.snapshot, {}, "A remote-only deletion must be adopted locally");
+assert.equal(remoteDeletionMerge.localNeedsApply, true, "A remote-only deletion must be applied locally");
 assert.equal(routeById("110-tausend-111-4074")?.raceCost, "215,00 € (inkl. 25 % MwSt.)", "Istria 2027 published entry fee must remain recorded");
 assert.equal(routeById("110-tausend-111-4074")?.paidCost, "296,44 €", "Istria 2027 paid receipt total must remain recorded");
 assert.equal(routeById("110-tausend-111-4074")?.paidCostDate, "2026-07-05", "Istria 2027 payment date must remain recorded");
