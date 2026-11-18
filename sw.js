@@ -1,4 +1,4 @@
-const CACHE_NAME = 'trail-event-planner-v43';
+const CACHE_NAME = 'trail-event-planner-v44';
 const APP_SHELL = ['./', './index.html', './race-tools.js', './season-tools.js', './event-dates.json', './manifest.webmanifest', './trail-icon.svg', './trail-apple-touch-icon.png'];
 
 self.addEventListener('install', event => {
@@ -40,17 +40,19 @@ self.addEventListener('fetch', event => {
     return;
   }
 
-  if (request.mode === 'navigate') {
+  const isAppCode = /\\.(?:js|mjs|css|html|webmanifest)$/.test(url.pathname) || request.mode === 'navigate';
+  if (isAppCode) {
     event.respondWith(
-      fetch(request)
+      fetch(request, { cache: 'no-store' })
         .then(response => {
           if (response && response.ok) {
+            const key = request.mode === 'navigate' ? './index.html' : request;
             const copy = response.clone();
-            return caches.open(CACHE_NAME).then(cache => cache.put('./index.html', copy)).then(() => response);
+            return caches.open(CACHE_NAME).then(cache => cache.put(key, copy)).then(() => response);
           }
           return response;
         })
-        .catch(() => caches.match('./index.html'))
+        .catch(() => caches.match(request).then(cached => cached || (request.mode === 'navigate' ? caches.match('./index.html') : undefined)))
     );
     return;
   }
