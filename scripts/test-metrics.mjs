@@ -42,6 +42,13 @@ const concurrentEditMerge = mergeCloudSnapshots(
 assert.deepEqual(concurrentEditMerge.conflicts, ["plannerTestKey"], "A local deletion must not overwrite a concurrent remote edit");
 assert.ok(html.includes('"id":"110-tausend-111-4074","raceCost":"215,00 € (inkl. 25 % MwSt.)","paidCost":"296,44 €","paidCostDate":"2026-07-05","paidCostStatus":"Bezahlt"'), "Istria 2027 paid entry cost must remain recorded with its receipt total");
 assert.ok(html.includes('"paidCostDetails":"Startgeld 215,00 € inkl. MwSt.; Sportograf-Fotos 33,52 €; Bus-Transfer 18,75 € inkl. MwSt.; Servicegebühren inkl. Steuer 29,17 €"'), "Istria 2027 receipt breakdown must remain recorded");
+assert.ok(html.includes("\"id\":\"tmcdc-185-3500\",\"raceCost\":\"177–213 € (Startgeld laut Veranstalter, abhängig von Anmeldephase; Bearbeitungsgebühren ggf. zusätzlich)\""), "tmcdc-185-3500 2027 published entry fee must remain recorded");
+assert.ok(html.includes("\"id\":\"tmcn-100-2300\",\"raceCost\":\"127–153 € (Startgeld laut Veranstalter, abhängig von Anmeldephase; Bearbeitungsgebühren ggf. zusätzlich)\""), "tmcn-100-2300 2027 published entry fee must remain recorded");
+assert.ok(html.includes("\"id\":\"tmcs-85-1200\",\"raceCost\":\"117–143 € (Startgeld laut Veranstalter, abhängig von Anmeldephase; Bearbeitungsgebühren ggf. zusätzlich)\""), "tmcs-85-1200 2027 published entry fee must remain recorded");
+assert.ok(html.includes("\"id\":\"ptcn-58-1200\",\"raceCost\":\"75–98 € (Startgeld laut Veranstalter, abhängig von Anmeldephase; Bearbeitungsgebühren ggf. zusätzlich)\""), "ptcn-58-1200 2027 published entry fee must remain recorded");
+assert.ok(html.includes("\"id\":\"ugp-125-5700\",\"raceCost\":\"240–270 € (100M-Tarif laut UTMB; zzgl. 8 % Verwaltungsgebühr)\""), "ugp-125-5700 2027 published entry fee must remain recorded");
+assert.ok(html.includes("\"id\":\"ugp-87-4200\",\"raceCost\":\"169–199 € (100K-Tarif laut UTMB; zzgl. 8 % Verwaltungsgebühr)\""), "ugp-87-4200 2027 published entry fee must remain recorded");
+assert.ok(html.includes("\"id\":\"ugp-51-2500\",\"raceCost\":\"95 € (50K-Tarif laut UTMB; zzgl. 8 % Verwaltungsgebühr)\""), "ugp-51-2500 2027 published entry fee must remain recorded");
 assert.ok(html.includes("function collectLocalPlannerData(){const data={};CLOUD_KEYS.forEach"), "Backup and cloud snapshots must collect every registered local data key");
 assert.ok(html.includes("function seasonSave()"), "Season priorities must have a dedicated persistence function");
 assert.ok(raceTools.includes("function strategy(id,ri,r)"), "Per-race strategy planner must exist");
