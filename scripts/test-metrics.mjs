@@ -11,6 +11,9 @@ assert.ok(serviceWorker.includes("cache.put(cacheKey, copy)") && serviceWorker.i
 
 assert.ok(html.includes("'trailRacePriorities'"), "Season priorities must be included in private backups and cloud snapshots");
 assert.ok(html.includes('"id":"mozart-100-84-4800","raceCost":"208,20 € (Startgeld inkl. 20 % USt.; ohne Zusatzleistungen und Servicegebühren)","paidCost":"248,18 €","paidCostDate":"2026-07-15","paidCostStatus":"Bezahlt"'), "Mozart 2027 paid entry cost must match the UTMB payment receipt");
+assert.ok(html.includes('"id":"3kings-3hills-54-2300","raceCost":"79,00 €","paidCost":"79,00 €","paidCostDate":"2026-08-17","paidCostStatus":"Bezahlt"'), "3Kings 2027 paid entry cost must match the paid invoice");
+assert.ok(html.includes('"date":"2027-01-23","web":null,"starttime":null,"registration":null,"overnight":null,"hotelCost":null,"raceCost":"69,00 €","paidCost":"83,90 €","paidCostDate":"2026-09-17","paidCostStatus":"Bezahlt","paidCostDetails":"MOUNTAINMAN-Rechnung'), "MOUNTAINMAN 2027 date and paid total must match the invoice");
+assert.ok(html.includes('"route":"mozart Ultra","km":84'), "2027 Mozart route must use the verified event name");
 assert.ok(html.includes("Storage.prototype.removeItem=function(key)"), "Removing a planner data key must trigger cloud synchronization");
 assert.ok(html.includes("Storage.prototype.clear=function()") && html.includes("hadPlannerData"), "Clearing local planner data must trigger cloud synchronization");
 assert.ok(html.includes('"id":"110-tausend-111-4074","raceCost":"215,00 € (inkl. 25 % MwSt.)","paidCost":"296,44 €","paidCostDate":"2026-07-05","paidCostStatus":"Bezahlt"'), "Istria 2027 paid entry cost must remain recorded with its receipt total");
