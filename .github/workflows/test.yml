@@ -28,3 +28,9 @@ jobs:
         run: npm ci
       - name: Run app syntax and regression tests
         run: npm run test:syntax
+      - name: Set up Python for event data validation
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.x"
+      - name: Validate event and route data feed
+        run: python scripts/validate_event_data.py
