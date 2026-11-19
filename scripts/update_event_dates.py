@@ -407,6 +407,19 @@ for event_id, source_url in MANUAL_UNCONFIRMED_SOURCES.items():
         "url": source_url, "status": "read", "verification": "manual-official-page"
     })
 
+# Keep a placeholder record for every event, even when no official URL or
+# machine-readable date is available yet. This prevents new catalog entries
+# from disappearing from the date-review feed or breaking completeness checks.
+for event in events:
+    feed["events"].setdefault(event["id"], {
+        "eventId": event["id"],
+        "checkedAt": updated,
+        "status": "unconfirmed",
+        "sources": [],
+        "eventPeriod": None,
+        "routes": {}
+    })
+
 (ROOT / "event-dates.json").write_text(
     json.dumps(feed, ensure_ascii=False, indent=2) + "\n",
     encoding="utf-8"

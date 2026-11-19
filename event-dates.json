@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-18T14:25:00.201965+00:00",
+  "updatedAt": "2026-11-19T20:35:00.000Z",
   "schemaVersion": 3,
   "events": {
     "la-corsa-della-bora": {
@@ -593,6 +593,31 @@
           "date": "2027-05-07",
           "verified": true
         },
+        "1": {
+          "routeId": "trailhalbmarathon-k25-26-6-870",
+          "date": "2027-05-05",
+          "verified": true
+        },
+        "2": {
+          "routeId": "discovery-race-k35-37-8-2110",
+          "date": "2027-05-05",
+          "verified": true
+        },
+        "3": {
+          "routeId": "trailmarathon-k42-43-4-2400",
+          "date": "2027-05-06",
+          "verified": true
+        },
+        "4": {
+          "routeId": "panorama-ultra-trail-67-9-2670",
+          "date": "2027-05-06",
+          "verified": true
+        },
+        "5": {
+          "routeId": "heart-of-the-alps-ultra-87-3900",
+          "date": "2027-05-08",
+          "verified": true
+        },
         "6": {
           "routeId": "master-of-innsbruck-112-6-5500",
           "date": "2027-05-08",
@@ -620,31 +645,6 @@
         },
         "11": {
           "routeId": "master-of-innsbruck-112-6-5500",
-          "date": "2027-05-08",
-          "verified": true
-        },
-        "1": {
-          "routeId": "trailhalbmarathon-k25-26-6-870",
-          "date": "2027-05-05",
-          "verified": true
-        },
-        "2": {
-          "routeId": "discovery-race-k35-37-8-2110",
-          "date": "2027-05-05",
-          "verified": true
-        },
-        "3": {
-          "routeId": "trailmarathon-k42-43-4-2400",
-          "date": "2027-05-06",
-          "verified": true
-        },
-        "4": {
-          "routeId": "panorama-ultra-trail-67-9-2670",
-          "date": "2027-05-06",
-          "verified": true
-        },
-        "5": {
-          "routeId": "heart-of-the-alps-ultra-87-3900",
           "date": "2027-05-08",
           "verified": true
         }
@@ -2401,6 +2401,16 @@
         "verified": true
       },
       "routes": {
+        "0": {
+          "routeId": "base-trail-26-900",
+          "date": "2027-07-24",
+          "verified": true
+        },
+        "1": {
+          "routeId": "marathon-40-1650",
+          "date": "2027-07-24",
+          "verified": true
+        },
         "2": {
           "routeId": "3kings-3hills-54-2300",
           "date": "2027-07-24",
@@ -2429,16 +2439,6 @@
         "7": {
           "routeId": "100-miles-ultra-168-6300",
           "date": "2027-07-23",
-          "verified": true
-        },
-        "0": {
-          "routeId": "base-trail-26-900",
-          "date": "2027-07-24",
-          "verified": true
-        },
-        "1": {
-          "routeId": "marathon-40-1650",
-          "date": "2027-07-24",
           "verified": true
         }
       }
@@ -3264,12 +3264,12 @@
           "date": "2027-09-12",
           "verified": true
         },
-        "6": {
+        "5": {
           "routeId": "wildstrubel-wild-glacier-marathon-lenk",
           "date": "2027-09-10",
           "verified": true
         },
-        "5": {
+        "6": {
           "routeId": "wildstrubel-wild-glacier-marathon-lenk",
           "date": "2027-09-10",
           "verified": true
@@ -4339,12 +4339,12 @@
         "verified": true
       },
       "routes": {
-        "5": {
+        "4": {
           "routeId": "trail-du-saint-jacques-by-utmb-rando-28km",
           "date": "2027-06-20",
           "verified": true
         },
-        "4": {
+        "5": {
           "routeId": "trail-du-saint-jacques-by-utmb-rando-28km",
           "date": "2027-06-20",
           "verified": true
@@ -4538,6 +4538,1358 @@
           "verified": true
         }
       }
+    },
+    "coelmo-napoli-city-half-marathon": {
+      "eventId": "coelmo-napoli-city-half-marathon",
+      "checkedAt": "2026-11-19T20:35:00.000Z",
+      "status": "unconfirmed",
+      "sources": [],
+      "eventPeriod": null,
+      "routes": {}
+    },
+    "lisbon-half-marathon": {
+      "eventId": "lisbon-half-marathon",
+      "checkedAt": "2026-11-19T20:35:00.000Z",
+      "status": "unconfirmed",
+      "sources": [],
+      "eventPeriod": null,
+      "routes": {}
+    },
+    "warsaw-half-marathon": {
+      "eventId": "warsaw-half-marathon",
+      "checkedAt": "2026-11-19T20:35:00.000Z",
+      "status": "unconfirmed",
+      "sources": [],
+      "eventPeriod": null,
+      "routes": {}
+    },
+    "prague-half-marathon": {
+      "eventId": "prague-half-marathon",
+      "checkedAt": "2026-11-19T20:35:00.000Z",
+      "status": "unconfirmed",
+      "sources": [],
+      "eventPeriod": null,
+      "routes": {}
+    },
+    "berlin-half-marathon": {
+      "eventId": "berlin-half-marathon",
+      "checkedAt": "2026-11-19T20:35:00.000Z",
+      "status": "unconfirmed",
+      "sources": [],
+      "eventPeriod": null,
+      "routes": {}
+    },
+    "belgrade-half-marathon": {
+      "eventId": "belgrade-half-marathon",
+      "checkedAt": "2026-11-19T20:35:00.000Z",
+      "status": "unconfirmed",
+      "sources": [],
+      "eventPeriod": null,
+      "routes": {}
+    },
+    "wiener-stadtische-half-marathon": {
+      "eventId": "wiener-stadtische-half-marathon",
+      "checkedAt": "2026-11-19T20:35:00.000Z",
+      "status": "unconfirmed",
+      "sources": [],
+      "eventPeriod": null,
+      "routes": {}
+    },
+    "riga-half-marathon": {
+      "eventId": "riga-half-marathon",
+      "checkedAt": "2026-11-19T20:35:00.000Z",
+      "status": "unconfirmed",
+      "sources": [],
+      "eventPeriod": null,
+      "routes": {}
+    },
+    "stockholm-half-marathon": {
+      "eventId": "stockholm-half-marathon",
+      "checkedAt": "2026-11-19T20:35:00.000Z",
+      "status": "unconfirmed",
+      "sources": [],
+      "eventPeriod": null,
+      "routes": {}
+    },
+    "copenhagen-half-marathon": {
+      "eventId": "copenhagen-half-marathon",
+      "checkedAt": "2026-11-19T20:35:00.000Z",
+      "status": "unconfirmed",
+      "sources": [],
+      "eventPeriod": null,
+      "routes": {}
+    },
+    "cardiff-half-marathon": {
+      "eventId": "cardiff-half-marathon",
+      "checkedAt": "2026-11-19T20:35:00.000Z",
+      "status": "unconfirmed",
+      "sources": [],
+      "eventPeriod": null,
+      "routes": {}
+    },
+    "valencia-half-marathon": {
+      "eventId": "valencia-half-marathon",
+      "checkedAt": "2026-11-19T20:35:00.000Z",
+      "status": "unconfirmed",
+      "sources": [],
+      "eventPeriod": null,
+      "routes": {}
+    },
+    "run-rome-the-marathon": {
+      "eventId": "run-rome-the-marathon",
+      "checkedAt": "2026-11-19T20:35:00.000Z",
+      "status": "unconfirmed",
+      "sources": [],
+      "eventPeriod": null,
+      "routes": {}
+    },
+    "ing-night-marathon-luxembourg": {
+      "eventId": "ing-night-marathon-luxembourg",
+      "checkedAt": "2026-11-19T20:35:00.000Z",
+      "status": "unconfirmed",
+      "sources": [],
+      "eventPeriod": null,
+      "routes": {}
+    },
+    "stramilano-half-marathon": {
+      "eventId": "stramilano-half-marathon",
+      "checkedAt": "2026-11-19T20:35:00.000Z",
+      "status": "unconfirmed",
+      "sources": [],
+      "eventPeriod": null,
+      "routes": {}
+    },
+    "mezza-maratona-sul-brembo": {
+      "eventId": "mezza-maratona-sul-brembo",
+      "checkedAt": "2026-11-19T20:35:00.000Z",
+      "status": "unconfirmed",
+      "sources": [],
+      "eventPeriod": null,
+      "routes": {}
+    },
+    "stragardalake-run-your-dream": {
+      "eventId": "stragardalake-run-your-dream",
+      "checkedAt": "2026-11-19T20:35:00.000Z",
+      "status": "unconfirmed",
+      "sources": [],
+      "eventPeriod": null,
+      "routes": {}
+    },
+    "mangia-s-straragusa": {
+      "eventId": "mangia-s-straragusa",
+      "checkedAt": "2026-11-19T20:35:00.000Z",
+      "status": "unconfirmed",
+      "sources": [],
+      "eventPeriod": null,
+      "routes": {}
+    },
+    "mangia-s-maratona-di-ragusa": {
+      "eventId": "mangia-s-maratona-di-ragusa",
+      "checkedAt": "2026-11-19T20:35:00.000Z",
+      "status": "unconfirmed",
+      "sources": [],
+      "eventPeriod": null,
+      "routes": {}
+    },
+    "losa-experience-21k-half-marathon": {
+      "eventId": "losa-experience-21k-half-marathon",
+      "checkedAt": "2026-11-19T20:35:00.000Z",
+      "status": "unconfirmed",
+      "sources": [],
+      "eventPeriod": null,
+      "routes": {}
+    },
+    "irun21-la-mezza-di-vicenza": {
+      "eventId": "irun21-la-mezza-di-vicenza",
+      "checkedAt": "2026-11-19T20:35:00.000Z",
+      "status": "unconfirmed",
+      "sources": [],
+      "eventPeriod": null,
+      "routes": {}
+    },
+    "half-marathon-citta-di-montecatini-terme": {
+      "eventId": "half-marathon-citta-di-montecatini-terme",
+      "checkedAt": "2026-11-19T20:35:00.000Z",
+      "status": "unconfirmed",
+      "sources": [],
+      "eventPeriod": null,
+      "routes": {}
+    },
+    "novara-half-marathon": {
+      "eventId": "novara-half-marathon",
+      "checkedAt": "2026-11-19T20:35:00.000Z",
+      "status": "unconfirmed",
+      "sources": [],
+      "eventPeriod": null,
+      "routes": {}
+    },
+    "mezza-maratona-internazionale-delle-due-perle": {
+      "eventId": "mezza-maratona-internazionale-delle-due-perle",
+      "checkedAt": "2026-11-19T20:35:00.000Z",
+      "status": "unconfirmed",
+      "sources": [],
+      "eventPeriod": null,
+      "routes": {}
+    },
+    "portofino-marathon": {
+      "eventId": "portofino-marathon",
+      "checkedAt": "2026-11-19T20:35:00.000Z",
+      "status": "unconfirmed",
+      "sources": [],
+      "eventPeriod": null,
+      "routes": {}
+    },
+    "white-marble-marathon": {
+      "eventId": "white-marble-marathon",
+      "checkedAt": "2026-11-19T20:35:00.000Z",
+      "status": "unconfirmed",
+      "sources": [],
+      "eventPeriod": null,
+      "routes": {}
+    },
+    "white-marble-half-marathon": {
+      "eventId": "white-marble-half-marathon",
+      "checkedAt": "2026-11-19T20:35:00.000Z",
+      "status": "unconfirmed",
+      "sources": [],
+      "eventPeriod": null,
+      "routes": {}
+    },
+    "corime-barletta-marathon": {
+      "eventId": "corime-barletta-marathon",
+      "checkedAt": "2026-11-19T20:35:00.000Z",
+      "status": "unconfirmed",
+      "sources": [],
+      "eventPeriod": null,
+      "routes": {}
+    },
+    "corime-barletta-half-marathon": {
+      "eventId": "corime-barletta-half-marathon",
+      "checkedAt": "2026-11-19T20:35:00.000Z",
+      "status": "unconfirmed",
+      "sources": [],
+      "eventPeriod": null,
+      "routes": {}
+    },
+    "mezza-maratona-di-oristano": {
+      "eventId": "mezza-maratona-di-oristano",
+      "checkedAt": "2026-11-19T20:35:00.000Z",
+      "status": "unconfirmed",
+      "sources": [],
+      "eventPeriod": null,
+      "routes": {}
+    },
+    "mezza-maratona-di-san-valentino": {
+      "eventId": "mezza-maratona-di-san-valentino",
+      "checkedAt": "2026-11-19T20:35:00.000Z",
+      "status": "unconfirmed",
+      "sources": [],
+      "eventPeriod": null,
+      "routes": {}
+    },
+    "maratona-di-san-valentino": {
+      "eventId": "maratona-di-san-valentino",
+      "checkedAt": "2026-11-19T20:35:00.000Z",
+      "status": "unconfirmed",
+      "sources": [],
+      "eventPeriod": null,
+      "routes": {}
+    },
+    "verdi-marathon": {
+      "eventId": "verdi-marathon",
+      "checkedAt": "2026-11-19T20:35:00.000Z",
+      "status": "unconfirmed",
+      "sources": [],
+      "eventPeriod": null,
+      "routes": {}
+    },
+    "verdi-marathon-21k": {
+      "eventId": "verdi-marathon-21k",
+      "checkedAt": "2026-11-19T20:35:00.000Z",
+      "status": "unconfirmed",
+      "sources": [],
+      "eventPeriod": null,
+      "routes": {}
+    },
+    "agnolotto-half-marathon": {
+      "eventId": "agnolotto-half-marathon",
+      "checkedAt": "2026-11-19T20:35:00.000Z",
+      "status": "unconfirmed",
+      "sources": [],
+      "eventPeriod": null,
+      "routes": {}
+    },
+    "ferrara-half-marathon": {
+      "eventId": "ferrara-half-marathon",
+      "checkedAt": "2026-11-19T20:35:00.000Z",
+      "status": "unconfirmed",
+      "sources": [],
+      "eventPeriod": null,
+      "routes": {}
+    },
+    "ferrara-marathon": {
+      "eventId": "ferrara-marathon",
+      "checkedAt": "2026-11-19T20:35:00.000Z",
+      "status": "unconfirmed",
+      "sources": [],
+      "eventPeriod": null,
+      "routes": {}
+    },
+    "run-for-life-21km": {
+      "eventId": "run-for-life-21km",
+      "checkedAt": "2026-11-19T20:35:00.000Z",
+      "status": "unconfirmed",
+      "sources": [],
+      "eventPeriod": null,
+      "routes": {}
+    },
+    "strasimeno-half-marathon": {
+      "eventId": "strasimeno-half-marathon",
+      "checkedAt": "2026-11-19T20:35:00.000Z",
+      "status": "unconfirmed",
+      "sources": [],
+      "eventPeriod": null,
+      "routes": {}
+    },
+    "strasimeno-marathon": {
+      "eventId": "strasimeno-marathon",
+      "checkedAt": "2026-11-19T20:35:00.000Z",
+      "status": "unconfirmed",
+      "sources": [],
+      "eventPeriod": null,
+      "routes": {}
+    },
+    "bologna-marathon": {
+      "eventId": "bologna-marathon",
+      "checkedAt": "2026-11-19T20:35:00.000Z",
+      "status": "unconfirmed",
+      "sources": [],
+      "eventPeriod": null,
+      "routes": {}
+    },
+    "run-tune-up": {
+      "eventId": "run-tune-up",
+      "checkedAt": "2026-11-19T20:35:00.000Z",
+      "status": "unconfirmed",
+      "sources": [],
+      "eventPeriod": null,
+      "routes": {}
+    },
+    "lago-maggiore-half-marathon": {
+      "eventId": "lago-maggiore-half-marathon",
+      "checkedAt": "2026-11-19T20:35:00.000Z",
+      "status": "unconfirmed",
+      "sources": [],
+      "eventPeriod": null,
+      "routes": {}
+    },
+    "derthona-half-marathon": {
+      "eventId": "derthona-half-marathon",
+      "checkedAt": "2026-11-19T20:35:00.000Z",
+      "status": "unconfirmed",
+      "sources": [],
+      "eventPeriod": null,
+      "routes": {}
+    },
+    "mare-sale-half-marathon": {
+      "eventId": "mare-sale-half-marathon",
+      "checkedAt": "2026-11-19T20:35:00.000Z",
+      "status": "unconfirmed",
+      "sources": [],
+      "eventPeriod": null,
+      "routes": {}
+    },
+    "mezza-maratona-citta-di-termini-imerese": {
+      "eventId": "mezza-maratona-citta-di-termini-imerese",
+      "checkedAt": "2026-11-19T20:35:00.000Z",
+      "status": "unconfirmed",
+      "sources": [],
+      "eventPeriod": null,
+      "routes": {}
+    },
+    "stracivitanova-banco-marchigiano-half-marathon": {
+      "eventId": "stracivitanova-banco-marchigiano-half-marathon",
+      "checkedAt": "2026-11-19T20:35:00.000Z",
+      "status": "unconfirmed",
+      "sources": [],
+      "eventPeriod": null,
+      "routes": {}
+    },
+    "brescia-art-marathon": {
+      "eventId": "brescia-art-marathon",
+      "checkedAt": "2026-11-19T20:35:00.000Z",
+      "status": "unconfirmed",
+      "sources": [],
+      "eventPeriod": null,
+      "routes": {}
+    },
+    "brescia-half-marathon": {
+      "eventId": "brescia-half-marathon",
+      "checkedAt": "2026-11-19T20:35:00.000Z",
+      "status": "unconfirmed",
+      "sources": [],
+      "eventPeriod": null,
+      "routes": {}
+    },
+    "maratonina-comune-di-brugnera-alto-livenza": {
+      "eventId": "maratonina-comune-di-brugnera-alto-livenza",
+      "checkedAt": "2026-11-19T20:35:00.000Z",
+      "status": "unconfirmed",
+      "sources": [],
+      "eventPeriod": null,
+      "routes": {}
+    },
+    "scarpadoro-half-marathon": {
+      "eventId": "scarpadoro-half-marathon",
+      "checkedAt": "2026-11-19T20:35:00.000Z",
+      "status": "unconfirmed",
+      "sources": [],
+      "eventPeriod": null,
+      "routes": {}
+    },
+    "cervia-marathon": {
+      "eventId": "cervia-marathon",
+      "checkedAt": "2026-11-19T20:35:00.000Z",
+      "status": "unconfirmed",
+      "sources": [],
+      "eventPeriod": null,
+      "routes": {}
+    },
+    "dogi-s-half-marathon": {
+      "eventId": "dogi-s-half-marathon",
+      "checkedAt": "2026-11-19T20:35:00.000Z",
+      "status": "unconfirmed",
+      "sources": [],
+      "eventPeriod": null,
+      "routes": {}
+    },
+    "mezza-maratona-di-agrigento": {
+      "eventId": "mezza-maratona-di-agrigento",
+      "checkedAt": "2026-11-19T20:35:00.000Z",
+      "status": "unconfirmed",
+      "sources": [],
+      "eventPeriod": null,
+      "routes": {}
+    },
+    "wizz-air-milano-marathon": {
+      "eventId": "wizz-air-milano-marathon",
+      "checkedAt": "2026-11-19T20:35:00.000Z",
+      "status": "unconfirmed",
+      "sources": [],
+      "eventPeriod": null,
+      "routes": {}
+    },
+    "scoglittirace-half-marathon-trofeo-pescamare": {
+      "eventId": "scoglittirace-half-marathon-trofeo-pescamare",
+      "checkedAt": "2026-11-19T20:35:00.000Z",
+      "status": "unconfirmed",
+      "sources": [],
+      "eventPeriod": null,
+      "routes": {}
+    },
+    "half-marathon-la-mezza-del-metauro": {
+      "eventId": "half-marathon-la-mezza-del-metauro",
+      "checkedAt": "2026-11-19T20:35:00.000Z",
+      "status": "unconfirmed",
+      "sources": [],
+      "eventPeriod": null,
+      "routes": {}
+    },
+    "mezza-maratona-di-latina": {
+      "eventId": "mezza-maratona-di-latina",
+      "checkedAt": "2026-11-19T20:35:00.000Z",
+      "status": "unconfirmed",
+      "sources": [],
+      "eventPeriod": null,
+      "routes": {}
+    },
+    "mezza-maratona-di-alessandria": {
+      "eventId": "mezza-maratona-di-alessandria",
+      "checkedAt": "2026-11-19T20:35:00.000Z",
+      "status": "unconfirmed",
+      "sources": [],
+      "eventPeriod": null,
+      "routes": {}
+    },
+    "mezza-maratona-del-sulcis": {
+      "eventId": "mezza-maratona-del-sulcis",
+      "checkedAt": "2026-11-19T20:35:00.000Z",
+      "status": "unconfirmed",
+      "sources": [],
+      "eventPeriod": null,
+      "routes": {}
+    },
+    "mezza-due-laghi": {
+      "eventId": "mezza-due-laghi",
+      "checkedAt": "2026-11-19T20:35:00.000Z",
+      "status": "unconfirmed",
+      "sources": [],
+      "eventPeriod": null,
+      "routes": {}
+    },
+    "mezza-maratona-dei-fiori": {
+      "eventId": "mezza-maratona-dei-fiori",
+      "checkedAt": "2026-11-19T20:35:00.000Z",
+      "status": "unconfirmed",
+      "sources": [],
+      "eventPeriod": null,
+      "routes": {}
+    },
+    "terni-half-marathon": {
+      "eventId": "terni-half-marathon",
+      "checkedAt": "2026-11-19T20:35:00.000Z",
+      "status": "unconfirmed",
+      "sources": [],
+      "eventPeriod": null,
+      "routes": {}
+    },
+    "maratona-dei-laghi": {
+      "eventId": "maratona-dei-laghi",
+      "checkedAt": "2026-11-19T20:35:00.000Z",
+      "status": "unconfirmed",
+      "sources": [],
+      "eventPeriod": null,
+      "routes": {}
+    },
+    "mezza-maratona-dei-laghi": {
+      "eventId": "mezza-maratona-dei-laghi",
+      "checkedAt": "2026-11-19T20:35:00.000Z",
+      "status": "unconfirmed",
+      "sources": [],
+      "eventPeriod": null,
+      "routes": {}
+    },
+    "agropoli-paestum-half-marathon": {
+      "eventId": "agropoli-paestum-half-marathon",
+      "checkedAt": "2026-11-19T20:35:00.000Z",
+      "status": "unconfirmed",
+      "sources": [],
+      "eventPeriod": null,
+      "routes": {}
+    },
+    "maratona-del-lamone": {
+      "eventId": "maratona-del-lamone",
+      "checkedAt": "2026-11-19T20:35:00.000Z",
+      "status": "unconfirmed",
+      "sources": [],
+      "eventPeriod": null,
+      "routes": {}
+    },
+    "sardinia-marathon-valle-dei-nuraghi": {
+      "eventId": "sardinia-marathon-valle-dei-nuraghi",
+      "checkedAt": "2026-11-19T20:35:00.000Z",
+      "status": "unconfirmed",
+      "sources": [],
+      "eventPeriod": null,
+      "routes": {}
+    },
+    "kormed-21100-varese-half-marathon": {
+      "eventId": "kormed-21100-varese-half-marathon",
+      "checkedAt": "2026-11-19T20:35:00.000Z",
+      "status": "unconfirmed",
+      "sources": [],
+      "eventPeriod": null,
+      "routes": {}
+    },
+    "la-mezza-di-cremona": {
+      "eventId": "la-mezza-di-cremona",
+      "checkedAt": "2026-11-19T20:35:00.000Z",
+      "status": "unconfirmed",
+      "sources": [],
+      "eventPeriod": null,
+      "routes": {}
+    },
+    "prato-half-marathon": {
+      "eventId": "prato-half-marathon",
+      "checkedAt": "2026-11-19T20:35:00.000Z",
+      "status": "unconfirmed",
+      "sources": [],
+      "eventPeriod": null,
+      "routes": {}
+    },
+    "mezza-maratona-internazionale-di-genova": {
+      "eventId": "mezza-maratona-internazionale-di-genova",
+      "checkedAt": "2026-11-19T20:35:00.000Z",
+      "status": "unconfirmed",
+      "sources": [],
+      "eventPeriod": null,
+      "routes": {}
+    },
+    "padova-marathon": {
+      "eventId": "padova-marathon",
+      "checkedAt": "2026-11-19T20:35:00.000Z",
+      "status": "unconfirmed",
+      "sources": [],
+      "eventPeriod": null,
+      "routes": {}
+    },
+    "padova-half-marathon": {
+      "eventId": "padova-half-marathon",
+      "checkedAt": "2026-11-19T20:35:00.000Z",
+      "status": "unconfirmed",
+      "sources": [],
+      "eventPeriod": null,
+      "routes": {}
+    },
+    "rimini-marathon": {
+      "eventId": "rimini-marathon",
+      "checkedAt": "2026-11-19T20:35:00.000Z",
+      "status": "unconfirmed",
+      "sources": [],
+      "eventPeriod": null,
+      "routes": {}
+    },
+    "rimini-half-marathon": {
+      "eventId": "rimini-half-marathon",
+      "checkedAt": "2026-11-19T20:35:00.000Z",
+      "status": "unconfirmed",
+      "sources": [],
+      "eventPeriod": null,
+      "routes": {}
+    },
+    "trieste-42k": {
+      "eventId": "trieste-42k",
+      "checkedAt": "2026-11-19T20:35:00.000Z",
+      "status": "unconfirmed",
+      "sources": [],
+      "eventPeriod": null,
+      "routes": {}
+    },
+    "trieste-21k": {
+      "eventId": "trieste-21k",
+      "checkedAt": "2026-11-19T20:35:00.000Z",
+      "status": "unconfirmed",
+      "sources": [],
+      "eventPeriod": null,
+      "routes": {}
+    },
+    "lucca-half-marathon": {
+      "eventId": "lucca-half-marathon",
+      "checkedAt": "2026-11-19T20:35:00.000Z",
+      "status": "unconfirmed",
+      "sources": [],
+      "eventPeriod": null,
+      "routes": {}
+    },
+    "collemar-athon": {
+      "eventId": "collemar-athon",
+      "checkedAt": "2026-11-19T20:35:00.000Z",
+      "status": "unconfirmed",
+      "sources": [],
+      "eventPeriod": null,
+      "routes": {}
+    },
+    "half-collemar-athon": {
+      "eventId": "half-collemar-athon",
+      "checkedAt": "2026-11-19T20:35:00.000Z",
+      "status": "unconfirmed",
+      "sources": [],
+      "eventPeriod": null,
+      "routes": {}
+    },
+    "placentia-half-marathon": {
+      "eventId": "placentia-half-marathon",
+      "checkedAt": "2026-11-19T20:35:00.000Z",
+      "status": "unconfirmed",
+      "sources": [],
+      "eventPeriod": null,
+      "routes": {}
+    },
+    "bibione-half-marathon": {
+      "eventId": "bibione-half-marathon",
+      "checkedAt": "2026-11-19T20:35:00.000Z",
+      "status": "unconfirmed",
+      "sources": [],
+      "eventPeriod": null,
+      "routes": {}
+    },
+    "jesolo-moonlight-half-marathon": {
+      "eventId": "jesolo-moonlight-half-marathon",
+      "checkedAt": "2026-11-19T20:35:00.000Z",
+      "status": "unconfirmed",
+      "sources": [],
+      "eventPeriod": null,
+      "routes": {}
+    },
+    "aosta-21k-half-marathon": {
+      "eventId": "aosta-21k-half-marathon",
+      "checkedAt": "2026-11-19T20:35:00.000Z",
+      "status": "unconfirmed",
+      "sources": [],
+      "eventPeriod": null,
+      "routes": {}
+    },
+    "mezza-maratona-della-memoria": {
+      "eventId": "mezza-maratona-della-memoria",
+      "checkedAt": "2026-11-19T20:35:00.000Z",
+      "status": "unconfirmed",
+      "sources": [],
+      "eventPeriod": null,
+      "routes": {}
+    },
+    "parma-mezza-maratona": {
+      "eventId": "parma-mezza-maratona",
+      "checkedAt": "2026-11-19T20:35:00.000Z",
+      "status": "unconfirmed",
+      "sources": [],
+      "eventPeriod": null,
+      "routes": {}
+    },
+    "maratonina-citta-di-udine": {
+      "eventId": "maratonina-citta-di-udine",
+      "checkedAt": "2026-11-19T20:35:00.000Z",
+      "status": "unconfirmed",
+      "sources": [],
+      "eventPeriod": null,
+      "routes": {}
+    },
+    "trento-half-marathon": {
+      "eventId": "trento-half-marathon",
+      "checkedAt": "2026-11-19T20:35:00.000Z",
+      "status": "unconfirmed",
+      "sources": [],
+      "eventPeriod": null,
+      "routes": {}
+    },
+    "maratona-del-mugello": {
+      "eventId": "maratona-del-mugello",
+      "checkedAt": "2026-11-19T20:35:00.000Z",
+      "status": "unconfirmed",
+      "sources": [],
+      "eventPeriod": null,
+      "routes": {}
+    },
+    "mantova-half-marathon": {
+      "eventId": "mantova-half-marathon",
+      "checkedAt": "2026-11-19T20:35:00.000Z",
+      "status": "unconfirmed",
+      "sources": [],
+      "eventPeriod": null,
+      "routes": {}
+    },
+    "telesia-half-marathon": {
+      "eventId": "telesia-half-marathon",
+      "checkedAt": "2026-11-19T20:35:00.000Z",
+      "status": "unconfirmed",
+      "sources": [],
+      "eventPeriod": null,
+      "routes": {}
+    },
+    "alghero-half-marathon": {
+      "eventId": "alghero-half-marathon",
+      "checkedAt": "2026-11-19T20:35:00.000Z",
+      "status": "unconfirmed",
+      "sources": [],
+      "eventPeriod": null,
+      "routes": {}
+    },
+    "maratona-reale": {
+      "eventId": "maratona-reale",
+      "checkedAt": "2026-11-19T20:35:00.000Z",
+      "status": "unconfirmed",
+      "sources": [],
+      "eventPeriod": null,
+      "routes": {}
+    },
+    "una-corsa-da-re-half-marathon": {
+      "eventId": "una-corsa-da-re-half-marathon",
+      "checkedAt": "2026-11-19T20:35:00.000Z",
+      "status": "unconfirmed",
+      "sources": [],
+      "eventPeriod": null,
+      "routes": {}
+    },
+    "pisa-half-marathon": {
+      "eventId": "pisa-half-marathon",
+      "checkedAt": "2026-11-19T20:35:00.000Z",
+      "status": "unconfirmed",
+      "sources": [],
+      "eventPeriod": null,
+      "routes": {}
+    },
+    "rome-half-marathon": {
+      "eventId": "rome-half-marathon",
+      "checkedAt": "2026-11-19T20:35:00.000Z",
+      "status": "unconfirmed",
+      "sources": [],
+      "eventPeriod": null,
+      "routes": {}
+    },
+    "parma-marathon": {
+      "eventId": "parma-marathon",
+      "checkedAt": "2026-11-19T20:35:00.000Z",
+      "status": "unconfirmed",
+      "sources": [],
+      "eventPeriod": null,
+      "routes": {}
+    },
+    "palermo-international-half-marathon": {
+      "eventId": "palermo-international-half-marathon",
+      "checkedAt": "2026-11-19T20:35:00.000Z",
+      "status": "unconfirmed",
+      "sources": [],
+      "eventPeriod": null,
+      "routes": {}
+    },
+    "neapolis-marathon": {
+      "eventId": "neapolis-marathon",
+      "checkedAt": "2026-11-19T20:35:00.000Z",
+      "status": "unconfirmed",
+      "sources": [],
+      "eventPeriod": null,
+      "routes": {}
+    },
+    "neapolis-half-marathon": {
+      "eventId": "neapolis-half-marathon",
+      "checkedAt": "2026-11-19T20:35:00.000Z",
+      "status": "unconfirmed",
+      "sources": [],
+      "eventPeriod": null,
+      "routes": {}
+    },
+    "venicemarathon": {
+      "eventId": "venicemarathon",
+      "checkedAt": "2026-11-19T20:35:00.000Z",
+      "status": "unconfirmed",
+      "sources": [],
+      "eventPeriod": null,
+      "routes": {}
+    },
+    "venice-half-marathon": {
+      "eventId": "venice-half-marathon",
+      "checkedAt": "2026-11-19T20:35:00.000Z",
+      "status": "unconfirmed",
+      "sources": [],
+      "eventPeriod": null,
+      "routes": {}
+    },
+    "laus-half-marathon": {
+      "eventId": "laus-half-marathon",
+      "checkedAt": "2026-11-19T20:35:00.000Z",
+      "status": "unconfirmed",
+      "sources": [],
+      "eventPeriod": null,
+      "routes": {}
+    },
+    "maratonina-citta-di-arezzo": {
+      "eventId": "maratonina-citta-di-arezzo",
+      "checkedAt": "2026-11-19T20:35:00.000Z",
+      "status": "unconfirmed",
+      "sources": [],
+      "eventPeriod": null,
+      "routes": {}
+    },
+    "egnazia-half-marathon": {
+      "eventId": "egnazia-half-marathon",
+      "checkedAt": "2026-11-19T20:35:00.000Z",
+      "status": "unconfirmed",
+      "sources": [],
+      "eventPeriod": null,
+      "routes": {}
+    },
+    "runrivierarun-half-marathon": {
+      "eventId": "runrivierarun-half-marathon",
+      "checkedAt": "2026-11-19T20:35:00.000Z",
+      "status": "unconfirmed",
+      "sources": [],
+      "eventPeriod": null,
+      "routes": {}
+    },
+    "costa-dei-trabocchi-half-marathon": {
+      "eventId": "costa-dei-trabocchi-half-marathon",
+      "checkedAt": "2026-11-19T20:35:00.000Z",
+      "status": "unconfirmed",
+      "sources": [],
+      "eventPeriod": null,
+      "routes": {}
+    },
+    "strasalerno-half-marathon": {
+      "eventId": "strasalerno-half-marathon",
+      "checkedAt": "2026-11-19T20:35:00.000Z",
+      "status": "unconfirmed",
+      "sources": [],
+      "eventPeriod": null,
+      "routes": {}
+    },
+    "torino-city-marathon": {
+      "eventId": "torino-city-marathon",
+      "checkedAt": "2026-11-19T20:35:00.000Z",
+      "status": "unconfirmed",
+      "sources": [],
+      "eventPeriod": null,
+      "routes": {}
+    },
+    "torino-city-half-marathon": {
+      "eventId": "torino-city-half-marathon",
+      "checkedAt": "2026-11-19T20:35:00.000Z",
+      "status": "unconfirmed",
+      "sources": [],
+      "eventPeriod": null,
+      "routes": {}
+    },
+    "lago-maggiore-marathon": {
+      "eventId": "lago-maggiore-marathon",
+      "checkedAt": "2026-11-19T20:35:00.000Z",
+      "status": "unconfirmed",
+      "sources": [],
+      "eventPeriod": null,
+      "routes": {}
+    },
+    "mezza-maratona-citta-di-palmanova": {
+      "eventId": "mezza-maratona-citta-di-palmanova",
+      "checkedAt": "2026-11-19T20:35:00.000Z",
+      "status": "unconfirmed",
+      "sources": [],
+      "eventPeriod": null,
+      "routes": {}
+    },
+    "maratonina-citta-di-crema": {
+      "eventId": "maratonina-citta-di-crema",
+      "checkedAt": "2026-11-19T20:35:00.000Z",
+      "status": "unconfirmed",
+      "sources": [],
+      "eventPeriod": null,
+      "routes": {}
+    },
+    "tui-palermo-marathon": {
+      "eventId": "tui-palermo-marathon",
+      "checkedAt": "2026-11-19T20:35:00.000Z",
+      "status": "unconfirmed",
+      "sources": [],
+      "eventPeriod": null,
+      "routes": {}
+    },
+    "tui-palermo-half-marathon": {
+      "eventId": "tui-palermo-half-marathon",
+      "checkedAt": "2026-11-19T20:35:00.000Z",
+      "status": "unconfirmed",
+      "sources": [],
+      "eventPeriod": null,
+      "routes": {}
+    },
+    "ravenna-half-marathon": {
+      "eventId": "ravenna-half-marathon",
+      "checkedAt": "2026-11-19T20:35:00.000Z",
+      "status": "unconfirmed",
+      "sources": [],
+      "eventPeriod": null,
+      "routes": {}
+    },
+    "maratona-di-ravenna-citta-d-arte": {
+      "eventId": "maratona-di-ravenna-citta-d-arte",
+      "checkedAt": "2026-11-19T20:35:00.000Z",
+      "status": "unconfirmed",
+      "sources": [],
+      "eventPeriod": null,
+      "routes": {}
+    },
+    "due-mari-marathon": {
+      "eventId": "due-mari-marathon",
+      "checkedAt": "2026-11-19T20:35:00.000Z",
+      "status": "unconfirmed",
+      "sources": [],
+      "eventPeriod": null,
+      "routes": {}
+    },
+    "san-francesco-marathon": {
+      "eventId": "san-francesco-marathon",
+      "checkedAt": "2026-11-19T20:35:00.000Z",
+      "status": "unconfirmed",
+      "sources": [],
+      "eventPeriod": null,
+      "routes": {}
+    },
+    "verona-run-marathon": {
+      "eventId": "verona-run-marathon",
+      "checkedAt": "2026-11-19T20:35:00.000Z",
+      "status": "unconfirmed",
+      "sources": [],
+      "eventPeriod": null,
+      "routes": {}
+    },
+    "verona-run-halfmarathon": {
+      "eventId": "verona-run-halfmarathon",
+      "checkedAt": "2026-11-19T20:35:00.000Z",
+      "status": "unconfirmed",
+      "sources": [],
+      "eventPeriod": null,
+      "routes": {}
+    },
+    "savona-international-half-marathon": {
+      "eventId": "savona-international-half-marathon",
+      "checkedAt": "2026-11-19T20:35:00.000Z",
+      "status": "unconfirmed",
+      "sources": [],
+      "eventPeriod": null,
+      "routes": {}
+    },
+    "estra-firenze-marathon": {
+      "eventId": "estra-firenze-marathon",
+      "checkedAt": "2026-11-19T20:35:00.000Z",
+      "status": "unconfirmed",
+      "sources": [],
+      "eventPeriod": null,
+      "routes": {}
+    },
+    "milano-half-marathon": {
+      "eventId": "milano-half-marathon",
+      "checkedAt": "2026-11-19T20:35:00.000Z",
+      "status": "unconfirmed",
+      "sources": [],
+      "eventPeriod": null,
+      "routes": {}
+    },
+    "como-lake-half-marathon": {
+      "eventId": "como-lake-half-marathon",
+      "checkedAt": "2026-11-19T20:35:00.000Z",
+      "status": "unconfirmed",
+      "sources": [],
+      "eventPeriod": null,
+      "routes": {}
+    },
+    "catania-marathon": {
+      "eventId": "catania-marathon",
+      "checkedAt": "2026-11-19T20:35:00.000Z",
+      "status": "unconfirmed",
+      "sources": [],
+      "eventPeriod": null,
+      "routes": {}
+    },
+    "salento-half-marathon": {
+      "eventId": "salento-half-marathon",
+      "checkedAt": "2026-11-19T20:35:00.000Z",
+      "status": "unconfirmed",
+      "sources": [],
+      "eventPeriod": null,
+      "routes": {}
+    },
+    "maratona-di-reggio-emilia-citta-del-tricolore": {
+      "eventId": "maratona-di-reggio-emilia-citta-del-tricolore",
+      "checkedAt": "2026-11-19T20:35:00.000Z",
+      "status": "unconfirmed",
+      "sources": [],
+      "eventPeriod": null,
+      "routes": {}
+    },
+    "mezza-maratona-del-tricolore": {
+      "eventId": "mezza-maratona-del-tricolore",
+      "checkedAt": "2026-11-19T20:35:00.000Z",
+      "status": "unconfirmed",
+      "sources": [],
+      "eventPeriod": null,
+      "routes": {}
+    },
+    "maratona-di-pisa": {
+      "eventId": "maratona-di-pisa",
+      "checkedAt": "2026-11-19T20:35:00.000Z",
+      "status": "unconfirmed",
+      "sources": [],
+      "eventPeriod": null,
+      "routes": {}
+    },
+    "mezza-maratona-di-pisa": {
+      "eventId": "mezza-maratona-di-pisa",
+      "checkedAt": "2026-11-19T20:35:00.000Z",
+      "status": "unconfirmed",
+      "sources": [],
+      "eventPeriod": null,
+      "routes": {}
+    },
+    "maratonina-della-citta-murata": {
+      "eventId": "maratonina-della-citta-murata",
+      "checkedAt": "2026-11-19T20:35:00.000Z",
+      "status": "unconfirmed",
+      "sources": [],
+      "eventPeriod": null,
+      "routes": {}
+    },
+    "neusiedler-see-marathon": {
+      "eventId": "neusiedler-see-marathon",
+      "checkedAt": "2026-11-19T20:35:00.000Z",
+      "status": "unconfirmed",
+      "sources": [],
+      "eventPeriod": null,
+      "routes": {}
+    },
+    "oslo-marathon": {
+      "eventId": "oslo-marathon",
+      "checkedAt": "2026-11-19T20:35:00.000Z",
+      "status": "unconfirmed",
+      "sources": [],
+      "eventPeriod": null,
+      "routes": {}
+    },
+    "oktoberfest-run-nitra-half-marathon": {
+      "eventId": "oktoberfest-run-nitra-half-marathon",
+      "checkedAt": "2026-11-19T20:35:00.000Z",
+      "status": "unconfirmed",
+      "sources": [],
+      "eventPeriod": null,
+      "routes": {}
+    },
+    "minsk-half-marathon": {
+      "eventId": "minsk-half-marathon",
+      "checkedAt": "2026-11-19T20:35:00.000Z",
+      "status": "unconfirmed",
+      "sources": [],
+      "eventPeriod": null,
+      "routes": {}
+    },
+    "drammen-halvmaraton": {
+      "eventId": "drammen-halvmaraton",
+      "checkedAt": "2026-11-19T20:35:00.000Z",
+      "status": "unconfirmed",
+      "sources": [],
+      "eventPeriod": null,
+      "routes": {}
+    },
+    "lotto-poznan-marathon": {
+      "eventId": "lotto-poznan-marathon",
+      "checkedAt": "2026-11-19T20:35:00.000Z",
+      "status": "unconfirmed",
+      "sources": [],
+      "eventPeriod": null,
+      "routes": {}
+    },
+    "polish-half-marathon-championships": {
+      "eventId": "polish-half-marathon-championships",
+      "checkedAt": "2026-11-19T20:35:00.000Z",
+      "status": "unconfirmed",
+      "sources": [],
+      "eventPeriod": null,
+      "routes": {}
+    },
+    "3-country-marathon": {
+      "eventId": "3-country-marathon",
+      "checkedAt": "2026-11-19T20:35:00.000Z",
+      "status": "unconfirmed",
+      "sources": [],
+      "eventPeriod": null,
+      "routes": {}
+    },
+    "french-half-marathon-championships": {
+      "eventId": "french-half-marathon-championships",
+      "checkedAt": "2026-11-19T20:35:00.000Z",
+      "status": "unconfirmed",
+      "sources": [],
+      "eventPeriod": null,
+      "routes": {}
+    },
+    "finnish-half-marathon-championships": {
+      "eventId": "finnish-half-marathon-championships",
+      "checkedAt": "2026-11-19T20:35:00.000Z",
+      "status": "unconfirmed",
+      "sources": [],
+      "eventPeriod": null,
+      "routes": {}
+    },
+    "belgian-half-marathon-championships": {
+      "eventId": "belgian-half-marathon-championships",
+      "checkedAt": "2026-11-19T20:35:00.000Z",
+      "status": "unconfirmed",
+      "sources": [],
+      "eventPeriod": null,
+      "routes": {}
+    },
+    "mitja-marato-de-sitges": {
+      "eventId": "mitja-marato-de-sitges",
+      "checkedAt": "2026-11-19T20:35:00.000Z",
+      "status": "unconfirmed",
+      "sources": [],
+      "eventPeriod": null,
+      "routes": {}
+    },
+    "la-mitja-marato-internacional-de-granollers": {
+      "eventId": "la-mitja-marato-internacional-de-granollers",
+      "checkedAt": "2026-11-19T20:35:00.000Z",
+      "status": "unconfirmed",
+      "sources": [],
+      "eventPeriod": null,
+      "routes": {}
+    },
+    "media-maraton-ciudad-de-getafe": {
+      "eventId": "media-maraton-ciudad-de-getafe",
+      "checkedAt": "2026-11-19T20:35:00.000Z",
+      "status": "unconfirmed",
+      "sources": [],
+      "eventPeriod": null,
+      "routes": {}
+    },
+    "hyundai-mitja-marato-barcelona-by-brooks": {
+      "eventId": "hyundai-mitja-marato-barcelona-by-brooks",
+      "checkedAt": "2026-11-19T20:35:00.000Z",
+      "status": "unconfirmed",
+      "sources": [],
+      "eventPeriod": null,
+      "routes": {}
+    },
+    "grup-oliva-motor-mitja-de-cambrils": {
+      "eventId": "grup-oliva-motor-mitja-de-cambrils",
+      "checkedAt": "2026-11-19T20:35:00.000Z",
+      "status": "unconfirmed",
+      "sources": [],
+      "eventPeriod": null,
+      "routes": {}
+    },
+    "media-maraton-de-xativa": {
+      "eventId": "media-maraton-de-xativa",
+      "checkedAt": "2026-11-19T20:35:00.000Z",
+      "status": "unconfirmed",
+      "sources": [],
+      "eventPeriod": null,
+      "routes": {}
+    },
+    "totalenergies-media-maraton-de-malaga": {
+      "eventId": "totalenergies-media-maraton-de-malaga",
+      "checkedAt": "2026-11-19T20:35:00.000Z",
+      "status": "unconfirmed",
+      "sources": [],
+      "eventPeriod": null,
+      "routes": {}
+    },
+    "edp-lisbon-marathon-weekend": {
+      "eventId": "edp-lisbon-marathon-weekend",
+      "checkedAt": "2026-11-19T20:35:00.000Z",
+      "status": "unconfirmed",
+      "sources": [],
+      "eventPeriod": null,
+      "routes": {}
+    },
+    "hyundai-porto-half-marathon": {
+      "eventId": "hyundai-porto-half-marathon",
+      "checkedAt": "2026-11-19T20:35:00.000Z",
+      "status": "unconfirmed",
+      "sources": [],
+      "eventPeriod": null,
+      "routes": {}
+    },
+    "wizz-air-budapest-half-marathon": {
+      "eventId": "wizz-air-budapest-half-marathon",
+      "checkedAt": "2026-11-19T20:35:00.000Z",
+      "status": "unconfirmed",
+      "sources": [],
+      "eventPeriod": null,
+      "routes": {}
+    },
+    "tartu-city-marathon": {
+      "eventId": "tartu-city-marathon",
+      "checkedAt": "2026-11-19T20:35:00.000Z",
+      "status": "unconfirmed",
+      "sources": [],
+      "eventPeriod": null,
+      "routes": {}
+    },
+    "hoka-semi-de-paris": {
+      "eventId": "hoka-semi-de-paris",
+      "checkedAt": "2026-11-19T20:35:00.000Z",
+      "status": "unconfirmed",
+      "sources": [],
+      "eventPeriod": null,
+      "routes": {}
+    },
+    "abalone-marathon-de-nantes": {
+      "eventId": "abalone-marathon-de-nantes",
+      "checkedAt": "2026-11-19T20:35:00.000Z",
+      "status": "unconfirmed",
+      "sources": [],
+      "eventPeriod": null,
+      "routes": {}
+    },
+    "run-in-lyon-by-harmonie-mutuelle": {
+      "eventId": "run-in-lyon-by-harmonie-mutuelle",
+      "checkedAt": "2026-11-19T20:35:00.000Z",
+      "status": "unconfirmed",
+      "sources": [],
+      "eventPeriod": null,
+      "routes": {}
+    },
+    "semi-de-cannes": {
+      "eventId": "semi-de-cannes",
+      "checkedAt": "2026-11-19T20:35:00.000Z",
+      "status": "unconfirmed",
+      "sources": [],
+      "eventPeriod": null,
+      "routes": {}
+    },
+    "maasmarathon": {
+      "eventId": "maasmarathon",
+      "checkedAt": "2026-11-19T20:35:00.000Z",
+      "status": "unconfirmed",
+      "sources": [],
+      "eventPeriod": null,
+      "routes": {}
+    },
+    "wizz-air-cluj-napoca-marathon": {
+      "eventId": "wizz-air-cluj-napoca-marathon",
+      "checkedAt": "2026-11-19T20:35:00.000Z",
+      "status": "unconfirmed",
+      "sources": [],
+      "eventPeriod": null,
+      "routes": {}
+    },
+    "egmond-halve-marathon": {
+      "eventId": "egmond-halve-marathon",
+      "checkedAt": "2026-11-19T20:35:00.000Z",
+      "status": "unconfirmed",
+      "sources": [],
+      "eventPeriod": null,
+      "routes": {}
+    },
+    "nn-cpc-loop-den-haag": {
+      "eventId": "nn-cpc-loop-den-haag",
+      "checkedAt": "2026-11-19T20:35:00.000Z",
+      "status": "unconfirmed",
+      "sources": [],
+      "eventPeriod": null,
+      "routes": {}
+    },
+    "arrow-venloop": {
+      "eventId": "arrow-venloop",
+      "checkedAt": "2026-11-19T20:35:00.000Z",
+      "status": "unconfirmed",
+      "sources": [],
+      "eventPeriod": null,
+      "routes": {}
+    },
+    "du-motion-dubrovnik": {
+      "eventId": "du-motion-dubrovnik",
+      "checkedAt": "2026-11-19T20:35:00.000Z",
+      "status": "unconfirmed",
+      "sources": [],
+      "eventPeriod": null,
+      "routes": {}
+    },
+    "drei-herzen-marathon-radenci": {
+      "eventId": "drei-herzen-marathon-radenci",
+      "checkedAt": "2026-11-19T20:35:00.000Z",
+      "status": "unconfirmed",
+      "sources": [],
+      "eventPeriod": null,
+      "routes": {}
+    },
+    "nlb-ljubljana-marathon": {
+      "eventId": "nlb-ljubljana-marathon",
+      "checkedAt": "2026-11-19T20:35:00.000Z",
+      "status": "unconfirmed",
+      "sources": [],
+      "eventPeriod": null,
+      "routes": {}
+    },
+    "split-marathon": {
+      "eventId": "split-marathon",
+      "checkedAt": "2026-11-19T20:35:00.000Z",
+      "status": "unconfirmed",
+      "sources": [],
+      "eventPeriod": null,
+      "routes": {}
+    },
+    "sibiu-international-marathon": {
+      "eventId": "sibiu-international-marathon",
+      "checkedAt": "2026-11-19T20:35:00.000Z",
+      "status": "unconfirmed",
+      "sources": [],
+      "eventPeriod": null,
+      "routes": {}
     }
   }
 }
