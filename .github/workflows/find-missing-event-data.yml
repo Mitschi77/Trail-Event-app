@@ -39,6 +39,7 @@ jobs:
       - name: Test conservative source and cut-off parsing
         run: python -m unittest scripts/test_event_data_rules.py scripts/test_event_data_candidates.py
       - name: Search missing GPX, elevation, dates, start times, fees and cut-off evidence
+        if: github.event_name != 'pull_request'
         run: python scripts/find_missing_event_data.py
       - name: Submit candidates to owner review queue
         if: github.event_name != 'pull_request'
