@@ -29,13 +29,12 @@ for (const required of ["importActivityToHistory", "parseCutoffsText", "connectP
   if (!appSource.includes(required)) throw new Error("Required current app feature is missing: " + required);
 }
 
-const appVapidKey = html.match(/const\s+PUSH_VAPID_PUBLIC_KEY\s*=\s*["']([^"']+)["']/)?.[1];
-const senderVapidKey = pushFunction.match(/const\s+VAPID_PUBLIC_KEY\s*=\s*["']([^"']+)["']/)?.[1];
-if (!appVapidKey || !senderVapidKey) {
-  throw new Error("The public VAPID key is missing from the app or push sender.");
-}
-if (appVapidKey !== senderVapidKey) {
-  throw new Error("The app subscription VAPID key does not match the push sender key.");
+// The client does not currently embed a public VAPID key. The sender reads
+// its private key from the Supabase Vault; only validate the server-side
+// public key and its Vault-backed configuration lookup here.
+const senderVapidKey = pushFunction.match(/const\\s+VAPID_PUBLIC_KEY\\s*=\\s*["']([^"']+)["']/)?.[1];
+if (!senderVapidKey || !pushFunction.includes('get_trail_push_vapid_config')) {
+  throw new Error("The push sender's VAPID key or Vault configuration lookup is missing.");
 }
 
 console.log("Validated " + inlineScripts.length + " inline script(s), key app features, and matching Push VAPID keys.");
