@@ -5890,6 +5890,142 @@
       "sources": [],
       "eventPeriod": null,
       "routes": {}
+    },
+    "10-slavonska-trka": {
+      "eventId": "10-slavonska-trka",
+      "checkedAt": "2026-11-19T21:36:00.000Z",
+      "status": "unconfirmed",
+      "sources": [],
+      "eventPeriod": null,
+      "routes": {}
+    },
+    "zagreb21": {
+      "eventId": "zagreb21",
+      "checkedAt": "2026-11-19T21:36:00.000Z",
+      "status": "unconfirmed",
+      "sources": [],
+      "eventPeriod": null,
+      "routes": {}
+    },
+    "osjecki-ferivi-polumaraton": {
+      "eventId": "osjecki-ferivi-polumaraton",
+      "checkedAt": "2026-11-19T21:36:00.000Z",
+      "status": "unconfirmed",
+      "sources": [],
+      "eventPeriod": null,
+      "routes": {}
+    },
+    "viski-polumaraton": {
+      "eventId": "viski-polumaraton",
+      "checkedAt": "2026-11-19T21:36:00.000Z",
+      "status": "unconfirmed",
+      "sources": [],
+      "eventPeriod": null,
+      "routes": {}
+    },
+    "plitvicki-maraton": {
+      "eventId": "plitvicki-maraton",
+      "checkedAt": "2026-11-19T21:36:00.000Z",
+      "status": "unconfirmed",
+      "sources": [],
+      "eventPeriod": null,
+      "routes": {}
+    },
+    "powerade-belgrade-marathon": {
+      "eventId": "powerade-belgrade-marathon",
+      "checkedAt": "2026-11-19T21:36:00.000Z",
+      "status": "unconfirmed",
+      "sources": [],
+      "eventPeriod": null,
+      "routes": {}
+    },
+    "timisoara-21k-sportguru": {
+      "eventId": "timisoara-21k-sportguru",
+      "checkedAt": "2026-11-19T21:36:00.000Z",
+      "status": "unconfirmed",
+      "sources": [],
+      "eventPeriod": null,
+      "routes": {}
+    },
+    "oradea-city-trail-2027": {
+      "eventId": "oradea-city-trail-2027",
+      "checkedAt": "2026-11-19T21:36:00.000Z",
+      "status": "unconfirmed",
+      "sources": [],
+      "eventPeriod": null,
+      "routes": {}
+    },
+    "alba-iulia-city-race-2027": {
+      "eventId": "alba-iulia-city-race-2027",
+      "checkedAt": "2026-11-19T21:36:00.000Z",
+      "status": "unconfirmed",
+      "sources": [],
+      "eventPeriod": null,
+      "routes": {}
+    },
+    "dzi-marathon-stara-zagora-2027": {
+      "eventId": "dzi-marathon-stara-zagora-2027",
+      "checkedAt": "2026-11-19T21:36:00.000Z",
+      "status": "unconfirmed",
+      "sources": [],
+      "eventPeriod": null,
+      "routes": {}
+    },
+    "sofia-half-marathon-2027": {
+      "eventId": "sofia-half-marathon-2027",
+      "checkedAt": "2026-11-19T21:36:00.000Z",
+      "status": "unconfirmed",
+      "sources": [],
+      "eventPeriod": null,
+      "routes": {}
+    },
+    "plovdiv-run-marathon-weekend-2027": {
+      "eventId": "plovdiv-run-marathon-weekend-2027",
+      "checkedAt": "2026-11-19T21:36:00.000Z",
+      "status": "unconfirmed",
+      "sources": [],
+      "eventPeriod": null,
+      "routes": {}
+    },
+    "sri-chinmoy-run-become-sofia-2027": {
+      "eventId": "sri-chinmoy-run-become-sofia-2027",
+      "checkedAt": "2026-11-19T21:36:00.000Z",
+      "status": "unconfirmed",
+      "sources": [],
+      "eventPeriod": null,
+      "routes": {}
+    },
+    "dzi-marathon-varna-2027": {
+      "eventId": "dzi-marathon-varna-2027",
+      "checkedAt": "2026-11-19T21:36:00.000Z",
+      "status": "unconfirmed",
+      "sources": [],
+      "eventPeriod": null,
+      "routes": {}
+    },
+    "nlb-rmc-banja-luka-half-2027": {
+      "eventId": "nlb-rmc-banja-luka-half-2027",
+      "checkedAt": "2026-11-19T21:36:00.000Z",
+      "status": "unconfirmed",
+      "sources": [],
+      "eventPeriod": null,
+      "routes": {}
+    },
+    "wizz-air-skopje-marathon-2027": {
+      "eventId": "wizz-air-skopje-marathon-2027",
+      "checkedAt": "2026-11-19T21:36:00.000Z",
+      "status": "unconfirmed",
+      "sources": [],
+      "eventPeriod": null,
+      "routes": {}
+    },
+    "om-half-marathon-chisinau-2027": {
+      "eventId": "om-half-marathon-chisinau-2027",
+      "checkedAt": "2026-11-19T21:36:00.000Z",
+      "status": "unconfirmed",
+      "sources": [],
+      "eventPeriod": null,
+      "routes": {}
     }
   }
 }
