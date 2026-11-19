@@ -24,8 +24,9 @@ for (const [index, source] of inlineScripts.entries()) {
   }
 }
 
-for (const required of ["parseGpx", "persistGpxData", "connectPlannerCloud"]) {
-  if (!appSource.includes(required)) throw new Error("Required app feature is missing from the combined app source: " + required);
+// Guard against regressions in the functions that exist in the current app.
+for (const required of ["importActivityToHistory", "parseCutoffsText", "connectPlannerCloud"]) {
+  if (!appSource.includes(required)) throw new Error("Required current app feature is missing: " + required);
 }
 
 const appVapidKey = html.match(/const\s+PUSH_VAPID_PUBLIC_KEY\s*=\s*["']([^"']+)["']/)?.[1];
