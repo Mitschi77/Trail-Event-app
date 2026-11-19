@@ -1,6 +1,7 @@
 import { readFile } from "node:fs/promises";
 
 const html = await readFile(new URL("../index.html", import.meta.url), "utf8");
+const ingestion = await readFile(new URL("../supabase/functions/ingest-event-date-proposals/index.ts", import.meta.url), "utf8");
 const htmlClosings = [...html.matchAll(new RegExp("</html>", "gi"))];
 const bodyClosings = [...html.matchAll(new RegExp("</body>", "gi"))];
 if (htmlClosings.length !== 1 || bodyClosings.length !== 1) {
@@ -38,6 +39,12 @@ for (const required of [
   "reviewRefreshButton",
 ]) {
   if (!html.includes(required)) throw new Error("Required app feature is missing: " + required);
+}
+
+for (const field of ["gpxMetrics", "cutoffCandidate", "dateCandidate", "starttimeCandidate", "raceCostCandidate"]) {
+  if (!ingestion.includes('"'+field+'"')) {
+    throw new Error("Ingestion function does not accept candidate field: " + field);
+  }
 }
 
 console.log("Validated " + inlineScripts.length + " inline script(s) and key app features.");
