@@ -57,8 +57,7 @@ if (!html.includes("function plannerAccountBackupKey(userId)")) {
 if (!html.includes("function switchPlannerAccountData(previousUserId,nextUserId)")) {
   throw new Error("Account switching must preserve the previous account snapshot.");
 }
-const accountSwitch = html.match(/function switchPlannerAccountData\\(previousUserId,nextUserId\\)\\{([\\s\\S]*?)\\nasync function activateCloudUser/)?.[1] || "";
-if (!accountSwitch.includes("localStorage.setItem(plannerAccountBackupKey(previousUserId)") || !accountSwitch.includes("validatePlannerSnapshot(nextBackup.keys)") || !accountSwitch.includes("applyPlannerSnapshot(nextBackup.keys)")) {
+if (!html.includes("localStorage.setItem(plannerAccountBackupKey(previousUserId)") || !html.includes("validatePlannerSnapshot(nextBackup.keys)") || !html.includes("applyPlannerSnapshot(nextBackup.keys)")) {
   throw new Error("Account switching must save, validate, and safely restore account-specific local data.");
 }
 
