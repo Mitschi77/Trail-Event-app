@@ -82,3 +82,13 @@ if (appVapidKey !== senderVapidKey) {
 }
 
 console.log("Validated " + inlineScripts.length + " inline script(s), key app features, and matching Push VAPID keys.");
+
+if (!html.includes('sold-out-stamp') || !html.includes('SOLD OUT')) {
+  throw new Error("Sold-out routes must show a visible red stamp in the event overview.");
+}
+if (!html.includes('sold-out-text') || !html.includes("r.registrationStatus==='sold_out'")) {
+  throw new Error("Expanded route details must show the red sold-out text for sold-out routes.");
+}
+if (!html.includes('data-field="registrationStatus"')) {
+  throw new Error("Route editor must support the registration status.");
+}
