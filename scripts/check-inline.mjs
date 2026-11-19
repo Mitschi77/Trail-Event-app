@@ -50,6 +50,18 @@ if (!signedOutHandler.includes("Sitzung beendet.") || signedOutHandler.includes(
   throw new Error("Unexpected auth sign-out must preserve local planner data.");
 }
 
+
+if (!html.includes("function plannerAccountBackupKey(userId)")) {
+  throw new Error("Account-specific local planner backups are missing.");
+}
+if (!html.includes("function switchPlannerAccountData(previousUserId,nextUserId)")) {
+  throw new Error("Account switching must preserve the previous account snapshot.");
+}
+const accountSwitch = html.match(/function switchPlannerAccountData\\(previousUserId,nextUserId\\)\\{([\\s\\S]*?)\\nasync function activateCloudUser/)?.[1] || "";
+if (!accountSwitch.includes("localStorage.setItem(plannerAccountBackupKey(previousUserId)") || !accountSwitch.includes("validatePlannerSnapshot(nextBackup.keys)") || !accountSwitch.includes("applyPlannerSnapshot(nextBackup.keys)")) {
+  throw new Error("Account switching must save, validate, and safely restore account-specific local data.");
+}
+
 const appVapidKey = html.match(/const\s+PUSH_VAPID_PUBLIC_KEY\s*=\s*["']([^"']+)["']/)?.[1];
 const senderVapidKey = pushFunction.match(/const\s+VAPID_PUBLIC_KEY\s*=\s*["']([^"']+)["']/)?.[1];
 if (!appVapidKey || !senderVapidKey) {
