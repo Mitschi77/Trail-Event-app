@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-20T00:18:00.000Z",
+  "updatedAt": "2026-11-20T00:22:00.000Z",
   "schemaVersion": 3,
   "events": {
     "la-corsa-della-bora": {
@@ -6350,6 +6350,78 @@
         "1": {
           "routeId": "debrecen-half-marathon-21-097-2027",
           "date": "2027-04-04",
+          "verified": true,
+          "fallback": false
+        }
+      }
+    },
+    "xxiv-motherson-szigetkoz-half-marathon-2027": {
+      "eventId": "xxiv-motherson-szigetkoz-half-marathon-2027",
+      "checkedAt": "2026-11-20T00:22:00.000Z",
+      "status": "verified",
+      "sources": [
+        {
+          "url": "https://struccfutoklub.hu/szigetkoz-felmaraton/",
+          "status": "read"
+        }
+      ],
+      "eventPeriod": {
+        "startDate": "2027-04-04",
+        "endDate": "2027-04-04",
+        "verified": true
+      },
+      "routes": {
+        "0": {
+          "routeId": "motherson-szigetkoz-half-21-km-2027",
+          "date": "2027-04-04",
+          "verified": true,
+          "fallback": false
+        }
+      }
+    },
+    "fut-a-ring-half-marathon-2027": {
+      "eventId": "fut-a-ring-half-marathon-2027",
+      "checkedAt": "2026-11-20T00:22:00.000Z",
+      "status": "verified",
+      "sources": [
+        {
+          "url": "https://futaring.hu/en/tavok/",
+          "status": "read"
+        }
+      ],
+      "eventPeriod": {
+        "startDate": "2027-03-06",
+        "endDate": "2027-03-06",
+        "verified": true
+      },
+      "routes": {
+        "0": {
+          "routeId": "fut-a-ring-half-marathon-21-097-2027",
+          "date": "2027-03-06",
+          "verified": true,
+          "fallback": false
+        }
+      }
+    },
+    "tihanyi-felmaraton-2027": {
+      "eventId": "tihanyi-felmaraton-2027",
+      "checkedAt": "2026-11-20T00:22:00.000Z",
+      "status": "verified",
+      "sources": [
+        {
+          "url": "https://futniszep.hu/",
+          "status": "read"
+        }
+      ],
+      "eventPeriod": {
+        "startDate": "2027-04-03",
+        "endDate": "2027-04-03",
+        "verified": true
+      },
+      "routes": {
+        "0": {
+          "routeId": "pelso-clean-tihanyi-half-21-1-2027",
+          "date": "2027-04-03",
           "verified": true,
           "fallback": false
         }
