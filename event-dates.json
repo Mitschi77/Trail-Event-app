@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-20T00:12:00.000Z",
+  "updatedAt": "2026-11-20T00:15:00.000Z",
   "schemaVersion": 3,
   "events": {
     "la-corsa-della-bora": {
@@ -6288,6 +6288,34 @@
         "0": {
           "routeId": "omv-petrom-bucharest-half-marathon-21-097-2027",
           "date": "2027-05-09",
+          "verified": true,
+          "fallback": false
+        }
+      }
+    },
+    "brasov-21k-2027": {
+      "eventId": "brasov-21k-2027",
+      "checkedAt": "2026-11-20T00:15:00.000Z",
+      "status": "verified",
+      "sources": [
+        {
+          "url": "https://brasov.21k.ro/regulament/",
+          "status": "read"
+        },
+        {
+          "url": "https://brasov.21k.ro/",
+          "status": "read"
+        }
+      ],
+      "eventPeriod": {
+        "startDate": "2027-04-18",
+        "endDate": "2027-04-18",
+        "verified": true
+      },
+      "routes": {
+        "0": {
+          "routeId": "brasov-21k-half-marathon-21-097-2027",
+          "date": "2027-04-18",
           "verified": true,
           "fallback": false
         }
