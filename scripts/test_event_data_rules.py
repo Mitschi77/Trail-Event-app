@@ -1,5 +1,5 @@
 import unittest
-from scripts.event_data_rules import extract_cutoff_hours, filter_shared_gpx_proposals, is_http_url
+from scripts.event_data_rules import extract_cutoff_hours, filter_shared_gpx_proposals, is_http_url, meaningful_elevation_gain
 
 class EventDataRulesTests(unittest.TestCase):
     def test_time_limit_before_value(self):
@@ -33,6 +33,13 @@ class EventDataRulesTests(unittest.TestCase):
     def test_unique_route_gpx_source_is_kept(self):
         proposal = {"payload": {"field": "gpxMetrics", "eventId": "race", "routeId": "a", "sourceUrl": "https://example.org/a.gpx"}}
         self.assertEqual(filter_shared_gpx_proposals([proposal]), [proposal])
+
+
+    def test_flat_zero_elevation_is_not_treated_as_real_elevation(self):
+        self.assertIsNone(meaningful_elevation_gain([0, 0, 0, 0], 0))
+
+    def test_meaningful_elevation_range_keeps_ascent(self):
+        self.assertEqual(meaningful_elevation_gain([100, 120, 160], 75.4), 75)
 
     def test_http_url_validation(self):
         self.assertTrue(is_http_url("https://example.org/race"))
