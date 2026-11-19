@@ -111,11 +111,26 @@ for event in events:
     if not previous:
         continue
     previous = dict(previous)
-    valid_route_ids = {route.get("id") for route in event.get("routes", [])}
-    previous_routes = {
-        key: value for key, value in (previous.get("routes") or {}).items()
-        if value.get("routeId") in valid_route_ids and value.get("date")
+    route_index_by_id = {
+        route.get("id"): index
+        for index, route in enumerate(event.get("routes", []))
+        if route.get("id")
     }
+    # Normalize retained feed entries to the current route positions by stable ID.
+    # Older feed versions can contain duplicate IDs at obsolete array indexes;
+    # prefer the entry already stored at the route's current canonical index.
+    previous_routes = {}
+    previous_route_keys = {}
+    for old_key, value in (previous.get("routes") or {}).items():
+        route_id = value.get("routeId")
+        if route_id not in route_index_by_id or not value.get("date"):
+            continue
+        current_key = str(route_index_by_id[route_id])
+        existing = previous_routes.get(current_key)
+        existing_key = previous_route_keys.get(current_key)
+        if existing is None or old_key == current_key or existing_key != current_key:
+            previous_routes[current_key] = value
+            previous_route_keys[current_key] = old_key
     previous["routes"] = previous_routes
     previous_period = previous.get("eventPeriod")
     if previous_period and previous_period.get("endDate") and previous_period["endDate"] < today:
