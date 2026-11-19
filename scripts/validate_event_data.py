@@ -32,6 +32,7 @@ warnings = []
 event_ids = set()
 route_ids_global = set()
 event_route_ids = {}
+events_by_id = {event.get("id"): event for event in events if event.get("id")}
 route_total = 0
 filled = {"km": 0, "hm": 0, "maxh": 0, "date": 0, "profileUrl": 0, "cutoffUrl": 0, "profileData": 0, "cutoffData": 0}
 missing = {"km": 0, "hm": 0, "maxh": 0, "date": 0, "start": 0, "startLocation": 0, "country": 0, "profileData": 0, "cutoffData": 0}
@@ -159,10 +160,28 @@ for feed_event_id, feed_record in feed_events.items():
         errors.append(f"{feed_event_id}: invalid feed event end date {period['endDate']!r}")
     if period.get("startDate") and period.get("endDate") and valid_date(period["startDate"]) and valid_date(period["endDate"]) and period["endDate"] < period["startDate"]:
         errors.append(f"{feed_event_id}: feed event end date precedes start date")
+    seen_feed_route_ids = set()
+    current_routes = events_by_id[feed_event_id].get("routes") or []
     for route_index, feed_route in (feed_record.get("routes") or {}).items():
         route_id = feed_route.get("routeId")
         if route_id not in event_route_ids.get(feed_event_id, set()):
             warnings.append(f"{feed_event_id}: stale feed route ID {route_id!r} (not present in current event list)")
+        if route_id and route_id in seen_feed_route_ids:
+            warnings.append(f"{feed_event_id}: duplicate feed entry for route ID {route_id!r}")
+        if route_id:
+            seen_feed_route_ids.add(route_id)
+        try:
+            numeric_index = int(route_index)
+            indexed_route = current_routes[numeric_index] if numeric_index >= 0 else None
+        except (TypeError, ValueError):
+            indexed_route = None
+        if indexed_route is None:
+            warnings.append(f"{feed_event_id}: feed route index {route_index!r} is not a valid current route position")
+        elif route_id and indexed_route.get("id") != route_id:
+            warnings.append(
+                f"{feed_event_id}: feed index {route_index} now points to {indexed_route.get('id')!r}, "
+                f"but stable routeId is {route_id!r}; app must resolve by routeId"
+            )
         if feed_route.get("date") and not valid_date(feed_route["date"]):
             errors.append(f"{feed_event_id} / {route_id}: invalid feed route date {feed_route['date']!r}")
 
