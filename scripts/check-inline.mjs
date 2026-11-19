@@ -81,4 +81,8 @@ if (appVapidKey !== senderVapidKey) {
   throw new Error("The app subscription VAPID key does not match the push sender key.");
 }
 
-console.log("Validated " + inlineScripts.length + " inline script(s), key app features, and matching Push VAPID keys.");
+if (!html.includes("sold-out-stamp") || !html.includes("soldOutRouteBadge(r)")) throw new Error("Sold-out routes must retain their red overview stamp.");
+if (!html.includes("SOLD OUT · AUSVERKAUFT") || !html.includes("sold-out-text")) throw new Error("Expanded event details must show the red sold-out notice.");
+if (!html.includes('data-field="registrationStatus"') || !html.includes("registrationStatus==='sold_out'")) throw new Error("Route editors must persist the available/sold-out registration status.");
+
+console.log("Validated " + inlineScripts.length + " inline script(s), key app features, sold-out status UI, and matching Push VAPID keys.");
