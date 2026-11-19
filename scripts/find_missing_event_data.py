@@ -6,6 +6,7 @@ from datetime import datetime, timezone
 from html import unescape
 from pathlib import Path
 from urllib.parse import urljoin, urlparse
+from event_data_candidates import CANDIDATE_PATTERNS, extract_contexts, missing_candidate_fields
 
 ROOT = Path(__file__).resolve().parents[1]
 HTML = (ROOT / "index.html").read_text(encoding="utf-8")
@@ -37,8 +38,15 @@ def parse_gpx(data):
     gain=sum(max(0,b-a) for a,b in zip(elevations,elevations[1:])) if len(elevations)>1 else None
     return {"km":round(distance,2),"hm":round(gain) if gain is not None else None,"trackPoints":len(pts),"hasElevation":gain is not None}
 def route_scan(event, ri, route):
-    source=route.get("web") or route.get("profileUrl") or route.get("cutoffUrl") or event.get("web")
-    if not isinstance(source,str) or urlparse(source).scheme not in ("http","https"): return []
+    # Prefer a usable URL, not a display title stored in a field named "web".
+    source_candidates = (
+        route.get("web"), route.get("profileUrl"), route.get("cutoffUrl"),
+        route.get("gpxSource"), route.get("registration"), event.get("web"),
+    )
+    source = next((value for value in source_candidates
+                   if isinstance(value, str) and urlparse(value).scheme in ("http", "https")
+                   and urlparse(value).netloc), None)
+    if not source: return []
     try: raw, final_url, ctype=fetch(source)
     except Exception as e: return []
     page=raw.decode("utf-8","replace")
@@ -74,6 +82,22 @@ def route_scan(event, ri, route):
                 "field":"cutoffCandidate","oldValue":None,"newValue":hits[:5],"sourceUrl":final_url,
                 "evidence":"Texttreffer auf der hinterlegten Veranstalter-/Streckenseite. Kein automatischer Zahlenimport; Zuordnung und Bedeutung manuell prüfen.",
                 "checkedAt":NOW,"requiresOwnerApproval":True}})
+    # Candidate extraction for missing route date, start time and entry fee.
+    # Keep the original text fragment as evidence; never normalize or auto-apply it.
+    missing_fields = missing_candidate_fields(route)
+    candidate_fields = [(field, missing, CANDIDATE_PATTERNS[field])
+                        for field, missing in missing_fields.items()]
+    for field, missing, pattern in candidate_fields:
+        if not missing: continue
+        snippets=extract_contexts(plain, pattern)
+        if not snippets: continue
+        props.append({"proposal_type":"data_correction",
+          "title":f"{field}-Angabe prüfen: {event.get('name')} · {route.get('name') or route.get('route') or ri}",
+          "payload":{"source":"automated_event_data_finder","eventId":event.get("id"),"eventName":event.get("name"),
+            "routeId":route.get("id"),"routeIndex":ri,"field":field+"Candidate","oldValue":route.get(field),
+            "newValue":snippets,"sourceUrl":final_url,
+            "evidence":"Textkandidat von der hinterlegten Veranstalter-/Streckenseite. Originalkontext bleibt erhalten; Jahr, Strecke, Preisstaffel und Gültigkeit müssen manuell geprüft werden.",
+            "checkedAt":NOW,"requiresOwnerApproval":True}})
     return props
 
 proposals=[]
@@ -81,7 +105,10 @@ jobs=[]
 for event in events:
     for i,route in enumerate(event.get("routes",[])):
         # Focus only routes with at least one missing data field of interest.
-        if route.get("km") and route.get("hm") and route.get("maxh") and route.get("gpxDownloadUrl") and (route.get("elevationProfile") or route.get("profilePoints")): continue
+        if (route.get("km") and route.get("hm") and route.get("maxh") and route.get("gpxDownloadUrl")
+            and (route.get("elevationProfile") or route.get("profilePoints"))
+            and route.get("date") and route.get("starttime") and route.get("raceCost") not in (None, "")):
+            continue
         jobs.append((event,i,route))
 with ThreadPoolExecutor(max_workers=10) as pool:
     futures=[pool.submit(route_scan,*job) for job in jobs]
