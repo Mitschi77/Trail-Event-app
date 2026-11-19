@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-19T22:30:00.000Z",
+  "updatedAt": "2026-11-19T22:45:00.000Z",
   "schemaVersion": 3,
   "events": {
     "la-corsa-della-bora": {
@@ -6102,6 +6102,14 @@
     "rimi-riga-marathon-2027": {
       "eventId": "rimi-riga-marathon-2027",
       "checkedAt": "2026-11-19T23:30:00+01:00",
+      "status": "unconfirmed",
+      "sources": [],
+      "eventPeriod": null,
+      "routes": {}
+    },
+    "mali-kraski-maraton-2027": {
+      "eventId": "mali-kraski-maraton-2027",
+      "checkedAt": "2026-11-19T23:45:00+01:00",
       "status": "unconfirmed",
       "sources": [],
       "eventPeriod": null,
