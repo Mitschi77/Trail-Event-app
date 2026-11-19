@@ -39,8 +39,6 @@ jobs:
           python-version: "3.x"
       - name: Read official event pages
         run: python scripts/update_event_dates.py
-      - name: Validate event and route data
-        run: python scripts/validate_event_data.py
       - name: Validate generated event-date feed
         run: python scripts/validate_event_data.py
       - name: Submit verified date changes as owner review proposals
