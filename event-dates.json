@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-20T00:22:00.000Z",
+  "updatedAt": "2026-11-20T00:25:00.000Z",
   "schemaVersion": 3,
   "events": {
     "la-corsa-della-bora": {
@@ -5877,11 +5877,41 @@
     },
     "drei-herzen-marathon-radenci": {
       "eventId": "drei-herzen-marathon-radenci",
-      "checkedAt": "2026-11-19T20:35:00.000Z",
-      "status": "unconfirmed",
-      "sources": [],
-      "eventPeriod": null,
-      "routes": {}
+      "checkedAt": "2026-11-20T00:25:00.000Z",
+      "status": "verified",
+      "sources": [
+        {
+          "url": "https://www.alias.maraton-radenci.si/en/runs/radenska-classic-marathon",
+          "status": "read"
+        },
+        {
+          "url": "https://www.alias.maraton-radenci.si/en/runs/radenska-medium-half-marathon",
+          "status": "read"
+        },
+        {
+          "url": "https://www.alias.maraton-radenci.si/en/frequently-asked-questions/",
+          "status": "read"
+        }
+      ],
+      "eventPeriod": {
+        "startDate": "2027-05-15",
+        "endDate": "2027-05-15",
+        "verified": true
+      },
+      "routes": {
+        "0": {
+          "routeId": "radenci-classic-marathon-42-195",
+          "date": "2027-05-15",
+          "verified": true,
+          "fallback": false
+        },
+        "1": {
+          "routeId": "radenci-medium-half-21-098",
+          "date": "2027-05-15",
+          "verified": true,
+          "fallback": false
+        }
+      }
     },
     "nlb-ljubljana-marathon": {
       "eventId": "nlb-ljubljana-marathon",
