@@ -53,15 +53,22 @@ def filter_shared_gpx_proposals(proposals, distance_tolerance=0.15):
         if len(route_ids) <= 1:
             kept.append(proposal)
             continue
-        old_value = payload.get("oldValue") or {}
-        new_value = payload.get("newValue") or {}
-        try:
-            old_km = float(old_value.get("km"))
-            new_km = float(new_value.get("km"))
-            matches_route = old_km > 0 and abs(new_km - old_km) / old_km <= distance_tolerance
-        except (TypeError, ValueError):
-            matches_route = False
-        if matches_route:
+        # A shared GPX is safe only when exactly one route's stored distance
+        # matches it. If zero or several routes match, the source-to-route
+        # relationship is ambiguous and none of these proposals is emitted.
+        matches = []
+        for candidate in group:
+            candidate_payload = candidate.get("payload") or {}
+            old_value = candidate_payload.get("oldValue") or {}
+            new_value = candidate_payload.get("newValue") or {}
+            try:
+                old_km = float(old_value.get("km"))
+                new_km = float(new_value.get("km"))
+                if old_km > 0 and abs(new_km - old_km) / old_km <= distance_tolerance:
+                    matches.append(candidate)
+            except (TypeError, ValueError):
+                continue
+        if len(matches) == 1 and proposal is matches[0]:
             kept.append(proposal)
     return kept
 
