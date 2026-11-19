@@ -45,6 +45,11 @@ if (!html.includes("if(!(await ensureSupabaseLibrary()))")) {
   throw new Error("Cloud login must wait for the Supabase fallback loader before creating the client.");
 }
 
+const signedOutHandler = html.match(/else if\(event==='SIGNED_OUT'\)\{([^}]*)\}/)?.[1] || "";
+if (!signedOutHandler.includes("Sitzung beendet.") || signedOutHandler.includes("CLOUD_KEYS.forEach")) {
+  throw new Error("Unexpected auth sign-out must preserve local planner data.");
+}
+
 const appVapidKey = html.match(/const\s+PUSH_VAPID_PUBLIC_KEY\s*=\s*["']([^"']+)["']/)?.[1];
 const senderVapidKey = pushFunction.match(/const\s+VAPID_PUBLIC_KEY\s*=\s*["']([^"']+)["']/)?.[1];
 if (!appVapidKey || !senderVapidKey) {
