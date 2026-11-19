@@ -1,5 +1,12 @@
 name: Find missing event and route data
 on:
+  pull_request:
+    paths:
+      - "scripts/find_missing_event_data.py"
+      - "scripts/event_data_rules.py"
+      - "scripts/test_event_data_rules.py"
+      - ".github/workflows/find-missing-event-data.yml"
+      - "supabase/functions/ingest-event-date-proposals/index.ts"
   push:
     branches: [main]
     paths:
@@ -23,9 +30,12 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.x"
+      - name: Test conservative source and cut-off parsing
+        run: python -m unittest scripts/test_event_data_rules.py
       - name: Search missing GPX, elevation and cut-off evidence
         run: python scripts/find_missing_event_data.py
       - name: Submit candidates to owner review queue
+        if: github.event_name != 'pull_request'
         run: python scripts/submit_event_data_proposals.py
       - name: Keep scan report for diagnostics
         if: always()
