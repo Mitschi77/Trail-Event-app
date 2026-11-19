@@ -53,3 +53,10 @@ def filter_shared_gpx_proposals(proposals):
             continue
         kept.append(proposal)
     return kept
+
+def meaningful_elevation_gain(elevations, ascent, minimum_span_m=5):
+    """Return ascent only when the GPX elevation series has a meaningful vertical range."""
+    values = [float(value) for value in elevations if value is not None]
+    if len(values) < 2 or max(values) - min(values) < minimum_span_m:
+        return None
+    return round(ascent)
