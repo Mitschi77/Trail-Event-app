@@ -1,5 +1,5 @@
 import unittest
-from event_data_rules import extract_cutoff_hours, is_http_url
+from scripts.event_data_rules import extract_cutoff_hours, is_http_url
 
 class EventDataRulesTests(unittest.TestCase):
     def test_time_limit_before_value(self):
