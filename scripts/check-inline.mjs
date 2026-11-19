@@ -1,6 +1,10 @@
 import { readFile } from "node:fs/promises";
 
 const html = await readFile(new URL("../index.html", import.meta.url), "utf8");
+const pushFunction = await readFile(
+  new URL("../supabase/functions/send-event-review-push/index.ts", import.meta.url),
+  "utf8"
+);
 const inlineScripts = [...html.matchAll(/<script(?:\s[^>]*)?>([\s\S]*?)<\/script>/gi)]
   .map(match => match[1].trim())
   .filter(Boolean);
@@ -21,4 +25,13 @@ for (const required of ["parseGpx", "persistGpxData", "connectPlannerCloud"]) {
   if (!html.includes(required)) throw new Error("Required app feature is missing: " + required);
 }
 
-console.log("Validated " + inlineScripts.length + " inline script(s) and key app features.");
+const appVapidKey = html.match(/const\s+PUSH_VAPID_PUBLIC_KEY\s*=\s*["']([^"']+)["']/)?.[1];
+const senderVapidKey = pushFunction.match(/const\s+VAPID_PUBLIC_KEY\s*=\s*["']([^"']+)["']/)?.[1];
+if (!appVapidKey || !senderVapidKey) {
+  throw new Error("The public VAPID key is missing from the app or push sender.");
+}
+if (appVapidKey !== senderVapidKey) {
+  throw new Error("The app subscription VAPID key does not match the push sender key.");
+}
+
+console.log("Validated " + inlineScripts.length + " inline script(s), key app features, and matching Push VAPID keys.");
