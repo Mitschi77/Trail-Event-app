@@ -3,7 +3,7 @@ import { createClient } from "https://esm.sh/@supabase/supabase-js@2";
 import webpush from "npm:web-push@3.6.7";
 
 const OWNER_ID = "a5d10e85-e559-4d44-9ee0-d8b8de08262f";
-const VAPID_PUBLIC_KEY = "BAMKuxl4VO7kZvR2Mu2_J2nx4SdRvY_M-6lFmDHF6lnfRmmZAlCHHwzINyHfWIXEoFVlEWiF2Mff7QaadJFQ";
+const VAPID_PUBLIC_KEY = "BFGW4HjKtrfZcdQcJcmnG71jED1MsKXXkZTqDhDAzQh-k3UE3Sx_SPR97sG54tGi7gjQsmGkAnZO6ImY21VsEzA";
 const cors = {
   "Access-Control-Allow-Origin": "https://mitschi77.github.io",
   "Access-Control-Allow-Headers": "authorization, x-client-info, apikey, content-type",
