@@ -170,8 +170,8 @@ MANUAL_EVENT_PERIODS = {
     "puerto-vallarta-mexico-by-utmb": ("2027-03-04", "2027-03-06", "https://puerto-vallarta.utmb.world/races-runners/runners/registration", {}),
     "transgrancanaria": ("2027-02-23", "2027-02-27", "https://transgrancanaria.net/en/regulations/", {"0": "2027-02-26", "1": "2027-02-27"}),
     "zugspitz-ultratrail": ("2027-06-17", "2027-06-20", "https://zugspitz.utmb.world/", {"0": "2027-06-19", "1": "2027-06-19", "2": "2027-06-18", "3": "2027-06-18", "4": "2027-06-17", "5": "2027-06-18", "6": "2027-06-19"}),
-    "3kings-3hills": ("2027-07-23", "2027-07-24", "https://www.3kings-3hills.com/fakten/", {"0": "2027-07-24", "1": "2027-07-24", "2": "2027-07-24", "3": "2027-07-24", "4": "2027-07-24", "5": "2027-07-24", "6": "2027-07-23", "7": "2027-07-23"}),
-    "innsbruck-alpine": ("2027-05-05", "2027-05-08", "https://www.innsbruckalpine.at/rennen/alle-bewerbe/", {"0": "2027-05-07", "1": "2027-05-05", "2": "2027-05-05", "3": "2027-05-06", "4": "2027-05-06", "5": "2027-05-08", "6": "2027-05-08", "7": "2027-05-08", "8": "2027-05-06", "9": "2027-05-08", "10": "2027-05-08", "11": "2027-05-08"}),
+    "3kings-3hills": ("2027-07-23", "2027-07-24", "https://www.3kings-3hills.com/fakten/", {"base-trail-26-900": "2027-07-24", "marathon-40-1650": "2027-07-24", "3kings-3hills-54-2300": "2027-07-24", "endurance-trail-85-3000": "2027-07-24", "ultratrail-xl-117-4467": "2027-07-23", "100-miles-ultra-168-6300": "2027-07-23"}),
+    "innsbruck-alpine": ("2027-05-05", "2027-05-08", "https://www.innsbruckalpine.at/rennen/alle-bewerbe/", {"trail-hunt-23-9-1450": "2027-05-07", "trailhalbmarathon-k25-26-6-870": "2027-05-08", "discovery-race-k35-37-8-2110": "2027-05-08", "trailmarathon-k42-43-4-2400": "2027-05-06", "panorama-ultra-trail-67-9-2670": "2027-05-08", "heart-of-the-alps-ultra-87-3900": "2027-05-08", "master-of-innsbruck-112-6-5500": "2027-05-08"}),
     "tschirgant-sky": ("2027-06-12", "2027-06-12", "https://tschirgant-sky.run/", {"0": "2027-06-12"}),
     "kaiserkrone": ("2027-06-25", "2027-06-26", "https://www.wilderkaiser.info/de/kaiserkrone-trail.html", {"0": "2027-06-25", "1": "2027-06-26", "2": "2027-06-26", "3": "2027-06-26", "4": "2027-06-26", "5": "2027-06-26"}),
     "kat100": ("2027-08-05", "2027-08-07", "https://kat.utmb.world/de/races", {"0": "2027-08-05", "1": "2027-08-06", "2": "2027-08-07", "3": "2027-08-07", "4": "2027-08-07"}),
@@ -355,13 +355,26 @@ for event_id, (start_date, end_date, source_url, route_dates) in MANUAL_EVENT_PE
         "url": source_url, "status": "read", "verification": "manual-official-page"
     })
     record["checkedAt"] = updated
-    for route_index, route_date in route_dates.items():
-        index = int(route_index)
-        if index < len(event.get("routes", [])):
+    route_index_by_id = {
+        route.get("id"): index
+        for index, route in enumerate(event.get("routes", []))
+        if route.get("id")
+    }
+    for route_key, route_date in route_dates.items():
+        # Prefer stable route IDs; retain numeric keys only for legacy manual maps.
+        if route_key in route_index_by_id:
+            index = route_index_by_id[route_key]
+        else:
+            try:
+                index = int(route_key)
+            except (TypeError, ValueError):
+                continue
+        if 0 <= index < len(event.get("routes", [])):
             route = event["routes"][index]
-            existing_route = (record.get("routes") or {}).get(route_index, {})
+            canonical_key = str(index)
+            existing_route = (record.get("routes") or {}).get(canonical_key, {})
             if not existing_route.get("date") or route_date[:4] >= existing_route.get("date", "")[:4]:
-                record.setdefault("routes", {})[route_index] = {
+                record.setdefault("routes", {})[canonical_key] = {
                     "routeId": route["id"], "date": route_date, "verified": True
                 }
 
