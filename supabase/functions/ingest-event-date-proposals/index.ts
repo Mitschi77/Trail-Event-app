@@ -37,7 +37,8 @@ Deno.serve(async (req) => {
     const key = Deno.env.get("SUPABASE_SERVICE_ROLE_KEY");
     if (!url || !key) throw new Error("Supabase server configuration missing");
     const supabase = createClient(url, key, { auth: { persistSession: false } });
-    let inserted = 0, duplicates = 0;
+
+    const valid = [];
     for (const p of body.proposals) {
       const payload = p?.payload;
       const validDate = ["event_change", "route_change"].includes(p?.proposal_type) &&
@@ -56,34 +57,66 @@ Deno.serve(async (req) => {
           !(validDate || validData)) {
         return new Response("Invalid proposal item", { status: 400 });
       }
-      const { data: pending, error: pendingError } = await supabase
-        .from("event_change_proposals").select("id,payload")
-        .eq("submitted_by", OWNER_ID).eq("status", "pending")
-        .eq("proposal_type", p.proposal_type).limit(1000);
-      if (pendingError) throw pendingError;
-      const keyOf = (x) => [x?.eventId || "", x?.routeId || "", x?.field || ""].join("|");
-      if ((pending || []).some((row) => keyOf(row.payload) === keyOf(payload))) {
-        duplicates++;
-        continue;
-      }
-      const { data: insertedRow, error: insertError } = await supabase.from("event_change_proposals").insert({
-        submitted_by: OWNER_ID, proposal_type: p.proposal_type,
-        title: p.title, payload, status: "pending"
-      }).select("id").single();
-      if (insertError) throw insertError;
-      inserted++;
+      valid.push(p);
+    }
+
+    const types = [...new Set(valid.map((p) => p.proposal_type))];
+    const { data: pending, error: pendingError } = await supabase
+      .from("event_change_proposals").select("proposal_type,payload")
+      .eq("submitted_by", OWNER_ID).eq("status", "pending")
+      .in("proposal_type", types).limit(5000);
+    if (pendingError) throw pendingError;
+
+    const keyOf = (type, x) => [type || "", x?.eventId || "", x?.routeId || "", x?.field || ""].join("|");
+    const existing = new Set((pending || []).map((row) => keyOf(row.proposal_type, row.payload)));
+    const unique = new Map();
+    for (const p of valid) {
+      const k = keyOf(p.proposal_type, p.payload);
+      if (!existing.has(k) && !unique.has(k)) unique.set(k, p);
+    }
+    const rows = [...unique.values()].map((p) => ({
+      submitted_by: OWNER_ID,
+      proposal_type: p.proposal_type,
+      title: p.title,
+      payload: p.payload,
+      status: "pending",
+    }));
+
+    if (!rows.length) {
+      return Response.json({ success: true, inserted: 0, duplicates: valid.length });
+    }
+
+    const { data: insertedRows, error: insertError } = await supabase
+      .from("event_change_proposals").insert(rows).select("id");
+    if (insertError) throw insertError;
+
+    // Avoid one push invocation per proposal. A single batch notification is enough,
+    // and no invocation is made when the owner has not registered a push subscription.
+    const { data: subscriptions, error: subscriptionError } = await supabase
+      .from("event_push_subscriptions").select("id").eq("user_id", OWNER_ID).limit(1);
+    let push = "not-configured";
+    if (subscriptionError) {
+      console.warn("Could not check owner push subscriptions", subscriptionError);
+      push = "check-failed";
+    } else if (subscriptions?.length && insertedRows?.length) {
       try {
-        const pushResponse = await fetch(`${url}/functions/v1/send-event-review-push`, {
+        const response = await fetch(`${url}/functions/v1/send-event-review-push`, {
           method: "POST",
           headers: { "Authorization": `Bearer ${key}`, "Content-Type": "application/json" },
-          body: JSON.stringify({ proposal_id: insertedRow.id }),
+          body: JSON.stringify({ proposal_id: insertedRows[0].id }),
         });
-        if (!pushResponse.ok) console.warn("Push notification dispatch failed", pushResponse.status);
-      } catch (pushError) {
-        console.warn("Push notification dispatch failed", pushError);
+        push = response.ok ? "sent" : `failed-${response.status}`;
+      } catch (error) {
+        console.warn("Batch push notification dispatch failed", error);
+        push = "failed";
       }
     }
-    return Response.json({ success: true, inserted, duplicates });
+    return Response.json({
+      success: true,
+      inserted: insertedRows?.length || 0,
+      duplicates: valid.length - (insertedRows?.length || 0),
+      push,
+    });
   } catch (error) {
     console.error("Proposal ingestion failed", error);
     return new Response("Proposal ingestion failed", { status: 500 });
