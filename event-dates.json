@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-19T21:40:00.000Z",
+  "updatedAt": "2026-11-19T22:00:00.000Z",
   "schemaVersion": 3,
   "events": {
     "la-corsa-della-bora": {
@@ -6062,6 +6062,22 @@
     "pko-gdynia-half-2027": {
       "eventId": "pko-gdynia-half-2027",
       "checkedAt": "2026-11-19T21:40:00.000Z",
+      "status": "unconfirmed",
+      "sources": [],
+      "eventPeriod": null,
+      "routes": {}
+    },
+    "csob-bratislava-marathon-2027": {
+      "eventId": "csob-bratislava-marathon-2027",
+      "checkedAt": "2026-11-19T23:00:00+01:00",
+      "status": "unconfirmed",
+      "sources": [],
+      "eventPeriod": null,
+      "routes": {}
+    },
+    "maraton-treh-src-2027": {
+      "eventId": "maraton-treh-src-2027",
+      "checkedAt": "2026-11-19T23:00:00+01:00",
       "status": "unconfirmed",
       "sources": [],
       "eventPeriod": null,
