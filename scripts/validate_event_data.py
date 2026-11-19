@@ -172,7 +172,7 @@ for feed_event_id, feed_record in feed_events.items():
             seen_feed_route_ids.add(route_id)
         try:
             numeric_index = int(route_index)
-            indexed_route = current_routes[numeric_index] if numeric_index >= 0 else None
+            indexed_route = current_routes[numeric_index] if 0 <= numeric_index < len(current_routes) else None
         except (TypeError, ValueError):
             indexed_route = None
         if indexed_route is None:
