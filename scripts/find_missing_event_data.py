@@ -6,6 +6,7 @@ from datetime import datetime, timezone
 from html import unescape
 from pathlib import Path
 from urllib.parse import urljoin, urlparse
+from event_data_rules import extract_cutoff_hours, is_http_url
 
 ROOT = Path(__file__).resolve().parents[1]
 HTML = (ROOT / "index.html").read_text(encoding="utf-8")
@@ -88,10 +89,13 @@ def route_scan(event, ri, route):
     # its GPX links or cut-off text to one arbitrary route. Use an explicitly
     # route-linked page, or the event homepage only when the event has one route.
     route_sources=[route.get("web"),route.get("profileUrl"),route.get("cutoffUrl")]
-    source=next((u for u in route_sources if isinstance(u,str) and u and u != event.get("web")),None)
+    source=next((u for u in route_sources if is_http_url(u) and u != event.get("web")),None)
+    # A single-route event may safely use its official event page as evidence.
+    # Prefer the explicit GPX source page; gpxDownloadUrl can be a file URL.
     if source is None and len(event.get("routes",[]))==1:
-        source=event.get("web")
-    if not isinstance(source,str) or urlparse(source).scheme not in ("http","https"): return props
+        fallback_sources=[route.get("gpxSource"),event.get("web"),route.get("gpxDownloadUrl")]
+        source=next((u for u in fallback_sources if is_http_url(u) and not GPX_RE.search(u)),None)
+    if not is_http_url(source): return props
     try: raw, final_url, ctype=fetch(source)
     except Exception as e: return props
     page=raw.decode("utf-8","replace")
@@ -117,14 +121,17 @@ def route_scan(event, ri, route):
                 "checkedAt":NOW,"requiresOwnerApproval":True}})
             break
         except Exception: continue
-    # Cut-off text is only a candidate; context and URL are retained for human verification.
-    if not route.get("maxh") and not route.get("cutoffs"):
-        hits=CUTOFF_RE.findall(plain)
-        if hits:
-            props.append({"proposal_type":"data_correction","title":f"Cut-off prüfen: {event.get('name')} · {route.get('name') or route.get('route') or ri}",
+    # Extract only explicit time-limit phrases. Existing values are compared too,
+    # so clear official corrections become review proposals rather than being ignored.
+    cutoff_hours=extract_cutoff_hours(plain)
+    if cutoff_hours is not None and not route.get("cutoffs"):
+        try: current_hours=float(route.get("maxh")) if route.get("maxh") not in (None,"") else None
+        except (TypeError,ValueError): current_hours=None
+        if current_hours is None or abs(current_hours-cutoff_hours)>0.01:
+            props.append({"proposal_type":"data_correction","title":f"Zeitlimit prüfen: {event.get('name')} · {route.get('name') or route.get('route') or ri}",
               "payload":{"source":"automated_event_data_finder","eventId":event.get("id"),"eventName":event.get("name"),"routeId":route.get("id"),"routeIndex":ri,
-                "field":"cutoffCandidate","oldValue":None,"newValue":hits[:5],"sourceUrl":final_url,
-                "evidence":"Texttreffer auf der hinterlegten Veranstalter-/Streckenseite. Kein automatischer Zahlenimport; Zuordnung und Bedeutung manuell prüfen.",
+                "field":"maxh","oldValue":current_hours,"newValue":cutoff_hours,"sourceUrl":final_url,
+                "evidence":"Explizite Zeitlimit-Angabe auf der zugeordneten Veranstalter-/Streckenseite erkannt. Wert und Streckenzuordnung vor Übernahme manuell prüfen.",
                 "checkedAt":NOW,"requiresOwnerApproval":True}})
     return props
 
