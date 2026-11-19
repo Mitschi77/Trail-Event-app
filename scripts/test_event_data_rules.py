@@ -22,12 +22,12 @@ class EventDataRulesTests(unittest.TestCase):
         ]
         self.assertEqual(filter_shared_gpx_proposals(proposals), [proposals[0]])
 
-    def test_shared_gpx_source_keeps_multiple_matching_route_distances(self):
+    def test_shared_gpx_source_with_ambiguous_matching_distances_is_suppressed(self):
         proposals = [
             {"payload": {"field": "gpxMetrics", "eventId": "race", "routeId": "a", "sourceUrl": "https://example.org/course.gpx", "oldValue": {"km": 6.7}, "newValue": {"km": 6.72}}},
             {"payload": {"field": "gpxMetrics", "eventId": "race", "routeId": "b", "sourceUrl": "https://example.org/course.gpx", "oldValue": {"km": 6.7}, "newValue": {"km": 6.72}}},
         ]
-        self.assertEqual(filter_shared_gpx_proposals(proposals), proposals)
+        self.assertEqual(filter_shared_gpx_proposals(proposals), [])
 
     def test_same_gpx_url_for_different_events_is_not_a_conflict(self):
         proposals = [
