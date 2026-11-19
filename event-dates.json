@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-20T00:15:00.000Z",
+  "updatedAt": "2026-11-20T00:18:00.000Z",
   "schemaVersion": 3,
   "events": {
     "la-corsa-della-bora": {
@@ -6316,6 +6316,40 @@
         "0": {
           "routeId": "brasov-21k-half-marathon-21-097-2027",
           "date": "2027-04-18",
+          "verified": true,
+          "fallback": false
+        }
+      }
+    },
+    "debrecen-maraton-2027": {
+      "eventId": "debrecen-maraton-2027",
+      "checkedAt": "2026-11-20T00:18:00.000Z",
+      "status": "verified",
+      "sources": [
+        {
+          "url": "https://debrecenmaraton.hu/en/competition-rules-1",
+          "status": "read"
+        },
+        {
+          "url": "https://debrecenmaraton.hu/en",
+          "status": "read"
+        }
+      ],
+      "eventPeriod": {
+        "startDate": "2027-04-04",
+        "endDate": "2027-04-04",
+        "verified": true
+      },
+      "routes": {
+        "0": {
+          "routeId": "debrecen-marathon-42-195-2027",
+          "date": "2027-04-04",
+          "verified": true,
+          "fallback": false
+        },
+        "1": {
+          "routeId": "debrecen-half-marathon-21-097-2027",
+          "date": "2027-04-04",
           "verified": true,
           "fallback": false
         }
