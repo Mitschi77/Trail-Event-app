@@ -1354,6 +1354,66 @@ header{padding-left:max(14px,calc((100vw - 1120px)/2));padding-right:max(14px,ca
   #missingEvents .event{max-width:100%;min-width:0}
 }
 </style>
+
+<style id="trail-navigation-no-scroll-v1">
+/* Navigation ohne seitliches Wischen: klare, umbrechende Raster-Navigation */
+.tabbar{
+  display:grid!important;
+  grid-template-columns:repeat(5,minmax(0,1fr));
+  align-items:stretch;
+  gap:7px;
+  width:100%;
+  max-width:100%;
+  min-width:0;
+  overflow:visible!important;
+  overscroll-behavior:initial;
+  -webkit-overflow-scrolling:auto;
+  scrollbar-width:auto;
+  padding:8px;
+  border:1px solid var(--line);
+  border-radius:14px;
+  background:#111d16f2;
+}
+.tabbar>.tab-button,
+.tabbar>.more-nav{
+  box-sizing:border-box;
+  width:100%;
+  min-width:0;
+  max-width:100%;
+  margin:0;
+}
+.tabbar>.tab-button{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  min-height:46px;
+  padding:9px 6px;
+  white-space:normal;
+  overflow-wrap:anywhere;
+  line-height:1.2;
+  font-size:clamp(11px,1.1vw,13px);
+}
+.tabbar>.more-nav{display:block}
+.tabbar .more-nav-trigger{width:100%;min-width:0;white-space:normal}
+.more-nav-menu{max-width:calc(100vw - 32px)}
+@media(max-width:700px){
+  .tabbar{
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    gap:7px;
+    margin:0 0 14px;
+    padding:8px;
+    border-radius:13px;
+  }
+  .tabbar>.tab-button{min-height:46px;padding:9px 7px;font-size:12px}
+  .tabbar>.more-nav{grid-column:1 / -1;justify-self:stretch}
+  .tabbar .more-nav-trigger{min-height:44px}
+  .more-nav-menu{left:0;right:0;width:100%;min-width:0}
+}
+@media(min-width:701px){
+  .tabbar{position:sticky;top:0;z-index:80}
+}
+</style>
+
 </head><script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script><body>
 <header><div class="top"><div class="brand"><img src="./trail-icon.svg" alt="" width="34" height="34"> TRAILRUNNING-MANAGER</div><div class="utmb-header-index" aria-label="Persönlicher UTMB Index 436"><span class="utmb-header-mark" aria-hidden="true">▲</span><span class="utmb-header-copy"><small>UTMB INDEX</small><strong>436</strong></span><span class="utmb-header-link">↗</span></div><div class="pill"><button id="cloudProfileButton" type="button" aria-label="Anmelden – Cloud-Konto öffnen" title="Anmelden – Cloud-Konto öffnen" style="margin-left:6px;min-width:44px;min-height:44px;display:inline-flex;align-items:center;justify-content:center;gap:5px;border:1px solid #668074;border-radius:24px;background:#20372d;color:#fff;padding:5px 9px;text-decoration:none;cursor:pointer;touch-action:manipulation" onclick="event.preventDefault();event.stopPropagation();const d=document.getElementById('appMenuDropdown'),m=document.getElementById('appMenuButton'),p=document.getElementById('accountPanel'),t=document.getElementById('cloudAccountMenuToggle');d.hidden=false;m.setAttribute('aria-expanded','true');p.hidden=false;t.setAttribute('aria-expanded','true');t.textContent='☁️ Cloud-Konto schließen';const e=document.getElementById('cloudEmail');if(e)e.focus({preventScroll:true});"><svg id="cloudProfileIcon" width="24" height="24" viewBox="0 0 24 24" role="img" aria-label="Rotes Strichmännchen – abgemeldet"><circle cx="12" cy="5" r="2.5" fill="none" stroke="#ff6262" stroke-width="2"/><path d="M12 8v7m0-4-5 3m5-3 5 3m-5 1-4 6m4-6 4 6" fill="none" stroke="#ff6262" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button><button id="appMenuButton" type="button" class="app-menu-button" aria-label="Weitere Funktionen öffnen" aria-haspopup="true" aria-expanded="false" aria-controls="appMenuDropdown" title="Weitere Funktionen">···</button><button id="appSettingsButton" type="button" class="app-menu-button" aria-label="App-Einstellungen und Verbindungen öffnen" aria-haspopup="true" aria-expanded="false" aria-controls="appSettingsPanel" title="Einstellungen und Verbindungen" style="margin-left:5px"><svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 8.2a3.8 3.8 0 1 0 0 7.6 3.8 3.8 0 0 0 0-7.6Z" fill="none" stroke="currentColor" stroke-width="2"/><path d="m19.4 13.5 1.1.9-1.5 2.6-1.4-.5a7.8 7.8 0 0 1-1.6.9l-.2 1.5h-3l-.3-1.5a7.8 7.8 0 0 1-1.6-.9l-1.4.5L8 14.4l1.1-.9a7.5 7.5 0 0 1 0-1.9L8 10.7l1.5-2.6 1.4.5a7.8 7.8 0 0 1 1.6-.9l.3-1.5h3l.2 1.5a7.8 7.8 0 0 1 1.6.9l1.4-.5 1.5 2.6-1.1.9a7.5 7.5 0 0 1 0 1.9Z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg></button><div id="appSettingsPanel" class="app-menu-dropdown app-settings-panel" hidden><div class="app-menu-heading"><span>⚙️ App-Einstellungen &amp; Verbindungen</span><button id="closeAppSettingsButton" class="secondary" type="button">Schließen ✕</button></div><p class="app-menu-hint">Hier siehst du, welche Dienste die App benötigt, welche optional sind und ob sie auf diesem Gerät erreichbar sind. Passwörter und geheime Schlüssel gehören niemals in diese Übersicht.</p><div class="settings-group"><strong>Erforderlich für die Grundfunktionen</strong><div class="settings-connection"><span>GitHub Pages – App-Bereitstellung und Aktualisierungen</span><b id="connHosting">Prüfung …</b></div><div class="settings-connection"><span>Supabase – Cloud-Konto, Synchronisierung, Event-Prüfung und Datenbank</span><b id="connSupabase">Prüfung …</b></div><div class="settings-connection"><span>Browser-Speicher – lokale Einstellungen, Offline-Daten und Sicherungen</span><b id="connStorage">Prüfung …</b></div></div><div class="settings-group"><strong>Für Karten und Streckenprofile</strong><div class="settings-connection"><span>Leaflet über unpkg – Kartenanzeige</span><b id="connLeaflet">Prüfung …</b></div><div class="settings-connection"><span>OpenStreetMap – Kartenkacheln und Kartendaten</span><b id="connOsm">Wird bei Kartenaufruf geprüft</b></div></div><div class="settings-group"><strong>Optional – bei Bedarf aktivieren</strong><div class="settings-connection"><span>Web-Push – Mitteilungen zu eingereichten Änderungen</span><b id="connPush">Nicht eingerichtet</b></div><div class="settings-connection"><span>Garmin Connect / Strava – Aktivitätsdateien FIT, TCX oder GPX</span><b class="settings-neutral">Dateiimport verfügbar</b></div><div class="settings-connection"><span>Veranstalter-Websites – automatische Eventdaten-Erkennung über Supabase</span><b id="connEventScan">Bei Anmeldung verfügbar</b></div></div><div class="settings-group"><strong>Persönliche Einstellungen</strong><button class="secondary app-menu-item" type="button" onclick="document.getElementById('cloudProfileButton').click()">☁️ Cloud-Konto öffnen / anmelden</button><button class="secondary app-menu-item" type="button" onclick="document.getElementById('historyTabButton').click()">🏃 Laufhistorie &amp; Aktivitätsimport</button></div><p class="app-menu-hint">Garmin- und Strava-Passwörter werden nicht benötigt. Die App nutzt derzeit den Dateiimport, keine direkte Kontoverknüpfung. Für Karten ist keine OpenStreetMap-Anmeldung erforderlich.</p></div><div id="appMenuDropdown" class="app-menu-dropdown" role="menu" hidden><div class="app-menu-heading" style="display:flex;align-items:center;justify-content:space-between;gap:10px"><span>Menü · Daten &amp; Verwaltung</span><button id="closeAppMenuButton" type="button" class="secondary" aria-label="Menü schließen" style="min-height:36px;padding:5px 10px">Schließen ✕</button></div><div class="app-menu-section-title">Konto &amp; Synchronisierung</div><button id="cloudAccountMenuToggle" class="secondary app-menu-item" type="button" aria-expanded="false" aria-controls="accountPanel">☁️ Cloud-Konto öffnen</button><div id="accountPanel" class="app-menu-account" hidden><div style="font-weight:700;margin-bottom:5px">☁️ Cloud-Konto</div><div id="cloudStatus" style="font-size:13px;color:#d4e2d9;margin-bottom:10px">Melde dich an, um deine Laufplanung sicher in deiner Cloud zu speichern.</div><div id="cloudCheckStatus" role="status" aria-live="polite" style="font-size:11px;color:#b8d0c2;margin:-5px 0 10px">Automatischer Abruf noch nicht gestartet.</div><form id="cloudAuthForm" style="display:flex;gap:8px;flex-wrap:wrap"><input id="cloudEmail" type="email" required autocomplete="email" placeholder="E-Mail-Adresse" style="flex:1 1 190px;min-width:0;padding:11px;border-radius:9px;border:1px solid #789084;font:inherit"><input id="cloudPassword" type="password" required minlength="8" autocomplete="current-password" placeholder="Passwort (mind. 8 Zeichen)" style="flex:1 1 190px;min-width:0;padding:11px;border-radius:9px;border:1px solid #789084;font:inherit"><button class="primary" id="cloudLoginButton" type="button" onclick="event.preventDefault();if(typeof window.plannerLoginClick==='function')window.plannerLoginClick();else document.getElementById('cloudStatus').textContent='Cloud-Anmeldung wird initialisiert. Bitte kurz warten und erneut versuchen.'">Anmelden</button><button class="secondary" id="cloudSignup" type="button" onclick="plannerSignupClick()">Konto erstellen</button></form><div id="cloudAccountActions" hidden style="gap:8px;margin-top:8px"><button class="primary" id="restoreCloudData" type="button">Laufplanung und Laufhistorie aus der Cloud laden</button><button class="secondary" id="cloudLogout" type="button">Abmelden</button><button class="secondary" id="deleteCloudAccount" type="button" style="border-color:#d66;color:#ffb8b8">Konto endgültig löschen</button></div><div style="font-size:11px;color:#c4d5c9;margin-top:8px">Deine persönlichen Daten werden nur für dein angemeldetes Konto gespeichert. Verwende ein eigenes, sicheres Passwort.</div>
 </div><div class="app-menu-section-title">Speicher &amp; Datensicherung</div><div class="app-menu-info"><strong>☁️ Laufdaten geräteübergreifend</strong><p>Mit deinem Konto werden deine Laufplanung und gespeicherten Ergebnisse zwischen deinen Geräten synchronisiert. Melde dich dazu über den Bereich „Cloud-Konto“ an.</p><div id="appMenuCloudInfo" class="app-menu-hint">Noch nicht angemeldet – Synchronisierung ist nicht aktiv.</div></div><div class="app-menu-info"><strong>Gerätespeicher</strong><p id="storageHealth" aria-live="polite">Speicherstatus wird geprüft …</p><button class="secondary app-menu-item" id="protectStorageButton" type="button" onclick="requestPersistentStorage()">Speicherung auf diesem Gerät schützen</button></div><div class="app-menu-section-title">Sicherung verwalten</div><button class="secondary app-menu-item" id="exportBackup" type="button" role="menuitem">Datensicherung herunterladen</button><button class="secondary app-menu-item" id="downloadPreRestoreBackup" type="button" role="menuitem" hidden>Vorherigen Stand herunterladen</button><label class="secondary app-menu-item app-menu-label" for="importBackup" role="menuitem">Datensicherung wiederherstellen<input id="importBackup" type="file" accept="application/json,.json" hidden></label><div class="app-menu-hint">Sichere deine Planungen regelmäßig als JSON-Datei. Beim Wiederherstellen werden nur Daten aus einer gültigen Sicherung übernommen.</div><div id="cloudConflictActions" class="app-menu-conflict" style="display:none"><button class="secondary app-menu-item" id="downloadCloudBackup" type="button">Cloud-Sicherung herunterladen</button><button class="secondary app-menu-item" id="useCloudDataLocally" type="button">Cloud-Daten auf dieses Gerät übernehmen</button><button class="secondary app-menu-item" id="useLocalCloudData" type="button">Lokale Daten in Cloud übernehmen</button></div></div></div></div><div class="hero"><h1>Dein nächstes<br>Trail-Abenteuer.</h1><div class="stats"><div class="stat"><b id="eventCount">—</b><span>Hauptevents</span></div><div class="stat"><b id="routeCount">—</b><span>Strecken</span></div><div class="stat"><b>5 km</b><span>Unterkunftsradius</span></div></div></div></header>
