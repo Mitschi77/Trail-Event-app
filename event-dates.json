@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-20T00:04:00.000Z",
+  "updatedAt": "2026-11-20T00:07:00.000Z",
   "schemaVersion": 3,
   "events": {
     "la-corsa-della-bora": {
@@ -6210,6 +6210,34 @@
         "0": {
           "routeId": "semimaraton-iasi-21-km-2027",
           "date": "2027-04-25",
+          "verified": true,
+          "fallback": false
+        }
+      }
+    },
+    "semimaraton-gerar-2027": {
+      "eventId": "semimaraton-gerar-2027",
+      "checkedAt": "2026-11-20T00:07:00.000Z",
+      "status": "verified",
+      "sources": [
+        {
+          "url": "https://yoloevents.ro/event/semimaraton-gerar/",
+          "status": "read"
+        },
+        {
+          "url": "https://gerar.ro/",
+          "status": "read"
+        }
+      ],
+      "eventPeriod": {
+        "startDate": "2027-01-30",
+        "endDate": "2027-01-30",
+        "verified": true
+      },
+      "routes": {
+        "0": {
+          "routeId": "semimaraton-gerar-team-half-marathon-21-km-2027",
+          "date": "2027-01-30",
           "verified": true,
           "fallback": false
         }
