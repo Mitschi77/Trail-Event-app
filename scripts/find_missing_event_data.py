@@ -177,7 +177,7 @@ jobs=[]
 for event in events:
     for i,route in enumerate(event.get("routes",[])):
         # Focus only routes with at least one missing data field of interest.
-        if route.get("km") and route.get("hm") and route.get("maxh") and route.get("gpxDownloadUrl") and (route.get("elevationProfile") or route.get("profilePoints")): continue
+        if (route.get("km") and route.get("hm") and route.get("maxh") and route.get("gpxDownloadUrl") and (route.get("elevationProfile") or route.get("profilePoints")) and route.get("date") and route.get("starttime") and route.get("raceCost") not in (None, "")): continue
         jobs.append((event,i,route))
 with ThreadPoolExecutor(max_workers=10) as pool:
     futures=[pool.submit(route_scan,*job) for job in jobs]
