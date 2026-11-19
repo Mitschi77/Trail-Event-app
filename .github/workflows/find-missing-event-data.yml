@@ -7,6 +7,7 @@ on:
       - "scripts/test_event_data_rules.py"
       - ".github/workflows/find-missing-event-data.yml"
       - "supabase/functions/ingest-event-date-proposals/index.ts"
+      - "supabase/functions/ingest-event-date-proposals/index.ts"
   push:
     branches: [main]
     paths:
