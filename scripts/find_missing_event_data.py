@@ -7,7 +7,7 @@ from html import unescape
 from pathlib import Path
 from urllib.parse import urljoin, urlparse
 from event_data_rules import extract_cutoff_hours, filter_shared_gpx_proposals, is_http_url, meaningful_elevation_gain
-from event_data_candidates import CANDIDATE_PATTERNS, extract_contexts, missing_candidate_fields
+from event_data_candidates import CANDIDATE_PATTERNS, extract_contexts, extract_date_values, missing_candidate_fields
 
 ROOT = Path(__file__).resolve().parents[1]
 HTML = (ROOT / "index.html").read_text(encoding="utf-8")
@@ -159,14 +159,28 @@ def route_scan(event, ri, route):
     for field, missing in missing_candidate_fields(route).items():
         if not missing:
             continue
-        snippets = extract_contexts(plain, CANDIDATE_PATTERNS[field])
-        if not snippets:
-            continue
+        if field == "date":
+            values = extract_date_values(plain)
+            if not values:
+                continue
+            # Keep date values machine-readable and short. Store surrounding
+            # page text only as evidence, never as the proposed field value.
+            contexts = extract_contexts(plain, CANDIDATE_PATTERNS[field])
+            evidence = "Exakte Datumszeichenfolge(n): " + ", ".join(values) + ". Kontext: " + " | ".join(contexts[:2])
+            new_value = values
+            title = f"Datumsfund prüfen: {event.get('name')} · {route.get('name') or route.get('route') or ri}"
+        else:
+            snippets = extract_contexts(plain, CANDIDATE_PATTERNS[field])
+            if not snippets:
+                continue
+            evidence = "Unveränderter Textkandidat von der zugeordneten Veranstalter-/Streckenseite. Jahr, Strecke, Preisstaffel und Gültigkeit müssen manuell geprüft werden."
+            new_value = snippets
+            title = f"{field}-Angabe prüfen: {event.get('name')} · {route.get('name') or route.get('route') or ri}"
         props.append({"proposal_type":"data_correction",
-          "title":f"{field}-Angabe prüfen: {event.get('name')} · {route.get('name') or route.get('route') or ri}",
+          "title":title,
           "payload":{"source":"automated_event_data_finder","eventId":event.get("id"),"eventName":event.get("name"),
-            "routeId":route.get("id"),"routeIndex":ri,"field":field+"Candidate","oldValue":route.get(field),"newValue":snippets,"sourceUrl":final_url,
-            "evidence":"Unveränderter Textkandidat von der zugeordneten Veranstalter-/Streckenseite. Jahr, Strecke, Preisstaffel und Gültigkeit müssen manuell geprüft werden.",
+            "routeId":route.get("id"),"routeIndex":ri,"field":field+"Candidate","oldValue":route.get(field),"newValue":new_value,"sourceUrl":final_url,
+            "evidence":evidence,
             "checkedAt":NOW,"requiresOwnerApproval":True}})
     return props
 
