@@ -4,6 +4,8 @@ on:
     paths:
       - "scripts/find_missing_event_data.py"
       - "scripts/event_data_rules.py"
+      - "scripts/event_data_candidates.py"
+      - "scripts/test_event_data_candidates.py"
       - "scripts/test_event_data_rules.py"
       - ".github/workflows/find-missing-event-data.yml"
       - "supabase/functions/ingest-event-date-proposals/index.ts"
@@ -11,6 +13,9 @@ on:
     branches: [main]
     paths:
       - "scripts/find_missing_event_data.py"
+      - "scripts/event_data_candidates.py"
+      - "scripts/test_event_data_candidates.py"
+      - "scripts/test_event_data_rules.py"
       - "scripts/submit_event_data_proposals.py"
       - ".github/workflows/find-missing-event-data.yml"
       - "supabase/functions/ingest-event-date-proposals/index.ts"
@@ -32,8 +37,9 @@ jobs:
         with:
           python-version: "3.x"
       - name: Test conservative source and cut-off parsing
-        run: python -m unittest scripts/test_event_data_rules.py
-      - name: Search missing GPX, elevation and cut-off evidence
+        run: python -m unittest scripts/test_event_data_rules.py scripts/test_event_data_candidates.py
+      - name: Search missing GPX, elevation, dates, start times, fees and cut-off evidence
+        if: github.event_name != 'pull_request'
         run: python scripts/find_missing_event_data.py
       - name: Submit candidates to owner review queue
         if: github.event_name != 'pull_request'
