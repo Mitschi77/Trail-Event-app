@@ -142,8 +142,13 @@ for event_index, event in enumerate(events):
     expected_max_hm = max(valid_hm) if valid_hm else None
     if event.get("minKm") != expected_min_km:
         warnings.append(f"{name}: minKm summary {event.get('minKm')!r} does not match route minimum {expected_min_km!r}")
-    if event.get("maxHm") != expected_max_hm:
-        warnings.append(f"{name}: maxHm summary {event.get('maxHm')!r} does not match route maximum {expected_max_hm!r}")
+    # A stored event-level 0 is used as an unknown/empty summary when no
+    # route has elevation data. Do not report that sentinel as a mismatch.
+    reported_max_hm = event.get("maxHm")
+    if expected_max_hm is not None and reported_max_hm != expected_max_hm:
+        warnings.append(f"{name}: maxHm summary {reported_max_hm!r} does not match route maximum {expected_max_hm!r}")
+    elif expected_max_hm is None and reported_max_hm not in (None, 0):
+        warnings.append(f"{name}: maxHm summary {reported_max_hm!r} exists but no route has elevation data")
 
 
 missing_feed_events = event_ids - set(feed_events)
