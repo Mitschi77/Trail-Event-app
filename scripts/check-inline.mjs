@@ -35,6 +35,16 @@ for (const required of ["parseGpx", "persistGpxData", "connectPlannerCloud"]) {
   if (!html.includes(required)) throw new Error("Required app feature is missing: " + required);
 }
 
+if (!html.includes("async function ensureSupabaseLibrary()")) {
+  throw new Error("Cloud login must provide a Supabase CDN fallback loader.");
+}
+if (!html.includes("https://unpkg.com/@supabase/supabase-js@2")) {
+  throw new Error("Supabase fallback CDN is missing.");
+}
+if (!html.includes("if(!(await ensureSupabaseLibrary()))")) {
+  throw new Error("Cloud login must wait for the Supabase fallback loader before creating the client.");
+}
+
 const appVapidKey = html.match(/const\s+PUSH_VAPID_PUBLIC_KEY\s*=\s*["']([^"']+)["']/)?.[1];
 const senderVapidKey = pushFunction.match(/const\s+VAPID_PUBLIC_KEY\s*=\s*["']([^"']+)["']/)?.[1];
 if (!appVapidKey || !senderVapidKey) {
