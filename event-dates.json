@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-20T00:10:00.000Z",
+  "updatedAt": "2026-11-20T00:12:00.000Z",
   "schemaVersion": 3,
   "events": {
     "la-corsa-della-bora": {
@@ -6260,6 +6260,34 @@
         "0": {
           "routeId": "semimaraton-gerar-team-half-marathon-21-km-2027",
           "date": "2027-01-30",
+          "verified": true,
+          "fallback": false
+        }
+      }
+    },
+    "omv-petrom-bucharest-half-marathon-2027": {
+      "eventId": "omv-petrom-bucharest-half-marathon-2027",
+      "checkedAt": "2026-11-20T00:12:00.000Z",
+      "status": "verified",
+      "sources": [
+        {
+          "url": "https://www.bucuresti21km.ro/en/cursa-21km-half-marathon-bucharest/",
+          "status": "read"
+        },
+        {
+          "url": "https://www.bucuresti21km.ro/en/schedule/",
+          "status": "read"
+        }
+      ],
+      "eventPeriod": {
+        "startDate": "2027-05-09",
+        "endDate": "2027-05-09",
+        "verified": true
+      },
+      "routes": {
+        "0": {
+          "routeId": "omv-petrom-bucharest-half-marathon-21-097-2027",
+          "date": "2027-05-09",
           "verified": true,
           "fallback": false
         }
