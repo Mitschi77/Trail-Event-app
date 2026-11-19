@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-19T22:00:00.000Z",
+  "updatedAt": "2026-11-19T22:20:00.000Z",
   "schemaVersion": 3,
   "events": {
     "la-corsa-della-bora": {
@@ -6078,6 +6078,30 @@
     "maraton-treh-src-2027": {
       "eventId": "maraton-treh-src-2027",
       "checkedAt": "2026-11-19T23:00:00+01:00",
+      "status": "unconfirmed",
+      "sources": [],
+      "eventPeriod": null,
+      "routes": {}
+    },
+    "kaunas-akropolis-marathon-2027": {
+      "eventId": "kaunas-akropolis-marathon-2027",
+      "checkedAt": "2026-11-19T23:20:00+01:00",
+      "status": "unconfirmed",
+      "sources": [],
+      "eventPeriod": null,
+      "routes": {}
+    },
+    "nlb-ljubljana-marathon-2027": {
+      "eventId": "nlb-ljubljana-marathon-2027",
+      "checkedAt": "2026-11-19T23:20:00+01:00",
+      "status": "unconfirmed",
+      "sources": [],
+      "eventPeriod": null,
+      "routes": {}
+    },
+    "rimi-riga-marathon-2027": {
+      "eventId": "rimi-riga-marathon-2027",
+      "checkedAt": "2026-11-19T23:20:00+01:00",
       "status": "unconfirmed",
       "sources": [],
       "eventPeriod": null,
