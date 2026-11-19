@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-19T23:58:00.000Z",
+  "updatedAt": "2026-11-20T00:04:00.000Z",
   "schemaVersion": 3,
   "events": {
     "la-corsa-della-bora": {
@@ -6186,6 +6186,34 @@
       "sources": [],
       "eventPeriod": null,
       "routes": {}
+    },
+    "semimaraton-iasi-2027": {
+      "eventId": "semimaraton-iasi-2027",
+      "checkedAt": "2026-11-20T00:04:00.000Z",
+      "status": "verified",
+      "sources": [
+        {
+          "url": "https://semimaratoniasi.ro/",
+          "status": "read"
+        },
+        {
+          "url": "https://semimaratoniasi.ro/inscrieri/",
+          "status": "read"
+        }
+      ],
+      "eventPeriod": {
+        "startDate": "2027-04-25",
+        "endDate": "2027-04-25",
+        "verified": true
+      },
+      "routes": {
+        "0": {
+          "routeId": "semimaraton-iasi-21-km-2027",
+          "date": "2027-04-25",
+          "verified": true,
+          "fallback": false
+        }
+      }
     }
   }
 }
