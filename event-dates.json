@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-19T23:02:00.000Z",
+  "updatedAt": "2026-11-19T23:58:00.000Z",
   "schemaVersion": 3,
   "events": {
     "la-corsa-della-bora": {
@@ -5621,11 +5621,27 @@
     },
     "oktoberfest-run-nitra-half-marathon": {
       "eventId": "oktoberfest-run-nitra-half-marathon",
-      "checkedAt": "2026-11-19T20:35:00.000Z",
-      "status": "unconfirmed",
-      "sources": [],
-      "eventPeriod": null,
-      "routes": {}
+      "checkedAt": "2026-11-19T23:58:00.000Z",
+      "status": "verified",
+      "sources": [
+        {
+          "url": "https://oktoberfestrun.sk/propozicie-2026/",
+          "status": "read"
+        }
+      ],
+      "eventPeriod": {
+        "startDate": "2027-09-18",
+        "endDate": "2027-09-18",
+        "verified": true
+      },
+      "routes": {
+        "0": {
+          "routeId": "oktoberfest-run-nitra-half-marathon-21-0975",
+          "date": "2027-09-18",
+          "verified": true,
+          "fallback": false
+        }
+      }
     },
     "minsk-half-marathon": {
       "eventId": "minsk-half-marathon",
