@@ -37,4 +37,4 @@ if (!senderVapidKey || !pushFunction.includes('get_trail_push_vapid_config')) {
   throw new Error("The push sender's VAPID key or Vault configuration lookup is missing.");
 }
 
-console.log("Validated " + inlineScripts.length + " inline script(s), key app features, and matching Push VAPID keys.");
+console.log("Validated " + inlineScripts.length + " inline script(s), current app features, and server-side Push VAPID configuration.");
