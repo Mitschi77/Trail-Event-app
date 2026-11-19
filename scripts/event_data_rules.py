@@ -3,8 +3,8 @@ import re
 from urllib.parse import urlparse
 
 _CUTOFF_PATTERNS = (
-    re.compile(r"(?i)(?:cut[\\s-]?off|time\\s*limit|zeitlimit|max(?:imum)?\\s*time|maximalzeit|schlusszeit|zeitbeschränkung)\\s*[:：-]?\\s*(\\d{1,3}(?:[.,]\\d{1,2})?)\\s*(?:h|hours?|stunden?)\\b"),
-    re.compile(r"(?i)(\\d{1,3}(?:[.,]\\d{1,2})?)\\s*(?:h|hours?|stunden?)\\s*(?:cut[\\s-]?off|time\\s*limit|zeitlimit)\\b"),
+    re.compile(r"(?i)(?:cut[\s-]?off|time\s*limit|zeitlimit|max(?:imum)?\s*time|maximalzeit|schlusszeit|zeitbeschränkung)\s*[:：-]?\s*(\d{1,3}(?:[.,]\d{1,2})?)\s*(?:h|hours?|stunden?)\b"),
+    re.compile(r"(?i)(\d{1,3}(?:[.,]\d{1,2})?)\s*(?:h|hours?|stunden?)\s*(?:cut[\s-]?off|time\s*limit|zeitlimit)\b"),
 )
 
 def is_http_url(value):
