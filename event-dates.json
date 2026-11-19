@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-19T22:31:00+01:00",
+  "updatedAt": "2026-11-19T21:40:00.000Z",
   "schemaVersion": 3,
   "events": {
     "la-corsa-della-bora": {
@@ -6022,6 +6022,46 @@
     "legal-half-marathon-2027": {
       "eventId": "legal-half-marathon-2027",
       "checkedAt": "2026-11-19T22:31:00+01:00",
+      "status": "unconfirmed",
+      "sources": [],
+      "eventPeriod": null,
+      "routes": {}
+    },
+    "zuerich-marathon-2027": {
+      "eventId": "zuerich-marathon-2027",
+      "checkedAt": "2026-11-19T21:40:00.000Z",
+      "status": "unconfirmed",
+      "sources": [],
+      "eventPeriod": null,
+      "routes": {}
+    },
+    "getpro-bath-half-2027": {
+      "eventId": "getpro-bath-half-2027",
+      "checkedAt": "2026-11-19T21:40:00.000Z",
+      "status": "unconfirmed",
+      "sources": [],
+      "eventPeriod": null,
+      "routes": {}
+    },
+    "pko-poznan-half-2027": {
+      "eventId": "pko-poznan-half-2027",
+      "checkedAt": "2026-11-19T21:40:00.000Z",
+      "status": "unconfirmed",
+      "sources": [],
+      "eventPeriod": null,
+      "routes": {}
+    },
+    "cracovia-marathon-2027": {
+      "eventId": "cracovia-marathon-2027",
+      "checkedAt": "2026-11-19T21:40:00.000Z",
+      "status": "unconfirmed",
+      "sources": [],
+      "eventPeriod": null,
+      "routes": {}
+    },
+    "pko-gdynia-half-2027": {
+      "eventId": "pko-gdynia-half-2027",
+      "checkedAt": "2026-11-19T21:40:00.000Z",
       "status": "unconfirmed",
       "sources": [],
       "eventPeriod": null,
