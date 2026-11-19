@@ -37,6 +37,8 @@ for (const required of [
   "function updateReviewAccess()",
   ".more-nav-item[hidden]{display:none!important}",
   "reviewRefreshButton",
+  "sendOwnerPushTest",
+  "send-owner-test-push",
 ]) {
   if (!html.includes(required)) throw new Error("Required app feature is missing: " + required);
 }
