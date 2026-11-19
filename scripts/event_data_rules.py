@@ -28,8 +28,13 @@ def extract_cutoff_hours(text):
                 return value
     return None
 
-def filter_shared_gpx_proposals(proposals, distance_tolerance=0.15):
-    """Keep shared GPX evidence only for routes whose stored distance matches the track."""
+def filter_shared_gpx_proposals(proposals, distance_tolerance=0.15, known_routes_by_source=None):
+    """Keep shared GPX evidence only when exactly one event route matches its distance.
+
+    known_routes_by_source includes every route's stored distance, including
+    routes omitted from this scan because their data is already complete.
+    """
+    known_routes_by_source = known_routes_by_source or {}
     source_groups = {}
     for proposal in proposals:
         payload = proposal.get("payload") or {}
@@ -49,29 +54,39 @@ def filter_shared_gpx_proposals(proposals, distance_tolerance=0.15):
             continue
         key = (payload.get("eventId"), payload.get("sourceUrl"))
         group = source_groups.get(key, [])
-        route_ids = {str((p.get("payload") or {}).get("routeId") or (p.get("payload") or {}).get("routeIndex")) for p in group}
-        if len(route_ids) <= 1:
-            kept.append(proposal)
-            continue
-        # A shared GPX is safe only when exactly one route's stored distance
-        # matches it. If zero or several routes match, the source-to-route
-        # relationship is ambiguous and none of these proposals is emitted.
-        matches = []
+        route_distances = {
+            str(route.get("routeId")): route.get("km")
+            for route in known_routes_by_source.get(key, [])
+            if route.get("routeId") is not None
+        }
         for candidate in group:
             candidate_payload = candidate.get("payload") or {}
+            candidate_id = candidate_payload.get("routeId") or candidate_payload.get("routeIndex")
             old_value = candidate_payload.get("oldValue") or {}
-            new_value = candidate_payload.get("newValue") or {}
+            route_distances[str(candidate_id)] = old_value.get("km")
+        if len(route_distances) <= 1:
+            kept.append(proposal)
+            continue
+
+        # Completed routes count too: only one route across the full event
+        # may have a stored distance compatible with this GPX track.
+        new_value = payload.get("newValue") or {}
+        try:
+            new_km = float(new_value.get("km"))
+        except (TypeError, ValueError):
+            continue
+        matches = set()
+        for route_id, stored_km in route_distances.items():
             try:
-                old_km = float(old_value.get("km"))
-                new_km = float(new_value.get("km"))
+                old_km = float(stored_km)
                 if old_km > 0 and abs(new_km - old_km) / old_km <= distance_tolerance:
-                    matches.append(candidate)
+                    matches.add(route_id)
             except (TypeError, ValueError):
                 continue
-        if len(matches) == 1 and proposal is matches[0]:
+        proposal_route_id = str(payload.get("routeId") or payload.get("routeIndex"))
+        if len(matches) == 1 and proposal_route_id in matches:
             kept.append(proposal)
     return kept
-
 def meaningful_elevation_gain(elevations, ascent, minimum_span_m=5):
     """Return ascent only when the GPX elevation series has a meaningful vertical range."""
     values = [float(value) for value in elevations if value is not None]

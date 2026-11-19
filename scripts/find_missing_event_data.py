@@ -170,7 +170,18 @@ with ThreadPoolExecutor(max_workers=10) as pool:
         except Exception: pass
 # Do not attribute one identical GPX file to several routes of the same event.
 proposal_count_before_shared_filter = len(proposals)
-proposals = filter_shared_gpx_proposals(proposals)
+# Include every route that references a direct GPX URL, even if that route
+# is already complete and therefore omitted from the scan jobs.
+known_routes_by_source = {}
+for event in events:
+    for route_index, route in enumerate(event.get("routes", [])):
+        source_url = route.get("gpxDownloadUrl")
+        if isinstance(source_url, str) and GPX_RE.search(source_url) and urlparse(source_url).scheme in ("http", "https"):
+            route_id = route.get("id") or route_index
+            known_routes_by_source.setdefault((event.get("id"), source_url), []).append(
+                {"routeId": route_id, "km": route.get("km")}
+            )
+proposals = filter_shared_gpx_proposals(proposals, known_routes_by_source=known_routes_by_source)
 skipped_shared_gpx_proposals = proposal_count_before_shared_filter - len(proposals)
 # Deduplicate stable field/source candidates to avoid flooding review queue.
 unique={}

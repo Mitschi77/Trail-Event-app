@@ -29,6 +29,22 @@ class EventDataRulesTests(unittest.TestCase):
         ]
         self.assertEqual(filter_shared_gpx_proposals(proposals), [])
 
+    def test_complete_route_is_counted_when_checking_shared_gpx_ambiguity(self):
+        proposal = {"payload": {"field": "gpxMetrics", "eventId": "race", "routeId": "incomplete", "sourceUrl": "https://example.org/course.gpx", "oldValue": {"km": 70}, "newValue": {"km": 70.5}}}
+        known_routes = {("race", "https://example.org/course.gpx"): [
+            {"routeId": "incomplete", "km": 70},
+            {"routeId": "complete", "km": 70.2},
+        ]}
+        self.assertEqual(filter_shared_gpx_proposals([proposal], known_routes_by_source=known_routes), [])
+
+    def test_complete_route_with_different_distance_does_not_block_unique_match(self):
+        proposal = {"payload": {"field": "gpxMetrics", "eventId": "race", "routeId": "incomplete", "sourceUrl": "https://example.org/course.gpx", "oldValue": {"km": 70}, "newValue": {"km": 70.5}}}
+        known_routes = {("race", "https://example.org/course.gpx"): [
+            {"routeId": "incomplete", "km": 70},
+            {"routeId": "complete", "km": 24},
+        ]}
+        self.assertEqual(filter_shared_gpx_proposals([proposal], known_routes_by_source=known_routes), [proposal])
+
     def test_same_gpx_url_for_different_events_is_not_a_conflict(self):
         proposals = [
             {"payload": {"field": "gpxMetrics", "eventId": "race-a", "routeId": "a", "sourceUrl": "https://example.org/course.gpx"}},
