@@ -25,6 +25,8 @@ jobs:
           python-version: "3.x"
       - name: Search missing GPX, elevation and cut-off evidence
         run: python scripts/find_missing_event_data.py
+      - name: Test conservative source and cut-off parsing
+        run: python -m unittest scripts/test_event_data_rules.py
       - name: Submit candidates to owner review queue
         run: python scripts/submit_event_data_proposals.py
       - name: Keep scan report for diagnostics
