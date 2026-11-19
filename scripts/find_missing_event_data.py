@@ -6,7 +6,7 @@ from datetime import datetime, timezone
 from html import unescape
 from pathlib import Path
 from urllib.parse import urljoin, urlparse
-from event_data_rules import extract_cutoff_hours, is_http_url
+from event_data_rules import extract_cutoff_hours, filter_shared_gpx_proposals, is_http_url
 
 ROOT = Path(__file__).resolve().parents[1]
 HTML = (ROOT / "index.html").read_text(encoding="utf-8")
@@ -147,11 +147,15 @@ with ThreadPoolExecutor(max_workers=10) as pool:
     for f in as_completed(futures):
         try: proposals.extend(f.result())
         except Exception: pass
+# Do not attribute one identical GPX file to several routes of the same event.
+proposal_count_before_shared_filter = len(proposals)
+proposals = filter_shared_gpx_proposals(proposals)
+skipped_shared_gpx_proposals = proposal_count_before_shared_filter - len(proposals)
 # Deduplicate stable field/source candidates to avoid flooding review queue.
 unique={}
 for p in proposals:
     x=p["payload"]; key=(x.get("eventId"),x.get("routeId"),x.get("field"),x.get("sourceUrl"))
     unique[key]=p
-out={"generatedAt":NOW,"scannedRoutes":len(jobs),"proposalCount":len(unique),"proposals":list(unique.values())}
+out={"generatedAt":NOW,"scannedRoutes":len(jobs),"proposalCount":len(unique),"skippedSharedGpxProposals":skipped_shared_gpx_proposals,"proposals":list(unique.values())}
 (ROOT/"event-data-proposals.json").write_text(json.dumps(out,ensure_ascii=False,indent=2)+"\n",encoding="utf-8")
 print(json.dumps({k:v for k,v in out.items() if k!="proposals"},ensure_ascii=False))
