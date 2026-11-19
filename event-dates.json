@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-20T00:07:00.000Z",
+  "updatedAt": "2026-11-20T00:10:00.000Z",
   "schemaVersion": 3,
   "events": {
     "la-corsa-della-bora": {
@@ -6085,11 +6085,33 @@
     },
     "csob-bratislava-marathon-2027": {
       "eventId": "csob-bratislava-marathon-2027",
-      "checkedAt": "2026-11-19T23:00:00+01:00",
-      "status": "unconfirmed",
-      "sources": [],
-      "eventPeriod": null,
-      "routes": {}
+      "checkedAt": "2026-11-20T00:10:00.000Z",
+      "status": "verified",
+      "sources": [
+        {
+          "url": "https://bratislavamarathon.sk/assets/documents/bam-2027/vseobecne-en-v2.pdf",
+          "status": "read"
+        }
+      ],
+      "eventPeriod": {
+        "startDate": "2027-04-11",
+        "endDate": "2027-04-11",
+        "verified": true
+      },
+      "routes": {
+        "0": {
+          "routeId": "csob-bratislava-marathon-42-195-2027",
+          "date": "2027-04-11",
+          "verified": true,
+          "fallback": false
+        },
+        "1": {
+          "routeId": "csob-bratislava-half-marathon-21-098-2027",
+          "date": "2027-04-11",
+          "verified": true,
+          "fallback": false
+        }
+      }
     },
     "maraton-treh-src-2027": {
       "eventId": "maraton-treh-src-2027",
