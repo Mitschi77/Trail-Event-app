@@ -112,6 +112,20 @@ assert.ok(html.includes("async function compressRouteImage(file)"), "Uploaded ro
 assert.ok(html.includes("STORAGE_WARNING_BYTES"), "Route image writes must be guarded against localStorage quota exhaustion");
 assert.ok(html.includes("if(file.size>8*1024*1024)"), "Route image uploads must have a safe source-file size limit");
 
+const conflictHelperStart = html.indexOf("function conflictingOfficialRouteDateIds(items)");
+const conflictHelperEnd = html.indexOf("\\nlet officialDateRefreshRunning", conflictHelperStart);
+assert.ok(conflictHelperStart >= 0 && conflictHelperEnd > conflictHelperStart, "Official route date conflict detector must exist");
+const conflictingOfficialRouteDateIds = new Function(html.slice(conflictHelperStart, conflictHelperEnd) + "; return conflictingOfficialRouteDateIds;")();
+assert.deepEqual([...conflictingOfficialRouteDateIds({
+  0: { routeId: "route-a", date: "2027-05-05", verified: true },
+  1: { routeId: "route-a", date: "2027-05-08", verified: true },
+  2: { routeId: "route-b", date: "2027-05-06", verified: true },
+  3: { routeId: "route-b", date: "2027-05-06", verified: true },
+  4: { routeId: "route-c", date: "2027-05-06", verified: false }
+})], ["route-a"], "Only verified route IDs with different dates must be treated as conflicting");
+assert.ok(html.includes("conflictingRouteIds.has(route.id)"), "Conflicting official route dates must remain pending");
+assert.ok(html.includes("if(item.routeId&&conflictingRouteIds.has(item.routeId))continue"), "Conflicting dates must not overwrite the route date in feed iteration");
+
 assert.ok(html.includes("function renderOfficialQualitySummary()"), "Official event data quality dashboard must exist");
 assert.ok(html.includes("window.officialEventFeed=feed"), "Official feed audit must use the loaded official event data");
 assert.ok(html.includes("Maximalzeit/Cut-offs") && html.includes("Array.isArray(x.r.cutoffs)&&x.r.cutoffs.length"), "A verified cutoff list may satisfy the race time-limit completeness check");
