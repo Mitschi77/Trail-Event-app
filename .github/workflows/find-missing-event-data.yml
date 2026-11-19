@@ -4,7 +4,11 @@ on:
     paths:
       - "scripts/find_missing_event_data.py"
       - "scripts/event_data_rules.py"
+      - "scripts/event_data_candidates.py"
+      - "scripts/test_event_data_candidates.py"
       - "scripts/test_event_data_rules.py"
+      - "scripts/event_data_candidates.py"
+      - "scripts/test_event_data_candidates.py"
       - ".github/workflows/find-missing-event-data.yml"
       - "supabase/functions/ingest-event-date-proposals/index.ts"
   push:
@@ -32,7 +36,7 @@ jobs:
         with:
           python-version: "3.x"
       - name: Test conservative source and cut-off parsing
-        run: python -m unittest scripts/test_event_data_rules.py
+        run: python -m unittest scripts/test_event_data_rules.py scripts/test_event_data_candidates.py
       - name: Search missing GPX, elevation and cut-off evidence
         run: python scripts/find_missing_event_data.py
       - name: Submit candidates to owner review queue
