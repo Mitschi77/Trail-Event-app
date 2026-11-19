@@ -24,3 +24,15 @@ def missing_candidate_fields(route):
         "starttime": not route.get("starttime"),
         "raceCost": route.get("raceCost") in (None, ""),
     }
+
+
+def extract_date_values(text, limit=4):
+    """Return only exact date tokens, never the surrounding page paragraph."""
+    found = []
+    for match in CANDIDATE_PATTERNS["date"].finditer(text or ""):
+        value = match.group(0).strip()
+        if value and value not in found:
+            found.append(value)
+        if len(found) >= limit:
+            break
+    return found
