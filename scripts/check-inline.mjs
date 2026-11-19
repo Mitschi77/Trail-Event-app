@@ -21,11 +21,11 @@ for (const [index, source] of inlineScripts.entries()) {
   }
 }
 
-if (/id="enableReviewNotifications"[^>]*onclick=/.test(html)) {
-  throw new Error("Push setup button must not rely on an inline onclick handler.");
+if (!/id="enableReviewNotifications"[^>]*onclick="window\.trailReviewPushClick\(event\)"/.test(html)) {
+  throw new Error("Push setup button must call its handler directly from the button click.");
 }
-if (!html.includes("notify.addEventListener('click',window.trailReviewPushClick)")) {
-  throw new Error("Push setup button is not bound through initProposalControls.");
+if (html.includes("notify.addEventListener('click',window.trailReviewPushClick)")) {
+  throw new Error("Push setup must not depend on delayed proposal-control initialization.");
 }
 if (!html.includes("const task=window.registerReviewPush()")) {
   throw new Error("Push setup must call the registration function synchronously from the click handler.");
