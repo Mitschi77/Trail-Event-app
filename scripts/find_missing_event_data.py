@@ -23,19 +23,50 @@ def haversine(a,b):
     r=6371000; p1,p2=math.radians(a[0]),math.radians(b[0]); dp=math.radians(b[0]-a[0]); dl=math.radians(b[1]-a[1])
     return 2*r*math.asin(math.sqrt(math.sin(dp/2)**2+math.cos(p1)*math.cos(p2)*math.sin(dl/2)**2))
 def parse_gpx(data):
-    root=ET.fromstring(data); pts=[]
-    for p in root.iter():
-        if p.tag.split("}")[-1] in ("trkpt","rtept"):
+    root=ET.fromstring(data)
+    # Keep each GPX track segment / route separate. Flattening all points can
+    # invent distance between unrelated tracks, and dropping missing elevation
+    # points can invent ascent across gaps in the elevation series.
+    containers=[]
+    for node in root.iter():
+        kind=node.tag.split("}")[-1]
+        if kind=="trkseg":
+            containers.append((node,"trkpt"))
+        elif kind=="rte":
+            containers.append((node,"rtept"))
+    if not containers:
+        containers=[(root,"trkpt"),(root,"rtept")]
+    segments=[]
+    for parent,point_tag in containers:
+        pts=[]
+        for p in parent:
+            if p.tag.split("}")[-1]!=point_tag:
+                continue
             try:
                 lat=float(p.attrib["lat"]); lon=float(p.attrib["lon"])
-                ele=next((float(c.text) for c in p if c.tag.split("}")[-1]=="ele" and c.text),None)
+                if not (math.isfinite(lat) and math.isfinite(lon) and -90<=lat<=90 and -180<=lon<=180):
+                    continue
+                ele=next((float(ch.text) for ch in p if ch.tag.split("}")[-1]=="ele" and ch.text),None)
+                if ele is not None and not math.isfinite(ele):
+                    ele=None
                 pts.append((lat,lon,ele))
-            except (KeyError,ValueError,TypeError): pass
-    if len(pts)<2: return None
-    distance=sum(haversine(a[:2],b[:2]) for a,b in zip(pts,pts[1:]))/1000
-    elevations=[p[2] for p in pts if p[2] is not None]
-    gain=sum(max(0,b-a) for a,b in zip(elevations,elevations[1:])) if len(elevations)>1 else None
-    return {"km":round(distance,2),"hm":round(gain) if gain is not None else None,"trackPoints":len(pts),"hasElevation":gain is not None}
+            except (KeyError,ValueError,TypeError):
+                continue
+        if pts:
+            segments.append(pts)
+    point_count=sum(len(segment) for segment in segments)
+    if point_count<2:
+        return None
+    distance=sum(haversine(a[:2],b[:2]) for segment in segments for a,b in zip(segment,segment[1:]))/1000
+    ascent=0.0
+    elevation_pairs=0
+    for segment in segments:
+        for a,b in zip(segment,segment[1:]):
+            if a[2] is not None and b[2] is not None:
+                ascent+=max(0,b[2]-a[2])
+                elevation_pairs+=1
+    gain=round(ascent) if elevation_pairs else None
+    return {"km":round(distance,2),"hm":gain,"trackPoints":point_count,"hasElevation":gain is not None}
 def route_scan(event, ri, route):
     props=[]
     # The direct GPX URL was previously ignored: only embedded webpage links were scanned.
