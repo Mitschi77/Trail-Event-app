@@ -31,6 +31,13 @@ if (!html.includes("const task=window.registerReviewPush()")) {
   throw new Error("Push setup must call the registration function synchronously from the click handler.");
 }
 
+if (!html.includes("button.textContent=status.textContent.includes('registriert')?'Push ist eingerichtet':'Erneut versuchen'")) {
+  throw new Error("Push setup must leave a visible success or retry state on the button.");
+}
+if (!html.includes("Service Worker wurde nicht rechtzeitig bereit")) {
+  throw new Error("Push setup must report a stalled service-worker readiness check.");
+}
+
 for (const required of ["parseGpx", "persistGpxData", "connectPlannerCloud"]) {
   if (!html.includes(required)) throw new Error("Required app feature is missing: " + required);
 }
