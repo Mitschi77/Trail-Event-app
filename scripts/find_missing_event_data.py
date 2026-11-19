@@ -6,7 +6,7 @@ from datetime import datetime, timezone
 from html import unescape
 from pathlib import Path
 from urllib.parse import urljoin, urlparse
-from event_data_rules import extract_cutoff_hours, filter_shared_gpx_proposals, is_http_url
+from event_data_rules import extract_cutoff_hours, filter_shared_gpx_proposals, is_http_url, meaningful_elevation_gain
 
 ROOT = Path(__file__).resolve().parents[1]
 HTML = (ROOT / "index.html").read_text(encoding="utf-8")
@@ -66,7 +66,8 @@ def parse_gpx(data):
             if a[2] is not None and b[2] is not None:
                 ascent+=max(0,b[2]-a[2])
                 elevation_pairs+=1
-    gain=round(ascent) if elevation_pairs else None
+    elevations=[p[2] for segment in segments for p in segment if p[2] is not None]
+    gain=meaningful_elevation_gain(elevations,ascent) if elevation_pairs else None
     return {"km":round(distance,2),"hm":gain,"trackPoints":point_count,"hasElevation":gain is not None}
 def route_scan(event, ri, route):
     props=[]
@@ -78,10 +79,20 @@ def route_scan(event, ri, route):
             if b"<gpx" in data[:1000].lower():
                 metrics=parse_gpx(data)
                 if metrics:
+                    old_km=route.get("km")
+                    try: distance_ratio=abs(float(metrics["km"])-float(old_km))/float(old_km) if old_km not in (None,"",0) else 0
+                    except (TypeError,ValueError): distance_ratio=0
+                    warnings=[]
+                    if distance_ratio>0.5:
+                        warnings.append("WARNUNG: GPX-Länge weicht um mehr als 50 Prozent vom gespeicherten Streckenwert ab; möglicherweise falscher oder unvollständiger Track.")
+                    if metrics.get("hm") is None and route.get("hm") not in (None,""):
+                        warnings.append("GPX enthält keine belastbaren Höhenwerte; vorhandene Höhenmeter nicht durch diesen Track ersetzen.")
+                    evidence="Direkt hinterlegte öffentliche GPX-Datei; Werte lokal aus Trackpunkten berechnet."
+                    if warnings: evidence += " " + " ".join(warnings)
                     props.append({"proposal_type":"data_correction","title":f"GPX-Daten prüfen: {event.get('name')} · {route.get('name') or route.get('route') or ri}",
                       "payload":{"source":"automated_event_data_finder","eventId":event.get("id"),"eventName":event.get("name"),"routeId":route.get("id"),"routeIndex":ri,
                         "field":"gpxMetrics","oldValue":{"km":route.get("km"),"hm":route.get("hm")},"newValue":metrics,"sourceUrl":actual,
-                        "evidence":"Direkt hinterlegte öffentliche GPX-Datei; Werte lokal aus Trackpunkten berechnet. Vor Übernahme mit Veranstalterangaben vergleichen.",
+                        "evidence":evidence,"reviewWarning":warnings or None,
                         "checkedAt":NOW,"requiresOwnerApproval":True}})
         except Exception:
             pass
@@ -114,10 +125,20 @@ def route_scan(event, ri, route):
             if b"<gpx" not in data[:1000].lower(): continue
             metrics=parse_gpx(data)
             if not metrics: continue
+            old_km=route.get("km")
+            try: distance_ratio=abs(float(metrics["km"])-float(old_km))/float(old_km) if old_km not in (None,"",0) else 0
+            except (TypeError,ValueError): distance_ratio=0
+            warnings=[]
+            if distance_ratio>0.5:
+                warnings.append("WARNUNG: GPX-Länge weicht um mehr als 50 Prozent vom gespeicherten Streckenwert ab; möglicherweise falscher oder unvollständiger Track.")
+            if metrics.get("hm") is None and route.get("hm") not in (None,""):
+                warnings.append("GPX enthält keine belastbaren Höhenwerte; vorhandene Höhenmeter nicht durch diesen Track ersetzen.")
+            evidence="Öffentlich erreichbare GPX-Datei von der verknüpften Strecken-/Veranstalterseite; Werte lokal aus Trackpunkten berechnet."
+            if warnings: evidence += " " + " ".join(warnings)
             props.append({"proposal_type":"data_correction","title":f"GPX-Daten prüfen: {event.get('name')} · {route.get('name') or route.get('route') or ri}",
               "payload":{"source":"automated_event_data_finder","eventId":event.get("id"),"eventName":event.get("name"),"routeId":route.get("id"),"routeIndex":ri,
                 "field":"gpxMetrics","oldValue":{"km":route.get("km"),"hm":route.get("hm")},"newValue":metrics,"sourceUrl":actual,
-                "evidence":"Öffentlich erreichbare GPX-Datei von der verknüpften Strecken-/Veranstalterseite; Werte lokal aus Trackpunkten berechnet.",
+                "evidence":evidence,"reviewWarning":warnings or None,
                 "checkedAt":NOW,"requiresOwnerApproval":True}})
             break
         except Exception: continue

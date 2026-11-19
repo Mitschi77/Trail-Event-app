@@ -28,9 +28,9 @@ def extract_cutoff_hours(text):
                 return value
     return None
 
-def filter_shared_gpx_proposals(proposals):
-    """Drop GPX metric proposals when one source file is assigned to multiple routes of one event."""
-    source_routes = {}
+def filter_shared_gpx_proposals(proposals, distance_tolerance=0.15):
+    """Keep shared GPX evidence only for routes whose stored distance matches the track."""
+    source_groups = {}
     for proposal in proposals:
         payload = proposal.get("payload") or {}
         if payload.get("field") != "gpxMetrics":
@@ -39,17 +39,35 @@ def filter_shared_gpx_proposals(proposals):
         event_id = payload.get("eventId")
         route_id = payload.get("routeId") or payload.get("routeIndex")
         if source and event_id is not None and route_id is not None:
-            source_routes.setdefault((event_id, source), set()).add(str(route_id))
+            source_groups.setdefault((event_id, source), []).append(proposal)
 
-    shared = {
-        key for key, route_ids in source_routes.items()
-        if len(route_ids) > 1
-    }
     kept = []
     for proposal in proposals:
         payload = proposal.get("payload") or {}
-        key = (payload.get("eventId"), payload.get("sourceUrl"))
-        if payload.get("field") == "gpxMetrics" and key in shared:
+        if payload.get("field") != "gpxMetrics":
+            kept.append(proposal)
             continue
-        kept.append(proposal)
+        key = (payload.get("eventId"), payload.get("sourceUrl"))
+        group = source_groups.get(key, [])
+        route_ids = {str((p.get("payload") or {}).get("routeId") or (p.get("payload") or {}).get("routeIndex")) for p in group}
+        if len(route_ids) <= 1:
+            kept.append(proposal)
+            continue
+        old_value = payload.get("oldValue") or {}
+        new_value = payload.get("newValue") or {}
+        try:
+            old_km = float(old_value.get("km"))
+            new_km = float(new_value.get("km"))
+            matches_route = old_km > 0 and abs(new_km - old_km) / old_km <= distance_tolerance
+        except (TypeError, ValueError):
+            matches_route = False
+        if matches_route:
+            kept.append(proposal)
     return kept
+
+def meaningful_elevation_gain(elevations, ascent, minimum_span_m=5):
+    """Return ascent only when the GPX elevation series has a meaningful vertical range."""
+    values = [float(value) for value in elevations if value is not None]
+    if len(values) < 2 or max(values) - min(values) < minimum_span_m:
+        return None
+    return round(ascent)
