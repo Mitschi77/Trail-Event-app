@@ -1,6 +1,9 @@
 import { readFile } from "node:fs/promises";
 
 const html = await readFile(new URL("../index.html", import.meta.url), "utf8");
+const raceTools = await readFile(new URL("../race-tools.js", import.meta.url), "utf8");
+const seasonTools = await readFile(new URL("../season-tools.js", import.meta.url), "utf8");
+const appSource = html + "\n" + raceTools + "\n" + seasonTools;
 const pushFunction = await readFile(
   new URL("../supabase/functions/send-event-review-push/index.ts", import.meta.url),
   "utf8"
@@ -22,7 +25,7 @@ for (const [index, source] of inlineScripts.entries()) {
 }
 
 for (const required of ["parseGpx", "persistGpxData", "connectPlannerCloud"]) {
-  if (!html.includes(required)) throw new Error("Required app feature is missing: " + required);
+  if (!appSource.includes(required)) throw new Error("Required app feature is missing from the combined app source: " + required);
 }
 
 const appVapidKey = html.match(/const\s+PUSH_VAPID_PUBLIC_KEY\s*=\s*["']([^"']+)["']/)?.[1];
