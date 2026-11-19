@@ -34,6 +34,8 @@ for (const required of [
   "async function renderReviewQueue()",
   "if(name==='review')renderReviewQueue()",
   "function updateReviewAccess()",
+  ".more-nav-item[hidden]{display:none!important}",
+  "reviewRefreshButton",
 ]) {
   if (!html.includes(required)) throw new Error("Required app feature is missing: " + required);
 }
