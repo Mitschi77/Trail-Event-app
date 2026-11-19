@@ -84,7 +84,13 @@ def route_scan(event, ri, route):
                         "checkedAt":NOW,"requiresOwnerApproval":True}})
         except Exception:
             pass
-    source=route.get("web") or route.get("profileUrl") or route.get("cutoffUrl") or event.get("web")
+    # A generic event homepage may describe several distances. Do not attach
+    # its GPX links or cut-off text to one arbitrary route. Use an explicitly
+    # route-linked page, or the event homepage only when the event has one route.
+    route_sources=[route.get("web"),route.get("profileUrl"),route.get("cutoffUrl")]
+    source=next((u for u in route_sources if isinstance(u,str) and u and u != event.get("web")),None)
+    if source is None and len(event.get("routes",[]))==1:
+        source=event.get("web")
     if not isinstance(source,str) or urlparse(source).scheme not in ("http","https"): return props
     try: raw, final_url, ctype=fetch(source)
     except Exception as e: return props
