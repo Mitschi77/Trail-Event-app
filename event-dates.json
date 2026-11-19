@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-19T22:55:00.000Z",
+  "updatedAt": "2026-11-19T22:58:00.000Z",
   "schemaVersion": 3,
   "events": {
     "la-corsa-della-bora": {
@@ -6134,6 +6134,14 @@
     "if-vilnius-half-marathon-2027": {
       "eventId": "if-vilnius-half-marathon-2027",
       "checkedAt": "2026-11-19T23:55:00+01:00",
+      "status": "unconfirmed",
+      "sources": [],
+      "eventPeriod": null,
+      "routes": {}
+    },
+    "panas-polmaraton-slezanski-2027": {
+      "eventId": "panas-polmaraton-slezanski-2027",
+      "checkedAt": "2026-11-19T23:58:00+01:00",
       "status": "unconfirmed",
       "sources": [],
       "eventPeriod": null,
