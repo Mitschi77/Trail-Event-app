@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-19T20:35:00.000Z",
+  "updatedAt": "2026-11-19T22:31:00+01:00",
   "schemaVersion": 3,
   "events": {
     "la-corsa-della-bora": {
@@ -5893,7 +5893,7 @@
     },
     "10-slavonska-trka": {
       "eventId": "10-slavonska-trka",
-      "checkedAt": "2026-11-19T21:36:00.000Z",
+      "checkedAt": "2026-11-19T22:31:00+01:00",
       "status": "unconfirmed",
       "sources": [],
       "eventPeriod": null,
@@ -5901,7 +5901,7 @@
     },
     "zagreb21": {
       "eventId": "zagreb21",
-      "checkedAt": "2026-11-19T21:36:00.000Z",
+      "checkedAt": "2026-11-19T22:31:00+01:00",
       "status": "unconfirmed",
       "sources": [],
       "eventPeriod": null,
@@ -5909,7 +5909,7 @@
     },
     "osjecki-ferivi-polumaraton": {
       "eventId": "osjecki-ferivi-polumaraton",
-      "checkedAt": "2026-11-19T21:36:00.000Z",
+      "checkedAt": "2026-11-19T22:31:00+01:00",
       "status": "unconfirmed",
       "sources": [],
       "eventPeriod": null,
@@ -5917,7 +5917,7 @@
     },
     "viski-polumaraton": {
       "eventId": "viski-polumaraton",
-      "checkedAt": "2026-11-19T21:36:00.000Z",
+      "checkedAt": "2026-11-19T22:31:00+01:00",
       "status": "unconfirmed",
       "sources": [],
       "eventPeriod": null,
@@ -5925,7 +5925,7 @@
     },
     "plitvicki-maraton": {
       "eventId": "plitvicki-maraton",
-      "checkedAt": "2026-11-19T21:36:00.000Z",
+      "checkedAt": "2026-11-19T22:31:00+01:00",
       "status": "unconfirmed",
       "sources": [],
       "eventPeriod": null,
@@ -5933,7 +5933,7 @@
     },
     "powerade-belgrade-marathon": {
       "eventId": "powerade-belgrade-marathon",
-      "checkedAt": "2026-11-19T21:36:00.000Z",
+      "checkedAt": "2026-11-19T22:31:00+01:00",
       "status": "unconfirmed",
       "sources": [],
       "eventPeriod": null,
@@ -5941,15 +5941,7 @@
     },
     "timisoara-21k-sportguru": {
       "eventId": "timisoara-21k-sportguru",
-      "checkedAt": "2026-11-19T21:36:00.000Z",
-      "status": "unconfirmed",
-      "sources": [],
-      "eventPeriod": null,
-      "routes": {}
-    },
-    "oradea-city-trail-2027": {
-      "eventId": "oradea-city-trail-2027",
-      "checkedAt": "2026-11-19T21:36:00.000Z",
+      "checkedAt": "2026-11-19T22:31:00+01:00",
       "status": "unconfirmed",
       "sources": [],
       "eventPeriod": null,
@@ -5957,7 +5949,7 @@
     },
     "alba-iulia-city-race-2027": {
       "eventId": "alba-iulia-city-race-2027",
-      "checkedAt": "2026-11-19T21:36:00.000Z",
+      "checkedAt": "2026-11-19T22:31:00+01:00",
       "status": "unconfirmed",
       "sources": [],
       "eventPeriod": null,
@@ -5965,7 +5957,7 @@
     },
     "dzi-marathon-stara-zagora-2027": {
       "eventId": "dzi-marathon-stara-zagora-2027",
-      "checkedAt": "2026-11-19T21:36:00.000Z",
+      "checkedAt": "2026-11-19T22:31:00+01:00",
       "status": "unconfirmed",
       "sources": [],
       "eventPeriod": null,
@@ -5973,7 +5965,7 @@
     },
     "sofia-half-marathon-2027": {
       "eventId": "sofia-half-marathon-2027",
-      "checkedAt": "2026-11-19T21:36:00.000Z",
+      "checkedAt": "2026-11-19T22:31:00+01:00",
       "status": "unconfirmed",
       "sources": [],
       "eventPeriod": null,
@@ -5981,7 +5973,7 @@
     },
     "plovdiv-run-marathon-weekend-2027": {
       "eventId": "plovdiv-run-marathon-weekend-2027",
-      "checkedAt": "2026-11-19T21:36:00.000Z",
+      "checkedAt": "2026-11-19T22:31:00+01:00",
       "status": "unconfirmed",
       "sources": [],
       "eventPeriod": null,
@@ -5989,7 +5981,7 @@
     },
     "sri-chinmoy-run-become-sofia-2027": {
       "eventId": "sri-chinmoy-run-become-sofia-2027",
-      "checkedAt": "2026-11-19T21:36:00.000Z",
+      "checkedAt": "2026-11-19T22:31:00+01:00",
       "status": "unconfirmed",
       "sources": [],
       "eventPeriod": null,
@@ -5997,7 +5989,7 @@
     },
     "dzi-marathon-varna-2027": {
       "eventId": "dzi-marathon-varna-2027",
-      "checkedAt": "2026-11-19T21:36:00.000Z",
+      "checkedAt": "2026-11-19T22:31:00+01:00",
       "status": "unconfirmed",
       "sources": [],
       "eventPeriod": null,
@@ -6005,7 +5997,7 @@
     },
     "nlb-rmc-banja-luka-half-2027": {
       "eventId": "nlb-rmc-banja-luka-half-2027",
-      "checkedAt": "2026-11-19T21:36:00.000Z",
+      "checkedAt": "2026-11-19T22:31:00+01:00",
       "status": "unconfirmed",
       "sources": [],
       "eventPeriod": null,
@@ -6013,7 +6005,7 @@
     },
     "wizz-air-skopje-marathon-2027": {
       "eventId": "wizz-air-skopje-marathon-2027",
-      "checkedAt": "2026-11-19T21:36:00.000Z",
+      "checkedAt": "2026-11-19T22:31:00+01:00",
       "status": "unconfirmed",
       "sources": [],
       "eventPeriod": null,
@@ -6021,7 +6013,15 @@
     },
     "om-half-marathon-chisinau-2027": {
       "eventId": "om-half-marathon-chisinau-2027",
-      "checkedAt": "2026-11-19T21:36:00.000Z",
+      "checkedAt": "2026-11-19T22:31:00+01:00",
+      "status": "unconfirmed",
+      "sources": [],
+      "eventPeriod": null,
+      "routes": {}
+    },
+    "legal-half-marathon-2027": {
+      "eventId": "legal-half-marathon-2027",
+      "checkedAt": "2026-11-19T22:31:00+01:00",
       "status": "unconfirmed",
       "sources": [],
       "eventPeriod": null,
