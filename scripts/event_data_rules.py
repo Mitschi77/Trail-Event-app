@@ -27,3 +27,29 @@ def extract_cutoff_hours(text):
             if 0 < value <= 1000:
                 return value
     return None
+
+def filter_shared_gpx_proposals(proposals):
+    """Drop GPX metric proposals when one source file is assigned to multiple routes of one event."""
+    source_routes = {}
+    for proposal in proposals:
+        payload = proposal.get("payload") or {}
+        if payload.get("field") != "gpxMetrics":
+            continue
+        source = payload.get("sourceUrl")
+        event_id = payload.get("eventId")
+        route_id = payload.get("routeId") or payload.get("routeIndex")
+        if source and event_id is not None and route_id is not None:
+            source_routes.setdefault((event_id, source), set()).add(str(route_id))
+
+    shared = {
+        key for key, route_ids in source_routes.items()
+        if len(route_ids) > 1
+    }
+    kept = []
+    for proposal in proposals:
+        payload = proposal.get("payload") or {}
+        key = (payload.get("eventId"), payload.get("sourceUrl"))
+        if payload.get("field") == "gpxMetrics" and key in shared:
+            continue
+        kept.append(proposal)
+    return kept
