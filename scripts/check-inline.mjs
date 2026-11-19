@@ -21,6 +21,16 @@ for (const [index, source] of inlineScripts.entries()) {
   }
 }
 
+if (/id="enableReviewNotifications"[^>]*onclick=/.test(html)) {
+  throw new Error("Push setup button must not rely on an inline onclick handler.");
+}
+if (!html.includes("notify.addEventListener('click',window.trailReviewPushClick)")) {
+  throw new Error("Push setup button is not bound through initProposalControls.");
+}
+if (!html.includes("const task=window.registerReviewPush()")) {
+  throw new Error("Push setup must call the registration function synchronously from the click handler.");
+}
+
 for (const required of ["parseGpx", "persistGpxData", "connectPlannerCloud"]) {
   if (!html.includes(required)) throw new Error("Required app feature is missing: " + required);
 }
