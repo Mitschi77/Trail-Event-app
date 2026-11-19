@@ -28,5 +28,7 @@ jobs:
         run: npm ci
       - name: Run app syntax and regression tests
         run: npm run test:syntax
+      - name: Run Python event-data regression tests
+        run: python3 -m unittest discover -s scripts -p 'test_*.py'
       - name: Validate event and route data, including date-feed route IDs
         run: python3 scripts/validate_event_data.py
