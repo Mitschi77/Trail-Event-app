@@ -1340,6 +1340,21 @@ header{padding-left:max(14px,calc((100vw - 1120px)/2));padding-right:max(14px,ca
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <script>
 document.addEventListener('click',function(e){
+  const pushButton=e.target.closest('#enableReviewNotifications');
+  if(pushButton){
+    e.preventDefault();
+    e.stopImmediatePropagation();
+    const status=document.getElementById('reviewNotificationStatus');
+    if(status)status.textContent='Klick erkannt – Push-Einrichtung wird gestartet …';
+    if(typeof window.registerReviewPush==='function'){
+      Promise.resolve(window.registerReviewPush()).catch(error=>{
+        if(status)status.textContent='Push-Einrichtung fehlgeschlagen: '+(error?.message||'Unbekannter Fehler');
+      });
+    }else if(status){
+      status.textContent='Klick erkannt, aber die Push-Funktion wurde vom App-Hauptskript nicht geladen. Bitte App neu laden; der technische Fehler wird dadurch eingegrenzt.';
+    }
+    return;
+  }
   const button=e.target.closest('#cloudLoginButton');
   if(!button)return;
   e.preventDefault();
