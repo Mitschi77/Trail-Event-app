@@ -32,7 +32,7 @@ for (const required of ["importActivityToHistory", "parseCutoffsText", "connectP
 // The client does not currently embed a public VAPID key. The sender reads
 // its private key from the Supabase Vault; only validate the server-side
 // public key and its Vault-backed configuration lookup here.
-const senderVapidKey = pushFunction.match(/const\\s+VAPID_PUBLIC_KEY\\s*=\\s*["']([^"']+)["']/)?.[1];
+const senderVapidKey = pushFunction.match(/const\s+VAPID_PUBLIC_KEY\s*=\s*["']([^"']+)["']/)?.[1];
 if (!senderVapidKey || !pushFunction.includes('get_trail_push_vapid_config')) {
   throw new Error("The push sender's VAPID key or Vault configuration lookup is missing.");
 }
