@@ -37,15 +37,30 @@ def parse_gpx(data):
     gain=sum(max(0,b-a) for a,b in zip(elevations,elevations[1:])) if len(elevations)>1 else None
     return {"km":round(distance,2),"hm":round(gain) if gain is not None else None,"trackPoints":len(pts),"hasElevation":gain is not None}
 def route_scan(event, ri, route):
+    props=[]
+    # The direct GPX URL was previously ignored: only embedded webpage links were scanned.
+    direct_gpx=route.get("gpxDownloadUrl")
+    if isinstance(direct_gpx,str) and GPX_RE.search(direct_gpx) and urlparse(direct_gpx).scheme in ("http","https"):
+        try:
+            data, actual, typ=fetch(direct_gpx,8_000_000)
+            if b"<gpx" in data[:1000].lower():
+                metrics=parse_gpx(data)
+                if metrics:
+                    props.append({"proposal_type":"data_correction","title":f"GPX-Daten prüfen: {event.get('name')} · {route.get('name') or route.get('route') or ri}",
+                      "payload":{"source":"automated_event_data_finder","eventId":event.get("id"),"eventName":event.get("name"),"routeId":route.get("id"),"routeIndex":ri,
+                        "field":"gpxMetrics","oldValue":{"km":route.get("km"),"hm":route.get("hm")},"newValue":metrics,"sourceUrl":actual,
+                        "evidence":"Direkt hinterlegte öffentliche GPX-Datei; Werte lokal aus Trackpunkten berechnet. Vor Übernahme mit Veranstalterangaben vergleichen.",
+                        "checkedAt":NOW,"requiresOwnerApproval":True}})
+        except Exception:
+            pass
     source=route.get("web") or route.get("profileUrl") or route.get("cutoffUrl") or event.get("web")
-    if not isinstance(source,str) or urlparse(source).scheme not in ("http","https"): return []
+    if not isinstance(source,str) or urlparse(source).scheme not in ("http","https"): return props
     try: raw, final_url, ctype=fetch(source)
-    except Exception as e: return []
+    except Exception as e: return props
     page=raw.decode("utf-8","replace")
     title=re.sub(r"<[^>]+>"," ",page[:5000])
     plain=unescape(re.sub(r"<script\b.*?</script>|<style\b.*?</style>"," ",page,flags=re.I|re.S))
     plain=re.sub(r"<[^>]+>"," ",plain); plain=re.sub(r"\s+"," ",plain)
-    props=[]
     links=[]
     for href in re.findall(r"""(?:href|src)\s*=\s*["']([^"']+)["']""",page,re.I):
         absolute=urljoin(final_url,unescape(href))
