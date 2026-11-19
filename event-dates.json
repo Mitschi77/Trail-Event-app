@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-19T22:59:00.000Z",
+  "updatedAt": "2026-11-19T23:02:00.000Z",
   "schemaVersion": 3,
   "events": {
     "la-corsa-della-bora": {
@@ -6158,6 +6158,14 @@
     "polmaraton-kolo-2027": {
       "eventId": "polmaraton-kolo-2027",
       "checkedAt": "2026-11-19T23:59:00+01:00",
+      "status": "unconfirmed",
+      "sources": [],
+      "eventPeriod": null,
+      "routes": {}
+    },
+    "murowana-goslina-polmaraton-2027": {
+      "eventId": "murowana-goslina-polmaraton-2027",
+      "checkedAt": "2026-11-20T00:02:00+01:00",
       "status": "unconfirmed",
       "sources": [],
       "eventPeriod": null,
