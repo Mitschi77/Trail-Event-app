@@ -8,7 +8,7 @@
     {
       "order": 91,
       "name": "Torlauf Dachstein",
-      "gpxStatus": "Official page exposes six GPX download links (Ultra, Marathon, Half Marathon, Skyrace, 10 km, Marathon Ersatzstrecke). The link targets were followed but binary retrieval failed for all six; XML/trackpoints and calculated metrics remain unverified. Official page/index has a content conflict: 2027 search-index data says Ultra 72 km/4,300 hm, while opened cached page still shows 2026 timetable and Ultra 72 km/3,900 hm. Keep all existing older GPX versions; do not promote any candidate without binary validation and edition confirmation.",
+      "gpxStatus": "2027 event date 04.09.2027 and six route options are confirmed by latest official page indexing. Latest indexed 2027 Ultra value is 72 km/4,300 hm; cached page still shows 2026 Ultra 3,900 hm, so conflict remains flagged. Six official Outdooractive GPX links were followed but no binary files were delivered to the inspection tool. No XML or trackpoint validation completed.",
       "source": "https://www.torlauf-dachstein.info/infos",
       "downloads": [
         {
@@ -32,7 +32,7 @@
           "url": "https://www.outdooractive.com/de/download.tour.gpx?i=235239301&project=outdooractive"
         }
       ],
-      "followUp": "Obtain the six files via Outdooractive direct download or organizer contact, then parse and compare. Ask organizer to clarify Ultra ascent 3,900 vs 4,300 hm and confirm which page/file version is the official 2027 course.",
+      "followUp": "Retry downloads through ordinary browser/Outdooractive or obtain official exports from organizer. Validate XML, trackpoints, distance and elevation; confirm 2027 Ultra 4,300 hm directly with organizer if cached page still shows 3,900 hm.",
       "verified2027CourseInfo": {
         "source": "https://www.torlauf-dachstein.info/infos",
         "routes": [
@@ -101,15 +101,55 @@
         "assessment": "The official page appears to have mixed or cached 2026 and 2027 content. Do not silently normalize Ultra ascent to 4,300 or 3,900 hm until organizer page is consistently updated or confirms the value."
       },
       "gpxTechnicalChecks": {
-        "status": "binary-not-fetched",
-        "attempts": "All six official Outdooractive GPX download links (five race routes plus Marathon Ersatzstrecke) were followed from the official page. The web fetch failed for each endpoint (400 OK or cache miss); no GPX bytes were received.",
-        "parsed": false,
+        "status": "binary-fetch-failed",
+        "attemptedLinks": 6,
+        "successfulBinaryDownloads": 0,
+        "xmlParsed": false,
         "trackpointCount": null,
         "calculatedDistanceKm": null,
         "calculatedAscentHm": null,
-        "note": "The existence of a visible official download link is confirmed, but file integrity and route measurements are not. Do not mark these as technically validated."
+        "failedMethods": "Following the six Outdooractive GPX download links from the official course page returned HTTP-like 400 OK or cache miss; no GPX payload was delivered. This is not evidence that the links are invalid for normal browsers or the organizer app.",
+        "technicalStatus": "link confirmed; file contents unverified"
       },
-      "retentionRule": "Existing historical GPX versions remain valid as last available versions until official replacements are downloaded and checked. Never overwrite/delete old files."
+      "retentionRule": "Do not overwrite or delete prior GPX files. Keep all historic versions until the new 2027 file is downloaded and technically checked.",
+      "verified2027Update": {
+        "source": "https://www.torlauf-dachstein.info/infos",
+        "eventDate": "2027-09-04",
+        "latestIndexedCourseData": [
+          {
+            "name": "Ultra",
+            "distanceKm": 72,
+            "elevationHm": 4300
+          },
+          {
+            "name": "Marathon",
+            "distanceKm": 42,
+            "elevationHm": 2500
+          },
+          {
+            "name": "Halbmarathon",
+            "distanceKm": 24,
+            "elevationHm": 510
+          },
+          {
+            "name": "Skyrace",
+            "distanceKm": 24,
+            "elevationHm": 2220
+          },
+          {
+            "name": "10 KM / Team Lauf",
+            "distanceKm": 10,
+            "elevationHm": 150
+          },
+          {
+            "name": "Marathon Ersatzstrecke",
+            "distanceKm": 42,
+            "elevationHm": 1500
+          }
+        ],
+        "sourceConflict": "Current search-index extraction shows the 2027 date and Ultra 4,300 hm. The separately opened cached page still shows 2026 schedule and Ultra 3,900 hm. Treat 4,300 hm as the latest indexed 2027 value, but keep conflict flagged until the organizer page itself consistently displays the 2027 version.",
+        "citation": "Current official page search extraction dated 20.11.2026."
+      }
     },
     {
       "order": 92,
