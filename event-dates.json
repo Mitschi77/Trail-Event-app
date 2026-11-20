@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-20T22:45:00Z",
+  "updatedAt": "2026-11-20T22:40:00Z",
   "schemaVersion": 3,
   "events": {
     "la-corsa-della-bora": {
@@ -6673,9 +6673,14 @@
       "status": "verified",
       "sources": [
         {
-          "url": "https://marathonvarna42km.com/en/",
+          "url": "https://marathonvarna42km.com/en/stranica/informaciya",
           "status": "read",
-          "verification": "official-2027-organizer-confirmation"
+          "verification": "official-2027-race-information"
+        },
+        {
+          "url": "https://marathonvarna42km.com/en/stranica/info-systezatelen-den",
+          "status": "read",
+          "verification": "official-2027-race-day-rules"
         }
       ],
       "eventPeriod": {
@@ -8653,10 +8658,16 @@
       "eventId": "maratonul-international-sibiu-2027",
       "checkedAt": "2026-11-20T22:25:00Z",
       "status": "verified",
-      "sources": [],
+      "sources": [
+        {
+          "url": "https://www.maratonsibiu.ro/regulament",
+          "status": "read",
+          "verification": "official-2027-race-regulations"
+        }
+      ],
       "eventPeriod": {
         "startDate": "2027-05-29",
-        "endDate": "2027-05-29",
+        "endDate": "2027-05-30",
         "verified": true
       },
       "routes": {
@@ -8677,6 +8688,11 @@
         },
         "3": {
           "routeId": "sibiu-2027-5k",
+          "date": "2027-05-29",
+          "verified": true
+        },
+        "4": {
+          "routeId": "sibiu-2027-teamrun",
           "date": "2027-05-29",
           "verified": true
         }
