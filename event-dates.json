@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-20T21:20:00Z",
+  "updatedAt": "2026-11-20T21:45:00Z",
   "schemaVersion": 3,
   "events": {
     "la-corsa-della-bora": {
@@ -7296,6 +7296,331 @@
           "date": "2027-07-09",
           "verified": true,
           "fallback": false
+        }
+      }
+    },
+    "1313-innsbruck-2027": {
+      "eventId": "1313-innsbruck-2027",
+      "checkedAt": "2026-11-20T21:45:00Z",
+      "status": "verified",
+      "sources": [
+        {
+          "url": "https://www.from13to13.com/",
+          "status": "read",
+          "verification": "official-2027-event-date-and-race-schedule"
+        }
+      ],
+      "eventPeriod": {
+        "startDate": "2027-10-02",
+        "endDate": "2027-10-03",
+        "verified": true
+      },
+      "routes": {
+        "0": {
+          "routeId": "1313-innsbruck-solo-2027",
+          "date": "2027-10-02",
+          "verified": true
+        },
+        "1": {
+          "routeId": "1313-innsbruck-relay-2027",
+          "date": "2027-10-02",
+          "verified": true
+        }
+      }
+    },
+    "ultra-marin-golfe-morbihan-2027": {
+      "eventId": "ultra-marin-golfe-morbihan-2027",
+      "checkedAt": "2026-11-20T21:45:00Z",
+      "status": "verified",
+      "sources": [
+        {
+          "url": "https://www.ultra-marin.fr/",
+          "status": "read",
+          "verification": "official-2027-event-date-and-race-schedule"
+        }
+      ],
+      "eventPeriod": {
+        "startDate": "2027-06-23",
+        "endDate": "2027-06-27",
+        "verified": true
+      },
+      "routes": {
+        "0": {
+          "routeId": "ultra-marin-raid-100-2027",
+          "date": "2027-06-24",
+          "verified": true
+        },
+        "1": {
+          "routeId": "ultra-marin-grand-raid-175-2027",
+          "date": "2027-06-25",
+          "verified": true
+        },
+        "2": {
+          "routeId": "ultra-marin-grand-relais-175-2027",
+          "date": "2027-06-25",
+          "verified": true
+        },
+        "3": {
+          "routeId": "ultra-marin-reveil-70-2027",
+          "date": "2027-06-26",
+          "verified": true
+        },
+        "4": {
+          "routeId": "ultra-marin-arvor-60-2027",
+          "date": "2027-06-26",
+          "verified": true
+        },
+        "5": {
+          "routeId": "ultra-marin-douaniers-34-2027",
+          "date": "2027-06-27",
+          "verified": true
+        },
+        "6": {
+          "routeId": "ultra-marin-marins-13-2027",
+          "date": "2027-06-26",
+          "verified": true
+        }
+      }
+    },
+    "nove-colli-running-2027": {
+      "eventId": "nove-colli-running-2027",
+      "checkedAt": "2026-11-20T21:45:00Z",
+      "status": "verified",
+      "sources": [
+        {
+          "url": "https://www.novecollirunning.it/",
+          "status": "read",
+          "verification": "official-2027-event-date-and-race-schedule"
+        }
+      ],
+      "eventPeriod": {
+        "startDate": "2027-05-08",
+        "endDate": "2027-05-09",
+        "verified": true
+      },
+      "routes": {
+        "0": {
+          "routeId": "nove-colli-running-2027-200k",
+          "date": "2027-05-08",
+          "verified": true
+        },
+        "1": {
+          "routeId": "quattro-colli-running-2027-100k",
+          "date": "2027-05-08",
+          "verified": true
+        }
+      }
+    },
+    "bieler-lauftage-2027": {
+      "eventId": "bieler-lauftage-2027",
+      "checkedAt": "2026-11-20T21:45:00Z",
+      "status": "verified",
+      "sources": [
+        {
+          "url": "https://bielerlauftage.ch/",
+          "status": "read",
+          "verification": "official-2027-event-date-and-race-schedule"
+        }
+      ],
+      "eventPeriod": {
+        "startDate": "2027-06-11",
+        "endDate": "2027-06-12",
+        "verified": true
+      },
+      "routes": {
+        "0": {
+          "routeId": "biel-100k-2027",
+          "date": "2027-06-11",
+          "verified": true
+        },
+        "1": {
+          "routeId": "biel-half-2027",
+          "date": "2027-06-11",
+          "verified": true
+        },
+        "2": {
+          "routeId": "biel-10k-2027",
+          "date": "2027-06-11",
+          "verified": true
+        },
+        "3": {
+          "routeId": "biel-5er-staffel-2027",
+          "date": "2027-06-11",
+          "verified": true
+        },
+        "4": {
+          "routeId": "biel-2er-staffel-2027",
+          "date": "2027-06-11",
+          "verified": true
+        }
+      }
+    },
+    "unicaja-ultra-sierra-nevada-2027": {
+      "eventId": "unicaja-ultra-sierra-nevada-2027",
+      "checkedAt": "2026-11-20T21:45:00Z",
+      "status": "verified",
+      "sources": [
+        {
+          "url": "https://ultrasierranevada.com/en/",
+          "status": "read",
+          "verification": "official-2027-event-date-and-race-schedule"
+        }
+      ],
+      "eventPeriod": {
+        "startDate": "2027-04-02",
+        "endDate": "2027-04-04",
+        "verified": true
+      },
+      "routes": {
+        "0": {
+          "routeId": "usn-ultra-2027-101k",
+          "date": "2027-04-02",
+          "verified": true
+        },
+        "1": {
+          "routeId": "usn-r3levos-2027-74k",
+          "date": "2027-04-03",
+          "verified": true
+        },
+        "2": {
+          "routeId": "usn-trail-2027-60k",
+          "date": "2027-04-03",
+          "verified": true
+        },
+        "3": {
+          "routeId": "usn-marathon-2027-40k",
+          "date": "2027-04-03",
+          "verified": true
+        },
+        "4": {
+          "routeId": "usn-media-2027-25k",
+          "date": "2027-04-04",
+          "verified": true
+        }
+      }
+    },
+    "100km-steenwerck-2027": {
+      "eventId": "100km-steenwerck-2027",
+      "checkedAt": "2026-11-20T21:45:00Z",
+      "status": "verified",
+      "sources": [
+        {
+          "url": "https://100kmsteenwerck.fr/",
+          "status": "read",
+          "verification": "official-2027-event-date-and-race-schedule"
+        }
+      ],
+      "eventPeriod": {
+        "startDate": "2027-05-05",
+        "endDate": "2027-05-06",
+        "verified": true
+      },
+      "routes": {
+        "0": {
+          "routeId": "steenwerck-100k-race-2027",
+          "date": "2027-05-05",
+          "verified": true
+        },
+        "1": {
+          "routeId": "steenwerck-100k-open-2027",
+          "date": "2027-05-05",
+          "verified": true
+        }
+      }
+    },
+    "beat-the-beast-ultra-2027": {
+      "eventId": "beat-the-beast-ultra-2027",
+      "checkedAt": "2026-11-20T21:45:00Z",
+      "status": "verified",
+      "sources": [
+        {
+          "url": "https://bigsbackyardultra.com/races/beat-the-beast-ultra/",
+          "status": "read",
+          "verification": "official-2027-event-date-and-race-schedule"
+        }
+      ],
+      "eventPeriod": {
+        "startDate": "2027-05-01",
+        "endDate": "2027-05-01",
+        "verified": true
+      },
+      "routes": {
+        "0": {
+          "routeId": "beat-the-beast-ultra-2027-loop",
+          "date": "2027-05-01",
+          "verified": true
+        }
+      }
+    },
+    "kreuzhorst-ultra-2027": {
+      "eventId": "kreuzhorst-ultra-2027",
+      "checkedAt": "2026-11-20T21:45:00Z",
+      "status": "verified",
+      "sources": [
+        {
+          "url": "https://trust-community.de/",
+          "status": "read",
+          "verification": "official-2027-event-date-and-race-schedule"
+        }
+      ],
+      "eventPeriod": {
+        "startDate": "2027-09-25",
+        "endDate": "2027-09-25",
+        "verified": true
+      },
+      "routes": {
+        "0": {
+          "routeId": "kreuzhorst-ultra-2027-24h",
+          "date": "2027-09-25",
+          "verified": true
+        }
+      }
+    },
+    "katzen-sprungs-backyard-2027": {
+      "eventId": "katzen-sprungs-backyard-2027",
+      "checkedAt": "2026-11-20T21:45:00Z",
+      "status": "verified",
+      "sources": [
+        {
+          "url": "https://bigsbackyardultra.com/races/katzen-sprungs-backyard-ultra/",
+          "status": "read",
+          "verification": "official-2027-event-date-and-race-schedule"
+        }
+      ],
+      "eventPeriod": {
+        "startDate": "2027-04-30",
+        "endDate": "2027-04-30",
+        "verified": true
+      },
+      "routes": {
+        "0": {
+          "routeId": "katzen-sprungs-backyard-2027-loop",
+          "date": "2027-04-30",
+          "verified": true
+        }
+      }
+    },
+    "bme-elimination-2027": {
+      "eventId": "bme-elimination-2027",
+      "checkedAt": "2026-11-20T21:45:00Z",
+      "status": "verified",
+      "sources": [
+        {
+          "url": "https://www.barkingmadevents.com/events/bme-elimination-2027",
+          "status": "read",
+          "verification": "official-2027-event-date-and-race-schedule"
+        }
+      ],
+      "eventPeriod": {
+        "startDate": "2027-02-06",
+        "endDate": "2027-02-06",
+        "verified": true
+      },
+      "routes": {
+        "0": {
+          "routeId": "bme-elimination-2027-loop",
+          "date": "2027-02-06",
+          "verified": true
         }
       }
     }
