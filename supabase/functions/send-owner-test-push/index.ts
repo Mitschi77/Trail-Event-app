@@ -3,7 +3,6 @@ import { createClient } from "https://esm.sh/@supabase/supabase-js@2";
 import webpush from "npm:web-push@3.6.7";
 
 const OWNER_ID = "a5d10e85-e559-4d44-9ee0-d8b8de08262f";
-const VAPID_PUBLIC_KEY = "BFGW4HjKtrfZcdQcJcmnG71jED1MsKXXkZTqDhDAzQh-k3UE3Sx_SPR97sG54tGi7gjQsmGkAnZO6ImY21VsEzA";
 const cors = {
   "Access-Control-Allow-Origin": "https://mitschi77.github.io",
   "Access-Control-Allow-Headers": "authorization, x-client-info, apikey, content-type",
@@ -40,11 +39,11 @@ Deno.serve(async (req: Request) => {
   if (!allowed) return json({ error: "Zu viele Push-Tests. Bitte in zehn Minuten erneut versuchen." }, 429);
 
   const { data: config, error: configError } = await admin.rpc("get_trail_push_vapid_config");
-  if (configError || !config?.private_key || !config?.subject) {
+  if (configError || !config?.private_key || !config?.public_key || !config?.subject) {
     console.error("Push test VAPID config unavailable", configError);
     return json({ error: "VAPID-Konfiguration im sicheren Speicher nicht verfügbar." }, 503);
   }
-  webpush.setVapidDetails(config.subject, VAPID_PUBLIC_KEY, config.private_key);
+  webpush.setVapidDetails(config.subject, config.public_key, config.private_key);
 
   const { data: subscriptions, error: subscriptionError } = await admin
     .from("event_push_subscriptions")
