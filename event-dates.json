@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-20T22:25:00Z",
+  "updatedAt": "2026-11-20T22:35:00Z",
   "schemaVersion": 3,
   "events": {
     "la-corsa-della-bora": {
@@ -7034,7 +7034,7 @@
     },
     "omv-petrom-bucharest-half-marathon-2027": {
       "eventId": "omv-petrom-bucharest-half-marathon-2027",
-      "checkedAt": "2026-11-20T00:12:00.000Z",
+      "checkedAt": "2026-11-20T22:35:00Z",
       "status": "verified",
       "sources": [
         {
@@ -7044,10 +7044,15 @@
         {
           "url": "https://www.bucuresti21km.ro/en/schedule/",
           "status": "read"
+        },
+        {
+          "url": "https://www.bucuresti21km.ro/en/rules/",
+          "status": "read",
+          "verification": "official-2027-event-information"
         }
       ],
       "eventPeriod": {
-        "startDate": "2027-05-09",
+        "startDate": "2027-05-08",
         "endDate": "2027-05-09",
         "verified": true
       },
@@ -7055,8 +7060,12 @@
         "0": {
           "routeId": "omv-petrom-bucharest-half-marathon-21-097-2027",
           "date": "2027-05-09",
-          "verified": true,
-          "fallback": false
+          "verified": true
+        },
+        "1": {
+          "routeId": "bucharest-half-2027-10k",
+          "date": null,
+          "verified": false
         }
       }
     },
@@ -8669,6 +8678,260 @@
         "3": {
           "routeId": "sibiu-2027-5k",
           "date": "2027-05-29",
+          "verified": true
+        }
+      }
+    },
+    "wizz-air-cluj-napoca-marathon-2027": {
+      "eventId": "wizz-air-cluj-napoca-marathon-2027",
+      "checkedAt": "2026-11-20T22:35:00Z",
+      "status": "verified",
+      "sources": [],
+      "eventPeriod": {
+        "startDate": "2027-04-10",
+        "endDate": "2027-04-11",
+        "verified": true
+      },
+      "routes": {
+        "0": {
+          "routeId": "cluj-marathon-2027-42k",
+          "date": "2027-04-11",
+          "verified": true
+        },
+        "1": {
+          "routeId": "cluj-marathon-2027-21k",
+          "date": "2027-04-11",
+          "verified": true
+        },
+        "2": {
+          "routeId": "cluj-marathon-2027-10k",
+          "date": "2027-04-11",
+          "verified": true
+        },
+        "3": {
+          "routeId": "cluj-marathon-2027-4k",
+          "date": "2027-04-11",
+          "verified": true
+        }
+      }
+    },
+    "timisoara-21k-by-sportguru-2027": {
+      "eventId": "timisoara-21k-by-sportguru-2027",
+      "checkedAt": "2026-11-20T22:35:00Z",
+      "status": "verified",
+      "sources": [],
+      "eventPeriod": {
+        "startDate": "2027-03-21",
+        "endDate": "2027-03-21",
+        "verified": true
+      },
+      "routes": {
+        "0": {
+          "routeId": "timisoara-21k-2027-21k",
+          "date": "2027-03-21",
+          "verified": true
+        },
+        "1": {
+          "routeId": "timisoara-21k-2027-10k",
+          "date": "2027-03-21",
+          "verified": true
+        },
+        "2": {
+          "routeId": "timisoara-21k-2027-5k",
+          "date": "2027-03-21",
+          "verified": true
+        },
+        "3": {
+          "routeId": "timisoara-21k-2027-25k",
+          "date": "2027-03-21",
+          "verified": true
+        }
+      }
+    },
+    "bucharest-international-half-2027": {
+      "eventId": "bucharest-international-half-2027",
+      "checkedAt": "2026-11-20T22:35:00Z",
+      "status": "verified",
+      "sources": [],
+      "eventPeriod": {
+        "startDate": "2027-04-25",
+        "endDate": "2027-04-25",
+        "verified": true
+      },
+      "routes": {
+        "0": {
+          "routeId": "bucharest-int-half-2027-21k",
+          "date": "2027-04-25",
+          "verified": true
+        },
+        "1": {
+          "routeId": "bucharest-int-half-2027-10k",
+          "date": "2027-04-25",
+          "verified": true
+        },
+        "2": {
+          "routeId": "bucharest-int-half-2027-35k",
+          "date": "2027-04-25",
+          "verified": true
+        }
+      }
+    },
+    "wizz-air-tirana-marathon-2027": {
+      "eventId": "wizz-air-tirana-marathon-2027",
+      "checkedAt": "2026-11-20T22:35:00Z",
+      "status": "verified",
+      "sources": [],
+      "eventPeriod": {
+        "startDate": "2027-10-10",
+        "endDate": "2027-10-10",
+        "verified": true
+      },
+      "routes": {
+        "0": {
+          "routeId": "tirana-marathon-2027-42k",
+          "date": "2027-10-10",
+          "verified": true
+        },
+        "1": {
+          "routeId": "tirana-marathon-2027-21k",
+          "date": "2027-10-10",
+          "verified": true
+        },
+        "2": {
+          "routeId": "tirana-marathon-2027-10k",
+          "date": "2027-10-10",
+          "verified": true
+        },
+        "3": {
+          "routeId": "tirana-marathon-2027-5k",
+          "date": "2027-10-10",
+          "verified": true
+        }
+      }
+    },
+    "chisinau-international-marathon-2027": {
+      "eventId": "chisinau-international-marathon-2027",
+      "checkedAt": "2026-11-20T22:35:00Z",
+      "status": "verified",
+      "sources": [],
+      "eventPeriod": {
+        "startDate": "2027-09-25",
+        "endDate": "2027-09-26",
+        "verified": true
+      },
+      "routes": {
+        "0": {
+          "routeId": "chisinau-marathon-2027-42k",
+          "date": "2027-09-25",
+          "verified": true
+        },
+        "1": {
+          "routeId": "chisinau-marathon-2027-21k",
+          "date": "2027-09-25",
+          "verified": true
+        },
+        "2": {
+          "routeId": "chisinau-marathon-2027-10k",
+          "date": "2027-09-25",
+          "verified": true
+        },
+        "3": {
+          "routeId": "chisinau-marathon-2027-5k",
+          "date": "2027-09-25",
+          "verified": true
+        }
+      }
+    },
+    "kosice-peace-marathon-2027": {
+      "eventId": "kosice-peace-marathon-2027",
+      "checkedAt": "2026-11-20T22:35:00Z",
+      "status": "verified",
+      "sources": [
+        {
+          "url": "https://www.kosicemarathon.com/",
+          "status": "read",
+          "verification": "official-2027-event-information"
+        }
+      ],
+      "eventPeriod": {
+        "startDate": "2027-10-03",
+        "endDate": "2027-10-03",
+        "verified": true
+      },
+      "routes": {
+        "0": {
+          "routeId": "kosice-peace-marathon-2027-42k",
+          "date": "2027-10-03",
+          "verified": true
+        }
+      }
+    },
+    "edp-porto-marathon-2027": {
+      "eventId": "edp-porto-marathon-2027",
+      "checkedAt": "2026-11-20T22:35:00Z",
+      "status": "verified",
+      "sources": [],
+      "eventPeriod": {
+        "startDate": "2027-11-07",
+        "endDate": "2027-11-07",
+        "verified": true
+      },
+      "routes": {
+        "0": {
+          "routeId": "edp-porto-marathon-2027-42k",
+          "date": "2027-11-07",
+          "verified": true
+        }
+      }
+    },
+    "wizz-air-venicemarathon-2027": {
+      "eventId": "wizz-air-venicemarathon-2027",
+      "checkedAt": "2026-11-20T22:35:00Z",
+      "status": "verified",
+      "sources": [],
+      "eventPeriod": {
+        "startDate": "2027-10-24",
+        "endDate": "2027-10-24",
+        "verified": true
+      },
+      "routes": {
+        "0": {
+          "routeId": "venicemarathon-2027-42k",
+          "date": "2027-10-24",
+          "verified": true
+        },
+        "1": {
+          "routeId": "venicemarathon-2027-21k",
+          "date": "2027-10-24",
+          "verified": true
+        }
+      }
+    },
+    "neusiedler-see-marathon-2027": {
+      "eventId": "neusiedler-see-marathon-2027",
+      "checkedAt": "2026-11-20T22:35:00Z",
+      "status": "verified",
+      "sources": [
+        {
+          "url": "https://neusiedlersee-marathon.at/",
+          "status": "read",
+          "verification": "official-2027-event-information"
+        }
+      ],
+      "eventPeriod": {
+        "startDate": "2027-09-26",
+        "endDate": "2027-09-26",
+        "verified": true
+      },
+      "routes": {
+        "0": {
+          "routeId": "neusiedler-see-marathon-2027-marathon",
+          "date": "2027-09-26",
+          "verified": true
+        },
+        "1": {
+          "routeId": "neusiedler-see-marathon-2027-half",
+          "date": "2027-09-26",
           "verified": true
         }
       }
