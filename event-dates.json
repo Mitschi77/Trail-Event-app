@@ -9529,9 +9529,25 @@
     },
     "debrecen-marathon-2027": {
       "eventId": "debrecen-marathon-2027",
-      "checkedAt": "2026-11-20T23:05:00Z",
+      "checkedAt": "2026-11-20T23:15:00Z",
       "status": "verified",
-      "sources": [],
+      "sources": [
+        {
+          "url": "https://debrecenmaraton.hu/en",
+          "status": "read",
+          "verification": "official-2027-event-information"
+        },
+        {
+          "url": "https://debrecenmaraton.hu/en/marathon-distance",
+          "status": "read",
+          "verification": "official-2027-event-information"
+        },
+        {
+          "url": "https://debrecenmaraton.hu/en/competition-rules-1",
+          "status": "read",
+          "verification": "official-2027-event-information"
+        }
+      ],
       "eventPeriod": {
         "startDate": "2027-04-04",
         "endDate": "2027-04-04",
@@ -9552,9 +9568,20 @@
     },
     "scoglittirace-half-marathon-2027": {
       "eventId": "scoglittirace-half-marathon-2027",
-      "checkedAt": "2026-11-20T23:05:00Z",
+      "checkedAt": "2026-11-20T23:15:00Z",
       "status": "unconfirmed",
-      "sources": [],
+      "sources": [
+        {
+          "url": "https://worldathletics.org/competition/calendar-results?disciplineId=2&endDate=2027-12-31&startDate=2026-10-16",
+          "status": "read",
+          "verification": "official-2027-event-information"
+        },
+        {
+          "url": "https://www.maratoniamo.it/gara/scoglittirace-v-half-marathon-trofeo-pescamare-vittoria-mezza",
+          "status": "read",
+          "verification": "official-2027-event-information"
+        }
+      ],
       "eventPeriod": {
         "startDate": "2027-04-04",
         "endDate": "2027-04-04",
@@ -9567,13 +9594,24 @@
           "verified": false
         }
       },
-      "note": "Termin aus sekundärem/regionalem Kalender; direkte Veranstalterbestätigung für 2027 noch ausstehend."
+      "note": "World Athletics listet das Rennen für 04.04.2027; die 21,0975 km sind über einen sekundären Kalender geführt. Offizielles Reglement 2027 und Veranstalterbestätigung fehlen noch."
     },
     "pardubice-wine-half-marathon-2027": {
       "eventId": "pardubice-wine-half-marathon-2027",
-      "checkedAt": "2026-11-20T23:05:00Z",
+      "checkedAt": "2026-11-20T23:15:00Z",
       "status": "verified",
-      "sources": [],
+      "sources": [
+        {
+          "url": "https://www.pardubickyvinarskypulmaraton.cz/cs/?zavod=4",
+          "status": "read",
+          "verification": "official-2027-event-information"
+        },
+        {
+          "url": "https://www.pardubickyvinarskypulmaraton.cz/cs/40-propozice-mistrovstvi-cr/",
+          "status": "read",
+          "verification": "official-2027-event-information"
+        }
+      ],
       "eventPeriod": {
         "startDate": "2027-04-10",
         "endDate": "2027-04-10",
@@ -9589,9 +9627,15 @@
     },
     "pko-poznan-half-marathon-2027": {
       "eventId": "pko-poznan-half-marathon-2027",
-      "checkedAt": "2026-11-20T23:05:00Z",
+      "checkedAt": "2026-11-20T23:15:00Z",
       "status": "verified",
-      "sources": [],
+      "sources": [
+        {
+          "url": "https://halfmarathon.poznan.pl/",
+          "status": "read",
+          "verification": "official-2027-event-information"
+        }
+      ],
       "eventPeriod": {
         "startDate": "2027-04-11",
         "endDate": "2027-04-11",
@@ -9607,28 +9651,49 @@
     },
     "nice-international-half-marathon-2027": {
       "eventId": "nice-international-half-marathon-2027",
-      "checkedAt": "2026-11-20T23:05:00Z",
-      "status": "unconfirmed",
-      "sources": [],
+      "checkedAt": "2026-11-20T23:15:00Z",
+      "status": "verified",
+      "sources": [
+        {
+          "url": "https://nicesemimarathon.com/",
+          "status": "read",
+          "verification": "official-2027-event-information"
+        },
+        {
+          "url": "https://cdchs06.com/afficheCalendrier-new.php",
+          "status": "read",
+          "verification": "official-2027-event-information"
+        }
+      ],
       "eventPeriod": {
         "startDate": "2027-04-04",
         "endDate": "2027-04-04",
-        "verified": false
+        "verified": true
       },
       "routes": {
         "0": {
           "routeId": "nice-half-marathon-2027",
           "date": "2027-04-04",
-          "verified": false
+          "verified": true
         }
-      },
-      "note": "Termin aus sekundärem/regionalem Kalender; direkte Veranstalterbestätigung für 2027 noch ausstehend."
+      }
     },
     "linz-donau-marathon-2027": {
       "eventId": "linz-donau-marathon-2027",
-      "checkedAt": "2026-11-20T23:05:00Z",
+      "checkedAt": "2026-11-20T23:15:00Z",
       "status": "verified",
-      "sources": [],
+      "sources": [
+        {
+          "url": "https://www.linzmarathon.at/de/bewerbe/oberbank-marathon",
+          "status": "read",
+          "verification": "official-2027-event-information"
+        },
+        {
+          "url": "https://www.linzmarathon.at/de/bewerbe/oberbank-marathon/slide.wann-start",
+          "status": "read",
+          "verification": "official-2027-event-information"
+        }
+      ],
       "eventPeriod": {
         "startDate": "2027-04-11",
         "endDate": "2027-04-11",
@@ -9649,9 +9714,25 @@
     },
     "lake-garda-42-2027": {
       "eventId": "lake-garda-42-2027",
-      "checkedAt": "2026-11-20T23:05:00Z",
+      "checkedAt": "2026-11-20T23:15:00Z",
       "status": "verified",
-      "sources": [],
+      "sources": [
+        {
+          "url": "https://lakegarda42.com/",
+          "status": "read",
+          "verification": "official-2027-event-information"
+        },
+        {
+          "url": "https://lakegarda42.com/lg42-showdown/",
+          "status": "read",
+          "verification": "official-2027-event-information"
+        },
+        {
+          "url": "https://lakegarda42.com/lg21-the-test/",
+          "status": "read",
+          "verification": "official-2027-event-information"
+        }
+      ],
       "eventPeriod": {
         "startDate": "2027-04-11",
         "endDate": "2027-04-11",
@@ -9672,9 +9753,15 @@
     },
     "wienerwald-ultra-trail-2027": {
       "eventId": "wienerwald-ultra-trail-2027",
-      "checkedAt": "2026-11-20T23:05:00Z",
+      "checkedAt": "2026-11-20T23:15:00Z",
       "status": "verified",
-      "sources": [],
+      "sources": [
+        {
+          "url": "https://www.wienerwaldtrail.at/",
+          "status": "read",
+          "verification": "official-2027-event-information"
+        }
+      ],
       "eventPeriod": {
         "startDate": "2027-10-09",
         "endDate": "2027-10-09",
@@ -9695,9 +9782,20 @@
     },
     "tschirgant-sky-run-2027": {
       "eventId": "tschirgant-sky-run-2027",
-      "checkedAt": "2026-11-20T23:05:00Z",
+      "checkedAt": "2026-11-20T23:15:00Z",
       "status": "verified",
-      "sources": [],
+      "sources": [
+        {
+          "url": "https://www.imst.at/de/veranstaltung/tschirgant-sky-run.html?date=12.06.2027",
+          "status": "read",
+          "verification": "official-2027-event-information"
+        },
+        {
+          "url": "https://www.stmi.at/Tschirgant_Sky_Run",
+          "status": "read",
+          "verification": "official-2027-event-information"
+        }
+      ],
       "eventPeriod": {
         "startDate": "2027-06-12",
         "endDate": "2027-06-12",
@@ -9733,9 +9831,20 @@
     },
     "montafon-arlberg-marathon-2027": {
       "eventId": "montafon-arlberg-marathon-2027",
-      "checkedAt": "2026-11-20T23:05:00Z",
+      "checkedAt": "2026-11-20T23:15:00Z",
       "status": "verified",
-      "sources": [],
+      "sources": [
+        {
+          "url": "https://www.montafon.at/montafon-arlberg-marathon/de/organisatorisches",
+          "status": "read",
+          "verification": "official-2027-event-information"
+        },
+        {
+          "url": "https://www.montafon.at/montafon-arlberg-marathon/de/organisatorisches/programm",
+          "status": "read",
+          "verification": "official-2027-event-information"
+        }
+      ],
       "eventPeriod": {
         "startDate": "2027-06-26",
         "endDate": "2027-06-26",
