@@ -22,6 +22,15 @@ assert.equal(routeMatchesDistanceFilter({km:28},"lt22"), false, "Youth-only dist
 assert.equal(appEvents.find(event=>event.id==="stubai-ultra-trail")?.minKm,14);
 assert.equal(appEvents.find(event=>event.id==="trai-verbier-st-bernhard")?.minKm,28);
 
+// Combined age-group filter regression coverage from PR #171.
+for (const [eventId, expected] of [["hochkonigman",3.6],["kaiserkrone",8.3],["stubai-ultra-trail",14],["trai-verbier-st-bernhard",28],["der-gletscher-trailrun",6.3]]) {
+  assert.equal(appEvents.find(event=>event.id===eventId)?.minKm, expected, eventId + " minimum distance must ignore youth/kids races");
+}
+for (const id of ["hochkoenig-mini-kids-2027","hochkoenig-mini-junior-2027","hochkoenig-mini-youth-2027","kaiserkrone-kids","stubai-kids-trail-2027","verbier-trail-decouverte-2027","verbier-trail-decouverte-3-5-2027","verbier-x-orient-2027","verbier-x-orient-5k-240-2027","glacier-widi-200m-2027","glacier-widi-400m-2027","glacier-widi-600m-2027","glacier-widi-1500m-2027"]) {
+  assert.equal(routeById(id)?.excludeFromDistanceFilter, true, id + " must be excluded from adult distance filters");
+}
+
+
 const serializedRecordById = id => {
   const index = html.indexOf('"id":"' + id + '"');
   if (index < 0) return "";
