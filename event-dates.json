@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-20T22:40:00Z",
+  "updatedAt": "2026-11-20T22:45:00Z",
   "schemaVersion": 3,
   "events": {
     "la-corsa-della-bora": {
@@ -6721,11 +6721,32 @@
     },
     "wizz-air-skopje-marathon-2027": {
       "eventId": "wizz-air-skopje-marathon-2027",
-      "checkedAt": "2026-11-19T22:31:00+01:00",
-      "status": "unconfirmed",
-      "sources": [],
-      "eventPeriod": null,
-      "routes": {}
+      "checkedAt": "2026-11-20T22:45:00Z",
+      "status": "verified",
+      "sources": [
+        {
+          "url": "https://skopskimaraton.com.mk/en/info/races/marathon/",
+          "status": "read",
+          "verification": "official-2027-event-page"
+        }
+      ],
+      "eventPeriod": {
+        "startDate": "2027-10-03",
+        "endDate": "2027-10-03",
+        "verified": true
+      },
+      "routes": {
+        "0": {
+          "routeId": "wizz-air-skopje-marathon-42-195-2027",
+          "date": "2027-10-03",
+          "verified": true
+        },
+        "1": {
+          "routeId": "wizz-air-skopje-half-21-0975-2027",
+          "date": "2027-10-03",
+          "verified": true
+        }
+      }
     },
     "om-half-marathon-chisinau-2027": {
       "eventId": "om-half-marathon-chisinau-2027",
@@ -9000,6 +9021,190 @@
         "1": {
           "routeId": "neusiedler-see-marathon-2027-half",
           "date": "2027-09-26",
+          "verified": true
+        }
+      }
+    },
+    "sparkasse-3-laender-marathon-2027": {
+      "eventId": "sparkasse-3-laender-marathon-2027",
+      "checkedAt": "2026-11-20T22:45:00Z",
+      "status": "verified",
+      "sources": [],
+      "eventPeriod": {
+        "startDate": "2027-10-10",
+        "endDate": "2027-10-10",
+        "verified": true
+      },
+      "routes": {
+        "0": {
+          "routeId": "3laender-marathon-2027",
+          "date": "2027-10-10",
+          "verified": true
+        },
+        "1": {
+          "routeId": "3laender-skinfit-half-2027",
+          "date": "2027-10-10",
+          "verified": true
+        }
+      }
+    },
+    "run-in-lyon-2027": {
+      "eventId": "run-in-lyon-2027",
+      "checkedAt": "2026-11-20T22:45:00Z",
+      "status": "verified",
+      "sources": [],
+      "eventPeriod": {
+        "startDate": "2027-10-03",
+        "endDate": "2027-10-03",
+        "verified": true
+      },
+      "routes": {
+        "0": {
+          "routeId": "run-in-lyon-2027-marathon",
+          "date": "2027-10-03",
+          "verified": true
+        },
+        "1": {
+          "routeId": "run-in-lyon-2027-half",
+          "date": "2027-10-03",
+          "verified": true
+        }
+      }
+    },
+    "swb-marathon-bremen-2027": {
+      "eventId": "swb-marathon-bremen-2027",
+      "checkedAt": "2026-11-20T22:45:00Z",
+      "status": "verified",
+      "sources": [],
+      "eventPeriod": {
+        "startDate": "2027-10-03",
+        "endDate": "2027-10-03",
+        "verified": true
+      },
+      "routes": {
+        "0": {
+          "routeId": "swb-marathon-bremen-2027-42k",
+          "date": "2027-10-03",
+          "verified": true
+        },
+        "1": {
+          "routeId": "swb-marathon-bremen-2027-half",
+          "date": "2027-10-03",
+          "verified": true
+        }
+      }
+    },
+    "generali-koeln-marathon-2027": {
+      "eventId": "generali-koeln-marathon-2027",
+      "checkedAt": "2026-11-20T22:45:00Z",
+      "status": "verified",
+      "sources": [],
+      "eventPeriod": {
+        "startDate": "2027-10-03",
+        "endDate": "2027-10-03",
+        "verified": true
+      },
+      "routes": {
+        "0": {
+          "routeId": "generali-koeln-marathon-2027-42k",
+          "date": "2027-10-03",
+          "verified": true
+        },
+        "1": {
+          "routeId": "generali-koeln-marathon-2027-half",
+          "date": "2027-10-03",
+          "verified": true
+        }
+      }
+    },
+    "drammen-halvmaraton-2027": {
+      "eventId": "drammen-halvmaraton-2027",
+      "checkedAt": "2026-11-20T22:45:00Z",
+      "status": "unconfirmed",
+      "sources": [],
+      "eventPeriod": {
+        "startDate": "2027-09-04",
+        "endDate": "2027-09-04",
+        "verified": false
+      },
+      "routes": {
+        "0": {
+          "routeId": "drammen-halvmaraton-2027-half",
+          "date": "2027-09-04",
+          "verified": false
+        }
+      },
+      "note": "Vorläufiger Kalenderfund; Veranstalterdetails und Tagesdaten noch nicht ausreichend bestätigt."
+    },
+    "oktoberfest-run-nitra-2027": {
+      "eventId": "oktoberfest-run-nitra-2027",
+      "checkedAt": "2026-11-20T22:45:00Z",
+      "status": "unconfirmed",
+      "sources": [],
+      "eventPeriod": {
+        "startDate": "2027-09-18",
+        "endDate": "2027-09-18",
+        "verified": false
+      },
+      "routes": {
+        "0": {
+          "routeId": "oktoberfest-run-nitra-2027-half",
+          "date": "2027-09-18",
+          "verified": false
+        }
+      },
+      "note": "Vorläufiger Kalenderfund; Veranstalterdetails und Tagesdaten noch nicht ausreichend bestätigt."
+    },
+    "aj-bell-great-north-run-2027": {
+      "eventId": "aj-bell-great-north-run-2027",
+      "checkedAt": "2026-11-20T22:45:00Z",
+      "status": "verified",
+      "sources": [],
+      "eventPeriod": {
+        "startDate": "2027-09-12",
+        "endDate": "2027-09-12",
+        "verified": true
+      },
+      "routes": {
+        "0": {
+          "routeId": "aj-bell-great-north-run-2027-half",
+          "date": "2027-09-12",
+          "verified": true
+        }
+      }
+    },
+    "greifenseelauf-2027": {
+      "eventId": "greifenseelauf-2027",
+      "checkedAt": "2026-11-20T22:45:00Z",
+      "status": "verified",
+      "sources": [],
+      "eventPeriod": {
+        "startDate": "2027-09-18",
+        "endDate": "2027-09-18",
+        "verified": true
+      },
+      "routes": {
+        "0": {
+          "routeId": "greifenseelauf-2027-half",
+          "date": "2027-09-18",
+          "verified": true
+        }
+      }
+    },
+    "semi-marathon-les-sables-olonne-2027": {
+      "eventId": "semi-marathon-les-sables-olonne-2027",
+      "checkedAt": "2026-11-20T22:45:00Z",
+      "status": "verified",
+      "sources": [],
+      "eventPeriod": {
+        "startDate": "2027-05-16",
+        "endDate": "2027-05-16",
+        "verified": true
+      },
+      "routes": {
+        "0": {
+          "routeId": "semi-marathon-les-sables-olonne-2027",
+          "date": "2027-05-16",
           "verified": true
         }
       }
