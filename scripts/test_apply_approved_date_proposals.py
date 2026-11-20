@@ -70,5 +70,35 @@ class ApprovedDateProposalTests(unittest.TestCase):
         self.assertEqual(report["skipped"][0]["reason"], "missing-or-invalid-evidence")
         self.assertEqual(updated["events"]["sample"]["eventPeriod"]["startDate"], "2026-11-01")
 
+
+    def test_identical_duplicate_proposals_are_idempotent(self):
+        feed = {
+            "updatedAt": "2026-11-20T00:00:00Z",
+            "events": {"sample": {"status": "verified", "routes": {
+                "0": {"routeId": "sample-50k", "date": None, "verified": False}
+            }}}
+        }
+        payload = {
+            "source": "official_event_date_feed", "eventId": "sample",
+            "routeId": "sample-50k", "routeIndex": "0", "field": "date",
+            "oldValue": None, "newValue": "2027-11-02",
+            "sources": ["https://organizer.example/course"]
+        }
+        updated, report = apply_proposals(feed, [
+            proposal("first", "route_change", payload),
+            proposal("duplicate", "route_change", payload)
+        ])
+        self.assertEqual(report["applied"], ["first"])
+        self.assertEqual(report["skipped"][0]["reason"], "duplicate-identical-proposal")
+        self.assertEqual(report["conflicts"], [])
+        self.assertEqual(updated["events"]["sample"]["routes"]["0"]["date"], "2027-11-02")
+
+    def test_noop_does_not_change_feed_timestamp(self):
+        updated, report = apply_proposals(BASE, [
+            proposal("pending", "event_change", {}, status="pending")
+        ])
+        self.assertEqual(report["applied"], [])
+        self.assertEqual(updated["updatedAt"], BASE["updatedAt"])
+
 if __name__ == "__main__":
     unittest.main()
