@@ -1,6 +1,6 @@
 {
   "batch": 23,
-  "checkedAt": "2026-11-17",
+  "checkedAt": "2026-11-20",
   "scope": "Top-level events 111-115 in current EVENTS order",
   "status": "saved",
   "appCommit": "f783eeacd698cba311cd0f0adc701fa5c13062bc",
@@ -8,34 +8,34 @@
     {
       "order": 111,
       "name": "24+1 Challenge",
-      "gpxStatus": "Official Austria Backyard Ultra Hochkönig 2027 confirmed for 25 October 2027, 6.706 km loop. Organizer says route map/track still follows; no GPX published.",
+      "gpxStatus": "2027 Austria Backyard Ultra Hochkönig edition confirmed for 25 October 2027; official loop is 6.706 km. Organizer says route map/track will follow. No official GPX available yet; no older loop may be represented as current 2027.",
       "source": "https://www.austriabackyardultra.com/hochkoenig",
       "followUp": "Recheck when organizer releases the course."
     },
     {
       "order": 112,
       "name": "Puglia Terra delle Gravine",
-      "gpxStatus": "No current 2027 Puglia UTMB edition listed in the official UTMB calendar; no current organizer GPX verified.",
+      "gpxStatus": "No current 2027 Puglia Terra delle Gravine UTMB edition confirmed. Retain any historic route files as historical last-available versions; do not import as current.",
       "followUp": "Do not use historic Puglia GPX unless a new edition is confirmed."
     },
     {
       "order": 113,
       "name": "3 Días Trail Ibiza",
-      "gpxStatus": "Official 2026 edition runs 27-29 November 2026. Organizer says tracks for the Saturday stage are sent by email one week before the event because the route crosses private/protected land; no public direct GPX link.",
+      "gpxStatus": "Official 2026 edition scheduled 27–29 November 2026. Organizer sends Saturday-stage GPX by email one week before race because of private/protected land. No public direct GPX; check participant communication and do not redistribute restricted tracks.",
       "source": "https://3diastrailibiza.com/ultra-trail-maraton-media-maraton-y-10k/",
       "followUp": "Check participant email around one week before the race."
     },
     {
       "order": 114,
       "name": "Oman by UTMB",
-      "gpxStatus": "Official UTMB 2026 pages provide Map + GPX for all five courses: Hajar Ultra, Jabal Classic, Skyward Canyon, Old Capital Trail, Scenic Ascent. Individual pages linked in app; direct file endpoints not extracted.",
+      "gpxStatus": "Official UTMB 2026 Map + GPX pages confirmed for five races. No 2027 edition confirmed in this checkpoint. Keep 2026 GPX as last available edition; do not present as 2027.",
       "source": "https://oman.utmb.world/races",
       "followUp": "Export each current 2026 GPX from the official Map + GPX section."
     },
     {
       "order": 115,
       "name": "Mammutmarsch",
-      "gpxStatus": "Official organizer confirms Munich 75K and 100K on 31 July 2027. No public organizer GPX download is shown on the official event page.",
+      "gpxStatus": "Official organizer confirms Munich 75K and 100K on 31 July 2027. No public organizer GPX download; participant/organizer source required before technical validation.",
       "source": "https://mammutmarsch.de/events/muenchen",
       "followUp": "Ask organizer or check participant portal for GPX files."
     }

@@ -154,7 +154,7 @@ MANUAL_EVENT_PERIODS = {
     "mozart": ("2027-06-05", "2027-06-05", "https://mozart.utmb.world/de/races/mozart100", {"0": "2027-06-05"}),
     "mountain-man-winter": ("2027-01-23", "2027-01-24", "https://mountainman.de/winterloop/", {}),
     "backyard-ultra": ("2027-06-26", "2027-06-27", "https://www.hofer-backyard-ultra.de/ausschreibung-2027/", {"backyard-ultra-6-7-100": "2027-06-26"}),
-    "piut": ("2027-07-09", "2027-07-10", "https://piut.utmb.world/", {"piut50-50-3100": "2027-07-10", "piut85-85-5200": "2027-07-09", "piut100-100-6300": "2027-07-09"}),
+    "piut": ("2027-07-09", "2027-07-10", "https://piut.utmb.world/", {"piut50-50-3100": "2027-07-10", "piut85-85-5200": "2027-07-09", "piut100-100-6300": "2027-07-09", "piut30-30-1540": "2027-07-10", "piut20-20-1300": "2027-07-10", "piut-ten-10-94": "2027-07-10", "piut-kids-bambini-015-2027": "2027-07-09", "piut-kids-600m-2027": "2027-07-09", "piut-kids-1200m-2027": "2027-07-09"}),
     "oh-meu-deus": ("2027-04-30", "2027-05-02", "https://ohmeudeus.utmb.world/races/omd100k", {"oh-meu-deus-100k-94-5300": "2027-05-01"}),
     "strasimeno": ("2027-03-07", "2027-03-07", "https://www.strasimeno.it/", {"strasimeno-10km": "2027-03-07", "strasimeno-half-marathon-21-0975": "2027-03-07", "strasimeno-34km": "2027-03-07", "strasimeno-marathon-42-195": "2027-03-07", "strasimeno-ultramarathon-58-04": "2027-03-07"}),
     "dolomyths-run": ("2027-07-09", "2027-07-11", "https://dolomythsrun.it/en/", {"0": "2027-07-10", "1": "2027-07-11"}),
@@ -174,11 +174,23 @@ MANUAL_EVENT_PERIODS = {
     "puerto-vallarta-mexico-by-utmb": ("2027-03-04", "2027-03-06", "https://puerto-vallarta.utmb.world/races-runners/runners/registration", {}),
     "transgrancanaria": ("2027-02-23", "2027-02-27", "https://transgrancanaria.net/en/regulations/", {"0": "2027-02-26", "1": "2027-02-27"}),
     "zugspitz-ultratrail": ("2027-06-17", "2027-06-20", "https://zugspitz.utmb.world/", {"0": "2027-06-19", "1": "2027-06-19", "2": "2027-06-18", "3": "2027-06-18", "4": "2027-06-17", "5": "2027-06-18", "6": "2027-06-19"}),
-    "3kings-3hills": ("2027-07-23", "2027-07-24", "https://www.3kings-3hills.com/fakten/", {"base-trail-26-900": "2027-07-24", "marathon-40-1650": "2027-07-24", "3kings-3hills-54-2300": "2027-07-24", "endurance-trail-85-3000": "2027-07-24", "ultratrail-xl-117-4467": "2027-07-23", "100-miles-ultra-168-6300": "2027-07-23"}),
-    "innsbruck-alpine": ("2027-05-05", "2027-05-08", "https://www.innsbruckalpine.at/rennen/alle-bewerbe/", {"trail-hunt-23-9-1450": "2027-05-07", "trailhalbmarathon-k25-26-6-870": "2027-05-08", "discovery-race-k35-37-8-2110": "2027-05-08", "trailmarathon-k42-43-4-2400": "2027-05-06", "panorama-ultra-trail-67-9-2670": "2027-05-08", "heart-of-the-alps-ultra-87-3900": "2027-05-08", "master-of-innsbruck-112-6-5500": "2027-05-08"}),
+    "3kings-3hills": ("2027-07-23", "2027-07-24", "https://www.3kings-3hills.com/fakten/", {"base-trail-26-900": "2027-07-24", "marathon-40-1650": "2027-07-24", "3kings-3hills-54-2300": "2027-07-24", "endurance-trail-85-3000": "2027-07-24", "ultratrail-xl-117-4467": "2027-07-23", "100-miles-ultra-168-6300": "2027-07-23", "shorty-trail-16-700-2027": "2027-07-24", "traily-trail-5-100-2027": "2027-07-24"}),
+    "innsbruck-alpine": ("2027-05-05", "2027-05-08", "https://www.innsbruckalpine.at/rennen/alle-bewerbe/", {"trail-hunt-23-9-1450": "2027-05-07", "trailhalbmarathon-k25-26-6-870": "2027-05-08", "discovery-race-k35-37-8-2110": "2027-05-08", "trailmarathon-k42-43-4-2400": "2027-05-06", "panorama-ultra-trail-67-9-2670": "2027-05-08", "heart-of-the-alps-ultra-87-3900": "2027-05-08", "master-of-innsbruck-112-6-5500": "2027-05-08", "businesstrail-k7-8-2-285-2027": "2027-05-05", "nighttrail-k7-8-2-285-2027": "2027-05-05", "vertical-vtc-7-4-1330-2027": "2027-05-06", "young-talents-race-7-4-280-2027": "2027-05-06", "rookie-trailrun-k15-17-5-590-2027": "2027-05-08", "kids-trail-iatf-2027": "2027-05-07"}),
+    "otscher-trail": ("2027-06-04", "2027-06-06", "https://www.oetschertrail.run/", {"marathon-trail-49-8-2322": "2027-06-05", "oetscher-speed-trail-2027": "2027-06-05", "oetscher-skyrace-2027": "2027-06-06"}),
     "tschirgant-sky": ("2027-06-12", "2027-06-12", "https://tschirgant-sky.run/", {"0": "2027-06-12"}),
     "kaiserkrone": ("2027-06-25", "2027-06-26", "https://www.wilderkaiser.info/de/kaiserkrone-trail.html", {"0": "2027-06-25", "1": "2027-06-26", "2": "2027-06-26", "3": "2027-06-26", "4": "2027-06-26", "5": "2027-06-26"}),
     "kat100": ("2027-08-05", "2027-08-07", "https://kat.utmb.world/de/races", {"0": "2027-08-05", "1": "2027-08-06", "2": "2027-08-07", "3": "2027-08-07", "4": "2027-08-07"}),
+    "3trail-ibiza": ("2027-11-26", "2027-11-28", "https://3diastrailibiza.com/", {}),
+    "oman-by-utmb": ("2026-12-10", "2026-12-12", "https://oman.utmb.world/", {"jabal-classic-103-5000": "2026-12-10", "hajar-ultra-154-8000": "2026-12-10", "oman-skyward-canyon-50-2400": "2026-12-11", "oman-old-capital-trail-32-1400": "2026-12-12", "oman-scenic-ascent-21-5-550": "2026-12-12"}),
+    "alpin-team-trailrun": ("2027-09-25", "2027-09-25", "https://www.atra.club/trailrunning-kalender", {"k50-52-3450": "2027-09-25"}),
+}
+
+# These route entries are not scheduled as separate 2027 races yet. Do not
+# carry forward their 2026 dates as if they were valid dates for the next edition.
+MANUAL_NO_ROUTE_DATES = {
+    "mountain-man-winter": {"m-trail-22-650", "l-trail-31-750"},
+    "backyard-ultra": {"backyard-ultra-6-7-50"},
+    "3trail-ibiza": {"ultra-trail-73-5-2100"},
 }
 
 for event in events:
@@ -252,6 +264,8 @@ for event in events:
     for route_index, route in enumerate(event.get("routes", [])):
         key = str(route_index)
         if key in route_entries:
+            continue
+        if route.get("id") in MANUAL_NO_ROUTE_DATES.get(event["id"], set()):
             continue
         previous_edition_date = route_fallback_dates.get(key) or str(route.get("date") or "")
         if re.fullmatch(r"2026-\d{2}-\d{2}", previous_edition_date):

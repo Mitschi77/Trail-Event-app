@@ -1,6 +1,6 @@
 {
   "batch": 24,
-  "checkedAt": "2026-11-17",
+  "checkedAt": "2026-11-20",
   "scope": "Top-level events 116-120 in current EVENTS order",
   "status": "saved",
   "appCommit": "9e6215c01d5882264b1c72cbbd79c66812996bd5",
@@ -8,37 +8,219 @@
     {
       "order": 116,
       "name": "Megamarsch",
-      "gpxStatus": "Official 2027 Munich 100K event confirmed for 15-16 May, approx. 990 hm. Organizer says route is provided as Komoot download two weeks before event and may change shortly before start.",
+      "gpxStatus": "Official 2027 Munich 100K confirmed for 15–16 May, approx. 990 hm. Route is provided via Komoot about two weeks before event and may change shortly before start. No final GPX available yet.",
       "source": "https://www.megamarsch.de/m%C3%BCnchen",
       "followUp": "Recheck around 1 May 2027 for Komoot/GPX route."
     },
     {
       "order": 117,
       "name": "Vietnam Highlands Trail by UTMB",
-      "gpxStatus": "All four official 2027 GPX files are linked from the UTMB race pages and stored in Google Drive. App now provides a one-click import attempt by converting each official Drive file ID to its download endpoint; if Google Drive CORS or confirmation blocks it, download manually and use the GPX file import.",
+      "gpxStatus": "Four official 2027 GPX files linked from UTMB pages and hosted in Google Drive. App one-click import is an attempted integration only; successful download and XML parsing are not yet confirmed. If Drive blocks browser access, manual file import is the fallback.",
       "source": "https://vietnamhighlands.utmb.world/",
       "followUp": "Try the one-click import button; if it fails, download the .gpx file from Drive and use the app's GPX file import field."
     },
     {
       "order": 118,
       "name": "Tarawera Ultra-Trail by UTMB",
-      "gpxStatus": "Official UTMB 2027 Map + GPX pages confirmed for TMiler, T102, T50, T21 and T14; all five route pages linked in app.",
+      "gpxStatus": "Official UTMB 2027 pages confirm five race courses and expose a Map + GPX tab on the individual T102 page. The tab is visible, but its underlying GPX download URL has not been extracted and the GPX binary has not been fetched. Official 2027 values: TMiler 163/3800, T102 102/2300 (aid station cumulative distance totals 101.9), T50 52/1150, T21 23/400, T14 14/161. No file is marked technically validated.",
       "source": "https://tarawera.utmb.world/",
-      "followUp": "Export each route from its official Map + GPX panel."
+      "followUp": "Extract Map + GPX download payloads for TMiler, T102, T50, T21 and T14; parse each file and compare computed distance/ascent with the official page before promoting it as 2027.",
+      "checkedAt": "2026-11-20",
+      "official2027CourseData": {
+        "source": "https://tarawera.utmb.world/",
+        "raceDate": "2027-02-13/2027-02-14",
+        "routes": [
+          {
+            "name": "TMiler",
+            "distanceKm": 163,
+            "elevationGainHm": 3800,
+            "racePage": "https://tarawera.utmb.world/races/tmiler"
+          },
+          {
+            "name": "T102",
+            "distanceKm": 102,
+            "elevationGainHm": 2300,
+            "racePage": "https://tarawera.utmb.world/races/t-102",
+            "operationalMeasuredDistanceKm": 101.9
+          },
+          {
+            "name": "T50",
+            "distanceKm": 52,
+            "elevationGainHm": 1150,
+            "racePage": "https://tarawera.utmb.world/races/t-50"
+          },
+          {
+            "name": "T21",
+            "distanceKm": 23,
+            "elevationGainHm": 400,
+            "racePage": "https://tarawera.utmb.world/races/t-21"
+          },
+          {
+            "name": "T14",
+            "distanceKm": 14,
+            "elevationGainHm": 161,
+            "racePage": "https://tarawera.utmb.world/races/t-14"
+          }
+        ],
+        "t102Checkpoints": [
+          {
+            "name": "Firmin Field",
+            "distanceKm": 0
+          },
+          {
+            "name": "Titoki",
+            "distanceKm": 13.7
+          },
+          {
+            "name": "Outlet",
+            "distanceKm": 27.6
+          },
+          {
+            "name": "Otamuri",
+            "distanceKm": 41.7
+          },
+          {
+            "name": "Rotoiti",
+            "distanceKm": 52.4
+          },
+          {
+            "name": "Okataina",
+            "distanceKm": 57.5
+          },
+          {
+            "name": "Millar",
+            "distanceKm": 72.7
+          },
+          {
+            "name": "Tikitapu (Blue Lake)",
+            "distanceKm": 84.8
+          },
+          {
+            "name": "Redwoods",
+            "distanceKm": 94.7
+          },
+          {
+            "name": "Village Green finish",
+            "distanceKm": 101.9
+          }
+        ],
+        "note": "Official UTMB homepage and T102 race page show 102 km / 2,300 m+ and a Map + GPX tab. Aid-station table totals 101.9 km, which is a rounding/detail variation, not a reason to alter advertised distance. Third-party independently measured GPX figures may differ; organizer value is primary."
+      },
+      "gpxTechnicalChecks": {
+        "status": "map-gpx-tab-confirmed; binary-not-fetched",
+        "officialRoutePageCount": 5,
+        "downloadedFiles": 0,
+        "xmlParsed": false,
+        "trackpointCount": null,
+        "calculatedDistanceKm": null,
+        "calculatedElevationHm": null,
+        "nextStep": "Extract the actual Map + GPX tab payload or official download URLs from all five race pages, then retrieve and parse the GPX bytes. Keep any existing historic files unchanged."
+      },
+      "retentionRule": "Preserve older official GPX versions until new 2027 bytes are downloaded and validated. Do not overwrite or delete historical tracks."
     },
     {
       "order": 119,
       "name": "Puerto Vallarta México by UTMB",
-      "gpxStatus": "Official 2027 UTMB Map + GPX pages confirmed and linked for Hikuri 81K, Nakawé 53K, Haramara 37K, Ereno 20K and Pata Salada 5K.",
+      "gpxStatus": "Official UTMB 2027 pages confirm five race routes and their advertised distances/elevation. The individual Hikuri 81K page is accessible; third-party independent route analysis reports measured route lengths differing slightly from organizer's rounded distances. This is a measurement distinction, not evidence of an outdated course. The official direct GPX bytes have not yet been obtained or parsed; do not mark any route technically validated.",
       "source": "https://puerto-vallarta.utmb.world/races",
-      "followUp": "Export each route from its official Map + GPX panel."
+      "followUp": "Extract the actual Map + GPX downloads from all five Puerto Vallarta UTMB race pages and validate XML/trackpoints, measured distance and ascent; preserve any older GPX versions separately.",
+      "checkedAt": "2026-11-20",
+      "official2027CourseData": {
+        "source": "https://puerto-vallarta.utmb.world/",
+        "eventDate": "2027-03-04/2027-03-06",
+        "routes": [
+          {
+            "name": "Hikuri 81K",
+            "distanceKm": 81,
+            "elevationGainHm": 3900,
+            "racePage": "https://puerto-vallarta.utmb.world/races/Hikuri"
+          },
+          {
+            "name": "Nakawé 53K",
+            "distanceKm": 53,
+            "elevationGainHm": 2500
+          },
+          {
+            "name": "Haramara 37K",
+            "distanceKm": 37,
+            "elevationGainHm": 1600
+          },
+          {
+            "name": "Ereno 20K",
+            "distanceKm": 20,
+            "elevationGainHm": 1050
+          },
+          {
+            "name": "Pata Salada 5K",
+            "distanceKm": 5,
+            "elevationGainHm": 200
+          }
+        ],
+        "note": "Official UTMB 2027 event and all five course values confirmed. Third-party route tracing reports mapped distances 80.2/53.1/37.2/20.3/4.9 km, while organizer advertises rounded 81/53/37/20/5 km. Keep organizer distances as advertised values; use parsed GPX only for separate measured fields."
+      },
+      "gpxTechnicalChecks": {
+        "status": "official-course-data-verified; binary-not-fetched",
+        "officialRoutes": 5,
+        "downloadedFiles": 0,
+        "xmlParsed": false,
+        "trackpointCount": null,
+        "calculatedDistanceKm": null,
+        "calculatedElevationHm": null,
+        "note": "Third-party measured trace lengths are useful only as a cross-check. They are not a substitute for fetching the official UTMB GPX file and independently parsing its trackpoints."
+      },
+      "retentionRule": "Do not overwrite or delete previous GPX versions. Add new official 2027 versions only after binary download and technical validation."
     },
     {
       "order": 120,
       "name": "HOKA Xtrail Kenting by UTMB",
-      "gpxStatus": "Official UTMB 2027 Map + GPX pages confirmed and linked for 100K, 50K, 25K, 10K and Kids Family Run.",
+      "gpxStatus": "Official UTMB 2027 pages confirm five course variants and current advertised values: 98/3291, 50/1496, 26/589, 11/201 and 2/10. Event page and race list are live. Although previous app checkpoint noted Map + GPX pages, the actual direct file URLs and GPX bytes have not been extracted or parsed in this audit. No route is marked technically validated.",
       "source": "https://xtrail.utmb.world/",
-      "followUp": "Export each route from its official Map + GPX panel."
+      "followUp": "Extract the actual official GPX downloads from all five Xtrail race pages and validate XML, trackpoints, measured distance and ascent; retain older GPX versions until new files are checked.",
+      "checkedAt": "2026-11-20",
+      "official2027CourseData": {
+        "source": "https://xtrail.utmb.world/",
+        "eventDate": "2027-03-05/2027-03-07",
+        "routes": [
+          {
+            "name": "Xtrail 100K",
+            "distanceKm": 98,
+            "elevationGainHm": 3291,
+            "racePage": "https://xtrail.utmb.world/races/Top-100K"
+          },
+          {
+            "name": "Xtrail 50K",
+            "distanceKm": 50,
+            "elevationGainHm": 1496
+          },
+          {
+            "name": "Xtrail 25K",
+            "distanceKm": 26,
+            "elevationGainHm": 589
+          },
+          {
+            "name": "Xtrail 10K",
+            "distanceKm": 11,
+            "elevationGainHm": 201
+          },
+          {
+            "name": "Xtrail Kids Family Run",
+            "distanceKm": 2,
+            "elevationGainHm": 10
+          }
+        ],
+        "note": "Official 2027 homepage and race list now provide exact advertised values for all five routes. Independent map analysis returns same values for 100K and 50K, with slight differences possible for the smaller courses. Use official organizer values as advertised; keep measured GPX values separate once the actual files are parsed."
+      },
+      "gpxTechnicalChecks": {
+        "status": "official-route-data-verified; binary-not-fetched",
+        "officialRoutes": 5,
+        "downloadedFiles": 0,
+        "xmlParsed": false,
+        "trackpointCount": null,
+        "calculatedDistanceKm": null,
+        "calculatedElevationHm": null,
+        "note": "No GPX binary bytes received; advertised organizer values must not be confused with measured values."
+      },
+      "retentionRule": "Keep all older official GPX files as historical last-available versions. Add 2027 files as separate versions and promote only after successful binary validation."
     }
   ],
   "nextBatch": "Continue with events 121-125 after package 24 checkpoint."

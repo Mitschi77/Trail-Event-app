@@ -1,0 +1,8 @@
+# Functions that validate external credentials in their own handlers.
+# Supabase's platform JWT check must be disabled so GitHub OIDC tokens reach
+# the handler; the handler verifies issuer, audience, repository, ref and workflow.
+[functions.ingest-event-date-proposals]
+verify_jwt = false
+
+[functions.export-approved-event-date-proposals]
+verify_jwt = false

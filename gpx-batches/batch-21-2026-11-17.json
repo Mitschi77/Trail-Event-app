@@ -1,6 +1,6 @@
 {
   "batch": 21,
-  "checkedAt": "2026-11-17",
+  "checkedAt": "2026-11-20",
   "scope": "Top-level events 101-105 in current EVENTS order",
   "status": "saved",
   "appCommit": "7b87032517dfd0288c047fb2811a5d22367ee9ce",
@@ -8,9 +8,47 @@
     {
       "order": 101,
       "name": "Alpin Team Trailrun",
-      "gpxStatus": "Official organizer download page offers GPX for K50/K23/K10, but current event pages and files are for 2026 (26 September 2026). No confirmed 2027 edition found.",
+      "gpxStatus": "2027 date 25 September appears confirmed by ITRA-indexed listing, but official organizer website still displays 2026. 2026 K50/K23/K10 GPX remain last available official files and must be retained, not used as confirmed 2027 routes. 2027 distance/elevation variants differ across sources; organizer clarification required.",
       "source": "https://www.alpinteamtrail.at/de/download/",
-      "followUp": "Wait for organizer to announce next edition and update GPX."
+      "followUp": "Ask organizer whether 2027 edition is confirmed and request the current three GPX files; reconcile K50 52/53 km and K23/K10 elevation discrepancies before updating app metrics.",
+      "verified2027Edition": {
+        "source": "https://www.ravitorun.com/en/races/utmb-160226",
+        "date": "2027-09-25",
+        "location": "Werfenweng, Austria",
+        "distances": [
+          {
+            "name": "ATT K50",
+            "distanceKm": 53,
+            "elevationHm": 3556
+          },
+          {
+            "name": "K50 historical/alternate listing",
+            "distanceKm": 52,
+            "elevationHm": 3450
+          },
+          {
+            "name": "ATT K23",
+            "distanceKm": 23,
+            "elevationHm": 1430
+          },
+          {
+            "name": "K23 alternate listing",
+            "distanceKm": 23,
+            "elevationHm": 1523
+          },
+          {
+            "name": "ATT K10",
+            "distanceKm": 10,
+            "elevationHm": 413
+          },
+          {
+            "name": "K10 alternate listing",
+            "distanceKm": 10,
+            "elevationHm": 394
+          }
+        ],
+        "note": "ITRA-indexed race listing currently confirms 25 Sep 2027. However official organizer homepage still shows 2026 edition; conflicting route metrics exist across listings. Do not treat 2027 GPX as confirmed until organizer updates."
+      }
     },
     {
       "order": 102,
@@ -29,7 +67,7 @@
     {
       "order": 104,
       "name": "Oberaudorf Trail Festival",
-      "gpxStatus": "Official 2027 pages confirm five races and course metrics. Organizer pages state GPX track is required/provided; direct file endpoints were not publicly extractable. All five official route pages linked in app.",
+      "gpxStatus": "Official 2027 event 30 Sep–3 Oct confirmed with five routes (12/21/42/60/104.5 km). OTF100 page exposes structured 104.5 km / 4,992 m elevation, but narrative conflicts (5,900 m). Official course pages say GPX is provided/required; direct download endpoints still need extraction.",
       "sources": [
         "https://saltytrailrunning.com/en-de/pages/otf-100",
         "https://saltytrailrunning.com/en-de/pages/otf-ultra",
@@ -37,14 +75,51 @@
         "https://saltytrailrunning.com/en-de/pages/otf-speed",
         "https://saltytrailrunning.com/en-de/pages/otf-short"
       ],
-      "followUp": "Extract organizer GPX URLs from each race page or obtain them from organizer's participant portal."
+      "followUp": "Extract official GPX from all five SALTY course pages/participant area; parse each file and ask organizer to clarify OTF100 elevation discrepancy (4,992 vs 5,000 vs 5,900 hm).",
+      "verified2027CourseInfo": {
+        "source": "https://saltytrailrunning.com/en-de/pages/otf-100",
+        "dateStart": "2027-09-30",
+        "dateEnd": "2027-10-03",
+        "routes": [
+          {
+            "name": "OTF 100 XXL",
+            "distanceKm": 104.5,
+            "elevationHm": 4992,
+            "start": "2027-10-01 21:00",
+            "startLocation": "DYNAFIT Speed Factory, Kiefersfelden",
+            "finish": "Kurpark Oberaudorf"
+          },
+          {
+            "name": "Wendelstein Ultra XL",
+            "distanceKm": 60
+          },
+          {
+            "name": "Sudelfeld Trail L",
+            "distanceKm": 42
+          },
+          {
+            "name": "Brünnstein Speed M",
+            "distanceKm": 21
+          },
+          {
+            "name": "Hocheck Short S",
+            "distanceKm": 12
+          }
+        ],
+        "note": "Official organizer confirms five distances and new OTF100 for 2027. OTF100 page has an internal elevation inconsistency: headline 4,992 m, key facts 5,000 m, narrative paragraph 5,900 m. Do not silently select 5,900; retain 4,992 m as page's explicit structured distance/elevation field and flag organizer discrepancy."
+      }
     },
     {
       "order": 105,
       "name": "Taubertal 100",
-      "gpxStatus": "2027 event date 2 October confirmed by organizer/community calendar. Official GPS page currently says Stand 17.08.26 and links GPX files named for 2026 (50/70/100/100 miles); stale files rejected.",
+      "gpxStatus": "Official Taubertal Trail site now announces 10 July 2027, while old Taubertal 100 GPS page still links 2026 files. Do not assume this is the same 100 km event. Keep all 2026 Taubertal 100 GPX versions as historical and request clarification on event identity and 2027 routes.",
       "source": "https://www.taubertal100.de/GPS-Streckenverlauf",
-      "followUp": "Wait for 2027 GPS files; do not use 2026 files for planning."
+      "followUp": "Clarify with organizer whether Taubertal Trail 10 July 2027 replaces Taubertal 100; only then attach correct new route/GPX files.",
+      "verified2027Edition": {
+        "source": "https://taubertal-trail.de/",
+        "date": "2027-07-10",
+        "note": "Official Taubertal Trail website now says Save the Date 10 July 2027. This may be a renamed/restructured event; it does not confirm the former Taubertal 100 event or its four 2026 distance tracks."
+      }
     }
   ],
   "nextBatch": "Continue with events 106-110 after package 21 checkpoint."

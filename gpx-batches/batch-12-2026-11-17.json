@@ -1,6 +1,6 @@
 {
   "batch": 12,
-  "checkedAt": "2026-11-17",
+  "checkedAt": "2026-11-20",
   "scope": "Events 56–60 in top-level EVENTS array",
   "status": "saved",
   "appCommit": "add7c9d6bd3e411588c90a5bc59bd74efeb7bcaa",
@@ -13,10 +13,28 @@
         "https://www.wilderkaiser.info/de/tours/kaiserkrone-trail-skyrace-offizielle-wettkampfroute-trailrunning-event.html",
         "https://www.wilderkaiser.info/de/tours/kaiserkrone-trail-panorama-offizielle-wettkampfroute-trailrunning-event.html",
         "https://www.wilderkaiser.info/de/tours/kaiserkrone-trail-medium-offizielle-wettkampfroute-trailrunning-event.html",
-        "https://www.wilderkaiser.info/de/tours/kaiserkrone-trail-short-offizielle-wettkampfroute-trailrunning-event.html"
+        "https://www.wilderkaiser.info/de/tours/kaiserkrone-trail-short-offizielle-wettkampfroute-trailrunning-event.html",
+        "https://www.wilderkaiser.info/de/kaiserkrone-trail.html"
       ],
       "gpxStatus": "official-page-download",
-      "note": "Five official route pages each display a GPX/PDF download button. App links open the matching route page; Kids route has no GPX."
+      "note": "Five official route pages each display a GPX/PDF download button. App links open the matching route page; Kids route has no GPX.",
+      "verified2027EventInfo": {
+        "source": "https://www.wilderkaiser.info/de/kaiserkrone-trail.html",
+        "dates": [
+          "2027-06-25",
+          "2027-06-26"
+        ],
+        "competitions": [
+          "ULTRA",
+          "SKYRACE",
+          "PANORAMA",
+          "MEDIUM",
+          "SHORT",
+          "KIDS"
+        ],
+        "note": "Veranstalterseite bestätigt Save-the-Date und offizielle interaktive Streckenkarten mit GPX-Download für die Bewerbe. Kids-Strecke bleibt ohne GPX laut bisheriger Prüfung; einzelne Strecken-GPX müssen separat aus den Karten heruntergeladen und inhaltlich geprüft werden."
+      },
+      "followUp": "Die sechs Bewerbe sind für 25./26.06.2027 bestätigt. Fünf Wettkampfstrecken über die offiziellen interaktiven Karten einzeln exportieren; GPX-Dateien danach auf Trackpunkte, Distanz und Höhenmeter prüfen. Kids ohne GPX belassen."
     },
     {
       "order": 57,
@@ -39,7 +57,7 @@
       "gpxStatus": "historical-track",
       "historicalDate": "2022-07-02",
       "gpxUrl": "https://www.brixenmarathon.com/info/dolomites-ultra-trail-84km.gpx",
-      "note": "Official 84 km / 4,728 hm GPX is available for the last documented edition on 2 July 2022. The event page says the race was cancelled after 2022; app date corrected from 2026 to 2022."
+      "note": "Official 84 km / 4,728 hm GPX is available for the last documented edition on 2 July 2022. The event page says the race was cancelled after 2022; app date corrected from 2026 to 2022. Historische 2022-GPX bleibt als letzte historische Streckenversion erhalten, wird aber nicht als aktuelle 2027-Strecke ausgegeben."
     },
     {
       "order": 59,

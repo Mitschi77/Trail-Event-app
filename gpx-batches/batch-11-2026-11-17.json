@@ -1,6 +1,6 @@
 {
   "batch": 11,
-  "checkedAt": "2026-11-17",
+  "checkedAt": "2026-11-20",
   "scope": "Events 51–55 in top-level EVENTS array",
   "status": "saved",
   "appCommit": "f52483310ca8dac2c56f90759fb3b2538bbe2a87",
@@ -85,7 +85,44 @@
           "observedFile": "https://pdf.utmb.world/raw/upload/v1750610477/lavaredo/files/2025/Lavaredo_10_K_2025_m_22_6_25_67b83acbb3.gpx"
         }
       ],
-      "note": "2027 race pages expose GPX buttons, but the linked files are dated 2024, 2025 or 2026. None was added as a 2027 GPX. Official 50K elevation corrected in app from 2,800 to 2,600 m."
+      "note": "2027 race pages expose GPX buttons, but the linked files are dated 2024, 2025 or 2026. None was added as a 2027 GPX. Official 50K elevation corrected in app from 2,800 to 2,600 m.",
+      "verified2027CourseInfo": {
+        "source": "https://lavaredo.utmb.world/races",
+        "eventPeriod": "2027-06-23/2027-06-27",
+        "routes": [
+          {
+            "name": "Lavaredo 120K",
+            "date": "2027-06-25",
+            "distanceKm": 120,
+            "elevationHm": 5800
+          },
+          {
+            "name": "Lavaredo 80K",
+            "date": "2027-06-26",
+            "distanceKm": 80,
+            "elevationHm": 4600
+          },
+          {
+            "name": "Lavaredo 50K",
+            "date": "2027-06-25",
+            "distanceKm": 50,
+            "elevationHm": 2600
+          },
+          {
+            "name": "Lavaredo 20K",
+            "date": "2027-06-24",
+            "distanceKm": 20,
+            "elevationHm": 1000
+          },
+          {
+            "name": "Lavaredo 10K",
+            "date": "2027-06-23",
+            "distanceKm": 10,
+            "elevationHm": 300
+          }
+        ],
+        "note": "Offizielle UTMB-Übersicht bestätigt die 2027-Streckenwerte. Die im Prüfstand gefundenen Download-URLs zeigen weiterhin Dateien aus 2024, 2025 oder 2026; deshalb keine davon als 2027-Datei einstufen. Vorhandene ältere Dateien bleiben nach Aufbewahrungsregel erhalten."
+      }
     },
     {
       "order": 55,
@@ -120,7 +157,8 @@
     "Tschirgant: ask organizer for TS52 GPX and add missing TS16/TS26/TS42 route records if needed.",
     "Backyard Ultra: recheck Hofer 2027 GPX; obtain Kuckuck email GPX only if user has the race pack.",
     "Lavaredo: replace all old 2024–2026 GPX links when UTMB publishes 2027 files.",
-    "Austria Backyard Ultra: obtain direct Frankenmarkt GPX file; Garmin course link already saved for Kirchdorf."
+    "Austria Backyard Ultra: obtain direct Frankenmarkt GPX file; Garmin course link already saved for Kirchdorf.",
+    "Lavaredo 2027: aktuelle offizielle Kurswerte sind bestätigt; die GPX-Downloads erst dann als neue Version ergänzen, wenn UTMB-Dateien mit 2027-Jahrgang veröffentlicht."
   ],
   "retrievalLimitation": "Only organizer-hosted direct URLs or official map/course links are saved. No old Lavaredo file was mislabelled as 2027."
 }

@@ -1,6 +1,6 @@
 {
   "batch": 26,
-  "checkedAt": "2026-11-17",
+  "checkedAt": "2026-11-20",
   "scope": "Remaining top-level events 126-128 in current EVENTS order",
   "status": "saved",
   "appCommit": "e19395cfa2cc4d0e1a6853126de2404dac5c7281",
@@ -8,37 +8,343 @@
     {
       "order": 126,
       "name": "Torrencial Valdivia by UTMB",
-      "gpxStatus": "Official UTMB 2027 race pages confirmed for six courses (PILOLCURA 100K, ONCOL 65K, LLANCAHUE 45K, COLLICO 20K, CAU CAU 12K, ISLA TEJA 6K). Public race pages currently show route profile but no GPX download or Map + GPX section.",
+      "gpxStatus": "Neue Detailprüfung (20.11.2026) zeigt echte Abweichungen innerhalb der offiziellen 2027-Veröffentlichung: der aktuelle Suchindex/2027-Übersichts-Snapshot nennt PILOLCURA 101 km/4100 hm, ONCOL 65/2600, COLLICO 20/800, CAU CAU 12/400, ISLA TEJA 6.5/200. Die direkt geöffneten 2027-Seiten bzw. ältere gecachte Homepage-Snapshot zeigen dagegen PILOLCURA 100/4500 (Beschreibung 4600), ONCOL 63/2500, COLLICO 20/750, CAU CAU 10/350, ISLA TEJA 6.5/150-170. LLANCAHUE ist stabil bei 45/1600. PILOLCURA-Einzelrennseite ist ausdrücklich auf Freitag 25. Juni 2027 datiert und zeigt Map + GPX; es handelt sich also NICHT um eine 2026-Rennseite. Direkter GPX-Link wurde nicht extrahiert. Andere Einzelrennseiten teils Cache miss/alte Snapshots; Datenkonflikte offen lassen und keine Werte automatisch überschreiben.",
       "source": "https://torrencial.utmb.world/races",
-      "followUp": "Recheck when official GPX downloads are added."
+      "followUp": "Obtain organizer clarification for official 2027 metrics (especially PILOLCURA, ONCOL, COLLICO, CAU CAU, ISLA TEJA), extract direct GPX files for all six routes and compare them with overview values. Keep existing historical versions.",
+      "official2027CourseData": {
+        "source": "https://torrencial.utmb.world/",
+        "eventDate": "2027-06-24/2027-06-27",
+        "overviewRoutes": [
+          {
+            "name": "PILOLCURA 100K",
+            "distanceKm": 101,
+            "elevationGainHm": 4100,
+            "sourceStatus": "current indexed 2027 overview"
+          },
+          {
+            "name": "ONCOL 65K",
+            "distanceKm": 65,
+            "elevationGainHm": 2600,
+            "sourceStatus": "current indexed 2027 overview"
+          },
+          {
+            "name": "LLANCAHUE 45K",
+            "distanceKm": 45,
+            "elevationGainHm": 1600,
+            "sourceStatus": "official indexed overview and detail cache consistent"
+          },
+          {
+            "name": "COLLICO 20K",
+            "distanceKm": 20,
+            "elevationGainHm": 800,
+            "sourceStatus": "current indexed 2027 overview"
+          },
+          {
+            "name": "CAU CAU 12K",
+            "distanceKm": 12,
+            "elevationGainHm": 400,
+            "sourceStatus": "current indexed 2027 overview"
+          },
+          {
+            "name": "ISLA TEJA 6K",
+            "distanceKm": 6.5,
+            "elevationGainHm": 200,
+            "sourceStatus": "current indexed 2027 overview"
+          }
+        ],
+        "conflictingPILOLCURAIndividualPage": {
+          "observedPageUrl": "https://torrencial.utmb.world/races/PILOLCURA100K",
+          "edition": "2027",
+          "startDate": "2027-06-25",
+          "pageMetrics": {
+            "distanceKm": 100,
+            "elevationGainHmMetric": 4500,
+            "elevationGainTextHm": 4600
+          },
+          "overviewSearchSnapshot": {
+            "distanceKm": 101,
+            "elevationGainHm": 4100
+          },
+          "pageHasMapGpxTab": true,
+          "directDownloadUrl": null,
+          "note": "Both are official 2027 sources/snapshots. Conflict cannot be attributed to a stale 2026 page; retain both observations pending organizer confirmation."
+        },
+        "gpxAvailability": "PILOLCURA 100K individual official page visibly exposes a Map + GPX tab. Direct file URL not extracted; other distances require individual page review.",
+        "otherOfficialSnapshotConflicts": [
+          {
+            "route": "ONCOL",
+            "overview": {
+              "distanceKm": 65,
+              "elevationGainHm": 2600
+            },
+            "olderHomepageSnapshot": {
+              "distanceKm": 63,
+              "elevationGainHm": 2500
+            },
+            "racePageSlug": "ONCOL60K"
+          },
+          {
+            "route": "COLLICO",
+            "overview": {
+              "distanceKm": 20,
+              "elevationGainHm": 800
+            },
+            "olderHomepageSnapshot": {
+              "distanceKm": 20,
+              "elevationGainHm": 750
+            }
+          },
+          {
+            "route": "CAU CAU",
+            "overview": {
+              "distanceKm": 12,
+              "elevationGainHm": 400
+            },
+            "olderHomepageSnapshot": {
+              "distanceKm": 10,
+              "elevationGainHm": 350
+            },
+            "racePageSlug": "CAUCAU10K"
+          },
+          {
+            "route": "ISLA TEJA",
+            "overview": {
+              "distanceKm": 6.5,
+              "elevationGainHm": 200
+            },
+            "olderHomepageSnapshot": {
+              "distanceKm": 6.5,
+              "elevationGainHm": 170
+            }
+          }
+        ]
+      },
+      "gpxTechnicalChecks": {
+        "status": "PILOLCURA-2027-map-gpx-tab-confirmed-no-direct-link; route-metrics-conflicting-official-snapshots; no-binary-parsed",
+        "downloadedFiles": 0,
+        "xmlParsed": false,
+        "trackpointCount": null,
+        "calculatedDistanceKm": null,
+        "calculatedElevationHm": null,
+        "note": "PILOLCURA 2027 detail page has Map + GPX tab; direct file URL not exposed. No GPX bytes received. Other race pages could not all be retrieved due cache misses."
+      }
     },
     {
       "order": 127,
       "name": "HOKA Val d'Aran by UTMB",
-      "gpxStatus": "Official direct 2027 GPX files added for VDA 163K, TDL 75K and PDA 55K. Current official downloads for CDH 110K, EXP 30K, SKY 18K, SKY Promises and Vielha 10K are explicitly 2026 files; rejected as stale.",
+      "gpxStatus": "Alle sieben Einträge der offiziellen GPX-Download-Übersichtsseite wurden nun direkt aufgerufen: VDA, CDH, TDL, PDA, EXP, SKY und VIELHA 10K. Sämtliche sieben direkten Dateinamen/Pfade enthalten GPX 2026 bzw. `_2026`; sie sind daher historische 2026-Dateien und keine bestätigten 2027-Tracks. Die offiziellen 2027-Rennseiten zeigen 2027-Distanzen/Höhenmeter und teils Map + GPX-Abschnitte. SKY Promesas 18K besitzt auf seiner 2027-Seite ebenfalls einen GPX-Download-Verweis, wird aber in der zentralen Downloadliste nicht separat geführt. Direkte GPX-Downloads wurden vom Webabruf wegen application/octet-stream/400 OK nicht als Bytes geliefert; kein XML-Parsing.",
       "source": "https://valdaran.utmb.world/race/tracks",
       "downloads": [
         {
           "route": "VDA 163K",
-          "url": "https://pdf.utmb.world/raw/upload/v1790061470/valdaran/Races/GPX%202026%20DEFINTIVOS%20EVENTO/NORMALES/VDA_2027_COLOMERS_6d455e408b.gpx"
+          "url": "https://res.cloudinary.com/utmb-world/raw/upload/v1781796580/valdaran/Races/GPX%202026%20DEFINTIVOS%20EVENTO/NORMALES/VDA_2026_WEB_COLOMERS_1_b8cad96a9e.gpx",
+          "version": "2026",
+          "fetchStatus": "400 Unsupported content-type; no bytes"
+        },
+        {
+          "route": "CDH 110K",
+          "url": "https://res.cloudinary.com/utmb-world/raw/upload/v1781791842/valdaran/Races/GPX%202026%20DEFINTIVOS%20EVENTO/NORMALES/CDH_2026_COLOMERS_f8d40a39ba.gpx",
+          "version": "2026",
+          "fetchStatus": "400 OK; no bytes"
         },
         {
           "route": "TDL 75K",
-          "url": "https://pdf.utmb.world/raw/upload/v1790060745/valdaran/Races/GPX%202026%20DEFINTIVOS%20EVENTO/NORMALES/TDL_V1_2027_c88f0b55b1.gpx"
+          "url": "https://res.cloudinary.com/utmb-world/raw/upload/v1782645137/valdaran/Races/GPX%202026%20DEFINTIVOS%20EVENTO/NORMALES/TDL_V1_2_1ae7000dd9.gpx",
+          "version": "2026",
+          "fetchStatus": "400 OK; no bytes"
         },
         {
           "route": "PDA 55K",
-          "url": "https://pdf.utmb.world/raw/upload/v1790060783/valdaran/Races/GPX%202026%20DEFINTIVOS%20EVENTO/NORMALES/PDA_2027_COLOMERS_a0831fb556.gpx"
+          "url": "https://res.cloudinary.com/utmb-world/raw/upload/v1781791843/valdaran/Races/GPX%202026%20DEFINTIVOS%20EVENTO/NORMALES/PDA_2026_COLOMERS_da1f9a6296.gpx",
+          "version": "2026",
+          "fetchStatus": "400 Unsupported content-type; no bytes"
+        },
+        {
+          "route": "EXP 32K",
+          "url": "https://res.cloudinary.com/utmb-world/raw/upload/v1781791844/valdaran/Races/GPX%202026%20DEFINTIVOS%20EVENTO/NORMALES/EXP_2026_111f465c43.gpx",
+          "version": "2026",
+          "fetchStatus": "400 Unsupported content-type; no bytes"
+        },
+        {
+          "route": "SKY 18K",
+          "url": "https://res.cloudinary.com/utmb-world/raw/upload/v1781791842/valdaran/Races/GPX%202026%20DEFINTIVOS%20EVENTO/NORMALES/SKY_2026_v0_e8122d2359.gpx",
+          "version": "2026",
+          "fetchStatus": "400 OK; no bytes"
+        },
+        {
+          "route": "VIELHA 10K",
+          "url": "https://res.cloudinary.com/utmb-world/raw/upload/v1782645286/valdaran/Races/GPX%202026%20DEFINTIVOS%20EVENTO/NORMALES/VIELHA_10_K_2026_39f453409a.gpx",
+          "version": "2026",
+          "fetchStatus": "400 OK; no bytes"
         }
       ],
-      "followUp": "Import the three confirmed 2027 files; wait for updated files for remaining five races."
+      "followUp": "Auf neue 2027-Dateien für alle sieben Strecken der zentralen Downloadliste sowie eine separate SKY-Promesas-Datei warten; ältere 2026-Dateien unverändert als historische Versionen behalten.",
+      "retentionRule": "Never remove/overwrite prior-year GPX. Keep each version with year, source, checksum and validation status; promote new version only after its bytes have been downloaded and checked.",
+      "checkedAt": "2026-11-20",
+      "official2027Metrics": [
+        {
+          "route": "VDA 163K",
+          "distanceKm": 163,
+          "elevationGainHm": 10000,
+          "source": "https://valdaran.utmb.world/races/vda",
+          "sourceStatus": "official race page"
+        },
+        {
+          "route": "CDH 110K",
+          "distanceKm": 110,
+          "elevationGainHm": 6400,
+          "source": "https://valdaran.utmb.world/",
+          "sourceStatus": "official event page"
+        },
+        {
+          "route": "TDL 75K",
+          "distanceKm": 75,
+          "elevationGainHm": 5100,
+          "source": "https://valdaran.utmb.world/races/tdl",
+          "sourceStatus": "official race page"
+        },
+        {
+          "route": "PDA 55K",
+          "distanceKm": 55,
+          "elevationGainHm": 3300,
+          "source": "https://valdaran.utmb.world/",
+          "sourceStatus": "official event page"
+        }
+      ],
+      "gpxTechnicalChecks": {
+        "status": "seven-central-download-links-confirmed-2026; SKY-Promesas-separate-2027-page-link; no-binary-parsed",
+        "reason": "External GPX binary URLs are inaccessible to current repository connector and web fetch; no file bytes received, no XML parse, no trackpoint count, no calculated distance/elevation.",
+        "requiredChecks": [
+          "download organizer binary",
+          "verify GPX XML well-formedness",
+          "count trackpoints and segments",
+          "calculate geodesic track distance",
+          "calculate ascent/descent from elevation samples",
+          "compare calculated metrics with official 2027 page",
+          "record SHA-256 and checkedAt"
+        ],
+        "vdaWarning": "The saved candidate path contains the directory label GPX 2026 while filename says VDA_2027. Require organizer-side confirmation or fresh 2027 export.",
+        "tdlNote": "Independent third-party analysis reports a 2027 organizer GPX was analysed; use only as a cross-check, not as source file validation in this repository.",
+        "note": "All seven central download links explicitly resolve to 2026-named files under GPX 2026 directory. SKY Promesas 2027 page also has its own GPX link but no separate entry in the central list. No binary bytes, XML parse or trackpoint calculations."
+      }
     },
     {
       "order": 128,
       "name": "Monte Rosa Walser Waeg by UTMB",
-      "gpxStatus": "Official 2027 Map + GPX pages exist. Direct links for SDV 120K, MRT 82K and WWT 43K resolve to files explicitly labelled 2026 and are rejected. Gressoney Lys, Regina Margherita, Junior Walser and Becca Pink have no verified 2027-versioned GPX; Junior Walser's unversioned GPX was not accepted as 2027.",
+      "gpxStatus": "Vollständige Einzelprüfung der sieben Wettkampf-/Side-Race-Seiten abgeschlossen: SDV 120K (120/8200) und MRT 82K (82/6300) zeigen 2027-Seiten mit Map + GPX, ihre direkten Dateien sind jedoch ausdrücklich 2026 benannt. WWT 43K (43/3100), RMT 15K (15/650) und JWT 9K (9/600) haben ebenfalls 2027-Seiten mit GPX-Download-Verweisen. WWT-Dateiname ohne Jahr; RMT-Datei ausdrücklich 2026; JWT-Dateiname ohne Jahr. Die Becca-Pink-Seite ist ein 2026-Snapshot (17. Juli 2026) und kann nicht als 2027-GPX-Quelle gelten. GLT 35K/1800 hm ist laut 2027-Übersicht neu; die Streckenlinie ist noch nicht veröffentlicht und die Einzelstreckenseite konnte nicht geladen werden. Kids Races sind Familien-/Kinderläufe ohne auswertbare Distanzdaten/GPX auf der offiziellen Seite. Keine Binärdateien konnten technisch geladen oder geparst werden.",
       "source": "https://mrww.utmb.world/races",
-      "followUp": "Wait for 2027 GPX updates and recheck all seven courses."
+      "followUp": "Obtain authorized 2027 GPX exports for SDV, MRT, WWT, RMT and JWT; clarify unversioned WWT/JWT files with organizer; wait for GLT route publication; recheck Becca Pink 2027 page; retain 2026 files.",
+      "retentionRule": "Keep 2026 GPX files and unversioned historical candidates with source/year labels. Add new 2027 versions separately after official publication and validation.",
+      "official2027CourseData": {
+        "source": "https://mrww.utmb.world/",
+        "eventDate": "2027-07-15/2027-07-18",
+        "overviewRoutes": [
+          {
+            "name": "Les sentiers des Valdôtains",
+            "distanceKm": 120,
+            "elevationGainHm": 8200,
+            "racePage": "https://mrww.utmb.world/races/SDV"
+          },
+          {
+            "name": "Monte Rosa Trail",
+            "distanceKm": 82,
+            "elevationGainHm": 6300,
+            "racePage": "https://mrww.utmb.world/races/MRT"
+          },
+          {
+            "name": "Walserwaeg Trail",
+            "distanceKm": 43,
+            "elevationGainHm": 3100,
+            "racePage": "https://mrww.utmb.world/races/WWT"
+          },
+          {
+            "name": "Gressoney Lys Trail",
+            "distanceKm": 35,
+            "elevationGainHm": 1800,
+            "sourceStatus": "2027 overview; new course, course line not yet published"
+          },
+          {
+            "name": "Regina Margherita Trail",
+            "distanceKm": 15,
+            "elevationGainHm": 650,
+            "racePage": "https://mrww.utmb.world/races/RMT"
+          },
+          {
+            "name": "Junior Walser Trail",
+            "distanceKm": 9,
+            "elevationGainHm": 600,
+            "racePage": "https://mrww.utmb.world/races/JWT"
+          },
+          {
+            "name": "Becca Pink",
+            "distanceKm": 4,
+            "elevationGainHm": null,
+            "racePage": "https://mrww.utmb.world/races/BP",
+            "sourceStatus": "official detail page currently stale 2026 snapshot; 2027 details unconfirmed"
+          },
+          {
+            "name": "Kids Races",
+            "distanceKm": null,
+            "elevationGainHm": null,
+            "racePage": "https://mrww.utmb.world/destination/kid",
+            "sourceStatus": "event side races; no route metrics/GPX published in page"
+          }
+        ],
+        "gpxVersionFindings": [
+          {
+            "route": "SDV 120K",
+            "url": "https://res.cloudinary.com/utmb-world/raw/upload/v1784039088/mrww/100m_2026_7cfb064644.gpx",
+            "version": "2026",
+            "pageEdition": "2027",
+            "fetchStatus": "400 OK; bytes not received"
+          },
+          {
+            "route": "MRT 82K",
+            "url": "https://res.cloudinary.com/utmb-world/raw/upload/v1779697373/mrww/MRW_2026_100_K_22d59b22b6.gpx",
+            "version": "2026",
+            "pageEdition": "2027",
+            "fetchStatus": "400 OK; bytes not received"
+          },
+          {
+            "route": "WWT 43K",
+            "url": "https://res.cloudinary.com/utmb-world/raw/upload/v1784039996/mrww/WWT_50k_by_UTMB_dbcbe317ee.gpx",
+            "version": "unversioned",
+            "pageEdition": "2027",
+            "fetchStatus": "400 OK; bytes not received"
+          },
+          {
+            "route": "RMT 15K",
+            "url": "https://res.cloudinary.com/utmb-world/raw/upload/v1784039070/mrww/20k_2026_b8183922a0.gpx",
+            "version": "2026",
+            "pageEdition": "2027",
+            "fetchStatus": "400 OK; bytes not received"
+          },
+          {
+            "route": "JWT 9K",
+            "url": "https://res.cloudinary.com/utmb-world/raw/upload/v1770978779/mrww/Junior_Walser_Trail_v3_67a087f33d.gpx",
+            "version": "unversioned",
+            "pageEdition": "2027",
+            "fetchStatus": "cache miss; bytes not received"
+          },
+          {
+            "route": "Becca Pink 4K",
+            "url": null,
+            "version": "not confirmed",
+            "pageEdition": "2026 stale snapshot",
+            "fetchStatus": "no 2027 direct URL confirmed"
+          }
+        ],
+        "note": "Official homepage lists event dates 15-18 July 2027 and all race metrics. Individual SDV/MRT/WWT/RMT/JWT pages are 2027 and show their respective Map + GPX download controls (WWT, RMT, JWT directly inspected). Download target file names show SDV/MRT/RMT=2026, WWT/JWT unversioned. Becca Pink individual page still shows Friday 17 July 2026; do not infer its 2027 status from this cached page. GLT is new for 2027, 35km/1800hm, route line not yet drawn. Kids pages contain no route metrics."
+      },
+      "gpxTechnicalChecks": {
+        "status": "five-2027-race-pages-have-gpx-links; three-files-explicitly-2026; two-unversioned; BP-stale-2026; GLT-course-not-published; no-binary-parsed",
+        "downloadedFiles": 0,
+        "xmlParsed": false,
+        "trackpointCount": null,
+        "calculatedDistanceKm": null,
+        "calculatedElevationHm": null,
+        "note": "Official GPX download URLs resolve to binary content rejected by current web fetch (400 OK) or cache miss. No bytes, XML or trackpoints received. Do not mark any of these files as technically validated."
+      }
     }
   ],
   "completedTopLevelEvents": 128,

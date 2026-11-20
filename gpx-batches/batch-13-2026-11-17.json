@@ -1,6 +1,6 @@
 {
   "batch": 13,
-  "checkedAt": "2026-11-17",
+  "checkedAt": "2026-11-20",
   "scope": "Top-level events 61-65 in current EVENTS order",
   "status": "saved",
   "appCommit": "47db32fe80b0f1602bcc80686b0a50b457a67621",
@@ -8,7 +8,7 @@
     {
       "order": 61,
       "name": "Obertauern Trailrun Summit",
-      "gpxStatus": "Seven official 2027 GPX files directly linked and added to app; two more official races are map-only (Extreme 100 and Panorama). App route list expanded from 3 to 9 current competitions; obsolete 2026 labels archived.",
+      "gpxStatus": "Official organizer page confirms 2027 dates (9–11 July), eight competition names and nine route variants. Official Outdooractive partnership release confirms all tracks are downloadable as GPX and can be sent to GPS watches. Seven direct WordPress candidate URLs are recorded, but no binary files have been fetched or parsed. The Extreme 100 and Panorama routes still need their actual Outdooractive GPX download targets; the official race pages are available but their IDs have not been extracted.",
       "downloads": [
         {
           "route": "Endurance Trail 2 Summits",
@@ -39,19 +39,155 @@
           "url": "https://www.trailrun-summit.com/wp-content/uploads/Family-Trail-3K-2027.gpx"
         }
       ],
-      "mapOnly": [
-        "Extreme 100 Trail 8 Summits",
-        "Panorama Trail 2 Summits"
-      ],
+      "mapOnly": [],
       "source": "https://www.trailrun-summit.com/",
-      "followUp": "Use one-click import for the seven direct files; wait for remaining map-only GPX."
+      "followUp": "Extract exact Outdooractive tour/download IDs from the official race pages for all seven timed races plus both Family Trail variants; then download and parse each GPX binary. Retain all previous-year versions until the 2027 files are validated.",
+      "verified2027EventInfo": {
+        "source": "https://www.trailrun-summit.com/",
+        "date": "2027-07-09/2027-07-11",
+        "races": [
+          {
+            "name": "Extreme 100 Trail 8 Summits",
+            "distanceKm": 108,
+            "elevationHm": 6677
+          },
+          {
+            "name": "RAIFFEISEN Trail Ultra 8 Summits",
+            "distanceKm": 76.6,
+            "elevationHm": 5080
+          },
+          {
+            "name": "SPORTSHOP SKIWORLD Endurance Trail 2 Summits",
+            "distanceKm": 53.2,
+            "elevationHm": 3061
+          },
+          {
+            "name": "Ultimate Trail 2 Summits",
+            "distanceKm": 34.6,
+            "elevationHm": 2029
+          },
+          {
+            "name": "Panorama Trail 2 Summits",
+            "distanceKm": 16.2,
+            "elevationHm": 1113
+          },
+          {
+            "name": "Easy Trail",
+            "distanceKm": 8.9,
+            "elevationHm": 436
+          },
+          {
+            "name": "Seekarspitz Vertical",
+            "distanceKm": 5.3,
+            "elevationHm": 536
+          },
+          {
+            "name": "Family Trail",
+            "distancesKm": [
+              3.1,
+              5.4
+            ],
+            "elevationHm": {
+              "up": [
+                106,
+                305
+              ],
+              "down": [
+                34,
+                90
+              ]
+            }
+          }
+        ],
+        "note": "Offizielle Veranstalterseite bestätigt sieben zeitgemessene Wettbewerbe plus den unzeitgemessenen Family Trail mit zwei Distanzen. Alle Tracks können laut Veranstalter über Outdooractive als GPX heruntergeladen werden. Die zuvor gespeicherten sieben Direktlinks decken nicht alle Strecken ab; für Extreme 100 und Panorama fehlen weiterhin die konkreten Outdooractive-Tour-IDs/Direktdateien."
+      },
+      "checkedAt": "2026-11-20",
+      "verified2027Update": {
+        "source": "https://www.trailrun-summit.com/",
+        "eventDates": "2027-07-09/2027-07-11",
+        "officialCourses": [
+          {
+            "name": "Extreme 100 Trail 8 Summits",
+            "distanceKm": 108,
+            "elevationUpHm": 6677,
+            "day": "2027-07-10"
+          },
+          {
+            "name": "RAIFFEISEN Trail Ultra 8 Summits",
+            "distanceKm": 76.6,
+            "elevationUpHm": 5080,
+            "day": "2027-07-10"
+          },
+          {
+            "name": "SPORTSHOP SKIWORLD Endurance Trail 2 Summits",
+            "distanceKm": 53.2,
+            "elevationUpHm": 3061,
+            "day": "2027-07-10"
+          },
+          {
+            "name": "HOTEL ALPINA Ultimate Trail 2 Summits",
+            "distanceKm": 34.6,
+            "elevationUpHm": 2029,
+            "day": "2027-07-10"
+          },
+          {
+            "name": "MARTINI SPORTSWEAR Panorama Trail 2 Summits",
+            "distanceKm": 16.2,
+            "elevationUpHm": 1113,
+            "day": "2027-07-10"
+          },
+          {
+            "name": "HOCHALM Easy Trail",
+            "distanceKm": 8.9,
+            "elevationUpHm": 436,
+            "day": "2027-07-10"
+          },
+          {
+            "name": "Seekarspitz Vertical",
+            "distanceKm": 5.3,
+            "elevationUpHm": 536,
+            "elevationDownHm": 70,
+            "day": "2027-07-09"
+          },
+          {
+            "name": "Family Trail short",
+            "distanceKm": 3.1,
+            "elevationUpHm": 106,
+            "elevationDownHm": 34,
+            "day": "2027-07-11"
+          },
+          {
+            "name": "Family Trail long",
+            "distanceKm": 5.4,
+            "elevationUpHm": 305,
+            "elevationDownHm": 90,
+            "day": "2027-07-11"
+          }
+        ],
+        "note": "Official homepage now describes eight competitions and the Family Trail's two distances. Event values are taken from the current official page. It is clearer to model eight competition names (including family event) with nine route variants."
+      },
+      "gpxTechnicalChecks": {
+        "status": "not-yet-validated",
+        "downloadedFiles": 0,
+        "parsedFiles": 0,
+        "trackpointCounts": null,
+        "calculatedDistances": null,
+        "calculatedElevation": null,
+        "note": "Organizer confirms GPX availability, but the actual GPX bytes were not obtained in this inspection. The seven saved direct URL candidates remain unverified; do not treat them as validated current routes."
+      },
+      "retentionRule": "Preserve older GPX versions as last available historical files until a new official file is downloaded, checked and confirmed. Do not overwrite/delete prior versions."
     },
     {
       "order": 62,
       "name": "Restonica Trail Corsica",
-      "gpxStatus": "Official FAQ states GPX is released only a few days before the event because routes cross private land.",
+      "gpxStatus": "2027 edition confirmed; organizer FAQ says GPX track is published only a few days before race because course crosses private land. No current downloadable 2027 GPX expected yet.",
       "source": "https://restonica.utmb.world/races-runners/runners/infos-pratiques",
-      "followUp": "Recheck shortly before the race."
+      "followUp": "Recheck shortly before the race.",
+      "verified2027Edition": {
+        "source": "https://restonica.utmb.world/en",
+        "edition": "2027",
+        "note": "Official 2027 race site is live and advertises the 2027 edition. GPX policy unchanged: only released a few days before race because of private land."
+      }
     },
     {
       "order": 63,
@@ -61,21 +197,79 @@
         "https://verbier.utmb.world/races/x-traversee",
         "https://verbier.utmb.world/races/x-alpine"
       ],
-      "followUp": "Export each distance from its official map."
+      "followUp": "Export each distance from its official map.",
+      "verified2027CourseInfo": {
+        "source": "https://verbier.utmb.world/races/X-traversee",
+        "route": "X-Traversée",
+        "date": "2027-07-10",
+        "distanceKm": 77,
+        "elevationHm": 5300,
+        "note": "Official 2027 page explicitly confirms route modification near Grand St-Bernard to avoid traffic congestion. Map/GPX control present; direct file URL still not extracted."
+      }
     },
     {
       "order": 64,
       "name": "PIUT",
-      "gpxStatus": "App entry refers to 12 July 2026, now past. Official route-map pages provide GPX/KML downloads, but no current next-edition date is confirmed.",
+      "gpxStatus": "2027 event confirmed for 9–10 July 2027; official event calendar lists 20–100 km formats. 2026 GPX/routes are not to be treated as 2027; wait for updated route maps/files.",
       "source": "https://www.paznaun-ischgl.com/de/piut-startseite/challenges/streckenkarte",
-      "followUp": "Wait for next edition date and updated course files."
+      "followUp": "Wait for next edition date and updated course files.",
+      "verified2027Edition": {
+        "source": "https://www.ischgl.com/de/veranstaltungen-erlebnisse/veranstaltungskalender/piut-paznaun-ischgl-ultra-trail_event_135487129",
+        "dateStart": "2027-07-09",
+        "dateEnd": "2027-07-10",
+        "distanceRangeKm": "20-100",
+        "note": "Official tourism/event calendar now confirms 2027 date and event formats. UTMB runner schedule says 2027 details will be published closer to event; no new GPX verified."
+      }
     },
     {
       "order": 65,
       "name": "Glacier Trailrun Alpine Race",
-      "gpxStatus": "2027 event confirmed, but organizer is revising routes and postponing registration to 1 December 2026; no final GPX published. App's 100K route is not in official 2027 program.",
+      "gpxStatus": "2027 event confirmed for 22–25 July. Organizer has revised the program to Top Mountain Run, 14K, 26K, 42K, 62K and WIDI. No final official GPX published yet; previous app 100K route does not belong to published 2027 program and must not be presented as a 2027 race.",
       "source": "https://www.oetztal-trailrunning.at/die-running-events/glacier-trailrun-alpine-race/",
-      "followUp": "Recheck after 1 December 2026 when registration and route details are published."
+      "followUp": "After 1 December 2026 registration launch, recheck the final route pages and official GPX files. Keep any existing 100K GPX as historical/last available version, clearly separated from the 2027 event program.",
+      "verified2027CourseInfo": {
+        "source": "https://www.oetztal-trailrunning.at/die-running-events/glacier-trailrun-alpine-race/",
+        "dateStart": "2027-07-22",
+        "dateEnd": "2027-07-25",
+        "races": [
+          {
+            "name": "Top Mountain Run",
+            "distanceKm": 6.3,
+            "elevationHm": 750
+          },
+          {
+            "name": "Gletscher Trail 14K",
+            "distanceKm": 14,
+            "elevationHm": 800
+          },
+          {
+            "name": "Gletscher Trail 26K",
+            "distanceKm": 25.8,
+            "elevationHm": 1900
+          },
+          {
+            "name": "Gletscher Trail 42K",
+            "distanceKm": 42.5,
+            "elevationHm": 2800
+          },
+          {
+            "name": "Gletscher Trail 62K",
+            "distanceKm": 61.1,
+            "elevationHm": 3600
+          },
+          {
+            "name": "WIDI Trailrun",
+            "distancesM": [
+              200,
+              400,
+              600,
+              1500
+            ]
+          }
+        ],
+        "registrationOpens": "2026-12-01T00:00:00",
+        "note": "Offizielle 2027-Seite listet fünf Erwachsenenwettbewerbe plus WIDI; die zuvor genannte 100K-Strecke gehört nicht zum veröffentlichten 2027-Programm. Noch keine finalen GPX-Dateien veröffentlicht."
+      }
     }
   ],
   "nextBatch": "Continue with events 66-70 after package 13 checkpoint."
