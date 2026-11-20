@@ -8,9 +8,9 @@
     {
       "order": 121,
       "name": "Desert Rats Trail Running Festival by UTMB",
-      "gpxStatus": "Official 2027 event page confirms four routes: 100K 100/2050, 50K 48/1050, 21K 21/700, 10K 9/200. Critical: the official 2027 21K page's GPX download target resolves to a file explicitly named 2025_Desert_Rats...21k. The page's 'Last updated 2026' label does not make the GPX a 2027 file. Keep 2025 GPX as historical last-available version; wait for genuine 2027 files.",
+      "gpxStatus": "Official 2027 event page confirms four routes: 100K 100/2050, 50K 48/1050, 21K 21/700, 10K 9/200. 100K and 50K GPX panels both say last updated 2026; the 21K direct link resolves to a file explicitly named 2025. The 10K race page currently displays a 2026 start date and a GPX download link, so its edition cannot be assigned to 2027. No current 2027 GPX is confirmed.",
       "source": "https://desertrats.utmb.world/races",
-      "followUp": "Recheck all four race-page GPX targets for a newly versioned 2027 upload. Keep 2025 files retained and labelled historical; do not replace until 2027 bytes are fetched and validated.",
+      "followUp": "Recheck all four race-page GPX targets when the 2027 course files are released. Keep 2025/2026 files as historical or edition-unverified; do not replace until genuine 2027 bytes are fetched and validated.",
       "retentionRule": "Keep all 2025 GPX files as historical versions until official 2027 replacements are published, downloaded and technically checked.",
       "checkedAt": "2026-11-20",
       "official2027CourseData": {
@@ -42,18 +42,18 @@
             "racePage": "https://desertrats.utmb.world/races/10k"
           }
         ],
-        "gpxVersionFinding": "On the official 2027 21K race page, the Download GPX File link resolves to a Cloudinary path /desertrats/GPX Files/2025/2025_Desert_Rats_Trail_Running_Festival_by_UTMB_21k_Course_fd8f191146.gpx. It is explicitly a 2025 file, despite the 2027 race page. The page says last updated 2026, which does not change the file's 2025 version label.",
+        "gpxVersionFinding": "100K and 50K official GPX panels are labelled Last updated: 2026. 21K direct link resolves to a Cloudinary path explicitly containing /2025/ and filename 2025_Desert_Rats...21k. 10K page still displays Friday 10 April 2026 and has a GPX link, so no 2027 edition can be assigned. None of these links proves a 2027 GPX.",
         "note": "2027 advertised distances/elevation are official; direct GPX download link still resolves to a 2025 route. Do not import it as 2027."
       },
       "gpxTechnicalChecks": {
-        "status": "official-page-link-followed; old-file-version-confirmed",
+        "status": "official-download-links-confirmed; linked-file-years-2025-2026-or-unverified; no-binary-parsed",
         "downloadedFiles": 0,
         "xmlParsed": false,
         "trackpointCount": null,
         "calculatedDistanceKm": null,
         "calculatedElevationHm": null,
         "confirmedOldLink": "https://res.cloudinary.com/utmb-world/raw/upload/v1737738182/desertrats/GPX%20Files/2025/2025_Desert_Rats_Trail_Running_Festival_by_UTMB_21k_Course_fd8f191146.gpx",
-        "note": "The file endpoint returned cache miss when opened. URL path itself clearly identifies 2025. No binary contents received or parsed."
+        "note": "21K link path explicitly identifies 2025; 100K and 50K panels say last updated 2026; 10K page is still showing a 2026 race date. No binary bytes received or parsed."
       }
     },
     {
@@ -106,7 +106,7 @@
     {
       "order": 123,
       "name": "The Canyons Endurance Runs by UTMB",
-      "gpxStatus": "Official 2027 Canyons event confirms 100M 161/5550, 100K 100/3750, 50K 50/1700 and 25K 25/850. Official 100M, 100K and 50K pages explicitly state their downloadable GPX is the 2026 file and subject to change for 2027. Keep those 2026 GPX files as historical versions; do not present as current 2027. Direct file bytes have not been parsed.",
+      "gpxStatus": "Official 2027 Canyons event confirms 100M 161/5550, 100K 100/3750, 50K 50/1700 and 25K 25/850. Official 100M, 100K, 50K and 25K pages identify their linked GPX as 2026 files and subject to change for 2027. Keep all four 2026 GPX files as historical versions; do not present as current 2027. Direct file bytes have not been parsed.",
       "source": "https://canyons.utmb.world/races",
       "followUp": "Monitor each of the four official course pages for a new 2027-versioned GPX. When published, download and parse the file, compare track distance/ascent and retain the 2026 files separately.",
       "retentionRule": "Do not delete or overwrite 2026 GPX versions. Add verified 2027 files as separate versions only after the actual files are downloaded and checked.",
@@ -140,17 +140,17 @@
             "racePage": "https://canyons.utmb.world/races/25k"
           }
         ],
-        "gpxVersionFinding": "Official 100M, 100K and 50K 2027 race pages explicitly warn that linked GPX is the 2026 file and subject to change for 2027. 100M page last updated 21 Apr 2026; 100K page last updated 21 Apr 2026; 50K page last updated 14 Apr 2026.",
+        "gpxVersionFinding": "Official 100M, 100K, 50K and 25K course pages warn that their linked GPX files are the 2026 edition and subject to change for 2027. The 25K page's revision history records addition of a 2026 25K GPX file (last updated 15 March 2026).",
         "note": "The four 2027 race distances and ascent figures are current official advertised values; 2026 GPX files are explicitly not approved as 2027 course files."
       },
       "gpxTechnicalChecks": {
-        "status": "official-2026-gpx-version-warning-confirmed",
+        "status": "official-2026-gpx-version-warning-confirmed-for-all-four-distances",
         "downloadedFiles": 0,
         "xmlParsed": false,
         "trackpointCount": null,
         "calculatedDistanceKm": null,
         "calculatedElevationHm": null,
-        "note": "Wait for new 2027 GPX uploads; the linked 2026 files are explicitly subject to change and must remain historical only."
+        "note": "All four 2026 files remain historical only. No binary bytes received or parsed."
       }
     },
     {
