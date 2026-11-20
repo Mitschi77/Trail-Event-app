@@ -29,6 +29,8 @@ jobs:
       - name: Run app syntax and regression tests
         run: npm run test:syntax
       - name: Check Python workflow scripts
-        run: python3 -m py_compile scripts/update_event_dates.py scripts/validate_event_data.py scripts/submit_event_date_proposals.py
+        run: python3 -m py_compile scripts/update_event_dates.py scripts/validate_event_data.py scripts/submit_event_date_proposals.py scripts/event_source_status.py scripts/test_event_source_status.py
+      - name: Test official event source health classification
+        run: python3 -m unittest scripts/test_event_source_status.py
       - name: Validate event and route data, including date-feed route IDs
         run: python3 scripts/validate_event_data.py
