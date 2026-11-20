@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-20T23:15:00Z",
+  "updatedAt": "2026-11-20T23:30:00Z",
   "schemaVersion": 3,
   "events": {
     "la-corsa-della-bora": {
@@ -9870,9 +9870,15 @@
     },
     "koasamarsch-ebbs-2027": {
       "eventId": "koasamarsch-ebbs-2027",
-      "checkedAt": "2026-11-20T23:15:00Z",
+      "checkedAt": "2026-11-20T23:30:00Z",
       "status": "verified",
-      "sources": [],
+      "sources": [
+        {
+          "url": "https://www.koasamarsch.at/",
+          "status": "read",
+          "verification": "official-2027-event-information"
+        }
+      ],
       "eventPeriod": {
         "startDate": "2027-06-12",
         "endDate": "2027-06-12",
@@ -9903,9 +9909,50 @@
     },
     "zugspitz-ultra-trail-by-utmb-2027": {
       "eventId": "zugspitz-ultra-trail-by-utmb-2027",
-      "checkedAt": "2026-11-20T23:15:00Z",
+      "checkedAt": "2026-11-20T23:30:00Z",
       "status": "verified",
-      "sources": [],
+      "sources": [
+        {
+          "url": "https://zugspitz.utmb.world/de",
+          "status": "read",
+          "verification": "official-2027-event-information"
+        },
+        {
+          "url": "https://zugspitz.utmb.world/de/races/ZUT100",
+          "status": "read",
+          "verification": "official-2027-event-information"
+        },
+        {
+          "url": "https://zugspitz.utmb.world/de/races/ultratrail",
+          "status": "read",
+          "verification": "official-2027-event-information"
+        },
+        {
+          "url": "https://zugspitz.utmb.world/de/races/ehrwald-trail",
+          "status": "read",
+          "verification": "official-2027-event-information"
+        },
+        {
+          "url": "https://zugspitz.utmb.world/de/races/leutasch-trail",
+          "status": "read",
+          "verification": "official-2027-event-information"
+        },
+        {
+          "url": "https://zugspitz.utmb.world/de/races/mittenwald-trail",
+          "status": "read",
+          "verification": "official-2027-event-information"
+        },
+        {
+          "url": "https://zugspitz.utmb.world/de/races/garmisch-partenkirchen-trail",
+          "status": "read",
+          "verification": "official-2027-event-information"
+        },
+        {
+          "url": "https://zugspitz.utmb.world/de/races/grainau-trail",
+          "status": "read",
+          "verification": "official-2027-event-information"
+        }
+      ],
       "eventPeriod": {
         "startDate": "2027-06-17",
         "endDate": "2027-06-19",
@@ -9951,9 +9998,30 @@
     },
     "black-forest-ultra-trail-run-2027": {
       "eventId": "black-forest-ultra-trail-run-2027",
-      "checkedAt": "2026-11-20T23:15:00Z",
+      "checkedAt": "2026-11-20T23:30:00Z",
       "status": "verified",
-      "sources": [],
+      "sources": [
+        {
+          "url": "https://www.ultra-trailrun.de/",
+          "status": "read",
+          "verification": "official-2027-event-information"
+        },
+        {
+          "url": "https://www.ultra-trailrun.de/strecken/",
+          "status": "read",
+          "verification": "official-2027-event-information"
+        },
+        {
+          "url": "https://www.ultra-trailrun.de/faq/",
+          "status": "read",
+          "verification": "official-2027-event-information"
+        },
+        {
+          "url": "https://www.ultra-trailrun.de/programm/",
+          "status": "read",
+          "verification": "official-2027-event-information"
+        }
+      ],
       "eventPeriod": {
         "startDate": "2027-09-17",
         "endDate": "2027-09-19",
@@ -9990,13 +10058,30 @@
           "date": "2027-09-18",
           "verified": true
         }
-      }
+      },
+      "note": "2027-Distanzen nur als Bereiche veröffentlicht; GPX und finale Höhenmeter folgen. 2026-Streckenwerte nicht als bestätigte 2027-Werte übernehmen."
     },
     "xterra-trail-des-balcons-dazur-mandelieu-2027": {
       "eventId": "xterra-trail-des-balcons-dazur-mandelieu-2027",
-      "checkedAt": "2026-11-20T23:15:00Z",
+      "checkedAt": "2026-11-20T23:30:00Z",
       "status": "verified",
-      "sources": [],
+      "sources": [
+        {
+          "url": "https://xterraplanet.com/event/xterra-trails-des-balcons-dazur",
+          "status": "read",
+          "verification": "official-2027-event-information"
+        },
+        {
+          "url": "https://xterraplanet.com/race/xterra-trails-des-balcons-dazur-45k-trail-des-balcons-dazur",
+          "status": "read",
+          "verification": "official-2027-event-information"
+        },
+        {
+          "url": "https://xterraplanet.com/race/xterra-trails-des-balcons-dazur-78k-ultra-trail-des-balcons-dazur",
+          "status": "read",
+          "verification": "official-2027-event-information"
+        }
+      ],
       "eventPeriod": {
         "startDate": "2027-04-10",
         "endDate": "2027-04-11",
@@ -10027,9 +10112,15 @@
     },
     "runthrough-trails-berchtesgaden-2027": {
       "eventId": "runthrough-trails-berchtesgaden-2027",
-      "checkedAt": "2026-11-20T23:15:00Z",
+      "checkedAt": "2026-11-20T23:30:00Z",
       "status": "verified",
-      "sources": [],
+      "sources": [
+        {
+          "url": "https://www.runthroughtrails.com/berchtesgaden",
+          "status": "read",
+          "verification": "official-2027-event-information"
+        }
+      ],
       "eventPeriod": {
         "startDate": "2027-10-16",
         "endDate": "2027-10-16",
@@ -10055,9 +10146,15 @@
     },
     "runthrough-brecon-beacons-2027": {
       "eventId": "runthrough-brecon-beacons-2027",
-      "checkedAt": "2026-11-20T23:15:00Z",
+      "checkedAt": "2026-11-20T23:30:00Z",
       "status": "verified",
-      "sources": [],
+      "sources": [
+        {
+          "url": "https://www.runthroughtrails.com/brecon-beacons",
+          "status": "read",
+          "verification": "official-2027-event-information"
+        }
+      ],
       "eventPeriod": {
         "startDate": "2027-08-07",
         "endDate": "2027-08-07",
@@ -10078,9 +10175,20 @@
     },
     "runthrough-trails-interlaken-2027": {
       "eventId": "runthrough-trails-interlaken-2027",
-      "checkedAt": "2026-11-20T23:15:00Z",
+      "checkedAt": "2026-11-20T23:30:00Z",
       "status": "verified",
-      "sources": [],
+      "sources": [
+        {
+          "url": "https://www.runthroughtrails.com/interlaken",
+          "status": "read",
+          "verification": "official-2027-event-information"
+        },
+        {
+          "url": "https://www.runthroughtrails.com/events",
+          "status": "read",
+          "verification": "official-2027-event-information"
+        }
+      ],
       "eventPeriod": {
         "startDate": "2027-08-07",
         "endDate": "2027-08-07",
@@ -10091,42 +10199,60 @@
           "routeId": "interlaken-27k-27-1433",
           "date": "2027-08-07",
           "verified": true
+        },
+        "1": {
+          "routeId": "interlaken-16k-16-470",
+          "date": "2027-08-07",
+          "verified": true
         }
       }
     },
     "runthrough-trails-engelberg-2027": {
       "eventId": "runthrough-trails-engelberg-2027",
-      "checkedAt": "2026-11-20T23:15:00Z",
+      "checkedAt": "2026-11-20T23:30:00Z",
       "status": "verified",
-      "sources": [],
+      "sources": [
+        {
+          "url": "https://www.runthroughtrails.com/engelberg",
+          "status": "read",
+          "verification": "official-2027-event-information"
+        }
+      ],
       "eventPeriod": {
         "startDate": "2027-08-21",
-        "endDate": "2027-08-21",
-        "verified": true
+        "endDate": "2027-08-22",
+        "verified": false
       },
       "routes": {
         "0": {
           "routeId": "engelberg-25k-25-938",
-          "date": "2027-08-21",
-          "verified": true
+          "date": null,
+          "verified": false
         },
         "1": {
           "routeId": "engelberg-56k-56-2501",
-          "date": "2027-08-21",
-          "verified": true
+          "date": null,
+          "verified": false
         },
         "2": {
           "routeId": "engelberg-100k-100-5393",
-          "date": "2027-08-21",
-          "verified": true
+          "date": null,
+          "verified": false
         }
-      }
+      },
+      "note": "Offizielle Seite widerspricht sich: Eventkopf 21.08.2027, Detailprogramm nennt Renntag 22.08.2027; Mittelstrecke als 56K bzw. 59K. Renntage und Mittelstreckendistanz vor Veröffentlichung mit Veranstalter klären."
     },
     "runthrough-tittesworth-water-2027": {
       "eventId": "runthrough-tittesworth-water-2027",
-      "checkedAt": "2026-11-20T23:15:00Z",
+      "checkedAt": "2026-11-20T23:30:00Z",
       "status": "verified",
-      "sources": [],
+      "sources": [
+        {
+          "url": "https://www.runthroughtrails.com/tittesworth-water",
+          "status": "read",
+          "verification": "official-2027-event-information"
+        }
+      ],
       "eventPeriod": {
         "startDate": "2027-07-04",
         "endDate": "2027-07-04",
@@ -10152,9 +10278,15 @@
     },
     "runthrough-south-downs-2027": {
       "eventId": "runthrough-south-downs-2027",
-      "checkedAt": "2026-11-20T23:15:00Z",
+      "checkedAt": "2026-11-20T23:30:00Z",
       "status": "verified",
-      "sources": [],
+      "sources": [
+        {
+          "url": "https://www.runthroughtrails.com/south-downs",
+          "status": "read",
+          "verification": "official-2027-event-information"
+        }
+      ],
       "eventPeriod": {
         "startDate": "2027-08-01",
         "endDate": "2027-08-01",
