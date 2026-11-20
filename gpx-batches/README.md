@@ -19,7 +19,14 @@ In der Streckendetailansicht:
 3. Falls der Veranstalter-Server den Browser-Download wegen CORS blockiert, GPX über den Download-Link speichern und anschließend über **Daten ergänzen / bearbeiten → GPX-Datei für Höhenprofil** importieren.
 
 ## Wichtige Abgrenzung
-Die GPX-URLs und Importfunktion sind in der App hinterlegt. Die GPX-Dateien selbst wurden in diesem Arbeitsschritt **nicht als Dateien in das GitHub-Repository kopiert**. Die verfügbaren GitHub- und Laufzeitwerkzeuge konnten die externen GPX-Dateien nicht direkt herunterladen; deshalb wird kein Download oder Import als bereits abgeschlossen ausgegeben. Veraltete 2025/2026-Tracks wurden ausdrücklich als veraltet markiert oder aus dem direkten Import entfernt. Unversionierte Kandidaten sind als solche gekennzeichnet.
+Die GPX-URLs und Importfunktion sind in der App hinterlegt. Die GPX-Dateien selbst wurden in diesem Arbeitsschritt **nicht als Dateien in das GitHub-Repository kopiert**. Die verfügbaren GitHub- und Laufzeitwerkzeuge konnten die externen GPX-Dateien nicht direkt herunterladen; deshalb wird kein Download oder Import als bereits abgeschlossen ausgegeben. Unversionierte Kandidaten sind als solche gekennzeichnet.
+
+## Versions- und Aufbewahrungsregel
+- Eine vorhandene ältere GPX-Datei bleibt als **letzte verfügbare Streckenversion** erhalten, bis eine neue offizielle GPX-Datei veröffentlicht und geprüft wurde.
+- Neue offizielle Dateien werden als neue Version ergänzt; ältere Dateien werden weder überschrieben noch gelöscht.
+- Jahrgang, Quelle und Prüfstatus müssen an jeder Version erkennbar bleiben.
+- Solange keine neue offizielle Datei vorliegt, bleibt die ältere Datei verfügbar. Falls eine Streckenänderung bekannt ist oder vermutet wird, erhält sie zusätzlich den Hinweis **historische Strecke – Übereinstimmung mit aktueller Route nicht bestätigt**.
+- Eine Einschränkung des Veranstalters zur Nutzung oder Weitergabe bleibt verbindlich; sie wird nicht durch diese Aufbewahrungsregel aufgehoben.
 
 ## Sicherheitsregel
 Nur Dateien mit passendem Veranstalter-/Jahresstand als aktuelle Strecke übernehmen. Bei GPX-Links mit altem Jahr, unklarer Distanz oder noch nicht finaler Strecke zuerst Veranstalterseite prüfen.
