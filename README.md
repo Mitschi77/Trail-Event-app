@@ -1,2 +1,0 @@
-# Trail-Event-app
-Trail
