@@ -129,7 +129,7 @@ assert.ok(html.includes("result.messages?.recordMesgs"), "FIT parser must read G
 assert.ok(html.includes("result.messages?.sessionMesgs"), "FIT parser must read Garmin sessionMesgs");
 assert.ok(html.includes("Number(p.positionLat)*180/2147483648") && html.includes("Number(p.positionLong)*180/2147483648"), "FIT semicircle coordinates must be converted to degrees");
 
-assert.ok(html.includes("manualIndex=runAttempts[key].findIndex"), "Activity imports must detect existing manual runs");
+assert.ok(html.includes("existing=Array.isArray(runAttempts[key])?runAttempts[key]:[]") && html.includes("manualIndex=existing.findIndex"), "Activity imports must detect existing manual runs without mutating source data before storage");
 assert.ok(html.includes("Ergebnis, Platz und Bewertung bleiben erhalten."), "Activity import must preserve manual race metadata");
 assert.ok(html.includes("sourceFile:file.name,sourceFileSize:file.size,sourceFileHash:fileHash,updatedAt:Date.now()"), "Merged activity imports must retain their duplicate-detection fingerprint");
 
