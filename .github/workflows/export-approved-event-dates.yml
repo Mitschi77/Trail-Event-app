@@ -26,9 +26,6 @@ jobs:
         with:
           python-version: '3.x'
       - name: Fetch owner-approved date proposals using GitHub OIDC
-        env:
-          ACTIONS_ID_TOKEN_REQUEST_URL: ${{ env.ACTIONS_ID_TOKEN_REQUEST_URL }}
-          ACTIONS_ID_TOKEN_REQUEST_TOKEN: ${{ env.ACTIONS_ID_TOKEN_REQUEST_TOKEN }}
         run: |
           python3 - <<'PY'
           import json, os, urllib.request
