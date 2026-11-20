@@ -144,6 +144,15 @@ assert.ok(html.includes("Jetzt übernehmen?"), "Activity import preview must req
 assert.ok(html.includes("async function activityFileFingerprint(file)"), "Activity imports must fingerprint files for duplicate detection");
 assert.ok(html.includes("sourceFileHash:fileHash"), "Imported activity records must persist their file fingerprint");
 assert.ok(html.includes("const data=await parseActivityTrack(file),route=event.routes[ri]"), "Route file import must await async FIT/TCX parsing");
+const organizerRestrictedRoute = routeById("linz55-55-1-1429");
+assert.equal(organizerRestrictedRoute?.gpxAvailability, "organizer-download-restricted", "Donautrail route must retain its explicit organizer GPX restriction");
+assert.ok(organizerRestrictedRoute?.gpxDownloadUrl, "Restricted source URL remains available for audit but must not enable import");
+assert.match(html, /function routeGpxIsOrganizerRestricted\\(route\\)\\{[^}]*organizer-download-restricted[^}]*\\}/, "Organizer GPX restriction helper must recognize the real database status");
+assert.ok(html.includes("return !routeGpxIsOrganizerRestricted(route)&&!!("), "Restricted routes must not be counted as GPX-downloadable");
+assert.ok(html.includes("if(routeGpxIsOrganizerRestricted({gpxAvailability:status}))return false"), "Organizer restriction must hide remote GPX import links");
+assert.ok(html.includes("if(routeGpxIsOrganizerRestricted(route))throw new Error("), "Organizer restriction must block local route GPX imports");
+assert.ok(html.includes("if(routeGpxIsOrganizerRestricted(route)){alert("), "Organizer restriction must block direct remote route GPX imports");
+
 assert.ok(html.includes("async function importGpxForRoute(id,ri,input)"), "Planned route detail import must support asynchronous FIT/TCX parsing");
 assert.ok(html.includes("const data=await parseActivityTrack(file);if(data.track.length<2)"), "Planned route detail import must await parsed track data");
 
