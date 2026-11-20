@@ -6233,10 +6233,20 @@
     },
     "murowana-goslina-polmaraton-2027": {
       "eventId": "murowana-goslina-polmaraton-2027",
-      "checkedAt": "2026-11-20T00:02:00+01:00",
-      "status": "unconfirmed",
-      "sources": [],
-      "eventPeriod": null,
+      "checkedAt": "2026-11-20",
+      "status": "verified",
+      "sources": [
+        {
+          "url": "https://ckis.murowana-goslina.pl/kalendarz/murowana-goslina-polmaraton-2027/",
+          "status": "read",
+          "verification": "official-organizer-calendar-2027"
+        }
+      ],
+      "eventPeriod": {
+        "startDate": "2027-03-21",
+        "endDate": "2027-03-21",
+        "verified": true
+      },
       "routes": {}
     },
     "semimaraton-iasi-2027": {
