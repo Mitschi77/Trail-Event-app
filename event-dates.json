@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-21T01:10:00Z",
+  "updatedAt": "2026-11-21T01:20:00Z",
   "schemaVersion": 3,
   "events": {
     "la-corsa-della-bora": {
@@ -13229,6 +13229,252 @@
         "0": {
           "routeId": "last-light-backyard-2027-loop",
           "date": "2027-03-06",
+          "verified": true
+        }
+      }
+    },
+    "bust-spreewald-2027": {
+      "eventId": "bust-spreewald-2027",
+      "checkedAt": "2026-11-21T01:20:00Z",
+      "status": "verified",
+      "sources": [
+        {
+          "url": "https://b-u-s-t.de/",
+          "status": "read",
+          "verification": "official-2027-event-information"
+        }
+      ],
+      "eventPeriod": {
+        "startDate": "2027-01-16",
+        "endDate": "2027-01-16",
+        "verified": true
+      },
+      "routes": {
+        "0": {
+          "routeId": "bust-spreewald-2027-loop",
+          "date": "2027-01-16",
+          "verified": true
+        }
+      }
+    },
+    "psyland-backyard-2027": {
+      "eventId": "psyland-backyard-2027",
+      "checkedAt": "2026-11-21T01:20:00Z",
+      "status": "verified",
+      "sources": [
+        {
+          "url": "https://www.insane-backyard-ultra.com/de/rennen/",
+          "status": "read",
+          "verification": "official-2027-event-information"
+        },
+        {
+          "url": "https://www.insane-backyard-ultra.com/de/haeufige-fragen/",
+          "status": "read",
+          "verification": "official-2027-event-information"
+        }
+      ],
+      "eventPeriod": {
+        "startDate": "2027-07-10",
+        "endDate": "2027-07-11",
+        "verified": true
+      },
+      "routes": {
+        "0": {
+          "routeId": "psyland-backyard-2027-loop",
+          "date": "2027-07-10",
+          "verified": true
+        },
+        "1": {
+          "routeId": "psyland-backyard-2027-night-loop",
+          "date": "2027-07-10",
+          "verified": true
+        }
+      },
+      "note": "Tages- und Nachtrunde sind beide 6,706 km; Tagesrunde 160 hm, Nachtrunde 60 hm. Start 10.07.2027 um 12:00."
+    },
+    "devils-loop-backyard-2027": {
+      "eventId": "devils-loop-backyard-2027",
+      "checkedAt": "2026-11-21T01:20:00Z",
+      "status": "verified",
+      "sources": [
+        {
+          "url": "https://devils-loop.de/",
+          "status": "read",
+          "verification": "official-2027-event-information"
+        }
+      ],
+      "eventPeriod": {
+        "startDate": "2027-09-18",
+        "endDate": "2027-09-19",
+        "verified": true
+      },
+      "routes": {
+        "0": {
+          "routeId": "devils-loop-backyard-2027-loop",
+          "date": "2027-09-18",
+          "verified": true
+        }
+      }
+    },
+    "friedrichsgaber-backyard-2027": {
+      "eventId": "friedrichsgaber-backyard-2027",
+      "checkedAt": "2026-11-21T01:20:00Z",
+      "status": "verified",
+      "sources": [
+        {
+          "url": "https://statistik.d-u-v.org/eventdetail.php?event=135550",
+          "status": "read",
+          "verification": "official-2027-event-information"
+        }
+      ],
+      "eventPeriod": {
+        "startDate": "2027-10-15",
+        "endDate": "2027-10-16",
+        "verified": true
+      },
+      "routes": {
+        "0": {
+          "routeId": "friedrichsgaber-backyard-2027-loop",
+          "date": "2027-10-15",
+          "verified": true
+        }
+      },
+      "note": "DUV bestätigt Datum, Start 19:55 und 24h-Format; Streckenbeschreibung wird zeitnah bekanntgegeben, deshalb keine Rundendistanz übernommen."
+    },
+    "trailrunning-squad-backyard-2027": {
+      "eventId": "trailrunning-squad-backyard-2027",
+      "checkedAt": "2026-11-21T01:20:00Z",
+      "status": "verified",
+      "sources": [
+        {
+          "url": "https://www.trailrunningsquad.de/backyard-ultra/",
+          "status": "read",
+          "verification": "official-2027-event-information"
+        }
+      ],
+      "eventPeriod": {
+        "startDate": "2027-09-18",
+        "endDate": "2027-09-18",
+        "verified": true
+      },
+      "routes": {
+        "0": {
+          "routeId": "trailrunning-squad-backyard-2027-loop",
+          "date": "2027-09-18",
+          "verified": true
+        }
+      },
+      "note": "Offizielle Seite nennt widersprüchliche Startzeiten 10:00 und 18:00; Startzeit bleibt offen."
+    },
+    "tcw-backyard-ultra-2027": {
+      "eventId": "tcw-backyard-ultra-2027",
+      "checkedAt": "2026-11-21T01:20:00Z",
+      "status": "unconfirmed",
+      "sources": [
+        {
+          "url": "https://tcw-backyard-ultra.de/",
+          "status": "read",
+          "verification": "secondary-calendar-only"
+        },
+        {
+          "url": "https://backyardultra.de/veranstaltung/6-tcw-backyard-ultra/",
+          "status": "read",
+          "verification": "secondary-calendar-only"
+        }
+      ],
+      "eventPeriod": {
+        "startDate": "2027-09-18",
+        "endDate": "2027-09-18",
+        "verified": false
+      },
+      "routes": {
+        "0": {
+          "routeId": "tcw-backyard-ultra-2027-loop",
+          "date": "2027-09-18",
+          "verified": false
+        }
+      },
+      "note": "Veranstalterseite zeigt noch alte Ausgabe; 2027-Termin ist vorläufig."
+    },
+    "last-rabbit-standing-2027": {
+      "eventId": "last-rabbit-standing-2027",
+      "checkedAt": "2026-11-21T01:20:00Z",
+      "status": "verified",
+      "sources": [
+        {
+          "url": "https://backyardultra.de/veranstaltung/last-rabbit-standing-2027/",
+          "status": "read",
+          "verification": "official-2027-event-information"
+        }
+      ],
+      "eventPeriod": {
+        "startDate": "2027-04-03",
+        "endDate": "2027-04-03",
+        "verified": true
+      },
+      "routes": {
+        "0": {
+          "routeId": "last-rabbit-standing-2027-loop",
+          "date": "2027-04-03",
+          "verified": true
+        }
+      }
+    },
+    "westerwaelder-backyard-ultra-2027": {
+      "eventId": "westerwaelder-backyard-ultra-2027",
+      "checkedAt": "2026-11-21T01:20:00Z",
+      "status": "verified",
+      "sources": [
+        {
+          "url": "https://backyardultra.de/veranstaltung/2-westerwaelder-backyard-ultra/",
+          "status": "read",
+          "verification": "official-2027-event-information"
+        },
+        {
+          "url": "https://katjaslaufzeit.de/westerwaelder-backyard-ultra-2027-ausschreibung/",
+          "status": "read",
+          "verification": "official-2027-event-information"
+        }
+      ],
+      "eventPeriod": {
+        "startDate": "2027-05-07",
+        "endDate": "2027-05-10",
+        "verified": true
+      },
+      "routes": {
+        "0": {
+          "routeId": "westerwaelder-backyard-ultra-2027-loop",
+          "date": "2027-05-07",
+          "verified": true
+        }
+      },
+      "note": "DUV/Veranstalter korrigieren die Vorschlagswerte auf 6,706 km/71 hm je Runde; 34h Gesamtformat."
+    },
+    "lafferde-loop-challenge-2027": {
+      "eventId": "lafferde-loop-challenge-2027",
+      "checkedAt": "2026-11-21T01:20:00Z",
+      "status": "verified",
+      "sources": [
+        {
+          "url": "https://run-llc.de/ausschreibung",
+          "status": "read",
+          "verification": "official-2027-event-information"
+        },
+        {
+          "url": "https://backyardultra.de/veranstaltung/lafferde-loop-challenge-2027/",
+          "status": "read",
+          "verification": "official-2027-event-information"
+        }
+      ],
+      "eventPeriod": {
+        "startDate": "2027-05-15",
+        "endDate": "2027-05-15",
+        "verified": true
+      },
+      "routes": {
+        "0": {
+          "routeId": "lafferde-loop-challenge-2027-loop",
+          "date": "2027-05-15",
           "verified": true
         }
       }
