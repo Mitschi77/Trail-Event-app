@@ -3327,6 +3327,11 @@
           "url": "https://wildstrubel.utmb.world/races/Wild-adaptive-run",
           "status": "read",
           "verification": "official-2027-route-details"
+        },
+        {
+          "url": "https://wildstrubel.utmb.world/races/wild-glacier-marathon",
+          "status": "read",
+          "verification": "official-2027-route-details"
         }
       ],
       "eventPeriod": {
