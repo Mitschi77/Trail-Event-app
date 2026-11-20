@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-20T20:32:50.524Z",
+  "updatedAt": "2026-11-20T20:36:00Z",
   "schemaVersion": 3,
   "events": {
     "la-corsa-della-bora": {
@@ -1377,6 +1377,36 @@
           "routeId": "hochkoenig-mini-ultraks-2027",
           "date": "2027-06-04",
           "verified": true
+        },
+        "6": {
+          "routeId": "hochkoenig-mini-kids-2027",
+          "date": "2027-06-04",
+          "verified": true
+        },
+        "7": {
+          "routeId": "hochkoenig-mini-junior-2027",
+          "date": "2027-06-04",
+          "verified": true
+        },
+        "8": {
+          "routeId": "hochkoenig-mini-youth-2027",
+          "date": "2027-06-04",
+          "verified": true
+        },
+        "9": {
+          "routeId": "hochkoenig-hk-sprint-10-310-2027",
+          "date": "2027-06-05",
+          "verified": true
+        },
+        "10": {
+          "routeId": "hochkoenig-vertical-5-9-1080-2027",
+          "date": "2027-06-04",
+          "verified": true
+        },
+        "11": {
+          "routeId": "hochkoenig-team-trail-3-6-120-2027",
+          "date": "2027-06-04",
+          "verified": true
         }
       }
     },
@@ -1524,6 +1554,11 @@
         "verified": true
       },
       "routes": {
+        "0": {
+          "routeId": "marathon-trail-49-8-2322",
+          "date": "2027-06-05",
+          "verified": true
+        },
         "1": {
           "routeId": "oetscher-speed-trail-2027",
           "date": "2027-06-05",
@@ -1856,6 +1891,11 @@
         },
         "4": {
           "routeId": "kaiserkrone-medium-20-7-1290",
+          "date": "2027-06-26",
+          "verified": true
+        },
+        "5": {
+          "routeId": "kaiserkrone-short-8-3-490-2027",
           "date": "2027-06-26",
           "verified": true
         }
@@ -2330,6 +2370,36 @@
         },
         "2": {
           "routeId": "gletscher-trail-26k-25-8-1900",
+          "date": "2027-07-24",
+          "verified": true
+        },
+        "4": {
+          "routeId": "glacier-top-mountain-run-2027",
+          "date": "2027-07-23",
+          "verified": true
+        },
+        "5": {
+          "routeId": "glacier-trail-14k-2027",
+          "date": "2027-07-24",
+          "verified": true
+        },
+        "6": {
+          "routeId": "glacier-widi-200m-2027",
+          "date": "2027-07-24",
+          "verified": true
+        },
+        "7": {
+          "routeId": "glacier-widi-400m-2027",
+          "date": "2027-07-24",
+          "verified": true
+        },
+        "8": {
+          "routeId": "glacier-widi-600m-2027",
+          "date": "2027-07-24",
+          "verified": true
+        },
+        "9": {
+          "routeId": "glacier-widi-1500m-2027",
           "date": "2027-07-24",
           "verified": true
         }
