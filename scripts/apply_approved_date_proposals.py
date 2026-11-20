@@ -93,6 +93,10 @@ def apply_proposals(feed: dict, proposals: list[dict]) -> tuple[dict, dict]:
                 continue
             period = event.setdefault("eventPeriod", {})
             current = period.get(field)
+            if current == new_value:
+                seen_mutations.add(target_key)
+                report["skipped"].append({"id": proposal_id, "reason": "already-current"})
+                continue
             if current != payload.get("oldValue"):
                 report["conflicts"].append({"id": proposal_id, "reason": "old-value-mismatch", "current": current, "expected": payload.get("oldValue")})
                 continue
@@ -114,8 +118,12 @@ def apply_proposals(feed: dict, proposals: list[dict]) -> tuple[dict, dict]:
                     continue
                 route = matches[0]
             current = route.get("date")
+            if current == new_value:
+                seen_mutations.add(target_key)
+                report["skipped"].append({"id": proposal_id, "reason": "already-current"})
+                continue
             if current != payload.get("oldValue"):
-                report.conflicts.append({"id": proposal_id, "reason": "old-value-mismatch", "current": current, "expected": payload.get("oldValue")})
+                report["conflicts"].append({"id": proposal_id, "reason": "old-value-mismatch", "current": current, "expected": payload.get("oldValue")})
                 continue
             route["date"] = new_value
             route["verified"] = True
