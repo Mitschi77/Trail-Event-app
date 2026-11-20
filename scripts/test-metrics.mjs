@@ -10,6 +10,18 @@ assert.ok(eventDataMatch, "Event data must remain parseable");
 const appEvents = JSON.parse(eventDataMatch[1]);
 const appRoutes = appEvents.flatMap(event => event.routes || []);
 const routeById = id => appRoutes.find(route => route.id === id);
+
+const distanceFilterStart = html.indexOf("function routeMatchesDistanceFilter(route,filter){");
+const distanceFilterEnd = html.indexOf("function routeIsUtmbRelated", distanceFilterStart);
+assert.ok(distanceFilterStart >= 0 && distanceFilterEnd > distanceFilterStart, "Distance filter renderer boundaries must be present");
+const routeMatchesDistanceFilter = new Function("return (" + html.slice(distanceFilterStart, distanceFilterEnd).trim() + ")")();
+assert.equal(routeMatchesDistanceFilter({km:0.8,excludeFromDistanceFilter:true},"lt22"), false, "Kids race must not satisfy the main distance filter");
+assert.equal(routeMatchesDistanceFilter({km:0.8,excludeFromDistanceFilter:true},""), true, "Youth race remains visible without a distance filter");
+assert.equal(routeMatchesDistanceFilter({km:14},"lt22"), true, "Regular trail distance remains filterable");
+assert.equal(routeMatchesDistanceFilter({km:28},"lt22"), false, "Youth-only distances must not lower the main event distance");
+assert.equal(appEvents.find(event=>event.id==="stubai-ultra-trail")?.minKm,14);
+assert.equal(appEvents.find(event=>event.id==="trai-verbier-st-bernhard")?.minKm,28);
+
 const serializedRecordById = id => {
   const index = html.indexOf('"id":"' + id + '"');
   if (index < 0) return "";
