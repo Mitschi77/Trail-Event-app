@@ -92,9 +92,11 @@ assert.ok(raceTools.includes("function segments(r,id,ri)"), "GPX elevation segme
 
 assert.ok(raceTools.includes("Verpflegungs-Erinnerungen"), "Race strategy must calculate fueling reminders");
 
-const fuelScheduleMatch = html.match(/function renderFuelSchedule\(r,d\)\{[\s\S]*?(?=function renderRaceStrategy)/);
-assert.ok(fuelScheduleMatch, "Fueling schedule must remain a pure, testable renderer");
-const renderFuelSchedule = new Function("return (" + fuelScheduleMatch[0] + ")")();
+const fuelScheduleStart = html.indexOf("function renderFuelSchedule(r,d){");
+const fuelScheduleEnd = html.indexOf("\\nfunction renderRaceStrategy", fuelScheduleStart);
+assert.ok(fuelScheduleStart >= 0 && fuelScheduleEnd > fuelScheduleStart, "Fueling renderer boundaries must be present");
+const fuelScheduleSource = html.slice(fuelScheduleStart, fuelScheduleEnd).trim();
+const renderFuelSchedule = new Function("return (" + fuelScheduleSource + ")")();
 const noFuelPlan = renderFuelSchedule({km:50}, {pace:"Infinity", fuel:60});
 assert.match(noFuelPlan, /bitte Distanz und Zieltempo eintragen/);
 const minFuel = renderFuelSchedule({km:50}, {pace:10, fuel:-5});
