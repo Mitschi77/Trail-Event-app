@@ -8,7 +8,7 @@
     {
       "order": 61,
       "name": "Obertauern Trailrun Summit",
-      "gpxStatus": "Seven direct GPX URLs remain saved as candidates; official organizer news confirms all OTS tracks are downloadable through Outdooractive. Direct file bytes and track content have not yet been independently parsed. The previous map-only classification for Extreme 100 and Panorama is superseded.",
+      "gpxStatus": "Official organizer confirms all OTS tracks are downloadable as GPX via Outdooractive. Seven direct candidate URLs remain saved, but they have not been downloaded or parsed in this environment. Direct GPX URLs/Outdooractive tour IDs for Extreme 100 and Panorama still need to be extracted. Family Trail has two untimed variants; official ascent/descent is 106/34 hm (3.1 km) and 305/90 hm (5.4 km).",
       "downloads": [
         {
           "route": "Endurance Trail 2 Summits",
@@ -39,12 +39,9 @@
           "url": "https://www.trailrun-summit.com/wp-content/uploads/Family-Trail-3K-2027.gpx"
         }
       ],
-      "mapOnly": [
-        "Extreme 100 Trail 8 Summits",
-        "Panorama Trail 2 Summits"
-      ],
+      "mapOnly": [],
       "source": "https://www.trailrun-summit.com/",
-      "followUp": "All official Outdooractive route entries and the seven saved direct GPX URLs one by one compare, download and parse; add any missing 2027 files without overwriting older versions.",
+      "followUp": "Extract the Outdooractive route IDs for all 7 timed competitions and both Family Trail variants, including Extreme 100 and Panorama; then download and parse the actual GPX XML. Do not mark files technically checked until bytes and trackpoints are inspected.",
       "verified2027EventInfo": {
         "source": "https://www.trailrun-summit.com/",
         "date": "2027-07-09/2027-07-11",
@@ -90,13 +87,19 @@
               3.1,
               5.4
             ],
-            "elevationHm": [
-              34,
-              90
-            ]
+            "elevationHm": {
+              "up": [
+                106,
+                305
+              ],
+              "down": [
+                34,
+                90
+              ]
+            }
           }
         ],
-        "note": "Offizielle 2027-Seite bestätigt neun Wettkampf- bzw. Familienformate (Family Trail mit zwei Distanzen). Veranstalter verweist für herunterladbare Tracks auf Outdooractive. Die sieben bereits gespeicherten direkten GPX-URLs sind getrennt zu prüfen; die Aussage 'zwei Rennen nur als Karte' ist nicht mehr belastbar und wurde durch die offizielle Download-Aussage ersetzt."
+        "note": "Offizielle Veranstalterseite bestätigt sieben zeitgemessene Wettbewerbe plus den unzeitgemessenen Family Trail mit zwei Distanzen. Alle Tracks können laut Veranstalter über Outdooractive als GPX heruntergeladen werden. Die zuvor gespeicherten sieben Direktlinks decken nicht alle Strecken ab; für Extreme 100 und Panorama fehlen weiterhin die konkreten Outdooractive-Tour-IDs/Direktdateien."
       }
     },
     {
