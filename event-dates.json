@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-20T08:12:00.000Z",
+  "updatedAt": "2026-11-20T21:00:00.000Z",
   "schemaVersion": 3,
   "events": {
     "la-corsa-della-bora": {
@@ -324,7 +324,7 @@
     },
     "wien-marathon": {
       "eventId": "wien-marathon",
-      "checkedAt": "2026-11-18T14:25:00.201965+00:00",
+      "checkedAt": "2026-11-20T21:00:00.000Z",
       "status": "verified",
       "sources": [
         {
@@ -336,6 +336,11 @@
           "url": "https://www2.vienna-marathon.com/?go=marathon&lang=de",
           "status": "read",
           "verification": "manual-official-page"
+        },
+        {
+          "url": "https://superhalfs-production.s3.amazonaws.com/admin_file_uploads/EUROPA_Launch_PR.pdf",
+          "status": "read",
+          "verification": "official-superhalfs-2027-calendar"
         }
       ],
       "eventPeriod": {
@@ -4541,10 +4546,20 @@
     },
     "coelmo-napoli-city-half-marathon": {
       "eventId": "coelmo-napoli-city-half-marathon",
-      "checkedAt": "2026-11-19T20:35:00.000Z",
-      "status": "unconfirmed",
-      "sources": [],
-      "eventPeriod": null,
+      "checkedAt": "2026-11-20T21:00:00.000Z",
+      "status": "verified",
+      "sources": [
+        {
+          "url": "https://superhalfs-production.s3.amazonaws.com/admin_file_uploads/EUROPA_Launch_PR.pdf",
+          "status": "read",
+          "verification": "official-superhalfs-2027-calendar"
+        }
+      ],
+      "eventPeriod": {
+        "startDate": "2027-02-21",
+        "endDate": "2027-02-21",
+        "verified": true
+      },
       "routes": {}
     },
     "lisbon-half-marathon": {
@@ -4557,10 +4572,20 @@
     },
     "warsaw-half-marathon": {
       "eventId": "warsaw-half-marathon",
-      "checkedAt": "2026-11-19T20:35:00.000Z",
-      "status": "unconfirmed",
-      "sources": [],
-      "eventPeriod": null,
+      "checkedAt": "2026-11-20T21:00:00.000Z",
+      "status": "verified",
+      "sources": [
+        {
+          "url": "https://superhalfs-production.s3.amazonaws.com/admin_file_uploads/EUROPA_Launch_PR.pdf",
+          "status": "read",
+          "verification": "official-superhalfs-2027-calendar"
+        }
+      ],
+      "eventPeriod": {
+        "startDate": "2027-03-14",
+        "endDate": "2027-03-14",
+        "verified": true
+      },
       "routes": {}
     },
     "prague-half-marathon": {
@@ -4573,18 +4598,38 @@
     },
     "berlin-half-marathon": {
       "eventId": "berlin-half-marathon",
-      "checkedAt": "2026-11-19T20:35:00.000Z",
-      "status": "unconfirmed",
-      "sources": [],
-      "eventPeriod": null,
+      "checkedAt": "2026-11-20T21:00:00.000Z",
+      "status": "verified",
+      "sources": [
+        {
+          "url": "https://superhalfs-production.s3.amazonaws.com/admin_file_uploads/EUROPA_Launch_PR.pdf",
+          "status": "read",
+          "verification": "official-superhalfs-2027-calendar"
+        }
+      ],
+      "eventPeriod": {
+        "startDate": "2027-04-04",
+        "endDate": "2027-04-04",
+        "verified": true
+      },
       "routes": {}
     },
     "belgrade-half-marathon": {
       "eventId": "belgrade-half-marathon",
-      "checkedAt": "2026-11-19T20:35:00.000Z",
-      "status": "unconfirmed",
-      "sources": [],
-      "eventPeriod": null,
+      "checkedAt": "2026-11-20T21:00:00.000Z",
+      "status": "verified",
+      "sources": [
+        {
+          "url": "https://superhalfs-production.s3.amazonaws.com/admin_file_uploads/EUROPA_Launch_PR.pdf",
+          "status": "read",
+          "verification": "official-superhalfs-2027-calendar"
+        }
+      ],
+      "eventPeriod": {
+        "startDate": "2027-04-17",
+        "endDate": "2027-04-17",
+        "verified": true
+      },
       "routes": {}
     },
     "wiener-stadtische-half-marathon": {
@@ -4597,18 +4642,38 @@
     },
     "riga-half-marathon": {
       "eventId": "riga-half-marathon",
-      "checkedAt": "2026-11-19T20:35:00.000Z",
-      "status": "unconfirmed",
-      "sources": [],
-      "eventPeriod": null,
+      "checkedAt": "2026-11-20T21:00:00.000Z",
+      "status": "verified",
+      "sources": [
+        {
+          "url": "https://superhalfs-production.s3.amazonaws.com/admin_file_uploads/EUROPA_Launch_PR.pdf",
+          "status": "read",
+          "verification": "official-superhalfs-2027-calendar"
+        }
+      ],
+      "eventPeriod": {
+        "startDate": "2027-05-16",
+        "endDate": "2027-05-16",
+        "verified": true
+      },
       "routes": {}
     },
     "stockholm-half-marathon": {
       "eventId": "stockholm-half-marathon",
-      "checkedAt": "2026-11-19T20:35:00.000Z",
-      "status": "unconfirmed",
-      "sources": [],
-      "eventPeriod": null,
+      "checkedAt": "2026-11-20T21:00:00.000Z",
+      "status": "verified",
+      "sources": [
+        {
+          "url": "https://superhalfs-production.s3.amazonaws.com/admin_file_uploads/EUROPA_Launch_PR.pdf",
+          "status": "read",
+          "verification": "official-superhalfs-2027-calendar"
+        }
+      ],
+      "eventPeriod": {
+        "startDate": "2027-08-21",
+        "endDate": "2027-08-21",
+        "verified": true
+      },
       "routes": {}
     },
     "copenhagen-half-marathon": {
