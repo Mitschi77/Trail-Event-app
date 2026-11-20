@@ -91,6 +91,21 @@ assert.ok(raceTools.includes("function segmentUi(id,ri,r)"), "GPX segment planne
 assert.ok(raceTools.includes("function segments(r,id,ri)"), "GPX elevation segments must be analyzed");
 
 assert.ok(raceTools.includes("Verpflegungs-Erinnerungen"), "Race strategy must calculate fueling reminders");
+
+const fuelScheduleMatch = html.match(/function renderFuelSchedule\(r,d\)\{[^\n]*?\}/);
+assert.ok(fuelScheduleMatch, "Fueling schedule must remain a pure, testable renderer");
+const renderFuelSchedule = new Function("return (" + fuelScheduleMatch[0] + ")")();
+const noFuelPlan = renderFuelSchedule({km:50}, {pace:"Infinity", fuel:60});
+assert.match(noFuelPlan, /bitte Distanz und Zieltempo eintragen/);
+const minFuel = renderFuelSchedule({km:50}, {pace:10, fuel:-5});
+assert.match(minFuel, /Alle 15 Minuten/);
+const maxFuel = renderFuelSchedule({km:100}, {pace:10, fuel:999});
+assert.match(maxFuel, /Alle 240 Minuten/);
+const longUltra = renderFuelSchedule({km:500}, {pace:10, fuel:15});
+assert.equal((longUltra.match(/<tr>/g) || []).length, 41, "Ultra reminder table must cap at 40 data rows plus header");
+const noFullInterval = renderFuelSchedule({km:1}, {pace:5, fuel:60});
+assert.match(noFullInterval, /kein vollständiges Verpflegungsintervall/);
+
 assert.ok(raceTools.includes("angegebenen Maximalzeit"), "Race strategy must compare the estimate with the route cutoff");
 assert.ok(raceTools.includes("raceCheckCount"), "Checklist must show completed-item progress");
 assert.ok(raceTools.includes("groupDone"), "Checklist must show progress per category");
