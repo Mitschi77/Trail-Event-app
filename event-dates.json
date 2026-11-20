@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-20T20:36:00Z",
+  "updatedAt": "2026-11-20T21:00:00Z",
   "schemaVersion": 3,
   "events": {
     "la-corsa-della-bora": {
@@ -7178,45 +7178,50 @@
     },
     "strasimeno": {
       "eventId": "strasimeno",
-      "checkedAt": "2026-11-20T00:00:00Z",
-      "status": "pending-review",
+      "checkedAt": "2026-11-20T21:00:00Z",
+      "status": "verified",
       "sources": [
         {
-          "url": "https://www.strasimeno.it/",
+          "url": "https://www.iutaitalia.it/2026/09/25-strasimeno-2027/",
           "status": "read",
-          "verification": "official-event-page"
+          "verification": "IUTA-official-2027-announcement"
+        },
+        {
+          "url": "https://www.podismo.it/strasimeno-ultramaratona-del-lago-trasimeno/regolamento-strasimeno/",
+          "status": "read",
+          "verification": "organizer-regulations-2027"
         }
       ],
       "eventPeriod": {
         "startDate": "2027-03-07",
         "endDate": "2027-03-07",
-        "verified": false
+        "verified": true
       },
       "routes": {
         "0": {
           "routeId": "strasimeno-10km",
           "date": "2027-03-07",
-          "verified": false
+          "verified": true
         },
         "1": {
           "routeId": "strasimeno-half-marathon-21-0975",
           "date": "2027-03-07",
-          "verified": false
+          "verified": true
         },
         "2": {
           "routeId": "strasimeno-34km",
           "date": "2027-03-07",
-          "verified": false
+          "verified": true
         },
         "3": {
           "routeId": "strasimeno-marathon-42-195",
           "date": "2027-03-07",
-          "verified": false
+          "verified": true
         },
         "4": {
           "routeId": "strasimeno-ultramarathon-58-04",
           "date": "2027-03-07",
-          "verified": false
+          "verified": true
         }
       }
     },
