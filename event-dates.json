@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-20T21:00:00.000Z",
+  "updatedAt": "2026-11-20T21:45:00.000Z",
   "schemaVersion": 3,
   "events": {
     "la-corsa-della-bora": {
@@ -324,23 +324,13 @@
     },
     "wien-marathon": {
       "eventId": "wien-marathon",
-      "checkedAt": "2026-11-20T21:00:00.000Z",
+      "checkedAt": "2026-11-20T21:45:00.000Z",
       "status": "verified",
       "sources": [
         {
-          "url": "https://www.vienna-marathon.com/?go=news&newsid=4145",
+          "url": "https://www.vienna-marathon.com/?go=marathon&lang=en",
           "status": "read",
-          "error": "The read operation timed out"
-        },
-        {
-          "url": "https://www2.vienna-marathon.com/?go=marathon&lang=de",
-          "status": "read",
-          "verification": "manual-official-page"
-        },
-        {
-          "url": "https://superhalfs-production.s3.amazonaws.com/admin_file_uploads/EUROPA_Launch_PR.pdf",
-          "status": "read",
-          "verification": "official-superhalfs-2027-calendar"
+          "verification": "official-organizer-2027-event-data"
         }
       ],
       "eventPeriod": {
@@ -352,7 +342,8 @@
         "0": {
           "routeId": "wien-marathon-42-2",
           "date": "2027-04-18",
-          "verified": true
+          "verified": true,
+          "fallback": false
         }
       }
     },
@@ -4546,13 +4537,18 @@
     },
     "coelmo-napoli-city-half-marathon": {
       "eventId": "coelmo-napoli-city-half-marathon",
-      "checkedAt": "2026-11-20T21:00:00.000Z",
+      "checkedAt": "2026-11-20T21:45:00.000Z",
       "status": "verified",
       "sources": [
         {
-          "url": "https://superhalfs-production.s3.amazonaws.com/admin_file_uploads/EUROPA_Launch_PR.pdf",
+          "url": "https://www.napolirunning.com/en/races/coelmo-napoli-city-half-marathon-2027/",
           "status": "read",
-          "verification": "official-superhalfs-2027-calendar"
+          "verification": "official-organizer-2027-event-data"
+        },
+        {
+          "url": "https://www.superhalfs.com/en/articles/news/2026/11/06/superhalfs-europa/",
+          "status": "read",
+          "verification": "official-organizer-2027-event-data"
         }
       ],
       "eventPeriod": {
@@ -4560,7 +4556,14 @@
         "endDate": "2027-02-21",
         "verified": true
       },
-      "routes": {}
+      "routes": {
+        "0": {
+          "routeId": "coelmo-napoli-city-half-marathon-21-1",
+          "date": "2027-02-21",
+          "verified": true,
+          "fallback": false
+        }
+      }
     },
     "lisbon-half-marathon": {
       "eventId": "lisbon-half-marathon",
@@ -4572,13 +4575,18 @@
     },
     "warsaw-half-marathon": {
       "eventId": "warsaw-half-marathon",
-      "checkedAt": "2026-11-20T21:00:00.000Z",
+      "checkedAt": "2026-11-20T21:45:00.000Z",
       "status": "verified",
       "sources": [
         {
-          "url": "https://superhalfs-production.s3.amazonaws.com/admin_file_uploads/EUROPA_Launch_PR.pdf",
+          "url": "https://polmaratonwarszawski.com/en/info-half-marathon/",
           "status": "read",
-          "verification": "official-superhalfs-2027-calendar"
+          "verification": "official-organizer-2027-event-data"
+        },
+        {
+          "url": "https://polmaratonwarszawski.com/wp-content/uploads/sites/4/2026/11/Regulations_of_the_21st_Warsaw_Half_Marathon_EN.pdf",
+          "status": "read",
+          "verification": "official-organizer-2027-event-data"
         }
       ],
       "eventPeriod": {
@@ -4586,7 +4594,14 @@
         "endDate": "2027-03-14",
         "verified": true
       },
-      "routes": {}
+      "routes": {
+        "0": {
+          "routeId": "warsaw-half-marathon-21-1",
+          "date": "2027-03-14",
+          "verified": true,
+          "fallback": false
+        }
+      }
     },
     "prague-half-marathon": {
       "eventId": "prague-half-marathon",
@@ -4598,13 +4613,18 @@
     },
     "berlin-half-marathon": {
       "eventId": "berlin-half-marathon",
-      "checkedAt": "2026-11-20T21:00:00.000Z",
+      "checkedAt": "2026-11-20T21:45:00.000Z",
       "status": "verified",
       "sources": [
         {
-          "url": "https://superhalfs-production.s3.amazonaws.com/admin_file_uploads/EUROPA_Launch_PR.pdf",
+          "url": "https://www.generali-berliner-halbmarathon.de/anmelden/infos-zur-anmeldung",
           "status": "read",
-          "verification": "official-superhalfs-2027-calendar"
+          "verification": "official-organizer-2027-event-data"
+        },
+        {
+          "url": "https://www.superhalfs.com/en/faqs/",
+          "status": "read",
+          "verification": "official-organizer-2027-event-data"
         }
       ],
       "eventPeriod": {
@@ -4612,17 +4632,29 @@
         "endDate": "2027-04-04",
         "verified": true
       },
-      "routes": {}
+      "routes": {
+        "0": {
+          "routeId": "berlin-half-marathon-21-1",
+          "date": "2027-04-04",
+          "verified": true,
+          "fallback": false
+        }
+      }
     },
     "belgrade-half-marathon": {
       "eventId": "belgrade-half-marathon",
-      "checkedAt": "2026-11-20T21:00:00.000Z",
+      "checkedAt": "2026-11-20T21:45:00.000Z",
       "status": "verified",
       "sources": [
         {
-          "url": "https://superhalfs-production.s3.amazonaws.com/admin_file_uploads/EUROPA_Launch_PR.pdf",
+          "url": "https://bgdmarathon.org/superhalfs-europa/?lang=en",
           "status": "read",
-          "verification": "official-superhalfs-2027-calendar"
+          "verification": "official-organizer-2027-event-data"
+        },
+        {
+          "url": "https://www.superhalfs.com/en/articles/news/2026/11/06/superhalfs-europa/",
+          "status": "read",
+          "verification": "official-organizer-2027-event-data"
         }
       ],
       "eventPeriod": {
@@ -4630,25 +4662,59 @@
         "endDate": "2027-04-17",
         "verified": true
       },
-      "routes": {}
+      "routes": {
+        "0": {
+          "routeId": "belgrade-half-marathon-21-1",
+          "date": "2027-04-17",
+          "verified": true,
+          "fallback": false
+        }
+      }
     },
     "wiener-stadtische-half-marathon": {
       "eventId": "wiener-stadtische-half-marathon",
-      "checkedAt": "2026-11-19T20:35:00.000Z",
-      "status": "unconfirmed",
-      "sources": [],
-      "eventPeriod": null,
-      "routes": {}
-    },
-    "riga-half-marathon": {
-      "eventId": "riga-half-marathon",
-      "checkedAt": "2026-11-20T21:00:00.000Z",
+      "checkedAt": "2026-11-20T21:45:00.000Z",
       "status": "verified",
       "sources": [
         {
-          "url": "https://superhalfs-production.s3.amazonaws.com/admin_file_uploads/EUROPA_Launch_PR.pdf",
+          "url": "https://www.vienna-marathon.com/?go=halfmarathon&lang=en",
           "status": "read",
-          "verification": "official-superhalfs-2027-calendar"
+          "verification": "official-organizer-2027-event-data"
+        },
+        {
+          "url": "https://www.superhalfs.com/en/articles/news/2026/11/06/superhalfs-europa/",
+          "status": "read",
+          "verification": "official-organizer-2027-event-data"
+        }
+      ],
+      "eventPeriod": {
+        "startDate": "2027-04-18",
+        "endDate": "2027-04-18",
+        "verified": true
+      },
+      "routes": {
+        "0": {
+          "routeId": "wiener-stadtische-half-marathon-21-1",
+          "date": "2027-04-18",
+          "verified": true,
+          "fallback": false
+        }
+      }
+    },
+    "riga-half-marathon": {
+      "eventId": "riga-half-marathon",
+      "checkedAt": "2026-11-20T21:45:00.000Z",
+      "status": "verified",
+      "sources": [
+        {
+          "url": "https://rimirigamarathon.com/en/frequently-asked-questions/",
+          "status": "read",
+          "verification": "official-organizer-2027-event-data"
+        },
+        {
+          "url": "https://rimirigamarathon.com/wp-content/uploads/2026/11/Rimi-Riga-marathon_Rules_2027_06112026.pdf",
+          "status": "read",
+          "verification": "official-organizer-2027-event-data"
         }
       ],
       "eventPeriod": {
@@ -4656,17 +4722,34 @@
         "endDate": "2027-05-16",
         "verified": true
       },
-      "routes": {}
+      "routes": {
+        "0": {
+          "routeId": "riga-half-marathon-21-1",
+          "date": "2027-05-16",
+          "verified": true,
+          "fallback": false
+        }
+      }
     },
     "stockholm-half-marathon": {
       "eventId": "stockholm-half-marathon",
-      "checkedAt": "2026-11-20T21:00:00.000Z",
+      "checkedAt": "2026-11-20T21:45:00.000Z",
       "status": "verified",
       "sources": [
         {
-          "url": "https://superhalfs-production.s3.amazonaws.com/admin_file_uploads/EUROPA_Launch_PR.pdf",
+          "url": "https://stockholmhalfmarathon.se/about-the-race-2026/",
           "status": "read",
-          "verification": "official-superhalfs-2027-calendar"
+          "verification": "official-organizer-2027-event-data"
+        },
+        {
+          "url": "https://events.marathongruppen.se/8ca268887b77af349904",
+          "status": "read",
+          "verification": "official-organizer-2027-event-data"
+        },
+        {
+          "url": "https://www.superhalfs.com/en/articles/news/2026/11/06/superhalfs-europa/",
+          "status": "read",
+          "verification": "official-organizer-2027-event-data"
         }
       ],
       "eventPeriod": {
@@ -4674,7 +4757,14 @@
         "endDate": "2027-08-21",
         "verified": true
       },
-      "routes": {}
+      "routes": {
+        "0": {
+          "routeId": "stockholm-half-marathon-21-1",
+          "date": "2027-08-21",
+          "verified": true,
+          "fallback": false
+        }
+      }
     },
     "copenhagen-half-marathon": {
       "eventId": "copenhagen-half-marathon",
@@ -6401,11 +6491,33 @@
     },
     "rimi-riga-marathon-2027": {
       "eventId": "rimi-riga-marathon-2027",
-      "checkedAt": "2026-11-19T23:30:00+01:00",
-      "status": "unconfirmed",
-      "sources": [],
-      "eventPeriod": null,
-      "routes": {}
+      "checkedAt": "2026-11-20T21:45:00.000Z",
+      "status": "verified",
+      "sources": [
+        {
+          "url": "https://rimirigamarathon.com/en/frequently-asked-questions/",
+          "status": "read",
+          "verification": "official-organizer-2027-event-data"
+        },
+        {
+          "url": "https://rimirigamarathon.com/wp-content/uploads/2026/11/Rimi-Riga-marathon_Rules_2027_06112026.pdf",
+          "status": "read",
+          "verification": "official-organizer-2027-event-data"
+        }
+      ],
+      "eventPeriod": {
+        "startDate": "2027-05-15",
+        "endDate": "2027-05-16",
+        "verified": true
+      },
+      "routes": {
+        "0": {
+          "routeId": "rimi-riga-marathon-42-195-2027",
+          "date": "2027-05-16",
+          "verified": true,
+          "fallback": false
+        }
+      }
     },
     "mali-kraski-maraton-2027": {
       "eventId": "mali-kraski-maraton-2027",
