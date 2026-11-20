@@ -1,0 +1,286 @@
+{
+  "batch": 63,
+  "checkedAt": "2026-11-21",
+  "scope": "Official-source review and GPX version status for top-level events 101–110",
+  "safety": [
+    "Keep all existing GPX files until an official replacement is downloaded, parsed and validated.",
+    "Do not overwrite/delete older course files when a new edition is announced.",
+    "A GPX download link is not proof that its binary has been parsed or its track metrics validated."
+  ],
+  "events": [
+    {
+      "order": 101,
+      "name": "Alpin Team Trailrun",
+      "officialSource": "https://alpinteamtrail.at/",
+      "date": "No 2027 edition confirmed",
+      "routes2026": [
+        {
+          "name": "K10",
+          "distanceKm": 10,
+          "elevationGainHm": 394
+        },
+        {
+          "name": "K23",
+          "distanceKm": 23,
+          "elevationGainHm": 1523
+        },
+        {
+          "name": "K50",
+          "distanceKm": 52,
+          "elevationGainHm": 3450
+        }
+      ],
+      "gpxStatus": "Official page still shows 25–26 September 2026 and downloadable GPX for 2026 routes; no 2027 date/file confirmed.",
+      "binaryDownloaded": false,
+      "parsed": false,
+      "metricsCompared": false,
+      "detail": "Do not treat current page or GPX links as 2027. Keep the 2026 tracks labelled historical/current edition until organizer announces next date."
+    },
+    {
+      "order": 102,
+      "name": "Chihuahua by UTMB",
+      "officialSource": "https://chihuahua.utmb.world/races",
+      "date": "No 2027 edition listed; official page remains 1–3 October 2026",
+      "routes2026": [
+        {
+          "name": "Rarámuri 118K",
+          "distanceKm": 118,
+          "elevationGainHm": 5600
+        },
+        {
+          "name": "Weriga 93K",
+          "distanceKm": 94,
+          "elevationGainHm": 4700
+        },
+        {
+          "name": "Akáa 58K",
+          "distanceKm": 58,
+          "elevationGainHm": 2500
+        },
+        {
+          "name": "Komakali 39K",
+          "distanceKm": 39,
+          "elevationGainHm": 1700
+        },
+        {
+          "name": "Napurega 21K",
+          "distanceKm": 21,
+          "elevationGainHm": 700
+        },
+        {
+          "name": "Norawa 9K",
+          "distanceKm": 9,
+          "elevationGainHm": 200
+        }
+      ],
+      "gpxStatus": "2026 programme only; no 2027 edition or 2027 GPX verified.",
+      "binaryDownloaded": false,
+      "parsed": false,
+      "metricsCompared": false,
+      "detail": "UTMB page continues to show the 2026 event and six races. No 2027 Chihuahua date is published; retain old course files as 2026 only."
+    },
+    {
+      "order": 103,
+      "name": "Trail & Tarmac Pursuit",
+      "officialSource": "https://trailtarmacpursuit.com/",
+      "date": "2027-10-01/03",
+      "distanceKmRange": [
+        240,
+        270
+      ],
+      "timeLimitHours": 44,
+      "checkpoints": 6,
+      "gpxStatus": "2027 event confirmed; no single official GPX by design because teams plan their own route and checkpoint 6 is revealed 30 minutes before start.",
+      "binaryDownloaded": false,
+      "parsed": false,
+      "metricsCompared": false,
+      "detail": "Five checkpoints are released in the months before the race; final secret checkpoint is disclosed at 16:30 on 1 October 2027. App should model this as a self-planned route event, not a fixed course with one organizer GPX."
+    },
+    {
+      "order": 104,
+      "name": "Oberaudorf Trail Festival",
+      "officialSource": "https://saltytrailrunning.com/en-en/pages/otf-program",
+      "date": "2027-09-30/10-03",
+      "routes": [
+        {
+          "name": "OTF 100 XXL",
+          "distanceKm": 100
+        },
+        {
+          "name": "Wendelstein Ultra XL",
+          "distanceKm": 56.5
+        },
+        {
+          "name": "Sudelfeld Trail L",
+          "distanceKm": 42.8
+        },
+        {
+          "name": "Brünnstein Speed M",
+          "distanceKm": 24
+        },
+        {
+          "name": "Hocheck Short S",
+          "distanceKm": 12.4
+        }
+      ],
+      "gpxStatus": "Official 2027 event programme confirmed; direct GPX endpoints were not validated as official 2027 files. Third-party search result lists candidate downloads, including an OTF26 filename for the 100km file; treat as stale/unverified.",
+      "binaryDownloaded": false,
+      "parsed": false,
+      "metricsCompared": false,
+      "detail": "Official programme confirms 2027 event dates and five races. Candidate links surfaced outside organizer site include 12.4K/24K/42.8K/56.5K and an OTF26 100K file; do not import until each official organizer route page confirms edition/version."
+    },
+    {
+      "order": 105,
+      "name": "Taubertal 100",
+      "officialSource": "https://www.taubertal100.de/GPS-Streckenverlauf",
+      "date": "2027-10-02 (secondary event calendar)",
+      "routes": [
+        "50 km",
+        "70 km",
+        "100 km",
+        "100 miles"
+      ],
+      "gpxStatus": "2027 date appears in event calendars; organizer GPS page still marked 17.08.2026 and offers 2026 files only.",
+      "binaryDownloaded": false,
+      "parsed": false,
+      "metricsCompared": false,
+      "detail": "Important distinction: this app entry is Taubertal 100 (ultramarathon starting Rothenburg), not the separate Taubertal Trail event in Adelshofen. Do not substitute Taubertal Trail GPX files. Await 2027 Taubertal 100 organizer files."
+    },
+    {
+      "order": 106,
+      "name": "HOKA Kodiak Ultra Marathons by UTMB",
+      "officialSource": "https://kodiak.utmb.world/register",
+      "date": "2027 edition registration announced; exact 2027 course GPX not published/verified",
+      "gpxStatus": "2027 registration information is live, but accessible course pages/GPX still refer to 2026 edition.",
+      "binaryDownloaded": false,
+      "parsed": false,
+      "metricsCompared": false,
+      "detail": "2027 event is confirmed at registration page; wait for 2027 course pages and individual track releases. Do not reuse 2026 GPX."
+    },
+    {
+      "order": 107,
+      "name": "München Marathon",
+      "officialSource": "https://marathonmuenchen.org/gpx-downloads/",
+      "date": "2027 event/course date not yet confirmed on GPX page",
+      "gpxStatus": "Official GPX download page explicitly names 11 October 2026 and offers marathon, half-marathon and 10K files only for 2026.",
+      "binaryDownloaded": false,
+      "parsed": false,
+      "metricsCompared": false,
+      "detail": "Organizer notes GPS/GPX distances may differ from certified road-race measurement by around 1–2%; do not treat GPS track measurement as the certified course length. Wait for 2027 download page."
+    },
+    {
+      "order": 108,
+      "name": "StundenRundenLauf (Chiemgauer100)",
+      "officialSource": "https://chiemgauer100.de/stundenrundenlauf-wieder-ab-2026/",
+      "date": "No 2027 edition announced",
+      "loop2026": {
+        "distanceKm": 6.7,
+        "elevationGainHm": 58
+      },
+      "gpxStatus": "Official announcement only confirms the event's return in 2026; no 2027 edition or GPX release found.",
+      "binaryDownloaded": false,
+      "parsed": false,
+      "metricsCompared": false,
+      "detail": "2026 event page confirms 6.7km loop and approx. 58hm. Do not project this route into 2027 without organizer confirmation."
+    },
+    {
+      "order": 109,
+      "name": "Kullamannen by UTMB",
+      "officialSource": "https://kullamannen.utmb.world/",
+      "date": "2027-11-05/06",
+      "routes": [
+        {
+          "name": "Ultra 100 Miles",
+          "distanceKm": 168,
+          "elevationGainHm": 2020
+        },
+        {
+          "name": "Sprint Ultra 100 km",
+          "distanceKm": 108,
+          "elevationGainHm": 749
+        },
+        {
+          "name": "Seventh Seal",
+          "distanceKm": 53,
+          "elevationGainHm": 727
+        },
+        {
+          "name": "North Shore",
+          "distanceKm": 22,
+          "elevationGainHm": 96
+        }
+      ],
+      "gpxStatus": "2027 date and four race distances/elevation values officially published; individual Map + GPX files not downloaded or parsed in this pass.",
+      "binaryDownloaded": false,
+      "parsed": false,
+      "metricsCompared": false,
+      "detail": "Official event page shows 5–6 November 2027. The current race naming and distances differ from the old checkpoint's generic 100M/100K/50K/20K labels; update labels only after checking each route page."
+    },
+    {
+      "order": 110,
+      "name": "Mallorca Serra de Tramuntana by UTMB",
+      "officialSource": "https://mallorca.utmb.world/races",
+      "date": "No 2027 edition confirmed; official page lists 2026 only",
+      "routes2026": [
+        {
+          "name": "Serra de Tramuntana",
+          "distanceKm": 138,
+          "elevationGainHm": 5350
+        },
+        {
+          "name": "Camins de pedra en sec",
+          "distanceKm": 104,
+          "elevationGainHm": 3740
+        },
+        {
+          "name": "Els Tres Mils",
+          "distanceKm": 56,
+          "elevationGainHm": 2450
+        },
+        {
+          "name": "Camins de s'Arxiduc",
+          "distanceKm": 26,
+          "elevationGainHm": 1000
+        }
+      ],
+      "gpxStatus": "2026 tracks only; no 2027 event or GPX confirmed.",
+      "binaryDownloaded": false,
+      "parsed": false,
+      "metricsCompared": false,
+      "detail": "Do not use 2026 track files as 2027 routes. Recheck only after official UTMB event calendar lists a new Mallorca edition."
+    }
+  ],
+  "summary": {
+    "eventsCovered": 10,
+    "official2027EventsConfirmed": 4,
+    "directGpxBinariesDownloaded": 0,
+    "tracksParsed": 0,
+    "metricsCompared": 0,
+    "oldGpxDeleted": 0,
+    "oldGpxOverwritten": 0,
+    "appRuntimeFilesChanged": 0,
+    "notable": [
+      "Trail & Tarmac Pursuit is a self-planned 240–270km relay with six checkpoints, not a fixed GPX course.",
+      "Oberaudorf Trail Festival has official 2027 programme and five race formats; candidate direct GPX links surfaced externally are not yet validated as 2027 organizer files.",
+      "Taubertal 100 must not be confused with Taubertal Trail in Adelshofen.",
+      "Kullamannen 2027 official route page now specifies 168/108/53/22km with respective elevation values.",
+      "Alpin Team Trail, Chihuahua, StundenRundenLauf and Mallorca have no confirmed 2027 edition/course files in current official sources."
+    ],
+    "noGpxFilesChanged": true,
+    "noAppRuntimeDataChanged": true
+  },
+  "followUps": [
+    "Alpin Team Trail: wait for next edition announcement and new K10/K23/K50 GPX.",
+    "Chihuahua: wait for UTMB 2027 event listing and new race-page files.",
+    "Trail & Tarmac Pursuit: create participant-specific route planning only after CP1–5 release; CP6 arrives 30 minutes before start.",
+    "Oberaudorf: verify each route page's 2027 download URL and binary; reject OTF26 file.",
+    "Taubertal 100: obtain official 2027 GPX for 50/70/100km/100mi; keep separate from Taubertal Trail.",
+    "Kodiak: wait for 2027 course pages and individual GPX publication.",
+    "München Marathon: wait for 2027 GPX download page.",
+    "StundenRundenLauf: wait for next edition announcement and route file.",
+    "Kullamannen: export and parse each of four 2027 Map + GPX routes.",
+    "Mallorca: wait for official 2027 event confirmation before adding new track."
+  ],
+  "noGpxFilesChanged": true,
+  "noAppRuntimeDataChanged": true
+}
