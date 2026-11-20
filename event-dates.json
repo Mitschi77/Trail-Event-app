@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-21T01:00:00Z",
+  "updatedAt": "2026-11-21T01:10:00Z",
   "schemaVersion": 3,
   "events": {
     "la-corsa-della-bora": {
@@ -13020,6 +13020,218 @@
         }
       },
       "note": "RaceResult bestätigt Veranstaltung 04.–07.06.2027; 6,706 km aus sekundärem Laufkalender."
+    },
+    "adelsberg-backyard-2027": {
+      "eventId": "adelsberg-backyard-2027",
+      "checkedAt": "2026-11-21T01:10:00Z",
+      "status": "verified",
+      "sources": [
+        {
+          "url": "https://www.sg-adelsberg.de/backyard/",
+          "status": "read",
+          "verification": "official-2027-event-information"
+        }
+      ],
+      "eventPeriod": {
+        "startDate": "2027-05-15",
+        "endDate": "2027-05-17",
+        "verified": true
+      },
+      "routes": {
+        "0": {
+          "routeId": "adelsberg-backyard-2027-loop",
+          "date": "2027-05-15",
+          "verified": true
+        }
+      }
+    },
+    "van-halen-backyard-2027": {
+      "eventId": "van-halen-backyard-2027",
+      "checkedAt": "2026-11-21T01:10:00Z",
+      "status": "verified",
+      "sources": [
+        {
+          "url": "https://lg-lottehalen.jimdofree.com/van-halen-backyard-ultra-8-5-9-5/",
+          "status": "read",
+          "verification": "official-2027-event-information"
+        },
+        {
+          "url": "https://statistik.d-u-v.org/eventdetail.php?event=135832",
+          "status": "read",
+          "verification": "official-2027-event-information"
+        }
+      ],
+      "eventPeriod": {
+        "startDate": "2027-05-08",
+        "endDate": "2027-05-09",
+        "verified": true
+      },
+      "routes": {
+        "0": {
+          "routeId": "van-halen-backyard-2027-loop",
+          "date": "2027-05-08",
+          "verified": true
+        }
+      }
+    },
+    "humble-club-backyard-2027": {
+      "eventId": "humble-club-backyard-2027",
+      "checkedAt": "2026-11-21T01:10:00Z",
+      "status": "unconfirmed",
+      "sources": [
+        {
+          "url": "https://ultrarunhub.com/races/humble-club-backyard-run-nr-6",
+          "status": "read",
+          "verification": "secondary-calendar-only"
+        }
+      ],
+      "eventPeriod": {
+        "startDate": "2027-04-24",
+        "endDate": "2027-04-24",
+        "verified": false
+      },
+      "routes": {
+        "0": {
+          "routeId": "humble-club-backyard-2027-loop",
+          "date": "2027-04-24",
+          "verified": false
+        }
+      },
+      "note": "Termin/Format oder Streckendaten noch nicht durch eine endgültige Veranstalter-Ausschreibung bestätigt."
+    },
+    "hammer-backyard-2027": {
+      "eventId": "hammer-backyard-2027",
+      "checkedAt": "2026-11-21T01:10:00Z",
+      "status": "unconfirmed",
+      "sources": [
+        {
+          "url": "https://hammerbackyard.xn--ballonlufer-r8a.de/",
+          "status": "read",
+          "verification": "secondary-calendar-only"
+        }
+      ],
+      "eventPeriod": {
+        "startDate": "2027-04-17",
+        "endDate": "2027-04-17",
+        "verified": false
+      },
+      "routes": {
+        "0": {
+          "routeId": "hammer-backyard-2027-loop",
+          "date": "2027-04-17",
+          "verified": false
+        }
+      },
+      "note": "Termin/Format oder Streckendaten noch nicht durch eine endgültige Veranstalter-Ausschreibung bestätigt."
+    },
+    "weingarten-backyard-2027": {
+      "eventId": "weingarten-backyard-2027",
+      "checkedAt": "2026-11-21T01:10:00Z",
+      "status": "unconfirmed",
+      "sources": [
+        {
+          "url": "https://www.runnersworld.de/laufkalender/weingarten-backyard-ultra/",
+          "status": "read",
+          "verification": "secondary-calendar-only"
+        }
+      ],
+      "eventPeriod": {
+        "startDate": "2027-04-10",
+        "endDate": "2027-04-12",
+        "verified": false
+      },
+      "routes": {
+        "0": {
+          "routeId": "weingarten-backyard-2027-loop",
+          "date": "2027-04-10",
+          "verified": false
+        }
+      },
+      "note": "Termin/Format oder Streckendaten noch nicht durch eine endgültige Veranstalter-Ausschreibung bestätigt."
+    },
+    "last-legs-backyard-2027": {
+      "eventId": "last-legs-backyard-2027",
+      "checkedAt": "2026-11-21T01:10:00Z",
+      "status": "verified",
+      "sources": [
+        {
+          "url": "https://lastlegsultra.de/",
+          "status": "read",
+          "verification": "official-2027-event-information"
+        },
+        {
+          "url": "https://lastlegsultra.de/?page_id=2112",
+          "status": "read",
+          "verification": "official-2027-event-information"
+        }
+      ],
+      "eventPeriod": {
+        "startDate": "2027-04-30",
+        "endDate": "2027-04-30",
+        "verified": true
+      },
+      "routes": {
+        "0": {
+          "routeId": "last-legs-backyard-2027-loop",
+          "date": "2027-04-30",
+          "verified": true
+        }
+      },
+      "note": "Offizielle Veranstalterseite bestätigt 30.04.2027, 12:00 Uhr, 6,7 km/10 hm pro Runde. Korrektur gegenüber Kalenderdatum 01.04."
+    },
+    "lonnerstadt-backyard-2027": {
+      "eventId": "lonnerstadt-backyard-2027",
+      "checkedAt": "2026-11-21T01:10:00Z",
+      "status": "unconfirmed",
+      "sources": [
+        {
+          "url": "https://all-sportevents.eu/en/theme/backyard-ultras/country/germany",
+          "status": "read",
+          "verification": "secondary-calendar-only"
+        }
+      ],
+      "eventPeriod": {
+        "startDate": "2027-03-27",
+        "endDate": "2027-03-27",
+        "verified": false
+      },
+      "routes": {
+        "0": {
+          "routeId": "lonnerstadt-backyard-2027-loop",
+          "date": "2027-03-27",
+          "verified": false
+        }
+      },
+      "note": "Termin/Format oder Streckendaten noch nicht durch eine endgültige Veranstalter-Ausschreibung bestätigt."
+    },
+    "last-light-backyard-2027": {
+      "eventId": "last-light-backyard-2027",
+      "checkedAt": "2026-11-21T01:10:00Z",
+      "status": "verified",
+      "sources": [
+        {
+          "url": "https://thelastlight.phexora.ai/index.html",
+          "status": "read",
+          "verification": "official-2027-event-information"
+        },
+        {
+          "url": "https://thelastlight.phexora.ai/terms.html",
+          "status": "read",
+          "verification": "official-2027-event-information"
+        }
+      ],
+      "eventPeriod": {
+        "startDate": "2027-03-06",
+        "endDate": "2027-03-06",
+        "verified": true
+      },
+      "routes": {
+        "0": {
+          "routeId": "last-light-backyard-2027-loop",
+          "date": "2027-03-06",
+          "verified": true
+        }
+      }
     }
   }
 }
