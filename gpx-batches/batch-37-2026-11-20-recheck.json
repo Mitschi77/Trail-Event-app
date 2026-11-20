@@ -1,0 +1,142 @@
+{
+  "batch": 37,
+  "checkedAt": "2026-11-20",
+  "scope": "Second-pass official-source review of top-level events 29-38 (10 events)",
+  "status": "rechecked",
+  "events": [
+    {
+      "order": 29,
+      "name": "Ultra Trail Snowdonia Eryri by UTMB",
+      "year": 2027,
+      "gpxStatus": "Official race pages continue to state that final GPX downloads are released two weeks before the event. No current 2027 GPX binaries verified in this pass. Do not substitute older tracks; recheck inside the organizer's release window.",
+      "sources": [
+        "https://eryri.utmb.world/races/Eryri-80K",
+        "https://eryri.utmb.world/races/Eryri-100M",
+        "https://eryri.utmb.world/races/Eryri-100K"
+      ],
+      "followUp": "Recheck two weeks before race week and validate each published track."
+    },
+    {
+      "order": 30,
+      "name": "Alpenstadt City&Trail",
+      "year": 2027,
+      "gpxStatus": "No official 2027 GPX file verified. Public calendar listings still do not establish an organizer-approved track. Previous app route options require reconciliation with the next official course announcement.",
+      "source": "https://cityundtrail.de/",
+      "followUp": "Wait for organizer's 2027 route details and request the official GPX; keep prior track historical."
+    },
+    {
+      "order": 31,
+      "name": "Garda Trentino Trail Extra",
+      "year": 2027,
+      "gpxStatus": "Official event information still contains conflicting elevation figures: overview approximately 7,000 hm versus regulation approximately 5,800 hm. No current 2027 GPX binary verified. Do not select one value without organizer clarification.",
+      "source": "https://www.gardatrentinotrail.it/de-de/p/32/garda-trentino-trail-extra",
+      "followUp": "Ask organizer to resolve elevation discrepancy and publish final GPX."
+    },
+    {
+      "order": 32,
+      "name": "Garda Trentino Trail Extra 100",
+      "gpxStatus": "Appears to duplicate the same Garda Trentino Trail Extra event as top-level order 31, with conflicting elevation figures and no separate verified 2027 GPX. Preserve both records pending an explicit data cleanup decision; do not silently merge or delete.",
+      "source": "https://www.gardatrentinotrail.it/de-de/p/32/garda-trentino-trail-extra",
+      "followUp": "Reconcile duplicate event records 31/32 against the official race catalogue and retain historical IDs/GPX references during any cleanup."
+    },
+    {
+      "order": 33,
+      "name": "Garda Trentino Trail",
+      "year": 2027,
+      "gpxStatus": "Official route download link still resolves to Garda_Trentino_Trail_2024.gpx. It is stale and must not be labelled as 2027. No new 2027 GPX binary verified.",
+      "source": "https://www.gardatrentinotrail.it/de-de/p/13/garda-trentino-trail",
+      "followUp": "Wait for official 2027 GPX; retain 2024 track as historical."
+    },
+    {
+      "order": 34,
+      "name": "MOUNTAINMAN Reit im Winkl",
+      "year": 2027,
+      "routes": [
+        [
+          "XXL",
+          73,
+          null
+        ],
+        [
+          "XL",
+          52,
+          null
+        ],
+        [
+          "L",
+          40,
+          null
+        ],
+        [
+          "M",
+          26,
+          null
+        ],
+        [
+          "S",
+          11,
+          null
+        ]
+      ],
+      "gpxStatus": "Official 2027 route menu remains five distances (XXL 73K, XL 52K, L 40K, M 26K, S 11K). Organizer provides course maps through Komoot; GPX access requires the organizer's route access/coupon near the event. No direct public 2027 GPX binary validated in this pass.",
+      "source": "https://mountainman.de/trailrunning-events/alps/reit-im-winkl/streckendetails-reit-im-winkl/",
+      "followUp": "Ensure app contains exactly the five official route variants; collect and validate organizer/Komoot tracks when access opens."
+    },
+    {
+      "order": 35,
+      "name": "Rennsteiglauf",
+      "gpxStatus": "Official Supermarathon route description and Outdooractive route profile remain available, but no direct organizer-hosted GPX binary was verified in this pass. Distinguish the public route profile from an official downloadable race GPX.",
+      "source": "https://www.rennsteiglauf.de/wettkampf/strecken/supermarathon/",
+      "followUp": "Check official Outdooractive export and request direct GPX if required for app import."
+    },
+    {
+      "order": 36,
+      "name": "Greenloop Backyard Ultra",
+      "year": 2027,
+      "eventDate": "15 May 2027",
+      "routes": [
+        [
+          "Backyard loop",
+          6.706,
+          null
+        ]
+      ],
+      "gpxStatus": "Official organizer confirms the 6.706 km loop and 15 May 2027 date. No public GPX download found. Current public listing confirms the date and loop length, but not elevation; do not infer hm.",
+      "source": "https://www.greenloopbackyard.de/",
+      "followUp": "Request official loop GPX and elevation profile from organizer."
+    },
+    {
+      "order": 37,
+      "name": "Schwarzach Trail",
+      "year": 2027,
+      "eventDates": "21-22 May 2027 (listed by external event calendar; organizer's linked page remains 2026)",
+      "gpxStatus": "A current external calendar lists 21-22 May 2027, but the organizer's linked detailed route page still contains 2026 K47/K33/K17 GPX information. Treat 2027 date as provisional until organizer confirmation; do not reuse 2026 tracks.",
+      "sources": [
+        "https://www.triundrun.at/de/events/schwarzach-trail-2026/allgemeine-infos-zum-schwarzach-trail",
+        "https://all-sportevents.eu/en/sport/running/country/austria/discipline/ultra-trail-m"
+      ],
+      "followUp": "Obtain direct organizer confirmation of 2027 date, race formats and new GPX files."
+    },
+    {
+      "order": 38,
+      "name": "Ultra X 110 Finland",
+      "editionStatus": "No Finland 2027 race found on the official Ultra X calendar in this pass. Existing route/kit data relates to earlier editions and must not be presented as a current 2027 race.",
+      "gpxStatus": "No current official 2027 GPX verified. Do not keep a 2027 Finland listing unless organizer confirms a new edition.",
+      "source": "https://ultra-x.co/ultra-marathon-races/",
+      "followUp": "Confirm with Ultra X whether Finland returns; otherwise mark event inactive/historical without deleting historical route files."
+    }
+  ],
+  "summary": {
+    "eventsRechecked": 10,
+    "importantUpdates": [
+      "Greenloop Backyard Ultra official page confirms 15 May 2027 and 6.706 km loop; no public GPX or elevation confirmed.",
+      "Schwarzach Trail appears in an external 2027 calendar for 21-22 May, but organizer route detail page still shows 2026; current date/course remains provisional.",
+      "Garda Trentino Extra / Extra 100 remain possible duplicate records with conflicting 7,000 vs 5,800 hm values; no silent merge.",
+      "Garda Trentino Trail's linked GPX is still a 2024 file and is rejected for 2027.",
+      "Mountainman Reit im Winkl has five official distances; GPX via organizer/Komoot access.",
+      "Ultra X Finland has no confirmed 2027 event listing in official calendar."
+    ],
+    "gpxSafety": "No GPX binary was downloaded and parsed in this pass. Older tracks remain retained as historical and are not accepted as current-year replacements. No existing GPX files are deleted or replaced.",
+    "next": "Continue second-pass review with events 19-28."
+  }
+}
