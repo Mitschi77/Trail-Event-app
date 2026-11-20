@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-20T23:40:00Z",
+  "updatedAt": "2026-11-20T23:50:00Z",
   "schemaVersion": 3,
   "events": {
     "la-corsa-della-bora": {
@@ -10597,6 +10597,242 @@
         }
       },
       "note": "Offizielle Seite bestätigt Halbmarathon am 16.05.2027; Zeitplanübersicht enthält widersprüchliche Überschriften und teils alte Uhrzeiten. Startzeit daher nicht als bestätigt geführt."
+    },
+    "copenhagen-half-marathon-2027": {
+      "eventId": "copenhagen-half-marathon-2027",
+      "checkedAt": "2026-11-20T23:50:00Z",
+      "status": "verified",
+      "sources": [
+        {
+          "url": "https://www.superhalfs.com/en/events/copenhagen/",
+          "status": "read",
+          "verification": "official-2027-event-information"
+        }
+      ],
+      "eventPeriod": {
+        "startDate": "2027-09-19",
+        "endDate": "2027-09-19",
+        "verified": true
+      },
+      "routes": {
+        "0": {
+          "routeId": "copenhagen-half-2027-21k",
+          "date": "2027-09-19",
+          "verified": true
+        }
+      }
+    },
+    "cardiff-half-marathon-2027": {
+      "eventId": "cardiff-half-marathon-2027",
+      "checkedAt": "2026-11-20T23:50:00Z",
+      "status": "verified",
+      "sources": [
+        {
+          "url": "https://www.superhalfs.com/en/events/cardiff/",
+          "status": "read",
+          "verification": "official-2027-event-information"
+        }
+      ],
+      "eventPeriod": {
+        "startDate": "2027-10-03",
+        "endDate": "2027-10-03",
+        "verified": true
+      },
+      "routes": {
+        "0": {
+          "routeId": "cardiff-half-2027-21k",
+          "date": "2027-10-03",
+          "verified": true
+        }
+      }
+    },
+    "generali-prague-half-marathon-2027": {
+      "eventId": "generali-prague-half-marathon-2027",
+      "checkedAt": "2026-11-20T23:50:00Z",
+      "status": "verified",
+      "sources": [
+        {
+          "url": "https://www.superhalfs.com/en/events/prague/",
+          "status": "read",
+          "verification": "official-2027-event-information"
+        }
+      ],
+      "eventPeriod": {
+        "startDate": "2027-04-03",
+        "endDate": "2027-04-03",
+        "verified": true
+      },
+      "routes": {
+        "0": {
+          "routeId": "prague-half-2027-21k",
+          "date": "2027-04-03",
+          "verified": true
+        }
+      }
+    },
+    "generali-berlin-half-marathon-2027": {
+      "eventId": "generali-berlin-half-marathon-2027",
+      "checkedAt": "2026-11-20T23:50:00Z",
+      "status": "verified",
+      "sources": [
+        {
+          "url": "https://www.superhalfs.com/en/events/berlin/",
+          "status": "read",
+          "verification": "official-2027-event-information"
+        }
+      ],
+      "eventPeriod": {
+        "startDate": "2027-04-04",
+        "endDate": "2027-04-04",
+        "verified": true
+      },
+      "routes": {
+        "0": {
+          "routeId": "berlin-half-2027-21k",
+          "date": "2027-04-04",
+          "verified": true
+        }
+      }
+    },
+    "belgrade-half-marathon-2027": {
+      "eventId": "belgrade-half-marathon-2027",
+      "checkedAt": "2026-11-20T23:50:00Z",
+      "status": "verified",
+      "sources": [
+        {
+          "url": "https://www.superhalfs.com/en/events/belgrade/",
+          "status": "read",
+          "verification": "official-2027-event-information"
+        }
+      ],
+      "eventPeriod": {
+        "startDate": "2027-04-17",
+        "endDate": "2027-04-17",
+        "verified": true
+      },
+      "routes": {
+        "0": {
+          "routeId": "belgrade-half-2027-21k",
+          "date": "2027-04-17",
+          "verified": true
+        }
+      }
+    },
+    "edp-lisbon-half-marathon-2027": {
+      "eventId": "edp-lisbon-half-marathon-2027",
+      "checkedAt": "2026-11-20T23:50:00Z",
+      "status": "verified",
+      "sources": [
+        {
+          "url": "https://www.superhalfs.com/en/events/lisbon/",
+          "status": "read",
+          "verification": "official-2027-event-information"
+        }
+      ],
+      "eventPeriod": {
+        "startDate": "2027-03-07",
+        "endDate": "2027-03-07",
+        "verified": true
+      },
+      "routes": {
+        "0": {
+          "routeId": "lisbon-half-2027-21k",
+          "date": "2027-03-07",
+          "verified": true
+        }
+      }
+    },
+    "valencia-half-marathon-2027": {
+      "eventId": "valencia-half-marathon-2027",
+      "checkedAt": "2026-11-20T23:50:00Z",
+      "status": "verified",
+      "sources": [
+        {
+          "url": "https://www.superhalfs.com/en/events/valencia/",
+          "status": "read",
+          "verification": "official-2027-event-information"
+        }
+      ],
+      "eventPeriod": {
+        "startDate": "2027-10-24",
+        "endDate": "2027-10-24",
+        "verified": true
+      },
+      "routes": {
+        "0": {
+          "routeId": "valencia-half-2027-21k",
+          "date": "2027-10-24",
+          "verified": true
+        }
+      }
+    },
+    "hc-andersen-marathon-2027": {
+      "eventId": "hc-andersen-marathon-2027",
+      "checkedAt": "2026-11-20T23:50:00Z",
+      "status": "verified",
+      "sources": [
+        {
+          "url": "https://hcamarathon.com/",
+          "status": "read",
+          "verification": "official-2027-event-information"
+        }
+      ],
+      "eventPeriod": {
+        "startDate": "2027-09-26",
+        "endDate": "2027-09-26",
+        "verified": true
+      },
+      "routes": {
+        "0": {
+          "routeId": "hc-andersen-marathon-2027-42k",
+          "date": "2027-09-26",
+          "verified": true
+        },
+        "1": {
+          "routeId": "hc-andersen-marathon-2027-half",
+          "date": "2027-09-26",
+          "verified": true
+        }
+      }
+    },
+    "enschede-marathon-2027": {
+      "eventId": "enschede-marathon-2027",
+      "checkedAt": "2026-11-20T23:50:00Z",
+      "status": "verified",
+      "sources": [
+        {
+          "url": "https://www.enschedemarathon.nl/en/",
+          "status": "read",
+          "verification": "official-2027-event-information"
+        }
+      ],
+      "eventPeriod": {
+        "startDate": "2027-04-11",
+        "endDate": "2027-04-11",
+        "verified": true
+      },
+      "routes": {
+        "0": {
+          "routeId": "enschede-marathon-2027-42k",
+          "date": "2027-04-11",
+          "verified": true
+        },
+        "1": {
+          "routeId": "enschede-marathon-2027-half",
+          "date": "2027-04-11",
+          "verified": true
+        },
+        "2": {
+          "routeId": "enschede-marathon-2027-10k",
+          "date": "2027-04-11",
+          "verified": true
+        },
+        "3": {
+          "routeId": "enschede-marathon-2027-5k",
+          "date": "2027-04-11",
+          "verified": true
+        }
+      }
     }
   }
 }
