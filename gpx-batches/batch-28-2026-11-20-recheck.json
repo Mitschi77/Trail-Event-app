@@ -1,0 +1,222 @@
+{
+  "batch": 28,
+  "checkedAt": "2026-11-20",
+  "scope": "Second official-source GPX and route-data pass for top-level events 109-118",
+  "status": "rechecked",
+  "events": [
+    {
+      "order": 109,
+      "name": "Kullamannen by UTMB",
+      "year": 2027,
+      "routes": [
+        [
+          "Ultra 100 Miles",
+          168,
+          2020
+        ],
+        [
+          "Sprint Ultra 100 km",
+          108,
+          749
+        ],
+        [
+          "Seventh Seal",
+          53,
+          727
+        ],
+        [
+          "North Shore",
+          22,
+          96
+        ]
+      ],
+      "gpx": "Official 2027 race pages confirm four races and route metrics. Official race details are available; binary GPX files were not downloaded or parsed in this pass.",
+      "source": "https://kullamannen.utmb.world/",
+      "followUp": "Extract the official GPX download links for each 2027 race and validate file contents."
+    },
+    {
+      "order": 110,
+      "name": "Mallorca Serra de Tramuntana",
+      "year": 2027,
+      "routes": [],
+      "gpx": "Current UTMB calendar does not list a 2027 Mallorca edition; official GPX page previously checked contains 2026 tracks only. Do not use historic GPX as 2027.",
+      "source": "https://mallorca.utmb.world/race/tracks",
+      "followUp": "Recheck only after organizer confirms a 2027 edition and publishes current course files."
+    },
+    {
+      "order": 111,
+      "name": "24+1 Challenge / Austria Backyard Ultra Hochkönig",
+      "year": 2027,
+      "routes": [
+        [
+          "Backyard loop",
+          6.706,
+          null
+        ]
+      ],
+      "gpx": "Official organizer confirms 25 October 2027, hourly 6.706 km loop and 24+1 format. No public GPX download found in official page review.",
+      "source": "https://www.austriabackyardultra.com/hochkoenig",
+      "followUp": "Request or recheck official course track when organizer publishes it."
+    },
+    {
+      "order": 112,
+      "name": "Puglia Terra delle Gravine",
+      "year": 2027,
+      "routes": [],
+      "gpx": "No current 2027 Puglia UTMB edition or current organizer GPX was confirmed in the available official calendar checks. Historical tracks must not be treated as current.",
+      "source": "https://utmb.world/utmb-world-series",
+      "followUp": "Confirm whether a new edition is announced before refreshing route data."
+    },
+    {
+      "order": 113,
+      "name": "3 Días Trail Ibiza",
+      "year": 2026,
+      "routes": [],
+      "gpx": "Official organizer confirms event dates 27-29 November 2026 and three stages. The Saturday route through private/protected land is distributed to participants by email approximately one week before the event; no public direct GPX link confirmed.",
+      "source": "https://3diastrailibiza.com/",
+      "followUp": "Check participant email/portal for the current GPX near race week; do not substitute a historic public track."
+    },
+    {
+      "order": 114,
+      "name": "Oman by UTMB",
+      "year": 2026,
+      "routes": [
+        [
+          "Hajar Ultra",
+          154,
+          8000
+        ],
+        [
+          "Jabal Classic",
+          103,
+          5000
+        ],
+        [
+          "Skyward Canyon",
+          50,
+          2400
+        ],
+        [
+          "Old Capital Trail",
+          32,
+          1400
+        ],
+        [
+          "Scenic Ascent",
+          21.5,
+          550
+        ]
+      ],
+      "gpx": "Official 2026 race pages list five courses and Map + GPX panels. Official metrics confirmed; GPX file bytes were not independently downloaded/parsed in this pass.",
+      "source": "https://oman.utmb.world/",
+      "followUp": "Extract each official 2026 GPX and validate distance/elevation from file before marking imported."
+    },
+    {
+      "order": 115,
+      "name": "Mammutmarsch München",
+      "year": 2027,
+      "routes": [
+        [
+          "100K",
+          100,
+          null
+        ],
+        [
+          "75K",
+          75,
+          null
+        ]
+      ],
+      "gpx": "Official organizer confirms 31 July 2027 and 75K/100K routes. No public GPX download shown on the official event page.",
+      "source": "https://mammutmarsch.de/events/muenchen",
+      "followUp": "Check participant portal or request current GPX from organizer."
+    },
+    {
+      "order": 116,
+      "name": "Megamarsch München",
+      "year": 2027,
+      "routes": [
+        [
+          "100 km",
+          100,
+          990
+        ]
+      ],
+      "gpx": "Official organizer confirms 15-16 May 2027, approx. 990 hm and a Komoot download about two weeks before the event; route may still change shortly before start. No current GPX download is published yet.",
+      "source": "https://www.megamarsch.de/m%C3%BCnchen",
+      "followUp": "Recheck around 1 May 2027 for the official Komoot/GPX track."
+    },
+    {
+      "order": 117,
+      "name": "Vietnam Highlands Trail by UTMB",
+      "year": 2027,
+      "routes": [
+        [
+          "100K Langbiang",
+          101.5,
+          null
+        ],
+        [
+          "50K Elephant",
+          54.6,
+          null
+        ],
+        [
+          "20K Pinhatt",
+          22.2,
+          null
+        ],
+        [
+          "10K Tuyenlam",
+          10.6,
+          null
+        ]
+      ],
+      "gpx": "Official 2027 pages confirm four race distances and course names. Previous checkpoint records official Google Drive GPX links for all four, but files were not downloaded/parsed in this pass; keep file validation pending.",
+      "source": "https://vietnamhighlands.utmb.world/",
+      "followUp": "Resolve each official Drive file and validate its GPX contents; if browser CORS/confirmation blocks import, download manually and use the app GPX import."
+    },
+    {
+      "order": 118,
+      "name": "Tarawera Ultra-Trail by UTMB",
+      "year": 2027,
+      "routes": [
+        [
+          "TMiler",
+          163,
+          3800
+        ],
+        [
+          "T102",
+          102,
+          2300
+        ],
+        [
+          "T50",
+          52,
+          1150
+        ],
+        [
+          "T21",
+          23,
+          400
+        ],
+        [
+          "T14",
+          14,
+          161
+        ]
+      ],
+      "gpx": "Official 2027 page confirms five races, distances and elevation gains. Official entry information points users to the event app for course maps; no direct public GPX file endpoint was confirmed in this pass.",
+      "source": "https://tarawera.utmb.world/",
+      "followUp": "Inspect official race detail pages/app for GPX release and validate each track before import."
+    }
+  ],
+  "summary": {
+    "eventsRechecked": 10,
+    "routeVariantsWithOfficialMetrics": 17,
+    "corrections": [],
+    "gpxSafety": "No GPX binary is claimed as downloaded or validated in this pass. Historical 2026 tracks are not accepted for 2027; tracks distributed privately or released later remain pending.",
+    "next": "Continue second-pass review of events 99-108, then events 89-98."
+  }
+}
