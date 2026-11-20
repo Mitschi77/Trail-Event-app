@@ -96,7 +96,7 @@ for event_index, event in enumerate(events):
                     valid_hm.append(numeric)
                 if field == "km" and numeric > 300:
                     warnings.append(f"{name} / {route_id}: unusually long distance {numeric:g} km – please verify")
-                if field == "hm" and numeric > 15000:
+                if field == "hm" and numeric > 15000 and route.get("multiDayStageRace") is not True:
                     warnings.append(f"{name} / {route_id}: unusually high elevation gain {numeric:g} hm – please verify")
                 if field == "maxh" and numeric > 240:
                     warnings.append(f"{name} / {route_id}: unusually long time limit {numeric:g} h – please verify")
