@@ -1804,6 +1804,11 @@
           "url": "https://www.wilderkaiser.info/de/kaiserkrone-trail.html",
           "status": "read",
           "verification": "manual-official-page"
+        },
+        {
+          "url": "https://www.tirol.at/aktivitaeten/events/alle-events/kaiserkrone-trail",
+          "status": "read",
+          "verification": "official-tirol-2027-event-details"
         }
       ],
       "eventPeriod": {
@@ -1834,6 +1839,11 @@
         },
         "4": {
           "routeId": "kaiserkrone-medium-20-7-1290",
+          "date": "2027-06-26",
+          "verified": true
+        },
+        "5": {
+          "routeId": "kaiserkrone-short-8-3-490-2027",
           "date": "2027-06-26",
           "verified": true
         }
@@ -1884,6 +1894,11 @@
         "4": {
           "routeId": "stubai-kids-trail-2027",
           "date": "2027-07-03",
+          "verified": true
+        },
+        "5": {
+          "routeId": "stubai-sunnenseitn-14-700-2027",
+          "date": "2027-07-02",
           "verified": true
         }
       }
