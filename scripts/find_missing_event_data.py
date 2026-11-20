@@ -7,7 +7,7 @@ from html import unescape
 from pathlib import Path
 from urllib.parse import urljoin, urlparse
 from event_data_rules import extract_cutoff_hours, filter_shared_gpx_proposals, is_http_url, meaningful_elevation_gain
-from event_data_candidates import CANDIDATE_PATTERNS, extract_contexts, extract_date_values, missing_candidate_fields
+from event_data_candidates import CANDIDATE_PATTERNS, extract_contexts, extract_date_values, extract_starttime_values, extract_race_cost_values, missing_candidate_fields
 
 ROOT = Path(__file__).resolve().parents[1]
 HTML = (ROOT / "index.html").read_text(encoding="utf-8")
@@ -169,13 +169,20 @@ def route_scan(event, ri, route):
             evidence = "Exakte Datumszeichenfolge(n): " + ", ".join(values) + ". Kontext: " + " | ".join(contexts[:2])
             new_value = values
             title = f"Datumsfund prüfen: {event.get('name')} · {route.get('name') or route.get('route') or ri}"
-        else:
-            snippets = extract_contexts(plain, CANDIDATE_PATTERNS[field])
-            if not snippets:
+        elif field == "starttime":
+            values = extract_starttime_values(plain)
+            if not values:
                 continue
-            evidence = "Unveränderter Textkandidat von der zugeordneten Veranstalter-/Streckenseite. Jahr, Strecke, Preisstaffel und Gültigkeit müssen manuell geprüft werden."
-            new_value = snippets
-            title = f"{field}-Angabe prüfen: {event.get('name')} · {route.get('name') or route.get('route') or ri}"
+            evidence = "Nur erkannte Uhrzeit(en) aus einer expliziten Startzeit-Angabe. Streckenzuordnung und Gültigkeit manuell prüfen."
+            new_value = values
+            title = f"Startzeit prüfen: {event.get('name')} · {route.get('name') or route.get('route') or ri}"
+        elif field == "raceCost":
+            values = extract_race_cost_values(plain)
+            if not values:
+                continue
+            evidence = "Nur erkannte Geldbeträge aus einer expliziten Startgeld-/Nenngeld-Angabe. Währung, Preisstaffel und Gültigkeit manuell prüfen."
+            new_value = values
+            title = f"Startgeld prüfen: {event.get('name')} · {route.get('name') or route.get('route') or ri}"
         props.append({"proposal_type":"data_correction",
           "title":title,
           "payload":{"source":"automated_event_data_finder","eventId":event.get("id"),"eventName":event.get("name"),

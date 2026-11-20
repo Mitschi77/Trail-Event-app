@@ -65,7 +65,7 @@ if (!html.includes("function switchPlannerAccountData(previousUserId,nextUserId)
   throw new Error("Account switching must preserve the previous account snapshot.");
 }
 
-for (const required of ["dateCandidate:'Startdatum · Textfund'", "starttimeCandidate:'Startzeit · Textfund'", "raceCostCandidate:'Startgeld · Textfund'", "if(Array.isArray(value))return value.filter"]) {
+for (const required of ["dateCandidate:'Startdatum · Textfund'", "starttimeCandidate:'Startzeit · erkannte Uhrzeit'", "raceCostCandidate:'Startgeld · erkannter Betrag'", "if(Array.isArray(value))return value.filter"]) {
   if (!html.includes(required)) throw new Error("Review queue must render readable official-page candidates: " + required);
 }
 if (!html.includes("localStorage.setItem(plannerAccountBackupKey(previousUserId)") || !html.includes("validatePlannerSnapshot(nextBackup.keys)") || !html.includes("applyPlannerSnapshot(nextBackup.keys)")) {

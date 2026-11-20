@@ -36,3 +36,43 @@ def extract_date_values(text, limit=4):
         if len(found) >= limit:
             break
     return found
+
+
+TIME_VALUE_PATTERN = re.compile(r"(?<!\d)([01]?\d|2[0-3])[:.]([0-5]\d)(?!\d)")
+MONEY_VALUE_PATTERN = re.compile(
+    r"(?:(?P<amount>(?:\d{1,3}(?:[ .]\d{3})+|\d{2,4})(?:[,.]\d{1,2})?)\s*(?P<currency>€|eur|chf|usd|\$)"
+    r"|(?P<currency_prefix>€|eur|chf|usd|\$)\s*(?P<amount_prefix>(?:\d{1,3}(?:[ .]\d{3})+|\d{2,4})(?:[,.]\d{1,2})?))",
+    re.IGNORECASE,
+)
+
+
+def extract_starttime_values(text, limit=4):
+    """Return only clock times found in explicit start-time contexts."""
+    found = []
+    for context in CANDIDATE_PATTERNS["starttime"].finditer(text or ""):
+        for match in TIME_VALUE_PATTERN.finditer(context.group(0)):
+            value = f"{int(match.group(1)):02d}:{match.group(2)}"
+            if value not in found:
+                found.append(value)
+            if len(found) >= limit:
+                return found
+    return found
+
+
+def extract_race_cost_values(text, limit=4):
+    """Return only currency amounts found in explicit entry-fee contexts."""
+    found = []
+    for context in CANDIDATE_PATTERNS["raceCost"].finditer(text or ""):
+        matches = list(MONEY_VALUE_PATTERN.finditer(context.group(0)))
+        if not matches:
+            continue
+        match = matches[-1]
+        amount = match.group("amount") or match.group("amount_prefix")
+        currency = match.group("currency") or match.group("currency_prefix")
+        currency = {"eur": "€", "usd": "USD", "$": "USD", "chf": "CHF"}.get(currency.lower(), currency)
+        value = f"{amount} {currency}"
+        if value not in found:
+            found.append(value)
+        if len(found) >= limit:
+            break
+    return found
