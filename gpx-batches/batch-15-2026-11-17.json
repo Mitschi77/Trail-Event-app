@@ -1,0 +1,45 @@
+{
+  "batch": 15,
+  "checkedAt": "2026-11-17",
+  "scope": "Top-level events 71-75 in current EVENTS order",
+  "status": "saved",
+  "appCommit": "82b7388c837463542a551631350c4b5db7f0a18e",
+  "events": [
+    {
+      "order": 71,
+      "name": "3Kings 3Hills",
+      "gpxStatus": "Official 2027 event and eight route distances confirmed. Organizer says GPX data are available on individual route pages; app links to official participant info. Direct GPX file URLs not yet extracted.",
+      "source": "https://www.3kings-3hills.com/",
+      "followUp": "Extract each route GPX individually; avoid old 2024 files."
+    },
+    {
+      "order": 72,
+      "name": "Davos X-Trail",
+      "gpxStatus": "Official 2027 Diamond route confirmed (68.37 km / 3,309 hm). Organizer GPX download currently points to StreckeDiamond2026.gpx; rejected as stale.",
+      "source": "https://www.davos-xtrails.ch/diamond-68-km",
+      "followUp": "Wait for 2027 GPX release."
+    },
+    {
+      "order": 73,
+      "name": "The North Face Großglockner Ultra-Trail",
+      "gpxStatus": "Official 2027 five races confirmed: GGUT 110K, OTT 84K, GGT 57K, GWT 37K, KST 16K. Organizer official app is route source; no public direct GPX download verified.",
+      "source": "https://www.ultratrail.at/de",
+      "followUp": "Check official app / athlete race pack for downloadable GPX."
+    },
+    {
+      "order": 74,
+      "name": "SachsenTrail",
+      "gpxStatus": "Organizer route pages link GPX downloads, but current visible FunTrail file is 2026_FunTrail.gpx and other route pages carry a 2026 page date. Do not import for 2027.",
+      "source": "https://www.sachsentrail.de/",
+      "followUp": "Recheck after 2027 route GPX files are published."
+    },
+    {
+      "order": 75,
+      "name": "Gauja Trail by UTMB",
+      "gpxStatus": "Official 2027 UTMB Map + GPX pages linked for all seven courses (100K, 50K, 20K, 10K, Sigulda Three Castles, Youth, Kids). Direct file endpoints not extracted from map widgets.",
+      "source": "https://gauja.utmb.world/races",
+      "followUp": "Export each route from official Map + GPX section."
+    }
+  ],
+  "nextBatch": "Continue with events 76-80 after package 15 checkpoint."
+}

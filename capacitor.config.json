@@ -1,0 +1,11 @@
+{
+  "appId": "de.mitschi77.trailevents",
+  "appName": "Trail Events",
+  "webDir": "www",
+  "server": {
+    "iosScheme": "capacitor"
+  },
+  "ios": {
+    "contentInset": "automatic"
+  }
+}

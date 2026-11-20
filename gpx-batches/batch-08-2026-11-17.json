@@ -1,0 +1,62 @@
+{
+  "batch": 8,
+  "checkedAt": "2026-11-17",
+  "scope": "Events 36–40 in top-level EVENTS array",
+  "status": "saved",
+  "appCommit": "40d247052d6a2fc4b7dfdcc1fb59b1af6cf1a32b",
+  "latestObservedIndexBlob": "837bb9cc6920638855fd9bb8711ed0920edc4d41",
+  "events": [
+    {
+      "order": 36,
+      "name": "Greenloop Backyard Ultra",
+      "officialSource": "https://www.greenloopbackyard.de/",
+      "gpxStatus": "not-published-yet",
+      "note": "Official site confirms 6.706 km loop and date 15 May 2027; no GPX download found."
+    },
+    {
+      "order": 37,
+      "name": "Schwarzach Trail",
+      "officialSource": "https://www.triundrun.at/de/events/schwarzach-trail-2026/allgemeine-infos-zum-schwarzach-trail",
+      "gpxStatus": "stale-2026-course",
+      "note": "Organizer page contains 2026 GPX information for K47/K33/K17, but 2027 details/GPX are not yet published. Do not reuse 2026 course."
+    },
+    {
+      "order": 38,
+      "name": "Ultra X 110 Finnland",
+      "officialSource": "https://ultra-x.co/ultra-marathon-races/",
+      "gpxStatus": "not-listed-2027",
+      "note": "Official Ultra X event calendar does not currently list a Finland 2027 event. Existing Finland kit list/route data relates to earlier editions; no 2027 GPX."
+    },
+    {
+      "order": 39,
+      "name": "Mountain Ultra Trail by UTMB",
+      "officialSources": [
+        "https://mut.utmb.world/en/races/mutmiler",
+        "https://mut.utmb.world/races/mut100",
+        "https://mut.utmb.world/races/mut60",
+        "https://mut.utmb.world/races/mut45",
+        "https://mut.utmb.world/races/mutchallenge",
+        "https://mut.utmb.world/races/mutlite"
+      ],
+      "gpxStatus": "interactive-map",
+      "note": "All six official UTMB race pages provide a Map + GPX section; no separate direct downloadable GPX URL was exposed. MUT Miler route data is still marked to be confirmed."
+    },
+    {
+      "order": 40,
+      "name": "MOUNTAINMAN Berchtesgaden – WATZ",
+      "officialSources": [
+        "https://mountainman.de/trailrunning-events/alps/berchtesgaden/",
+        "https://mountainman.de/trailrunning-events/alps/berchtesgaden/streckendetails-berchtesgaden-watz/"
+      ],
+      "gpxStatus": "organizer-komoot",
+      "note": "Organizer confirms GPX tracks for WATZ Ultimate, Double and Final. Stage files are accessed through the official route pages/Komoot; voucher before the event. Ultimate comprises four stages; Double uses stages 3–4; Final uses stage 4. No direct public GPX file URL."
+    }
+  ],
+  "followUps": [
+    "Greenloop: ask organizer for official GPX if route display is needed.",
+    "Schwarzach: recheck when 2027 route and GPX files are published.",
+    "Ultra X Finland: remove or correct the 2027 event entry unless organizer confirms a 2027 edition.",
+    "MUT by UTMB: recheck for final downloadable files; current race pages show map/GPX interface.",
+    "WATZ: obtain organizer's Komoot voucher/track files before event and associate stage GPX with the correct format."
+  ]
+}

@@ -1,0 +1,34 @@
+name: App syntax and regression tests
+
+on:
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: app-tests-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  test:
+    name: Node syntax and regression suite
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - name: Install locked dependencies
+        run: npm ci
+      - name: Run app syntax and regression tests
+        run: npm run test:syntax
+      - name: Check Python workflow scripts
+        run: python3 -m py_compile scripts/update_event_dates.py scripts/validate_event_data.py scripts/submit_event_date_proposals.py
+      - name: Validate event and route data, including date-feed route IDs
+        run: python3 scripts/validate_event_data.py

@@ -1,0 +1,71 @@
+{
+  "batch": 2,
+  "checkedAt": "2026-11-17",
+  "scope": "Top-level events 6-10 in current EVENTS order",
+  "status": "saved",
+  "appCommit": "5eeb1c7d8561e6f9e135743be6edb75b95162fdf",
+  "events": [
+    {
+      "order": 6,
+      "name": "Transgrancanaria",
+      "gpxStatus": "No current 2027 GPX. Official Classic page currently exposes a 2026 file; rejected as stale.",
+      "routes": [
+        "Classic 126km",
+        "Advanced 82km"
+      ],
+      "followUp": "Wait for official 2027 GPX links. Do not use 2026 GPX."
+    },
+    {
+      "order": 7,
+      "name": "Donautrail",
+      "gpxStatus": "Organizer download page found, but reuse/upload is prohibited by its terms.",
+      "routes": [
+        "Linz55",
+        "Linz75",
+        "Linz100"
+      ],
+      "officialDownloadPage": "https://donautrail.at/downlaod-gpx-track-donautrail/",
+      "followUp": "App links users to the organizer page only; do not copy files into repository. User must accept organizer terms."
+    },
+    {
+      "order": 8,
+      "name": "Psyland Backyard Ultra",
+      "gpxStatus": "Historical event from 14 March 2026; no official GPX found for this past edition.",
+      "followUp": "Do not substitute tracks from a different 2027 event or similarly named race."
+    },
+    {
+      "order": 9,
+      "name": "Tenerife Bluetrail by UTMB",
+      "gpxStatus": "Official 2027 direct downloads linked for 82K and 68K; 110K, 47K and 24K page links still resolve to 2025 files and are rejected as stale.",
+      "officialDownloadPage": "https://tenerife.utmb.world/race/tracks",
+      "downloads": [
+        {
+          "route": "82K",
+          "url": "https://pdf.utmb.world/raw/upload/v1779958614/tenerife/2027_TBT_VILAFLOR_82km_3300m_15dda65079.gpx"
+        },
+        {
+          "route": "68K",
+          "url": "https://pdf.utmb.world/raw/upload/v1779958611/tenerife/2027_TBT_LA_ESPERANZA_68km_3600m_d784b08256.gpx"
+        }
+      ],
+      "followUp": "Use app one-click import and check CORS; wait for updated 110K/47K/24K GPX."
+    },
+    {
+      "order": 10,
+      "name": "Chianti Ultra Trail",
+      "gpxStatus": "Official UTMB direct 2027 GPX links verified and added.",
+      "downloads": [
+        {
+          "route": "CUT 73K",
+          "url": "https://pdf.utmb.world/raw/upload/v1777382308/chianti/Races/gpx%20files/2027/CUT_73_K_2027_a4e001e60a.gpx"
+        },
+        {
+          "route": "UTCC 120K",
+          "url": "https://pdf.utmb.world/raw/upload/v1780669402/chianti/Races/gpx%20files/UTCC_120_K_2027_01_8d79fda70b.gpx"
+        }
+      ],
+      "followUp": "Use app one-click import and verify route metrics against official course details."
+    }
+  ],
+  "nextBatch": "Continue with events 11-15 after package 2 checkpoint."
+}

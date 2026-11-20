@@ -1,0 +1,66 @@
+{
+  "batch": 3,
+  "checkedAt": "2026-11-17",
+  "scope": "Top-level events 11-15 in current EVENTS order",
+  "status": "saved",
+  "appCommit": "edfc41ad618da5a8f27de274b110c4ed4d43cf35",
+  "events": [
+    {
+      "order": 11,
+      "name": "Ötzi Trairun",
+      "gpxStatus": "Official direct GPX link verified and added.",
+      "route": "Sunny Mountain Trail 30K",
+      "download": "https://www.merano-suedtirol.it/media/20ed251a-0d81-4b8a-a13d-2164258490f4/t123182821-sunny-mountain-trail-30km-2100hm.gpx",
+      "source": "https://www.merano-suedtirol.it/de/oetzi-trailrun-naturns/dein-lauf/sunny-mountain-trail.html",
+      "followUp": "Use one-click import; verify CORS and parsed track."
+    },
+    {
+      "order": 12,
+      "name": "Wien Marathon",
+      "gpxStatus": "Official 2027 page exposes a GPX link but its actual URL is under /2026/; stale file rejected.",
+      "source": "https://www.vienna-marathon.com/?go=marathon&lang=de",
+      "followUp": "Wait for the organizer to publish the 2027 GPX."
+    },
+    {
+      "order": 13,
+      "name": "Istrien / Istria100",
+      "gpxStatus": "Official UTMB GPX downloads for 2027 linked for 110K and 69K.",
+      "source": "https://istria.utmb.world/hr/races-runners/runners/gpx-tracks",
+      "downloads": [
+        {
+          "route": "Istria 110K",
+          "url": "https://pdf.utmb.world/raw/upload/v1781524088/istria/.gpx/ISTRIA_111k_2027_43ca9de8f1.gpx"
+        },
+        {
+          "route": "Istria 69K",
+          "url": "https://pdf.utmb.world/raw/upload/v1781524084/istria/.gpx/ISTRIA_69k_2027_f18764744b.gpx"
+        }
+      ],
+      "followUp": "Use one-click import; compare imported route length with official values."
+    },
+    {
+      "order": 14,
+      "name": "Paris Marathon",
+      "gpxStatus": "Historical 2026 event; official route profile page found but no official GPX link verified.",
+      "source": "https://www.schneiderelectricparismarathon.com/en/information/route-and-profiles",
+      "followUp": "Do not use unofficial course files as official. Check the next edition's route page if this event remains in the plan."
+    },
+    {
+      "order": 15,
+      "name": "Grand Raid Ventoux",
+      "gpxStatus": "Official UTMB pages expose Map + GPX interactive map, but no direct downloadable file link in page text.",
+      "routes": [
+        "UGP 125K",
+        "GEV 87K",
+        "MMT 51K"
+      ],
+      "sources": [
+        "https://ventoux.utmb.world/races/grv100m",
+        "https://ventoux.utmb.world/races/grv100k",
+        "https://ventoux.utmb.world/races/GRV50K"
+      ],
+      "followUp": "Export GPX from each official race map or recheck when direct download buttons appear."
+    }
+  ],
+  "nextBatch": "Continue with events 16-20 after package 3 checkpoint."
+}

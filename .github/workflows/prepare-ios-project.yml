@@ -1,0 +1,68 @@
+name: Prepare native iOS project
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+# Dieser Workflow wird nur noch manuell gestartet.
+# Die Web-App/PWA benötigt keine automatische native iOS-Projektgenerierung.
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  generate-ios:
+    runs-on: macos-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Install dependencies
+        run: npm install
+      - name: Audit npm dependencies
+        run: npm audit --audit-level=high
+      - name: Validate app JavaScript
+        run: npm run test:syntax
+      - name: Generate native iOS project
+        run: |
+          if [ -d ios/App/App.xcodeproj ]; then npm run ios:sync; else npm run ios:add; fi
+          npm run build
+      - name: Commit generated Xcode project
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add ios package-lock.json
+          if ! git diff --cached --quiet; then
+            git commit -m "Generate native Capacitor iOS project"
+            for attempt in 1 2 3 4 5; do
+              git fetch origin main
+              if git rebase origin/main; then
+                if git push origin HEAD:main; then
+                  exit 0
+                fi
+              else
+                echo "Main changed during generation; regenerating against latest main."
+                git rebase --abort
+                git reset --hard origin/main
+                npm install
+                npm run ios:sync
+                npm run build
+                git add ios package-lock.json
+                if git diff --cached --quiet; then
+                  echo "Latest main already contains the generated native project and lockfile."
+                  exit 0
+                fi
+                git commit -m "Generate native Capacitor iOS project"
+              fi
+              sleep 3
+            done
+            echo "Could not publish generated iOS project and lockfile after five attempts."
+            exit 1
+          else
+            echo "No native project changes to commit."
+          fi

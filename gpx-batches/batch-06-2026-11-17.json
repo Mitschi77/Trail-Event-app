@@ -1,0 +1,53 @@
+{
+  "batch": 6,
+  "checkedAt": "2026-11-17",
+  "scope": "Top-level events 26-30 in current EVENTS order",
+  "status": "saved",
+  "appCommit": "3dcd56280271a6e63f5c2abc16655be68d141920",
+  "events": [
+    {
+      "order": 26,
+      "name": "Transvulcania adidas",
+      "gpxStatus": "Official 2027 GPX found for new 12K Light only. Other official links still point to TRV24 (2024) and are rejected.",
+      "download": "https://transvulcania.com/wp-content/uploads/gpx/sin-categorizar/Transvulcania_12K.gpx",
+      "source": "https://transvulcania.com/de/",
+      "followUp": "Import 12K; wait for updated 2027 GPX for Ultra, Marathon, Half Marathon and Vertical."
+    },
+    {
+      "order": 27,
+      "name": "Ultra Tail Australia by UTMB",
+      "gpxStatus": "Official race pages show Map + GPX but label current map data as 2026; 2027 files not yet confirmed.",
+      "sources": [
+        "https://uta.utmb.world/races/utamiler",
+        "https://uta.utmb.world/races/uta100"
+      ],
+      "followUp": "Wait for updated 2027 course map and GPX."
+    },
+    {
+      "order": 28,
+      "name": "Trail Alsace by UTMB",
+      "gpxStatus": "Official FAQ says GPX will be emailed 1-2 weeks before the race because route crosses private land.",
+      "source": "https://alsace.utmb.world/races-runners/runners/infos-pratiques",
+      "followUp": "Recheck two weeks before event; do not import old or unofficial tracks."
+    },
+    {
+      "order": 29,
+      "name": "Ultra Trail Snowdonia Eryri",
+      "gpxStatus": "Official pages say final GPX downloads will be available two weeks before the event.",
+      "sources": [
+        "https://eryri.utmb.world/races/Eryri-80K",
+        "https://eryri.utmb.world/races/Eryri-100M",
+        "https://eryri.utmb.world/races/Eryri-100K"
+      ],
+      "followUp": "Recheck two weeks before event."
+    },
+    {
+      "order": 30,
+      "name": "Alpenstadt City&Trail",
+      "gpxStatus": "No official GPX published for 2027. Third-party event listing also says GPX trace not yet published.",
+      "source": "https://cityundtrail.de/",
+      "followUp": "Wait for official route files; reconcile app route options with organizer's 2027 distances."
+    }
+  ],
+  "nextBatch": "Continue with events 31-35 after package 6 checkpoint."
+}

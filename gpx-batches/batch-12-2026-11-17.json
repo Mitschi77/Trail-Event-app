@@ -1,0 +1,75 @@
+{
+  "batch": 12,
+  "checkedAt": "2026-11-17",
+  "scope": "Events 56–60 in top-level EVENTS array",
+  "status": "saved",
+  "appCommit": "add7c9d6bd3e411588c90a5bc59bd74efeb7bcaa",
+  "events": [
+    {
+      "order": 56,
+      "name": "Kaiserkrone",
+      "officialSources": [
+        "https://www.wilderkaiser.info/de/tours/kaiserkrone-trail-ultra-offizielle-wettkampfroute-trailrunning-event.html",
+        "https://www.wilderkaiser.info/de/tours/kaiserkrone-trail-skyrace-offizielle-wettkampfroute-trailrunning-event.html",
+        "https://www.wilderkaiser.info/de/tours/kaiserkrone-trail-panorama-offizielle-wettkampfroute-trailrunning-event.html",
+        "https://www.wilderkaiser.info/de/tours/kaiserkrone-trail-medium-offizielle-wettkampfroute-trailrunning-event.html",
+        "https://www.wilderkaiser.info/de/tours/kaiserkrone-trail-short-offizielle-wettkampfroute-trailrunning-event.html"
+      ],
+      "gpxStatus": "official-page-download",
+      "note": "Five official route pages each display a GPX/PDF download button. App links open the matching route page; Kids route has no GPX."
+    },
+    {
+      "order": 57,
+      "name": "Stubai Ultra Trail by UTMB",
+      "officialSources": [
+        "https://stubai.utmb.world/races/stubai100",
+        "https://stubai.utmb.world/races/stubai-ultra",
+        "https://stubai.utmb.world/races/stubai-classic",
+        "https://stubai.utmb.world/races/stubai-express",
+        "https://stubai.utmb.world/races/stubai-sunnenseitn-trail",
+        "https://stubai.utmb.world/races/kids-trail"
+      ],
+      "gpxStatus": "interactive-map",
+      "note": "2027 race pages for 100, Ultra, Classic, Express and Sunnenseitn all include Map + GPX. No separate direct file URL; app links open each map. Kids Trail has no GPX route."
+    },
+    {
+      "order": 58,
+      "name": "Brixen marathon / Dolomites Ultra Trail",
+      "officialSource": "https://www.brixenmarathon.com/dolomites-ultra-trail/",
+      "gpxStatus": "historical-track",
+      "historicalDate": "2022-07-02",
+      "gpxUrl": "https://www.brixenmarathon.com/info/dolomites-ultra-trail-84km.gpx",
+      "note": "Official 84 km / 4,728 hm GPX is available for the last documented edition on 2 July 2022. The event page says the race was cancelled after 2022; app date corrected from 2026 to 2022."
+    },
+    {
+      "order": 59,
+      "name": "U.TLW",
+      "officialSource": "https://utlw.de/de/",
+      "gpxStatus": "not-current-edition",
+      "note": "Official site still points to 2025 registration and the individual route links return 404. No 2027 date or GPX verified. App date cleared; routes renamed to official 23K Osser-Riese and 54K König vom Bayerwald."
+    },
+    {
+      "order": 60,
+      "name": "Großglockner Mountain Run",
+      "officialSources": [
+        "https://grossglockner-mountainrun.at/",
+        "https://grossglockner-mountainrun.at/strecke/"
+      ],
+      "gpxStatus": "not-published-yet",
+      "officialStats": {
+        "distanceKm": 13.3,
+        "elevationM": 1300,
+        "date": "2027-07-04"
+      },
+      "note": "Official 2027 site confirms 13.3 km / 1,300 m and race date 4 July 2027, but no official GPX download. Third-party GPX pages were deliberately not used."
+    }
+  ],
+  "followUps": [
+    "Kaiserkrone: test the five GPX/PDF download buttons and save the files if the browser can access them.",
+    "Stubai: recheck for direct GPX exports closer to race weekend.",
+    "Brixen: keep the 2022 GPX clearly marked historical; do not treat it as a current race.",
+    "U.TLW: confirm whether a 2027 edition exists before reactivating the event.",
+    "Grossglockner: request official GPX from organizer when available."
+  ],
+  "retrievalLimitation": "The app stores official page links for Kaiserkrone/Stubai and the historical Brixen GPX URL. Direct GPX binaries are not embedded in the repository except as external links."
+}

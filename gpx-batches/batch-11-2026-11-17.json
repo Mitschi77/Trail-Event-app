@@ -1,0 +1,126 @@
+{
+  "batch": 11,
+  "checkedAt": "2026-11-17",
+  "scope": "Events 51–55 in top-level EVENTS array",
+  "status": "saved",
+  "appCommit": "f52483310ca8dac2c56f90759fb3b2538bbe2a87",
+  "events": [
+    {
+      "order": 51,
+      "name": "Schluchthof Backyard",
+      "officialSource": "https://www.schluchthof.de/",
+      "gpxStatus": "not-verified",
+      "note": "Official site returned 502; no GPX could be checked."
+    },
+    {
+      "order": 52,
+      "name": "Tschirgant Sky",
+      "officialSources": [
+        "https://tschirgant-sky.run/",
+        "https://tschirgant-sky.run/trailrun-tirol-strecken/"
+      ],
+      "gpxStatus": "not-published-yet",
+      "note": "Official 2027 page confirms 12 June and four distances TS16/TS26/TS42/TS52; no GPX link. App currently lists only TS52 Ultra."
+    },
+    {
+      "order": 53,
+      "name": "Backyard Ultra",
+      "routes": [
+        {
+          "name": "Hofer Backyard Ultra",
+          "status": "not-published-yet",
+          "note": "Official 2027 page, no GPX. Unverified legacy Komoot URL removed from app."
+        },
+        {
+          "name": "Fränkischer Backyard",
+          "status": "not-verified",
+          "note": "Official site returned 403."
+        },
+        {
+          "name": "Tuttlinger Backyard Ultra",
+          "status": "past-event-no-gpx",
+          "note": "Official page says the fifth edition is over; no 2027 date or GPX."
+        },
+        {
+          "name": "Kuckuck Backyard Ultra",
+          "status": "race-email",
+          "note": "Organizer sends GPX by email in the final race update. The 2026 event date is 10 October 2026; public Komoot route is titled 2025 and was not reused."
+        }
+      ]
+    },
+    {
+      "order": 54,
+      "name": "La Sportiva Lavaredo Ultra Trail by UTMB",
+      "officialSources": [
+        "https://lavaredo.utmb.world/races/lavaredo50k",
+        "https://lavaredo.utmb.world/races/lavaredo80k",
+        "https://lavaredo.utmb.world/races/lavaredo120k",
+        "https://lavaredo.utmb.world/races/lavaredo20k",
+        "https://lavaredo.utmb.world/races/lavaredo10k"
+      ],
+      "routes": [
+        {
+          "name": "Lavaredo 50K",
+          "status": "stale-official-link",
+          "observedFile": "https://pdf.utmb.world/raw/upload/v1699116332/lavaredo/files/2024/Lavaredo50_K_6b9b57cbde.gpx"
+        },
+        {
+          "name": "Lavaredo 80K",
+          "status": "stale-official-link",
+          "observedFile": "https://pdf.utmb.world/raw/upload/v1729968924/lavaredo/files/2025/Lavaredo80_K_2025_Val_Marzon_Cortina_8000eae9e2.gpx"
+        },
+        {
+          "name": "Lavaredo 120K",
+          "status": "stale-official-link",
+          "observedFile": "https://pdf.utmb.world/raw/upload/v1782387012/lavaredo/files/2026/LUT_20_Madre_2026_6_2025_2065s_20pul_89a81f913b.gpx"
+        },
+        {
+          "name": "Lavaredo 20K",
+          "status": "stale-official-link",
+          "observedFile": "https://pdf.utmb.world/raw/upload/v1719163172/lavaredo/files/2024/LUT_20k_variante_2024_de2a531f04.gpx"
+        },
+        {
+          "name": "Lavaredo 10K",
+          "status": "stale-official-link",
+          "observedFile": "https://pdf.utmb.world/raw/upload/v1750610477/lavaredo/files/2025/Lavaredo_10_K_2025_m_22_6_25_67b83acbb3.gpx"
+        }
+      ],
+      "note": "2027 race pages expose GPX buttons, but the linked files are dated 2024, 2025 or 2026. None was added as a 2027 GPX. Official 50K elevation corrected in app from 2,800 to 2,600 m."
+    },
+    {
+      "order": 55,
+      "name": "Austria Backyard Ultra",
+      "officialSources": [
+        "https://www.austriabackyardultra.com/frankenmarkt",
+        "https://www.austriabackyardultra.com/kirchdorf"
+      ],
+      "routes": [
+        {
+          "name": "Frankenmarkt",
+          "status": "official-page-download",
+          "note": "2027 page says GPX-Datei downloaden but no direct file URL was exposed; app links to organizer page."
+        },
+        {
+          "name": "Kirchdorf",
+          "status": "external-route",
+          "url": "https://connect.garmin.com/app/course/245916329",
+          "note": "Official 2027 page links Garmin Connect; loop is 9 hm."
+        },
+        {
+          "name": "Kirchdorf 7+1",
+          "status": "external-route",
+          "url": "https://connect.garmin.com/app/course/245916329",
+          "note": "Same official 9 hm Kirchdorf loop linked via Garmin Connect."
+        }
+      ]
+    }
+  ],
+  "followUps": [
+    "Schluchthof: retry official site and request GPX.",
+    "Tschirgant: ask organizer for TS52 GPX and add missing TS16/TS26/TS42 route records if needed.",
+    "Backyard Ultra: recheck Hofer 2027 GPX; obtain Kuckuck email GPX only if user has the race pack.",
+    "Lavaredo: replace all old 2024–2026 GPX links when UTMB publishes 2027 files.",
+    "Austria Backyard Ultra: obtain direct Frankenmarkt GPX file; Garmin course link already saved for Kirchdorf."
+  ],
+  "retrievalLimitation": "Only organizer-hosted direct URLs or official map/course links are saved. No old Lavaredo file was mislabelled as 2027."
+}

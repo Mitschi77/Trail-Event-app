@@ -1,0 +1,72 @@
+import unittest
+from scripts.event_data_rules import extract_cutoff_hours, filter_shared_gpx_proposals, is_http_url, meaningful_elevation_gain
+
+class EventDataRulesTests(unittest.TestCase):
+    def test_time_limit_before_value(self):
+        self.assertEqual(extract_cutoff_hours("Zeitlimit: 44 Stunden"), 44)
+
+    def test_value_before_time_limit(self):
+        self.assertEqual(extract_cutoff_hours("44h Zeitlimit"), 44)
+
+    def test_decimal_hours(self):
+        self.assertEqual(extract_cutoff_hours("time limit 12.5 hours"), 12.5)
+
+    def test_unlabelled_duration_is_not_a_cutoff(self):
+        self.assertIsNone(extract_cutoff_hours("The event lasts 44 hours"))
+
+
+    def test_shared_gpx_source_only_matches_route_with_compatible_distance(self):
+        proposals = [
+            {"payload": {"field": "gpxMetrics", "eventId": "race", "routeId": "ultra", "sourceUrl": "https://example.org/course.gpx", "oldValue": {"km": 72}, "newValue": {"km": 70.75}}},
+            {"payload": {"field": "gpxMetrics", "eventId": "race", "routeId": "half", "sourceUrl": "https://example.org/course.gpx", "oldValue": {"km": 24}, "newValue": {"km": 70.75}}},
+        ]
+        self.assertEqual(filter_shared_gpx_proposals(proposals), [proposals[0]])
+
+    def test_shared_gpx_source_with_ambiguous_matching_distances_is_suppressed(self):
+        proposals = [
+            {"payload": {"field": "gpxMetrics", "eventId": "race", "routeId": "a", "sourceUrl": "https://example.org/course.gpx", "oldValue": {"km": 6.7}, "newValue": {"km": 6.72}}},
+            {"payload": {"field": "gpxMetrics", "eventId": "race", "routeId": "b", "sourceUrl": "https://example.org/course.gpx", "oldValue": {"km": 6.7}, "newValue": {"km": 6.72}}},
+        ]
+        self.assertEqual(filter_shared_gpx_proposals(proposals), [])
+
+    def test_complete_route_is_counted_when_checking_shared_gpx_ambiguity(self):
+        proposal = {"payload": {"field": "gpxMetrics", "eventId": "race", "routeId": "incomplete", "sourceUrl": "https://example.org/course.gpx", "oldValue": {"km": 70}, "newValue": {"km": 70.5}}}
+        known_routes = {("race", "https://example.org/course.gpx"): [
+            {"routeId": "incomplete", "km": 70},
+            {"routeId": "complete", "km": 70.2},
+        ]}
+        self.assertEqual(filter_shared_gpx_proposals([proposal], known_routes_by_source=known_routes), [])
+
+    def test_complete_route_with_different_distance_does_not_block_unique_match(self):
+        proposal = {"payload": {"field": "gpxMetrics", "eventId": "race", "routeId": "incomplete", "sourceUrl": "https://example.org/course.gpx", "oldValue": {"km": 70}, "newValue": {"km": 70.5}}}
+        known_routes = {("race", "https://example.org/course.gpx"): [
+            {"routeId": "incomplete", "km": 70},
+            {"routeId": "complete", "km": 24},
+        ]}
+        self.assertEqual(filter_shared_gpx_proposals([proposal], known_routes_by_source=known_routes), [proposal])
+
+    def test_same_gpx_url_for_different_events_is_not_a_conflict(self):
+        proposals = [
+            {"payload": {"field": "gpxMetrics", "eventId": "race-a", "routeId": "a", "sourceUrl": "https://example.org/course.gpx"}},
+            {"payload": {"field": "gpxMetrics", "eventId": "race-b", "routeId": "b", "sourceUrl": "https://example.org/course.gpx"}},
+        ]
+        self.assertEqual(filter_shared_gpx_proposals(proposals), proposals)
+
+    def test_unique_route_gpx_source_is_kept(self):
+        proposal = {"payload": {"field": "gpxMetrics", "eventId": "race", "routeId": "a", "sourceUrl": "https://example.org/a.gpx"}}
+        self.assertEqual(filter_shared_gpx_proposals([proposal]), [proposal])
+
+
+    def test_flat_zero_elevation_is_not_treated_as_real_elevation(self):
+        self.assertIsNone(meaningful_elevation_gain([0, 0, 0, 0], 0))
+
+    def test_meaningful_elevation_range_keeps_ascent(self):
+        self.assertEqual(meaningful_elevation_gain([100, 120, 160], 75.4), 75)
+
+    def test_http_url_validation(self):
+        self.assertTrue(is_http_url("https://example.org/race"))
+        self.assertFalse(is_http_url("Trail & Tarmac Pursuit"))
+        self.assertFalse(is_http_url("javascript:alert(1)"))
+
+if __name__ == "__main__":
+    unittest.main()

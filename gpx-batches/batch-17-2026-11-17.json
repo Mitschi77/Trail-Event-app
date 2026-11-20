@@ -1,0 +1,49 @@
+{
+  "batch": 17,
+  "checkedAt": "2026-11-17",
+  "scope": "Top-level events 81-85 in current EVENTS order",
+  "status": "saved",
+  "appCommit": "920364b9dc69648501f933eb413ed472eba317ec",
+  "events": [
+    {
+      "order": 81,
+      "name": "Last Soul Ultra",
+      "gpxStatus": "Season 3 / 2027 official page confirms 6.706 km backyard loop, but no public GPX download found.",
+      "source": "https://www.lastsoulultra.com/",
+      "followUp": "Ask organizer for the route GPX."
+    },
+    {
+      "order": 82,
+      "name": "Karnisches Ungetüm",
+      "gpxStatus": "Official 2027 event page and route values confirmed; no official GPX file download verified.",
+      "source": "https://www.ungetuem.at/kut/",
+      "followUp": "Ask organizer for GPX or recheck the course page closer to race."
+    },
+    {
+      "order": 83,
+      "name": "TREK Matterhorn Ultraks",
+      "gpxStatus": "Official race pages expose GPX links, but current pages/files identify the 2026 edition. No 2027 date or updated course file verified; 2026 files rejected.",
+      "sources": [
+        "https://www.matterhorn-ultraks.ch/strecken/sky",
+        "https://www.matterhorn-ultraks.ch/strecken/extreme",
+        "https://www.matterhorn-ultraks.ch/strecken/mountain"
+      ],
+      "followUp": "Wait for confirmed 2027 event dates and GPX versions."
+    },
+    {
+      "order": 84,
+      "name": "Trans Alpine Run",
+      "gpxStatus": "Official 2027 event announced for 18-24 September, but public route page still contains 2026 stages. Organizer FAQ says GPX files are sent only to registered participants.",
+      "source": "https://www.transalpine-run.com/strecke/",
+      "followUp": "Wait for 2027 stage route release and participant GPX delivery."
+    },
+    {
+      "order": 85,
+      "name": "UTMB Mont Blanc",
+      "gpxStatus": "Official UTMB Mont-Blanc 2027 dates and routes not yet announced; current race pages show 2026 edition. Old GPX files not used.",
+      "source": "https://montblanc.utmb.world/races",
+      "followUp": "Recheck after official 2027 race week and course details are published."
+    }
+  ],
+  "nextBatch": "Continue with events 86-90 after package 17 checkpoint."
+}

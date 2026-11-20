@@ -1,0 +1,97 @@
+{
+  "batch": 10,
+  "checkedAt": "2026-11-17",
+  "scope": "Events 46–50 in top-level EVENTS array",
+  "status": "saved",
+  "appCommit": "60e9a74c13f9b4d12bf9b801ca5d18155bb7d0ba",
+  "events": [
+    {
+      "order": 46,
+      "name": "Falkensteinlauf",
+      "officialSource": "https://www.falkensteinlauf.de/",
+      "gpxStatus": "not-published-yet",
+      "note": "Organizer confirms 17 July 2027; no GPX download or route elevation was published on the official site."
+    },
+    {
+      "order": 47,
+      "name": "Trail 100 Andorra by UTMB",
+      "officialSources": [
+        "https://andorra.utmb.world/races/ultra-105k",
+        "https://andorra.utmb.world/races/trail-80k",
+        "https://andorra.utmb.world/races/trail-50k",
+        "https://andorra.utmb.world/races/trail-10k"
+      ],
+      "gpxStatus": "interactive-map; 21K detail unverified",
+      "note": "2027 UTMB race pages for 105K, 80K, 50K and 10K include Map + GPX sections but no direct GPX file URL. The 24.9 km route is officially named Trail 21K; its detail URL returns 404, so the app label was corrected and GPX remains unverified."
+    },
+    {
+      "order": 48,
+      "name": "Ötscher Trail",
+      "officialSources": [
+        "https://www.oetschertrail.run/marathon-trail-powered-by-st-bernhard",
+        "https://www.oetschertrail.run/vertical-race",
+        "https://www.oetschertrail.run/easy-trail",
+        "https://www.oetschertrail.run/speed-trail",
+        "https://www.oetschertrail.run/skyrace"
+      ],
+      "routes": [
+        {
+          "name": "Marathon Trail",
+          "status": "direct-download",
+          "url": "https://f5b2b23a-39a9-471a-aa92-dad164c32ad4.filesusr.com/ugd/afb1d3_82f4e594ac7741ab9107443bd68f7b99.gpx?dn=oetscher-marathon-trail+%281%29.gpx"
+        },
+        {
+          "name": "Vertical Race",
+          "status": "direct-download",
+          "url": "https://f5b2b23a-39a9-471a-aa92-dad164c32ad4.filesusr.com/ugd/afb1d3_041ffa4ce430487696c7df0d73aad437.gpx?dn=%C3%96tscher_Trail_Vertical_Race.gpx"
+        },
+        {
+          "name": "Easy Trail",
+          "status": "direct-download",
+          "url": "https://f5b2b23a-39a9-471a-aa92-dad164c32ad4.filesusr.com/ugd/afb1d3_62b5e76db07b49f187db724412f9f8d3.gpx?dn=oetscher-easy-trail.gpx"
+        },
+        {
+          "name": "Speed Trail",
+          "status": "direct-download",
+          "url": "https://f5b2b23a-39a9-471a-aa92-dad164c32ad4.filesusr.com/ugd/afb1d3_d276590d4ed04f139d897798d2b180a9.gpx?dn=oetscher-speed-trail-01.gpx"
+        },
+        {
+          "name": "Skyrace",
+          "status": "direct-download",
+          "url": "https://f5b2b23a-39a9-471a-aa92-dad164c32ad4.filesusr.com/ugd/afb1d3_bde3abfb974f43b5913c55b4c9963760.gpx?dn=oetscher-skyrace%20%281%29.gpx"
+        }
+      ],
+      "note": "All five route pages link to distinct official GPX files; each file URL was individually confirmed through the organizer's download link."
+    },
+    {
+      "order": 49,
+      "name": "Ultra X 110 Slowenien",
+      "officialSource": "https://ultra-x.co/ultra-marathon-races/",
+      "gpxStatus": "not-verified",
+      "note": "Ultra X calendar lists I Feel Slovenia, but the linked event page currently returns 404. No 2027 date or GPX could be verified."
+    },
+    {
+      "order": 50,
+      "name": "Zugspitz Ultratrail",
+      "officialSources": [
+        "https://zugspitz.utmb.world/de/races/mittenwald-trail",
+        "https://zugspitz.utmb.world/de/races/leutasch-trail",
+        "https://zugspitz.utmb.world/de/races/ehrwald-trail",
+        "https://zugspitz.utmb.world/de/races/ultratrail",
+        "https://zugspitz.utmb.world/de/races/zut100",
+        "https://zugspitz.utmb.world/de/races/garmisch-partenkirchen-trail",
+        "https://zugspitz.utmb.world/de/races/grainau-trail"
+      ],
+      "gpxStatus": "interactive-map",
+      "note": "All seven official 2027 UTMB route pages include Map + GPX. No separate direct GPX file URL exposed; app route metrics match official pages."
+    }
+  ],
+  "followUps": [
+    "Falkensteinlauf: request GPX and official elevation data.",
+    "Andorra: check when direct GPX files become available; restore route detail page if 21K page is published.",
+    "Ötscher Trail: the five official route-specific GPX links are now live in the app.",
+    "Ultra X Slovenia: verify whether a 2027 edition exists before keeping it as a current event.",
+    "Zugspitz Ultratrail: recheck for direct GPX exports closer to race week."
+  ],
+  "retrievalLimitation": "The app links to the five Ötscher GPX files and three Dolomiti Extreme Trail GPX files. Binary files themselves are not yet stored inside the GitHub repository; the buttons open the organizer-hosted GPX files directly."
+}

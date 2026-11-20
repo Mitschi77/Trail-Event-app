@@ -1,0 +1,53 @@
+{
+  "batch": 4,
+  "checkedAt": "2026-11-17",
+  "scope": "Top-level events 16-20 in current EVENTS order (repository contains 19 top-level events in this range)",
+  "status": "saved",
+  "appCommit": "85cd5464182fa0540a94fcfb4df9f8ee4d93dc94",
+  "events": [
+    {
+      "order": 16,
+      "name": "Ultratrail Fränkische Schweiz",
+      "gpxStatus": "2027 course pages show interactive Trail Intelligence profile and GPX data loading, but no direct downloadable file link was publicly verifiable.",
+      "routes": [
+        "Longtrail 66K",
+        "Ultratrail 100K",
+        "Speedtrail 33K",
+        "Shorttrail 15K"
+      ],
+      "followUp": "Extract official route file when public GPX export is available."
+    },
+    {
+      "order": 17,
+      "name": "Hamburg Marathon",
+      "gpxStatus": "Official download links found, but they point to HMH26 files (2026 edition); rejected as stale for 2027.",
+      "source": "https://haspa-marathon-hamburg.de/strecke/",
+      "followUp": "Wait for HMH27 GPX files."
+    },
+    {
+      "order": 18,
+      "name": "TCS London Marathon - Major",
+      "gpxStatus": "Official course page has map/course description; no official GPX download verified.",
+      "source": "https://www.londonmarathonevents.co.uk/london-marathon/course",
+      "followUp": "Use official map until an organizer GPX is published."
+    },
+    {
+      "order": 19,
+      "name": "Oh Meu Deus",
+      "gpxStatus": "Official UTMB pages provide Map + GPX interactive sections for 100M/100K, but no direct GPX file URL could be extracted. Organizer warns routes may change due to ground conditions.",
+      "sources": [
+        "https://ohmeudeus.utmb.world/races/omd100m",
+        "https://ohmeudeus.utmb.world/races/omd100k"
+      ],
+      "followUp": "Recheck after route finalization; export from official map."
+    },
+    {
+      "order": 20,
+      "name": "innsbruck Alpine",
+      "gpxStatus": "Organizer promises advance GPX downloads for all races. The available K110 direct file currently resolves to IATF26_K110_260429.gpx (2026), so it is rejected for 2027.",
+      "source": "https://www.innsbruckalpine.at/anmeldung/leistungen/",
+      "followUp": "Wait for IATF27 GPX links on each route page."
+    }
+  ],
+  "nextBatch": "Continue with events 21-25 after package 4 checkpoint."
+}

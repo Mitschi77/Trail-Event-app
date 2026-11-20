@@ -1,0 +1,100 @@
+{
+  "batch": 9,
+  "checkedAt": "2026-11-17",
+  "scope": "Events 41–45 in top-level EVENTS array",
+  "status": "saved",
+  "appCommit": "343eb9b7ec04269e824338f75e2b2631ec4cb8b8",
+  "events": [
+    {
+      "order": 41,
+      "name": "Jenaer Backyard Ultra",
+      "officialSource": "https://jenaerbackyardultra.de/",
+      "gpxStatus": "not-published-yet",
+      "note": "Official page confirms 6.7 km / approx. 150 hm loop for 05.06.2027; no GPX download."
+    },
+    {
+      "order": 42,
+      "name": "Dolomiti Extreme Trail",
+      "officialSources": [
+        "https://www.dolomitiextremetrail.com/en/race/dxt-55k",
+        "https://www.dolomitiextremetrail.com/en/race/dxt-72k",
+        "https://www.dolomitiextremetrail.com/en/race/dxt-103k"
+      ],
+      "routes": [
+        {
+          "name": "DXT 55K",
+          "officialDistanceKm": 58,
+          "officialHm": 3600,
+          "date": "2027-06-12",
+          "gpxStatus": "direct-download",
+          "gpxUrl": "https://www.dolomitiextremetrail.com/assets/gpx/dolomiti-extreme-trail-2027-dxt-55k.gpx"
+        },
+        {
+          "name": "DXT 72K",
+          "officialDistanceKm": 76,
+          "officialHm": 4800,
+          "date": "2027-06-11",
+          "gpxStatus": "direct-download",
+          "gpxUrl": "https://www.dolomitiextremetrail.com/assets/gpx/dolomiti-extreme-trail-2027-dxt-72k.gpx"
+        },
+        {
+          "name": "DXT 103K",
+          "officialDistanceKm": 102,
+          "officialHm": 6500,
+          "date": "2027-06-11",
+          "gpxStatus": "direct-download",
+          "gpxUrl": "https://www.dolomitiextremetrail.com/assets/gpx/dolomiti-extreme-trail-2027-dxt-103k.gpx"
+        }
+      ],
+      "note": "All three 2027 GPX links are direct official XML files. The official route distances/elevation differ from the app's old figures; app corrected to 58/3600, 76/4800 and 102/6500."
+    },
+    {
+      "order": 43,
+      "name": "Hochkönig Ultraks",
+      "officialSource": "https://www.hochkoenig-ultraks.at/",
+      "gpxStatus": "not-published-yet",
+      "note": "2027 route pages confirm distances and elevation; official runner guide says GPX appears on each course page or in the information email. No direct GPX links visible on the current pages. Mini Ultraks contains three kid distances (0.5/1/1.5 km), not one fixed route."
+    },
+    {
+      "order": 44,
+      "name": "Mozart",
+      "officialSources": [
+        "https://mozart.utmb.world/de/races/mozart100",
+        "https://mozart.utmb.world/de/races/mozartultra",
+        "https://mozart.utmb.world/de/races/mozartmarathon",
+        "https://mozart.utmb.world/de/races/mozarthalf",
+        "https://mozart.utmb.world/de/races/mozartlake"
+      ],
+      "gpxStatus": "interactive-map / route reconciliation needed",
+      "note": "Official 2027 race pages provide Map + GPX but no direct downloadable file URL. App has outdated event date (corrected to 05.06.2027) and route mismatches: official mozart 100 is 119 km/6000 m, mozart Ultra is 84 km/4800 m, Marathon 44/1600, Half 28/1100, Lake Trail 12/200. App currently has 84 km labelled mozart 100, 23 km Half and 37 km Light; it lacks the true 119 km 100 and Lake Trail entry."
+    },
+    {
+      "order": 45,
+      "name": "Ultra Scotland",
+      "officialSources": [
+        "https://www.gbultras.com/ultra-scotland-50/",
+        "https://www.gbultras.com/ultra-scotland-100/"
+      ],
+      "routes": [
+        {
+          "name": "Ultra Scotland 50",
+          "gpxStatus": "official-map-download",
+          "mapUrl": "https://app.racemap.studio/map?e=36&rotate=&route=ULTRA+SCOTLAND+50+MILE&t=18"
+        },
+        {
+          "name": "Ultra Scotland 100",
+          "gpxStatus": "official-map-download",
+          "mapUrl": "https://app.racemap.studio/map?e=36&rotate=&route=ULTRA+SCOTLAND+100+MILE+-+NEW&t=18"
+        }
+      ],
+      "note": "Official GB Ultras route maps expose GPX downloads. The 100-mile map offers both High Level race route and Low Level severe-weather route."
+    }
+  ],
+  "followUps": [
+    "Hochkönig Ultraks: recheck race pages or information email for direct 2027 GPX files.",
+    "Mozart: reconcile the app's four old route entries with the five official 2027 race distances and add missing mozart 100/Lake Trail routes.",
+    "Ultra Scotland: test GPX download from the official Racemap map before embedding the file.",
+    "Jenaer Backyard Ultra: request GPX from organizer if route map is needed."
+  ],
+  "retrievalLimitation": "Direct GPX URLs are saved in the app. The raw GPX binaries were not committed to the repository because the available download path could not retrieve the organizer files; the app links directly to the organizer's GPX or map."
+}

@@ -1,0 +1,51 @@
+{
+  "batch": 21,
+  "checkedAt": "2026-11-17",
+  "scope": "Top-level events 101-105 in current EVENTS order",
+  "status": "saved",
+  "appCommit": "7b87032517dfd0288c047fb2811a5d22367ee9ce",
+  "events": [
+    {
+      "order": 101,
+      "name": "Alpin Team Trailrun",
+      "gpxStatus": "Official organizer download page offers GPX for K50/K23/K10, but current event pages and files are for 2026 (26 September 2026). No confirmed 2027 edition found.",
+      "source": "https://www.alpinteamtrail.at/de/download/",
+      "followUp": "Wait for organizer to announce next edition and update GPX."
+    },
+    {
+      "order": 102,
+      "name": "Chihuahua by UTMB",
+      "gpxStatus": "Official UTMB pages currently show 2026 event/results; Chihuahua is not listed in the current UTMB 2027 calendar. No current 2027 GPX.",
+      "source": "https://chihuahua.utmb.world/races",
+      "followUp": "Do not import 2026 routes unless 2027 edition is confirmed."
+    },
+    {
+      "order": 103,
+      "name": "Trail&Tarmac Pursuit",
+      "gpxStatus": "Official 2027 event confirmed (1-3 October), 240-270 km from St. Gallen to St. Moritz. Teams must plan their own route; checkpoints are progressively revealed, so no single official GPX exists.",
+      "source": "https://trailtarmacpursuit.com/",
+      "followUp": "Build a personal route once five checkpoints are published; final checkpoint appears 30 minutes before start."
+    },
+    {
+      "order": 104,
+      "name": "Oberaudorf Trail Festival",
+      "gpxStatus": "Official 2027 pages confirm five races and course metrics. Organizer pages state GPX track is required/provided; direct file endpoints were not publicly extractable. All five official route pages linked in app.",
+      "sources": [
+        "https://saltytrailrunning.com/en-de/pages/otf-100",
+        "https://saltytrailrunning.com/en-de/pages/otf-ultra",
+        "https://saltytrailrunning.com/en-de/pages/otf-sudelfeld",
+        "https://saltytrailrunning.com/en-de/pages/otf-speed",
+        "https://saltytrailrunning.com/en-de/pages/otf-short"
+      ],
+      "followUp": "Extract organizer GPX URLs from each race page or obtain them from organizer's participant portal."
+    },
+    {
+      "order": 105,
+      "name": "Taubertal 100",
+      "gpxStatus": "2027 event date 2 October confirmed by organizer/community calendar. Official GPS page currently says Stand 17.08.26 and links GPX files named for 2026 (50/70/100/100 miles); stale files rejected.",
+      "source": "https://www.taubertal100.de/GPS-Streckenverlauf",
+      "followUp": "Wait for 2027 GPS files; do not use 2026 files for planning."
+    }
+  ],
+  "nextBatch": "Continue with events 106-110 after package 21 checkpoint."
+}
