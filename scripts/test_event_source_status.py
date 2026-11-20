@@ -11,6 +11,21 @@ class SourceCheckStatusTests(unittest.TestCase):
     def test_all_sources_unavailable(self):
         self.assertEqual(classify_source_check_status([{"status": "unavailable"}, {"status": "unavailable"}]), "unavailable")
 
+    def test_unknown_status_does_not_hide_unavailable_sources(self):
+        self.assertEqual(classify_source_check_status([
+            {"status": "unavailable"}, {"status": "future-status"}
+        ]), "unavailable")
+
+    def test_unknown_status_does_not_hide_read_sources(self):
+        self.assertEqual(classify_source_check_status([
+            {"status": "read"}, {"status": "future-status"}
+        ]), "read")
+
+    def test_empty_and_non_dict_entries_are_ignored(self):
+        self.assertEqual(classify_source_check_status([
+            None, "read", {}, {"status": "  "}
+        ]), "not-checked")
+
     def test_mixed_read_and_unavailable_is_partial(self):
         self.assertEqual(classify_source_check_status([{"status": "read"}, {"status": "unavailable"}]), "partial")
 
@@ -38,6 +53,9 @@ class SourceCheckStatusTests(unittest.TestCase):
     def test_iso_timestamp_validation(self):
         self.assertTrue(valid_iso_timestamp("2026-11-20T17:00:00Z"))
         self.assertTrue(valid_iso_timestamp("2026-11-20T17:00:00.123456+00:00"))
+        self.assertTrue(valid_iso_timestamp("2026-11-20T18:00:00+01:00"))
+        self.assertFalse(valid_iso_timestamp("2026-11-20T17:00:00"))
+        self.assertFalse(valid_iso_timestamp("2026-11-20"))
         self.assertFalse(valid_iso_timestamp("2026-13-45T99:99:99Z"))
         self.assertFalse(valid_iso_timestamp("not-a-timestamp"))
         self.assertFalse(valid_iso_timestamp(None))
