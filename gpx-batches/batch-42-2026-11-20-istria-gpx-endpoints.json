@@ -1,0 +1,59 @@
+{
+  "batch": 42,
+  "checkedAt": "2026-11-20",
+  "scope": "Additional official Istria100 by UTMB 2027 GPX endpoint checks",
+  "status": "official-links-confirmed-binaries-not-parsed",
+  "sourcePage": "https://istria.utmb.world/races-runners/runners/gpx-tracks",
+  "checks": [
+    {
+      "route": "Istria100 110K 2027",
+      "directGpx": "https://pdf.utmb.world/raw/upload/v1781524088/istria/.gpx/ISTRIA_111k_2027_43ca9de8f1.gpx",
+      "officialEvidence": "The official UTMB GPX page lists Istria100 110K and its GPX download link.",
+      "fetchAttempt": "The linked endpoint returned application/octet-stream; the inspection tool rejected the binary response.",
+      "binaryDownloaded": false,
+      "parsed": false,
+      "metricsCompared": false,
+      "result": "Official 2027 endpoint confirmed; binary not technically validated."
+    },
+    {
+      "route": "Istria100 69K 2027",
+      "directGpx": "https://pdf.utmb.world/raw/upload/v1781524084/istria/.gpx/ISTRIA_69k_2027_f18764744b.gpx",
+      "officialEvidence": "The official UTMB GPX page lists Istria100 69K and its GPX download link.",
+      "fetchAttempt": "The linked endpoint returned application/octet-stream; the inspection tool rejected the binary response.",
+      "binaryDownloaded": false,
+      "parsed": false,
+      "metricsCompared": false,
+      "result": "Official 2027 endpoint confirmed; binary not technically validated."
+    },
+    {
+      "route": "Istria100 42K 2027",
+      "directGpx": "https://pdf.utmb.world/raw/upload/v1781524083/istria/.gpx/ISTRIA_42k_2027_86917b64ad.gpx",
+      "officialEvidence": "The official UTMB GPX page lists Istria100 42K and its GPX download link.",
+      "fetchAttempt": "The linked endpoint returned application/octet-stream; the inspection tool rejected the binary response.",
+      "binaryDownloaded": false,
+      "parsed": false,
+      "metricsCompared": false,
+      "result": "Official 2027 endpoint confirmed; binary not technically validated."
+    },
+    {
+      "route": "Istria100 21K 2027",
+      "directGpx": "https://pdf.utmb.world/raw/upload/v1781524082/istria/.gpx/ISTRIA_21k_2027_c07fc2ccdb.gpx",
+      "officialEvidence": "The official UTMB GPX page lists Istria100 21K and its GPX download link.",
+      "fetchAttempt": "The linked endpoint returned application/octet-stream; the inspection tool rejected the binary response.",
+      "binaryDownloaded": false,
+      "parsed": false,
+      "metricsCompared": false,
+      "result": "Official 2027 endpoint confirmed; binary not technically validated."
+    }
+  ],
+  "summary": {
+    "attempted": 4,
+    "officialYearSpecificEndpointsConfirmed": 4,
+    "binaryFilesDownloaded": 0,
+    "tracksParsed": 0,
+    "metricsCompared": 0,
+    "warning": "Official download links are confirmed, but the inspection environment cannot retrieve application/octet-stream GPX binaries. Do not mark these files as validated or replace any existing track.",
+    "next": "Run the GPX downloads in a real app/CI runtime, parse GPX XML and compare computed geodesic distance and elevation gain with official event figures."
+  },
+  "gpxSafety": "No existing GPX file was deleted or replaced. Existing tracks remain valid until a newer file is actually downloaded, parsed and validated."
+}
