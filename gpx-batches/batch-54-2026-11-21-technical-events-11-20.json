@@ -1,0 +1,351 @@
+{
+  "batch": 54,
+  "checkedAt": "2026-11-21",
+  "scope": "Technical GPX availability and official endpoint review for top-level events 11–20",
+  "status": "attempted-no-binary-validation",
+  "safetyRules": [
+    "Old GPX files remain valid until a new official file is downloaded, parsed and validated.",
+    "No GPX files were deleted, overwritten or replaced.",
+    "An official download button or Map + GPX panel is not proof that a binary was successfully retrieved or validated.",
+    "Reject year-mismatched 2025/2026 tracks as current 2027 tracks."
+  ],
+  "checks": [
+    {
+      "eventOrder": 11,
+      "event": "Ötzi Trailrun Naturns",
+      "officialSource": "https://www.merano-suedtirol.it/de/oetzi-trailrun-naturns/",
+      "date": "2027-04-08/10",
+      "routes": [
+        {
+          "name": "Ötzi-Ultra Trail",
+          "distanceKm": 45,
+          "elevationM": 3400,
+          "url": "https://www.merano-suedtirol.it/media/9b13d94d-731a-4795-958b-78f995d0a960/t348762166-ultra-oetzi-trailrun-27.gpx"
+        },
+        {
+          "name": "Sunny Mountain Trail",
+          "distanceKm": 30,
+          "elevationM": 2100,
+          "url": "https://www.merano-suedtirol.it/media/20ed251a-0d81-4b8a-a13d-2164258490f4/t123182821-sunny-mountain-trail-30km-2100hm.gpx"
+        },
+        {
+          "name": "Skyrace Naturns",
+          "distanceKm": 15,
+          "elevationM": 1150,
+          "url": "https://www.merano-suedtirol.it/media/fa8bed05-4b30-4332-8b3b-ef4e8dc6e5ca/t123182623-naturns-skyrace-15km-1150hm.gpx"
+        },
+        {
+          "name": "Ötzi-Just for Fun",
+          "distanceKm": 8,
+          "elevationM": 400,
+          "url": "https://www.merano-suedtirol.it/media/ce9bef7d-2d7e-47fa-91cd-6c2a51802012/t290121524-just-for-fun-strecke-2025.gpx",
+          "status": "reject-stale-2025"
+        },
+        {
+          "name": "Ötzi-Vertical",
+          "distanceKm": 4.2,
+          "elevationM": 760,
+          "url": null,
+          "status": "no-direct-gpx-link-identified"
+        }
+      ],
+      "attempts": [
+        {
+          "url": "https://www.merano-suedtirol.it/media/9b13d94d-731a-4795-958b-78f995d0a960/t348762166-ultra-oetzi-trailrun-27.gpx",
+          "result": "not-accessible-to-inspection-tool"
+        },
+        {
+          "url": "https://www.merano-suedtirol.it/media/20ed251a-0d81-4b8a-a13d-2164258490f4/t123182821-sunny-mountain-trail-30km-2100hm.gpx",
+          "result": "unsupported-content-type-application/unknown"
+        },
+        {
+          "url": "https://www.merano-suedtirol.it/media/fa8bed05-4b30-4332-8b3b-ef4e8dc6e5ca/t123182623-naturns-skyrace-15km-1150hm.gpx",
+          "result": "unsupported-content-type-application/unknown"
+        }
+      ],
+      "binaryDownloaded": false,
+      "parsed": false,
+      "metricsCompared": false,
+      "detail": "Organizer's 2027 regulation confirms 45km/3400m, 30km/2100m, 15km/1150m, 8km/400m, Vertical 4.2km/760m. Three current GPX URLs were attempted; no binary bytes returned. The 8K download is explicitly 2025 and is not a 2027 replacement."
+    },
+    {
+      "eventOrder": 12,
+      "event": "Vienna City Marathon",
+      "officialSource": "https://www.vienna-marathon.com/?go=marathon&lang=de",
+      "status": "stale-2026-download",
+      "detail": "Official page's current GPX URL is under /2026/. No 2027-versioned file verified. Do not treat it as a current 2027 route.",
+      "binaryDownloaded": false,
+      "parsed": false,
+      "metricsCompared": false
+    },
+    {
+      "eventOrder": 13,
+      "event": "Istria 100 by UTMB",
+      "officialSource": "https://istria.utmb.world/races-runners/runners/gpx-tracks",
+      "date": "2027-04-01/04",
+      "routes": [
+        {
+          "name": "168K",
+          "distanceKm": 168,
+          "elevationM": 6800,
+          "url": "https://pdf.utmb.world/raw/upload/v1781524089/istria/.gpx/ISTRIA_168k_2027_85dcf7c2ad.gpx"
+        },
+        {
+          "name": "110K",
+          "distanceKm": 111,
+          "elevationM": 4200,
+          "url": "https://pdf.utmb.world/raw/upload/v1781524088/istria/.gpx/ISTRIA_111k_2027_43ca9de8f1.gpx"
+        },
+        {
+          "name": "69K",
+          "distanceKm": 69.6,
+          "elevationM": 2400,
+          "url": "https://pdf.utmb.world/raw/upload/v1781524084/istria/.gpx/ISTRIA_69k_2027_f18764744b.gpx"
+        },
+        {
+          "name": "42K",
+          "distanceKm": 42,
+          "elevationM": 1000,
+          "url": "https://pdf.utmb.world/raw/upload/v1781524083/istria/.gpx/ISTRIA_42k_2027_86917b64ad.gpx"
+        },
+        {
+          "name": "21K",
+          "distanceKm": 21.5,
+          "elevationM": 157,
+          "url": "https://pdf.utmb.world/raw/upload/v1781524082/istria/.gpx/ISTRIA_21k_2027_c07fc2ccdb.gpx"
+        }
+      ],
+      "attempts": [
+        {
+          "route": "168K",
+          "result": "direct-GPX-URL-inaccessible-to-inspection-tool"
+        },
+        {
+          "route": "110K",
+          "result": "direct-GPX-URL-inaccessible-to-inspection-tool"
+        },
+        {
+          "route": "69K",
+          "result": "direct-GPX-URL-inaccessible-to-inspection-tool"
+        },
+        {
+          "route": "42K",
+          "result": "direct-GPX-URL-inaccessible-to-inspection-tool"
+        },
+        {
+          "route": "21K",
+          "result": "direct-GPX-URL-inaccessible-to-inspection-tool"
+        }
+      ],
+      "binaryDownloaded": false,
+      "parsed": false,
+      "metricsCompared": false,
+      "detail": "Official UTMB pages list all five 2027 Map/GPX routes. The five direct year-versioned endpoints were individually attempted; none returned binary content to this inspection environment. Official 2027 values are 168/6800, 111/4200, 69.6/2400, 42/1000, 21.5/157."
+    },
+    {
+      "eventOrder": 14,
+      "event": "Schneider Electric Paris Marathon",
+      "officialSource": "https://www.schneiderelectricparismarathon.com/en/information/route-and-profiles",
+      "status": "no-official-GPX-verified",
+      "detail": "Official route profile page found; no official downloadable GPX endpoint was verified for the historical 2026 event. Do not use third-party GPX as organizer file.",
+      "binaryDownloaded": false,
+      "parsed": false,
+      "metricsCompared": false
+    },
+    {
+      "eventOrder": 15,
+      "event": "Grand Raid Ventoux by UTMB",
+      "officialSources": [
+        "https://ventoux.utmb.world/races/grv100m",
+        "https://ventoux.utmb.world/races/grv100k",
+        "https://ventoux.utmb.world/races/GRV50K"
+      ],
+      "date": "2027-04-23/25",
+      "routes": [
+        {
+          "name": "Ultra Géant de Provence",
+          "distanceKm": 125,
+          "elevationM": 5700
+        },
+        {
+          "name": "Grande Epopée Ventoux",
+          "distanceKm": 87,
+          "elevationM": 4200
+        },
+        {
+          "name": "Mistral Marathon Trail",
+          "distanceKm": 51,
+          "elevationM": 2500
+        },
+        {
+          "name": "Trail des Coteaux",
+          "distanceKm": 26,
+          "elevationM": 1100
+        }
+      ],
+      "status": "official-interactive-Map-GPX-export-no-direct-binary-endpoint-extracted",
+      "binaryDownloaded": false,
+      "parsed": false,
+      "metricsCompared": false,
+      "detail": "Official route-map export is available through interactive Map + GPX; no direct file endpoint could be extracted or downloaded. Four formats are listed for 2027, including the 20K/26km race omitted from the older checkpoint."
+    },
+    {
+      "eventOrder": 16,
+      "event": "SALOMON Ultratrail Fränkische Schweiz",
+      "officialSource": "https://www.ultratrail-fraenkische-schweiz.de/",
+      "date": "2027-04-23/24",
+      "routes": [
+        {
+          "name": "Ultratrail",
+          "distanceKm": 100,
+          "elevationM": 3930
+        },
+        {
+          "name": "Longtrail",
+          "distanceKm": 66.9,
+          "elevationM": 2750
+        },
+        {
+          "name": "Speedtrail",
+          "distanceKm": 33,
+          "elevationM": null
+        },
+        {
+          "name": "Shorttrail",
+          "distanceKm": 15,
+          "elevationM": null
+        }
+      ],
+      "status": "official-Trail-Intelligence-GPX-export-on-course-pages; no direct URL extracted",
+      "binaryDownloaded": false,
+      "parsed": false,
+      "metricsCompared": false,
+      "detail": "Official Longtrail page exposes a GPX export control and precise 66.9km/2750hm. Official event site confirms new 100km/3930hm course for 2027. The interactive export was not downloaded; other route page exports still need separate extraction."
+    },
+    {
+      "eventOrder": 17,
+      "event": "Haspa Marathon Hamburg",
+      "officialSource": "https://haspa-marathon-hamburg.de/strecke/",
+      "status": "current-official-page-has-GPX-download-controls-but-version-needs-confirmation",
+      "detail": "Official route page has marathon and half-marathon GPX download controls. The older checkpoint identified HMH26 files, so no file is accepted as 2027 until its exact URL/version is checked. No binary was downloaded or parsed.",
+      "binaryDownloaded": false,
+      "parsed": false,
+      "metricsCompared": false
+    },
+    {
+      "eventOrder": 18,
+      "event": "TCS London Marathon",
+      "officialSource": "https://www.londonmarathonevents.co.uk/london-marathon/course",
+      "date": "2027-04-24/25",
+      "status": "no-official-GPX-download-verified",
+      "detail": "Official course description is available; no official downloadable GPX endpoint found. Official event overview states 2027 weekend and 26.2-mile road course. Do not use third-party GPX as official.",
+      "binaryDownloaded": false,
+      "parsed": false,
+      "metricsCompared": false
+    },
+    {
+      "eventOrder": 19,
+      "event": "Oh Meu Deus by UTMB",
+      "officialSources": [
+        "https://ohmeudeus.utmb.world/races/omd100m",
+        "https://ohmeudeus.utmb.world/"
+      ],
+      "date": "2027-04-30/05-02",
+      "routes": [
+        {
+          "name": "100M",
+          "distanceKm": 167,
+          "elevationM": 8900
+        },
+        {
+          "name": "100K",
+          "distanceKm": 94,
+          "elevationM": 5300
+        },
+        {
+          "name": "50K",
+          "distanceKm": 52,
+          "elevationM": 2900
+        },
+        {
+          "name": "20K",
+          "distanceKm": 22,
+          "elevationM": 1000
+        }
+      ],
+      "status": "official-2027-race-pages-and-Map-GPX-interactive-panel; no-direct-download-binary-verified",
+      "binaryDownloaded": false,
+      "parsed": false,
+      "metricsCompared": false,
+      "detail": "Official site now lists four distances, not only 100M and 100K. It warns routes may change due to ground conditions; do not lock in a track until the final route files are published and validated."
+    },
+    {
+      "eventOrder": 20,
+      "event": "adidas Innsbruck Alpine Trailrun Festival",
+      "officialSources": [
+        "https://www.innsbruckalpine.at/anmeldung/leistungen/",
+        "https://www.innsbruckalpine.at/rennen/alle-bewerbe/"
+      ],
+      "date": "2027-05-05/08",
+      "routes": [
+        {
+          "name": "K110",
+          "distanceKm": 112.6,
+          "elevationM": 5500
+        },
+        {
+          "name": "K85",
+          "distanceKm": 86.8,
+          "elevationM": 3880
+        },
+        {
+          "name": "K65",
+          "distanceKm": 68.9,
+          "elevationM": 2640
+        },
+        {
+          "name": "K42",
+          "distanceKm": 43.4,
+          "elevationM": 2400
+        },
+        {
+          "name": "K35",
+          "distanceKm": 37.8,
+          "elevationM": 2110
+        },
+        {
+          "name": "K25",
+          "distanceKm": 26.6,
+          "elevationM": 870
+        }
+      ],
+      "status": "official-2027-GPX-promised-for-all-races; old-K110-IATF26-file-stale",
+      "binaryDownloaded": false,
+      "parsed": false,
+      "metricsCompared": false,
+      "detail": "Organizer promises digital course map and GPX for all races. Current event pages confirm 2027 dates and six main distances. The previously found IATF26 K110 file is not accepted as 2027. Await versioned IATF27 downloads."
+    }
+  ],
+  "summary": {
+    "eventsCovered": 10,
+    "individualGpxUrlsAttempted": 8,
+    "downloadedBinaryFiles": 0,
+    "parsedTracks": 0,
+    "metricsCompared": 0,
+    "attemptsBreakdown": "3 Ötzi files + 5 Istria files",
+    "important": "No binary GPX data was successfully obtained in this inspection environment. Unsupported content-type and inaccessible endpoints are tooling limitations, not proof of broken organizer links."
+  },
+  "followUps": [
+    "Ötzi: run the three year-specific GPX downloads in an actual browser/CI fetcher; exclude 2025 Just-for-Fun file.",
+    "Istria: fetch and parse all five official 2027 GPX files using a binary-capable runner.",
+    "Vienna: recheck for a 2027-versioned file.",
+    "Grand Raid Ventoux: export all four routes from official interactive maps.",
+    "UTFS: extract the Trail Intelligence exports for all four distances.",
+    "Hamburg: verify whether official downloads have switched from HMH26 to HMH27.",
+    "London: wait for any official downloadable GPX release.",
+    "Oh Meu Deus: export final tracks for all four distances after organizer finalization.",
+    "Innsbruck Alpine: wait for IATF27 GPX downloads and validate all six routes."
+  ],
+  "noChangesToGpxFiles": true,
+  "noAppRuntimeDataChanged": true
+}
