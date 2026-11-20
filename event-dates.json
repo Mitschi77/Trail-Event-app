@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-20T18:52:00Z",
+  "updatedAt": "2026-11-20T18:55:00Z",
   "schemaVersion": 3,
   "events": {
     "la-corsa-della-bora": {
@@ -2556,7 +2556,7 @@
     },
     "3kings-3hills": {
       "eventId": "3kings-3hills",
-      "checkedAt": "2026-11-18T14:25:00.201965+00:00",
+      "checkedAt": "2026-11-20T18:55:00Z",
       "status": "verified",
       "sources": [
         {
@@ -2566,8 +2566,8 @@
         },
         {
           "url": "https://www.3kings-3hills.com/fakten/",
-          "status": "read",
-          "verification": "manual-official-page"
+          "status": "manual",
+          "verification": "official-2027-route-details"
         }
       ],
       "eventPeriod": {
@@ -2605,8 +2605,19 @@
           "routeId": "100-miles-ultra-168-6300",
           "date": "2027-07-23",
           "verified": true
+        },
+        "6": {
+          "routeId": "shorty-trail-16-700-2027",
+          "date": "2027-07-24",
+          "verified": true
+        },
+        "7": {
+          "routeId": "traily-trail-5-100-2027",
+          "date": "2027-07-24",
+          "verified": true
         }
-      }
+      },
+      "sourceCheckStatus": "manual"
     },
     "davos-x-trail": {
       "eventId": "davos-x-trail",
