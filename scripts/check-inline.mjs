@@ -85,7 +85,7 @@ if (appVapidKey !== senderVapidKey) {
   throw new Error("The app subscription VAPID key does not match the push sender key.");
 }
 
-if (!/id="sendOwnerPushTest"[^>]*onclick="window\\.trailOwnerPushTestClick\\(event\\)"/.test(html)) {
+if (!html.includes('id="sendOwnerPushTest" type="button" onclick="window.trailOwnerPushTestClick(event)"')) {
   throw new Error("Owner push test button must call its handler directly from the click.");
 }
 if (!html.includes("window.trailOwnerPushTestClick=async function(event)")) {
@@ -94,8 +94,7 @@ if (!html.includes("window.trailOwnerPushTestClick=async function(event)")) {
 for (const required of ["claim_event_push_rate_limit", "get_trail_push_vapid_config", "sendNotification", "event_push_subscriptions"]) {
   if (!ownerTestPushFunction.includes(required)) throw new Error("Owner push test endpoint is missing: " + required);
 }
-const ownerTestVapidKey = ownerTestPushFunction.match(/const\\s+VAPID_PUBLIC_KEY\\s*=\\s*[\"']([^\"']+)[\"']/)?.[1];
-if (!ownerTestVapidKey || ownerTestVapidKey !== appVapidKey) {
+if (!appVapidKey || !ownerTestPushFunction.includes('const VAPID_PUBLIC_KEY = "' + appVapidKey + '"')) {
   throw new Error("The owner push test VAPID key does not match the app subscription key.");
 }
 
