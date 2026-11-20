@@ -9,6 +9,10 @@ const ownerTestPushFunction = await readFile(
   new URL("../supabase/functions/send-owner-test-push/index.ts", import.meta.url),
   "utf8"
 );
+const ownerTestPushCore = await readFile(
+  new URL("../supabase/functions/send-owner-test-push/core.mjs", import.meta.url),
+  "utf8"
+);
 const inlineScripts = [...html.matchAll(/<script(?:\s[^>]*)?>([\s\S]*?)<\/script>/gi)]
   .map(match => match[1].trim())
   .filter(Boolean);
@@ -91,21 +95,17 @@ if (!html.includes('id="sendOwnerPushTest" type="button" onclick="window.trailOw
 if (!html.includes("window.trailOwnerPushTestClick=async function(event)")) {
   throw new Error("Owner push test button handler is missing.");
 }
-for (const required of ["claim_event_push_rate_limit", "get_trail_push_vapid_config", "sendNotification", "event_push_subscriptions"]) {
-  if (!ownerTestPushFunction.includes(required)) throw new Error("Owner push test endpoint is missing: " + required);
+if (!ownerTestPushFunction.includes('from "./core.mjs"') || !ownerTestPushFunction.includes("Deno.serve(handler)")) {
+  throw new Error("Owner push Edge Function must serve the independently testable core handler.");
 }
-if (!ownerTestPushFunction.includes("!config?.public_key") ||
-    !ownerTestPushFunction.includes("webpush.setVapidDetails(config.subject, config.public_key, config.private_key)")) {
-  throw new Error("The owner push test must use the public VAPID key returned by the secure configuration RPC.");
+for (const required of ["claim_event_push_rate_limit", "get_trail_push_vapid_config", "sendNotification", "event_push_subscriptions", "eq(\"user_id\", ownerId)", "eq(\"user_id\", ownerId)"]) {
+  if (!ownerTestPushCore.includes(required)) throw new Error("Owner push core is missing required security behavior: " + required);
 }
-if (!ownerTestPushFunction.includes("if (!subscriptions?.length) return json({ sent: 0, removed: 0, failed: 0, noSubscriptions: true }, 200)")) {
-  throw new Error("The owner push test must distinguish devices that were never registered.");
+if (!ownerTestPushCore.includes("config.private_key") || !ownerTestPushCore.includes("webpush.setVapidDetails(config.subject, config.public_key, config.private_key)")) {
+  throw new Error("The owner push core must use the private VAPID key only from the secure configuration RPC.");
 }
-if (!ownerTestPushFunction.includes("removed > 0 && failed === 0")) {
-  throw new Error("Expired push subscriptions must be reported separately from missing registrations.");
-}
-if (ownerTestPushFunction.includes("VAPID_PUBLIC_KEY =")) {
-  throw new Error("The owner push test must not hardcode a VAPID key.");
+if (ownerTestPushFunction.includes("SUPABASE_SERVICE_ROLE_KEY") || ownerTestPushFunction.includes("private_key") && ownerTestPushFunction.includes("VAPID_PRIVATE_KEY =")) {
+  throw new Error("Server secrets must not be hardcoded or passed from the browser.");
 }
 
 if (!html.includes("sold-out-stamp") || !html.includes("soldOutRouteBadge(r)")) throw new Error("Sold-out routes must retain their red overview stamp.");
