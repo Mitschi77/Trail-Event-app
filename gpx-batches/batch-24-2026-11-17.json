@@ -1,6 +1,6 @@
 {
   "batch": 24,
-  "checkedAt": "2026-11-17",
+  "checkedAt": "2026-11-20",
   "scope": "Top-level events 116-120 in current EVENTS order",
   "status": "saved",
   "appCommit": "9e6215c01d5882264b1c72cbbd79c66812996bd5",
@@ -8,35 +8,35 @@
     {
       "order": 116,
       "name": "Megamarsch",
-      "gpxStatus": "Official 2027 Munich 100K event confirmed for 15-16 May, approx. 990 hm. Organizer says route is provided as Komoot download two weeks before event and may change shortly before start.",
+      "gpxStatus": "Official 2027 Munich 100K confirmed for 15–16 May, approx. 990 hm. Route is provided via Komoot about two weeks before event and may change shortly before start. No final GPX available yet.",
       "source": "https://www.megamarsch.de/m%C3%BCnchen",
       "followUp": "Recheck around 1 May 2027 for Komoot/GPX route."
     },
     {
       "order": 117,
       "name": "Vietnam Highlands Trail by UTMB",
-      "gpxStatus": "All four official 2027 GPX files are linked from the UTMB race pages and stored in Google Drive. App now provides a one-click import attempt by converting each official Drive file ID to its download endpoint; if Google Drive CORS or confirmation blocks it, download manually and use the GPX file import.",
+      "gpxStatus": "Four official 2027 GPX files linked from UTMB pages and hosted in Google Drive. App one-click import is an attempted integration only; successful download and XML parsing are not yet confirmed. If Drive blocks browser access, manual file import is the fallback.",
       "source": "https://vietnamhighlands.utmb.world/",
       "followUp": "Try the one-click import button; if it fails, download the .gpx file from Drive and use the app's GPX file import field."
     },
     {
       "order": 118,
       "name": "Tarawera Ultra-Trail by UTMB",
-      "gpxStatus": "Official UTMB 2027 Map + GPX pages confirmed for TMiler, T102, T50, T21 and T14; all five route pages linked in app.",
+      "gpxStatus": "Five official 2027 UTMB Map + GPX pages confirmed (TMiler, T102, T50, T21, T14). Direct file endpoints and XML bytes still need extraction and validation.",
       "source": "https://tarawera.utmb.world/",
       "followUp": "Export each route from its official Map + GPX panel."
     },
     {
       "order": 119,
       "name": "Puerto Vallarta México by UTMB",
-      "gpxStatus": "Official 2027 UTMB Map + GPX pages confirmed and linked for Hikuri 81K, Nakawé 53K, Haramara 37K, Ereno 20K and Pata Salada 5K.",
+      "gpxStatus": "Five official 2027 UTMB Map + GPX pages confirmed (Hikuri 81K, Nakawé 53K, Haramara 37K, Ereno 20K, Pata Salada 5K). Direct files not yet parsed.",
       "source": "https://puerto-vallarta.utmb.world/races",
       "followUp": "Export each route from its official Map + GPX panel."
     },
     {
       "order": 120,
       "name": "HOKA Xtrail Kenting by UTMB",
-      "gpxStatus": "Official UTMB 2027 Map + GPX pages confirmed and linked for 100K, 50K, 25K, 10K and Kids Family Run.",
+      "gpxStatus": "Official 2027 UTMB Map + GPX pages confirmed for 100K, 50K, 25K, 10K and Kids Family Run. Direct endpoints and XML track content remain unverified.",
       "source": "https://xtrail.utmb.world/",
       "followUp": "Export each route from its official Map + GPX panel."
     }
