@@ -1,0 +1,185 @@
+{
+  "batch": 34,
+  "checkedAt": "2026-11-20",
+  "scope": "Second-pass official-source review of top-level events 59-68 (10 events)",
+  "status": "rechecked",
+  "events": [
+    {
+      "order": 59,
+      "name": "U.TLW",
+      "editionStatus": "No 2027 edition/date confirmed on official site at this check.",
+      "gpxStatus": "The previous official page still pointed to 2025 registration; route links previously returned 404. No current official GPX or next-edition route set verified. Keep any older GPX historical and do not reactivate the event as a 2027 race.",
+      "source": "https://utlw.de/de/",
+      "followUp": "Recheck only after organizer publishes a new edition/date and working official route downloads."
+    },
+    {
+      "order": 60,
+      "name": "Großglockner Mountain Run",
+      "year": 2027,
+      "eventDate": "4 July 2027",
+      "routes": [
+        [
+          "Mountain Run",
+          13.3,
+          1300
+        ]
+      ],
+      "gpxStatus": "Official organizer confirms 13.3 km/1,300 hm and 4 July 2027. No official GPX download found in the previous pass; no new public GPX confirmed now. Third-party tracks are not accepted as official replacements.",
+      "sources": [
+        "https://grossglockner-mountainrun.at/",
+        "https://grossglockner-mountainrun.at/strecke/"
+      ],
+      "followUp": "Request or recheck official GPX publication; retain any old track as historical."
+    },
+    {
+      "order": 61,
+      "name": "Obertauern Trailrun Summit",
+      "year": 2027,
+      "gpxStatus": "Previous pass identified seven direct official 2027 GPX URLs and two additional map-only races (Extreme 100 Trail 8 Summits and Panorama Trail 2 Summits). This pass did not download/parse the binaries, so direct links are available but file integrity/current contents are not newly validated.",
+      "source": "https://www.trailrun-summit.com/",
+      "followUp": "Download and parse all seven linked 2027 files; obtain official GPX for the two map-only races when released."
+    },
+    {
+      "order": 62,
+      "name": "Restonica Trail Corsica by UTMB",
+      "year": 2027,
+      "gpxStatus": "Official FAQ policy remains that GPX tracks are released only a few days before the event because routes cross private land. No early public 2027 GPX confirmed.",
+      "source": "https://restonica.utmb.world/races-runners/runners/infos-pratiques",
+      "followUp": "Check shortly before race week; do not use unofficial copies."
+    },
+    {
+      "order": 63,
+      "name": "Trail Verbier St-Bernard by UTMB",
+      "year": 2027,
+      "gpxStatus": "Official 2027 race pages provide Map + GPX panels. The X-Traversée route has a 2027 modification near Grand St-Bernard. Actual GPX binaries were not downloaded/parsed in this pass.",
+      "sources": [
+        "https://verbier.utmb.world/races/x-traversee",
+        "https://verbier.utmb.world/races/x-alpine"
+      ],
+      "followUp": "Export each official 2027 route and compare measured track lengths/elevation, with particular attention to X-Traversée change."
+    },
+    {
+      "order": 64,
+      "name": "PIUT (Paznaun Ischgl Ultra Trail)",
+      "editionStatus": "Previous app entry referred to 12 July 2026; no next-edition date confirmed in this pass.",
+      "gpxStatus": "Official route-map pages have GPX/KML downloads, but without a confirmed next edition or current route version these must not be treated as current. Preserve prior GPX historically.",
+      "source": "https://www.paznaun-ischgl.com/de/piut-startseite/challenges/streckenkarte",
+      "followUp": "Wait for next edition date and current course pack before updating event date or GPX."
+    },
+    {
+      "order": 65,
+      "name": "Glacier Trailrun Alpine Race",
+      "year": 2027,
+      "gpxStatus": "Previous official organizer update said routes were being revised and registration postponed to 1 December 2026; no final 2027 GPX confirmed in this pass. The app's former 100K route is not confirmed in the official 2027 program.",
+      "source": "https://www.oetztal-trailrunning.at/die-running-events/glacier-trailrun-alpine-race/",
+      "followUp": "Recheck after organizer releases revised program and final course files."
+    },
+    {
+      "order": 66,
+      "name": "Engadin Ultra Trail",
+      "year": 2027,
+      "eventDates": "16-17 July 2027",
+      "routes": [
+        [
+          "EUT102",
+          102,
+          5677
+        ],
+        [
+          "EUT53",
+          53,
+          2639
+        ],
+        [
+          "ET23",
+          23,
+          1064
+        ],
+        [
+          "ET16",
+          16,
+          791
+        ]
+      ],
+      "gpxStatus": "Important current update: organizer announced two significant EUT102 course changes to replace gravel with trails, including a new forest section after Zuoz and a new Clavadatsch Trail approach to Samedan. The organizer says the overall EUT102 distance remains approximately 102 km. The changes also affect the final section of all routes. Therefore older GPX tracks must not be treated as the final 2027 versions, even though the four route labels remain. No binary GPX files were downloaded/parsed in this pass.",
+      "sources": [
+        "https://www.engadinultratrail.ch/",
+        "https://en.engadinultratrail.ch/post/route-adjustments-for-the-engadin-ultra-trail-even-more-trails"
+      ],
+      "followUp": "Obtain the revised 2027 files for all four distances and validate that they include the new post-Zuoz and Clavadatsch sections."
+    },
+    {
+      "order": 67,
+      "name": "Maintal Ultratrail",
+      "year": 2027,
+      "eventDate": "17 July 2027",
+      "routes": [
+        [
+          "Ultratrail",
+          64,
+          1700
+        ],
+        [
+          "Trail T30",
+          30,
+          720
+        ],
+        [
+          "Trail T13",
+          13,
+          230
+        ]
+      ],
+      "gpxStatus": "Official organizer confirms 12th edition on 17 July 2027 and registration opened 1 November 2026. Official Ultratrail route page provides MTUT_Ultratrail.gpx; prior audit found a direct T30 GPX and T13 route download page. No binaries were downloaded/parsed in this pass. Event listing still says date not confirmed, so prefer organizer's official registration page.",
+      "sources": [
+        "https://www.mtut.de/anmeldung/",
+        "https://www.mtut.de/trails/ultratrail/",
+        "https://www.mtut.de/trails/trail-t30/",
+        "https://www.mtut.de/trails/trail-t13/"
+      ],
+      "followUp": "Download all three organizer GPX files and validate the 64/30/13 km tracks; correct the third-party 'date unconfirmed' status from official source."
+    },
+    {
+      "order": 68,
+      "name": "DoloMyths Run",
+      "year": 2027,
+      "eventDates": "9-11 July 2027",
+      "routes": [
+        [
+          "Fassa Trail",
+          null,
+          null
+        ],
+        [
+          "SkyRace",
+          null,
+          null
+        ],
+        [
+          "V-Rodella",
+          4.9,
+          932
+        ]
+      ],
+      "gpxStatus": "Official organizer confirms 2027 dates and introduces a new V-Rodella vertical race on 9 July: 4.9 km and 932 m ascent. Its GPX and virtual tour are explicitly 'coming soon'. Fassa Trail and SkyRace are scheduled 10 and 11 July; their current 2027 binary GPX files were not confirmed/downloaded in this pass.",
+      "sources": [
+        "https://dolomythsrun.it/en/",
+        "https://www.dolomyths.run/en/home.html"
+      ],
+      "followUp": "Wait for V-Rodella GPX publication; recheck 2027 Fassa Trail and SkyRace tracks separately."
+    }
+  ],
+  "summary": {
+    "eventsRechecked": 10,
+    "importantUpdates": [
+      "Engadin Ultra Trail 2027 has meaningful EUT102 and shared final-section route modifications; old GPX versions must not be used as final 2027 tracks.",
+      "Maintal Ultratrail organizer confirms 17 July 2027 and live registration; official download pages exist for all three routes, but binaries still need technical validation.",
+      "DoloMyths Run adds V-Rodella on 9 July 2027, 4.9 km/932 hm; GPX is explicitly coming soon.",
+      "Obertauern has seven official 2027 GPX links from previous pass plus two map-only courses; binary checks remain outstanding.",
+      "Restonica GPX release is deliberately delayed until shortly before the race because of private land.",
+      "U.TLW and PIUT do not yet have a verified next-edition course pack; old GPX remains historical."
+    ],
+    "gpxSafety": "No GPX binary was downloaded and parsed in this pass. A download link or map panel is not technical validation. Existing older GPX files remain retained and are not treated as current replacements where route changes or edition status are unresolved. No existing GPX files are deleted or replaced.",
+    "next": "Continue second-pass review of events 49-58."
+  }
+}
