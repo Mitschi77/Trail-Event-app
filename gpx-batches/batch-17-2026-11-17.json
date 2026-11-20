@@ -8,43 +8,135 @@
     {
       "order": 81,
       "name": "Last Soul Ultra",
-      "gpxStatus": "2027 Season 3 official page confirms 6.706 km backyard loop; no public downloadable GPX. Keep route dimensions as organizer-confirmed, not GPX-validated.",
+      "gpxStatus": "2027 World Series confirmed with three qualifiers and a qualification-only Germany final. The organizer confirms a 6.706 km backyard loop, but no public downloadable GPX. Do not represent this as a single event with a fixed German venue/date.",
       "source": "https://www.lastsoulultra.com/",
-      "followUp": "Ask organizer for the route GPX."
+      "followUp": "Wait for organizer to publish venue/loop GPX for each qualifier and Germany final; retain any prior German course as a historical separate version.",
+      "verified2027Edition": {
+        "source": "https://www.lastsoulultra.com/world-series",
+        "format": "Season 3 / World Series",
+        "loopKm": 6.706,
+        "stops": [
+          {
+            "country": "USA",
+            "date": "2027-02-19",
+            "status": "entry requests closed"
+          },
+          {
+            "country": "United Kingdom",
+            "month": "April 2027"
+          },
+          {
+            "country": "Australia",
+            "month": "June 2027"
+          },
+          {
+            "country": "Germany",
+            "month": "August 2027",
+            "status": "qualification-only final"
+          }
+        ],
+        "note": "2027 is not one single Last Soul Ultra race in Germany; organizer announces three qualifiers and a Germany final. Venues for later qualifiers/final are not yet announced."
+      }
     },
     {
       "order": 82,
       "name": "Karnisches Ungetüm",
-      "gpxStatus": "Official 2027 event and route values confirmed; no official public GPX download verified. Request organizer file; do not substitute third-party GPX.",
+      "gpxStatus": "2027 event is listed for 14 August. Current published race details indicate 75 km / 5,200 hm plus a new Short Trail of about 25 km / 1,500 hm. A public third-party GPX page exists, but no official organizer download URL has been verified; do not label third-party file official.",
       "source": "https://www.ungetuem.at/kut/",
-      "followUp": "Ask organizer for GPX or recheck the course page closer to race."
+      "followUp": "Request official GPX for both distances from organizer; keep third-party route only as a separately sourced candidate until confirmed.",
+      "verified2027Edition": {
+        "source": "https://www.ungetuem.at/kut/",
+        "date": "2027-08-14",
+        "mainDistanceKm": 75,
+        "elevationHm": 5200,
+        "additionalRace": {
+          "name": "Ungetüm Short Trail",
+          "distanceKm": 25,
+          "elevationHm": 1500
+        },
+        "note": "2027 date and additional short format confirmed by current event listings; organizer must be treated as final authority for exact distance and GPX."
+      }
     },
     {
       "order": 83,
       "name": "TREK Matterhorn Ultraks",
-      "gpxStatus": "Current official route pages still expose 2026 edition GPX files. Keep these as last available historical versions; no 2027 course/date confirmation or replacement GPX verified.",
+      "gpxStatus": "2027 edition confirmed for 20–22 August and official race distances are available. The downloadable files found on organizer course pages still identify 2026; keep them as historical last-available versions until 2027 replacements are published and checked.",
       "sources": [
         "https://www.matterhorn-ultraks.ch/strecken/sky",
         "https://www.matterhorn-ultraks.ch/strecken/extreme",
         "https://www.matterhorn-ultraks.ch/strecken/mountain"
       ],
       "followUp": "Wait for confirmed 2027 event dates and GPX versions.",
-      "retentionRule": "Retain existing 2026 GPX files with edition/source metadata; label current-route match unconfirmed and replace only after official 2027 files are checked."
+      "retentionRule": "Keep existing 2026 GPX files and source links with edition metadata; do not overwrite or delete before official 2027 replacement validation.",
+      "verified2027Edition": {
+        "source": "https://www.myswitzerland.com/en-us/experiences/events/trek-matterhorn-ultraks/",
+        "dates": [
+          "2027-08-20",
+          "2027-08-22"
+        ],
+        "routes": [
+          {
+            "name": "EXTREME",
+            "distanceKm": 26,
+            "elevationHm": 3066
+          },
+          {
+            "name": "SKY",
+            "distanceKm": 49,
+            "elevationHm": 3600
+          },
+          {
+            "name": "MOUNTAIN",
+            "distanceKm": 32,
+            "elevationHm": 2000
+          },
+          {
+            "name": "ACTIVE",
+            "distanceKm": 19,
+            "elevationHm": 1150
+          },
+          {
+            "name": "VERTINIGHT",
+            "distanceKm": 4.9,
+            "elevationHm": 691
+          },
+          {
+            "name": "RELAY",
+            "distanceKm": 32,
+            "elevationHm": 2000
+          }
+        ],
+        "note": "2027 dates and principal route distances/elevation confirmed. Children's Wolli and Superwolli also announced. The previously saved 2026 GPX links remain last available historical versions, not 2027."
+      }
     },
     {
       "order": 84,
       "name": "Trans Alpine Run",
-      "gpxStatus": "2027 Trans Alpine Run announced for 18–24 September. Public stage pages remain 2026; organizer sends GPX only to registered participants. Do not use public 2026 stages as 2027.",
+      "gpxStatus": "2027 event confirmed for 18–24 September. Official site still labels public route overview 2026; a general 'All GPX Files' link is present but not confirmed to contain 2027 stages. Do not treat 2026 stage tracks as current.",
       "source": "https://www.transalpine-run.com/strecke/",
-      "followUp": "Wait for 2027 stage route release and participant GPX delivery."
+      "followUp": "Recheck official 2027 stage schedule and participant GPX delivery; keep older stage GPX versions separately."
     },
     {
       "order": 85,
       "name": "UTMB Mont Blanc",
-      "gpxStatus": "No official 2027 UTMB Mont-Blanc dates/course GPX verified yet. Existing prior-year files must remain archived as historical last-available versions, not be deleted.",
+      "gpxStatus": "2027 UTMB Mont-Blanc edition and key starts now confirmed (PTL 22 Aug, UTMB/CCC 25 Aug, OCC 28 Aug). Full schedule is announced in December 2026. 2027 race detail pages remain opening soon; no current 2027 GPX files verified.",
       "source": "https://montblanc.utmb.world/races",
-      "followUp": "Recheck after official 2027 race week and course details are published.",
-      "retentionRule": "Keep existing historic GPX versions, with year and source; do not label them as 2027 or remove them pending official 2027 release."
+      "followUp": "Recheck after full December 2026 schedule and race detail pages; keep historic GPX files as separate year-labelled versions.",
+      "retentionRule": "Keep existing historic GPX versions, with year and source; do not label them as 2027 or remove them pending official 2027 release.",
+      "verified2027Edition": {
+        "source": "https://montblanc.utmb.world/",
+        "dates": [
+          "2027-08-22",
+          "2027-08-28"
+        ],
+        "keyStarts": {
+          "PTL": "2027-08-22",
+          "UTMB": "2027-08-25",
+          "CCC": "2027-08-25",
+          "OCC": "2027-08-28"
+        },
+        "note": "Official 2027 homepage confirms edition dates and the UTMB/CCC/OCC start dates; complete schedule is due in December 2026."
+      }
     }
   ],
   "nextBatch": "Continue with events 86-90 after package 17 checkpoint."
