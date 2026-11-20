@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-20T21:05:00Z",
+  "updatedAt": "2026-11-20T21:15:00Z",
   "schemaVersion": 3,
   "events": {
     "la-corsa-della-bora": {
@@ -107,34 +107,22 @@
     },
     "mountain-man-winter": {
       "eventId": "mountain-man-winter",
-      "checkedAt": "2026-11-18T14:25:00.201965+00:00",
+      "checkedAt": "2026-11-20T21:15:00Z",
       "status": "verified",
       "sources": [
         {
           "url": "https://www.reitimwinkl.de/mountainman-winterloop",
           "status": "read",
-          "verification": "manual-official-page"
+          "verification": "official-2027-event-date-and-loop-course"
         }
       ],
-      "eventPeriod": null,
-      "routes": {
-        "0": {
-          "routeId": "m-trail-22-650",
-          "date": "2026-03-08",
-          "verified": false,
-          "fallback": true,
-          "fallbackYear": 2026,
-          "note": "Vorläufiger Ersatztermin aus der Ausgabe 2026; kein offizieller Starttermin 2027 gefunden."
-        },
-        "1": {
-          "routeId": "l-trail-31-750",
-          "date": "2026-03-08",
-          "verified": false,
-          "fallback": true,
-          "fallbackYear": 2026,
-          "note": "Vorläufiger Ersatztermin aus der Ausgabe 2026; kein offizieller Starttermin 2027 gefunden."
-        }
-      }
+      "eventPeriod": {
+        "startDate": "2027-01-23",
+        "endDate": "2027-01-24",
+        "verified": true
+      },
+      "routes": {},
+      "note": "2027 ist eine neue Winterloop-Challenge mit 7,5-km-Rundkurs und 110 hm pro Runde. Die bisherigen 22-/31-km-Strecken gehören nicht zur veröffentlichten 2027-Ausschreibung; ihre Tagesstarts sind daher nicht zugeordnet."
     },
     "ultra-mediterrania": {
       "eventId": "ultra-mediterrania",
@@ -545,15 +533,24 @@
     },
     "oh-meu-deus": {
       "eventId": "oh-meu-deus",
-      "checkedAt": "2026-11-18T14:25:00.201965+00:00",
+      "checkedAt": "2026-11-20T21:15:00Z",
       "status": "verified",
       "sources": [
         {
           "url": "https://ohmeudeus.utmb.world/races/omd100m",
           "status": "read"
+        },
+        {
+          "url": "https://ohmeudeus.utmb.world/",
+          "status": "read",
+          "verification": "official-2027-race-schedule"
         }
       ],
-      "eventPeriod": null,
+      "eventPeriod": {
+        "startDate": "2027-04-30",
+        "endDate": "2027-05-02",
+        "verified": true
+      },
       "routes": {
         "0": {
           "routeId": "oh-meu-deus-100m-167-8900",
@@ -562,13 +559,11 @@
         },
         "1": {
           "routeId": "oh-meu-deus-100k-94-5300",
-          "date": "2026-05-01",
-          "verified": false,
-          "fallback": true,
-          "fallbackYear": 2026,
-          "note": "Vorläufiger Ersatztermin aus der Ausgabe 2026; kein offizieller Starttermin 2027 gefunden."
+          "date": "2027-05-01",
+          "verified": true
         }
-      }
+      },
+      "note": "2027-Tagesstarts laut offizieller UTMB-Rennübersicht: 100M am 30.04., 100K am 01.05.; 50K am 30.04. und 20K am 02.05."
     },
     "innsbruck-alpine": {
       "eventId": "innsbruck-alpine",
@@ -804,8 +799,8 @@
     },
     "chiemgau-trail": {
       "eventId": "chiemgau-trail",
-      "checkedAt": "2026-11-18T14:25:00.201965+00:00",
-      "status": "verified",
+      "checkedAt": "2026-11-20T21:15:00Z",
+      "status": "unconfirmed",
       "sources": [
         {
           "url": "https://chiemgau-trail-run.de/",
@@ -837,7 +832,7 @@
           "note": "Vorläufiger Ersatztermin aus der Ausgabe 2026; kein offizieller Starttermin 2027 gefunden."
         }
       },
-      "note": "Die offizielle Veranstalterseite bestätigt derzeit nur die Ausgabe am 24. Oktober 2026. Ein Termin und die Strecken für 2027 sind noch nicht offiziell veröffentlicht. Die bisherigen Streckendaten stammen aus einer älteren Ausgabe und sind nicht als bestätigte 2027-Angaben zu verwenden."
+      "note": "Die offizielle Veranstalterseite bestätigt aktuell nur die Ausgabe 24.10.2026. Ein 2027-Termin ist nicht veröffentlicht; 2026-Angaben bleiben ausdrücklich als Ersatzdaten markiert."
     },
     "transvulcania-la-palma": {
       "eventId": "transvulcania-la-palma",
@@ -1717,16 +1712,11 @@
     },
     "backyard-ultra": {
       "eventId": "backyard-ultra",
-      "checkedAt": "2026-11-18T14:25:00.201965+00:00",
+      "checkedAt": "2026-11-20T21:15:00Z",
       "status": "verified",
       "sources": [
         {
           "url": "https://www.hofer-backyard-ultra.de/",
-          "status": "read",
-          "verification": "official-2027-source"
-        },
-        {
-          "url": "https://www.hofer-backyard-ultra.de/ausschreibung-2027/",
           "status": "read",
           "verification": "official-2027-source"
         },
@@ -1742,11 +1732,16 @@
         {
           "url": "https://tsv-katzwang-ultrasport.de/kuckucksuhrenlauf/kuckuck-ausschreibung/",
           "status": "read"
+        },
+        {
+          "url": "https://www.hofer-backyard-ultra.de/ausschreibung-2027/",
+          "status": "read",
+          "verification": "official-2027-organizer-announcement"
         }
       ],
       "eventPeriod": {
         "startDate": "2027-06-26",
-        "endDate": "2027-06-26",
+        "endDate": "2027-06-27",
         "verified": true
       },
       "routes": {
@@ -1754,16 +1749,9 @@
           "routeId": "backyard-ultra-6-7-100",
           "date": "2027-06-26",
           "verified": true
-        },
-        "3": {
-          "routeId": "backyard-ultra-6-7-50",
-          "date": "2026-10-10",
-          "verified": false,
-          "fallback": true,
-          "fallbackYear": 2026,
-          "note": "Vorläufiger Ersatztermin aus der Ausgabe 2026; kein offizieller Starttermin 2027 gefunden."
         }
-      }
+      },
+      "note": "Hofer Backyard Ultra ist für den 26.06.2027 bestätigt. Für Kuckuck Backyard Ultra liegt kein bestätigter 2027-Termin vor; das alte Datum 10.10.2026 wird nicht als 2027-Termin weitergeführt."
     },
     "lavardedo-trail": {
       "eventId": "lavardedo-trail",
@@ -3795,8 +3783,8 @@
     },
     "alpin-team-trailrun": {
       "eventId": "alpin-team-trailrun",
-      "checkedAt": "2026-11-18T14:25:00.201965+00:00",
-      "status": "verified",
+      "checkedAt": "2026-11-20T21:15:00Z",
+      "status": "unconfirmed",
       "sources": [
         {
           "url": "https://www.trailrunning-verband.at/trailrunning-kalender",
@@ -3815,7 +3803,7 @@
           "note": "Vorläufiger Ersatztermin aus der Ausgabe 2026; kein offizieller Starttermin 2027 gefunden."
         }
       },
-      "note": "Ein offizieller Termin für 2027 ist noch nicht belegt; die hinterlegte Datumsangabe stammt aus 2026."
+      "note": "Ein 2027-Termin ist in der offiziellen Kalenderprüfung nicht bestätigt. Der vorläufige Termin 2027-09-26 stammt aus der Ausgabe 2026 und bleibt ausdrücklich unverifiziert."
     },
     "chihuahua-by-utmb": {
       "eventId": "chihuahua-by-utmb",
@@ -4079,7 +4067,7 @@
     },
     "3trail-ibiza": {
       "eventId": "3trail-ibiza",
-      "checkedAt": "2026-11-18T14:25:00.201965+00:00",
+      "checkedAt": "2026-11-20T21:15:00Z",
       "status": "verified",
       "sources": [
         {
@@ -4090,7 +4078,7 @@
         {
           "url": "https://3diastrailibiza.com/",
           "status": "read",
-          "verification": "official-2027-source"
+          "verification": "official-event-programme-and-2027-event-period"
         }
       ],
       "eventPeriod": {
@@ -4098,28 +4086,14 @@
         "endDate": "2027-11-28",
         "verified": true
       },
-      "routes": {
-        "0": {
-          "routeId": "ultra-trail-73-5-2100",
-          "date": "2026-11-28",
-          "verified": false,
-          "fallback": true,
-          "fallbackYear": 2026,
-          "note": "Vorläufiger Ersatztermin aus der Ausgabe 2026; kein offizieller Starttermin 2027 gefunden."
-        }
-      },
-      "note": "Der Veranstaltungszeitraum 26.–28. November 2027 ist auf der offiziellen Arista-Eventseite gelistet. Die konkreten Tagesstarts und die 2027-Strecken sind noch nicht veröffentlicht."
+      "routes": {},
+      "note": "Der Veranstaltungszeitraum 26.–28.11.2027 ist gelistet. Der konkrete Starttag des Ultra-Trails 2027 ist noch nicht bestätigt; das Datum der Ausgabe 2026 wird nicht fortgeschrieben."
     },
     "oman-by-utmb": {
       "eventId": "oman-by-utmb",
-      "checkedAt": "2026-11-18T14:25:00.201965+00:00",
+      "checkedAt": "2026-11-20T21:15:00Z",
       "status": "verified",
       "sources": [
-        {
-          "url": "https://oman.utmb.world/",
-          "status": "read",
-          "verification": "official-calendar-and-race-pages"
-        },
         {
           "url": "https://oman.utmb.world/shuttle",
           "status": "read",
@@ -4134,6 +4108,11 @@
           "url": "https://oman.utmb.world/races/HAJ",
           "status": "read",
           "verification": "official-calendar-and-race-pages"
+        },
+        {
+          "url": "https://oman.utmb.world/",
+          "status": "read",
+          "verification": "official-2026-race-schedule"
         }
       ],
       "eventPeriod": {
@@ -4145,45 +4124,30 @@
         "0": {
           "routeId": "jabal-classic-103-5000",
           "date": "2026-12-10",
-          "verified": false,
-          "fallback": true,
-          "fallbackYear": 2026,
-          "note": "Vorläufiger Ersatztermin aus der Ausgabe 2026; kein offizieller Starttermin 2027 gefunden."
+          "verified": true
         },
         "1": {
           "routeId": "hajar-ultra-154-8000",
           "date": "2026-12-10",
-          "verified": false,
-          "fallback": true,
-          "fallbackYear": 2026,
-          "note": "Vorläufiger Ersatztermin aus der Ausgabe 2026; kein offizieller Starttermin 2027 gefunden."
+          "verified": true
         },
         "2": {
           "routeId": "oman-skyward-canyon-50-2400",
           "date": "2026-12-11",
-          "verified": false,
-          "fallback": true,
-          "fallbackYear": 2026,
-          "note": "Vorläufiger Ersatztermin aus der Ausgabe 2026; kein offizieller Starttermin 2027 gefunden."
+          "verified": true
         },
         "3": {
           "routeId": "oman-old-capital-trail-32-1400",
           "date": "2026-12-12",
-          "verified": false,
-          "fallback": true,
-          "fallbackYear": 2026,
-          "note": "Vorläufiger Ersatztermin aus der Ausgabe 2026; kein offizieller Starttermin 2027 gefunden."
+          "verified": true
         },
         "4": {
           "routeId": "oman-scenic-ascent-21-5-550",
           "date": "2026-12-12",
-          "verified": false,
-          "fallback": true,
-          "fallbackYear": 2026,
-          "note": "Vorläufiger Ersatztermin aus der Ausgabe 2026; kein offizieller Starttermin 2027 gefunden."
+          "verified": true
         }
       },
-      "note": "Die offizielle Race-Seite nennt für Old Capital Trail 32 km, der Event-Zeitplan führt den Lauf als 20K. Distanzangabe ist deshalb als widersprüchlich markiert und sollte vor Anmeldung nochmals beim Veranstalter geprüft werden."
+      "note": "Alle fünf Streckentermine gehören zur offiziellen Ausgabe 2026 (10.–12.12.2026); sie sind keine 2027-Termine. Old Capital Trail wird auf der offiziellen Race-Seite mit 32 km / 1.400 hm geführt."
     },
     "mammutmarsch": {
       "eventId": "mammutmarsch",
