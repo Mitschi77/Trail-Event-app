@@ -40,6 +40,8 @@ const serializedRecordById = id => {
 };
 
 
+assert.ok(html.includes("const eventYear=String(data.eventPeriod.startDate).slice(0,4)"), "A verified new edition must be able to clear prior-year route dates that are not verified for the new edition");
+
 assert.ok(serviceWorker.includes("'./event-dates.json'"), "Offline app shell must cache the official event feed");
 assert.match(serviceWorker, /const CACHE_NAME = 'trail-event-planner-v\d+'/, "App shell cache must use a versioned cache name for the aid-station parser update");
 assert.ok(serviceWorker.includes("url.pathname.endsWith('/event-dates.json')"), "Official event feed must use a network-first cache strategy");
