@@ -2063,13 +2063,48 @@
     },
     "trai-verbier-st-bernhard": {
       "eventId": "trai-verbier-st-bernhard",
-      "checkedAt": "2026-11-18T14:25:00.201965+00:00",
+      "checkedAt": "2026-11-20T10:00:00+01:00",
       "status": "verified",
       "sources": [
         {
-          "url": "https://verbier.utmb.world/",
+          "url": "https://verbier.utmb.world/en",
           "status": "read",
-          "verification": "official-2027-page"
+          "verification": "official-2027-event-list"
+        },
+        {
+          "url": "https://verbier.utmb.world/races/x-alpine",
+          "status": "read",
+          "verification": "official-2027-route-details"
+        },
+        {
+          "url": "https://verbier.utmb.world/races/X-traversee",
+          "status": "read",
+          "verification": "official-2027-route-details"
+        },
+        {
+          "url": "https://verbier.utmb.world/races/Verbier-marathon-Xtreme",
+          "status": "read",
+          "verification": "official-2027-route-details"
+        },
+        {
+          "url": "https://verbier.utmb.world/races/verbier-marathon",
+          "status": "read",
+          "verification": "official-2027-route-details"
+        },
+        {
+          "url": "https://verbier.utmb.world/races/X-Plore",
+          "status": "read",
+          "verification": "official-2027-route-details"
+        },
+        {
+          "url": "https://verbier.utmb.world/races/trail-decouverte",
+          "status": "read",
+          "verification": "official-2027-route-details"
+        },
+        {
+          "url": "https://verbier.utmb.world/races/X-Orient",
+          "status": "read",
+          "verification": "official-2027-route-details"
         }
       ],
       "eventPeriod": {
@@ -2110,6 +2145,21 @@
         },
         "6": {
           "routeId": "verbier-x-orient-2027",
+          "date": "2027-07-11",
+          "verified": true
+        },
+        "7": {
+          "routeId": "verbier-marathon-47-2900",
+          "date": "2027-07-09",
+          "verified": true
+        },
+        "8": {
+          "routeId": "verbier-trail-decouverte-3-5-2027",
+          "date": "2027-07-11",
+          "verified": true
+        },
+        "9": {
+          "routeId": "verbier-x-orient-5k-240-2027",
           "date": "2027-07-11",
           "verified": true
         }
