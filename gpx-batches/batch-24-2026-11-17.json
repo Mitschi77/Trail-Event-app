@@ -22,9 +22,101 @@
     {
       "order": 118,
       "name": "Tarawera Ultra-Trail by UTMB",
-      "gpxStatus": "Five official 2027 UTMB Map + GPX pages confirmed (TMiler, T102, T50, T21, T14). Direct file endpoints and XML bytes still need extraction and validation.",
+      "gpxStatus": "Official UTMB 2027 pages confirm five race courses and expose a Map + GPX tab on the individual T102 page. The tab is visible, but its underlying GPX download URL has not been extracted and the GPX binary has not been fetched. Official 2027 values: TMiler 163/3800, T102 102/2300 (aid station cumulative distance totals 101.9), T50 52/1150, T21 23/400, T14 14/161. No file is marked technically validated.",
       "source": "https://tarawera.utmb.world/",
-      "followUp": "Export each route from its official Map + GPX panel."
+      "followUp": "Extract Map + GPX download payloads for TMiler, T102, T50, T21 and T14; parse each file and compare computed distance/ascent with the official page before promoting it as 2027.",
+      "checkedAt": "2026-11-20",
+      "official2027CourseData": {
+        "source": "https://tarawera.utmb.world/",
+        "raceDate": "2027-02-13/2027-02-14",
+        "routes": [
+          {
+            "name": "TMiler",
+            "distanceKm": 163,
+            "elevationGainHm": 3800,
+            "racePage": "https://tarawera.utmb.world/races/tmiler"
+          },
+          {
+            "name": "T102",
+            "distanceKm": 102,
+            "elevationGainHm": 2300,
+            "racePage": "https://tarawera.utmb.world/races/t-102",
+            "operationalMeasuredDistanceKm": 101.9
+          },
+          {
+            "name": "T50",
+            "distanceKm": 52,
+            "elevationGainHm": 1150,
+            "racePage": "https://tarawera.utmb.world/races/t-50"
+          },
+          {
+            "name": "T21",
+            "distanceKm": 23,
+            "elevationGainHm": 400,
+            "racePage": "https://tarawera.utmb.world/races/t-21"
+          },
+          {
+            "name": "T14",
+            "distanceKm": 14,
+            "elevationGainHm": 161,
+            "racePage": "https://tarawera.utmb.world/races/t-14"
+          }
+        ],
+        "t102Checkpoints": [
+          {
+            "name": "Firmin Field",
+            "distanceKm": 0
+          },
+          {
+            "name": "Titoki",
+            "distanceKm": 13.7
+          },
+          {
+            "name": "Outlet",
+            "distanceKm": 27.6
+          },
+          {
+            "name": "Otamuri",
+            "distanceKm": 41.7
+          },
+          {
+            "name": "Rotoiti",
+            "distanceKm": 52.4
+          },
+          {
+            "name": "Okataina",
+            "distanceKm": 57.5
+          },
+          {
+            "name": "Millar",
+            "distanceKm": 72.7
+          },
+          {
+            "name": "Tikitapu (Blue Lake)",
+            "distanceKm": 84.8
+          },
+          {
+            "name": "Redwoods",
+            "distanceKm": 94.7
+          },
+          {
+            "name": "Village Green finish",
+            "distanceKm": 101.9
+          }
+        ],
+        "note": "Official UTMB homepage and T102 race page show 102 km / 2,300 m+ and a Map + GPX tab. Aid-station table totals 101.9 km, which is a rounding/detail variation, not a reason to alter advertised distance. Third-party independently measured GPX figures may differ; organizer value is primary."
+      },
+      "gpxTechnicalChecks": {
+        "status": "map-gpx-tab-confirmed; binary-not-fetched",
+        "officialRoutePageCount": 5,
+        "downloadedFiles": 0,
+        "xmlParsed": false,
+        "trackpointCount": null,
+        "calculatedDistanceKm": null,
+        "calculatedElevationHm": null,
+        "nextStep": "Extract the actual Map + GPX tab payload or official download URLs from all five race pages, then retrieve and parse the GPX bytes. Keep any existing historic files unchanged."
+      },
+      "retentionRule": "Preserve older official GPX versions until new 2027 bytes are downloaded and validated. Do not overwrite or delete historical tracks."
     },
     {
       "order": 119,
