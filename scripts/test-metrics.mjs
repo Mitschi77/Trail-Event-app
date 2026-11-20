@@ -528,3 +528,24 @@ for (const [id, km, hm, starttime] of [["shorty-trail-16-700-2027",16,700,"12:30
   const route = routeById(id); assert.ok(route, id + " must be catalogued");
   assert.equal(route.km, km); assert.equal(route.hm, hm); assert.equal(route.date, "2027-07-24"); assert.equal(route.starttime, starttime);
 }
+
+// Innsbruck Alpine 2027 official catalog: side races and youth races are not omitted.
+const innsbruckEvent = appEvents.find(event => event.id === "innsbruck-alpine");
+assert.ok(innsbruckEvent, "Innsbruck Alpine must remain in the event catalog");
+assert.equal(innsbruckEvent.routes.length, 13, "All seven main races plus six side/youth races must be represented");
+assert.equal(innsbruckEvent.minKm, 7.4, "The official Vertical is the shortest regular route; the youth race and Kids Trail do not distort the minimum");
+for (const [id, km, hm, date, starttime] of [
+  ["businesstrail-k7-8-2-285-2027",8.2,285,"2027-05-05","18:00"],
+  ["nighttrail-k7-8-2-285-2027",8.2,285,"2027-05-05","20:00"],
+  ["vertical-vtc-7-4-1330-2027",7.4,1330,"2027-05-06","11:15"],
+  ["young-talents-race-7-4-280-2027",7.4,280,"2027-05-06","15:00"],
+  ["rookie-trailrun-k15-17-5-590-2027",17.5,590,"2027-05-08","16:30"]
+]) {
+  const route = routeById(id); assert.ok(route, id + " must be catalogued");
+  assert.equal(route.km, km); assert.equal(route.hm, hm); assert.equal(route.date, date); assert.equal(route.starttime, starttime);
+}
+const iatfKids = routeById("kids-trail-iatf-2027");
+assert.ok(iatfKids, "Innsbruck Kids Trail must be represented");
+assert.equal(iatfKids.date, "2027-05-07"); assert.equal(iatfKids.starttime, "15:00");
+assert.equal(iatfKids.km, null); assert.equal(iatfKids.hm, null);
+assert.equal(iatfKids.excludeFromDistanceFilter, true, "Kids Trail must not distort the main distance filters");
