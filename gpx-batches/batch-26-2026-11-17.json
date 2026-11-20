@@ -1,6 +1,6 @@
 {
   "batch": 26,
-  "checkedAt": "2026-11-17",
+  "checkedAt": "2026-11-20",
   "scope": "Remaining top-level events 126-128 in current EVENTS order",
   "status": "saved",
   "appCommit": "e19395cfa2cc4d0e1a6853126de2404dac5c7281",
@@ -8,14 +8,14 @@
     {
       "order": 126,
       "name": "Torrencial Valdivia by UTMB",
-      "gpxStatus": "Official UTMB 2027 race pages confirmed for six courses (PILOLCURA 100K, ONCOL 65K, LLANCAHUE 45K, COLLICO 20K, CAU CAU 12K, ISLA TEJA 6K). Public race pages currently show route profile but no GPX download or Map + GPX section.",
+      "gpxStatus": "Official UTMB 2027 race pages confirm six courses (PILOLCURA 100K, ONCOL 65K, LLANCAHUE 45K, COLLICO 20K, CAU CAU 12K, ISLA TEJA 6K). No public GPX download/Map + GPX panel yet; older files, if present, remain historical.",
       "source": "https://torrencial.utmb.world/races",
       "followUp": "Recheck when official GPX downloads are added."
     },
     {
       "order": 127,
       "name": "HOKA Val d'Aran by UTMB",
-      "gpxStatus": "Official direct 2027 GPX files added for VDA 163K, TDL 75K and PDA 55K. Current official downloads for CDH 110K, EXP 30K, SKY 18K, SKY Promises and Vielha 10K are explicitly 2026 files; rejected as stale.",
+      "gpxStatus": "Three direct 2027 GPX files remain saved for VDA 163K, TDL 75K and PDA 55K. They are candidates pending actual XML download/trackpoint validation. For CDH 110K, EXP 30K, SKY 18K, SKY Promises and Vielha 10K, current official downloads are 2026 files; keep them as last available historical versions until 2027 replacements are checked.",
       "source": "https://valdaran.utmb.world/race/tracks",
       "downloads": [
         {
@@ -31,14 +31,16 @@
           "url": "https://pdf.utmb.world/raw/upload/v1790060783/valdaran/Races/GPX%202026%20DEFINTIVOS%20EVENTO/NORMALES/PDA_2027_COLOMERS_a0831fb556.gpx"
         }
       ],
-      "followUp": "Import the three confirmed 2027 files; wait for updated files for remaining five races."
+      "followUp": "Import the three confirmed 2027 files; wait for updated files for remaining five races.",
+      "retentionRule": "Keep 2026 files for CDH/EXP/SKY/SKY Promises/Vielha as historical versions; do not overwrite/delete when 2027 replacements arrive. Keep three 2027 candidates as separate versions until parsed."
     },
     {
       "order": 128,
       "name": "Monte Rosa Walser Waeg by UTMB",
-      "gpxStatus": "Official 2027 Map + GPX pages exist. Direct links for SDV 120K, MRT 82K and WWT 43K resolve to files explicitly labelled 2026 and are rejected. Gressoney Lys, Regina Margherita, Junior Walser and Becca Pink have no verified 2027-versioned GPX; Junior Walser's unversioned GPX was not accepted as 2027.",
+      "gpxStatus": "Official 2027 Map + GPX pages exist. SDV 120K, MRT 82K and WWT 43K links still resolve to files labelled 2026; retain these as last available historical versions. Other four course GPX files have no confirmed 2027 edition; unversioned files must not be labelled 2027.",
       "source": "https://mrww.utmb.world/races",
-      "followUp": "Wait for 2027 GPX updates and recheck all seven courses."
+      "followUp": "Wait for 2027 GPX updates and recheck all seven courses.",
+      "retentionRule": "Keep 2026 GPX files and unversioned historical candidates with source/year labels. Add new 2027 versions separately after official publication and validation."
     }
   ],
   "completedTopLevelEvents": 128,
