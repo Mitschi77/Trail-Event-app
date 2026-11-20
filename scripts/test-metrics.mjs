@@ -489,3 +489,17 @@ assert.deepEqual(validatePlannerSnapshot({plannerKey: JSON.stringify({ok:true})}
 assert.throws(() => validatePlannerSnapshot({unknownKey: "{}"}), /Unbekannter oder ungültiger Datenbereich/);
 assert.throws(() => validatePlannerSnapshot({plannerKey: "{"}), /Beschädigte Daten/);
 assert.notDeepEqual(cloudSignature({plannerKey:"old"}), cloudSignature({plannerKey:"new"}), "Backup integrity signatures must change when stored data changes");
+
+
+// Wild-Strubel main distance filters must ignore youth, kids and adaptive fun runs.
+const wildStrubelEvent = appEvents.find(event => event.id === "wild-strubel");
+assert.ok(wildStrubelEvent, "Wild-Strubel event must remain in the catalog");
+assert.equal(wildStrubelEvent.minKm, 10, "Wild-Strubel main filter must start at the adult Wild 10, not the 0.8 km kids race");
+assert.equal(routeById("wild-glacier-marathon-41-2500")?.km, 41, "Wild Glacier Marathon Lenk must remain in the 2027 catalog");
+assert.equal(routeById("wild-glacier-marathon-41-2500")?.hm, 2500, "Wild Glacier Marathon elevation must remain recorded");
+assert.equal(routeById("wild-glacier-marathon-41-2500")?.date, "2027-09-10", "Wild Glacier Marathon date must remain recorded");
+for (const id of ["wild-nextgen-10-500","wild-kids-ycoor-0-8-2027","wild-kids-grenon-1-7-2027","wild-adaptive-run-2-2027"]) {
+  assert.equal(routeById(id)?.excludeFromDistanceFilter, true, id + " must not distort the main distance filters");
+}
+assert.equal(wildStrubelEvent.routes.filter(route => route.excludeFromDistanceFilter !== true).reduce((min, route) => Math.min(min, Number(route.km) || Infinity), Infinity), 10,
+  "Wild-Strubel main distance minimum must be based on eligible adult race routes");
