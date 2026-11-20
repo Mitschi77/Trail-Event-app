@@ -1,0 +1,324 @@
+{
+  "batch": 62,
+  "checkedAt": "2026-11-21",
+  "scope": "Official-source and GPX-version review for top-level events 91-100",
+  "rules": [
+    "Old GPX files remain valid as historical/current fallback until a new official file is downloaded, parsed and validated.",
+    "Never overwrite or delete old GPX files because a new edition is announced.",
+    "Do not treat a route map or a GPX link as proof that its binary was parsed or validated."
+  ],
+  "events": [
+    {
+      "order": 91,
+      "name": "Torlauf Dachstein",
+      "source": "https://www.torlauf-dachstein.info/infos",
+      "date": "2027-09-04",
+      "currentOfficial": {
+        "ultra": "72 km / 4300 hm",
+        "marathon": "42 km / 2500 hm",
+        "halfMarathon": "24 km / 510 hm",
+        "tenKmTeam": "10 km / 150 hm",
+        "marathonWeatherAlternative": "42 km / 1500 hm"
+      },
+      "gpxStatus": "Official 2027 page exposes GPX download links for listed routes; five direct URLs were already recorded in the previous checkpoint. No binary parsed in this package.",
+      "previousLinks": [
+        "https://www.outdooractive.com/download.tour.gpx?i=334299958&lang=de&project=outdooractive",
+        "https://www.outdooractive.com/download.tour.gpx?i=109515786&lang=de&project=outdooractive",
+        "https://www.outdooractive.com/download.tour.gpx?i=109516152&lang=de&project=outdooractive",
+        "https://www.outdooractive.com/download.tour.gpx?i=333179794&lang=de&project=outdooractive",
+        "https://www.outdooractive.com/de/download.tour.gpx?i=235239301&project=outdooractive"
+      ],
+      "binaryDownloaded": false,
+      "parsed": false,
+      "metricsCompared": false,
+      "detail": "Current organizer page advertises 2027 and lists Ultra, Marathon, Half Marathon and 10K/Team plus a weather alternative. Page content seen this pass does not show a separate Skyrace entry despite the older checkpoint having a Skyrace URL; verify whether that link remains a valid 2027 competition before retaining it as a race. Distances/elevation are organizer values; route software may vary."
+    },
+    {
+      "order": 92,
+      "name": "Ultra-Trail Great Wall by UTMB",
+      "officialSource": "https://dajingmen.utmb.world/",
+      "gpxStatus": "No official 2027 dates or 2027 course/GPX publication verified. Do not use third-party projected date.",
+      "binaryDownloaded": false,
+      "parsed": false,
+      "metricsCompared": false,
+      "detail": "An unofficial course guide says 2027 dates are not announced and 2026 route maps are not 2027 files. App entry's exact race identity/format should be confirmed with organizer before attaching tracks."
+    },
+    {
+      "order": 93,
+      "name": "Kaçkar by UTMB",
+      "officialSource": "https://kackar.utmb.world/",
+      "date": "2027-09-10/12",
+      "routes": [
+        {
+          "name": "Kaçkar 100K",
+          "distanceKm": 82,
+          "elevationGainHm": 5600
+        },
+        {
+          "name": "Kaçkar 50K",
+          "distanceKm": 44,
+          "elevationGainHm": 3000
+        },
+        {
+          "name": "Kaçkar 20K",
+          "distanceKm": 20,
+          "elevationGainHm": 1400
+        },
+        {
+          "name": "Ayder 4K",
+          "distanceKm": 4,
+          "elevationGainHm": 230
+        }
+      ],
+      "gpxStatus": "2027 race pages and course formats confirmed; UTMB site has route pages but individual GPX binary not downloaded/parsed in this pass.",
+      "binaryDownloaded": false,
+      "parsed": false,
+      "metricsCompared": false,
+      "detail": "Current official race listing confirms 10–12 September 2027, four races and distances/elevation above. Export each final GPX from its race detail/map page and parse separately."
+    },
+    {
+      "order": 94,
+      "name": "Wildstrubel by UTMB",
+      "officialSource": "https://wildstrubel.utmb.world/de/races",
+      "date": "2027-09-09/12",
+      "routes": [
+        {
+          "name": "Wild 110 Crans-Montana",
+          "distanceKm": 113,
+          "elevationGainHm": 6600
+        },
+        {
+          "name": "Wild 70 Kandersteg",
+          "distanceKm": 72,
+          "elevationGainHm": 4600
+        },
+        {
+          "name": "Wild 55 Adelboden",
+          "distanceKm": 55,
+          "elevationGainHm": 3300
+        },
+        {
+          "name": "Wild Glacier Marathon Lenk",
+          "distanceKm": 41,
+          "elevationGainHm": 2500
+        },
+        {
+          "name": "Wild 25 Leukerbad",
+          "distanceKm": 26,
+          "elevationGainHm": 1200
+        },
+        {
+          "name": "Wild 10 Crans-Montana",
+          "distanceKm": 10,
+          "elevationGainHm": 500
+        },
+        {
+          "name": "Wild NextGen Crans-Montana",
+          "distanceKm": 10,
+          "elevationGainHm": 500
+        }
+      ],
+      "gpxStatus": "Official 2027 race listing confirms seven named running routes plus kids/adaptive activities; no individual GPX binary parsed in this pass.",
+      "binaryDownloaded": false,
+      "parsed": false,
+      "metricsCompared": false,
+      "detail": "Current official page lists more than the six routes in the older checkpoint. Update route inventory only after checking each race page; kids 1km/2km and Adaptive/Joëlette are separate formats and should not be mistaken for additional standard trail races."
+    },
+    {
+      "order": 95,
+      "name": "Paraty Brazil by UTMB",
+      "officialSource": "https://paraty.utmb.world/",
+      "date": "2027-09-23/26",
+      "routes": [
+        {
+          "name": "PTR 100",
+          "distanceKm": 101,
+          "elevationGainHm": 4850
+        },
+        {
+          "name": "PTR 55",
+          "distanceKm": 53,
+          "elevationGainHm": 3200
+        },
+        {
+          "name": "PTR 34",
+          "distanceKm": 34,
+          "elevationGainHm": 1100
+        },
+        {
+          "name": "PTR 25",
+          "distanceKm": 25,
+          "elevationGainHm": 750
+        },
+        {
+          "name": "PTR 17",
+          "distanceKm": 17,
+          "elevationGainHm": 550
+        },
+        {
+          "name": "NIGHT 10",
+          "distanceKm": 10,
+          "elevationGainHm": 270
+        },
+        {
+          "name": "RUN 7",
+          "distanceKm": 7,
+          "elevationGainHm": 50
+        }
+      ],
+      "gpxStatus": "Official 2027 seven-race programme confirmed; GPX availability on individual race pages was noted in prior checkpoint, but no binary downloaded or parsed here.",
+      "binaryDownloaded": false,
+      "parsed": false,
+      "metricsCompared": false,
+      "detail": "2027 programme includes new NIGHT 10; older route list should be reconciled with all seven distances. Fetch and validate each race page's final GPX separately."
+    },
+    {
+      "order": 96,
+      "name": "ARBERLAND Ultra Trail",
+      "officialSource": "https://www.arberland-bayerischer-wald.de/aktiv-im-sommer/trailrunning/arberland-ultra-trail/",
+      "date": "2027-09-18",
+      "routes": [
+        {
+          "name": "Ultra Trail",
+          "distanceKm": 102,
+          "elevationGainHm": 3900
+        },
+        {
+          "name": "Classic Trail",
+          "distanceKm": 66,
+          "elevationGainHm": 2300
+        },
+        {
+          "name": "Auerhahn Trail",
+          "distanceKm": 47,
+          "elevationGainHm": 1900
+        },
+        {
+          "name": "Schachtenbach Trail",
+          "distanceKm": 36,
+          "elevationGainHm": 1500
+        },
+        {
+          "name": "Arbersee Trail",
+          "distanceKm": 20,
+          "elevationGainHm": 900
+        }
+      ],
+      "gpxStatus": "2027 date and five routes confirmed by regional official tourism page; previously seen organizer GPX downloads were 2026 files and remain stale.",
+      "binaryDownloaded": false,
+      "parsed": false,
+      "metricsCompared": false,
+      "detail": "Source text contains a discrepancy for Classic Trail: one paragraph says 2400hm while its route list says 2300hm. Also an obvious typo lists 9000hm for the 20km dog run; standard Arbersee Trail is listed as 20km/900hm. Resolve Classic elevation with organizer; do not copy the typo."
+    },
+    {
+      "order": 97,
+      "name": "I Feel Slovenia Julian Alps Trail Run by UTMB",
+      "officialSource": "https://julianalps.utmb.world/races",
+      "faq": "https://julianalps.utmb.world/races-runners/runners/faq",
+      "date": "2027-09-16/19",
+      "routes": [
+        "120K",
+        "80K",
+        "50K",
+        "25K",
+        "15K",
+        "10K",
+        "NextGen 10K"
+      ],
+      "gpxStatus": "2027 race pages and seven course formats listed; official FAQ says final GPX files will be uploaded at end of August 2027 because small changes remain possible.",
+      "binaryDownloaded": false,
+      "parsed": false,
+      "metricsCompared": false,
+      "detail": "Current event schedule confirms 16–19 September 2027. Do not import provisional tracks as final; fetch final files after end-August publication."
+    },
+    {
+      "order": 98,
+      "name": "BMW BERLIN-MARATHON",
+      "officialSource": "https://www.bmw-berlin-marathon.com/en/your-race/course/",
+      "gpxStatus": "Organizer page offers GPX for marathon and related events, but no verified 2027 file/version found in this pass; existing map may still be older edition.",
+      "binaryDownloaded": false,
+      "parsed": false,
+      "metricsCompared": false,
+      "detail": "Retain previous track as historical until the organizer publishes and labels the 2027 course. Separate marathon GPX from inline skating, GENERALI 5K and mini-marathon files."
+    },
+    {
+      "order": 99,
+      "name": "Adamello Ultra Trail",
+      "officialSource": "https://www.adamelloultratrail.it/",
+      "secondarySource": "https://www.trailrunning.de/aktuelles/adamello-ultra-trail/adamello-ultra-trail-gibt-termin-und-strecken-fr-2027-bekannt/10613",
+      "date": "2027-09-24/26",
+      "routes": [
+        {
+          "name": "170K",
+          "distanceKm": 170,
+          "elevationGainHm": 11500
+        },
+        {
+          "name": "100K",
+          "distanceKm": 100,
+          "elevationGainHm": 6050
+        },
+        {
+          "name": "60K",
+          "distanceKm": 60,
+          "elevationGainHm": 4000
+        },
+        {
+          "name": "35K",
+          "distanceKm": 35,
+          "elevationGainHm": 2200
+        }
+      ],
+      "gpxStatus": "2027 date and four routes newly announced in a press report; official organizer GPX not verified.",
+      "binaryDownloaded": false,
+      "parsed": false,
+      "metricsCompared": false,
+      "detail": "Event was not absent as older checkpoint said: report dated 17 November 2026 confirms 24–26 September 2027 and route set 170/100/60/35km. Treat distances/elevation as announced values pending organizer course/GPX release."
+    },
+    {
+      "order": 100,
+      "name": "Nice Côte d'Azur by UTMB",
+      "officialSource": "https://nice.utmb.world/races",
+      "gpxStatus": "No official 2027 edition confirmed; no 2027 GPX. Do not attach 2026 GPX to 2027.",
+      "binaryDownloaded": false,
+      "parsed": false,
+      "metricsCompared": false,
+      "detail": "A current November 2026 report says 2027 remains unannounced after the city withdrew financial support and UTMB maintained only the 2026 edition. Treat 2027 as unconfirmed, not as a scheduled race."
+    }
+  ],
+  "summary": {
+    "eventsCovered": 10,
+    "previouslyRecordedTorlaufGpxLinks": 5,
+    "newBinaryDownloads": 0,
+    "tracksParsed": 0,
+    "metricsCompared": 0,
+    "oldGpxDeleted": 0,
+    "oldGpxOverwritten": 0,
+    "appRuntimeFilesChanged": 0,
+    "importantUpdates": [
+      "Torlauf Dachstein organizer now lists 2027 course details and GPX links; current formats need reconciliation against an older Skyrace link.",
+      "Kaçkar 2027 four routes and distances confirmed.",
+      "Wildstrubel 2027 listing includes seven standard running routes, more than older checkpoint count.",
+      "Paraty 2027 programme includes seven races including NIGHT 10.",
+      "ARBERLAND 2027 routes confirmed; Classic hm discrepancy needs organizer clarification.",
+      "Adamello Ultra Trail 2027 announced for 24–26 September with four distances; old checkpoint was outdated.",
+      "Great Wall and Nice 2027 dates/editions not officially confirmed."
+    ],
+    "noGpxFilesChanged": true,
+    "noAppRuntimeDataChanged": true
+  },
+  "followUps": [
+    "Torlauf: parse the five recorded GPX links and reconcile Skyrace entry with current official 2027 programme.",
+    "Great Wall: confirm exact event and await official 2027 date/route release.",
+    "Kaçkar: export and parse final GPX for all four distances.",
+    "Wildstrubel: enumerate all race detail pages and validate GPX for seven running routes; separate kids/adaptive activities.",
+    "Paraty: validate all seven race-page GPX files including NIGHT 10.",
+    "ARBERLAND: request organizer clarification for Classic Trail 2300 vs 2400hm and obtain fresh 2027 GPX files.",
+    "Julian Alps: recheck final GPX publication at end of August 2027.",
+    "Berlin Marathon: wait for 2027 course map and GPX release.",
+    "Adamello: confirm official 2027 route files with organizer and parse four distances.",
+    "Nice: do not track as confirmed 2027 race until organizer announces an edition."
+  ],
+  "noGpxFilesChanged": true,
+  "noAppRuntimeDataChanged": true
+}
