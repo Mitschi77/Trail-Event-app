@@ -1,0 +1,198 @@
+{
+  "batch": 32,
+  "checkedAt": "2026-11-20",
+  "scope": "Second official-source event, course metrics and GPX status review of top-level events 79-83",
+  "status": "rechecked",
+  "events": [
+    {
+      "order": 79,
+      "name": "Swiss Alps 100",
+      "year": 2027,
+      "eventDates": "6-8 August 2027",
+      "routes": [
+        [
+          "160K",
+          159.4,
+          10150
+        ],
+        [
+          "100K",
+          100.8,
+          6250
+        ],
+        [
+          "50K",
+          51.6,
+          3210
+        ],
+        [
+          "Vertical",
+          10,
+          1830
+        ],
+        [
+          "Matterhorning",
+          33.3,
+          4692
+        ],
+        [
+          "Kids Run",
+          1,
+          25
+        ]
+      ],
+      "gpx": "Official 2027 site provides course pages and GPX download links for the 50K and Matterhorning, with course details published for the 160K/100K as well. New finding: the Matterhorning detail page lists 33.30 km/4,692 hm, but its aid-station table totals 30.40 km (four 7.60 km loops); this distance discrepancy must be resolved before importing the GPX. The 2027 event is confirmed and Matterhorning is a one-time 10th-anniversary race.",
+      "sources": [
+        "https://www.swissalps100.com/de",
+        "https://www.swissalps100.com/courses/50k",
+        "https://www.swissalps100.com/de/courses/matterhorning"
+      ],
+      "followUp": "Download each official course GPX and parse it; ask organizer to clarify Matterhorning's 33.3 km vs 30.4 km inconsistency."
+    },
+    {
+      "order": 80,
+      "name": "Allgäu Panorama Marathon",
+      "year": 2027,
+      "eventDates": "8 August 2027",
+      "routes": [
+        [
+          "Ultra",
+          69,
+          2749
+        ],
+        [
+          "Marathon",
+          42.3,
+          1190
+        ],
+        [
+          "Halbmarathon",
+          21.1,
+          177
+        ],
+        [
+          "Hörnerlauf",
+          18,
+          1081
+        ],
+        [
+          "Halbmarathon Reverse",
+          21.1,
+          null
+        ],
+        [
+          "5 km",
+          5,
+          null
+        ]
+      ],
+      "gpx": "Official organizer confirms 20th edition on 8 August 2027 and a new Saturday reverse half marathon. The official page currently does not expose a public GPX download. Third-party 2027 course listings disagree on the exact ultra distance (69 vs 69.5 km) and list elevation values that should not be promoted to confirmed organizer data; keep them provisional pending official course profiles.",
+      "source": "https://www.allgaeu-panorama-marathon.de/",
+      "followUp": "Check official course pages as 2027 details are published; request official GPX and confirm exact ultra distance and hm."
+    },
+    {
+      "order": 81,
+      "name": "Last Soul Ultra",
+      "year": 2027,
+      "eventDates": "2027 World Series; Germany final in August 2027",
+      "routes": [
+        [
+          "Backyard loop",
+          6.706,
+          null
+        ]
+      ],
+      "gpx": "Official Season 3/2027 page confirms one 6.706 km loop with hourly starts and no fixed finish distance. The official World Series page gives qualifier windows and Germany final in August 2027, but venues for several qualifiers are not yet announced and no public GPX download was found.",
+      "sources": [
+        "https://www.lastsoulultra.com/",
+        "https://www.lastsoulultra.com/world-series"
+      ],
+      "followUp": "Request the exact venue-specific loop GPX once each venue is announced."
+    },
+    {
+      "order": 82,
+      "name": "Karnisches Ungetüm",
+      "year": 2027,
+      "eventDates": "14 August 2027",
+      "routes": [
+        [
+          "Ungetüm",
+          75,
+          5200
+        ],
+        [
+          "Short Trail",
+          25,
+          1500
+        ]
+      ],
+      "gpx": "2027 date and both course distances/elevation figures are reported by a current event listing, including a statement that the organizer provides a GPX track. The official organizer page remains the primary source for route confirmation; direct GPX binary and current-version metadata were not downloaded/validated in this pass.",
+      "sources": [
+        "https://www.ungetuem.at/kut/",
+        "https://running.life/de/termine/karnisches-ungetum-kut80"
+      ],
+      "followUp": "Extract the official 2027 GPX from the organizer page and verify both distances against parsed track length/elevation."
+    },
+    {
+      "order": 83,
+      "name": "TREK Matterhorn Ultraks",
+      "year": 2027,
+      "eventDates": "A Zermatt destination page lists 20-22 August 2027; the organizer's own homepage currently says the 2027 date will be announced soon.",
+      "routes": [
+        [
+          "SKY",
+          49,
+          3600
+        ],
+        [
+          "EXTREME",
+          26,
+          3066
+        ],
+        [
+          "MOUNTAIN",
+          32,
+          2000
+        ],
+        [
+          "ACTIVE",
+          19,
+          1150
+        ],
+        [
+          "VERTINIGHT",
+          4.9,
+          691
+        ],
+        [
+          "Relay",
+          32,
+          2000
+        ],
+        [
+          "Children's race",
+          2.6,
+          151
+        ]
+      ],
+      "gpx": "Critical source conflict: the Zermatt destination page presents 20-22 August 2027 and course formats/metrics, while the organizer's current homepage still displays 2026 results and says the 2027 date is to be announced. The organizer's existing route pages/GPX links remain associated with 2026; do not accept them as 2027 files. Treat the 2027 date, course list and GPX versions as provisional until organizer confirmation.",
+      "sources": [
+        "https://www.matterhorn-ultraks.ch/en/home",
+        "https://zermatt-prod.europe-west1.gcp.storefrontcloud.io/en/discover-experience/events/top-events/matterhorn-ultraks"
+      ],
+      "followUp": "Wait for organizer's own 2027 announcement and fresh course/GPX files; resolve date and course-format discrepancies."
+    }
+  ],
+  "summary": {
+    "eventsRechecked": 5,
+    "importantUpdates": [
+      "Swiss Alps 100 2027 dates and full course menu confirmed; Matterhorning has an internal 33.3 km vs 30.4 km discrepancy.",
+      "Allgäu Panorama Marathon confirms 8 August 2027 and a new reverse half marathon; official public GPX not found.",
+      "Last Soul Ultra Season 3 confirms the 6.706 km backyard loop and Germany final in August 2027; no public GPX.",
+      "Karnisches Ungetüm 2027 listing gives 75 km/5,200 hm and new 25 km/1,500 hm short trail; GPX binary not validated.",
+      "Matterhorn Ultraks has a date conflict: Zermatt page says 20-22 August 2027, organizer page says 2027 date still to be announced; existing organizer GPX pages are 2026."
+    ],
+    "gpxSafety": "No GPX binary was downloaded or parsed in this pass. Old GPX files remain retained as historical versions and are not treated as valid replacements for 2027. No existing files deleted or replaced.",
+    "next": "Continue second-pass review of events 74-78."
+  }
+}
