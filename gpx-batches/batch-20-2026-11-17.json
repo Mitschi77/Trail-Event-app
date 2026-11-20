@@ -1,6 +1,6 @@
 {
   "batch": 20,
-  "checkedAt": "2026-11-17",
+  "checkedAt": "2026-11-20",
   "scope": "Top-level events 96-100 in current EVENTS order",
   "status": "saved",
   "appCommit": "9338bd634ecc98c8fc66150fbbd707195b9acb26",
@@ -8,14 +8,15 @@
     {
       "order": 96,
       "name": "Arberland Ultra Trail",
-      "gpxStatus": "Official 2027 event confirmed for 18 September 2027 with five distances. Organizer pages currently expose GPX files named for the 2026 edition; rejected as stale for 2027.",
+      "gpxStatus": "2027 event confirmed for 18 September with five distances. Organizer pages currently expose GPX files named 2026; retain them as last available historical versions and don't label current 2027.",
       "source": "https://www.woidlaeufer.de/",
-      "followUp": "Wait for 2027 GPX files; don't import 2026 tracks."
+      "followUp": "Wait for 2027 GPX files; don't import 2026 tracks.",
+      "retentionRule": "Keep each 2026 GPX file and source until a new official 2027 file is published and checked; don't delete or overwrite."
     },
     {
       "order": 97,
       "name": "I Feel Slovenia Julian Alps Trail Run by UTMB",
-      "gpxStatus": "Official UTMB pages confirm 2027 courses and GPX availability on each race page. FAQ says final GPX versions will be uploaded at end of August 2027 due to possible small route changes.",
+      "gpxStatus": "Seven official 2027 course pages and GPX availability confirmed. Final GPX files are expected at end of August 2027 due to possible minor course changes; interim tracks must remain provisional and older editions separate.",
       "source": "https://julianalps.utmb.world/races",
       "routes": [
         "120K",
@@ -31,21 +32,22 @@
     {
       "order": 98,
       "name": "Berlin Marathon - Major",
-      "gpxStatus": "Official organizer offers GPX downloads, but current course map is the 2026 edition. No 2027 GPX confirmed.",
+      "gpxStatus": "Official organizer offers GPX, but the currently linked course map is the 2026 edition. Keep 2026 GPX as last available version, labelled historical; no 2027 file confirmed.",
       "source": "https://www.bmw-berlin-marathon.com/en/your-race/course/",
-      "followUp": "Wait for the 2027 course map/GPX."
+      "followUp": "Wait for the 2027 course map/GPX.",
+      "retentionRule": "Retain 2026 Berlin Marathon GPX until official 2027 course file is published and checked."
     },
     {
       "order": 99,
       "name": "Adamello Ultratrail",
-      "gpxStatus": "No confirmed 2027 edition or current official GPX found for the app entry.",
+      "gpxStatus": "No official 2027 edition or current organizer GPX verified. Keep any older official track as historical last-available version; do not attach unverified third-party routes.",
       "source": "https://www.adamelloultratrail.it/",
       "followUp": "Confirm the next edition date with organizer before using any track."
     },
     {
       "order": 100,
       "name": "Nice Cote D'Azur",
-      "gpxStatus": "Official UTMB FAQ says GPX files are posted on individual race pages 1-2 weeks before race. The current UTMB event calendar does not list a 2027 Nice Côte d'Azur edition; no 2027 GPX imported.",
+      "gpxStatus": "No 2027 Nice Côte d'Azur edition currently confirmed in the official event calendar. Official FAQ says GPX files are published 1–2 weeks before race; do not import an unconfirmed 2027 track.",
       "source": "https://nice.utmb.world/races",
       "followUp": "Recheck only if organizer confirms a 2027 edition."
     }
