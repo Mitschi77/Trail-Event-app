@@ -1,0 +1,55 @@
+{
+  "batch": 41,
+  "checkedAt": "2026-11-20",
+  "scope": "First technical GPX endpoint checks after completing the official-source review",
+  "status": "attempted-no-binary-validation",
+  "checks": [
+    {
+      "event": "Trail Menorca Camí de Cavalls",
+      "route": "TMCDC 185 km",
+      "officialPage": "https://www.trailmenorca.es/carreras/tmcdc-185-km/",
+      "directGpx": "https://www.trailmenorca.es/tracks/tmcdc-185-km.gpx",
+      "pageEvidence": "Official route page explicitly identifies the 30 April 2027 event, 185 km and 3,500 m D+ and links 'Descargar GPX'.",
+      "fetchAttempt": "Browser retrieval rejected the response because the endpoint serves application/gpx+xml, which this inspection tool cannot parse. This is a tooling/content-type limitation, not proof the organizer URL is broken.",
+      "binaryDownloaded": false,
+      "parsed": false,
+      "metricsCompared": false,
+      "result": "Official 2027 endpoint confirmed; binary still unvalidated."
+    },
+    {
+      "event": "Trail Menorca Camí de Cavalls",
+      "route": "STCN 27 km",
+      "officialPage": "https://www.trailmenorca.es/en/carreras/stcn-27-km/",
+      "directGpx": "https://trailmenorca.es/wp-content/uploads/2026/04/6.STCN-27-KM.gpx",
+      "pageEvidence": "Current page still displays 2 May 2026 and links a GPX under /2026/; it must not be treated as the 2027 track.",
+      "fetchAttempt": "Browser retrieval rejected application/gpx+xml as unsupported; no binary available for parsing.",
+      "binaryDownloaded": false,
+      "parsed": false,
+      "metricsCompared": false,
+      "result": "Reject as current 2027 GPX; retain only as historical 2026 reference."
+    },
+    {
+      "event": "Istria100 by UTMB",
+      "route": "168K 2027",
+      "officialPage": "https://istria.utmb.world/races-runners/runners/gpx-tracks",
+      "directGpx": "https://pdf.utmb.world/raw/upload/v1781524089/istria/.gpx/ISTRIA_168k_2027_85dcf7c2ad.gpx",
+      "pageEvidence": "Official UTMB GPX page lists 168K, 110K, 69K, 42K and 21K downloads; the 168K URL is corroborated in an event information page.",
+      "fetchAttempt": "Direct URL is not accessible through the current web inspection tool; no binary returned.",
+      "binaryDownloaded": false,
+      "parsed": false,
+      "metricsCompared": false,
+      "result": "2027 link candidate corroborated, but no technical validation."
+    }
+  ],
+  "summary": {
+    "attempted": 3,
+    "officialYearSpecificEndpointConfirmed": 1,
+    "staleYearLinkRejected": 1,
+    "unreadableBinaryLink": 1,
+    "binaryFilesDownloaded": 0,
+    "tracksParsed": 0,
+    "warning": "Do not report these attempts as successful GPX downloads or imports. The web inspection environment rejects application/gpx+xml or direct GPX binaries. A real download/parser run in the app or CI is still required.",
+    "next": "Run an authenticated/CI-capable GPX validation job or browser-side import test; parse XML trackpoints, compute geodesic length and elevation gain, compare to organizer values, and preserve existing files until a validated replacement exists."
+  },
+  "gpxSafety": "No GPX files were deleted or replaced. The STCN 2026 track is explicitly historical only."
+}
