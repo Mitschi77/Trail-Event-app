@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-20T22:35:00Z",
+  "updatedAt": "2026-11-20T22:45:00Z",
   "schemaVersion": 3,
   "events": {
     "la-corsa-della-bora": {
@@ -7042,11 +7042,11 @@
           "status": "read"
         },
         {
-          "url": "https://www.bucuresti21km.ro/en/schedule/",
+          "url": "https://www.bucuresti21km.ro/en/cursa-10km-10k-bucharest-race/",
           "status": "read"
         },
         {
-          "url": "https://www.bucuresti21km.ro/en/rules/",
+          "url": "https://www.bucuresti21km.ro/en/schedule/",
           "status": "read",
           "verification": "official-2027-event-information"
         }
@@ -7064,8 +7064,8 @@
         },
         "1": {
           "routeId": "bucharest-half-2027-10k",
-          "date": null,
-          "verified": false
+          "date": "2027-05-08",
+          "verified": true
         }
       }
     },
@@ -8684,9 +8684,20 @@
     },
     "wizz-air-cluj-napoca-marathon-2027": {
       "eventId": "wizz-air-cluj-napoca-marathon-2027",
-      "checkedAt": "2026-11-20T22:35:00Z",
+      "checkedAt": "2026-11-20T22:45:00Z",
       "status": "verified",
-      "sources": [],
+      "sources": [
+        {
+          "url": "https://maraton-cluj.ro/en/regulament/",
+          "status": "read",
+          "verification": "official-2027-event-information"
+        },
+        {
+          "url": "https://maraton-cluj.ro/en/maraton-42-2-km/",
+          "status": "read",
+          "verification": "official-2027-event-information"
+        }
+      ],
       "eventPeriod": {
         "startDate": "2027-04-10",
         "endDate": "2027-04-11",
@@ -8717,9 +8728,20 @@
     },
     "timisoara-21k-by-sportguru-2027": {
       "eventId": "timisoara-21k-by-sportguru-2027",
-      "checkedAt": "2026-11-20T22:35:00Z",
+      "checkedAt": "2026-11-20T22:45:00Z",
       "status": "verified",
-      "sources": [],
+      "sources": [
+        {
+          "url": "https://timisoara.21k.ro/conditii-participare/?lang=en",
+          "status": "read",
+          "verification": "official-2027-event-information"
+        },
+        {
+          "url": "https://timisoara.21k.ro/cursa-21k/?lang=en",
+          "status": "read",
+          "verification": "official-2027-event-information"
+        }
+      ],
       "eventPeriod": {
         "startDate": "2027-03-21",
         "endDate": "2027-03-21",
@@ -8750,9 +8772,15 @@
     },
     "bucharest-international-half-2027": {
       "eventId": "bucharest-international-half-2027",
-      "checkedAt": "2026-11-20T22:35:00Z",
+      "checkedAt": "2026-11-20T22:45:00Z",
       "status": "verified",
-      "sources": [],
+      "sources": [
+        {
+          "url": "https://www.bucharest.run/en/info/event-schedule/",
+          "status": "read",
+          "verification": "official-2027-event-information"
+        }
+      ],
       "eventPeriod": {
         "startDate": "2027-04-25",
         "endDate": "2027-04-25",
@@ -8778,9 +8806,15 @@
     },
     "wizz-air-tirana-marathon-2027": {
       "eventId": "wizz-air-tirana-marathon-2027",
-      "checkedAt": "2026-11-20T22:35:00Z",
+      "checkedAt": "2026-11-20T22:45:00Z",
       "status": "verified",
-      "sources": [],
+      "sources": [
+        {
+          "url": "https://www.tiranamarathon.com/en?lang=en",
+          "status": "read",
+          "verification": "official-2027-event-information"
+        }
+      ],
       "eventPeriod": {
         "startDate": "2027-10-10",
         "endDate": "2027-10-10",
@@ -8811,9 +8845,15 @@
     },
     "chisinau-international-marathon-2027": {
       "eventId": "chisinau-international-marathon-2027",
-      "checkedAt": "2026-11-20T22:35:00Z",
+      "checkedAt": "2026-11-20T22:45:00Z",
       "status": "verified",
-      "sources": [],
+      "sources": [
+        {
+          "url": "https://marathon.md/en/marathon42km",
+          "status": "read",
+          "verification": "official-2027-event-information"
+        }
+      ],
       "eventPeriod": {
         "startDate": "2027-09-25",
         "endDate": "2027-09-26",
@@ -8822,22 +8862,22 @@
       "routes": {
         "0": {
           "routeId": "chisinau-marathon-2027-42k",
-          "date": "2027-09-25",
+          "date": "2027-09-26",
           "verified": true
         },
         "1": {
           "routeId": "chisinau-marathon-2027-21k",
-          "date": "2027-09-25",
+          "date": "2027-09-26",
           "verified": true
         },
         "2": {
           "routeId": "chisinau-marathon-2027-10k",
-          "date": "2027-09-25",
+          "date": "2027-09-26",
           "verified": true
         },
         "3": {
           "routeId": "chisinau-marathon-2027-5k",
-          "date": "2027-09-25",
+          "date": "2027-09-26",
           "verified": true
         }
       }
@@ -8868,9 +8908,15 @@
     },
     "edp-porto-marathon-2027": {
       "eventId": "edp-porto-marathon-2027",
-      "checkedAt": "2026-11-20T22:35:00Z",
+      "checkedAt": "2026-11-20T22:45:00Z",
       "status": "verified",
-      "sources": [],
+      "sources": [
+        {
+          "url": "https://www.maratonadoporto.com/en/",
+          "status": "read",
+          "verification": "official-2027-event-information"
+        }
+      ],
       "eventPeriod": {
         "startDate": "2027-11-07",
         "endDate": "2027-11-07",
@@ -8886,9 +8932,15 @@
     },
     "wizz-air-venicemarathon-2027": {
       "eventId": "wizz-air-venicemarathon-2027",
-      "checkedAt": "2026-11-20T22:35:00Z",
+      "checkedAt": "2026-11-20T22:45:00Z",
       "status": "verified",
-      "sources": [],
+      "sources": [
+        {
+          "url": "https://www.venicemarathon.it/en/",
+          "status": "read",
+          "verification": "official-2027-event-information"
+        }
+      ],
       "eventPeriod": {
         "startDate": "2027-10-24",
         "endDate": "2027-10-24",
@@ -8909,7 +8961,7 @@
     },
     "neusiedler-see-marathon-2027": {
       "eventId": "neusiedler-see-marathon-2027",
-      "checkedAt": "2026-11-20T22:35:00Z",
+      "checkedAt": "2026-11-20T22:45:00Z",
       "status": "verified",
       "sources": [
         {
