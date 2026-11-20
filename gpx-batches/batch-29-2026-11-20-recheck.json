@@ -55,17 +55,17 @@
       "routes": [
         [
           "K50",
-          50,
+          null,
           null
         ],
         [
           "K23",
-          23,
+          null,
           null
         ],
         [
           "K10",
-          10,
+          null,
           null
         ]
       ],
@@ -105,7 +105,7 @@
       "routes": [
         [
           "OTF 100",
-          100,
+          null,
           null
         ],
         [
@@ -165,17 +165,17 @@
       "routes": [
         [
           "Marathon",
-          42.195,
+          null,
           null
         ],
         [
           "Half Marathon",
-          21.0975,
+          null,
           null
         ],
         [
           "10K",
-          10,
+          null,
           null
         ]
       ],
