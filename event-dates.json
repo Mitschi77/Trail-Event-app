@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-20T23:50:00Z",
+  "updatedAt": "2026-11-20T23:58:00Z",
   "schemaVersion": 3,
   "events": {
     "la-corsa-della-bora": {
@@ -10833,6 +10833,388 @@
           "verified": true
         }
       }
+    },
+    "crete-marathon-2027": {
+      "eventId": "crete-marathon-2027",
+      "checkedAt": "2026-11-20T23:58:00Z",
+      "status": "verified",
+      "sources": [
+        {
+          "url": "https://crete-marathon.gr/en/home/",
+          "status": "read",
+          "verification": "official-2027-event-information"
+        },
+        {
+          "url": "https://crete-marathon.gr/en/race/crete-marathon-2027/marathon/",
+          "status": "read",
+          "verification": "official-2027-event-information"
+        }
+      ],
+      "eventPeriod": {
+        "startDate": "2027-04-11",
+        "endDate": "2027-04-11",
+        "verified": true
+      },
+      "routes": {
+        "0": {
+          "routeId": "crete-marathon-2027-42k",
+          "date": "2027-04-11",
+          "verified": true
+        },
+        "1": {
+          "routeId": "crete-marathon-2027-10k",
+          "date": "2027-04-11",
+          "verified": true
+        },
+        "2": {
+          "routeId": "crete-marathon-2027-5k",
+          "date": "2027-04-11",
+          "verified": true
+        },
+        "3": {
+          "routeId": "crete-marathon-2027-2.5k",
+          "date": "2027-04-11",
+          "verified": true
+        }
+      }
+    },
+    "tartu-city-marathon-2027": {
+      "eventId": "tartu-city-marathon-2027",
+      "checkedAt": "2026-11-20T23:58:00Z",
+      "status": "verified",
+      "sources": [
+        {
+          "url": "https://tartumaraton.ee/en/",
+          "status": "read",
+          "verification": "official-2027-event-information"
+        },
+        {
+          "url": "https://aims-worldrunning.org/calendar.html",
+          "status": "read",
+          "verification": "official-2027-event-information"
+        }
+      ],
+      "eventPeriod": {
+        "startDate": "2027-10-02",
+        "endDate": "2027-10-02",
+        "verified": true
+      },
+      "routes": {
+        "0": {
+          "routeId": "tartu-city-marathon-2027-42k",
+          "date": "2027-10-02",
+          "verified": true
+        },
+        "1": {
+          "routeId": "tartu-city-marathon-2027-21k",
+          "date": "2027-10-02",
+          "verified": true
+        },
+        "2": {
+          "routeId": "tartu-city-marathon-2027-10k",
+          "date": "2027-10-02",
+          "verified": true
+        }
+      }
+    },
+    "padova-marathon-2027": {
+      "eventId": "padova-marathon-2027",
+      "checkedAt": "2026-11-20T23:58:00Z",
+      "status": "verified",
+      "sources": [
+        {
+          "url": "https://padovamarathon.com/en/marathon/",
+          "status": "read",
+          "verification": "official-2027-event-information"
+        }
+      ],
+      "eventPeriod": {
+        "startDate": "2027-04-18",
+        "endDate": "2027-04-18",
+        "verified": true
+      },
+      "routes": {
+        "0": {
+          "routeId": "padova-marathon-2027-42k",
+          "date": "2027-04-18",
+          "verified": true
+        }
+      }
+    },
+    "rimini-marathon-2027": {
+      "eventId": "rimini-marathon-2027",
+      "checkedAt": "2026-11-20T23:58:00Z",
+      "status": "verified",
+      "sources": [
+        {
+          "url": "https://www.riminimarathon.it/domande-frequenti/",
+          "status": "read",
+          "verification": "official-2027-event-information"
+        },
+        {
+          "url": "https://www.riminimarathon.it/regolamento-maratona/",
+          "status": "read",
+          "verification": "official-2027-event-information"
+        }
+      ],
+      "eventPeriod": {
+        "startDate": "2027-04-16",
+        "endDate": "2027-04-18",
+        "verified": true
+      },
+      "routes": {
+        "0": {
+          "routeId": "rimini-marathon-2027-42k",
+          "date": "2027-04-18",
+          "verified": true
+        },
+        "1": {
+          "routeId": "rimini-marathon-2027-half",
+          "date": "2027-04-18",
+          "verified": true
+        },
+        "2": {
+          "routeId": "rimini-marathon-2027-10mi",
+          "date": "2027-04-18",
+          "verified": true
+        },
+        "3": {
+          "routeId": "rimini-marathon-2027-10k",
+          "date": "2027-04-18",
+          "verified": true
+        },
+        "4": {
+          "routeId": "rimini-marathon-2027-kids1k",
+          "date": "2027-04-17",
+          "verified": true
+        }
+      }
+    },
+    "neapolis-marathon-2027": {
+      "eventId": "neapolis-marathon-2027",
+      "checkedAt": "2026-11-20T23:58:00Z",
+      "status": "verified",
+      "sources": [
+        {
+          "url": "https://www.neapolismarathon.it/marathon/",
+          "status": "read",
+          "verification": "official-2027-event-information"
+        },
+        {
+          "url": "https://www.neapolismarathon.it/half-marathon/",
+          "status": "read",
+          "verification": "official-2027-event-information"
+        },
+        {
+          "url": "https://www.neapolismarathon.it/sea-run/",
+          "status": "read",
+          "verification": "official-2027-event-information"
+        }
+      ],
+      "eventPeriod": {
+        "startDate": "2027-10-24",
+        "endDate": "2027-10-24",
+        "verified": true
+      },
+      "routes": {
+        "0": {
+          "routeId": "neapolis-marathon-2027-42k",
+          "date": "2027-10-24",
+          "verified": true
+        },
+        "1": {
+          "routeId": "neapolis-marathon-2027-half",
+          "date": "2027-10-24",
+          "verified": true
+        },
+        "2": {
+          "routeId": "neapolis-marathon-2027-sea-run",
+          "date": "2027-10-24",
+          "verified": true
+        }
+      }
+    },
+    "irish-life-dublin-marathon-2027": {
+      "eventId": "irish-life-dublin-marathon-2027",
+      "checkedAt": "2026-11-20T23:58:00Z",
+      "status": "verified",
+      "sources": [
+        {
+          "url": "https://irishlifedublinmarathon.ie/2027-event-dates-entry-information/",
+          "status": "read",
+          "verification": "official-2027-event-information"
+        }
+      ],
+      "eventPeriod": {
+        "startDate": "2027-10-24",
+        "endDate": "2027-10-24",
+        "verified": true
+      },
+      "routes": {
+        "0": {
+          "routeId": "irish-life-dublin-marathon-2027-42k",
+          "date": "2027-10-24",
+          "verified": true
+        }
+      }
+    },
+    "tui-palma-marathon-2027": {
+      "eventId": "tui-palma-marathon-2027",
+      "checkedAt": "2026-11-20T23:58:00Z",
+      "status": "verified",
+      "sources": [
+        {
+          "url": "https://www.palmademallorcamarathon.com/english/race-info/",
+          "status": "read",
+          "verification": "official-2027-event-information"
+        },
+        {
+          "url": "https://www.palmademallorcamarathon.com/english/race-info/rules-and-regulations",
+          "status": "read",
+          "verification": "official-2027-event-information"
+        }
+      ],
+      "eventPeriod": {
+        "startDate": "2027-10-17",
+        "endDate": "2027-10-17",
+        "verified": true
+      },
+      "routes": {
+        "0": {
+          "routeId": "tui-palma-marathon-2027-42k",
+          "date": "2027-10-17",
+          "verified": true
+        },
+        "1": {
+          "routeId": "tui-palma-marathon-2027-half",
+          "date": "2027-10-17",
+          "verified": true
+        },
+        "2": {
+          "routeId": "tui-palma-marathon-2027-10k",
+          "date": "2027-10-17",
+          "verified": true
+        }
+      }
+    },
+    "istanbul-marathon-2027": {
+      "eventId": "istanbul-marathon-2027",
+      "checkedAt": "2026-11-20T23:58:00Z",
+      "status": "verified",
+      "sources": [
+        {
+          "url": "https://aims-worldrunning.org/races/882.html",
+          "status": "read",
+          "verification": "official-2027-event-information"
+        },
+        {
+          "url": "https://maraton.istanbul/",
+          "status": "read",
+          "verification": "official-2027-event-information"
+        }
+      ],
+      "eventPeriod": {
+        "startDate": "2027-11-07",
+        "endDate": "2027-11-07",
+        "verified": true
+      },
+      "routes": {
+        "0": {
+          "routeId": "istanbul-marathon-2027-42k",
+          "date": "2027-11-07",
+          "verified": true
+        }
+      }
+    },
+    "edp-lisbon-marathon-2027": {
+      "eventId": "edp-lisbon-marathon-2027",
+      "checkedAt": "2026-11-20T23:58:00Z",
+      "status": "verified",
+      "sources": [
+        {
+          "url": "https://www.lisboa-marathon.com/",
+          "status": "read",
+          "verification": "official-2027-event-information"
+        }
+      ],
+      "eventPeriod": {
+        "startDate": "2027-10-09",
+        "endDate": "2027-10-10",
+        "verified": true
+      },
+      "routes": {
+        "0": {
+          "routeId": "edp-lisbon-marathon-2027-42k",
+          "date": "2027-10-09",
+          "verified": true
+        },
+        "1": {
+          "routeId": "edp-lisbon-marathon-2027-half",
+          "date": "2027-10-10",
+          "verified": true
+        },
+        "2": {
+          "routeId": "edp-lisbon-marathon-2027-8k",
+          "date": "2027-10-10",
+          "verified": true
+        }
+      },
+      "note": "Marathon 09.10.; Halbmarathon und EDP 8K 10.10.2027."
+    },
+    "raiffeisen-bank-bucharest-marathon-2027": {
+      "eventId": "raiffeisen-bank-bucharest-marathon-2027",
+      "checkedAt": "2026-11-20T23:58:00Z",
+      "status": "verified",
+      "sources": [
+        {
+          "url": "https://bucharest-marathon.com/en/",
+          "status": "read",
+          "verification": "official-2027-event-information"
+        },
+        {
+          "url": "https://bucharest-marathon.com/en/bucharest-marathon-maratonul-bucuresti-42km-42k/",
+          "status": "read",
+          "verification": "official-2027-event-information"
+        },
+        {
+          "url": "https://bucharest-marathon.com/en/program-eveniment-bucharest-marathon/",
+          "status": "read",
+          "verification": "official-2027-event-information"
+        }
+      ],
+      "eventPeriod": {
+        "startDate": "2027-10-09",
+        "endDate": "2027-10-10",
+        "verified": true
+      },
+      "routes": {
+        "0": {
+          "routeId": "bucharest-marathon-2027-42k",
+          "date": "2027-10-10",
+          "verified": true
+        },
+        "1": {
+          "routeId": "bucharest-marathon-2027-half",
+          "date": "2027-10-10",
+          "verified": true
+        },
+        "2": {
+          "routeId": "bucharest-marathon-2027-relay4x",
+          "date": "2027-10-10",
+          "verified": true
+        },
+        "3": {
+          "routeId": "bucharest-marathon-2027-10k",
+          "date": "2027-10-09",
+          "verified": true
+        },
+        "4": {
+          "routeId": "bucharest-marathon-2027-2k",
+          "date": "2027-10-09",
+          "verified": true
+        }
+      },
+      "note": "10K und Fun Race am 09.10.; Marathon, Halbmarathon und 4x-Staffel am 10.10.2027."
     }
   }
 }
