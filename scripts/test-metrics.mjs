@@ -558,3 +558,15 @@ assert.ok(iatfKids, "Innsbruck Kids Trail must be represented");
 assert.equal(iatfKids.date, "2027-05-07"); assert.equal(iatfKids.starttime, "15:00");
 assert.equal(iatfKids.km, null); assert.equal(iatfKids.hm, null);
 assert.equal(iatfKids.excludeFromDistanceFilter, true, "Kids Trail must not distort the main distance filters");
+
+
+// Ötscher Trail 2027: official organizer distances and Saturday marathon date.
+const oetscher = appEvents.find(event => event.id === "otscher-trail");
+assert.ok(oetscher, "Ötscher Trail must remain in the catalog");
+assert.equal(oetscher.minKm, 51.45);
+assert.equal(oetscher.maxHm, 2432);
+const oetscherMarathon = routeById("marathon-trail-49-8-2322");
+assert.equal(oetscherMarathon?.km, 51.45);
+assert.equal(oetscherMarathon?.hm, 2432);
+assert.equal(oetscherMarathon?.date, "2027-06-05");
+assert.equal(oetscherMarathon?.datePending, undefined);
