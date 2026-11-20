@@ -1,6 +1,6 @@
 {
   "batch": 17,
-  "checkedAt": "2026-11-17",
+  "checkedAt": "2026-11-20",
   "scope": "Top-level events 81-85 in current EVENTS order",
   "status": "saved",
   "appCommit": "920364b9dc69648501f933eb413ed472eba317ec",
@@ -8,41 +8,43 @@
     {
       "order": 81,
       "name": "Last Soul Ultra",
-      "gpxStatus": "Season 3 / 2027 official page confirms 6.706 km backyard loop, but no public GPX download found.",
+      "gpxStatus": "2027 Season 3 official page confirms 6.706 km backyard loop; no public downloadable GPX. Keep route dimensions as organizer-confirmed, not GPX-validated.",
       "source": "https://www.lastsoulultra.com/",
       "followUp": "Ask organizer for the route GPX."
     },
     {
       "order": 82,
       "name": "Karnisches Ungetüm",
-      "gpxStatus": "Official 2027 event page and route values confirmed; no official GPX file download verified.",
+      "gpxStatus": "Official 2027 event and route values confirmed; no official public GPX download verified. Request organizer file; do not substitute third-party GPX.",
       "source": "https://www.ungetuem.at/kut/",
       "followUp": "Ask organizer for GPX or recheck the course page closer to race."
     },
     {
       "order": 83,
       "name": "TREK Matterhorn Ultraks",
-      "gpxStatus": "Official race pages expose GPX links, but current pages/files identify the 2026 edition. No 2027 date or updated course file verified; 2026 files rejected.",
+      "gpxStatus": "Current official route pages still expose 2026 edition GPX files. Keep these as last available historical versions; no 2027 course/date confirmation or replacement GPX verified.",
       "sources": [
         "https://www.matterhorn-ultraks.ch/strecken/sky",
         "https://www.matterhorn-ultraks.ch/strecken/extreme",
         "https://www.matterhorn-ultraks.ch/strecken/mountain"
       ],
-      "followUp": "Wait for confirmed 2027 event dates and GPX versions."
+      "followUp": "Wait for confirmed 2027 event dates and GPX versions.",
+      "retentionRule": "Retain existing 2026 GPX files with edition/source metadata; label current-route match unconfirmed and replace only after official 2027 files are checked."
     },
     {
       "order": 84,
       "name": "Trans Alpine Run",
-      "gpxStatus": "Official 2027 event announced for 18-24 September, but public route page still contains 2026 stages. Organizer FAQ says GPX files are sent only to registered participants.",
+      "gpxStatus": "2027 Trans Alpine Run announced for 18–24 September. Public stage pages remain 2026; organizer sends GPX only to registered participants. Do not use public 2026 stages as 2027.",
       "source": "https://www.transalpine-run.com/strecke/",
       "followUp": "Wait for 2027 stage route release and participant GPX delivery."
     },
     {
       "order": 85,
       "name": "UTMB Mont Blanc",
-      "gpxStatus": "Official UTMB Mont-Blanc 2027 dates and routes not yet announced; current race pages show 2026 edition. Old GPX files not used.",
+      "gpxStatus": "No official 2027 UTMB Mont-Blanc dates/course GPX verified yet. Existing prior-year files must remain archived as historical last-available versions, not be deleted.",
       "source": "https://montblanc.utmb.world/races",
-      "followUp": "Recheck after official 2027 race week and course details are published."
+      "followUp": "Recheck after official 2027 race week and course details are published.",
+      "retentionRule": "Keep existing historic GPX versions, with year and source; do not label them as 2027 or remove them pending official 2027 release."
     }
   ],
   "nextBatch": "Continue with events 86-90 after package 17 checkpoint."
