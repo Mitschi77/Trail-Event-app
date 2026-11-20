@@ -1,0 +1,186 @@
+{
+  "batch": 55,
+  "checkedAt": "2026-11-21",
+  "scope": "Technical GPX availability and official course-version review for top-level events 21–30",
+  "status": "attempted-no-binary-validation",
+  "safetyRules": [
+    "Existing GPX files remain valid until a replacement is officially published, downloaded, parsed and validated.",
+    "No GPX files were deleted, overwritten or replaced in this package.",
+    "Official download buttons and interactive Map + GPX panels do not count as successful binary retrieval.",
+    "Do not accept year-mismatched historic tracks as current 2027 courses."
+  ],
+  "checks": [
+    {
+      "eventOrder": 21,
+      "event": "Trail Menorca Camí de Cavalls",
+      "officialSource": "https://www.trailmenorca.es/en/carreras/tmcdc-185-km/",
+      "date": "2027-04-30/05-02",
+      "routes": [
+        "TMCDC 185K",
+        "TMCN 100K",
+        "TMCS 85K",
+        "PTCN 58K",
+        "PTCS 44K",
+        "STCN 27K",
+        "STARTER 11K"
+      ],
+      "officialPageEvidence": "The 2027 TMCDC 185K page states 185km, 3500m D+, start 30 April 2027 and exposes a Download GPX control. The page links all seven route pages.",
+      "gpxStatus": "seven-official-2027-download-controls-confirmed; binary-download-not-completed",
+      "attempts": 7,
+      "binaryDownloaded": false,
+      "parsed": false,
+      "metricsCompared": false,
+      "detail": "Previously recorded direct URLs for all seven routes remain candidates, but no GPX bytes were retrieved or parsed in this technical pass. A 2026 STCN URL must not be used as 2027."
+    },
+    {
+      "eventOrder": 22,
+      "event": "Malcesine Baldo Trail",
+      "officialSource": "https://www.malcesinebaldo.it/",
+      "routes": [
+        "60K Ultra",
+        "41K Marathon",
+        "26.4K Medium",
+        "16K Short"
+      ],
+      "gpxStatus": "three-direct-files-previously-found; medium-file-distance-conflict-unresolved",
+      "attempts": 4,
+      "binaryDownloaded": false,
+      "parsed": false,
+      "metricsCompared": false,
+      "detail": "Three direct GPX filenames are MBT_60k_ULTRA.gpx, MBT_41K_MARATHON.gpx and MBT_16k_short.gpx. MBT_24k_medium.gpx is only a candidate although the organizer distance is 26.4km. Need parse geometry and compare measured length before using it."
+    },
+    {
+      "eventOrder": 23,
+      "event": "Ultra X 110 Scotland",
+      "officialSource": "https://ultra-x.co/event/ultra-marathon-in-scotland/",
+      "gpxStatus": "no-public-2027-GPX-yet",
+      "binaryDownloaded": false,
+      "parsed": false,
+      "metricsCompared": false,
+      "detail": "Organizer sends race pack and route details around one month before the event; event has seven race options rather than the three previously listed in the app. Wait for official race pack."
+    },
+    {
+      "eventOrder": 24,
+      "event": "Ternberg Trail Backyard Ultra",
+      "officialSource": "https://www.austriabackyardultra.com/ternberg",
+      "route": "6.706km / 351hm loop",
+      "garminRoute": "https://connect.garmin.com/app/activity/10009450670",
+      "gpxStatus": "official-Garmin-route-found; direct-GPX-export-not-accessible-without-interactive-login",
+      "binaryDownloaded": false,
+      "parsed": false,
+      "metricsCompared": false,
+      "detail": "Organizer confirms 6.706km/351hm and links Garmin Connect route. No direct downloadable GPX endpoint extracted."
+    },
+    {
+      "eventOrder": 25,
+      "event": "Chiemgau Trail",
+      "gpxStatus": "historical-CTR26-only; 2026-edition-past",
+      "binaryDownloaded": false,
+      "parsed": false,
+      "metricsCompared": false,
+      "detail": "Existing tracks are for CTR26, 24 October 2026. Do not mark them as a 2027 course or substitute them for a future edition."
+    },
+    {
+      "eventOrder": 26,
+      "event": "Transvulcania adidas",
+      "officialSource": "https://transvulcania.com/de/",
+      "routes": [
+        "Ultramarathon",
+        "Marathon",
+        "Halbmarathon",
+        "Vertical Kilometer",
+        "12K Light"
+      ],
+      "gpxStatus": "12K-Light-direct-link-candidate; remaining-direct-links-are-2024-and-rejected",
+      "url": "https://transvulcania.com/wp-content/uploads/gpx/sin-categorizar/Transvulcania_12K.gpx",
+      "binaryDownloaded": false,
+      "parsed": false,
+      "metricsCompared": false,
+      "detail": "The event homepage exposes five principal race disciplines. The one earlier candidate file named Transvulcania_12K.gpx has no year in its filename; it is not accepted as confirmed 2027 until organizer metadata or file content is verified. Other links point to TRV24 and are stale."
+    },
+    {
+      "eventOrder": 27,
+      "event": "Ultra-Trail Australia by UTMB",
+      "officialSources": [
+        "https://uta.utmb.world/races/utamiler",
+        "https://uta.utmb.world/races/uta100"
+      ],
+      "date": "2027-05-13/16",
+      "gpxStatus": "current-page-map-data-still-2026; 2027-GPX-not-confirmed",
+      "binaryDownloaded": false,
+      "parsed": false,
+      "metricsCompared": false,
+      "detail": "UTMB event page lists 13–16 May 2027, but race map and GPX content identified in earlier review remains labelled 2026. Reject as current 2027 track pending updated map/files."
+    },
+    {
+      "eventOrder": 28,
+      "event": "Trail Alsace by UTMB",
+      "officialSource": "https://alsace.utmb.world/races-runners/runners/infos-pratiques",
+      "date": "2027-05-13/16",
+      "routes": [
+        "UTDC 100M",
+        "UTDP 100K",
+        "TDC 50K",
+        "TDP 20K",
+        "RDP"
+      ],
+      "gpxStatus": "official-final-GPX-release-one-to-two-weeks-before-race",
+      "binaryDownloaded": false,
+      "parsed": false,
+      "metricsCompared": false,
+      "detail": "Official FAQ states that because the race crosses private areas, GPX is emailed only 1–2 weeks before the event. No public current GPX to download now."
+    },
+    {
+      "eventOrder": 29,
+      "event": "Ultra-Trail Snowdonia Eryri by UTMB",
+      "officialSource": "https://eryri.utmb.world/races/Eryri-80K",
+      "date": "2027-05-14/16",
+      "routes": [
+        {
+          "name": "Eryri 80K",
+          "distanceKm": 78,
+          "elevationM": 2500,
+          "officialStartDate": "2027-05-14"
+        }
+      ],
+      "gpxStatus": "official-final-GPX-release-two-weeks-before-event",
+      "binaryDownloaded": false,
+      "parsed": false,
+      "metricsCompared": false,
+      "detail": "Correction to the old shorthand: official Eryri 80K route is 78km / 2500m+, starts 14 May 2027; the official page says final GPX downloads become available two weeks before the event. Other race pages need separate per-distance checks."
+    },
+    {
+      "eventOrder": 30,
+      "event": "Alpenstadt City&Trail",
+      "officialSource": "https://cityundtrail.de/",
+      "gpxStatus": "no-official-2027-GPX-published",
+      "binaryDownloaded": false,
+      "parsed": false,
+      "metricsCompared": false,
+      "detail": "No official 2027 GPX published. Third-party listing also indicates route trace is not yet published; app distance options need reconciliation with the organizer's 2027 race offering."
+    }
+  ],
+  "summary": {
+    "eventsCovered": 10,
+    "individualDirectGpxDownloadAttempts": 0,
+    "downloadedBinaryFiles": 0,
+    "parsedTracks": 0,
+    "metricsCompared": 0,
+    "officialDownloadControlsOrRoutesRecorded": 7,
+    "important": "The inspection tools cannot currently retrieve external GPX binaries as file bytes. For Menorca and Malcesine this package records the official download endpoints/routes as pending technical validation; no success is claimed."
+  },
+  "followUps": [
+    "Trail Menorca: download and parse each of seven official 2027 files; compare actual track lengths/elevation.",
+    "Malcesine: parse all four route files; specifically verify the 26.4km route against MBT_24k_medium.gpx.",
+    "Ultra X Scotland: recheck when official race pack is issued about one month before event.",
+    "Ternberg: obtain/export official Garmin GPX and parse it.",
+    "Chiemgau Trail: wait for official next-edition course files; retain CTR26 as historical.",
+    "Transvulcania: verify 12K file year/version and obtain 2027 files for remaining disciplines.",
+    "Ultra-Trail Australia: wait for 2027 Map + GPX update.",
+    "Trail Alsace: recheck 1–2 weeks before event and process participant GPX email.",
+    "Eryri: recheck final GPX files two weeks before 14 May 2027; verify every distance individually.",
+    "Alpenstadt City&Trail: wait for organizer publication and reconcile race list."
+  ],
+  "noChangesToGpxFiles": true,
+  "noAppRuntimeDataChanged": true
+}
