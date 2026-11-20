@@ -1,0 +1,313 @@
+{
+  "batch": 59,
+  "checkedAt": "2026-11-21",
+  "scope": "Official GPX availability and 2027 course-version review for top-level events 61–70",
+  "safetyRules": [
+    "Old GPX files remain valid until an official replacement is downloaded, parsed and validated.",
+    "No existing GPX files were deleted, overwritten or replaced.",
+    "A Map + GPX panel or direct link is not a successful binary download or a validated track.",
+    "Do not treat a previous edition's GPX as a 2027 course."
+  ],
+  "checks": [
+    {
+      "eventOrder": 61,
+      "event": "Obertauern Trailrun Summit",
+      "officialSource": "https://www.trailrun-summit.com/",
+      "date": "2027-07-09/11",
+      "routes": [
+        {
+          "name": "Extreme 100 Trail 8 Summits",
+          "distanceKm": 108,
+          "elevationGainHm": 6677,
+          "gpxStatus": "map-only; no direct file"
+        },
+        {
+          "name": "Trail Ultra 8 Summits",
+          "distanceKm": 76.6,
+          "elevationGainHm": 5080,
+          "gpxStatus": "official-2027-GPX-direct-link-exists"
+        },
+        {
+          "name": "Endurance Trail 2 Summits",
+          "distanceKm": 53.2,
+          "elevationGainHm": 3061,
+          "gpxStatus": "official-2027-GPX-direct-link-exists"
+        },
+        {
+          "name": "Ultimate Trail 2 Summits",
+          "distanceKm": 34.6,
+          "elevationGainHm": 2029,
+          "gpxStatus": "official-2027-GPX-direct-link-exists"
+        },
+        {
+          "name": "Panorama Trail 2 Summits",
+          "distanceKm": 16.2,
+          "elevationGainHm": 1113,
+          "gpxStatus": "map-only; no direct file"
+        },
+        {
+          "name": "Easy Trail",
+          "distanceKm": 8.9,
+          "elevationGainHm": 436,
+          "gpxStatus": "official-2027-GPX-direct-link-exists"
+        },
+        {
+          "name": "Seekarspitz Vertical",
+          "distanceKm": 5.3,
+          "elevationGainHm": 536,
+          "gpxStatus": "official-2027-GPX-direct-link-exists"
+        },
+        {
+          "name": "Family Trail",
+          "distancesKm": [
+            3.1,
+            5.4
+          ],
+          "gpxStatus": "two official 2027 GPX links previously recorded"
+        }
+      ],
+      "gpxStatus": "seven-direct-GPX-URLs-recorded-in-previous-check; three-direct-URL-open-attempts-in-this-pass-failed-or-content-type-unsupported; no binary saved",
+      "directUrlsAttempted": 3,
+      "binaryDownloaded": 0,
+      "parsed": false,
+      "metricsCompared": false,
+      "detail": "Correction: current official homepage says eight competitions, with Family Trail having two distance options; it lists 108km/6677hm Extreme 100, 76.6km/5080hm Ultra, 53.2km/3061hm Endurance, 34.6km/2029hm Ultimate, 16.2km/1113hm Panorama, 8.9km/436hm Easy, 5.3km/536hm Vertical, and Family 3.1km/5.4km. Prior checkpoint said nine current competitions and used different route names/figures. Three previously recorded 2027 direct GPX URLs were opened: two inaccessible, one rejected as unsupported application/gpx+xml. No file bytes retrieved."
+    },
+    {
+      "eventOrder": 62,
+      "event": "Restonica Trail by UTMB",
+      "officialSource": "https://restonica.utmb.world/races-runners/runners/infos-pratiques",
+      "date": "2027-07-06/10",
+      "gpxStatus": "official-FAQ-says-GPX-released-only-a-few-days-before-event",
+      "routes": [
+        {
+          "name": "UTC 100M"
+        },
+        {
+          "name": "RT 100K"
+        },
+        {
+          "name": "PM 50K"
+        },
+        {
+          "name": "TT 50K"
+        },
+        {
+          "name": "GT 20K",
+          "distanceKm": 17,
+          "elevationGainHm": 650
+        }
+      ],
+      "binaryDownloaded": false,
+      "parsed": false,
+      "metricsCompared": false,
+      "detail": "Official FAQ explicitly says GPX is released only a few days before the event because the route crosses private land. Official event site confirms 6–10 July 2027 and GT20K 17km/650m+."
+    },
+    {
+      "eventOrder": 63,
+      "event": "Trail Verbier St-Bernard by UTMB",
+      "officialSources": [
+        "https://verbier.utmb.world/races/x-traversee",
+        "https://verbier.utmb.world/races/x-alpine"
+      ],
+      "date": "2027-07-09/11",
+      "gpxStatus": "official-2027-Map-plus-GPX-sections; no-direct-GPX-binary-retrieved",
+      "binaryDownloaded": false,
+      "parsed": false,
+      "metricsCompared": false,
+      "detail": "Official UTMB race pages expose Map + GPX sections. X-Traversée has a 2027 route modification near Grand St-Bernard. Export each distance separately from the official map; no binary download was completed."
+    },
+    {
+      "eventOrder": 64,
+      "event": "PIUT – Paznaun Ischgl Ultra Trail",
+      "officialSource": "https://www.paznaun-ischgl.com/de/piut-startseite/challenges/streckenkarte",
+      "gpxStatus": "2026-edition-past; no-next-edition-date-or-current-GPX-confirmed",
+      "binaryDownloaded": false,
+      "parsed": false,
+      "metricsCompared": false,
+      "detail": "Previous official event record was 12 July 2026, now past. Official route-map pages have GPX/KML download controls but no next edition/date confirmed in the checkpoint. Do not mark 2026 tracks as 2027."
+    },
+    {
+      "eventOrder": 65,
+      "event": "Glacier Trailrun Alpine Race",
+      "officialSource": "https://www.oetztal-trailrunning.at/die-running-events/glacier-trailrun-alpine-race/",
+      "date": "2027-07-22/25",
+      "routes": [
+        {
+          "name": "Top Mountain Run",
+          "distanceKm": 6.3,
+          "elevationGainHm": 750
+        },
+        {
+          "name": "Gletscher Trail 14K",
+          "distanceKm": 14,
+          "elevationGainHm": 800
+        },
+        {
+          "name": "Gletscher Trail 26K",
+          "distanceKm": 25.8,
+          "elevationGainHm": 1900
+        },
+        {
+          "name": "Gletscher Trail 42K",
+          "distanceKm": 42.5,
+          "elevationGainHm": 2800
+        },
+        {
+          "name": "Gletscher Trail 62K",
+          "distanceKm": 61.1,
+          "elevationGainHm": 3600
+        },
+        {
+          "name": "WIDI Trailrun",
+          "distancesM": [
+            200,
+            400,
+            600,
+            1500
+          ]
+        }
+      ],
+      "gpxStatus": "2027-event-and-revised-distances-confirmed; no-final-GPX-published",
+      "binaryDownloaded": false,
+      "parsed": false,
+      "metricsCompared": false,
+      "detail": "Organizer's current page gives 22–25 July 2027 and updated distances. Registration start has been moved to 1 December 2026 at 00:00 due to administrative items and route revisions. Previous app 100K entry is not in current official program and must not be treated as confirmed."
+    },
+    {
+      "eventOrder": 66,
+      "event": "Engadin Ultra Trail",
+      "officialSource": "https://www.engadinultratrail.ch/",
+      "date": "2027-07-16/17",
+      "routes": [
+        "EUT102",
+        "EUT53",
+        "ET23",
+        "ET16"
+      ],
+      "gpxStatus": "four-official-2027-route-links-recorded-in-app; no-binary-download-or-parser-validation-in-this-pass",
+      "binaryDownloaded": false,
+      "parsed": false,
+      "metricsCompared": false,
+      "detail": "Official site confirms four routes and dates 16–17 July 2027. Existing app has four official GPX links; each needs actual import/parser validation."
+    },
+    {
+      "eventOrder": 67,
+      "event": "Maintal Ultratrail",
+      "officialSources": [
+        "https://www.mtut.de/trails/ultratrail/",
+        "https://www.mtut.de/trails/trail-t30/",
+        "https://www.mtut.de/trails/trail-t13/"
+      ],
+      "routes": [
+        {
+          "name": "Ultratrail",
+          "distanceKm": 64
+        },
+        {
+          "name": "T30",
+          "distanceKm": 30
+        },
+        {
+          "name": "T13",
+          "distanceKm": 13
+        }
+      ],
+      "gpxStatus": "official-download-pages-exist; T30-direct-GPX-previously-recorded; Ultra-and-T13-page-downloads-unvalidated",
+      "binaryDownloaded": false,
+      "parsed": false,
+      "metricsCompared": false,
+      "detail": "Organizer pages offer course downloads for 64km Ultra, T30 and T13. No file downloaded or parsed in this pass."
+    },
+    {
+      "eventOrder": 68,
+      "event": "Dolomyths Run",
+      "officialSources": [
+        "https://dolomythsrun.it/en/fassa-trail-route.html",
+        "https://dolomythsrun.it/en/sky-route.html",
+        "https://dolomythsrun.it/en/v-rodella.html"
+      ],
+      "gpxStatus": "2027-course-pages-present; no-current-2027-GPX-files-confirmed",
+      "binaryDownloaded": false,
+      "parsed": false,
+      "metricsCompared": false,
+      "detail": "Official 2027 route pages exist for Fassa Trail, SkyRace and V-Rodella. V-Rodella page says GPX will be published later. Keep any old tracks historical."
+    },
+    {
+      "eventOrder": 69,
+      "event": "Eiger Ultra Trail by UTMB",
+      "officialSources": [
+        "https://eiger.utmb.world/races/E101",
+        "https://eiger.utmb.world/races/e51"
+      ],
+      "date": "2027-07-14/18",
+      "routes": [
+        {
+          "name": "E101",
+          "distanceKm": 101,
+          "elevationGainHm": 6700,
+          "date": "2027-07-17"
+        },
+        {
+          "name": "E51",
+          "date": "2027-07-17"
+        }
+      ],
+      "gpxStatus": "current-2027-race-pages-now-show-download-GPX-buttons; prior-2026-files-stale; exact-file-version-and-binary-validation-pending",
+      "binaryDownloaded": false,
+      "parsed": false,
+      "metricsCompared": false,
+      "detail": "Current E101 page confirms 101km/6700m+ and 17 July 2027; E51 page confirms 2027 start and a Download GPX control. Current pages now expose downloadable GPX controls; do not rely on prior 2026 file links. Need retrieve actual current hrefs, confirm 2027 version and parse both files."
+    },
+    {
+      "eventOrder": 70,
+      "event": "Bucovina Ultra Rocks by UTMB",
+      "officialSource": "https://bucovina.utmb.world/races",
+      "date": "2027-07-23/25",
+      "routes": [
+        "Ultra Rocks",
+        "Four Summits",
+        "Lady's Rocks",
+        "Rocky",
+        "Radical",
+        "Rumble Rock",
+        "RUNC Challenge"
+      ],
+      "gpxStatus": "2027-direct-GPX-links-previously-recorded-for-five-formats; Rumble-Rock-coming-soon; RUNC-Challenge-version-unconfirmed",
+      "binaryDownloaded": false,
+      "parsed": false,
+      "metricsCompared": false,
+      "detail": "UTMB event calendar confirms 23–25 July 2027. Five race formats have official direct GPX links in the previous checkpoint; Rumble Rock GPX was still marked coming soon and RUNC Challenge file had no 2027 confirmation. No direct binary retrieval or parsing in this pass."
+    }
+  ],
+  "summary": {
+    "eventsCovered": 10,
+    "directUrlsAttempted": 3,
+    "binaryDownloaded": 0,
+    "tracksParsed": 0,
+    "metricsCompared": 0,
+    "criticalFindings": [
+      "Obertauern 2027 official homepage corrects event inventory: eight competitions with Family Trail split into 3.1km and 5.4km, not nine adult competitions.",
+      "Obertauern updated official distances/elevation: Extreme 100 108km/6677m; Ultra 76.6/5080; Endurance 53.2/3061; Ultimate 34.6/2029; Panorama 16.2/1113; Easy 8.9/436; Vertical 5.3/536.",
+      "Restonica official FAQ confirms GPX release only a few days before the event due to private land.",
+      "Glacier Trailrun 2027 updated route programme no longer lists the old 100K; six race categories with revised distances, registration 1 December 2026.",
+      "Eiger 2027 official pages now display GPX downloads, replacing earlier 2026-stale status; actual file version still to validate."
+    ],
+    "noGpxFilesChanged": true,
+    "noAppRuntimeDataChanged": true
+  },
+  "followUps": [
+    "Obertauern: refresh app route names/distances/elevation to current official eight competitions; download all seven direct GPX URLs and obtain map-only Extreme100/Panorama exports; verify Family Trail two tracks.",
+    "Restonica: schedule GPX check a few days before 6–10 July 2027 and validate every category separately.",
+    "Verbier: export each official 2027 GPX, paying attention to X-Traversée route change near Grand St-Bernard.",
+    "PIUT: wait for official next-edition date and updated route publication before reactivating current event.",
+    "Glacier: replace stale app 100K assumption with current 2027 programme; recheck after registration opens 1 December 2026.",
+    "Engadin: import and parse EUT102/EUT53/ET23/ET16 and compare actual length/ascent.",
+    "Maintal: download official Ultra/T30/T13 files and parse all three.",
+    "Dolomyths: recheck when 2027 GPX files are published.",
+    "Eiger: inspect direct 2027 download hrefs on E101 and E51, save binary and parse distance/ascent; do not use 2026 files.",
+    "Bucovina: verify 2027 file versions for five direct-link races; recheck Rumble Rock and RUNC Challenge."
+  ],
+  "noGpxFilesChanged": true,
+  "noAppRuntimeDataChanged": true
+}
