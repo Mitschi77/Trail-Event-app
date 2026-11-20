@@ -1,6 +1,6 @@
 {
   "batch": 16,
-  "checkedAt": "2026-11-17",
+  "checkedAt": "2026-11-20",
   "scope": "Top-level events 76-80 in current EVENTS order",
   "status": "saved",
   "appCommit": "3c28218d80620b271425b4478ff95cb961f9762a",
@@ -8,37 +8,151 @@
     {
       "order": 76,
       "name": "Quito Trail by UTMB",
-      "gpxStatus": "Official 2027 event and six race distances confirmed. UTMB pages still show route details as opening soon; no official GPX published.",
+      "gpxStatus": "Six 2027 races and official distance/elevation figures confirmed. Official race detail pages still show Opening soon; no separate official 2027 GPX files verified. Do not import third-party files as official.",
       "source": "https://quito.utmb.world/",
-      "followUp": "Recheck when race detail pages and GPX are released."
+      "followUp": "Wait for official race detail pages and 2027 GPX release; then compare each file against the official six route metrics.",
+      "verified2027CourseInfo": {
+        "source": "https://quito.utmb.world/",
+        "dateStart": "2027-07-30",
+        "dateEnd": "2027-08-01",
+        "routes": [
+          {
+            "name": "80K Oso",
+            "date": "2027-07-31",
+            "distanceKm": 76,
+            "elevationHm": 4400
+          },
+          {
+            "name": "50K Nutria",
+            "date": "2027-07-31",
+            "distanceKm": 53,
+            "elevationHm": 2800
+          },
+          {
+            "name": "30K Tucán",
+            "date": "2027-07-31",
+            "distanceKm": 31,
+            "elevationHm": 1600
+          },
+          {
+            "name": "20K Quinde",
+            "date": "2027-08-01",
+            "distanceKm": 20,
+            "elevationHm": 1000
+          },
+          {
+            "name": "12K Humboldt",
+            "date": "2027-08-01",
+            "distanceKm": 13,
+            "elevationHm": 850
+          },
+          {
+            "name": "6K Rana",
+            "date": "2027-08-01",
+            "distanceKm": 6.5,
+            "elevationHm": 300
+          }
+        ],
+        "note": "Offizielle UTMB-Seite bestätigt sechs Rennen und diese gerundeten Streckenwerte. Drittanbieter meldet teils genauere Zahlen, aber die offiziellen Werte sind maßgeblich. Offizielle Detailseiten zeigen noch 'Opening soon'; keine bestätigten 2027-GPX-Dateien."
+      }
     },
     {
       "order": 77,
       "name": "Pitz Alpine Glacier Trail",
-      "gpxStatus": "Official 2027 event pages and route GPX map/downloads confirmed for P105, P90, P60, P45 Glacier, P45 Rifflsee, P30, P15 and Young Talents Race. Official route pages linked in app; direct file endpoints not extracted.",
+      "gpxStatus": "Official 2027 event and all eight route metrics confirmed. Official course pages expose route/GPX controls; direct file endpoints and XML content have not yet been independently extracted and parsed.",
       "source": "https://www.pitztal.com/de/salomon-pitz-alpine-glacier-trail.html",
-      "followUp": "Download from each official course page; verify final course data before import."
+      "followUp": "Export all eight official 2027 GPX tracks individually and validate XML, trackpoints, distance and elevation. Keep earlier files as separate versions.",
+      "verified2027CourseInfo": {
+        "source": "https://www.pitztal.com/de/salomon-pitz-alpine-glacier-trail.html",
+        "dateStart": "2027-07-30",
+        "dateEnd": "2027-08-01",
+        "routes": [
+          {
+            "name": "P105",
+            "distanceKm": 103,
+            "elevationHm": 6000
+          },
+          {
+            "name": "P90",
+            "distanceKm": 87,
+            "elevationHm": 5200
+          },
+          {
+            "name": "P60",
+            "distanceKm": 63,
+            "elevationHm": 4300
+          },
+          {
+            "name": "P45 Glacier",
+            "distanceKm": 45,
+            "elevationHm": 2900
+          },
+          {
+            "name": "P45 Rifflsee",
+            "distanceKm": 43,
+            "elevationHm": 2100
+          },
+          {
+            "name": "P30",
+            "distanceKm": 27,
+            "elevationHm": 1300
+          },
+          {
+            "name": "P15",
+            "distanceKm": 16,
+            "elevationHm": 800
+          },
+          {
+            "name": "Young Talents Race",
+            "distanceKm": 8,
+            "elevationHm": 640
+          }
+        ]
+      }
     },
     {
       "order": 78,
       "name": "kat100",
-      "gpxStatus": "Official 2027 UTMB course pages provide Map + GPX sections. Marathon Trail is a new course and organizer explicitly says GPX is not yet downloadable due to possible minor changes.",
+      "gpxStatus": "2027 Marathon Trail confirmed: 52 km / 3,100 hm, completely new single-loop course. Official map is viewable, but GPX download is not yet enabled due to possible minor route adjustments. Keep older KAT100 GPX files separate as historical versions.",
       "source": "https://kat.utmb.world/de/races",
-      "followUp": "Recheck GPX downloads for all routes once final files are published."
+      "followUp": "Recheck when UTMB enables the final Marathon Trail GPX download; preserve older route file until replacement is checked.",
+      "verified2027CourseInfo": {
+        "source": "https://kat.utmb.world/de/races/marathon-trail",
+        "date": "2027-08-07",
+        "distanceKm": 52,
+        "elevationHm": 3100,
+        "note": "The official Marathon Trail page now shows the new single-loop route from Fieberbrunn via Gebrakapelle and Aurach back to Fieberbrunn. GPX route is visible online for orientation, but download is withheld while minor route changes remain possible."
+      }
     },
     {
       "order": 79,
       "name": "Swiss Alps 100",
-      "gpxStatus": "Official organizer GPX download pages confirmed for 50K, 100K, 160K and Matterhorning (2027-only). Pages linked in app; direct file URLs not extracted.",
+      "gpxStatus": "Official 2027 event and Matterhorning track metrics confirmed. Official Matterhorning page has a GPX download control; direct URL and file content still to extract. Retain separate GPX versions for 50K, 100K, 160K and Vertical; the event homepage currently shows 160K and 100K sold out.",
       "source": "https://www.swissalps100.com/",
-      "followUp": "Download each course from official page; note Matterhorning is only held in 2027."
+      "followUp": "Extract and parse the official 2027 GPX downloads for 50K, 100K, 160K, Vertical and Matterhorning; preserve older files independently.",
+      "verified2027CourseInfo": {
+        "source": "https://www.swissalps100.com/courses/matterhorning",
+        "dateStart": "2027-08-06",
+        "dateEnd": "2027-08-08",
+        "matterhorning": {
+          "distanceKm": 33.3,
+          "elevationHm": 4692,
+          "only2027": true
+        },
+        "note": "Official 2027 homepage confirms Aug 6–8. Matterhorning course page confirms 33.30 km / 4,692 hm and 2027-only. Main 50K/100K/160K/Vertical course details remain individually linked in official course section."
+      }
     },
     {
       "order": 80,
       "name": "Allgäu Panorama Marathon",
-      "gpxStatus": "Official 2027 event information and interactive Ultra map found. No public GPX file download found on the official Ultra course page.",
+      "gpxStatus": "2027 event confirmed for 8 August. Official site announces a new Half Marathon Reverse on Saturday; public official 2027 GPX files not found. Third-party 2027 metrics are not imported as organizer-confirmed data.",
       "source": "https://allgaeu-panorama-marathon.de/content/strecken/ultra/",
-      "followUp": "Use organizer map or request GPX from organizer."
+      "followUp": "Wait for official 2027 course maps/GPX, especially Ultra and the new Saturday Reverse Half Marathon; keep any prior-year tracks marked by edition.",
+      "verified2027Edition": {
+        "source": "https://www.allgaeu-panorama-marathon.de/",
+        "date": "2027-08-08",
+        "note": "Official homepage confirms 20th Allgäu Panorama Marathon on 8 August 2027. New Saturday Half Marathon Reverse is announced for the anniversary weekend in addition to Sunday events."
+      }
     }
   ],
   "nextBatch": "Continue with events 81-85 after package 16 checkpoint."
