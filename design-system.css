@@ -1,0 +1,98 @@
+/* Trail Events – unified responsive design system
+   Shared visual tokens and responsive layout polish for iPhone and iPad.
+   Existing app behavior and data markup remain unchanged. */
+:root{--ui-font:-apple-system,BlinkMacSystemFont,"SF Pro Text","Segoe UI",sans-serif;--ui-text:16px;--ui-label:13px;--ui-caption:13px;--ui-title:24px;--ui-section:20px;--ui-control:48px;--ui-touch:44px;--ui-radius:14px;--ui-radius-control:11px;--ui-gap:12px;--ui-content-max:1440px}
+html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
+body{font-family:var(--ui-font);font-size:var(--ui-text);line-height:1.5;padding-bottom:env(safe-area-inset-bottom);-webkit-tap-highlight-color:transparent}
+button,input,select,textarea{font-family:var(--ui-font)}
+button,[role="button"],a{touch-action:manipulation}
+:where(button,input,select,textarea,a,summary):focus-visible{outline:3px solid #9bc9a9;outline-offset:2px}
+.wrap{width:min(100%,var(--ui-content-max));margin-inline:auto}
+.hero{width:min(calc(100% - 36px),var(--ui-content-max))}
+.hero h1{font-size:clamp(28px,3vw,40px);line-height:1.12}
+.planner h2,.event-detail-head h2,.elevation-popup-head h2{font-size:var(--ui-title);line-height:1.2}
+.planner h3,.planner-panel h3,.planner-review h3{font-size:var(--ui-section);line-height:1.25}
+.planner label,.edit-grid label,.radius-location-field label,.toolbar-field,.planner-grid label{font-size:var(--ui-label);line-height:1.35;font-weight:650}
+.field,.toolbar-field .field,.planner select,.planner input,.edit-grid input,.run-tools .race-status-control select,.year-race-status select,.app-menu-account #cloudAuthForm input{min-height:var(--ui-control);border-radius:var(--ui-radius-control);font-size:16px;line-height:1.35}
+.field{padding:11px 14px}
+.planner select,.planner input,.edit-grid input{padding:10px 12px}
+.primary,.secondary,.tab-button,.app-menu-item,.more-nav-item,.radius-action-field button,.filter-reset-wrap button{min-height:var(--ui-touch);border-radius:var(--ui-radius-control);line-height:1.25}
+.primary{min-height:48px;padding:12px 18px;font-size:15px}
+.secondary{padding:10px 13px;font-size:13px}
+.tab-button{padding:12px 15px;font-size:14px}
+.event,.planner,.planner-panel,.planner-review,.route,.plan-card,.year-group,.event-filter-panel,.race-tools-section,.review-card,.integration-status,.integration-provider{border-radius:var(--ui-radius)}
+.event{margin-block:0}
+.eventhead{min-height:76px;padding:16px 18px}
+.eventtitle{font-size:17px;line-height:1.35}
+.meta,.plan-meta,.year-race-meta,.routegrid{line-height:1.5}
+.detail{padding:16px 18px 18px}
+.routes{gap:var(--ui-gap)}
+.route{padding:14px}
+.route strong{font-size:15px;line-height:1.35}
+.routegrid{gap:8px 14px}
+.link{min-height:38px;display:inline-flex;align-items:center;padding:8px 11px}
+.tag{line-height:1.35}
+.resultsline{min-height:28px}
+.event-filter-panel>summary{min-height:52px;padding:13px 16px}
+.event-filter-panel .toolbar{gap:var(--ui-gap);padding:14px 16px 16px}
+.tabbar{gap:7px;padding:6px}
+.planner{padding:20px}
+.planner-grid{gap:var(--ui-gap)}
+.planner-columns{gap:16px}
+.planner-panel,.planner-review{padding:16px}
+.edit-grid{gap:var(--ui-gap)}
+.run-tools{gap:10px 14px}
+.run-tools label{min-height:var(--ui-touch)}
+.run-tools input[type=checkbox],.checklist-group input{width:20px;height:20px}
+.star-btn{min-width:34px;min-height:38px}
+.app-menu-dropdown{border-radius:16px;padding:14px}
+.app-menu-item,.more-nav-item{display:flex;align-items:center}
+.empty{padding:32px 22px}
+.note,.foot{line-height:1.55}
+/* iPhone */
+@media(max-width:700px){
+header{padding-left:max(14px,env(safe-area-inset-left));padding-right:max(14px,env(safe-area-inset-right))}
+.hero{width:auto;margin:22px 14px 0}
+.wrap{padding-left:max(14px,env(safe-area-inset-left));padding-right:max(14px,env(safe-area-inset-right))}
+.toolbar,#eventsTab .toolbar{gap:9px}
+#events{display:grid;grid-template-columns:minmax(0,1fr);gap:11px}
+.eventhead{grid-template-columns:minmax(0,1fr) auto;gap:10px;padding:14px}
+.eventtitle{font-size:16px}
+.detail{padding:13px 14px 15px}
+.routes{grid-template-columns:minmax(0,1fr)}
+.planner{padding:15px}
+.planner-panel,.planner-review{padding:13px}
+.planner-grid{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}
+.planner-columns{grid-template-columns:minmax(0,1fr)}
+.edit-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+.event-filter-panel .toolbar{padding:12px}
+.event-filter-panel .toolbar-field,.event-filter-panel .field{min-width:0;width:100%}
+.tabbar{margin-top:16px}
+.tab-button{flex:1 1 130px}
+.app-menu-dropdown{right:max(10px,env(safe-area-inset-right))}
+}
+@media(max-width:390px){
+.hero h1{font-size:27px}
+.stats{gap:6px}
+.stat{min-width:0;flex:1 1 calc(50% - 6px);padding:9px 10px}
+.eventhead{grid-template-columns:minmax(0,1fr)}
+.date{white-space:normal}
+.edit-grid,.planner-grid{grid-template-columns:minmax(0,1fr)}
+.planner-grid .event-choice,.planner-grid .primary{grid-column:auto}
+}
+/* iPad and tablet */
+@media(min-width:760px){
+.wrap{padding-inline:24px}
+.hero{width:min(calc(100% - 48px),var(--ui-content-max))}
+#events{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;align-items:start}
+.event{min-width:0}
+.routes,.planner-columns{grid-template-columns:repeat(2,minmax(0,1fr))}
+.planner{padding:22px}
+.event-filter-panel .toolbar{grid-template-columns:repeat(3,minmax(0,1fr))}
+.planner-grid{grid-template-columns:minmax(0,1.5fr) minmax(160px,.7fr) auto}
+.tabbar{flex-wrap:nowrap}
+.tab-button{flex:1 1 0;min-width:0}
+}
+@media(min-width:1100px){.routes{grid-template-columns:repeat(3,minmax(0,1fr))}#events{gap:16px}}
+#events[hidden],.tab-panel[hidden],.tab-panel[hidden] #events{display:none!important}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;transition-duration:.01ms!important;animation-duration:.01ms!important}}
