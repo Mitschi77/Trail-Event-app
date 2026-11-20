@@ -2142,17 +2142,48 @@
     },
     "piut": {
       "eventId": "piut",
-      "checkedAt": "2026-11-18T14:25:00.201965+00:00",
+      "checkedAt": "2026-11-20T18:50:00Z",
       "status": "verified",
       "sources": [
         {
-          "url": "https://www.paznaun-ischgl.com/de/piut-startseite/challenges/piut",
-          "status": "read"
+          "url": "https://piut.utmb.world/races",
+          "status": "manual",
+          "verification": "official-2027-race-list"
         },
         {
-          "url": "https://www.ischgl.com/de/veranstaltungen-erlebnisse/veranstaltungskalender/piut-paznaun-ischgl-ultra-trail_event_135487129",
-          "status": "read",
-          "verification": "manual-official-page"
+          "url": "https://piut.utmb.world/races/piut100",
+          "status": "manual",
+          "verification": "official-2027-route-details"
+        },
+        {
+          "url": "https://piut.utmb.world/races/piut85",
+          "status": "manual",
+          "verification": "official-2027-route-details"
+        },
+        {
+          "url": "https://piut.utmb.world/races/piut50",
+          "status": "manual",
+          "verification": "official-2027-route-details"
+        },
+        {
+          "url": "https://piut.utmb.world/races/piut30",
+          "status": "manual",
+          "verification": "official-2027-route-details"
+        },
+        {
+          "url": "https://piut.utmb.world/races/piut20",
+          "status": "manual",
+          "verification": "official-2027-route-details"
+        },
+        {
+          "url": "https://piut.utmb.world/races/piut-ten",
+          "status": "manual",
+          "verification": "official-2027-route-details"
+        },
+        {
+          "url": "https://piut.utmb.world/races/piut-kids",
+          "status": "manual",
+          "verification": "official-2027-route-details"
         }
       ],
       "eventPeriod": {
@@ -2163,29 +2194,51 @@
       "routes": {
         "0": {
           "routeId": "piut50-50-3100",
-          "date": "2026-07-12",
-          "verified": false,
-          "fallback": true,
-          "fallbackYear": 2026,
-          "note": "Vorläufiger Ersatztermin aus der Ausgabe 2026; kein offizieller Starttermin 2027 gefunden."
+          "date": "2027-07-10",
+          "verified": true
         },
         "1": {
           "routeId": "piut85-85-5200",
-          "date": "2026-07-12",
-          "verified": false,
-          "fallback": true,
-          "fallbackYear": 2026,
-          "note": "Vorläufiger Ersatztermin aus der Ausgabe 2026; kein offizieller Starttermin 2027 gefunden."
+          "date": "2027-07-09",
+          "verified": true
         },
         "2": {
           "routeId": "piut100-100-6300",
-          "date": "2026-07-12",
-          "verified": false,
-          "fallback": true,
-          "fallbackYear": 2026,
-          "note": "Vorläufiger Ersatztermin aus der Ausgabe 2026; kein offizieller Starttermin 2027 gefunden."
+          "date": "2027-07-09",
+          "verified": true
+        },
+        "3": {
+          "routeId": "piut30-30-1540",
+          "date": "2027-07-10",
+          "verified": true
+        },
+        "4": {
+          "routeId": "piut20-20-1300",
+          "date": "2027-07-10",
+          "verified": true
+        },
+        "5": {
+          "routeId": "piut-ten-10-94",
+          "date": "2027-07-10",
+          "verified": true
+        },
+        "6": {
+          "routeId": "piut-kids-bambini-015-2027",
+          "date": "2027-07-09",
+          "verified": true
+        },
+        "7": {
+          "routeId": "piut-kids-600m-2027",
+          "date": "2027-07-09",
+          "verified": true
+        },
+        "8": {
+          "routeId": "piut-kids-1200m-2027",
+          "date": "2027-07-09",
+          "verified": true
         }
-      }
+      },
+      "sourceCheckStatus": "manual"
     },
     "der-gletscher-trailrun": {
       "eventId": "der-gletscher-trailrun",
