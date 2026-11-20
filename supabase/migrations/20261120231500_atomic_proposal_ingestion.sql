@@ -39,7 +39,7 @@ begin
     v_route_id := coalesce(v_item_payload ->> 'routeId', '');
     v_field_name := v_item_payload ->> 'field';
 
-    if v_proposal_type not in ('event_change', 'route_change', 'data_correction')
+    if v_proposal_type is null or v_proposal_type not in ('event_change', 'route_change', 'data_correction')
        or v_event_id is null or v_event_id = '' or v_field_name is null or v_field_name = '' then
       raise exception 'Invalid proposal deduplication key' using errcode = '22023';
     end if;
