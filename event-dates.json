@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-21T00:10:00Z",
+  "updatedAt": "2026-11-21T00:20:00Z",
   "schemaVersion": 3,
   "events": {
     "la-corsa-della-bora": {
@@ -11623,6 +11623,343 @@
         "6": {
           "routeId": "spar-budapest-5k-2027",
           "date": "2027-10-09",
+          "verified": true
+        }
+      }
+    },
+    "french-riviera-marathon-nice-cannes-2027": {
+      "eventId": "french-riviera-marathon-nice-cannes-2027",
+      "checkedAt": "2026-11-21T00:20:00Z",
+      "status": "verified",
+      "sources": [
+        {
+          "url": "https://www.marathon06.com/2027/AN/epreuves/marathon/",
+          "status": "read",
+          "verification": "official-2027-event-information"
+        }
+      ],
+      "eventPeriod": {
+        "startDate": "2027-11-07",
+        "endDate": "2027-11-07",
+        "verified": true
+      },
+      "routes": {
+        "0": {
+          "routeId": "nice-cannes-marathon-2027-42k",
+          "date": "2027-11-07",
+          "verified": true
+        }
+      }
+    },
+    "islandsbanki-reykjavik-marathon-2027": {
+      "eventId": "islandsbanki-reykjavik-marathon-2027",
+      "checkedAt": "2026-11-21T00:20:00Z",
+      "status": "verified",
+      "sources": [
+        {
+          "url": "https://www.rmi.is/en/program",
+          "status": "read",
+          "verification": "official-2027-event-information"
+        }
+      ],
+      "eventPeriod": {
+        "startDate": "2027-08-21",
+        "endDate": "2027-08-21",
+        "verified": true
+      },
+      "routes": {
+        "0": {
+          "routeId": "reykjavik-marathon-2027-42k",
+          "date": "2027-08-21",
+          "verified": true
+        },
+        "1": {
+          "routeId": "reykjavik-marathon-2027-half",
+          "date": "2027-08-21",
+          "verified": true
+        },
+        "2": {
+          "routeId": "reykjavik-marathon-2027-10k",
+          "date": "2027-08-21",
+          "verified": true
+        }
+      },
+      "note": "Allgemeine Startwelle Marathon/Halbmarathon 08:45; Wettkampfstart 08:15. 10 km allgemeiner Start 10:00, Wettkampfstart 09:30."
+    },
+    "bjorn-borg-helsinki-marathon-2027": {
+      "eventId": "bjorn-borg-helsinki-marathon-2027",
+      "checkedAt": "2026-11-21T00:20:00Z",
+      "status": "verified",
+      "sources": [
+        {
+          "url": "https://www.helsinkimarathon.fi/en/event-info/",
+          "status": "read",
+          "verification": "official-2027-event-information"
+        },
+        {
+          "url": "https://ssl.eventilla.com/helsinki-marathon-2027/EN",
+          "status": "read",
+          "verification": "official-2027-event-information"
+        }
+      ],
+      "eventPeriod": {
+        "startDate": "2027-08-28",
+        "endDate": "2027-08-28",
+        "verified": true
+      },
+      "routes": {
+        "0": {
+          "routeId": "helsinki-marathon-2027-42k",
+          "date": "2027-08-28",
+          "verified": true
+        },
+        "1": {
+          "routeId": "helsinki-marathon-2027-half",
+          "date": "2027-08-28",
+          "verified": true
+        },
+        "2": {
+          "routeId": "helsinki-marathon-2027-10k",
+          "date": "2027-08-28",
+          "verified": true
+        },
+        "3": {
+          "routeId": "helsinki-marathon-2027-relay",
+          "date": "2027-08-28",
+          "verified": true
+        }
+      }
+    },
+    "edinburgh-marathon-2027": {
+      "eventId": "edinburgh-marathon-2027",
+      "checkedAt": "2026-11-21T00:20:00Z",
+      "status": "verified",
+      "sources": [
+        {
+          "url": "https://www.edinburghmarathon.com/",
+          "status": "read",
+          "verification": "official-2027-event-information"
+        },
+        {
+          "url": "https://www.edinburghmarathon.com/faqs/marathon",
+          "status": "read",
+          "verification": "official-2027-event-information"
+        },
+        {
+          "url": "https://www.edinburghmarathon.com/faqs/halfmarathon",
+          "status": "read",
+          "verification": "official-2027-event-information"
+        }
+      ],
+      "eventPeriod": {
+        "startDate": "2027-05-29",
+        "endDate": "2027-05-30",
+        "verified": true
+      },
+      "routes": {
+        "0": {
+          "routeId": "edinburgh-marathon-2027-42k",
+          "date": "2027-05-30",
+          "verified": true
+        },
+        "1": {
+          "routeId": "edinburgh-marathon-2027-half",
+          "date": "2027-05-30",
+          "verified": true
+        },
+        "2": {
+          "routeId": "edinburgh-marathon-2027-relay",
+          "date": "2027-05-30",
+          "verified": true
+        },
+        "3": {
+          "routeId": "edinburgh-marathon-2027-10k",
+          "date": "2027-05-29",
+          "verified": true
+        }
+      }
+    },
+    "vodafone-prague-marathon-2027": {
+      "eventId": "vodafone-prague-marathon-2027",
+      "checkedAt": "2026-11-21T00:20:00Z",
+      "status": "verified",
+      "sources": [
+        {
+          "url": "https://www.runczech.com/en/events/vodafone-prague-marathon-2027",
+          "status": "read",
+          "verification": "official-2027-event-information"
+        },
+        {
+          "url": "https://register.runczech.com/2027/vodafone-prague-marathon-2027-euro",
+          "status": "read",
+          "verification": "official-2027-event-information"
+        }
+      ],
+      "eventPeriod": {
+        "startDate": "2027-05-01",
+        "endDate": "2027-05-02",
+        "verified": true
+      },
+      "routes": {
+        "0": {
+          "routeId": "vodafone-prague-marathon-2027-42k",
+          "date": "2027-05-02",
+          "verified": true
+        },
+        "1": {
+          "routeId": "prague-marathon-2027-2run",
+          "date": "2027-05-02",
+          "verified": true
+        },
+        "2": {
+          "routeId": "prague-marathon-2027-mile",
+          "date": "2027-05-01",
+          "verified": true
+        }
+      }
+    },
+    "mainova-frankfurt-marathon-2027": {
+      "eventId": "mainova-frankfurt-marathon-2027",
+      "checkedAt": "2026-11-21T00:20:00Z",
+      "status": "verified",
+      "sources": [
+        {
+          "url": "https://www.frankfurt-marathon.com/dein-lauf/marathon/",
+          "status": "read",
+          "verification": "official-2027-event-information"
+        },
+        {
+          "url": "https://frankfurt.de/themen/sport/sportevents/frankfurt-marathon",
+          "status": "read",
+          "verification": "official-2027-event-information"
+        }
+      ],
+      "eventPeriod": {
+        "startDate": "2027-10-31",
+        "endDate": "2027-10-31",
+        "verified": true
+      },
+      "routes": {
+        "0": {
+          "routeId": "mainova-frankfurt-marathon-2027-42k",
+          "date": "2027-10-31",
+          "verified": true
+        }
+      }
+    },
+    "tcs-amsterdam-marathon-2027": {
+      "eventId": "tcs-amsterdam-marathon-2027",
+      "checkedAt": "2026-11-21T00:20:00Z",
+      "status": "verified",
+      "sources": [
+        {
+          "url": "https://www.tcsamsterdammarathon.eu/program",
+          "status": "read",
+          "verification": "official-2027-event-information"
+        }
+      ],
+      "eventPeriod": {
+        "startDate": "2027-10-30",
+        "endDate": "2027-10-31",
+        "verified": true
+      },
+      "routes": {
+        "0": {
+          "routeId": "tcs-amsterdam-marathon-2027-42k",
+          "date": "2027-10-31",
+          "verified": true
+        },
+        "1": {
+          "routeId": "tcs-amsterdam-marathon-2027-half",
+          "date": "2027-10-31",
+          "verified": true
+        },
+        "2": {
+          "routeId": "tcs-amsterdam-marathon-2027-75k",
+          "date": "2027-10-30",
+          "verified": true
+        }
+      }
+    },
+    "49-warsaw-marathon-2027": {
+      "eventId": "49-warsaw-marathon-2027",
+      "checkedAt": "2026-11-21T00:20:00Z",
+      "status": "verified",
+      "sources": [
+        {
+          "url": "https://maratonwarszawski.com/en/news/registration-is-now-open-for-the-49th-warsaw-marathon/",
+          "status": "read",
+          "verification": "official-2027-event-information"
+        }
+      ],
+      "eventPeriod": {
+        "startDate": "2027-09-26",
+        "endDate": "2027-09-26",
+        "verified": true
+      },
+      "routes": {
+        "0": {
+          "routeId": "49-warsaw-marathon-2027-42k",
+          "date": "2027-09-26",
+          "verified": true
+        }
+      }
+    },
+    "run-rome-marathon-2027": {
+      "eventId": "run-rome-marathon-2027",
+      "checkedAt": "2026-11-21T00:20:00Z",
+      "status": "verified",
+      "sources": [
+        {
+          "url": "https://www.runromethemarathon.com/en/home-2025-en-2/faq-maratona/",
+          "status": "read",
+          "verification": "official-2027-event-information"
+        },
+        {
+          "url": "https://www.runromethemarathon.com/wp-content/uploads/2026/04/RRTM27-regolamento-inglese-23-4-2026.pdf",
+          "status": "read",
+          "verification": "official-2027-event-information"
+        }
+      ],
+      "eventPeriod": {
+        "startDate": "2027-03-14",
+        "endDate": "2027-03-14",
+        "verified": true
+      },
+      "routes": {
+        "0": {
+          "routeId": "run-rome-marathon-2027-42k",
+          "date": "2027-03-14",
+          "verified": true
+        }
+      },
+      "note": "Offizielle FAQ und Reglement bestätigen 14.03.2027, 08:30 Uhr, ca. 20 m Höhenunterschied."
+    },
+    "copenhagen-marathon-2027": {
+      "eventId": "copenhagen-marathon-2027",
+      "checkedAt": "2026-11-21T00:20:00Z",
+      "status": "verified",
+      "sources": [
+        {
+          "url": "https://copenhagenmarathon.dk/en/",
+          "status": "read",
+          "verification": "official-2027-event-information"
+        },
+        {
+          "url": "https://visitorservice.kk.dk/en/events/copenhagen-marathon?language=en",
+          "status": "read",
+          "verification": "official-2027-event-information"
+        }
+      ],
+      "eventPeriod": {
+        "startDate": "2027-05-09",
+        "endDate": "2027-05-09",
+        "verified": true
+      },
+      "routes": {
+        "0": {
+          "routeId": "copenhagen-marathon-2027-42k",
+          "date": "2027-05-09",
           "verified": true
         }
       }
