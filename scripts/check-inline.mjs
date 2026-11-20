@@ -94,8 +94,12 @@ if (!html.includes("window.trailOwnerPushTestClick=async function(event)")) {
 for (const required of ["claim_event_push_rate_limit", "get_trail_push_vapid_config", "sendNotification", "event_push_subscriptions"]) {
   if (!ownerTestPushFunction.includes(required)) throw new Error("Owner push test endpoint is missing: " + required);
 }
-if (!appVapidKey || !ownerTestPushFunction.includes('const VAPID_PUBLIC_KEY = "' + appVapidKey + '"')) {
-  throw new Error("The owner push test VAPID key does not match the app subscription key.");
+if (!ownerTestPushFunction.includes("!config?.public_key") ||
+    !ownerTestPushFunction.includes("webpush.setVapidDetails(config.subject, config.public_key, config.private_key)")) {
+  throw new Error("The owner push test must use the public VAPID key returned by the secure configuration RPC.");
+}
+if (ownerTestPushFunction.includes("VAPID_PUBLIC_KEY =")) {
+  throw new Error("The owner push test must not hardcode a VAPID key.");
 }
 
 if (!html.includes("sold-out-stamp") || !html.includes("soldOutRouteBadge(r)")) throw new Error("Sold-out routes must retain their red overview stamp.");
