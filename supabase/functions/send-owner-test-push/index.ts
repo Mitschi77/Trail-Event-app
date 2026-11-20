@@ -79,6 +79,10 @@ Deno.serve(async (req: Request) => {
       }
     }
   }
-  const noSubscriptions = sent === 0 && failed === 0 && removed > 0;
-  return json({ sent, removed, failed, noSubscriptions }, sent > 0 || noSubscriptions ? 200 : 502);
+  // A missing initial subscription list is handled above. If subscriptions
+  // existed but expired, return the removal count so the UI can ask for re-registration.
+  return json(
+    { sent, removed, failed, noSubscriptions: false },
+    sent > 0 || (removed > 0 && failed === 0) ? 200 : 502,
+  );
 });
