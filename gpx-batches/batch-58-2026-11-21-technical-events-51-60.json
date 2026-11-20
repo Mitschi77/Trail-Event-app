@@ -1,0 +1,252 @@
+{
+  "batch": 58,
+  "checkedAt": "2026-11-21",
+  "scope": "Technical GPX availability and official route-version review for top-level events 51–60",
+  "safetyRules": [
+    "Existing GPX files remain valid until an official replacement is actually downloaded, parsed and validated.",
+    "No GPX files were deleted, overwritten or replaced.",
+    "An interactive map or GPX button does not count as a validated local GPX file.",
+    "Historic tracks remain historical and must not be represented as current 2027 courses."
+  ],
+  "checks": [
+    {
+      "eventOrder": 51,
+      "event": "Schluchthof Backyard",
+      "officialSource": "https://www.schluchthof.de/",
+      "gpxStatus": "official-site-still-returns-502; no-route-or-GPX-validation-possible",
+      "binaryDownloaded": false,
+      "parsed": false,
+      "metricsCompared": false,
+      "detail": "Official site returned 502 Bad Gateway again. No GPX status can be established; this is an access failure from the inspection path, not proof that the organizer website or GPX is unavailable."
+    },
+    {
+      "eventOrder": 52,
+      "event": "Tschirgant Skyrun",
+      "officialSources": [
+        "https://tschirgant-sky.run/",
+        "https://tschirgant-sky.run/trailrun-tirol-strecken/"
+      ],
+      "date": "2027-06-12",
+      "routes": [
+        "TS16 Adventure",
+        "TS26 Experience",
+        "TS42 Marathon",
+        "TS52 Ultra"
+      ],
+      "gpxStatus": "four-official-race-formats-confirmed; no-official-GPX-download-link-visible-on-race-or-course-overview-pages",
+      "binaryDownloaded": false,
+      "parsed": false,
+      "metricsCompared": false,
+      "detail": "Current official homepage and course overview confirm four routes, not only TS52. Children's side event has separate 200m/400m/800m/1200m races and should not be conflated with the four main distances. Third-party GPX offers were not accepted as official."
+    },
+    {
+      "eventOrder": 53,
+      "event": "Backyard Ultra (group)",
+      "routes": [
+        {
+          "name": "Hofer Backyard Ultra",
+          "officialSource": "https://www.hofer-backyard-ultra.de/ausschreibung-2027/",
+          "date": "2027-06-26",
+          "distanceKm": 6.706,
+          "elevationGainHmApprox": 80,
+          "gpxStatus": "official-page-links-to-Komoot-with-GPX-download",
+          "binaryDownloaded": false,
+          "parsed": false,
+          "metricsCompared": false,
+          "detail": "Correction to prior checkpoint: official 2027 race page explicitly confirms 6.706km / approx. 80hm and links a Komoot route with GPX download. Course binary still not downloaded/parsed."
+        },
+        {
+          "name": "Fränkischer Backyard",
+          "gpxStatus": "not-verified; official-site-previously-returned-403",
+          "binaryDownloaded": false,
+          "parsed": false,
+          "metricsCompared": false,
+          "detail": "No 2027 official GPX confirmed."
+        },
+        {
+          "name": "Tuttlinger Backyard Ultra",
+          "gpxStatus": "past-event; no-2027-date-or-GPX-confirmed",
+          "binaryDownloaded": false,
+          "parsed": false,
+          "metricsCompared": false
+        },
+        {
+          "name": "Kuckuck Backyard Ultra",
+          "gpxStatus": "2026-event-past; GPX-was-sent-by-race-email; public-Komoot-is-2025",
+          "binaryDownloaded": false,
+          "parsed": false,
+          "metricsCompared": false,
+          "detail": "Do not reuse the 2025 public Komoot route as a current course."
+        }
+      ]
+    },
+    {
+      "eventOrder": 54,
+      "event": "La Sportiva Lavaredo Ultra Trail by UTMB",
+      "officialSources": [
+        "https://lavaredo.utmb.world/races/lavaredo50k",
+        "https://lavaredo.utmb.world/races/lavaredo80k",
+        "https://lavaredo.utmb.world/races/lavaredo120k",
+        "https://lavaredo.utmb.world/races/lavaredo20k",
+        "https://lavaredo.utmb.world/races/lavaredo10k"
+      ],
+      "date": "2027-06-23/27",
+      "routes": [
+        {
+          "name": "Lavaredo 50K",
+          "distanceKm": 50,
+          "elevationGainHm": 2600,
+          "date": "2027-06-25"
+        }
+      ],
+      "gpxStatus": "2027-page-has-Map-plus-GPX-but-current-50K-GPX-link-resolves-to-2024-file; stale-version-confirmed",
+      "directUrlsAttempted": 1,
+      "binaryDownloaded": false,
+      "parsed": false,
+      "metricsCompared": false,
+      "detail": "Official 2027 Lavaredo 50K page confirms 50km / 2600m+ and 25 June 2027, but its GPX track link points to a pdf.utmb.world path containing /2024/. The web viewer rejects application/octet-stream, so no bytes were downloaded. Keep 2024 GPX historical; do not label it 2027. Need repeat this check for the other four distances."
+    },
+    {
+      "eventOrder": 55,
+      "event": "Austria Backyard Ultra",
+      "officialSources": [
+        "https://www.austriabackyardultra.com/en/upcoming",
+        "https://www.austriabackyardultra.com/frankenmarkt",
+        "https://www.austriabackyardultra.com/kirchdorf"
+      ],
+      "routes": [
+        {
+          "name": "Frankenmarkt",
+          "date": "2027-06-19",
+          "gpxStatus": "official-page-announces-new-location-and-new-route; no-direct-file-url-confirmed"
+        },
+        {
+          "name": "Kirchdorf",
+          "date": "2027-09-25",
+          "gpxStatus": "official-event-listing-confirmed; previously recorded Garmin Connect course needs current-edition verification"
+        },
+        {
+          "name": "Kirchdorf 7+1",
+          "date": "2027-09-25",
+          "gpxStatus": "same-Garmin-course-link-as-Kirchdorf; verify whether it is a distinct route variant"
+        }
+      ],
+      "binaryDownloaded": false,
+      "parsed": false,
+      "metricsCompared": false,
+      "detail": "Official series calendar confirms Frankenmarkt on 19 June 2027 with a new route, and Kirchdorf in Tirol on 25 September 2027. Do not assume the older Garmin route applies to the new Frankenmarkt course; re-verify the two Kirchdorf entries for duplication."
+    },
+    {
+      "eventOrder": 56,
+      "event": "Kaiserkrone Trail",
+      "officialSource": "https://www.wilderkaiser.info/en/kaiserkrone-trail.html",
+      "date": "2027-06-25/26",
+      "routes": [
+        "ULTRA",
+        "SKYRACE",
+        "PANORAMA",
+        "MEDIUM",
+        "SHORT",
+        "KIDS"
+      ],
+      "gpxStatus": "official-2027-event-page-links-six-interactive-route-maps-with-GPX-downloads",
+      "binaryDownloaded": false,
+      "parsed": false,
+      "metricsCompared": false,
+      "detail": "Current organizer page confirms six categories and official route map/GPX download links for each. The five adult course pages plus KIDS route map are linked. Actual files were not downloaded or parsed. Prior checkpoint omitted the KIDS route map link, though kids event is a separate competition."
+    },
+    {
+      "eventOrder": 57,
+      "event": "Stubai Ultra Trail by UTMB",
+      "officialSources": [
+        "https://stubai.utmb.world/races/stubai100",
+        "https://stubai.utmb.world/races/stubai-ultra",
+        "https://stubai.utmb.world/races/stubai-classic",
+        "https://stubai.utmb.world/races/stubai-express",
+        "https://stubai.utmb.world/races/stubai-sunnenseitn-trail",
+        "https://stubai.utmb.world/races/kids-trail"
+      ],
+      "date": "2027-07-02/03",
+      "gpxStatus": "five-official-race-pages-have-Map-plus-GPX; no-direct-GPX-binary-retrieved; kids-trail-no-GPX-route",
+      "binaryDownloaded": false,
+      "parsed": false,
+      "metricsCompared": false,
+      "detail": "Official UTMB race pages show Map + GPX for Stubai100, Ultra, Classic, Express and Sunnenseitn. Kids Trail is a separate short-format event and has no GPX route."
+    },
+    {
+      "eventOrder": 58,
+      "event": "Brixen marathon / Dolomites Ultra Trail",
+      "officialSource": "https://www.brixenmarathon.com/dolomites-ultra-trail/",
+      "gpxStatus": "historic-only-last-edition-2022; event-cancelled-after-2022",
+      "historicalRoute": {
+        "distanceKm": 84,
+        "elevationGainHm": 4728,
+        "date": "2022-07-02",
+        "gpxUrl": "https://www.brixenmarathon.com/info/dolomites-ultra-trail-84km.gpx"
+      },
+      "binaryDownloaded": false,
+      "parsed": false,
+      "metricsCompared": false,
+      "detail": "Retain 2022 GPX as historical record only. Do not represent as a current 2027 event or course."
+    },
+    {
+      "eventOrder": 59,
+      "event": "U.TLW",
+      "officialSource": "https://utlw.de/de/",
+      "gpxStatus": "no-current-edition-confirmed; official-site-still-refers-to-2025; route-links-previously-returned-404",
+      "binaryDownloaded": false,
+      "parsed": false,
+      "metricsCompared": false,
+      "detail": "No 2027 date or working current route/GPX confirmed. Existing route names 23K Osser-Riese and 54K König vom Bayerwald are historical organizer naming; keep status unconfirmed."
+    },
+    {
+      "eventOrder": 60,
+      "event": "Großglockner Mountain Run",
+      "officialSources": [
+        "https://grossglockner-mountainrun.at/",
+        "https://grossglockner-mountainrun.at/strecke/"
+      ],
+      "date": "2027-07-04",
+      "route": {
+        "distanceKm": 13.3,
+        "elevationGainHm": 1300
+      },
+      "gpxStatus": "2027-date-distance-elevation-confirmed; no-official-GPX-link-found",
+      "binaryDownloaded": false,
+      "parsed": false,
+      "metricsCompared": false,
+      "detail": "Organizer's 2027 event page/route page could not be fetched by the current web viewer; prior checkpoint contains official event data for 13.3km / 1300m on 4 July 2027. Third-party GPX tracks were not used."
+    }
+  ],
+  "summary": {
+    "eventsCovered": 10,
+    "directGpxUrlAttempts": 1,
+    "localBinaryDownloads": 0,
+    "tracksParsed": 0,
+    "metricsCompared": 0,
+    "officialInteractiveGPXRouteCollections": 2,
+    "criticalFindings": [
+      "Tschirgant Skyrun 2027 officially has four main race distances TS16/TS26/TS42/TS52; previous app checkpoint only mentioned TS52.",
+      "Hofer Backyard Ultra 2027 official page does provide a Komoot route with GPX download, correcting previous status.",
+      "Lavaredo 50K 2027 page still links to a GPX URL dated 2024; reject as stale.",
+      "Kaiserkrone 2027 official page links six interactive maps with GPX downloads, including KIDS.",
+      "Austria Backyard 2027 confirms Frankenmarkt new course 19 June and Kirchdorf 25 September; old course link needs validation."
+    ],
+    "noGpxFilesChanged": true,
+    "noAppRuntimeDataChanged": true
+  },
+  "followUps": [
+    "Retry Schluchthof official site later and request GPX directly if still unavailable.",
+    "Tschirgant: inspect all four routes for organizer GPX downloads or request from organizer; retain children's race distances separately.",
+    "Hofer: export GPX from official linked Komoot route and parse actual length/ascent.",
+    "Lavaredo: check all five 2027 course page GPX URLs for embedded year; retain old files as historic until replacements validated.",
+    "Austria Backyard: obtain new Frankenmarkt GPX; compare Kirchdorf and Kirchdorf 7+1 to determine whether they are duplicate records or separate course formats.",
+    "Kaiserkrone: download and parse all six official 2027 map exports, keeping KIDS separate from adult route list.",
+    "Stubai: retrieve five current official UTMB GPX exports and validate each; Kids route no GPX.",
+    "Brixen: maintain cancelled/historical status; do not reactivate without a new organizer announcement.",
+    "U.TLW: verify 2027 event existence before reactivating.",
+    "Großglockner Mountain Run: request official GPX when organizer publishes it; do not substitute third-party tracks."
+  ],
+  "noGpxFilesChanged": true,
+  "noAppRuntimeDataChanged": true
+}
