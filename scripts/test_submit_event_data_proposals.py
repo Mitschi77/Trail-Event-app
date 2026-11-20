@@ -49,6 +49,9 @@ class ProposalSubmissionTests(unittest.TestCase):
         self.assertIn("order by jsonb_build_array(", sql)
         self.assertIn("grant execute on function public.ingest_event_change_proposals(jsonb) to service_role", sql)
         self.assertIn("and status = 'pending'", sql)
+        self.assertIn("v_source_url := coalesce(v_item_payload ->> 'sourceUrl', '')", sql)
+        self.assertIn("coalesce(payload ->> 'sourceUrl', '') = v_source_url", sql)
+        self.assertIn("v_field_name, v_source_url", sql)
 
     @patch.object(proposals.time, "sleep")
     @patch.object(proposals.urllib.request, "urlopen")
