@@ -1,0 +1,219 @@
+{
+  "batch": 56,
+  "checkedAt": "2026-11-21",
+  "scope": "Official course version and GPX availability review for top-level events 31–40",
+  "status": "audit-checkpoint-no-binary-parsing",
+  "safetyRules": [
+    "Existing GPX files remain valid until an official replacement is actually downloaded, parsed and validated.",
+    "No existing GPX files were deleted, overwritten or replaced.",
+    "A map panel, download control, PDF or participant-only GPX entitlement is not counted as a successfully retrieved GPX binary.",
+    "Do not promote historic 2026 files to 2027 courses."
+  ],
+  "checks": [
+    {
+      "eventOrder": 31,
+      "event": "Garda Trentino Trail Extra",
+      "officialSource": "https://www.gardatrentinotrail.it/de-de/p/32/garda-trentino-trail-extra",
+      "gpxStatus": "Race-GPX-navigation-present; no direct 2027-GPX-binary-url-exposed",
+      "distanceKm": 100,
+      "elevationConflictHm": {
+        "racePage": 7000,
+        "regulationApprox": 5800
+      },
+      "binaryDownloaded": false,
+      "parsed": false,
+      "metricsCompared": false,
+      "detail": "Official 2027 page shows a Race GPX navigation item and preliminary Wikiloc map, but no direct downloadable GPX URL was exposed. Critical official-source conflict: page summary says 7,000m while 2027 regulation says about 5,800m positive gain. Do not choose one as final without organizer clarification or GPX validation."
+    },
+    {
+      "eventOrder": 32,
+      "event": "Garda Trentino Trail Extra 100",
+      "officialSource": "https://www.gardatrentinotrail.it/de-de/p/32/garda-trentino-trail-extra",
+      "gpxStatus": "probable-duplicate-of-event-31",
+      "binaryDownloaded": false,
+      "parsed": false,
+      "metricsCompared": false,
+      "detail": "Same official event page, event name and 100km format as event 31. Treat as likely duplicate database record pending comparison of source data and IDs. Do not maintain two separate courses unless a distinct event is evidenced."
+    },
+    {
+      "eventOrder": 33,
+      "event": "Garda Trentino Trail",
+      "officialSource": "https://www.gardatrentinotrail.it/de-de/p/13/garda-trentino-trail",
+      "gpxStatus": "historic-2024-GPX-only-in-prior-check; no-2027-binary-confirmed",
+      "distanceKm": 75,
+      "elevationGainHm": 4000,
+      "binaryDownloaded": false,
+      "parsed": false,
+      "metricsCompared": false,
+      "detail": "2027 regulation confirms 75km / approximately 4,000m positive gain. Previously known direct Race GPX link points to Garda_Trentino_Trail_2024.gpx and is stale; do not reuse as 2027 course."
+    },
+    {
+      "eventOrder": 34,
+      "event": "MOUNTAINMAN Reit im Winkl",
+      "officialSource": "https://mountainman.de/trailrunning-events/alps/reit-im-winkl/streckendetails-reit-im-winkl/",
+      "registrationSource": "https://mountainman.de/produkt/anmeldung-mountainman-reit-im-winkl-25-09-2027/",
+      "gpxStatus": "official-Komoot-course-download-via-organizer-voucher; no-direct-GPX-binary-url",
+      "routes": [
+        {
+          "name": "XXL",
+          "distanceKm": 73,
+          "elevationGainHm": 3200
+        },
+        {
+          "name": "XL",
+          "distanceKm": 52,
+          "elevationGainHm": 2000
+        },
+        {
+          "name": "L",
+          "distanceKm": 40,
+          "elevationGainHm": 1500
+        },
+        {
+          "name": "M",
+          "distanceKm": 26,
+          "elevationGainHm": 950
+        },
+        {
+          "name": "S",
+          "distanceKm": 11,
+          "elevationGainHm": 300
+        }
+      ],
+      "binaryDownloaded": false,
+      "parsed": false,
+      "metricsCompared": false,
+      "detail": "Organizer confirms five distances and says participants can download complete routes through Komoot using a voucher code. No direct GPX file bytes were retrieved."
+    },
+    {
+      "eventOrder": 35,
+      "event": "GutsMuths-Rennsteiglauf Supermarathon",
+      "officialSource": "https://www.rennsteiglauf.de/wettkampf/strecken/supermarathon/",
+      "gpxStatus": "official-2027-route-description-and-profile; downloadable-PDF-is-2026; no-current-GPX-found",
+      "distanceKm": 73.9,
+      "elevationGainHm": 1874,
+      "elevationLossHm": 1386,
+      "binaryDownloaded": false,
+      "parsed": false,
+      "metricsCompared": false,
+      "detail": "Official 2027 page confirms 73.9km. Outdooractive-derived profile reports 1,874m ascent and 1,386m descent. Download Streckenführung link resolves to a 2026 PDF, not a 2027 GPX. Keep 2026 file historical."
+    },
+    {
+      "eventOrder": 36,
+      "event": "Greenloop Backyard Ultra",
+      "officialSource": "https://www.greenloopbackyard.de/",
+      "gpxStatus": "course-loop-confirmed; no-GPX-published",
+      "date": "2027-05-15",
+      "distanceKm": 6.706,
+      "binaryDownloaded": false,
+      "parsed": false,
+      "metricsCompared": false,
+      "detail": "Organizer confirms a 6.706km hourly loop and date 15 May 2027. No public GPX download found."
+    },
+    {
+      "eventOrder": 37,
+      "event": "Schwarzach Trail",
+      "officialSource": "https://www.triundrun.at/de/",
+      "historicSource": "https://www.triundrun.at/de/events/schwarzach-trail-2026/allgemeine-infos-zum-schwarzach-trail",
+      "gpxStatus": "2027-event-announced; detailed-route-data-not-yet-published; 2026-GPX-is-stale",
+      "binaryDownloaded": false,
+      "parsed": false,
+      "metricsCompared": false,
+      "detail": "Organizer homepage lists Schwarzach Trail 2027 for 22 May and says details coming soon. The K47/K33/K17 GPX page is explicitly 2026; do not reuse those tracks for 2027."
+    },
+    {
+      "eventOrder": 38,
+      "event": "Ultra X Finland",
+      "officialSource": "https://ultra-x.co/ultra-marathon-races/",
+      "gpxStatus": "2027-edition-not-confirmed-by-organizer; third-party-calendar-entry-is-estimated",
+      "binaryDownloaded": false,
+      "parsed": false,
+      "metricsCompared": false,
+      "detail": "A Finnish race calendar lists a possible 27 June 2027 date and 110/60/50/25km, but explicitly says the date is estimated and not officially received. No organizer-confirmed 2027 event or GPX was found. Do not treat the third-party listing as confirmed event data."
+    },
+    {
+      "eventOrder": 39,
+      "event": "Mountain Ultra Trail by UTMB",
+      "officialSources": [
+        "https://mut.utmb.world/en/races/mutmiler",
+        "https://mut.utmb.world/races/mut100",
+        "https://mut.utmb.world/races/mut60",
+        "https://mut.utmb.world/races/mut45",
+        "https://mut.utmb.world/races/mutchallenge",
+        "https://mut.utmb.world/races/mutlite"
+      ],
+      "gpxStatus": "six-official-race-pages-have-Map-plus-GPX-interface; no-direct-GPX-binary-retrieved",
+      "routes": [
+        {
+          "name": "MUT Miler",
+          "distanceKm": 168,
+          "elevationGainHm": 8014,
+          "date": "2027-05-28"
+        }
+      ],
+      "binaryDownloaded": false,
+      "parsed": false,
+      "metricsCompared": false,
+      "detail": "MUT Miler page shows 168km / 8,014m+ and a Map + GPX interface, but explicitly says aid stations and official route data are still to be confirmed. Do not consider displayed metrics or interface a validated final GPX. Other five race pages need individual route-data confirmation."
+    },
+    {
+      "eventOrder": 40,
+      "event": "MOUNTAINMAN Berchtesgaden – WATZ",
+      "officialSource": "https://mountainman.de/trailrunning-events/alps/berchtesgaden/",
+      "gpxStatus": "organizer-confirms-GPX-download-included-with-registration; files-not-publicly-accessible",
+      "routes": [
+        {
+          "name": "WATZ Ultimate",
+          "distanceKm": 111,
+          "elevationGainHm": 5300,
+          "stages": 4
+        },
+        {
+          "name": "WATZ Double",
+          "distanceKm": 57,
+          "elevationGainHm": 2500,
+          "stages": 2
+        },
+        {
+          "name": "WATZ Final",
+          "distanceKm": 25,
+          "elevationGainHm": 1300,
+          "stages": 1
+        }
+      ],
+      "binaryDownloaded": false,
+      "parsed": false,
+      "metricsCompared": false,
+      "detail": "Organizer's 2027 page explicitly includes GPX track downloads in the entry package for Ultimate, Double and Final. Tracks appear participant/registration-provided; no public direct file URLs were exposed. Associate stage files to correct formats when obtained."
+    }
+  ],
+  "summary": {
+    "eventsCovered": 10,
+    "individualDirectGpxBinaryDownloadsAttempted": 0,
+    "binaryDownloaded": 0,
+    "tracksParsed": 0,
+    "metricsCompared": 0,
+    "officialGpXInterfacesOrParticipantDownloadEntitlements": 3,
+    "criticalFindings": [
+      "Events 31 and 32 likely duplicate the same Garda Trentino Trail Extra 100 event.",
+      "Garda Extra 100 official elevation conflict: 7,000m summary vs about 5,800m regulation.",
+      "Rennsteig route PDF currently resolves to 2026, not 2027.",
+      "Schwarzach Trail 2027 announced but details still pending; 2026 tracks remain historical.",
+      "Ultra X Finland 2027 is only an estimated third-party listing, not organizer-confirmed.",
+      "MUT Miler route data still marked to be confirmed."
+    ],
+    "noGpxFilesChanged": true,
+    "noAppRuntimeDataChanged": true
+  },
+  "followUps": [
+    "Ask Garda Trentino organizer to resolve 7,000m vs 5,800m and verify whether event 31/32 are duplicate records; then obtain 2027 GPX.",
+    "Do not use 2024 Garda Trail GPX as 2027.",
+    "Obtain MOUNTAINMAN Reit im Winkl Komoot voucher or official GPX export and validate all five tracks.",
+    "Recheck Rennsteig official 2027 route download; retain 2026 PDF as historical only.",
+    "Ask Greenloop for official GPX or wait for publication.",
+    "Recheck Schwarzach after organizer publishes 2027 details; replace no old files until new tracks validated.",
+    "Require organizer confirmation before retaining Ultra X Finland 2027 as a confirmed event.",
+    "Recheck each of the six MUT race pages for confirmed route data and final GPX; prioritize MUT Miler status.",
+    "Obtain WATZ stage GPX files through participant download and validate stage composition for Ultimate, Double and Final."
+  ]
+}
