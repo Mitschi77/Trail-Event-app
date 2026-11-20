@@ -15,7 +15,7 @@
     {
       "order": 127,
       "name": "HOKA Val d'Aran by UTMB",
-      "gpxStatus": "Three direct 2027 GPX files remain saved for VDA 163K, TDL 75K and PDA 55K. They are candidates pending actual XML download/trackpoint validation. For CDH 110K, EXP 30K, SKY 18K, SKY Promises and Vielha 10K, current official downloads are 2026 files; keep them as last available historical versions until 2027 replacements are checked.",
+      "gpxStatus": "2027 official race pages now explicitly list GPX download panels. VDA 163K, TDL 75K and PDA 55K have stored direct URL candidates, but no binary could be fetched here for XML/trackpoint validation. Important version warning: VDA stored URL is in a directory labelled 'GPX 2026' despite filename VDA_2027; do not certify it as a verified 2027 GPX. An independent 2027 course analysis reports TDL file hash and measurements, but this is not a substitute for importing the organizer's bytes. CDH, EXP, SKY, SKY Promises and Vielha 10K also need current 2027 direct files; older 2026 files remain preserved as historical versions.",
       "source": "https://valdaran.utmb.world/race/tracks",
       "downloads": [
         {
@@ -31,8 +31,54 @@
           "url": "https://pdf.utmb.world/raw/upload/v1790060783/valdaran/Races/GPX%202026%20DEFINTIVOS%20EVENTO/NORMALES/PDA_2027_COLOMERS_a0831fb556.gpx"
         }
       ],
-      "followUp": "Import the three confirmed 2027 files; wait for updated files for remaining five races.",
-      "retentionRule": "Keep 2026 files for CDH/EXP/SKY/SKY Promises/Vielha as historical versions; do not overwrite/delete when 2027 replacements arrive. Keep three 2027 candidates as separate versions until parsed."
+      "followUp": "Obtain direct 2027 GPX downloads for all seven race courses, preferably via organizer/UTMB page or participant export; validate binary bytes and replace none of the historical files.",
+      "retentionRule": "Never remove/overwrite prior-year GPX. Keep each version with year, source, checksum and validation status; promote new version only after its bytes have been downloaded and checked.",
+      "checkedAt": "2026-11-20",
+      "official2027Metrics": [
+        {
+          "route": "VDA 163K",
+          "distanceKm": 163,
+          "elevationGainHm": 10000,
+          "source": "https://valdaran.utmb.world/races/vda",
+          "sourceStatus": "official race page"
+        },
+        {
+          "route": "CDH 110K",
+          "distanceKm": 110,
+          "elevationGainHm": 6400,
+          "source": "https://valdaran.utmb.world/",
+          "sourceStatus": "official event page"
+        },
+        {
+          "route": "TDL 75K",
+          "distanceKm": 75,
+          "elevationGainHm": 5100,
+          "source": "https://valdaran.utmb.world/races/tdl",
+          "sourceStatus": "official race page"
+        },
+        {
+          "route": "PDA 55K",
+          "distanceKm": 55,
+          "elevationGainHm": 3300,
+          "source": "https://valdaran.utmb.world/",
+          "sourceStatus": "official event page"
+        }
+      ],
+      "gpxTechnicalChecks": {
+        "status": "not-yet-validated",
+        "reason": "External GPX binary URLs are inaccessible to current repository connector and web fetch; no file bytes received, no XML parse, no trackpoint count, no calculated distance/elevation.",
+        "requiredChecks": [
+          "download organizer binary",
+          "verify GPX XML well-formedness",
+          "count trackpoints and segments",
+          "calculate geodesic track distance",
+          "calculate ascent/descent from elevation samples",
+          "compare calculated metrics with official 2027 page",
+          "record SHA-256 and checkedAt"
+        ],
+        "vdaWarning": "The saved candidate path contains the directory label GPX 2026 while filename says VDA_2027. Require organizer-side confirmation or fresh 2027 export.",
+        "tdlNote": "Independent third-party analysis reports a 2027 organizer GPX was analysed; use only as a cross-check, not as source file validation in this repository."
+      }
     },
     {
       "order": 128,
