@@ -121,9 +121,54 @@
     {
       "order": 119,
       "name": "Puerto Vallarta México by UTMB",
-      "gpxStatus": "Five official 2027 UTMB Map + GPX pages confirmed (Hikuri 81K, Nakawé 53K, Haramara 37K, Ereno 20K, Pata Salada 5K). Direct files not yet parsed.",
+      "gpxStatus": "Official UTMB 2027 pages confirm five race routes and their advertised distances/elevation. The individual Hikuri 81K page is accessible; third-party independent route analysis reports measured route lengths differing slightly from organizer's rounded distances. This is a measurement distinction, not evidence of an outdated course. The official direct GPX bytes have not yet been obtained or parsed; do not mark any route technically validated.",
       "source": "https://puerto-vallarta.utmb.world/races",
-      "followUp": "Export each route from its official Map + GPX panel."
+      "followUp": "Extract the actual Map + GPX downloads from all five Puerto Vallarta UTMB race pages and validate XML/trackpoints, measured distance and ascent; preserve any older GPX versions separately.",
+      "checkedAt": "2026-11-20",
+      "official2027CourseData": {
+        "source": "https://puerto-vallarta.utmb.world/",
+        "eventDate": "2027-03-04/2027-03-06",
+        "routes": [
+          {
+            "name": "Hikuri 81K",
+            "distanceKm": 81,
+            "elevationGainHm": 3900,
+            "racePage": "https://puerto-vallarta.utmb.world/races/Hikuri"
+          },
+          {
+            "name": "Nakawé 53K",
+            "distanceKm": 53,
+            "elevationGainHm": 2500
+          },
+          {
+            "name": "Haramara 37K",
+            "distanceKm": 37,
+            "elevationGainHm": 1600
+          },
+          {
+            "name": "Ereno 20K",
+            "distanceKm": 20,
+            "elevationGainHm": 1050
+          },
+          {
+            "name": "Pata Salada 5K",
+            "distanceKm": 5,
+            "elevationGainHm": 200
+          }
+        ],
+        "note": "Official UTMB 2027 event and all five course values confirmed. Third-party route tracing reports mapped distances 80.2/53.1/37.2/20.3/4.9 km, while organizer advertises rounded 81/53/37/20/5 km. Keep organizer distances as advertised values; use parsed GPX only for separate measured fields."
+      },
+      "gpxTechnicalChecks": {
+        "status": "official-course-data-verified; binary-not-fetched",
+        "officialRoutes": 5,
+        "downloadedFiles": 0,
+        "xmlParsed": false,
+        "trackpointCount": null,
+        "calculatedDistanceKm": null,
+        "calculatedElevationHm": null,
+        "note": "Third-party measured trace lengths are useful only as a cross-check. They are not a substitute for fetching the official UTMB GPX file and independently parsing its trackpoints."
+      },
+      "retentionRule": "Do not overwrite or delete previous GPX versions. Add new official 2027 versions only after binary download and technical validation."
     },
     {
       "order": 120,
