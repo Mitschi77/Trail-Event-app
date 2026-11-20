@@ -91,7 +91,10 @@ def apply_proposals(feed: dict, proposals: list[dict]) -> tuple[dict, dict]:
             if field not in {"startDate", "endDate"}:
                 report["skipped"].append({"id": proposal_id, "reason": "unsupported-event-field"})
                 continue
-            period = event.setdefault("eventPeriod", {})
+            period = event.get("eventPeriod")
+            if not isinstance(period, dict):
+                period = {}
+                event["eventPeriod"] = period
             current = period.get(field)
             if current == new_value:
                 seen_mutations.add(target_key)
