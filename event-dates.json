@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-20T22:15:00+01:00",
+  "updatedAt": "2026-11-20T22:40:00+01:00",
   "schemaVersion": 3,
   "events": {
     "la-corsa-della-bora": {
@@ -1827,18 +1827,48 @@
     },
     "stubai-ultra-trail": {
       "eventId": "stubai-ultra-trail",
-      "checkedAt": "2026-11-18T14:25:00.201965+00:00",
+      "checkedAt": "2026-11-20T22:40:00+01:00",
       "status": "verified",
       "sources": [
         {
           "url": "https://stubai.utmb.world/de",
           "status": "read",
-          "verification": "official-2027-page"
+          "verification": "official-utmb-2027-race-page"
         },
         {
           "url": "https://stubai.utmb.world/de/races",
           "status": "read",
-          "verification": "official-2027-race-list"
+          "verification": "official-utmb-2027-race-page"
+        },
+        {
+          "url": "https://stubai.utmb.world/races/stubai100",
+          "status": "read",
+          "verification": "official-utmb-2027-race-page"
+        },
+        {
+          "url": "https://stubai.utmb.world/races/stubai-ultra",
+          "status": "read",
+          "verification": "official-utmb-2027-race-page"
+        },
+        {
+          "url": "https://stubai.utmb.world/races/stubai-classic",
+          "status": "read",
+          "verification": "official-utmb-2027-race-page"
+        },
+        {
+          "url": "https://stubai.utmb.world/races/stubai-express",
+          "status": "read",
+          "verification": "official-utmb-2027-race-page"
+        },
+        {
+          "url": "https://stubai.utmb.world/de/races/stubai-sunnenseitn-trail",
+          "status": "read",
+          "verification": "official-utmb-2027-race-page"
+        },
+        {
+          "url": "https://stubai.utmb.world/races/kids-trail",
+          "status": "read",
+          "verification": "official-utmb-2027-race-page"
         }
       ],
       "eventPeriod": {
@@ -1848,29 +1878,40 @@
       },
       "routes": {
         "0": {
-          "routeId": "stubai-ultra-57-4200",
-          "date": "2027-07-03",
-          "verified": true
-        },
-        "1": {
           "routeId": "stubai-100-101-5800",
           "date": "2027-07-02",
-          "verified": true
+          "verified": true,
+          "fallback": false
+        },
+        "1": {
+          "routeId": "stubai-ultra-57-4200",
+          "date": "2027-07-03",
+          "verified": true,
+          "fallback": false
         },
         "2": {
           "routeId": "stubai-classic-31-2300",
           "date": "2027-07-03",
-          "verified": true
+          "verified": true,
+          "fallback": false
         },
         "3": {
           "routeId": "stubai-express-23-1240",
           "date": "2027-07-03",
-          "verified": true
+          "verified": true,
+          "fallback": false
         },
-        "5": {
+        "4": {
           "routeId": "stubai-kids-trail-2027",
           "date": "2027-07-03",
-          "verified": true
+          "verified": true,
+          "fallback": false
+        },
+        "5": {
+          "routeId": "stubai-sunnenseitn-trail-14-700",
+          "date": "2027-07-02",
+          "verified": true,
+          "fallback": false
         }
       }
     },
