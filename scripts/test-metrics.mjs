@@ -567,7 +567,7 @@ function makeActivityStorageHarness({ failRecordsWrite = false } = {}) {
     "queuePlannerCloudSave", "initialAttempts", "initialRecords",
     "let runAttempts=initialAttempts,runRecords=initialRecords;" +
     activityStorageSource +
-    ";return {runAttempts,runRecords};");
+    ";queuePlannerCloudSave();return {runAttempts,runRecords};");
   const nextAttempts = { "0:0": [{ date: "2026-11-20", source: "file" }] };
   const nextRecords = { "0:0": { done: true, year: "2026" } };
   return {
