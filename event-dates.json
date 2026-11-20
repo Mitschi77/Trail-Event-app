@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-20T22:10:00Z",
+  "updatedAt": "2026-11-20T22:25:00Z",
   "schemaVersion": 3,
   "events": {
     "la-corsa-della-bora": {
@@ -6669,11 +6669,42 @@
     },
     "dzi-marathon-varna-2027": {
       "eventId": "dzi-marathon-varna-2027",
-      "checkedAt": "2026-11-19T22:31:00+01:00",
-      "status": "unconfirmed",
-      "sources": [],
-      "eventPeriod": null,
-      "routes": {}
+      "checkedAt": "2026-11-20T22:25:00Z",
+      "status": "verified",
+      "sources": [
+        {
+          "url": "https://marathonvarna42km.com/en/",
+          "status": "read",
+          "verification": "official-2027-organizer-confirmation"
+        }
+      ],
+      "eventPeriod": {
+        "startDate": "2027-05-16",
+        "endDate": "2027-05-16",
+        "verified": true
+      },
+      "routes": {
+        "0": {
+          "routeId": "dzi-marathon-varna-42-2027",
+          "date": "2027-05-16",
+          "verified": true
+        },
+        "1": {
+          "routeId": "dzi-marathon-varna-half-21-2027",
+          "date": "2027-05-16",
+          "verified": true
+        },
+        "2": {
+          "routeId": "varna-2027-10.5k",
+          "date": "2027-05-16",
+          "verified": true
+        },
+        "3": {
+          "routeId": "varna-2027-2k",
+          "date": "2027-05-16",
+          "verified": true
+        }
+      }
     },
     "nlb-rmc-banja-luka-half-2027": {
       "eventId": "nlb-rmc-banja-luka-half-2027",
@@ -6933,7 +6964,7 @@
     },
     "semimaraton-iasi-2027": {
       "eventId": "semimaraton-iasi-2027",
-      "checkedAt": "2026-11-20T00:04:00.000Z",
+      "checkedAt": "2026-11-20T22:25:00Z",
       "status": "verified",
       "sources": [
         {
@@ -6954,8 +6985,22 @@
         "0": {
           "routeId": "semimaraton-iasi-21-km-2027",
           "date": "2027-04-25",
-          "verified": true,
-          "fallback": false
+          "verified": true
+        },
+        "1": {
+          "routeId": "iasi-half-2027-10k",
+          "date": "2027-04-25",
+          "verified": true
+        },
+        "2": {
+          "routeId": "iasi-half-2027-5k",
+          "date": "2027-04-25",
+          "verified": true
+        },
+        "3": {
+          "routeId": "iasi-half-2027-2.5k",
+          "date": "2027-04-25",
+          "verified": true
         }
       }
     },
@@ -7017,7 +7062,7 @@
     },
     "brasov-21k-2027": {
       "eventId": "brasov-21k-2027",
-      "checkedAt": "2026-11-20T00:15:00.000Z",
+      "checkedAt": "2026-11-20T22:25:00Z",
       "status": "verified",
       "sources": [
         {
@@ -7038,8 +7083,22 @@
         "0": {
           "routeId": "brasov-21k-half-marathon-21-097-2027",
           "date": "2027-04-18",
-          "verified": true,
-          "fallback": false
+          "verified": true
+        },
+        "1": {
+          "routeId": "brasov-21k-2027-10k",
+          "date": "2027-04-18",
+          "verified": true
+        },
+        "2": {
+          "routeId": "brasov-21k-2027-5k",
+          "date": "2027-04-18",
+          "verified": true
+        },
+        "3": {
+          "routeId": "brasov-21k-2027-2.5k",
+          "date": "2027-04-18",
+          "verified": true
         }
       }
     },
@@ -8363,6 +8422,253 @@
         "1": {
           "routeId": "zrinskih-2027-5k",
           "date": "2027-04-25",
+          "verified": true
+        }
+      }
+    },
+    "osjecki-ferivi-polumaraton-2027": {
+      "eventId": "osjecki-ferivi-polumaraton-2027",
+      "checkedAt": "2026-11-20T22:25:00Z",
+      "status": "unconfirmed",
+      "sources": [
+        {
+          "url": "https://runners.hr/utrka/osjecki-ferivi-polumaraton",
+          "status": "read",
+          "verification": "secondary-or-partial-confirmation"
+        }
+      ],
+      "eventPeriod": {
+        "startDate": "2027-04-17",
+        "endDate": "2027-04-17",
+        "verified": false
+      },
+      "routes": {
+        "0": {
+          "routeId": "osjecki-ferivi-2027-half",
+          "date": "2027-04-17",
+          "verified": false
+        },
+        "1": {
+          "routeId": "osjecki-ferivi-2027-5k",
+          "date": "2027-04-17",
+          "verified": false
+        },
+        "2": {
+          "routeId": "osjecki-ferivi-2027-relay-men",
+          "date": "2027-04-17",
+          "verified": false
+        },
+        "3": {
+          "routeId": "osjecki-ferivi-2027-relay-women",
+          "date": "2027-04-17",
+          "verified": false
+        },
+        "4": {
+          "routeId": "osjecki-ferivi-2027-relay-mixed",
+          "date": "2027-04-17",
+          "verified": false
+        }
+      },
+      "note": "Veranstaltung/Termin teilweise durch Genehmigung oder Sekundärquelle belegt; Strecken- und Tagesdetails noch mit Veranstalter abgleichen."
+    },
+    "42-plitvicki-maraton-2027": {
+      "eventId": "42-plitvicki-maraton-2027",
+      "checkedAt": "2026-11-20T22:25:00Z",
+      "status": "unconfirmed",
+      "sources": [
+        {
+          "url": "https://np-plitvicka-jezera.hr/odluka-o-koncesijskom-odobrenju-42-plitvicki-maraton/",
+          "status": "read",
+          "verification": "secondary-or-partial-confirmation"
+        }
+      ],
+      "eventPeriod": {
+        "startDate": "2027-06-05",
+        "endDate": "2027-06-06",
+        "verified": false
+      },
+      "routes": {
+        "0": {
+          "routeId": "plitvicki-2027-marathon",
+          "date": "2027-06-05",
+          "verified": false
+        },
+        "1": {
+          "routeId": "plitvicki-2027-half",
+          "date": "2027-06-05",
+          "verified": false
+        },
+        "2": {
+          "routeId": "plitvicki-2027-9k",
+          "date": "2027-06-05",
+          "verified": false
+        },
+        "3": {
+          "routeId": "plitvicki-2027-5k",
+          "date": "2027-06-05",
+          "verified": false
+        }
+      },
+      "note": "Veranstaltung/Termin teilweise durch Genehmigung oder Sekundärquelle belegt; Strecken- und Tagesdetails noch mit Veranstalter abgleichen."
+    },
+    "rentlio-zadar-night-run-2027": {
+      "eventId": "rentlio-zadar-night-run-2027",
+      "checkedAt": "2026-11-20T22:25:00Z",
+      "status": "verified",
+      "sources": [
+        {
+          "url": "https://www.zadarnight.run/en",
+          "status": "read",
+          "verification": "official-2027-organizer-confirmation"
+        }
+      ],
+      "eventPeriod": {
+        "startDate": "2027-04-03",
+        "endDate": "2027-04-03",
+        "verified": true
+      },
+      "routes": {
+        "0": {
+          "routeId": "zadar-night-run-2027-half",
+          "date": "2027-04-03",
+          "verified": true
+        },
+        "1": {
+          "routeId": "zadar-night-run-2027-10k",
+          "date": "2027-04-03",
+          "verified": true
+        },
+        "2": {
+          "routeId": "zadar-night-run-2027-5k",
+          "date": "2027-04-03",
+          "verified": true
+        }
+      }
+    },
+    "zagreb21-spring-half-marathon-2027": {
+      "eventId": "zagreb21-spring-half-marathon-2027",
+      "checkedAt": "2026-11-20T22:25:00Z",
+      "status": "verified",
+      "sources": [],
+      "eventPeriod": {
+        "startDate": "2027-03-20",
+        "endDate": "2027-03-21",
+        "verified": true
+      },
+      "routes": {
+        "0": {
+          "routeId": "zagreb21-2027-half",
+          "date": "2027-03-21",
+          "verified": true
+        },
+        "1": {
+          "routeId": "zagreb21-2027-5k",
+          "date": "2027-03-20",
+          "verified": true
+        },
+        "2": {
+          "routeId": "zagreb21-2027-relay",
+          "date": "2027-03-21",
+          "verified": true
+        }
+      }
+    },
+    "zagreb-marathon-2027": {
+      "eventId": "zagreb-marathon-2027",
+      "checkedAt": "2026-11-20T22:25:00Z",
+      "status": "verified",
+      "sources": [],
+      "eventPeriod": {
+        "startDate": "2027-10-10",
+        "endDate": "2027-10-10",
+        "verified": true
+      },
+      "routes": {
+        "0": {
+          "routeId": "zagreb-marathon-2027-42k",
+          "date": "2027-10-10",
+          "verified": true
+        },
+        "1": {
+          "routeId": "zagreb-marathon-2027-half",
+          "date": "2027-10-10",
+          "verified": true
+        },
+        "2": {
+          "routeId": "zagreb-marathon-2027-10k",
+          "date": "2027-10-10",
+          "verified": true
+        }
+      }
+    },
+    "maraton-maramures-2027": {
+      "eventId": "maraton-maramures-2027",
+      "checkedAt": "2026-11-20T22:25:00Z",
+      "status": "verified",
+      "sources": [
+        {
+          "url": "https://www.maratonmaramures.ro/",
+          "status": "read",
+          "verification": "official-2027-organizer-confirmation"
+        }
+      ],
+      "eventPeriod": {
+        "startDate": "2027-06-13",
+        "endDate": "2027-06-13",
+        "verified": true
+      },
+      "routes": {
+        "0": {
+          "routeId": "maramures-2027-42k",
+          "date": "2027-06-13",
+          "verified": true
+        },
+        "1": {
+          "routeId": "maramures-2027-21k",
+          "date": "2027-06-13",
+          "verified": true
+        },
+        "2": {
+          "routeId": "maramures-2027-13k",
+          "date": "2027-06-13",
+          "verified": true
+        },
+        "3": {
+          "routeId": "maramures-2027-5k",
+          "date": "2027-06-13",
+          "verified": true
+        }
+      }
+    },
+    "maratonul-international-sibiu-2027": {
+      "eventId": "maratonul-international-sibiu-2027",
+      "checkedAt": "2026-11-20T22:25:00Z",
+      "status": "verified",
+      "sources": [],
+      "eventPeriod": {
+        "startDate": "2027-05-29",
+        "endDate": "2027-05-29",
+        "verified": true
+      },
+      "routes": {
+        "0": {
+          "routeId": "sibiu-2027-marathon",
+          "date": "2027-05-29",
+          "verified": true
+        },
+        "1": {
+          "routeId": "sibiu-2027-half",
+          "date": "2027-05-29",
+          "verified": true
+        },
+        "2": {
+          "routeId": "sibiu-2027-10k",
+          "date": "2027-05-29",
+          "verified": true
+        },
+        "3": {
+          "routeId": "sibiu-2027-5k",
+          "date": "2027-05-29",
           "verified": true
         }
       }
