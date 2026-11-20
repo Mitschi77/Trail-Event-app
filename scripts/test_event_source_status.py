@@ -1,4 +1,5 @@
 import unittest
+from validate_event_data import valid_iso_timestamp
 
 from scripts.event_source_status import classify_source_check_status
 
@@ -33,6 +34,13 @@ class SourceCheckStatusTests(unittest.TestCase):
 
     def test_mixed_unknown_and_manual_preserves_manual(self):
         self.assertEqual(classify_source_check_status([{"status": "unknown"}, {"status": "manual"}]), "manual")
+
+    def test_iso_timestamp_validation(self):
+        self.assertTrue(valid_iso_timestamp("2026-11-20T17:00:00Z"))
+        self.assertTrue(valid_iso_timestamp("2026-11-20T17:00:00.123456+00:00"))
+        self.assertFalse(valid_iso_timestamp("2026-13-45T99:99:99Z"))
+        self.assertFalse(valid_iso_timestamp("not-a-timestamp"))
+        self.assertFalse(valid_iso_timestamp(None))
 
 
 if __name__ == "__main__":
