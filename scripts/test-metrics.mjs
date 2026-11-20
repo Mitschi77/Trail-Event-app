@@ -519,3 +519,12 @@ for (const [id, km] of [["piut-kids-bambini-015-2027",0.15],["piut-kids-600m-202
   assert.equal(route.hm, null, "Do not invent elevation for Kids Run laps");
 }
 assert.equal(piutEvent.minKm, 10, "PIUT TEN is the shortest regular event distance; Kids Run laps must not lower the main filter");
+
+// 3Kings3Hills 2027: all eight official distances must be represented.
+const threeKings = appEvents.find(event => event.id === "3kings-3hills");
+assert.ok(threeKings, "3Kings3Hills must remain in the event catalog");
+assert.equal(threeKings.minKm, 5, "The official 5 km Traily Trail is the event's shortest regular distance");
+for (const [id, km, hm, starttime] of [["shorty-trail-16-700-2027",16,700,"12:30"],["traily-trail-5-100-2027",5,100,"15:30"]]) {
+  const route = routeById(id); assert.ok(route, id + " must be catalogued");
+  assert.equal(route.km, km); assert.equal(route.hm, hm); assert.equal(route.date, "2027-07-24"); assert.equal(route.starttime, starttime);
+}
