@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-20T22:45:00Z",
+  "updatedAt": "2026-11-20T22:55:00Z",
   "schemaVersion": 3,
   "events": {
     "la-corsa-della-bora": {
@@ -6721,13 +6721,18 @@
     },
     "wizz-air-skopje-marathon-2027": {
       "eventId": "wizz-air-skopje-marathon-2027",
-      "checkedAt": "2026-11-20T22:45:00Z",
+      "checkedAt": "2026-11-20T22:55:00Z",
       "status": "verified",
       "sources": [
         {
-          "url": "https://skopskimaraton.com.mk/en/info/races/marathon/",
+          "url": "https://skopskimaraton.com.mk/en/terms-and-conditions/",
           "status": "read",
-          "verification": "official-2027-event-page"
+          "verification": "official-2027-event-information"
+        },
+        {
+          "url": "https://skopskimaraton.com.mk/en/info/program/",
+          "status": "read",
+          "verification": "official-2027-event-information"
         }
       ],
       "eventPeriod": {
@@ -9027,9 +9032,15 @@
     },
     "sparkasse-3-laender-marathon-2027": {
       "eventId": "sparkasse-3-laender-marathon-2027",
-      "checkedAt": "2026-11-20T22:45:00Z",
+      "checkedAt": "2026-11-20T22:55:00Z",
       "status": "verified",
-      "sources": [],
+      "sources": [
+        {
+          "url": "https://3laender-marathon.at/",
+          "status": "read",
+          "verification": "official-2027-event-information"
+        }
+      ],
       "eventPeriod": {
         "startDate": "2027-10-10",
         "endDate": "2027-10-10",
@@ -9050,9 +9061,20 @@
     },
     "run-in-lyon-2027": {
       "eventId": "run-in-lyon-2027",
-      "checkedAt": "2026-11-20T22:45:00Z",
+      "checkedAt": "2026-11-20T22:55:00Z",
       "status": "verified",
-      "sources": [],
+      "sources": [
+        {
+          "url": "https://www.runinlyon.com/en/registration/register",
+          "status": "read",
+          "verification": "official-2027-event-information"
+        },
+        {
+          "url": "https://www.runinlyon.com/en/practical-information/easy-to-understand-information",
+          "status": "read",
+          "verification": "official-2027-event-information"
+        }
+      ],
       "eventPeriod": {
         "startDate": "2027-10-03",
         "endDate": "2027-10-03",
@@ -9073,9 +9095,15 @@
     },
     "swb-marathon-bremen-2027": {
       "eventId": "swb-marathon-bremen-2027",
-      "checkedAt": "2026-11-20T22:45:00Z",
+      "checkedAt": "2026-11-20T22:55:00Z",
       "status": "verified",
-      "sources": [],
+      "sources": [
+        {
+          "url": "https://swb-marathon.com/",
+          "status": "read",
+          "verification": "official-2027-event-information"
+        }
+      ],
       "eventPeriod": {
         "startDate": "2027-10-03",
         "endDate": "2027-10-03",
@@ -9096,9 +9124,15 @@
     },
     "generali-koeln-marathon-2027": {
       "eventId": "generali-koeln-marathon-2027",
-      "checkedAt": "2026-11-20T22:45:00Z",
+      "checkedAt": "2026-11-20T22:55:00Z",
       "status": "verified",
-      "sources": [],
+      "sources": [
+        {
+          "url": "https://koeln-marathon.de/",
+          "status": "read",
+          "verification": "official-2027-event-information"
+        }
+      ],
       "eventPeriod": {
         "startDate": "2027-10-03",
         "endDate": "2027-10-03",
@@ -9157,9 +9191,20 @@
     },
     "aj-bell-great-north-run-2027": {
       "eventId": "aj-bell-great-north-run-2027",
-      "checkedAt": "2026-11-20T22:45:00Z",
+      "checkedAt": "2026-11-20T22:55:00Z",
       "status": "verified",
-      "sources": [],
+      "sources": [
+        {
+          "url": "https://www.greatrun.org/events/",
+          "status": "read",
+          "verification": "official-2027-event-information"
+        },
+        {
+          "url": "https://www.greatrun.org/events/great-north-run/?section=runner-info",
+          "status": "read",
+          "verification": "official-2027-event-information"
+        }
+      ],
       "eventPeriod": {
         "startDate": "2027-09-12",
         "endDate": "2027-09-12",
@@ -9175,9 +9220,25 @@
     },
     "greifenseelauf-2027": {
       "eventId": "greifenseelauf-2027",
-      "checkedAt": "2026-11-20T22:45:00Z",
+      "checkedAt": "2026-11-20T22:55:00Z",
       "status": "verified",
-      "sources": [],
+      "sources": [
+        {
+          "url": "https://greifenseelauf.ch/",
+          "status": "read",
+          "verification": "official-2027-event-information"
+        },
+        {
+          "url": "https://greifenseelauf.ch/anmelden/",
+          "status": "read",
+          "verification": "official-2027-event-information"
+        },
+        {
+          "url": "https://greifenseelauf.ch/schweizer-meisterschaften/",
+          "status": "read",
+          "verification": "official-2027-event-information"
+        }
+      ],
       "eventPeriod": {
         "startDate": "2027-09-18",
         "endDate": "2027-09-18",
@@ -9193,9 +9254,15 @@
     },
     "semi-marathon-les-sables-olonne-2027": {
       "eventId": "semi-marathon-les-sables-olonne-2027",
-      "checkedAt": "2026-11-20T22:45:00Z",
+      "checkedAt": "2026-11-20T22:55:00Z",
       "status": "verified",
-      "sources": [],
+      "sources": [
+        {
+          "url": "https://www.semimarathonlesablesdolonne.com/",
+          "status": "read",
+          "verification": "official-2027-event-information"
+        }
+      ],
       "eventPeriod": {
         "startDate": "2027-05-16",
         "endDate": "2027-05-16",
