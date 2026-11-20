@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-20T00:25:00.000Z",
+  "updatedAt": "2026-11-20T08:12:00.000Z",
   "schemaVersion": 3,
   "events": {
     "la-corsa-della-bora": {
@@ -5845,35 +5845,113 @@
     },
     "egmond-halve-marathon": {
       "eventId": "egmond-halve-marathon",
-      "checkedAt": "2026-11-19T20:35:00.000Z",
-      "status": "unconfirmed",
-      "sources": [],
-      "eventPeriod": null,
-      "routes": {}
+      "checkedAt": "2026-11-20T08:12:00.000Z",
+      "status": "verified",
+      "sources": [
+        {
+          "url": "https://www.egmondhalvemarathon.nl/programma",
+          "status": "read",
+          "verification": "official-organizer-2027-event-and-race-information"
+        }
+      ],
+      "eventPeriod": {
+        "startDate": "2027-01-10",
+        "endDate": "2027-01-10",
+        "verified": true
+      },
+      "routes": {
+        "0": {
+          "routeId": "egmond-halve-marathon-21-1",
+          "date": "2027-01-10",
+          "verified": true,
+          "fallback": false
+        }
+      }
     },
     "nn-cpc-loop-den-haag": {
       "eventId": "nn-cpc-loop-den-haag",
-      "checkedAt": "2026-11-19T20:35:00.000Z",
-      "status": "unconfirmed",
-      "sources": [],
-      "eventPeriod": null,
-      "routes": {}
+      "checkedAt": "2026-11-20T08:12:00.000Z",
+      "status": "verified",
+      "sources": [
+        {
+          "url": "https://nncpcloopdenhaag.nl/en/event-info/",
+          "status": "read",
+          "verification": "official-organizer-2027-event-and-race-information"
+        },
+        {
+          "url": "https://nncpcloopdenhaag.nl/en/?lang=en",
+          "status": "read",
+          "verification": "official-organizer-2027-event-and-race-information"
+        }
+      ],
+      "eventPeriod": {
+        "startDate": "2027-03-14",
+        "endDate": "2027-03-14",
+        "verified": true
+      },
+      "routes": {
+        "0": {
+          "routeId": "nn-cpc-loop-den-haag-half-21-1",
+          "date": "2027-03-14",
+          "verified": true,
+          "fallback": false
+        }
+      }
     },
     "arrow-venloop": {
       "eventId": "arrow-venloop",
-      "checkedAt": "2026-11-19T20:35:00.000Z",
-      "status": "unconfirmed",
-      "sources": [],
-      "eventPeriod": null,
-      "routes": {}
+      "checkedAt": "2026-11-20T08:12:00.000Z",
+      "status": "verified",
+      "sources": [
+        {
+          "url": "https://venloop.nl/de/laufen/arrow-venloop/",
+          "status": "read",
+          "verification": "official-organizer-2027-event-and-race-information"
+        },
+        {
+          "url": "https://venloop.nl/en/running/arrow-venloop/distances/",
+          "status": "read",
+          "verification": "official-organizer-2027-event-and-race-information"
+        }
+      ],
+      "eventPeriod": {
+        "startDate": "2027-03-21",
+        "endDate": "2027-03-21",
+        "verified": true
+      },
+      "routes": {
+        "0": {
+          "routeId": "arrow-venloop-half-21-097",
+          "date": "2027-03-21",
+          "verified": true,
+          "fallback": false
+        }
+      }
     },
     "du-motion-dubrovnik": {
       "eventId": "du-motion-dubrovnik",
-      "checkedAt": "2026-11-19T20:35:00.000Z",
-      "status": "unconfirmed",
-      "sources": [],
-      "eventPeriod": null,
-      "routes": {}
+      "checkedAt": "2026-11-20T08:12:00.000Z",
+      "status": "verified",
+      "sources": [
+        {
+          "url": "https://du-motion.com/races/half-marathon",
+          "status": "read",
+          "verification": "official-organizer-2027-event-and-race-information"
+        }
+      ],
+      "eventPeriod": {
+        "startDate": "2027-04-25",
+        "endDate": "2027-04-25",
+        "verified": true
+      },
+      "routes": {
+        "0": {
+          "routeId": "du-motion-dubrovnik-half-21-1",
+          "date": "2027-04-25",
+          "verified": true,
+          "fallback": false
+        }
+      }
     },
     "drei-herzen-marathon-radenci": {
       "eventId": "drei-herzen-marathon-radenci",
@@ -5915,27 +5993,116 @@
     },
     "nlb-ljubljana-marathon": {
       "eventId": "nlb-ljubljana-marathon",
-      "checkedAt": "2026-11-19T20:35:00.000Z",
-      "status": "unconfirmed",
-      "sources": [],
-      "eventPeriod": null,
-      "routes": {}
+      "checkedAt": "2026-11-20T08:12:00.000Z",
+      "status": "verified",
+      "sources": [
+        {
+          "url": "https://ljubljanamarathon.si/en",
+          "status": "read",
+          "verification": "official-organizer-2027-event-and-race-information"
+        },
+        {
+          "url": "https://ljubljanamarathon.si/en/marathon",
+          "status": "read",
+          "verification": "official-organizer-2027-event-and-race-information"
+        }
+      ],
+      "eventPeriod": {
+        "startDate": "2027-10-16",
+        "endDate": "2027-10-17",
+        "verified": true
+      },
+      "routes": {
+        "0": {
+          "routeId": "ljubljana-marathon-42-195",
+          "date": "2027-10-17",
+          "verified": true,
+          "fallback": false
+        },
+        "1": {
+          "routeId": "ljubljana-half-21-098",
+          "date": "2027-10-17",
+          "verified": true,
+          "fallback": false
+        }
+      }
     },
     "split-marathon": {
       "eventId": "split-marathon",
-      "checkedAt": "2026-11-19T20:35:00.000Z",
-      "status": "unconfirmed",
-      "sources": [],
-      "eventPeriod": null,
-      "routes": {}
+      "checkedAt": "2026-11-20T08:12:00.000Z",
+      "status": "verified",
+      "sources": [
+        {
+          "url": "https://splitmarathon.com/en/home/",
+          "status": "read",
+          "verification": "official-organizer-2027-event-and-race-information"
+        },
+        {
+          "url": "https://splitmarathon.com/en/marathon/",
+          "status": "read",
+          "verification": "official-organizer-2027-event-and-race-information"
+        },
+        {
+          "url": "https://splitmarathon.com/wp-content/uploads/2026/05/pravila-maraton.pdf",
+          "status": "read",
+          "verification": "official-organizer-2027-event-and-race-information"
+        }
+      ],
+      "eventPeriod": {
+        "startDate": "2027-02-12",
+        "endDate": "2027-02-14",
+        "verified": true
+      },
+      "routes": {
+        "0": {
+          "routeId": "split-marathon-42-195",
+          "date": "2027-02-14",
+          "verified": true,
+          "fallback": false
+        },
+        "1": {
+          "routeId": "split-half-marathon-21-1",
+          "date": "2027-02-14",
+          "verified": true,
+          "fallback": false
+        }
+      }
     },
     "sibiu-international-marathon": {
       "eventId": "sibiu-international-marathon",
-      "checkedAt": "2026-11-19T20:35:00.000Z",
-      "status": "unconfirmed",
-      "sources": [],
-      "eventPeriod": null,
-      "routes": {}
+      "checkedAt": "2026-11-20T08:12:00.000Z",
+      "status": "verified",
+      "sources": [
+        {
+          "url": "https://maratonsibiu.ro/en/faqs-%C3%AEntreb%C4%83ri-frecvente",
+          "status": "read",
+          "verification": "official-organizer-2027-event-and-race-information"
+        },
+        {
+          "url": "https://maratonsibiu.ro/en/",
+          "status": "read",
+          "verification": "official-organizer-2027-event-and-race-information"
+        }
+      ],
+      "eventPeriod": {
+        "startDate": "2027-05-29",
+        "endDate": "2027-05-30",
+        "verified": true
+      },
+      "routes": {
+        "0": {
+          "routeId": "sibiu-international-marathon-42-195",
+          "date": "2027-05-29",
+          "verified": true,
+          "fallback": false
+        },
+        "1": {
+          "routeId": "sibiu-half-marathon-21-097",
+          "date": "2027-05-29",
+          "verified": true,
+          "fallback": false
+        }
+      }
     },
     "10-slavonska-trka": {
       "eventId": "10-slavonska-trka",
