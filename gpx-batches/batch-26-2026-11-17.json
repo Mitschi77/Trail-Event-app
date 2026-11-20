@@ -8,9 +8,9 @@
     {
       "order": 126,
       "name": "Torrencial Valdivia by UTMB",
-      "gpxStatus": "Official UTMB 2027 event overview confirms six races and currently lists PILOLCURA 100K (101 km/4100 hm), ONCOL 65K (65/2600), LLANCAHUE 45K (45/1600), COLLICO 20K (20/800), CAU CAU 12K (12/400), ISLA TEJA 6K (6.5/200). PILOLCURA 100K individual race page has a Map + GPX tab, correcting the earlier blanket note that no GPX panel was visible. However its own race page conflicts with the overview: 100 km/4500 hm in the metrics and 4600 hm in prose. Direct GPX target not extracted; no binary parsed. Other five course pages not individually verified for direct GPX links.",
+      "gpxStatus": "Official UTMB 2027 event overview and current indexed PILOLCURA page confirm six races and PILOLCURA 100K 101 km/4100 hm. The direct open of the same individual race URL returned an older 2026 snapshot (106 km/4500 hm metric; 4600 hm in prose), so that snapshot is stale and must not be treated as a 2027 metric discrepancy. The old snapshot shows a Map + GPX tab, but it does not prove a 2027 GPX is published. No 2027 GPX target extracted and no binary parsed. Other five course pages still require individual 2027 GPX verification.",
       "source": "https://torrencial.utmb.world/races",
-      "followUp": "Clarify official PILOLCURA metric conflict (overview 101/4100 versus race page 100/4500, prose 4600), extract the 100K GPX target, and inspect remaining five course pages for GPX tabs/downloads.",
+      "followUp": "Check the official 2027 race page in a browser/session that is not serving the stale 2026 snapshot; extract the actual 2027 GPX URL and verify other five distances.",
       "official2027CourseData": {
         "source": "https://torrencial.utmb.world/",
         "eventDate": "2027-06-24/2027-06-27",
@@ -48,21 +48,25 @@
           }
         ],
         "conflictingPILOLCURAIndividualPage": {
-          "distanceKm": 100,
-          "elevationGainMetricHm": 4500,
-          "elevationGainTextHm": 4600,
-          "note": "Individual race page metrics/prose differ from event overview values; do not resolve automatically."
+          "observedPageUrl": "https://torrencial.utmb.world/es/races/PILOLCURA100K",
+          "fetchedSnapshotEdition": "2026",
+          "fetchedSnapshotMetrics": {
+            "distanceKm": 106,
+            "elevationGainHmMetric": 4500,
+            "elevationGainTextHm": 4600
+          },
+          "note": "A direct open of the race URL returned a cached/old 2026 page snapshot (26-28 June 2026), not a valid 2027 detail page. The current official 2027 search-index result and event overview both confirm 101 km/4100 hm. Do not treat 2026 page snapshot as a 2027 metric conflict."
         },
         "gpxAvailability": "PILOLCURA 100K individual official page visibly exposes a Map + GPX tab. Direct file URL not extracted; other distances require individual page review."
       },
       "gpxTechnicalChecks": {
-        "status": "official-map-gpx-tab-confirmed-for-PILOLCURA; binary-not-fetched",
+        "status": "2027-official-metrics-confirmed; individual-detail-url-serves-stale-2026-snapshot; 2027-gpx-not-confirmed",
         "downloadedFiles": 0,
         "xmlParsed": false,
         "trackpointCount": null,
         "calculatedDistanceKm": null,
         "calculatedElevationHm": null,
-        "note": "Direct GPX target was not exposed in the page text; no bytes downloaded or parsed. Preserve any older course files as historical."
+        "note": "The 2027 event overview confirms 101/4100. Direct race URL fetch returned 2026 page snapshot, including 106/4500 and a GPX tab. Do not assume that tab points to 2027 GPX. No file bytes received."
       }
     },
     {
