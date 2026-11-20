@@ -531,3 +531,62 @@ assert.deepEqual(validatePlannerSnapshot({plannerKey: JSON.stringify({ok:true})}
 assert.throws(() => validatePlannerSnapshot({unknownKey: "{}"}), /Unbekannter oder ungültiger Datenbereich/);
 assert.throws(() => validatePlannerSnapshot({plannerKey: "{"}), /Beschädigte Daten/);
 assert.notDeepEqual(cloudSignature({plannerKey:"old"}), cloudSignature({plannerKey:"new"}), "Backup integrity signatures must change when stored data changes");
+
+
+// Execute the actual activity-import storage transaction from index.html.
+// The second write is forced to fail after the first write has succeeded.
+const activityStorageStart = html.indexOf("const attemptsRaw=JSON.stringify(nextAttempts)");
+const activityStorageMarker = "runAttempts=nextAttempts;runRecords=nextRecords;";
+const activityStorageEnd = html.indexOf(activityStorageMarker, activityStorageStart);
+assert.ok(activityStorageStart >= 0 && activityStorageEnd > activityStorageStart,
+  "Activity import storage transaction must remain extractable for failure testing");
+const activityStorageSource = html.slice(activityStorageStart, activityStorageEnd + activityStorageMarker.length);
+function makeActivityStorageHarness({ failRecordsWrite = false } = {}) {
+  const initialAttempts = { "0:0": [{ date: "2026-01-01", result: "Platz" }] };
+  const initialRecords = { "0:0": { done: false, year: "2026" } };
+  let runAttempts = initialAttempts;
+  let runRecords = initialRecords;
+  const values = new Map([
+    ["trailEventRunAttempts", JSON.stringify(initialAttempts)],
+    ["trailEventRunRecords", JSON.stringify(initialRecords)]
+  ]);
+  let failNextRecordsWrite = failRecordsWrite;
+  let cloudSaves = 0;
+  const localStorage = {
+    getItem(key) { return values.has(key) ? values.get(key) : null; },
+    setItem(key, value) {
+      if (key === "trailEventRunRecords" && failNextRecordsWrite) {
+        failNextRecordsWrite = false;
+        throw new Error("simulated quota failure on second write");
+      }
+      values.set(key, String(value));
+    },
+    removeItem(key) { values.delete(key); }
+  };
+  const execute = new Function("nextAttempts", "nextRecords", "localStorage",
+    "queuePlannerCloudSave", "initialAttempts", "initialRecords",
+    "let runAttempts=initialAttempts,runRecords=initialRecords;" +
+    activityStorageSource +
+    ";return {runAttempts,runRecords};");
+  const nextAttempts = { "0:0": [{ date: "2026-11-20", source: "file" }] };
+  const nextRecords = { "0:0": { done: true, year: "2026" } };
+  return {
+    execute: () => execute(nextAttempts, nextRecords, localStorage, () => cloudSaves++, initialAttempts, initialRecords),
+    values, initialAttempts, initialRecords, nextAttempts, nextRecords,
+    getCloudSaves: () => cloudSaves
+  };
+}
+const failedActivityStorage = makeActivityStorageHarness({ failRecordsWrite: true });
+assert.throws(() => failedActivityStorage.execute(), /Import nicht gespeichert/);
+assert.equal(failedActivityStorage.values.get("trailEventRunAttempts"),
+  JSON.stringify(failedActivityStorage.initialAttempts),
+  "A failed second write must roll back the already-written activity attempts");
+assert.equal(failedActivityStorage.values.get("trailEventRunRecords"),
+  JSON.stringify(failedActivityStorage.initialRecords),
+  "A failed second write must preserve the prior event status");
+assert.deepEqual(failedActivityStorage.initialAttempts, { "0:0": [{ date: "2026-01-01", result: "Platz" }] },
+  "Original in-memory attempts must remain unchanged after a failed import");
+assert.deepEqual(failedActivityStorage.initialRecords, { "0:0": { done: false, year: "2026" } },
+  "Original in-memory records must remain unchanged after a failed import");
+assert.equal(failedActivityStorage.getCloudSaves(), 0,
+  "A failed activity import must not queue cloud synchronization");
