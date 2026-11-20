@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-20T22:40:00+01:00",
+  "updatedAt": "2026-11-20T17:10:00Z",
   "schemaVersion": 3,
   "events": {
     "la-corsa-della-bora": {
@@ -591,12 +591,12 @@
         },
         "1": {
           "routeId": "trailhalbmarathon-k25-26-6-870",
-          "date": "2027-05-05",
+          "date": "2027-05-08",
           "verified": true
         },
         "2": {
           "routeId": "discovery-race-k35-37-8-2110",
-          "date": "2027-05-05",
+          "date": "2027-05-08",
           "verified": true
         },
         "3": {
@@ -606,7 +606,7 @@
         },
         "4": {
           "routeId": "panorama-ultra-trail-67-9-2670",
-          "date": "2027-05-06",
+          "date": "2027-05-08",
           "verified": true
         },
         "5": {
@@ -615,31 +615,6 @@
           "verified": true
         },
         "6": {
-          "routeId": "master-of-innsbruck-112-6-5500",
-          "date": "2027-05-08",
-          "verified": true
-        },
-        "7": {
-          "routeId": "discovery-race-k35-37-8-2110",
-          "date": "2027-05-08",
-          "verified": true
-        },
-        "8": {
-          "routeId": "trailmarathon-k42-43-4-2400",
-          "date": "2027-05-06",
-          "verified": true
-        },
-        "9": {
-          "routeId": "panorama-ultra-trail-67-9-2670",
-          "date": "2027-05-08",
-          "verified": true
-        },
-        "10": {
-          "routeId": "heart-of-the-alps-ultra-87-3900",
-          "date": "2027-05-08",
-          "verified": true
-        },
-        "11": {
           "routeId": "master-of-innsbruck-112-6-5500",
           "date": "2027-05-08",
           "verified": true
@@ -1337,7 +1312,7 @@
           "date": "2027-06-06",
           "verified": true
         },
-        "8": {
+        "5": {
           "routeId": "hochkoenig-mini-ultraks-2027",
           "date": "2027-06-04",
           "verified": true
@@ -1488,12 +1463,12 @@
         "verified": true
       },
       "routes": {
-        "3": {
+        "1": {
           "routeId": "oetscher-speed-trail-2027",
           "date": "2027-06-05",
           "verified": true
         },
-        "4": {
+        "2": {
           "routeId": "oetscher-skyrace-2027",
           "date": "2027-06-06",
           "verified": true
@@ -2570,20 +2545,10 @@
         },
         "4": {
           "routeId": "ultratrail-xl-117-4467",
-          "date": "2027-07-24",
-          "verified": true
-        },
-        "5": {
-          "routeId": "100-miles-ultra-168-6300",
-          "date": "2027-07-24",
-          "verified": true
-        },
-        "6": {
-          "routeId": "ultratrail-xl-117-4467",
           "date": "2027-07-23",
           "verified": true
         },
-        "7": {
+        "5": {
           "routeId": "100-miles-ultra-168-6300",
           "date": "2027-07-23",
           "verified": true
@@ -2674,7 +2639,7 @@
           "date": "2027-06-26",
           "verified": true
         },
-        "3": {
+        "2": {
           "routeId": "sachsentrail-quartertrail-20-506",
           "date": "2027-06-27",
           "verified": true
@@ -4486,11 +4451,6 @@
       },
       "routes": {
         "4": {
-          "routeId": "trail-du-saint-jacques-by-utmb-rando-28km",
-          "date": "2027-06-20",
-          "verified": true
-        },
-        "5": {
           "routeId": "trail-du-saint-jacques-by-utmb-rando-28km",
           "date": "2027-06-20",
           "verified": true
@@ -6646,11 +6606,47 @@
     },
     "maraton-treh-src-2027": {
       "eventId": "maraton-treh-src-2027",
-      "checkedAt": "2026-11-19T23:00:00+01:00",
-      "status": "unconfirmed",
-      "sources": [],
-      "eventPeriod": null,
-      "routes": {}
+      "checkedAt": "2026-11-20T17:10:00Z",
+      "status": "verified",
+      "sources": [
+        {
+          "url": "https://www.maraton-radenci.si/",
+          "status": "read",
+          "verification": "official-2027-event-page"
+        },
+        {
+          "url": "https://www.maraton-radenci.si/pogosta-vprasanja",
+          "status": "read",
+          "verification": "official-2027-faq"
+        }
+      ],
+      "eventPeriod": {
+        "startDate": "2027-05-15",
+        "endDate": "2027-05-15",
+        "verified": true
+      },
+      "routes": {
+        "0": {
+          "routeId": "maraton-treh-src-42-195",
+          "date": "2027-05-15",
+          "verified": true
+        },
+        "1": {
+          "routeId": "maraton-treh-src-21-098",
+          "date": "2027-05-15",
+          "verified": true
+        },
+        "2": {
+          "routeId": "maraton-treh-src-10",
+          "date": "2027-05-15",
+          "verified": true
+        },
+        "3": {
+          "routeId": "maraton-treh-src-5-316",
+          "date": "2027-05-15",
+          "verified": true
+        }
+      }
     },
     "kaunas-akropolis-marathon-2027": {
       "eventId": "kaunas-akropolis-marathon-2027",
