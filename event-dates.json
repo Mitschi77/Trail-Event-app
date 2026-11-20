@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-20T00:25:00.000Z",
+  "updatedAt": "2026-11-20T22:40:00+01:00",
   "schemaVersion": 3,
   "events": {
     "la-corsa-della-bora": {
@@ -324,18 +324,13 @@
     },
     "wien-marathon": {
       "eventId": "wien-marathon",
-      "checkedAt": "2026-11-18T14:25:00.201965+00:00",
+      "checkedAt": "2026-11-20T21:45:00.000Z",
       "status": "verified",
       "sources": [
         {
-          "url": "https://www.vienna-marathon.com/?go=news&newsid=4145",
+          "url": "https://www.vienna-marathon.com/?go=marathon&lang=en",
           "status": "read",
-          "error": "The read operation timed out"
-        },
-        {
-          "url": "https://www2.vienna-marathon.com/?go=marathon&lang=de",
-          "status": "read",
-          "verification": "manual-official-page"
+          "verification": "official-organizer-2027-event-data"
         }
       ],
       "eventPeriod": {
@@ -347,7 +342,8 @@
         "0": {
           "routeId": "wien-marathon-42-2",
           "date": "2027-04-18",
-          "verified": true
+          "verified": true,
+          "fallback": false
         }
       }
     },
@@ -1831,18 +1827,48 @@
     },
     "stubai-ultra-trail": {
       "eventId": "stubai-ultra-trail",
-      "checkedAt": "2026-11-18T14:25:00.201965+00:00",
+      "checkedAt": "2026-11-20T22:40:00+01:00",
       "status": "verified",
       "sources": [
         {
           "url": "https://stubai.utmb.world/de",
           "status": "read",
-          "verification": "official-2027-page"
+          "verification": "official-utmb-2027-race-page"
         },
         {
           "url": "https://stubai.utmb.world/de/races",
           "status": "read",
-          "verification": "official-2027-race-list"
+          "verification": "official-utmb-2027-race-page"
+        },
+        {
+          "url": "https://stubai.utmb.world/races/stubai100",
+          "status": "read",
+          "verification": "official-utmb-2027-race-page"
+        },
+        {
+          "url": "https://stubai.utmb.world/races/stubai-ultra",
+          "status": "read",
+          "verification": "official-utmb-2027-race-page"
+        },
+        {
+          "url": "https://stubai.utmb.world/races/stubai-classic",
+          "status": "read",
+          "verification": "official-utmb-2027-race-page"
+        },
+        {
+          "url": "https://stubai.utmb.world/races/stubai-express",
+          "status": "read",
+          "verification": "official-utmb-2027-race-page"
+        },
+        {
+          "url": "https://stubai.utmb.world/de/races/stubai-sunnenseitn-trail",
+          "status": "read",
+          "verification": "official-utmb-2027-race-page"
+        },
+        {
+          "url": "https://stubai.utmb.world/races/kids-trail",
+          "status": "read",
+          "verification": "official-utmb-2027-race-page"
         }
       ],
       "eventPeriod": {
@@ -1854,27 +1880,38 @@
         "0": {
           "routeId": "stubai-ultra-57-4200",
           "date": "2027-07-03",
-          "verified": true
+          "verified": true,
+          "fallback": false
         },
         "1": {
           "routeId": "stubai-100-101-5800",
           "date": "2027-07-02",
-          "verified": true
+          "verified": true,
+          "fallback": false
         },
         "2": {
           "routeId": "stubai-classic-31-2300",
           "date": "2027-07-03",
-          "verified": true
+          "verified": true,
+          "fallback": false
         },
         "3": {
           "routeId": "stubai-express-23-1240",
           "date": "2027-07-03",
-          "verified": true
+          "verified": true,
+          "fallback": false
         },
-        "5": {
+        "4": {
           "routeId": "stubai-kids-trail-2027",
           "date": "2027-07-03",
-          "verified": true
+          "verified": true,
+          "fallback": false
+        },
+        "5": {
+          "routeId": "stubai-sunnenseitn-trail-14-700",
+          "date": "2027-07-02",
+          "verified": true,
+          "fallback": false
         }
       }
     },
@@ -2026,13 +2063,48 @@
     },
     "trai-verbier-st-bernhard": {
       "eventId": "trai-verbier-st-bernhard",
-      "checkedAt": "2026-11-18T14:25:00.201965+00:00",
+      "checkedAt": "2026-11-20T10:00:00+01:00",
       "status": "verified",
       "sources": [
         {
-          "url": "https://verbier.utmb.world/",
+          "url": "https://verbier.utmb.world/en",
           "status": "read",
-          "verification": "official-2027-page"
+          "verification": "official-2027-event-list"
+        },
+        {
+          "url": "https://verbier.utmb.world/races/x-alpine",
+          "status": "read",
+          "verification": "official-2027-route-details"
+        },
+        {
+          "url": "https://verbier.utmb.world/races/X-traversee",
+          "status": "read",
+          "verification": "official-2027-route-details"
+        },
+        {
+          "url": "https://verbier.utmb.world/races/Verbier-marathon-Xtreme",
+          "status": "read",
+          "verification": "official-2027-route-details"
+        },
+        {
+          "url": "https://verbier.utmb.world/races/verbier-marathon",
+          "status": "read",
+          "verification": "official-2027-route-details"
+        },
+        {
+          "url": "https://verbier.utmb.world/races/X-Plore",
+          "status": "read",
+          "verification": "official-2027-route-details"
+        },
+        {
+          "url": "https://verbier.utmb.world/races/trail-decouverte",
+          "status": "read",
+          "verification": "official-2027-route-details"
+        },
+        {
+          "url": "https://verbier.utmb.world/races/X-Orient",
+          "status": "read",
+          "verification": "official-2027-route-details"
         }
       ],
       "eventPeriod": {
@@ -2073,6 +2145,21 @@
         },
         "6": {
           "routeId": "verbier-x-orient-2027",
+          "date": "2027-07-11",
+          "verified": true
+        },
+        "7": {
+          "routeId": "verbier-marathon-47-2900",
+          "date": "2027-07-09",
+          "verified": true
+        },
+        "8": {
+          "routeId": "verbier-trail-decouverte-3-5-2027",
+          "date": "2027-07-11",
+          "verified": true
+        },
+        "9": {
+          "routeId": "verbier-x-orient-5k-240-2027",
           "date": "2027-07-11",
           "verified": true
         }
@@ -2149,6 +2236,11 @@
         },
         "1": {
           "routeId": "gletscher-trail-62k-61-1-3600",
+          "date": "2027-07-24",
+          "verified": true
+        },
+        "2": {
+          "routeId": "gletscher-trail-26k-25-8-1900",
           "date": "2027-07-24",
           "verified": true
         },
@@ -2294,13 +2386,48 @@
     },
     "eiger-ultratrail": {
       "eventId": "eiger-ultratrail",
-      "checkedAt": "2026-11-17T07:30:48.484Z",
+      "checkedAt": "2026-11-20T10:30:00+01:00",
       "status": "verified",
       "sources": [
         {
-          "url": "https://eiger.utmb.world/de",
+          "url": "https://eiger.utmb.world/de/races",
           "status": "read",
-          "verification": "manual-official-page"
+          "verification": "official-2027-race-list"
+        },
+        {
+          "url": "https://eiger.utmb.world/races/E250",
+          "status": "read",
+          "verification": "official-2027-route-details"
+        },
+        {
+          "url": "https://eiger.utmb.world/races/E101",
+          "status": "read",
+          "verification": "official-2027-route-details"
+        },
+        {
+          "url": "https://eiger.utmb.world/races/E51",
+          "status": "read",
+          "verification": "official-2027-route-details"
+        },
+        {
+          "url": "https://eiger.utmb.world/races/e35",
+          "status": "read",
+          "verification": "official-2027-route-details"
+        },
+        {
+          "url": "https://eiger.utmb.world/races/e16",
+          "status": "read",
+          "verification": "official-2027-route-details"
+        },
+        {
+          "url": "https://eiger.utmb.world/races/trail-surprise",
+          "status": "read",
+          "verification": "official-2027-route-details"
+        },
+        {
+          "url": "https://eiger.utmb.world/races",
+          "status": "read",
+          "verification": "official-2027-kids-race-list"
         }
       ],
       "eventPeriod": {
@@ -2317,6 +2444,31 @@
         "1": {
           "routeId": "ultratrail-100-6700",
           "date": "2027-07-17",
+          "verified": true
+        },
+        "2": {
+          "routeId": "eiger-e250-261-18000",
+          "date": "2027-07-14",
+          "verified": true
+        },
+        "3": {
+          "routeId": "eiger-e35-35-2500",
+          "date": "2027-07-17",
+          "verified": true
+        },
+        "4": {
+          "routeId": "eiger-e16-16-950",
+          "date": "2027-07-17",
+          "verified": true
+        },
+        "5": {
+          "routeId": "eiger-trail-surprise-15-800",
+          "date": "2027-07-16",
+          "verified": true
+        },
+        "6": {
+          "routeId": "eiger-kids-race-2027",
+          "date": "2027-07-16",
           "verified": true
         }
       }
@@ -3183,54 +3335,38 @@
     },
     "wild-strubel": {
       "eventId": "wild-strubel",
-      "checkedAt": "2026-11-18T14:25:00.201965+00:00",
+      "checkedAt": "2026-11-20T09:35:00+01:00",
       "status": "verified",
       "sources": [
         {
-          "url": "https://wildstrubel.utmb.world/de/",
+          "url": "https://wildstrubel.utmb.world/de/races",
           "status": "read",
-          "verification": "official-2027-race-pages"
-        },
-        {
-          "url": "https://wildstrubel.utmb.world/de/discover/the-event/agenda",
-          "status": "read",
-          "verification": "official-2027-race-pages"
-        },
-        {
-          "url": "https://wildstrubel.utmb.world/",
-          "status": "read"
+          "verification": "official-2027-race-list"
         },
         {
           "url": "https://wildstrubel.utmb.world/races/wild-10",
-          "status": "read"
-        },
-        {
-          "url": "https://wildstrubel.utmb.world/races/wild-glacier-marathon",
-          "status": "read"
-        },
-        {
-          "url": "https://wildstrubel.utmb.world/races/wild-25",
-          "status": "read"
-        },
-        {
-          "url": "https://wildstrubel.utmb.world/races/wild-70",
-          "status": "read"
+          "status": "read",
+          "verification": "official-2027-route-details"
         },
         {
           "url": "https://wildstrubel.utmb.world/races/Wild-NextGen",
-          "status": "read"
+          "status": "read",
+          "verification": "official-2027-route-details"
         },
         {
-          "url": "https://wildstrubel.utmb.world/races/wild-110",
-          "status": "read"
+          "url": "https://wildstrubel.utmb.world/races/wild-kids-ycoor",
+          "status": "read",
+          "verification": "official-2027-route-details"
         },
         {
-          "url": "https://wildstrubel.utmb.world/races/wild-55",
-          "status": "read"
+          "url": "https://wildstrubel.utmb.world/races/wild-kids-grenon",
+          "status": "read",
+          "verification": "official-2027-route-details"
         },
         {
-          "url": "https://wildstrubel.utmb.world/races",
-          "status": "read"
+          "url": "https://wildstrubel.utmb.world/races/Wild-adaptive-run",
+          "status": "read",
+          "verification": "official-2027-route-details"
         }
       ],
       "eventPeriod": {
@@ -3265,12 +3401,27 @@
           "verified": true
         },
         "5": {
-          "routeId": "wildstrubel-wild-glacier-marathon-lenk",
-          "date": "2027-09-10",
+          "routeId": "wild10-10-500",
+          "date": "2027-09-11",
           "verified": true
         },
         "6": {
-          "routeId": "wildstrubel-wild-glacier-marathon-lenk",
+          "routeId": "wild-nextgen-10-500",
+          "date": "2027-09-11",
+          "verified": true
+        },
+        "7": {
+          "routeId": "wild-kids-ycoor-0-8-2027",
+          "date": "2027-09-10",
+          "verified": true
+        },
+        "8": {
+          "routeId": "wild-kids-grenon-1-7-2027",
+          "date": "2027-09-10",
+          "verified": true
+        },
+        "9": {
+          "routeId": "wild-adaptive-run-2-2027",
           "date": "2027-09-10",
           "verified": true
         }
@@ -4420,49 +4571,53 @@
     },
     "hoka-val-d-aran-by-utmb": {
       "eventId": "hoka-val-d-aran-by-utmb",
-      "checkedAt": "2026-11-18T14:25:00.201965+00:00",
+      "checkedAt": "2026-11-20T10:05:00+01:00",
       "status": "verified",
       "sources": [
         {
           "url": "https://valdaran.utmb.world/",
-          "status": "read"
-        },
-        {
-          "url": "https://valdaran.utmb.world/races/PDA",
-          "status": "read"
-        },
-        {
-          "url": "https://valdaran.utmb.world/races/TDL",
-          "status": "read"
-        },
-        {
-          "url": "https://valdaran.utmb.world/races/10K",
-          "status": "read"
-        },
-        {
-          "url": "https://valdaran.utmb.world/races/cdh",
-          "status": "read"
-        },
-        {
-          "url": "https://valdaran.utmb.world/races/skyp",
-          "status": "read"
-        },
-        {
-          "url": "https://valdaran.utmb.world/races/sky",
-          "status": "read"
+          "status": "read",
+          "verification": "official-2027-event-overview"
         },
         {
           "url": "https://valdaran.utmb.world/races/VDA",
-          "status": "read"
+          "status": "read",
+          "verification": "official-2027-route"
+        },
+        {
+          "url": "https://valdaran.utmb.world/races/cdh",
+          "status": "read",
+          "verification": "official-2027-route"
+        },
+        {
+          "url": "https://valdaran.utmb.world/races/TDL",
+          "status": "read",
+          "verification": "official-2027-route"
+        },
+        {
+          "url": "https://valdaran.utmb.world/races/PDA",
+          "status": "read",
+          "verification": "official-2027-route"
         },
         {
           "url": "https://valdaran.utmb.world/races/EXP",
-          "status": "read"
+          "status": "read",
+          "verification": "official-2027-route"
         },
         {
-          "url": "https://valdaran.utmb.world/?page_id=1259",
+          "url": "https://valdaran.utmb.world/races/sky",
           "status": "read",
-          "verification": "manual-official-page"
+          "verification": "official-2027-route"
+        },
+        {
+          "url": "https://valdaran.utmb.world/races/skyp",
+          "status": "read",
+          "verification": "official-2027-route"
+        },
+        {
+          "url": "https://valdaran.utmb.world/races/10K",
+          "status": "read",
+          "verification": "official-2027-route"
         }
       ],
       "eventPeriod": {
@@ -4470,7 +4625,48 @@
         "endDate": "2027-07-11",
         "verified": true
       },
-      "routes": {}
+      "routes": {
+        "0": {
+          "routeId": "valldaran-torn-dera-val-d-aran-vda",
+          "date": "2027-07-09",
+          "verified": true
+        },
+        "1": {
+          "routeId": "valldaran-camins-d-h-r-cdh",
+          "date": "2027-07-09",
+          "verified": true
+        },
+        "2": {
+          "routeId": "valldaran-termi-res-dera-libertat-tdl",
+          "date": "2027-07-07",
+          "verified": true
+        },
+        "3": {
+          "routeId": "valldaran-peades-d-aigua-pda",
+          "date": "2027-07-08",
+          "verified": true
+        },
+        "4": {
+          "routeId": "valldaran-experi-ncia-d-aran-exp",
+          "date": "2027-07-11",
+          "verified": true
+        },
+        "5": {
+          "routeId": "valldaran-sky-18-900",
+          "date": "2027-07-10",
+          "verified": true
+        },
+        "6": {
+          "routeId": "valldaran-sky-promesas-18-900",
+          "date": "2027-07-10",
+          "verified": true
+        },
+        "7": {
+          "routeId": "valldaran-vielha-10k-10-500",
+          "date": "2027-07-07",
+          "verified": true
+        }
+      }
     },
     "monte-rosa-walser-waeg-by-utmb": {
       "eventId": "monte-rosa-walser-waeg-by-utmb",
@@ -4541,11 +4737,33 @@
     },
     "coelmo-napoli-city-half-marathon": {
       "eventId": "coelmo-napoli-city-half-marathon",
-      "checkedAt": "2026-11-19T20:35:00.000Z",
-      "status": "unconfirmed",
-      "sources": [],
-      "eventPeriod": null,
-      "routes": {}
+      "checkedAt": "2026-11-20T21:45:00.000Z",
+      "status": "verified",
+      "sources": [
+        {
+          "url": "https://www.napolirunning.com/en/races/coelmo-napoli-city-half-marathon-2027/",
+          "status": "read",
+          "verification": "official-organizer-2027-event-data"
+        },
+        {
+          "url": "https://www.superhalfs.com/en/articles/news/2026/11/06/superhalfs-europa/",
+          "status": "read",
+          "verification": "official-organizer-2027-event-data"
+        }
+      ],
+      "eventPeriod": {
+        "startDate": "2027-02-21",
+        "endDate": "2027-02-21",
+        "verified": true
+      },
+      "routes": {
+        "0": {
+          "routeId": "coelmo-napoli-city-half-marathon-21-1",
+          "date": "2027-02-21",
+          "verified": true,
+          "fallback": false
+        }
+      }
     },
     "lisbon-half-marathon": {
       "eventId": "lisbon-half-marathon",
@@ -4557,11 +4775,33 @@
     },
     "warsaw-half-marathon": {
       "eventId": "warsaw-half-marathon",
-      "checkedAt": "2026-11-19T20:35:00.000Z",
-      "status": "unconfirmed",
-      "sources": [],
-      "eventPeriod": null,
-      "routes": {}
+      "checkedAt": "2026-11-20T21:45:00.000Z",
+      "status": "verified",
+      "sources": [
+        {
+          "url": "https://polmaratonwarszawski.com/en/info-half-marathon/",
+          "status": "read",
+          "verification": "official-organizer-2027-event-data"
+        },
+        {
+          "url": "https://polmaratonwarszawski.com/wp-content/uploads/sites/4/2026/11/Regulations_of_the_21st_Warsaw_Half_Marathon_EN.pdf",
+          "status": "read",
+          "verification": "official-organizer-2027-event-data"
+        }
+      ],
+      "eventPeriod": {
+        "startDate": "2027-03-14",
+        "endDate": "2027-03-14",
+        "verified": true
+      },
+      "routes": {
+        "0": {
+          "routeId": "warsaw-half-marathon-21-1",
+          "date": "2027-03-14",
+          "verified": true,
+          "fallback": false
+        }
+      }
     },
     "prague-half-marathon": {
       "eventId": "prague-half-marathon",
@@ -4573,43 +4813,158 @@
     },
     "berlin-half-marathon": {
       "eventId": "berlin-half-marathon",
-      "checkedAt": "2026-11-19T20:35:00.000Z",
-      "status": "unconfirmed",
-      "sources": [],
-      "eventPeriod": null,
-      "routes": {}
+      "checkedAt": "2026-11-20T21:45:00.000Z",
+      "status": "verified",
+      "sources": [
+        {
+          "url": "https://www.generali-berliner-halbmarathon.de/anmelden/infos-zur-anmeldung",
+          "status": "read",
+          "verification": "official-organizer-2027-event-data"
+        },
+        {
+          "url": "https://www.superhalfs.com/en/faqs/",
+          "status": "read",
+          "verification": "official-organizer-2027-event-data"
+        }
+      ],
+      "eventPeriod": {
+        "startDate": "2027-04-04",
+        "endDate": "2027-04-04",
+        "verified": true
+      },
+      "routes": {
+        "0": {
+          "routeId": "berlin-half-marathon-21-1",
+          "date": "2027-04-04",
+          "verified": true,
+          "fallback": false
+        }
+      }
     },
     "belgrade-half-marathon": {
       "eventId": "belgrade-half-marathon",
-      "checkedAt": "2026-11-19T20:35:00.000Z",
-      "status": "unconfirmed",
-      "sources": [],
-      "eventPeriod": null,
-      "routes": {}
+      "checkedAt": "2026-11-20T21:45:00.000Z",
+      "status": "verified",
+      "sources": [
+        {
+          "url": "https://bgdmarathon.org/superhalfs-europa/?lang=en",
+          "status": "read",
+          "verification": "official-organizer-2027-event-data"
+        },
+        {
+          "url": "https://www.superhalfs.com/en/articles/news/2026/11/06/superhalfs-europa/",
+          "status": "read",
+          "verification": "official-organizer-2027-event-data"
+        }
+      ],
+      "eventPeriod": {
+        "startDate": "2027-04-17",
+        "endDate": "2027-04-17",
+        "verified": true
+      },
+      "routes": {
+        "0": {
+          "routeId": "belgrade-half-marathon-21-1",
+          "date": "2027-04-17",
+          "verified": true,
+          "fallback": false
+        }
+      }
     },
     "wiener-stadtische-half-marathon": {
       "eventId": "wiener-stadtische-half-marathon",
-      "checkedAt": "2026-11-19T20:35:00.000Z",
-      "status": "unconfirmed",
-      "sources": [],
-      "eventPeriod": null,
-      "routes": {}
+      "checkedAt": "2026-11-20T21:45:00.000Z",
+      "status": "verified",
+      "sources": [
+        {
+          "url": "https://www.vienna-marathon.com/?go=halfmarathon&lang=en",
+          "status": "read",
+          "verification": "official-organizer-2027-event-data"
+        },
+        {
+          "url": "https://www.superhalfs.com/en/articles/news/2026/11/06/superhalfs-europa/",
+          "status": "read",
+          "verification": "official-organizer-2027-event-data"
+        }
+      ],
+      "eventPeriod": {
+        "startDate": "2027-04-18",
+        "endDate": "2027-04-18",
+        "verified": true
+      },
+      "routes": {
+        "0": {
+          "routeId": "wiener-stadtische-half-marathon-21-1",
+          "date": "2027-04-18",
+          "verified": true,
+          "fallback": false
+        }
+      }
     },
     "riga-half-marathon": {
       "eventId": "riga-half-marathon",
-      "checkedAt": "2026-11-19T20:35:00.000Z",
-      "status": "unconfirmed",
-      "sources": [],
-      "eventPeriod": null,
-      "routes": {}
+      "checkedAt": "2026-11-20T21:45:00.000Z",
+      "status": "verified",
+      "sources": [
+        {
+          "url": "https://rimirigamarathon.com/en/frequently-asked-questions/",
+          "status": "read",
+          "verification": "official-organizer-2027-event-data"
+        },
+        {
+          "url": "https://rimirigamarathon.com/wp-content/uploads/2026/11/Rimi-Riga-marathon_Rules_2027_06112026.pdf",
+          "status": "read",
+          "verification": "official-organizer-2027-event-data"
+        }
+      ],
+      "eventPeriod": {
+        "startDate": "2027-05-16",
+        "endDate": "2027-05-16",
+        "verified": true
+      },
+      "routes": {
+        "0": {
+          "routeId": "riga-half-marathon-21-1",
+          "date": "2027-05-16",
+          "verified": true,
+          "fallback": false
+        }
+      }
     },
     "stockholm-half-marathon": {
       "eventId": "stockholm-half-marathon",
-      "checkedAt": "2026-11-19T20:35:00.000Z",
-      "status": "unconfirmed",
-      "sources": [],
-      "eventPeriod": null,
-      "routes": {}
+      "checkedAt": "2026-11-20T21:45:00.000Z",
+      "status": "verified",
+      "sources": [
+        {
+          "url": "https://stockholmhalfmarathon.se/about-the-race-2026/",
+          "status": "read",
+          "verification": "official-organizer-2027-event-data"
+        },
+        {
+          "url": "https://events.marathongruppen.se/8ca268887b77af349904",
+          "status": "read",
+          "verification": "official-organizer-2027-event-data"
+        },
+        {
+          "url": "https://www.superhalfs.com/en/articles/news/2026/11/06/superhalfs-europa/",
+          "status": "read",
+          "verification": "official-organizer-2027-event-data"
+        }
+      ],
+      "eventPeriod": {
+        "startDate": "2027-08-21",
+        "endDate": "2027-08-21",
+        "verified": true
+      },
+      "routes": {
+        "0": {
+          "routeId": "stockholm-half-marathon-21-1",
+          "date": "2027-08-21",
+          "verified": true,
+          "fallback": false
+        }
+      }
     },
     "copenhagen-half-marathon": {
       "eventId": "copenhagen-half-marathon",
@@ -5845,35 +6200,113 @@
     },
     "egmond-halve-marathon": {
       "eventId": "egmond-halve-marathon",
-      "checkedAt": "2026-11-19T20:35:00.000Z",
-      "status": "unconfirmed",
-      "sources": [],
-      "eventPeriod": null,
-      "routes": {}
+      "checkedAt": "2026-11-20T08:12:00.000Z",
+      "status": "verified",
+      "sources": [
+        {
+          "url": "https://www.egmondhalvemarathon.nl/programma",
+          "status": "read",
+          "verification": "official-organizer-2027-event-and-race-information"
+        }
+      ],
+      "eventPeriod": {
+        "startDate": "2027-01-10",
+        "endDate": "2027-01-10",
+        "verified": true
+      },
+      "routes": {
+        "0": {
+          "routeId": "egmond-halve-marathon-21-1",
+          "date": "2027-01-10",
+          "verified": true,
+          "fallback": false
+        }
+      }
     },
     "nn-cpc-loop-den-haag": {
       "eventId": "nn-cpc-loop-den-haag",
-      "checkedAt": "2026-11-19T20:35:00.000Z",
-      "status": "unconfirmed",
-      "sources": [],
-      "eventPeriod": null,
-      "routes": {}
+      "checkedAt": "2026-11-20T08:12:00.000Z",
+      "status": "verified",
+      "sources": [
+        {
+          "url": "https://nncpcloopdenhaag.nl/en/event-info/",
+          "status": "read",
+          "verification": "official-organizer-2027-event-and-race-information"
+        },
+        {
+          "url": "https://nncpcloopdenhaag.nl/en/?lang=en",
+          "status": "read",
+          "verification": "official-organizer-2027-event-and-race-information"
+        }
+      ],
+      "eventPeriod": {
+        "startDate": "2027-03-14",
+        "endDate": "2027-03-14",
+        "verified": true
+      },
+      "routes": {
+        "0": {
+          "routeId": "nn-cpc-loop-den-haag-half-21-1",
+          "date": "2027-03-14",
+          "verified": true,
+          "fallback": false
+        }
+      }
     },
     "arrow-venloop": {
       "eventId": "arrow-venloop",
-      "checkedAt": "2026-11-19T20:35:00.000Z",
-      "status": "unconfirmed",
-      "sources": [],
-      "eventPeriod": null,
-      "routes": {}
+      "checkedAt": "2026-11-20T08:12:00.000Z",
+      "status": "verified",
+      "sources": [
+        {
+          "url": "https://venloop.nl/de/laufen/arrow-venloop/",
+          "status": "read",
+          "verification": "official-organizer-2027-event-and-race-information"
+        },
+        {
+          "url": "https://venloop.nl/en/running/arrow-venloop/distances/",
+          "status": "read",
+          "verification": "official-organizer-2027-event-and-race-information"
+        }
+      ],
+      "eventPeriod": {
+        "startDate": "2027-03-21",
+        "endDate": "2027-03-21",
+        "verified": true
+      },
+      "routes": {
+        "0": {
+          "routeId": "arrow-venloop-half-21-097",
+          "date": "2027-03-21",
+          "verified": true,
+          "fallback": false
+        }
+      }
     },
     "du-motion-dubrovnik": {
       "eventId": "du-motion-dubrovnik",
-      "checkedAt": "2026-11-19T20:35:00.000Z",
-      "status": "unconfirmed",
-      "sources": [],
-      "eventPeriod": null,
-      "routes": {}
+      "checkedAt": "2026-11-20T08:12:00.000Z",
+      "status": "verified",
+      "sources": [
+        {
+          "url": "https://du-motion.com/races/half-marathon",
+          "status": "read",
+          "verification": "official-organizer-2027-event-and-race-information"
+        }
+      ],
+      "eventPeriod": {
+        "startDate": "2027-04-25",
+        "endDate": "2027-04-25",
+        "verified": true
+      },
+      "routes": {
+        "0": {
+          "routeId": "du-motion-dubrovnik-half-21-1",
+          "date": "2027-04-25",
+          "verified": true,
+          "fallback": false
+        }
+      }
     },
     "drei-herzen-marathon-radenci": {
       "eventId": "drei-herzen-marathon-radenci",
@@ -5915,27 +6348,116 @@
     },
     "nlb-ljubljana-marathon": {
       "eventId": "nlb-ljubljana-marathon",
-      "checkedAt": "2026-11-19T20:35:00.000Z",
-      "status": "unconfirmed",
-      "sources": [],
-      "eventPeriod": null,
-      "routes": {}
+      "checkedAt": "2026-11-20T08:12:00.000Z",
+      "status": "verified",
+      "sources": [
+        {
+          "url": "https://ljubljanamarathon.si/en",
+          "status": "read",
+          "verification": "official-organizer-2027-event-and-race-information"
+        },
+        {
+          "url": "https://ljubljanamarathon.si/en/marathon",
+          "status": "read",
+          "verification": "official-organizer-2027-event-and-race-information"
+        }
+      ],
+      "eventPeriod": {
+        "startDate": "2027-10-16",
+        "endDate": "2027-10-17",
+        "verified": true
+      },
+      "routes": {
+        "0": {
+          "routeId": "ljubljana-marathon-42-195",
+          "date": "2027-10-17",
+          "verified": true,
+          "fallback": false
+        },
+        "1": {
+          "routeId": "ljubljana-half-21-098",
+          "date": "2027-10-17",
+          "verified": true,
+          "fallback": false
+        }
+      }
     },
     "split-marathon": {
       "eventId": "split-marathon",
-      "checkedAt": "2026-11-19T20:35:00.000Z",
-      "status": "unconfirmed",
-      "sources": [],
-      "eventPeriod": null,
-      "routes": {}
+      "checkedAt": "2026-11-20T08:12:00.000Z",
+      "status": "verified",
+      "sources": [
+        {
+          "url": "https://splitmarathon.com/en/home/",
+          "status": "read",
+          "verification": "official-organizer-2027-event-and-race-information"
+        },
+        {
+          "url": "https://splitmarathon.com/en/marathon/",
+          "status": "read",
+          "verification": "official-organizer-2027-event-and-race-information"
+        },
+        {
+          "url": "https://splitmarathon.com/wp-content/uploads/2026/05/pravila-maraton.pdf",
+          "status": "read",
+          "verification": "official-organizer-2027-event-and-race-information"
+        }
+      ],
+      "eventPeriod": {
+        "startDate": "2027-02-12",
+        "endDate": "2027-02-14",
+        "verified": true
+      },
+      "routes": {
+        "0": {
+          "routeId": "split-marathon-42-195",
+          "date": "2027-02-14",
+          "verified": true,
+          "fallback": false
+        },
+        "1": {
+          "routeId": "split-half-marathon-21-1",
+          "date": "2027-02-14",
+          "verified": true,
+          "fallback": false
+        }
+      }
     },
     "sibiu-international-marathon": {
       "eventId": "sibiu-international-marathon",
-      "checkedAt": "2026-11-19T20:35:00.000Z",
-      "status": "unconfirmed",
-      "sources": [],
-      "eventPeriod": null,
-      "routes": {}
+      "checkedAt": "2026-11-20T08:12:00.000Z",
+      "status": "verified",
+      "sources": [
+        {
+          "url": "https://maratonsibiu.ro/en/faqs-%C3%AEntreb%C4%83ri-frecvente",
+          "status": "read",
+          "verification": "official-organizer-2027-event-and-race-information"
+        },
+        {
+          "url": "https://maratonsibiu.ro/en/",
+          "status": "read",
+          "verification": "official-organizer-2027-event-and-race-information"
+        }
+      ],
+      "eventPeriod": {
+        "startDate": "2027-05-29",
+        "endDate": "2027-05-30",
+        "verified": true
+      },
+      "routes": {
+        "0": {
+          "routeId": "sibiu-international-marathon-42-195",
+          "date": "2027-05-29",
+          "verified": true,
+          "fallback": false
+        },
+        "1": {
+          "routeId": "sibiu-half-marathon-21-097",
+          "date": "2027-05-29",
+          "verified": true,
+          "fallback": false
+        }
+      }
     },
     "10-slavonska-trka": {
       "eventId": "10-slavonska-trka",
@@ -6169,11 +6691,33 @@
     },
     "rimi-riga-marathon-2027": {
       "eventId": "rimi-riga-marathon-2027",
-      "checkedAt": "2026-11-19T23:30:00+01:00",
-      "status": "unconfirmed",
-      "sources": [],
-      "eventPeriod": null,
-      "routes": {}
+      "checkedAt": "2026-11-20T21:45:00.000Z",
+      "status": "verified",
+      "sources": [
+        {
+          "url": "https://rimirigamarathon.com/en/frequently-asked-questions/",
+          "status": "read",
+          "verification": "official-organizer-2027-event-data"
+        },
+        {
+          "url": "https://rimirigamarathon.com/wp-content/uploads/2026/11/Rimi-Riga-marathon_Rules_2027_06112026.pdf",
+          "status": "read",
+          "verification": "official-organizer-2027-event-data"
+        }
+      ],
+      "eventPeriod": {
+        "startDate": "2027-05-15",
+        "endDate": "2027-05-16",
+        "verified": true
+      },
+      "routes": {
+        "0": {
+          "routeId": "rimi-riga-marathon-42-195-2027",
+          "date": "2027-05-16",
+          "verified": true,
+          "fallback": false
+        }
+      }
     },
     "mali-kraski-maraton-2027": {
       "eventId": "mali-kraski-maraton-2027",
@@ -6498,6 +7042,107 @@
           "routeId": "strasimeno-ultramarathon-58-04",
           "date": "2027-03-07",
           "verified": false
+        }
+      }
+    },
+    "paznaun-ischgl-ultra-trail-2027": {
+      "eventId": "paznaun-ischgl-ultra-trail-2027",
+      "checkedAt": "2026-11-20T22:15:00+01:00",
+      "status": "verified",
+      "sources": [
+        {
+          "url": "https://piut.utmb.world/",
+          "status": "read",
+          "verification": "official-utmb-2027-race-page"
+        },
+        {
+          "url": "https://piut.utmb.world/races",
+          "status": "read",
+          "verification": "official-utmb-2027-race-page"
+        },
+        {
+          "url": "https://piut.utmb.world/races/piut100",
+          "status": "read",
+          "verification": "official-utmb-2027-race-page"
+        },
+        {
+          "url": "https://piut.utmb.world/races/piut85",
+          "status": "read",
+          "verification": "official-utmb-2027-race-page"
+        },
+        {
+          "url": "https://piut.utmb.world/races/piut50",
+          "status": "read",
+          "verification": "official-utmb-2027-race-page"
+        },
+        {
+          "url": "https://piut.utmb.world/races/piut30",
+          "status": "read",
+          "verification": "official-utmb-2027-race-page"
+        },
+        {
+          "url": "https://piut.utmb.world/races/piut20",
+          "status": "read",
+          "verification": "official-utmb-2027-race-page"
+        },
+        {
+          "url": "https://piut.utmb.world/races/piut-ten",
+          "status": "read",
+          "verification": "official-utmb-2027-race-page"
+        },
+        {
+          "url": "https://piut.utmb.world/runners/registration",
+          "status": "read",
+          "verification": "official-utmb-2027-race-page"
+        }
+      ],
+      "eventPeriod": {
+        "startDate": "2027-07-09",
+        "endDate": "2027-07-10",
+        "verified": true
+      },
+      "routes": {
+        "0": {
+          "routeId": "piut-100-2027",
+          "date": "2027-07-09",
+          "verified": true,
+          "fallback": false
+        },
+        "1": {
+          "routeId": "piut-85-2027",
+          "date": "2027-07-09",
+          "verified": true,
+          "fallback": false
+        },
+        "2": {
+          "routeId": "piut-50-2027",
+          "date": "2027-07-10",
+          "verified": true,
+          "fallback": false
+        },
+        "3": {
+          "routeId": "piut-30-2027",
+          "date": "2027-07-10",
+          "verified": true,
+          "fallback": false
+        },
+        "4": {
+          "routeId": "piut-20-2027",
+          "date": "2027-07-10",
+          "verified": true,
+          "fallback": false
+        },
+        "5": {
+          "routeId": "piut-ten-2027",
+          "date": "2027-07-10",
+          "verified": true,
+          "fallback": false
+        },
+        "6": {
+          "routeId": "piut-kids-run-2027",
+          "date": "2027-07-09",
+          "verified": true,
+          "fallback": false
         }
       }
     }
