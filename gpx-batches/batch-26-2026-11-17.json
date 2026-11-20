@@ -231,9 +231,9 @@
     {
       "order": 128,
       "name": "Monte Rosa Walser Waeg by UTMB",
-      "gpxStatus": "Offizielle 2027-Detailseite Walserwaeg Trail bestätigt Start Samstag 17. Juli 2027, 43 km/3100 hm und Map + GPX mit GPX-Download-Link. Der direkte Download scheitert beim Abruf mit 400 OK; Dateiname `WWT_50k_by_UTMB...gpx` enthält kein Jahr, daher Ausgabezuordnung weiterhin ungeklärt. SDV- und MRT-Links zeigen weiterhin 2026 im Dateinamen. Für die übrigen vier Strecken fehlen noch Einzelprüfungen.",
+      "gpxStatus": "Vollständige Einzelprüfung der sieben Wettkampf-/Side-Race-Seiten abgeschlossen: SDV 120K (120/8200) und MRT 82K (82/6300) zeigen 2027-Seiten mit Map + GPX, ihre direkten Dateien sind jedoch ausdrücklich 2026 benannt. WWT 43K (43/3100), RMT 15K (15/650) und JWT 9K (9/600) haben ebenfalls 2027-Seiten mit GPX-Download-Verweisen. WWT-Dateiname ohne Jahr; RMT-Datei ausdrücklich 2026; JWT-Dateiname ohne Jahr. Die Becca-Pink-Seite ist ein 2026-Snapshot (17. Juli 2026) und kann nicht als 2027-GPX-Quelle gelten. GLT 35K/1800 hm ist laut 2027-Übersicht neu; die Streckenlinie ist noch nicht veröffentlicht und die Einzelstreckenseite konnte nicht geladen werden. Kids Races sind Familien-/Kinderläufe ohne auswertbare Distanzdaten/GPX auf der offiziellen Seite. Keine Binärdateien konnten technisch geladen oder geparst werden.",
       "source": "https://mrww.utmb.world/races",
-      "followUp": "Retrieve the WWT download bytes through an authorized route and identify its edition/checksum; inspect the 2027 SDV, MRT, RMT, JWT, Becca Pink and Kids pages and keep the old GPX versions.",
+      "followUp": "Obtain authorized 2027 GPX exports for SDV, MRT, WWT, RMT and JWT; clarify unversioned WWT/JWT files with organizer; wait for GLT route publication; recheck Becca Pink 2027 page; retain 2026 files.",
       "retentionRule": "Keep 2026 GPX files and unversioned historical candidates with source/year labels. Add new 2027 versions separately after official publication and validation.",
       "official2027CourseData": {
         "source": "https://mrww.utmb.world/",
@@ -260,22 +260,34 @@
           {
             "name": "Gressoney Lys Trail",
             "distanceKm": 35,
-            "elevationGainHm": 1700
+            "elevationGainHm": 1800,
+            "sourceStatus": "2027 overview; new course, course line not yet published"
           },
           {
             "name": "Regina Margherita Trail",
             "distanceKm": 15,
-            "elevationGainHm": 650
+            "elevationGainHm": 650,
+            "racePage": "https://mrww.utmb.world/races/RMT"
           },
           {
             "name": "Junior Walser Trail",
             "distanceKm": 9,
-            "elevationGainHm": 600
+            "elevationGainHm": 600,
+            "racePage": "https://mrww.utmb.world/races/JWT"
           },
           {
             "name": "Becca Pink",
             "distanceKm": 4,
-            "elevationGainHm": null
+            "elevationGainHm": null,
+            "racePage": "https://mrww.utmb.world/races/BP",
+            "sourceStatus": "official detail page currently stale 2026 snapshot; 2027 details unconfirmed"
+          },
+          {
+            "name": "Kids Races",
+            "distanceKm": null,
+            "elevationGainHm": null,
+            "racePage": "https://mrww.utmb.world/destination/kid",
+            "sourceStatus": "event side races; no route metrics/GPX published in page"
           }
         ],
         "gpxVersionFindings": [
@@ -283,32 +295,55 @@
             "route": "SDV 120K",
             "url": "https://res.cloudinary.com/utmb-world/raw/upload/v1784039088/mrww/100m_2026_7cfb064644.gpx",
             "version": "2026",
+            "pageEdition": "2027",
             "fetchStatus": "400 OK; bytes not received"
           },
           {
             "route": "MRT 82K",
             "url": "https://res.cloudinary.com/utmb-world/raw/upload/v1779697373/mrww/MRW_2026_100_K_22d59b22b6.gpx",
             "version": "2026",
+            "pageEdition": "2027",
             "fetchStatus": "400 OK; bytes not received"
           },
           {
             "route": "WWT 43K",
             "url": "https://res.cloudinary.com/utmb-world/raw/upload/v1784039996/mrww/WWT_50k_by_UTMB_dbcbe317ee.gpx",
-            "version": "unversioned filename; current official 2027 race detail page contains Map + GPX and start date 17 July 2027",
-            "fetchStatus": "400 OK; bytes not received",
-            "note": "The page is current 2027; the file year cannot be inferred from filename."
+            "version": "unversioned",
+            "pageEdition": "2027",
+            "fetchStatus": "400 OK; bytes not received"
+          },
+          {
+            "route": "RMT 15K",
+            "url": "https://res.cloudinary.com/utmb-world/raw/upload/v1784039070/mrww/20k_2026_b8183922a0.gpx",
+            "version": "2026",
+            "pageEdition": "2027",
+            "fetchStatus": "400 OK; bytes not received"
+          },
+          {
+            "route": "JWT 9K",
+            "url": "https://res.cloudinary.com/utmb-world/raw/upload/v1770978779/mrww/Junior_Walser_Trail_v3_67a087f33d.gpx",
+            "version": "unversioned",
+            "pageEdition": "2027",
+            "fetchStatus": "cache miss; bytes not received"
+          },
+          {
+            "route": "Becca Pink 4K",
+            "url": null,
+            "version": "not confirmed",
+            "pageEdition": "2026 stale snapshot",
+            "fetchStatus": "no 2027 direct URL confirmed"
           }
         ],
-        "note": "Current official 2027 WWT page states 43 km/3100 hm, start 17 July 2027 and shows Map + GPX/GPX DOWNLOAD. The file itself remains edition-unverified because its filename has no year and binary download failed."
+        "note": "Official homepage lists event dates 15-18 July 2027 and all race metrics. Individual SDV/MRT/WWT/RMT/JWT pages are 2027 and show their respective Map + GPX download controls (WWT, RMT, JWT directly inspected). Download target file names show SDV/MRT/RMT=2026, WWT/JWT unversioned. Becca Pink individual page still shows Friday 17 July 2026; do not infer its 2027 status from this cached page. GLT is new for 2027, 35km/1800hm, route line not yet drawn. Kids pages contain no route metrics."
       },
       "gpxTechnicalChecks": {
-        "status": "two-2026-links-confirmed; WWT-2027-page-gpx-link-confirmed-file-year-unknown; no-binary-parsed",
+        "status": "five-2027-race-pages-have-gpx-links; three-files-explicitly-2026; two-unversioned; BP-stale-2026; GLT-course-not-published; no-binary-parsed",
         "downloadedFiles": 0,
         "xmlParsed": false,
         "trackpointCount": null,
         "calculatedDistanceKm": null,
         "calculatedElevationHm": null,
-        "note": "SDV and MRT URLs explicitly contain 2026. WWT race detail is current 2027 (43km/3100hm, 17 July 2027) and shows GPX download, but filename lacks year. Download failed with 400 OK; no bytes/XML/trackpoints."
+        "note": "Official GPX download URLs resolve to binary content rejected by current web fetch (400 OK) or cache miss. No bytes, XML or trackpoints received. Do not mark any of these files as technically validated."
       }
     }
   ],
