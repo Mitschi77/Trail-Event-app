@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-20T22:55:00Z",
+  "updatedAt": "2026-11-20T23:05:00Z",
   "schemaVersion": 3,
   "events": {
     "la-corsa-della-bora": {
@@ -9444,6 +9444,238 @@
         "1": {
           "routeId": "adac-hannover-half-2027",
           "date": "2027-04-11",
+          "verified": true
+        }
+      }
+    },
+    "debrecen-marathon-2027": {
+      "eventId": "debrecen-marathon-2027",
+      "checkedAt": "2026-11-20T23:05:00Z",
+      "status": "verified",
+      "sources": [],
+      "eventPeriod": {
+        "startDate": "2027-04-04",
+        "endDate": "2027-04-04",
+        "verified": true
+      },
+      "routes": {
+        "0": {
+          "routeId": "debrecen-marathon-42k-2027",
+          "date": "2027-04-04",
+          "verified": true
+        },
+        "1": {
+          "routeId": "debrecen-half-2027",
+          "date": "2027-04-04",
+          "verified": true
+        }
+      }
+    },
+    "scoglittirace-half-marathon-2027": {
+      "eventId": "scoglittirace-half-marathon-2027",
+      "checkedAt": "2026-11-20T23:05:00Z",
+      "status": "unconfirmed",
+      "sources": [],
+      "eventPeriod": {
+        "startDate": "2027-04-04",
+        "endDate": "2027-04-04",
+        "verified": false
+      },
+      "routes": {
+        "0": {
+          "routeId": "scoglittirace-half-2027",
+          "date": "2027-04-04",
+          "verified": false
+        }
+      },
+      "note": "Termin aus sekundärem/regionalem Kalender; direkte Veranstalterbestätigung für 2027 noch ausstehend."
+    },
+    "pardubice-wine-half-marathon-2027": {
+      "eventId": "pardubice-wine-half-marathon-2027",
+      "checkedAt": "2026-11-20T23:05:00Z",
+      "status": "verified",
+      "sources": [],
+      "eventPeriod": {
+        "startDate": "2027-04-10",
+        "endDate": "2027-04-10",
+        "verified": true
+      },
+      "routes": {
+        "0": {
+          "routeId": "pardubice-wine-half-2027",
+          "date": "2027-04-10",
+          "verified": true
+        }
+      }
+    },
+    "pko-poznan-half-marathon-2027": {
+      "eventId": "pko-poznan-half-marathon-2027",
+      "checkedAt": "2026-11-20T23:05:00Z",
+      "status": "verified",
+      "sources": [],
+      "eventPeriod": {
+        "startDate": "2027-04-11",
+        "endDate": "2027-04-11",
+        "verified": true
+      },
+      "routes": {
+        "0": {
+          "routeId": "pko-poznan-half-2027",
+          "date": "2027-04-11",
+          "verified": true
+        }
+      }
+    },
+    "nice-international-half-marathon-2027": {
+      "eventId": "nice-international-half-marathon-2027",
+      "checkedAt": "2026-11-20T23:05:00Z",
+      "status": "unconfirmed",
+      "sources": [],
+      "eventPeriod": {
+        "startDate": "2027-04-04",
+        "endDate": "2027-04-04",
+        "verified": false
+      },
+      "routes": {
+        "0": {
+          "routeId": "nice-half-marathon-2027",
+          "date": "2027-04-04",
+          "verified": false
+        }
+      },
+      "note": "Termin aus sekundärem/regionalem Kalender; direkte Veranstalterbestätigung für 2027 noch ausstehend."
+    },
+    "linz-donau-marathon-2027": {
+      "eventId": "linz-donau-marathon-2027",
+      "checkedAt": "2026-11-20T23:05:00Z",
+      "status": "verified",
+      "sources": [],
+      "eventPeriod": {
+        "startDate": "2027-04-11",
+        "endDate": "2027-04-11",
+        "verified": true
+      },
+      "routes": {
+        "0": {
+          "routeId": "linz-marathon-2027",
+          "date": "2027-04-11",
+          "verified": true
+        },
+        "1": {
+          "routeId": "linz-half-2027",
+          "date": "2027-04-11",
+          "verified": true
+        }
+      }
+    },
+    "lake-garda-42-2027": {
+      "eventId": "lake-garda-42-2027",
+      "checkedAt": "2026-11-20T23:05:00Z",
+      "status": "verified",
+      "sources": [],
+      "eventPeriod": {
+        "startDate": "2027-04-11",
+        "endDate": "2027-04-11",
+        "verified": true
+      },
+      "routes": {
+        "0": {
+          "routeId": "lake-garda-lg42-2027",
+          "date": "2027-04-11",
+          "verified": true
+        },
+        "1": {
+          "routeId": "lake-garda-lg21-2027",
+          "date": "2027-04-11",
+          "verified": true
+        }
+      }
+    },
+    "wienerwald-ultra-trail-2027": {
+      "eventId": "wienerwald-ultra-trail-2027",
+      "checkedAt": "2026-11-20T23:05:00Z",
+      "status": "verified",
+      "sources": [],
+      "eventPeriod": {
+        "startDate": "2027-10-09",
+        "endDate": "2027-10-09",
+        "verified": true
+      },
+      "routes": {
+        "0": {
+          "routeId": "wut-double-100-2027",
+          "date": "2027-10-09",
+          "verified": true
+        },
+        "1": {
+          "routeId": "wut-single-50-2027",
+          "date": "2027-10-09",
+          "verified": true
+        }
+      }
+    },
+    "tschirgant-sky-run-2027": {
+      "eventId": "tschirgant-sky-run-2027",
+      "checkedAt": "2026-11-20T23:05:00Z",
+      "status": "verified",
+      "sources": [],
+      "eventPeriod": {
+        "startDate": "2027-06-12",
+        "endDate": "2027-06-12",
+        "verified": true
+      },
+      "routes": {
+        "0": {
+          "routeId": "tschirgant-ts52-ultra-2027",
+          "date": "2027-06-12",
+          "verified": true
+        },
+        "1": {
+          "routeId": "tschirgant-ts42-marathon-2027",
+          "date": "2027-06-12",
+          "verified": true
+        },
+        "2": {
+          "routeId": "tschirgant-ts26-experience-2027",
+          "date": "2027-06-12",
+          "verified": true
+        },
+        "3": {
+          "routeId": "tschirgant-ts16-adventure-2027",
+          "date": "2027-06-12",
+          "verified": true
+        },
+        "4": {
+          "routeId": "tschirgant-rosengarten-nightrace-2027",
+          "date": "2027-06-12",
+          "verified": true
+        }
+      }
+    },
+    "montafon-arlberg-marathon-2027": {
+      "eventId": "montafon-arlberg-marathon-2027",
+      "checkedAt": "2026-11-20T23:05:00Z",
+      "status": "verified",
+      "sources": [],
+      "eventPeriod": {
+        "startDate": "2027-06-26",
+        "endDate": "2027-06-26",
+        "verified": true
+      },
+      "routes": {
+        "0": {
+          "routeId": "montafon-arlberg-marathon-2027",
+          "date": "2027-06-26",
+          "verified": true
+        },
+        "1": {
+          "routeId": "montafon-arlberg-t33-trail-2027",
+          "date": "2027-06-26",
+          "verified": true
+        },
+        "2": {
+          "routeId": "montafon-panorama-trail-2027",
+          "date": "2027-06-26",
           "verified": true
         }
       }
