@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-20T18:55:00Z",
+  "updatedAt": "2026-11-20T18:56:00Z",
   "schemaVersion": 3,
   "events": {
     "la-corsa-della-bora": {
@@ -569,13 +569,43 @@
     },
     "innsbruck-alpine": {
       "eventId": "innsbruck-alpine",
-      "checkedAt": "2026-11-18T14:25:00.201965+00:00",
+      "checkedAt": "2026-11-20T18:56:00Z",
       "status": "verified",
       "sources": [
         {
           "url": "https://www.innsbruckalpine.at/rennen/alle-bewerbe/",
           "status": "read",
           "verification": "manual-official-page"
+        },
+        {
+          "url": "https://www.innsbruckalpine.at/festival/zeitplan/",
+          "status": "manual",
+          "verification": "official-2027-schedule"
+        },
+        {
+          "url": "https://www.innsbruckalpine.at/race/businesstrail/",
+          "status": "manual",
+          "verification": "official-2027-route-details"
+        },
+        {
+          "url": "https://www.innsbruckalpine.at/race/nighttrail/",
+          "status": "manual",
+          "verification": "official-2027-route-details"
+        },
+        {
+          "url": "https://www.innsbruckalpine.at/race/vertical/",
+          "status": "manual",
+          "verification": "official-2027-route-details"
+        },
+        {
+          "url": "https://www.innsbruckalpine.at/race/young-talents-race/",
+          "status": "manual",
+          "verification": "official-2027-route-details"
+        },
+        {
+          "url": "https://www.innsbruckalpine.at/race/rookie-trailrun/",
+          "status": "manual",
+          "verification": "official-2027-route-details"
         }
       ],
       "eventPeriod": {
@@ -618,8 +648,39 @@
           "routeId": "master-of-innsbruck-112-6-5500",
           "date": "2027-05-08",
           "verified": true
+        },
+        "7": {
+          "routeId": "businesstrail-k7-8-2-285-2027",
+          "date": "2027-05-05",
+          "verified": true
+        },
+        "8": {
+          "routeId": "nighttrail-k7-8-2-285-2027",
+          "date": "2027-05-05",
+          "verified": true
+        },
+        "9": {
+          "routeId": "vertical-vtc-7-4-1330-2027",
+          "date": "2027-05-06",
+          "verified": true
+        },
+        "10": {
+          "routeId": "young-talents-race-7-4-280-2027",
+          "date": "2027-05-06",
+          "verified": true
+        },
+        "11": {
+          "routeId": "rookie-trailrun-k15-17-5-590-2027",
+          "date": "2027-05-08",
+          "verified": true
+        },
+        "12": {
+          "routeId": "kids-trail-iatf-2027",
+          "date": "2027-05-07",
+          "verified": true
         }
-      }
+      },
+      "sourceCheckStatus": "manual"
     },
     "trail-menorca-cami-de-cavalls": {
       "eventId": "trail-menorca-cami-de-cavalls",
