@@ -182,6 +182,7 @@ MANUAL_EVENT_PERIODS = {
     "kat100": ("2027-08-05", "2027-08-07", "https://kat.utmb.world/de/races", {"0": "2027-08-05", "1": "2027-08-06", "2": "2027-08-07", "3": "2027-08-07", "4": "2027-08-07"}),
     "3trail-ibiza": ("2027-11-26", "2027-11-28", "https://3diastrailibiza.com/", {}),
     "oman-by-utmb": ("2026-12-10", "2026-12-12", "https://oman.utmb.world/", {"jabal-classic-103-5000": "2026-12-10", "hajar-ultra-154-8000": "2026-12-10", "oman-skyward-canyon-50-2400": "2026-12-11", "oman-old-capital-trail-32-1400": "2026-12-12", "oman-scenic-ascent-21-5-550": "2026-12-12"}),
+    "alpin-team-trailrun": ("2027-09-25", "2027-09-25", "https://www.atra.club/trailrunning-kalender", {"k50-52-3450": "2027-09-25"}),
 }
 
 # These route entries are not scheduled as separate 2027 races yet. Do not
