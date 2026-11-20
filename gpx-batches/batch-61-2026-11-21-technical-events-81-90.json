@@ -1,0 +1,275 @@
+{
+  "batch": 61,
+  "checkedAt": "2026-11-21",
+  "scope": "Official GPX availability and 2027 course-version review for top-level events 81–90",
+  "safetyRules": [
+    "Existing GPX files remain valid until an official replacement is downloaded, parsed and validated.",
+    "No existing GPX files were deleted, overwritten or replaced.",
+    "Participant-only GPX releases and future final-route publication are not treated as public downloads.",
+    "Do not label 2025/2026 course files as current 2027 routes."
+  ],
+  "checks": [
+    {
+      "eventOrder": 81,
+      "event": "Last Soul Ultra",
+      "officialSources": [
+        "https://www.lastsoulultra.com/",
+        "https://bigsbackyardultra.com/races/last-soul-ultra/"
+      ],
+      "date": "2027-08-15",
+      "loop": {
+        "distanceKm": 6.706
+      },
+      "gpxStatus": "2027-event-confirmed; public-loop-GPX-not-found",
+      "binaryDownloaded": false,
+      "parsed": false,
+      "metricsCompared": false,
+      "detail": "Big's Backyard Ultra race listing confirms Sunday 15 August 2027 in Germany and a 6,706m loop. Last Soul site also describes Season 3 / 2027 qualification events and German final in August. No public direct GPX download found; do not assume the same loop geometry without organizer file."
+    },
+    {
+      "eventOrder": 82,
+      "event": "Karnisches Ungetüm",
+      "officialSource": "https://www.ungetuem.at/kut/",
+      "date": "2027-08-14",
+      "routes": [
+        {
+          "name": "KUT 75K",
+          "distanceKm": 75,
+          "elevationGainHm": 5200
+        },
+        {
+          "name": "KUT Short Trail",
+          "distanceKm": 25,
+          "elevationGainHm": 1500
+        }
+      ],
+      "gpxStatus": "2027-date-and-two-route-formats-confirmed-by-current-calendar; organizer-GPX-not-downloaded",
+      "binaryDownloaded": false,
+      "parsed": false,
+      "metricsCompared": false,
+      "detail": "Current race calendar reports 14 August 2027, 75km/5200hm main course and new 25km/1500hm Short Trail. A GPX track is expected/required for participants according to event listing, but no direct official download URL was retrieved in this pass. Treat metrics as provisional until organizer course data confirms."
+    },
+    {
+      "eventOrder": 83,
+      "event": "TREK Matterhorn Ultraks",
+      "officialSources": [
+        "https://www.matterhorn-ultraks.ch/home",
+        "https://www.myswitzerland.com/en-us/experiences/events/trek-matterhorn-ultraks/"
+      ],
+      "date": "2027-08-20/22",
+      "routes": [
+        {
+          "name": "SKY",
+          "distanceKm": 49,
+          "elevationGainHm": 3600
+        },
+        {
+          "name": "EXTREME",
+          "distanceKm": 26,
+          "elevationGainHm": 3066
+        },
+        {
+          "name": "MOUNTAIN",
+          "distanceKm": 32,
+          "elevationGainHm": 2000
+        },
+        {
+          "name": "RELAY by Loyco",
+          "distanceKm": 32,
+          "elevationGainHm": 2000
+        },
+        {
+          "name": "ACTIVE",
+          "distanceKm": 19,
+          "elevationGainHm": 1150
+        },
+        {
+          "name": "VERTINIGHT",
+          "distanceKm": 4.9,
+          "elevationGainHm": 691
+        },
+        {
+          "name": "Wolli",
+          "distanceKm": 0.9
+        },
+        {
+          "name": "Superwolli",
+          "distanceKm": 2.6
+        }
+      ],
+      "gpxStatus": "2027-event-confirmed; current-organizer-pages-show-route-GPX-area-but-individual-2027-file-versions-not-verified",
+      "binaryDownloaded": false,
+      "parsed": false,
+      "metricsCompared": false,
+      "detail": "Current 2027 event listing confirms 20–22 August 2027, five solo distances, relay and kids races. Older app checkpoint's 2026 files must remain historical. Need inspect each 2027 course href/version before importing."
+    },
+    {
+      "eventOrder": 84,
+      "event": "Dynafit Transalpine Run",
+      "officialSource": "https://www.transalpine-run.com/en/",
+      "faq": "https://www.transalpine-run.com/en/information/faq/",
+      "date": "2027-09-18/24",
+      "gpxStatus": "2027-event-confirmed; route-overview-still-2026; GPX-sent-only-to-registered-participants",
+      "binaryDownloaded": false,
+      "parsed": false,
+      "metricsCompared": false,
+      "detail": "Official site confirms 18–24 September 2027 and seven stages, over 250km / 15,000m+ in total. Current route overview still says 2026. Official FAQ explicitly states GPX data are sent only to registered participants. Do not reuse 2026 stage files as 2027."
+    },
+    {
+      "eventOrder": 85,
+      "event": "UTMB Mont-Blanc",
+      "officialSource": "https://montblanc.utmb.world/races",
+      "gpxStatus": "2027-race-dates-and-course-details-not-yet-announced-on-official-pages; current pages-are-2026",
+      "binaryDownloaded": false,
+      "parsed": false,
+      "metricsCompared": false,
+      "detail": "No confirmed 2027 race programme or GPX version established in this review. Preserve 2026 routes as historical only and wait for official 2027 announcement."
+    },
+    {
+      "eventOrder": 86,
+      "event": "Fränkischer Backyard Ultra",
+      "officialSource": "https://www.fraenkischerbackyard.de/",
+      "gpxStatus": "official-site-still-publishes-2026-announcement-and-2026-GPX; no-2027-date-or-file-confirmed",
+      "binaryDownloaded": false,
+      "parsed": false,
+      "metricsCompared": false,
+      "detail": "Organizer page currently shows 4 September 2026, 6.7km / about 90hm and a GPX download for that edition. The 2026 event is past; no 2027 date or 2027 route file found. Do not reuse 2026 track."
+    },
+    {
+      "eventOrder": 87,
+      "event": "Dolomiti di Brenta Trail",
+      "officialSource": "https://www.dolomitidibrentatrail.it/en/routes/regulation/",
+      "date": "2027-09-11",
+      "routes": [
+        {
+          "name": "DBT 64K",
+          "distanceKm": 64,
+          "elevationGainHm": 4200
+        },
+        {
+          "name": "DBT 45K",
+          "distanceKm": 45,
+          "elevationGainHm": 2850
+        },
+        {
+          "name": "DBT 21K",
+          "distanceKm": 21,
+          "elevationGainHm": 1250
+        }
+      ],
+      "gpxStatus": "2027-routes-and-GPS-track-information-published; final-official-route-only-on-31-July-2027",
+      "binaryDownloaded": false,
+      "parsed": false,
+      "metricsCompared": false,
+      "detail": "Official 2027 regulation confirms all three distances and says maps/descriptions/GPS tracks are documented online, but organizer may change courses until 31 July 2027 when final official route is published. Do not treat current GPX as final; re-download after 31 July."
+    },
+    {
+      "eventOrder": 88,
+      "event": "adidas INFINITE TRAILS Gastein",
+      "officialSources": [
+        "https://infinite-trails.com/gpx-racemap-2/",
+        "https://infinite-trails.com/en/"
+      ],
+      "date": "2027-09-04 (secondary event calendar; organizer pack pending)",
+      "routes": [
+        {
+          "name": "Individual 60K",
+          "distanceKm": 60,
+          "elevationGainHm": 5200
+        },
+        {
+          "name": "Individual 45K",
+          "distanceKm": 45,
+          "elevationGainHm": 3100
+        },
+        {
+          "name": "Individual 30K",
+          "distanceKm": 30,
+          "elevationGainHm": 1900
+        },
+        {
+          "name": "Individual 15K",
+          "distanceKm": 15,
+          "elevationGainHm": 900
+        },
+        {
+          "name": "Team leg",
+          "distancesKm": [
+            44,
+            35,
+            21
+          ]
+        }
+      ],
+      "gpxStatus": "previous-official-download-pack-still-2026; 2027-pack-not-confirmed",
+      "binaryDownloaded": false,
+      "parsed": false,
+      "metricsCompared": false,
+      "detail": "Previous official GPX platform identified its downloadable pack as 2026. A 2027 date is listed by event calendar, but current official route/GPX pack has not been verified. Do not use 2026 pack as 2027."
+    },
+    {
+      "eventOrder": 89,
+      "event": "Mayrhofen Ultraks Zillertal",
+      "officialSource": "https://mayrhofen.ultraks.com/",
+      "date": "2027-09-03/04",
+      "routes": [
+        {
+          "name": "Z101",
+          "distanceKm": 101,
+          "elevationGainHm": 7600
+        },
+        {
+          "name": "TUX070",
+          "distanceKm": 70,
+          "elevationGainHm": 4400
+        }
+      ],
+      "gpxStatus": "2027-event-and-course-information-confirmed; current-GPX-links-previously-point-to-2025-or-2026",
+      "binaryDownloaded": false,
+      "parsed": false,
+      "metricsCompared": false,
+      "detail": "Official homepage confirms 3–4 September 2027. Z101 is 101+km/7600m+ and TUX070 70km/4400m+. Previously checked official download links point to Z101 2025 and TUX070/RK50 2026; reject those as 2027 tracks. Check all seven current route pages for updated GPX links."
+    },
+    {
+      "eventOrder": 90,
+      "event": "Munich Backyard",
+      "officialSource": "https://www.munichbackyard.de/",
+      "gpxStatus": "2027-ticketing-visible; 6.7km-standard-backyard-loop; direct-route-GPX-not-extracted",
+      "binaryDownloaded": false,
+      "parsed": false,
+      "metricsCompared": false,
+      "detail": "Current official homepage shows 2027 tickets and the standard 6.7km backyard format. It does not expose a public direct GPX link on the main page. Previous checkpoint says AGB confirms a marked 6.706km route; obtain direct file from organizer or participant area and validate."
+    }
+  ],
+  "summary": {
+    "eventsCovered": 10,
+    "directGpxUrlsAttempted": 0,
+    "binaryDownloaded": 0,
+    "tracksParsed": 0,
+    "metricsCompared": 0,
+    "criticalFindings": [
+      "Last Soul Ultra 2027 event listing confirms 15 August and a 6.706m loop.",
+      "Karnisches Ungetüm 2027 now includes a new 25km/1500hm Short Trail in addition to 75km/5200hm main course; metrics need organizer confirmation.",
+      "Matterhorn Ultraks 2027 date is confirmed for 20–22 August with five solo distances, relay and kids races; 2026 GPX links remain stale.",
+      "Transalpine Run 2027 dates confirmed, but official FAQ says GPX is participant-only and current route overview remains 2026.",
+      "Dolomiti di Brenta Trail official regulation states final official GPX/course release 31 July 2027.",
+      "Mayrhofen 2027 event dates confirmed, but prior official GPX hrefs remain old 2025/2026 files."
+    ],
+    "noGpxFilesChanged": true,
+    "noAppRuntimeDataChanged": true
+  },
+  "followUps": [
+    "Last Soul: request official 2027 loop GPX and compare measured loop length to 6.706km.",
+    "Karnisches Ungetüm: obtain official 2027 GPX for 75K and new Short Trail; validate distance/elevation.",
+    "Matterhorn Ultraks: inspect all 2027 course page download hrefs and reject any 2026 filenames; parse SKY/EXTREME/MOUNTAIN/ACTIVE/VERTINIGHT separately and include relay/kids appropriately.",
+    "Transalpine Run: wait for registered participant GPX pack and validate all seven 2027 stages; keep 2026 stage files historical.",
+    "UTMB Mont-Blanc: wait for 2027 official programme and course release.",
+    "Fränkischer Backyard: wait for 2027 organizer announcement; do not reuse 2026 GPX.",
+    "Dolomiti di Brenta: re-download final GPX after 31 July 2027 and validate all three distances.",
+    "INFINITE TRAILS: wait for official 2027 Trailbook/GPX pack; keep 2026 files historical.",
+    "Mayrhofen Ultraks: obtain fresh 2027 GPX for all seven courses and reject Z101 2025/TUX070 and RK50 2026.",
+    "Munich Backyard: request direct organizer GPX and parse actual route length/elevation."
+  ],
+  "noGpxFilesChanged": true,
+  "noAppRuntimeDataChanged": true
+}
