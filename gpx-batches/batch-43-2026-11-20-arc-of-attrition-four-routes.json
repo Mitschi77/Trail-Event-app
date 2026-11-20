@@ -1,0 +1,77 @@
+{
+  "batch": 43,
+  "checkedAt": "2026-11-20",
+  "scope": "Second review of Arc of Attrition by UTMB 2027 route inventory and GPX availability",
+  "status": "official-four-race-inventory-confirmed-binary-files-not-parsed",
+  "officialEventPage": "https://arcofattrition.utmb.world/",
+  "officialFaq": "https://arcofattrition.utmb.world/faqs",
+  "routePages": [
+    {
+      "route": "Arc 100M",
+      "page": "https://arcofattrition.utmb.world/races/Arc100M",
+      "date": "2027-01-22",
+      "officialDistanceKm": 174.4,
+      "officialElevationGainHm": 5534,
+      "appHasRouteInCheckpoint": true,
+      "existingGpxCandidate": "https://app.fit-pa.com/media/race-course/6aee7dd4db1cd7c8bc4570e7/6aee7dd9db1cd7c8bc4570e8/arc-100m-2027.gpx",
+      "endpointTest": "Direct binary not accessible through current inspection environment; not downloaded or parsed.",
+      "binaryDownloaded": false,
+      "parsed": false,
+      "metricsCompared": false
+    },
+    {
+      "route": "Arc 100K",
+      "page": "https://arcofattrition.utmb.world/races/Arc100K",
+      "date": "2027-01-23",
+      "officialDistanceKm": 83.8,
+      "officialElevationGainHm": 2738,
+      "appHasRouteInCheckpoint": true,
+      "existingGpxCandidate": "https://app.fit-pa.com/media/race-course/6aee7de0db1cd7c8bc4570eb/6aee7de2db1cd7c8bc4570ec/arc-100k-2027.gpx",
+      "endpointTest": "Direct binary rejected by inspection tool due to application/gpx+xml content type; not downloaded or parsed.",
+      "binaryDownloaded": false,
+      "parsed": false,
+      "metricsCompared": false
+    },
+    {
+      "route": "Arc 50K",
+      "page": "https://arcofattrition.utmb.world/races/Arc50k",
+      "date": "2027-01-24",
+      "officialDistanceKm": 47.3,
+      "officialElevationGainHm": 1370,
+      "appHasRouteInCheckpoint": false,
+      "officialGpxAccess": "Official race page has Map + GPX section; organizer FAQ says use Map then Export as GPX. No direct URL extracted.",
+      "binaryDownloaded": false,
+      "parsed": false,
+      "metricsCompared": false
+    },
+    {
+      "route": "Arc 20K",
+      "page": "https://arcofattrition.utmb.world/races/Arc20k",
+      "date": "2027-01-24",
+      "officialDistanceKm": 24.4,
+      "officialElevationGainHm": 826,
+      "appHasRouteInCheckpoint": false,
+      "officialGpxAccess": "Official race page has Map + GPX section; organizer FAQ says use Map then Export as GPX. No direct URL extracted.",
+      "binaryDownloaded": false,
+      "parsed": false,
+      "metricsCompared": false
+    }
+  ],
+  "findings": [
+    "The official organizer site lists four 2027 races: Arc 100M, Arc 100K, Arc 50K and Arc 20K. The earlier app checkpoint listed only two routes, so the route inventory is incomplete unless the two shorter races are present elsewhere in current app data.",
+    "The official 2027 values on the organizer's race pages are 174.4 km / 5,534 m+, 83.8 km / 2,738 m+, 47.3 km / 1,370 m+ and 24.4 km / 826 m+ respectively.",
+    "The official FAQ explicitly states that GPX routes for each distance are available on the respective race page via Map and Export as GPX.",
+    "The two previously recorded fit-pa GPX candidates could not be binary-downloaded or parsed in this inspection environment. Their metrics therefore remain unvalidated."
+  ],
+  "summary": {
+    "racesOfficiallyListed": 4,
+    "appRoutesInPriorCheckpoint": 2,
+    "additionalRaceVariantsToCheck": 2,
+    "officialMapGpxExportConfirmed": true,
+    "binaryFilesDownloaded": 0,
+    "tracksParsed": 0,
+    "metricsCompared": 0,
+    "next": "Check the current app event record for all four Arc routes, export each official GPX in a real browser/app runtime, parse trackpoints and compare computed length and elevation gain against organizer values."
+  },
+  "gpxSafety": "No GPX files were deleted or replaced. Existing GPX files remain valid until a newer official file is actually downloaded, parsed and validated."
+}
