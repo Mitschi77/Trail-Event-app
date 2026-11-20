@@ -58,12 +58,28 @@ const prior=window.showPlannedEventDetails;if(typeof prior!=='function')return;
 window.showPlannedEventDetails=function(id,ri){prior(id,ri);const root=document.getElementById('plannedEventDetailContent'),r=EVENTS?.[id]?.routes?.[ri];if(!root||!r)return;const wrap=document.createElement('div');wrap.innerHTML=renderPlan(id,ri,r);root.appendChild(wrap);const panel=wrap.querySelector('[id^="coursePlan"]');const saved=window.racePlanData?.(id,ri)||{};const st=saved.aidStations||r.aidStations||[];panel.querySelector('[data-cp-stations]').value=st.map(x=>[x.name,x.km,x.food||'',x.drink||''].join(' | ')).join('\n');panel.querySelector('[data-cp-station-source]').value=saved.aidStationsSource||r.aidStationsSource||'';panel.querySelector('[data-cp-save]').addEventListener('click',()=>calculate(panel,id,ri,r));};
 })();
 
-// Push button fallback: remove the inline handler so the document-level
-// capture handler can route taps even when the browser blocks inline handlers.
+// Bind the push setup directly to the button. Do not rely on an inline
+// onclick attribute or a separate delegated handler: both made taps silently
+// do nothing in the installed iOS app.
 (()=>{
   const repair=()=>{
     const button=document.getElementById('enableReviewNotifications');
-    if(button) button.removeAttribute('onclick');
+    if(!button || button.dataset.pushClickBound==='1') return;
+    button.removeAttribute('onclick');
+    button.addEventListener('click',async()=>{
+      const out=document.getElementById('reviewNotificationStatus');
+      if(out) out.textContent='Klick erkannt – Push-Einrichtung wird gestartet …';
+      button.disabled=true;
+      try{
+        if(typeof window.registerReviewPush!=='function') throw new Error('Push-Einrichtung ist in dieser App-Version nicht geladen.');
+        await window.registerReviewPush();
+      }catch(error){
+        if(out) out.textContent='Push-Einrichtung fehlgeschlagen: '+(error?.message||'Unbekannter Fehler');
+      }finally{
+        button.disabled=false;
+      }
+    });
+    button.dataset.pushClickBound='1';
   };
   if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',repair,{once:true});
   else repair();
