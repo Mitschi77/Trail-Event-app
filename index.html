@@ -7197,6 +7197,8 @@ const EVENTS=[
         "starttime": "10:00",
         "registration": "https://stubai.utmb.world/de/runners/registration",
         "note": "0,8 km, 22 hm. Start Samstag 3. Juli um 10:00 Uhr; Teilnahme kostenlos, ohne Zeitnahme."
+      ,
+        "excludeFromDistanceFilter": true
       },
       {
         "id": "stubai-sunnenseitn-trail-14-700",
@@ -7679,6 +7681,8 @@ const EVENTS=[
         "starttime": "09:00",
         "profileUrl": "https://verbier.utmb.world/races/trail-decouverte",
         "notes": "Für 4–8 Jahre: 1,2 km um 09:00; für 9–15 Jahre zusätzlich 3,5 km mit Start um 09:20."
+      ,
+        "excludeFromDistanceFilter": true
       },
       {
         "id": "verbier-x-orient-2027",
@@ -7700,6 +7704,8 @@ const EVENTS=[
         "starttime": "10:30",
         "profileUrl": "https://verbier.utmb.world/races/X-Orient",
         "notes": "Orientierungslauf für 12–17 Jahre; Wahl zwischen 5 km / 240 hm und 7 km / 350 hm. Freie Startzeit zwischen 10:30 und 12:30 Uhr."
+      ,
+        "excludeFromDistanceFilter": true
       },
       {
         "id": "verbier-marathon-47-2900",
@@ -7738,6 +7744,8 @@ const EVENTS=[
         "profileUrl": "https://verbier.utmb.world/races/trail-decouverte",
         "series": "UTMB",
         "notes": "Zusatzrunde für Kinder und Jugendliche von 9–15 Jahren; offizielle Streckenlänge 3,5 km. Höhenmeter für diese Variante nicht separat angegeben."
+      ,
+        "excludeFromDistanceFilter": true
       },
       {
         "id": "verbier-x-orient-5k-240-2027",
@@ -7756,6 +7764,8 @@ const EVENTS=[
         "profileUrl": "https://verbier.utmb.world/races/X-Orient",
         "series": "UTMB",
         "notes": "Kurze Wahlstrecke (U14); freie Startzeit zwischen 10:30 und 12:30 Uhr."
+      ,
+        "excludeFromDistanceFilter": true
       }
     ],
     "id": "trai-verbier-st-bernhard",
@@ -19459,7 +19469,7 @@ function enrichUtmbRouteCategories(){
  });
 }
 enrichUtmbRouteCategories();
-function routeMatchesDistanceFilter(route,filter){if(!filter)return true;const km=Number(route?.km);if(!Number.isFinite(km)||km<=0)return false;if(filter==='lt22')return km<22;if(filter==='lt43')return km<43;if(filter==='43to50')return km>=43&&km<50;if(filter==='50to75')return km>=50&&km<75;if(filter==='75to100')return km>=75&&km<100;if(filter==='100to120')return km>=100&&km<=120;if(filter==='gt120')return km>120;return true;}
+function routeMatchesDistanceFilter(route,filter){if(!filter)return true;if(route?.excludeFromDistanceFilter===true)return false;const km=Number(route?.km);if(!Number.isFinite(km)||km<=0)return false;if(filter==='lt22')return km<22;if(filter==='lt43')return km<43;if(filter==='43to50')return km>=43&&km<50;if(filter==='50to75')return km>=50&&km<75;if(filter==='75to100')return km>=75&&km<100;if(filter==='100to120')return km>=100&&km<=120;if(filter==='gt120')return km>120;return true;}
 function routeIsUtmbRelated(event,route){return !!(route?.utmbIndexRace||route?.utmbCategory||event?.series==='UTMB'||/by UTMB/i.test(event?.name||''));}
 function routeGpxIsOrganizerRestricted(route){return route?.gpxUseProhibited===true||route?.gpxRestricted===true||['organizer-download-restricted','organizer-prohibited','organizer-restricted','prohibited-by-organizer'].includes(String(route?.gpxAvailability||'').toLowerCase());}
 function routeHasDownloadableGpx(route){return !routeGpxIsOrganizerRestricted(route)&&!!(route?.gpxUrl||['available','downloadable','downloadable-now'].includes(String(route?.gpxAvailability||'').toLowerCase()));}
@@ -19502,10 +19512,10 @@ function setEventRunType(id,value){if(!requirePlannerLogin('deine persönlichen 
 let eventDataEdits={};
 try{eventDataEdits=JSON.parse(localStorage.getItem('trailEventDataEdits')||'{}')||{};}catch(e){eventDataEdits={};}
 const legacyEventDataEdits=JSON.stringify(eventDataEdits);eventDataEdits=migrateRouteMap(eventDataEdits);try{if(JSON.stringify(eventDataEdits)!==legacyEventDataEdits)localStorage.setItem('trailEventDataEdits',JSON.stringify(eventDataEdits));}catch(e){}
-function applyLocalEventDataEdits(){if(!cloudUser||!cloudReady)return;Object.entries(eventDataEdits).forEach(([key,values])=>{const m=key.match(/^(.+)::(.+)$/);if(!m)return;const ei=findEventIndexById(m[1]),ev=EVENTS[ei],route=ei>=0?ev.routes.find(r=>r.id===m[2]):null;if(ev&&route){const officialEvent=window.officialEventFeed?.events?.[m[1]],officialRoute=officialEvent?.status==='verified'?Object.values(officialEvent.routes||{}).find(item=>item?.verified&&item.routeId===route.id):null;const safeValues=officialRoute?.date?{...values,date:officialRoute.date}:values;Object.assign(route,safeValues);if(officialRoute?.date){route.dateVerifiedAt=officialEvent.checkedAt||window.officialEventFeed.updatedAt;route.datePending=false;route.dateFallback=false;delete route.dateFallbackNote;route.dateSource=(officialEvent.sources||[]).map(x=>x.url).filter(Boolean).join(', ');}if(safeValues.start!==undefined)ev.start=safeValues.start;if(safeValues.country!==undefined)ev.country=safeValues.country;syncEventDatesFromRoutes(ev);ev.minKm=ev.routes.reduce((n,r)=>r.km!==null&&r.km!==undefined&&r.km!==''?Math.min(n,Number(r.km)):n,Infinity);if(!Number.isFinite(ev.minKm))ev.minKm=null;ev.maxHm=ev.routes.reduce((n,r)=>r.hm!==null&&r.hm!==undefined&&r.hm!==''?Math.max(n,Number(r.hm)):n,-Infinity);if(!Number.isFinite(ev.maxHm))ev.maxHm=null;}});}
+function applyLocalEventDataEdits(){if(!cloudUser||!cloudReady)return;Object.entries(eventDataEdits).forEach(([key,values])=>{const m=key.match(/^(.+)::(.+)$/);if(!m)return;const ei=findEventIndexById(m[1]),ev=EVENTS[ei],route=ei>=0?ev.routes.find(r=>r.id===m[2]):null;if(ev&&route){const officialEvent=window.officialEventFeed?.events?.[m[1]],officialRoute=officialEvent?.status==='verified'?Object.values(officialEvent.routes||{}).find(item=>item?.verified&&item.routeId===route.id):null;const safeValues=officialRoute?.date?{...values,date:officialRoute.date}:values;Object.assign(route,safeValues);if(officialRoute?.date){route.dateVerifiedAt=officialEvent.checkedAt||window.officialEventFeed.updatedAt;route.datePending=false;route.dateFallback=false;delete route.dateFallbackNote;route.dateSource=(officialEvent.sources||[]).map(x=>x.url).filter(Boolean).join(', ');}if(safeValues.start!==undefined)ev.start=safeValues.start;if(safeValues.country!==undefined)ev.country=safeValues.country;syncEventDatesFromRoutes(ev);ev.minKm=ev.routes.reduce((n,r)=>r?.excludeFromDistanceFilter!==true&&r.km!==null&&r.km!==undefined&&r.km!==''?Math.min(n,Number(r.km)):n,Infinity);if(!Number.isFinite(ev.minKm))ev.minKm=null;ev.maxHm=ev.routes.reduce((n,r)=>r.hm!==null&&r.hm!==undefined&&r.hm!==''?Math.max(n,Number(r.hm)):n,-Infinity);if(!Number.isFinite(ev.maxHm))ev.maxHm=null;}});}
 
 function toggleRouteEdit(button){const panel=button.nextElementSibling;panel.hidden=!panel.hidden;button.textContent=panel.hidden?'Daten ergänzen / bearbeiten':'Bearbeitung schließen';}
-function syncEventSummaries(event){const kms=event.routes.map(r=>Number(r.km)).filter(n=>Number.isFinite(n)&&n>0),hms=event.routes.map(r=>r.hm).filter(v=>v!==null&&v!==undefined&&v!=='').map(Number).filter(n=>Number.isFinite(n)&&n>=0);event.minKm=kms.length?Math.min(...kms):null;event.maxHm=hms.length?Math.max(...hms):null;}function saveRouteData(id,ri,button){if(!requirePlannerLogin('deine persönlichen Streckenänderungen'))return;const panel=button.closest('.route-edit'),event=EVENTS[id],route=event.routes[ri],values={};panel.querySelectorAll('[data-field]').forEach(input=>{const key=input.dataset.field;let value=input.value.trim();if(['km','hm','maxh','roundKm','itraPoints'].includes(key))value=value===''?null:Number(value);else if(key==='utmbIndexRace')value=value==='true';else if(value==='')value=null;values[key]=value;});if(Object.prototype.hasOwnProperty.call(values,'cutoffsText')){values.cutoffs=parseCutoffsText(values.cutoffsText);delete values.cutoffsText;}const dateChanged=Object.prototype.hasOwnProperty.call(values,'date')&&values.date!==route.date;Object.assign(route,values);if(dateChanged){delete route.dateVerifiedAt;delete route.dateSource;route.datePending=!values.date&&!!event.dateVerifiedAt;}if(values.start!==undefined)event.start=values.start;if(values.country!==undefined)event.country=values.country;syncEventDatesFromRoutes(event);syncEventSummaries(event);eventDataEdits[routeKey(id,ri)]={...(eventDataEdits[routeKey(id,ri)]||{}),...values};try{localStorage.setItem('trailEventDataEdits',JSON.stringify(eventDataEdits));queuePlannerCloudSave();}catch(e){}render();}
+function syncEventSummaries(event){const kms=event.routes.filter(r=>r?.excludeFromDistanceFilter!==true).map(r=>Number(r.km)).filter(n=>Number.isFinite(n)&&n>0),hms=event.routes.map(r=>r.hm).filter(v=>v!==null&&v!==undefined&&v!=='').map(Number).filter(n=>Number.isFinite(n)&&n>=0);event.minKm=kms.length?Math.min(...kms):null;event.maxHm=hms.length?Math.max(...hms):null;}function saveRouteData(id,ri,button){if(!requirePlannerLogin('deine persönlichen Streckenänderungen'))return;const panel=button.closest('.route-edit'),event=EVENTS[id],route=event.routes[ri],values={};panel.querySelectorAll('[data-field]').forEach(input=>{const key=input.dataset.field;let value=input.value.trim();if(['km','hm','maxh','roundKm','itraPoints'].includes(key))value=value===''?null:Number(value);else if(key==='utmbIndexRace')value=value==='true';else if(value==='')value=null;values[key]=value;});if(Object.prototype.hasOwnProperty.call(values,'cutoffsText')){values.cutoffs=parseCutoffsText(values.cutoffsText);delete values.cutoffsText;}const dateChanged=Object.prototype.hasOwnProperty.call(values,'date')&&values.date!==route.date;Object.assign(route,values);if(dateChanged){delete route.dateVerifiedAt;delete route.dateSource;route.datePending=!values.date&&!!event.dateVerifiedAt;}if(values.start!==undefined)event.start=values.start;if(values.country!==undefined)event.country=values.country;syncEventDatesFromRoutes(event);syncEventSummaries(event);eventDataEdits[routeKey(id,ri)]={...(eventDataEdits[routeKey(id,ri)]||{}),...values};try{localStorage.setItem('trailEventDataEdits',JSON.stringify(eventDataEdits));queuePlannerCloudSave();}catch(e){}render();}
 function calculateTrackData(raw){const points=raw.filter(p=>Number.isFinite(p.lat)&&Number.isFinite(p.lon)&&Math.abs(p.lat)<=90&&Math.abs(p.lon)<=180);if(points.length<2)throw new Error('Die Datei enthält zu wenige gültige Streckenpunkte.');const rad=v=>v*Math.PI/180,track=[];let meters=0,ascent=0,descent=0,prev=null,profile=[];for(const p of points){if(prev){const dLat=rad(p.lat-prev.lat),dLon=rad(p.lon-prev.lon),a=Math.sin(dLat/2)**2+Math.cos(rad(prev.lat))*Math.cos(rad(p.lat))*Math.sin(dLon/2)**2;meters+=6371000*2*Math.atan2(Math.sqrt(a),Math.sqrt(1-a));if(Number.isFinite(p.ele)&&Number.isFinite(prev.ele)){const delta=p.ele-prev.ele;if(delta>0)ascent+=delta;else descent-=delta;}}track.push([p.lat,p.lon]);if(Number.isFinite(p.ele))profile.push([Number((meters/1000).toFixed(3)),Number(p.ele.toFixed(1))]);prev=p;}const sample=(arr,max)=>{if(arr.length<=max)return arr;const step=Math.ceil(arr.length/max),out=arr.filter((p,i)=>i%step===0);if(out[out.length-1]!==arr[arr.length-1])out.push(arr[arr.length-1]);return out;};const times=points.map(p=>p.time instanceof Date?p.time.getTime():Date.parse(p.time||'')).filter(Number.isFinite),startTime=times.length?new Date(times[0]).toISOString():'';return {track:sample(track,1200),elevationProfile:profile.length>=2?sample(profile,240):null,distanceKm:Number((meters/1000).toFixed(2)),ascentHm:Math.round(ascent),descentHm:Math.round(descent),pointCount:points.length,startTime,durationSeconds:times.length>1?Math.max(0,Math.round((times[times.length-1]-times[0])/1000)):0};}
 function parseGpxData(xmlText){const doc=new DOMParser().parseFromString(xmlText,'application/xml');if(doc.querySelector('parsererror'))throw new Error('Die GPX-Datei konnte nicht gelesen werden.');let nodes=[...doc.getElementsByTagNameNS('*','trkpt')];if(!nodes.length)nodes=[...doc.getElementsByTagNameNS('*','rtept')];const raw=nodes.map(n=>({lat:n.hasAttribute('lat')?Number(n.getAttribute('lat')):NaN,lon:n.hasAttribute('lon')?Number(n.getAttribute('lon')):NaN,ele:Number(n.getElementsByTagNameNS('*','ele')[0]?.textContent),time:n.getElementsByTagNameNS('*','time')[0]?.textContent||''}));return calculateTrackData(raw);}
 function parseTcxData(xmlText){const doc=new DOMParser().parseFromString(xmlText,'application/xml');if(doc.querySelector('parsererror'))throw new Error('Die TCX-Datei konnte nicht gelesen werden.');const nodes=[...doc.getElementsByTagNameNS('*','Trackpoint')];const raw=nodes.map(n=>({lat:Number(n.getElementsByTagNameNS('*','LatitudeDegrees')[0]?.textContent),lon:Number(n.getElementsByTagNameNS('*','LongitudeDegrees')[0]?.textContent),ele:Number(n.getElementsByTagNameNS('*','AltitudeMeters')[0]?.textContent),time:n.getElementsByTagNameNS('*','Time')[0]?.textContent||''}));return calculateTrackData(raw);}
