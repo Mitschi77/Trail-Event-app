@@ -1463,7 +1463,7 @@ window.trailReviewPushClick=function(event){
 document.addEventListener('click',function(event){
   const target=event.target;
   const button=target instanceof Element ? target.closest('#enableReviewNotifications') : null;
-  if(!button||button.hasAttribute('onclick'))return;
+  if(!button)return;
   event.preventDefault();
   event.stopPropagation();
   window.trailReviewPushClick(event);
