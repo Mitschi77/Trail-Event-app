@@ -173,9 +173,54 @@
     {
       "order": 120,
       "name": "HOKA Xtrail Kenting by UTMB",
-      "gpxStatus": "Official 2027 UTMB Map + GPX pages confirmed for 100K, 50K, 25K, 10K and Kids Family Run. Direct endpoints and XML track content remain unverified.",
+      "gpxStatus": "Official UTMB 2027 pages confirm five course variants and current advertised values: 98/3291, 50/1496, 26/589, 11/201 and 2/10. Event page and race list are live. Although previous app checkpoint noted Map + GPX pages, the actual direct file URLs and GPX bytes have not been extracted or parsed in this audit. No route is marked technically validated.",
       "source": "https://xtrail.utmb.world/",
-      "followUp": "Export each route from its official Map + GPX panel."
+      "followUp": "Extract the actual official GPX downloads from all five Xtrail race pages and validate XML, trackpoints, measured distance and ascent; retain older GPX versions until new files are checked.",
+      "checkedAt": "2026-11-20",
+      "official2027CourseData": {
+        "source": "https://xtrail.utmb.world/",
+        "eventDate": "2027-03-05/2027-03-07",
+        "routes": [
+          {
+            "name": "Xtrail 100K",
+            "distanceKm": 98,
+            "elevationGainHm": 3291,
+            "racePage": "https://xtrail.utmb.world/races/Top-100K"
+          },
+          {
+            "name": "Xtrail 50K",
+            "distanceKm": 50,
+            "elevationGainHm": 1496
+          },
+          {
+            "name": "Xtrail 25K",
+            "distanceKm": 26,
+            "elevationGainHm": 589
+          },
+          {
+            "name": "Xtrail 10K",
+            "distanceKm": 11,
+            "elevationGainHm": 201
+          },
+          {
+            "name": "Xtrail Kids Family Run",
+            "distanceKm": 2,
+            "elevationGainHm": 10
+          }
+        ],
+        "note": "Official 2027 homepage and race list now provide exact advertised values for all five routes. Independent map analysis returns same values for 100K and 50K, with slight differences possible for the smaller courses. Use official organizer values as advertised; keep measured GPX values separate once the actual files are parsed."
+      },
+      "gpxTechnicalChecks": {
+        "status": "official-route-data-verified; binary-not-fetched",
+        "officialRoutes": 5,
+        "downloadedFiles": 0,
+        "xmlParsed": false,
+        "trackpointCount": null,
+        "calculatedDistanceKm": null,
+        "calculatedElevationHm": null,
+        "note": "No GPX binary bytes received; advertised organizer values must not be confused with measured values."
+      },
+      "retentionRule": "Keep all older official GPX files as historical last-available versions. Add 2027 files as separate versions and promote only after successful binary validation."
     }
   ],
   "nextBatch": "Continue with events 121-125 after package 24 checkpoint."
