@@ -147,7 +147,7 @@ assert.ok(html.includes("const data=await parseActivityTrack(file),route=event.r
 const organizerRestrictedRoute = routeById("linz55-55-1-1429");
 assert.equal(organizerRestrictedRoute?.gpxAvailability, "organizer-download-restricted", "Donautrail route must retain its explicit organizer GPX restriction");
 assert.ok(organizerRestrictedRoute?.gpxDownloadUrl, "Restricted source URL remains available for audit but must not enable import");
-assert.match(html, /function routeGpxIsOrganizerRestricted\\(route\\)\\{[^}]*organizer-download-restricted[^}]*\\}/, "Organizer GPX restriction helper must recognize the real database status");
+assert.match(html, /function routeGpxIsOrganizerRestricted\(route\)\{[^}]*organizer-download-restricted[^}]*\}/, "Organizer GPX restriction helper must recognize the real database status");
 assert.ok(html.includes("return !routeGpxIsOrganizerRestricted(route)&&!!("), "Restricted routes must not be counted as GPX-downloadable");
 assert.ok(html.includes("if(routeGpxIsOrganizerRestricted({gpxAvailability:status}))return false"), "Organizer restriction must hide remote GPX import links");
 assert.ok(html.includes("if(routeGpxIsOrganizerRestricted(route))throw new Error("), "Organizer restriction must block local route GPX imports");
