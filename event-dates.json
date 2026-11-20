@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-21T00:30:00Z",
+  "updatedAt": "2026-11-21T00:40:00Z",
   "schemaVersion": 3,
   "events": {
     "la-corsa-della-bora": {
@@ -12185,7 +12185,7 @@
           "verified": false
         }
       },
-      "note": "Sekundärer Kalenderfund; Veranstalterbestätigung und finale Streckenangaben fehlen."
+      "note": "Sekundärer Kalenderfund für 21.08.2027; die offizielle Helvetia-Seite bestätigt stattdessen einen Community Run in Uitikon am 06.02.2027. Der Augusttermin bleibt unbestätigt."
     },
     "abu-ternberg-trail-2027": {
       "eventId": "abu-ternberg-trail-2027",
@@ -12240,7 +12240,230 @@
           "verified": false
         }
       },
-      "note": "Sekundärer Kalenderfund; Veranstalterbestätigung und finale Streckenangaben fehlen."
+      "note": "Sekundärer Kalenderfund für 31.10.2027; keine offizielle Veranstalterbestätigung gefunden."
+    },
+    "backyard-community-oberwil-june-2027": {
+      "eventId": "backyard-community-oberwil-june-2027",
+      "checkedAt": "2026-11-21T00:40:00Z",
+      "status": "verified",
+      "sources": [
+        {
+          "url": "https://helvetiabackyard.ch/community-run/",
+          "status": "read",
+          "verification": "official-2027-event-information"
+        }
+      ],
+      "eventPeriod": {
+        "startDate": "2027-06-05",
+        "endDate": "2027-06-05",
+        "verified": true
+      },
+      "routes": {
+        "0": {
+          "routeId": "backyard-community-oberwil-june-2027-loop",
+          "date": "2027-06-05",
+          "verified": true
+        }
+      },
+      "note": "Korrektur: Veranstalter bestätigt Rothenburg, Luzern, nicht Oberwil-Lieli. 6,706 km/126 hm je Runde, maximal 15 Runden."
+    },
+    "wylaender-backyard-2027": {
+      "eventId": "wylaender-backyard-2027",
+      "checkedAt": "2026-11-21T00:40:00Z",
+      "status": "verified",
+      "sources": [
+        {
+          "url": "https://www.badi-dachsen.ch/backyardultra",
+          "status": "read",
+          "verification": "official-2027-event-information"
+        },
+        {
+          "url": "https://all-sportevents.eu/termin/wylaender-backyard-ultra-2027-09-04-7355",
+          "status": "read",
+          "verification": "official-2027-event-information"
+        }
+      ],
+      "eventPeriod": {
+        "startDate": "2027-09-04",
+        "endDate": "2027-09-04",
+        "verified": true
+      },
+      "routes": {
+        "0": {
+          "routeId": "wylaender-backyard-2027-loop",
+          "date": "2027-09-04",
+          "verified": true
+        }
+      }
+    },
+    "abu-amstetten-2027": {
+      "eventId": "abu-amstetten-2027",
+      "checkedAt": "2026-11-21T00:40:00Z",
+      "status": "verified",
+      "sources": [
+        {
+          "url": "https://www.austriabackyardultra.com/amstetten",
+          "status": "read",
+          "verification": "official-2027-event-information"
+        }
+      ],
+      "eventPeriod": {
+        "startDate": "2027-04-24",
+        "endDate": "2027-04-25",
+        "verified": true
+      },
+      "routes": {
+        "0": {
+          "routeId": "abu-amstetten-2027-loop",
+          "date": "2027-04-24",
+          "verified": true
+        },
+        "1": {
+          "routeId": "abu-amstetten-2027-7plus1",
+          "date": "2027-04-25",
+          "verified": true
+        }
+      }
+    },
+    "abu-loosdorf-trail-2027": {
+      "eventId": "abu-loosdorf-trail-2027",
+      "checkedAt": "2026-11-21T00:40:00Z",
+      "status": "verified",
+      "sources": [
+        {
+          "url": "https://www.austriabackyardultra.com/loosdorf",
+          "status": "read",
+          "verification": "official-2027-event-information"
+        },
+        {
+          "url": "https://www.austriabackyardultra.com/upcoming",
+          "status": "read",
+          "verification": "official-2027-event-information"
+        }
+      ],
+      "eventPeriod": {
+        "startDate": "2027-05-29",
+        "endDate": "2027-05-30",
+        "verified": true
+      },
+      "routes": {
+        "0": {
+          "routeId": "abu-loosdorf-trail-2027-loop",
+          "date": null,
+          "verified": false
+        }
+      },
+      "note": "Termin bestätigt; Detailseite ist noch Ausgabe 2026. Streckenlänge und Höhenmeter für 2027 offen."
+    },
+    "abu-wagendorf-2027": {
+      "eventId": "abu-wagendorf-2027",
+      "checkedAt": "2026-11-21T00:40:00Z",
+      "status": "verified",
+      "sources": [
+        {
+          "url": "https://www.austriabackyardultra.com/wagendorf",
+          "status": "read",
+          "verification": "official-2027-event-information"
+        },
+        {
+          "url": "https://www.austriabackyardultra.com/upcoming",
+          "status": "read",
+          "verification": "official-2027-event-information"
+        }
+      ],
+      "eventPeriod": {
+        "startDate": "2027-07-10",
+        "endDate": "2027-07-11",
+        "verified": true
+      },
+      "routes": {
+        "0": {
+          "routeId": "abu-wagendorf-2027-loop",
+          "date": null,
+          "verified": false
+        }
+      },
+      "note": "Termin bestätigt; Streckenseite zeigt noch 2026 und ein Tag-/Nachtkonzept. Keine alten Streckenwerte für 2027 übernommen."
+    },
+    "abu-thueringen-vorarlberg-2027": {
+      "eventId": "abu-thueringen-vorarlberg-2027",
+      "checkedAt": "2026-11-21T00:40:00Z",
+      "status": "verified",
+      "sources": [
+        {
+          "url": "https://www.austriabackyardultra.com/upcoming",
+          "status": "read",
+          "verification": "official-2027-event-information"
+        }
+      ],
+      "eventPeriod": {
+        "startDate": "2027-08-07",
+        "endDate": "2027-08-08",
+        "verified": true
+      },
+      "routes": {
+        "0": {
+          "routeId": "abu-thueringen-vorarlberg-2027-loop",
+          "date": null,
+          "verified": false
+        }
+      },
+      "note": "Termin bestätigt; 2027-GPX, Rundendistanz und Höhenmeter auf der geprüften Veranstalterseite noch offen."
+    },
+    "abu-kirchschlag-2027": {
+      "eventId": "abu-kirchschlag-2027",
+      "checkedAt": "2026-11-21T00:40:00Z",
+      "status": "verified",
+      "sources": [
+        {
+          "url": "https://www.austriabackyardultra.com/upcoming",
+          "status": "read",
+          "verification": "official-2027-event-information"
+        }
+      ],
+      "eventPeriod": {
+        "startDate": "2027-08-28",
+        "endDate": "2027-08-29",
+        "verified": true
+      },
+      "routes": {
+        "0": {
+          "routeId": "abu-kirchschlag-2027-loop",
+          "date": null,
+          "verified": false
+        }
+      },
+      "note": "Termin bestätigt; 2027-GPX, Rundendistanz und Höhenmeter auf der geprüften Veranstalterseite noch offen."
+    },
+    "abu-kirchdorf-tirol-2027": {
+      "eventId": "abu-kirchdorf-tirol-2027",
+      "checkedAt": "2026-11-21T00:40:00Z",
+      "status": "verified",
+      "sources": [
+        {
+          "url": "https://www.austriabackyardultra.com/kirchdorf",
+          "status": "read",
+          "verification": "official-2027-event-information"
+        },
+        {
+          "url": "https://www.austriabackyardultra.com/upcoming",
+          "status": "read",
+          "verification": "official-2027-event-information"
+        }
+      ],
+      "eventPeriod": {
+        "startDate": "2027-09-25",
+        "endDate": "2027-09-25",
+        "verified": true
+      },
+      "routes": {
+        "0": {
+          "routeId": "abu-kirchdorf-tirol-2027-loop",
+          "date": null,
+          "verified": false
+        }
+      },
+      "note": "Termin bestätigt; Detailseite enthält noch ältere Ausgabe. 2027-GPX und Rundendistanz offen."
     }
   }
 }
