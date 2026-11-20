@@ -1287,7 +1287,7 @@
       ],
       "eventPeriod": {
         "startDate": "2027-06-04",
-        "endDate": "2027-06-06",
+        "endDate": "2027-06-05",
         "verified": true
       },
       "routes": {
@@ -1308,16 +1308,41 @@
         },
         "3": {
           "routeId": "hochkoenig-hk30-extreme-34-2680",
-          "date": "2027-06-06",
+          "date": "2027-06-05",
           "verified": true
         },
         "4": {
           "routeId": "hochkoenig-hk20-20-5-1020",
-          "date": "2027-06-06",
+          "date": "2027-06-05",
           "verified": true
         },
         "5": {
-          "routeId": "hochkoenig-mini-ultraks-2027",
+          "routeId": "hochkoenig-mini-kids-2027",
+          "date": "2027-06-04",
+          "verified": true
+        },
+        "6": {
+          "routeId": "hochkoenig-mini-junior-2027",
+          "date": "2027-06-04",
+          "verified": true
+        },
+        "7": {
+          "routeId": "hochkoenig-mini-youth-2027",
+          "date": "2027-06-04",
+          "verified": true
+        },
+        "8": {
+          "routeId": "hochkoenig-hk-sprint-10-310-2027",
+          "date": "2027-06-05",
+          "verified": true
+        },
+        "9": {
+          "routeId": "hochkoenig-vertical-5-9-1080-2027",
+          "date": "2027-06-04",
+          "verified": true
+        },
+        "10": {
+          "routeId": "hochkoenig-team-trail-3-6-120-2027",
           "date": "2027-06-04",
           "verified": true
         }
@@ -1452,21 +1477,31 @@
     },
     "otscher-trail": {
       "eventId": "otscher-trail",
-      "checkedAt": "2026-11-18T14:25:00.201965+00:00",
-      "status": "verified",
+      "checkedAt": "2026-11-20T20:00:00Z",
+      "status": "partial",
       "sources": [
         {
           "url": "https://www.oetschertrail.run/",
           "status": "read",
-          "verification": "official-2027-page"
+          "verification": "official-event-site"
+        },
+        {
+          "url": "https://www.ravitorun.com/en/races/itra-121692",
+          "status": "read",
+          "verification": "itra-2027-event-listing"
         }
       ],
       "eventPeriod": {
-        "startDate": "2027-06-04",
-        "endDate": "2027-06-06",
+        "startDate": "2027-06-05",
+        "endDate": "2027-06-05",
         "verified": true
       },
       "routes": {
+        "0": {
+          "routeId": "marathon-trail-49-8-2322",
+          "date": "2027-06-05",
+          "verified": true
+        },
         "1": {
           "routeId": "oetscher-speed-trail-2027",
           "date": "2027-06-05",
@@ -1474,7 +1509,7 @@
         },
         "2": {
           "routeId": "oetscher-skyrace-2027",
-          "date": "2027-06-06",
+          "date": "2027-06-05",
           "verified": true
         }
       }
@@ -2032,22 +2067,27 @@
           "verified": true
         },
         "3": {
-          "routeId": "verbier-marathon-x-treme-43-3000",
-          "date": "2027-07-09",
-          "verified": true
-        },
-        "4": {
           "routeId": "verbier-x-plore-28-1700",
           "date": "2027-07-11",
           "verified": true
         },
-        "5": {
+        "4": {
           "routeId": "verbier-trail-decouverte-2027",
           "date": "2027-07-11",
           "verified": true
         },
-        "6": {
+        "5": {
           "routeId": "verbier-x-orient-2027",
+          "date": "2027-07-11",
+          "verified": true
+        },
+        "6": {
+          "routeId": "verbier-marathon-47-2900",
+          "date": "2027-07-09",
+          "verified": true
+        },
+        "7": {
+          "routeId": "verbier-trail-decouverte-3-5-2027",
           "date": "2027-07-11",
           "verified": true
         }
@@ -2129,6 +2169,36 @@
         },
         "2": {
           "routeId": "gletscher-trail-26k-25-8-1900",
+          "date": "2027-07-24",
+          "verified": true
+        },
+        "3": {
+          "routeId": "glacier-top-mountain-run-2027",
+          "date": "2027-07-23",
+          "verified": true
+        },
+        "4": {
+          "routeId": "glacier-trail-14k-2027",
+          "date": "2027-07-24",
+          "verified": true
+        },
+        "5": {
+          "routeId": "glacier-widi-200m-2027",
+          "date": "2027-07-24",
+          "verified": true
+        },
+        "6": {
+          "routeId": "glacier-widi-400m-2027",
+          "date": "2027-07-24",
+          "verified": true
+        },
+        "7": {
+          "routeId": "glacier-widi-600m-2027",
+          "date": "2027-07-24",
+          "verified": true
+        },
+        "8": {
+          "routeId": "glacier-widi-1500m-2027",
           "date": "2027-07-24",
           "verified": true
         }
