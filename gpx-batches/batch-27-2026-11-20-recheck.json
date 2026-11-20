@@ -288,7 +288,7 @@
           500
         ]
       ],
-      "gpx": "Official 2027 page lists eight variants. Correction: EXP is 32 km/2,100 m. Three saved GPX candidates have 2027 in filename but a directory labelled GPX 2026; leave pending binary/content/version validation. Other five are 2026 and stale.",
+      "gpx": "Current official 2027 track index exposes seven downloadable GPX links (no Kids GPX link). Direct-link filenames: VDA_2027, TDL_V1_2027 and PDA_2027, but all three are stored under a directory explicitly named GPX 2026 DEFINTIVOS EVENTO; CDH_2026, EXP_2026, SKY_2026 and VIELHA 10K are explicitly 2026. The file endpoints return application/octet-stream and could not be downloaded/parsed in this environment, so none is binary-validated or accepted as a 2027 replacement. EXP individual 2027 race page confirms 32 km / 2,100 m+ despite the race index label still saying EXP 30K.",
       "source": "https://valdaran.utmb.world/"
     },
     {
@@ -341,9 +341,10 @@
     "corrections": [
       "Rothrock 25K: 1,188 m (not 1,180 m)",
       "Torrencial ISLA TEJA: 6.5 km (not 6 km)",
-      "Val d'Aran EXP: 32 km / 2,100 m (not 30 km)"
+      "Val d'Aran EXP: 32 km / 2,100 m (not 30 km)",
+      "Val d'Aran official EXP detail page confirms 32 km / 2,100 m+, while index still labels it EXP 30K; prefer the individual race page."
     ],
-    "gpxSafety": "No GPX file marked binary-validated in this pass. Older-year files remain rejected; Val d'Aran 2027-named candidates remain pending content/version validation."
+    "gpxSafety": "No GPX file marked binary-validated in this pass. Older-year files remain rejected. Val d'Aran track index has seven downloads; three have 2027 in filename but a directory labelled GPX 2026, while four are explicitly 2026. Keep all candidates pending binary/version validation; no Kids GPX link is currently exposed."
   },
-  "next": "Validate individual GPX downloads and route geometry for events 119-128; then continue second-pass review of events 1-118."
+  "next": "Resolve GPX binary download/validation for Val d'Aran candidates and continue the second-pass review of events 1-118."
 }
