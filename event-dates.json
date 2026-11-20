@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-21T00:40:00Z",
+  "updatedAt": "2026-11-21T00:50:00Z",
   "schemaVersion": 3,
   "events": {
     "la-corsa-della-bora": {
@@ -12464,6 +12464,281 @@
         }
       },
       "note": "Termin bestätigt; Detailseite enthält noch ältere Ausgabe. 2027-GPX und Rundendistanz offen."
+    },
+    "abu-seekirchen-2027": {
+      "eventId": "abu-seekirchen-2027",
+      "checkedAt": "2026-11-21T00:50:00Z",
+      "status": "verified",
+      "sources": [
+        {
+          "url": "https://www.austriabackyardultra.com/seekirchen",
+          "status": "read",
+          "verification": "official-2027-event-information"
+        }
+      ],
+      "eventPeriod": {
+        "startDate": "2027-10-09",
+        "endDate": "2027-10-09",
+        "verified": true
+      },
+      "routes": {
+        "0": {
+          "routeId": "abu-seekirchen-2027-loop",
+          "date": "2027-10-09",
+          "verified": true
+        }
+      }
+    },
+    "tabu-trans-austrian-2027": {
+      "eventId": "tabu-trans-austrian-2027",
+      "checkedAt": "2026-11-21T00:50:00Z",
+      "status": "verified",
+      "sources": [
+        {
+          "url": "https://www.austriabackyardultra.com/tabu",
+          "status": "read",
+          "verification": "official-2027-event-information"
+        }
+      ],
+      "eventPeriod": {
+        "startDate": "2027-04-04",
+        "endDate": "2027-04-11",
+        "verified": true
+      },
+      "routes": {
+        "0": {
+          "routeId": "tabu-trans-austrian-2027-loop",
+          "date": "2027-04-04",
+          "verified": true
+        },
+        "1": {
+          "routeId": "tabu-trans-austrian-2027-half",
+          "date": "2027-04-07",
+          "verified": true
+        },
+        "2": {
+          "routeId": "tabu-trans-austrian-2027-short",
+          "date": "2027-04-09",
+          "verified": true
+        }
+      },
+      "note": "Sonderformat, kein klassischer Backyard-Loop: 785 km/knapp 5.000 hm Bregenz–Podersdorf, dazu 405 km ab Salzburg und 263 km ab Linz."
+    },
+    "swiss-marathonis-backyard-2027": {
+      "eventId": "swiss-marathonis-backyard-2027",
+      "checkedAt": "2026-11-21T00:50:00Z",
+      "status": "unconfirmed",
+      "sources": [
+        {
+          "url": "https://myturnier.com/turnier/1-swiss-marathonis-backyard-marathon-2027-01-03-536eea8c73e3/",
+          "status": "read",
+          "verification": "secondary-calendar-only"
+        },
+        {
+          "url": "https://laufsportal.ch/",
+          "status": "read",
+          "verification": "secondary-calendar-only"
+        }
+      ],
+      "eventPeriod": {
+        "startDate": "2027-01-03",
+        "endDate": "2027-01-03",
+        "verified": false
+      },
+      "routes": {
+        "0": {
+          "routeId": "swiss-marathonis-backyard-2027-loop",
+          "date": "2027-01-03",
+          "verified": false
+        }
+      },
+      "note": "Nur sekundäre Kalenderangaben; offizielle Ausschreibung/Veranstalterbestätigung noch ausstehend."
+    },
+    "backyard-community-oberwil-feb-2027": {
+      "eventId": "backyard-community-oberwil-feb-2027",
+      "checkedAt": "2026-11-21T00:50:00Z",
+      "status": "verified",
+      "sources": [
+        {
+          "url": "https://helvetiabackyard.ch/community-run/",
+          "status": "read",
+          "verification": "official-2027-event-information"
+        }
+      ],
+      "eventPeriod": {
+        "startDate": "2027-02-06",
+        "endDate": "2027-02-06",
+        "verified": true
+      },
+      "routes": {
+        "0": {
+          "routeId": "backyard-community-oberwil-feb-2027-loop",
+          "date": "2027-02-06",
+          "verified": true
+        }
+      },
+      "note": "Offizielle Helvetia-Seite bestätigt 06.02.2027 in Uitikon; die im Vorschlag genannte Ortsangabe Oberwil-Lieli war falsch. 2027-Rundendistanz noch offen."
+    },
+    "easter-backyard-uerzlikon-2027": {
+      "eventId": "easter-backyard-uerzlikon-2027",
+      "checkedAt": "2026-11-21T00:50:00Z",
+      "status": "verified",
+      "sources": [
+        {
+          "url": "https://easterbackyardultra.ch/",
+          "status": "read",
+          "verification": "official-2027-event-information"
+        },
+        {
+          "url": "https://bigsbackyardultra.com/races/easter-backyard-ultra/",
+          "status": "read",
+          "verification": "official-2027-event-information"
+        }
+      ],
+      "eventPeriod": {
+        "startDate": "2027-03-26",
+        "endDate": "2027-03-26",
+        "verified": true
+      },
+      "routes": {
+        "0": {
+          "routeId": "easter-backyard-uerzlikon-2027-loop",
+          "date": "2027-03-26",
+          "verified": true
+        }
+      }
+    },
+    "montlinger-backyard-2027": {
+      "eventId": "montlinger-backyard-2027",
+      "checkedAt": "2026-11-21T00:50:00Z",
+      "status": "verified",
+      "sources": [
+        {
+          "url": "https://montlingerbackyard.ch/",
+          "status": "read",
+          "verification": "official-2027-event-information"
+        }
+      ],
+      "eventPeriod": {
+        "startDate": "2027-04-17",
+        "endDate": "2027-04-17",
+        "verified": true
+      },
+      "routes": {
+        "0": {
+          "routeId": "montlinger-backyard-2027-loop",
+          "date": "2027-04-17",
+          "verified": true
+        }
+      }
+    },
+    "witiker-backyard-2027": {
+      "eventId": "witiker-backyard-2027",
+      "checkedAt": "2026-11-21T00:50:00Z",
+      "status": "verified",
+      "sources": [
+        {
+          "url": "https://bigsbackyardultra.com/races/witiker-backyard-ultra/",
+          "status": "read",
+          "verification": "official-2027-event-information"
+        },
+        {
+          "url": "https://backyardultra.ch/",
+          "status": "read",
+          "verification": "official-2027-event-information"
+        }
+      ],
+      "eventPeriod": {
+        "startDate": "2027-05-06",
+        "endDate": "2027-05-06",
+        "verified": true
+      },
+      "routes": {
+        "0": {
+          "routeId": "witiker-backyard-2027-loop",
+          "date": "2027-05-06",
+          "verified": true
+        }
+      },
+      "note": "6,706 km pro Runde; Veranstalter nennt unterschiedliche Höhenmeter je Tag-/Nachtrunde (ca. 400/300 ft)."
+    },
+    "impossible-backyard-zurich-2027": {
+      "eventId": "impossible-backyard-zurich-2027",
+      "checkedAt": "2026-11-21T00:50:00Z",
+      "status": "verified",
+      "sources": [
+        {
+          "url": "https://x-impossible.ch/race-info/",
+          "status": "read",
+          "verification": "official-2027-event-information"
+        },
+        {
+          "url": "https://bigsbackyardultra.com/races/x-impossible-backyard-ultra/",
+          "status": "read",
+          "verification": "official-2027-event-information"
+        }
+      ],
+      "eventPeriod": {
+        "startDate": "2027-05-29",
+        "endDate": "2027-05-29",
+        "verified": true
+      },
+      "routes": {
+        "0": {
+          "routeId": "impossible-backyard-zurich-2027-loop",
+          "date": "2027-05-29",
+          "verified": true
+        }
+      }
+    },
+    "helvetia-backyard-uitikon-2027": {
+      "eventId": "helvetia-backyard-uitikon-2027",
+      "checkedAt": "2026-11-21T00:50:00Z",
+      "status": "verified",
+      "sources": [
+        {
+          "url": "https://helvetiabackyard.ch/infos/",
+          "status": "read",
+          "verification": "official-2027-event-information"
+        }
+      ],
+      "eventPeriod": {
+        "startDate": "2027-10-08",
+        "endDate": "2027-10-08",
+        "verified": true
+      },
+      "routes": {
+        "0": {
+          "routeId": "helvetia-backyard-uitikon-2027-loop",
+          "date": "2027-10-08",
+          "verified": true
+        }
+      },
+      "note": "Termin 08.10.2027 und 6,706-km-Runde bestätigt; neuer Veranstaltungsort für 2027 noch nicht veröffentlicht."
+    },
+    "swub-may-2027": {
+      "eventId": "swub-may-2027",
+      "checkedAt": "2026-11-21T00:50:00Z",
+      "status": "verified",
+      "sources": [
+        {
+          "url": "https://neckarlauf.com/schwarzwaldultra-backyard.html",
+          "status": "read",
+          "verification": "official-2027-event-information"
+        }
+      ],
+      "eventPeriod": {
+        "startDate": "2027-05-08",
+        "endDate": "2027-05-08",
+        "verified": true
+      },
+      "routes": {
+        "0": {
+          "routeId": "swub-may-2027-loop",
+          "date": "2027-05-08",
+          "verified": true
+        }
+      }
     }
   }
 }
