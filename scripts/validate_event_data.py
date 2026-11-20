@@ -1,7 +1,7 @@
 import json
 import math
 import re
-from datetime import date
+from datetime import date, datetime
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -18,10 +18,20 @@ feed_events = feed.get('events', {})
 
 
 def valid_date(value):
-    if not isinstance(value, str) or not re.fullmatch(r"\d{4}-\d{2}-\d{2}", value):
+    if not isinstance(value, str) or not re.fullmatch(r"\\d{4}-\\d{2}-\\d{2}", value):
         return False
     try:
         date.fromisoformat(value)
+        return True
+    except ValueError:
+        return False
+
+
+def valid_iso_timestamp(value):
+    if not isinstance(value, str) or not value.strip():
+        return False
+    try:
+        datetime.fromisoformat(value.strip().replace("Z", "+00:00"))
         return True
     except ValueError:
         return False
@@ -156,14 +166,14 @@ for missing_id in sorted(missing_feed_events):
     errors.append(f"{missing_id}: missing event-dates.json entry")
 for feed_event_id, feed_record in feed_events.items():
     checked_at = feed_record.get("checkedAt")
-    if checked_at and not isinstance(checked_at, str):
-        errors.append(f"{feed_event_id}: checkedAt must be an ISO timestamp")
+    if checked_at and not valid_iso_timestamp(checked_at):
+        errors.append(f"{feed_event_id}: checkedAt must be a valid ISO timestamp")
     source_check = feed_record.get("sourceCheckStatus")
     if source_check and source_check not in ("read", "partial", "unavailable", "not-checked", "manual"):
         errors.append(f"{feed_event_id}: invalid sourceCheckStatus {source_check!r}")
     last_success = feed_record.get("lastSuccessfulSourceCheckAt")
-    if last_success and not isinstance(last_success, str):
-        errors.append(f"{feed_event_id}: lastSuccessfulSourceCheckAt must be an ISO timestamp")
+    if last_success and not valid_iso_timestamp(last_success):
+        errors.append(f"{feed_event_id}: lastSuccessfulSourceCheckAt must be a valid ISO timestamp")
     if feed_record.get("status") == "verified":
         period = feed_record.get("eventPeriod") or {}
         has_verified_period = bool(period.get("verified") and period.get("startDate"))
