@@ -1,0 +1,350 @@
+{
+  "batch": 27,
+  "checkedAt": "2026-11-20",
+  "scope": "Second official route-data validation of top-level events 119-128",
+  "status": "rechecked",
+  "events": [
+    {
+      "order": 119,
+      "name": "Puerto Vallarta México by UTMB",
+      "routes": [
+        [
+          "Hikuri 81K",
+          81,
+          3900
+        ],
+        [
+          "Nakawé 53K",
+          53,
+          2500
+        ],
+        [
+          "Haramara 37K",
+          37,
+          1600
+        ],
+        [
+          "Ereno 20K",
+          20,
+          1050
+        ],
+        [
+          "Pata Salada 5K",
+          5,
+          200
+        ]
+      ],
+      "gpx": "Previous checkpoint records official Map + GPX pages. Route metrics reconfirmed; file bytes/version not independently validated.",
+      "source": "https://puerto-vallarta.utmb.world/"
+    },
+    {
+      "order": 120,
+      "name": "HOKA Xtrail Kenting by UTMB",
+      "routes": [
+        [
+          "Xtrail 100K",
+          98,
+          3291
+        ],
+        [
+          "Xtrail 50K",
+          50,
+          1496
+        ],
+        [
+          "Xtrail 25K",
+          26,
+          589
+        ],
+        [
+          "Xtrail 10K",
+          11,
+          201
+        ],
+        [
+          "Kids Family Run",
+          2,
+          10
+        ]
+      ],
+      "gpx": "Previous checkpoint records official Map + GPX pages. Route metrics reconfirmed; file bytes/version not independently validated.",
+      "source": "https://xtrail.utmb.world/"
+    },
+    {
+      "order": 121,
+      "name": "Desert RATS Trail Running Festival by UTMB",
+      "routes": [
+        [
+          "100K",
+          100,
+          2050
+        ],
+        [
+          "50K",
+          48,
+          1050
+        ],
+        [
+          "21K",
+          21,
+          700
+        ],
+        [
+          "10K",
+          9,
+          200
+        ]
+      ],
+      "gpx": "Current official 2027 race page confirmed; saved checkpoint reports downloadable GPX still from 2025/2026. Keep stale files rejected.",
+      "source": "https://desertrats.utmb.world/"
+    },
+    {
+      "order": 122,
+      "name": "Hiroshima by UTMB",
+      "routes": [
+        [
+          "HIROSHIMA 100K",
+          100,
+          null
+        ],
+        [
+          "HIROSHIMA 50K",
+          50,
+          null
+        ],
+        [
+          "HIROSHIMA 25K",
+          25,
+          null
+        ]
+      ],
+      "gpx": "Official 2027 overview confirms three races but doesn't expose elevation or GPX download in page extract. Prior elevation values remain provisional pending individual race-page verification.",
+      "source": "https://hiroshima.utmb.world/overview"
+    },
+    {
+      "order": 123,
+      "name": "The Canyons Endurance Runs by UTMB",
+      "routes": [
+        [
+          "100M",
+          161,
+          5550
+        ],
+        [
+          "100K",
+          100,
+          3750
+        ],
+        [
+          "50K",
+          50,
+          1700
+        ],
+        [
+          "25K",
+          25,
+          850
+        ]
+      ],
+      "gpx": "Official 2027 metrics confirmed. Saved checkpoint says linked GPX files are explicitly 2026; keep rejected as stale.",
+      "source": "https://canyons.utmb.world/"
+    },
+    {
+      "order": 124,
+      "name": "Rothrock by UTMB",
+      "routes": [
+        [
+          "50K",
+          53.3,
+          1550
+        ],
+        [
+          "25K",
+          26.9,
+          1188
+        ]
+      ],
+      "gpx": "Official 2027 metrics confirmed. Correction: 25K elevation is 1,188 m, not 1,180 m. Current GPX links in checkpoint are 2026 and remain stale.",
+      "source": "https://rothrock.utmb.world/"
+    },
+    {
+      "order": 125,
+      "name": "Trail du Saint-Jacques by UTMB",
+      "routes": [
+        [
+          "Ultra du Saint Jacques 100M",
+          140,
+          6000
+        ],
+        [
+          "Grand Trail du Saint Jacques 100K",
+          88,
+          3600
+        ],
+        [
+          "Monistrail 50K",
+          55,
+          2100
+        ],
+        [
+          "Les Chibottes 20K",
+          28,
+          750
+        ],
+        [
+          "Le 12 du Dolaizon",
+          12,
+          200
+        ],
+        [
+          "Rando 28km",
+          28,
+          750
+        ]
+      ],
+      "gpx": "Official 2027 metrics confirmed. Saved checkpoint says GPX files will be available from 11 June 2027; none independently verified now.",
+      "source": "https://saint-jacques.utmb.world/"
+    },
+    {
+      "order": 126,
+      "name": "Torrencial Valdivia by UTMB",
+      "routes": [
+        [
+          "PILOLCURA 100K",
+          101,
+          4100
+        ],
+        [
+          "ONCOL 65K",
+          65,
+          2600
+        ],
+        [
+          "LLANCAHUE 45K",
+          45,
+          1600
+        ],
+        [
+          "COLLICO 20K",
+          20,
+          800
+        ],
+        [
+          "CAU CAU 12K",
+          12,
+          400
+        ],
+        [
+          "ISLA TEJA",
+          6.5,
+          200
+        ]
+      ],
+      "gpx": "Official 2027 metrics confirmed. Correction: ISLA TEJA is 6.5 km, not 6 km. No public GPX shown on race list page.",
+      "source": "https://torrencial.utmb.world/races"
+    },
+    {
+      "order": 127,
+      "name": "HOKA Val d'Aran by UTMB",
+      "routes": [
+        [
+          "VDA",
+          163,
+          10000
+        ],
+        [
+          "CDH",
+          110,
+          6400
+        ],
+        [
+          "TDL",
+          75,
+          5100
+        ],
+        [
+          "PDA",
+          55,
+          3300
+        ],
+        [
+          "EXP",
+          32,
+          2100
+        ],
+        [
+          "SKY 18K PROMESAS",
+          18,
+          900
+        ],
+        [
+          "SKY Baqueira Beret",
+          18,
+          900
+        ],
+        [
+          "VIELHA 10K",
+          10,
+          500
+        ]
+      ],
+      "gpx": "Current official 2027 track index exposes seven downloadable GPX links (no Kids GPX link). Direct-link filenames: VDA_2027, TDL_V1_2027 and PDA_2027, but all three are stored under a directory explicitly named GPX 2026 DEFINTIVOS EVENTO; CDH_2026, EXP_2026, SKY_2026 and VIELHA 10K are explicitly 2026. The file endpoints return application/octet-stream and could not be downloaded/parsed in this environment, so none is binary-validated or accepted as a 2027 replacement. EXP individual 2027 race page confirms 32 km / 2,100 m+ despite the race index label still saying EXP 30K.",
+      "source": "https://valdaran.utmb.world/"
+    },
+    {
+      "order": 128,
+      "name": "Monte Rosa Walser Waeg by UTMB",
+      "routes": [
+        [
+          "Les sentiers des Valdôtains",
+          120,
+          8200
+        ],
+        [
+          "Monte Rosa Trail",
+          82,
+          6300
+        ],
+        [
+          "Walserwaeg Trail",
+          43,
+          3100
+        ],
+        [
+          "Gressoney Lys Trail",
+          35,
+          1700
+        ],
+        [
+          "Regina Margherita Trail",
+          15,
+          650
+        ],
+        [
+          "Junior Walser Trail",
+          9,
+          600
+        ],
+        [
+          "Becca Pink",
+          4,
+          null
+        ]
+      ],
+      "gpx": "Official 2027 routes confirmed. Saved direct GPX links for 120K, 82K and 43K are 2026 and rejected; no verified 2027 files for other routes. Becca Pink elevation not shown on overview.",
+      "source": "https://mrww.utmb.world/"
+    }
+  ],
+  "summary": {
+    "eventsRechecked": 10,
+    "routeVariants": 53,
+    "corrections": [
+      "Rothrock 25K: 1,188 m (not 1,180 m)",
+      "Torrencial ISLA TEJA: 6.5 km (not 6 km)",
+      "Val d'Aran EXP: 32 km / 2,100 m (not 30 km)",
+      "Val d'Aran official EXP detail page confirms 32 km / 2,100 m+, while index still labels it EXP 30K; prefer the individual race page."
+    ],
+    "gpxSafety": "No GPX file marked binary-validated in this pass. Older-year files remain rejected. Val d'Aran track index has seven downloads; three have 2027 in filename but a directory labelled GPX 2026, while four are explicitly 2026. Keep all candidates pending binary/version validation; no Kids GPX link is currently exposed."
+  },
+  "next": "Resolve GPX binary download/validation for Val d'Aran candidates and continue the second-pass review of events 1-118."
+}
