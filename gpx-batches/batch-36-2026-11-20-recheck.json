@@ -1,0 +1,286 @@
+{
+  "batch": 36,
+  "checkedAt": "2026-11-20",
+  "scope": "Second-pass official-source review of top-level events 39-48 (10 events)",
+  "status": "rechecked",
+  "events": [
+    {
+      "order": 39,
+      "name": "Mountain Ultra Trail by UTMB",
+      "year": 2027,
+      "gpxStatus": "Official UTMB pages for MUT Miler, MUT100, MUT60, MUT45, MUT Challenge and MUT Lite expose Map + GPX panels. The Miler course data was previously marked to be confirmed. No direct GPX binaries were downloaded or parsed in this pass; map panels alone do not establish file version or integrity.",
+      "sources": [
+        "https://mut.utmb.world/en/races/mutmiler",
+        "https://mut.utmb.world/races/mut100",
+        "https://mut.utmb.world/races/mut60",
+        "https://mut.utmb.world/races/mut45",
+        "https://mut.utmb.world/races/mutchallenge",
+        "https://mut.utmb.world/races/mutlite"
+      ],
+      "followUp": "Export all six official 2027 GPX tracks and validate each; confirm Miler distance/elevation before treating it as final."
+    },
+    {
+      "order": 40,
+      "name": "MOUNTAINMAN Berchtesgaden – WATZ",
+      "year": 2027,
+      "eventDates": "2-6 June 2027",
+      "routes": [
+        [
+          "WATZ Ultimate",
+          111,
+          5300
+        ],
+        [
+          "WATZ Double",
+          57,
+          2500
+        ],
+        [
+          "WATZ Final",
+          25,
+          1300
+        ]
+      ],
+      "gpxStatus": "Major update: organizer now confirms the 2027 WATZ festival, dates and three formats. Official organizer says GPX track maps are included and accessible via its route pages/Komoot; participant voucher is provided before the event. No public direct GPX binaries were downloaded/parsed in this pass. Ultimate is four stages; Double uses stages 3-4; Final is stage 4.",
+      "sources": [
+        "https://mountainman.de/trailrunning-events/alps/berchtesgaden/",
+        "https://mountainman.de/trailrunning-events/alps/berchtesgaden/4-etappe-watz/"
+      ],
+      "followUp": "Collect the official stage GPX/Komoot routes when the organizer makes participant access available; map each stage correctly to Ultimate, Double and Final."
+    },
+    {
+      "order": 41,
+      "name": "Jenaer Backyard Ultra",
+      "year": 2027,
+      "eventDate": "5 June 2027",
+      "routes": [
+        [
+          "Backyard loop",
+          6.7,
+          150
+        ]
+      ],
+      "gpxStatus": "Official organizer confirms the 6.7 km loop and approx. 150 hm; event is sold out and offers a waiting list. No public GPX download found. Keep route metrics as organizer-published, not GPX-measured.",
+      "source": "https://jenaerbackyardultra.de/",
+      "followUp": "Request the official loop GPX from organizer; do not substitute a community route."
+    },
+    {
+      "order": 42,
+      "name": "Dolomiti Extreme Trail",
+      "year": 2027,
+      "eventDates": "11-12 June 2027",
+      "routes": [
+        [
+          "DXT 103K",
+          102,
+          6500
+        ],
+        [
+          "DXT 72K",
+          76,
+          4800
+        ],
+        [
+          "DXT 55K",
+          58,
+          3600
+        ]
+      ],
+      "gpxStatus": "All three official 2027 race pages provide direct GPX download controls. Official route metrics differ from the nominal race labels and previous app values: 102/6500, 76/4800 and 58/3600. Direct official URLs were already recorded in the prior batch, but binary downloads/parsing have not been completed in this pass.",
+      "sources": [
+        "https://www.dolomitiextremetrail.com/en/race/dxt-103k",
+        "https://www.dolomitiextremetrail.com/en/race/dxt-72k",
+        "https://www.dolomitiextremetrail.com/en/race/dxt-55k"
+      ],
+      "followUp": "Download all three 2027 official GPX binaries and compare parsed lengths/elevation against 102/6500, 76/4800 and 58/3600."
+    },
+    {
+      "order": 43,
+      "name": "Hochkönig Ultraks",
+      "year": 2027,
+      "eventDates": "4-6 June 2027",
+      "routes": [
+        [
+          "HK70",
+          71.5,
+          4150
+        ],
+        [
+          "HK48",
+          48,
+          2940
+        ],
+        [
+          "HK30 Extreme",
+          34,
+          2680
+        ],
+        [
+          "HK30 Panorama",
+          30.7,
+          2050
+        ],
+        [
+          "HK20",
+          20.5,
+          1020
+        ],
+        [
+          "HK Sprint",
+          10,
+          310
+        ],
+        [
+          "HK Vertical",
+          5.9,
+          1080
+        ],
+        [
+          "Raiffeisen Team Trail",
+          3.6,
+          120
+        ],
+        [
+          "Mini Ultraks",
+          1.5,
+          null
+        ]
+      ],
+      "gpxStatus": "Official organizer confirms nine formats and their distances/elevation where specified. Mini Ultraks consists of three separate youth distances (0.5/1/1.5 km), not one fixed 1.5 km race. Organizer runner guide indicates GPX on course pages or in race email; direct public GPX links were not confirmed in this pass.",
+      "source": "https://www.hochkoenig-ultraks.at/",
+      "followUp": "Obtain the individual official GPX files from course pages or participant email; model Mini Ultraks as three age-group distances."
+    },
+    {
+      "order": 44,
+      "name": "mozart 100 by UTMB",
+      "year": 2027,
+      "eventDate": "5 June 2027",
+      "routes": [
+        [
+          "mozart 100",
+          119,
+          6000
+        ],
+        [
+          "mozart Ultra",
+          84,
+          4800
+        ],
+        [
+          "mozart Marathon",
+          44,
+          1600
+        ],
+        [
+          "mozart Half",
+          28,
+          1100
+        ],
+        [
+          "mozart Lake Trail",
+          12,
+          200
+        ]
+      ],
+      "gpxStatus": "Official 2027 UTMB race pages provide Map + GPX panels for the five races. Major app data reconciliation remains necessary: the true 100 is 119 km/6,000 hm; the 84 km race is mozart Ultra; the official Half is 28 km and the 12 km Lake Trail must be present. No GPX binary downloaded/parsed in this pass.",
+      "sources": [
+        "https://mozart.utmb.world/de/races/mozart100",
+        "https://mozart.utmb.world/de/races/mozartultra",
+        "https://mozart.utmb.world/de/races/mozartmarathon",
+        "https://mozart.utmb.world/de/races/mozarthalf",
+        "https://mozart.utmb.world/de/races/mozartlake"
+      ],
+      "followUp": "Reconcile app route records to all five official 2027 race pages, then export and validate each official GPX binary."
+    },
+    {
+      "order": 45,
+      "name": "Ultra Scotland",
+      "year": 2027,
+      "gpxStatus": "Official GB Ultras pages retain 50-mile and 100-mile race information and official Racemap course maps with GPX export. The 100-mile map includes a High Level race route and a Low Level severe-weather alternative; these must remain distinct. A 2027 edition date was not confirmed by the retrieved official sources in this pass, and no GPX binary was downloaded/parsed.",
+      "sources": [
+        "https://www.gbultras.com/ultra-scotland-50/",
+        "https://www.gbultras.com/ultra-scotland-100/"
+      ],
+      "followUp": "Confirm 2027 event date with organizer; export both official GPX routes and preserve High Level vs Low Level as separate variants."
+    },
+    {
+      "order": 46,
+      "name": "Falkensteinlauf",
+      "year": 2027,
+      "eventDate": "17 July 2027",
+      "gpxStatus": "Official organizer confirms the 2027 date, but the route page currently provides no GPX download or official elevation value. The 2026 event details must not be used as a 2027 course file.",
+      "source": "https://www.falkensteinlauf.de/",
+      "followUp": "Recheck when 2027 registration opens at the end of 2026; request official route GPX and elevation."
+    },
+    {
+      "order": 47,
+      "name": "Trail 100 Andorra by UTMB",
+      "year": 2027,
+      "eventDates": "11-13 June 2027",
+      "routes": [
+        [
+          "Ultra 105K",
+          105,
+          6800
+        ],
+        [
+          "Trail 80K",
+          79,
+          3900
+        ],
+        [
+          "Trail 50K",
+          50,
+          3400
+        ],
+        [
+          "Trail 25K (category Trail 21K)",
+          24.9,
+          1350
+        ],
+        [
+          "Trail 10K",
+          10,
+          500
+        ]
+      ],
+      "gpxStatus": "Official 2027 event page now confirms five courses and published metrics. The former app label 'Trail 21K' is a category name; actual course length is 24.9 km. Individual route pages expose Map + GPX, but direct binaries were not downloaded/parsed in this pass.",
+      "sources": [
+        "https://andorra.utmb.world/",
+        "https://andorra.utmb.world/races/ultra-105k",
+        "https://andorra.utmb.world/races/trail-80k",
+        "https://andorra.utmb.world/races/trail-50k"
+      ],
+      "followUp": "Correct app course label to Trail 25K (UTMB category Trail 21K) and export/validate all five official 2027 GPX tracks."
+    },
+    {
+      "order": 48,
+      "name": "Ötscher Trail",
+      "year": 2027,
+      "gpxStatus": "Five route-specific official GPX download URLs were individually recorded in the prior pass (Marathon Trail, Vertical Race, Easy Trail, Speed Trail, Skyrace). This pass confirms these are organizer-hosted links, but does not download or parse the binaries; confirm the files are still current for the 2027 edition before any replacement. Kids route has no GPX.",
+      "sources": [
+        "https://www.oetschertrail.run/marathon-trail-powered-by-st-bernhard",
+        "https://www.oetschertrail.run/vertical-race",
+        "https://www.oetschertrail.run/easy-trail",
+        "https://www.oetschertrail.run/speed-trail",
+        "https://www.oetschertrail.run/skyrace"
+      ],
+      "followUp": "Download and parse all five organizer GPX files; inspect file metadata and course version before labeling as 2027."
+    }
+  ],
+  "summary": {
+    "eventsRechecked": 10,
+    "importantUpdates": [
+      "MOUNTAINMAN WATZ 2027 is confirmed for 2-6 June with Ultimate 111 km/5300 hm, Double 57/2500 and Final 25/1300; organizer includes GPX via route pages/Komoot.",
+      "Jenaer Backyard Ultra confirms 5 June 2027 and a 6.7 km/150 hm loop; event is sold out with waiting list.",
+      "Dolomiti Extreme Trail 2027 provides official direct GPX download controls for all three races; measured course values differ from race labels.",
+      "Hochkönig Ultraks confirms nine formats; Mini Ultraks has three separate distances.",
+      "mozart 100 app route names/metrics need major reconciliation to five official 2027 races; 100 is 119 km, not 84 km.",
+      "Trail 100 Andorra officially labels the 24.9 km route as Trail 25K although the UTMB category is Trail 21K.",
+      "Falkensteinlauf 2027 date confirmed, but no official GPX or elevation published.",
+      "Ultra Scotland's current official map has two distinct 100-mile variants; 2027 date not confirmed in this source pass."
+    ],
+    "gpxSafety": "No GPX binary was downloaded and parsed in this pass. Official map panels, organizer download controls and Komoot links do not by themselves constitute technical binary validation. Older GPX files remain retained as historical; no existing GPX files are deleted or replaced.",
+    "next": "Continue second-pass review with events 29-38."
+  }
+}
