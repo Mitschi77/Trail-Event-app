@@ -8,7 +8,7 @@
     {
       "order": 91,
       "name": "Torlauf Dachstein",
-      "gpxStatus": "Five official Outdooractive GPX URLs remain saved. Current organizer page confirms at least Ultra 72/4300, Marathon 42/2500 and Half Marathon 24/510; XML bytes and all five route profiles still require technical validation.",
+      "gpxStatus": "Official page exposes six GPX download links (Ultra, Marathon, Half Marathon, Skyrace, 10 km, Marathon Ersatzstrecke). The link targets were followed but binary retrieval failed for all six; XML/trackpoints and calculated metrics remain unverified. Official page/index has a content conflict: 2027 search-index data says Ultra 72 km/4,300 hm, while opened cached page still shows 2026 timetable and Ultra 72 km/3,900 hm. Keep all existing older GPX versions; do not promote any candidate without binary validation and edition confirmation.",
       "source": "https://www.torlauf-dachstein.info/infos",
       "downloads": [
         {
@@ -32,7 +32,7 @@
           "url": "https://www.outdooractive.com/de/download.tour.gpx?i=235239301&project=outdooractive"
         }
       ],
-      "followUp": "Download/parse each of five GPX files, compare measured length and elevation to current organizer course pages; keep previous versions separate if the route year differs.",
+      "followUp": "Obtain the six files via Outdooractive direct download or organizer contact, then parse and compare. Ask organizer to clarify Ultra ascent 3,900 vs 4,300 hm and confirm which page/file version is the official 2027 course.",
       "verified2027CourseInfo": {
         "source": "https://www.torlauf-dachstein.info/infos",
         "routes": [
@@ -53,7 +53,63 @@
           }
         ],
         "note": "Current official course page shows Ultra 72 km/4,300 hm, Marathon 42 km/2,500 hm and Half Marathon 24 km/510 hm. Five official GPX links (Ultra, Marathon, Half Marathon, Skyrace, 10K) remain in the app; their downloaded XML and track metrics have not yet been independently checked against these values. Organizer notes measurement software may vary."
-      }
+      },
+      "checkedAt": "2026-11-20",
+      "officialDownloadLinksConfirmed": [
+        {
+          "route": "Ultra",
+          "url": "https://www.outdooractive.com/download.tour.gpx?i=334299958&lang=de&project=outdooractive",
+          "sourcePage": "https://www.torlauf-dachstein.info/infos",
+          "status": "official-link-confirmed; binary-fetch-failed"
+        },
+        {
+          "route": "Marathon",
+          "url": "https://www.outdooractive.com/download.tour.gpx?i=109515786&lang=de&project=outdooractive",
+          "sourcePage": "https://www.torlauf-dachstein.info/infos",
+          "status": "official-link-confirmed; binary-fetch-failed"
+        },
+        {
+          "route": "Halbmarathon",
+          "url": "https://www.outdooractive.com/download.tour.gpx?i=109516152&lang=de&project=outdooractive",
+          "sourcePage": "https://www.torlauf-dachstein.info/infos",
+          "status": "official-link-confirmed; binary-fetch-failed"
+        },
+        {
+          "route": "Skyrace",
+          "url": "https://www.outdooractive.com/download.tour.gpx?i=333179794&lang=de&project=outdooractive",
+          "sourcePage": "https://www.torlauf-dachstein.info/infos",
+          "status": "official-link-confirmed; binary-fetch-failed"
+        },
+        {
+          "route": "10 KM Lauf",
+          "url": "https://www.outdooractive.com/de/download.tour.gpx?i=235239301&project=outdooractive",
+          "sourcePage": "https://www.torlauf-dachstein.info/infos",
+          "status": "official-link-confirmed; binary-fetch-failed"
+        },
+        {
+          "route": "Marathon Ersatzstrecke",
+          "url": "https://www.outdooractive.com/download.tour.gpx?i=217072815&lang=de&project=outdooractive",
+          "sourcePage": "https://www.torlauf-dachstein.info/infos",
+          "status": "official-link-confirmed; binary-fetch-failed"
+        }
+      ],
+      "officialPageConflict": {
+        "source": "https://www.torlauf-dachstein.info/infos",
+        "observedAt": "2026-11-20",
+        "currentSearchIndexText": "Search index currently surfaces 2027 event date 04.09.2027 and course details including Ultra 72 km/4,300 hm, Marathon 42 km/2,500 hm, Half Marathon 24 km/510 hm, Skyrace 24 km/2,220 hm and 10 km/150 hm.",
+        "cachedPageText": "Opened page content still displays 2026 timetable and 2026 price/registration information; its Ultra section says 72 km/3,900 hm while Marathon 42/2,500, Half Marathon 24/510, Skyrace 24/2,220 and 10 km/150 remain the same.",
+        "assessment": "The official page appears to have mixed or cached 2026 and 2027 content. Do not silently normalize Ultra ascent to 4,300 or 3,900 hm until organizer page is consistently updated or confirms the value."
+      },
+      "gpxTechnicalChecks": {
+        "status": "binary-not-fetched",
+        "attempts": "All six official Outdooractive GPX download links (five race routes plus Marathon Ersatzstrecke) were followed from the official page. The web fetch failed for each endpoint (400 OK or cache miss); no GPX bytes were received.",
+        "parsed": false,
+        "trackpointCount": null,
+        "calculatedDistanceKm": null,
+        "calculatedAscentHm": null,
+        "note": "The existence of a visible official download link is confirmed, but file integrity and route measurements are not. Do not mark these as technically validated."
+      },
+      "retentionRule": "Existing historical GPX versions remain valid as last available versions until official replacements are downloaded and checked. Never overwrite/delete old files."
     },
     {
       "order": 92,
