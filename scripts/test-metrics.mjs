@@ -105,6 +105,11 @@ const maxFuel = renderFuelSchedule({km:100}, {pace:10, fuel:999});
 assert.match(maxFuel, /Alle 240 Minuten/);
 const longUltra = renderFuelSchedule({km:500}, {pace:10, fuel:15});
 assert.equal((longUltra.match(/<tr>/g) || []).length, 41, "Ultra reminder table must cap at 40 data rows plus header");
+assert.match(longUltra, /Anzeige ist auf 40 Erinnerungen begrenzt/, "Ultra schedule must disclose when reminders are truncated");
+assert.match(longUltra, /Laufzeit ohne Pausen/, "Fuel schedule must label moving time without pauses");
+const exactlyForty = renderFuelSchedule({km:61}, {pace:10, fuel:15});
+assert.equal((exactlyForty.match(/<tr>/g) || []).length, 41, "A schedule with exactly 40 reminders must retain all rows");
+assert.doesNotMatch(exactlyForty, /Anzeige ist auf 40 Erinnerungen begrenzt/, "A schedule with no 41st reminder must not show a truncation warning");
 const noFullInterval = renderFuelSchedule({km:1}, {pace:5, fuel:60});
 assert.match(noFullInterval, /kein vollständiges Verpflegungsintervall/);
 
