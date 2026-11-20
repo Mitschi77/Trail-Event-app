@@ -90,7 +90,7 @@ for event_index, event in enumerate(events):
                     errors.append(f"{name} / {route_id}: invalid or negative {field}={value!r}")
                     continue
                 filled[field] += 1
-                if field == "km" and numeric > 0:
+                if field == "km" and numeric > 0 and route.get("excludeFromDistanceFilter") is not True:
                     valid_km.append(numeric)
                 if field == "hm":
                     valid_hm.append(numeric)
