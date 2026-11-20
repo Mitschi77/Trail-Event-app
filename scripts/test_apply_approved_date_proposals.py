@@ -100,5 +100,33 @@ class ApprovedDateProposalTests(unittest.TestCase):
         self.assertEqual(report["applied"], [])
         self.assertEqual(updated["updatedAt"], BASE["updatedAt"])
 
+    def test_already_current_dates_are_safe_noops(self):
+        feed = {
+            "updatedAt": "2026-11-20T00:00:00Z",
+            "events": {"sample": {
+                "status": "verified",
+                "eventPeriod": {"startDate": "2027-11-01", "verified": True},
+                "routes": {"0": {"routeId": "sample-50k", "date": "2027-11-02", "verified": True}}
+            }}
+        }
+        rows = [
+            proposal("event-current", "event_change", {
+                "source": "official_event_date_feed", "eventId": "sample",
+                "field": "startDate", "oldValue": "2026-11-01", "newValue": "2027-11-01",
+                "sources": ["https://organizer.example/race"]
+            }),
+            proposal("route-current", "route_change", {
+                "source": "official_event_date_feed", "eventId": "sample", "routeId": "sample-50k",
+                "routeIndex": "0", "field": "date", "oldValue": "2026-11-01", "newValue": "2027-11-02",
+                "sources": ["https://organizer.example/course"]
+            })
+        ]
+        updated, report = apply_proposals(feed, rows)
+        self.assertEqual(report["applied"], [])
+        self.assertEqual(report["conflicts"], [])
+        self.assertEqual([x["reason"] for x in report["skipped"]], ["already-current", "already-current"])
+        self.assertEqual(updated["updatedAt"], feed["updatedAt"])
+
+
 if __name__ == "__main__":
     unittest.main()
