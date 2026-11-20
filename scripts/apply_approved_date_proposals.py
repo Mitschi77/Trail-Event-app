@@ -70,11 +70,10 @@ def apply_proposals(feed: dict, proposals: list[dict]) -> tuple[dict, dict]:
         if not isinstance(event_id, str) or not event_id or not valid_date(new_value) or not sources:
             report["skipped"].append({"id": proposal_id, "reason": "missing-or-invalid-evidence"})
             continue
-        target_key = (proposal_type, event_id, payload.get("routeId") if proposal_type == "route_change" else field, field, payload.get("oldValue"), new_value)
+        target_key = json.dumps([proposal_type, event_id, payload.get("routeId") if proposal_type == "route_change" else field, field, payload.get("oldValue"), new_value], sort_keys=True)
         if target_key in seen_mutations:
             report["skipped"].append({"id": proposal_id, "reason": "duplicate-identical-proposal"})
             continue
-        seen_mutations.add(target_key)
 
         if checked_at:
             try:
@@ -133,6 +132,7 @@ def apply_proposals(feed: dict, proposals: list[dict]) -> tuple[dict, dict]:
                 existing.append({"url": url, "status": "read", "verification": "owner-approved-date-proposal"})
                 known.add(url)
         event["sources"] = existing
+        seen_mutations.add(target_key)
         report["applied"].append(proposal_id)
 
     if report["applied"]:
