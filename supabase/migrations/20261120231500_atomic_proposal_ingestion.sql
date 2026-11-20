@@ -14,6 +14,7 @@ declare
   v_event_id text;
   v_route_id text;
   v_field_name text;
+  v_source_url text;
   lock_key text;
   existing_id uuid;
   inserted_id uuid;
@@ -36,7 +37,8 @@ begin
        value ->> 'proposal_type',
        value -> 'payload' ->> 'eventId',
        coalesce(value -> 'payload' ->> 'routeId', ''),
-       value -> 'payload' ->> 'field'
+       value -> 'payload' ->> 'field',
+       coalesce(value -> 'payload' ->> 'sourceUrl', '')
      )::text
   loop
     v_item_payload := item -> 'payload';
@@ -44,6 +46,7 @@ begin
     v_event_id := v_item_payload ->> 'eventId';
     v_route_id := coalesce(v_item_payload ->> 'routeId', '');
     v_field_name := v_item_payload ->> 'field';
+    v_source_url := coalesce(v_item_payload ->> 'sourceUrl', '');
 
     if v_proposal_type is null or v_proposal_type not in ('event_change', 'route_change', 'data_correction')
        or v_event_id is null or v_event_id = '' or v_field_name is null or v_field_name = '' then
@@ -51,7 +54,7 @@ begin
     end if;
 
     -- JSON array encoding avoids delimiter collisions in user-controlled key parts.
-    lock_key := jsonb_build_array(v_proposal_type, v_event_id, v_route_id, v_field_name)::text;
+    lock_key := jsonb_build_array(v_proposal_type, v_event_id, v_route_id, v_field_name, v_source_url)::text;
     perform pg_advisory_xact_lock(hashtextextended(lock_key, 0));
 
     select id into existing_id
@@ -62,6 +65,7 @@ begin
        and payload ->> 'eventId' = v_event_id
        and coalesce(payload ->> 'routeId', '') = v_route_id
        and payload ->> 'field' = v_field_name
+       and coalesce(payload ->> 'sourceUrl', '') = v_source_url
      limit 1;
 
     if found then
