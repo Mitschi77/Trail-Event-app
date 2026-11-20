@@ -20,10 +20,7 @@ declare
   inserted_ids uuid[] := '{}'::uuid[];
   duplicate_count integer := 0;
 begin
-  if auth.role() is distinct from 'service_role' then
-    raise exception 'Only the proposal ingestion service may insert automated proposals'
-      using errcode = '42501';
-  end if;
+  -- EXECUTE is revoked from PUBLIC, anon and authenticated; only service_role is granted access.
   if p_rows is null or jsonb_typeof(p_rows) is distinct from 'array' then
     raise exception 'Proposal batch must be a JSON array' using errcode = '22023';
   end if;
