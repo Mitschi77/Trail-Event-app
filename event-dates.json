@@ -1897,7 +1897,7 @@
           "verified": true
         },
         "5": {
-          "routeId": "stubai-sunnenseitn-14-700-2027",
+          "routeId": "stubai-sunnenseitn-trail-14-700",
           "date": "2027-07-02",
           "verified": true
         }
@@ -2103,6 +2103,11 @@
         },
         "7": {
           "routeId": "verbier-trail-decouverte-3-5-2027",
+          "date": "2027-07-11",
+          "verified": true
+        },
+        "8": {
+          "routeId": "verbier-x-orient-5k-240-2027",
           "date": "2027-07-11",
           "verified": true
         }
