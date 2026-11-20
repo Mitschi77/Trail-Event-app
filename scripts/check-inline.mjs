@@ -86,7 +86,7 @@ if (!html.includes("SOLD OUT · AUSVERKAUFT") || !html.includes("sold-out-text")
 if (!html.includes('data-field="registrationStatus"') || !html.includes("registrationStatus==='sold_out'")) throw new Error("Route editors must persist the available/sold-out registration status.");
 
 
-const gpxRestriction = html.match(/function routeGpxIsOrganizerRestricted\\(route\\)\\{([^}]*)\\}/)?.[1] || "";
+const gpxRestriction = html.match(/function routeGpxIsOrganizerRestricted\(route\)\{([^}]*)\}/)?.[1] || "";
 if (!gpxRestriction.includes("gpxUseProhibited") || !gpxRestriction.includes("gpxRestricted") || !gpxRestriction.includes("organizer-prohibited")) {
   throw new Error("Organizer GPX restrictions must be recognized across supported restriction fields.");
 }
