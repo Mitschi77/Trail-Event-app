@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-20T21:45:00Z",
+  "updatedAt": "2026-11-20T22:00:00+01:00",
   "schemaVersion": 3,
   "events": {
     "la-corsa-della-bora": {
@@ -7620,6 +7620,381 @@
         "0": {
           "routeId": "bme-elimination-2027-loop",
           "date": "2027-02-06",
+          "verified": true
+        }
+      }
+    },
+    "wizz-air-budapest-half-marathon-2027": {
+      "eventId": "wizz-air-budapest-half-marathon-2027",
+      "checkedAt": "2026-11-20T22:00:00+01:00",
+      "status": "verified",
+      "sources": [
+        {
+          "url": "https://halfmarathon.runinbudapest.com/wizz-air-budapest-half-marathon-2027/",
+          "status": "read",
+          "verification": "official-2027-organizer-calendar"
+        }
+      ],
+      "eventPeriod": {
+        "startDate": "2027-09-05",
+        "endDate": "2027-09-05",
+        "verified": true
+      },
+      "routes": {
+        "0": {
+          "routeId": "budapest-half-2027-21k",
+          "date": "2027-09-05",
+          "verified": true
+        },
+        "1": {
+          "routeId": "budapest-half-relay2-2027",
+          "date": "2027-09-05",
+          "verified": true
+        },
+        "2": {
+          "routeId": "budapest-half-relay3-2027",
+          "date": "2027-09-05",
+          "verified": true
+        },
+        "3": {
+          "routeId": "budapest-10k-2027",
+          "date": "2027-09-05",
+          "verified": true
+        }
+      }
+    },
+    "mattoni-usti-nad-labem-2027": {
+      "eventId": "mattoni-usti-nad-labem-2027",
+      "checkedAt": "2026-11-20T22:00:00+01:00",
+      "status": "verified",
+      "sources": [
+        {
+          "url": "https://www.runczech.com/en/events/mattoni-running-festival-usti-nad-labem-2027-2",
+          "status": "read",
+          "verification": "official-2027-runczech-event"
+        }
+      ],
+      "eventPeriod": {
+        "startDate": "2027-09-18",
+        "endDate": "2027-09-18",
+        "verified": true
+      },
+      "routes": {
+        "0": {
+          "routeId": "usti-half-2027",
+          "date": "2027-09-18",
+          "verified": true
+        },
+        "1": {
+          "routeId": "usti-10k-2027",
+          "date": "2027-09-18",
+          "verified": true
+        },
+        "2": {
+          "routeId": "usti-mile-2027",
+          "date": "2027-09-18",
+          "verified": true
+        },
+        "3": {
+          "routeId": "usti-half-relay-2027",
+          "date": "2027-09-18",
+          "verified": true
+        }
+      }
+    },
+    "mattoni-half-marathon-ceske-budejovice-2027": {
+      "eventId": "mattoni-half-marathon-ceske-budejovice-2027",
+      "checkedAt": "2026-11-20T22:00:00+01:00",
+      "status": "verified",
+      "sources": [
+        {
+          "url": "https://www.runczech.com/en/events/mattoni-running-festival-ceske-budejovice-2027-2",
+          "status": "read",
+          "verification": "official-2027-runczech-event"
+        }
+      ],
+      "eventPeriod": {
+        "startDate": "2027-05-29",
+        "endDate": "2027-05-29",
+        "verified": true
+      },
+      "routes": {
+        "0": {
+          "routeId": "ceske-budejovice-half-2027",
+          "date": "2027-05-29",
+          "verified": true
+        },
+        "1": {
+          "routeId": "ceske-budejovice-5k-2027",
+          "date": "2027-05-29",
+          "verified": true
+        },
+        "2": {
+          "routeId": "ceske-budejovice-mile-2027",
+          "date": "2027-05-29",
+          "verified": true
+        },
+        "3": {
+          "routeId": "ceske-budejovice-2run-2027",
+          "date": "2027-05-29",
+          "verified": true
+        },
+        "4": {
+          "routeId": "ceske-budejovice-relay-2027",
+          "date": "2027-05-29",
+          "verified": true
+        }
+      }
+    },
+    "42-lifestar-malta-marathon-2027": {
+      "eventId": "42-lifestar-malta-marathon-2027",
+      "checkedAt": "2026-11-20T22:00:00+01:00",
+      "status": "verified",
+      "sources": [
+        {
+          "url": "https://maltamarathon.com/malta-marathon/",
+          "status": "read",
+          "verification": "official-2027-organizer-calendar"
+        }
+      ],
+      "eventPeriod": {
+        "startDate": "2027-02-28",
+        "endDate": "2027-02-28",
+        "verified": true
+      },
+      "routes": {
+        "0": {
+          "routeId": "malta-marathon-2027-42k",
+          "date": "2027-02-28",
+          "verified": true
+        },
+        "1": {
+          "routeId": "malta-marathon-2027-half",
+          "date": "2027-02-28",
+          "verified": true
+        },
+        "2": {
+          "routeId": "malta-marathon-2027-walk",
+          "date": "2027-02-28",
+          "verified": true
+        },
+        "3": {
+          "routeId": "malta-marathon-2027-5k",
+          "date": "2027-02-28",
+          "verified": true
+        },
+        "4": {
+          "routeId": "malta-marathon-2027-kids",
+          "date": "2027-02-28",
+          "verified": true
+        }
+      }
+    },
+    "26-poznan-marathon-2027": {
+      "eventId": "26-poznan-marathon-2027",
+      "checkedAt": "2026-11-20T22:00:00+01:00",
+      "status": "verified",
+      "sources": [
+        {
+          "url": "https://marathon.poznan.pl/",
+          "status": "read",
+          "verification": "official-organizer-announcement-2027"
+        }
+      ],
+      "eventPeriod": {
+        "startDate": "2027-10-24",
+        "endDate": "2027-10-24",
+        "verified": true
+      },
+      "routes": {
+        "0": {
+          "routeId": "poznan-marathon-2027-42k",
+          "date": "2027-10-24",
+          "verified": true
+        }
+      }
+    },
+    "15-karlovacki-cener-2027": {
+      "eventId": "15-karlovacki-cener-2027",
+      "checkedAt": "2026-11-20T22:00:00+01:00",
+      "status": "verified",
+      "sources": [
+        {
+          "url": "https://karlovac10k.com/",
+          "status": "read",
+          "verification": "official-organizer-event-2027"
+        }
+      ],
+      "eventPeriod": {
+        "startDate": "2027-06-11",
+        "endDate": "2027-06-11",
+        "verified": true
+      },
+      "routes": {
+        "0": {
+          "routeId": "karlovacki-cener-2027-10k",
+          "date": "2027-06-11",
+          "verified": true
+        },
+        "1": {
+          "routeId": "karlovacki-cener-2027-10k-elite",
+          "date": "2027-06-11",
+          "verified": true
+        },
+        "2": {
+          "routeId": "karlovacki-cener-2027-relay",
+          "date": "2027-06-11",
+          "verified": true
+        },
+        "3": {
+          "routeId": "karlovacki-cener-2027-mile",
+          "date": "2027-06-11",
+          "verified": true
+        }
+      }
+    },
+    "rovinj-run-popolana-2027": {
+      "eventId": "rovinj-run-popolana-2027",
+      "checkedAt": "2026-11-20T22:00:00+01:00",
+      "status": "unconfirmed",
+      "sources": [
+        {
+          "url": "https://runners.hr/en/race/rovinj-run",
+          "status": "read",
+          "verification": "secondary-race-calendar-only"
+        }
+      ],
+      "eventPeriod": {
+        "startDate": "2027-04-11",
+        "endDate": "2027-04-11",
+        "verified": false
+      },
+      "routes": {
+        "0": {
+          "routeId": "rovinj-popolana-2027-half",
+          "date": "2027-04-11",
+          "verified": false
+        },
+        "1": {
+          "routeId": "rovinj-popolana-2027-10k",
+          "date": "2027-04-11",
+          "verified": false
+        },
+        "2": {
+          "routeId": "rovinj-popolana-2027-5k",
+          "date": "2027-04-11",
+          "verified": false
+        }
+      }
+    },
+    "10-zagrebacki-proljetni-cener-2027": {
+      "eventId": "10-zagrebacki-proljetni-cener-2027",
+      "checkedAt": "2026-11-20T22:00:00+01:00",
+      "status": "verified",
+      "sources": [
+        {
+          "url": "https://www.proljetni.run/proizvod/9-zagrebacki-proljetni-cener/",
+          "status": "read",
+          "verification": "official-organizer-event-2027"
+        }
+      ],
+      "eventPeriod": {
+        "startDate": "2027-03-13",
+        "endDate": "2027-03-13",
+        "verified": true
+      },
+      "routes": {
+        "0": {
+          "routeId": "proljetni-cener-2027-5k",
+          "date": "2027-03-13",
+          "verified": true
+        },
+        "1": {
+          "routeId": "proljetni-cener-2027-10k",
+          "date": "2027-03-13",
+          "verified": true
+        },
+        "2": {
+          "routeId": "proljetni-cener-2027-relay",
+          "date": "2027-03-13",
+          "verified": true
+        },
+        "3": {
+          "routeId": "proljetni-cener-2027-nordic",
+          "date": "2027-03-13",
+          "verified": true
+        },
+        "4": {
+          "routeId": "proljetni-cener-2027-canicross",
+          "date": "2027-03-13",
+          "verified": true
+        }
+      }
+    },
+    "zagreb-winter-classic-2027": {
+      "eventId": "zagreb-winter-classic-2027",
+      "checkedAt": "2026-11-20T22:00:00+01:00",
+      "status": "verified",
+      "sources": [
+        {
+          "url": "https://www.utrka.com/utrke/winterclasicc/2027/info/",
+          "status": "read",
+          "verification": "official-registration-event-2027"
+        }
+      ],
+      "eventPeriod": {
+        "startDate": "2027-01-31",
+        "endDate": "2027-01-31",
+        "verified": true
+      },
+      "routes": {
+        "0": {
+          "routeId": "zagreb-winter-classic-2027-10k",
+          "date": "2027-01-31",
+          "verified": true
+        },
+        "1": {
+          "routeId": "zagreb-winter-classic-2027-5k",
+          "date": "2027-01-31",
+          "verified": true
+        }
+      }
+    },
+    "vukovar-half-marathon-2027": {
+      "eventId": "vukovar-half-marathon-2027",
+      "checkedAt": "2026-11-20T22:00:00+01:00",
+      "status": "verified",
+      "sources": [
+        {
+          "url": "https://vuhalfmarathon.com/",
+          "status": "read",
+          "verification": "official-organizer-event-2027"
+        }
+      ],
+      "eventPeriod": {
+        "startDate": "2027-05-21",
+        "endDate": "2027-05-22",
+        "verified": true
+      },
+      "routes": {
+        "0": {
+          "routeId": "vukovar-half-2027-21k",
+          "date": "2027-05-22",
+          "verified": true
+        },
+        "1": {
+          "routeId": "vukovar-half-2027-night5k",
+          "date": "2027-05-21",
+          "verified": true
+        },
+        "2": {
+          "routeId": "vukovar-half-2027-kids800",
+          "date": "2027-05-22",
+          "verified": true
+        },
+        "3": {
+          "routeId": "vukovar-half-2027-kids400",
+          "date": "2027-05-22",
           "verified": true
         }
       }
