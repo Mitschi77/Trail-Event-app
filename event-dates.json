@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-20T23:58:00Z",
+  "updatedAt": "2026-11-21T00:10:00Z",
   "schemaVersion": 3,
   "events": {
     "la-corsa-della-bora": {
@@ -6885,34 +6885,121 @@
     },
     "kaunas-akropolis-marathon-2027": {
       "eventId": "kaunas-akropolis-marathon-2027",
-      "checkedAt": "2026-11-19T23:30:00+01:00",
-      "status": "unconfirmed",
-      "sources": [],
-      "eventPeriod": null,
-      "routes": {}
-    },
-    "nlb-ljubljana-marathon-2027": {
-      "eventId": "nlb-ljubljana-marathon-2027",
-      "checkedAt": "2026-11-19T23:30:00+01:00",
-      "status": "unconfirmed",
-      "sources": [],
-      "eventPeriod": null,
-      "routes": {}
-    },
-    "rimi-riga-marathon-2027": {
-      "eventId": "rimi-riga-marathon-2027",
-      "checkedAt": "2026-11-20T21:45:00.000Z",
+      "checkedAt": "2026-11-21T00:10:00Z",
       "status": "verified",
       "sources": [
         {
-          "url": "https://rimirigamarathon.com/en/frequently-asked-questions/",
+          "url": "https://www.kaunasmarathon.lt/page/maps",
           "status": "read",
-          "verification": "official-organizer-2027-event-data"
+          "verification": "official-2027-event-information"
         },
         {
-          "url": "https://rimirigamarathon.com/wp-content/uploads/2026/11/Rimi-Riga-marathon_Rules_2027_06112026.pdf",
+          "url": "https://www.kaunasmarathon.lt/puslapis/distancijos",
           "status": "read",
-          "verification": "official-organizer-2027-event-data"
+          "verification": "official-2027-event-information"
+        }
+      ],
+      "eventPeriod": {
+        "startDate": "2027-04-25",
+        "endDate": "2027-04-25",
+        "verified": true
+      },
+      "routes": {
+        "0": {
+          "routeId": "kaunas-akropolis-marathon-42-195-2027",
+          "date": "2027-04-25",
+          "verified": true
+        },
+        "1": {
+          "routeId": "kaunas-akropolis-half-marathon-21-098-2027",
+          "date": "2027-04-25",
+          "verified": true
+        },
+        "2": {
+          "routeId": "kaunas-akropolis-10k-2027",
+          "date": "2027-04-25",
+          "verified": true
+        },
+        "3": {
+          "routeId": "kaunas-akropolis-5k-2027",
+          "date": "2027-04-25",
+          "verified": true
+        },
+        "4": {
+          "routeId": "kaunas-akropolis-1-5k-2027",
+          "date": "2027-04-25",
+          "verified": true
+        },
+        "5": {
+          "routeId": "kaunas-akropolis-400m-2027",
+          "date": "2027-04-25",
+          "verified": true
+        }
+      }
+    },
+    "nlb-ljubljana-marathon-2027": {
+      "eventId": "nlb-ljubljana-marathon-2027",
+      "checkedAt": "2026-11-21T00:10:00Z",
+      "status": "verified",
+      "sources": [
+        {
+          "url": "https://ljubljanamarathon.si/en",
+          "status": "read",
+          "verification": "official-2027-event-information"
+        },
+        {
+          "url": "https://ljubljanamarathon.si/en/vita-kids-run",
+          "status": "read",
+          "verification": "official-2027-event-information"
+        }
+      ],
+      "eventPeriod": {
+        "startDate": "2027-10-16",
+        "endDate": "2027-10-17",
+        "verified": true
+      },
+      "routes": {
+        "0": {
+          "routeId": "nlb-ljubljana-marathon-42-195-2027",
+          "date": "2027-10-17",
+          "verified": true
+        },
+        "1": {
+          "routeId": "nlb-ljubljana-half-marathon-21-098-2027",
+          "date": "2027-10-17",
+          "verified": true
+        },
+        "2": {
+          "routeId": "nlb-ljubljana-10k-2027",
+          "date": "2027-10-17",
+          "verified": true
+        },
+        "3": {
+          "routeId": "nlb-ljubljana-kids-200m-2027",
+          "date": "2027-10-16",
+          "verified": true
+        }
+      }
+    },
+    "rimi-riga-marathon-2027": {
+      "eventId": "rimi-riga-marathon-2027",
+      "checkedAt": "2026-11-21T00:10:00Z",
+      "status": "verified",
+      "sources": [
+        {
+          "url": "https://rimirigamarathon.com/en/event-guide/",
+          "status": "read",
+          "verification": "official-2027-event-programme"
+        },
+        {
+          "url": "https://rimirigamarathon.com/en/frequently-asked-questions/",
+          "status": "read",
+          "verification": "official-2027-event-information"
+        },
+        {
+          "url": "https://rimirigamarathon.com/en/courses/",
+          "status": "read",
+          "verification": "official-2027-course-and-times"
         }
       ],
       "eventPeriod": {
@@ -6924,10 +7011,50 @@
         "0": {
           "routeId": "rimi-riga-marathon-42-195-2027",
           "date": "2027-05-16",
-          "verified": true,
-          "fallback": false
+          "verified": true
+        },
+        "1": {
+          "routeId": "riga-half-2027-21k",
+          "date": "2027-05-16",
+          "verified": true
+        },
+        "2": {
+          "routeId": "rimi-riga-10k-2027",
+          "date": "2027-05-16",
+          "verified": true
+        },
+        "3": {
+          "routeId": "rimi-riga-6k-2027",
+          "date": "2027-05-16",
+          "verified": true
+        },
+        "4": {
+          "routeId": "rimi-riga-42k-relay-2027",
+          "date": "2027-05-16",
+          "verified": true
+        },
+        "5": {
+          "routeId": "rimi-riga-21k-relay-2027",
+          "date": "2027-05-16",
+          "verified": true
+        },
+        "6": {
+          "routeId": "rimi-riga-mile-2027",
+          "date": "2027-05-15",
+          "verified": true
+        },
+        "7": {
+          "routeId": "rimi-riga-kids-200m-2027",
+          "date": "2027-05-15",
+          "verified": true
+        },
+        "8": {
+          "routeId": "rimi-riga-kids-400m-2027",
+          "date": "2027-05-15",
+          "verified": true
         }
-      }
+      },
+      "note": "Offizieller Event Guide zeigt bei einer Programmtabelle versehentlich May 17; FAQ/Registration/News bestätigen den 16.05.2027. Startzeiten daher nur als vorläufige Programmangaben behandeln."
     },
     "mali-kraski-maraton-2027": {
       "eventId": "mali-kraski-maraton-2027",
@@ -6939,19 +7066,92 @@
     },
     "swedbank-tallinn-marathon-2027": {
       "eventId": "swedbank-tallinn-marathon-2027",
-      "checkedAt": "2026-11-19T23:55:00+01:00",
-      "status": "unconfirmed",
-      "sources": [],
-      "eventPeriod": null,
-      "routes": {}
+      "checkedAt": "2026-11-21T00:10:00Z",
+      "status": "verified",
+      "sources": [
+        {
+          "url": "https://www.tallinnmarathon.ee/index.php?id=16",
+          "status": "read",
+          "verification": "official-2027-event-information"
+        }
+      ],
+      "eventPeriod": {
+        "startDate": "2027-09-10",
+        "endDate": "2027-09-12",
+        "verified": true
+      },
+      "routes": {
+        "0": {
+          "routeId": "tallinn-half-marathon-21-1-2027",
+          "date": "2027-09-11",
+          "verified": true
+        },
+        "1": {
+          "routeId": "tallinn-marathon-42-195-2027",
+          "date": "2027-09-12",
+          "verified": true
+        },
+        "2": {
+          "routeId": "tallinn-fall-race-10k-2027",
+          "date": null,
+          "verified": false
+        },
+        "3": {
+          "routeId": "tallinn-youth-run-5k-2027",
+          "date": null,
+          "verified": false
+        }
+      },
+      "note": "Veranstalter bestätigt 10.–12.09.2027 und die Distanzen; Renntage für 10K und Youth Run noch nicht ausgewiesen."
     },
     "swedbank-vilnius-marathon-2027": {
       "eventId": "swedbank-vilnius-marathon-2027",
-      "checkedAt": "2026-11-19T23:55:00+01:00",
-      "status": "unconfirmed",
-      "sources": [],
-      "eventPeriod": null,
-      "routes": {}
+      "checkedAt": "2026-11-21T00:10:00Z",
+      "status": "verified",
+      "sources": [
+        {
+          "url": "https://www.vilniausmaratonas.lt/en/informacija/nuostatai/",
+          "status": "read",
+          "verification": "official-2027-event-information"
+        },
+        {
+          "url": "https://www.vilniausmaratonas.lt/en/programa/",
+          "status": "read",
+          "verification": "official-2027-event-information"
+        }
+      ],
+      "eventPeriod": {
+        "startDate": "2027-09-12",
+        "endDate": "2027-09-12",
+        "verified": true
+      },
+      "routes": {
+        "0": {
+          "routeId": "vilnius-marathon-42-195-2027",
+          "date": "2027-09-12",
+          "verified": true
+        },
+        "1": {
+          "routeId": "vilnius-half-marathon-21-098-2027",
+          "date": "2027-09-12",
+          "verified": true
+        },
+        "2": {
+          "routeId": "vilnius-marathon-10k-2027",
+          "date": "2027-09-12",
+          "verified": true
+        },
+        "3": {
+          "routeId": "vilnius-marathon-5k-2027",
+          "date": "2027-09-12",
+          "verified": true
+        },
+        "4": {
+          "routeId": "vilnius-marathon-200m-2027",
+          "date": "2027-09-12",
+          "verified": true
+        }
+      }
     },
     "if-vilnius-half-marathon-2027": {
       "eventId": "if-vilnius-half-marathon-2027",
@@ -10573,31 +10773,6 @@
         }
       }
     },
-    "rimi-riga-half-marathon-2027": {
-      "eventId": "rimi-riga-half-marathon-2027",
-      "checkedAt": "2026-11-20T23:40:00Z",
-      "status": "verified",
-      "sources": [
-        {
-          "url": "https://rimirigamarathon.com/en/courses/",
-          "status": "read",
-          "verification": "official-2027-event-information"
-        }
-      ],
-      "eventPeriod": {
-        "startDate": "2027-05-16",
-        "endDate": "2027-05-16",
-        "verified": true
-      },
-      "routes": {
-        "0": {
-          "routeId": "riga-half-2027-21k",
-          "date": "2027-05-16",
-          "verified": true
-        }
-      },
-      "note": "Offizielle Seite bestätigt Halbmarathon am 16.05.2027; Zeitplanübersicht enthält widersprüchliche Überschriften und teils alte Uhrzeiten. Startzeit daher nicht als bestätigt geführt."
-    },
     "copenhagen-half-marathon-2027": {
       "eventId": "copenhagen-half-marathon-2027",
       "checkedAt": "2026-11-20T23:50:00Z",
@@ -11215,6 +11390,242 @@
         }
       },
       "note": "10K und Fun Race am 09.10.; Marathon, Halbmarathon und 4x-Staffel am 10.10.2027."
+    },
+    "alexander-the-great-marathon-2027": {
+      "eventId": "alexander-the-great-marathon-2027",
+      "checkedAt": "2026-11-21T00:10:00Z",
+      "status": "verified",
+      "sources": [
+        {
+          "url": "https://atgm.gr/",
+          "status": "read",
+          "verification": "official-2027-event-information"
+        },
+        {
+          "url": "https://atgm.gr/wp-content/uploads/2026/07/Proclamation21ATGM-EL.pdf",
+          "status": "read",
+          "verification": "official-2027-event-information"
+        }
+      ],
+      "eventPeriod": {
+        "startDate": "2027-04-04",
+        "endDate": "2027-04-04",
+        "verified": true
+      },
+      "routes": {
+        "0": {
+          "routeId": "alexander-the-great-marathon-2027-42k",
+          "date": "2027-04-04",
+          "verified": true
+        }
+      }
+    },
+    "zurich-rock-n-roll-madrid-marathon-2027": {
+      "eventId": "zurich-rock-n-roll-madrid-marathon-2027",
+      "checkedAt": "2026-11-21T00:10:00Z",
+      "status": "verified",
+      "sources": [
+        {
+          "url": "https://rocknrollmadridrun.com/about-the-event/?lang=en",
+          "status": "read",
+          "verification": "official-2027-event-information"
+        },
+        {
+          "url": "https://rocknrollmadridrun.com/faqs/?lang=en",
+          "status": "read",
+          "verification": "official-2027-event-information"
+        }
+      ],
+      "eventPeriod": {
+        "startDate": "2027-04-25",
+        "endDate": "2027-04-25",
+        "verified": true
+      },
+      "routes": {
+        "0": {
+          "routeId": "madrid-marathon-2027-42k",
+          "date": "2027-04-25",
+          "verified": true
+        },
+        "1": {
+          "routeId": "madrid-half-marathon-2027-21k",
+          "date": "2027-04-25",
+          "verified": true
+        }
+      },
+      "note": "Organizer confirms marathon and half marathon. Madrid tourism page states 08:45, organizer FAQ still says first wave TBD; no start time stored."
+    },
+    "ing-night-marathon-luxembourg-2027": {
+      "eventId": "ing-night-marathon-luxembourg-2027",
+      "checkedAt": "2026-11-21T00:10:00Z",
+      "status": "verified",
+      "sources": [
+        {
+          "url": "https://www.ing-night-marathon.lu/en/information/faq.html",
+          "status": "read",
+          "verification": "official-2027-event-information"
+        },
+        {
+          "url": "https://www.ing-night-marathon.lu/en/disciplines/marathon.html",
+          "status": "read",
+          "verification": "official-2027-event-information"
+        }
+      ],
+      "eventPeriod": {
+        "startDate": "2027-05-08",
+        "endDate": "2027-05-08",
+        "verified": true
+      },
+      "routes": {
+        "0": {
+          "routeId": "ing-night-marathon-luxembourg-2027-42k",
+          "date": "2027-05-08",
+          "verified": true
+        },
+        "1": {
+          "routeId": "luxembourg-night-half-2027-21k",
+          "date": "2027-05-08",
+          "verified": true
+        },
+        "2": {
+          "routeId": "luxembourg-night-team-relay-2027",
+          "date": "2027-05-08",
+          "verified": true
+        },
+        "3": {
+          "routeId": "luxembourg-night-5k-2027",
+          "date": "2027-05-08",
+          "verified": true
+        },
+        "4": {
+          "routeId": "luxembourg-night-mini-4-2k-2027",
+          "date": "2027-05-08",
+          "verified": true
+        },
+        "5": {
+          "routeId": "luxembourg-night-mini-1k-2027",
+          "date": "2027-05-08",
+          "verified": true
+        }
+      }
+    },
+    "generali-geneve-marathon-2027": {
+      "eventId": "generali-geneve-marathon-2027",
+      "checkedAt": "2026-11-21T00:10:00Z",
+      "status": "verified",
+      "sources": [
+        {
+          "url": "https://www.generaligenevemarathon.com/en",
+          "status": "read",
+          "verification": "official-2027-event-information"
+        },
+        {
+          "url": "https://www.generaligenevemarathon.com/en/marathon",
+          "status": "read",
+          "verification": "official-2027-event-information"
+        },
+        {
+          "url": "https://www.generaligenevemarathon.com/en/half-marathon",
+          "status": "read",
+          "verification": "official-2027-event-information"
+        },
+        {
+          "url": "https://www.generaligenevemarathon.com/en/10-km",
+          "status": "read",
+          "verification": "official-2027-event-information"
+        },
+        {
+          "url": "https://www.generaligenevemarathon.com/en/le-5-km-by-always",
+          "status": "read",
+          "verification": "official-2027-event-information"
+        }
+      ],
+      "eventPeriod": {
+        "startDate": "2027-05-08",
+        "endDate": "2027-05-09",
+        "verified": true
+      },
+      "routes": {
+        "0": {
+          "routeId": "generali-geneve-marathon-2027-42k",
+          "date": "2027-05-09",
+          "verified": true
+        },
+        "1": {
+          "routeId": "geneva-marathon-relay-2027",
+          "date": "2027-05-09",
+          "verified": true
+        },
+        "2": {
+          "routeId": "geneva-half-marathon-2027",
+          "date": "2027-05-09",
+          "verified": true
+        },
+        "3": {
+          "routeId": "geneva-10k-2027",
+          "date": "2027-05-08",
+          "verified": true
+        },
+        "4": {
+          "routeId": "geneva-5k-2027",
+          "date": "2027-05-08",
+          "verified": true
+        }
+      }
+    },
+    "spar-budapest-marathon-2027": {
+      "eventId": "spar-budapest-marathon-2027",
+      "checkedAt": "2026-11-21T00:10:00Z",
+      "status": "verified",
+      "sources": [
+        {
+          "url": "https://marathon.runinbudapest.com/",
+          "status": "read",
+          "verification": "official-2027-event-information"
+        }
+      ],
+      "eventPeriod": {
+        "startDate": "2027-10-09",
+        "endDate": "2027-10-10",
+        "verified": true
+      },
+      "routes": {
+        "0": {
+          "routeId": "spar-budapest-marathon-2027-42k",
+          "date": "2027-10-10",
+          "verified": true
+        },
+        "1": {
+          "routeId": "spar-budapest-half-2027-21k",
+          "date": "2027-10-10",
+          "verified": true
+        },
+        "2": {
+          "routeId": "spar-budapest-14k-2027",
+          "date": "2027-10-10",
+          "verified": true
+        },
+        "3": {
+          "routeId": "spar-budapest-relay2-2027",
+          "date": "2027-10-10",
+          "verified": true
+        },
+        "4": {
+          "routeId": "spar-budapest-relay4-2027",
+          "date": "2027-10-10",
+          "verified": true
+        },
+        "5": {
+          "routeId": "spar-budapest-10k-2027",
+          "date": "2027-10-09",
+          "verified": true
+        },
+        "6": {
+          "routeId": "spar-budapest-5k-2027",
+          "date": "2027-10-09",
+          "verified": true
+        }
+      }
     }
   }
 }
