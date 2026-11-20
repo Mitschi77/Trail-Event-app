@@ -154,7 +154,7 @@ MANUAL_EVENT_PERIODS = {
     "mozart": ("2027-06-05", "2027-06-05", "https://mozart.utmb.world/de/races/mozart100", {"0": "2027-06-05"}),
     "mountain-man-winter": ("2027-01-23", "2027-01-24", "https://mountainman.de/winterloop/", {}),
     "backyard-ultra": ("2027-06-26", "2027-06-27", "https://www.hofer-backyard-ultra.de/ausschreibung-2027/", {"backyard-ultra-6-7-100": "2027-06-26"}),
-    "piut": ("2027-07-09", "2027-07-10", "https://piut.utmb.world/", {"piut50-50-3100": "2027-07-10", "piut85-85-5200": "2027-07-09", "piut100-100-6300": "2027-07-09"}),
+    "piut": ("2027-07-09", "2027-07-10", "https://piut.utmb.world/", {"piut50-50-3100": "2027-07-10", "piut85-85-5200": "2027-07-09", "piut100-100-6300": "2027-07-09", "piut30-30-1540": "2027-07-10", "piut20-20-1300": "2027-07-10", "piut-ten-10-94": "2027-07-10", "piut-kids-bambini-015-2027": "2027-07-09", "piut-kids-600m-2027": "2027-07-09", "piut-kids-1200m-2027": "2027-07-09"}),
     "oh-meu-deus": ("2027-04-30", "2027-05-02", "https://ohmeudeus.utmb.world/races/omd100k", {"oh-meu-deus-100k-94-5300": "2027-05-01"}),
     "strasimeno": ("2027-03-07", "2027-03-07", "https://www.strasimeno.it/", {"strasimeno-10km": "2027-03-07", "strasimeno-half-marathon-21-0975": "2027-03-07", "strasimeno-34km": "2027-03-07", "strasimeno-marathon-42-195": "2027-03-07", "strasimeno-ultramarathon-58-04": "2027-03-07"}),
     "dolomyths-run": ("2027-07-09", "2027-07-11", "https://dolomythsrun.it/en/", {"0": "2027-07-10", "1": "2027-07-11"}),
