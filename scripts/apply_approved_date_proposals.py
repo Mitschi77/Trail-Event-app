@@ -47,6 +47,8 @@ def apply_proposals(feed: dict, proposals: list[dict]) -> tuple[dict, dict]:
     events = updated.setdefault("events", {})
     report = {"applied": [], "skipped": [], "conflicts": []}
 
+    seen_mutations = set()
+
     for row in proposals:
         proposal_id = str(row.get("id") or "unknown")
         if row.get("status") != "approved":
@@ -68,6 +70,12 @@ def apply_proposals(feed: dict, proposals: list[dict]) -> tuple[dict, dict]:
         if not isinstance(event_id, str) or not event_id or not valid_date(new_value) or not sources:
             report["skipped"].append({"id": proposal_id, "reason": "missing-or-invalid-evidence"})
             continue
+        target_key = (proposal_type, event_id, payload.get("routeId") if proposal_type == "route_change" else field, field, payload.get("oldValue"), new_value)
+        if target_key in seen_mutations:
+            report["skipped"].append({"id": proposal_id, "reason": "duplicate-identical-proposal"})
+            continue
+        seen_mutations.add(target_key)
+
         if checked_at:
             try:
                 datetime.fromisoformat(checked_at.replace("Z", "+00:00"))
@@ -127,7 +135,8 @@ def apply_proposals(feed: dict, proposals: list[dict]) -> tuple[dict, dict]:
         event["sources"] = existing
         report["applied"].append(proposal_id)
 
-    updated["updatedAt"] = datetime.now(timezone.utc).replace(microsecond=0).isoformat().replace("+00:00", "Z")
+    if report["applied"]:
+        updated["updatedAt"] = datetime.now(timezone.utc).replace(microsecond=0).isoformat().replace("+00:00", "Z")
     return updated, report
 
 
