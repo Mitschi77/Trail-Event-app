@@ -2381,13 +2381,48 @@
     },
     "eiger-ultratrail": {
       "eventId": "eiger-ultratrail",
-      "checkedAt": "2026-11-17T07:30:48.484Z",
+      "checkedAt": "2026-11-20T10:30:00+01:00",
       "status": "verified",
       "sources": [
         {
-          "url": "https://eiger.utmb.world/de",
+          "url": "https://eiger.utmb.world/de/races",
           "status": "read",
-          "verification": "manual-official-page"
+          "verification": "official-2027-race-list"
+        },
+        {
+          "url": "https://eiger.utmb.world/races/E250",
+          "status": "read",
+          "verification": "official-2027-route-details"
+        },
+        {
+          "url": "https://eiger.utmb.world/races/E101",
+          "status": "read",
+          "verification": "official-2027-route-details"
+        },
+        {
+          "url": "https://eiger.utmb.world/races/E51",
+          "status": "read",
+          "verification": "official-2027-route-details"
+        },
+        {
+          "url": "https://eiger.utmb.world/races/e35",
+          "status": "read",
+          "verification": "official-2027-route-details"
+        },
+        {
+          "url": "https://eiger.utmb.world/races/e16",
+          "status": "read",
+          "verification": "official-2027-route-details"
+        },
+        {
+          "url": "https://eiger.utmb.world/races/trail-surprise",
+          "status": "read",
+          "verification": "official-2027-route-details"
+        },
+        {
+          "url": "https://eiger.utmb.world/races",
+          "status": "read",
+          "verification": "official-2027-kids-race-list"
         }
       ],
       "eventPeriod": {
@@ -2404,6 +2439,31 @@
         "1": {
           "routeId": "ultratrail-100-6700",
           "date": "2027-07-17",
+          "verified": true
+        },
+        "2": {
+          "routeId": "eiger-e250-261-18000",
+          "date": "2027-07-14",
+          "verified": true
+        },
+        "3": {
+          "routeId": "eiger-e35-35-2500",
+          "date": "2027-07-17",
+          "verified": true
+        },
+        "4": {
+          "routeId": "eiger-e16-16-950",
+          "date": "2027-07-17",
+          "verified": true
+        },
+        "5": {
+          "routeId": "eiger-trail-surprise-15-800",
+          "date": "2027-07-16",
+          "verified": true
+        },
+        "6": {
+          "routeId": "eiger-kids-race-2027",
+          "date": "2027-07-16",
           "verified": true
         }
       }
