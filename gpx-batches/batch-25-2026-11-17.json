@@ -8,17 +8,100 @@
     {
       "order": 121,
       "name": "Desert Rats Trail Running Festival by UTMB",
-      "gpxStatus": "Official 2027 race pages confirmed for 100K, 50K, 21K and 10K, but the actual GPX download links currently point to 2025 files. Keep existing older official GPX as historical last-available version; do not present as current 2027.",
+      "gpxStatus": "Official 2027 event page confirms four routes: 100K 100/2050, 50K 48/1050, 21K 21/700, 10K 9/200. Critical: the official 2027 21K page's GPX download target resolves to a file explicitly named 2025_Desert_Rats...21k. The page's 'Last updated 2026' label does not make the GPX a 2027 file. Keep 2025 GPX as historical last-available version; wait for genuine 2027 files.",
       "source": "https://desertrats.utmb.world/races",
-      "followUp": "Wait for 2027 GPX files.",
-      "retentionRule": "Do not delete or overwrite the existing 2025/2026 GPX. Keep its edition/source metadata until an official 2027 replacement is published and checked."
+      "followUp": "Recheck all four race-page GPX targets for a newly versioned 2027 upload. Keep 2025 files retained and labelled historical; do not replace until 2027 bytes are fetched and validated.",
+      "retentionRule": "Keep all 2025 GPX files as historical versions until official 2027 replacements are published, downloaded and technically checked.",
+      "checkedAt": "2026-11-20",
+      "official2027CourseData": {
+        "source": "https://desertrats.utmb.world/",
+        "eventDate": "2027-04-08/2027-04-11",
+        "routes": [
+          {
+            "name": "100K",
+            "distanceKm": 100,
+            "elevationGainHm": 2050,
+            "racePage": "https://desertrats.utmb.world/races/100k"
+          },
+          {
+            "name": "50K",
+            "distanceKm": 48,
+            "elevationGainHm": 1050,
+            "racePage": "https://desertrats.utmb.world/races/50k"
+          },
+          {
+            "name": "21K",
+            "distanceKm": 21,
+            "elevationGainHm": 700,
+            "racePage": "https://desertrats.utmb.world/races/21k"
+          },
+          {
+            "name": "10K",
+            "distanceKm": 9,
+            "elevationGainHm": 200,
+            "racePage": "https://desertrats.utmb.world/races/10k"
+          }
+        ],
+        "gpxVersionFinding": "On the official 2027 21K race page, the Download GPX File link resolves to a Cloudinary path /desertrats/GPX Files/2025/2025_Desert_Rats_Trail_Running_Festival_by_UTMB_21k_Course_fd8f191146.gpx. It is explicitly a 2025 file, despite the 2027 race page. The page says last updated 2026, which does not change the file's 2025 version label.",
+        "note": "2027 advertised distances/elevation are official; direct GPX download link still resolves to a 2025 route. Do not import it as 2027."
+      },
+      "gpxTechnicalChecks": {
+        "status": "official-page-link-followed; old-file-version-confirmed",
+        "downloadedFiles": 0,
+        "xmlParsed": false,
+        "trackpointCount": null,
+        "calculatedDistanceKm": null,
+        "calculatedElevationHm": null,
+        "confirmedOldLink": "https://res.cloudinary.com/utmb-world/raw/upload/v1737738182/desertrats/GPX%20Files/2025/2025_Desert_Rats_Trail_Running_Festival_by_UTMB_21k_Course_fd8f191146.gpx",
+        "note": "The file endpoint returned cache miss when opened. URL path itself clearly identifies 2025. No binary contents received or parsed."
+      }
     },
     {
       "order": 122,
       "name": "Hiroshima by UTMB",
-      "gpxStatus": "Official 2027 pages confirm 100K, 50K and 25K routes. No public GPX download or Map + GPX panel currently published; preserve any older tracks as historical versions.",
+      "gpxStatus": "Official 2027 course pages confirm 100K category (actual 94.6 km/5,587 hm), 50K (49/2,800) and 25K (25/880). The 100K page visibly includes a Map + GPX tab, correcting the earlier note that no panel existed. Direct GPX download targets and file bytes have not yet been extracted or parsed. Do not label any GPX technically checked.",
       "source": "https://hiroshima.utmb.world/overview",
-      "followUp": "Recheck when official GPX files are released."
+      "followUp": "Extract the Map + GPX download targets from 100K, 50K and 25K pages; retrieve and parse each official file, then compare measured metrics to the official page.",
+      "checkedAt": "2026-11-20",
+      "official2027CourseData": {
+        "source": "https://hiroshima.utmb.world/overview",
+        "eventDate": "2027-04-09/2027-04-11",
+        "routes": [
+          {
+            "name": "HIROSHIMA 100K",
+            "advertisedCategory": "100K",
+            "distanceKm": 94.6,
+            "elevationGainHm": 5587,
+            "racePage": "https://hiroshima.utmb.world/races/HIROSHIMA100K"
+          },
+          {
+            "name": "HIROSHIMA 50K",
+            "advertisedCategory": "50K",
+            "distanceKm": 49,
+            "elevationGainHm": 2800,
+            "racePage": "https://hiroshima.utmb.world/races/HIROSHIMA50K"
+          },
+          {
+            "name": "HIROSHIMA 25K",
+            "advertisedCategory": "25K",
+            "distanceKm": 25,
+            "elevationGainHm": 880,
+            "racePage": "https://hiroshima.utmb.world/races/HIROSHIMA25K"
+          }
+        ],
+        "gpxAvailability": "Official 100K page exposes a Map + GPX tab. This corrects the earlier checkpoint claim that no public Map + GPX panel was present. Direct GPX target has not yet been extracted.",
+        "note": "UTMB page labels 100K category but exact course distance is 94.6 km; use exact advertised distance as route length, retain category separately."
+      },
+      "gpxTechnicalChecks": {
+        "status": "official-map-gpx-tab-confirmed; binary-not-fetched",
+        "downloadedFiles": 0,
+        "xmlParsed": false,
+        "trackpointCount": null,
+        "calculatedDistanceKm": null,
+        "calculatedElevationHm": null,
+        "note": "Need extract official GPX download target from all three race pages and parse actual XML. Older tracks remain historical."
+      },
+      "retentionRule": "Preserve previous-year GPX files as historical versions until verified 2027 replacements are downloaded. Never overwrite or delete old versions."
     },
     {
       "order": 123,
