@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-20T21:50:00Z",
+  "updatedAt": "2026-11-20T22:10:00Z",
   "schemaVersion": 3,
   "events": {
     "la-corsa-della-bora": {
@@ -7995,6 +7995,374 @@
         "3": {
           "routeId": "vukovar-half-2027-kids400",
           "date": "2027-05-22",
+          "verified": true
+        }
+      }
+    },
+    "27-split-marathon-2027": {
+      "eventId": "27-split-marathon-2027",
+      "checkedAt": "2026-11-20T22:10:00Z",
+      "status": "verified",
+      "sources": [
+        {
+          "url": "https://splitmarathon.com/",
+          "status": "read",
+          "verification": "official-2027-event-confirmation"
+        }
+      ],
+      "eventPeriod": {
+        "startDate": "2027-02-13",
+        "endDate": "2027-02-14",
+        "verified": true
+      },
+      "routes": {
+        "0": {
+          "routeId": "split-marathon-2027-marathon",
+          "date": "2027-02-14",
+          "verified": true
+        },
+        "1": {
+          "routeId": "split-marathon-2027-half",
+          "date": "2027-02-14",
+          "verified": true
+        },
+        "2": {
+          "routeId": "split-marathon-2027-10k",
+          "date": "2027-02-14",
+          "verified": true
+        },
+        "3": {
+          "routeId": "split-marathon-2027-5k",
+          "date": "2027-02-13",
+          "verified": true
+        },
+        "4": {
+          "routeId": "split-marathon-2027-2k",
+          "date": "2027-02-13",
+          "verified": true
+        }
+      }
+    },
+    "split-night-half-2027": {
+      "eventId": "split-night-half-2027",
+      "checkedAt": "2026-11-20T22:10:00Z",
+      "status": "verified",
+      "sources": [
+        {
+          "url": "https://splitmarathon.com/",
+          "status": "read",
+          "verification": "official-2027-event-confirmation"
+        }
+      ],
+      "eventPeriod": {
+        "startDate": "2027-08-28",
+        "endDate": "2027-08-28",
+        "verified": true
+      },
+      "routes": {
+        "0": {
+          "routeId": "split-night-half-2027-21k",
+          "date": "2027-08-28",
+          "verified": true
+        },
+        "1": {
+          "routeId": "split-night-half-2027-10k",
+          "date": "2027-08-28",
+          "verified": true
+        },
+        "2": {
+          "routeId": "split-night-half-2027-2027-5k",
+          "date": "2027-08-28",
+          "verified": true
+        }
+      }
+    },
+    "23rd-rijeka-half-marathon-2027": {
+      "eventId": "23rd-rijeka-half-marathon-2027",
+      "checkedAt": "2026-11-20T22:10:00Z",
+      "status": "verified",
+      "sources": [
+        {
+          "url": "https://www.rijeka.run/en/",
+          "status": "read",
+          "verification": "official-2027-event-confirmation"
+        }
+      ],
+      "eventPeriod": {
+        "startDate": "2027-04-10",
+        "endDate": "2027-04-10",
+        "verified": true
+      },
+      "routes": {
+        "0": {
+          "routeId": "rijeka-run-2027-half",
+          "date": "2027-04-10",
+          "verified": true
+        },
+        "1": {
+          "routeId": "rijeka-run-2027-10k",
+          "date": "2027-04-10",
+          "verified": true
+        },
+        "2": {
+          "routeId": "rijeka-run-2027-5k",
+          "date": "2027-04-10",
+          "verified": true
+        },
+        "3": {
+          "routeId": "rijeka-run-2027-relay",
+          "date": "2027-04-10",
+          "verified": true
+        }
+      }
+    },
+    "du-motion-dubrovnik-half-marathon-2027": {
+      "eventId": "du-motion-dubrovnik-half-marathon-2027",
+      "checkedAt": "2026-11-20T22:10:00Z",
+      "status": "verified",
+      "sources": [
+        {
+          "url": "https://du-motion.com/races/half-marathon",
+          "status": "read",
+          "verification": "official-2027-event-confirmation"
+        }
+      ],
+      "eventPeriod": {
+        "startDate": "2027-04-25",
+        "endDate": "2027-04-25",
+        "verified": true
+      },
+      "routes": {
+        "0": {
+          "routeId": "dubrovnik-du-motion-2027-half",
+          "date": "2027-04-25",
+          "verified": true
+        }
+      }
+    },
+    "23-atletski-polumaraton-maslenica-2027": {
+      "eventId": "23-atletski-polumaraton-maslenica-2027",
+      "checkedAt": "2026-11-20T22:10:00Z",
+      "status": "unconfirmed",
+      "sources": [
+        {
+          "url": "https://runners.hr/en/race/atletski-polumaraton-maslenica",
+          "status": "read",
+          "verification": "secondary-source-provisional"
+        }
+      ],
+      "eventPeriod": {
+        "startDate": "2027-01-23",
+        "endDate": "2027-01-23",
+        "verified": false
+      },
+      "routes": {
+        "0": {
+          "routeId": "maslenica-2027-half",
+          "date": "2027-01-23",
+          "verified": false
+        },
+        "1": {
+          "routeId": "maslenica-2027-10mi",
+          "date": "2027-01-23",
+          "verified": false
+        }
+      },
+      "note": "Sekundärquelle listet Ausgabe 2027; Veranstalterbestätigung noch ausstehend. Nicht als endgültig bestätigt behandeln."
+    },
+    "10-zimske-varazdinske-utrke-2027": {
+      "eventId": "10-zimske-varazdinske-utrke-2027",
+      "checkedAt": "2026-11-20T22:10:00Z",
+      "status": "unconfirmed",
+      "sources": [
+        {
+          "url": "https://runners.hr/en/race/zimske-varazdinske-utrke",
+          "status": "read",
+          "verification": "secondary-source-provisional"
+        }
+      ],
+      "eventPeriod": {
+        "startDate": "2027-02-07",
+        "endDate": "2027-02-07",
+        "verified": false
+      },
+      "routes": {
+        "0": {
+          "routeId": "zimske-varazdinske-2027-marathon",
+          "date": "2027-02-07",
+          "verified": false
+        },
+        "1": {
+          "routeId": "zimske-varazdinske-2027-half",
+          "date": "2027-02-07",
+          "verified": false
+        },
+        "2": {
+          "routeId": "zimske-varazdinske-2027-10k",
+          "date": "2027-02-07",
+          "verified": false
+        },
+        "3": {
+          "routeId": "zimske-varazdinske-2027-5k",
+          "date": "2027-02-07",
+          "verified": false
+        }
+      },
+      "note": "Sekundärquelle listet Ausgabe 2027; Veranstalterbestätigung noch ausstehend. Nicht als endgültig bestätigt behandeln."
+    },
+    "9-pula-marathon-2027": {
+      "eventId": "9-pula-marathon-2027",
+      "checkedAt": "2026-11-20T22:10:00Z",
+      "status": "verified",
+      "sources": [
+        {
+          "url": "https://www.pulamarathon.com/",
+          "status": "read",
+          "verification": "official-2027-event-confirmation"
+        }
+      ],
+      "eventPeriod": {
+        "startDate": "2027-09-18",
+        "endDate": "2027-09-19",
+        "verified": true
+      },
+      "routes": {
+        "0": {
+          "routeId": "pula-2027-half",
+          "date": "2027-09-18",
+          "verified": true
+        },
+        "1": {
+          "routeId": "pula-2027-5.99k",
+          "date": "2027-09-18",
+          "verified": true
+        },
+        "2": {
+          "routeId": "pula-2027-10k",
+          "date": "2027-09-18",
+          "verified": true
+        },
+        "3": {
+          "routeId": "pula-2027-nordic-5k",
+          "date": "2027-09-19",
+          "verified": true
+        }
+      }
+    },
+    "33-joma-varazdinski-polumaraton-2027": {
+      "eventId": "33-joma-varazdinski-polumaraton-2027",
+      "checkedAt": "2026-11-20T22:10:00Z",
+      "status": "verified",
+      "sources": [
+        {
+          "url": "https://www.utrka.com/utrke/varazdinskipm/2027/info/",
+          "status": "read",
+          "verification": "official-2027-event-confirmation"
+        }
+      ],
+      "eventPeriod": {
+        "startDate": "2027-09-19",
+        "endDate": "2027-09-19",
+        "verified": true
+      },
+      "routes": {
+        "0": {
+          "routeId": "varazdin-2027-half",
+          "date": "2027-09-19",
+          "verified": true
+        },
+        "1": {
+          "routeId": "varazdin-2027-5k",
+          "date": "2027-09-19",
+          "verified": true
+        },
+        "2": {
+          "routeId": "varazdin-2027-kids-200m",
+          "date": "2027-09-19",
+          "verified": true
+        },
+        "3": {
+          "routeId": "varazdin-2027-kids-500m",
+          "date": "2027-09-19",
+          "verified": true
+        },
+        "4": {
+          "routeId": "varazdin-2027-kids-1k",
+          "date": "2027-09-19",
+          "verified": true
+        }
+      }
+    },
+    "3-viski-polumaraton-2027": {
+      "eventId": "3-viski-polumaraton-2027",
+      "checkedAt": "2026-11-20T22:10:00Z",
+      "status": "unconfirmed",
+      "sources": [
+        {
+          "url": "https://runners.hr/en/race/viski-polumaraton",
+          "status": "read",
+          "verification": "secondary-source-provisional"
+        }
+      ],
+      "eventPeriod": {
+        "startDate": "2027-05-14",
+        "endDate": "2027-05-15",
+        "verified": false
+      },
+      "routes": {
+        "0": {
+          "routeId": "viski-2027-half",
+          "date": "2027-05-15",
+          "verified": false
+        },
+        "1": {
+          "routeId": "viski-2027-5k",
+          "date": "2027-05-15",
+          "verified": false
+        },
+        "2": {
+          "routeId": "viski-2027-relay-men",
+          "date": "2027-05-15",
+          "verified": false
+        },
+        "3": {
+          "routeId": "viski-2027-relay-women",
+          "date": "2027-05-15",
+          "verified": false
+        },
+        "4": {
+          "routeId": "viski-2027-relay-mixed",
+          "date": "2027-05-15",
+          "verified": false
+        }
+      },
+      "note": "Sekundärquelle listet Ausgabe 2027; Veranstalterbestätigung noch ausstehend. Nicht als endgültig bestätigt behandeln."
+    },
+    "10-polumaraton-zrinskih-2027": {
+      "eventId": "10-polumaraton-zrinskih-2027",
+      "checkedAt": "2026-11-20T22:10:00Z",
+      "status": "verified",
+      "sources": [
+        {
+          "url": "https://www.akm.hr/",
+          "status": "read",
+          "verification": "official-2027-event-confirmation"
+        }
+      ],
+      "eventPeriod": {
+        "startDate": "2027-04-25",
+        "endDate": "2027-04-25",
+        "verified": true
+      },
+      "routes": {
+        "0": {
+          "routeId": "zrinskih-2027-half",
+          "date": "2027-04-25",
+          "verified": true
+        },
+        "1": {
+          "routeId": "zrinskih-2027-5k",
+          "date": "2027-04-25",
           "verified": true
         }
       }
