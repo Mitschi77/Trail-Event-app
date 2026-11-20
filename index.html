@@ -19129,13 +19129,12 @@ async function saveProposalComparison(card){
  if(!cloudClient||!isReviewOwner()){status.textContent='Speichern nur mit dem Inhaberkonto möglich.';return;}
  status.textContent='Speichere deine Auswahl …';
  try{
-  const {data:row,error}=await cloudClient.from('event_change_proposals').select('payload,proposal_type').eq('id',id).single();
+  const {data:row,error}=await cloudClient.from('event_change_proposals').select('proposal_type').eq('id',id).single();
   if(error)throw error;
   if(row.proposal_type!=='new_event')throw new Error('Der Vorschlag ist kein neues Rennen.');
   const choices={};card.querySelectorAll('[data-compare-field]').forEach(el=>choices[el.dataset.compareField]=el.value);
   const decision={existingEventId:select.value,fieldChoices:choices,routePolicy:'keep_both',decidedAt:new Date().toISOString(),decidedBy:cloudUser.id};
-  const payload={...(row.payload||{}),comparison_decision:decision};
-  const {error:updateError}=await cloudClient.from('event_change_proposals').update({payload}).eq('id',id);
+  const {error:updateError}=await cloudClient.from('event_change_proposals').update({comparison_decision:decision}).eq('id',id);
   if(updateError)throw updateError;
   status.textContent='Auswahl gespeichert. Beide Streckenbestände bleiben getrennt erhalten; es wurde nichts automatisch veröffentlicht.';
  }catch(e){status.textContent='Speichern fehlgeschlagen: '+(e.message||'Unbekannter Fehler');}
