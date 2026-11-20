@@ -3220,54 +3220,38 @@
     },
     "wild-strubel": {
       "eventId": "wild-strubel",
-      "checkedAt": "2026-11-18T14:25:00.201965+00:00",
+      "checkedAt": "2026-11-20T09:30:00+01:00",
       "status": "verified",
       "sources": [
         {
-          "url": "https://wildstrubel.utmb.world/de/",
+          "url": "https://wildstrubel.utmb.world/de/races",
           "status": "read",
-          "verification": "official-2027-race-pages"
-        },
-        {
-          "url": "https://wildstrubel.utmb.world/de/discover/the-event/agenda",
-          "status": "read",
-          "verification": "official-2027-race-pages"
-        },
-        {
-          "url": "https://wildstrubel.utmb.world/",
-          "status": "read"
+          "verification": "official-2027-race-list"
         },
         {
           "url": "https://wildstrubel.utmb.world/races/wild-10",
-          "status": "read"
-        },
-        {
-          "url": "https://wildstrubel.utmb.world/races/wild-glacier-marathon",
-          "status": "read"
-        },
-        {
-          "url": "https://wildstrubel.utmb.world/races/wild-25",
-          "status": "read"
-        },
-        {
-          "url": "https://wildstrubel.utmb.world/races/wild-70",
-          "status": "read"
+          "status": "read",
+          "verification": "official-2027-route-details"
         },
         {
           "url": "https://wildstrubel.utmb.world/races/Wild-NextGen",
-          "status": "read"
+          "status": "read",
+          "verification": "official-2027-route-details"
         },
         {
-          "url": "https://wildstrubel.utmb.world/races/wild-110",
-          "status": "read"
+          "url": "https://wildstrubel.utmb.world/races/wild-kids-ycoor",
+          "status": "read",
+          "verification": "official-2027-route-details"
         },
         {
-          "url": "https://wildstrubel.utmb.world/races/wild-55",
-          "status": "read"
+          "url": "https://wildstrubel.utmb.world/races/wild-kids-grenon",
+          "status": "read",
+          "verification": "official-2027-route-details"
         },
         {
-          "url": "https://wildstrubel.utmb.world/races",
-          "status": "read"
+          "url": "https://wildstrubel.utmb.world/races/Wild-adaptive-run",
+          "status": "read",
+          "verification": "official-2027-route-details"
         }
       ],
       "eventPeriod": {
@@ -3302,12 +3286,27 @@
           "verified": true
         },
         "5": {
-          "routeId": "wildstrubel-wild-glacier-marathon-lenk",
-          "date": "2027-09-10",
+          "routeId": "wild10-10-500",
+          "date": "2027-09-11",
           "verified": true
         },
         "6": {
-          "routeId": "wildstrubel-wild-glacier-marathon-lenk",
+          "routeId": "wild-nextgen-10-500",
+          "date": "2027-09-11",
+          "verified": true
+        },
+        "7": {
+          "routeId": "wild-kids-ycoor-0-8-2027",
+          "date": "2027-09-10",
+          "verified": true
+        },
+        "8": {
+          "routeId": "wild-kids-grenon-1-7-2027",
+          "date": "2027-09-10",
+          "verified": true
+        },
+        "9": {
+          "routeId": "wild-adaptive-run-2-2027",
           "date": "2027-09-10",
           "verified": true
         }
