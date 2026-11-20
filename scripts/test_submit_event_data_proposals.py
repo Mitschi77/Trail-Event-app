@@ -42,6 +42,14 @@ class ProposalSubmissionTests(unittest.TestCase):
     def test_batch_size_is_bounded(self):
         self.assertEqual(proposals.BATCH_SIZE, 50)
 
+    def test_database_rpc_uses_transaction_lock_and_service_role_gate(self):
+        migration = Path(__file__).resolve().parents[1] / "supabase/migrations/20261120231500_atomic_proposal_ingestion.sql"
+        sql = migration.read_text(encoding="utf-8")
+        self.assertIn("pg_advisory_xact_lock(hashtextextended(lock_key, 0))", sql)
+        self.assertIn("auth.role() is distinct from 'service_role'", sql)
+        self.assertIn("grant execute on function public.ingest_event_change_proposals(jsonb) to service_role", sql)
+        self.assertIn("and status = 'pending'", sql)
+
     @patch.object(proposals.time, "sleep")
     @patch.object(proposals.urllib.request, "urlopen")
     def test_retries_transient_http_error_then_succeeds(self, urlopen, _sleep):
