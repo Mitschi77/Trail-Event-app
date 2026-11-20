@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-20T23:05:00Z",
+  "updatedAt": "2026-11-20T23:15:00Z",
   "schemaVersion": 3,
   "events": {
     "la-corsa-della-bora": {
@@ -9755,6 +9755,316 @@
         "2": {
           "routeId": "montafon-panorama-trail-2027",
           "date": "2027-06-26",
+          "verified": true
+        }
+      }
+    },
+    "koasamarsch-ebbs-2027": {
+      "eventId": "koasamarsch-ebbs-2027",
+      "checkedAt": "2026-11-20T23:15:00Z",
+      "status": "verified",
+      "sources": [],
+      "eventPeriod": {
+        "startDate": "2027-06-12",
+        "endDate": "2027-06-12",
+        "verified": true
+      },
+      "routes": {
+        "0": {
+          "routeId": "koasa-55-panorama-trail-2027",
+          "date": "2027-06-12",
+          "verified": true
+        },
+        "1": {
+          "routeId": "koasa-classic-run-2027",
+          "date": "2027-06-12",
+          "verified": true
+        },
+        "2": {
+          "routeId": "koasa-hoellenritt-2027",
+          "date": "2027-06-12",
+          "verified": true
+        },
+        "3": {
+          "routeId": "koasa-easy-trail-8k-2027",
+          "date": "2027-06-12",
+          "verified": true
+        }
+      }
+    },
+    "zugspitz-ultra-trail-by-utmb-2027": {
+      "eventId": "zugspitz-ultra-trail-by-utmb-2027",
+      "checkedAt": "2026-11-20T23:15:00Z",
+      "status": "verified",
+      "sources": [],
+      "eventPeriod": {
+        "startDate": "2027-06-17",
+        "endDate": "2027-06-19",
+        "verified": true
+      },
+      "routes": {
+        "0": {
+          "routeId": "zut100-167-8205-2027",
+          "date": "2027-06-17",
+          "verified": true
+        },
+        "1": {
+          "routeId": "zut-ultratrail-107-5280-2027",
+          "date": "2027-06-18",
+          "verified": true
+        },
+        "2": {
+          "routeId": "zut-ehrwald-86-4295-2027",
+          "date": "2027-06-18",
+          "verified": true
+        },
+        "3": {
+          "routeId": "zut-leutasch-68-5-3100-2027",
+          "date": "2027-06-19",
+          "verified": true
+        },
+        "4": {
+          "routeId": "zut-mittenwald-44-2110-2027",
+          "date": "2027-06-19",
+          "verified": true
+        },
+        "5": {
+          "routeId": "zut-garmisch-29-1565-2027",
+          "date": "2027-06-18",
+          "verified": true
+        },
+        "6": {
+          "routeId": "zut-grainau-16-760-2027",
+          "date": "2027-06-19",
+          "verified": true
+        }
+      }
+    },
+    "black-forest-ultra-trail-run-2027": {
+      "eventId": "black-forest-ultra-trail-run-2027",
+      "checkedAt": "2026-11-20T23:15:00Z",
+      "status": "verified",
+      "sources": [],
+      "eventPeriod": {
+        "startDate": "2027-09-17",
+        "endDate": "2027-09-19",
+        "verified": true
+      },
+      "routes": {
+        "0": {
+          "routeId": "bfutr-1one-2027",
+          "date": "2027-09-18",
+          "verified": true
+        },
+        "1": {
+          "routeId": "bfutr-2two-2027",
+          "date": "2027-09-18",
+          "verified": true
+        },
+        "2": {
+          "routeId": "bfutr-3three-2027",
+          "date": "2027-09-18",
+          "verified": true
+        },
+        "3": {
+          "routeId": "bfutr-5five-2027",
+          "date": "2027-09-18",
+          "verified": true
+        },
+        "4": {
+          "routeId": "bfutr-8eight-2027",
+          "date": "2027-09-18",
+          "verified": true
+        },
+        "5": {
+          "routeId": "bfutr-xtreme-2027",
+          "date": "2027-09-18",
+          "verified": true
+        }
+      }
+    },
+    "xterra-trail-des-balcons-dazur-mandelieu-2027": {
+      "eventId": "xterra-trail-des-balcons-dazur-mandelieu-2027",
+      "checkedAt": "2026-11-20T23:15:00Z",
+      "status": "verified",
+      "sources": [],
+      "eventPeriod": {
+        "startDate": "2027-04-10",
+        "endDate": "2027-04-11",
+        "verified": true
+      },
+      "routes": {
+        "0": {
+          "routeId": "xterra-balcons-azur-23k-2027",
+          "date": "2027-04-10",
+          "verified": true
+        },
+        "1": {
+          "routeId": "xterra-balcons-azur-14k-2027",
+          "date": "2027-04-10",
+          "verified": true
+        },
+        "2": {
+          "routeId": "xterra-balcons-azur-47k-2027",
+          "date": "2027-04-11",
+          "verified": true
+        },
+        "3": {
+          "routeId": "xterra-balcons-azur-68k-2027",
+          "date": "2027-04-11",
+          "verified": true
+        }
+      }
+    },
+    "runthrough-trails-berchtesgaden-2027": {
+      "eventId": "runthrough-trails-berchtesgaden-2027",
+      "checkedAt": "2026-11-20T23:15:00Z",
+      "status": "verified",
+      "sources": [],
+      "eventPeriod": {
+        "startDate": "2027-10-16",
+        "endDate": "2027-10-16",
+        "verified": true
+      },
+      "routes": {
+        "0": {
+          "routeId": "berchtesgaden-12k-12-583",
+          "date": "2027-10-16",
+          "verified": true
+        },
+        "1": {
+          "routeId": "berchtesgaden-26k-26-1594",
+          "date": "2027-10-16",
+          "verified": true
+        },
+        "2": {
+          "routeId": "berchtesgaden-44k-44-2845",
+          "date": "2027-10-16",
+          "verified": true
+        }
+      }
+    },
+    "runthrough-brecon-beacons-2027": {
+      "eventId": "runthrough-brecon-beacons-2027",
+      "checkedAt": "2026-11-20T23:15:00Z",
+      "status": "verified",
+      "sources": [],
+      "eventPeriod": {
+        "startDate": "2027-08-07",
+        "endDate": "2027-08-07",
+        "verified": true
+      },
+      "routes": {
+        "0": {
+          "routeId": "brecon-beacons-24k-24-667",
+          "date": "2027-08-07",
+          "verified": true
+        },
+        "1": {
+          "routeId": "brecon-beacons-51k-51-2184",
+          "date": "2027-08-07",
+          "verified": true
+        }
+      }
+    },
+    "runthrough-trails-interlaken-2027": {
+      "eventId": "runthrough-trails-interlaken-2027",
+      "checkedAt": "2026-11-20T23:15:00Z",
+      "status": "verified",
+      "sources": [],
+      "eventPeriod": {
+        "startDate": "2027-08-07",
+        "endDate": "2027-08-07",
+        "verified": true
+      },
+      "routes": {
+        "0": {
+          "routeId": "interlaken-27k-27-1433",
+          "date": "2027-08-07",
+          "verified": true
+        }
+      }
+    },
+    "runthrough-trails-engelberg-2027": {
+      "eventId": "runthrough-trails-engelberg-2027",
+      "checkedAt": "2026-11-20T23:15:00Z",
+      "status": "verified",
+      "sources": [],
+      "eventPeriod": {
+        "startDate": "2027-08-21",
+        "endDate": "2027-08-21",
+        "verified": true
+      },
+      "routes": {
+        "0": {
+          "routeId": "engelberg-25k-25-938",
+          "date": "2027-08-21",
+          "verified": true
+        },
+        "1": {
+          "routeId": "engelberg-56k-56-2501",
+          "date": "2027-08-21",
+          "verified": true
+        },
+        "2": {
+          "routeId": "engelberg-100k-100-5393",
+          "date": "2027-08-21",
+          "verified": true
+        }
+      }
+    },
+    "runthrough-tittesworth-water-2027": {
+      "eventId": "runthrough-tittesworth-water-2027",
+      "checkedAt": "2026-11-20T23:15:00Z",
+      "status": "verified",
+      "sources": [],
+      "eventPeriod": {
+        "startDate": "2027-07-04",
+        "endDate": "2027-07-04",
+        "verified": true
+      },
+      "routes": {
+        "0": {
+          "routeId": "tittesworth-10k-10-351",
+          "date": "2027-07-04",
+          "verified": true
+        },
+        "1": {
+          "routeId": "tittesworth-22k-22-811",
+          "date": "2027-07-04",
+          "verified": true
+        },
+        "2": {
+          "routeId": "tittesworth-50k-50-1551",
+          "date": "2027-07-04",
+          "verified": true
+        }
+      }
+    },
+    "runthrough-south-downs-2027": {
+      "eventId": "runthrough-south-downs-2027",
+      "checkedAt": "2026-11-20T23:15:00Z",
+      "status": "verified",
+      "sources": [],
+      "eventPeriod": {
+        "startDate": "2027-08-01",
+        "endDate": "2027-08-01",
+        "verified": true
+      },
+      "routes": {
+        "0": {
+          "routeId": "south-downs-12k-12-391",
+          "date": "2027-08-01",
+          "verified": true
+        },
+        "1": {
+          "routeId": "south-downs-25k-25-699",
+          "date": "2027-08-01",
+          "verified": true
+        },
+        "2": {
+          "routeId": "south-downs-50k-50-1491",
+          "date": "2027-08-01",
           "verified": true
         }
       }
