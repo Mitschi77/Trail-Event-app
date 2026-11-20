@@ -1,1482 +1,3 @@
-<!doctype html>
-<html lang="de"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"><meta name="theme-color" content="#10151f"><link rel="icon" type="image/svg+xml" href="./trail-icon.svg"><link rel="manifest" href="./manifest.webmanifest"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="Trailrunning-Manager"><title>Trailrunning-Manager</title><link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
-<style>
-:root{--bg:#f4f5f0;--ink:#18231f;--muted:#68756e;--green:#1e5b43;--lime:#d9f36a;--line:#e2e7df;--card:#fff;--shadow:0 8px 28px #1b35200b}*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.5 -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}header{background:#14251f;color:white;padding:26px max(20px,calc((100vw - 1120px)/2)) 30px}.top{display:flex;align-items:center;justify-content:space-between;gap:16px}.utmb-header-index{display:inline-flex;align-items:center;gap:9px;margin-left:auto;margin-right:2px;padding:6px 11px 6px 8px;min-height:46px;border:1px solid #526d83;border-radius:9px;background:linear-gradient(115deg,#142b43 0%,#254d68 100%);color:#f6fbff;text-decoration:none;box-shadow:inset 0 1px 0 #ffffff20;white-space:nowrap}.utmb-header-mark{display:inline-flex;align-items:center;justify-content:center;width:27px;height:27px;border-radius:6px;background:linear-gradient(145deg,#d9f36a 0 48%,#5db6a0 48% 72%,#e9a64a 72%);color:#152b3d;font-size:17px;font-weight:950;clip-path:polygon(0 100%,18% 28%,35% 65%,58% 0,100% 100%)}.utmb-header-copy{display:flex;flex-direction:column;line-height:1.05;gap:3px}.utmb-header-copy small{font-size:9px;font-weight:850;letter-spacing:.12em;color:#c4d8e6}.utmb-header-copy strong{font-size:20px;line-height:1;font-weight:950;letter-spacing:-.04em;color:#fff}.utmb-header-link{font-size:13px;color:#d9f36a;font-weight:900}@media(max-width:520px){header{padding:16px 14px 22px}.top{gap:8px}.brand{font-size:10px;letter-spacing:.08em;gap:6px}.brand img{width:29px;height:29px}.utmb-header-index{gap:6px;padding:5px 7px 5px 6px;min-height:40px}.utmb-header-mark{width:22px;height:22px;font-size:14px}.utmb-header-copy small{font-size:8px}.utmb-header-copy strong{font-size:17px}.utmb-header-link{display:none}}.brand{display:flex;align-items:center;gap:10px;font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:#e9edf4;font-weight:800}.brand img{width:34px;height:34px;flex:none}.pill{position:relative;display:flex;align-items:center;gap:7px;border:1px solid #496357;border-radius:30px;padding:6px 9px 6px 11px;font-size:12px;color:#e1eee5}.app-menu-button{width:30px;height:30px;border:1px solid #668074;border-radius:50%;background:#20372d;color:#fff;font:700 22px/1 -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;cursor:pointer;padding:0;display:inline-flex;align-items:center;justify-content:center}.app-menu-button:hover,.app-menu-button[aria-expanded="true"]{background:#365044;border-color:#8aaa91} .app-menu-dropdown{max-height:min(75vh,620px);overflow-y:auto;overscroll-behavior:contain;position:absolute;z-index:100;top:calc(100% + 10px);right:0;width:min(310px,calc(100vw - 32px));padding:13px;background:#fff;color:var(--ink);border:1px solid var(--line);border-radius:15px;box-shadow:0 14px 38px #071a1240;text-align:left}.app-menu-dropdown[hidden]{display:none}.app-menu-heading{font-size:13px;font-weight:800;color:var(--green);margin:2px 2px 10px}.app-menu-item{display:block;width:100%;min-height:42px;text-align:left;margin:6px 0;padding:10px 12px;font-size:13px}.app-menu-label{cursor:pointer}.app-menu-account{background:#20372d;color:#fff;border:1px solid #365044;border-radius:10px;padding:12px;margin:6px 0 10px}.app-menu-account[hidden]{display:none}.app-menu-account #cloudAuthForm{display:flex;gap:7px;flex-wrap:wrap}.app-menu-account #cloudAuthForm[hidden],#cloudAccountActions[hidden]{display:none!important}#cloudAccountActions:not([hidden]){display:grid}.app-menu-account #cloudAuthForm input{flex:1 1 100%;min-width:0;padding:10px;border-radius:8px;border:1px solid #789084;font:inherit;font-size:14px}.app-menu-account #cloudAuthForm button{flex:1 1 auto;min-height:40px;font-size:13px}.app-menu-account #cloudStatus{font-size:12px;color:#d4e2d9;margin-bottom:9px}.app-menu-info{padding:10px 11px;margin:8px 0;border:1px solid #365044;border-radius:10px;background:#20372d;color:#fff}.app-menu-info strong{display:block;font-size:13px}.app-menu-info p{margin:5px 0 7px;font-size:12px;line-height:1.45;color:#d4e2d9}.app-menu-info .app-menu-hint{margin:0;color:#c4d5c9}.app-menu-hint{font-size:11px;line-height:1.45;color:var(--muted);margin:8px 3px 3px}.app-menu-conflict{gap:6px;flex-wrap:wrap;margin-top:10px;padding-top:10px;border-top:1px solid var(--line)}.hero{max-width:1120px;margin:28px auto 0}.hero h1{font-size:clamp(30px,5vw,48px);line-height:1.04;letter-spacing:-.04em;margin:0 0 10px}.hero p{color:#c5d2ca;margin:0;max-width:620px}.stats{display:flex;gap:10px;flex-wrap:wrap;margin-top:22px}.stat{background:#20372d;border:1px solid #365044;padding:10px 14px;border-radius:13px;min-width:110px}.stat b{display:block;font-size:20px;color:var(--lime)}.stat span{font-size:12px;color:#c2d0c7}.wrap{max-width:1120px;margin:24px auto;padding:0 18px}.toolbar{display:grid;grid-template-columns:1fr 190px 190px;gap:10px;margin-bottom:16px}.field{background:white;border:1px solid var(--line);border-radius:12px;padding:12px 14px;color:var(--ink);font:inherit;width:100%;outline:none}.field:focus{border-color:#67947c;box-shadow:0 0 0 3px #1e5b4312}.resultsline{display:flex;justify-content:space-between;gap:10px;align-items:center;color:var(--muted);font-size:13px;margin:10px 2px 12px}.event{background:var(--card);border:1px solid var(--line);border-radius:17px;margin:10px 0;box-shadow:var(--shadow);overflow:hidden}.event.event-done{background:#fff2b3;border-color:#d6a800;border-left:4px solid #d6a800}.event.event-done .eventhead{background:#fff2b3;color:#3b3214}.event.event-done .detail{background:#fff8d9;color:#3b3214}.eventhead{display:grid;grid-template-columns:1fr auto;gap:16px;align-items:center;padding:17px 18px;cursor:pointer}.eventhead:hover{background:#fafcf8}.eventtitle{font-weight:750;font-size:17px;letter-spacing:-.02em}.meta{display:flex;flex-wrap:wrap;gap:7px;margin-top:7px;color:var(--muted);font-size:12px}.tag{background:#f0f4ee;border-radius:30px;padding:4px 8px}.type-select{max-width:170px;border:1px solid var(--line);border-radius:30px;padding:4px 8px;background:#fff;color:var(--green);font:inherit;font-size:12px}.date{font-weight:700;color:var(--green);font-size:14px;white-space:nowrap}.chev{color:#7b887f;margin-left:8px}.detail{border-top:1px solid var(--line);padding:15px 18px 18px;background:#fcfdfb}.routes{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:9px}.route{border:1px solid var(--line);border-radius:13px;padding:12px;background:white}.utmb-profile-summary{flex:1 1 100%;margin-top:10px;padding:14px;background:#20372d;border:1px solid #496357;border-radius:13px;color:#eef5ef}.utmb-profile-summary>strong{display:block;color:#b8e5c6;margin-bottom:8px}.utmb-profile-summary a,.utmb-result-card a{color:#b8e5c6;font-weight:700}.utmb-profile-summary .plan-meta,.utmb-result-card .plan-meta{margin:8px 0 0;color:#c4d5c9}.utmb-result-card{margin:12px 0;padding:13px;background:#20372d;border:1px solid #496357;border-left:4px solid #d9f36a;border-radius:12px;color:#eef5ef}.utmb-result-card>strong{display:block;color:#b8e5c6;margin-bottom:8px}.utmb-result-card .routegrid{margin:8px 0}.run-record-summary{margin:0 0 12px;padding:11px 12px;background:#f6f9f5;border:1px solid #e1e9df;border-radius:11px}.run-record-summary>strong{display:block;margin-bottom:7px;color:var(--green);font-size:13px}.route-info-tools{margin-top:12px;padding:12px;background:#f6f9f5;border:1px solid #dfe9dc;border-radius:11px}.route-info-heading{font-weight:750;color:var(--green);margin-bottom:8px}.route-info-panel{display:block!important}.route.route-done{background:#eff9ed;border-color:#b9dcb5}.route strong{display:block;margin-bottom:5px}.utmb-total-score{display:inline-flex;vertical-align:middle;align-items:center;gap:6px;margin-left:9px;padding:4px 8px 4px 5px;border:1px solid #496b83;border-radius:7px;background:linear-gradient(110deg,#172d43 0%,#254c66 100%);color:#f4fbff;box-shadow:inset 0 1px 0 #ffffff20;font-size:10px;line-height:1.1;letter-spacing:.045em;white-space:nowrap}.utmb-total-mark{display:inline-flex;align-items:center;justify-content:center;width:19px;height:18px;background:linear-gradient(145deg,#f5d35e 0 25%,#e87936 25% 50%,#4da879 50% 75%,#d94c4c 75%);clip-path:polygon(0 100%,18% 18%,35% 62%,53% 0,100% 100%);color:#15283a;font-size:11px;font-weight:950;padding-top:3px}.utmb-total-label{font-weight:850;color:#c9dce8}.utmb-total-score strong{font-size:13px;color:#fff;font-weight:950;letter-spacing:0}@media(max-width:520px){.utmb-total-score{gap:4px;margin-left:6px;padding:4px 6px 4px 4px;font-size:9px}.utmb-total-score strong{font-size:12px}}
-.utmb-category-badge,.utmb-stones-badge{display:inline-flex;align-items:center;gap:4px;margin:2px 6px 7px 0;padding:3px 8px;border-radius:7px;font-size:11px;font-weight:800;line-height:1.35}.utmb-category-badge{background:color-mix(in srgb,var(--utmb-category-color) 16%,white);border:1px solid color-mix(in srgb,var(--utmb-category-color) 55%,white);color:#25332b;gap:6px}.utmb-category-label{font-weight:900;letter-spacing:.02em}.utmb-category-mark{display:inline-flex;align-items:center;justify-content:center;width:18px;height:17px;background:#182b40;color:#fff;font-size:12px;font-weight:950;line-height:1;clip-path:polygon(0 100%,18% 18%,35% 62%,53% 0,100% 100%);padding-top:3px}.utmb-category-effort{font-weight:650;opacity:.82}.utmb-stones-badge{background:#edf4f7;border:1px solid #d5e3e9;color:#34566a}.itra-points-badge{display:inline-flex;align-items:center;margin:2px 6px 7px 0;padding:3px 8px;border-radius:7px;background:#eee9f7;border:1px solid #d8cbea;color:#59427a;font-size:11px;font-weight:800}.route-data-status{margin:6px 0 9px;padding:7px 9px;border-radius:8px;background:#fff5e8;color:#80551d;font-size:11px;line-height:1.45}.route-data-status.complete{background:#edf5ee;color:#38634a}.routegrid{display:flex;gap:14px;color:var(--muted);font-size:13px;flex-wrap:wrap}.routegrid b{color:var(--ink)}.routefoot{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}.link{display:inline-block;text-decoration:none;color:var(--green);font-size:12px;font-weight:700;border:1px solid #d9e6dc;border-radius:9px;padding:6px 9px}.link:hover{background:#edf5ee}.stay{margin-top:14px;padding:14px;background:#f4f7f2;border-radius:13px}.stay h3{margin:0 0 5px;font-size:14px}.stay p{margin:0 0 10px;color:var(--muted);font-size:12px}.staylinks{display:flex;gap:8px;flex-wrap:wrap}.staylinks a{font-size:12px;font-weight:700;text-decoration:none;border-radius:9px;padding:8px 11px;background:#1e5b43;color:white}.staylinks a.alt{background:white;color:var(--green);border:1px solid #d5e2d8}.note{font-size:12px;color:var(--muted);margin:18px 2px}.empty{padding:36px;text-align:center;color:var(--muted);background:white;border:1px dashed var(--line);border-radius:16px}.foot{padding:24px 18px;text-align:center;color:var(--muted);font-size:12px}
-
-.tabbar{display:flex;flex-wrap:wrap;gap:8px;margin:22px 0 18px;padding:5px;background:#e9eee8;border-radius:13px}.tab-button{flex:1 1 180px;border:0;border-radius:10px;padding:11px 14px;background:transparent;color:var(--muted);font:700 14px -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;cursor:pointer}.tab-button[aria-selected="true"]{background:#fff;color:var(--green);box-shadow:0 2px 8px #1b352012}.tab-button#addTabButton{flex-basis:100%}.tab-panel[hidden]{display:none}.planner{display:block;width:100%;max-width:100%;min-width:0;background:#fff;border:1px solid var(--line);border-radius:18px;padding:18px;margin:0 0 22px;box-shadow:var(--shadow)}#yearTab:not([hidden]){display:block!important;width:100%;max-width:100%;min-width:0}#seasonEnhancements,#seasonRaceCards,#seasonTimeline,.season-training-panel{display:block;width:100%;max-width:100%;min-width:0}#seasonEnhancements{clear:both}#seasonTimeline{overflow:hidden}.season-lane{max-width:100%;min-width:0}.planner h2{font-size:22px;margin:0 0 5px;letter-spacing:-.03em}.planner-intro{color:var(--muted);font-size:13px;margin:0 0 16px}.planner-grid{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(150px,.7fr) auto;gap:10px;align-items:end}.planner label{display:block;font-size:12px;font-weight:700;color:var(--muted);margin:0 0 6px}.planner select,.planner input{width:100%;background:#fff;border:1px solid var(--line);border-radius:11px;padding:11px 12px;font:inherit;color:var(--ink)}.primary{border:0;border-radius:11px;background:var(--green);color:#fff;font:700 14px -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;padding:12px 16px;cursor:pointer;min-height:44px}.secondary{border:1px solid #d5e2d8;border-radius:10px;background:#f7faf6;color:var(--green);font:700 12px -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;padding:8px 11px;cursor:pointer}.planner-status{margin:14px 0 0;padding:12px;border-radius:12px;background:#f3f7f1;font-size:13px;color:var(--ink)}.planner-status b{color:var(--green)}.planner-review{margin-top:14px;border:1px solid var(--line);border-radius:13px;padding:14px;background:var(--card)}.planner-review h3{margin:0 0 9px;font-size:15px}.planner-review-stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin:9px 0}.planner-review-stat{padding:9px;border-radius:10px;background:var(--bg);min-width:0}.planner-review-stat b{display:block;font-size:17px}.planner-review-stat span{font-size:11px;color:var(--muted)}.planner-review-list{display:grid;gap:7px;margin-top:10px}.planner-review-item{display:flex;gap:9px;align-items:flex-start;padding:8px 0;border-top:1px solid var(--line);font-size:12px}.planner-review-item strong{display:block;font-size:13px}.planner-review-item .review-state{margin-left:auto;white-space:nowrap;font-weight:700}.planner-review-warning{color:#d58b37}.planner-review-ok{color:var(--green)}.planner-order-actions{display:flex;gap:6px;flex-wrap:wrap;margin-top:8px}.planner-order-actions button{min-width:44px}@media(max-width:380px){.planner-review-stats{grid-template-columns:repeat(2,minmax(0,1fr))}}.planner-columns{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:16px}.planner-panel{border:1px solid var(--line);border-radius:13px;padding:13px;min-width:0}.planner-panel h3{font-size:14px;margin:0 0 10px}.plan-card{border:1px solid var(--line);border-radius:11px;padding:11px;margin:8px 0;background:#fff}.plan-card strong{display:block;font-size:14px}.plan-meta{font-size:12px;color:var(--muted);margin:4px 0 8px}.plan-actions{display:flex;gap:7px;flex-wrap:wrap;align-items:center}.plan-empty{font-size:13px;color:var(--muted);padding:10px 2px}.planner small{color:var(--muted)}.route-edit{margin:8px 0 12px;padding:12px;background:#f3f7f1;border:1px solid #dfe8dc;border-radius:12px}.edit-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(145px,1fr));gap:9px;margin-bottom:10px}.edit-grid label{display:block;font-size:12px;color:var(--muted);font-weight:700}.edit-grid input{display:block;width:100%;min-width:0;margin-top:4px;padding:8px;border:1px solid var(--line);border-radius:8px;background:#fff;color:var(--ink);font:inherit}.route-edit[hidden]{display:none}.run-tools{display:flex;gap:10px;align-items:center;flex-wrap:wrap;padding:12px 13px;margin:0 0 13px;background:#f3f7f1;border:1px solid #e1e9df;border-radius:12px}.run-tools label{display:flex;gap:7px;align-items:center;font-size:13px;font-weight:700;color:var(--ink);margin:0}.run-tools input[type="checkbox"]{width:18px;height:18px;accent-color:var(--green)}.run-tools input[type="number"]{width:88px;min-width:88px;height:36px;padding:6px 8px;border:1px solid var(--line);border-radius:8px;font:inherit;color:var(--ink);background:#fff}.stars{display:inline-flex;gap:2px;align-items:center}.star-btn{border:0;background:transparent;padding:1px;color:#aab3aa;font-size:21px;line-height:1;cursor:pointer}.star-btn.active{color:#e4a821}.rating-label{font-size:12px;color:var(--muted)}.run-summary{display:inline-flex;gap:5px;align-items:center;color:var(--green);font-size:12px;font-weight:700}.overview-stars{color:#d49a16;letter-spacing:1px;font-size:13px}@media(max-width:700px){.planner-grid{grid-template-columns:1fr 1fr}.planner-grid .event-choice{grid-column:1/-1}.planner-grid .primary{grid-column:1/-1;width:100%}.planner-columns{grid-template-columns:1fr}.planner{padding:14px}}
-
-@media(max-width:700px){.toolbar{grid-template-columns:1fr 1fr}.toolbar input{grid-column:1/-1}.eventhead{padding:15px}.date{font-size:12px}.hero{margin-top:24px}.stats{gap:7px}.stat{min-width:95px}}
-.year-group{border:1px solid var(--line);border-radius:13px;padding:13px;margin:12px 0;background:#fff}.year-heading{display:flex;justify-content:space-between;align-items:center;gap:10px;margin:0 0 9px;color:var(--green)}.year-heading h3{font-size:20px;margin:0}.year-summary{font-size:12px;color:var(--muted);text-align:right}.year-race{padding:10px 0;border-top:1px solid var(--line)}.year-race:first-of-type{border-top:0}.year-race strong{display:block;font-size:14px}.year-race-meta{font-size:12px;color:var(--muted);margin-top:4px}.year-totals{font-size:12px;font-weight:700;color:var(--ink);margin-top:10px;padding-top:9px;border-top:1px solid var(--line)}@media(max-width:700px){.year-heading{align-items:flex-start;flex-direction:column}.year-summary{text-align:left}}\n
-
-.race-tools-section{margin:14px 0;padding:13px;border:1px solid var(--line);border-radius:13px;background:var(--card)}.race-tools-section h4{margin:0 0 8px}.checklist-group{margin:10px 0;padding:9px;border:1px solid var(--line);border-radius:9px}.checklist-group strong{display:block;margin-bottom:6px;color:var(--green)}.checklist-group label{display:flex;gap:8px;align-items:center;margin:7px 0;font-size:13px}.checklist-group input{width:18px;height:18px;accent-color:var(--green)}.equipment-source-note{padding:9px 10px;margin:8px 0;background:#24372d;border-left:3px solid #d9b84b;border-radius:7px;font-size:12px;line-height:1.45;color:var(--ink)}.equipment-check{align-items:flex-start!important}.equipment-check span{display:grid;gap:3px;line-height:1.35}.equipment-check small{font-size:11px;color:var(--muted)}.equipment-check.is-checked b{text-decoration:line-through;opacity:.72}.official-equipment a{color:var(--green);font-weight:700;text-decoration:underline}.training-bars{display:grid;gap:7px}.training-week{display:grid;grid-template-columns:60px minmax(40px,1fr) 65px;gap:6px;align-items:center;font-size:11px}.training-week small{grid-column:2/-1;color:var(--muted)}.training-bar-track{height:9px;border-radius:8px;background:var(--line);overflow:hidden}.training-bar{height:100%;background:#4e9a6d;border-radius:8px}.segment-row{display:grid;grid-template-columns:1fr .7fr 1fr;gap:8px;padding:8px 4px;border-bottom:1px solid var(--line);font-size:12px}.segment-head{color:var(--green);font-weight:700}/* Dauerhafter Dark Mode */
-:root{color-scheme:dark;--bg:#101713;--ink:#e7eee9;--muted:#a5b2aa;--green:#8fc6a5;--lime:#d9f36a;--line:#34443a;--card:#1a241e;--shadow:0 8px 28px #0005}
-body{background:var(--bg);color:var(--ink)}
-.wrap,.planner,.year-group,.route,.plan-card,.empty,.field,.planner select,.planner input,.edit-grid input,.event-detail-dialog{background:#1a241e;color:var(--ink)}
-.event,.eventhead,.detail,.tabbar,.tab-button[aria-selected="true"],.route-info-tools,.run-record-summary,.route-edit,.run-tools,.planner-status,.stay,.year-group,.route,.plan-card,.event-detail-data{background:#1a241e;color:var(--ink);border-color:var(--line)}
-.eventhead:hover{background:#202e25}.event.event-done,.event.event-done .eventhead{background:#fff2b3;color:#3b3214}.event.event-done .detail{background:#fff8d9;color:#3b3214}.event.event-done .eventhead:hover{background:#ffed91}
-.tag{background:#2a3a30;color:#dce9df}.type-select{background:#1a241e;color:var(--green);border-color:var(--line)}
-.link{color:#a8d9b7;border-color:#496552}.link:hover,.secondary{background:#26372c;color:#c5e8d0;border-color:#496552}
-.tabbar{background:#1b2921}.tab-button{color:var(--muted)}.tab-button[aria-selected="true"]{color:#c5e8d0}
-.routegrid b,.year-totals{color:var(--ink)}.route-info-heading,.route-info-panel,.event-detail-row b{color:#a8d9b7}
-.app-menu-dropdown{background:#1a241e;color:var(--ink);border-color:var(--line)}
-.app-menu-item,.event-detail-row{border-color:var(--line)}
-.year-profile-panels{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:10px;margin-top:10px}
-.year-profile-panel{min-width:0;border:1px solid var(--line);border-radius:11px;padding:10px;background:#202d25}
-.year-profile-panel strong{display:block;font-size:12px;color:#b9dfc5;margin-bottom:7px}
-.year-profile-panel iframe{display:block;width:100%;height:210px;border:0;border-radius:7px;background:#fff}
-.year-profile-empty{font-size:12px;color:var(--muted)}
-
-/* iPhone: sichere Abstände, gut treffbare Bedienelemente und lesbare Formulare */
-@media(max-width:700px){
-  header{padding-top:calc(26px + env(safe-area-inset-top,0px))}
-  .wrap{padding-left:14px;padding-right:14px}
-  .tabbar{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:6px;padding:5px}
-  .tab-button{min-width:0;min-height:44px;padding:11px 7px;font-size:13px;line-height:1.25;overflow-wrap:anywhere}
-  .tab-button#addTabButton{grid-column:1/-1;flex-basis:auto}
-  .field,.planner select,.planner input,.edit-grid input{font-size:16px}
-  .primary,.secondary,.link{min-height:44px;display:inline-flex;align-items:center;justify-content:center}
-  .toolbar{gap:8px}
-  .planner-grid{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}
-  .planner-grid .event-choice,.planner-grid .primary{grid-column:1/-1}
-  .planner-columns{grid-template-columns:minmax(0,1fr)}
-  .planner{padding:14px}
-  .planner-panel{min-width:0}
-  .eventhead{gap:9px;grid-template-columns:minmax(0,1fr) auto}
-  .eventtitle{overflow-wrap:anywhere}
-  .type-select{max-width:125px;min-width:0}
-  .routegrid{gap:8px 12px}
-  .routefoot,.staylinks{gap:8px}
-  .run-tools{align-items:flex-start}
-  .run-tools label{min-height:44px;display:flex;align-items:center}
-  .run-tools input[type="checkbox"]{width:20px;height:20px;margin-right:7px}
-  .edit-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
-  .edit-grid label{min-width:0}
-  .year-group{padding:11px}
-  .foot{padding-bottom:calc(24px + env(safe-area-inset-bottom,0px))}
-}
-@media(max-width:380px){
-  .stats .stat{min-width:0;flex:1 1 28%;padding:9px}
-  .stat b{font-size:18px}
-  .tab-button{font-size:12px}
-  .edit-grid{grid-template-columns:minmax(0,1fr)}
-}
-
-/* Zusätzliche iPhone-Optimierungen: keine gequetschten Eventköpfe oder Formulare */
-@media(max-width:700px){
-  .eventhead{grid-template-columns:minmax(0,1fr) minmax(64px,auto);align-items:start;min-height:64px}
-  .eventhead>div:last-child{display:flex;flex-direction:column;align-items:flex-end;gap:4px}
-  .date{white-space:normal;text-align:right;line-height:1.3}
-  .chev{margin-left:0}
-  .routes{grid-template-columns:minmax(0,1fr)}
-  .detail{padding:12px}
-  .route{min-width:0}
-  .routegrid>span{min-width:0;overflow-wrap:anywhere}
-  .routefoot .link,.staylinks a{flex:1 1 auto;min-width:min(100%,140px);text-align:center}
-  .run-tools{gap:6px}
-  .run-details{width:100%;display:grid;grid-template-columns:minmax(0,1fr);gap:8px}
-  .run-details[hidden]{display:none}
-  .run-details>label{min-width:0}
-  .run-details input,.run-details select,.edit-grid input{min-height:44px;font-size:16px}
-}
-@media(max-width:360px){
-  .eventhead{grid-template-columns:minmax(0,1fr)}
-  .eventhead>div:last-child{align-items:flex-start}
-  .date{text-align:left}
-  .meta{gap:5px;font-size:11px}
-  .detail{padding:10px}
-}
-
-/* Zweispaltig bleibt die Hauptnavigation; die eigentlichen Rennen und Strecken stehen untereinander. */
-#events,#missingEvents,#historyList,#yearOverview,#suggestions{
-  display:grid;
-  grid-template-columns:minmax(0,1fr);
-  gap:12px;
-  align-items:start;
-}
-#events>.event,#missingEvents>.year-group,#historyList>.plan-card,
-#yearOverview>.year-group,#yearOverview>.plan-card,#suggestions>.plan-card{
-  width:100%;
-  min-width:0;
-  margin:0;
-}
-#events .routes{grid-template-columns:minmax(0,1fr)}
-#missingEvents .year-race{display:block}
-#suggestions>.plan-empty{grid-column:1}
-@media(max-width:700px){
-  #events,#missingEvents,#historyList,#yearOverview,#suggestions{grid-template-columns:minmax(0,1fr);gap:9px}
-  #events .routes{grid-template-columns:minmax(0,1fr)}
-}
-.event-detail-overlay{position:fixed;inset:0;z-index:1000;background:#102019b8;display:flex;align-items:center;justify-content:center;padding:16px}.event-detail-overlay[hidden]{display:none}.event-detail-dialog{width:min(680px,100%);max-height:min(88vh,900px);overflow:auto;background:#fff;border-radius:18px;padding:18px;box-shadow:0 18px 60px #0005}.event-detail-head{display:flex;align-items:center;justify-content:space-between;gap:12px}.event-detail-head h2{margin:0;font-size:20px}.event-detail-dialog h3{margin:16px 0 8px;font-size:18px}.event-detail-dialog h4{margin:16px 0 8px;color:var(--green)}
-.event-detail-group{margin:9px 0;border:1px solid var(--line);border-radius:12px;background:var(--panel);overflow:hidden}.event-detail-group>summary{list-style:none;cursor:pointer;padding:13px 14px;font-weight:700;font-size:14px;display:flex;align-items:center;justify-content:space-between;gap:10px}.event-detail-group>summary::-webkit-details-marker{display:none}.event-detail-group>summary::after{content:'＋';font-size:17px;color:var(--muted);flex:none}.event-detail-group[open]>summary::after{content:'−'}.event-detail-group-body{padding:0 12px 12px}.event-detail-group-body>.event-detail-data{margin-top:2px}.event-detail-group-body>.year-profile-panel{margin-top:2px}.event-detail-group-body>.gpx-import{margin-top:8px}.event-detail-data{border:1px solid var(--line);border-radius:12px;overflow:hidden}.event-detail-row{display:grid;grid-template-columns:minmax(130px,.8fr) minmax(0,1.2fr);gap:12px;padding:9px 11px;border-bottom:1px solid var(--line);font-size:13px;overflow-wrap:anywhere}.event-detail-row:last-child{border-bottom:0}.event-detail-row b{color:var(--muted)}.event-detail-row a{color:var(--green);font-weight:700}.event-detail-note{font-size:12px;color:var(--muted);margin:12px 0 0}@media(max-width:480px){.event-detail-overlay{padding:8px}.event-detail-dialog{padding:13px}.event-detail-row{grid-template-columns:1fr;gap:2px}}.year-load-chart{margin-top:10px;padding:12px;border:1px solid var(--line);border-radius:11px;background:#202d25}.year-load-chart>strong{display:block;font-size:12px;color:#b9dfc5;margin-bottom:8px}.load-legend{display:flex;gap:14px;font-size:11px;color:var(--muted);margin-bottom:8px}.load-bar-row{display:grid;grid-template-columns:minmax(100px,1fr) minmax(60px,2fr) auto;gap:8px;align-items:center;font-size:11px;color:var(--muted);margin:5px 0}.load-track{height:8px;border-radius:9px;background:#34443a;overflow:hidden}.load-fill{height:100%;border-radius:9px;background:#8fc6a5}.load-fill.actual{background:#d8c56b}.load-dot{display:inline-block;width:8px;height:8px;border-radius:50%;margin-right:4px}.load-dot.planned{background:#8fc6a5}.load-dot.actual{background:#d8c56b}.load-bar-row b{color:var(--ink);white-space:nowrap}@media(max-width:440px){.load-bar-row{grid-template-columns:minmax(90px,1fr) minmax(42px,1fr) auto;gap:5px;font-size:10px}}
-.gpx-import{margin:10px 0;padding:10px;border:1px dashed var(--line);border-radius:9px;font-size:12px}.gpx-import label{display:flex;flex-direction:column;gap:7px;font-weight:600}.gpx-import input{font-size:12px;max-width:100%}.gpx-import small{display:block;color:var(--muted);margin-top:6px}
-.race-status-control{margin:10px 0;padding:10px;border:1px solid var(--line);border-radius:10px;background:var(--panel)}.race-status-control label{display:flex;align-items:center;justify-content:space-between;gap:12px;font-size:13px;font-weight:600}.race-status-control select{max-width:58%;padding:7px;border-radius:7px;background:var(--input);color:var(--ink);border:1px solid var(--line)}.race-status-control small{display:block;color:var(--muted);font-size:11px;margin-top:6px}
-
-/* Dark-Mode-Kontrast: lesbare Texte, Formulare und Dialoge */
-:root{
-  color-scheme:dark;
-  --ink:#f0f5f1;
-  --muted:#bdc9c1;
-  --green:#a8dfba;
-  --line:#46584c;
-  --bg:#101713;
-  --card:#1a241e;
-  --panel:#202d25;
-  --input:#17221b;
-}
-body{color:var(--ink)}
-h1,h2,h3,h4,h5,h6,strong,b,label,legend,th{color:var(--ink)}
-p,small,.muted,.meta,.resultsline,.note,.foot,.planner-intro,.year-race-meta,.year-profile-empty{color:var(--muted)}
-input,select,textarea,button{color:var(--ink);color-scheme:dark}
-input::placeholder,textarea::placeholder{color:#aebbb2;opacity:1}
-.field,.planner input,.planner select,.edit-grid input,.edit-grid select,.edit-grid textarea,
-.run-details input,.run-details select,.run-tools input,.race-status-control select{
-  background:var(--input)!important;color:var(--ink)!important;border-color:var(--line)!important
-}
-.event-detail-dialog{background:#1a241e!important;color:var(--ink)!important}
-.event-detail-dialog h2,.event-detail-dialog h3,.event-detail-dialog h4,
-.event-detail-dialog p,.event-detail-dialog span,.event-detail-dialog b{color:var(--ink)}
-.event-detail-row b,.event-detail-row{color:var(--muted)}
-.event-detail-row a,.link,.event-detail-dialog h4{color:#a8dfba}
-.tab-button{color:#bdc9c1}
-.tab-button[aria-selected="true"]{color:#e6f5eb;background:#2b4033}
-.date,.routegrid b,.year-totals,.eventtitle,.planner h2,.year-heading h3{color:var(--ink)}
-.tag{color:#e5f0e8;background:#304337}
-.route-data-status{background:#49371f;color:#ffe0a8}
-.route-data-status.complete{background:#203d2b;color:#c5f0d0}
-.event.event-done,.event.event-done .eventhead{background:#fff2b3;color:#3b3214}.event.event-done .detail{background:#fff8d9;color:#3b3214}.event.event-done .eventhead:hover{background:#ffed91}
-.eventhead:hover{background:#26372c}
-.empty,.plan-empty{background:#1a241e;color:var(--muted)}
-.year-profile-panel,.year-load-chart{background:#202d25;color:var(--ink)}
-.year-profile-panel strong,.year-load-chart>strong{color:#c9ecd3}
-.secondary{background:#26372c;color:#e0f0e5;border-color:#536b5a}
-.primary{color:#fff}
-.app-menu-dropdown{background:#1a241e;color:var(--ink)}
-.app-menu-item,.app-menu-dropdown p,.app-menu-dropdown small{color:var(--ink)}
-.event-detail-overlay{background:#050b08d9}
-.event-detail-dialog{border:1px solid var(--line)}
-table{color:var(--ink)}
-th,td{border-color:var(--line)}
-a{color:#a8dfba}
-:focus-visible{outline:2px solid #b8e8c6;outline-offset:2px}
-
-
-/* Bedienbarkeit: klare Fokusführung, größere Ziele und kompakte iPhone-Navigation */
-:where(button,a,input,select,textarea,[role="button"]):focus-visible{outline:3px solid #d9f36a;outline-offset:3px}
-button,.primary,.secondary,.tab-button,.link{touch-action:manipulation}
-@media(max-width:700px){.wrap{padding-left:12px;padding-right:12px;margin-top:14px}.tabbar{position:sticky;top:0;z-index:80;display:flex;flex-wrap:nowrap;gap:6px;margin:0 -12px 16px;padding:8px 12px;border-radius:0 0 13px 13px;overflow-x:auto;overscroll-behavior-x:contain;-webkit-overflow-scrolling:touch;scrollbar-width:thin;background:#18271f;border-bottom:1px solid #34443a}.tab-button,.tab-button#addTabButton{flex:0 0 auto;min-height:44px;white-space:nowrap;padding:10px 13px;border:1px solid #496052;border-radius:10px;color:#d4e2d9;background:#20372d}.tab-button[aria-selected="true"]{background:#d9f36a;color:#18231f;border-color:#d9f36a;box-shadow:none}.eventhead{min-height:68px;gap:9px}.eventtitle{font-size:16px}.field,.planner select,.planner input,.edit-grid input{font-size:16px;min-height:44px}.primary,.secondary{min-height:44px}.routefoot .link,.staylinks a{min-height:40px;display:inline-flex;align-items:center}.app-menu-dropdown{position:fixed;top:74px;right:12px;max-height:calc(100dvh - 92px)}}
-@media(prefers-reduced-motion:no-preference){.tabbar{scroll-behavior:smooth}.event,.route,.plan-card,.tab-button{transition:background-color .15s ease,border-color .15s ease}}
-@media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}}
-
-#eventsTab .toolbar-field{display:block;min-width:0;font-size:12px;font-weight:750;color:var(--muted)}#eventsTab .toolbar-field .field{display:block;margin-top:5px;min-height:46px;font-size:15px}
-@media(max-width:700px){#eventsTab .toolbar{grid-template-columns:1fr 1fr}#eventsTab .toolbar-field:first-child{grid-column:1/-1}#eventsTab .toolbar-field .field{font-size:16px}}
-
-/* Direkte Strecken-Vorschau im Planer und klarere Jahreskarten */
-.planner-route-preview{margin:12px 0 4px;padding:13px 14px;border:1px solid var(--line);border-radius:13px;background:var(--card);color:var(--ink);font-size:13px}.planner-route-preview-head{display:flex;justify-content:space-between;gap:8px;flex-wrap:wrap}.planner-route-preview-head strong{font-size:15px}.planner-route-preview-head span{font-weight:700;color:var(--green)}.planner-route-preview-meta{display:flex;gap:7px;flex-wrap:wrap;margin:9px 0}.planner-route-preview-meta span{padding:5px 8px;border-radius:8px;background:var(--bg);font-size:12px}.planner-route-preview-actions{display:flex;align-items:center;justify-content:space-between;gap:8px;flex-wrap:wrap;color:var(--muted);font-size:12px}.year-detail-button{margin:8px 0}.year-race{padding:13px 0}.year-race-meta{line-height:1.55}
-@media(max-width:700px){.planner-route-preview{padding:11px}.planner-route-preview-actions{align-items:stretch}.planner-route-preview-actions button{width:100%}.year-detail-button{width:100%;min-height:44px}}
-.run-tools .race-status-control{display:flex;align-items:center;gap:7px}.run-tools .race-status-control select{min-height:36px;max-width:190px;padding:6px 28px 6px 9px;border:1px solid var(--line);border-radius:9px;background:#fff;color:var(--ink);font:inherit;font-size:13px}.event-status-tag{background:#eaf1e8;color:var(--green);font-weight:700}.run-tools label{min-height:36px}@media(max-width:520px){.run-tools .race-status-control{width:100%;justify-content:space-between}.run-tools .race-status-control select{flex:1;max-width:none}.event-status-tag{white-space:normal}}.year-status-summary{display:flex;gap:5px;flex-wrap:wrap;justify-content:flex-end;margin-top:5px}.year-status-count{display:inline-flex;padding:3px 7px;border-radius:20px;background:#eaf1e8;color:#315b40;font-size:11px;font-weight:700}.year-race-status{display:flex;align-items:center;gap:8px;margin:8px 0;color:var(--muted);font-size:12px;font-weight:700}.year-race-status select{min-height:38px;max-width:210px;padding:6px 28px 6px 9px;border:1px solid var(--line);border-radius:9px;background:var(--card);color:var(--ink);font:inherit;font-size:13px}.year-race-meta{line-height:1.6;overflow-wrap:anywhere}@media(max-width:520px){.year-status-summary{justify-content:flex-start}.year-race-status{align-items:stretch;flex-direction:column;gap:5px}.year-race-status select{max-width:none;width:100%;min-height:44px}}.review-state.planner-review-overlap{background:#6b2929;color:#fff;border-radius:7px;padding:5px 8px;font-weight:800}.planner-review-item{gap:12px}.planner-review-item>div{min-width:0}.planner-review-item>div>span{display:block;overflow-wrap:anywhere}@media(max-width:520px){.planner-review-item{align-items:flex-start;flex-direction:column}.planner-review-item .review-state{align-self:flex-start}.planner-review-stats{grid-template-columns:repeat(2,minmax(0,1fr))}}.season-priority-summary{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px;margin:10px 0 14px}.season-priority-summary>div{min-width:0;padding:10px;border:1px solid var(--line);border-radius:10px;background:var(--card)}.season-priority-summary b{display:block;font-size:21px;color:var(--green)}.season-priority-summary span{display:block;font-size:11px;color:var(--muted);line-height:1.3}.season-race-head>div{min-width:0}.season-race-head strong{overflow-wrap:anywhere}@media(max-width:520px){.season-priority-summary{grid-template-columns:repeat(2,minmax(0,1fr))}.season-priority-summary>div{padding:8px}}.season-priority-review{margin:12px 0;padding:12px;border:1px solid var(--line);border-radius:12px;background:var(--card)}.season-priority-review h3{margin:0 0 6px}.season-alert{margin-top:10px;padding:10px;border-left:4px solid #d99a43;border-radius:8px;background:var(--bg)}.season-alert>strong{display:block;overflow-wrap:anywhere}.season-alternatives{margin-top:8px;font-size:12px}.season-alternatives ul{margin:5px 0 0;padding-left:20px}.season-alternatives li{margin:5px 0;line-height:1.45}@media(max-width:520px){.season-priority-review{padding:9px}.season-alert{padding:8px}}.route-png-tools{display:grid;gap:8px;margin:12px 0 4px}.route-png-label{width:max-content;max-width:100%;cursor:pointer}.route-png-status{color:var(--muted);font-size:11px}.route-png-preview{margin:8px 0 0;padding:8px;border:1px solid var(--line);border-radius:10px;background:var(--card)}.route-png-preview img{display:block;width:100%;height:auto;max-height:520px;object-fit:contain;border-radius:7px}.route-png-preview img{cursor:zoom-in}.route-png-preview figcaption{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-top:8px;font-size:12px;color:var(--muted)}.media-zoom-trigger{cursor:zoom-in}.media-zoom-trigger:focus-visible{outline:3px solid #8fc6a5;outline-offset:3px}.media-zoom-overlay{position:fixed;inset:0;z-index:3000;background:#050a08f2;display:flex;align-items:center;justify-content:center;padding:12px}.media-zoom-overlay[hidden]{display:none}.media-zoom-dialog{width:min(1200px,100%);height:min(94dvh,100%);display:flex;flex-direction:column;gap:10px;background:#111b15;border:1px solid #496552;border-radius:14px;padding:10px;min-height:0}.media-zoom-toolbar{display:flex;align-items:center;justify-content:space-between;gap:8px;color:#e7eee9}.media-zoom-actions{display:flex;gap:7px;align-items:center;flex-wrap:wrap}.media-zoom-actions button{min-width:42px;min-height:42px}.media-zoom-stage{flex:1;min-height:0;overflow:auto;display:flex;align-items:center;justify-content:center;touch-action:pan-x pan-y pinch-zoom;background:#080d0a;border-radius:9px}.media-zoom-stage img{display:block;max-width:100%;max-height:100%;width:auto;height:auto;object-fit:contain;transform-origin:center center;transition:transform .12s ease}.media-zoom-stage .gpx-map{width:100%;height:100%;min-height:360px;margin:0;border:0;border-radius:9px}.media-zoom-caption{font-size:12px;color:#c3d2c8;overflow-wrap:anywhere}@media(max-width:600px){.media-zoom-overlay{padding:5px}.media-zoom-dialog{height:96dvh;padding:7px}.media-zoom-stage img{max-width:100%;max-height:100%}}
-/* Garmin-/Strava-Schnittstellen: klarer Status und mobile Importwege */
-.integration-hub{display:grid;gap:12px}.integration-status-grid,.integration-provider-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}.integration-status,.integration-provider{min-width:0;padding:11px;border:1px solid var(--line);border-radius:11px;background:var(--panel,#202d25)}.integration-status{display:flex;align-items:center;gap:9px}.integration-status strong,.integration-provider strong{display:block;font-size:13px}.integration-status small{display:block;color:var(--muted);font-size:11px}.integration-dot{width:9px;height:9px;flex:0 0 9px;border-radius:50%;background:#d6a34b}.integration-dot.active{background:#69bd82}.integration-provider p{font-size:12px;color:var(--muted);line-height:1.5;margin:6px 0 10px}.integration-provider .link{margin:3px 4px 3px 0}.integration-hub>.secondary{justify-self:start}@media(max-width:560px){.integration-status-grid,.integration-provider-grid{grid-template-columns:1fr}.integration-hub>.secondary{width:100%}}
-
-/* Mobile-first primary navigation: four core areas plus a compact More menu */
-.more-nav{position:relative;flex:0 0 auto}
-.more-nav-trigger{display:inline-flex;align-items:center;gap:7px}
-.more-nav-trigger.has-active{border-color:#d9f36a;color:#d9f36a}
-.more-nav-menu{position:absolute;right:0;top:calc(100% + 9px);z-index:120;display:grid;gap:5px;min-width:190px;padding:7px;border:1px solid #496052;border-radius:12px;background:#18271f;box-shadow:0 12px 32px #0006}
-.more-nav-menu[hidden]{display:none}
-.more-nav-item{width:100%;min-height:44px;padding:10px 12px;border:0;border-radius:8px;background:transparent;color:#e6f0e9;text-align:left;font:600 14px -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;cursor:pointer;touch-action:manipulation}
-.more-nav-item:hover,.more-nav-item:focus-visible{background:#2b4033;outline:2px solid #d9f36a;outline-offset:-2px}
-@media(min-width:760px){.more-nav-menu{left:0;right:auto}}
- .history-card-head{display:flex;align-items:flex-start;justify-content:space-between;gap:10px}.history-card-head>strong{min-width:0}.history-delete{flex:none;width:38px;height:38px;border:1px solid #f0d1ce;border-radius:10px;background:#fff5f4;color:#a52b24;font-size:18px;cursor:pointer;display:inline-flex;align-items:center;justify-content:center}.history-delete:focus-visible{outline:3px solid #d98b83;outline-offset:2px}.app-menu-section-title{margin:13px 3px 6px;padding-top:10px;border-top:1px solid var(--line);font-size:11px;font-weight:850;letter-spacing:.06em;text-transform:uppercase;color:var(--green)}.app-settings-panel{width:min(390px,calc(100vw - 28px));max-height:min(78vh,700px)}.settings-group{margin:10px 0;padding:11px;background:#202d25;border:1px solid var(--line);border-radius:11px}.settings-group>strong{display:block;margin-bottom:8px;color:#b9dfc5;font-size:12px}.settings-connection{display:flex;justify-content:space-between;gap:10px;align-items:flex-start;padding:8px 0;border-top:1px solid #ffffff14;font-size:12px}.settings-connection:first-of-type{border-top:0}.settings-connection b{flex:0 0 auto;font-size:11px;color:#e8c76b;text-align:right}.settings-connection b.settings-ok{color:#8ed5a5}.settings-connection b.settings-neutral{color:#b8c7d5}.app-settings-panel .app-menu-heading button{white-space:nowrap}.year-view-switch{display:flex;gap:8px;flex-wrap:wrap;margin:10px 0 14px}.year-view-switch button.active{background:var(--green);color:#fff;border-color:var(--green)}.year-calendar-year{margin:14px 0;padding:12px;border:1px solid var(--line);border-radius:13px;background:#1a241e}.year-calendar-year h3{margin:0 0 12px;color:var(--green)}.year-calendar-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}.year-calendar-month{min-width:0;border:1px solid var(--line);border-radius:10px;padding:8px;background:#202d25}.year-calendar-month h4{margin:0 0 7px;font-size:13px;color:#dce9df}.year-calendar-week,.year-calendar-days{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:2px}.year-calendar-week span{text-align:center;font-size:9px;color:var(--muted);padding:2px 0}.year-calendar-day{min-height:31px;min-width:0;padding:2px;border-radius:5px;background:#17221b;font-size:10px;position:relative}.year-calendar-day.empty{background:transparent;border:0}.year-calendar-day.today{outline:1px solid var(--lime)}.year-calendar-day.has-event{background:#612c30;color:#fff}.year-calendar-day.has-hotel{background:#214f80;color:#fff}.year-calendar-day.has-event.has-hotel{background:linear-gradient(135deg,#8a3038 0 50%,#285f98 50%);color:#fff}.year-calendar-day .day-number{display:block;font-weight:750}.year-calendar-day .day-mark{display:block;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-size:8px;line-height:1.15}.year-calendar-legend{display:flex;gap:14px;flex-wrap:wrap;font-size:12px;margin:8px 0 12px}.year-calendar-legend span{display:inline-flex;align-items:center;gap:6px}.year-calendar-swatch{width:11px;height:11px;border-radius:3px;display:inline-block}.year-calendar-swatch.event{background:#b94c55}.year-calendar-swatch.hotel{background:#397fbd}@media(max-width:700px){.year-calendar-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.year-calendar-month{padding:6px}.year-calendar-day{min-height:28px}}@media(max-width:390px){.year-calendar-grid{grid-template-columns:1fr}}.elevation-popup{position:fixed;inset:0;z-index:10050;background:#050b08ed;display:flex;align-items:center;justify-content:center;padding:18px}.elevation-popup[hidden]{display:none}.elevation-popup-dialog{width:min(1200px,100%);max-height:94dvh;overflow:auto;background:var(--panel,#18271f);color:var(--ink,#edf5ef);border:1px solid var(--line,#496052);border-radius:16px;padding:18px;box-shadow:0 20px 70px #0009}.elevation-popup-head{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:16px}.elevation-popup-head h2{font-size:20px;margin:0}.elevation-popup-chart{width:100%;min-height:280px;padding:14px;border:1px solid var(--line);border-radius:12px;background:#202d25}.elevation-popup-chart svg{width:100%!important;height:auto!important;max-height:65dvh}.elevation-popup-chart svg polyline{stroke-width:3.5}.elevation-popup-hint{font-size:12px;color:var(--muted);margin:10px 2px 0}@media(max-width:600px){.elevation-popup{padding:7px}.elevation-popup-dialog{padding:12px;max-height:96dvh;border-radius:12px}.elevation-popup-head h2{font-size:16px}.elevation-popup-chart{padding:6px;min-height:180px}.elevation-popup-chart svg{max-height:62dvh}}
-/* Review queue: compact, mobile-first decision cards */
-.review-toolbar{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:12px 0}
-.review-summary{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin:12px 0}
-.review-summary>div{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:10px;min-width:0}
-.review-summary b{display:block;font-size:1.35rem;line-height:1.2;font-variant-numeric:tabular-nums}
-.review-summary small{color:var(--muted);font-size:11px}
-.review-card{margin:10px 0;padding:12px!important;border-radius:14px}
-.review-card.is-deferred{opacity:.82}
-.review-card-head{display:flex;align-items:flex-start;justify-content:space-between;gap:10px}
-.review-card-title{font-weight:750;line-height:1.3;overflow-wrap:anywhere}
-.review-card-meta{font-size:12px;color:var(--muted);margin:5px 0 10px}
-.review-card .review-diff{margin:8px 0!important;padding:10px!important}
-.review-card .review-diff>div{grid-template-columns:minmax(0,1fr) minmax(0,1fr)!important}
-.review-card .review-diff small{font-size:11px;color:var(--muted)}
-.review-card .review-extra{margin-top:8px}
-.review-card .review-actions{display:flex;flex-wrap:wrap;gap:7px;margin-top:10px}
-.review-card .review-actions button{flex:1 1 105px;min-height:42px}
-.review-next{width:100%;margin:4px 0 10px}
-.review-card details summary{cursor:pointer;font-weight:650;padding:8px 0}
-@media(max-width:420px){.review-toolbar{grid-template-columns:1fr}.review-summary{gap:5px}.review-summary>div{padding:8px}.review-summary b{font-size:1.15rem}.review-card{padding:10px!important}.review-card .review-actions button{flex:1 1 100%}}
-</style><style>.gpx-map{height:300px;min-height:240px;border:1px solid var(--line);border-radius:12px;overflow:hidden;background:#e8eee8;margin:10px 0}.gpx-map-status{font-size:12px;color:var(--muted);margin:4px 0 10px}.gpx-stats{display:flex;gap:8px;flex-wrap:wrap;margin:8px 0}.gpx-stat{padding:7px 10px;border:1px solid var(--line);border-radius:9px;background:var(--card);font-size:12px}.gpx-stat b{display:block;color:var(--green);font-size:15px}.info-tip{display:inline-block;vertical-align:middle;margin:4px 0 8px;max-width:100%;color:var(--muted);font-size:12px}.info-tip summary{list-style:none;display:inline-flex;align-items:center;justify-content:center;width:24px;height:24px;min-width:24px;border:1.5px solid var(--green);border-radius:50%;background:var(--card);color:var(--green);font:700 14px/1 -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;cursor:pointer;user-select:none;padding:0}.info-tip summary::-webkit-details-marker{display:none}.info-tip summary:focus-visible{outline:3px solid #8fc6a5;outline-offset:2px}.info-tip[open] summary{background:var(--green);color:#fff;border-color:var(--green)}.info-tip-content{margin-top:7px;padding:9px 11px;border:1px solid var(--line);border-radius:10px;background:var(--card);color:var(--muted);font-size:12px;line-height:1.5;max-width:760px}.info-tip-content p{margin:0}.info-tip-content a{color:var(--green)}</style><style>
-.season-race{border:1px solid var(--line);border-radius:12px;padding:12px;margin:9px 0;background:var(--card)}
-.season-race-head{display:flex;justify-content:space-between;gap:10px;align-items:center;flex-wrap:wrap}
-.season-race select,.season-race input{min-height:40px;border:1px solid var(--line);border-radius:9px;padding:8px;background:var(--bg);color:var(--ink);font:inherit}
-.season-priority{font-weight:800;min-width:90px}
-.season-recovery{display:grid;grid-template-columns:repeat(auto-fit,minmax(135px,1fr));gap:8px;margin-top:10px}
-.season-recovery label{font-size:11px;color:var(--muted)}
-.season-recovery input{display:block;width:100%;margin-top:4px}
-.season-timeline{display:grid;gap:9px}
-.season-year{border:1px solid var(--line);border-radius:12px;padding:11px}
-.season-year h4{margin:0 0 8px;color:var(--green)}
-.season-lane{display:flex;gap:5px;align-items:stretch;overflow-x:auto;padding:5px 0 9px}
-.season-block{flex:var(--season-days,1) 0 105px;min-width:105px;border-radius:9px;padding:8px;font-size:11px;background:#2a3a30;border-top:4px solid #8fc6a5}
-.season-block strong{display:block;font-size:12px;margin-bottom:4px}
-.season-block.a{border-top-color:#e6a34a}.season-block.b{border-top-color:#6aa6d8}.season-block.c{border-top-color:#9b9b9b}
-.season-phase{margin-top:5px;color:var(--muted);font-size:10px}
-.season-phase.base{color:#a8d9b7}.season-phase.build{color:#80bce5}.season-phase.peak{color:#e6bd74}.season-phase.taper{color:#d7a5df}.season-phase.recovery{color:#ef9b8c}
-@media(max-width:700px){.season-race-head{align-items:flex-start}.season-priority{width:100%}}
-#appMenuButton{ text-decoration:none }
-/* Event cards: clearer hierarchy and calmer information density */
-#events>.event{margin:12px 0;border-radius:16px;box-shadow:0 3px 14px #00000012}
-#events .eventhead{grid-template-columns:minmax(0,1fr) auto;gap:12px;align-items:start;padding:16px 15px;min-height:0}
-#events .eventtitle{font-size:17px;line-height:1.25;font-weight:800;letter-spacing:-.025em;margin:0 0 5px}
-#events .meta{gap:6px;margin-top:8px;align-items:center}
-#events .meta .tag{display:inline-flex;align-items:center;min-height:26px;padding:4px 9px;border:1px solid var(--line);border-radius:8px;font-size:11px;line-height:1.2}
-#events .meta .type-select{min-height:30px;max-width:150px;padding:4px 7px;border-radius:8px;font-size:11px}
-#events .date{display:inline-flex;flex-direction:column;align-items:flex-end;gap:3px;padding:8px 9px;border-radius:10px;background:#e8f0e6;color:#214b35;font-size:13px;line-height:1.2;text-align:right}
-#events .date small{font-size:9px!important;line-height:1.2}
-#events .chev{display:block;margin-top:8px;text-align:right;color:var(--muted)}
-#events .detail{padding:0 12px 12px}
-#events .routes{grid-template-columns:minmax(0,1fr);gap:9px}
-#events .route{padding:13px;border-radius:12px}
-#events .eventhead:focus-visible{outline:3px solid #a9d34b;outline-offset:-3px}
-@media(max-width:520px){#events .eventhead{padding:13px 12px;gap:8px}#events .eventtitle{font-size:16px}#events .date{font-size:12px;padding:7px}#events .meta .tag{font-size:10px;padding:4px 7px}}
-
-/* Annual overview: stronger season grouping and scannable race rows */
-#yearOverview .year-group{padding:15px;margin:14px 0;border-radius:15px;background:var(--card);box-shadow:0 3px 14px #00000010}
-#yearOverview .year-heading{position:sticky;top:58px;z-index:4;align-items:flex-start;padding:8px 2px 11px;margin:-2px 0 10px;border-bottom:1px solid var(--line);background:var(--card)}
-#yearOverview .year-heading h3{margin:0;font-size:21px;letter-spacing:-.03em}
-#yearOverview .year-summary{font-size:12px;font-weight:700;text-align:right;color:var(--muted)}
-#yearOverview .year-status-summary{display:flex;flex-wrap:wrap;justify-content:flex-end;gap:4px;margin-top:5px}
-#yearOverview .year-status-count{display:inline-flex;padding:3px 7px;border-radius:7px;background:var(--soft);font-size:10px}
-#yearOverview .plan-card{position:relative;margin:9px 0;padding:13px;border-radius:12px;background:var(--surface,var(--card));border-left:3px solid var(--green)}
-#yearOverview .plan-card strong{line-height:1.35}
-#yearOverview .year-profile-panels{grid-template-columns:minmax(0,1fr);gap:8px}
-#yearOverview .year-profile-panel{padding:11px;border-radius:10px}
-#yearOverview .year-profile-panel>strong{display:block;margin-bottom:7px}
-#yearOverview .year-totals{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:7px;padding-top:12px;line-height:1.35}
-#yearOverview .year-detail-button{width:100%;justify-content:center;margin-top:10px}
-@media(max-width:520px){#yearOverview .year-group{padding:11px}#yearOverview .year-heading{top:56px}#yearOverview .year-heading h3{font-size:19px}#yearOverview .year-totals{grid-template-columns:1fr 1fr}}
-
-/* Route details: grouped facts, profile and race-control information */
-#events .route>strong{display:block;font-size:15px;line-height:1.35;margin-bottom:6px}
-#events .route .routegrid{display:flex;flex-wrap:wrap;gap:7px 12px;margin-top:8px;padding:8px 9px;border-radius:9px;background:var(--soft);font-size:12px}
-#events .route .route-info-tools{margin-top:10px;border:1px solid var(--line);border-radius:11px;overflow:hidden}
-#events .route .route-info-heading{padding:10px 11px;background:var(--soft);font-size:13px}
-#events .route .route-info-panel{padding:10px 11px}
-#events .route .route-info-panel .link{margin:4px 5px 4px 0}
-#events .route .route-edit{margin-top:9px;padding:10px;border:1px solid var(--line);border-radius:10px;background:var(--soft)}
-#events .route .edit-grid{gap:10px}
-#events .route .edit-grid label{font-size:12px;font-weight:650}
-#events .route .gpx-status{display:block;margin-top:5px;font-size:11px}
-@media(max-width:520px){#events .route .routegrid{display:grid;grid-template-columns:1fr 1fr;gap:7px}#events .route .edit-grid{grid-template-columns:minmax(0,1fr)}#events .route .route-info-panel{padding:9px}}
-
-/* Reduced-motion and platform theme details retained separately. */
-@media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;transition-duration:.01ms!important;animation-duration:.01ms!important;animation-iteration-count:1!important}}
-@media(prefers-color-scheme:dark){#events .date{background:#263b2e;color:#d9f3df}#events .meta .tag{background:#202d25;color:var(--ink)}#events .route .routegrid{background:#202d25}}
-
-/* Clear interaction feedback and accessible status messages */
-:where(.planner-status,[role="status"],[aria-live="polite"]){overflow-wrap:anywhere}
-.planner-status{padding:10px 12px;border:1px solid var(--line);border-radius:10px;background:var(--soft);font-size:13px}
-:where(button,.tab-button,.more-nav-item):disabled{opacity:.55;cursor:not-allowed}
-:where(.primary,.secondary,.more-nav-item):active{transform:translateY(1px)}
-@media(hover:hover){:where(.primary,.secondary,.tab-button,.more-nav-item){transition:background-color .15s ease,border-color .15s ease,transform .12s ease}}
-</style>
-<style id="completed-event-variant-b">
-/* Absolvierte Rennen: klare Karte statt gelber Flächen */
-#events .event.event-done{
-  position:relative;
-  background:#ffffff!important;
-  color:#18231f!important;
-  border:1px solid #d9dfd8!important;
-  border-left:5px solid #e0b629!important;
-  box-shadow:0 3px 12px #00000012;
-}
-#events .event.event-done .eventhead{
-  position:relative;
-  padding-top:38px!important;
-  background:#ffffff!important;
-  color:#18231f!important;
-}
-#events .event.event-done .detail{
-  background:#fbfcfa!important;
-  color:#26332c!important;
-  border-color:#e4e9e3!important;
-}
-#events .event.event-done .eventtitle,
-#events .event.event-done .date,
-#events .event.event-done .meta,
-#events .event.event-done .meta .tag{
-  color:#26332c!important;
-}
-#events .event.event-done .eventhead::before{
-  content:"✓ Absolviert";
-  position:absolute;
-  top:8px;
-  left:14px;
-  display:inline-flex;
-  align-items:center;
-  min-height:22px;
-  padding:3px 9px;
-  border:1px solid #e5c85f;
-  border-radius:20px;
-  background:#fff7d6;
-  color:#5b4700;
-  font-size:11px;
-  font-weight:750;
-  line-height:1.2;
-  letter-spacing:.02em;
-}
-#events .event.event-done .eventhead:hover{background:#fff!important}
-#events .event.event-done .date{background:#f1f4ef!important;color:#26332c!important}
-#events .event.event-done .meta .tag{background:#f0f3ee!important;color:#344239!important}
-</style>
-
-<style id="completed-run-contrast">
-/* Hoher Kontrast für absolvierte Strecken und deren Eingabebereiche */
-#events .route.route-done{
-  background:#17231c!important;
-  color:#edf5ef!important;
-  border:1px solid #597362!important;
-  box-shadow:0 3px 14px #0004;
-}
-#events .route.route-done :is(h1,h2,h3,h4,h5,strong,b,label,.route-info-heading,.routegrid,.rating-label,.info-tip,.info-tip-content){
-  color:#e7f1e9!important;
-}
-#events .route.route-done .route-edit,
-#events .route.route-done .run-tools,
-#events .route.route-done .run-record-summary,
-#events .route.route-done .route-info-tools{
-  background:#202f26!important;
-  color:#edf5ef!important;
-  border:1px solid #52695a!important;
-}
-#events .route.route-done .route-edit label,
-#events .route.route-done .run-tools label,
-#events .route.route-done .run-record-summary strong{
-  color:#f0f6f1!important;
-  font-weight:700;
-}
-#events .route.route-done input:not([type="checkbox"]),
-#events .route.route-done select,
-#events .route.route-done textarea{
-  background:#101a14!important;
-  color:#f4f8f5!important;
-  border:1px solid #718879!important;
-  border-radius:9px;
-  caret-color:#d9f36a;
-}
-#events .route.route-done input::placeholder,
-#events .route.route-done textarea::placeholder{
-  color:#b8c8bd!important;
-  opacity:1!important;
-}
-#events .route.route-done input:focus,
-#events .route.route-done select:focus,
-#events .route.route-done textarea:focus{
-  outline:3px solid #d9f36a!important;
-  outline-offset:2px;
-  border-color:#d9f36a!important;
-}
-#events .route.route-done .secondary,
-#events .route.route-done .run-details-toggle{
-  background:#294333!important;
-  color:#f0f7f2!important;
-  border:1px solid #779482!important;
-  font-weight:700;
-}
-#events .route.route-done .secondary:active,
-#events .route.route-done .run-details-toggle:active{
-  background:#365a42!important;
-}
-#events .route.route-done .route-data-status.complete{
-  background:#234c35!important;
-  color:#e5f6e9!important;
-  border:1px solid #4f9b69;
-}
-#events .route.route-done .info-tip-content{
-  background:#202f26!important;
-  border-color:#52695a!important;
-}
-#events .route.route-done .star-btn{color:#aebdb3}
-#events .route.route-done .star-btn.active{color:#ffd15c!important}
-</style>
-
-<style id="trail-design-system-final">
-/* Einheitliches Alpine-Trail-Designsystem – zentrale Tokens und Grundelemente */
-:root{
-  color-scheme:dark;
-  --bg:#0e1712;
-  --ink:#edf4ee;
-  --muted:#a7b6ab;
-  --green:#8bc9a0;
-  --green-strong:#397a55;
-  --lime:#d9f36a;
-  --line:#34483b;
-  --card:#18241c;
-  --surface:#202e25;
-  --soft:#1d2b22;
-  --shadow:0 10px 28px #0000002b;
-  --ui-radius:14px;
-  --ui-radius-small:10px;
-  --ui-space:12px;
-}
-html{background:var(--bg);scroll-padding-top:76px}
-body{
-  background:var(--bg);
-  color:var(--ink);
-  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
-  -webkit-font-smoothing:antialiased;
-  text-rendering:optimizeLegibility;
-}
-:where(.planner,.planner-panel,.year-group,.plan-card,.event,.route,.stay,.integration-provider,.planner-status){
-  border-color:var(--line);
-  border-radius:var(--ui-radius);
-  box-shadow:var(--shadow);
-}
-:where(.planner,.planner-panel,.year-group,.plan-card,.event,.route,.stay,.integration-provider){
-  background:var(--card);
-  color:var(--ink);
-}
-:where(.planner h2,.planner h3,.planner-panel h3,.year-heading h3,.eventtitle){
-  color:var(--ink);
-  letter-spacing:-.025em;
-  line-height:1.25;
-}
-:where(.planner-intro,.plan-meta,.note,.empty,.plan-empty,.year-race-meta){color:var(--muted)}
-:where(.primary,.secondary,.tab-button,.more-nav-item,.year-detail-button,.link){
-  font-family:inherit;
-  letter-spacing:0;
-  touch-action:manipulation;
-  border-radius:var(--ui-radius-small);
-}
-:where(.secondary,.more-nav-item){
-  background:var(--surface);
-  color:var(--ink);
-  border-color:var(--line);
-}
-:where(input,select,textarea,.field){
-  color:var(--ink);
-  background:var(--surface);
-  border-color:var(--line);
-  border-radius:var(--ui-radius-small);
-  accent-color:var(--green);
-}
-:where(button,a,input,select,textarea,[role="button"]):focus-visible{
-  outline:3px solid var(--lime);
-  outline-offset:2px;
-}
-:where(.planner-intro,.plan-meta,.note,.planner-status){line-height:1.55}
-:where(.primary,.secondary,.tab-button,.more-nav-item){transition:background-color .16s ease,border-color .16s ease,transform .12s ease}
-@media(prefers-reduced-motion:reduce){
-  :where(.primary,.secondary,.tab-button,.more-nav-item){transition:none}
-}
-
-/* Punkt 2: Eventübersicht – klare Kartenhierarchie und kompakte Metadaten */
-#events{display:grid;gap:12px}
-#events .event{
-  margin:0;
-  overflow:hidden;
-  border:1px solid var(--line);
-  border-left:4px solid var(--green-strong);
-  border-radius:16px;
-  background:var(--card);
-  box-shadow:0 5px 18px #00000020;
-  transition:border-color .16s ease,box-shadow .16s ease,transform .16s ease;
-}
-#events .eventhead{
-  display:grid;
-  grid-template-columns:minmax(0,1fr) auto;
-  align-items:start;
-  gap:14px;
-  padding:16px;
-  background:transparent;
-  color:var(--ink);
-}
-#events .eventhead:hover{background:#ffffff08}
-#events .eventtitle{
-  margin:0 0 8px;
-  color:var(--ink);
-  font-size:17px;
-  font-weight:780;
-  line-height:1.28;
-  letter-spacing:-.025em;
-}
-#events .meta{
-  display:flex;
-  flex-wrap:wrap;
-  align-items:center;
-  gap:6px;
-  color:var(--muted);
-  font-size:12px;
-  line-height:1.4;
-}
-#events .meta .tag{
-  display:inline-flex;
-  align-items:center;
-  min-height:25px;
-  max-width:100%;
-  padding:4px 8px;
-  border:1px solid var(--line);
-  border-radius:8px;
-  background:var(--surface);
-  color:var(--muted);
-  font-size:11px;
-  font-weight:650;
-  overflow-wrap:anywhere;
-}
-#events .type-select{
-  min-height:30px;
-  max-width:190px;
-  padding:4px 7px;
-  border:1px solid var(--line);
-  border-radius:8px;
-  background:var(--surface);
-  color:var(--ink);
-  font-size:11px;
-}
-#events .eventhead>div:last-child{
-  display:flex;
-  flex-direction:column;
-  align-items:flex-end;
-  gap:9px;
-  min-width:78px;
-}
-#events .date{
-  display:block;
-  min-width:78px;
-  padding:8px 9px;
-  border:1px solid #52765e;
-  border-radius:10px;
-  background:#20372a;
-  color:#d9f3df;
-  font-size:12px;
-  font-weight:800;
-  line-height:1.3;
-  text-align:center;
-  white-space:normal;
-}
-#events .date small{color:#a9d7b7!important}
-#events .chev{color:var(--green);font-size:20px;line-height:1}
-#events .detail{
-  padding:14px 16px 16px;
-  border-top:1px solid var(--line);
-  background:#111b15;
-  color:var(--ink);
-}
-#events .routes{display:grid;grid-template-columns:minmax(0,1fr);gap:10px}
-#events .route{
-  margin:0;
-  border:1px solid var(--line);
-  border-radius:13px;
-  background:var(--card);
-  color:var(--ink);
-  box-shadow:none;
-}
-#events .event.event-done{
-  border-left-color:#d9b84f!important;
-  border-color:#665a32!important;
-  background:var(--card)!important;
-  color:var(--ink)!important;
-  box-shadow:0 5px 18px #00000020!important;
-}
-#events .event.event-done .eventhead,
-#events .event.event-done .eventhead:hover{
-  background:transparent!important;
-  color:var(--ink)!important;
-}
-#events .event.event-done .eventtitle,
-#events .event.event-done .meta,
-#events .event.event-done .meta .tag,
-#events .event.event-done .date{color:var(--ink)!important}
-#events .event.event-done .detail{
-  background:#111b15!important;
-  color:var(--ink)!important;
-  border-color:var(--line)!important;
-}
-#events .event.event-done .date{
-  background:#332e1d!important;
-  border-color:#806d36!important;
-  color:#f4e3a3!important;
-}
-#events .event.event-done .eventhead::before{
-  top:8px;
-  left:16px;
-  border-color:#806d36;
-  background:#332e1d;
-  color:#f4e3a3;
-}
-@media(hover:hover){
-  #events .event:hover{border-color:#5b8068;box-shadow:0 9px 24px #00000030;transform:translateY(-1px)}
-}
-@media(max-width:520px){
-  #events{gap:10px}
-  #events .eventhead{grid-template-columns:minmax(0,1fr) 76px;gap:9px;padding:13px 12px}
-  #events .eventtitle{font-size:15px;margin-bottom:7px}
-  #events .meta{gap:5px}
-  #events .meta .tag{font-size:10px;min-height:23px;padding:3px 7px}
-  #events .type-select{max-width:100%;font-size:10px}
-  #events .eventhead>div:last-child{min-width:0}
-  #events .date{min-width:0;width:100%;padding:7px 5px;font-size:11px}
-  #events .detail{padding:11px}
-}
-
-/* Punkt 3: Jahresübersicht – Saisonblöcke, Rennkarten und Kennzahlen */
-#yearOverview{display:grid;gap:16px}
-#yearOverview .year-group{
-  margin:0;
-  padding:15px;
-  border:1px solid var(--line);
-  border-radius:17px;
-  background:linear-gradient(145deg,#1b2a20 0%,var(--card) 58%);
-  box-shadow:var(--shadow);
-}
-#yearOverview .year-heading{
-  position:sticky;
-  top:58px;
-  z-index:5;
-  display:flex;
-  flex-wrap:wrap;
-  align-items:center;
-  justify-content:space-between;
-  gap:8px 14px;
-  padding:10px 3px 13px;
-  margin:0 0 10px;
-  border-bottom:1px solid var(--line);
-  background:#18241cf5;
-  backdrop-filter:blur(12px);
-}
-#yearOverview .year-heading h3{
-  margin:0;
-  color:#d9f3df;
-  font-size:22px;
-  font-weight:850;
-  letter-spacing:-.035em;
-}
-#yearOverview .year-summary{
-  color:var(--muted);
-  font-size:12px;
-  font-weight:750;
-  text-align:right;
-}
-#yearOverview .year-status-summary{display:flex;flex-wrap:wrap;justify-content:flex-end;gap:5px;margin-top:6px}
-#yearOverview .year-status-count{
-  display:inline-flex;
-  padding:4px 8px;
-  border:1px solid var(--line);
-  border-radius:20px;
-  background:var(--surface);
-  color:var(--ink);
-  font-size:10px;
-  font-weight:700;
-}
-#yearOverview .year-race{
-  display:grid;
-  gap:8px;
-  margin:0;
-  padding:13px 0;
-  border-top:1px solid #34483b;
-}
-#yearOverview .year-race>div:first-child{align-items:center!important}
-#yearOverview .year-race>div:first-child>strong{
-  color:var(--ink);
-  font-size:15px;
-  font-weight:780;
-  line-height:1.3;
-}
-#yearOverview .year-race-meta{
-  color:var(--muted);
-  font-size:12px;
-  line-height:1.5;
-}
-#yearOverview .year-race-status{
-  display:grid;
-  grid-template-columns:auto minmax(0,1fr);
-  align-items:center;
-  gap:10px;
-  max-width:460px;
-  color:var(--muted);
-  font-size:12px;
-  font-weight:700;
-}
-#yearOverview .year-race-status select{
-  width:100%;
-  min-height:40px;
-  padding:7px 10px;
-  border:1px solid var(--line);
-  border-radius:10px;
-  background:var(--surface);
-  color:var(--ink);
-  font:inherit;
-}
-#yearOverview .year-race .stay{
-  margin:2px 0 0;
-  padding:11px 12px;
-  border:1px solid var(--line);
-  border-radius:11px;
-  background:var(--surface);
-  box-shadow:none;
-}
-#yearOverview .year-race .stay h3{margin:0 0 6px;font-size:13px;color:#d9f3df}
-#yearOverview .year-race .stay p{margin:5px 0;line-height:1.45}
-#yearOverview .year-race .year-detail-button{width:100%;justify-content:center;margin-top:2px}
-#yearOverview .year-race>.secondary{justify-self:start}
-#yearOverview .year-totals{
-  display:flex;
-  flex-wrap:wrap;
-  gap:6px 12px;
-  align-items:center;
-  margin-top:9px;
-  padding:11px 12px;
-  border:1px solid var(--line);
-  border-radius:11px;
-  background:var(--surface);
-  color:var(--ink);
-  font-size:12px;
-  font-weight:750;
-  line-height:1.4;
-}
-#yearOverview .year-profile-panels{display:grid;grid-template-columns:minmax(0,1fr);gap:9px;margin-top:10px}
-#yearOverview .year-profile-panel{
-  min-width:0;
-  padding:12px;
-  border:1px solid var(--line);
-  border-radius:12px;
-  background:var(--surface);
-}
-#yearOverview .year-profile-panel>strong{display:block;margin-bottom:8px;color:#c8e8d1;font-size:13px}
-#yearOverview .year-profile-panel iframe{width:100%;border-radius:9px;background:#fff}
-#yearOverview .year-detail-button{min-height:44px}
-@media(max-width:520px){
-  #yearOverview{gap:12px}
-  #yearOverview .year-group{padding:11px}
-  #yearOverview .year-heading{top:56px;align-items:flex-start}
-  #yearOverview .year-heading h3{font-size:20px}
-  #yearOverview .year-summary{text-align:left}
-  #yearOverview .year-status-summary{justify-content:flex-start}
-  #yearOverview .year-race{padding:11px 0}
-  #yearOverview .year-race-status{grid-template-columns:1fr;gap:5px}
-  #yearOverview .year-totals{padding:10px;font-size:11px}
-}
-
-/* Punkt 4: Streckendetails – Kennzahlen, Datenqualität und Streckenressourcen */
-#events .route{
-  display:grid;
-  gap:10px;
-  padding:14px;
-  border:1px solid var(--line);
-  border-radius:14px;
-  background:var(--card);
-  color:var(--ink);
-}
-#events .route>strong{
-  display:block;
-  margin:0;
-  color:var(--ink);
-  font-size:16px;
-  font-weight:800;
-  line-height:1.3;
-}
-#events .route>.routegrid{
-  display:grid;
-  grid-template-columns:repeat(2,minmax(0,1fr));
-  gap:7px;
-  margin:0;
-  padding:0;
-  background:transparent;
-}
-#events .route>.routegrid>span{
-  min-width:0;
-  padding:8px 9px;
-  border:1px solid var(--line);
-  border-radius:9px;
-  background:var(--surface);
-  color:var(--muted);
-  font-size:11px;
-  line-height:1.4;
-  overflow-wrap:anywhere;
-}
-#events .route .routegrid b{color:var(--ink);font-weight:800}
-#events .route .route-data-status{
-  display:inline-flex;
-  align-items:center;
-  justify-self:start;
-  min-height:25px;
-  padding:4px 9px;
-  border:1px solid #75643a;
-  border-radius:20px;
-  background:#302a1a;
-  color:#f1d995;
-  font-size:11px;
-  font-weight:750;
-}
-#events .route .route-data-status.complete{
-  border-color:#477a58;
-  background:#1c3827;
-  color:#bce6c7;
-}
-#events .route .route-info-tools{
-  margin:0;
-  border:1px solid var(--line);
-  border-radius:12px;
-  background:var(--surface);
-  overflow:hidden;
-}
-#events .route .route-info-heading{
-  padding:11px 12px;
-  border-bottom:1px solid var(--line);
-  background:#26382c;
-  color:#d9f3df;
-  font-size:13px;
-}
-#events .route .route-info-panel{
-  margin:0;
-  padding:12px;
-  border:0;
-  border-radius:0;
-  background:var(--surface);
-  color:var(--ink);
-}
-#events .route .route-info-panel .plan-meta,
-#events .route .route-info-panel .rating-label{color:var(--muted)}
-#events .route .route-info-panel .link{
-  display:inline-flex;
-  align-items:center;
-  min-height:38px;
-  margin:4px 5px 4px 0;
-  padding:7px 10px;
-  border:1px solid var(--line);
-  border-radius:9px;
-  background:#18271f;
-  color:#bce6c7;
-  text-decoration:none;
-}
-#events .route .route-edit{
-  margin:0;
-  padding:12px;
-  border:1px solid var(--line);
-  border-radius:11px;
-  background:var(--surface);
-}
-#events .route .edit-grid{gap:10px}
-#events .route .edit-grid label{color:var(--muted);font-size:12px;font-weight:700}
-#events .route .edit-grid input,
-#events .route .edit-grid select,
-#events .route .edit-grid textarea{
-  width:100%;
-  min-width:0;
-  margin-top:5px;
-  padding:9px 10px;
-  border:1px solid var(--line);
-  border-radius:9px;
-  background:#111b15;
-  color:var(--ink);
-}
-#events .route .run-tools,
-#events .route .run-record-summary{
-  padding:11px 12px;
-  margin:0;
-  border:1px solid var(--line);
-  border-radius:11px;
-  background:var(--surface);
-  color:var(--ink);
-}
-#events .route .run-record-summary>strong{color:#d9f3df}
-#events .route .routefoot{
-  display:flex;
-  flex-wrap:wrap;
-  gap:7px;
-  padding-top:3px;
-  border-top:1px solid var(--line);
-}
-#events .route .routefoot .link,
-#events .route .routefoot button{flex:1 1 145px;justify-content:center;min-height:40px}
-#events .route .route-png-tools{margin-top:10px;padding-top:10px;border-top:1px solid var(--line)}
-#events .route .route-png-preview{margin:10px 0 0;padding:9px;border:1px solid var(--line);border-radius:10px;background:#111b15}
-#events .route .route-png-preview img{display:block;width:100%;max-height:240px;object-fit:contain;border-radius:7px}
-#events .route .route-png-preview figcaption{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:8px;margin-top:8px;color:var(--muted);font-size:11px}
-#events .route .gpx-map{border-color:var(--line);border-radius:12px;background:#17241b}
-#events .route .gpx-stats{display:flex;flex-wrap:wrap;gap:6px}
-#events .route .gpx-stats span{padding:6px 8px;border:1px solid var(--line);border-radius:8px;background:var(--surface);color:var(--ink);font-size:11px}
-#events .route.route-done{
-  background:#17231c!important;
-  color:#edf5ef!important;
-  border-color:#597362!important;
-}
-#events .route.route-done>.routegrid>span{background:#202f26!important;border-color:#52695a!important;color:#d5e3d9!important}
-#events .route.route-done .route-info-heading{background:#263c2e!important;color:#e7f1e9!important}
-@media(max-width:520px){
-  #events .route{gap:9px;padding:11px}
-  #events .route>strong{font-size:15px}
-  #events .route>.routegrid{grid-template-columns:repeat(2,minmax(0,1fr));gap:6px}
-  #events .route>.routegrid>span{padding:7px;font-size:10px}
-  #events .route .routefoot{display:grid;grid-template-columns:1fr}
-  #events .route .routefoot .link,
-  #events .route .routefoot button{width:100%}
-  #events .route .route-info-panel{padding:10px}
-}
-
-/* Punkt 5: Navigation – klarer aktiver Bereich und konsistente Menüs */
-.tabbar{
-  position:sticky;
-  top:0;
-  z-index:80;
-  display:flex;
-  flex-wrap:nowrap;
-  align-items:center;
-  gap:6px;
-  margin:0 -12px 16px;
-  padding:8px 12px;
-  border:0;
-  border-bottom:1px solid var(--line);
-  border-radius:0 0 14px 14px;
-  background:#111d16f2;
-  box-shadow:0 6px 18px #00000020;
-  overflow-x:auto;
-  overscroll-behavior-x:contain;
-  -webkit-overflow-scrolling:touch;
-  scrollbar-width:none;
-}
-.tabbar::-webkit-scrollbar{display:none}
-.tab-button{
-  flex:0 0 auto;
-  min-width:92px;
-  min-height:44px;
-  padding:10px 13px;
-  border:1px solid transparent;
-  border-radius:10px;
-  background:transparent;
-  color:#a7b6ab;
-  font-size:13px;
-  font-weight:750;
-  white-space:nowrap;
-  text-align:center;
-}
-.tab-button[aria-selected="true"]{
-  border-color:#8bc9a055;
-  background:#d9f36a;
-  color:#18231f;
-  box-shadow:0 3px 10px #00000025;
-}
-.tab-button.has-active,
-.more-nav-trigger.has-active{
-  border-color:#8bc9a0;
-  background:#263c2e;
-  color:#d9f3df;
-}
-.tab-button:focus-visible{outline:3px solid var(--lime);outline-offset:2px}
-.more-nav{position:relative;flex:0 0 auto}
-.more-nav-trigger{display:inline-flex;align-items:center;justify-content:center;gap:7px;min-width:84px}
-.more-nav-menu{
-  position:absolute;
-  top:calc(100% + 9px);
-  right:0;
-  left:auto;
-  z-index:120;
-  display:grid;
-  gap:5px;
-  min-width:210px;
-  padding:8px;
-  border:1px solid #496052;
-  border-radius:13px;
-  background:#18271f;
-  box-shadow:0 14px 34px #0007;
-}
-.more-nav-item{
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:10px;
-  width:100%;
-  min-height:44px;
-  padding:10px 12px;
-  border:1px solid transparent;
-  border-radius:9px;
-  background:transparent;
-  color:#e6f0e9;
-  font:650 13px -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
-  text-align:left;
-}
-.more-nav-item:hover,.more-nav-item:focus-visible{border-color:#496052;background:#263c2e;color:#fff}
-#missingCount{min-width:25px;padding:3px 7px;border-radius:20px;background:#34483b;color:#d9f3df;text-align:center;font-size:11px}
-.app-menu-button{
-  width:44px;
-  height:44px;
-  border:1px solid #668074;
-  border-radius:13px;
-  background:#20372d;
-  color:#fff;
-  font-size:22px;
-}
-.app-menu-button:hover,.app-menu-button[aria-expanded="true"]{background:#365044;border-color:#8aaa91}
-.app-menu-dropdown{
-  width:min(340px,calc(100vw - 24px));
-  max-height:min(78dvh,680px);
-  padding:14px;
-  border:1px solid var(--line);
-  border-radius:16px;
-  background:#18241c;
-  color:var(--ink);
-  box-shadow:0 18px 46px #0008;
-}
-.app-menu-heading{
-  padding-bottom:10px;
-  margin-bottom:8px;
-  border-bottom:1px solid var(--line);
-  color:#d9f3df;
-  font-size:13px;
-  font-weight:800;
-}
-.app-menu-item{
-  min-height:44px;
-  border:1px solid var(--line);
-  border-radius:10px;
-  background:var(--surface);
-  color:var(--ink);
-}
-@media(max-width:700px){
-  .tabbar{margin:0 -12px 14px;padding:7px 10px;gap:5px}
-  .tab-button{min-width:84px;padding:10px 11px;font-size:12px}
-  .more-nav-trigger{min-width:76px}
-  .more-nav-menu{right:0;min-width:min(230px,calc(100vw - 28px))}
-  .app-menu-dropdown{position:fixed;top:74px;right:12px;left:auto;width:min(340px,calc(100vw - 24px));max-height:calc(100dvh - 92px);z-index:140}
-}
-
-/* Zentrale Designregeln – konsolidierte Komponenten- und Kontrastschicht */
-:root{
-  --success:#9bd8aa;
-  --success-bg:#1c3827;
-  --warning:#f0d58c;
-  --warning-bg:#342d1c;
-  --danger:#ffaaa1;
-  --danger-bg:#3b2421;
-  --focus:var(--lime);
-}
-:where(.primary){
-  min-height:44px;
-  padding:10px 14px;
-  border:1px solid #7fba91;
-  border-radius:10px;
-  background:#397a55;
-  color:#fff;
-  font-weight:750;
-  box-shadow:0 3px 10px #00000020;
-}
-:where(.primary:hover){background:#468b63}
-:where(.secondary){
-  min-height:40px;
-  padding:8px 11px;
-  border:1px solid var(--line);
-  border-radius:10px;
-  background:var(--surface);
-  color:var(--ink);
-  font-weight:650;
-}
-:where(.link){color:#bce6c7;border-color:#496552}
-:where(.planner-status,[role="status"],[aria-live="polite"]){overflow-wrap:anywhere}
-.planner-status{border:1px solid var(--line);background:var(--surface);color:var(--ink)}
-.planner-review-warning{color:var(--warning)}
-.planner-review-ok{color:var(--success)}
-:where(.route-data-status.complete,.integration-dot.active){color:var(--success)}
-:where(.year-profile-empty,.gpx-map-status,.equipment-source-note){color:var(--muted)}
-:where(.field,select,input,textarea):disabled{opacity:.62;color:var(--muted)}
-:where(.primary,.secondary,.tab-button,.more-nav-item,.app-menu-button):active{transform:translateY(1px)}
-:where(button,a,input,select,textarea,[role="button"]):focus-visible{outline:3px solid var(--focus);outline-offset:2px}
-@media(max-width:700px){
-  :where(.primary,.secondary,.link,.year-detail-button){min-height:44px}
-  :where(input,select,textarea,.field){font-size:16px}
-}
-@media(prefers-reduced-motion:reduce){
-  *,*::before,*::after{scroll-behavior:auto!important;transition-duration:.01ms!important;animation-duration:.01ms!important;animation-iteration-count:1!important}
-}
-
-
-/* Safari-Korrektur: Metadaten-Chips bleiben auch bei absolvierten Events dunkel */
-#events .event .meta .tag{
-  background:#26382d!important;
-  color:#dce9df!important;
-  border:1px solid #405648!important;
-}
-#events .event .meta .type-select{
-  background:#1b2a21!important;
-  color:#edf4ee!important;
-  border:1px solid #405648!important;
-  color-scheme:dark;
-}
-#events .event.event-done .meta .tag,
-#events .event.event-done .meta .type-select{
-  background:#26382d!important;
-  color:#e5f0e8!important;
-  border-color:#786735!important;
-}
-#events .event .run-tools,
-#events .event .run-record-summary{
-  background:#202e25!important;
-  color:#edf4ee!important;
-  border-color:#405648!important;
-}
-#events .event .run-tools input:not([type="checkbox"]),
-#events .event .run-tools select,
-#events .event .edit-grid input,
-#events .event .edit-grid select,
-#events .event .edit-grid textarea{
-  background:#17231b!important;
-  color:#edf4ee!important;
-  border-color:#405648!important;
-  color-scheme:dark;
-}
-#events .event .run-tools input::placeholder,
-#events .event .edit-grid input::placeholder,
-#events .event .edit-grid textarea::placeholder{
-  color:#a7b6ab!important;
-  opacity:1;
-}
-</style>
-
-
-
-
-
-
-
-
-
-<style id="trail-navigation-polish-v1">
-/* Punkt 5: Navigation – klare aktive Position und ruhiges Mehr-Menü */
-.tabbar{
-  position:sticky;
-  top:0;
-  z-index:80;
-  display:flex;
-  flex-wrap:nowrap;
-  align-items:center;
-  gap:6px;
-  margin:0 -12px 18px;
-  padding:8px 12px;
-  border:0;
-  border-bottom:1px solid var(--line);
-  border-radius:0 0 14px 14px;
-  background:#111d16f2;
-  box-shadow:0 7px 20px #00000026;
-  backdrop-filter:blur(14px);
-  overflow-x:auto;
-  overscroll-behavior-x:contain;
-  -webkit-overflow-scrolling:touch;
-  scrollbar-width:none;
-}
-.tabbar::-webkit-scrollbar{display:none}
-.tab-button{
-  flex:0 0 auto;
-  min-width:88px;
-  min-height:44px;
-  padding:10px 12px;
-  border:1px solid transparent;
-  border-radius:10px;
-  background:transparent;
-  color:var(--muted);
-  font:750 13px/1.2 inherit;
-  white-space:nowrap;
-  text-align:center;
-}
-.tab-button[aria-selected="true"]{
-  border-color:#547a60;
-  background:#294333;
-  color:#e2f5e7;
-  box-shadow:inset 0 0 0 1px #365c43;
-}
-.tab-button:focus-visible,.more-nav-item:focus-visible{outline:3px solid var(--lime);outline-offset:2px}
-.more-nav{position:relative;flex:0 0 auto}
-.more-nav-trigger{display:inline-flex;align-items:center;justify-content:center;gap:7px;min-width:78px}
-.more-nav-trigger[aria-expanded="true"]{border-color:#547a60;background:#20372a;color:#e2f5e7}
-.more-nav-menu{
-  position:absolute;
-  top:calc(100% + 9px);
-  right:0;
-  left:auto;
-  z-index:120;
-  display:grid;
-  gap:5px;
-  min-width:min(230px,calc(100vw - 28px));
-  padding:8px;
-  border:1px solid var(--line);
-  border-radius:13px;
-  background:#18271f;
-  box-shadow:0 14px 34px #0007;
-}
-.more-nav-item{
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:10px;
-  width:100%;
-  min-height:46px;
-  padding:10px 12px;
-  border:1px solid transparent;
-  border-radius:9px;
-  background:transparent;
-  color:var(--ink);
-  font:650 13px/1.3 inherit;
-  text-align:left;
-}
-.more-nav-item:hover,.more-nav-item:focus-visible{background:#2b4033;border-color:#496552}
-.more-nav-item span{color:var(--lime);font-variant-numeric:tabular-nums}
-.app-menu-button{min-width:44px;min-height:44px;border-radius:12px}
-.app-menu-dropdown{background:#18241c;color:var(--ink);border-color:var(--line)}
-@media(min-width:760px){
-  .tabbar{margin-left:0;margin-right:0;padding-left:10px;padding-right:10px;border:1px solid var(--line);border-radius:14px}
-  .tab-button{flex:1 1 auto}
-  .more-nav{margin-left:auto}
-}
-@media(max-width:520px){
-  .tabbar{margin:0 -12px 14px;padding:7px 10px;gap:5px;border-radius:0 0 13px 13px}
-  .tab-button{min-width:84px;padding:10px 11px;font-size:12px}
-  .more-nav-trigger{min-width:72px}
-}
-</style>
-
-<style id="trail-visual-consistency-v1">
-/* Punkt 6: letzte visuelle Vereinheitlichung und zugängliche Interaktionen */
-:root{
-  --ui-radius:14px;
-  --ui-radius-small:10px;
-  --ui-space:12px;
-}
-:where(.planner,.planner-panel,.planner-status,.year-group,.plan-card,.route,.event,.integration-provider){
-  border-radius:var(--ui-radius);
-}
-:where(.primary,.secondary,.tab-button,.more-nav-item,.year-detail-button,.link){
-  font-family:inherit;
-  letter-spacing:normal;
-  touch-action:manipulation;
-}
-:where(input,select,textarea,.field){
-  border-radius:var(--ui-radius-small);
-  color:var(--ink);
-  accent-color:var(--green);
-}
-:where(button,a,input,select,textarea,[role="button"]):focus-visible{
-  outline:3px solid var(--lime);
-  outline-offset:2px;
-}
-:where(.planner-intro,.plan-meta,.note,.planner-status){
-  line-height:1.55;
-  overflow-wrap:anywhere;
-}
-:where(.primary,.secondary,.tab-button,.more-nav-item){
-  min-height:44px;
-}
-:where(button:disabled,input:disabled,select:disabled,textarea:disabled){
-  opacity:.58;
-  cursor:not-allowed;
-}
-:where(.planner-status,[role="status"],[aria-live="polite"]){
-  overflow-wrap:anywhere;
-}
-@media(max-width:520px){
-  :where(.planner-panel,.planner-status,.year-group,.plan-card,.route,.event){
-    min-width:0;
-  }
-  :where(.planner-intro,.plan-meta,.note){
-    overflow-wrap:anywhere;
-  }
-}
-</style>
-<style id="trail-iphone-width-fix-v2">
-/* Einheitliche iPhone-Breite: nur die Navigation darf intern horizontal scrollen */
-html,body{
-  width:100%;
-  max-width:100%;
-  min-width:0;
-  overflow-x:clip;
-}
-body{position:relative}
-header,.hero,.wrap{
-  box-sizing:border-box;
-  width:100%;
-  min-width:0;
-}
-header{padding-left:max(14px,calc((100vw - 1120px)/2));padding-right:max(14px,calc((100vw - 1120px)/2))}
-.hero{padding-left:14px;padding-right:14px}
-.wrap{padding-left:12px;padding-right:12px}
-#yearTab,#yearOverview,#seasonEnhancements,#seasonRaceCards,#seasonTimeline,
-.season-training-panel,.planner,.planner-panel,.year-group,.year-race,
-.year-profile-panel,.integration-hub{
-  box-sizing:border-box;
-  width:100%;
-  max-width:100%;
-  min-width:0;
-}
-#yearOverview,.season-priority-summary,.season-training-panel,
-.training-overview,.training-stats,.training-grid{
-  grid-template-columns:repeat(2,minmax(0,1fr));
-}
-#yearOverview>* ,#seasonEnhancements>* ,#seasonRaceCards>* ,#seasonTimeline>*{
-  min-width:0;
-  max-width:100%;
-}
-.tabbar{
-  box-sizing:border-box;
-  width:100%;
-  max-width:100%;
-  min-width:0;
-  margin-left:0;
-  margin-right:0;
-}
-.tabbar>.tab-button,.tabbar>.more-nav{min-width:0;flex:0 0 auto}
-@media(max-width:700px){
-  header{padding-left:14px;padding-right:14px}
-  .hero{margin-left:0;margin-right:0;padding-left:0;padding-right:0}
-  .wrap{margin-left:auto;margin-right:auto;padding-left:12px;padding-right:12px}
-  .tabbar{margin:0 0 14px;padding:7px 8px;gap:5px;border-radius:12px}
-  .tab-button{min-width:0;padding:10px 11px;flex:0 0 auto}
-  #yearOverview{grid-template-columns:minmax(0,1fr)}
-  .season-priority-summary,.training-overview,.training-stats,.training-grid{
-    grid-template-columns:repeat(2,minmax(0,1fr))
-  }
-  .planner-columns{grid-template-columns:minmax(0,1fr)}
-}
-@media(max-width:380px){
-  .season-priority-summary,.training-overview,.training-stats,.training-grid{
-    grid-template-columns:minmax(0,1fr)
-  }
-}
-</style>
-<style id="trail-iphone-comfort-width-v3">
-/* Etwas mehr seitlicher Innenabstand für angenehme Kartenbreite auf dem iPhone */
-@media(max-width:700px){
-  header{padding-left:18px;padding-right:18px}
-  .hero{padding-left:0;padding-right:0}
-  .wrap{padding-left:18px;padding-right:18px}
-  .tabbar{margin-left:0;margin-right:0}
-  #yearOverview .year-group,
-  #events .event,
-  #missingEvents .event{max-width:100%;min-width:0}
-}
-</style>
-
-<style id="trail-navigation-no-scroll-v1">
-/* Navigation ohne seitliches Wischen: klare, umbrechende Raster-Navigation */
-.tabbar{
-  display:grid!important;
-  grid-template-columns:repeat(5,minmax(0,1fr));
-  align-items:stretch;
-  gap:7px;
-  width:100%;
-  max-width:100%;
-  min-width:0;
-  overflow:visible!important;
-  overscroll-behavior:initial;
-  -webkit-overflow-scrolling:auto;
-  scrollbar-width:auto;
-  padding:8px;
-  border:1px solid var(--line);
-  border-radius:14px;
-  background:#111d16f2;
-}
-.tabbar>.tab-button,
-.tabbar>.more-nav{
-  box-sizing:border-box;
-  width:100%;
-  min-width:0;
-  max-width:100%;
-  margin:0;
-}
-.tabbar>.tab-button{
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  min-height:46px;
-  padding:9px 6px;
-  white-space:normal;
-  overflow-wrap:anywhere;
-  line-height:1.2;
-  font-size:clamp(11px,1.1vw,13px);
-}
-.tabbar>.more-nav{display:block}
-.tabbar .more-nav-trigger{width:100%;min-width:0;white-space:normal}
-.more-nav-menu{max-width:calc(100vw - 32px)}
-@media(max-width:700px){
-  .tabbar{
-    grid-template-columns:repeat(2,minmax(0,1fr));
-    gap:7px;
-    margin:0 0 14px;
-    padding:8px;
-    border-radius:13px;
-  }
-  .tabbar>.tab-button{min-height:46px;padding:9px 7px;font-size:12px}
-  .tabbar>.more-nav{grid-column:1 / -1;justify-self:stretch}
-  .tabbar .more-nav-trigger{min-height:44px}
-  .more-nav-menu{left:0;right:0;width:100%;min-width:0}
-}
-@media(min-width:701px){
-  .tabbar{position:sticky;top:0;z-index:80}
-}
-</style>
-
-
-<style id="trail-sold-out-badges-v1">
-.sold-out-stamp{display:inline-flex;align-items:center;justify-content:center;margin:3px 0 9px;padding:4px 10px;border:2px solid #e12d2d;border-radius:4px;background:#fff0f0;color:#c71919;font-size:11px;font-weight:950;letter-spacing:.12em;line-height:1;transform:rotate(-2deg);box-shadow:0 1px 3px #8d171722}.sold-out-overview{display:inline-flex;align-items:center;gap:4px;padding:4px 8px;border:1px solid #e12d2d;border-radius:20px;background:#fff0f0;color:#bd1717;font-size:10px;font-weight:850;letter-spacing:.025em}.sold-out-overview::before{content:'●';font-size:8px}.sold-out-text{display:block;margin:8px 0;padding:9px 12px;border-left:4px solid #e12d2d;background:#fff0f0;color:#bd1717;font-size:15px;font-weight:950;letter-spacing:.1em}
-</style>
-
-<style id="trail-calendar-race-duration-v1">.race-duration-bar{cursor:pointer;pointer-events:auto;padding:0;appearance:none}.race-duration-bar:focus-visible{outline:2px solid #fff;outline-offset:2px}.year-race-popup{position:fixed;inset:0;z-index:10060;display:flex;align-items:center;justify-content:center;padding:16px;background:#0008}.year-race-popup[hidden]{display:none}.year-race-popup-card{position:relative;width:min(320px,100%);padding:17px 18px 15px;border:1px solid #668273;border-radius:14px;background:#1c2b22;color:#edf5ef;box-shadow:0 14px 44px #0009}.year-race-popup-card h3{margin:0 28px 13px 0;font-size:16px;line-height:1.3}.year-race-popup-row{display:flex;justify-content:space-between;align-items:flex-start;gap:14px;padding:8px 0;border-top:1px solid #ffffff20;font-size:13px}.year-race-popup-row span{color:#b9cbbf}.year-race-popup-row strong{text-align:right;overflow-wrap:anywhere}.year-race-popup-close{position:absolute;right:9px;top:7px;width:32px;height:32px;border:0;border-radius:8px;background:#ffffff12;color:#fff;font-size:23px;cursor:pointer}</style><style id="trail-calendar-race-duration-v1">.year-calendar-day{overflow:visible}.race-duration-bar{position:absolute;z-index:2;left:-2px;right:-2px;bottom:3px;height:7px;background:#e05b63;border:1px solid #ff9ca1;pointer-events:none}.race-duration-bar.start{left:3px;border-radius:5px 0 0 5px}.race-duration-bar.end{right:3px;border-radius:0 5px 5px 0}.race-duration-bar.single{left:3px;right:3px;border-radius:5px}.year-calendar-day.has-event.has-hotel{background:#214f80}.year-calendar-day .hotel-mark{position:absolute;top:2px;right:3px;color:#8bc8ff;font-size:8px;line-height:1}.year-calendar-swatch.event{background:#e05b63}</style>
-</head><script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script><body>
-<header><div class="top"><div class="brand"><img src="./trail-icon.svg" alt="" width="34" height="34"> TRAILRUNNING-MANAGER</div><div class="utmb-header-index" aria-label="Persönlicher UTMB Index 436"><span class="utmb-header-mark" aria-hidden="true">▲</span><span class="utmb-header-copy"><small>UTMB INDEX</small><strong>436</strong></span><span class="utmb-header-link">↗</span></div><div class="pill"><button id="cloudProfileButton" type="button" aria-label="Anmelden – Cloud-Konto öffnen" title="Anmelden – Cloud-Konto öffnen" style="margin-left:6px;min-width:44px;min-height:44px;display:inline-flex;align-items:center;justify-content:center;gap:5px;border:1px solid #668074;border-radius:24px;background:#20372d;color:#fff;padding:5px 9px;text-decoration:none;cursor:pointer;touch-action:manipulation" onclick="event.preventDefault();event.stopPropagation();const d=document.getElementById('appMenuDropdown'),m=document.getElementById('appMenuButton'),p=document.getElementById('accountPanel'),t=document.getElementById('cloudAccountMenuToggle');d.hidden=false;m.setAttribute('aria-expanded','true');p.hidden=false;t.setAttribute('aria-expanded','true');t.textContent='☁️ Cloud-Konto schließen';const e=document.getElementById('cloudEmail');if(e)e.focus({preventScroll:true});"><svg id="cloudProfileIcon" width="24" height="24" viewBox="0 0 24 24" role="img" aria-label="Rotes Strichmännchen – abgemeldet"><circle cx="12" cy="5" r="2.5" fill="none" stroke="#ff6262" stroke-width="2"/><path d="M12 8v7m0-4-5 3m5-3 5 3m-5 1-4 6m4-6 4 6" fill="none" stroke="#ff6262" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button><button id="appMenuButton" type="button" class="app-menu-button" aria-label="Weitere Funktionen öffnen" aria-haspopup="true" aria-expanded="false" aria-controls="appMenuDropdown" title="Weitere Funktionen">···</button><button id="appSettingsButton" type="button" class="app-menu-button" aria-label="App-Einstellungen und Verbindungen öffnen" aria-haspopup="true" aria-expanded="false" aria-controls="appSettingsPanel" title="Einstellungen und Verbindungen" style="margin-left:5px"><svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 8.2a3.8 3.8 0 1 0 0 7.6 3.8 3.8 0 0 0 0-7.6Z" fill="none" stroke="currentColor" stroke-width="2"/><path d="m19.4 13.5 1.1.9-1.5 2.6-1.4-.5a7.8 7.8 0 0 1-1.6.9l-.2 1.5h-3l-.3-1.5a7.8 7.8 0 0 1-1.6-.9l-1.4.5L8 14.4l1.1-.9a7.5 7.5 0 0 1 0-1.9L8 10.7l1.5-2.6 1.4.5a7.8 7.8 0 0 1 1.6-.9l.3-1.5h3l.2 1.5a7.8 7.8 0 0 1 1.6.9l1.4-.5 1.5 2.6-1.1.9a7.5 7.5 0 0 1 0 1.9Z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg></button><div id="appSettingsPanel" class="app-menu-dropdown app-settings-panel" hidden><div class="app-menu-heading"><span>⚙️ App-Einstellungen &amp; Verbindungen</span><button id="closeAppSettingsButton" class="secondary" type="button">Schließen ✕</button></div><p class="app-menu-hint">Hier siehst du, welche Dienste die App benötigt, welche optional sind und ob sie auf diesem Gerät erreichbar sind. Passwörter und geheime Schlüssel gehören niemals in diese Übersicht.</p><div class="settings-group"><strong>Erforderlich für die Grundfunktionen</strong><div class="settings-connection"><span>GitHub Pages – App-Bereitstellung und Aktualisierungen</span><b id="connHosting">Prüfung …</b></div><div class="settings-connection"><span>Supabase – Cloud-Konto, Synchronisierung, Event-Prüfung und Datenbank</span><b id="connSupabase">Prüfung …</b></div><div class="settings-connection"><span>Browser-Speicher – lokale Einstellungen, Offline-Daten und Sicherungen</span><b id="connStorage">Prüfung …</b></div></div><div class="settings-group"><strong>Für Karten und Streckenprofile</strong><div class="settings-connection"><span>Leaflet über unpkg – Kartenanzeige</span><b id="connLeaflet">Prüfung …</b></div><div class="settings-connection"><span>OpenStreetMap – Kartenkacheln und Kartendaten</span><b id="connOsm">Wird bei Kartenaufruf geprüft</b></div></div><div class="settings-group"><strong>Optional – bei Bedarf aktivieren</strong><div class="settings-connection"><span>Web-Push – Mitteilungen zu eingereichten Änderungen</span><b id="connPush">Nicht eingerichtet</b></div><div class="settings-connection"><span>Garmin Connect / Strava – Aktivitätsdateien FIT, TCX oder GPX</span><b class="settings-neutral">Dateiimport verfügbar</b></div><div class="settings-connection"><span>Veranstalter-Websites – automatische Eventdaten-Erkennung über Supabase</span><b id="connEventScan">Bei Anmeldung verfügbar</b></div></div><div class="settings-group"><strong>Persönliche Einstellungen</strong><button class="secondary app-menu-item" type="button" onclick="document.getElementById('cloudProfileButton').click()">☁️ Cloud-Konto öffnen / anmelden</button><button class="secondary app-menu-item" type="button" onclick="document.getElementById('historyTabButton').click()">🏃 Laufhistorie &amp; Aktivitätsimport</button></div><p class="app-menu-hint">Garmin- und Strava-Passwörter werden nicht benötigt. Die App nutzt derzeit den Dateiimport, keine direkte Kontoverknüpfung. Für Karten ist keine OpenStreetMap-Anmeldung erforderlich.</p></div><div id="appMenuDropdown" class="app-menu-dropdown" role="menu" hidden><div class="app-menu-heading" style="display:flex;align-items:center;justify-content:space-between;gap:10px"><span>Menü · Daten &amp; Verwaltung</span><button id="closeAppMenuButton" type="button" class="secondary" aria-label="Menü schließen" style="min-height:36px;padding:5px 10px">Schließen ✕</button></div><div class="app-menu-section-title">Konto &amp; Synchronisierung</div><button id="cloudAccountMenuToggle" class="secondary app-menu-item" type="button" aria-expanded="false" aria-controls="accountPanel">☁️ Cloud-Konto öffnen</button><div id="accountPanel" class="app-menu-account" hidden><div style="font-weight:700;margin-bottom:5px">☁️ Cloud-Konto</div><div id="cloudStatus" style="font-size:13px;color:#d4e2d9;margin-bottom:10px">Melde dich an, um deine Laufplanung sicher in deiner Cloud zu speichern.</div><div id="cloudCheckStatus" role="status" aria-live="polite" style="font-size:11px;color:#b8d0c2;margin:-5px 0 10px">Automatischer Abruf noch nicht gestartet.</div><form id="cloudAuthForm" style="display:flex;gap:8px;flex-wrap:wrap"><input id="cloudEmail" type="email" required autocomplete="email" placeholder="E-Mail-Adresse" style="flex:1 1 190px;min-width:0;padding:11px;border-radius:9px;border:1px solid #789084;font:inherit"><input id="cloudPassword" type="password" required minlength="8" autocomplete="current-password" placeholder="Passwort (mind. 8 Zeichen)" style="flex:1 1 190px;min-width:0;padding:11px;border-radius:9px;border:1px solid #789084;font:inherit"><button class="primary" id="cloudLoginButton" type="button" onclick="event.preventDefault();if(typeof window.plannerLoginClick==='function')window.plannerLoginClick();else document.getElementById('cloudStatus').textContent='Cloud-Anmeldung wird initialisiert. Bitte kurz warten und erneut versuchen.'">Anmelden</button><button class="secondary" id="cloudSignup" type="button" onclick="plannerSignupClick()">Konto erstellen</button></form><div id="cloudAccountActions" hidden style="gap:8px;margin-top:8px"><button class="primary" id="restoreCloudData" type="button">Laufplanung und Laufhistorie aus der Cloud laden</button><button class="secondary" id="cloudLogout" type="button">Abmelden</button><button class="secondary" id="deleteCloudAccount" type="button" style="border-color:#d66;color:#ffb8b8">Konto endgültig löschen</button></div><div style="font-size:11px;color:#c4d5c9;margin-top:8px">Deine persönlichen Daten werden nur für dein angemeldetes Konto gespeichert. Verwende ein eigenes, sicheres Passwort.</div>
-</div><div class="app-menu-section-title">Speicher &amp; Datensicherung</div><div class="app-menu-info"><strong>☁️ Laufdaten geräteübergreifend</strong><p>Mit deinem Konto werden deine Laufplanung und gespeicherten Ergebnisse zwischen deinen Geräten synchronisiert. Melde dich dazu über den Bereich „Cloud-Konto“ an.</p><div id="appMenuCloudInfo" class="app-menu-hint">Noch nicht angemeldet – Synchronisierung ist nicht aktiv.</div></div><div class="app-menu-info"><strong>Gerätespeicher</strong><p id="storageHealth" aria-live="polite">Speicherstatus wird geprüft …</p><button class="secondary app-menu-item" id="protectStorageButton" type="button" onclick="requestPersistentStorage()">Speicherung auf diesem Gerät schützen</button></div><div class="app-menu-section-title">Sicherung verwalten</div><button class="secondary app-menu-item" id="exportBackup" type="button" role="menuitem">Datensicherung herunterladen</button><button class="secondary app-menu-item" id="downloadPreRestoreBackup" type="button" role="menuitem" hidden>Vorherigen Stand herunterladen</button><label class="secondary app-menu-item app-menu-label" for="importBackup" role="menuitem">Datensicherung wiederherstellen<input id="importBackup" type="file" accept="application/json,.json" hidden></label><div class="app-menu-hint">Sichere deine Planungen regelmäßig als JSON-Datei. Beim Wiederherstellen werden nur Daten aus einer gültigen Sicherung übernommen.</div><div id="cloudConflictActions" class="app-menu-conflict" style="display:none"><button class="secondary app-menu-item" id="downloadCloudBackup" type="button">Cloud-Sicherung herunterladen</button><button class="secondary app-menu-item" id="useCloudDataLocally" type="button">Cloud-Daten auf dieses Gerät übernehmen</button><button class="secondary app-menu-item" id="useLocalCloudData" type="button">Lokale Daten in Cloud übernehmen</button></div></div></div></div><div class="hero"><h1>Dein nächstes<br>Trail-Abenteuer.</h1><div class="stats"><div class="stat"><b id="eventCount">—</b><span>Hauptevents</span></div><div class="stat"><b id="routeCount">—</b><span>Strecken</span></div><div class="stat"><b>5 km</b><span>Unterkunftsradius</span></div></div></div></header>
-<main class="wrap"><nav class="tabbar" role="tablist" aria-label="Hauptnavigation"><button class="tab-button" id="eventsTabButton" type="button" role="tab" aria-selected="true" aria-controls="eventsTab">Events</button><button class="tab-button" id="plannerTabButton" type="button" role="tab" aria-selected="false" aria-controls="plannerTab">Eventplaner</button><button class="tab-button" id="yearTabButton" type="button" role="tab" aria-selected="false" aria-controls="yearTab">Jahresübersicht</button><button class="tab-button" id="historyTabButton" type="button" role="tab" aria-selected="false" aria-controls="historyTab">Laufhistorie</button><div class="more-nav"><button class="tab-button more-nav-trigger" id="moreNavButton" type="button" aria-expanded="false" aria-controls="moreNavMenu">Mehr <span aria-hidden="true">⌄</span></button><div class="more-nav-menu" id="moreNavMenu" hidden><button class="more-nav-item" id="missingTabButton" type="button">Offene Angaben <span id="missingCount">—</span></button><button class="more-nav-item" id="addTabButton" type="button">＋ Lauf hinzufügen</button><button class="more-nav-item" id="proposalTabButton" type="button">📝 Änderung vorschlagen</button><button class="more-nav-item" id="reviewTabButton" type="button" hidden>🛡️ Prüfung <span id="reviewCount">0</span></button></div></div></nav><section class="tab-panel" id="yearTab" role="tabpanel" aria-labelledby="yearTabButton" hidden><section class="planner"><h2>📅 Meine Jahresübersicht</h2><p class="planner-intro">Alle geplanten Rennen – wahlweise als bisherige Übersicht oder als Jahreskalender.</p><div class="year-view-switch" role="group" aria-label="Ansicht der Jahresübersicht"><button type="button" id="yearListViewButton" class="secondary active" aria-pressed="true">Listenansicht</button><button type="button" id="yearCalendarViewButton" class="secondary" aria-pressed="false">Jahreskalender</button></div><div id="yearCalendar" hidden></div><div id="yearOverview"><div class="plan-empty">Noch keine Events geplant. Füge zuerst im Eventplaner Rennen hinzu.</div></div><section class="planner" id="seasonEnhancements"><h2>🏁 Saisonsteuerung</h2><p class="planner-intro">Priorisiere deine Rennen, plane Trainingsphasen und passe die Regeneration anhand deiner tatsächlichen Wettkampfdaten an.</p><div id="seasonRaceCards"></div><h3 style="margin-top:18px">Trainingsphasen & Rennkalender</h3><div id="seasonTimeline" class="season-timeline"></div><section class="planner-panel integration-hub" style="margin-top:14px" aria-labelledby="integrationHubTitle"><h3 id="integrationHubTitle">🔗 Garmin &amp; Strava – Trainingsdaten</h3><p class="planner-intro">Deine Laufhistorie kann bereits Aktivitäten aus Garmin Connect und Strava übernehmen. Der sichere Dateiimport ist aktiv; eine automatische Kontosynchronisierung ist noch nicht verbunden.</p><div class="integration-status-grid"><div class="integration-status"><span class="integration-dot active"></span><div><strong>Dateiimport aktiv</strong><small>FIT · TCX · GPX</small></div></div><div class="integration-status"><span class="integration-dot pending"></span><div><strong>Direkt-Synchronisierung</strong><small>Noch nicht eingerichtet</small></div></div></div><div class="integration-provider-grid"><article class="integration-provider"><strong>Strava</strong><p>Exportiere deine Aktivität als GPX oder lade deine Kontodaten über den Strava-Datenexport herunter. Importiere anschließend die Aktivitätsdatei in der Laufhistorie.</p><a class="link" href="https://support.strava.com/hc/de/articles/216918437-Datenexport" target="_blank" rel="noopener">Strava-Datenexport ↗</a><a class="link" href="https://developers.strava.com/docs/authentication/" target="_blank" rel="noopener">API / OAuth ↗</a></article><article class="integration-provider"><strong>Garmin Connect</strong><p>Exportiere eine Aktivität als Originaldatei (FIT) oder als TCX/GPX. FIT enthält – sofern aufgezeichnet – auch Puls- und Leistungsdaten.</p><a class="link" href="https://connect.garmin.com/" target="_blank" rel="noopener">Garmin Connect öffnen ↗</a><a class="link" href="https://developer.garmin.com/gc-developer-program/" target="_blank" rel="noopener">Garmin Developer Program ↗</a></article></div><button class="secondary" type="button" onclick="document.getElementById('historyTabButton')?.click();document.getElementById('activityImportFile')?.scrollIntoView({behavior:'smooth',block:'center'});">Aktivität jetzt importieren ↓</button><p class="plan-meta">Sicherheit: Keine Anbieter-Passwörter oder API-Schlüssel in der App speichern. Für einen automatischen Direktabgleich werden freigeschaltete Anbieter-APIs, ein Server-Backend und geschützte OAuth-Secrets benötigt. Bis dahin bleibt der Dateiimport die zuverlässige und datensparsame Lösung.</p></section><p class="note">Die Erholungs-Orientierung berücksichtigt Distanz, Höhenmeter, tatsächliche Laufdauer und DNF-Status. Sie ist eine grobe Planungsheuristik, keine medizinische Trainingsfreigabe. Passe Umfang und Intensität an Belastbarkeit, Erfahrung und Erholung an.</p></section></section></section><section class="tab-panel" id="historyTab" role="tabpanel" aria-labelledby="historyTabButton" hidden><section class="planner"><h2>🏅 Meine Laufhistorie</h2><p class="planner-intro">Hier erscheinen alle Strecken, die du unter „Events“ als bereits gelaufen markiert hast. Deine Angaben und Bewertungen werden auf diesem Gerät gespeichert.</p><div class="planner-panel" style="margin:12px 0"><h3>Aktivität aus Garmin, Strava oder Datei importieren</h3><p class="planner-intro">Importiere eine absolvierte Aktivität: Garmin FIT/TCX oder GPX (auch aus Strava exportiert). Die Datei sollte Zeitstempel enthalten.</p><p class="note"><strong>Garmin Connect:</strong> Auf der Website Aktivitäten öffnen → Aktivität auswählen → Zahnrad → „Original exportieren“ (FIT empfohlen). <strong>Strava:</strong> Auf der Website Aktivität öffnen → „Mehr“ (•••) → „Original exportieren“ oder „GPX exportieren“. FIT enthält meist die meisten Trainingsdaten. <a href="https://support.garmin.com/de-DE/?faq=W1TvTPW8JZ6LfJSfK512Q8" target="_blank" rel="noopener">Garmin-Anleitung</a> · <a href="https://support.strava.com/de/articles/15401919-wie-exportiere-ich-meine-strava-daten" target="_blank" rel="noopener">Strava-Anleitung</a>.</p><div class="planner-grid"><label>Event<select id="activityImportEvent" class="field"><option value="">Event auswählen …</option></select></label><label>Strecke<select id="activityImportRoute" class="field" disabled><option value="">Zuerst Event auswählen …</option></select></label><label>Aktivitätsdatei<input id="activityImportFile" type="file" accept=".fit,.gpx,.tcx,application/octet-stream,application/gpx+xml,application/vnd.garmin.tcx+xml" style="display:block;max-width:100%"></label><button class="primary" type="button" onclick="importActivityToHistory()">Aktivität importieren</button></div><p id="activityImportStatus" class="planner-status" aria-live="polite">Die Aktivität wird deiner Laufhistorie zugeordnet. Bereits vorhandene manuelle Einträge bleiben erhalten.</p></div><div class="toolbar" style="grid-template-columns:1fr;max-width:420px;margin-bottom:14px"><select id="historySort" class="field" aria-label="Laufhistorie sortieren"><option value="yearDesc">Jahr (neueste zuerst)</option><option value="yearAsc">Jahr (älteste zuerst)</option><option value="name">Eventname (A–Z)</option><option value="distanceDesc">Distanz (längste zuerst)</option><option value="distanceAsc">Distanz (kürzeste zuerst)</option><option value="ratingDesc">Bewertung (höchste zuerst)</option><option value="ratingAsc">Bewertung (niedrigste zuerst)</option></select></div><div id="historyStats" class="stats" style="margin:0 0 14px"></div><div id="historyList"><div class="plan-empty">Noch keine gelaufenen Strecken eingetragen.</div></div></section></section><section class="tab-panel" id="plannerTab" role="tabpanel" aria-labelledby="plannerTabButton" hidden><section class="planner" aria-labelledby="plannerTitle"><h2 id="plannerTitle">🗓 Mein Eventplaner</h2><p class="planner-intro">Wähle dein Ausgangsevent. Die App berechnet die Regenerationspause ab dem letzten Veranstaltungstag und zeigt danach passende Termine aus deiner Trail-Liste.</p><p id="officialDateStatus" class="planner-status" aria-live="polite">Offizielle Termindaten werden beim Öffnen des Planers geprüft.</p><div class="planner-grid"><div class="event-choice"><label for="baseEvent">Ausgangsevent (letztes Rennen der Jahresplanung)</label><select id="baseEvent"><option value="">Event auswählen …</option></select></div><div class="event-choice"><label for="baseRoute">Strecke</label><select id="baseRoute" disabled><option value="">Zuerst Event auswählen …</option></select></div><div><label for="recoveryWeeks">Regeneration (Wochen)</label><input id="recoveryWeeks" type="number" min="1" max="52" step="1" value="4"></div><button class="primary" id="startPlan" type="button">Planung starten</button></div><div id="baseRoutePreview" class="planner-route-preview" aria-live="polite"><span>Wähle ein Event und eine Strecke, um die wichtigsten Daten vor der Planung zu prüfen.</span></div><div id="plannerStatus" class="planner-status" aria-live="polite">Wähle ein Event und lege deine Regenerationszeit fest.</div><div class="planner-columns"><div class="planner-panel"><h3>Vorschläge nach der Regeneration</h3><div id="suggestions" class="plan-empty">Noch keine Vorschläge. Starte deine Planung.</div></div><div class="planner-panel"><h3>Meine geplanten Events</h3><div id="myPlan" class="plan-empty">Dein persönlicher Eventplan erscheint hier.</div><div class="plan-actions"><button class="secondary" id="sortPlanChronologically" type="button" onclick="sortPlannedEventsChronologically()">↕ Chronologisch sortieren</button><button class="secondary" id="exportPlanCalendar" type="button" onclick="exportPlannedCalendar()">📅 Kalenderdatei exportieren</button><button class="secondary" id="clearPlan" type="button">Plan zurücksetzen</button></div></div></div><div id="plannerReview" class="planner-review" aria-live="polite"></div><p class="note">Berechnung: Für jedes Event zählt das späteste hinterlegte Streckendatum als letzter Veranstaltungstag. Events ohne hinterlegtes Datum können nicht automatisch einsortiert werden. Die Vorschläge sind Terminfilter, keine sportmedizinische Belastungsfreigabe.</p></section></section><section class="tab-panel" id="addTab" role="tabpanel" aria-labelledby="addTabButton" hidden><section class="planner"><h2>➕ Neuen Lauf hinzufügen</h2><p class="planner-intro">Trage zuerst die offizielle Veranstaltungs-Webadresse ein. Ich lese die verfügbaren Angaben aus und fülle die Felder soweit möglich vor. Anschließend kannst du alles kontrollieren und fehlende Angaben von Hand ergänzen. Der Vorschlag bleibt bis zu deiner Freigabe unveröffentlicht.</p><div class="planner-panel" style="margin:14px 0"><label><b>1. Offizielle Event-Webadresse</b><input id="newEventWeb" type="url" inputmode="url" placeholder="https://…"></label><div class="plan-actions"><button class="primary" id="inspectNewEventWebsite" type="button">Website auslesen und Formular vorfüllen</button></div><div id="newEventInspectStatus" class="planner-status" aria-live="polite">Noch keine Website ausgelesen.</div></div><h3 style="margin:18px 0 8px">2. Erkannte Angaben prüfen und ergänzen</h3><div class="edit-grid"><label>Veranstaltungsname *<input id="newEventName" placeholder="Wird möglichst automatisch erkannt"></label><label>Startdatum<input id="newEventDate" type="date"></label><label>Startzeit<input id="newEventTime" placeholder="z. B. 06:00"></label><label>Zielort<input id="newEventStart" placeholder="Ort / Zielbereich"></label><label>Startpunkt (Standard)<input id="newEventStartLocation" placeholder="Ort / Startbereich"></label><label>Land<input id="newEventCountry" placeholder="Land"></label><label>Laufart<select id="newEventType"><option>Trailrunning / Ultra</option><option>Backyard</option><option>Marathon</option><option>Halbmarathon</option><option>Berglauf / Vertical</option><option>Straßenlauf</option><option>Lauf</option><option>Sonstiger Lauf</option><option>Nicht angegeben</option></select></label></div><h3 style="margin:18px 0 8px">3. Erkannte Strecken prüfen und manuell ergänzen</h3><div id="newRouteRows"></div><div class="plan-actions"><button class="secondary" type="button" onclick="addNewRouteRow()">+ Weitere Strecke</button></div><div class="plan-actions" style="margin-top:16px"><button class="primary" type="button" onclick="saveNewEvent()">Lauf speichern</button></div><div id="newEventStatus" class="planner-status" aria-live="polite">Pflichtfeld: Veranstaltungsname. Mindestens eine Strecke ist vorgesehen.</div></section></section><section class="tab-panel" id="proposalTab" role="tabpanel" aria-labelledby="proposalTabButton" hidden><section class="planner"><h2>📝 Änderung vorschlagen</h2><p class="planner-intro">Neue Rennen, Strecken oder Korrekturen für die öffentliche Datenbank können hier eingereicht werden. Jeder Vorschlag bleibt unveröffentlicht, bis der Datenbankinhaber ihn geprüft und freigegeben hat.</p><div class="planner-panel" style="margin-top:14px"><h3>＋ Neue Strecke / Datenkorrektur vorschlagen</h3><label>Betroffenes Rennen<select id="proposalEventSelect" class="field"><option value="">Rennen auswählen …</option></select></label><div class="edit-grid"><label>Streckenname<input id="proposalRouteName" placeholder="Name der Strecke"></label><label>Distanz (km)<input id="proposalRouteKm" type="number" min="0" step="0.1"></label><label>Höhenmeter<input id="proposalRouteHm" type="number" min="0" step="1"></label><label>Streckendatum<input id="proposalRouteDate" type="date"></label><label>Quelle / offizieller Link<input id="proposalSource" type="url" placeholder="https://…"></label></div><label>Hinweis / Begründung<textarea id="proposalNote" class="field" rows="3" placeholder="Was soll ergänzt oder geändert werden?"></textarea></label><button class="primary" id="submitRouteProposal" type="button">Zur Prüfung einreichen</button><p id="proposalSubmitStatus" class="planner-status" aria-live="polite"></p></div></section></section><section class="tab-panel" id="reviewTab" role="tabpanel" aria-labelledby="reviewTabButton" hidden><section class="planner"><h2>🛡️ Prüfung – öffentliche Eventdatenbank</h2><p class="planner-intro">Hier landen alle Änderungsvorschläge für die öffentliche Datenbank. Deine Freigabe dokumentiert die Entscheidung; die Veröffentlichung erfolgt anschließend kontrolliert und getrennt.</p><div class="planner-panel" id="reviewNotificationsPanel"><h3>🔔 Hinweise bei geöffnetem App-Fenster</h3><p id="reviewNotificationStatus" class="planner-intro" role="status" aria-live="polite">Benachrichtigungen sind noch nicht aktiviert.</p><button class="secondary" id="enableReviewNotifications" type="button" onclick="window.trailReviewPushClick(event)" style="touch-action:manipulation;cursor:pointer">Push-Mitteilungen auf diesem Gerät einrichten</button></div><h3 style="margin-top:20px">Vorschläge bearbeiten</h3><p class="planner-intro">Offene Aufgaben zuerst. Entscheide direkt in der Karte; Details und GPX bleiben bei Bedarf aufklappbar.</p><div id="reviewSummary" class="review-summary" aria-live="polite"><div><b id="reviewOpenCount">—</b><small>Offen</small></div><div><b id="reviewApprovedCount">—</b><small>Freigegeben</small></div><div><b id="reviewPublishedCount">—</b><small>Veröffentlicht</small></div></div><div class="review-toolbar"><label>Ansicht<select id="reviewFilter" class="field"><option value="open">Offene zuerst</option><option value="all">Alle Vorschläge</option><option value="new_event">Neue Rennen</option><option value="new_route">Neue Strecken</option><option value="correction">Korrekturen / Änderungen</option><option value="approved">Freigegeben</option><option value="published">Veröffentlicht</option><option value="rejected">Abgelehnt</option><option value="deferred">Zurückgestellt</option></select></label><button class="secondary review-next" id="reviewNextButton" type="button">Nächsten offenen Vorschlag anzeigen ↓</button></div><div id="reviewQueue"><p class="plan-empty">Lade Vorschläge …</p></div></section></section><section class="tab-panel" id="eventsTab" role="tabpanel" aria-labelledby="eventsTabButton"><div class="toolbar"><label class="toolbar-field">Event suchen<input id="search" class="field" type="search" placeholder="Name, Ort oder Land …" aria-label="Event, Ort oder Land suchen"></label><label class="toolbar-field">Sortieren<select id="sort" class="field" aria-label="Events sortieren"><option value="date">Startdatum (früheste zuerst)</option><option value="dateDesc">Startdatum (späteste zuerst)</option><option value="name">Eventname (A–Z)</option><option value="km">Kürzeste Strecke</option><option value="hm">Höchste Höhenmeter</option><option value="type">Laufart (A–Z)</option></select></label><label class="toolbar-field">Land filtern<select id="country" class="field" aria-label="Nach Land filtern"><option value="">Alle Länder</option></select></label><label class="toolbar-field">Laufart filtern<select id="runTypeFilter" class="field" aria-label="Nach Laufart filtern"><option value="">Alle Laufarten</option><option value="Backyard">Backyard</option><option value="Trailrunning / Ultra">Trail-Lauf / Ultratrail</option><option value="Marathon">Marathon</option><option value="Halbmarathon">Halbmarathon</option><option value="Berglauf / Vertical">Berglauf / Vertical</option><option value="Straßenlauf">Straßenlauf</option><option value="Lauf">Sonstiger Lauf</option><option value="Nicht angegeben">Nicht angegeben</option></select></label></div><div class="resultsline"><span id="resultCount">Lade Events …</span><span>Nur Tabellenblatt „trail“</span></div><section id="events"></section><p class="note">Datenbasis: Event- und Streckendaten aus deiner Trail-Datenbank. Starttermine werden mit verfügbaren offiziellen Veranstalterangaben abgeglichen. Nicht bestätigte Termine bleiben als vorläufig gekennzeichnet.</p></section><section class="tab-panel" id="missingTab" role="tabpanel" aria-labelledby="missingTabButton" hidden><section class="planner"><h2>🧩 Rennen mit fehlenden Angaben</h2><p class="planner-intro">Hier stehen nur Strecken, bei denen noch Angaben fehlen. Sobald die für die jeweilige Laufart erforderlichen Angaben wie Distanz, Startdatum, Start- und Zielort sowie Land vollständig sind, verschwindet die Strecke automatisch aus dieser Liste. Streckenprofil und Cut-off-Links bleiben optionale Zusatzinformationen.</p><div id="missingSummary" class="planner-status" aria-live="polite"></div><div id="officialQualitySummary" class="planner-status" aria-live="polite"></div><div class="toolbar" style="grid-template-columns:1fr;max-width:520px;margin:12px 0"><label>Liste sortieren<select id="missingSort" class="field"><option value="error">Fehlergruppe (A–Z)</option><option value="event">Eventname (A–Z)</option><option value="route">Streckenname (A–Z)</option><option value="countDesc">Meiste Fehler zuerst</option><option value="countAsc">Wenigste Fehler zuerst</option><option value="upcoming">Anstehende Rennen zuerst (Startdatum)</option><option value="profile">Höhenprofil fehlt zuerst (Hinweise)</option><option value="cutoff">Cut-off fehlt zuerst (Hinweise)</option><option value="gpx">GPX fehlt zuerst (Hinweise)</option><option value="destination">Zielort fehlt zuerst</option><option value="maxTime">Maximalzeit fehlt zuerst</option></select></label></div><p class="note">Fehler und Hinweise lassen sich getrennt über × ein- und ausblenden. Innerhalb der Kategorien können einzelne Gruppen zusätzlich eingeklappt werden.</p><div id="missingEvents"><div class="plan-empty">Prüfe die Streckendaten …</div></div></section></section></main><div class="foot">Trailrunning-Manager · Private Vorschau</div>
-<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-<script>
-window.trailReviewPushClick=function(event){
-  event?.preventDefault?.();
-  event?.stopPropagation?.();
-  const button=document.getElementById('enableReviewNotifications');
-  const status=document.getElementById('reviewNotificationStatus');
-  if(!button||!status)return;
-  button.disabled=true;
-  button.textContent='Einrichtung wird gestartet …';
-  status.textContent='Klick erkannt. Push-Einrichtung wird gestartet …';
-  if(typeof window.registerReviewPush!=='function'){
-    status.textContent='Push-Funktion wurde nicht geladen. Bitte Seite neu laden.';
-    button.disabled=false;
-    button.textContent='Push-Mitteilungen auf diesem Gerät einrichten';
-    return;
-  }
-  try{
-    // Call synchronously inside the user gesture so iOS can show the permission prompt.
-    const task=window.registerReviewPush();
-    Promise.resolve(task).catch(error=>{
-      status.textContent='Push-Einrichtung fehlgeschlagen: '+(error?.message||'Unbekannter Fehler');
-    }).finally(()=>{
-      button.disabled=false;
-      button.textContent=status.textContent.includes('registriert')?'Push ist eingerichtet':'Erneut versuchen';
-    });
-  }catch(error){
-    status.textContent='Push-Einrichtung fehlgeschlagen: '+(error?.message||'Unbekannter Fehler');
-    button.disabled=false;
-    button.textContent='Erneut versuchen';
-  }
-};
-// Capture the tap before other page handlers; this also works if later app initialization fails.
-document.addEventListener('click',function(event){
-  const target=event.target;
-  const button=target instanceof Element ? target.closest('#enableReviewNotifications') : null;
-  if(!button||button.hasAttribute('onclick'))return;
-  event.preventDefault();
-  event.stopPropagation();
-  window.trailReviewPushClick(event);
-},true);
-window.addEventListener('error',function(e){
-  const status=document.getElementById('cloudCheckStatus');
-  if(status)status.textContent='JavaScript-Fehler: '+(e.message||'Unbekannt')+' · Zeile '+(e.lineno||'?');
-  const cloudStatus=document.getElementById('cloudStatus');
-  if(cloudStatus)cloudStatus.textContent='Das Hauptskript ist auf einen Fehler gestoßen. Bitte Screenshot senden.';
-});
-window.addEventListener('unhandledrejection',function(e){
-  const status=document.getElementById('cloudCheckStatus');
-  if(status)status.textContent='Skriptfehler: '+(e.reason?.message||String(e.reason||'Unbekannt'));
-});
-</script>
-<script>
 const EVENTS=[
   {
     "name": "La Corsa della Bora",
@@ -2832,7 +1353,7 @@ const EVENTS=[
     ],
     "id": "otzi-trairun"
   },
-    {
+  {
     "name": "Wien Marathon",
     "series": null,
     "date": "2027-04-18",
@@ -10866,7 +9387,7 @@ const EVENTS=[
     "id": "julian-alps-trail-run",
     "endDate": "2027-09-19"
   },
-      {
+  {
     "name": "Berlin Marathon - Major",
     "series": null,
     "date": "2027-09-26",
@@ -13126,7 +11647,7 @@ const EVENTS=[
     ],
     "id": "monte-rosa-walser-waeg-by-utmb"
   },
-    {
+  {
     "name": "Coelmo Napoli City Half Marathon",
     "series": "SuperHalfs EUROPA",
     "date": "2027-02-21",
@@ -13185,7 +11706,7 @@ const EVENTS=[
     ],
     "id": "lisbon-half-marathon"
   },
-    {
+  {
     "name": "Warsaw Half Marathon",
     "series": "SuperHalfs EUROPA",
     "date": "2027-03-14",
@@ -13260,7 +11781,7 @@ const EVENTS=[
     ],
     "id": "prague-half-marathon"
   },
-    {
+  {
     "name": "Berlin Half Marathon",
     "series": "SuperHalfs ORIGINALS",
     "date": "2027-04-04",
@@ -13291,7 +11812,7 @@ const EVENTS=[
     ],
     "id": "berlin-half-marathon"
   },
-    {
+  {
     "name": "Belgrade Half Marathon",
     "series": "SuperHalfs EUROPA",
     "date": "2027-04-17",
@@ -13318,7 +11839,7 @@ const EVENTS=[
     ],
     "id": "belgrade-half-marathon"
   },
-    {
+  {
     "name": "Wiener Städtische Half Marathon",
     "series": "SuperHalfs EUROPA",
     "date": "2027-04-18",
@@ -13350,7 +11871,7 @@ const EVENTS=[
     ],
     "id": "wiener-stadtische-half-marathon"
   },
-    {
+  {
     "name": "Riga Half Marathon",
     "series": "SuperHalfs EUROPA",
     "date": "2027-05-16",
@@ -13380,7 +11901,7 @@ const EVENTS=[
     ],
     "id": "riga-half-marathon"
   },
-    {
+  {
     "name": "Stockholm Half Marathon",
     "series": "SuperHalfs EUROPA",
     "date": "2027-08-21",
@@ -18283,7 +16804,7 @@ const EVENTS=[
       }
     ]
   },
-    {
+  {
     "id": "rimi-riga-marathon-2027",
     "name": "Rimi Riga Marathon",
     "date": "2027-05-16",
@@ -18777,6 +17298,176 @@ const EVENTS=[
       }
     ],
     "id": "tihanyi-felmaraton-2027"
+  },
+  {
+    "id": "paznaun-ischgl-ultra-trail-2027",
+    "name": "Paznaun Ischgl Ultra Trail by UTMB",
+    "series": "UTMB World Series",
+    "date": "2027-07-09",
+    "endDate": "2027-07-10",
+    "start": "Paznaun (See, Kappl, Galtür und Ischgl)",
+    "startLocation": "Paznaun",
+    "country": "Österreich",
+    "minKm": 10,
+    "maxHm": 6300,
+    "web": "https://piut.utmb.world/",
+    "registration": "https://piut.utmb.world/runners/registration",
+    "routes": [
+      {
+        "id": "piut-100-2027",
+        "name": "PIUT 100",
+        "route": "PIUT 100",
+        "year": 2027,
+        "km": 100,
+        "hm": 6300,
+        "maxh": 23,
+        "date": "2027-07-09",
+        "start": "See",
+        "startLocation": "See",
+        "country": "Österreich",
+        "starttime": "23:00",
+        "web": "https://piut.utmb.world/races/piut100",
+        "registration": "https://piut.utmb.world/runners/registration",
+        "cutoffUrl": "https://piut.utmb.world/races/piut100",
+        "profileUrl": "https://piut.utmb.world/races/piut100",
+        "gpxAvailability": "official-interactive-map",
+        "gpxSource": "https://piut.utmb.world/races/piut100",
+        "gpxDownloadUrl": "https://piut.utmb.world/races/piut100",
+        "gpxDownloadLabel": "Offizielle Karte + GPX öffnen",
+        "note": "Start in See, Ziel in Ischgl. Offizielle UTMB-Angabe: 100 km, 6.300 hm, 23 Stunden."
+      },
+      {
+        "id": "piut-85-2027",
+        "name": "PIUT 85",
+        "route": "PIUT 85",
+        "year": 2027,
+        "km": 85,
+        "hm": 5200,
+        "maxh": 23,
+        "date": "2027-07-09",
+        "start": "See",
+        "startLocation": "See",
+        "country": "Österreich",
+        "starttime": "23:00",
+        "web": "https://piut.utmb.world/races/piut85",
+        "registration": "https://piut.utmb.world/runners/registration",
+        "cutoffUrl": "https://piut.utmb.world/races/piut85",
+        "profileUrl": "https://piut.utmb.world/races/piut85",
+        "gpxAvailability": "official-interactive-map",
+        "gpxSource": "https://piut.utmb.world/races/piut85",
+        "gpxDownloadUrl": "https://piut.utmb.world/races/piut85",
+        "gpxDownloadLabel": "Offizielle Karte + GPX öffnen",
+        "note": "Start in See, Ziel in Ischgl. Offizielle UTMB-Angabe: 85 km, 5.200 hm, 23 Stunden."
+      },
+      {
+        "id": "piut-50-2027",
+        "name": "PIUT 50",
+        "route": "PIUT 50",
+        "year": 2027,
+        "km": 50,
+        "hm": 3100,
+        "maxh": 16,
+        "date": "2027-07-10",
+        "start": "Kappl",
+        "startLocation": "Kappl",
+        "country": "Österreich",
+        "starttime": "06:00",
+        "web": "https://piut.utmb.world/races/piut50",
+        "registration": "https://piut.utmb.world/runners/registration",
+        "cutoffUrl": "https://piut.utmb.world/races/piut50",
+        "profileUrl": "https://piut.utmb.world/races/piut50",
+        "gpxAvailability": "official-interactive-map",
+        "gpxSource": "https://piut.utmb.world/races/piut50",
+        "gpxDownloadUrl": "https://piut.utmb.world/races/piut50",
+        "gpxDownloadLabel": "Offizielle Karte + GPX öffnen",
+        "note": "Start in Kappl, Ziel in Ischgl. Offizielle UTMB-Angabe: 50 km, 3.100 hm, 16 Stunden."
+      },
+      {
+        "id": "piut-30-2027",
+        "name": "PIUT 30",
+        "route": "PIUT 30",
+        "year": 2027,
+        "km": 30,
+        "hm": 1540,
+        "maxh": 13.5,
+        "date": "2027-07-10",
+        "start": "Galtür",
+        "startLocation": "Galtür",
+        "country": "Österreich",
+        "starttime": "08:30",
+        "web": "https://piut.utmb.world/races/piut30",
+        "registration": "https://piut.utmb.world/runners/registration",
+        "cutoffUrl": "https://piut.utmb.world/races/piut30",
+        "profileUrl": "https://piut.utmb.world/races/piut30",
+        "gpxAvailability": "official-interactive-map",
+        "gpxSource": "https://piut.utmb.world/races/piut30",
+        "gpxDownloadUrl": "https://piut.utmb.world/races/piut30",
+        "gpxDownloadLabel": "Offizielle Karte + GPX öffnen",
+        "note": "Start in Galtür, Ziel in Ischgl. Offizielle UTMB-Angabe: 30 km, 1.540 hm, 13 Stunden 30 Minuten."
+      },
+      {
+        "id": "piut-20-2027",
+        "name": "PIUT 20",
+        "route": "PIUT 20",
+        "year": 2027,
+        "km": 20,
+        "hm": 1300,
+        "maxh": 10,
+        "date": "2027-07-10",
+        "start": "Ischgl",
+        "startLocation": "Ischgl",
+        "country": "Österreich",
+        "starttime": "11:00",
+        "web": "https://piut.utmb.world/races/piut20",
+        "registration": "https://piut.utmb.world/runners/registration",
+        "cutoffUrl": "https://piut.utmb.world/races/piut20",
+        "profileUrl": "https://piut.utmb.world/races/piut20",
+        "gpxAvailability": "official-interactive-map",
+        "gpxSource": "https://piut.utmb.world/races/piut20",
+        "gpxDownloadUrl": "https://piut.utmb.world/races/piut20",
+        "gpxDownloadLabel": "Offizielle Karte + GPX öffnen",
+        "note": "Start in Ischgl, Ziel in Ischgl. Offizielle UTMB-Angabe: 20 km, 1.300 hm, 10 Stunden."
+      },
+      {
+        "id": "piut-ten-2027",
+        "name": "PIUT TEN",
+        "route": "PIUT TEN",
+        "year": 2027,
+        "km": 10,
+        "hm": 94,
+        "maxh": 8,
+        "date": "2027-07-10",
+        "start": "Galtür",
+        "startLocation": "Galtür",
+        "country": "Österreich",
+        "starttime": "14:00",
+        "web": "https://piut.utmb.world/races/piut-ten",
+        "registration": "https://piut.utmb.world/runners/registration",
+        "cutoffUrl": "https://piut.utmb.world/races/piut-ten",
+        "profileUrl": "https://piut.utmb.world/races/piut-ten",
+        "gpxAvailability": "official-interactive-map",
+        "gpxSource": "https://piut.utmb.world/races/piut-ten",
+        "gpxDownloadUrl": "https://piut.utmb.world/races/piut-ten",
+        "gpxDownloadLabel": "Offizielle Karte + GPX öffnen",
+        "note": "Charity-Lauf von Galtür nach Ischgl. Offizielle UTMB-Angabe: 10 km, 94 hm, 8 Stunden."
+      },
+      {
+        "id": "piut-kids-run-2027",
+        "name": "PIUT Kids Run",
+        "route": "PIUT Kids Run",
+        "year": 2027,
+        "km": null,
+        "hm": null,
+        "maxh": null,
+        "date": "2027-07-09",
+        "start": "Ischgl",
+        "startLocation": "Ischgl",
+        "country": "Österreich",
+        "web": "https://piut.utmb.world/races",
+        "registration": "https://piut.utmb.world/runners/registration",
+        "note": "Kinderlauf; Distanz und Startzeit für 2027 noch nicht veröffentlicht."
+      }
+    ]
   }
 ]
 function enrichUtmbRouteCategories(){
