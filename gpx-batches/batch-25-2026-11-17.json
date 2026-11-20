@@ -106,10 +106,52 @@
     {
       "order": 123,
       "name": "The Canyons Endurance Runs by UTMB",
-      "gpxStatus": "Official 2027 100M/100K/50K/25K pages confirm routes, but each current download is explicitly labelled 2026 GPX and subject to 2027 changes. Keep existing older official GPX as historical last-available version; do not present as current 2027.",
+      "gpxStatus": "Official 2027 Canyons event confirms 100M 161/5550, 100K 100/3750, 50K 50/1700 and 25K 25/850. Official 100M, 100K and 50K pages explicitly state their downloadable GPX is the 2026 file and subject to change for 2027. Keep those 2026 GPX files as historical versions; do not present as current 2027. Direct file bytes have not been parsed.",
       "source": "https://canyons.utmb.world/races",
-      "followUp": "Wait for 2027 GPX files.",
-      "retentionRule": "Do not delete or overwrite the existing 2025/2026 GPX. Keep its edition/source metadata until an official 2027 replacement is published and checked."
+      "followUp": "Monitor each of the four official course pages for a new 2027-versioned GPX. When published, download and parse the file, compare track distance/ascent and retain the 2026 files separately.",
+      "retentionRule": "Do not delete or overwrite 2026 GPX versions. Add verified 2027 files as separate versions only after the actual files are downloaded and checked.",
+      "checkedAt": "2026-11-20",
+      "official2027CourseData": {
+        "source": "https://canyons.utmb.world/",
+        "eventDate": "2027-04-22/2027-04-25",
+        "routes": [
+          {
+            "name": "100M",
+            "distanceKm": 161,
+            "elevationGainHm": 5550,
+            "racePage": "https://canyons.utmb.world/races/100M"
+          },
+          {
+            "name": "100K",
+            "distanceKm": 100,
+            "elevationGainHm": 3750,
+            "racePage": "https://canyons.utmb.world/races/100K"
+          },
+          {
+            "name": "50K",
+            "distanceKm": 50,
+            "elevationGainHm": 1700,
+            "racePage": "https://canyons.utmb.world/races/50k"
+          },
+          {
+            "name": "25K",
+            "distanceKm": 25,
+            "elevationGainHm": 850,
+            "racePage": "https://canyons.utmb.world/races/25k"
+          }
+        ],
+        "gpxVersionFinding": "Official 100M, 100K and 50K 2027 race pages explicitly warn that linked GPX is the 2026 file and subject to change for 2027. 100M page last updated 21 Apr 2026; 100K page last updated 21 Apr 2026; 50K page last updated 14 Apr 2026.",
+        "note": "The four 2027 race distances and ascent figures are current official advertised values; 2026 GPX files are explicitly not approved as 2027 course files."
+      },
+      "gpxTechnicalChecks": {
+        "status": "official-2026-gpx-version-warning-confirmed",
+        "downloadedFiles": 0,
+        "xmlParsed": false,
+        "trackpointCount": null,
+        "calculatedDistanceKm": null,
+        "calculatedElevationHm": null,
+        "note": "Wait for new 2027 GPX uploads; the linked 2026 files are explicitly subject to change and must remain historical only."
+      }
     },
     {
       "order": 124,
