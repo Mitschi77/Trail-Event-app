@@ -28,7 +28,16 @@ begin
     raise exception 'Proposal batch exceeds the 300 item limit' using errcode = '22023';
   end if;
 
-  for item in select value from jsonb_array_elements(p_rows) as entries(value)
+  -- Acquire locks in a stable order to avoid deadlocks between overlapping batches.
+  for item in
+    select value
+      from jsonb_array_elements(p_rows) as entries(value)
+     order by jsonb_build_array(
+       value ->> 'proposal_type',
+       value -> 'payload' ->> 'eventId',
+       coalesce(value -> 'payload' ->> 'routeId', ''),
+       value -> 'payload' ->> 'field'
+     )::text
   loop
     v_item_payload := item -> 'payload';
     v_proposal_type := item ->> 'proposal_type';
