@@ -503,3 +503,19 @@ for (const id of ["wild-nextgen-10-500","wild-kids-ycoor-0-8-2027","wild-kids-gr
 }
 assert.equal(wildStrubelEvent.routes.filter(route => route.excludeFromDistanceFilter !== true).reduce((min, route) => Math.min(min, Number(route.km) || Infinity), Infinity), 10,
   "Wild-Strubel main distance minimum must be based on eligible adult race routes");
+
+// PIUT 2027 official distances and the three age-appropriate Kids Run laps.
+const piutEvent = appEvents.find(event => event.id === "piut");
+assert.ok(piutEvent, "PIUT must remain in the event catalog");
+assert.equal(piutEvent.date, "2027-07-09");
+assert.equal(piutEvent.endDate, "2027-07-10");
+for (const [id, km, hm, date] of [["piut100-100-6300",100,6300,"2027-07-09"],["piut85-85-5200",85,5200,"2027-07-09"],["piut50-50-3100",50,3100,"2027-07-10"],["piut30-30-1540",30,1540,"2027-07-10"],["piut20-20-1300",20,1300,"2027-07-10"],["piut-ten-10-94",10,94,"2027-07-10"]]) {
+  const route = routeById(id); assert.ok(route, id + " must be catalogued");
+  assert.equal(route.km, km, id + " distance"); assert.equal(route.hm, hm, id + " elevation"); assert.equal(route.date, date, id + " date");
+}
+for (const [id, km] of [["piut-kids-bambini-015-2027",0.15],["piut-kids-600m-2027",0.6],["piut-kids-1200m-2027",1.2]]) {
+  const route = routeById(id); assert.ok(route, id + " must be catalogued"); assert.equal(route.km, km);
+  assert.equal(route.date, "2027-07-09"); assert.equal(route.starttime, "15:00"); assert.equal(route.excludeFromDistanceFilter, true);
+  assert.equal(route.hm, null, "Do not invent elevation for Kids Run laps");
+}
+assert.equal(piutEvent.minKm, 10, "PIUT TEN is the shortest regular event distance; Kids Run laps must not lower the main filter");
