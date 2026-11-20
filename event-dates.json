@@ -9275,6 +9275,178 @@
           "verified": true
         }
       }
+    },
+    "pko-wroclaw-night-half-2027": {
+      "eventId": "pko-wroclaw-night-half-2027",
+      "checkedAt": "2026-11-20T22:55:00Z",
+      "status": "verified",
+      "sources": [],
+      "eventPeriod": {
+        "startDate": "2027-06-12",
+        "endDate": "2027-06-12",
+        "verified": true
+      },
+      "routes": {
+        "0": {
+          "routeId": "pko-wroclaw-night-half-2027",
+          "date": "2027-06-12",
+          "verified": true
+        }
+      }
+    },
+    "scania-halve-marathon-zwolle-2027": {
+      "eventId": "scania-halve-marathon-zwolle-2027",
+      "checkedAt": "2026-11-20T22:55:00Z",
+      "status": "verified",
+      "sources": [],
+      "eventPeriod": {
+        "startDate": "2027-06-12",
+        "endDate": "2027-06-12",
+        "verified": true
+      },
+      "routes": {
+        "0": {
+          "routeId": "scania-halve-marathon-zwolle-2027",
+          "date": "2027-06-12",
+          "verified": true
+        }
+      }
+    },
+    "hella-hamburg-half-2027": {
+      "eventId": "hella-hamburg-half-2027",
+      "checkedAt": "2026-11-20T22:55:00Z",
+      "status": "verified",
+      "sources": [],
+      "eventPeriod": {
+        "startDate": "2027-06-27",
+        "endDate": "2027-06-27",
+        "verified": true
+      },
+      "routes": {
+        "0": {
+          "routeId": "hella-hamburg-half-2027",
+          "date": "2027-06-27",
+          "verified": true
+        }
+      }
+    },
+    "analog-devices-cork-city-marathon-2027": {
+      "eventId": "analog-devices-cork-city-marathon-2027",
+      "checkedAt": "2026-11-20T22:55:00Z",
+      "status": "verified",
+      "sources": [],
+      "eventPeriod": {
+        "startDate": "2027-06-06",
+        "endDate": "2027-06-06",
+        "verified": true
+      },
+      "routes": {
+        "0": {
+          "routeId": "cork-city-marathon-2027",
+          "date": "2027-06-06",
+          "verified": true
+        },
+        "1": {
+          "routeId": "cork-city-half-marathon-2027",
+          "date": "2027-06-06",
+          "verified": true
+        }
+      }
+    },
+    "stuttgart-lauf-half-2027": {
+      "eventId": "stuttgart-lauf-half-2027",
+      "checkedAt": "2026-11-20T22:55:00Z",
+      "status": "verified",
+      "sources": [],
+      "eventPeriod": {
+        "startDate": "2027-06-06",
+        "endDate": "2027-06-06",
+        "verified": true
+      },
+      "routes": {
+        "0": {
+          "routeId": "stuttgart-lauf-half-2027",
+          "date": "2027-06-06",
+          "verified": true
+        }
+      }
+    },
+    "bjorn-borg-helsinki-half-marathon-2027": {
+      "eventId": "bjorn-borg-helsinki-half-marathon-2027",
+      "checkedAt": "2026-11-20T22:55:00Z",
+      "status": "verified",
+      "sources": [],
+      "eventPeriod": {
+        "startDate": "2027-06-12",
+        "endDate": "2027-06-12",
+        "verified": true
+      },
+      "routes": {
+        "0": {
+          "routeId": "helsinki-half-marathon-2027",
+          "date": "2027-06-12",
+          "verified": true
+        }
+      }
+    },
+    "mattoni-half-marathon-olomouc-2027": {
+      "eventId": "mattoni-half-marathon-olomouc-2027",
+      "checkedAt": "2026-11-20T22:55:00Z",
+      "status": "verified",
+      "sources": [],
+      "eventPeriod": {
+        "startDate": "2027-06-12",
+        "endDate": "2027-06-12",
+        "verified": true
+      },
+      "routes": {
+        "0": {
+          "routeId": "mattoni-half-olomouc-2027",
+          "date": "2027-06-12",
+          "verified": true
+        }
+      }
+    },
+    "mattoni-karlovy-vary-half-2027": {
+      "eventId": "mattoni-karlovy-vary-half-2027",
+      "checkedAt": "2026-11-20T22:55:00Z",
+      "status": "verified",
+      "sources": [],
+      "eventPeriod": {
+        "startDate": "2027-05-15",
+        "endDate": "2027-05-15",
+        "verified": true
+      },
+      "routes": {
+        "0": {
+          "routeId": "karlovy-vary-half-2027",
+          "date": "2027-05-15",
+          "verified": true
+        }
+      }
+    },
+    "adac-marathon-hannover-2027": {
+      "eventId": "adac-marathon-hannover-2027",
+      "checkedAt": "2026-11-20T22:55:00Z",
+      "status": "verified",
+      "sources": [],
+      "eventPeriod": {
+        "startDate": "2027-04-11",
+        "endDate": "2027-04-11",
+        "verified": true
+      },
+      "routes": {
+        "0": {
+          "routeId": "adac-hannover-marathon-2027",
+          "date": "2027-04-11",
+          "verified": true
+        },
+        "1": {
+          "routeId": "adac-hannover-half-2027",
+          "date": "2027-04-11",
+          "verified": true
+        }
+      }
     }
   }
 }
