@@ -93,7 +93,7 @@ assert.ok(raceTools.includes("function segments(r,id,ri)"), "GPX elevation segme
 assert.ok(raceTools.includes("Verpflegungs-Erinnerungen"), "Race strategy must calculate fueling reminders");
 
 const fuelScheduleStart = html.indexOf("function renderFuelSchedule(r,d){");
-const fuelScheduleEnd = html.indexOf("\\nfunction renderRaceStrategy", fuelScheduleStart);
+const fuelScheduleEnd = html.indexOf("function renderRaceStrategy", fuelScheduleStart);
 assert.ok(fuelScheduleStart >= 0 && fuelScheduleEnd > fuelScheduleStart, "Fueling renderer boundaries must be present");
 const fuelScheduleSource = html.slice(fuelScheduleStart, fuelScheduleEnd).trim();
 const renderFuelSchedule = new Function("return (" + fuelScheduleSource + ")")();
