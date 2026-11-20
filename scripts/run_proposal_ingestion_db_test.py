@@ -72,6 +72,7 @@ def main():
             "routeId": ROUTE_ID,
             "field": "maxh",
             "source": "automated_event_data_finder",
+            "sourceUrl": "https://example.test/source-a",
         },
     }
     body = json.dumps([payload], separators=(",", ":"))
@@ -109,6 +110,30 @@ def main():
         raise AssertionError(f"Unexpected concurrent RPC results: {outputs}")
     if sorted(result["duplicates"] for result in outputs) != [0, 1]:
         raise AssertionError(f"Unexpected duplicate counts: {outputs}")
+
+    # The same logical field backed by a different source must remain a
+    # separate proposal; sourceUrl is part of the deduplication identity.
+    second_source = dict(payload)
+    second_source["title"] = "Same correction, independent evidence"
+    second_source["payload"] = dict(payload["payload"], sourceUrl="https://example.test/source-b")
+    second_body = json.dumps([second_source], separators=(",", ":"))
+    second_result = json.loads(psql(sql=f"""
+      begin;
+      set local role service_role;
+      select public.ingest_event_change_proposals('{second_body}'::jsonb);
+      commit;
+    """).splitlines()[-1])
+    if second_result["inserted"] != 1 or second_result["duplicates"] != 0:
+        raise AssertionError(f"Distinct source was incorrectly deduplicated: {second_result}")
+    count_with_two_sources = int(psql(sql=f"""
+      select count(*) from public.event_change_proposals
+      where payload->>'eventId' = '{EVENT_ID}'
+        and payload->>'routeId' = '{ROUTE_ID}'
+        and payload->>'field' = 'maxh'
+        and status = 'pending';
+    """))
+    if count_with_two_sources != 2:
+        raise AssertionError(f"Expected two source-specific rows, got {count_with_two_sources}")
 
     privilege_result = psql(sql="""
       select has_function_privilege('anon', 'public.ingest_event_change_proposals(jsonb)', 'EXECUTE'),
