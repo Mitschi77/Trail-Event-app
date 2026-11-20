@@ -155,6 +155,21 @@ missing_feed_events = event_ids - set(feed_events)
 for missing_id in sorted(missing_feed_events):
     errors.append(f"{missing_id}: missing event-dates.json entry")
 for feed_event_id, feed_record in feed_events.items():
+    checked_at = feed_record.get("checkedAt")
+    if checked_at and not isinstance(checked_at, str):
+        errors.append(f"{feed_event_id}: checkedAt must be an ISO timestamp")
+    source_check = feed_record.get("sourceCheckStatus")
+    if source_check and source_check not in ("read", "partial", "unavailable", "not-checked", "manual"):
+        errors.append(f"{feed_event_id}: invalid sourceCheckStatus {source_check!r}")
+    if feed_record.get("status") == "verified":
+        period = feed_record.get("eventPeriod") or {}
+        has_verified_period = bool(period.get("verified") and period.get("startDate"))
+        has_verified_route = any(
+            item.get("verified") and item.get("date")
+            for item in (feed_record.get("routes") or {}).values()
+        )
+        if not (has_verified_period or has_verified_route):
+            warnings.append(f"{feed_event_id}: status is verified but no verified event period or route date is present")
     if feed_event_id not in event_ids:
         warnings.append(f"event-dates.json contains stale event ID {feed_event_id!r}")
         continue
