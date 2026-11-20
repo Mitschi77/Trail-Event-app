@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-20T21:45:00.000Z",
+  "updatedAt": "2026-11-20T22:15:00+01:00",
   "schemaVersion": 3,
   "events": {
     "la-corsa-della-bora": {
@@ -6796,6 +6796,107 @@
         "0": {
           "routeId": "pelso-clean-tihanyi-half-21-1-2027",
           "date": "2027-04-03",
+          "verified": true,
+          "fallback": false
+        }
+      }
+    },
+    "paznaun-ischgl-ultra-trail-2027": {
+      "eventId": "paznaun-ischgl-ultra-trail-2027",
+      "checkedAt": "2026-11-20T22:15:00+01:00",
+      "status": "verified",
+      "sources": [
+        {
+          "url": "https://piut.utmb.world/",
+          "status": "read",
+          "verification": "official-utmb-2027-race-page"
+        },
+        {
+          "url": "https://piut.utmb.world/races",
+          "status": "read",
+          "verification": "official-utmb-2027-race-page"
+        },
+        {
+          "url": "https://piut.utmb.world/races/piut100",
+          "status": "read",
+          "verification": "official-utmb-2027-race-page"
+        },
+        {
+          "url": "https://piut.utmb.world/races/piut85",
+          "status": "read",
+          "verification": "official-utmb-2027-race-page"
+        },
+        {
+          "url": "https://piut.utmb.world/races/piut50",
+          "status": "read",
+          "verification": "official-utmb-2027-race-page"
+        },
+        {
+          "url": "https://piut.utmb.world/races/piut30",
+          "status": "read",
+          "verification": "official-utmb-2027-race-page"
+        },
+        {
+          "url": "https://piut.utmb.world/races/piut20",
+          "status": "read",
+          "verification": "official-utmb-2027-race-page"
+        },
+        {
+          "url": "https://piut.utmb.world/races/piut-ten",
+          "status": "read",
+          "verification": "official-utmb-2027-race-page"
+        },
+        {
+          "url": "https://piut.utmb.world/runners/registration",
+          "status": "read",
+          "verification": "official-utmb-2027-race-page"
+        }
+      ],
+      "eventPeriod": {
+        "startDate": "2027-07-09",
+        "endDate": "2027-07-10",
+        "verified": true
+      },
+      "routes": {
+        "0": {
+          "routeId": "piut-100-2027",
+          "date": "2027-07-09",
+          "verified": true,
+          "fallback": false
+        },
+        "1": {
+          "routeId": "piut-85-2027",
+          "date": "2027-07-09",
+          "verified": true,
+          "fallback": false
+        },
+        "2": {
+          "routeId": "piut-50-2027",
+          "date": "2027-07-10",
+          "verified": true,
+          "fallback": false
+        },
+        "3": {
+          "routeId": "piut-30-2027",
+          "date": "2027-07-10",
+          "verified": true,
+          "fallback": false
+        },
+        "4": {
+          "routeId": "piut-20-2027",
+          "date": "2027-07-10",
+          "verified": true,
+          "fallback": false
+        },
+        "5": {
+          "routeId": "piut-ten-2027",
+          "date": "2027-07-10",
+          "verified": true,
+          "fallback": false
+        },
+        "6": {
+          "routeId": "piut-kids-run-2027",
+          "date": "2027-07-09",
           "verified": true,
           "fallback": false
         }
