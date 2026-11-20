@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-20T21:15:00Z",
+  "updatedAt": "2026-11-20T21:20:00Z",
   "schemaVersion": 3,
   "events": {
     "la-corsa-della-bora": {
@@ -3783,27 +3783,33 @@
     },
     "alpin-team-trailrun": {
       "eventId": "alpin-team-trailrun",
-      "checkedAt": "2026-11-20T21:15:00Z",
-      "status": "unconfirmed",
+      "checkedAt": "2026-11-20T21:20:00Z",
+      "status": "verified",
       "sources": [
         {
           "url": "https://www.trailrunning-verband.at/trailrunning-kalender",
           "status": "read",
           "verification": "official-calendar-checked"
+        },
+        {
+          "url": "https://www.atra.club/trailrunning-kalender",
+          "status": "read",
+          "verification": "Austrian-trailrunning-association-2027-calendar"
         }
       ],
-      "eventPeriod": null,
+      "eventPeriod": {
+        "startDate": "2027-09-25",
+        "endDate": "2027-09-25",
+        "verified": true
+      },
       "routes": {
         "0": {
           "routeId": "k50-52-3450",
-          "date": "2026-09-26",
-          "verified": false,
-          "fallback": true,
-          "fallbackYear": 2026,
-          "note": "Vorläufiger Ersatztermin aus der Ausgabe 2026; kein offizieller Starttermin 2027 gefunden."
+          "date": "2027-09-25",
+          "verified": true
         }
       },
-      "note": "Ein 2027-Termin ist in der offiziellen Kalenderprüfung nicht bestätigt. Der vorläufige Termin 2027-09-26 stammt aus der Ausgabe 2026 und bleibt ausdrücklich unverifiziert."
+      "note": "Der österreichische Trailrunning-Verband listet den Alpin Team Trail für den 25.09.2027. Die 52-km-Strecke mit 3.450 hm ist im Eventdatensatz hinterlegt."
     },
     "chihuahua-by-utmb": {
       "eventId": "chihuahua-by-utmb",
