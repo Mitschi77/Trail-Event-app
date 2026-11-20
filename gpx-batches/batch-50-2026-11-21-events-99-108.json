@@ -1,0 +1,300 @@
+{
+  "batch": 50,
+  "checkedAt": "2026-11-21",
+  "scope": "Top-level events 99–108 in current EVENTS order",
+  "status": "audit-only-checkpoint",
+  "rules": [
+    "Old GPX files remain valid until a new official replacement is published, downloaded, parsed and validated.",
+    "Do not delete or replace historical GPX files during this audit.",
+    "An official map or GPX button is not proof of a technically validated binary."
+  ],
+  "events": [
+    {
+      "order": 99,
+      "name": "Adamello Ultra Trail",
+      "date": "2027-09-24/26",
+      "officialSource": "https://www.adamelloultratrail.it/",
+      "pressRelease": "https://www.trailrunning.de/aktuelles/news/adamello-ultra-trail-gibt-termin-und-strecken-fuer-2027-bekannt/",
+      "routes": [
+        {
+          "name": "AUT 170",
+          "distanceKm": 170,
+          "elevationM": 11500
+        },
+        {
+          "name": "AT 100",
+          "distanceKm": 100,
+          "elevationM": 6050
+        },
+        {
+          "name": "AHT 60",
+          "distanceKm": 60,
+          "elevationM": 4000
+        },
+        {
+          "name": "AST 35",
+          "distanceKm": 35,
+          "elevationM": 2200
+        }
+      ],
+      "gpxStatus": "2027-edition-and-routes-confirmed; current-official-gpx-not-yet-verified",
+      "note": "Important update from 17 Nov 2026 press release: 2027 event 24–26 September, four distances. Adamello Series side event begins 12 September. Previous checkpoint saying no 2027 edition is superseded."
+    },
+    {
+      "order": 100,
+      "name": "Nice Côte d’Azur by UTMB",
+      "date": "2027 not confirmed",
+      "officialSource": "https://nice.utmb.world/races",
+      "statement": "https://nice.utmb.world/news/declaration-officielle",
+      "routes": [],
+      "gpxStatus": "no-2027-edition-confirmed",
+      "note": "Official statement confirms exceptional continuation of the 2026 edition after municipal funding withdrawal; no official 2027 announcement found. FAQ says GPX normally appears 1–2 weeks before race, but that does not establish a 2027 edition."
+    },
+    {
+      "order": 101,
+      "name": "Alpin Team Trailrun",
+      "date": "2027 not confirmed",
+      "officialSource": "https://www.alpinteamtrail.at/de/download/",
+      "routes": [
+        {
+          "name": "K50",
+          "gpxStatus": "official-download-page-currently-2026"
+        },
+        {
+          "name": "K23",
+          "gpxStatus": "official-download-page-currently-2026"
+        },
+        {
+          "name": "K10",
+          "gpxStatus": "official-download-page-currently-2026"
+        }
+      ],
+      "gpxStatus": "2026-only-public-files; no-2027-edition-verified",
+      "note": "Keep existing 2026 tracks historical; do not treat them as 2027 files."
+    },
+    {
+      "order": 102,
+      "name": "Chihuahua by UTMB",
+      "date": "2027 not listed",
+      "officialSource": "https://chihuahua.utmb.world/races",
+      "routes": [
+        {
+          "name": "Rarámuri 118K",
+          "distanceKm": 118,
+          "elevationM": 5600,
+          "edition": "2026"
+        },
+        {
+          "name": "Weriga 93K",
+          "distanceKm": 94,
+          "elevationM": 4700,
+          "edition": "2026"
+        },
+        {
+          "name": "Akáa 58K",
+          "distanceKm": 58,
+          "elevationM": 2500,
+          "edition": "2026"
+        },
+        {
+          "name": "Komakali 39K",
+          "distanceKm": 39,
+          "elevationM": 1700,
+          "edition": "2026"
+        },
+        {
+          "name": "Napurega 21K",
+          "distanceKm": 21,
+          "elevationM": 700,
+          "edition": "2026"
+        },
+        {
+          "name": "Norawa 9K",
+          "distanceKm": 9,
+          "elevationM": 200,
+          "edition": "2026"
+        }
+      ],
+      "gpxStatus": "2026-races-only; not-listed-in-2027-calendar",
+      "note": "Current race page displays 2–3 October 2026 and six 2026 formats; no 2027 edition confirmed. Preserve 2026 data as historical."
+    },
+    {
+      "order": 103,
+      "name": "Trail & Tarmac Pursuit",
+      "date": "2027-10-01/03",
+      "officialSource": "https://trailtarmacpursuit.com/",
+      "routes": [
+        {
+          "name": "Team relay / self-planned route",
+          "distanceKm": [
+            240,
+            270
+          ],
+          "elevationM": null
+        }
+      ],
+      "gpxStatus": "no-single-official-gpx-by-design",
+      "note": "2027 edition confirmed, St. Gallen to St. Moritz, 240–270 km, 6 checkpoints, 44-hour limit. Five checkpoints released in advance; sixth secret checkpoint is revealed 30 minutes before start. Teams must plan their own route, so there is no single official GPX."
+    },
+    {
+      "order": 104,
+      "name": "Oberaudorf Trail Festival",
+      "date": "2027-09-30/10-03",
+      "officialSource": "https://saltytrailrunning.com/en-de/pages/otf",
+      "routes": [
+        {
+          "name": "OTF100 XXL",
+          "distanceKm": 104.5,
+          "elevationM": 4992,
+          "date": "2027-10-01",
+          "gpxStatus": "organizer-supplies-gpx-to-participants"
+        },
+        {
+          "name": "OTF Ultra",
+          "distanceKm": null,
+          "elevationM": null
+        },
+        {
+          "name": "OTF Sudelfeld",
+          "distanceKm": 42.8,
+          "elevationM": 2395,
+          "date": "2027-10-02",
+          "gpxStatus": "organizer-supplies-gpx-to-participants"
+        },
+        {
+          "name": "OTF Speed",
+          "distanceKm": null,
+          "elevationM": null
+        },
+        {
+          "name": "OTF Short",
+          "distanceKm": null,
+          "elevationM": null
+        }
+      ],
+      "gpxStatus": "five-2027-races-confirmed; gpx-is-mandatory/provided; direct-file-endpoints-not-publicly-extracted",
+      "note": "Official 2027 event page confirms 30 Sep–3 Oct, five distances 12K, 21K, 42K, 60K and new 100K. Individual OTF100 page gives 104.5 km / 4,992 hm; Sudelfeld page gives 42.8 km / 2,395 hm. Do not invent missing per-course metrics."
+    },
+    {
+      "order": 105,
+      "name": "Taubertal 100",
+      "date": "2027-10-02 reported; organizer confirmation required",
+      "officialSource": "https://www.taubertal100.de/GPS-Streckenverlauf",
+      "routes": [
+        {
+          "name": "50 km"
+        },
+        {
+          "name": "70 km"
+        },
+        {
+          "name": "100 km"
+        },
+        {
+          "name": "100 miles"
+        }
+      ],
+      "gpxStatus": "official-gps-page-last-known-2026; 2027-gpx-not-verified",
+      "note": "Do not confuse Taubertal 100 with the separate Taubertal Trail 2027 event. A similarly named Taubertal Trail page offers 2027 GPX, but it is a different race and must not be attached to this database entry."
+    },
+    {
+      "order": 106,
+      "name": "HOKA Kodiak Ultra Marathons by UTMB",
+      "date": "2027 event registration announced; exact race date/course files not yet confirmed",
+      "officialSource": "https://kodiak.utmb.world/register",
+      "routes": [
+        {
+          "name": "100M",
+          "edition": "current accessible course file 2026"
+        },
+        {
+          "name": "100K",
+          "edition": "current accessible course file 2026"
+        },
+        {
+          "name": "50K",
+          "edition": "course page recheck required"
+        },
+        {
+          "name": "21K",
+          "edition": "course page recheck required"
+        },
+        {
+          "name": "10K",
+          "edition": "course page recheck required"
+        }
+      ],
+      "gpxStatus": "2027-registration-page-live; no-2027-course-binary-validated",
+      "note": "Official registration page says 2027 registration will open soon and confirms event status as UTMB World Series Major. Older course files must not be assumed current."
+    },
+    {
+      "order": 107,
+      "name": "München Marathon",
+      "date": "2027 date not officially confirmed",
+      "officialSource": "https://marathonmuenchen.org/",
+      "coursePage": "https://marathonmuenchen.org/der-marathon/",
+      "routes": [
+        {
+          "name": "Marathon",
+          "distanceKm": 42.195,
+          "edition": "2026 course only"
+        },
+        {
+          "name": "Half Marathon",
+          "edition": "2027 programme not confirmed"
+        },
+        {
+          "name": "10K",
+          "edition": "2027 programme not confirmed"
+        }
+      ],
+      "gpxStatus": "official-gpx-page-is-2026-only; 2027-course-not-published",
+      "note": "Official 2026 course page shows 11 October 2026 and 42.195 km. Munich tourism page explicitly says 2027 date, race programme and route are not yet confirmed. No 2027 GPX."
+    },
+    {
+      "order": 108,
+      "name": "StundenRundenLauf / Chiemgauer 100",
+      "date": "2027 not confirmed",
+      "officialSource": "https://chiemgauer100.de/",
+      "previousEdition": "https://chiemgauer100.de/stundenrunden-2026-infos/",
+      "routes": [
+        {
+          "name": "Backyard loop",
+          "distanceKm": 6.7,
+          "elevationM": 58,
+          "edition": "2026"
+        }
+      ],
+      "gpxStatus": "2026-edition-only; no-2027-date-or-gpx-confirmed",
+      "note": "2026 edition is completed. Do not treat 6.7 km / approx. 58 hm as a current 2027 track without a new organizer announcement."
+    }
+  ],
+  "followUps": [
+    "Adamello: replace old 'no 2027 edition' status with confirmed 24–26 September 2027 and four official distances; request/verify current GPX.",
+    "Nice, Alpin Team and Chihuahua: keep 2027 status unconfirmed; no old course GPX reused.",
+    "Trail & Tarmac: route must be planned individually after checkpoints appear; no single official GPX exists.",
+    "Oberaudorf: extract the remaining three course metrics and direct GPX endpoints from official participant pages.",
+    "Taubertal 100: confirm exact date and 2027 GPS files; do not confuse with Taubertal Trail.",
+    "Kodiak: recheck race pages once 2027 course details are published.",
+    "München Marathon: wait for official 2027 date, programme and GPX.",
+    "StundenRundenLauf: recheck after organizer announces next edition."
+  ],
+  "sources": [
+    "https://www.adamelloultratrail.it/",
+    "https://www.trailrunning.de/aktuelles/news/adamello-ultra-trail-gibt-termin-und-strecken-fuer-2027-bekannt/",
+    "https://nice.utmb.world/races",
+    "https://nice.utmb.world/news/declaration-officielle",
+    "https://www.alpinteamtrail.at/de/download/",
+    "https://chihuahua.utmb.world/races",
+    "https://trailtarmacpursuit.com/",
+    "https://saltytrailrunning.com/en-de/pages/otf",
+    "https://saltytrailrunning.com/en-de/pages/otf-100",
+    "https://saltytrailrunning.com/en-en/pages/otf-sudelfeld",
+    "https://www.taubertal100.de/GPS-Streckenverlauf",
+    "https://taubertal-trail.de/strecken",
+    "https://kodiak.utmb.world/register",
+    "https://marathonmuenchen.org/der-marathon/",
+    "https://www.munich.travel/en/pois/sports-leisure/munich-marathon",
+    "https://chiemgauer100.de/stundenrunden-2026-infos/"
+  ]
+}
