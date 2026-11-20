@@ -173,12 +173,21 @@
   ],
   "summary": {
     "eventsCovered": 10,
-    "officialYearSpecificDirectGpxEndpointsAttempted": 5,
+    "officialYearSpecificDirectGpxEndpointsAttempted": 6,
     "successfulBinaryDownloads": 0,
     "tracksParsed": 0,
     "metricsCompared": 0,
     "trackedGpxFilesInMain": 0,
-    "important": "This pass confirms the inspection environment cannot retrieve the external GPX binary endpoints; it does not establish that the organizer URLs are broken. Actual browser-side import or a network-enabled GPX validation runner is required."
+    "important": "This pass confirms the inspection environment cannot retrieve the external GPX binary endpoints; it does not establish that the organizer URLs are broken. Actual browser-side import or a network-enabled GPX validation runner is required.",
+    "attemptedEndpoints": 6,
+    "endpointList": [
+      "Arc of Attrition 100M",
+      "Arc of Attrition 100K",
+      "Tenerife Bluetrail 82K",
+      "Tenerife Bluetrail 68K",
+      "Chianti CUT 73K",
+      "Chianti UTCC 120K"
+    ]
   },
   "next": "Continue with events 11–20 after an environment capable of downloading external GPX binaries is available; until then, keep collecting official endpoint evidence and never mark a track validated."
 }
