@@ -21,7 +21,7 @@ def classify_source_check_status(source_status):
     known = statuses & recognized
     if not known:
         return "not-checked"
-    if known == {"unavailable"} and len(statuses) == 1:
+    if known == {"unavailable"}:
         return "unavailable"
     if "unavailable" in known and (known - {"unavailable"}):
         return "partial"
