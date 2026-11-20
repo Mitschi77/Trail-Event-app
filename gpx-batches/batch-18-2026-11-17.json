@@ -1,6 +1,6 @@
 {
   "batch": 18,
-  "checkedAt": "2026-11-17",
+  "checkedAt": "2026-11-20",
   "scope": "Top-level events 86-90 in current EVENTS order",
   "status": "saved",
   "appCommit": "8463146e88df749ed5483a4e2a40565281449b41",
@@ -8,14 +8,14 @@
     {
       "order": 86,
       "name": "Fränkischer Backyard Ultra",
-      "gpxStatus": "Official organizer page shows 6.7 km course and GPX, but page is the 2026 announcement (4 September 2026). No 2027 date/GPX confirmed; 2026 track rejected.",
+      "gpxStatus": "Organizer page still exposes the 2026 announcement and 6.7 km GPX; no 2027 date or file verified. Keep 2026 file as last available version, not current 2027.",
       "source": "https://www.fraenkischerbackyard.de/",
       "followUp": "Wait for 2027 organizer announcement."
     },
     {
       "order": 87,
       "name": "Dolomiti di Brenta Trail",
-      "gpxStatus": "Official 2027 route pages document maps, route descriptions and GPS tracks for 64K, 45K and 21K. Organizer allows changes until 31 July 2027, when final official route is published.",
+      "gpxStatus": "Official 2027 route pages provide maps, descriptions and GPS tracks for 64K, 45K and 21K. Organizer may change courses until 31 July 2027; treat current tracks as provisional 2027 versions and preserve any previous editions separately.",
       "sources": [
         "https://www.dolomitidibrentatrail.it/en/routes/64k/",
         "https://www.dolomitidibrentatrail.it/en/routes/xterra45k/",
@@ -26,25 +26,27 @@
     {
       "order": 88,
       "name": "adidas INFINITE TRAILS Gastein",
-      "gpxStatus": "Official 2027 event date and course formats confirmed, but organizer GPX platform still identifies its download pack as 2026. No 2027 GPX imported.",
+      "gpxStatus": "2027 event date/formats confirmed; GPX download pack still identifies 2026. Retain 2026 pack as last available, not as current 2027.",
       "source": "https://infinite-trails.com/gpx-racemap-2/",
-      "followUp": "Recheck after 2027 Trailbook and course pack release."
+      "followUp": "Recheck after 2027 Trailbook and course pack release.",
+      "retentionRule": "Do not delete or overwrite the 2026 GPX pack until official 2027 pack is published and validated."
     },
     {
       "order": 89,
       "name": "Mayrhofen Ultraks",
-      "gpxStatus": "Official 2027 route pages confirmed for all seven races. Current GPX links point to older files (Z101 2025; TUX070/RK50 2026); rejected as stale for 2027.",
+      "gpxStatus": "Seven 2027 route pages confirmed; current GPX links point to older files (Z101 2025; TUX070/RK50 2026). Keep all older files as separate historical versions until official 2027 replacements are checked.",
       "sources": [
         "https://mayrhofen.ultraks.com/z101/",
         "https://mayrhofen.ultraks.com/tux070/",
         "https://mayrhofen.ultraks.com/rk50/"
       ],
-      "followUp": "Wait for 2027 GPX updates and verify all seven route files."
+      "followUp": "Wait for 2027 GPX updates and verify all seven route files.",
+      "retentionRule": "Retain Z101 2025 and TUX070/RK50 2026 GPX links/files with edition metadata; current-route match unconfirmed until 2027 GPX replacement."
     },
     {
       "order": 90,
       "name": "München Backyard Ultra",
-      "gpxStatus": "Organizer AGB confirms a marked 6.706 km route and GPX track; public direct download URL not extracted.",
+      "gpxStatus": "Organizer AGB confirms marked 6.706 km loop and GPX track; public direct download URL not extracted. Need participant/organizer source before file can be validated.",
       "source": "https://www.munichbackyard.de/agbs",
       "followUp": "Ask organizer for the direct GPX download or retrieve it from the participant area."
     }
