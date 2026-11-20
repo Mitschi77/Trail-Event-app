@@ -46,6 +46,7 @@ class ProposalSubmissionTests(unittest.TestCase):
         migration = Path(__file__).resolve().parents[1] / "supabase/migrations/20261120231500_atomic_proposal_ingestion.sql"
         sql = migration.read_text(encoding="utf-8")
         self.assertIn("pg_advisory_xact_lock(hashtextextended(lock_key, 0))", sql)
+        self.assertIn("order by jsonb_build_array(", sql)
         self.assertIn("grant execute on function public.ingest_event_change_proposals(jsonb) to service_role", sql)
         self.assertIn("and status = 'pending'", sql)
 
