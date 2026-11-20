@@ -1,0 +1,350 @@
+{
+  "batch": 49,
+  "checkedAt": "2026-11-20",
+  "scope": "Top-level events 89–98 in current EVENTS order",
+  "status": "audit-only-checkpoint",
+  "rules": [
+    "Existing GPX files remain valid until a new official replacement has been published, downloaded, parsed and validated.",
+    "Do not delete or replace historical GPX files in this audit.",
+    "A public GPX button or map panel does not prove binary validation."
+  ],
+  "events": [
+    {
+      "order": 89,
+      "name": "Mayrhofen Ultraks Zillertal",
+      "date": "2027-09-03/04",
+      "officialSource": "https://mayrhofen.ultraks.com/",
+      "routes": [
+        {
+          "name": "Z101",
+          "distanceKm": 101,
+          "elevationM": 7600
+        },
+        {
+          "name": "TUX070",
+          "distanceKm": 70,
+          "elevationM": 4400
+        },
+        {
+          "name": "RK50",
+          "distanceKm": 50,
+          "elevationM": 3200
+        },
+        {
+          "name": "MUZ30",
+          "distanceKm": 30,
+          "elevationM": null
+        },
+        {
+          "name": "MUZ14",
+          "distanceKm": 14,
+          "elevationM": null
+        },
+        {
+          "name": "Mountopolis Vertical",
+          "distanceKm": null,
+          "elevationM": null
+        },
+        {
+          "name": "Kids",
+          "distanceKm": null,
+          "elevationM": null
+        }
+      ],
+      "gpxStatus": "official-pages-current; download-links-stale-2025-or-2026-in-previous-check; no-2027-binary-validated",
+      "note": "Official site confirms 3–4 September 2027 and current 2027 routes. Z101 is 101+ km / 7,600 hm; TUX070 70 km / 4,400 hm; RK50 50 km / 3,200 hm. Old download endpoints must not be treated as 2027 files."
+    },
+    {
+      "order": 90,
+      "name": "Munich Backyard",
+      "date": "2027-09-04",
+      "officialSource": "https://www.munichbackyard.de/tickets",
+      "routes": [
+        {
+          "name": "Backyard loop",
+          "distanceKm": 6.706,
+          "elevationM": null
+        }
+      ],
+      "gpxStatus": "official-page-has-download-gpx-track; binary-not-validated",
+      "note": "2027 edition confirmed for Saturday 4 September at the Ruderregattaanlage Oberschleißheim. Organizer page has a Download GPX Track link; not yet downloaded or parsed."
+    },
+    {
+      "order": 91,
+      "name": "Torlauf Dachstein",
+      "date": "2027-09-04 (secondary calendar; organizer page date needs confirmation)",
+      "officialSource": "https://www.torlauf-dachstein.info/",
+      "routes": [
+        {
+          "name": "Ultra",
+          "distanceKm": null,
+          "elevationM": null
+        },
+        {
+          "name": "Marathon",
+          "distanceKm": 42.5,
+          "elevationM": 2500
+        },
+        {
+          "name": "Half Marathon",
+          "distanceKm": null,
+          "elevationM": null
+        },
+        {
+          "name": "Skyrace",
+          "distanceKm": null,
+          "elevationM": null
+        },
+        {
+          "name": "10K",
+          "distanceKm": 10,
+          "elevationM": null
+        }
+      ],
+      "gpxStatus": "five-official-outdooractive-gpx-urls-recorded-earlier; binary-validation-pending",
+      "note": "Prior checkpoint recorded five direct official-linked GPX downloads. 2027 date appears in Austrian trail calendar, but confirm directly with organizer before altering app date. Distances/elevation should be read from current individual course pages."
+    },
+    {
+      "order": 92,
+      "name": "Ultra Trail Great Wall",
+      "date": "2027 not confirmed",
+      "officialSource": null,
+      "routes": [],
+      "gpxStatus": "no-current-official-2027-event-or-gpx-verified",
+      "note": "Database event identity and organizer remain ambiguous. Do not attach a GPX or invent an edition; confirm exact race and organizer first."
+    },
+    {
+      "order": 93,
+      "name": "Kaçkar by UTMB",
+      "date": "2027 edition",
+      "officialSource": "https://kackar.utmb.world/",
+      "routes": [
+        {
+          "name": "100K",
+          "gpxStatus": "official-map-gpx-page"
+        },
+        {
+          "name": "50K",
+          "gpxStatus": "official-map-gpx-page"
+        },
+        {
+          "name": "20K",
+          "gpxStatus": "official-map-gpx-page"
+        },
+        {
+          "name": "Ayder 4K",
+          "gpxStatus": "official-map-gpx-page"
+        }
+      ],
+      "gpxStatus": "official-2027-race-pages-with-map-gpx; direct-file-and-binary-validation-pending",
+      "note": "Previous official-source review confirmed four race pages with Map + GPX panels. Export current files individually and verify the 2027 edition before import."
+    },
+    {
+      "order": 94,
+      "name": "Wildstrubel by UTMB",
+      "date": "2027-09-09/12",
+      "officialSource": "https://wildstrubel.utmb.world/",
+      "routes": [
+        {
+          "name": "Wild 110 Crans-Montana",
+          "distanceKm": 113,
+          "elevationM": 6600
+        },
+        {
+          "name": "72K",
+          "distanceKm": 72,
+          "elevationM": 4600
+        },
+        {
+          "name": "55K",
+          "distanceKm": 55,
+          "elevationM": 3300
+        },
+        {
+          "name": "41K",
+          "distanceKm": 41,
+          "elevationM": 2500
+        },
+        {
+          "name": "26K",
+          "distanceKm": 26,
+          "elevationM": 1200
+        },
+        {
+          "name": "10K",
+          "distanceKm": 10,
+          "elevationM": 500
+        }
+      ],
+      "gpxStatus": "official-2027-race-pages; direct-file-and-binary-validation-pending",
+      "note": "Wildstrubel becomes a UTMB World Series Major in 2027; official site confirms 9–12 September. Six routes are listed in secondary course detail; use UTMB race pages as authority for final distances and GPX."
+    },
+    {
+      "order": 95,
+      "name": "Paraty Brazil by UTMB",
+      "date": "2027-09-23/26",
+      "officialSource": "https://paraty.utmb.world/en",
+      "faq": "https://paraty.utmb.world/pt/races-runners/other-information/faq",
+      "routes": [
+        {
+          "name": "PTR 100",
+          "distanceKm": 101,
+          "elevationM": 4850
+        },
+        {
+          "name": "PTR 55",
+          "distanceKm": 53,
+          "elevationM": 3200
+        },
+        {
+          "name": "PTR 34",
+          "distanceKm": 34,
+          "elevationM": 1100
+        },
+        {
+          "name": "PTR 25",
+          "distanceKm": 25,
+          "elevationM": 750
+        },
+        {
+          "name": "PTR 17",
+          "distanceKm": 17,
+          "elevationM": 550
+        },
+        {
+          "name": "NIGHT 10",
+          "distanceKm": 10,
+          "elevationM": 270
+        },
+        {
+          "name": "RUN 7",
+          "distanceKm": 7,
+          "elevationM": 50
+        }
+      ],
+      "gpxStatus": "official-faq-confirms-gpx-on-each-of-seven-race-pages; binaries-not-validated",
+      "note": "Official 2027 programme has seven distances, including new NIGHT 10. FAQ explicitly confirms GPX on each race page."
+    },
+    {
+      "order": 96,
+      "name": "Arberland Ultra Trail",
+      "date": "2027-09-18",
+      "officialSource": "https://www.arberland-bayerischer-wald.de/aktiv-im-sommer/trailrunning/arberland-ultra-trail/",
+      "routes": [
+        {
+          "name": "Arberland Ultra Trail",
+          "distanceKm": 102,
+          "elevationM": 3900
+        },
+        {
+          "name": "Arberland Classic Trail",
+          "distanceKm": 66,
+          "elevationM": 2400
+        },
+        {
+          "name": "Auerhahn Trail",
+          "distanceKm": 47,
+          "elevationM": 1900
+        },
+        {
+          "name": "Schachtenbach Trail",
+          "distanceKm": 36,
+          "elevationM": 1500
+        },
+        {
+          "name": "Arbersee Trail",
+          "distanceKm": 20,
+          "elevationM": 900
+        }
+      ],
+      "gpxStatus": "official-event-confirmed; organizer-pages-show-2026-gpx-only-in-previous-check; 2027-binary-not-validated",
+      "note": "Official regional tourism page confirms 18 September 2027 and five distances. Use 102 km / 3,900 hm for Ultra, 66/2,400 Classic, 47/1,900 Auerhahn, 36/1,500 Schachtenbach and 20/900 Arbersee. Earlier secondary source has small discrepancies (e.g. Classic 2,530 hm); organizer figures prevail."
+    },
+    {
+      "order": 97,
+      "name": "I Feel Slovenia Julian Alps Trail Run by UTMB",
+      "date": "2027-09-16/19",
+      "officialSource": "https://julianalps.utmb.world/races",
+      "faq": "https://julianalps.utmb.world/races-runners/runners/faq",
+      "routes": [
+        {
+          "name": "I Feel Slovenia 120K",
+          "distanceKm": 122,
+          "elevationM": 5855
+        },
+        {
+          "name": "Bled 80K",
+          "distanceKm": 80,
+          "elevationM": 3866
+        },
+        {
+          "name": "Karavanke 50K",
+          "distanceKm": 55,
+          "elevationM": 2828
+        },
+        {
+          "name": "Kranjska Gora 25K",
+          "distanceKm": 25,
+          "elevationM": 1090
+        },
+        {
+          "name": "Intersport 15K",
+          "distanceKm": 17,
+          "elevationM": 583
+        },
+        {
+          "name": "Vitranc 10K",
+          "distanceKm": 11,
+          "elevationM": 329
+        },
+        {
+          "name": "NextGen 10K",
+          "distanceKm": 11,
+          "elevationM": 329
+        }
+      ],
+      "gpxStatus": "official-faq-confirms-gpx-per-race-page; final-files-uploaded-end-august-2027",
+      "note": "Official FAQ says route GPX exists on each race page, but final versions will be uploaded at end August 2027 because small changes remain possible. 2027 programme uses revised published names/metrics."
+    },
+    {
+      "order": 98,
+      "name": "BMW Berlin Marathon",
+      "date": "2027-09-26 (event date; course GPX pending)",
+      "officialSource": "https://www.bmw-berlin-marathon.com/en/your-race/course/",
+      "routes": [
+        {
+          "name": "Marathon",
+          "distanceKm": 42.195,
+          "elevationM": null
+        }
+      ],
+      "gpxStatus": "official-course-page-currently-2026; no-2027-gpx-confirmed",
+      "note": "Retain 2026 course file as historical. Recheck official course page for 2027 version before linking/importing."
+    }
+  ],
+  "followUps": [
+    "Mayrhofen: request/locate all seven 2027 GPX downloads and compare metadata against old 2025/2026 endpoints.",
+    "Munich Backyard: download official GPX and parse distance/elevation; keep loop distance 6.706km pending binary check.",
+    "Torlauf Dachstein: verify 2027 event date and all five current course downloads on organizer pages.",
+    "Ultra Trail Great Wall: resolve identity/organizer before adding any track.",
+    "Kaçkar, Wildstrubel and Paraty: export each official UTMB GPX and technically validate binaries.",
+    "Arberland: preserve official organizer metrics where secondary sources differ; replace stale 2026 files only after 2027 files are released and validated.",
+    "Julian Alps: recheck final GPX after end-August 2027.",
+    "Berlin Marathon: wait for official 2027 course publication."
+  ],
+  "sources": [
+    "https://mayrhofen.ultraks.com/",
+    "https://www.mayrhofen.at/en/events/mayrhofen-ultraks",
+    "https://www.munichbackyard.de/tickets",
+    "https://www.torlauf-dachstein.info/",
+    "https://kackar.utmb.world/",
+    "https://wildstrubel.utmb.world/",
+    "https://paraty.utmb.world/en",
+    "https://paraty.utmb.world/pt/races-runners/other-information/faq",
+    "https://www.arberland-bayerischer-wald.de/aktiv-im-sommer/trailrunning/arberland-ultra-trail/",
+    "https://julianalps.utmb.world/races",
+    "https://julianalps.utmb.world/races-runners/runners/faq",
+    "https://www.bmw-berlin-marathon.com/en/your-race/course/",
+    "https://www.adamelloultratrail.it/en/"
+  ]
+}
