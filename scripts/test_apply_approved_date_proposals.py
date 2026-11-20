@@ -128,5 +128,18 @@ class ApprovedDateProposalTests(unittest.TestCase):
         self.assertEqual(updated["updatedAt"], feed["updatedAt"])
 
 
+    def test_event_dates_initialize_null_event_period(self):
+        feed = {"events": {"sample": {"eventPeriod": None, "routes": {}, "sources": []}}}
+        rows = [proposal("start", "event_change", {
+            "source": "official_event_date_feed", "eventId": "sample",
+            "field": "startDate", "oldValue": None, "newValue": "2027-03-21",
+            "sources": ["https://organizer.example/race"]
+        })]
+        updated, report = apply_proposals(feed, rows)
+        self.assertEqual(report["applied"], ["start"])
+        self.assertEqual(updated["events"]["sample"]["eventPeriod"]["startDate"], "2027-03-21")
+        self.assertTrue(updated["events"]["sample"]["eventPeriod"]["verified"])
+
+
 if __name__ == "__main__":
     unittest.main()
