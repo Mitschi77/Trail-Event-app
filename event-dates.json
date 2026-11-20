@@ -6456,6 +6456,50 @@
           "fallback": false
         }
       }
+    },
+    "strasimeno": {
+      "eventId": "strasimeno",
+      "checkedAt": "2026-11-20T00:00:00Z",
+      "status": "pending-review",
+      "sources": [
+        {
+          "url": "https://www.strasimeno.it/",
+          "status": "read",
+          "verification": "official-event-page"
+        }
+      ],
+      "eventPeriod": {
+        "startDate": "2027-03-07",
+        "endDate": "2027-03-07",
+        "verified": false
+      },
+      "routes": {
+        "0": {
+          "routeId": "strasimeno-10km",
+          "date": "2027-03-07",
+          "verified": false
+        },
+        "1": {
+          "routeId": "strasimeno-half-marathon-21-0975",
+          "date": "2027-03-07",
+          "verified": false
+        },
+        "2": {
+          "routeId": "strasimeno-34km",
+          "date": "2027-03-07",
+          "verified": false
+        },
+        "3": {
+          "routeId": "strasimeno-marathon-42-195",
+          "date": "2027-03-07",
+          "verified": false
+        },
+        "4": {
+          "routeId": "strasimeno-ultramarathon-58-04",
+          "date": "2027-03-07",
+          "verified": false
+        }
+      }
     }
   }
 }
