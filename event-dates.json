@@ -1878,14 +1878,14 @@
       },
       "routes": {
         "0": {
-          "routeId": "stubai-100-101-5800",
-          "date": "2027-07-02",
+          "routeId": "stubai-ultra-57-4200",
+          "date": "2027-07-03",
           "verified": true,
           "fallback": false
         },
         "1": {
-          "routeId": "stubai-ultra-57-4200",
-          "date": "2027-07-03",
+          "routeId": "stubai-100-101-5800",
+          "date": "2027-07-02",
           "verified": true,
           "fallback": false
         },
