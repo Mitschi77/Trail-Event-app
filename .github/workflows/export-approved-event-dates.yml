@@ -1,0 +1,86 @@
+name: Export approved event-date proposals to review PR
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+  id-token: write
+
+concurrency:
+  group: approved-event-date-export
+  cancel-in-progress: false
+
+jobs:
+  export:
+    if: github.actor_id == '162504698'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out main
+        uses: actions/checkout@v4
+        with:
+          ref: main
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+      - name: Fetch owner-approved date proposals using GitHub OIDC
+        env:
+          ACTIONS_ID_TOKEN_REQUEST_URL: ${{ env.ACTIONS_ID_TOKEN_REQUEST_URL }}
+          ACTIONS_ID_TOKEN_REQUEST_TOKEN: ${{ env.ACTIONS_ID_TOKEN_REQUEST_TOKEN }}
+        run: |
+          python3 - <<'PY'
+          import json, os, urllib.request
+          url = os.environ["ACTIONS_ID_TOKEN_REQUEST_URL"]
+          req = urllib.request.Request(url + "&audience=trail-event-date-export",
+              headers={"Authorization": "Bearer " + os.environ["ACTIONS_ID_TOKEN_REQUEST_TOKEN"]})
+          with urllib.request.urlopen(req, timeout=20) as response:
+              token = json.load(response)["value"]
+          endpoint = "https://oycfmdovrnvhcwxmpanl.supabase.co/functions/v1/export-approved-event-date-proposals"
+          request = urllib.request.Request(endpoint, data=b"{}", method="POST",
+              headers={"Authorization": "Bearer " + token, "Content-Type": "application/json"})
+          with urllib.request.urlopen(request, timeout=30) as response:
+              result = json.load(response)
+          if result.get("truncated"):
+              raise SystemExit("More than 100 approved date proposals; export is intentionally stopped for manual batching.")
+          with open("approved-event-proposals.json", "w", encoding="utf-8") as f:
+              json.dump({"proposals": result.get("proposals", [])}, f, ensure_ascii=False, indent=2)
+          print("Approved date proposals fetched:", result.get("totalApprovedDateProposals", 0))
+          PY
+      - name: Apply approved proposals to a separate candidate feed
+        run: |
+          python3 scripts/apply_approved_date_proposals.py --input approved-event-proposals.json --output event-dates.proposed.json
+          python3 - <<'PY'
+          import json
+          r=json.load(open("approved-event-proposals.json", encoding="utf-8"))
+          if not r.get("proposals"):
+              print("No approved date proposals; no PR will be created.")
+          PY
+      - name: Prepare proposed feed only when there are applicable changes
+        id: changes
+        run: |
+          cp event-dates.proposed.json event-dates.json
+          if git diff --quiet -- event-dates.json; then
+            echo "has_changes=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "has_changes=true" >> "$GITHUB_OUTPUT"
+          fi
+      - name: Create a review pull request
+        if: steps.changes.outputs.has_changes == 'true'
+        uses: peter-evans/create-pull-request@v7
+        with:
+          token: ${{ github.token }}
+          base: main
+          branch: bot/approved-event-date-proposals
+          delete-branch: true
+          commit-message: "data: apply owner-approved event date proposals"
+          title: "Review owner-approved event date proposals"
+          body: |
+            This PR applies only owner-approved event/route date proposals exported through the restricted Supabase OIDC endpoint.
+
+            - No proposal is marked published by this workflow.
+            - Old values are checked before changes are applied.
+            - Conflicts stop the workflow.
+            - Merge and Pages deployment remain separate owner-controlled steps.
+          add-paths: event-dates.json
