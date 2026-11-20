@@ -143,6 +143,13 @@ assert.ok(html.includes("Jetzt übernehmen?"), "Activity import preview must req
 
 assert.ok(html.includes("async function activityFileFingerprint(file)"), "Activity imports must fingerprint files for duplicate detection");
 assert.ok(html.includes("sourceFileHash:fileHash"), "Imported activity records must persist their file fingerprint");
+assert.ok(html.includes("const oldAttempts=localStorage.getItem('trailEventRunAttempts'),oldRecords=localStorage.getItem('trailEventRunRecords')"), "Activity import must retain the prior local state for rollback");
+assert.ok(html.includes("localStorage.getItem('trailEventRunAttempts')!==attemptsRaw") && html.includes("localStorage.getItem('trailEventRunRecords')!==recordsRaw"), "Activity import must verify both persisted records before mutating in-memory state");
+assert.ok(html.includes("!Number.isInteger(ri)||!Array.isArray(event?.routes)||event.routes[ri]!==route"), "GPX persistence must validate the selected event and route identity");
+assert.ok(html.includes("previousRaw=localStorage.getItem('trailEventDataEdits')") && html.includes("localStorage.setItem('trailEventDataEdits',previousRaw)"), "GPX persistence must restore the previous storage value after a failed write or read-back");
+assert.ok(html.includes("previewLines.filter(Boolean).join('\\n')+'\\n\\nJetzt übernehmen?'"), "Activity confirmation must use actual newline escapes, not display literal backslash-n text");
+assert.ok(html.includes("eventDataEdits=nextEdits;route.gpxTrack=data.track"), "GPX route state must only change after storage read-back succeeds");
+
 assert.ok(html.includes("const data=await parseActivityTrack(file),route=event.routes[ri]"), "Route file import must await async FIT/TCX parsing");
 const organizerRestrictedRoute = routeById("linz55-55-1-1429");
 assert.equal(organizerRestrictedRoute?.gpxAvailability, "organizer-download-restricted", "Donautrail route must retain its explicit organizer GPX restriction");
