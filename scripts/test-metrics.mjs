@@ -572,3 +572,86 @@ assert.equal(oetscherMarathon?.km, 51.45);
 assert.equal(oetscherMarathon?.hm, 2432);
 assert.equal(oetscherMarathon?.date, "2027-06-05");
 assert.equal(oetscherMarathon?.datePending, undefined);
+
+
+// Owner review workflow: approval is deliberately separate from publication.
+const functionSource = (name, nextName) => {
+  const start = html.indexOf("async function " + name + "(");
+  const end = html.indexOf("async function " + nextName + "(", start);
+  assert.ok(start >= 0 && end > start, name + " must remain available for workflow regression tests");
+  return html.slice(start, end).trim();
+};
+const decideSource = functionSource("decideProposal", "markProposalPublished");
+const publishSource = functionSource("markProposalPublished", "submitRouteProposal");
+let decisionUpdate = null;
+const decisionFilters = [];
+let publishRpc = null;
+let reviewRenderCount = 0;
+const reviewCloudClient = {
+  from(table) {
+    assert.equal(table, "event_change_proposals");
+    return {
+      update(values) {
+        decisionUpdate = values;
+        return {
+          eq(column, value) {
+            decisionFilters.push([column, value]);
+            return this;
+          },
+          then(resolve, reject) {
+            return Promise.resolve({ error: null }).then(resolve, reject);
+          }
+        };
+      }
+    };
+  },
+  rpc(name, args) {
+    publishRpc = { name, args };
+    return Promise.resolve({ error: null });
+  }
+};
+const reviewDocument = {
+  querySelector(selector) {
+    if (selector.startsWith("[data-review-note=")) return { value: "Prüfung bestanden" };
+    if (selector.startsWith("[data-publication-ref=")) return { value: "https://github.com/Mitschi77/Trail-Event-app/commit/1234567890abcdef" };
+    return null;
+  }
+};
+const decideProposalForTest = new Function(
+  "isReviewOwner", "cloudClient", "cloudUser", "document", "confirm",
+  "setProposalDeferred", "renderReviewQueue",
+  decideSource + "; return decideProposal;"
+)(
+  () => true, reviewCloudClient, { id: "owner-id" }, reviewDocument, () => true,
+  () => {}, async () => { reviewRenderCount++; }
+);
+await decideProposalForTest("proposal-1", "approved");
+assert.deepEqual(decisionUpdate, {
+  status: "approved",
+  reviewer_note: "Prüfung bestanden",
+  decided_by: "owner-id",
+  decided_at: decisionUpdate.decided_at
+}, "Approving a proposal must only record the owner decision, not publish app data");
+assert.ok(Number.isFinite(Date.parse(decisionUpdate.decided_at)), "Approval timestamp must be valid");
+assert.deepEqual(decisionFilters, [["id", "proposal-1"], ["status", "pending"]], "Only the selected pending proposal may be approved");
+assert.equal(publishRpc, null, "Approval must not call the publication RPC");
+assert.equal(reviewRenderCount, 1, "The review queue must refresh after approval");
+
+const markProposalPublishedForTest = new Function(
+  "isReviewOwner", "cloudClient", "cloudUser", "cloudReady", "document",
+  "confirm", "alert", "renderReviewQueue",
+  publishSource + "; return markProposalPublished;"
+)(
+  () => true, reviewCloudClient, { id: "owner-id" }, true, reviewDocument,
+  () => true, () => {}, async () => { reviewRenderCount++; }
+);
+await markProposalPublishedForTest("proposal-1");
+assert.deepEqual(publishRpc, {
+  name: "mark_event_proposal_published",
+  args: {
+    p_proposal_id: "proposal-1",
+    p_publication_ref: "https://github.com/Mitschi77/Trail-Event-app/commit/1234567890abcdef"
+  }
+}, "Publication may only be documented through the owner-only RPC after a GitHub reference is supplied");
+assert.ok(html.includes("Freigabe ist noch keine Veröffentlichung."), "Review UI must clearly distinguish approval from publication");
+assert.ok(html.includes("Ist dieser Vorschlag bereits im öffentlichen App-Stand enthalten und die Pages-Veröffentlichung erfolgreich?"), "Publication confirmation must require the real public Pages release");
