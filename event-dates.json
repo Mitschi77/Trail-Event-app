@@ -9278,9 +9278,15 @@
     },
     "pko-wroclaw-night-half-2027": {
       "eventId": "pko-wroclaw-night-half-2027",
-      "checkedAt": "2026-11-20T22:55:00Z",
+      "checkedAt": "2026-11-20T23:05:00Z",
       "status": "verified",
-      "sources": [],
+      "sources": [
+        {
+          "url": "https://wrocwalkmarathon.pl/aktualnosci-polmaraton/polmaraton-2/nocny-wroc%C5%82aw-p%C3%B3%C5%82maraton-powr%C3%B3ci-12-czerwca-2027-roku-znamy-termin-13-edycji",
+          "status": "read",
+          "verification": "official-2027-event-information"
+        }
+      ],
       "eventPeriod": {
         "startDate": "2027-06-12",
         "endDate": "2027-06-12",
@@ -9296,9 +9302,20 @@
     },
     "scania-halve-marathon-zwolle-2027": {
       "eventId": "scania-halve-marathon-zwolle-2027",
-      "checkedAt": "2026-11-20T22:55:00Z",
+      "checkedAt": "2026-11-20T23:05:00Z",
       "status": "verified",
-      "sources": [],
+      "sources": [
+        {
+          "url": "https://halvemarathonzwolle.nl/",
+          "status": "read",
+          "verification": "official-2027-event-information"
+        },
+        {
+          "url": "https://www.hardlopen.nl/evenementen/64942-scania-halve-marathon-zwolle/",
+          "status": "read",
+          "verification": "official-2027-event-information"
+        }
+      ],
       "eventPeriod": {
         "startDate": "2027-06-12",
         "endDate": "2027-06-12",
@@ -9314,9 +9331,20 @@
     },
     "hella-hamburg-half-2027": {
       "eventId": "hella-hamburg-half-2027",
-      "checkedAt": "2026-11-20T22:55:00Z",
+      "checkedAt": "2026-11-20T23:05:00Z",
       "status": "verified",
-      "sources": [],
+      "sources": [
+        {
+          "url": "https://www.hamburg-halbmarathon.com/information/",
+          "status": "read",
+          "verification": "official-2027-event-information"
+        },
+        {
+          "url": "https://www.hamburg-halbmarathon.de/",
+          "status": "read",
+          "verification": "official-2027-event-information"
+        }
+      ],
       "eventPeriod": {
         "startDate": "2027-06-27",
         "endDate": "2027-06-27",
@@ -9332,9 +9360,20 @@
     },
     "analog-devices-cork-city-marathon-2027": {
       "eventId": "analog-devices-cork-city-marathon-2027",
-      "checkedAt": "2026-11-20T22:55:00Z",
+      "checkedAt": "2026-11-20T23:05:00Z",
       "status": "verified",
-      "sources": [],
+      "sources": [
+        {
+          "url": "https://www.corkcity.ie/en/cork-city-marathon/",
+          "status": "read",
+          "verification": "official-2027-event-information"
+        },
+        {
+          "url": "https://aims-worldrunning.org/races/751.html",
+          "status": "read",
+          "verification": "official-2027-event-information"
+        }
+      ],
       "eventPeriod": {
         "startDate": "2027-06-06",
         "endDate": "2027-06-06",
@@ -9355,9 +9394,20 @@
     },
     "stuttgart-lauf-half-2027": {
       "eventId": "stuttgart-lauf-half-2027",
-      "checkedAt": "2026-11-20T22:55:00Z",
+      "checkedAt": "2026-11-20T23:05:00Z",
       "status": "verified",
-      "sources": [],
+      "sources": [
+        {
+          "url": "https://stuttgart-lauf.de/dein-lauf/halbmarathon",
+          "status": "read",
+          "verification": "official-2027-event-information"
+        },
+        {
+          "url": "https://stuttgart-lauf.de/dein-lauf/uebersicht",
+          "status": "read",
+          "verification": "official-2027-event-information"
+        }
+      ],
       "eventPeriod": {
         "startDate": "2027-06-06",
         "endDate": "2027-06-06",
@@ -9373,9 +9423,20 @@
     },
     "bjorn-borg-helsinki-half-marathon-2027": {
       "eventId": "bjorn-borg-helsinki-half-marathon-2027",
-      "checkedAt": "2026-11-20T22:55:00Z",
+      "checkedAt": "2026-11-20T23:05:00Z",
       "status": "verified",
-      "sources": [],
+      "sources": [
+        {
+          "url": "https://helsinkihalfmarathon.fi/en/event-info/",
+          "status": "read",
+          "verification": "official-2027-event-information"
+        },
+        {
+          "url": "https://helsinkihalfmarathon.fi/en/home/",
+          "status": "read",
+          "verification": "official-2027-event-information"
+        }
+      ],
       "eventPeriod": {
         "startDate": "2027-06-12",
         "endDate": "2027-06-12",
@@ -9391,9 +9452,15 @@
     },
     "mattoni-half-marathon-olomouc-2027": {
       "eventId": "mattoni-half-marathon-olomouc-2027",
-      "checkedAt": "2026-11-20T22:55:00Z",
+      "checkedAt": "2026-11-20T23:05:00Z",
       "status": "verified",
-      "sources": [],
+      "sources": [
+        {
+          "url": "https://www.runczech.com/en/events/mattoni-running-festival-olomouc-2027-2/races/mattoni-half-marathon-olomouc",
+          "status": "read",
+          "verification": "official-2027-event-information"
+        }
+      ],
       "eventPeriod": {
         "startDate": "2027-06-12",
         "endDate": "2027-06-12",
@@ -9409,9 +9476,15 @@
     },
     "mattoni-karlovy-vary-half-2027": {
       "eventId": "mattoni-karlovy-vary-half-2027",
-      "checkedAt": "2026-11-20T22:55:00Z",
+      "checkedAt": "2026-11-20T23:05:00Z",
       "status": "verified",
-      "sources": [],
+      "sources": [
+        {
+          "url": "https://www.runczech.com/en/events/mattoni-running-festival-karlovy-vary-2027-2/races/mattoni-half-marathon-karlovy-vary",
+          "status": "read",
+          "verification": "official-2027-event-information"
+        }
+      ],
       "eventPeriod": {
         "startDate": "2027-05-15",
         "endDate": "2027-05-15",
@@ -9427,9 +9500,15 @@
     },
     "adac-marathon-hannover-2027": {
       "eventId": "adac-marathon-hannover-2027",
-      "checkedAt": "2026-11-20T22:55:00Z",
+      "checkedAt": "2026-11-20T23:05:00Z",
       "status": "verified",
-      "sources": [],
+      "sources": [
+        {
+          "url": "https://www.marathon-hannover.de/teilnehmer/allgemeine-infos.html",
+          "status": "read",
+          "verification": "official-2027-event-information"
+        }
+      ],
       "eventPeriod": {
         "startDate": "2027-04-11",
         "endDate": "2027-04-11",
