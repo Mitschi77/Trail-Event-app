@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-20T21:00:00Z",
+  "updatedAt": "2026-11-20T21:05:00Z",
   "schemaVersion": 3,
   "events": {
     "la-corsa-della-bora": {
@@ -511,7 +511,7 @@
     },
     "tcs-london-marathon-major": {
       "eventId": "tcs-london-marathon-major",
-      "checkedAt": "2026-11-18T14:25:00.201965+00:00",
+      "checkedAt": "2026-11-20T21:05:00Z",
       "status": "verified",
       "sources": [
         {
@@ -521,7 +521,12 @@
         {
           "url": "https://www.londonmarathonevents.co.uk/london-marathon/road-closures",
           "status": "read",
-          "verification": "manual-official-page"
+          "verification": "official-organizer-2027-two-day-schedule"
+        },
+        {
+          "url": "https://www.londonmarathonevents.co.uk/london-marathon/article/announcing-2027-tcs-london-marathon-double-two-days-one-event-100000-people",
+          "status": "read",
+          "verification": "official-organizer-2027-two-day-format"
         }
       ],
       "eventPeriod": {
@@ -532,11 +537,9 @@
       "routes": {
         "0": {
           "routeId": "tcs-london-marathon-major-42-2",
-          "date": "2026-04-27",
-          "verified": false,
-          "fallback": true,
-          "fallbackYear": 2026,
-          "note": "Vorläufiger Ersatztermin aus der Ausgabe 2026; kein offizieller Starttermin 2027 gefunden."
+          "date": "2027-04-25",
+          "verified": true,
+          "note": "2027 findet das Rennen an zwei Tagen (24. und 25. April) statt; der Streckeneintrag verwendet den Sonntag als Hauptdatum."
         }
       }
     },
