@@ -180,6 +180,16 @@ MANUAL_EVENT_PERIODS = {
     "tschirgant-sky": ("2027-06-12", "2027-06-12", "https://tschirgant-sky.run/", {"0": "2027-06-12"}),
     "kaiserkrone": ("2027-06-25", "2027-06-26", "https://www.wilderkaiser.info/de/kaiserkrone-trail.html", {"0": "2027-06-25", "1": "2027-06-26", "2": "2027-06-26", "3": "2027-06-26", "4": "2027-06-26", "5": "2027-06-26"}),
     "kat100": ("2027-08-05", "2027-08-07", "https://kat.utmb.world/de/races", {"0": "2027-08-05", "1": "2027-08-06", "2": "2027-08-07", "3": "2027-08-07", "4": "2027-08-07"}),
+    "3trail-ibiza": ("2027-11-26", "2027-11-28", "https://3diastrailibiza.com/", {}),
+    "oman-by-utmb": ("2026-12-10", "2026-12-12", "https://oman.utmb.world/", {"jabal-classic-103-5000": "2026-12-10", "hajar-ultra-154-8000": "2026-12-10", "oman-skyward-canyon-50-2400": "2026-12-11", "oman-old-capital-trail-32-1400": "2026-12-12", "oman-scenic-ascent-21-5-550": "2026-12-12"}),
+}
+
+# These route entries are not scheduled as separate 2027 races yet. Do not
+# carry forward their 2026 dates as if they were valid dates for the next edition.
+MANUAL_NO_ROUTE_DATES = {
+    "mountain-man-winter": {"m-trail-22-650", "l-trail-31-750"},
+    "backyard-ultra": {"backyard-ultra-6-7-50"},
+    "3trail-ibiza": {"ultra-trail-73-5-2100"},
 }
 
 for event in events:
@@ -253,6 +263,8 @@ for event in events:
     for route_index, route in enumerate(event.get("routes", [])):
         key = str(route_index)
         if key in route_entries:
+            continue
+        if route.get("id") in MANUAL_NO_ROUTE_DATES.get(event["id"], set()):
             continue
         previous_edition_date = route_fallback_dates.get(key) or str(route.get("date") or "")
         if re.fullmatch(r"2026-\d{2}-\d{2}", previous_edition_date):
