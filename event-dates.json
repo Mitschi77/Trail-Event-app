@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-21T00:50:00Z",
+  "updatedAt": "2026-11-21T01:00:00Z",
   "schemaVersion": 3,
   "events": {
     "la-corsa-della-bora": {
@@ -12739,6 +12739,287 @@
           "verified": true
         }
       }
+    },
+    "wurzelwerk-backyard-2027": {
+      "eventId": "wurzelwerk-backyard-2027",
+      "checkedAt": "2026-11-21T01:00:00Z",
+      "status": "verified",
+      "sources": [
+        {
+          "url": "https://my.raceresult.com/425008/",
+          "status": "read",
+          "verification": "official-2027-event-information"
+        },
+        {
+          "url": "https://www.laufpix.de/termine/2027/wurzelwerk-backyard-ultra",
+          "status": "read",
+          "verification": "official-2027-event-information"
+        }
+      ],
+      "eventPeriod": {
+        "startDate": "2027-05-07",
+        "endDate": "2027-05-07",
+        "verified": true
+      },
+      "routes": {
+        "0": {
+          "routeId": "wurzelwerk-backyard-2027-loop",
+          "date": "2027-05-07",
+          "verified": false
+        }
+      },
+      "note": "Datum über RaceResult bestätigt; 6,706 km aus sekundärem Eventkalender, nicht als offizielle GPX-/Höhenmeterangabe bestätigt."
+    },
+    "jenaer-backyard-2027": {
+      "eventId": "jenaer-backyard-2027",
+      "checkedAt": "2026-11-21T01:00:00Z",
+      "status": "verified",
+      "sources": [
+        {
+          "url": "https://jenaerbackyardultra.de/",
+          "status": "read",
+          "verification": "official-2027-event-information"
+        }
+      ],
+      "eventPeriod": {
+        "startDate": "2027-06-05",
+        "endDate": "2027-06-05",
+        "verified": true
+      },
+      "routes": {
+        "0": {
+          "routeId": "jenaer-backyard-2027-loop",
+          "date": "2027-06-05",
+          "verified": true
+        }
+      }
+    },
+    "schluchthof-backyard-2027": {
+      "eventId": "schluchthof-backyard-2027",
+      "checkedAt": "2026-11-21T01:00:00Z",
+      "status": "unconfirmed",
+      "sources": [
+        {
+          "url": "https://www.schluchthof.de/",
+          "status": "read",
+          "verification": "secondary-calendar-only"
+        },
+        {
+          "url": "https://finndu.app/race/4th-schluchthof-backyard-4th-schluchthof-backyard/",
+          "status": "read",
+          "verification": "secondary-calendar-only"
+        }
+      ],
+      "eventPeriod": {
+        "startDate": "2027-06-19",
+        "endDate": "2027-06-19",
+        "verified": false
+      },
+      "routes": {
+        "0": {
+          "routeId": "schluchthof-backyard-2027-loop",
+          "date": "2027-06-19",
+          "verified": false
+        }
+      },
+      "note": "Termin/Format nur sekundär oder noch in Planung; vor endgültiger Freigabe offizielle Veranstalterbestätigung abwarten."
+    },
+    "fraenkischer-backyard-2027": {
+      "eventId": "fraenkischer-backyard-2027",
+      "checkedAt": "2026-11-21T01:00:00Z",
+      "status": "unconfirmed",
+      "sources": [
+        {
+          "url": "https://www.fraenkischerbackyard.de/",
+          "status": "read",
+          "verification": "secondary-calendar-only"
+        },
+        {
+          "url": "https://www.hdsports.org/laufen/fraenkischer-backyard",
+          "status": "read",
+          "verification": "secondary-calendar-only"
+        }
+      ],
+      "eventPeriod": {
+        "startDate": "2027-09-03",
+        "endDate": "2027-09-03",
+        "verified": false
+      },
+      "routes": {
+        "0": {
+          "routeId": "fraenkischer-backyard-2027-loop",
+          "date": "2027-09-03",
+          "verified": false
+        }
+      },
+      "note": "Termin/Format nur sekundär oder noch in Planung; vor endgültiger Freigabe offizielle Veranstalterbestätigung abwarten."
+    },
+    "swub-sept-2027": {
+      "eventId": "swub-sept-2027",
+      "checkedAt": "2026-11-21T01:00:00Z",
+      "status": "verified",
+      "sources": [
+        {
+          "url": "https://neckarlauf.com/schwarzwaldultra-backyard.html",
+          "status": "read",
+          "verification": "official-2027-event-information"
+        }
+      ],
+      "eventPeriod": {
+        "startDate": "2027-09-11",
+        "endDate": "2027-09-11",
+        "verified": true
+      },
+      "routes": {
+        "0": {
+          "routeId": "swub-sept-2027-loop",
+          "date": "2027-09-11",
+          "verified": true
+        }
+      }
+    },
+    "palatina-backyard-2027": {
+      "eventId": "palatina-backyard-2027",
+      "checkedAt": "2026-11-21T01:00:00Z",
+      "status": "verified",
+      "sources": [
+        {
+          "url": "https://www.palatina-backyard-ultra.de/",
+          "status": "read",
+          "verification": "official-2027-event-information"
+        },
+        {
+          "url": "https://www.palatina-backyard-ultra.de/wettkampfregeln",
+          "status": "read",
+          "verification": "official-2027-event-information"
+        }
+      ],
+      "eventPeriod": {
+        "startDate": "2027-09-04",
+        "endDate": "2027-09-04",
+        "verified": true
+      },
+      "routes": {
+        "0": {
+          "routeId": "palatina-backyard-2027-loop",
+          "date": "2027-09-04",
+          "verified": true
+        }
+      }
+    },
+    "tharandter-backyard-2027": {
+      "eventId": "tharandter-backyard-2027",
+      "checkedAt": "2026-11-21T01:00:00Z",
+      "status": "verified",
+      "sources": [
+        {
+          "url": "https://www.scfreital.de/leichtathletik/backyard-ultramarathon",
+          "status": "read",
+          "verification": "official-2027-event-information"
+        }
+      ],
+      "eventPeriod": {
+        "startDate": "2027-08-14",
+        "endDate": "2027-08-14",
+        "verified": true
+      },
+      "routes": {
+        "0": {
+          "routeId": "tharandter-backyard-2027-loop",
+          "date": "2027-08-14",
+          "verified": true
+        }
+      }
+    },
+    "osee-backyard-2027": {
+      "eventId": "osee-backyard-2027",
+      "checkedAt": "2026-11-21T01:00:00Z",
+      "status": "verified",
+      "sources": [
+        {
+          "url": "https://o-see-backyard.de/",
+          "status": "read",
+          "verification": "official-2027-event-information"
+        },
+        {
+          "url": "https://www.o-see-sports.de/veranstaltungen/detail/16-backyard-ultra-o-see-backyard-ultra",
+          "status": "read",
+          "verification": "official-2027-event-information"
+        }
+      ],
+      "eventPeriod": {
+        "startDate": "2027-07-10",
+        "endDate": "2027-07-13",
+        "verified": true
+      },
+      "routes": {
+        "0": {
+          "routeId": "osee-backyard-2027-loop",
+          "date": "2027-07-10",
+          "verified": true
+        }
+      },
+      "note": "Offizieller Veranstalter bestätigt 10.–13.07.2027, 6,7056 km und 40 hm je Runde, Start/Ziel Westparkstadion Zittau/Pethau."
+    },
+    "charity-backyard-seekirch-2027": {
+      "eventId": "charity-backyard-seekirch-2027",
+      "checkedAt": "2026-11-21T01:00:00Z",
+      "status": "verified",
+      "sources": [
+        {
+          "url": "https://www.eintracht-seekirch.com/backyard-for-charity-2027",
+          "status": "read",
+          "verification": "official-2027-event-information"
+        },
+        {
+          "url": "https://my.raceresult.com/417493/",
+          "status": "read",
+          "verification": "official-2027-event-information"
+        }
+      ],
+      "eventPeriod": {
+        "startDate": "2027-06-19",
+        "endDate": "2027-06-20",
+        "verified": true
+      },
+      "routes": {
+        "0": {
+          "routeId": "charity-backyard-seekirch-2027-loop",
+          "date": "2027-06-19",
+          "verified": true
+        }
+      },
+      "note": "Offizielle Eintracht-Seekirch-Seite bestätigt 19.–20.06.2027, 6,7 km je Runde, maximal 24 Stunden."
+    },
+    "lucky-loops-backyard-2027": {
+      "eventId": "lucky-loops-backyard-2027",
+      "checkedAt": "2026-11-21T01:00:00Z",
+      "status": "verified",
+      "sources": [
+        {
+          "url": "https://my.raceresult.com/426858/",
+          "status": "read",
+          "verification": "official-2027-event-information"
+        },
+        {
+          "url": "https://gotrail.run/de/termine/lucky-loops-backyard-ultra",
+          "status": "read",
+          "verification": "official-2027-event-information"
+        }
+      ],
+      "eventPeriod": {
+        "startDate": "2027-06-04",
+        "endDate": "2027-06-07",
+        "verified": true
+      },
+      "routes": {
+        "0": {
+          "routeId": "lucky-loops-backyard-2027-loop",
+          "date": "2027-06-04",
+          "verified": false
+        }
+      },
+      "note": "RaceResult bestätigt Veranstaltung 04.–07.06.2027; 6,706 km aus sekundärem Laufkalender."
     }
   }
 }
