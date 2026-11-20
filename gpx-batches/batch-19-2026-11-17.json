@@ -1,6 +1,6 @@
 {
   "batch": 19,
-  "checkedAt": "2026-11-17",
+  "checkedAt": "2026-11-20",
   "scope": "Top-level events 91-95 in current EVENTS order",
   "status": "saved",
   "appCommit": "df7615c687c291e0dd245bdbc755c9e83554f929",
@@ -8,7 +8,7 @@
     {
       "order": 91,
       "name": "Torlauf Dachstein",
-      "gpxStatus": "Five direct GPX downloads verified from official organizer page via Outdooractive and added to app: Ultra, Marathon, Half Marathon, Skyrace, 10K.",
+      "gpxStatus": "Five official Outdooractive GPX URLs remain saved. Current organizer page confirms at least Ultra 72/4300, Marathon 42/2500 and Half Marathon 24/510; XML bytes and all five route profiles still require technical validation.",
       "source": "https://www.torlauf-dachstein.info/infos",
       "downloads": [
         {
@@ -32,7 +32,28 @@
           "url": "https://www.outdooractive.com/de/download.tour.gpx?i=235239301&project=outdooractive"
         }
       ],
-      "followUp": "Use the app's one-click GPX import on each route and check parsed distance/elevation."
+      "followUp": "Download/parse each of five GPX files, compare measured length and elevation to current organizer course pages; keep previous versions separate if the route year differs.",
+      "verified2027CourseInfo": {
+        "source": "https://www.torlauf-dachstein.info/infos",
+        "routes": [
+          {
+            "name": "Ultra",
+            "distanceKm": 72,
+            "elevationHm": 4300
+          },
+          {
+            "name": "Marathon",
+            "distanceKm": 42,
+            "elevationHm": 2500
+          },
+          {
+            "name": "Halbmarathon",
+            "distanceKm": 24,
+            "elevationHm": 510
+          }
+        ],
+        "note": "Current official course page shows Ultra 72 km/4,300 hm, Marathon 42 km/2,500 hm and Half Marathon 24 km/510 hm. Five official GPX links (Ultra, Marathon, Half Marathon, Skyrace, 10K) remain in the app; their downloaded XML and track metrics have not yet been independently checked against these values. Organizer notes measurement software may vary."
+      }
     },
     {
       "order": 92,
@@ -43,23 +64,135 @@
     {
       "order": 93,
       "name": "Kaçkar by UTMB",
-      "gpxStatus": "Official 2027 UTMB race pages confirmed for 100K, 50K, 20K and Ayder 4K; each page provides Map + GPX. Linked in app; direct file endpoints not extracted.",
+      "gpxStatus": "Official 2027 event pages confirm four races and current metrics: 82/5600, 44/3000, 20/1400 and Ayder 4K 4/230. Map + GPX controls are present, but direct endpoints and file XML remain to be extracted/validated.",
       "source": "https://kackar.utmb.world/",
-      "followUp": "Export each course from its official Map + GPX panel."
+      "followUp": "Export each course from its official Map + GPX panel.",
+      "verified2027CourseInfo": {
+        "source": "https://kackar.utmb.world/",
+        "dates": [
+          "2027-09-10",
+          "2027-09-12"
+        ],
+        "routes": [
+          {
+            "name": "Kaçkar 100K",
+            "date": "2027-09-11",
+            "distanceKm": 82,
+            "elevationHm": 5600
+          },
+          {
+            "name": "Kaçkar 50K",
+            "date": "2027-09-11",
+            "distanceKm": 44,
+            "elevationHm": 3000
+          },
+          {
+            "name": "Kaçkar 20K",
+            "date": "2027-09-11",
+            "distanceKm": 20,
+            "elevationHm": 1400
+          },
+          {
+            "name": "Ayder 4K",
+            "distanceKm": 4,
+            "elevationHm": 230
+          }
+        ]
+      }
     },
     {
       "order": 94,
       "name": "Wildstrubel by UTMB",
-      "gpxStatus": "Official 2027 UTMB race pages and Map + GPX panels confirmed for six listed routes; individual course pages linked in app.",
+      "gpxStatus": "Official 2027 edition confirmed for 9–12 September and the event becomes a UTMB Major. Current official page lists at least Wild 110 (113/6600), Wild 70 (72/4600) and Wild 55 (55/3300). GPX controls exist on race pages, direct files not yet parsed.",
       "source": "https://wildstrubel.utmb.world/",
-      "followUp": "Export each course from official Map + GPX panel."
+      "followUp": "Extract each of the six official 2027 race GPX files and verify the full event list; don't treat linked page presence as proof of file download.",
+      "verified2027CourseInfo": {
+        "source": "https://wildstrubel.utmb.world/de",
+        "dates": [
+          "2027-09-09",
+          "2027-09-12"
+        ],
+        "routes": [
+          {
+            "name": "Wild 110 Crans-Montana",
+            "date": "2027-09-10",
+            "distanceKm": 113,
+            "elevationHm": 6600
+          },
+          {
+            "name": "Wild 70 Kandersteg",
+            "date": "2027-09-10",
+            "distanceKm": 72,
+            "elevationHm": 4600
+          },
+          {
+            "name": "Wild 55 Adelboden",
+            "date": "2027-09-11",
+            "distanceKm": 55,
+            "elevationHm": 3300
+          }
+        ],
+        "note": "Official 2027 page confirms the event becomes a UTMB Major. More route pages may list further races; do not assume only these three without checking the full race list."
+      }
     },
     {
       "order": 95,
       "name": "Paraty Brazil by UTMB",
-      "gpxStatus": "Official FAQ explicitly confirms GPX files are available on each of seven race pages. Individual 2027 race pages linked in app.",
+      "gpxStatus": "2027 event 23–26 September confirmed; seven races now include new NIGHT 10 (10 km/270 hm). Organizer FAQ confirms GPX files on individual race pages, but NIGHT 10 GPX and all file contents still need direct validation.",
       "source": "https://paraty.utmb.world/pt/races",
-      "followUp": "Download each course from its official race page and import into app."
+      "followUp": "Verify the app includes NIGHT 10 as a seventh 2027 route, then export/parse all seven official GPX files separately.",
+      "verified2027CourseInfo": {
+        "source": "https://paraty.utmb.world/pt/news/inscricoes-paraty-brazil-by-utmb-2027",
+        "dates": [
+          "2027-09-23",
+          "2027-09-26"
+        ],
+        "routes": [
+          {
+            "name": "PTR 100",
+            "distanceKm": 101,
+            "elevationHm": 4850,
+            "date": "2027-09-24"
+          },
+          {
+            "name": "PTR 55",
+            "distanceKm": 53,
+            "elevationHm": 3200,
+            "date": "2027-09-25"
+          },
+          {
+            "name": "PTR 34",
+            "distanceKm": 34,
+            "elevationHm": 1100,
+            "date": "2027-09-25"
+          },
+          {
+            "name": "PTR 25",
+            "distanceKm": 25,
+            "elevationHm": 750,
+            "date": "2027-09-25"
+          },
+          {
+            "name": "PTR 17",
+            "distanceKm": 17,
+            "elevationHm": 550,
+            "date": "2027-09-25"
+          },
+          {
+            "name": "NIGHT 10",
+            "distanceKm": 10,
+            "elevationHm": 270,
+            "date": "2027-09-25"
+          },
+          {
+            "name": "RUN 7",
+            "distanceKm": 7,
+            "elevationHm": 50,
+            "date": "2027-09-26"
+          }
+        ],
+        "note": "Official organizer announcement adds NIGHT 10 for 2027; seven distances total. Previous route list should be checked for this new night race."
+      }
     }
   ],
   "nextBatch": "Continue with events 96-100 after package 19 checkpoint."
