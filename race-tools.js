@@ -57,3 +57,14 @@ root.querySelector('[data-cp-output]').innerHTML='<h5>Verpflegungsstationen des 
 const prior=window.showPlannedEventDetails;if(typeof prior!=='function')return;
 window.showPlannedEventDetails=function(id,ri){prior(id,ri);const root=document.getElementById('plannedEventDetailContent'),r=EVENTS?.[id]?.routes?.[ri];if(!root||!r)return;const wrap=document.createElement('div');wrap.innerHTML=renderPlan(id,ri,r);root.appendChild(wrap);const panel=wrap.querySelector('[id^="coursePlan"]');const saved=window.racePlanData?.(id,ri)||{};const st=saved.aidStations||r.aidStations||[];panel.querySelector('[data-cp-stations]').value=st.map(x=>[x.name,x.km,x.food||'',x.drink||''].join(' | ')).join('\n');panel.querySelector('[data-cp-station-source]').value=saved.aidStationsSource||r.aidStationsSource||'';panel.querySelector('[data-cp-save]').addEventListener('click',()=>calculate(panel,id,ri,r));};
 })();
+
+// Push button fallback: remove the inline handler so the document-level
+// capture handler can route taps even when the browser blocks inline handlers.
+(()=>{
+  const repair=()=>{
+    const button=document.getElementById('enableReviewNotifications');
+    if(button) button.removeAttribute('onclick');
+  };
+  if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',repair,{once:true});
+  else repair();
+})();
