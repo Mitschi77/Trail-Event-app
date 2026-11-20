@@ -1,0 +1,362 @@
+{
+  "batch": 44,
+  "checkedAt": "2026-11-20",
+  "scope": "Top-level events 39-48 in current EVENTS order; second-pass official-source and route/GPX audit",
+  "policy": {
+    "historicalGpx": "Existing GPX files remain valid until a new official file has been released, downloaded and validated. Never delete or replace a historical file merely because a new edition is announced.",
+    "binaryValidation": "No external GPX binary in this package was downloaded and parsed by the available inspection tools. Direct links and official map export availability are recorded separately from binary validation.",
+    "appChanges": "Audit-only checkpoint; no app route data or GPX files changed."
+  },
+  "events": [
+    {
+      "order": 39,
+      "name": "Mountain Ultra Trail by UTMB",
+      "source": "https://mut.utmb.world/en",
+      "editionDate": "2027-05-28/30",
+      "routes": [
+        {
+          "name": "MUT Miler",
+          "distanceKm": 168,
+          "elevationGainM": 8014,
+          "startDate": "2027-05-28",
+          "gpx": "official interactive map/export; direct file not extracted"
+        },
+        {
+          "name": "MUT 100",
+          "distanceKm": 100,
+          "elevationGainM": 4717,
+          "startDate": "2027-05-29",
+          "gpx": "official interactive map/export; direct file not extracted"
+        },
+        {
+          "name": "MUT 60",
+          "distanceKm": 58,
+          "elevationGainM": 3005,
+          "startDate": "2027-05-29",
+          "gpx": "official interactive map/export; direct file not extracted"
+        },
+        {
+          "name": "MUT Marathon",
+          "distanceKm": 43,
+          "elevationGainM": 2312,
+          "startDate": "2027-05-29",
+          "gpx": "official interactive map/export; direct file not extracted"
+        },
+        {
+          "name": "MUT Challenge",
+          "distanceKm": 25,
+          "elevationGainM": 1043,
+          "startDate": "2027-05-30",
+          "gpx": "official interactive map/export; direct file not extracted"
+        },
+        {
+          "name": "MUT Lite",
+          "distanceKm": 11.9,
+          "elevationGainM": 312,
+          "startDate": "2027-05-30",
+          "gpx": "official interactive map/export; direct file not extracted"
+        }
+      ],
+      "finding": "The official 2027 event has six races. MUT Miler is now specified at 168 km / 8,014 m+; this replaces the older 'to be confirmed' flag at the evidence level only. Compare all six app route entries against these official values.",
+      "followUp": "Reconcile app route labels/metrics and extract the official GPX exports; binary validation still pending."
+    },
+    {
+      "order": 40,
+      "name": "MOUNTAINMAN Berchtesgaden – WATZ",
+      "source": "https://mountainman.de/trailrunning-events/alps/berchtesgaden/",
+      "editionDate": "2027-06-03/06",
+      "routes": [
+        {
+          "name": "WATZ Ultimate",
+          "distanceKm": 111,
+          "elevationGainM": 5300,
+          "format": "4 stages, Thu-Sun"
+        },
+        {
+          "name": "WATZ Double",
+          "distanceKm": 57,
+          "elevationGainM": 2500,
+          "format": "stages 3-4, Sat-Sun"
+        },
+        {
+          "name": "WATZ Final",
+          "distanceKm": 25,
+          "elevationGainM": 1300,
+          "format": "stage 4, Sun"
+        }
+      ],
+      "finding": "Official organizer page confirms the three formats and that downloadable GPX stage maps are included. Stage dates/legs: 3 Jun Berchtesgaden–Marktschellenberg; 4 Jun Marktschellenberg–Bischofswiesen; 5 Jun Bischofswiesen–Ramsau; 6 Jun Ramsau–Berchtesgaden. No direct public GPX file URLs extracted.",
+      "followUp": "Obtain official stage downloads/Komoot voucher and associate stage files with the correct multi-day formats."
+    },
+    {
+      "order": 41,
+      "name": "Jenaer Backyard Ultra",
+      "source": "https://jenaerbackyardultra.de/",
+      "editionDate": "2027-06-05",
+      "routes": [
+        {
+          "name": "Backyard loop",
+          "distanceKm": 6.7,
+          "elevationGainM": 150,
+          "format": "hourly repeated loop"
+        }
+      ],
+      "finding": "Official page confirms 5 June 2027, 06:00, Sportplatz Cospeda, 6.7 km loop and just under 150 m per lap. No official GPX download shown. Event is sold out; waitlist mentioned.",
+      "followUp": "Keep GPX pending; request official file from organizer if a map/track is needed."
+    },
+    {
+      "order": 42,
+      "name": "Dolomiti Extreme Trail",
+      "source": "https://www.dolomitiextremetrail.com/en/rules",
+      "editionDate": "2027-06-11/13",
+      "routes": [
+        {
+          "name": "DXT 103K",
+          "distanceKm": 102,
+          "elevationGainM": 6500,
+          "gpx": "direct official link recorded in earlier batch; binary not parsed"
+        },
+        {
+          "name": "DXT 72K",
+          "distanceKm": 76,
+          "elevationGainM": 4800,
+          "gpx": "direct official link recorded in earlier batch; binary not parsed"
+        },
+        {
+          "name": "DXT 55K",
+          "distanceKm": 58,
+          "elevationGainM": 3600,
+          "gpx": "direct official link recorded in earlier batch; binary not parsed"
+        },
+        {
+          "name": "DXT 35K",
+          "distanceKm": 38,
+          "elevationGainM": 2500,
+          "gpx": "official route page; direct file not re-verified in this pass"
+        },
+        {
+          "name": "DXT 22K",
+          "distanceKm": 21,
+          "elevationGainM": 1140,
+          "gpx": "official route page; direct file not re-verified in this pass"
+        },
+        {
+          "name": "DXT 11K",
+          "distanceKm": 13,
+          "elevationGainM": 670,
+          "gpx": "official route page; direct file not re-verified in this pass"
+        },
+        {
+          "name": "Mini DXT",
+          "distanceKm": 2.5,
+          "elevationGainM": null,
+          "gpx": "no direct file confirmed"
+        }
+      ],
+      "finding": "Organizer rules specify seven routes, not only the three ultra distances: 102/6500, 76/4800, 58/3600, 38/2500, 21/1140, 13/670 and Mini 2.5 km. All races start/finish in Forno di Zoldo. Existing app route inventory should include all seven; three direct official GPX URLs were already recorded in the prior checkpoint.",
+      "followUp": "Check all seven app entries; obtain/verify direct official GPX for 35K, 22K and 11K; parse all files before marking validated."
+    },
+    {
+      "order": 43,
+      "name": "Hochkönig Ultraks",
+      "source": "https://www.hochkoenig-ultraks.at/",
+      "editionDate": "2027-06-04/06",
+      "routes": [
+        {
+          "name": "HK70",
+          "distanceKm": 71.5,
+          "elevationGainM": 4150
+        },
+        {
+          "name": "HK48",
+          "distanceKm": 48,
+          "elevationGainM": 2940
+        },
+        {
+          "name": "HK30-Extreme",
+          "distanceKm": 34,
+          "elevationGainM": 2680
+        },
+        {
+          "name": "HK30-Panorama",
+          "distanceKm": 30.7,
+          "elevationGainM": 2050
+        },
+        {
+          "name": "HK20",
+          "distanceKm": 20.5,
+          "elevationGainM": 1020
+        },
+        {
+          "name": "HK-Sprint",
+          "distanceKm": 10,
+          "elevationGainM": 310
+        },
+        {
+          "name": "HK-Vertical-Race",
+          "distanceKm": 5.9,
+          "elevationGainM": 1080
+        },
+        {
+          "name": "Raiffeisen-Team-Trail",
+          "distanceKm": 3.6,
+          "elevationGainM": 120
+        },
+        {
+          "name": "Mini Ultraks",
+          "distanceKm": null,
+          "elevationGainM": null,
+          "details": "Kids 0.5 km, Junior 1 km, Youth 1.5 km"
+        }
+      ],
+      "finding": "The current official 2027 page confirms nine formats and their distances/elevation where applicable. This is more complete than the earlier seven-route inventory and makes clear Mini Ultraks has three age-group distances. No direct public GPX URLs were verified in this pass.",
+      "followUp": "Compare all nine formats with app routes; check official course pages/runner email for GPX releases."
+    },
+    {
+      "order": 44,
+      "name": "mozart 100 by UTMB",
+      "source": "https://mozart.utmb.world/de/races",
+      "editionDate": "2027-06-05",
+      "routes": [
+        {
+          "name": "mozart 100",
+          "distanceKm": 119,
+          "elevationGainM": 6000
+        },
+        {
+          "name": "mozart Ultra",
+          "distanceKm": 84,
+          "elevationGainM": 4800
+        },
+        {
+          "name": "mozart Marathon",
+          "distanceKm": 44,
+          "elevationGainM": 1600
+        },
+        {
+          "name": "mozart Half Marathon",
+          "distanceKm": 28,
+          "elevationGainM": 1100
+        },
+        {
+          "name": "mozart Lake Trail",
+          "distanceKm": 12,
+          "elevationGainM": 200
+        },
+        {
+          "name": "mozart Ultra Relay",
+          "distanceKm": 84,
+          "elevationGainM": 4800,
+          "format": "relay"
+        }
+      ],
+      "finding": "The official 2027 event inventory includes six formats, including Ultra Relay. The previously recorded key mismatches remain: 119 km / 6000 m+ 100 and 12 km / 200 m+ Lake Trail are required; official Marathon is 44/1600 and Half is 28/1100. Interactive Map + GPX sections exist, but direct file URLs were not extracted.",
+      "followUp": "Reconcile the app to six official formats, including Ultra Relay, and extract GPX from each official race map."
+    },
+    {
+      "order": 45,
+      "name": "Ultra Scotland",
+      "sources": [
+        "https://www.gbultras.com/ultra-scotland-50/",
+        "https://www.gbultras.com/ultra-scotland-100/"
+      ],
+      "editionDate": "2027-06-05",
+      "routes": [
+        {
+          "name": "Ultra Scotland 50",
+          "format": "50 miles",
+          "gpx": "official Racemap GPX download; high-level race route"
+        },
+        {
+          "name": "Ultra Scotland 100",
+          "distanceMiles": 104,
+          "elevationGainM": 4611,
+          "format": "104 miles",
+          "gpx": "official Racemap GPX download; high-level race route and low-level severe-weather alternative"
+        }
+      ],
+      "finding": "Both official race pages expose GPX downloads via the embedded Racemap map. The 100-mile event is specified as 104 miles / 4,611 m+, not exactly 100 miles, and has two alternatives (high-level race route and low-level severe-weather route).",
+      "followUp": "Download both 50-mile and 100-mile high-level GPX files; keep the 100-mile low-level route separately labelled as a weather alternative and validate the binaries."
+    },
+    {
+      "order": 46,
+      "name": "Falkensteinlauf",
+      "source": "https://www.falkensteinlauf.de/",
+      "editionDate": "2027-07-17",
+      "routes": [],
+      "finding": "Organizer confirms the 2027 date (17 July) but has not published 2027 route distances, elevation totals or GPX. The page describes the course surface as 85% forest road and 15% asphalt, with a short steep rise (about 17 m over 170 m) per lap; number of laps/total route length is not stated in the current 2027 notice.",
+      "followUp": "Keep route metrics and GPX pending until the 2027 registration/race information is published."
+    },
+    {
+      "order": 47,
+      "name": "Trail 100 Andorra by UTMB",
+      "source": "https://andorra.utmb.world/",
+      "editionDate": "2027-06-11/13",
+      "routes": [
+        {
+          "name": "Ultra 105K",
+          "distanceKm": 105,
+          "elevationGainM": 6800
+        },
+        {
+          "name": "Trail 80K",
+          "distanceKm": 79,
+          "elevationGainM": 3900
+        },
+        {
+          "name": "Trail 50K",
+          "distanceKm": 50,
+          "elevationGainM": 3400
+        },
+        {
+          "name": "Trail 25K",
+          "distanceKm": 24.9,
+          "elevationGainM": 1350
+        },
+        {
+          "name": "Trail 10K",
+          "distanceKm": 10,
+          "elevationGainM": 500
+        }
+      ],
+      "finding": "The official 2027 inventory has five races. The short course is officially named Trail 25K (actual 24.9 km), not Trail 21K; the prior detail URL for the 21K label returned 404. Official pages show interactive map/GPX sections, but direct file URLs were not extracted.",
+      "followUp": "Rename the 24.9 km entry to Trail 25K; verify the official route page and extract GPX exports for all five races."
+    },
+    {
+      "order": 48,
+      "name": "Ötscher Trail",
+      "source": "https://www.oetschertrail.run/",
+      "editionDate": "2027-06-04/06",
+      "routes": [
+        {
+          "name": "Vertical Race",
+          "distanceKm": 5.1,
+          "elevationGainM": 1140
+        },
+        {
+          "name": "Marathon Trail",
+          "distanceKm": 51,
+          "elevationGainM": 2300
+        },
+        {
+          "name": "Speed Trail",
+          "distanceKm": 16,
+          "elevationGainM": 940
+        },
+        {
+          "name": "Skyrace",
+          "distanceKm": 23,
+          "elevationGainM": 1980
+        },
+        {
+          "name": "Easy Trail",
+          "distanceKm": null,
+          "elevationGainM": null
+        }
+      ],
+      "finding": "The organizer confirms five individual competitions and an interactive 2027 route map. Official page confirms Vertical Race 5.1 km / 1140 m+; ITRA-linked event data gives Marathon 51/2300, Speed 16/940 and Skyrace 23/1980. The current official page text does not provide reliable Easy Trail metrics in the extracted material. Five direct GPX links were recorded in the earlier checkpoint but their binary contents/year/distance have not been validated here.",
+      "followUp": "Keep all five prior GPX links as candidates only; validate each file against the 2027 map and obtain the Easy Trail metrics from the organizer."
+    }
+  ],
+  "nextBatch": "Continue with events 49-58 in the next ten-event package."
+}
