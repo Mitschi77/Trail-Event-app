@@ -142,6 +142,53 @@ assert.ok(html.includes("distanceDelta>=.15"), "Activity import must flag materi
 assert.ok(html.includes("Jetzt übernehmen?"), "Activity import preview must require confirmation");
 
 assert.ok(html.includes("async function activityFileFingerprint(file)"), "Activity imports must fingerprint files for duplicate detection");
+
+const persistGpxStart = html.indexOf("function persistGpxData(");
+const persistGpxEnd = html.indexOf("\nasync function importRouteGpx", persistGpxStart);
+assert.ok(persistGpxStart >= 0 && persistGpxEnd > persistGpxStart, "Atomic GPX persistence function boundaries must be present");
+const persistGpxSource = html.slice(persistGpxStart, persistGpxEnd).trim();
+function makePersistGpxHarness({failWrite=false, mismatchReadback=false, previousRaw='{"existing":{"keep":true}}'}={}) {
+  const route = {id:"route-a",km:10};
+  const event = {routes:[route]};
+  let stored = previousRaw;
+  let failNextWrite = failWrite;
+  let cloudSaves = 0;
+  const localStorage = {
+    getItem(key) { assert.equal(key,"trailEventDataEdits"); return mismatchReadback && stored!==previousRaw ? previousRaw : stored; },
+    setItem(key,value) {
+      assert.equal(key,"trailEventDataEdits");
+      if(failNextWrite && value!==previousRaw){failNextWrite=false;throw new Error("quota");}
+      stored=value;
+    },
+    removeItem(key) { assert.equal(key,"trailEventDataEdits"); stored=null; }
+  };
+  const factory = new Function("EVENTS","routeKey","initialEdits","localStorage","queuePlannerCloudSave",
+    "let eventDataEdits=initialEdits; "+persistGpxSource+"; return {persistGpxData,getEdits:()=>eventDataEdits};");
+  const initialEdits={existing:{keep:true}};
+  return {api:factory([event],(id,ri)=>id+":"+ri,initialEdits,localStorage,()=>cloudSaves++),
+    route,event,getStored:()=>stored,getCloudSaves:()=>cloudSaves,initialEdits};
+}
+const gpxData={track:[[1,2],[3,4]],distanceKm:10.2,ascentHm:450,descentHm:430,elevationProfile:[{km:0,hm:100},{km:10,hm:550}]};
+const successGpx=makePersistGpxHarness();
+assert.equal(successGpx.api.persistGpxData(successGpx.route,successGpx.event,0,gpxData,"route.gpx"),true);
+assert.equal(successGpx.route.gpxDistanceKm,10.2);
+assert.equal(successGpx.api.getEdits()["0:0"].gpxFileName,"route.gpx");
+assert.equal(successGpx.getStored(),JSON.stringify(successGpx.api.getEdits()));
+assert.equal(successGpx.getCloudSaves(),1);
+assert.throws(()=>successGpx.api.persistGpxData(successGpx.route,successGpx.event,1,gpxData,"bad.gpx"),/gehören nicht zur ausgewählten Strecke/);
+const failedGpx=makePersistGpxHarness({failWrite:true});
+assert.throws(()=>failedGpx.api.persistGpxData(failedGpx.route,failedGpx.event,0,gpxData,"quota.gpx"),/nicht sicher gespeichert/);
+assert.equal(failedGpx.route.gpxTrack,undefined,"Failed GPX writes must not mutate the route");
+assert.deepEqual(failedGpx.api.getEdits(),failedGpx.initialEdits,"Failed GPX writes must not mutate in-memory edits");
+assert.equal(failedGpx.getStored(),'{"existing":{"keep":true}}',"Failed GPX writes must restore the previous storage value");
+assert.equal(failedGpx.getCloudSaves(),0);
+const readbackGpx=makePersistGpxHarness({mismatchReadback:true});
+assert.throws(()=>readbackGpx.api.persistGpxData(readbackGpx.route,readbackGpx.event,0,gpxData,"mismatch.gpx"),/nicht sicher gespeichert/);
+assert.equal(readbackGpx.route.gpxTrack,undefined,"Failed GPX read-back must not mutate the route");
+assert.deepEqual(readbackGpx.api.getEdits(),readbackGpx.initialEdits);
+assert.equal(readbackGpx.getStored(),'{"existing":{"keep":true}}',"Failed GPX read-back must restore prior storage");
+assert.equal(readbackGpx.getCloudSaves(),0);
+
 assert.ok(html.includes("sourceFileHash:fileHash"), "Imported activity records must persist their file fingerprint");
 assert.ok(html.includes("oldAttempts=localStorage.getItem('trailEventRunAttempts'),oldRecords=localStorage.getItem('trailEventRunRecords')"), "Activity import must retain the prior local state for rollback");
 assert.ok(html.includes("localStorage.getItem('trailEventRunAttempts')!==attemptsRaw") && html.includes("localStorage.getItem('trailEventRunRecords')!==recordsRaw"), "Activity import must verify both persisted records before mutating in-memory state");
