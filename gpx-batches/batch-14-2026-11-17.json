@@ -1,6 +1,6 @@
 {
   "batch": 14,
-  "checkedAt": "2026-11-17",
+  "checkedAt": "2026-11-20",
   "scope": "Top-level events 66-70 in current EVENTS order",
   "status": "saved",
   "appCommit": "da8d203e93384b6275a15e1eab83250bdc3e56e5",
@@ -16,7 +16,7 @@
         "ET23",
         "ET16"
       ],
-      "followUp": "Use app GPX import control to load each track."
+      "followUp": "Download all four official 2027 GPX tracks (EUT102, EUT53, ET23, ET16) from the organizer pages and validate XML/trackpoints, measured distance and elevation before declaring files technically checked."
     },
     {
       "order": 67,
@@ -27,7 +27,7 @@
         "https://www.mtut.de/trails/trail-t30/",
         "https://www.mtut.de/trails/trail-t13/"
       ],
-      "followUp": "Download Ultra and T13 from organizer pages; T30 can be imported directly."
+      "followUp": "Retrieve the official Ultra 64K and T13 GPX files from their organizer pages; retain the T30 direct link. Parse all three files before marking verified."
     },
     {
       "order": 68,
@@ -38,24 +38,25 @@
         "https://dolomythsrun.it/en/sky-route.html",
         "https://dolomythsrun.it/en/v-rodella.html"
       ],
-      "followUp": "Recheck when organizer publishes GPX tracks."
+      "followUp": "Recheck the V-Rodella 'GPX later' notice and other 2027 race pages; keep route pages linked meanwhile."
     },
     {
       "order": 69,
       "name": "Eiger Ultratrail",
-      "gpxStatus": "Official 2027 E101/E51 pages provide Map + GPX, but current download buttons resolve to E101_2026 and E51_2026. Stale files rejected for 2027; official route pages linked in app.",
+      "gpxStatus": "Official 2027 E101/E51 pages provide Map + GPX controls, but the saved downloadable files are still named E101_2026 and E51_2026. Keep those files as last available versions; label historical/edition unconfirmed and do not present as current 2027 course.",
       "sources": [
         "https://eiger.utmb.world/races/E101",
         "https://eiger.utmb.world/races/E51"
       ],
-      "followUp": "Wait for UTMB 2027 GPX files; do not import 2026 files."
+      "followUp": "Wait for UTMB 2027 GPX files; do not import 2026 files.",
+      "retentionRule": "Do not delete or invalidate 2026 GPX files until official 2027 replacements are published and checked. If route differences are possible, mark historical route / current-route match unconfirmed."
     },
     {
       "order": 70,
       "name": "Bucovina Ultra Rocks by UTMB",
       "gpxStatus": "2027 direct GPX links remain for Ultra Rocks, Four Summits, Lady's Rocks, Rocky and Radical. Rumble Rock GPX says available soon; RUNC Challenge old file lacks 2027 confirmation.",
       "source": "https://bucovina.utmb.world/races",
-      "followUp": "Recheck Rumble Rock and RUNC Challenge official GPX publication."
+      "followUp": "Keep the five direct 2027 GPX URLs; obtain Rumble Rock when released. RUNC Challenge legacy file remains available only as last known version with year/source and no 2027 match claim."
     }
   ],
   "nextBatch": "Continue with events 71-75 after package 14 checkpoint."
