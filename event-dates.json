@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-21T00:20:00Z",
+  "updatedAt": "2026-11-21T00:30:00Z",
   "schemaVersion": 3,
   "events": {
     "la-corsa-della-bora": {
@@ -11963,6 +11963,284 @@
           "verified": true
         }
       }
+    },
+    "dnb-oslo-maraton-2027": {
+      "eventId": "dnb-oslo-maraton-2027",
+      "checkedAt": "2026-11-21T00:30:00Z",
+      "status": "verified",
+      "sources": [
+        {
+          "url": "https://oslomaraton.no/en/",
+          "status": "read",
+          "verification": "official-2027-event-information"
+        }
+      ],
+      "eventPeriod": {
+        "startDate": "2027-09-18",
+        "endDate": "2027-09-18",
+        "verified": true
+      },
+      "routes": {
+        "0": {
+          "routeId": "dnb-oslo-maraton-2027-42k",
+          "date": "2027-09-18",
+          "verified": true
+        },
+        "1": {
+          "routeId": "dnb-oslo-maraton-2027-half",
+          "date": "2027-09-18",
+          "verified": true
+        },
+        "2": {
+          "routeId": "dnb-oslo-maraton-2027-10k",
+          "date": "2027-09-18",
+          "verified": true
+        }
+      }
+    },
+    "zurich-seville-marathon-2027": {
+      "eventId": "zurich-seville-marathon-2027",
+      "checkedAt": "2026-11-21T00:30:00Z",
+      "status": "verified",
+      "sources": [
+        {
+          "url": "https://www.zurichmaratonsevilla.es/en/zms-regulations",
+          "status": "read",
+          "verification": "official-2027-event-information"
+        }
+      ],
+      "eventPeriod": {
+        "startDate": "2027-02-21",
+        "endDate": "2027-02-21",
+        "verified": true
+      },
+      "routes": {
+        "0": {
+          "routeId": "zurich-seville-marathon-2027-42k",
+          "date": "2027-02-21",
+          "verified": true
+        }
+      }
+    },
+    "nn-marathon-rotterdam-2027": {
+      "eventId": "nn-marathon-rotterdam-2027",
+      "checkedAt": "2026-11-21T00:30:00Z",
+      "status": "verified",
+      "sources": [
+        {
+          "url": "https://nnmarathonrotterdam.nl/en/",
+          "status": "read",
+          "verification": "official-2027-event-information"
+        }
+      ],
+      "eventPeriod": {
+        "startDate": "2027-04-10",
+        "endDate": "2027-04-11",
+        "verified": true
+      },
+      "routes": {
+        "0": {
+          "routeId": "nn-marathon-rotterdam-2027-42k",
+          "date": "2027-04-11",
+          "verified": true
+        },
+        "1": {
+          "routeId": "nn-marathon-rotterdam-2027-quarter",
+          "date": "2027-04-11",
+          "verified": true
+        },
+        "2": {
+          "routeId": "nn-marathon-rotterdam-2027-relay2",
+          "date": "2027-04-11",
+          "verified": true
+        },
+        "3": {
+          "routeId": "nn-marathon-rotterdam-2027-relay4",
+          "date": "2027-04-11",
+          "verified": true
+        }
+      }
+    },
+    "adidas-stockholm-marathon-2027": {
+      "eventId": "adidas-stockholm-marathon-2027",
+      "checkedAt": "2026-11-21T00:30:00Z",
+      "status": "verified",
+      "sources": [
+        {
+          "url": "https://stockholmmarathon.se/eng/",
+          "status": "read",
+          "verification": "official-2027-event-information"
+        }
+      ],
+      "eventPeriod": {
+        "startDate": "2027-05-29",
+        "endDate": "2027-05-29",
+        "verified": true
+      },
+      "routes": {
+        "0": {
+          "routeId": "adidas-stockholm-marathon-2027-42k",
+          "date": "2027-05-29",
+          "verified": true
+        }
+      }
+    },
+    "wizz-air-milano-marathon-2027": {
+      "eventId": "wizz-air-milano-marathon-2027",
+      "checkedAt": "2026-11-21T00:30:00Z",
+      "status": "verified",
+      "sources": [
+        {
+          "url": "https://www.generalimilanomarathon.it/en/",
+          "status": "read",
+          "verification": "official-2027-event-information"
+        }
+      ],
+      "eventPeriod": {
+        "startDate": "2027-04-04",
+        "endDate": "2027-04-04",
+        "verified": true
+      },
+      "routes": {
+        "0": {
+          "routeId": "wizz-air-milano-marathon-2027-42k",
+          "date": "2027-04-04",
+          "verified": true
+        }
+      }
+    },
+    "zurich-marato-barcelona-2027": {
+      "eventId": "zurich-marato-barcelona-2027",
+      "checkedAt": "2026-11-21T00:30:00Z",
+      "status": "verified",
+      "sources": [
+        {
+          "url": "https://zurichmaratobarcelona.es/",
+          "status": "read",
+          "verification": "official-2027-event-information"
+        }
+      ],
+      "eventPeriod": {
+        "startDate": "2027-03-14",
+        "endDate": "2027-03-14",
+        "verified": true
+      },
+      "routes": {
+        "0": {
+          "routeId": "zurich-marato-barcelona-2027-42k",
+          "date": "2027-03-14",
+          "verified": true
+        }
+      }
+    },
+    "volksbank-muenster-marathon-2027": {
+      "eventId": "volksbank-muenster-marathon-2027",
+      "checkedAt": "2026-11-21T00:30:00Z",
+      "status": "verified",
+      "sources": [
+        {
+          "url": "https://www.volksbank-muenster-marathon.de/",
+          "status": "read",
+          "verification": "official-2027-event-information"
+        }
+      ],
+      "eventPeriod": {
+        "startDate": "2027-09-12",
+        "endDate": "2027-09-12",
+        "verified": true
+      },
+      "routes": {
+        "0": {
+          "routeId": "volksbank-muenster-marathon-2027-42k",
+          "date": "2027-09-12",
+          "verified": true
+        }
+      }
+    },
+    "backyard-community-uitikon-aug-2027": {
+      "eventId": "backyard-community-uitikon-aug-2027",
+      "checkedAt": "2026-11-21T00:30:00Z",
+      "status": "unconfirmed",
+      "sources": [
+        {
+          "url": "https://all-sportevents.eu/en/theme/backyard-ultras/country/switzerland",
+          "status": "read",
+          "verification": "secondary-calendar-only"
+        },
+        {
+          "url": "https://backyard-ultra.live/",
+          "status": "read",
+          "verification": "secondary-calendar-only"
+        }
+      ],
+      "eventPeriod": {
+        "startDate": "2027-08-21",
+        "endDate": "2027-08-21",
+        "verified": false
+      },
+      "routes": {
+        "0": {
+          "routeId": "backyard-community-uitikon-aug-2027-7k",
+          "date": "2027-08-21",
+          "verified": false
+        }
+      },
+      "note": "Sekundärer Kalenderfund; Veranstalterbestätigung und finale Streckenangaben fehlen."
+    },
+    "abu-ternberg-trail-2027": {
+      "eventId": "abu-ternberg-trail-2027",
+      "checkedAt": "2026-11-21T00:30:00Z",
+      "status": "verified",
+      "sources": [
+        {
+          "url": "https://www.austriabackyardultra.com/",
+          "status": "read",
+          "verification": "official-2027-event-information"
+        }
+      ],
+      "eventPeriod": {
+        "startDate": "2027-05-06",
+        "endDate": "2027-05-06",
+        "verified": true
+      },
+      "routes": {
+        "0": {
+          "routeId": "abu-ternberg-trail-2027-loop",
+          "date": "2027-05-06",
+          "verified": true
+        }
+      },
+      "note": "2027-Datum bestätigt, Streckenwerte nicht. 2026-Detailseite mit 6,706 km/351 hm nicht auf 2027 übertragen."
+    },
+    "backyard-community-uitikon-oct-2027": {
+      "eventId": "backyard-community-uitikon-oct-2027",
+      "checkedAt": "2026-11-21T00:30:00Z",
+      "status": "unconfirmed",
+      "sources": [
+        {
+          "url": "https://all-sportevents.eu/en/theme/backyard-ultras/country/switzerland",
+          "status": "read",
+          "verification": "secondary-calendar-only"
+        },
+        {
+          "url": "https://backyard-ultra.live/",
+          "status": "read",
+          "verification": "secondary-calendar-only"
+        }
+      ],
+      "eventPeriod": {
+        "startDate": "2027-10-31",
+        "endDate": "2027-10-31",
+        "verified": false
+      },
+      "routes": {
+        "0": {
+          "routeId": "backyard-community-uitikon-oct-2027-7k",
+          "date": "2027-10-31",
+          "verified": false
+        }
+      },
+      "note": "Sekundärer Kalenderfund; Veranstalterbestätigung und finale Streckenangaben fehlen."
     }
   }
 }
