@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-20T23:30:00Z",
+  "updatedAt": "2026-11-20T23:40:00Z",
   "schemaVersion": 3,
   "events": {
     "la-corsa-della-bora": {
@@ -10309,6 +10309,294 @@
           "verified": true
         }
       }
+    },
+    "runthrough-the-fox-trail-2027": {
+      "eventId": "runthrough-the-fox-trail-2027",
+      "checkedAt": "2026-11-20T23:40:00Z",
+      "status": "verified",
+      "sources": [
+        {
+          "url": "https://www.runthroughtrails.com/the-fox/",
+          "status": "read",
+          "verification": "official-2027-event-information"
+        }
+      ],
+      "eventPeriod": {
+        "startDate": "2027-05-22",
+        "endDate": "2027-05-22",
+        "verified": true
+      },
+      "routes": {
+        "0": {
+          "routeId": "fox-trail-62k-62-756",
+          "date": "2027-05-22",
+          "verified": true
+        },
+        "1": {
+          "routeId": "fox-trail-41k-41",
+          "date": "2027-05-22",
+          "verified": true
+        },
+        "2": {
+          "routeId": "fox-trail-20k-20",
+          "date": "2027-05-22",
+          "verified": true
+        }
+      },
+      "note": "Punkt-zu-Punkt-Veranstaltung mit distanzabhängigen Startorten; The Burys Field ist Zielbereich. Startorte je Distanz auf Veranstalterseite noch gesondert zu prüfen."
+    },
+    "runthrough-trails-lake-district-2027": {
+      "eventId": "runthrough-trails-lake-district-2027",
+      "checkedAt": "2026-11-20T23:40:00Z",
+      "status": "verified",
+      "sources": [
+        {
+          "url": "https://www.runthroughtrails.com/lake-district",
+          "status": "read",
+          "verification": "official-2027-event-information"
+        }
+      ],
+      "eventPeriod": {
+        "startDate": "2027-04-10",
+        "endDate": "2027-04-10",
+        "verified": true
+      },
+      "routes": {
+        "0": {
+          "routeId": "runthrough-lake-district-23k-23-895",
+          "date": "2027-04-10",
+          "verified": true
+        },
+        "1": {
+          "routeId": "runthrough-lake-district-53k-53-2644",
+          "date": "2027-04-10",
+          "verified": true
+        }
+      }
+    },
+    "runthrough-trails-girona-2027": {
+      "eventId": "runthrough-trails-girona-2027",
+      "checkedAt": "2026-11-20T23:40:00Z",
+      "status": "verified",
+      "sources": [
+        {
+          "url": "https://www.runthroughtrails.com/girona",
+          "status": "read",
+          "verification": "official-2027-event-information"
+        }
+      ],
+      "eventPeriod": {
+        "startDate": "2027-04-03",
+        "endDate": "2027-04-03",
+        "verified": true
+      },
+      "routes": {
+        "0": {
+          "routeId": "runthrough-girona-15k-15-488",
+          "date": "2027-04-03",
+          "verified": true
+        },
+        "1": {
+          "routeId": "runthrough-girona-28k-28-917",
+          "date": "2027-04-03",
+          "verified": true
+        },
+        "2": {
+          "routeId": "runthrough-girona-50k-54-6-1981",
+          "date": "2027-04-03",
+          "verified": true
+        }
+      },
+      "note": "Offizielle Detailseite und Eventübersicht unterscheiden sich bei 50K-Höhenmetern (1.971/1.981 m) und Startzeit (08:00/08:15). App nutzt 1.971 hm aus Detailseite; Startzeit bleibt offen bis zur Klärung."
+    },
+    "runthrough-trails-morzine-avoriaz-2027": {
+      "eventId": "runthrough-trails-morzine-avoriaz-2027",
+      "checkedAt": "2026-11-20T23:40:00Z",
+      "status": "verified",
+      "sources": [
+        {
+          "url": "https://www.runthroughtrails.com/morzine-avoriaz",
+          "status": "read",
+          "verification": "official-2027-event-information"
+        }
+      ],
+      "eventPeriod": {
+        "startDate": "2027-06-19",
+        "endDate": "2027-06-19",
+        "verified": true
+      },
+      "routes": {
+        "0": {
+          "routeId": "runthrough-morzine-10k",
+          "date": "2027-06-19",
+          "verified": true
+        },
+        "1": {
+          "routeId": "runthrough-morzine-25k-25-1343",
+          "date": "2027-06-19",
+          "verified": true
+        },
+        "2": {
+          "routeId": "runthrough-morzine-50k-50-2768",
+          "date": "2027-06-19",
+          "verified": true
+        },
+        "3": {
+          "routeId": "runthrough-morzine-100k-100-5854",
+          "date": "2027-06-19",
+          "verified": true
+        }
+      }
+    },
+    "runthrough-trails-ascona-locarno-2027": {
+      "eventId": "runthrough-trails-ascona-locarno-2027",
+      "checkedAt": "2026-11-20T23:40:00Z",
+      "status": "verified",
+      "sources": [
+        {
+          "url": "https://www.runthroughtrails.com/ascona-locarno",
+          "status": "read",
+          "verification": "official-2027-event-information"
+        }
+      ],
+      "eventPeriod": {
+        "startDate": "2027-04-24",
+        "endDate": "2027-04-24",
+        "verified": true
+      },
+      "routes": {
+        "0": {
+          "routeId": "runthrough-ascona-24k-24-1271",
+          "date": "2027-04-24",
+          "verified": true
+        },
+        "1": {
+          "routeId": "runthrough-ascona-42k-42-2400",
+          "date": "2027-04-24",
+          "verified": true
+        }
+      }
+    },
+    "adidas-stockholm-half-marathon-2027": {
+      "eventId": "adidas-stockholm-half-marathon-2027",
+      "checkedAt": "2026-11-20T23:40:00Z",
+      "status": "verified",
+      "sources": [
+        {
+          "url": "https://www.superhalfs.com/en/events/stockholm/",
+          "status": "read",
+          "verification": "official-2027-event-information"
+        }
+      ],
+      "eventPeriod": {
+        "startDate": "2027-08-21",
+        "endDate": "2027-08-21",
+        "verified": true
+      },
+      "routes": {
+        "0": {
+          "routeId": "stockholm-half-2027-21k",
+          "date": "2027-08-21",
+          "verified": true
+        }
+      }
+    },
+    "warsaw-half-marathon-2027": {
+      "eventId": "warsaw-half-marathon-2027",
+      "checkedAt": "2026-11-20T23:40:00Z",
+      "status": "verified",
+      "sources": [
+        {
+          "url": "https://polmaratonwarszawski.com/en/info-half-marathon/",
+          "status": "read",
+          "verification": "official-2027-event-information"
+        }
+      ],
+      "eventPeriod": {
+        "startDate": "2027-03-14",
+        "endDate": "2027-03-14",
+        "verified": true
+      },
+      "routes": {
+        "0": {
+          "routeId": "warsaw-half-2027-21k",
+          "date": "2027-03-14",
+          "verified": true
+        }
+      }
+    },
+    "napoli-city-half-marathon-2027": {
+      "eventId": "napoli-city-half-marathon-2027",
+      "checkedAt": "2026-11-20T23:40:00Z",
+      "status": "verified",
+      "sources": [
+        {
+          "url": "https://www.napolirunning.com/en/rules/",
+          "status": "read",
+          "verification": "official-2027-event-information"
+        }
+      ],
+      "eventPeriod": {
+        "startDate": "2027-02-21",
+        "endDate": "2027-02-21",
+        "verified": true
+      },
+      "routes": {
+        "0": {
+          "routeId": "napoli-city-half-2027-21k",
+          "date": "2027-02-21",
+          "verified": true
+        }
+      }
+    },
+    "wiener-staedtische-halbmarathon-2027": {
+      "eventId": "wiener-staedtische-halbmarathon-2027",
+      "checkedAt": "2026-11-20T23:40:00Z",
+      "status": "verified",
+      "sources": [
+        {
+          "url": "https://www.superhalfs.com/en/events/vienna/",
+          "status": "read",
+          "verification": "official-2027-event-information"
+        }
+      ],
+      "eventPeriod": {
+        "startDate": "2027-04-18",
+        "endDate": "2027-04-18",
+        "verified": true
+      },
+      "routes": {
+        "0": {
+          "routeId": "vienna-half-2027-21k",
+          "date": "2027-04-18",
+          "verified": true
+        }
+      }
+    },
+    "rimi-riga-half-marathon-2027": {
+      "eventId": "rimi-riga-half-marathon-2027",
+      "checkedAt": "2026-11-20T23:40:00Z",
+      "status": "verified",
+      "sources": [
+        {
+          "url": "https://rimirigamarathon.com/en/courses/",
+          "status": "read",
+          "verification": "official-2027-event-information"
+        }
+      ],
+      "eventPeriod": {
+        "startDate": "2027-05-16",
+        "endDate": "2027-05-16",
+        "verified": true
+      },
+      "routes": {
+        "0": {
+          "routeId": "riga-half-2027-21k",
+          "date": "2027-05-16",
+          "verified": true
+        }
+      },
+      "note": "Offizielle Seite bestätigt Halbmarathon am 16.05.2027; Zeitplanübersicht enthält widersprüchliche Überschriften und teils alte Uhrzeiten. Startzeit daher nicht als bestätigt geführt."
     }
   }
 }
