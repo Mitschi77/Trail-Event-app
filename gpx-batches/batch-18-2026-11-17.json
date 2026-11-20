@@ -8,14 +8,14 @@
     {
       "order": 86,
       "name": "Fränkischer Backyard Ultra",
-      "gpxStatus": "Organizer page still exposes the 2026 announcement and 6.7 km GPX; no 2027 date or file verified. Keep 2026 file as last available version, not current 2027.",
+      "gpxStatus": "2026 organizer page shows 6.7 km loop and GPX; no 2027 date or file verified. Keep 2026 file as last available version, not current 2027.",
       "source": "https://www.fraenkischerbackyard.de/",
       "followUp": "Wait for 2027 organizer announcement."
     },
     {
       "order": 87,
       "name": "Dolomiti di Brenta Trail",
-      "gpxStatus": "Official 2027 route pages provide maps, descriptions and GPS tracks for 64K, 45K and 21K. Organizer may change courses until 31 July 2027; treat current tracks as provisional 2027 versions and preserve any previous editions separately.",
+      "gpxStatus": "Official 2027 route pages provide maps, descriptions and GPS tracks for 64K, 45K and 21K. Organizer may change courses until 31 July 2027; treat current tracks as provisional 2027 versions and preserve previous editions separately.",
       "sources": [
         "https://www.dolomitidibrentatrail.it/en/routes/64k/",
         "https://www.dolomitidibrentatrail.it/en/routes/xterra45k/",
