@@ -98,6 +98,12 @@ if (!ownerTestPushFunction.includes("!config?.public_key") ||
     !ownerTestPushFunction.includes("webpush.setVapidDetails(config.subject, config.public_key, config.private_key)")) {
   throw new Error("The owner push test must use the public VAPID key returned by the secure configuration RPC.");
 }
+if (!ownerTestPushFunction.includes("if (!subscriptions?.length) return json({ sent: 0, removed: 0, failed: 0, noSubscriptions: true }, 200)")) {
+  throw new Error("The owner push test must distinguish devices that were never registered.");
+}
+if (!ownerTestPushFunction.includes("removed > 0 && failed === 0")) {
+  throw new Error("Expired push subscriptions must be reported separately from missing registrations.");
+}
 if (ownerTestPushFunction.includes("VAPID_PUBLIC_KEY =")) {
   throw new Error("The owner push test must not hardcode a VAPID key.");
 }
