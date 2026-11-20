@@ -5198,22 +5198,6 @@
       "eventPeriod": null,
       "routes": {}
     },
-    "strasimeno-half-marathon": {
-      "eventId": "strasimeno-half-marathon",
-      "checkedAt": "2026-11-19T20:35:00.000Z",
-      "status": "unconfirmed",
-      "sources": [],
-      "eventPeriod": null,
-      "routes": {}
-    },
-    "strasimeno-marathon": {
-      "eventId": "strasimeno-marathon",
-      "checkedAt": "2026-11-19T20:35:00.000Z",
-      "status": "unconfirmed",
-      "sources": [],
-      "eventPeriod": null,
-      "routes": {}
-    },
     "bologna-marathon": {
       "eventId": "bologna-marathon",
       "checkedAt": "2026-11-19T20:35:00.000Z",
