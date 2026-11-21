@@ -1,0 +1,198 @@
+{
+  "batch": 73,
+  "checkedAt": "2026-11-21",
+  "scope": "events 189-198 from event-dates.json",
+  "rules": [
+    "Prefer official organizer sources; label calendar-only data provisional.",
+    "Do not reuse previous-edition routes or GPX without explicit edition confirmation.",
+    "Map controls and GPX links are not proof of binary download or complete track validation.",
+    "Do not delete or overwrite old GPX files until a new official binary is downloaded, parsed and validated.",
+    "Audit-only: no app runtime or live event records changed."
+  ],
+  "events": [
+    {
+      "sequence": 189,
+      "eventId": "maratona-dei-laghi",
+      "name": "Maratona dei Laghi",
+      "edition": 2027,
+      "date": "2027-04-11",
+      "distanceKm": 42.195,
+      "startTime": "09:00 provisional",
+      "start": "Angera (VA), Italy",
+      "status": "official-organizer-regulation-published; approvals-pending",
+      "gpxStatus": "no-current-gpx-binary-validated",
+      "detail": "Organizer's 2027 regulation confirms first edition, marathon distance and Angera start. Course description names Lake Maggiore, Lake Varese and Lake Monate, but official route geometry, finish location, technical characteristics and homologation are still to be announced; schedule explicitly provisional.",
+      "sources": [
+        "https://maratonadeilaghi.it/regolamento-maratona/",
+        "https://maratonadeilaghi.it/home/gare-e-distanze/"
+      ]
+    },
+    {
+      "sequence": 190,
+      "eventId": "mezza-maratona-dei-laghi",
+      "name": "Mezza Maratona dei Laghi",
+      "edition": 2027,
+      "date": "2027-04-11",
+      "distanceKm": 21.0975,
+      "startTime": "09:00 provisional",
+      "start": "Angera (VA), Italy",
+      "status": "official-organizer-regulation-published; approvals-pending",
+      "gpxStatus": "no-current-gpx-binary-validated",
+      "detail": "Separate half-marathon race within the same new Maratona dei Laghi event. Organizer confirms 21.0975km and Angera start; route, finish location, technical profile and final certification details still pending. Do not confuse with Mezza Due Laghi in Gravellona Toce, also on 11 April.",
+      "sources": [
+        "https://maratonadeilaghi.it/regolamento-pisanina/",
+        "https://maratonadeilaghi.it/informazioni-utili/"
+      ]
+    },
+    {
+      "sequence": 191,
+      "eventId": "agropoli-paestum-half-marathon",
+      "name": "Agropoli Paestum Half Marathon",
+      "edition": 2027,
+      "date": "2027-04-11",
+      "distanceKm": 21.0975,
+      "location": "Agropoli, Campania, Italy",
+      "status": "provisional-calendar-entry; organizer-regulation-not-yet-published",
+      "gpxStatus": "no-2027-gpx-confirmed",
+      "detail": "Calendar page lists 11 April 2027 and 21.0975km; start time, regulation and route remain undefined. Treat as provisional until organizer confirmation.",
+      "sources": [
+        "https://www.maratoniamo.it/gara/agropoli-paestum-half-marathon-agropoli-mezza"
+      ]
+    },
+    {
+      "sequence": 192,
+      "eventId": "maratona-del-lamone",
+      "name": "Maratona del Lamone",
+      "edition": 2027,
+      "date": "2027-04-11",
+      "distanceKm": 42.195,
+      "startTime": "09:00",
+      "start": "Piazza Farini, Russi (RA), Italy",
+      "status": "official-organizer-homepage-confirms-date-distance-and-start",
+      "gpxStatus": "existing-official-gpx-control-present-but-edition-not-verified-as-2027",
+      "detail": "Organizer homepage confirms 49th edition on 11 April 2027, Russi, Piazza Farini and 09:00 start. Organizer route page describes the route as updated 2024 and provides KML/GPX controls, but its detailed route text explicitly labels 2026. Do not assume these files are the 2027 route without edition confirmation and binary parsing.",
+      "sources": [
+        "https://gslamone.it/",
+        "https://gslamone.it/percorso/"
+      ]
+    },
+    {
+      "sequence": 193,
+      "eventId": "sardinia-marathon-valle-dei-nuraghi",
+      "name": "Sardinia Marathon Valle dei Nuraghi – Meilogu",
+      "edition": 2027,
+      "date": "2027-04-11",
+      "distanceKm": 42.195,
+      "startTime": "not independently verified",
+      "start": "Torralba, Sardinia, Italy",
+      "status": "2027-regulation-published-via-organizer-linked-document; municipal-approvals-pending",
+      "gpxStatus": "official-course-publication-referenced-but-no-binary-validated",
+      "detail": "Regulation for first edition confirms 42.195km on 11 April 2027 in Torralba and refers to separate route pages; routes remain subject to approval by municipalities and authorities. Separate 10km and approximately 4.5km events also planned. Regulation source is an organizer-linked redirect, not direct site PDF in this check.",
+      "sources": [
+        "https://cliccasul.link/6yegYb6",
+        "https://www.maratoniamo.it/gara/sardinia-marathon-valle-dei-nuraghi-torralba-maratona"
+      ]
+    },
+    {
+      "sequence": 194,
+      "eventId": "kormed-21100-varese-half-marathon",
+      "name": "Kormed 21100 Varese Half Marathon",
+      "edition": 2027,
+      "date": "2027-04-18",
+      "distanceKm": 21.0975,
+      "location": "Varese, Lombardia, Italy",
+      "status": "provisional-calendar-entry; organizer-regulation-not-yet-published",
+      "gpxStatus": "no-2027-gpx-confirmed",
+      "detail": "2027 calendar entry gives 18 April and 21.0975km; start time, regulation, route and registration details remain undefined. Do not infer details from prior editions.",
+      "sources": [
+        "https://www.maratoniamo.it/gara/kormed-21100-varese-half-marathon-varese-mezza"
+      ]
+    },
+    {
+      "sequence": 195,
+      "eventId": "la-mezza-di-cremona",
+      "name": "La Mezza di Cremona",
+      "edition": 2027,
+      "date": "2027-04-18",
+      "distanceKm": 21.0975,
+      "location": "Cremona, Lombardia, Italy",
+      "status": "provisional-calendar-entry; organizer-regulation-not-yet-published",
+      "gpxStatus": "no-2027-gpx-confirmed",
+      "detail": "2027 calendar entry gives 18 April and 21.0975km; time, regulation and detailed course are not yet published. The 2026 race was held on 20 September, so no prior-year route/date may be silently reused.",
+      "sources": [
+        "https://www.maratoniamo.it/gara/la-mezza-di-cremona-cremona-mezza"
+      ]
+    },
+    {
+      "sequence": 196,
+      "eventId": "prato-half-marathon",
+      "name": "Prato Half Marathon",
+      "edition": 2027,
+      "date": "2027-04-18",
+      "distanceKm": 21.097,
+      "startTime": "09:30",
+      "startFinish": "Viale Piave, Prato, Italy",
+      "status": "official-organizer-page-published",
+      "gpxStatus": "no-binary-gpx-validated",
+      "detail": "Official organizer page confirms 37th edition, 18 April 2027, 09:30, Viale Piave start/finish and new 21.097km measured/certified course around historic center and Piazza Santa Maria in Castello. No GPX binary or numeric elevation profile validated.",
+      "sources": [
+        "https://pratohalfmarathon.com/"
+      ]
+    },
+    {
+      "sequence": 197,
+      "eventId": "mezza-maratona-internazionale-di-genova",
+      "name": "Mezza Maratona Internazionale di Genova",
+      "edition": 2027,
+      "date": "2027-04-18",
+      "distanceKm": 21.0975,
+      "location": "Genova, Liguria, Italy",
+      "status": "provisional-calendar-entry; organizer-regulation-not-yet-published",
+      "gpxStatus": "no-2027-gpx-confirmed",
+      "detail": "Calendar page lists 18 April 2027 and 21.0975km; start time, rules and route are explicitly still to be defined. Calendar data only.",
+      "sources": [
+        "https://www.maratoniamo.it/gara/mezza-maratona-int-le-di-genova-genova-mezza"
+      ]
+    },
+    {
+      "sequence": 198,
+      "eventId": "padova-marathon",
+      "name": "Padova Marathon",
+      "edition": 2027,
+      "date": "2027-04-18",
+      "distanceKm": 42.195,
+      "startTime": "08:30",
+      "start": "Euganeo Stadium, Padova, Italy",
+      "finish": "Prato della Valle, Padova, Italy",
+      "status": "official-organizer-page-confirms-date-distance-and-times",
+      "gpxStatus": "no-2027-gpx-binary-validated",
+      "detail": "Official organizer page confirms 18 April 2027, 42.195km, 08:30 start at Euganeo Stadium and finish at Prato della Valle. Official course narrative includes the Euganean/Abano section and city center/Basilica of Saint Anthony; no current GPX binary or numeric ascent validated.",
+      "sources": [
+        "https://padovamarathon.com/en/marathon/",
+        "https://padovamarathon.com/"
+      ]
+    }
+  ],
+  "summary": {
+    "eventsReviewed": 10,
+    "official2027OrganizerOrRegulationSources": 6,
+    "calendarOnlyProvisional": 4,
+    "official2027GpxBinaryValidated": 0,
+    "officialGpxDownloadControlsFound": 1,
+    "binaryFilesDownloaded": 0,
+    "tracksParsed": 0,
+    "binaryMetricsCompared": 0,
+    "oldGpxFilesDeleted": 0,
+    "oldGpxFilesOverwritten": 0,
+    "appRuntimeFilesChanged": 0,
+    "appEventRecordsChanged": 0,
+    "auditOnly": true
+  },
+  "followUps": [
+    "Maratona dei Laghi and half: wait for final course maps, homologation and finish location; distinguish from Mezza Due Laghi.",
+    "Agropoli Paestum, Varese, Cremona and Genova: obtain organizer regulations and route details; current 2027 calendar records remain provisional.",
+    "Lamone: obtain explicit organizer confirmation that the KML/GPX downloads correspond to 2027 before any update; current route description is labelled 2026 / updated 2024.",
+    "Sardinia Marathon: retrieve official route files and verify municipal approvals; parse actual binary files.",
+    "Prato and Padova: request official 2027 GPX and numeric elevation profile; validate binaries before publishing."
+  ]
+}
