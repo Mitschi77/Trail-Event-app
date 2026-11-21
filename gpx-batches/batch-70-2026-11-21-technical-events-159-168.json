@@ -1,0 +1,224 @@
+{
+  "batch": 70,
+  "checkedAt": "2026-11-21",
+  "scope": {
+    "sequence": "events 159-168",
+    "eventIds": [
+      "verdi-marathon-21k",
+      "agnolotto-half-marathon",
+      "ferrara-half-marathon",
+      "ferrara-marathon",
+      "run-for-life-21km",
+      "strasimeno-half-marathon",
+      "strasimeno-marathon",
+      "bologna-marathon",
+      "run-tune-up",
+      "lago-maggiore-half-marathon"
+    ]
+  },
+  "rules": [
+    "Official organizer evidence is preferred; calendar listings are marked secondary/unconfirmed where no organizer confirmation was found.",
+    "A download button or ZIP link is not binary GPX validation.",
+    "Do not delete, overwrite or replace historical GPX files until a new official file has been downloaded, extracted, parsed and validated.",
+    "No live event records or app runtime files are changed in this audit."
+  ],
+  "events": [
+    {
+      "sequence": 159,
+      "eventId": "verdi-marathon-21k",
+      "name": "Verdi Marathon – 21K",
+      "edition": 2027,
+      "date": "2027-02-21",
+      "distanceKm": 21.097,
+      "start": "Salsomaggiore Terme",
+      "finish": "Fontanellato, Via Pigorini / Rocca",
+      "startTime": "09:30",
+      "gpxStatus": "official-2027-course-page; no GPX link found",
+      "detail": "Separate 21K catalog entry is a distance-level child of Verdi Marathon. Organizer page confirms certified 21.097km course, date and start/finish.",
+      "sources": [
+        "https://www.verdimarathon.it/21k/"
+      ]
+    },
+    {
+      "sequence": 160,
+      "eventId": "agnolotto-half-marathon",
+      "name": "Agnolotto Half Marathon",
+      "edition": 2027,
+      "date": "2027-02-21",
+      "distanceKm": 21.0975,
+      "location": "Trecate, Piemonte, Italy",
+      "gpxStatus": "secondary-calendar-only; official organizer course/GPX unconfirmed",
+      "detail": "The 2027 date and distance appear in the race calendar; organizer-specific 2027 route map and GPX were not found in this pass. Keep status unconfirmed until official organizer source is obtained.",
+      "sources": [
+        "https://www.maratoniamo.it/"
+      ]
+    },
+    {
+      "sequence": 161,
+      "eventId": "ferrara-half-marathon",
+      "name": "Ferrara Half Marathon",
+      "edition": 2027,
+      "date": "2027-02-28",
+      "distanceKm": 21.0975,
+      "startTime": "09:00",
+      "startFinish": "Corso Martiri della Libertà, Ferrara, Italy",
+      "gpxStatus": "official-course-page-exposes-gpx-zip-download; binary not retrieved or parsed",
+      "technical": {
+        "official2027Page": true,
+        "gpxLink": "https://ferraramarathon.com/wp-content/uploads/FM-GPX-21k.zip",
+        "downloadAttempt": "Web fetch rejected ZIP content type; no binary file obtained in local runtime.",
+        "binaryDownloaded": false,
+        "extracted": false,
+        "parsed": false,
+        "metricsCompared": false
+      },
+      "detail": "Organizer page says course passes historic centre and city walls; still awaiting FIDAL homologation. Official GPX link targets a ZIP archive, not a directly validated GPX.",
+      "sources": [
+        "https://ferraramarathon.com/gare/21k/",
+        "https://www.comune.ferrara.it/b/57684/ferrara-marathon-2027-definito-il-nuovo-percorso-con-partenza-e-arrivo"
+      ]
+    },
+    {
+      "sequence": 162,
+      "eventId": "ferrara-marathon",
+      "name": "Ferrara Marathon",
+      "edition": 2027,
+      "date": "2027-02-28",
+      "distanceKm": 42.195,
+      "startTime": "09:00",
+      "startFinish": "Corso Martiri della Libertà, Ferrara, Italy",
+      "gpxStatus": "official-course-page-and-GPX-download-controls; binary not retrieved or parsed",
+      "technical": {
+        "official2027Page": true,
+        "gpxLinkFound": true,
+        "officialGpxZip": "https://ferraramarathon.com/wp-content/uploads/FM-GPX-42k.zip",
+        "binaryDownloaded": false,
+        "extracted": false,
+        "parsed": false,
+        "metricsCompared": false,
+        "downloadAttempt": "Official GPX ZIP link confirmed on organizer page; web fetch rejected application/zip content, so no local binary obtained."
+      },
+      "detail": "Municipality confirms a new 2027 course through the historic centre, Renaissance walls and Parco Urbano. 42K and 21K awaiting FIDAL homologation. No ascent metric published; do not derive cumulative D+ from city terrain.",
+      "sources": [
+        "https://ferraramarathon.com/gare/42k/",
+        "https://www.comune.ferrara.it/b/57684/ferrara-marathon-2027-definito-il-nuovo-percorso-con-partenza-e-arrivo"
+      ]
+    },
+    {
+      "sequence": 163,
+      "eventId": "run-for-life-21km",
+      "name": "Run For Life 21Km",
+      "edition": 2027,
+      "date": "2027-03-07",
+      "distanceKm": 21.0975,
+      "location": "Monza, Lombardia, Italy",
+      "gpxStatus": "secondary-calendar-only; official organizer course/GPX unconfirmed",
+      "detail": "Race calendar lists 7 March 2027 in Monza. No official organizer 2027 course or GPX was identified in this pass.",
+      "sources": [
+        "https://www.maratoniamo.it/"
+      ]
+    },
+    {
+      "sequence": 164,
+      "eventId": "strasimeno-half-marathon",
+      "name": "Strasimeno Half Marathon",
+      "edition": 2027,
+      "date": "2027-03-07",
+      "distanceKm": 21.0975,
+      "location": "Castiglione del Lago, Umbria, Italy",
+      "gpxStatus": "secondary-calendar-only; official organizer 2027 route/GPX unconfirmed",
+      "detail": "Calendar listing confirms the date/location/distance provisionally; no official organizer 2027 route page or GPX verified in this pass. This is the 21km competitive finish within event 338 (25ª Strasimeno), not a separate event. Keep the event alias/route consolidation for a separate data-cleanup PR; do not create a duplicate event card.",
+      "sources": [
+        "https://www.maratoniamo.it/"
+      ],
+      "status": "same-event-as-sequence-338-strasimeno; IUTA-confirms-21km-competitive-finish",
+      "duplicateOfEventId": "strasimeno"
+    },
+    {
+      "sequence": 165,
+      "eventId": "strasimeno-marathon",
+      "name": "Strasimeno Marathon",
+      "edition": 2027,
+      "date": "2027-03-07",
+      "distanceKm": 42.195,
+      "location": "Castiglione del Lago, Umbria, Italy",
+      "gpxStatus": "secondary-calendar-only; official organizer 2027 route/GPX unconfirmed",
+      "detail": "Calendar listing shows a full marathon at the same event/date. Official organizer confirmation and current course geometry/GPX remain outstanding. The IUTA 2027 event announcement for sequence 338 lists competitive finishes at 10, 21, 34 and 58km; a 42km fee tier appears, but 42km is absent from the competitive finish list. Do not treat this as a confirmed 42.195km marathon.",
+      "sources": [
+        "https://www.maratoniamo.it/"
+      ],
+      "status": "42km-marathon-competitive-finish-not-confirmed-by-IUTA; possible-fee-tier-only",
+      "relatedEventId": "strasimeno"
+    },
+    {
+      "sequence": 166,
+      "eventId": "bologna-marathon",
+      "name": "Termal Bologna Marathon",
+      "edition": 2027,
+      "date": "2027-03-07",
+      "distanceKm": 42.195,
+      "location": "Bologna, Italy",
+      "start": "Via Irnerio",
+      "gpxStatus": "official-2027-regulations-published; GPX and elevation profile explicitly promised for later website publication",
+      "detail": "Organizer's 2027 regulation confirms 42.195km, FIDAL Bronze Category A, and event date. It states maps, GPX track and elevation profiles will be detailed on the official website; no published track was verified in this pass.",
+      "sources": [
+        "https://www.bolognamarathon.run/en/regolamento"
+      ]
+    },
+    {
+      "sequence": 167,
+      "eventId": "run-tune-up",
+      "name": "Run Tune Up",
+      "edition": 2027,
+      "date": "2027-03-07",
+      "distanceKm": 21.097,
+      "location": "Bologna, Italy",
+      "start": "Via Irnerio",
+      "gpxStatus": "official-2027-regulations-published; GPX and elevation profile explicitly promised for later website publication",
+      "detail": "Organizer's 2027 regulation confirms the 21.097km Run Tune Up as part of the Bologna Marathon weekend and says route maps, GPX and elevation profiles will be detailed later. Start times still to be announced.",
+      "sources": [
+        "https://www.bolognamarathon.run/en/regolamento"
+      ]
+    },
+    {
+      "sequence": 168,
+      "eventId": "lago-maggiore-half-marathon",
+      "name": "Lago Maggiore Half Marathon",
+      "edition": 2027,
+      "date": "2027-03-07",
+      "distanceKm": 21.0975,
+      "location": "Stresa to Verbania Pallanza, Italy",
+      "startTime": "10:00",
+      "gpxStatus": "secondary-calendar-only; route corridor listed; official 2027 GPX not confirmed",
+      "detail": "Calendar entry lists 21.0975km and route from Stresa lakeside to Verbania Pallanza, with start and finish in different towns. No organizer-published 2027 GPX was verified.",
+      "sources": [
+        "https://www.maratoniamo.it/"
+      ]
+    }
+  ],
+  "summary": {
+    "eventsReviewed": 10,
+    "official2027GpxLinksFound": 2,
+    "official2027GpxBinaryValidated": 0,
+    "official2027OrganizerRoutePagesFound": 5,
+    "secondaryCalendarOnly": 4,
+    "binaryFilesDownloaded": 0,
+    "zipArchivesExtracted": 0,
+    "tracksParsed": 0,
+    "binaryMetricsCompared": 0,
+    "oldGpxFilesDeleted": 0,
+    "oldGpxFilesOverwritten": 0,
+    "appRuntimeFilesChanged": 0,
+    "appEventRecordsChanged": 0,
+    "auditOnly": true,
+    "duplicateEventRecords": 1,
+    "unconfirmedDistanceClaims": 1
+  },
+  "followUps": [
+    "Ferrara 21K and 42K: obtain and extract the official GPX ZIPs, then parse both tracks and compare computed distance; no local binary obtained yet.",
+    "Bologna and Run Tune Up: recheck organizer site when 2027 maps/GPX/elevation profiles are published.",
+    "Agnolotto, Run For Life and Strasimeno: obtain official organizer 2027 pages before treating date and route as confirmed.",
+    "Lago Maggiore Half: verify 2027 course and GPX with organizer; retain separate start/finish city detail.",
+    "Strasimeno: consolidate the separate half-marathon alias into canonical event ID strasimeno in a data-cleanup PR; keep the 42km/42.195km marathon distance unconfirmed until organizer clarification."
+  ]
+}
