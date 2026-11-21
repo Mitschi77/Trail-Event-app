@@ -151,10 +151,13 @@ window.showPlannedEventDetails=function(id,ri){prior(id,ri);const root=document.
   const isRegisteredRoute=route=>!!route?.id&&restrictedRouteIds.has(String(route.id));
   const rightsFor=route=>{
     if(!route||!route.id)return policy.defaultEntry();
-    // Only the seven explicitly registered routes fail closed while the
-    // registry loads or if it cannot be fetched. Unlisted routes stay legacy.
-    if(isRegisteredRoute(route)&&(!registryReady||registryLoadFailed))return policy.defaultEntry();
-    return registry.routes?.[String(route.id)]||legacyEntry;
+    // Every explicitly registered route must have its own registry entry.
+    // Missing entries are denied, never treated as an unlisted legacy route.
+    if(isRegisteredRoute(route)){
+      if(!registryReady||registryLoadFailed)return policy.defaultEntry();
+      return registry.routes?.[String(route.id)]||policy.defaultEntry();
+    }
+    return legacyEntry;
   };
   const actualRoute=route=>{
     if(route?.id&&String(route.id).startsWith("review_")&&window.__gpxReviewRouteId){
@@ -211,8 +214,12 @@ window.showPlannedEventDetails=function(id,ri){prior(id,ri);const root=document.
   window.gpxRightsRegistry=registry;
   window.gpxRightsAllows=(routeId,action)=>{
     const id=String(routeId||"");
-    if(restrictedRouteIds.has(id)&&(!registryReady||registryLoadFailed))return false;
-    return policy.allows(registry.routes?.[id]||legacyEntry,action);
+    if(restrictedRouteIds.has(id)){
+      if(!registryReady||registryLoadFailed)return false;
+      const entry=registry.routes?.[id];
+      return !!entry&&policy.allows(entry,action);
+    }
+    return policy.allows(legacyEntry,action);
   };
   window.routeGpxIsOrganizerRestricted=route=>!canProcess(route);
   window.routeHasDownloadableGpx=route=>{
@@ -464,6 +471,9 @@ window.showPlannedEventDetails=function(id,ri){prior(id,ri);const root=document.
       .then(response=>{if(!response.ok)throw new Error("HTTP "+response.status);return response.json();})
       .then(data=>{
         if(data.defaultPolicy!=="deny"||!data.routes)throw new Error("Invalid GPX rights registry");
+        for(const routeId of restrictedRouteIds){
+          if(!Object.prototype.hasOwnProperty.call(data.routes,routeId))throw new Error("GPX rights registry is missing route "+routeId);
+        }
         registry=data;
         window.gpxRightsRegistry=data;
       })
