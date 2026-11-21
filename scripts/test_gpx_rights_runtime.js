@@ -30,7 +30,9 @@ async function harness(entry, gpxUrl = "https://example.org/course.gpx", withSto
     route.elevationProfile = [100, 200, 300];
     route.profileSource = "Streckendatei: course.gpx";
   }
-  const registry = { schemaVersion: 1, defaultPolicy: "deny", routes: { "explorer-85-2993": entry, "explorer-85-2993": entry } };
+  const registeredRouteIds = ["explorer-85-2993", "bora-ultra-105-3837", "transkarst-ultra-59-1814", "trieste-ultra-61-2-2323", "half-trail-23-3-700", "s1-family-hike-trail-14-8-419-2027", "s1-borin-5-5-186-2027"];
+  const registryRoutes = Object.fromEntries(registeredRouteIds.map(id => [id, id === "explorer-85-2993" ? entry : policy.defaultEntry()]));
+  const registry = { schemaVersion: 1, defaultPolicy: "deny", routes: registryRoutes };
   const window = {
     GpxRightsPolicy: policy,
     fetch: async (url) => {
