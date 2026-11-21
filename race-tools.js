@@ -111,6 +111,7 @@ window.showPlannedEventDetails=function(id,ri){prior(id,ri);const root=document.
   let policy=window.GpxRightsPolicy||fallbackPolicy;
   let registry={schemaVersion:1,defaultPolicy:"deny",routes:{}};
   let registryReady=false;
+  let registryLoadFailed=false;
   const events=()=>typeof EVENTS!=="undefined"&&Array.isArray(EVENTS)?EVENTS:[];
   const escapeHtml=value=>String(value??"").replace(/[&<>"']/g,ch=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[ch]));
   const findRouteById=id=>{
@@ -138,7 +139,9 @@ window.showPlannedEventDetails=function(id,ri){prior(id,ri);const root=document.
     restriction:{status:"clear"}
   };
   const rightsFor=route=>{
-    if(!route||!route.id)return policy.defaultEntry();
+    // Until the scoped registry has loaded successfully, fail closed rather
+    // than briefly exposing restricted routes during app startup.
+    if(!route||!route.id||!registryReady||registryLoadFailed)return policy.defaultEntry();
     return registry.routes?.[String(route.id)]||legacyEntry;
   };
   const actualRoute=route=>{
@@ -194,7 +197,7 @@ window.showPlannedEventDetails=function(id,ri){prior(id,ri);const root=document.
   };
 
   window.gpxRightsRegistry=registry;
-  window.gpxRightsAllows=(routeId,action)=>policy.allows(registry.routes?.[String(routeId)]||legacyEntry,action);
+  window.gpxRightsAllows=(routeId,action)=>registryReady&&!registryLoadFailed&&policy.allows(registry.routes?.[String(routeId)]||legacyEntry,action);
   window.routeGpxIsOrganizerRestricted=route=>!canProcess(route);
   window.routeHasDownloadableGpx=route=>{
     const href=route?.gpxDownloadUrl||route?.gpxUrl||"";
@@ -202,8 +205,9 @@ window.showPlannedEventDetails=function(id,ri){prior(id,ri);const root=document.
   };
   window.isGpxImportableUrl=(url,status)=>{
     if(/stale|historical|candidate|unversioned|needs-validation|not-current|not-published|not-verified|pending/i.test(String(status||"")))return false;
+    if(!registryReady||registryLoadFailed)return false;
     const route=routeByGpxUrl(url);
-    return !!route&&canProcess(route)&&policy.isDirectFileUrl(url);
+    return policy.isDirectFileUrl(url)&&(!route||canProcess(route));
   };
 
   const originalProposalRestricted=window.proposalGpxIsRestricted;
@@ -304,10 +308,16 @@ window.showPlannedEventDetails=function(id,ri){prior(id,ri);const root=document.
     const url=typeof input==="string"?input:(input?.url||"");
     const route=routeByGpxUrl(url);
     const knownRouteGpx=!!route;
-    const entry=route?rightsFor(route):policy.defaultEntry();
-    if(policy.shouldBlockFetch(url,entry,knownRouteGpx)){
+    // The registry is the boundary between restricted and legacy routes.
+    // Do not allow course GPX activity until it has loaded successfully.
+    if((!registryReady||registryLoadFailed)&&(policy.isDirectFileUrl(url)||knownRouteGpx)){
       return Promise.reject(new Error(blockedMessage(route)));
     }
+    if(route&&policy.shouldBlockFetch(url,rightsFor(route),true)){
+      return Promise.reject(new Error(blockedMessage(route)));
+    }
+    // An unlisted URL keeps the pre-existing behavior once the registry is
+    // available; this organizer's seven entries are not a global deny list.
     return originalFetch(input,init);
   };
 
@@ -408,7 +418,7 @@ window.showPlannedEventDetails=function(id,ri){prior(id,ri);const root=document.
     const direct=policy.isDirectFileUrl(href);
     const isGpx=direct||/gpx/i.test(link.textContent||"")||(route&&[route.gpxDownloadUrl,route.gpxUrl,route.gpxFileUrl].some(v=>v&&String(v)===href));
     if(!isGpx)return;
-    if(!route||!permissionForLink(route,href)){
+    if((!registryReady||registryLoadFailed)&&isGpx || (route&&!permissionForLink(route,href))){
       event.preventDefault();
       event.stopImmediatePropagation();
       alert(blockedMessage(route));
@@ -440,6 +450,7 @@ window.showPlannedEventDetails=function(id,ri){prior(id,ri);const root=document.
         window.gpxRightsRegistry=data;
       })
       .catch(error=>{
+        registryLoadFailed=true;
         registry={schemaVersion:1,defaultPolicy:"deny",routes:{}};
         window.gpxRightsRegistry=registry;
         window.gpxRightsRegistryError=String(error?.message||error);
