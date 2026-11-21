@@ -9,7 +9,7 @@ const start = raceTools.indexOf(marker);
 assert.notEqual(start, -1, "GPX rights gate must be present in race-tools.js");
 const gateSource = raceTools.slice(start);
 
-async function harness(entry, gpxUrl = "https://example.org/course.gpx", withStoredData = false) {
+async function harness(entry, gpxUrl = "https://example.org/course.gpx", withStoredData = false, registryFetchFails = false) {
   let originalFetchCalls = 0;
   let mapCalls = 0;
   let persistCalls = 0;
@@ -33,8 +33,9 @@ async function harness(entry, gpxUrl = "https://example.org/course.gpx", withSto
   const registry = { schemaVersion: 1, defaultPolicy: "deny", routes: { "test-route": entry } };
   const window = {
     GpxRightsPolicy: policy,
-    fetch: async () => {
+    fetch: async (url) => {
       originalFetchCalls += 1;
+      if (registryFetchFails && String(url).includes("gpx-rights.json")) return { ok: false, status: 503 };
       return { ok: true, json: async () => registry };
     },
     alert: () => {},
@@ -138,6 +139,11 @@ async function harness(entry, gpxUrl = "https://example.org/course.gpx", withSto
   await assert.rejects(linkOnly.window.fetch("https://example.org/gpx-download"), /GPX/);
   assert.equal(linkOnly.calls(), 1, "link-only permission must not allow the app to fetch the GPX page");
   assert.equal(linkOnly.window.routeGpxIsOrganizerRestricted(linkOnly.route), true);
+
+  const legacyWithoutRegistry = await harness(policy.defaultEntry(), "https://example.org/legacy-fallback.gpx", false, true);
+  assert.equal(legacyWithoutRegistry.window.routeGpxIsOrganizerRestricted(legacyWithoutRegistry.legacyRoute), false, "registry failure must not extend organizer restrictions to unlisted routes");
+  await legacyWithoutRegistry.window.fetch("https://example.org/legacy.gpx");
+  assert.equal(legacyWithoutRegistry.calls(), 2, "unlisted route GPX fetch must keep legacy behavior even if the scoped registry cannot load");
 
   console.log("GPX runtime gate tests passed.");
 })().catch(error => {
