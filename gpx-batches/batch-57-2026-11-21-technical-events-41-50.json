@@ -330,7 +330,11 @@
       "Andorra Trail 21K detail link is now present in the current race navigation; old 404 checkpoint should be refreshed."
     ],
     "noGpxFilesChanged": true,
-    "noAppRuntimeDataChanged": true
+    "noAppRuntimeDataChanged": true,
+    "currentEventDatesEntriesCoveredDirectly": 8,
+    "currentEventDatesEntriesCoveredByBatch58": 1,
+    "currentEventDatesEntriesNotCoveredByThisBatch": 1,
+    "legacyEntriesNotInCurrentEventDates": 2
   },
   "followUps": [
     "DXT: retrieve and parse the two readable XML files with a GPX parser; retry 103K; locate official 35K/22K/11K GPX links and validate all seven routes.",
@@ -344,5 +348,29 @@
     "Zugspitz: inspect all seven route pages for 2027 Map + GPX and confirm the route files individually."
   ],
   "noGpxFilesChanged": true,
-  "noAppRuntimeDataChanged": true
+  "noAppRuntimeDataChanged": true,
+  "currentEventDatesCrossCheck": {
+    "currentCatalogRange": "event-dates.json insertion positions 41–50 (1-based)",
+    "overlappingIds": [
+      "dolomiti-extreme-trail",
+      "mozart",
+      "ultra-scotland",
+      "falkensteinlauf",
+      "trail-100-andorra",
+      "otscher-trail",
+      "ultra-x-110-slowenien",
+      "zugspitz-ultratrail"
+    ],
+    "currentEntriesCoveredByAuditBatch58": [
+      "schluchthof"
+    ],
+    "currentEntriesNotCoveredByThisBatch": [
+      "hochkonigman"
+    ],
+    "legacyEntriesNotInCurrentCatalog": [
+      "Jenaer Backyard Ultra",
+      "Hochkönig Ultraks"
+    ],
+    "note": "This batch follows the historic top-level EVENTS order. Eight current catalog entries overlap directly; Schluchthof is covered by audit batch 58. The current Hochkönigman entry is distinct from the legacy Hochkönig Ultraks entry and still needs its own audit."
+  }
 }
