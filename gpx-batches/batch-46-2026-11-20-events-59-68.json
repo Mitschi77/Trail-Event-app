@@ -1,0 +1,403 @@
+{
+  "batch": 46,
+  "checkedAt": "2026-11-20",
+  "scope": "Official route and GPX status audit for ten records in the historic/original top-level event list 59–68; this is not the current event-dates.json insertion range 59–68.",
+  "status": "audit-only-checkpoint",
+  "rules": [
+    "Existing GPX files remain valid until a replacement is officially published, downloaded, parsed and validated.",
+    "Do not delete or replace historical GPX files during this audit.",
+    "A GPX download button or URL is not proof that the binary has been parsed."
+  ],
+  "events": [
+    {
+      "order": 59,
+      "name": "U.TLW / U. Trail Lamer Winkel",
+      "date": "2027-07-03",
+      "officialSource": "https://utlw.de/de/",
+      "secondarySource": "https://xc-run.de/aktuelles/news/trailrunning/u-tlw-2027-anmeldestart-am-1-dezember-trailrunning-kultevent-im-bayerischen-wald-geht-in-die-siebte-runde/",
+      "routes": [
+        {
+          "name": "Youth-Trail",
+          "distanceKm": 5,
+          "elevationM": 200,
+          "qualification": "knapp 5 km / rund 200 hm"
+        },
+        {
+          "name": "Rookie-Trail",
+          "distanceKm": 11,
+          "elevationM": 550
+        },
+        {
+          "name": "Osser-Riese",
+          "distanceKm": 24,
+          "elevationM": 1200
+        },
+        {
+          "name": "König vom Bayerwald",
+          "distanceKm": 54,
+          "elevationM": 2700
+        }
+      ],
+      "gpxStatus": "no-current-2027-binary-validated",
+      "note": "2027 edition and expanded route list newly confirmed. Correct older 23K/12K labels to current organizer descriptions; Youth-Trail is new. GPX not validated."
+    },
+    {
+      "order": 60,
+      "name": "Großglockner Mountain Run",
+      "date": "2027-07-04",
+      "officialSource": "https://grossglockner-mountainrun.at/",
+      "officialStats": {
+        "distanceKm": 13.3,
+        "elevationM": 1300
+      },
+      "gpxStatus": "not-published-yet",
+      "note": "Official 2027 date and route metrics already documented in previous checkpoint; no official GPX verified."
+    },
+    {
+      "order": 61,
+      "name": "Obertauern Trailrun Summit",
+      "date": "2027-07-09/11",
+      "officialSource": "https://www.trailrun-summit.com/",
+      "routes": [
+        {
+          "name": "Extreme 100 Trail 8 Summits",
+          "distanceKm": 108,
+          "elevationM": 6677,
+          "gpxStatus": "map-only-or-unconfirmed-direct"
+        },
+        {
+          "name": "RAIFFEISEN Trail Ultra 8 Summits",
+          "distanceKm": 76.6,
+          "elevationM": 5080,
+          "gpxStatus": "direct-link-recorded-in-older-checkpoint"
+        },
+        {
+          "name": "SPORTSHOP SKIWORLD Endurance Trail 2 Summits",
+          "distanceKm": 53.2,
+          "elevationM": 3061,
+          "gpxStatus": "direct-link-recorded-in-older-checkpoint"
+        },
+        {
+          "name": "HOTEL ALPINA Ultimate Trail 2 Summits",
+          "distanceKm": 34.6,
+          "elevationM": 2029,
+          "gpxStatus": "direct-link-recorded-in-older-checkpoint"
+        },
+        {
+          "name": "MARTINI SPORTSWEAR Panorama Trail 2 Summits",
+          "distanceKm": 16.2,
+          "elevationM": 1113,
+          "gpxStatus": "map-only-or-unconfirmed-direct"
+        },
+        {
+          "name": "HOCHALM Easy Trail",
+          "distanceKm": 8.9,
+          "elevationM": 436
+        },
+        {
+          "name": "Seekarspitz Vertical",
+          "distanceKm": 5.3,
+          "elevationM": 536
+        },
+        {
+          "name": "Family Trail",
+          "distanceKm": [
+            3.1,
+            5.4
+          ],
+          "elevationM": [
+            106,
+            305
+          ]
+        }
+      ],
+      "gpxStatus": "mixed-official-download-and-map-only",
+      "note": "Current official page identifies eight competition formats and gives updated metrics. Older checkpoint recorded seven direct GPX URLs and two map-only events; binaries not parsed. Reconcile count and direct downloads against 2027 course pages."
+    },
+    {
+      "order": 62,
+      "name": "Restonica Trail Corsica by UTMB",
+      "date": "2027-07-08/10",
+      "officialSource": "https://restonica.utmb.world/",
+      "faq": "https://restonica.utmb.world/races-runners/runners/infos-pratiques",
+      "routes": [
+        {
+          "name": "UTC100M",
+          "distanceKm": 110,
+          "elevationM": 7200
+        },
+        {
+          "name": "RT100K",
+          "distanceKm": 69,
+          "elevationM": 3950
+        },
+        {
+          "name": "PM50K",
+          "distanceKm": 52,
+          "elevationM": 2900
+        },
+        {
+          "name": "TT50K",
+          "distanceKm": 33,
+          "elevationM": 2400
+        },
+        {
+          "name": "GT20K",
+          "distanceKm": 17,
+          "elevationM": 650
+        }
+      ],
+      "gpxStatus": "released-only-a-few-days-before-race",
+      "note": "Official FAQ says GPX is released only a few days before the race because routes cross private land; use official race pages for current map until then."
+    },
+    {
+      "order": 63,
+      "name": "Trail Verbier St-Bernard by UTMB",
+      "date": "2027-07-09/11",
+      "officialSource": "https://verbier.utmb.world/en",
+      "routes": [
+        {
+          "name": "X-Alpine",
+          "distanceKm": 140,
+          "elevationM": 9300
+        },
+        {
+          "name": "X-Traversee",
+          "distanceKm": 77,
+          "elevationM": 5300,
+          "note": "2027 route modification near Grand St Bernard"
+        },
+        {
+          "name": "Verbier Marathon",
+          "distanceKm": 47,
+          "elevationM": 2900
+        },
+        {
+          "name": "Verbier Marathon X-Treme",
+          "distanceKm": 43,
+          "elevationM": 3000
+        },
+        {
+          "name": "Verbier X-Plore",
+          "distanceKm": 28,
+          "elevationM": 1700
+        }
+      ],
+      "gpxStatus": "official-map-gpx-pages; direct-binaries-not-validated",
+      "note": "Official 2027 programme adds two 50K-format races; do not carry forward old 2026 tracks, especially X-Traversee route modification."
+    },
+    {
+      "order": 64,
+      "name": "PIUT / Paznaun Ischgl Ultra Trail by UTMB",
+      "date": "2027-07-09/10",
+      "officialSource": "https://piut.utmb.world/",
+      "routes": [
+        {
+          "name": "PIUT 100",
+          "distanceKm": 100,
+          "elevationM": 6300
+        },
+        {
+          "name": "PIUT 85",
+          "distanceKm": 85,
+          "elevationM": 5200
+        },
+        {
+          "name": "PIUT 50",
+          "distanceKm": 50,
+          "elevationM": 3100
+        },
+        {
+          "name": "PIUT 30",
+          "distanceKm": 30,
+          "elevationM": 1540
+        },
+        {
+          "name": "PIUT 20",
+          "distanceKm": 20,
+          "elevationM": 1300
+        },
+        {
+          "name": "PIUT TEN",
+          "distanceKm": 10,
+          "elevationM": 94
+        },
+        {
+          "name": "PIUT Kids",
+          "note": "kids race"
+        }
+      ],
+      "gpxStatus": "official-race-pages-current; binary-not-validated",
+      "note": "2027 event confirmed 9–10 July with six distances plus Kids. Replace stale 2026 date; official UTMB pages provide current route details/maps. Avoid unofficial GPX mirrors."
+    },
+    {
+      "order": 65,
+      "name": "Glacier Trailrun Alpine Race",
+      "date": "2027-07-22/25",
+      "officialSource": "https://www.oetztal-trailrunning.at/die-running-events/glacier-trailrun-alpine-race/",
+      "routes": [
+        {
+          "name": "Top Mountain Run",
+          "distanceKm": 6.3,
+          "elevationM": 750
+        },
+        {
+          "name": "Gletscher Trail 14K",
+          "distanceKm": 14,
+          "elevationM": 800
+        },
+        {
+          "name": "Gletscher Trail 26K",
+          "distanceKm": 25.8,
+          "elevationM": 1900
+        },
+        {
+          "name": "Gletscher Trail 42K",
+          "distanceKm": 42.5,
+          "elevationM": 2800
+        },
+        {
+          "name": "Gletscher Trail 62K",
+          "distanceKm": 61.1,
+          "elevationM": 3600
+        },
+        {
+          "name": "WIDI Trailrun",
+          "distancesM": [
+            200,
+            400,
+            600,
+            1500
+          ]
+        }
+      ],
+      "gpxStatus": "routes-under-revision-no-final-gpx",
+      "note": "Official page confirms dates and current programme. Registration postponed to 2026-12-01 because administrative points and route revisions remain open; recheck after publication."
+    },
+    {
+      "order": 66,
+      "name": "Engadin Ultra Trail",
+      "date": "2027-07-16/17",
+      "officialSource": "https://www.engadinultratrail.ch/",
+      "routes": [
+        {
+          "name": "EUT102",
+          "distanceKm": 102.7,
+          "elevationM": 5677,
+          "gpxStatus": "official-download-button"
+        },
+        {
+          "name": "EUT53",
+          "gpxStatus": "official-route-listed; inspect current GPX"
+        },
+        {
+          "name": "ET23",
+          "gpxStatus": "official-route-listed; inspect current GPX"
+        },
+        {
+          "name": "ET16",
+          "gpxStatus": "official-route-listed; inspect current GPX"
+        }
+      ],
+      "gpxStatus": "official-downloads-listed; binaries-not-validated",
+      "note": "EUT102 official page confirms 102.7 km / +5677 m and a GPX download. Four route categories are in the event programme; confirm individual current GPX binaries before treating them as validated."
+    },
+    {
+      "order": 67,
+      "name": "Maintal Ultratrail",
+      "date": "2027-07-17",
+      "officialSource": "https://www.mtut.de/",
+      "routes": [
+        {
+          "name": "Ultratrail",
+          "distanceKm": 64,
+          "elevationM": 1700,
+          "gpxStatus": "official-download-page"
+        },
+        {
+          "name": "Trail T30",
+          "distanceKm": 30,
+          "elevationM": 720,
+          "gpxStatus": "official-direct-download-page"
+        },
+        {
+          "name": "Trail T13",
+          "distanceKm": 13,
+          "elevationM": 230,
+          "gpxStatus": "official-direct-download-page"
+        }
+      ],
+      "gpxStatus": "official-download-pages-confirmed; binaries-not-validated",
+      "note": "2027 event and date confirmed. Organizer pages expose GPX downloads for all three distances; the homepage still displays an older 2026 date, so use the 2027 registration/BLV information for date."
+    },
+    {
+      "order": 68,
+      "name": "Dolomyths Run",
+      "date": "2027-07-09/11",
+      "officialSource": "https://www.dolomythsrun.it/en/",
+      "routes": [
+        {
+          "name": "V-Rodella",
+          "distanceKm": 4.9,
+          "elevationM": 932,
+          "gpxStatus": "coming-soon"
+        },
+        {
+          "name": "Fassa Trail",
+          "note": "2027 event page available; verify current distance/elevation and GPX on route page"
+        },
+        {
+          "name": "SkyRace",
+          "note": "2027 event page available; verify current distance/elevation and GPX on route page"
+        }
+      ],
+      "gpxStatus": "2027-GPX-not-yet-published-for-V-Rodella; others-recheck",
+      "note": "Official 2027 programme is 9–11 July; new V-Rodella vertical is 4.9 km / 932 m D+ and official site explicitly says GPX coming soon."
+    }
+  ],
+  "followUps": [
+    "After 2026-12-01 recheck U.TLW and Glacier Trailrun for final course files and GPX.",
+    "Test official GPX downloads for Obertauern, Engadin and Maintal; do not mark validated until binary parsing succeeds.",
+    "Recheck Dolomyths V-Rodella GPX when published.",
+    "Keep all existing historical GPX files untouched until a new official track is validated."
+  ],
+  "sources": [
+    "https://xc-run.de/aktuelles/news/trailrunning/u-tlw-2027-anmeldestart-am-1-dezember-trailrunning-kultevent-im-bayerischen-wald-geht-in-die-siebte-runde/",
+    "https://www.trailrun-summit.com/",
+    "https://restonica.utmb.world/",
+    "https://restonica.utmb.world/races-runners/runners/infos-pratiques",
+    "https://verbier.utmb.world/en",
+    "https://piut.utmb.world/",
+    "https://www.oetztal-trailrunning.at/die-running-events/glacier-trailrun-alpine-race/",
+    "https://www.engadinultratrail.ch/eut102",
+    "https://www.mtut.de/anmeldung/",
+    "https://www.mtut.de/trails/ultratrail/",
+    "https://www.mtut.de/trails/trail-t30/",
+    "https://www.mtut.de/trails/trail-t13/",
+    "https://www.dolomythsrun.it/en/"
+  ],
+  "currentEventDatesCrossCheck": {
+    "currentCatalogRange": "event-dates.json insertion positions 59–68 (1-based)",
+    "overlappingIds": [
+      "obertauern-trailrun-summit",
+      "restonica-trail-corsica",
+      "trai-verbier-st-bernhard",
+      "piut",
+      "der-gletscher-trailrun",
+      "engadin-ut",
+      "maintal-ultratrail",
+      "dolomyths-run"
+    ],
+    "currentEntriesCoveredByAuditBatch59": [
+      "eiger-ultratrail",
+      "bucovina-ultra-rocks"
+    ],
+    "legacyEntriesCoveredByAuditBatch58": [
+      "u-tlw"
+    ],
+    "legacyOnlyEntriesNotInCurrentCatalog": [
+      "Großglockner Mountain Run"
+    ],
+    "note": "This package follows the historic/original event list. Eight current entries overlap directly; Eiger and Bucovina are covered by batch 59, and U.TLW by batch 58. Großglockner Mountain Run is a legacy-only record not present in the current event catalog."
+  }
+}
