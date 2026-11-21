@@ -71,7 +71,23 @@
     "binaryFilesDownloaded": 0,
     "tracksParsed": 0,
     "metricsCompared": 0,
-    "next": "Check the current app event record for all four Arc routes, export each official GPX in a real browser/app runtime, parse trackpoints and compare computed length and elevation gain against organizer values."
+    "next": "Check the current app event record for all four Arc routes, export each official GPX in a real browser/app runtime, parse trackpoints and compare computed length and elevation gain against organizer values.",
+    "currentAppRouteCount": 2,
+    "currentOfficialRoutesMissingFromApp": 2
   },
-  "gpxSafety": "No GPX files were deleted or replaced. Existing GPX files remain valid until a newer official file is actually downloaded, parsed and validated."
+  "gpxSafety": "No GPX files were deleted or replaced. Existing GPX files remain valid until a newer official file is actually downloaded, parsed and validated.",
+  "currentAppRecordCrossCheck": {
+    "eventId": "arc-of-attrition-by-utmb",
+    "currentRouteCount": 2,
+    "currentRouteIds": [
+      "arc-100m-173-5507",
+      "arc-100k-82-7-2708"
+    ],
+    "missingOfficialRoutes": [
+      "Arc 50K",
+      "Arc 20K"
+    ],
+    "official2027RouteCount": 4,
+    "note": "The current event-dates.json record contains only Arc 100M and Arc 100K. The official 2027 organizer programme includes Arc 50K and Arc 20K as well; do not treat the app route inventory as complete."
+  }
 }
