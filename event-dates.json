@@ -108,7 +108,7 @@
     "mountain-man-winter": {
       "eventId": "mountain-man-winter",
       "checkedAt": "2026-11-18T14:25:00.201965+00:00",
-      "status": "verified",
+      "status": "unconfirmed",
       "sources": [
         {
           "url": "https://www.reitimwinkl.de/mountainman-winterloop",
@@ -600,7 +600,7 @@
         },
         "2": {
           "routeId": "discovery-race-k35-37-8-2110",
-          "date": "2027-05-05",
+          "date": "2027-05-08",
           "verified": true
         },
         "3": {
@@ -610,7 +610,7 @@
         },
         "4": {
           "routeId": "panorama-ultra-trail-67-9-2670",
-          "date": "2027-05-06",
+          "date": "2027-05-08",
           "verified": true
         },
         "5": {
@@ -619,31 +619,6 @@
           "verified": true
         },
         "6": {
-          "routeId": "master-of-innsbruck-112-6-5500",
-          "date": "2027-05-08",
-          "verified": true
-        },
-        "7": {
-          "routeId": "discovery-race-k35-37-8-2110",
-          "date": "2027-05-08",
-          "verified": true
-        },
-        "8": {
-          "routeId": "trailmarathon-k42-43-4-2400",
-          "date": "2027-05-06",
-          "verified": true
-        },
-        "9": {
-          "routeId": "panorama-ultra-trail-67-9-2670",
-          "date": "2027-05-08",
-          "verified": true
-        },
-        "10": {
-          "routeId": "heart-of-the-alps-ultra-87-3900",
-          "date": "2027-05-08",
-          "verified": true
-        },
-        "11": {
           "routeId": "master-of-innsbruck-112-6-5500",
           "date": "2027-05-08",
           "verified": true
@@ -770,7 +745,7 @@
     "chiemgau-trail": {
       "eventId": "chiemgau-trail",
       "checkedAt": "2026-11-18T14:25:00.201965+00:00",
-      "status": "verified",
+      "status": "unconfirmed",
       "sources": [
         {
           "url": "https://chiemgau-trail-run.de/",
@@ -1312,7 +1287,7 @@
       ],
       "eventPeriod": {
         "startDate": "2027-06-04",
-        "endDate": "2027-06-06",
+        "endDate": "2027-06-05",
         "verified": true
       },
       "routes": {
@@ -1333,16 +1308,41 @@
         },
         "3": {
           "routeId": "hochkoenig-hk30-extreme-34-2680",
-          "date": "2027-06-06",
+          "date": "2027-06-05",
           "verified": true
         },
         "4": {
           "routeId": "hochkoenig-hk20-20-5-1020",
-          "date": "2027-06-06",
+          "date": "2027-06-05",
+          "verified": true
+        },
+        "5": {
+          "routeId": "hochkoenig-mini-kids-2027",
+          "date": "2027-06-04",
+          "verified": true
+        },
+        "6": {
+          "routeId": "hochkoenig-mini-junior-2027",
+          "date": "2027-06-04",
+          "verified": true
+        },
+        "7": {
+          "routeId": "hochkoenig-mini-youth-2027",
+          "date": "2027-06-04",
           "verified": true
         },
         "8": {
-          "routeId": "hochkoenig-mini-ultraks-2027",
+          "routeId": "hochkoenig-hk-sprint-10-310-2027",
+          "date": "2027-06-05",
+          "verified": true
+        },
+        "9": {
+          "routeId": "hochkoenig-vertical-5-9-1080-2027",
+          "date": "2027-06-04",
+          "verified": true
+        },
+        "10": {
+          "routeId": "hochkoenig-team-trail-3-6-120-2027",
           "date": "2027-06-04",
           "verified": true
         }
@@ -1477,29 +1477,39 @@
     },
     "otscher-trail": {
       "eventId": "otscher-trail",
-      "checkedAt": "2026-11-18T14:25:00.201965+00:00",
-      "status": "verified",
+      "checkedAt": "2026-11-20T20:00:00Z",
+      "status": "partial",
       "sources": [
         {
           "url": "https://www.oetschertrail.run/",
           "status": "read",
-          "verification": "official-2027-page"
+          "verification": "official-event-site"
+        },
+        {
+          "url": "https://www.ravitorun.com/en/races/itra-121692",
+          "status": "read",
+          "verification": "itra-2027-event-listing"
         }
       ],
       "eventPeriod": {
-        "startDate": "2027-06-04",
-        "endDate": "2027-06-06",
+        "startDate": "2027-06-05",
+        "endDate": "2027-06-05",
         "verified": true
       },
       "routes": {
-        "3": {
+        "0": {
+          "routeId": "marathon-trail-49-8-2322",
+          "date": "2027-06-05",
+          "verified": true
+        },
+        "1": {
           "routeId": "oetscher-speed-trail-2027",
           "date": "2027-06-05",
           "verified": true
         },
-        "4": {
+        "2": {
           "routeId": "oetscher-skyrace-2027",
-          "date": "2027-06-06",
+          "date": "2027-06-05",
           "verified": true
         }
       }
@@ -1794,6 +1804,11 @@
           "url": "https://www.wilderkaiser.info/de/kaiserkrone-trail.html",
           "status": "read",
           "verification": "manual-official-page"
+        },
+        {
+          "url": "https://www.tirol.at/aktivitaeten/events/alle-events/kaiserkrone-trail",
+          "status": "read",
+          "verification": "official-tirol-2027-event-details"
         }
       ],
       "eventPeriod": {
@@ -1824,6 +1839,11 @@
         },
         "4": {
           "routeId": "kaiserkrone-medium-20-7-1290",
+          "date": "2027-06-26",
+          "verified": true
+        },
+        "5": {
+          "routeId": "kaiserkrone-short-8-3-490-2027",
           "date": "2027-06-26",
           "verified": true
         }
@@ -1871,9 +1891,14 @@
           "date": "2027-07-03",
           "verified": true
         },
-        "5": {
+        "4": {
           "routeId": "stubai-kids-trail-2027",
           "date": "2027-07-03",
+          "verified": true
+        },
+        "5": {
+          "routeId": "stubai-sunnenseitn-trail-14-700",
+          "date": "2027-07-02",
           "verified": true
         }
       }
@@ -2057,22 +2082,32 @@
           "verified": true
         },
         "3": {
-          "routeId": "verbier-marathon-x-treme-43-3000",
-          "date": "2027-07-09",
-          "verified": true
-        },
-        "4": {
           "routeId": "verbier-x-plore-28-1700",
           "date": "2027-07-11",
           "verified": true
         },
-        "5": {
+        "4": {
           "routeId": "verbier-trail-decouverte-2027",
           "date": "2027-07-11",
           "verified": true
         },
-        "6": {
+        "5": {
           "routeId": "verbier-x-orient-2027",
+          "date": "2027-07-11",
+          "verified": true
+        },
+        "6": {
+          "routeId": "verbier-marathon-47-2900",
+          "date": "2027-07-09",
+          "verified": true
+        },
+        "7": {
+          "routeId": "verbier-trail-decouverte-3-5-2027",
+          "date": "2027-07-11",
+          "verified": true
+        },
+        "8": {
+          "routeId": "verbier-x-orient-5k-240-2027",
           "date": "2027-07-11",
           "verified": true
         }
@@ -2152,8 +2187,38 @@
           "date": "2027-07-24",
           "verified": true
         },
-        "3": {
+        "2": {
           "routeId": "gletscher-trail-26k-25-8-1900",
+          "date": "2027-07-24",
+          "verified": true
+        },
+        "3": {
+          "routeId": "glacier-top-mountain-run-2027",
+          "date": "2027-07-23",
+          "verified": true
+        },
+        "4": {
+          "routeId": "glacier-trail-14k-2027",
+          "date": "2027-07-24",
+          "verified": true
+        },
+        "5": {
+          "routeId": "glacier-widi-200m-2027",
+          "date": "2027-07-24",
+          "verified": true
+        },
+        "6": {
+          "routeId": "glacier-widi-400m-2027",
+          "date": "2027-07-24",
+          "verified": true
+        },
+        "7": {
+          "routeId": "glacier-widi-600m-2027",
+          "date": "2027-07-24",
+          "verified": true
+        },
+        "8": {
+          "routeId": "glacier-widi-1500m-2027",
           "date": "2027-07-24",
           "verified": true
         }
@@ -2423,20 +2488,10 @@
         },
         "4": {
           "routeId": "ultratrail-xl-117-4467",
-          "date": "2027-07-24",
-          "verified": true
-        },
-        "5": {
-          "routeId": "100-miles-ultra-168-6300",
-          "date": "2027-07-24",
-          "verified": true
-        },
-        "6": {
-          "routeId": "ultratrail-xl-117-4467",
           "date": "2027-07-23",
           "verified": true
         },
-        "7": {
+        "5": {
           "routeId": "100-miles-ultra-168-6300",
           "date": "2027-07-23",
           "verified": true
@@ -2527,7 +2582,7 @@
           "date": "2027-06-26",
           "verified": true
         },
-        "3": {
+        "2": {
           "routeId": "sachsentrail-quartertrail-20-506",
           "date": "2027-06-27",
           "verified": true
@@ -2926,7 +2981,7 @@
     "utmb-mont-blanc": {
       "eventId": "utmb-mont-blanc",
       "checkedAt": "2026-11-17T07:47:59.247Z",
-      "status": "verified",
+      "status": "unconfirmed",
       "sources": [
         {
           "url": "https://montblanc.utmb.world/races-runners/runners/infos-pratiques",
@@ -3268,11 +3323,6 @@
           "routeId": "wildstrubel-wild-glacier-marathon-lenk",
           "date": "2027-09-10",
           "verified": true
-        },
-        "6": {
-          "routeId": "wildstrubel-wild-glacier-marathon-lenk",
-          "date": "2027-09-10",
-          "verified": true
         }
       }
     },
@@ -3482,7 +3532,7 @@
     "alpin-team-trailrun": {
       "eventId": "alpin-team-trailrun",
       "checkedAt": "2026-11-18T14:25:00.201965+00:00",
-      "status": "verified",
+      "status": "unconfirmed",
       "sources": [
         {
           "url": "https://www.trailrunning-verband.at/trailrunning-kalender",
@@ -4343,11 +4393,6 @@
           "routeId": "trail-du-saint-jacques-by-utmb-rando-28km",
           "date": "2027-06-20",
           "verified": true
-        },
-        "5": {
-          "routeId": "trail-du-saint-jacques-by-utmb-rando-28km",
-          "date": "2027-06-20",
-          "verified": true
         }
       }
     },
@@ -4837,22 +4882,6 @@
     },
     "run-for-life-21km": {
       "eventId": "run-for-life-21km",
-      "checkedAt": "2026-11-19T20:35:00.000Z",
-      "status": "unconfirmed",
-      "sources": [],
-      "eventPeriod": null,
-      "routes": {}
-    },
-    "strasimeno-half-marathon": {
-      "eventId": "strasimeno-half-marathon",
-      "checkedAt": "2026-11-19T20:35:00.000Z",
-      "status": "unconfirmed",
-      "sources": [],
-      "eventPeriod": null,
-      "routes": {}
-    },
-    "strasimeno-marathon": {
-      "eventId": "strasimeno-marathon",
       "checkedAt": "2026-11-19T20:35:00.000Z",
       "status": "unconfirmed",
       "sources": [],
@@ -6142,14 +6171,6 @@
           "fallback": false
         }
       }
-    },
-    "maraton-treh-src-2027": {
-      "eventId": "maraton-treh-src-2027",
-      "checkedAt": "2026-11-19T23:00:00+01:00",
-      "status": "unconfirmed",
-      "sources": [],
-      "eventPeriod": null,
-      "routes": {}
     },
     "kaunas-akropolis-marathon-2027": {
       "eventId": "kaunas-akropolis-marathon-2027",

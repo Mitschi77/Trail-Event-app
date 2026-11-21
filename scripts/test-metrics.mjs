@@ -477,3 +477,20 @@ assert.deepEqual(validatePlannerSnapshot({plannerKey: JSON.stringify({ok:true})}
 assert.throws(() => validatePlannerSnapshot({unknownKey: "{}"}), /Unbekannter oder ungültiger Datenbereich/);
 assert.throws(() => validatePlannerSnapshot({plannerKey: "{"}), /Beschädigte Daten/);
 assert.notDeepEqual(cloudSignature({plannerKey:"old"}), cloudSignature({plannerKey:"new"}), "Backup integrity signatures must change when stored data changes");
+
+
+// Age-group races must remain visible without a distance filter but must not
+// satisfy adult distance filters or lower an event's regular-distance summary.
+const distanceFilterStart = html.indexOf("function routeMatchesDistanceFilter(route,filter){");
+const distanceFilterEnd = html.indexOf("function routeIsUtmbRelated", distanceFilterStart);
+assert.ok(distanceFilterStart >= 0 && distanceFilterEnd > distanceFilterStart, "Distance filter function boundaries must be present");
+const routeMatchesDistanceFilter = new Function("return (" + html.slice(distanceFilterStart, distanceFilterEnd).trim() + ")")();
+assert.equal(routeMatchesDistanceFilter({km:0.5,excludeFromDistanceFilter:true},"lt22"), false, "Kids races must not match adult distance filters");
+assert.equal(routeMatchesDistanceFilter({km:0.5,excludeFromDistanceFilter:true},""), true, "Kids races remain visible when no distance filter is selected");
+assert.equal(routeMatchesDistanceFilter({km:14},"lt22"), true, "Regular trail races remain filterable");
+for (const [eventId, expected] of [["hochkonigman",3.6],["kaiserkrone",8.3],["stubai-ultra-trail",14],["trai-verbier-st-bernhard",28],["der-gletscher-trailrun",6.3]]) {
+  assert.equal(appEvents.find(event=>event.id===eventId)?.minKm, expected, eventId + " minimum distance must ignore youth/kids races");
+}
+for (const id of ["hochkoenig-mini-kids-2027","hochkoenig-mini-junior-2027","hochkoenig-mini-youth-2027","kaiserkrone-kids","stubai-kids-trail-2027","verbier-trail-decouverte-2027","verbier-trail-decouverte-3-5-2027","verbier-x-orient-2027","verbier-x-orient-5k-240-2027","glacier-widi-200m-2027","glacier-widi-400m-2027","glacier-widi-600m-2027","glacier-widi-1500m-2027"]) {
+  assert.equal(routeById(id)?.excludeFromDistanceFilter, true, id + " must be excluded from adult distance filters");
+}
