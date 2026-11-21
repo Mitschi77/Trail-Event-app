@@ -1,0 +1,384 @@
+{
+  "batch": 86,
+  "checkedAt": "2026-11-21",
+  "scope": "events 319-328 from event-dates.json",
+  "rules": [
+    "Official organizer sources prioritized; secondary sources are clearly marked provisional.",
+    "Do not carry historic GPX/routes into 2027 without edition-specific binary retrieval and complete track parsing.",
+    "A map/video/download control is not equivalent to a parsed binary GPX.",
+    "No live records, app runtime or old GPX files are changed in this audit."
+  ],
+  "events": [
+    {
+      "sequence": 319,
+      "eventId": "kaunas-akropolis-marathon-2027",
+      "name": "Kaunas Akropolis Marathon",
+      "date": "2027-04-25",
+      "location": "Kaunas, Lithuania",
+      "status": "organizer-confirmed",
+      "routes": [
+        {
+          "name": "Marathon",
+          "distanceKm": 42.195,
+          "startTime": "08:30"
+        },
+        {
+          "name": "Half Marathon",
+          "distanceKm": 21.098,
+          "startTime": "08:30"
+        },
+        {
+          "name": "10K",
+          "distanceKm": 10,
+          "startTime": "15:00"
+        },
+        {
+          "name": "5K",
+          "distanceKm": 5,
+          "startTime": "14:00"
+        },
+        {
+          "name": "Family",
+          "distanceKm": 1.5,
+          "startTime": "13:00"
+        },
+        {
+          "name": "Kids",
+          "distanceKm": 0.4,
+          "startTime": "12:30"
+        }
+      ],
+      "detail": "Organizer's 2027 rules confirm 25 April, start venue Kaunas Akropolis/Karaliaus Mindaugo avenue and race start times. Official map page has 10K/5K GPX download links and course maps, but their file edition is not established and marathon/half GPX not validated. No binary downloaded or parsed.",
+      "gpxStatus": "official course-map page and 10K/5K download controls; no binary downloaded or parsed; edition unknown",
+      "sources": [
+        "https://www.kaunasmarathon.lt/",
+        "https://www.kaunasmarathon.lt/page/maps",
+        "https://www.kaunasmarathon.lt/page/map2"
+      ]
+    },
+    {
+      "sequence": 320,
+      "eventId": "nlb-ljubljana-marathon-2027",
+      "name": "NLB Ljubljana Marathon",
+      "date": "2027-10-16/17",
+      "location": "Ljubljana, Slovenia",
+      "status": "organizer-confirmed",
+      "routes": [
+        {
+          "name": "Marathon",
+          "date": "2027-10-17",
+          "distanceKm": 42.195,
+          "startTime": "09:00"
+        },
+        {
+          "name": "Half Marathon",
+          "date": "2027-10-17",
+          "distanceKm": 21.098,
+          "startTime": "09:00"
+        },
+        {
+          "name": "10K",
+          "date": "2027-10-16",
+          "distanceKm": 10,
+          "startTime": "16:30"
+        },
+        {
+          "name": "Kids",
+          "date": "2027-10-16",
+          "distanceKm": 0.2
+        }
+      ],
+      "detail": "Organizer confirms 31st edition 16–17 October 2027. Marathon, half and 10K registration pages list 09:00 for marathon/half and 16:30 for 10K; 10K and kids events on Saturday. Official GPX controls were found in earlier audit, but 2027 edition-specific binary not fetched or parsed.",
+      "gpxStatus": "official route downloads previously observed; edition and binary validation pending",
+      "sources": [
+        "https://ljubljanskimaraton.si/en/"
+      ]
+    },
+    {
+      "sequence": 321,
+      "eventId": "rimi-riga-marathon-2027",
+      "name": "Rimi Riga Marathon",
+      "date": "2027-05-15/16",
+      "location": "Riga, Latvia",
+      "status": "organizer-confirmed",
+      "routes": [
+        {
+          "name": "Marathon",
+          "date": "2027-05-16",
+          "distanceKm": 42.195
+        },
+        {
+          "name": "Half Marathon",
+          "date": "2027-05-16",
+          "distanceKm": 21.0975
+        },
+        {
+          "name": "10K",
+          "date": "2027-05-16",
+          "distanceKm": 10
+        },
+        {
+          "name": "6K",
+          "date": "2027-05-16",
+          "distanceKm": 5.7
+        },
+        {
+          "name": "DPD Mile",
+          "date": "2027-05-15",
+          "distanceKm": 1.609
+        }
+      ],
+      "detail": "Organizer FAQ and 2027 rules confirm 15–16 May. 2027 rules specify measured road courses: marathon 42.195km, half 21.0975km, 10km and 5.7km. Organizer says new courses are in the works and will be revealed later; do not use current/old GPX as 2027.",
+      "gpxStatus": "new 2027 courses pending publication; no current-edition GPX binary",
+      "sources": [
+        "https://rimirigamarathon.com/en/frequently-asked-questions/",
+        "https://rimirigamarathon.com/en/courses/",
+        "https://rimirigamarathon.com/wp-content/uploads/2026/11/Rimi-Riga-marathon_Rules_2027_06112026.pdf"
+      ]
+    },
+    {
+      "sequence": 322,
+      "eventId": "mali-kraski-maraton-2027",
+      "name": "25. Mali kraški maraton",
+      "date": "2027-03-21",
+      "location": "Sežana, Slovenia",
+      "status": "organizer-confirmed",
+      "routes": [
+        {
+          "name": "Biostil Half Marathon",
+          "distanceKm": 21.098,
+          "startTime": "11:00"
+        },
+        {
+          "name": "Generali ZAME 10ka",
+          "distanceKm": 10.4,
+          "startTime": "11:00"
+        },
+        {
+          "name": "Klančarjevih 6",
+          "distanceKm": 6.2,
+          "startTime": "11:00"
+        },
+        {
+          "name": "Kosovelova Pot",
+          "distanceKm": 8,
+          "startTime": "10:30"
+        }
+      ],
+      "detail": "Organizer homepage confirms Sunday 21 March 2027, Športni park Sežana, registration open and distances/times. The event name says 'marathon' but no full 42.195km marathon is listed; primary race is half marathon. No 2027 GPX or ascent figures found.",
+      "gpxStatus": "no 2027 GPX binary found or parsed",
+      "sources": [
+        "https://www.kraskimaraton.si/"
+      ]
+    },
+    {
+      "sequence": 323,
+      "eventId": "swedbank-tallinn-marathon-2027",
+      "name": "Swedbank Tallinn Marathon",
+      "date": "2027-09-10/12",
+      "location": "Tallinn, Estonia",
+      "status": "organizer-confirmed",
+      "routes": [
+        {
+          "name": "Marathon",
+          "date": "2027-09-12",
+          "distanceKm": 42.195
+        },
+        {
+          "name": "Half Marathon",
+          "date": "2027-09-11",
+          "distanceKm": 21.1
+        },
+        {
+          "name": "10K",
+          "date": "2027-09-11",
+          "distanceKm": 10
+        },
+        {
+          "name": "Nike Youth Run",
+          "date": "2027-09-11",
+          "distanceKm": 5
+        },
+        {
+          "name": "Welcome Run",
+          "date": "2027-09-10"
+        }
+      ],
+      "detail": "Organizer confirms weekend 10–12 September 2027. Marathon Sunday 12 Sep; half and 10K Saturday 11 Sep; 5K youth run Saturday; Welcome Run Friday. Course description says Tallinn streets and easy paths, with start/finish near Old Town. No 2027 GPX or elevation validated.",
+      "gpxStatus": "course videos/maps referenced; no 2027 binary GPX downloaded or parsed",
+      "sources": [
+        "https://www.jooks.ee/en/tallinn-marathon/tallinnmarathon-faq",
+        "https://www.jooks.ee/en/tallinn-marathon/news?news_id=1405",
+        "https://www.jooks.ee/en/tallinn-marathon/about-tallinn-marathon-info"
+      ]
+    },
+    {
+      "sequence": 324,
+      "eventId": "swedbank-vilnius-marathon-2027",
+      "name": "Swedbank Vilnius Marathon",
+      "date": "2027-09-12",
+      "location": "Vilnius, Lithuania",
+      "status": "organizer-confirmed",
+      "routes": [
+        {
+          "name": "Marathon",
+          "distanceKm": 42.195,
+          "startTime": "08:30"
+        },
+        {
+          "name": "Half Marathon",
+          "distanceKm": 21.098,
+          "startTime": "08:30"
+        },
+        {
+          "name": "10K",
+          "distanceKm": 10,
+          "startTime": "16:00"
+        },
+        {
+          "name": "5K",
+          "distanceKm": 5,
+          "startTime": "14:30"
+        },
+        {
+          "name": "Walk",
+          "distanceKm": 4
+        }
+      ],
+      "detail": "Organizer regulations confirm 12 September 2027 and distances 42.195/21.098/10/5km plus 4/10km walk; preliminary program gives 08:30 marathon/half, 14:30 5K, 16:00 10K. Start Cathedral Square. This is distinct from the separate IF Vilnius Half record (sequence 325), which appears to be another event in May; do not merge.",
+      "gpxStatus": "no 2027 GPX binary validated",
+      "sources": [
+        "https://www.vilniausmaratonas.lt/en/informacija/nuostatai/",
+        "https://www.vilniausmaratonas.lt/en/programa/"
+      ]
+    },
+    {
+      "sequence": 325,
+      "eventId": "if-vilnius-half-marathon-2027",
+      "name": "IF Vilnius Half Marathon",
+      "date": "2027-05-22",
+      "location": "Vilnius, Lithuania",
+      "status": "secondary-calendar-only; organizer-confirmation-needed",
+      "routes": [
+        {
+          "name": "Half Marathon",
+          "distanceKm": 21.1
+        },
+        {
+          "name": "10K",
+          "distanceKm": 10
+        },
+        {
+          "name": "5K",
+          "distanceKm": 5
+        }
+      ],
+      "detail": "EuroSlam lists 22 May 2027 and 21.1km, start/finish Cathedral Square, but an official organizer 2027 date/rulebook was not located. Do not confuse with the Swedbank Vilnius Marathon on 12 September 2027; this appears to be a separate May race but remains provisional until official confirmation. +80m is a third-party modelled estimate, not organizer/GPX data.",
+      "gpxStatus": "no official 2027 GPX binary; date provisional",
+      "sources": [
+        "https://euroslam.run/races/vilnius-half-marathon"
+      ]
+    },
+    {
+      "sequence": 326,
+      "eventId": "panas-polmaraton-slezanski-2027",
+      "name": "19. PANAS Półmaraton Ślężański",
+      "date": "2027-03-20",
+      "location": "Sobótka, Poland",
+      "status": "organizer-date-confirmed; detailed-route-pending",
+      "routes": [
+        {
+          "name": "Half Marathon",
+          "distanceKm": 21.0975,
+          "startTime": "11:00",
+          "start": "Rynek, Sobótka"
+        }
+      ],
+      "detail": "Organizer confirms Saturday 20 March 2027 in Sobótka. Official announcement says detailed organization, registration and additional races will follow. Third-party course page reports about 200m lowest-to-highest elevation difference, not cumulative ascent; not GPX-derived. No 2027 binary found.",
+      "gpxStatus": "no official 2027 GPX binary; route details pending",
+      "sources": [
+        "https://www.polmaratonslezanski.pl/19-polmaraton-slezanski-w-sobote-20-03-2027/",
+        "https://www.marathontrip.com/races/panas-pomaraton-slezanski/"
+      ]
+    },
+    {
+      "sequence": 327,
+      "eventId": "xiv-pabianicki-polmaraton-2027",
+      "name": "XIV Pabianicki Półmaraton",
+      "date": "2027-03-21",
+      "location": "Pabianice, Poland",
+      "status": "organizer-confirmed",
+      "routes": [
+        {
+          "name": "Half Marathon",
+          "distanceKm": 21.0975,
+          "startTime": "11:00",
+          "surface": "100% asphalt",
+          "certification": "PZLA certified"
+        }
+      ],
+      "detail": "Organizer regulations confirm 21 March 2027, 11:00, start/finish MOSiR Pabianice, Grota Roweckiego 3; certified 21.0975km asphalt course through Pabianice and surrounding area, 3h limit. Site also has announcement and 2027 registration details. No GPX or ascent published in checked material.",
+      "gpxStatus": "no official 2027 GPX binary found or parsed",
+      "sources": [
+        "https://pabianickipolmaraton.pl/index.php/regulamin/",
+        "https://pabianickipolmaraton.pl/"
+      ]
+    },
+    {
+      "sequence": 328,
+      "eventId": "polmaraton-kolo-2027",
+      "name": "Półmaraton Koło",
+      "date": "2027-04-25",
+      "location": "Koło, Poland",
+      "status": "organizer-confirmed",
+      "routes": [
+        {
+          "name": "Half Marathon",
+          "distanceKm": 21.097,
+          "startTime": "11:00",
+          "start": "Park 600-lecia",
+          "finish": "Park 600-lecia",
+          "certification": "PZLA certified"
+        },
+        {
+          "name": "Bieg Debiutanta",
+          "distanceKm": 4,
+          "startTime": "11:05"
+        }
+      ],
+      "detail": "Organizer regulation confirms 25 April 2027, half marathon start 11:00, 21.097km out-and-back course and PZLA certification. Bieg Debiutanta is 4km and starts 11:05. The 2027 timetable and regulations agree. No GPX or ascent figures found.",
+      "gpxStatus": "no official 2027 GPX binary found or parsed",
+      "sources": [
+        "https://polmaratonkolo.pl/regulamin-polmaraton-kolo/",
+        "https://polmaratonkolo.pl/harmonogram-zawodow/"
+      ]
+    }
+  ],
+  "summary": {
+    "eventsReviewed": 10,
+    "organizerDateConfirmed": 9,
+    "secondaryOnlyOrProvisional": 1,
+    "official2027GpxBinaryValidated": 0,
+    "binaryFilesDownloaded": 0,
+    "tracksParsed": 0,
+    "binaryMetricsCompared": 0,
+    "officialMapOrDownloadPagesFound": 3,
+    "oldGpxFilesDeleted": 0,
+    "oldGpxFilesOverwritten": 0,
+    "appRuntimeFilesChanged": 0,
+    "appEventRecordsChanged": 0,
+    "auditOnly": true
+  },
+  "followUps": [
+    "Kaunas: verify edition of 10K/5K GPX links and retrieve current marathon/half tracks.",
+    "Ljubljana: retrieve 2027 edition-specific official GPX and parse each distance independently.",
+    "Riga: wait for organizer's promised new 2027 courses; do not reuse older course GPX.",
+    "Mali kraški: verify whether full marathon distance is intended by event name; current organizer list has half/10.4/6.2km, not 42.195km.",
+    "Tallinn: obtain 2027 GPX and cumulative ascent for marathon, half, 10K and 5K.",
+    "Vilnius September: obtain edition-specific route GPX for marathon, half, 10K and 5K.",
+    "IF Vilnius Half May: locate organizer site/rules and verify whether 22 May 2027 is correct; keep provisional meanwhile.",
+    "Ślężański: await official 2027 route map/GPX; don't mistake 200m relief for cumulative ascent.",
+    "Pabianice: obtain official 2027 GPX and parsed ascent.",
+    "Koło: obtain official 2027 GPX and parsed ascent."
+  ]
+}
