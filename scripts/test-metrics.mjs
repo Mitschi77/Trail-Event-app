@@ -639,3 +639,18 @@ assert.deepEqual(failedActivityStorage.initialRecords, { "0:0": { done: false, y
   "Original in-memory records must remain unchanged after a failed import");
 assert.equal(failedActivityStorage.getCloudSaves(), 0,
   "A failed activity import must not queue cloud synchronization");
+
+// Year overview: compact, accessible cards expose the actual route profile and cut-off data.
+assert.ok(html.includes('class="year-race-more"') && html.includes('Weitere Streckendetails &amp; Planung'),
+  "Year race details must use native details/summary disclosure controls");
+assert.ok(html.includes('class="year-race-head"'), "Year overview must render compact race-card headings");
+assert.ok(html.includes("+(yearInvoices||'')+profileInfo+detailButton"),
+  "Expanded year cards must include accommodation, invoices, elevation profile, cut-offs and route metrics");
+assert.ok(html.includes('const profileInfo=') && html.includes("+derivedPanel+profilePanel+cutoffPanel+pngPanel+"),
+  "Year overview profile section must retain derived metrics, elevation profile, cut-off and optional route image");
+assert.ok(html.includes('aria-controls="yearReview'),
+  "Year review toggle must expose the controlled panel to assistive technology");
+assert.ok(html.includes('year-profile-panels') && html.includes('renderElevationProfile(x.r,x.e,safeFrameUrl)') && html.includes('renderCutoffDetails(x.r)'),
+  "Year cards must keep the route elevation profile and cut-off renderer wired in");
+assert.ok(html.includes('--bg:#101713') && html.includes('--ink:#f0f5f1') && html.includes('color-scheme:dark'),
+  "The existing fixed dark theme and readable contrast tokens must remain in place");
