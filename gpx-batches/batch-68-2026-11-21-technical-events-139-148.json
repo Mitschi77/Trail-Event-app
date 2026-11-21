@@ -1,0 +1,344 @@
+{
+  "batch": 68,
+  "checkedAt": "2026-11-21",
+  "scope": {
+    "sequence": "events 139-148",
+    "eventIds": [
+      "ing-night-marathon-luxembourg",
+      "stramilano-half-marathon",
+      "mezza-maratona-sul-brembo",
+      "stragardalake-run-your-dream",
+      "mangia-s-straragusa",
+      "mangia-s-maratona-di-ragusa",
+      "losa-experience-21k-half-marathon",
+      "irun21-la-mezza-di-vicenza",
+      "half-marathon-citta-di-montecatini-terme",
+      "novara-half-marathon"
+    ]
+  },
+  "rules": [
+    "Use official organizer sources for route and event facts wherever available.",
+    "A GPX link or button is not binary validation.",
+    "Do not delete, overwrite or replace old GPX files until a new official binary is downloaded, fully parsed and validated.",
+    "Keep historical editions separate from the 2027 edition.",
+    "Audit-only: do not change live event records or runtime files."
+  ],
+  "events": [
+    {
+      "sequence": 139,
+      "eventId": "ing-night-marathon-luxembourg",
+      "name": "ING Night Marathon Luxembourg",
+      "edition": 2027,
+      "eventDate": "2027-05-08",
+      "routes": [
+        {
+          "name": "Marathon",
+          "distanceKm": 42.195
+        },
+        {
+          "name": "Half Marathon",
+          "distanceKm": 21.0975
+        },
+        {
+          "name": "Team Run",
+          "distanceKm": 42.195,
+          "legs": 4
+        },
+        {
+          "name": "Minimarathon",
+          "distanceKm": 4.2
+        },
+        {
+          "name": "Mini Minimarathon",
+          "distanceKm": 1
+        },
+        {
+          "name": "5K Run for Success",
+          "distanceKm": 5
+        },
+        {
+          "name": "Roll & Run",
+          "distanceKm": 7.3
+        }
+      ],
+      "gpxStatus": "2027-official-course-pdf-available-no-gpx-link-found",
+      "technicalAttempt": {
+        "official2027DisciplinePagesChecked": true,
+        "officialCoursePdfControlFound": true,
+        "gpxLinkFound": false,
+        "binaryDownloaded": false,
+        "parsed": false,
+        "metricsCompared": false,
+        "result": "Organizer publishes 2027 discipline pages and a downloadable PDF course map for marathon and half marathon. The checked official pages do not expose a GPX download. The 2026 PDF is not a substitute for 2027."
+      },
+      "sources": [
+        "https://www.ing-night-marathon.lu/disziplinen/marathon-2027.html",
+        "https://www.ing-night-marathon.lu/disziplinen/halbmarathon-2027.html",
+        "https://www.ing-night-marathon.lu/informationen/faq.html"
+      ]
+    },
+    {
+      "sequence": 140,
+      "eventId": "stramilano-half-marathon",
+      "name": "Stramilano Half Marathon",
+      "edition": 2027,
+      "eventDate": "2027-03-21",
+      "distanceKm": 21.097,
+      "start": "Piazza Castello, Milano",
+      "finish": "Piazza Castello, Milano",
+      "startTimeLocal": "08:30",
+      "gpxStatus": "official-2027-street-by-street-route-published-no-gpx-link-found",
+      "technicalAttempt": {
+        "official2027RegulationsFound": true,
+        "official2027RoutePageFound": true,
+        "gpxLinkFound": false,
+        "binaryDownloaded": false,
+        "parsed": false,
+        "metricsCompared": false,
+        "result": "Official 2027 regulations confirm the 21.097km race on 21 March. The organizer provides a street-by-street route description and route image. No official GPX download link was found."
+      },
+      "sources": [
+        "https://www.stramilano.it/runs/stramilano-half-marathon-21-km/regulations/?lang=en",
+        "https://www.stramilano.it/runs/stramilano-half-marathon-21-km/21-km-route/?lang=en",
+        "https://www.stramilano.it/runs/stramilano-half-marathon-21-km/faq-21-km/?lang=en"
+      ]
+    },
+    {
+      "sequence": 141,
+      "eventId": "mezza-maratona-sul-brembo",
+      "name": "Mezza Maratona sul Brembo",
+      "edition": 2027,
+      "eventDate": "2027-01-06",
+      "distanceKm": 21.0975,
+      "location": "Dalmine, Bergamo, Italy",
+      "gpxStatus": "official-2027-organizer-course-page-not-located-no-gpx-confirmed",
+      "technicalAttempt": {
+        "official2027OrganizerPageFound": false,
+        "official2027GpxLinkFound": false,
+        "binaryDownloaded": false,
+        "parsed": false,
+        "metricsCompared": false,
+        "result": "The 2027 calendar date and half-marathon distance are visible in race calendars, but an official organizer 2027 course page or GPX could not be confirmed during this pass. Keep route details unconfirmed; do not use third-party GPX status as organizer evidence."
+      },
+      "sources": [
+        "https://www.runnersbergamo.it/",
+        "https://www.fidal-lombardia.it/"
+      ]
+    },
+    {
+      "sequence": 142,
+      "eventId": "stragardalake-run-your-dream",
+      "name": "StraGardaLake - Run Your Dream",
+      "edition": 2027,
+      "eventDate": "2027-01-10",
+      "routes": [
+        {
+          "name": "21K",
+          "distanceKm": 21,
+          "ascentM": 251,
+          "descentM": 251
+        },
+        {
+          "name": "10K",
+          "distanceKm": 10
+        }
+      ],
+      "gpxStatus": "official-2027-21k-gpx-download-link-found-binary-not-retrieved-or-validated",
+      "technicalAttempt": {
+        "official2027RoutePageFound": true,
+        "official2027GpxDownloadControlFound": true,
+        "directGpxEndpoint": "https://www.stragardalake.com/Stragardalake_21k.gpx",
+        "binaryDownloaded": false,
+        "parsed": false,
+        "metricsCompared": false,
+        "result": "Official 2027 route page confirms 21km, 251m positive and 251m negative elevation and provides a GPX download control. The direct endpoint could not be retrieved as a GPX binary in this audit; edition metadata and track content remain unverified."
+      },
+      "sources": [
+        "https://www.stragardalake.com/en/2nd-registration-opening-for-stragardalake/",
+        "https://www.stragardalake.com/en/percorso-da-21km/",
+        "https://www.stragardalake.com/Stragardalake_21k.gpx"
+      ]
+    },
+    {
+      "sequence": 143,
+      "eventId": "mangia-s-straragusa",
+      "name": "Mangia's StraRagusa",
+      "edition": 2027,
+      "eventDate": "2027-01-17",
+      "distanceKm": 21.097,
+      "startTimeLocal": "09:45",
+      "gpxStatus": "official-2027-route-page-and-gpx-download-label-present-edition-of-binary-unverified",
+      "technicalAttempt": {
+        "official2027EventPageFound": true,
+        "officialRouteDescriptionFound": true,
+        "officialGpxDownloadLabelFound": true,
+        "directBinaryUrlExposed": false,
+        "binaryDownloaded": false,
+        "parsed": false,
+        "metricsCompared": false,
+        "result": "Official organizer event page announces 17 January 2027; route page describes the 21.097km StraRagusa and displays a GPX download label. The underlying direct file URL and edition metadata could not be confirmed, so it is not validated as a 2027 track."
+      },
+      "detail": "Organizer route description says the first 11km are undulating, then the course descends gently and follows the final 19km of the marathon, including the final climb on Via XI Febbraio.",
+      "sources": [
+        "https://maratonadiragusa.com/maratona-di-ragusa/",
+        "https://maratonadiragusa.com/percorsi-maratona-di-ragusa1/"
+      ]
+    },
+    {
+      "sequence": 144,
+      "eventId": "mangia-s-maratona-di-ragusa",
+      "name": "Mangia's Maratona di Ragusa",
+      "edition": 2027,
+      "eventDate": "2027-01-17",
+      "distanceKm": 42.195,
+      "startTimeLocal": "08:00",
+      "gpxStatus": "official-2027-route-page-and-gpx-download-label-present-edition-of-binary-unverified",
+      "technicalAttempt": {
+        "official2027EventPageFound": true,
+        "officialRouteDescriptionFound": true,
+        "officialElevationProfileFound": true,
+        "officialGpxDownloadLabelFound": true,
+        "directBinaryUrlExposed": false,
+        "binaryDownloaded": false,
+        "parsed": false,
+        "metricsCompared": false,
+        "result": "Official organizer event page announces 17 January 2027; the route page describes the marathon and displays a GPX download label. The linked file edition could not be established. The published profile image shows +307m/-550m, but these values are page-level profile data, not independently parsed GPX metrics."
+      },
+      "detail": "The official route description includes city roads, rural plateau roads and short unpaved sections in the first half; the final kilometres descend into Ragusa Ibla with a final climb before the finish at Giardini Iblei.",
+      "sources": [
+        "https://maratonadiragusa.com/maratona-di-ragusa/",
+        "https://maratonadiragusa.com/percorsi-maratona-di-ragusa1/"
+      ]
+    },
+    {
+      "sequence": 145,
+      "eventId": "losa-experience-21k-half-marathon",
+      "name": "LOSA Experience 21K Half Marathon",
+      "edition": 2027,
+      "eventDate": "2027-01-17",
+      "distanceKm": 21.097,
+      "location": "Arconate, Milano, Italy",
+      "laps": 2,
+      "gpxStatus": "official-2027-course-description-and-elevation-profile-image-found-no-gpx-link-found",
+      "technicalAttempt": {
+        "official2027OrganizerPageFound": true,
+        "official2027CourseDescriptionFound": true,
+        "officialElevationProfileImageFound": true,
+        "gpxLinkFound": false,
+        "binaryDownloaded": false,
+        "parsed": false,
+        "metricsCompared": false,
+        "result": "Organizer confirms a FIDAL-certified 21.097km course on two laps, start/finish at Viale della Concordia in Arconate, with a published elevation-profile image. No GPX download link was found on the checked official page."
+      },
+      "sources": [
+        "https://losaexperience.it/21k/",
+        "https://losaexperience.it/"
+      ]
+    },
+    {
+      "sequence": 146,
+      "eventId": "irun21-la-mezza-di-vicenza",
+      "name": "iRun21 - La Mezza di Vicenza",
+      "edition": 2027,
+      "eventDate": "2027-01-24",
+      "distanceKm": 21.0975,
+      "startTimeLocal": "09:45",
+      "start": "Viale Roma, Vicenza, Italy",
+      "gpxStatus": "partial-2027-organizer-regulation-found-course-details-and-gpx-not-published-in-checked-material",
+      "technicalAttempt": {
+        "official2027PartialRegulationFound": true,
+        "officialStartAndTimeFound": true,
+        "officialCourseMapFound": false,
+        "gpxLinkFound": false,
+        "binaryDownloaded": false,
+        "parsed": false,
+        "metricsCompared": false,
+        "result": "The available 2027 organizer regulation is partial and confirms the date, half-marathon distance and start at Viale Roma. It does not specify the route, finish location or elevation profile. No official GPX link was found."
+      },
+      "sources": [
+        "https://www.vicenzamarathon.it/",
+        "https://www.ultrabericus.it/"
+      ]
+    },
+    {
+      "sequence": 147,
+      "eventId": "half-marathon-citta-di-montecatini-terme",
+      "name": "Half Marathon Città di Montecatini Terme",
+      "edition": 2027,
+      "eventDate": "2027-01-24",
+      "distanceKm": 21.097,
+      "startTimeLocal": "09:30",
+      "route": "Two laps of an approximately 10.5km city circuit; start and finish at Palavinci",
+      "elevation": "Organizer describes low elevation gain; no numeric cumulative ascent published on checked page",
+      "gpxStatus": "official-2027-route-description-found-no-gpx-link-found",
+      "technicalAttempt": {
+        "official2027OrganizerPageFound": true,
+        "official2027CourseDescriptionFound": true,
+        "officialGpxLinkFound": false,
+        "binaryDownloaded": false,
+        "parsed": false,
+        "metricsCompared": false,
+        "result": "Organizer confirms the 8th edition on 24 January 2027 at 09:30, with 21.097km on two laps of a 10.5km city circuit. No official GPX download link was found on the checked event page."
+      },
+      "sources": [
+        "https://montecatinimarathonasd.com/",
+        "https://montecatinimarathonasd.com/gare.html"
+      ]
+    },
+    {
+      "sequence": 148,
+      "eventId": "novara-half-marathon",
+      "name": "Novara Half Marathon",
+      "edition": 2027,
+      "eventDate": "2027-01-31",
+      "distanceKm": 21.0975,
+      "startTimeLocal": "09:30",
+      "start": "Viale Fratelli John e Robert Kennedy, Novara, Italy",
+      "gpxStatus": "official-organizer-gpx-google-drive-links-published-edition-of-binary-not-confirmed",
+      "technicalAttempt": {
+        "official2027OrganizerPageFound": true,
+        "official2027ProgramFound": true,
+        "official2027RouteGpxLinksFound": true,
+        "gpxTargets": [
+          "https://drive.google.com/file/d/1mTyi93MYBP6IgJkX0nwBxA1q9B_rZJHO/view?usp=drive_link",
+          "https://drive.google.com/file/d/1YMfpjv49sZfaQXdBXCNz4d-GK1t3o6v5/view?usp=drive_link"
+        ],
+        "binaryDownloaded": false,
+        "parsed": false,
+        "metricsCompared": false,
+        "result": "Organizer's 2027 page confirms 21.0975km, 31 January 2027, 09:30 start and provides Google Drive links labelled as GPX tracks for the half marathon and San Gaudenzio Run 10K. The actual binary files and their edition metadata were not retrieved or parsed."
+      },
+      "sources": [
+        "https://www.circuitorunning.it/24-novara-half-marathon",
+        "https://www.circuitorunning.it/programma-nhm",
+        "https://www.circuitorunning.it/percorsi-nhm"
+      ]
+    }
+  ],
+  "summary": {
+    "eventsReviewed": 10,
+    "official2027GpxBinaryValidated": 0,
+    "officialGpxDownloadControlsOrLinksFound": 4,
+    "officialCoursePdfsOrStreetDescriptionsFound": 5,
+    "eventsWithOfficial2027RouteDescription": 7,
+    "binaryFilesDownloaded": 0,
+    "tracksParsed": 0,
+    "binaryMetricsCompared": 0,
+    "oldGpxFilesDeleted": 0,
+    "oldGpxFilesOverwritten": 0,
+    "appRuntimeFilesChanged": 0,
+    "appEventRecordsChanged": 0,
+    "auditOnly": true
+  },
+  "followUps": [
+    "Luxembourg: recheck whether the organizer publishes GPX alongside the 2027 PDF maps.",
+    "Stramilano: recheck for an official GPX; retain the street-by-street route as text only.",
+    "Brembo: locate an official organizer 2027 event/course page before confirming route data.",
+    "StraGardaLake: retrieve the official 21K GPX binary, inspect metadata and parse the complete track.",
+    "Ragusa: resolve the actual GPX target URLs for both Marathon and StraRagusa and verify edition metadata; do not assume the 2027-labelled page makes the linked files 2027.",
+    "LOSA Experience: request or recheck for an official GPX file.",
+    "iRun21: obtain the complete organizer route map and any GPX before entering route/elevation details.",
+    "Montecatini: recheck for an official GPX and numeric ascent value.",
+    "Novara: retrieve both official Google Drive GPX binaries, inspect edition metadata and parse complete tracks."
+  ]
+}
