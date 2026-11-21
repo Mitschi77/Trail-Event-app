@@ -1,0 +1,198 @@
+{
+  "batch": 79,
+  "checkedAt": "2026-11-21",
+  "scope": "events 249-258 from event-dates.json",
+  "rules": [
+    "Official FIDAL and organizer sources take precedence; secondary calendar entries remain provisional.",
+    "Do not transfer 2026 route details or GPX to 2027 without explicit edition confirmation.",
+    "Keep marathon and half-marathon records separate, even when same organizer/event weekend.",
+    "A course page or download control is not proof of 2027 binary track validation.",
+    "Do not delete or overwrite old GPX files until new official binary is downloaded, fully parsed and validated.",
+    "Audit-only: no app runtime or live event records changed."
+  ],
+  "events": [
+    {
+      "sequence": 249,
+      "eventId": "estra-firenze-marathon",
+      "name": "Estra Firenze Marathon",
+      "edition": 2027,
+      "date": "2027-11-28",
+      "distanceKm": 42.195,
+      "location": "Florence, Toscana, Italy",
+      "status": "FIDAL-2027-calendar-confirms-date-and-gold-category; organizer-page-still-2026",
+      "gpxStatus": "no-2027-gpx-confirmed",
+      "detail": "FIDAL 2027 calendar confirms 28 November 2027, marathon, Gold category. Official Firenze Marathon site checked still displays 29 November 2026 and 2026 course content. No 2027 regulation or GPX published in checked material; do not reuse 2026 route.",
+      "sources": [
+        "https://casaitaliana.fidal.it/content/Maratone-e-mezze-219-eventi-nel-2027/186849",
+        "https://www.firenzemarathon.it/en/marathon/"
+      ]
+    },
+    {
+      "sequence": 250,
+      "eventId": "milano-half-marathon",
+      "name": "Milano Half Marathon",
+      "edition": 2027,
+      "date": "2027-11-28",
+      "distanceKm": 21.0975,
+      "location": "Milan, Lombardia, Italy",
+      "status": "FIDAL-2027-calendar-confirms-date-and-silver-category",
+      "gpxStatus": "no-2027-gpx-confirmed",
+      "detail": "FIDAL 2027 calendar confirms Milano Half Marathon on 28 November, Silver category. Organizer's 2027 half-marathon regulation/course/GPX was not independently found in this check. Keep separate from Wizz Air Milano Marathon on 4 April 2027.",
+      "sources": [
+        "https://casaitaliana.fidal.it/content/Maratone-e-mezze-219-eventi-nel-2027/186849"
+      ]
+    },
+    {
+      "sequence": 251,
+      "eventId": "como-lake-half-marathon",
+      "name": "Como Lake Half Marathon",
+      "edition": 2027,
+      "date": "2027-12-05",
+      "distanceKm": 21.0975,
+      "location": "Como, Lombardia, Italy",
+      "status": "FIDAL-derived-calendar-listing-for-2027; organizer-regulation-pending",
+      "gpxStatus": "no-2027-gpx-confirmed",
+      "detail": "2027 calendar entry, updated 18 November 2026, lists 5 December 2027 and 21.1km, citing FIDAL calendar. Description says undulating route from Como through Cernobbio, Moltrasio, Carate Urio and turnaround at Laglio, finishing near Villa Olmo; this route description may be historical and must be reconfirmed in 2027 rules. FIDAL page presently found is 2026 (6 December) and confirms only that edition's homologation.",
+      "sources": [
+        "https://dojemo.com/gara/como-lake-half-marathon-2027",
+        "https://www.fidal.it/calendario/XV%5E-Como-Lake-Half-Marathon/COD14246",
+        "https://www.maratoniamo.it/gare-in/lombardia/2027"
+      ]
+    },
+    {
+      "sequence": 252,
+      "eventId": "catania-marathon",
+      "name": "Catania Marathon",
+      "edition": 2027,
+      "date": "2027-12-12",
+      "distanceKm": 42.195,
+      "location": "Catania, Sicilia, Italy",
+      "status": "secondary-calendar-entry-only; organizer-regulation-pending",
+      "gpxStatus": "no-2027-gpx-confirmed",
+      "detail": "Calendar page gives 12 December 2027 and 42.195km; start time, regulation, registration and route remain undefined. Explicitly provisional, not organizer-confirmed.",
+      "sources": [
+        "https://www.maratoniamo.it/gara/catania-marathon-catania-maratona-2027"
+      ]
+    },
+    {
+      "sequence": 253,
+      "eventId": "salento-half-marathon",
+      "name": "Salento Half Marathon",
+      "edition": 2027,
+      "date": "2027-12-12",
+      "distanceKm": 21.0975,
+      "location": "Collepasso, Puglia, Italy",
+      "status": "secondary-calendar-entry-only; organizer-regulation-pending",
+      "gpxStatus": "no-2027-gpx-confirmed",
+      "detail": "Calendar page gives 12 December 2027 and 21.0975km; start time, rules and registration remain undefined. Explicitly provisional.",
+      "sources": [
+        "https://www.maratoniamo.it/gara/salento-half-marathon-2027-collepasso-mezza"
+      ]
+    },
+    {
+      "sequence": 254,
+      "eventId": "maratona-di-reggio-emilia-citta-del-tricolore",
+      "name": "Maratona di Reggio Emilia – Città del Tricolore",
+      "edition": 2027,
+      "date": "2027-12-12",
+      "distanceKm": 42.195,
+      "location": "Reggio nell'Emilia, Emilia-Romagna, Italy",
+      "status": "FIDAL-2027-calendar-confirms-date-and-silver-category",
+      "gpxStatus": "no-2027-gpx-confirmed",
+      "detail": "FIDAL 2027 calendar confirms 12 December 2027, marathon, Silver category. No 2027 organizer regulation, route, start time or GPX binary verified in this pass.",
+      "sources": [
+        "https://casaitaliana.fidal.it/content/Maratone-e-mezze-219-eventi-nel-2027/186849",
+        "https://www.maratoniamo.it/gare-a/reggio-nell-emilia"
+      ]
+    },
+    {
+      "sequence": 255,
+      "eventId": "mezza-maratona-del-tricolore",
+      "name": "Mezza Maratona del Tricolore",
+      "edition": 2027,
+      "date": "2027-12-12",
+      "distanceKm": 21.0975,
+      "location": "Reggio nell'Emilia, Emilia-Romagna, Italy",
+      "status": "secondary-calendar-entry-only; not-in-FIDAL-2027-marathon-half-list-extract",
+      "gpxStatus": "no-2027-gpx-confirmed",
+      "detail": "Maratoniamo lists 12 December 2027 and 21.0975km, but FIDAL 2027 national list extract confirms only Maratona di Reggio Emilia on that date, not the half marathon. Keep the half as a separate provisional event until organizer/FIDAL confirms 2027 staging.",
+      "sources": [
+        "https://www.maratoniamo.it/gare-a/reggio-nell-emilia",
+        "https://casaitaliana.fidal.it/content/Maratone-e-mezze-219-eventi-nel-2027/186849"
+      ]
+    },
+    {
+      "sequence": 256,
+      "eventId": "maratona-di-pisa",
+      "name": "Pisa Marathon",
+      "edition": 2027,
+      "date": "2027 date not published",
+      "distanceKm": 42.195,
+      "location": "Pisa, Toscana, Italy",
+      "status": "2027-edition-not-confirmed; official-rules-and-course-pages-are-2026",
+      "gpxStatus": "official-route-page-has-course-map-links-but-edition-is-2026; no-2027-binary-validated",
+      "detail": "Official organizer rules and course page are for 20 December 2026 (27th edition), 42.195km, 09:00, FIDAL/AIMS measured course. 2026 regulations allow deferral to 2027, but this does not establish a 2027 race date/course. Do not use the 2026 course or GPX as 2027.",
+      "sources": [
+        "https://maratonadipisa.com/en/rules-marathon/",
+        "https://maratonadipisa.com/en/percorsi/"
+      ]
+    },
+    {
+      "sequence": 257,
+      "eventId": "mezza-maratona-di-pisa",
+      "name": "Pisa Half Marathon – La Pisanina",
+      "edition": 2027,
+      "date": "2027 date not confirmed separately",
+      "distanceKm": 21.095,
+      "location": "Pisa, Toscana, Italy",
+      "status": "official-site-2026-course-context-only; no-distinct-2027-date-confirmed",
+      "gpxStatus": "no-2027-gpx-confirmed",
+      "detail": "The organizer's 2026 course page describes La Pisanina as 21.095km, sharing marathon route until the 13th-km turnaround, start Piazza Daniele Manin and finish below Leaning Tower. No separate 2027 date/regulation found. Do not assume the 2026 20 December date or course is valid for 2027.",
+      "sources": [
+        "https://maratonadipisa.com/en/percorsi/",
+        "https://maratonadipisa.com/en/rules-marathon/"
+      ]
+    },
+    {
+      "sequence": 258,
+      "eventId": "maratonina-della-citta-murata",
+      "name": "Maratonina della Città Murata",
+      "edition": 2027,
+      "date": "2027-12-19",
+      "distanceKm": 21.0975,
+      "location": "Cittadella, Veneto, Italy",
+      "status": "FIDAL-2027-calendar-confirms-date-and-silver-category",
+      "gpxStatus": "no-2027-gpx-confirmed",
+      "detail": "FIDAL 2027 calendar confirms 19 December 2027, half marathon, Silver category. The official FIDAL page currently found is still 2026 (20 December) with course homologation type A; 2027 route, regulation, start time and GPX remain pending.",
+      "sources": [
+        "https://casaitaliana.fidal.it/content/Maratone-e-mezze-219-eventi-nel-2027/186849",
+        "https://www.fidal.it/calendario/XX%5E-Maratonina-della-Citta-Murata21-0975km/COD14267",
+        "https://www.maratoniamo.it/gara/maratonina-della-citta-murata-cittadella-mezza-2027"
+      ]
+    }
+  ],
+  "summary": {
+    "eventsReviewed": 10,
+    "official2027FidalDateConfirmation": 4,
+    "secondaryOrUnconfirmed": 6,
+    "official2027GpxBinaryValidated": 0,
+    "officialCoursePagesFound": 2,
+    "binaryFilesDownloaded": 0,
+    "tracksParsed": 0,
+    "binaryMetricsCompared": 0,
+    "oldGpxFilesDeleted": 0,
+    "oldGpxFilesOverwritten": 0,
+    "appRuntimeFilesChanged": 0,
+    "appEventRecordsChanged": 0,
+    "auditOnly": true
+  },
+  "followUps": [
+    "Firenze: wait for organizer's 2027 regulation/route; FIDAL date is 28 November 2027, Gold.",
+    "Milano Half: retrieve 2027 organizer regulation and GPX; FIDAL lists 28 November 2027, Silver; distinct from April marathon.",
+    "Como: request 2027 organizer rules and route; calendar date 5 December is secondary/FIDAL-derived, while currently found FIDAL detail is 2026.",
+    "Catania and Salento: await organizer regulations and current route; calendar entries remain provisional.",
+    "Reggio Emilia: obtain official 2027 route and GPX; confirm whether half-marathon del Tricolore will also be held on 12 December.",
+    "Pisa Marathon and Half: no separate 2027 date/course published in checked organizer pages; retain historical 2026 materials as historical only.",
+    "Cittadella: FIDAL confirms 19 December 2027; await updated organizer rules and 2027 GPX."
+  ]
+}
