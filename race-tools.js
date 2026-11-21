@@ -357,14 +357,13 @@ window.showPlannedEventDetails=function(id,ri){prior(id,ri);const root=document.
       (event.routes||[]).forEach((route,routeIndex)=>{
         if(canProcess(route))return;
         let routeHadData=false;
+        const routeHadGpxFile=route.gpxTrack!==undefined||route.gpxFileName!==undefined;
         keys.forEach(key=>{
           if(route[key]!==undefined){delete route[key];routeHadData=true;changed=true;}
         });
-        if(String(route.profileSource||"").startsWith("Streckendatei:")){
-          delete route.elevationProfile;
-          delete route.profileSource;
-          routeHadData=true;
-          changed=true;
+        if(routeHadGpxFile||String(route.profileSource||"").startsWith("Streckendatei:")){
+          if(route.elevationProfile!==undefined){delete route.elevationProfile;routeHadData=true;changed=true;}
+          if(route.profileSource!==undefined){delete route.profileSource;routeHadData=true;changed=true;}
         }
         if(routeHadData)routesCleared++;
         if(typeof eventDataEdits!=="undefined"&&eventDataEdits){
@@ -372,13 +371,13 @@ window.showPlannedEventDetails=function(id,ri){prior(id,ri);const root=document.
           const edit=eventDataEdits[key];
           if(edit){
             let editHadData=false;
+            const editHadGpxFile=edit.gpxTrack!==undefined||edit.gpxFileName!==undefined;
             keys.forEach(field=>{
               if(edit[field]!==undefined){delete edit[field];editHadData=true;}
             });
-            if(String(edit.profileSource||"").startsWith("Streckendatei:")){
-              delete edit.elevationProfile;
-              delete edit.profileSource;
-              editHadData=true;
+            if(editHadGpxFile||String(edit.profileSource||"").startsWith("Streckendatei:")){
+              if(edit.elevationProfile!==undefined){delete edit.elevationProfile;editHadData=true;}
+              if(edit.profileSource!==undefined){delete edit.profileSource;editHadData=true;}
             }
             if(editHadData){
               recordsCleared++;
