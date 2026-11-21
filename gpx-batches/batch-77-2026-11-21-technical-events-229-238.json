@@ -1,0 +1,201 @@
+{
+  "batch": 77,
+  "checkedAt": "2026-11-21",
+  "scope": "events 229-238 from event-dates.json",
+  "rules": [
+    "Official organizer and FIDAL sources take precedence; secondary calendars remain provisional.",
+    "Do not transfer 2026 course details or GPX to 2027 without explicit organizer confirmation.",
+    "A route download control is not proof of edition validity or binary track validation.",
+    "Do not delete or overwrite old GPX files until a new official binary is downloaded, parsed completely and validated.",
+    "Audit-only: no app runtime or live event records changed."
+  ],
+  "events": [
+    {
+      "sequence": 229,
+      "eventId": "laus-half-marathon",
+      "name": "Laus Half Marathon",
+      "edition": 2027,
+      "date": "late October 2027; exact date provisional",
+      "distanceKm": 21.097,
+      "location": "Lodi, Lombardia, Italy",
+      "status": "official-organizer-site-confirms-2026-and-next-31-october; 2027-calendar-lists-late-October",
+      "gpxStatus": "no-2027-gpx-binary-validated",
+      "detail": "Organizer site currently shows 11th edition on 25 October 2026 and says 'Arrivederci al 31 Ottobre'; ENDU lists late October 2027. Treat 31 October 2027 as likely but not fully confirmed by a dated 2027 regulation. Historic start/finish at Piazza Castello/Piazza della Vittoria and 21.097km are from 2026 edition; do not automatically carry course to 2027.",
+      "sources": [
+        "https://www.laushalfmarathon.it/",
+        "https://www.endu.net/it/events/laushalfmarathon"
+      ]
+    },
+    {
+      "sequence": 230,
+      "eventId": "maratonina-citta-di-arezzo",
+      "name": "Maratonina Città di Arezzo",
+      "edition": 2027,
+      "date": "2027-10-31",
+      "distanceKm": 21.097,
+      "location": "Arezzo, Toscana, Italy",
+      "status": "FIDAL-derived-calendar-listing-only-for-2027; official-municipal-info-is-2026",
+      "gpxStatus": "no-2027-gpx-confirmed",
+      "detail": "DoJemo listing sourced to FIDAL calendar gives 31 October 2027 and 21.1km. Comune di Arezzo's official page confirms the 2026 race only (25 October 2026, two laps, start Via Crispi, finish Via Roma). Do not reuse 2026 route for 2027 until organizer publishes current details.",
+      "sources": [
+        "https://dojemo.com/en/gara/maratonina-citta-di-arezzo-2027",
+        "https://www.comune.arezzo.it/novita/torna-la-maratonina-citta-di-arezzo"
+      ]
+    },
+    {
+      "sequence": 231,
+      "eventId": "egnazia-half-marathon",
+      "name": "Egnazia Half Marathon",
+      "edition": 2027,
+      "date": "late October 2027; exact date not announced",
+      "distanceKm": 21.097,
+      "location": "Savelletri di Fasano, Puglia, Italy",
+      "status": "ENDU-lists-late-October-2027; organizer-site-still-displays-2026-regulation",
+      "gpxStatus": "no-2027-gpx-confirmed",
+      "detail": "ENDU listing says late October 2027. Official organizer page currently gives 1 November 2026, 21.097km, 09:00, start/finish Via Fiume, Savelletri; it permits transfer of 2026 entry to 2027, but no 2027 date or course regulation published. Keep exact date provisional; historic course is not confirmed for 2027.",
+      "sources": [
+        "https://www.endu.net/events/egnazia-half-marathon",
+        "https://www.egnaziahalfmarathon.it/"
+      ]
+    },
+    {
+      "sequence": 232,
+      "eventId": "runrivierarun-half-marathon",
+      "name": "RunRivieraRun Half Marathon",
+      "edition": 2027,
+      "date": "2027-10-31 provisional",
+      "distanceKm": 21.0975,
+      "location": "Finale Ligure, Liguria, Italy",
+      "status": "secondary-calendar-listing-only; organizer-regulation-pending",
+      "gpxStatus": "no-2027-gpx-confirmed",
+      "detail": "Maratoniamo lists 31 October 2027, 21.0975km, but marks date/programme as future and to be confirmed. Finishers lists only late October. No 2027 organizer rules, start time, route or GPX confirmed.",
+      "sources": [
+        "https://www.maratoniamo.it/gara/runrivierarun-half-marathon-finale-ligure-mezza",
+        "https://www.finishers.com/de/e/runrivierarun-half-marathon"
+      ]
+    },
+    {
+      "sequence": 233,
+      "eventId": "costa-dei-trabocchi-half-marathon",
+      "name": "Costa dei Trabocchi BCC Half Marathon",
+      "edition": 2027,
+      "date": "2027-10-31",
+      "distanceKm": 21.0975,
+      "location": "Ortona / Costa dei Trabocchi, Abruzzo, Italy",
+      "status": "official-organizer-homepage-announces-date; detailed-2027-rules-pending",
+      "gpxStatus": "no-2027-gpx-binary-validated",
+      "detail": "Official organizer homepage announces next edition 31 October 2027 and describes the route along Via Verde Costa dei Trabocchi. Current detailed information on homepage refers to 25 October 2026; no 2027 start time, detailed route geometry or GPX binary validated.",
+      "sources": [
+        "https://www.podistifrentani.it/halfmarathon/",
+        "https://www.maratoniamo.it/gara/costa-dei-trabocchi-bcc-half-marathon-ortona-mezza"
+      ]
+    },
+    {
+      "sequence": 234,
+      "eventId": "strasalerno-half-marathon",
+      "name": "StraSalerno Half Marathon",
+      "edition": 2027,
+      "date": "2027-10-31 provisional",
+      "distanceKm": 21.0975,
+      "location": "Salerno, Campania, Italy",
+      "status": "secondary-calendar-listing-only; organizer-regulation-pending",
+      "gpxStatus": "no-2027-gpx-confirmed",
+      "detail": "2027 calendar entry lists 31 October and 21.0975km, but explicitly says regulation, start time and programme are to be defined. Comune di Salerno official page confirms 2026 edition only, on 25 October at 08:30 from/to Piscina Comunale Simone Vitale. Do not carry 2026 details into 2027.",
+      "sources": [
+        "https://www.maratoniamo.it/gara/strasalerno-half-marathon-salerno-mezza",
+        "https://www.comune.salerno.it/novita/tutto-pronto-la-31a-edizione-della-strasalerno-half-marathon"
+      ]
+    },
+    {
+      "sequence": 235,
+      "eventId": "torino-city-marathon",
+      "name": "Torino City Marathon",
+      "edition": 2027,
+      "date": "2027-11-07 provisional",
+      "distanceKm": 42.195,
+      "location": "Torino, Piemonte, Italy",
+      "status": "FIDAL-2027-calendar-confirms-race-and-distance; date-from-secondary-calendar-only",
+      "gpxStatus": "no-2027-gpx-confirmed",
+      "detail": "FIDAL calendar document includes Torino City Marathon as an approved 2027 marathon over 42.195km. Maratoniamo lists 7 November 2027 but organizer's current official page/date was not found. A different third-party site projects 28 November and explicitly says date not fixed; therefore 7 November remains provisional, not official.",
+      "sources": [
+        "https://www.fidal.it/upload/files/GGG/CircVerb/2023-11-22%20-%20Omologazioni%20per%20sito.pdf",
+        "https://www.maratoniamo.it/gara/fiat-torino-city-marathon-2027",
+        "https://www.hdsports.at/laufen/turin-marathon"
+      ]
+    },
+    {
+      "sequence": 236,
+      "eventId": "torino-city-half-marathon",
+      "name": "Torino City Half Marathon",
+      "edition": 2027,
+      "date": "2027-11-07 provisional",
+      "distanceKm": 21.0975,
+      "location": "Torino, Piemonte, Italy",
+      "status": "FIDAL-2027-calendar-confirms-race-and-distance; date-from-secondary-calendar-only",
+      "gpxStatus": "no-2027-gpx-confirmed",
+      "detail": "FIDAL 2027 calendar document lists Torino City Half Marathon at 21.0975km. Maratoniamo lists 7 November 2027 with start time to be defined; no 2027 organizer regulation or route/GPX found. Keep date provisional.",
+      "sources": [
+        "https://www.fidal.it/upload/files/GGG/CircVerb/2023-11-22%20-%20Omologazioni%20per%20sito.pdf",
+        "https://www.maratoniamo.it/gare-a/torino"
+      ]
+    },
+    {
+      "sequence": 237,
+      "eventId": "lago-maggiore-marathon",
+      "name": "SPORTWAY Lago Maggiore Marathon",
+      "edition": 2027,
+      "date": "2027-11-07",
+      "distanceKm": 42,
+      "location": "Arona to Verbania-Pallanza, Piemonte, Italy",
+      "status": "ENDU-2027-listing; official-organizer-site-still-shows-2026-details",
+      "gpxStatus": "official-site-has-course-download-links-but-current-edition-not-verified; no-binary-validated",
+      "detail": "ENDU lists 7 November 2027, Arona, 42km route to Pallanza, and companion Half/10K. Official organizer pages still expose 2026 schedules, course and download controls; no 2027-specific GPX identified. Do not treat current download controls as 2027 until updated.",
+      "sources": [
+        "https://www.endu.net/events/lago-maggiore-marathon-2",
+        "https://lagomaggioremarathon.it/en/maratona/",
+        "https://lagomaggioremarathon.it/en/come-raggiungerci/"
+      ]
+    },
+    {
+      "sequence": 238,
+      "eventId": "mezza-maratona-citta-di-palmanova",
+      "name": "Mezza Maratona Città di Palmanova",
+      "edition": 2027,
+      "date": "2027-11-07",
+      "distanceKm": 21.0975,
+      "location": "Palmanova, Friuli-Venezia Giulia, Italy",
+      "status": "organizer-date-announced-in-local-press; FIDAL-2027-calendar-status-confirmed",
+      "gpxStatus": "no-2027-gpx-binary-validated",
+      "detail": "Local press quoting the organizer confirms 2027 race moves to 7 November (three weeks earlier) and will be 25th edition; 2027 FIDAL calendar promotes it to Silver category. Official organizer website still displays 2026 edition only. Historic course has two passes through Clauiano, but no 2027 course file/GPX validated.",
+      "sources": [
+        "https://primafriuli.it/palmanova-la-mezza-maratona-entra-tra-le-gare-argento-nel-2027-edizione-speciale-anticipata-a-novembre",
+        "https://www.friulioggi.it/palmanova/mezza-maratona-palmanova-promozione-argento-8-ottobre-2026/",
+        "https://www.mezzamaratonapalmanova.it/",
+        "https://www.fidal.it/upload/files/GGG/CircVerb/2023-11-22%20-%20Omologazioni%20per%20sito.pdf"
+      ]
+    }
+  ],
+  "summary": {
+    "eventsReviewed": 10,
+    "official2027OrganizerOrFidalConfirmation": 4,
+    "secondaryCalendarOrPartiallyConfirmed": 6,
+    "officialDownloadPagesFound": 1,
+    "official2027GpxBinaryValidated": 0,
+    "binaryFilesDownloaded": 0,
+    "tracksParsed": 0,
+    "binaryMetricsCompared": 0,
+    "oldGpxFilesDeleted": 0,
+    "oldGpxFilesOverwritten": 0,
+    "appRuntimeFilesChanged": 0,
+    "appEventRecordsChanged": 0,
+    "auditOnly": true
+  },
+  "followUps": [
+    "Laus and Egnazia: obtain explicit organizer 2027 date/regulations; exact calendar dates remain unclear.",
+    "Arezzo, RunRivieraRun and StraSalerno: await 2027 organizer regulations and current course details.",
+    "Costa dei Trabocchi: update from official homepage's 31 October 2027 announcement when regulation/route is published.",
+    "Torino Marathon and Half: FIDAL confirms both race distances for 2027; exact date still provisional pending organizer announcement.",
+    "Lago Maggiore Marathon: wait for official 2027 page and GPX file; current organizer downloads belong to 2026 materials.",
+    "Palmanova: organizer has announced 7 November 2027; wait for updated 2027 rules and route GPX."
+  ]
+}
