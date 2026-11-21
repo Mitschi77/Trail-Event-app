@@ -1,0 +1,322 @@
+{
+  "schemaVersion": 1,
+  "updatedAt": "2026-11-21",
+  "defaultPolicy": "deny",
+  "policyNote": "This registry applies only to the seven La Corsa della Bora 2027 routes listed here. Registered routes remain blocked for each GPX action until route-specific written permission and a clear restriction status are documented. Routes not listed in this organizer-specific registry retain the app's pre-existing GPX behavior; this registry must not impose a global GPX shutdown. Existing stored GPX data is retained and is never deleted by rights checks.",
+  "permissionKeys": [
+    "officialDescriptionVerbatim",
+    "editedDescription",
+    "originalSummary",
+    "routeFacts",
+    "mapsAndRouteLines",
+    "elevationProfiles",
+    "gpxFileFetch",
+    "gpxFileImport",
+    "gpxFileStore",
+    "gpxFileProcess",
+    "gpxFileMapDisplay",
+    "gpxFileUserDownload",
+    "gpxOfficialLink",
+    "eventNamesAndMarks",
+    "logosAndWordImageMarks",
+    "symbolsIconsPictogramsEmblemsMascots",
+    "eventSpecificGraphics"
+  ],
+  "routeCount": 7,
+  "routes": {
+    "explorer-85-2993": {
+      "eventId": "la-corsa-della-bora",
+      "eventName": "La Corsa della Bora 2027",
+      "routeName": "S1 Borderless Trail",
+      "status": "pending",
+      "permissions": {
+        "officialDescriptionVerbatim": false,
+        "editedDescription": false,
+        "originalSummary": false,
+        "routeFacts": false,
+        "mapsAndRouteLines": false,
+        "elevationProfiles": false,
+        "gpxFileFetch": false,
+        "gpxFileImport": false,
+        "gpxFileStore": false,
+        "gpxFileProcess": false,
+        "gpxFileMapDisplay": false,
+        "gpxFileUserDownload": false,
+        "gpxOfficialLink": false,
+        "eventNamesAndMarks": false,
+        "logosAndWordImageMarks": false,
+        "symbolsIconsPictogramsEmblemsMascots": false,
+        "eventSpecificGraphics": false
+      },
+      "restriction": {
+        "status": "withheld_until_race_week",
+        "notice": "Official 2027 route pages state that the final GPX is deliberately withheld until the week before the race because of possible last-minute safety/course changes and sections on private land that are open only under race-day arrangements. The regulations instruct participants to use only the GPX sent by automated email before the race.",
+        "sourceUrl": "https://www.s1trail.com/en/s1-borderless-trail/",
+        "additionalSourceUrls": [
+          "https://www.s1trail.com/en/dati-ufficiali-corsa-della-bora-2027/",
+          "https://www.s1trail.com/en/regolamento/"
+        ],
+        "checkedAt": "2026-11-21",
+        "downloadPageChecked": true,
+        "officialPublicDownloadAvailable": false,
+        "metadataChecked": false,
+        "metadataStatus": "no_public_2027_gpx_file_available_to_inspect",
+        "appAction": "block_fetch_load_import_store_process_map_display_and_user_download_until_explicit_route_specific_permission_and_clear_restriction_status",
+        "officialInfoPageLinkAllowed": true,
+        "officialGpxLinkPermissionStatus": "pending"
+      }
+    },
+    "bora-ultra-105-3837": {
+      "eventId": "la-corsa-della-bora",
+      "eventName": "La Corsa della Bora 2027",
+      "routeName": "S1 Bora Ultra",
+      "status": "pending",
+      "permissions": {
+        "officialDescriptionVerbatim": false,
+        "editedDescription": false,
+        "originalSummary": false,
+        "routeFacts": false,
+        "mapsAndRouteLines": false,
+        "elevationProfiles": false,
+        "gpxFileFetch": false,
+        "gpxFileImport": false,
+        "gpxFileStore": false,
+        "gpxFileProcess": false,
+        "gpxFileMapDisplay": false,
+        "gpxFileUserDownload": false,
+        "gpxOfficialLink": false,
+        "eventNamesAndMarks": false,
+        "logosAndWordImageMarks": false,
+        "symbolsIconsPictogramsEmblemsMascots": false,
+        "eventSpecificGraphics": false
+      },
+      "restriction": {
+        "status": "withheld_until_race_week",
+        "notice": "Official 2027 route pages state that the final GPX is deliberately withheld until the week before the race because of possible last-minute safety/course changes and sections on private land that are open only under race-day arrangements. The regulations instruct participants to use only the GPX sent by automated email before the race.",
+        "sourceUrl": "https://www.s1trail.com/en/s1-bora-ultra-116-km/",
+        "additionalSourceUrls": [
+          "https://www.s1trail.com/en/dati-ufficiali-corsa-della-bora-2027/",
+          "https://www.s1trail.com/en/regolamento/"
+        ],
+        "checkedAt": "2026-11-21",
+        "downloadPageChecked": true,
+        "officialPublicDownloadAvailable": false,
+        "metadataChecked": false,
+        "metadataStatus": "no_public_2027_gpx_file_available_to_inspect",
+        "appAction": "block_fetch_load_import_store_process_map_display_and_user_download_until_explicit_route_specific_permission_and_clear_restriction_status",
+        "officialInfoPageLinkAllowed": true,
+        "officialGpxLinkPermissionStatus": "pending"
+      }
+    },
+    "transkarst-ultra-59-1814": {
+      "eventId": "la-corsa-della-bora",
+      "eventName": "La Corsa della Bora 2027",
+      "routeName": "S1 TransKarst Ultra",
+      "status": "pending",
+      "permissions": {
+        "officialDescriptionVerbatim": false,
+        "editedDescription": false,
+        "originalSummary": false,
+        "routeFacts": false,
+        "mapsAndRouteLines": false,
+        "elevationProfiles": false,
+        "gpxFileFetch": false,
+        "gpxFileImport": false,
+        "gpxFileStore": false,
+        "gpxFileProcess": false,
+        "gpxFileMapDisplay": false,
+        "gpxFileUserDownload": false,
+        "gpxOfficialLink": false,
+        "eventNamesAndMarks": false,
+        "logosAndWordImageMarks": false,
+        "symbolsIconsPictogramsEmblemsMascots": false,
+        "eventSpecificGraphics": false
+      },
+      "restriction": {
+        "status": "withheld_until_race_week",
+        "notice": "Official 2027 route pages state that the final GPX is deliberately withheld until the week before the race because of possible last-minute safety/course changes and sections on private land that are open only under race-day arrangements. The regulations instruct participants to use only the GPX sent by automated email before the race.",
+        "sourceUrl": "https://www.s1trail.com/en/s1-trail/",
+        "additionalSourceUrls": [
+          "https://www.s1trail.com/en/dati-ufficiali-corsa-della-bora-2027/",
+          "https://www.s1trail.com/en/regolamento/"
+        ],
+        "checkedAt": "2026-11-21",
+        "downloadPageChecked": true,
+        "officialPublicDownloadAvailable": false,
+        "metadataChecked": false,
+        "metadataStatus": "no_public_2027_gpx_file_available_to_inspect",
+        "appAction": "block_fetch_load_import_store_process_map_display_and_user_download_until_explicit_route_specific_permission_and_clear_restriction_status",
+        "officialInfoPageLinkAllowed": true,
+        "officialGpxLinkPermissionStatus": "pending"
+      }
+    },
+    "trieste-ultra-61-2-2323": {
+      "eventId": "la-corsa-della-bora",
+      "eventName": "La Corsa della Bora 2027",
+      "routeName": "S1 Trieste Ultra",
+      "status": "pending",
+      "permissions": {
+        "officialDescriptionVerbatim": false,
+        "editedDescription": false,
+        "originalSummary": false,
+        "routeFacts": false,
+        "mapsAndRouteLines": false,
+        "elevationProfiles": false,
+        "gpxFileFetch": false,
+        "gpxFileImport": false,
+        "gpxFileStore": false,
+        "gpxFileProcess": false,
+        "gpxFileMapDisplay": false,
+        "gpxFileUserDownload": false,
+        "gpxOfficialLink": false,
+        "eventNamesAndMarks": false,
+        "logosAndWordImageMarks": false,
+        "symbolsIconsPictogramsEmblemsMascots": false,
+        "eventSpecificGraphics": false
+      },
+      "restriction": {
+        "status": "withheld_until_race_week",
+        "notice": "Official 2027 route pages state that the final GPX is deliberately withheld until the week before the race because of possible last-minute safety/course changes and sections on private land that are open only under race-day arrangements. The regulations instruct participants to use only the GPX sent by automated email before the race.",
+        "sourceUrl": "https://www.s1trail.com/en/s1-bora-ultra/",
+        "additionalSourceUrls": [
+          "https://www.s1trail.com/en/dati-ufficiali-corsa-della-bora-2027/",
+          "https://www.s1trail.com/en/regolamento/"
+        ],
+        "checkedAt": "2026-11-21",
+        "downloadPageChecked": true,
+        "officialPublicDownloadAvailable": false,
+        "metadataChecked": false,
+        "metadataStatus": "no_public_2027_gpx_file_available_to_inspect",
+        "appAction": "block_fetch_load_import_store_process_map_display_and_user_download_until_explicit_route_specific_permission_and_clear_restriction_status",
+        "officialInfoPageLinkAllowed": true,
+        "officialGpxLinkPermissionStatus": "pending"
+      }
+    },
+    "half-trail-23-3-700": {
+      "eventId": "la-corsa-della-bora",
+      "eventName": "La Corsa della Bora 2027",
+      "routeName": "S1 Half Trail",
+      "status": "pending",
+      "permissions": {
+        "officialDescriptionVerbatim": false,
+        "editedDescription": false,
+        "originalSummary": false,
+        "routeFacts": false,
+        "mapsAndRouteLines": false,
+        "elevationProfiles": false,
+        "gpxFileFetch": false,
+        "gpxFileImport": false,
+        "gpxFileStore": false,
+        "gpxFileProcess": false,
+        "gpxFileMapDisplay": false,
+        "gpxFileUserDownload": false,
+        "gpxOfficialLink": false,
+        "eventNamesAndMarks": false,
+        "logosAndWordImageMarks": false,
+        "symbolsIconsPictogramsEmblemsMascots": false,
+        "eventSpecificGraphics": false
+      },
+      "restriction": {
+        "status": "withheld_until_race_week",
+        "notice": "Official 2027 route pages state that the final GPX is deliberately withheld until the week before the race because of possible last-minute safety/course changes and sections on private land that are open only under race-day arrangements. The regulations instruct participants to use only the GPX sent by automated email before the race.",
+        "sourceUrl": "https://www.s1trail.com/en/s1-half/",
+        "additionalSourceUrls": [
+          "https://www.s1trail.com/en/dati-ufficiali-corsa-della-bora-2027/",
+          "https://www.s1trail.com/en/regolamento/"
+        ],
+        "checkedAt": "2026-11-21",
+        "downloadPageChecked": true,
+        "officialPublicDownloadAvailable": false,
+        "metadataChecked": false,
+        "metadataStatus": "no_public_2027_gpx_file_available_to_inspect",
+        "appAction": "block_fetch_load_import_store_process_map_display_and_user_download_until_explicit_route_specific_permission_and_clear_restriction_status",
+        "officialInfoPageLinkAllowed": true,
+        "officialGpxLinkPermissionStatus": "pending"
+      }
+    },
+    "s1-family-hike-trail-14-8-419-2027": {
+      "eventId": "la-corsa-della-bora",
+      "eventName": "La Corsa della Bora 2027",
+      "routeName": "S1 Family Hike & Trail",
+      "status": "pending",
+      "permissions": {
+        "officialDescriptionVerbatim": false,
+        "editedDescription": false,
+        "originalSummary": false,
+        "routeFacts": false,
+        "mapsAndRouteLines": false,
+        "elevationProfiles": false,
+        "gpxFileFetch": false,
+        "gpxFileImport": false,
+        "gpxFileStore": false,
+        "gpxFileProcess": false,
+        "gpxFileMapDisplay": false,
+        "gpxFileUserDownload": false,
+        "gpxOfficialLink": false,
+        "eventNamesAndMarks": false,
+        "logosAndWordImageMarks": false,
+        "symbolsIconsPictogramsEmblemsMascots": false,
+        "eventSpecificGraphics": false
+      },
+      "restriction": {
+        "status": "withheld_until_race_week",
+        "notice": "Official 2027 route pages state that the final GPX is deliberately withheld until the week before the race because of possible last-minute safety/course changes and sections on private land that are open only under race-day arrangements. The regulations instruct participants to use only the GPX sent by automated email before the race.",
+        "sourceUrl": "https://www.s1trail.com/en/s1-family-hike-2/",
+        "additionalSourceUrls": [
+          "https://www.s1trail.com/en/dati-ufficiali-corsa-della-bora-2027/",
+          "https://www.s1trail.com/en/regolamento/"
+        ],
+        "checkedAt": "2026-11-21",
+        "downloadPageChecked": true,
+        "officialPublicDownloadAvailable": false,
+        "metadataChecked": false,
+        "metadataStatus": "no_public_2027_gpx_file_available_to_inspect",
+        "appAction": "block_fetch_load_import_store_process_map_display_and_user_download_until_explicit_route_specific_permission_and_clear_restriction_status",
+        "officialInfoPageLinkAllowed": true,
+        "officialGpxLinkPermissionStatus": "pending"
+      }
+    },
+    "s1-borin-5-5-186-2027": {
+      "eventId": "la-corsa-della-bora",
+      "eventName": "La Corsa della Bora 2027",
+      "routeName": "S1 Borin",
+      "status": "pending",
+      "permissions": {
+        "officialDescriptionVerbatim": false,
+        "editedDescription": false,
+        "originalSummary": false,
+        "routeFacts": false,
+        "mapsAndRouteLines": false,
+        "elevationProfiles": false,
+        "gpxFileFetch": false,
+        "gpxFileImport": false,
+        "gpxFileStore": false,
+        "gpxFileProcess": false,
+        "gpxFileMapDisplay": false,
+        "gpxFileUserDownload": false,
+        "gpxOfficialLink": false,
+        "eventNamesAndMarks": false,
+        "logosAndWordImageMarks": false,
+        "symbolsIconsPictogramsEmblemsMascots": false,
+        "eventSpecificGraphics": false
+      },
+      "restriction": {
+        "status": "withheld_until_race_week",
+        "notice": "Official 2027 route pages state that the final GPX is deliberately withheld until the week before the race because of possible last-minute safety/course changes and sections on private land that are open only under race-day arrangements. The regulations instruct participants to use only the GPX sent by automated email before the race.",
+        "sourceUrl": "https://www.s1trail.com/en/borin/",
+        "additionalSourceUrls": [
+          "https://www.s1trail.com/en/dati-ufficiali-corsa-della-bora-2027/",
+          "https://www.s1trail.com/en/regolamento/"
+        ],
+        "checkedAt": "2026-11-21",
+        "downloadPageChecked": true,
+        "officialPublicDownloadAvailable": false,
+        "metadataChecked": false,
+        "metadataStatus": "no_public_2027_gpx_file_available_to_inspect",
+        "appAction": "block_fetch_load_import_store_process_map_display_and_user_download_until_explicit_route_specific_permission_and_clear_restriction_status",
+        "officialInfoPageLinkAllowed": true,
+        "officialGpxLinkPermissionStatus": "pending"
+      }
+    }
+  }
+}
