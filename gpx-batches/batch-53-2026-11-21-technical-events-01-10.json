@@ -1,0 +1,212 @@
+{
+  "batch": 53,
+  "checkedAt": "2026-11-21",
+  "scope": "Technical GPX availability/inventory pass for top-level events 1–10",
+  "status": "attempted-no-binary-validation",
+  "repositoryInventory": {
+    "defaultBranch": "main",
+    "recursiveTreeTruncated": false,
+    "trackedBlobCount": 94,
+    "trackedGpxFiles": 0,
+    "trackedGpxFilesMeaning": "No .gpx binary files are committed anywhere in the current main branch tree.",
+    "gpxBatchesReadme": "gpx-batches/README.md",
+    "readmeClaimsDirectGpxUrlsInRouteData": 53,
+    "readmeSaysExternalBinaryDownloadsNotAvailableToPriorInspectionRuntime": true
+  },
+  "safetyRules": [
+    "Existing GPX files must remain valid until a replacement is downloaded, parsed and validated.",
+    "No GPX files were deleted, overwritten or replaced in this package.",
+    "Do not treat an official GPX link as a successful download or parsed track.",
+    "Do not copy Donautrail GPX files because organizer terms prohibit reuse/upload."
+  ],
+  "checks": [
+    {
+      "eventOrder": 1,
+      "event": "La Corsa della Bora",
+      "route": "2027 routes (7 formats)",
+      "status": "not-yet-published",
+      "source": "https://www.s1trail.com/de/dati-ufficiali-corsa-della-bora-2027/",
+      "detail": "Organizer says final 2027 GPX is released during race week; no binary attempt possible before release.",
+      "binaryDownloaded": false,
+      "parsed": false,
+      "metricsCompared": false
+    },
+    {
+      "eventOrder": 2,
+      "event": "Marathon des Sables",
+      "route": "100 km / 100 miles",
+      "status": "not-published",
+      "source": "https://marathondessables.com/en/evenement/mds-ultra-2027",
+      "detail": "No official GPX download found on current 2027 event page.",
+      "binaryDownloaded": false,
+      "parsed": false,
+      "metricsCompared": false
+    },
+    {
+      "eventOrder": 3,
+      "event": "Arc of Attrition by UTMB",
+      "route": "ARC 100M",
+      "status": "official-2027-endpoint-not-accessible-to-web-inspector",
+      "source": "https://arcofattrition.utmb.world/races/Arc100M",
+      "url": "https://app.fit-pa.com/media/race-course/6aee7dd4db1cd7c8bc4570e7/6aee7dd9db1cd7c8bc4570e8/arc-100m-2027.gpx",
+      "detail": "Direct endpoint returned inaccessible/internal error in web inspection; no binary bytes obtained.",
+      "binaryDownloaded": false,
+      "parsed": false,
+      "metricsCompared": false
+    },
+    {
+      "eventOrder": 3,
+      "event": "Arc of Attrition by UTMB",
+      "route": "ARC 100K",
+      "status": "unsupported-content-type",
+      "source": "https://arcofattrition.utmb.world/faqs",
+      "url": "https://app.fit-pa.com/media/race-course/6aee7de0db1cd7c8bc4570eb/6aee7de2db1cd7c8bc4570ec/arc-100k-2027.gpx",
+      "detail": "Web inspector explicitly rejected application/gpx+xml. This is an inspection-tool MIME limitation, not evidence the organizer endpoint is broken.",
+      "binaryDownloaded": false,
+      "parsed": false,
+      "metricsCompared": false
+    },
+    {
+      "eventOrder": 4,
+      "event": "Mountain Man Winter",
+      "route": "Reit im Winkl Winterloop 2027",
+      "status": "login-gated-komoot-download",
+      "source": "https://mountainman.de/winterloop/",
+      "routePage": "https://www.komoot.com/tour/3022648619",
+      "detail": "Official organizer links the Komoot route; GPX export is behind Komoot login. No download/parse was performed.",
+      "binaryDownloaded": false,
+      "parsed": false,
+      "metricsCompared": false
+    },
+    {
+      "eventOrder": 5,
+      "event": "Ultra Mediterrania",
+      "route": "160K / official Drive folder",
+      "status": "folder-index-not-individually-resolved",
+      "source": "https://ultramediterrania.com/",
+      "folder": "https://drive.google.com/drive/folders/1ngs1-Kb3GsrigP6UWzuLDW3pCkTq4KQL?usp=sharing",
+      "detail": "Official link points to a Google Drive folder; individual 160K file and direct file ID not identified. No binary downloaded.",
+      "binaryDownloaded": false,
+      "parsed": false,
+      "metricsCompared": false
+    },
+    {
+      "eventOrder": 6,
+      "event": "Transgrancanaria",
+      "route": "Classic / Advanced",
+      "status": "stale-2026-link-rejected",
+      "source": "https://transgrancanaria.net/",
+      "detail": "Previously identified official page exposes a 2026 GPX; it is not accepted as a current 2027 route.",
+      "binaryDownloaded": false,
+      "parsed": false,
+      "metricsCompared": false
+    },
+    {
+      "eventOrder": 7,
+      "event": "Donautrail",
+      "route": "Linz55 / Linz75 / Linz100",
+      "status": "organizer-terms-prohibit-reuse-upload",
+      "source": "https://donautrail.at/downlaod-gpx-track-donautrail/",
+      "detail": "App should link to organizer download page only. Do not copy files into repository or redistribute them.",
+      "binaryDownloaded": false,
+      "parsed": false,
+      "metricsCompared": false
+    },
+    {
+      "eventOrder": 8,
+      "event": "Psyland Backyard Ultra",
+      "route": "2026 edition",
+      "status": "past-event-no-official-gpx-found",
+      "detail": "Historical 14 March 2026 event. No GPX for the past edition identified; do not substitute a track from another race.",
+      "binaryDownloaded": false,
+      "parsed": false,
+      "metricsCompared": false
+    },
+    {
+      "eventOrder": 9,
+      "event": "Tenerife Bluetrail by UTMB",
+      "route": "82K 2027",
+      "status": "official-year-specific-endpoint-unreadable",
+      "source": "https://tenerife.utmb.world/race/tracks",
+      "url": "https://pdf.utmb.world/raw/upload/v1779958614/tenerife/2027_TBT_VILAFLOR_82km_3300m_15dda65079.gpx",
+      "detail": "Direct GPX URL rejected by web inspector as inaccessible. Official link/version recorded; binary not obtained.",
+      "binaryDownloaded": false,
+      "parsed": false,
+      "metricsCompared": false
+    },
+    {
+      "eventOrder": 9,
+      "event": "Tenerife Bluetrail by UTMB",
+      "route": "68K 2027",
+      "status": "official-year-specific-endpoint-unreadable",
+      "source": "https://tenerife.utmb.world/race/tracks",
+      "url": "https://pdf.utmb.world/raw/upload/v1779958611/tenerife/2027_TBT_LA_ESPERANZA_68km_3600m_d784b08256.gpx",
+      "detail": "Direct GPX URL rejected by web inspector as inaccessible. Official link/version recorded; binary not obtained.",
+      "binaryDownloaded": false,
+      "parsed": false,
+      "metricsCompared": false
+    },
+    {
+      "eventOrder": 10,
+      "event": "Chianti Ultra Trail",
+      "route": "CUT 73K 2027",
+      "status": "official-year-specific-endpoint-unreadable",
+      "source": "https://chianti.utmb.world/",
+      "url": "https://pdf.utmb.world/raw/upload/v1777382308/chianti/Races/gpx%20files/2027/CUT_73_K_2027_a4e001e60a.gpx",
+      "detail": "Direct GPX URL rejected by web inspector as inaccessible. Official year-specific URL recorded; binary not obtained.",
+      "binaryDownloaded": false,
+      "parsed": false,
+      "metricsCompared": false
+    },
+    {
+      "eventOrder": 10,
+      "event": "Chianti Ultra Trail",
+      "route": "UTCC 120K 2027",
+      "status": "official-year-specific-endpoint-unreadable",
+      "source": "https://chianti.utmb.world/",
+      "url": "https://pdf.utmb.world/raw/upload/v1780669402/chianti/Races/gpx%20files/UTCC_120_K_2027_01_8d79fda70b.gpx",
+      "detail": "Direct GPX URL rejected by web inspector as inaccessible. Official year-specific URL recorded; binary not obtained.",
+      "binaryDownloaded": false,
+      "parsed": false,
+      "metricsCompared": false
+    }
+  ],
+  "summary": {
+    "eventsCovered": 10,
+    "officialYearSpecificDirectGpxEndpointsAttempted": 6,
+    "successfulBinaryDownloads": 0,
+    "tracksParsed": 0,
+    "metricsCompared": 0,
+    "trackedGpxFilesInMain": 0,
+    "important": "This pass confirms the inspection environment cannot retrieve the external GPX binary endpoints; it does not establish that the organizer URLs are broken. Actual browser-side import or a network-enabled GPX validation runner is required.",
+    "attemptedEndpoints": 6,
+    "endpointList": [
+      "Arc of Attrition 100M",
+      "Arc of Attrition 100K",
+      "Tenerife Bluetrail 82K",
+      "Tenerife Bluetrail 68K",
+      "Chianti CUT 73K",
+      "Chianti UTCC 120K"
+    ],
+    "currentEventDatesEntriesCovered": 10,
+    "currentEventDatesEntriesNotCovered": 0
+  },
+  "next": "Continue with events 11–20 after an environment capable of downloading external GPX binaries is available; until then, keep collecting official endpoint evidence and never mark a track validated.",
+  "currentEventDatesCrossCheck": {
+    "currentCatalogRange": "event-dates.json insertion positions 1–10 (1-based)",
+    "allTenCurrentEntriesCovered": true,
+    "eventIds": [
+      "la-corsa-della-bora",
+      "marathon-de-sables",
+      "arc-of-attrition-by-utmb",
+      "mountain-man-winter",
+      "ultra-mediterrania",
+      "transgrancanaria",
+      "donautrail",
+      "psyland-backyard-ultra",
+      "tenerife-bluetrail",
+      "chianti-ultra-trail"
+    ],
+    "note": "All ten records in this package map to current event-dates.json positions 1–10 in order."
+  }
+}
