@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "updatedAt": "2026-11-21",
-  "defaultPolicy": "registered_routes_deny_unless_approved_unlisted_routes_keep_legacy_behavior",
+  "defaultPolicy": "deny",
   "policyNote": "This registry applies only to the seven La Corsa della Bora 2027 routes listed here. Registered routes remain blocked for each GPX action until route-specific written permission and a clear restriction status are documented. Routes not listed in this organizer-specific registry retain the app's pre-existing GPX behavior; this registry must not impose a global GPX shutdown. Existing stored GPX data is retained and is never deleted by rights checks.",
   "permissionKeys": [
     "officialDescriptionVerbatim",
