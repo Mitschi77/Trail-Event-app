@@ -1,0 +1,297 @@
+{
+  "batch": 67,
+  "checkedAt": "2026-11-21",
+  "scope": {
+    "sequence": "events 129-138",
+    "events": [
+      "Generali Prague Half Marathon",
+      "Generali Berlin Half Marathon",
+      "Belgrade Half Marathon",
+      "Wiener Städtische Half Marathon",
+      "Rimi Riga Half Marathon",
+      "adidas Stockholm Half Marathon",
+      "Copenhagen Half Marathon",
+      "Cardiff Half Marathon",
+      "Valencia Half Marathon",
+      "Run Rome The Marathon"
+    ]
+  },
+  "rules": [
+    "Only official organizer sources count for current-edition route facts.",
+    "An old-edition GPX or course map remains historical and must not be promoted to 2027.",
+    "Do not delete, overwrite or replace existing GPX files until a new official file is actually downloaded, parsed and validated.",
+    "A map PDF, interactive map, download button or XML preview alone is not a validated GPX binary.",
+    "No local GPX binary download/parser capability was completed in this audit; all files remain unvalidated."
+  ],
+  "events": [
+    {
+      "sequence": 129,
+      "eventId": "prague-half-marathon",
+      "name": "Generali Prague Half Marathon",
+      "edition": 2027,
+      "eventDate": "2027-04-03",
+      "distanceKm": 21.097,
+      "officialSource": "https://www.runczech.com/en/events/generali-prague-half-marathon-2027-2/races/generali-prague-half-marathon",
+      "gpxStatus": "official-page-links-mapy-com-gpx-but-explicitly-2026-map; 2027-map-not-yet-published",
+      "technicalAttempt": {
+        "official2027RacePageChecked": true,
+        "official2027MapAvailable": false,
+        "historicalGpxExportAvailable": true,
+        "historicalEdition": 2026,
+        "binaryDownloaded": false,
+        "parsed": false,
+        "metricsCompared": false,
+        "result": "RunCzech explicitly states that the displayed maps and mapy.com GPX export are from the 2026 season and that the 2027 map will be published later. Do not use this GPX as the 2027 course."
+      },
+      "sources": [
+        "https://www.runczech.com/en/events/generali-prague-half-marathon-2027-2",
+        "https://www.runczech.com/en/events/generali-prague-half-marathon-2027-2/races/generali-prague-half-marathon"
+      ]
+    },
+    {
+      "sequence": 130,
+      "eventId": "berlin-half-marathon",
+      "name": "Generali Berlin Half Marathon",
+      "edition": 2027,
+      "eventDate": "2027-04-04",
+      "distanceKm": 21.0975,
+      "officialSource": "https://www.generali-berliner-halbmarathon.de/en/your-race/course",
+      "gpxStatus": "official-course-pdf-and-interactive-map; no-gpx-link-found-on-course-page",
+      "technicalAttempt": {
+        "official2027DateConfirmed": true,
+        "officialCourseMapPdfFound": true,
+        "interactiveMapFound": true,
+        "gpxLinkFound": false,
+        "binaryDownloaded": false,
+        "parsed": false,
+        "metricsCompared": false,
+        "result": "Organizer confirms 4 April 2027 and offers a course PDF plus interactive map. The checked official course page contains no GPX link. Elevation profile states maximum elevation difference 4.3m; this is not cumulative ascent."
+      },
+      "detail": "Do not enter 4.3m as cumulative elevation gain. It is the maximum elevation difference stated for the profile.",
+      "sources": [
+        "https://www.generali-berliner-halbmarathon.de/en/preparation/event-faq",
+        "https://www.generali-berliner-halbmarathon.de/en/your-race/course",
+        "https://www.generali-berliner-halbmarathon.de/en/your-race/race-day-for-participants"
+      ]
+    },
+    {
+      "sequence": 131,
+      "eventId": "belgrade-half-marathon",
+      "name": "Belgrade Half Marathon",
+      "edition": 2027,
+      "eventDate": "2027-04-17",
+      "distanceKm": 21.0975,
+      "officialSource": "https://bgdmarathon.org/superhalfs-europa/?lang=en",
+      "gpxStatus": "2027-event-date-confirmed; no-2027-course-gpx-confirmed; 2026-route-is-historical",
+      "technicalAttempt": {
+        "official2027EventConfirmed": true,
+        "official2027CourseMapFound": false,
+        "historical2026RouteDescriptionFound": true,
+        "binaryDownloaded": false,
+        "parsed": false,
+        "metricsCompared": false,
+        "result": "Official SuperHalfs Europa page confirms Belgrade on 17 April 2027. The accessible detailed Belgrade route page refers to the 2026 race, so its route description/map is not accepted as 2027 GPX evidence."
+      },
+      "sources": [
+        "https://bgdmarathon.org/superhalfs-europa/?lang=en",
+        "https://bgdmarathon.org/7th-sava-osiguranje-belgrade-half-marathon/?lang=en"
+      ]
+    },
+    {
+      "sequence": 132,
+      "eventId": "wiener-stadtische-half-marathon",
+      "name": "Wiener Städtische Half Marathon",
+      "edition": 2027,
+      "eventDate": "2027-04-18",
+      "distanceKm": 21.1,
+      "officialSource": "https://www.vienna-marathon.com/?go=halfmarathon&lang=en",
+      "gpxStatus": "official-page-exposes-download-as-gpx; edition-of-linked-track-not-verified",
+      "technicalAttempt": {
+        "official2027EventConfirmed": true,
+        "officialHalfMarathonGpxDownloadControlFound": true,
+        "directFileEditionConfirmed": false,
+        "binaryDownloaded": false,
+        "parsed": false,
+        "metricsCompared": false,
+        "result": "The official half-marathon page exposes a 'Download as GPX' control. Official VCM news confirms the 2027 half marathon on 18 April, but the linked GPX file's edition/version was not confirmed. Keep it unvalidated until the actual file metadata and track are checked."
+      },
+      "sources": [
+        "https://www.vienna-marathon.com/?go=halfmarathon&lang=en",
+        "https://www2.vienna-marathon.com/?go=news&newsid=4508",
+        "https://www.vienna-marathon.com/index.html?go=news&newsid=4539"
+      ]
+    },
+    {
+      "sequence": 133,
+      "eventId": "riga-half-marathon",
+      "name": "Rimi Riga Half Marathon",
+      "edition": 2027,
+      "eventDate": "2027-05-16",
+      "distanceKm": 21.0975,
+      "officialSource": "https://rimirigamarathon.com/en/courses/",
+      "gpxStatus": "2027-new-courses-announced-but-not-yet-revealed; no-2027-gpx",
+      "technicalAttempt": {
+        "official2027EventConfirmed": true,
+        "official2027CourseReleased": false,
+        "gpxLinkFound": false,
+        "binaryDownloaded": false,
+        "parsed": false,
+        "metricsCompared": false,
+        "result": "Organizer says new courses are in the works for the 15-16 May 2027 event and will be revealed later. The course page has mixed legacy date text (May 17) alongside the 2027 weekend; do not infer a GPX or import an old route. The official SuperHalfs schedule gives the half marathon date as 16 May 2027."
+      },
+      "sources": [
+        "https://rimirigamarathon.com/en/courses/",
+        "https://rimirigamarathon.com/en/news/registration-for-the-rimi-riga-marathon-2027-is-open/",
+        "https://bgdmarathon.org/superhalfs-europa/?lang=en"
+      ]
+    },
+    {
+      "sequence": 134,
+      "eventId": "stockholm-half-marathon",
+      "name": "adidas Stockholm Half Marathon",
+      "edition": 2027,
+      "eventDate": "2027-08-21",
+      "distanceKm": 21.098,
+      "officialSource": "https://stockholmhalfmarathon.se/om-loppet-2027/",
+      "gpxStatus": "official-2027-route-described-kilometre-by-kilometre; no-gpx-link-found",
+      "technicalAttempt": {
+        "official2027EventConfirmed": true,
+        "official2027RouteDescriptionFound": true,
+        "gpxLinkFound": false,
+        "binaryDownloaded": false,
+        "parsed": false,
+        "metricsCompared": false,
+        "result": "Official 2027 page confirms 21,098m, 21 August, start/finish around Strömbron/Norrbron and a kilometre-by-kilometre route description. Search of the official page found no GPX link."
+      },
+      "sources": [
+        "https://stockholmhalfmarathon.se/om-loppet-2027/"
+      ]
+    },
+    {
+      "sequence": 135,
+      "eventId": "copenhagen-half-marathon",
+      "name": "Copenhagen Half Marathon",
+      "edition": 2027,
+      "eventDate": "2027-09-19",
+      "distanceKm": 21.0975,
+      "officialSource": "https://cphhalf.dk/en/",
+      "gpxStatus": "official-2027-event-confirmed; no-2027-gpx-link-found",
+      "technicalAttempt": {
+        "official2027EventConfirmed": true,
+        "official2027DistanceConfirmed": true,
+        "gpxLinkFound": false,
+        "binaryDownloaded": false,
+        "parsed": false,
+        "metricsCompared": false,
+        "result": "Organizer confirms 19 September 2027, 09:30 and 21.0975km. The checked official homepage does not expose a 2027 GPX link. No older route was promoted."
+      },
+      "sources": [
+        "https://cphhalf.dk/en/"
+      ]
+    },
+    {
+      "sequence": 136,
+      "eventId": "cardiff-half-marathon",
+      "name": "Cardiff Half Marathon",
+      "edition": 2027,
+      "eventDate": "2027-10-03",
+      "distanceKm": 21.0975,
+      "officialSource": "https://www.cardiffhalfmarathon.co.uk/event-info/route/",
+      "gpxStatus": "official-2027-interactive-route-map-and-course-map-found; no-public-gpx-link-identified",
+      "technicalAttempt": {
+        "official2027EventConfirmed": true,
+        "official2027InteractiveMapFound": true,
+        "courseMapAndProfileFound": true,
+        "gpxLinkFound": false,
+        "binaryDownloaded": false,
+        "parsed": false,
+        "metricsCompared": false,
+        "result": "Organizer route page displays 03/10/2027 and an interactive route map, course map and profile. No public GPX download link was identified on the checked official route page."
+      },
+      "sources": [
+        "https://www.cardiffhalfmarathon.co.uk/event-info/route/",
+        "https://www.cardiffhalfmarathon.co.uk/map/"
+      ]
+    },
+    {
+      "sequence": 137,
+      "eventId": "valencia-half-marathon",
+      "name": "Valencia Half Marathon Trinidad Alfonso Zurich",
+      "edition": 2027,
+      "eventDate": "2027-10-24",
+      "distanceKm": 21.0975,
+      "officialSource": "https://www.valenciaciudaddelrunning.com/en/half/race-guide/",
+      "gpxStatus": "official-download-course-control-found-on-2026-race-guide; 2027-edition-file-not-confirmed",
+      "technicalAttempt": {
+        "official2027EventConfirmed": true,
+        "official2027RegistrationAndRegulationsLinksFound": true,
+        "officialCourseDownloadControlFound": true,
+        "linkedGuideEdition": "2026",
+        "directFileEditionConfirmed": false,
+        "binaryDownloaded": false,
+        "parsed": false,
+        "metricsCompared": false,
+        "result": "The official site has a downloadable course control on its race guide, but the inspected guide is explicitly the 25 October 2026 final-instructions page and includes 2026-specific content. It is not accepted as the 2027 course. 2027 registration/regulations links are present, but a 2027 GPX was not confirmed."
+      },
+      "sources": [
+        "https://www.valenciaciudaddelrunning.com/en/half/race-guide/",
+        "https://www.valenciaciudaddelrunning.com/en/half/"
+      ]
+    },
+    {
+      "sequence": 138,
+      "eventId": "run-rome-the-marathon",
+      "name": "Run Rome The Marathon",
+      "edition": 2027,
+      "eventDate": "2027-03-14",
+      "distanceKm": 42.195,
+      "elevationProfile": {
+        "minimumAltitudeM": 8,
+        "maximumAltitudeM": 31,
+        "note": "Organizer's 2027 landing page; these are altitude endpoints, not cumulative ascent."
+      },
+      "officialSource": "https://www.runromethemarathon.com/home-2027-prova/",
+      "gpxStatus": "2027-course-preview-and-video; no-2027-gpx-found; 2026-course-map-is-historical",
+      "technicalAttempt": {
+        "official2027CoursePageFound": true,
+        "official2027GpxLinkFound": false,
+        "historical2026EventGuidePdfFound": true,
+        "binaryDownloaded": false,
+        "parsed": false,
+        "metricsCompared": false,
+        "result": "The official 2027 landing page confirms 42.195km and altitude endpoints 8-31m and presents a course preview/video. The accessible detailed event guide PDF is for the 2026 edition and remains historical. No official 2027 GPX link was found."
+      },
+      "sources": [
+        "https://www.runromethemarathon.com/home-2027-prova/",
+        "https://www.runromethemarathon.com/en/home-2025-en-2/faq-maratona/",
+        "https://www.runromethemarathon.com/wp-content/uploads/2026/03/Event-Guide_WEB.pdf"
+      ]
+    }
+  ],
+  "summary": {
+    "eventsReviewed": 10,
+    "official2027GpxEditionConfirmed": 0,
+    "officialGpxControlsFound": 2,
+    "historicalGpxOrCourseAssetsIdentified": 3,
+    "officialInteractiveMapsOrCourseMapsFound": 5,
+    "binaryFilesDownloaded": 0,
+    "tracksParsed": 0,
+    "binaryMetricsCompared": 0,
+    "oldGpxFilesDeleted": 0,
+    "oldGpxFilesOverwritten": 0,
+    "appRuntimeFilesChanged": 0,
+    "appEventRecordsChanged": 0,
+    "noGpxFilesChanged": true,
+    "noAppRuntimeDataChanged": true
+  },
+  "followUps": [
+    "Prague: recheck when RunCzech publishes the 2027 course map/GPX.",
+    "Berlin: ask organizer for a public GPX or official track file; current official page provides PDF and interactive map only.",
+    "Belgrade: recheck for 2027 course map/GPX; keep 2026 course material historical.",
+    "Vienna: inspect the actual GPX endpoint and edition metadata before marking 2027 validated.",
+    "Riga: wait for organizer's new 2027 course reveal; reconcile the stray May 17 text against official May 16 half-marathon date.",
+    "Stockholm, Copenhagen, Cardiff: recheck for official GPX release; do not convert route descriptions or interactive maps into assumed GPX tracks.",
+    "Valencia: replace the 2026 race-guide download only after a clearly edition-labelled 2027 file appears.",
+    "Rome: wait for the organizer's 2027 route file; do not reuse the 2026 guide/track."
+  ]
+}
