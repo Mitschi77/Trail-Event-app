@@ -1,7 +1,7 @@
 {
   "batch": 52,
   "checkedAt": "2026-11-21",
-  "scope": "Top-level events 119–128 in current EVENTS order",
+  "scope": "Official route and GPX-version audit for ten records in the historic/original top-level event list 119–128; this is not the current event-dates.json insertion range 119–128.",
   "status": "audit-only-checkpoint",
   "rules": [
     "Old GPX files remain valid as historical/current fallback until an official replacement is downloaded, parsed and validated.",
@@ -421,5 +421,28 @@
     "https://valdaran.utmb.world/",
     "https://valdaran.utmb.world/race/tracks",
     "https://mrww.utmb.world/races"
-  ]
+  ],
+  "currentEventDatesCrossCheck": {
+    "currentCatalogRange": "event-dates.json insertion positions 119–128 (1-based)",
+    "overlappingIds": [
+      "hiroshima-by-utmb",
+      "the-canyons-endurance-runs-by-utmb",
+      "rothrock-by-utmb",
+      "trail-du-saint-jacques-by-utmb",
+      "torrencial-valdivia-by-utmb",
+      "hoka-val-d-aran-by-utmb",
+      "monte-rosa-walser-waeg-by-utmb"
+    ],
+    "currentEntriesNotCoveredByThisBatch": [
+      "coelmo-napoli-city-half-marathon",
+      "lisbon-half-marathon",
+      "warsaw-half-marathon"
+    ],
+    "legacyEntriesNotInCurrentCatalogRange": [
+      "Puerto Vallarta México by UTMB",
+      "Xtrail Kenting by UTMB",
+      "Desert RATS Trail Running Festival by UTMB"
+    ],
+    "note": "This package follows the historic/original 128-event list. Seven current catalog entries overlap; three current entries (Coelmo Napoli, Lisbon Half and Warsaw Half) still need a separate audit. The three legacy entries are present elsewhere in the current catalog at earlier positions or in another legacy list and are not part of current positions 119–128."
+  }
 }
