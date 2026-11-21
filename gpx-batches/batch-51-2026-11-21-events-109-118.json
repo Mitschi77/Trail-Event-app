@@ -1,7 +1,7 @@
 {
   "batch": 51,
   "checkedAt": "2026-11-21",
-  "scope": "Top-level events 109–118 in current EVENTS order",
+  "scope": "Official route and GPX-version audit for ten records in the historic/original top-level event list 109–118; this is not the current event-dates.json insertion range 109–118.",
   "status": "audit-only-checkpoint",
   "rules": [
     "Existing GPX files remain valid until a replacement is officially published, downloaded, parsed and validated.",
@@ -104,29 +104,31 @@
     {
       "order": 113,
       "name": "3 Días Trail Ibiza",
-      "date": "2026-11-26/29 confirmed; 2027 not announced",
+      "date": "2027-11-26/28",
       "officialSource": "https://3diastrailibiza.com/",
       "statement": "https://3diastrailibiza.com/comunicado-oficial-celebracion-de-los-3-dias-trail-ibiza/",
       "routes": [
         {
           "name": "Ultra",
-          "edition": "2026"
+          "edition": "2026-course-details-only"
         },
         {
           "name": "Trail Marathon",
-          "edition": "2026"
+          "edition": "2026-course-details-only"
         },
         {
           "name": "Half Marathon",
-          "edition": "2026"
+          "edition": "2026-course-details-only"
         },
         {
           "name": "Nocturna 10K",
-          "edition": "2026"
+          "edition": "2026-course-details-only"
         }
       ],
-      "gpxStatus": "2026-event; stage-gpx-sent-by-email-about-one-week-before; no-2027-track",
-      "note": "Organizer's 6 Oct 2026 statement confirms 2026 event will proceed despite election-day date overlap. Saturday route GPX is sent to participants by email because it crosses protected/private land. No 2027 date verified."
+      "gpxStatus": "2027-date-confirmed; 2027-course-and-GPX-not-yet-published; 2026-stage-GPX-email-only-and-private-land-restricted",
+      "note": "Official Arista Eventos organizer calendar now lists 3 Días Trail Ibiza for 26–28 November 2027. The detailed 3diastrailibiza.com schedule and route pages still show the 2026 edition; do not carry those 2026 course details or GPX files into 2027. For the 2026 event, stage GPX was sent to registered participants by email because routes cross protected/private land.",
+      "status": "official-Arista-organizer-calendar-confirms-2027-date; detailed-course-pages-still-2026",
+      "official2027DateSource": "https://aristaeventos.es/"
     },
     {
       "order": 114,
@@ -309,5 +311,36 @@
     "https://vietnamhighlands.utmb.world/runners/entry-info",
     "https://vietnamhighlands.utmb.world/runners/event-schedule",
     "https://tarawera.utmb.world/runners/entry-info"
-  ]
+  ],
+  "currentEventDatesCrossCheck": {
+    "currentCatalogRange": "event-dates.json insertion positions 109–118 (1-based)",
+    "overlappingIds": [
+      "puglia-terra-delle-gravine",
+      "3trail-ibiza",
+      "oman-by-utmb",
+      "mammutmarsch",
+      "megamarsch",
+      "vietnam-highlands-trail-by-utmb",
+      "tarawera-ultra-trail-by-utmb"
+    ],
+    "currentEntriesCoveredByAuditBatch52": [
+      "puerto-vallarta-mexico-by-utmb",
+      "hoka-xtrail-kenting-by-utmb",
+      "desert-rats-trail-running-festival-by-utmb"
+    ],
+    "legacyEntriesNotInCurrentCatalogRange": [
+      "Kullamannen by UTMB",
+      "Mallorca by UTMB / Serra de Tramuntana",
+      "Austria Backyard Ultra 24+1 Hochkönig"
+    ],
+    "note": "This package follows the historic/original event list. Seven current catalog entries overlap directly; the other three current entries are covered by audit batch 52. Kullamannen, Mallorca and Austria Backyard are legacy records outside current positions 109–118. The 3 Días Trail Ibiza 2027 date is now confirmed by the official Arista organizer calendar; its 2027 course/GPX remains unpublished."
+  },
+  "summary": {
+    "eventsCovered": 10,
+    "currentEventDatesEntriesCoveredDirectly": 7,
+    "currentEventDatesEntriesCoveredByBatch52": 3,
+    "legacyEntriesNotInCurrentEventDatesRange": 3,
+    "ibiza2027DateConfirmedByArista": true,
+    "ibiza2027CourseGpxPublished": false
+  }
 }
