@@ -477,3 +477,23 @@ assert.deepEqual(validatePlannerSnapshot({plannerKey: JSON.stringify({ok:true})}
 assert.throws(() => validatePlannerSnapshot({unknownKey: "{}"}), /Unbekannter oder ungültiger Datenbereich/);
 assert.throws(() => validatePlannerSnapshot({plannerKey: "{"}), /Beschädigte Daten/);
 assert.notDeepEqual(cloudSignature({plannerKey:"old"}), cloudSignature({plannerKey:"new"}), "Backup integrity signatures must change when stored data changes");
+
+// Year overview: expandable cards and review controls remain keyboard/screen-reader accessible.
+assert.ok(html.includes('<details class="year-race-more"><summary>Weitere Streckendetails &amp; Planung</summary>'),
+  "Year race details must use native details/summary disclosure controls");
+assert.ok(html.includes("window.yearReviewOpen=window.yearReviewOpen||{};function toggleYearReview(id)"),
+  "Year review open state must be initialized and survive re-renders");
+assert.ok(html.includes('aria-expanded="${open}" aria-controls="yearReview${x.uid}"'),
+  "Year review toggle must expose its expanded state and controlled panel to assistive technology");
+assert.ok(html.includes('id="yearReview${x.uid}" ${open?\'\':\'hidden\'}'),
+  "Year review panel must have a stable id and follow the open state");
+const plannedDetailsStart = html.indexOf("function showPlannedEventDetails(id,ri)");
+const plannedDetailsEnd = html.indexOf("function closePlannedEventDetails", plannedDetailsStart);
+assert.ok(plannedDetailsStart >= 0 && plannedDetailsEnd > plannedDetailsStart,
+  "Year overview must retain the full planned-event detail dialog");
+const plannedDetailsSource = html.slice(plannedDetailsStart, plannedDetailsEnd);
+for (const required of ["renderCutoffDetails(r)", "routeMetricMarkup(r,id)", "renderElevationProfile(r,e", "renderGpxMap(r)", "routeKeys", "eventKeys"]) {
+  assert.ok(plannedDetailsSource.includes(required), "Full detail dialog must retain " + required);
+}
+assert.ok(plannedDetailsSource.includes('role="dialog" aria-modal="true"'),
+  "Full event detail dialog must retain accessible modal semantics");
