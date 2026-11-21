@@ -1,0 +1,331 @@
+{
+  "schemaVersion": 1,
+  "updatedAt": "2026-11-21",
+  "organizerId": "asd-sentierouno-s1trail",
+  "organizerName": "ASD SentieroUNO / S1 Trail",
+  "officialWebsite": "https://www.s1trail.com/",
+  "contactVerification": {
+    "status": "verified_official_source",
+    "email": "info@s1trail.com",
+    "sourceUrl": "https://www.s1trail.com/wp-content/uploads/2024/11/20251127_Regolamento_KarstTrail_2025.pdf",
+    "sourceDescription": "Offizielle Veranstalter-Regelung als PDF auf der Domain s1trail.com; die E-Mail-Adresse steht im Dokument. Keine Drittquelle und keine geratene Adresse verwendet.",
+    "verifiedAt": "2026-11-21",
+    "contactPageNote": "Die Website bietet zusätzlich Kontakt über Telefon/WhatsApp; die verifizierte E-Mail-Adresse wurde im offiziellen, auf der Veranstalter-Domain gehosteten Reglement gefunden."
+  },
+  "databaseScope": {
+    "eventsInCurrentApp": [
+      {
+        "appEventId": "la-corsa-della-bora",
+        "eventName": "La Corsa della Bora",
+        "edition": 2027,
+        "dates": [
+          "2027-01-09",
+          "2027-01-10"
+        ],
+        "officialRouteCount": 7,
+        "routes": [
+          {
+            "id": "bora-ultra-105-3837",
+            "name": "S1 Bora Ultra 116.2 km / 3,930 m"
+          },
+          {
+            "id": "trieste-ultra-61-2-2323",
+            "name": "S1 Trieste Ultra 61.2 km / 2,323 m"
+          },
+          {
+            "id": "transkarst-ultra-59-1814",
+            "name": "S1 TransKarst Ultra 55.0 km / 1,594 m"
+          },
+          {
+            "id": "explorer-85-2993",
+            "name": "S1 Borderless Trail 36.2 km / 797 m"
+          },
+          {
+            "id": "half-trail-23-3-700",
+            "name": "S1 Half Trail 23.3 km / 700 m"
+          },
+          {
+            "id": "s1-family-hike-trail-14-8-419-2027",
+            "name": "S1 Family Hike & Trail 14.8 km / 419 m"
+          },
+          {
+            "id": "s1-borin-5-5-186-2027",
+            "name": "S1 Borin 5.5 km / 186 m"
+          }
+        ]
+      }
+    ],
+    "currentAppRouteCount": 5,
+    "officialRoutesMissingFromApp": [
+      "S1 Family Hike & Trail 14.8 km / 419 m D+",
+      "S1 Borin 5.5 km / 186 m D+"
+    ],
+    "otherOfficialSeriesNotInCurrentDatabase": [
+      {
+        "name": "Alpe Adria Ultra Trail",
+        "inCurrentDatabase": false
+      },
+      {
+        "name": "Sardon Run",
+        "inCurrentDatabase": false
+      },
+      {
+        "name": "Čaven Run",
+        "inCurrentDatabase": false
+      }
+    ],
+    "note": "Die offizielle Veranstalterseite nennt die drei weiteren Serien als ASD-SentieroUNO-Veranstaltungen. In der aktuellen EVENTS-Basis des Repositories wurde jedoch kein Event und keine Strecke unter diesen Namen bzw. deren offiziellen Domains gefunden. In der gebündelten E-Mail wurde gefragt, ob spätere Aufnahme dieser Serien durch dieselbe Freigabe abgedeckt werden kann."
+  },
+  "communication": {
+    "initialEnquiry": {
+      "date": "2026-11-19T13:53:17Z",
+      "recipient": "susanna@s1trail.com",
+      "subject": "Richiesta di autorizzazione per contenuti ufficiali – La Corsa della Bora",
+      "status": "sent_copy_found_in_sent_folder",
+      "scopeNote": "Kurze erste Anfrage; keine vollständige 12-Punkte-Rechtematrix und keine vollständige GPX-Sperrvermerk-Abfrage. Die Adresse wurde in dieser Recherche nicht als offizielle Kontaktadresse verifiziert."
+    },
+    "detailedFollowUp": {
+      "date": "2026-11-21T01:44:00Z",
+      "recipient": "info@s1trail.com",
+      "subject": "Itemised permission request – La Corsa della Bora 2027 – independent non-commercial app",
+      "messageId": "YdnVnqfUaqFxpwcdP8WLaeRYbbG7BWSP4LpsIpQUdPxbIm1lc3NhZ2UiLCJTZW50IE1lc3NhZ2VzIiwxMjc5MTY5MDQ3LDE2ODVd",
+      "status": "sent_copy_confirmed_in_sent_folder",
+      "deliveryConfirmed": false,
+      "outboxCheckedBeforeSending": true,
+      "noEarlierMessageToVerifiedAddressFound": true,
+      "inboxCheckedAfterSending": true,
+      "responseFound": false,
+      "note": "Detaillierte Ergänzungsanfrage an die anhand des offiziellen Reglements verifizierte Adresse. Versandnachweis im Gesendet-Ordner vorhanden; keine Zustellbestätigung und keine Antwort im Posteingang gefunden."
+    },
+    "nextAction": "Auf Antwort warten; vor jeder weiteren Nachricht erneut Gesendet-Ordner prüfen und keine erneute Anfrage ohne sachlichen Grund senden."
+  },
+  "permissionMatrix": [
+    {
+      "number": 1,
+      "id": "officialDescriptionVerbatim",
+      "label": "Official route descriptions reproduced verbatim",
+      "nonCommercialDecision": "pending",
+      "conditions": null,
+      "commercialDecision": "separate_question_pending"
+    },
+    {
+      "number": 2,
+      "id": "editedDescription",
+      "label": "Shortened or editorially edited official route descriptions",
+      "nonCommercialDecision": "pending",
+      "conditions": null,
+      "commercialDecision": "separate_question_pending"
+    },
+    {
+      "number": 3,
+      "id": "originalSummary",
+      "label": "Original factual summaries written from information supplied by the organizer",
+      "nonCommercialDecision": "pending",
+      "conditions": null,
+      "commercialDecision": "separate_question_pending"
+    },
+    {
+      "number": 4,
+      "id": "routeFacts",
+      "label": "Route facts including distance, elevation gain/loss, start/finish, checkpoints and cut-offs",
+      "nonCommercialDecision": "pending",
+      "conditions": null,
+      "commercialDecision": "separate_question_pending"
+    },
+    {
+      "number": 5,
+      "id": "mapsAndRouteLines",
+      "label": "Maps and route lines",
+      "nonCommercialDecision": "pending",
+      "conditions": null,
+      "commercialDecision": "separate_question_pending"
+    },
+    {
+      "number": 6,
+      "id": "elevationProfiles",
+      "label": "Elevation profiles",
+      "nonCommercialDecision": "pending",
+      "conditions": null,
+      "commercialDecision": "separate_question_pending"
+    },
+    {
+      "number": 7,
+      "id": "gpxFile",
+      "label": "The GPX files themselves – separate approval for fetch/access, load/import, storage, processing/analysis, map display and user download",
+      "nonCommercialDecision": "pending",
+      "conditions": null,
+      "commercialDecision": "separate_question_pending"
+    },
+    {
+      "number": 8,
+      "id": "gpxOfficialLink",
+      "label": "Link to the official GPX download/information page, separate from file permission",
+      "nonCommercialDecision": "pending",
+      "conditions": null,
+      "commercialDecision": "separate_question_pending"
+    },
+    {
+      "number": 9,
+      "id": "eventNamesAndMarks",
+      "label": "Event names and event marks/trademarks",
+      "nonCommercialDecision": "pending",
+      "conditions": null,
+      "commercialDecision": "separate_question_pending"
+    },
+    {
+      "number": 10,
+      "id": "logosAndWordImageMarks",
+      "label": "Logos and word/image marks",
+      "nonCommercialDecision": "pending",
+      "conditions": null,
+      "commercialDecision": "separate_question_pending"
+    },
+    {
+      "number": 11,
+      "id": "symbolsIconsPictogramsEmblemsMascots",
+      "label": "Symbols, icons, pictograms, emblems and mascots",
+      "nonCommercialDecision": "pending",
+      "conditions": null,
+      "commercialDecision": "separate_question_pending"
+    },
+    {
+      "number": 12,
+      "id": "eventSpecificGraphics",
+      "label": "Other event-specific graphics and visual design elements",
+      "nonCommercialDecision": "pending",
+      "conditions": null,
+      "commercialDecision": "separate_question_pending"
+    }
+  ],
+  "gpxRestrictions": {
+    "status": "withheld_until_race_week",
+    "organizerNoticeSummary": "Die offiziellen Streckenseiten halten die endgültigen GPX-Dateien bis zur Rennwoche zurück (kurzfristige Sicherheits-/Streckenänderungen; private Grundstücksabschnitte sind nur am Renntag geöffnet). Das offizielle Reglement weist Teilnehmende an, ausschließlich die vor dem Rennen automatisch per E-Mail versandte GPX-Datei zu verwenden.",
+    "sourceUrls": [
+      "https://www.s1trail.com/en/dati-ufficiali-corsa-della-bora-2027/",
+      "https://www.s1trail.com/en/regolamento/",
+      "https://www.s1trail.com/en/s1-bora-ultra-116-km/",
+      "https://www.s1trail.com/en/s1-bora-ultra/",
+      "https://www.s1trail.com/en/s1-trail/",
+      "https://www.s1trail.com/en/s1-borderless-trail/",
+      "https://www.s1trail.com/en/s1-half/",
+      "https://www.s1trail.com/en/s1-family-hike-2/",
+      "https://www.s1trail.com/en/borin/"
+    ],
+    "affectedRoutes": [
+      {
+        "routeId": "bora-ultra-105-3837",
+        "routeName": "S1 Bora Ultra 116.2 km / 3,930 m",
+        "restrictionStatus": "withheld_until_race_week",
+        "public2027GpxAvailable": false,
+        "downloadPageChecked": true,
+        "metadataChecked": false,
+        "metadataStatus": "no_public_file_available_to_inspect"
+      },
+      {
+        "routeId": "trieste-ultra-61-2-2323",
+        "routeName": "S1 Trieste Ultra 61.2 km / 2,323 m",
+        "restrictionStatus": "withheld_until_race_week",
+        "public2027GpxAvailable": false,
+        "downloadPageChecked": true,
+        "metadataChecked": false,
+        "metadataStatus": "no_public_file_available_to_inspect"
+      },
+      {
+        "routeId": "transkarst-ultra-59-1814",
+        "routeName": "S1 TransKarst Ultra 55.0 km / 1,594 m",
+        "restrictionStatus": "withheld_until_race_week",
+        "public2027GpxAvailable": false,
+        "downloadPageChecked": true,
+        "metadataChecked": false,
+        "metadataStatus": "no_public_file_available_to_inspect"
+      },
+      {
+        "routeId": "explorer-85-2993",
+        "routeName": "S1 Borderless Trail 36.2 km / 797 m",
+        "restrictionStatus": "withheld_until_race_week",
+        "public2027GpxAvailable": false,
+        "downloadPageChecked": true,
+        "metadataChecked": false,
+        "metadataStatus": "no_public_file_available_to_inspect"
+      },
+      {
+        "routeId": "half-trail-23-3-700",
+        "routeName": "S1 Half Trail 23.3 km / 700 m",
+        "restrictionStatus": "withheld_until_race_week",
+        "public2027GpxAvailable": false,
+        "downloadPageChecked": true,
+        "metadataChecked": false,
+        "metadataStatus": "no_public_file_available_to_inspect"
+      },
+      {
+        "routeId": "s1-family-hike-trail-14-8-419-2027",
+        "routeName": "S1 Family Hike & Trail 14.8 km / 419 m",
+        "restrictionStatus": "withheld_until_race_week",
+        "public2027GpxAvailable": false,
+        "downloadPageChecked": true,
+        "metadataChecked": false,
+        "metadataStatus": "no_public_file_available_to_inspect"
+      },
+      {
+        "routeId": "s1-borin-5-5-186-2027",
+        "routeName": "S1 Borin 5.5 km / 186 m",
+        "restrictionStatus": "withheld_until_race_week",
+        "public2027GpxAvailable": false,
+        "downloadPageChecked": true,
+        "metadataChecked": false,
+        "metadataStatus": "no_public_file_available_to_inspect"
+      }
+    ],
+    "questionsSent": [
+      "Sind einzelne GPX-Dateien oder Strecken mit Sperrvermerken, Nutzungsvorbehalten, Lizenz-/Urheberrechtshinweisen oder Downloadverboten versehen?",
+      "Wo stehen die Hinweise und für welche Strecken gelten sie?",
+      "Bedeutet ein solcher Hinweis, dass Drittanbieter die GPX-Datei nicht abrufen, laden, importieren, speichern, verarbeiten, auf einer Karte anzeigen oder Nutzern zum Download anbieten dürfen?",
+      "Ist eine reine Verlinkung auf die offizielle GPX-Seite trotz eines solchen Hinweises erlaubt?",
+      "Wie sollen Sperrvermerke und Bedingungen je Strecke korrekt in der App dargestellt werden?"
+    ],
+    "appEnforcement": "Fail-closed: kein Fetch, Laden, Import, Speichern, Verarbeiten, Kartenrendering oder Nutzer-Download ohne ausdrückliche, streckenspezifische Freigabe für genau diese Aktion und einen geklärten Restriktionsstatus. Reine GPX-Seitenverlinkung ist separat zu genehmigen. Offizielle Streckeninformationsseiten bleiben als Quellenlink erhalten, da dort kein Linkverbot gefunden wurde."
+  },
+  "commercialUse": {
+    "questionSent": true,
+    "currentPhase": "non-commercial only",
+    "laterCommercialUseDecision": "pending",
+    "separateWrittenLicenceRequired": true,
+    "noCommercialPermissionImplied": true
+  },
+  "brandAssets": {
+    "mediaKitRequested": true,
+    "logoFilesRequested": true,
+    "brandGuidelinesRequested": true,
+    "usageConditionsRequested": [
+      "Größe",
+      "Farbe",
+      "Platzierung",
+      "Quellenangabe",
+      "Laufzeit",
+      "zulässiger Kontext",
+      "Ausschlüsse und Auflagen"
+    ],
+    "responseStatus": "pending"
+  },
+  "responses": [],
+  "appIntegration": {
+    "routeDescriptionsFile": "route-descriptions.json",
+    "gpxRightsRegistry": "gpx-rights.json",
+    "gpxPolicyHelper": "gpx-rights-policy.js",
+    "gpxEnforcementPatch": "race-tools.js",
+    "publicationStatus": "draft_branch_not_merged",
+    "protectedAssetsCopied": false,
+    "officialDescriptionTextCopied": false,
+    "gpxFilesDownloaded": false,
+    "gpxRuntimeTest": "scripts/test_gpx_rights_runtime.js",
+    "testResults": {
+      "policyUnitTests": "passed",
+      "actualRaceToolsFetchGateMock": "passed",
+      "unauthorizedStoredGpxPurgeMock": "passed",
+      "blockedMapAndPersistenceMock": "passed",
+      "explicitlyApprovedRouteMock": "passed",
+      "linkOnlyPermissionSeparationMock": "passed",
+      "browserAndInstalledPwaVerification": "not_performed"
+    }
+  }
+}
