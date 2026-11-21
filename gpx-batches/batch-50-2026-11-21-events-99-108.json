@@ -1,7 +1,7 @@
 {
   "batch": 50,
   "checkedAt": "2026-11-21",
-  "scope": "Top-level events 99–108 in current EVENTS order",
+  "scope": "Official route and GPX status audit for ten records in the historic/original top-level event list 99–108; this is not the current event-dates.json insertion range 99–108.",
   "status": "audit-only-checkpoint",
   "rules": [
     "Old GPX files remain valid until a new official replacement is published, downloaded, parsed and validated.",
@@ -296,5 +296,32 @@
     "https://marathonmuenchen.org/der-marathon/",
     "https://www.munich.travel/en/pois/sports-leisure/munich-marathon",
     "https://chiemgauer100.de/stundenrunden-2026-infos/"
-  ]
+  ],
+  "currentEventDatesCrossCheck": {
+    "currentCatalogRange": "event-dates.json insertion positions 99–108 (1-based)",
+    "overlappingIds": [
+      "alpin-team-trailrun",
+      "chihuahua-by-utmb",
+      "trail-tarmac-pursuit",
+      "oberaudorf-trailfestival",
+      "taubertal-100",
+      "hoka-kodiak-ultra-marathons",
+      "munchen-marathon"
+    ],
+    "currentEntriesCoveredByAuditBatch51": [
+      "kullamannen",
+      "mallorca-serra-de-tramuntana"
+    ],
+    "currentEntriesCoveredByAuditBatch62": [
+      "adamello-ultratrail",
+      "nice-cote-d-azur"
+    ],
+    "currentEntriesNotYetCovered": [
+      "24-1-challenge"
+    ],
+    "legacyOnlyEntriesNotInCurrentCatalog": [
+      "StundenRundenLauf / Chiemgauer 100"
+    ],
+    "note": "This package follows the historic/original event list. Seven current entries overlap directly; Kullamannen and Mallorca are covered by batch 51, Adamello and Nice by batch 62. The 24-1 Challenge still needs a separate audit. StundenRundenLauf is not present in the current event catalog."
+  }
 }
