@@ -26,11 +26,19 @@ jobs:
           cache: npm
       - name: Install locked dependencies
         run: npm ci
+      - name: Set up Deno
+        uses: denoland/setup-deno@v2
+        with:
+          deno-version: v2.x
+      - name: Type-check owner push Edge Function
+        run: deno check --node-modules-dir=auto supabase/functions/send-owner-test-push/index.ts
       - name: Run app syntax and regression tests
         run: npm run test:syntax
+      - name: Run Python event-data regression tests
+        run: python3 -m unittest discover -s scripts -p 'test_*.py'
       - name: Check Python workflow scripts
-        run: python3 -m py_compile scripts/update_event_dates.py scripts/validate_event_data.py scripts/submit_event_date_proposals.py scripts/submit_event_data_proposals.py scripts/test_submit_event_data_proposals.py
-      - name: Run Python regression tests
+        run: python3 -m py_compile scripts/update_event_dates.py scripts/validate_event_data.py scripts/submit_event_date_proposals.py scripts/event_source_status.py scripts/test_event_source_status.py scripts/submit_event_data_proposals.py scripts/test_submit_event_data_proposals.py scripts/run_proposal_ingestion_db_test.py
+      - name: Test official event source health classification
         run: python3 -m unittest discover -s scripts -p 'test_*.py'
       - name: Validate event and route data, including date-feed route IDs
         run: python3 scripts/validate_event_data.py
