@@ -1,0 +1,191 @@
+{
+  "batch": 75,
+  "checkedAt": "2026-11-21",
+  "scope": "events 209-218 from event-dates.json",
+  "rules": [
+    "Official organizer sources take precedence; secondary calendar entries remain provisional.",
+    "Date changes must be reflected from latest organizer announcement; flag contradictory PDFs until updated.",
+    "Historic course maps or download controls do not prove 2027 edition validity.",
+    "Do not delete or overwrite old GPX until new official binary downloaded, fully parsed and validated.",
+    "Audit-only: no app runtime or live event records changed."
+  ],
+  "events": [
+    {
+      "sequence": 209,
+      "eventId": "jesolo-moonlight-half-marathon",
+      "name": "Jesolo Moonlight Half Marathon",
+      "edition": 2027,
+      "date": "2027-05-15",
+      "distanceKm": 21.097,
+      "startTime": "not confirmed after date change",
+      "start": "Jesolo, Italy",
+      "status": "official-organizer-date-change-announced; conflicting-older-regulation-pdf",
+      "gpxStatus": "no-2027-gpx-binary-validated",
+      "detail": "Official homepage and press release now announce NEW DATE Saturday 15 May 2027, moved one week earlier from 22 May. A currently indexed official PDF still says 22 May 2027 at 19:30 from Piazza Milano. The homepage date-change announcement takes precedence for the date, but start time and whether route/start details changed need updated regulation. Existing 21.097km distance remains in the older regulation; route was AIMS measured/certified in 2025, not a 2027 GPX validation.",
+      "sources": [
+        "https://www.moonlighthalfmarathon.it/en/",
+        "https://www.moonlighthalfmarathon.it/en/press-release/84-b-2026/85-a-press-office/509-the-16th-jesolo-moonlight-half-marathon-10k-has-a-new-date",
+        "https://moonlighthalfmarathon.it/images/2027/atleti/Regolamento%20MHM21K-%202027.pdf"
+      ]
+    },
+    {
+      "sequence": 210,
+      "eventId": "aosta-21k-half-marathon",
+      "name": "Aosta 21K Half Marathon",
+      "edition": 2027,
+      "date": "2027-05 (day not announced)",
+      "distanceKm": 21,
+      "location": "Aosta, Valle d'Aosta, Italy",
+      "status": "official-organizer-announces-return-in-may-2027; exact-date-pending",
+      "gpxStatus": "no-2027-gpx-confirmed",
+      "detail": "Official organizer says AOSTA21K will return in May 2027, without exact day or 2027 route. Historical course described as certified, fast and flat; do not assume the historic course is unchanged for 2027.",
+      "sources": [
+        "https://aosta21k.com/"
+      ]
+    },
+    {
+      "sequence": 211,
+      "eventId": "mezza-maratona-della-memoria",
+      "name": "Mezza Maratona della Memoria",
+      "edition": 2027,
+      "date": "2027-05-30",
+      "distanceKm": 21.0975,
+      "location": "Isola delle Femmine (PA), Sicily, Italy",
+      "status": "secondary-calendar-entry-only; official-2027-regulation-not-verified",
+      "gpxStatus": "no-2027-gpx-confirmed",
+      "detail": "A 2027 race listing gives 30 May 2027, 21.0975km and Isola delle Femmine, with ASD Polizia di Stato Palermo as organizer. FIDAL result found in this check is for the 2026 edition (31 May 2026), so it does not confirm 2027. Keep provisional until organizer/FIDAL 2027 entry or regulation appears.",
+      "sources": [
+        "https://runmaniac.com/de/gare/mezza-maratona-memoria",
+        "https://www.fidal.it/calendario/NAZ-III%5E-Mezza-Maratona-della-Memoria/COD14322"
+      ]
+    },
+    {
+      "sequence": 212,
+      "eventId": "parma-mezza-maratona",
+      "name": "Parma Mezza Maratona",
+      "edition": 2027,
+      "date": "2027-09-12",
+      "distanceKm": 21.0975,
+      "location": "Parma, Emilia-Romagna, Italy",
+      "status": "secondary-calendar-entry-only; organizer-regulation-pending",
+      "gpxStatus": "no-2027-gpx-confirmed",
+      "detail": "2027 calendar listing gives 12 September and 21.0975km. Regulation, start time, route and registration details remain undefined; date and programme marked future/provisional by listing.",
+      "sources": [
+        "https://www.maratoniamo.it/gara/parma-mezza-maratona-parma-mezza"
+      ]
+    },
+    {
+      "sequence": 213,
+      "eventId": "maratonina-citta-di-udine",
+      "name": "Maratonina Internazionale Città di Udine",
+      "edition": 2027,
+      "date": "2027-09-19",
+      "distanceKm": 21.0975,
+      "location": "Udine, Friuli-Venezia Giulia, Italy",
+      "status": "official-organizer-homepage-confirms-date; detailed-2027-regulation-pending",
+      "gpxStatus": "no-2027-gpx-binary-validated",
+      "detail": "Official homepage countdown and event details confirm Udine, 19 September 2027 and 27th edition. No detailed 2027 regulation/course/GPX found in checked page; current route marketing says one of the fastest courses but no numeric elevation or downloadable binary validated.",
+      "sources": [
+        "https://maratoninadiudine.it/"
+      ]
+    },
+    {
+      "sequence": 214,
+      "eventId": "trento-half-marathon",
+      "name": "Trento Half Marathon",
+      "edition": 2027,
+      "date": "2027-09-26 (calendar listing; unconfirmed)",
+      "distanceKm": 21.0975,
+      "location": "Trento, Trentino, Italy",
+      "status": "secondary-calendar-only; official-date-not-announced",
+      "gpxStatus": "no-2027-gpx-confirmed",
+      "detail": "Maratoniamo lists 26 September 2027, 21.0975km, but the official Trento Running Festival 2027 date was not found; another race calendar explicitly says 2027 date not announced. Treat 26 September as provisional only. 2026 race was 27 September.",
+      "sources": [
+        "https://www.maratoniamo.it/gara/trento-half-marathon-trento-mezza",
+        "https://marathonscout.com/races/trento-half-marathon"
+      ]
+    },
+    {
+      "sequence": 215,
+      "eventId": "maratona-del-mugello",
+      "name": "Maratona del Mugello",
+      "edition": 2027,
+      "date": "2027-09-26",
+      "distanceKm": 42.195,
+      "location": "Borgo San Lorenzo, Toscana, Italy",
+      "status": "secondary-calendar-only; organizer-regulation-pending",
+      "gpxStatus": "no-2027-gpx-confirmed",
+      "detail": "2027 calendar listing gives 26 September 2027 and 42.195km. Regulations, start time and detailed course remain undefined; listing itself marks future programme to be confirmed. Do not reuse 2026 route without organizer confirmation.",
+      "sources": [
+        "https://www.maratoniamo.it/gara/maratona-del-mugello-borgo-san-lorenzo-maratona"
+      ]
+    },
+    {
+      "sequence": 216,
+      "eventId": "mantova-half-marathon",
+      "name": "Mantova Half Marathon",
+      "edition": 2027,
+      "date": "2027-10-03",
+      "distanceKm": 21.0975,
+      "location": "Mantova, Lombardia, Italy",
+      "status": "official-organizer-homepage-confirms-next-appointment-date",
+      "gpxStatus": "no-2027-gpx-binary-validated",
+      "detail": "Official organizer homepage states next appointment 3 October 2027. The checked homepage does not expose 2027 distance, start time, course details or GPX; half-marathon distance inferred from event identity and should be confirmed in next regulation.",
+      "sources": [
+        "https://www.mantovahalfmarathon.it/"
+      ]
+    },
+    {
+      "sequence": 217,
+      "eventId": "telesia-half-marathon",
+      "name": "Telesia Half Marathon",
+      "edition": 2027,
+      "date": "2027 date not found",
+      "distanceKm": 21.0975,
+      "location": "Telese Terme, Campania, Italy",
+      "status": "2027-edition-not-confirmed-in-checked-organizer-material",
+      "gpxStatus": "organizer-route-download-page-exists-but-edition-not-verified-and-no-binary-parsed",
+      "detail": "Official route page offers route download and detailed description through lake, Terme di Telese, old town, San Salvatore Telesino and Grassano River to Piazza Minieri. No 2027 date or edition-specific file identified; route page cannot establish current 2027 course or GPX validity.",
+      "sources": [
+        "https://telesiasportevent.it/en/telesia-half-marathon-percorso-eng/"
+      ]
+    },
+    {
+      "sequence": 218,
+      "eventId": "alghero-half-marathon",
+      "name": "Alghero Half Marathon",
+      "edition": 2027,
+      "date": "2027-10-03",
+      "distanceKm": 21.0975,
+      "location": "Alghero, Sardinia, Italy",
+      "status": "secondary-calendar-only; organizer-regulation-pending",
+      "gpxStatus": "no-2027-gpx-confirmed",
+      "detail": "2027 calendar listing gives 3 October 2027 and 21.0975km, but start time, regulation, registration and route are undefined. Treat as provisional.",
+      "sources": [
+        "https://www.maratoniamo.it/gara/alghero-half-marathon-alghero-mezza"
+      ]
+    }
+  ],
+  "summary": {
+    "eventsReviewed": 10,
+    "official2027DateOrOrganizerConfirmation": 4,
+    "secondaryCalendarOnlyOrUnconfirmed": 6,
+    "official2027GpxBinaryValidated": 0,
+    "officialRouteDownloadPageFound": 1,
+    "binaryFilesDownloaded": 0,
+    "tracksParsed": 0,
+    "binaryMetricsCompared": 0,
+    "oldGpxFilesDeleted": 0,
+    "oldGpxFilesOverwritten": 0,
+    "appRuntimeFilesChanged": 0,
+    "appEventRecordsChanged": 0,
+    "auditOnly": true
+  },
+  "followUps": [
+    "Jesolo: update 2027 regulation after date change to 15 May; resolve old PDF still stating 22 May and verify start time/course.",
+    "Aosta: await exact date and 2027 route publication.",
+    "Memoria, Parma, Trento, Mugello and Alghero: obtain organizer/FIDAL confirmation and detailed regulations.",
+    "Udine and Mantova: obtain detailed 2027 rules and GPX/course profile.",
+    "Telesia: determine next edition date and confirm edition of route download; retrieve and parse official binary."
+  ]
+}
