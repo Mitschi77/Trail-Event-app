@@ -1,0 +1,323 @@
+{
+  "batch": 82,
+  "checkedAt": "2026-11-21",
+  "scope": "events 279-288 from event-dates.json",
+  "rules": [
+    "Organizer sources preferred; official tourism listing clearly labelled where used.",
+    "Course assets explicitly labelled 2026 are not treated as 2027 GPX.",
+    "Published OpenRunner elevation figures are recorded as organizer-displayed D+, not independent binary validation.",
+    "No elevation is inferred where source does not provide it.",
+    "Audit-only: no live app event data or runtime files changed."
+  ],
+  "events": [
+    {
+      "sequence": 279,
+      "eventId": "wizz-air-budapest-half-marathon",
+      "name": "42nd Wizz Air Budapest Half Marathon",
+      "date": "2027-09-05",
+      "location": "Budapest, Hungary",
+      "status": "organizer-confirmed",
+      "routes": [
+        {
+          "distanceKm": 21.1,
+          "startTime": "08:00",
+          "status": "organizer-confirmed"
+        },
+        {
+          "distanceKm": 10,
+          "status": "2027 event details forthcoming"
+        }
+      ],
+      "detail": "Organizer confirms 5 September 2027, 08:00, individual half marathon 21.1km. 10km, duo and trio formats are listed as forthcoming. AIMS also lists the 42nd edition on this date. No 2027 GPX or ascent figure verified.",
+      "gpxStatus": "no-2027-binary-downloaded-or-parsed",
+      "sources": [
+        "https://halfmarathon.runinbudapest.com/",
+        "https://aims-worldrunning.org/races/802.html"
+      ]
+    },
+    {
+      "sequence": 280,
+      "eventId": "tartu-city-marathon",
+      "name": "Tartu City Marathon",
+      "date": "2027-10-02",
+      "location": "Tartu, Estonia",
+      "status": "VisitEstonia-official-tourism-calendar-confirms-date; organizer-route-asset-edition-needs-validation",
+      "routes": [
+        {
+          "distanceKm": 42.195,
+          "status": "event listing identifies marathon"
+        },
+        {
+          "distanceKm": 21.1,
+          "status": "event listing identifies half marathon"
+        },
+        {
+          "distanceKm": 10,
+          "status": "event listing identifies 10km"
+        }
+      ],
+      "detail": "Visit Estonia event listing gives 2 October 2027, location Tartu and 42km/21km/10km options, plus city route description. This is a tourism authority listing rather than the organizer's detailed rules. No 2027 route metrics or GPX validated.",
+      "gpxStatus": "no-2027-binary-downloaded-or-parsed",
+      "sources": [
+        "https://visitestonia.com/en/tartu-city-marathon-2027"
+      ]
+    },
+    {
+      "sequence": 281,
+      "eventId": "hoka-semi-de-paris",
+      "name": "HOKA Semi de Paris",
+      "date": "2027-03-07",
+      "location": "Paris, France",
+      "status": "organizer-confirmed",
+      "routes": [
+        {
+          "distanceKm": 21.0975,
+          "status": "organizer-confirmed"
+        }
+      ],
+      "detail": "Organizer FAQ explicitly confirms Sunday 7 March 2027. The same FAQ says 2027 course, start and finish details will be published later. No elevation or GPX yet.",
+      "gpxStatus": "no-2027-binary-downloaded-or-parsed",
+      "sources": [
+        "https://www.hokasemimarathondeparis.com/en/faq"
+      ]
+    },
+    {
+      "sequence": 282,
+      "eventId": "abalone-marathon-de-nantes",
+      "name": "Abalone Marathon de Nantes",
+      "date": "2027-04-24/25",
+      "location": "Nantes, France",
+      "status": "organizer-confirmed",
+      "routes": [
+        {
+          "name": "Les Foulées de l'Éléphant 10K",
+          "date": "2027-04-24",
+          "distanceKm": 10,
+          "startTime": "21:30",
+          "elevationGainM": 55
+        },
+        {
+          "name": "Semi-marathon",
+          "date": "2027-04-25",
+          "distanceKm": 21.0975,
+          "startTime": "08:00",
+          "elevationGainM": 115
+        },
+        {
+          "name": "Marathon",
+          "date": "2027-04-25",
+          "distanceKm": 42.195,
+          "startTime": "09:15",
+          "elevationGainM": 235
+        }
+      ],
+      "detail": "Official organizer page confirms 45th edition on 24–25 April 2027 and separate race times/distances. Elevation figures are published as D+ from OpenRunner (55m/115m/235m), not independently GPX-parsed. Marathon and half share start at Machines de l'Île and finish at Parc des Expositions de la Beaujoire.",
+      "gpxStatus": "no-2027-binary-downloaded-or-parsed",
+      "sources": [
+        "https://www.marathondenantes.com/"
+      ]
+    },
+    {
+      "sequence": 283,
+      "eventId": "run-in-lyon-by-harmonie-mutuelle",
+      "name": "Run In Lyon by Harmonie Mutuelle",
+      "date": "2027-10-03",
+      "location": "Lyon, France",
+      "status": "organizer-confirmed-date-and-registration-open",
+      "routes": [
+        {
+          "distanceKm": 42.195,
+          "status": "2027 race category listed"
+        },
+        {
+          "distanceKm": 21.0975,
+          "status": "2027 race category listed"
+        },
+        {
+          "distanceKm": 10,
+          "status": "2027 race category listed"
+        }
+      ],
+      "detail": "Organizer confirms 3 October 2027 and registration open for marathon, half marathon, 10km and charity run. The course page explicitly says the displayed route downloads are 2026 routes; do not use them as 2027 routes/GPX.",
+      "gpxStatus": "2026-route-download-controls-visible; no-2027-binary-validated",
+      "sources": [
+        "https://www.runinlyon.com/en/registration/register",
+        "https://www.runinlyon.com/en/races/course"
+      ]
+    },
+    {
+      "sequence": 284,
+      "eventId": "semi-de-cannes",
+      "name": "Semi de Cannes",
+      "date": "2027-02-21",
+      "location": "Cannes, France",
+      "status": "organizer-confirmed",
+      "routes": [
+        {
+          "distanceKm": 21.1,
+          "elevationGainM": null,
+          "status": "official measured 2027 course; course preview and elevation pending"
+        },
+        {
+          "distanceKm": 10,
+          "status": "official measured 2027 course; preview pending"
+        },
+        {
+          "distanceKm": 5,
+          "status": "official measured 2027 course; preview pending"
+        }
+      ],
+      "detail": "Official 2027 rules confirm 21 February, 33rd half marathon, 27th 10km and 7th 5km. All three courses are officially measured; half marathon has FFA Gold label. Course preview and start time are still pending; organizer course page currently shows no elevation value.",
+      "gpxStatus": "no-2027-binary-downloaded-or-parsed",
+      "sources": [
+        "https://www.semi-cannes.com/en",
+        "https://www.semi-cannes.com/en/reglement",
+        "https://www.semi-cannes.com/en/la-course"
+      ]
+    },
+    {
+      "sequence": 285,
+      "eventId": "maasmarathon",
+      "name": "Maasmarathon",
+      "date": "2027-05-02",
+      "location": "Visé, Belgium / Netherlands",
+      "status": "organizer-confirmed",
+      "routes": [
+        {
+          "distanceKm": 42.195,
+          "startTime": "09:00",
+          "startFinish": "Place Reine Astrid, Visé",
+          "status": "organizer-confirmed"
+        },
+        {
+          "distanceKm": 21.0975,
+          "status": "organizer-listed; detailed 2027 start not found"
+        },
+        {
+          "distanceKm": 10,
+          "status": "organizer-listed"
+        },
+        {
+          "distanceKm": 5,
+          "status": "organizer-listed"
+        }
+      ],
+      "detail": "Organizer confirms Sunday 2 May 2027. Marathon route is two loops, flat and cross-border through Belgian and Dutch countryside along the Meuse; start/finish Place Reine Astrid at 09:00. Half marathon joins marathoners on the second loop. No numeric ascent or 2027 GPX binary verified.",
+      "gpxStatus": "no-2027-binary-downloaded-or-parsed",
+      "sources": [
+        "https://www.visemaasmarathon.com/en/",
+        "https://www.visemaasmarathon.com/fr/marathon/"
+      ]
+    },
+    {
+      "sequence": 286,
+      "eventId": "wizz-air-cluj-napoca-marathon",
+      "name": "Wizz Air Cluj-Napoca Marathon",
+      "date": "2027-04-10/11",
+      "location": "Cluj-Napoca, Romania",
+      "status": "organizer-regulations-confirmed",
+      "routes": [
+        {
+          "name": "Marathon",
+          "date": "2027-04-11",
+          "distanceKm": 42.195,
+          "startTime": "08:30",
+          "start": "Cluj Arena"
+        },
+        {
+          "name": "Half marathon",
+          "date": "2027-04-11",
+          "distanceKm": 21.0975,
+          "startTime": "10:30",
+          "start": "Cluj Arena"
+        },
+        {
+          "name": "Corporate relay",
+          "date": "2027-04-10",
+          "status": "organizer-listed"
+        }
+      ],
+      "detail": "Official 2027 regulations confirm event weekend 10–11 April, marathon and half marathon starts on Sunday at Cluj Arena. Marathon route page has a route download control and detailed street route, but no 2027 GPX binary was downloaded or parsed in this audit.",
+      "gpxStatus": "official-route-download-control-present; no-2027-binary-downloaded-or-parsed",
+      "sources": [
+        "https://maraton-cluj.ro/en/regulament/",
+        "https://maraton-cluj.ro/en/maraton-42-2-km/"
+      ]
+    },
+    {
+      "sequence": 287,
+      "eventId": "egmond-halve-marathon",
+      "name": "Egmond Halve Marathon",
+      "date": "2027-01-10",
+      "location": "Egmond aan Zee, Netherlands",
+      "status": "organizer-confirms-52nd-edition-date",
+      "routes": [
+        {
+          "distanceKm": 21.0975,
+          "status": "half marathon; start schedule pending"
+        }
+      ],
+      "detail": "Organizer states the 52nd edition takes place Sunday 10 January 2027 (second Sunday of January). Official programme page still displays 2026 timetable. Third-party route analysis estimates about 67m ascent and describes beach, dune reserve and Bloedweg sections; this is not an organizer-published 2027 GPX metric. No official GPX found.",
+      "gpxStatus": "no-official-2027-gpx-found-or-validated",
+      "sources": [
+        "https://www.egmondhalvemarathon.nl/program",
+        "https://www.runtools.nl/raceverkenner/egmond-halve-marathon"
+      ]
+    },
+    {
+      "sequence": 288,
+      "eventId": "nn-cpc-loop-den-haag",
+      "name": "NN CPC Loop Den Haag",
+      "date": "2027-03-14",
+      "location": "The Hague, Netherlands",
+      "status": "organizer-confirmed",
+      "routes": [
+        {
+          "distanceKm": 21.1,
+          "status": "organizer-confirmed"
+        },
+        {
+          "distanceKm": 10,
+          "status": "organizer-confirmed"
+        },
+        {
+          "distanceKm": 5,
+          "status": "organizer-confirmed"
+        }
+      ],
+      "detail": "Organizer confirms 51st edition on Sunday 14 March 2027; half marathon 21.1km, 10km, 5km and youth races listed. Event-info page describes a fast course; no 2027 GPX binary or elevation profile validated.",
+      "gpxStatus": "no-2027-binary-downloaded-or-parsed",
+      "sources": [
+        "https://nncpcloopdenhaag.nl/",
+        "https://nncpcloopdenhaag.nl/en/event-info/"
+      ]
+    }
+  ],
+  "summary": {
+    "eventsReviewed": 10,
+    "datesConfirmed": 10,
+    "organizerConfirmed": 9,
+    "officialTourismCalendarConfirmed": 1,
+    "official2027GpxBinaryValidated": 0,
+    "binaryFilesDownloaded": 0,
+    "tracksParsed": 0,
+    "binaryMetricsCompared": 0,
+    "oldGpxFilesDeleted": 0,
+    "oldGpxFilesOverwritten": 0,
+    "appRuntimeFilesChanged": 0,
+    "appEventRecordsChanged": 0,
+    "auditOnly": true
+  },
+  "followUps": [
+    "Budapest: obtain official 2027 GPX and cumulative ascent; only half marathon individual details currently open.",
+    "Tartu: verify detailed distances, route and GPX on organizer's event-specific page; current confirmation is from Visit Estonia event listing.",
+    "Paris: await 2027 start/finish and course release.",
+    "Nantes: retrieve individual GPX for 10K, half and marathon and compare against listed D+ 55/115/235m.",
+    "Lyon: await 2027 course release; existing route downloads are explicitly 2026.",
+    "Cannes: await 2027 course preview, start times, elevation and GPX.",
+    "Maasmarathon: obtain separate marathon/half GPX and verify loop junction; no ascent metric yet.",
+    "Cluj: download organizer route binaries when available and parse both marathon and half independently.",
+    "Egmond: await organizer's 2027 programme/course map; do not use third-party 67m as official GPX-validated ascent.",
+    "CPC: obtain 2027 route GPX and parse half/10K/5K separately."
+  ]
+}
