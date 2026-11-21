@@ -192,7 +192,22 @@
         "https://debrecenmaraton.hu/en/marathon-distance",
         "https://debrecenmaraton.hu/en/competition-rules-1",
         "https://debrecenmaraton.hu/en"
-      ]
+      ],
+      "gpxValidationAttempt": {
+        "attemptedAt": "2026-11-21",
+        "officialPage": "https://debrecenmaraton.hu/en/marathon-distance",
+        "downloadControl": "Maraton Track 2027 gpx",
+        "downloadEndpoint": "https://debrecenmaraton.hu/cdn/download/59235",
+        "serverResponse": "The browser fetch identified the response as application/gpx+xml but rejected it as an unsupported content type; the binary payload was not exposed.",
+        "alternateRetrieval": "Direct binary download attempt in the working environment failed due to unavailable DNS/network access.",
+        "result": "not-downloaded; not-parsed; no GPX metrics independently verified",
+        "sha256": null,
+        "fileSizeBytes": null,
+        "trackPoints": null,
+        "computedDistanceKm": null,
+        "computedElevationGainM": null,
+        "notes": "Do not treat the 2027 GPX as validated. Organizer-published +50m and 42.195km remain source claims only until the actual file bytes are obtained and the complete track is parsed."
+      }
     },
     {
       "sequence": 335,
@@ -374,9 +389,12 @@
     "oldGpxFilesOverwritten": 0,
     "appRuntimeFilesChanged": 0,
     "appEventRecordsChanged": 0,
-    "auditOnly": true
+    "auditOnly": true,
+    "binaryRetrievalAttempts": 2,
+    "binaryRetrievalSucceeded": 0
   },
   "followUps": [
+    "Debrecen: official endpoint /cdn/download/59235 returns application/gpx+xml, but available browser retrieval rejects this content type and the working environment cannot resolve external DNS. Obtain the file via a browser/manual upload or a GPX-capable download client, then hash and parse the complete track before validating distance and ascent.",
     "Murowana Goślina: obtain exact 2027 date from organizer; current municipal page announces race but date not visible.",
     "Iași: retrieve official route map file and validate exact 21km course geometry; don't infer D+.",
     "Gerar: get detailed 2027 rules for team format, exact course, start and GPX.",
