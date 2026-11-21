@@ -10,6 +10,18 @@ assert.ok(eventDataMatch, "Event data must remain parseable");
 const appEvents = JSON.parse(eventDataMatch[1]);
 const appRoutes = appEvents.flatMap(event => event.routes || []);
 const routeById = id => appRoutes.find(route => route.id === id);
+
+const distanceFilterStart = html.indexOf("function routeMatchesDistanceFilter(route,filter){");
+const distanceFilterEnd = html.indexOf("function routeIsUtmbRelated", distanceFilterStart);
+assert.ok(distanceFilterStart >= 0 && distanceFilterEnd > distanceFilterStart, "Distance filter renderer boundaries must be present");
+const routeMatchesDistanceFilter = new Function("return (" + html.slice(distanceFilterStart, distanceFilterEnd).trim() + ")")();
+assert.equal(routeMatchesDistanceFilter({km:0.8,excludeFromDistanceFilter:true},"lt22"), false, "Kids race must not satisfy the main distance filter");
+assert.equal(routeMatchesDistanceFilter({km:0.8,excludeFromDistanceFilter:true},""), true, "Youth race remains visible without a distance filter");
+assert.equal(routeMatchesDistanceFilter({km:14},"lt22"), true, "Regular trail distance remains filterable");
+assert.equal(routeMatchesDistanceFilter({km:28},"lt22"), false, "Youth-only distances must not lower the main event distance");
+assert.equal(appEvents.find(event=>event.id==="stubai-ultra-trail")?.minKm,14);
+assert.equal(appEvents.find(event=>event.id==="trai-verbier-st-bernhard")?.minKm,28);
+
 const serializedRecordById = id => {
   const index = html.indexOf('"id":"' + id + '"');
   if (index < 0) return "";
@@ -477,3 +489,63 @@ assert.deepEqual(validatePlannerSnapshot({plannerKey: JSON.stringify({ok:true})}
 assert.throws(() => validatePlannerSnapshot({unknownKey: "{}"}), /Unbekannter oder ungültiger Datenbereich/);
 assert.throws(() => validatePlannerSnapshot({plannerKey: "{"}), /Beschädigte Daten/);
 assert.notDeepEqual(cloudSignature({plannerKey:"old"}), cloudSignature({plannerKey:"new"}), "Backup integrity signatures must change when stored data changes");
+
+
+// Wild-Strubel main distance filters must ignore youth, kids and adaptive fun runs.
+const wildStrubelEvent = appEvents.find(event => event.id === "wild-strubel");
+assert.ok(wildStrubelEvent, "Wild-Strubel event must remain in the catalog");
+assert.equal(wildStrubelEvent.minKm, 10, "Wild-Strubel main filter must start at the adult Wild 10, not the 0.8 km kids race");
+assert.equal(routeById("wild-glacier-marathon-41-2500")?.km, 41, "Wild Glacier Marathon Lenk must remain in the 2027 catalog");
+assert.equal(routeById("wild-glacier-marathon-41-2500")?.hm, 2500, "Wild Glacier Marathon elevation must remain recorded");
+assert.equal(routeById("wild-glacier-marathon-41-2500")?.date, "2027-09-10", "Wild Glacier Marathon date must remain recorded");
+for (const id of ["wild-nextgen-10-500","wild-kids-ycoor-0-8-2027","wild-kids-grenon-1-7-2027","wild-adaptive-run-2-2027"]) {
+  assert.equal(routeById(id)?.excludeFromDistanceFilter, true, id + " must not distort the main distance filters");
+}
+assert.equal(wildStrubelEvent.routes.filter(route => route.excludeFromDistanceFilter !== true).reduce((min, route) => Math.min(min, Number(route.km) || Infinity), Infinity), 10,
+  "Wild-Strubel main distance minimum must be based on eligible adult race routes");
+
+// PIUT 2027 official distances and the three age-appropriate Kids Run laps.
+const piutEvent = appEvents.find(event => event.id === "piut");
+assert.ok(piutEvent, "PIUT must remain in the event catalog");
+assert.equal(piutEvent.date, "2027-07-09");
+assert.equal(piutEvent.endDate, "2027-07-10");
+for (const [id, km, hm, date] of [["piut100-100-6300",100,6300,"2027-07-09"],["piut85-85-5200",85,5200,"2027-07-09"],["piut50-50-3100",50,3100,"2027-07-10"],["piut30-30-1540",30,1540,"2027-07-10"],["piut20-20-1300",20,1300,"2027-07-10"],["piut-ten-10-94",10,94,"2027-07-10"]]) {
+  const route = routeById(id); assert.ok(route, id + " must be catalogued");
+  assert.equal(route.km, km, id + " distance"); assert.equal(route.hm, hm, id + " elevation"); assert.equal(route.date, date, id + " date");
+}
+for (const [id, km] of [["piut-kids-bambini-015-2027",0.15],["piut-kids-600m-2027",0.6],["piut-kids-1200m-2027",1.2]]) {
+  const route = routeById(id); assert.ok(route, id + " must be catalogued"); assert.equal(route.km, km);
+  assert.equal(route.date, "2027-07-09"); assert.equal(route.starttime, "15:00"); assert.equal(route.excludeFromDistanceFilter, true);
+  assert.equal(route.hm, null, "Do not invent elevation for Kids Run laps");
+}
+assert.equal(piutEvent.minKm, 10, "PIUT TEN is the shortest regular event distance; Kids Run laps must not lower the main filter");
+
+// 3Kings3Hills 2027: all eight official distances must be represented.
+const threeKings = appEvents.find(event => event.id === "3kings-3hills");
+assert.ok(threeKings, "3Kings3Hills must remain in the event catalog");
+assert.equal(threeKings.minKm, 5, "The official 5 km Traily Trail is the event's shortest regular distance");
+for (const [id, km, hm, starttime] of [["shorty-trail-16-700-2027",16,700,"12:30"],["traily-trail-5-100-2027",5,100,"15:30"]]) {
+  const route = routeById(id); assert.ok(route, id + " must be catalogued");
+  assert.equal(route.km, km); assert.equal(route.hm, hm); assert.equal(route.date, "2027-07-24"); assert.equal(route.starttime, starttime);
+}
+
+// Innsbruck Alpine 2027 official catalog: side races and youth races are not omitted.
+const innsbruckEvent = appEvents.find(event => event.id === "innsbruck-alpine");
+assert.ok(innsbruckEvent, "Innsbruck Alpine must remain in the event catalog");
+assert.equal(innsbruckEvent.routes.length, 13, "All seven main races plus six side/youth races must be represented");
+assert.equal(innsbruckEvent.minKm, 7.4, "The official Vertical is the shortest regular route; the youth race and Kids Trail do not distort the minimum");
+for (const [id, km, hm, date, starttime] of [
+  ["businesstrail-k7-8-2-285-2027",8.2,285,"2027-05-05","18:00"],
+  ["nighttrail-k7-8-2-285-2027",8.2,285,"2027-05-05","20:00"],
+  ["vertical-vtc-7-4-1330-2027",7.4,1330,"2027-05-06","11:15"],
+  ["young-talents-race-7-4-280-2027",7.4,280,"2027-05-06","15:00"],
+  ["rookie-trailrun-k15-17-5-590-2027",17.5,590,"2027-05-08","16:30"]
+]) {
+  const route = routeById(id); assert.ok(route, id + " must be catalogued");
+  assert.equal(route.km, km); assert.equal(route.hm, hm); assert.equal(route.date, date); assert.equal(route.starttime, starttime);
+}
+const iatfKids = routeById("kids-trail-iatf-2027");
+assert.ok(iatfKids, "Innsbruck Kids Trail must be represented");
+assert.equal(iatfKids.date, "2027-05-07"); assert.equal(iatfKids.starttime, "15:00");
+assert.equal(iatfKids.km, null); assert.equal(iatfKids.hm, null);
+assert.equal(iatfKids.excludeFromDistanceFilter, true, "Kids Trail must not distort the main distance filters");
