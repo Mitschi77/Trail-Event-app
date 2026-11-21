@@ -1,0 +1,299 @@
+{
+  "batch": 48,
+  "checkedAt": "2026-11-20",
+  "scope": "Official route and GPX status audit for ten records in the historic/original top-level event list 79–88; this is not the current event-dates.json insertion range 79–88.",
+  "status": "audit-only-checkpoint",
+  "rules": [
+    "Old GPX files remain valid until a new official GPX is published, downloaded, parsed and validated.",
+    "Never replace historical GPX solely because a new event edition is announced.",
+    "A course page or GPX button is not equivalent to a technically validated GPX binary."
+  ],
+  "events": [
+    {
+      "order": 79,
+      "name": "Swiss Alps 100",
+      "date": "2027-08-06/08",
+      "officialSource": "https://www.swissalps100.com/",
+      "routes": [
+        {
+          "name": "160K",
+          "distanceKm": 159.4,
+          "elevationM": 10150
+        },
+        {
+          "name": "100K",
+          "distanceKm": 100.8,
+          "elevationM": 6250
+        },
+        {
+          "name": "50K",
+          "distanceKm": 51.6,
+          "elevationM": 3210
+        },
+        {
+          "name": "Vertical",
+          "distanceKm": 10,
+          "elevationM": 1830
+        },
+        {
+          "name": "Matterhorning",
+          "distanceKm": 33.3,
+          "elevationM": 4692,
+          "edition": "2027 only"
+        },
+        {
+          "name": "Kids Run",
+          "distanceKm": 1,
+          "elevationM": 25
+        }
+      ],
+      "gpxStatus": "official-course-pages-with-gpx-downloads; binaries-not-validated",
+      "note": "Current official homepage lists 160K, 100K, 50K, Vertical, Kids and 2027-only Matterhorning. Older checkpoint omitted Vertical and Kids and described Matterhorning as 2027-only correctly. Official Matterhorning page provides a GPX download."
+    },
+    {
+      "order": 80,
+      "name": "Allgäu Panorama Marathon",
+      "date": "2027-08-07/08",
+      "officialSource": "https://www.allgaeu-panorama-marathon.de/",
+      "routes": [
+        {
+          "name": "Ultra",
+          "distanceKm": 69,
+          "elevationM": 3125
+        },
+        {
+          "name": "Marathon",
+          "distanceKm": 42.2,
+          "elevationM": 1375
+        },
+        {
+          "name": "Hörnerlauf",
+          "distanceKm": 18,
+          "elevationM": 1111
+        },
+        {
+          "name": "Halbmarathon",
+          "distanceKm": 21.1,
+          "elevationM": 140
+        },
+        {
+          "name": "Halbmarathon Reverse",
+          "distanceKm": 21.1,
+          "elevationM": 140
+        },
+        {
+          "name": "Rennergy-5K",
+          "distanceKm": 5
+        },
+        {
+          "name": "Kids-Run"
+        }
+      ],
+      "gpxStatus": "official-ultra-interactive-map; no-public-official-gpx-verified",
+      "note": "Official registration page confirms 7–8 August and seven formats including new reverse half marathon and 5K. Official schedule confirms starts; route metrics from registration listing. Keep GPX as not publicly available until organizer publishes a download."
+    },
+    {
+      "order": 81,
+      "name": "Last Soul Ultra",
+      "date": "2027 season; German final August",
+      "officialSource": "https://www.lastsoulultra.com/",
+      "routes": [
+        {
+          "name": "Backyard loop",
+          "distanceKm": 6.706,
+          "elevationM": null
+        }
+      ],
+      "gpxStatus": "no-public-gpx-found",
+      "note": "Official Season 3/2027 page confirms 6.706 km loop, hourly starts and no fixed finish distance. World Series has USA, UK and Australia qualifiers and a Germany final in August; no confirmed exact date/venue or public GPX."
+    },
+    {
+      "order": 82,
+      "name": "Karnisches Ungetüm",
+      "date": "2027-08-14 (secondary listing; organizer confirmation to recheck)",
+      "officialSource": "https://www.ungetuem.at/kut/",
+      "routes": [
+        {
+          "name": "KUT80",
+          "distanceKm": 80,
+          "elevationM": 5200
+        }
+      ],
+      "gpxStatus": "no-official-gpx-verified",
+      "note": "2027 date and 80 km / 5,200 hm appear in current race-calendar reporting, while another listing has conflicting 74–75 km figures/date. Treat 2027 details as provisional pending organizer's own confirmation; do not change app metrics from secondary source."
+    },
+    {
+      "order": 83,
+      "name": "TREK Matterhorn Ultraks",
+      "date": "2027 not confirmed on official course pages at audit time",
+      "officialSource": "https://www.matterhorn-ultraks.ch/",
+      "routes": [
+        {
+          "name": "Sky",
+          "distanceKm": null,
+          "elevationM": null
+        },
+        {
+          "name": "Extreme",
+          "distanceKm": null,
+          "elevationM": null
+        },
+        {
+          "name": "Mountain",
+          "distanceKm": null,
+          "elevationM": null
+        }
+      ],
+      "gpxStatus": "2026-pages-and-files-only; 2027-unconfirmed",
+      "note": "Older checkpoint found current official pages/files marked 2026. No 2027 edition date or updated official GPX verified. Keep old files historical, not 2027."
+    },
+    {
+      "order": 84,
+      "name": "Transalpine Run",
+      "date": "2027-09-18/24",
+      "officialSource": "https://www.transalpine-run.com/",
+      "routes": [
+        {
+          "name": "Stage race",
+          "distanceKm": null,
+          "elevationM": null
+        }
+      ],
+      "gpxStatus": "2027-event-announced; stage-routes-not-yet-released-publicly",
+      "note": "2027 event date reported as 18–24 September. Current public route page still contains 2026 stages; organizer FAQ says GPX files are provided to registered participants. Do not reuse 2026 stages as 2027."
+    },
+    {
+      "order": 85,
+      "name": "HOKA UTMB Mont-Blanc",
+      "date": "2027-08-23/29",
+      "officialSource": "https://montblanc.utmb.world/races",
+      "routes": [
+        {
+          "name": "UTMB",
+          "distanceKm": 174,
+          "elevationM": null
+        },
+        {
+          "name": "CCC",
+          "distanceKm": 101,
+          "elevationM": null
+        },
+        {
+          "name": "OCC",
+          "distanceKm": 57,
+          "elevationM": null
+        },
+        {
+          "name": "TDS",
+          "distanceKm": 153,
+          "elevationM": null
+        },
+        {
+          "name": "PTL",
+          "distanceKm": 300,
+          "elevationM": null
+        }
+      ],
+      "gpxStatus": "2027 event window known; final course files not yet verified",
+      "note": "2027 race week dates are listed as 23–29 August by current calendar source. Official 2027 route and GPX publication must be rechecked; do not treat 2026 route files as current."
+    },
+    {
+      "order": 86,
+      "name": "Fränkischer Backyard Ultra",
+      "date": "2027 not confirmed",
+      "officialSource": "https://www.fraenkischerbackyard.de/",
+      "routes": [
+        {
+          "name": "Backyard loop",
+          "distanceKm": 6.7,
+          "elevationM": null
+        }
+      ],
+      "gpxStatus": "2026-announcement-only; no-2027-gpx-verified",
+      "note": "Official public information available in previous check was a 2026 announcement and 6.7 km loop. No 2027 date or current GPX confirmed. Do not carry 2026 file forward."
+    },
+    {
+      "order": 87,
+      "name": "Dolomiti di Brenta Trail",
+      "date": "2027 date to be rechecked against organizer calendar",
+      "officialSource": "https://www.dolomitidibrentatrail.it/en/",
+      "routes": [
+        {
+          "name": "64K",
+          "distanceKm": 64,
+          "elevationM": null
+        },
+        {
+          "name": "XTERRA 45K",
+          "distanceKm": 45,
+          "elevationM": null
+        },
+        {
+          "name": "21K",
+          "distanceKm": 21,
+          "elevationM": null
+        }
+      ],
+      "gpxStatus": "official-maps-and-gps-tracks; final-track-publication-after-2027-07-31",
+      "note": "Organizer route pages document maps and GPS tracks but allow changes until 31 July 2027, when final official route is published. Import only final version after that date."
+    },
+    {
+      "order": 88,
+      "name": "adidas TERREX INFINITE TRAILS Gastein",
+      "date": "2027-09-04 (current event calendar; organizer date recheck)",
+      "officialSource": "https://infinite-trails.com/",
+      "gpxStatus": "2027-event-listed; public-gpx-pack-still-identifies-2026",
+      "note": "2027 event listed for 4 September. Organizer's public GPX/racemap pack still identifies 2026; no 2027 track should be imported until updated Trailbook/course pack is published."
+    }
+  ],
+  "followUps": [
+    "Swiss Alps 100: verify each official GPX download for 160K, 100K, 50K, Vertical and 2027-only Matterhorning.",
+    "Allgäu Panorama Marathon: request official GPX or check when organizer adds a public download; current official ultra map alone is not a validated GPX.",
+    "Karnisches Ungetüm: resolve conflicting 2027 date/distance/elevation with organizer before updating app values.",
+    "Matterhorn Ultraks and Fränkischer Backyard: wait for official 2027 edition announcements and files.",
+    "Transalpine Run: wait for stage routes and participant GPX release.",
+    "UTMB Mont-Blanc: recheck official 2027 course pages and GPX publication.",
+    "Dolomiti di Brenta Trail: do not import provisional track before final 31 July 2027 release.",
+    "Infinite Trails: replace 2026 pack only after official 2027 Trailbook/course pack appears."
+  ],
+  "sources": [
+    "https://www.swissalps100.com/",
+    "https://www.swissalps100.com/courses/matterhorning",
+    "https://www.allgaeu-panorama-marathon.de/",
+    "https://www.allgaeu-panorama-marathon.de/content/zeitplan/",
+    "https://www.anmeldungs-service.de/apm2027/",
+    "https://www.lastsoulultra.com/",
+    "https://www.lastsoulultra.com/world-series",
+    "https://www.ungetuem.at/kut/",
+    "https://www.matterhorn-ultraks.ch/",
+    "https://www.transalpine-run.com/strecke/",
+    "https://montblanc.utmb.world/races",
+    "https://www.fraenkischerbackyard.de/",
+    "https://www.dolomitidibrentatrail.it/en/routes/64k/",
+    "https://www.dolomitidibrentatrail.it/en/routes/xterra45k/",
+    "https://www.dolomitidibrentatrail.it/en/routes/21k/",
+    "https://infinite-trails.com/gpx-racemap-2/"
+  ],
+  "currentEventDatesCrossCheck": {
+    "currentCatalogRange": "event-dates.json insertion positions 79–88 (1-based)",
+    "overlappingIds": [
+      "last-soul-ultra",
+      "karnisches-ungetuem",
+      "ultraks-matterhorn",
+      "trans-alpine-run",
+      "utmb-mont-blanc",
+      "frankischer-backyard-ultra",
+      "dolomiti-di-brenta",
+      "infinite-trails"
+    ],
+    "currentEntriesCoveredByAuditBatch49": [
+      "mayrhofen-ultraks",
+      "munchen-backyard-ultra"
+    ],
+    "legacyEntriesCoveredByAuditBatch60": [
+      "swiss-alps-100",
+      "allgau-panorama-marathon"
+    ],
+    "note": "This package follows the historic/original top-level list. Eight current catalog entries overlap directly; Mayrhofen and Munich Backyard are covered by batch 49. Swiss Alps 100 and Allgäu Panorama are legacy-order entries but remain in the current catalog at positions 77–78 and are covered by batch 60."
+  }
+}
