@@ -1,0 +1,505 @@
+{
+  "batch": 47,
+  "checkedAt": "2026-11-20",
+  "scope": "Official route and GPX status audit for ten records in the historic/original top-level event list 69–78; this is not the current event-dates.json insertion range 69–78.",
+  "status": "audit-only-checkpoint",
+  "rules": [
+    "Old GPX files remain valid until a replacement is officially published, downloaded, parsed and validated.",
+    "Do not delete or replace historical GPX files during this audit.",
+    "Official download buttons/Map + GPX sections are not proof that binary data has been parsed."
+  ],
+  "events": [
+    {
+      "order": 69,
+      "name": "Eiger Ultra Trail by UTMB",
+      "date": "2027-07-14/18",
+      "officialSource": "https://eiger.utmb.world/races",
+      "routes": [
+        [
+          "E250 UNESCO Trail",
+          261,
+          18000
+        ],
+        [
+          "E101 Ultra Trail",
+          101,
+          6700
+        ],
+        [
+          "E51 Panorama Trail",
+          51,
+          3100
+        ],
+        [
+          "E35 North Face Trail",
+          35,
+          2500
+        ],
+        [
+          "E16 Pleasure Trail",
+          16,
+          950
+        ],
+        [
+          "Trail Surprise",
+          15,
+          800
+        ],
+        [
+          "Kids Race",
+          null,
+          null
+        ]
+      ],
+      "gpxStatus": "official-race-pages-have-download-sections; stale-2026-links-seen-previously; no-2027-binary-validated",
+      "note": "2027 programme now includes E250 261km and E35/E16/Trail Surprise in addition to E101/E51. Do not use older 2026 GPX endpoints for 2027."
+    },
+    {
+      "order": 70,
+      "name": "Bucovina Ultra Rocks by UTMB",
+      "date": "2027-07-23/25",
+      "officialSource": "https://bucovina.utmb.world/races",
+      "routes": [
+        [
+          "Ultra Rocks",
+          114,
+          7000
+        ],
+        [
+          "Four Summits",
+          72,
+          4600
+        ],
+        [
+          "Lady's Rocks",
+          48,
+          3200
+        ],
+        [
+          "Rocky",
+          33,
+          2000
+        ],
+        [
+          "Radical",
+          20,
+          1100
+        ],
+        [
+          "Rumble Rock",
+          16.5,
+          700
+        ],
+        [
+          "RUNC Challenge",
+          5,
+          550
+        ]
+      ],
+      "gpxStatus": "official-2027-pages; Rumble Rock GPX marked available-soon; binaries-not-validated",
+      "note": "2027 route list confirms seven events. Rumble Rock page explicitly says GPX download available soon. Recheck RUNC Challenge for current file rather than carrying forward older GPX."
+    },
+    {
+      "order": 71,
+      "name": "3Kings 3Hills",
+      "date": "2027-07-23/24",
+      "officialSource": "https://www.3kings-3hills.com/fakten/",
+      "routes": [
+        [
+          "Traily Trail",
+          5,
+          100
+        ],
+        [
+          "Shorty Trail",
+          16,
+          700
+        ],
+        [
+          "Base Trail",
+          26,
+          900
+        ],
+        [
+          "Marathon Trail",
+          40,
+          1700
+        ],
+        [
+          "Trail Ultra",
+          58,
+          2400
+        ],
+        [
+          "Endurance Trail",
+          85,
+          3000
+        ],
+        [
+          "Ultra Trail XL",
+          117,
+          4400
+        ],
+        [
+          "100 Miles Ultra Trail",
+          168,
+          6300
+        ]
+      ],
+      "gpxStatus": "organizer says GPX on individual route pages; direct files not extracted or parsed",
+      "note": "Current official 2027 facts page lists eight distances (not seven as its summary sentence says); route metrics have been revised for 2027. Do not reuse 2024 tracks."
+    },
+    {
+      "order": 72,
+      "name": "Davos X-Trails",
+      "date": "2027-07-23/24",
+      "officialSource": "https://www.davos-xtrails.ch/",
+      "routes": [
+        [
+          "Diamond",
+          68.37,
+          3309
+        ],
+        [
+          "Gold",
+          42.93,
+          1711
+        ],
+        [
+          "Silver",
+          23.76,
+          870
+        ],
+        [
+          "Bronze",
+          9.27,
+          236
+        ],
+        [
+          "1K Vertical",
+          6.94,
+          1080
+        ]
+      ],
+      "gpxStatus": "2027 Diamond page exposes GPX download; prior app URL referenced 2026; binary/version not validated",
+      "note": "Official 2027 Diamond page confirms 68.37km/+3309m and a GPX download. Other course values from official 2027 regulations; verify each download's edition before importing."
+    },
+    {
+      "order": 73,
+      "name": "The North Face Großglockner Ultra-Trail",
+      "date": "2027 edition",
+      "officialSource": "https://www.ultratrail.at/de/informationen/anmeldung",
+      "routes": [
+        [
+          "GGUT",
+          110,
+          6500
+        ],
+        [
+          "OTT",
+          84,
+          5000
+        ],
+        [
+          "GGT",
+          57,
+          3500
+        ],
+        [
+          "GWT",
+          37,
+          1500
+        ],
+        [
+          "KST",
+          16,
+          1000
+        ],
+        [
+          "Mini GGUT",
+          3.1,
+          120
+        ],
+        [
+          "Kids Trail Kaprun",
+          3.8,
+          120
+        ]
+      ],
+      "gpxStatus": "official route information; no public direct GPX binary validated",
+      "note": "Official registration page confirms five main races plus two children's race formats. Mini GGUT also has a 1km/20hm option; Kids Trail Kaprun has 220m, 1.4km and 3.8km options."
+    },
+    {
+      "order": 74,
+      "name": "SachsenTrail",
+      "date": "2027-06-25/27",
+      "officialSource": "https://www.sachsentrail.de/informationen/ausschreibung",
+      "routes": [
+        [
+          "UltraTrail",
+          74,
+          1920
+        ],
+        [
+          "HalfTrail",
+          36,
+          843
+        ],
+        [
+          "QuarterTrail",
+          20,
+          506
+        ],
+        [
+          "BaseTrail",
+          16,
+          357
+        ],
+        [
+          "FunTrail",
+          12.6,
+          347
+        ],
+        [
+          "UpHill Prolog",
+          4.2,
+          255
+        ],
+        [
+          "TeenTrail",
+          4,
+          70
+        ],
+        [
+          "KidsTrail",
+          1,
+          10
+        ],
+        [
+          "BambiniTrail",
+          0.4,
+          0
+        ]
+      ],
+      "gpxStatus": "organizer provides GPX per route page; current files need 2027 edition check; no binary parsed",
+      "note": "2027 programme includes nine formats; current page also shows 2026 date in one schedule line, so dates and page content should be rechecked against organizer announcements before app date overwrite. Historical 2026 GPX not accepted as 2027."
+    },
+    {
+      "order": 75,
+      "name": "Gauja Trail by UTMB",
+      "date": "2027-08-06/08",
+      "officialSource": "https://gauja.utmb.world/",
+      "routes": [
+        [
+          "Gauja Trail 100K",
+          91,
+          2200
+        ],
+        [
+          "Gauja Trail 50K",
+          53,
+          1200
+        ],
+        [
+          "Gauja Trail 20K",
+          21,
+          500
+        ],
+        [
+          "Gauja Trail 10K",
+          13.5,
+          300
+        ],
+        [
+          "Sigulda Three Castles",
+          12,
+          300
+        ],
+        [
+          "Gauja Trail Youth",
+          6,
+          100
+        ],
+        [
+          "Gauja Trail Kids",
+          1.6,
+          30
+        ]
+      ],
+      "gpxStatus": "official Map + GPX sections on course pages; direct files not extracted or parsed",
+      "note": "Seven official 2027 formats and metrics confirmed."
+    },
+    {
+      "order": 76,
+      "name": "Quito Trail by UTMB",
+      "date": "2027-07-30/08-01",
+      "officialSource": "https://quito.utmb.world/",
+      "routes": [
+        [
+          "80K Oso",
+          76,
+          4400
+        ],
+        [
+          "50K Nutria",
+          53,
+          2800
+        ],
+        [
+          "30K Tucán",
+          31,
+          1600
+        ],
+        [
+          "20K Quinde",
+          20,
+          1000
+        ],
+        [
+          "12K Humboldt",
+          13,
+          850
+        ],
+        [
+          "6K Rana",
+          6.5,
+          300
+        ]
+      ],
+      "gpxStatus": "route pages/details opening soon; no official GPX published",
+      "note": "Six races confirmed; official event page says 30 July–1 August 2027. Course details currently opening soon."
+    },
+    {
+      "order": 77,
+      "name": "Pitz Alpine Glacier Trail",
+      "date": "2027-07-30/08-01",
+      "officialSource": "https://www.pitztal.com/en/salomon-pitz-alpine-glacier-trail.html",
+      "routes": [
+        [
+          "P105 Salomon Ultra",
+          103,
+          6000
+        ],
+        [
+          "P90 Pitztal Glacier Ultra",
+          87,
+          5200
+        ],
+        [
+          "P60 Trail Experience",
+          63,
+          4300
+        ],
+        [
+          "P45 Glacier Trail",
+          45,
+          2900
+        ],
+        [
+          "P45 Rifflsee Trail",
+          43,
+          2100
+        ],
+        [
+          "P30 Taschachferner Trail",
+          27,
+          1300
+        ],
+        [
+          "P15 Zirbensteig Trail",
+          16,
+          800
+        ],
+        [
+          "P-Young Talents Race",
+          8,
+          640
+        ]
+      ],
+      "gpxStatus": "official route pages and GPX map/downloads referenced in prior checkpoint; no binary parsed",
+      "note": "Eight official 2027 routes confirmed, with revised published distance/elevation metrics."
+    },
+    {
+      "order": 78,
+      "name": "KAT100 by UTMB",
+      "date": "2027-08-05/07",
+      "officialSource": "https://kat.utmb.world/de/races",
+      "routes": [
+        [
+          "100 Miles",
+          169,
+          9000
+        ],
+        [
+          "Endurance Trail",
+          75,
+          4100
+        ],
+        [
+          "Marathon Trail",
+          52,
+          3100
+        ],
+        [
+          "Speed Trail",
+          24,
+          1650
+        ],
+        [
+          "Easy Trail",
+          8,
+          250
+        ],
+        [
+          "Kids Trail",
+          null,
+          null
+        ]
+      ],
+      "gpxStatus": "official Map + GPX; Marathon Trail GPX visible for orientation but download withheld pending minor route changes",
+      "note": "Marathon Trail is a new single-loop course, 52km/+3100m, on 7 Aug 2027. Organizer explicitly says GPX file is not downloadable yet because minor changes may occur."
+    }
+  ],
+  "followUps": [
+    "Extract each current official GPX individually for Eiger, 3Kings, Davos, SachsenTrail, Gauja and Pitz; check edition metadata before use.",
+    "Recheck Bucovina Rumble Rock GPX publication.",
+    "Wait for Quito route pages and GPX release.",
+    "Wait for final KAT100 Marathon Trail GPX; retain all older KAT100 GPX files meanwhile.",
+    "Resolve SachsenTrail's mixed 2026/2027 schedule text before changing the app event date."
+  ],
+  "sources": [
+    "https://eiger.utmb.world/races",
+    "https://bucovina.utmb.world/races",
+    "https://www.3kings-3hills.com/fakten/",
+    "https://www.davos-xtrails.ch/en/race-registration/runs/k68-davos",
+    "https://www.davos-xtrails.ch/fileadmin/user_upload/Dokumente/Informationen/Regulations__Davos_XTrails_EN.pdf",
+    "https://www.ultratrail.at/de/informationen/anmeldung",
+    "https://www.sachsentrail.de/informationen/ausschreibung",
+    "https://gauja.utmb.world/",
+    "https://quito.utmb.world/",
+    "https://www.pitztal.com/en/salomon-pitz-alpine-glacier-trail.html",
+    "https://kat.utmb.world/de/races/marathon-trail"
+  ],
+  "currentEventDatesCrossCheck": {
+    "currentCatalogRange": "event-dates.json insertion positions 69–78 (1-based)",
+    "overlappingIds": [
+      "3kings-3hills",
+      "davos-x-trail",
+      "ggut",
+      "sachsentrail-erzgebirge",
+      "gauja-trail-by-utmb",
+      "quito-trail-ecuador",
+      "pitz-alpine-glacier-trail",
+      "kat100"
+    ],
+    "currentEntriesCoveredByAuditBatch60": [
+      "swiss-alps-100",
+      "allgau-panorama-marathon"
+    ],
+    "legacyEntriesCoveredByAuditBatch59": [
+      "eiger-ultratrail",
+      "bucovina-ultra-rocks"
+    ],
+    "note": "This package follows the historic/original list. Eight current entries overlap directly; Swiss Alps 100 and Allgäu Panorama are covered by batch 60. Eiger Ultra Trail and Bucovina Ultra Rocks are historic-order entries but remain in the current catalog at positions 67–68 and are covered by batch 59."
+  }
+}
