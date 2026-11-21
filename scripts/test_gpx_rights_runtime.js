@@ -17,7 +17,7 @@ async function harness(entry, gpxUrl = "https://example.org/course.gpx", withSto
   let localWrites = 0;
   let cloudSaves = 0;
   const route = {
-    id: "test-route",
+    id: "explorer-85-2993",
     route: "Test route",
     gpxDownloadUrl: gpxUrl,
     gpxAvailability: "downloadable"
@@ -30,7 +30,7 @@ async function harness(entry, gpxUrl = "https://example.org/course.gpx", withSto
     route.elevationProfile = [100, 200, 300];
     route.profileSource = "Streckendatei: course.gpx";
   }
-  const registry = { schemaVersion: 1, defaultPolicy: "deny", routes: { "test-route": entry, "explorer-85-2993": entry } };
+  const registry = { schemaVersion: 1, defaultPolicy: "deny", routes: { "explorer-85-2993": entry, "explorer-85-2993": entry } };
   const window = {
     GpxRightsPolicy: policy,
     fetch: async (url) => {
@@ -102,8 +102,8 @@ async function harness(entry, gpxUrl = "https://example.org/course.gpx", withSto
   const registeredButMissing = { id: "bora-ultra-105-3837", gpxDownloadUrl: "https://example.org/missing.gpx" };
   assert.equal(pending.window.routeGpxIsOrganizerRestricted(registeredButMissing), true, "registered route missing a registry entry must fail closed");
   assert.equal(pending.window.gpxRightsAllows("bora-ultra-105-3837", "gpxFileFetch"), false, "missing registered rights entry must never inherit legacy permission");
-  assert.equal(pending.window.proposalGpxIsRestricted({ eventId: "test-event", routeId: "test-route" }), true);
-  assert.equal(pending.window.reviewGpxUrl({ eventId: "test-event", routeId: "test-route" }), "");
+  assert.equal(pending.window.proposalGpxIsRestricted({ eventId: "test-event", routeId: "explorer-85-2993" }), true);
+  assert.equal(pending.window.reviewGpxUrl({ eventId: "test-event", routeId: "explorer-85-2993" }), "");
   assert.deepEqual(pending.route.gpxTrack, [{ lat: 45, lon: 13 }], "existing in-memory GPX track must be retained");
   assert.deepEqual(pending.route.elevationProfile, [100, 200, 300], "existing GPX-derived elevation profile must be retained");
   assert.deepEqual(pending.eventDataEdits["test-event::test-route"].gpxTrack, [{ lat: 45, lon: 13 }], "existing stored GPX edit must be retained");
