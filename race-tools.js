@@ -333,10 +333,11 @@ window.showPlannedEventDetails=function(id,ri){prior(id,ri);const root=document.
     scope.querySelectorAll('input[data-gpx-event][data-gpx-route]').forEach(input=>{
       const route=routeForInput(input);
       if(route&&!canProcess(route)){
-        input.disabled=true;
-        input.title=blockedMessage(route);
+        const message=blockedMessage(route);
+        if(!input.disabled)input.disabled=true;
+        if(input.title!==message)input.title=message;
         const status=input.closest(".edit-grid,.year-profile-panel")?.querySelector(".gpx-status");
-        if(status)status.textContent=blockedMessage(route);
+        if(status&&status.textContent!==message)status.textContent=message;
       }
     });
     scope.querySelectorAll("input[data-review-gpx]").forEach(input=>{
