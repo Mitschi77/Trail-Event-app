@@ -187,7 +187,26 @@
       "Tenerife Bluetrail 68K",
       "Chianti CUT 73K",
       "Chianti UTCC 120K"
-    ]
+    ],
+    "currentEventDatesEntriesCovered": 10,
+    "currentEventDatesEntriesNotCovered": 0
   },
-  "next": "Continue with events 11–20 after an environment capable of downloading external GPX binaries is available; until then, keep collecting official endpoint evidence and never mark a track validated."
+  "next": "Continue with events 11–20 after an environment capable of downloading external GPX binaries is available; until then, keep collecting official endpoint evidence and never mark a track validated.",
+  "currentEventDatesCrossCheck": {
+    "currentCatalogRange": "event-dates.json insertion positions 1–10 (1-based)",
+    "allTenCurrentEntriesCovered": true,
+    "eventIds": [
+      "la-corsa-della-bora",
+      "marathon-de-sables",
+      "arc-of-attrition-by-utmb",
+      "mountain-man-winter",
+      "ultra-mediterrania",
+      "transgrancanaria",
+      "donautrail",
+      "psyland-backyard-ultra",
+      "tenerife-bluetrail",
+      "chianti-ultra-trail"
+    ],
+    "note": "All ten records in this package map to current event-dates.json positions 1–10 in order."
+  }
 }
