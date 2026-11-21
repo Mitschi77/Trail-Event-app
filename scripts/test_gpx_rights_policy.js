@@ -1,5 +1,8 @@
 const assert = require("node:assert/strict");
 const policy = require("../gpx-rights-policy.js");
+const registry = require("../gpx-rights.json");
+assert.equal(registry.defaultPolicy, "deny", "runtime registry loader must accept the configured deny policy");
+assert.equal(registry.routeCount, Object.keys(registry.routes).length, "rights registry route count must match its entries");
 
 const pending = policy.defaultEntry();
 assert.equal(policy.canProcess(pending), false, "pending rights must fail closed");
