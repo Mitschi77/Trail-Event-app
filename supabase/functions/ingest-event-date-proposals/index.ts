@@ -61,21 +61,7 @@ Deno.serve(async (req) => {
       valid.push(p);
     }
 
-    const types = [...new Set(valid.map((p) => p.proposal_type))];
-    const { data: pending, error: pendingError } = await supabase
-      .from("event_change_proposals").select("proposal_type,payload")
-      .eq("submitted_by", OWNER_ID).eq("status", "pending")
-      .in("proposal_type", types).limit(5000);
-    if (pendingError) throw pendingError;
-
-    const keyOf = (type, x) => [type || "", x?.eventId || "", x?.routeId || "", x?.field || ""].join("|");
-    const existing = new Set((pending || []).map((row) => keyOf(row.proposal_type, row.payload)));
-    const unique = new Map();
-    for (const p of valid) {
-      const k = keyOf(p.proposal_type, p.payload);
-      if (!existing.has(k) && !unique.has(k)) unique.set(k, p);
-    }
-    const rows = [...unique.values()].map((p) => ({
+    const rows = valid.map((p) => ({
       submitted_by: OWNER_ID,
       proposal_type: p.proposal_type,
       title: p.title,
@@ -84,12 +70,19 @@ Deno.serve(async (req) => {
     }));
 
     if (!rows.length) {
-      return Response.json({ success: true, inserted: 0, duplicates: valid.length });
+      return Response.json({ success: true, inserted: 0, duplicates: 0, push: "not-needed" });
     }
 
-    const { data: insertedRows, error: insertError } = await supabase
-      .from("event_change_proposals").insert(rows).select("id");
-    if (insertError) throw insertError;
+    // The database RPC serializes each logical key with transaction-scoped
+    // advisory locks. Retried or concurrent batches therefore cannot race
+    // between a separate SELECT and INSERT.
+    const { data: ingestion, error: ingestionError } = await supabase
+      .rpc("ingest_event_change_proposals", { p_rows: rows });
+    if (ingestionError) throw ingestionError;
+    const insertedIds: string[] = Array.isArray(ingestion?.insertedIds)
+      ? ingestion.insertedIds.filter((id: unknown): id is string => typeof id === "string")
+      : [];
+    const insertedCount = Number(ingestion?.inserted ?? insertedIds.length);
 
     // Avoid one push invocation per proposal. A single batch notification is enough,
     // and no invocation is made when the owner has not registered a push subscription.
@@ -99,12 +92,12 @@ Deno.serve(async (req) => {
     if (subscriptionError) {
       console.warn("Could not check owner push subscriptions", subscriptionError);
       push = "check-failed";
-    } else if (subscriptions?.length && insertedRows?.length) {
+    } else if (subscriptions?.length && insertedIds.length) {
       try {
         const response = await fetch(`${url}/functions/v1/send-event-review-push`, {
           method: "POST",
           headers: { "Authorization": `Bearer ${key}`, "Content-Type": "application/json" },
-          body: JSON.stringify({ proposal_id: insertedRows[0].id }),
+          body: JSON.stringify({ proposal_id: insertedIds[0] }),
         });
         push = response.ok ? "sent" : `failed-${response.status}`;
       } catch (error) {
@@ -114,8 +107,8 @@ Deno.serve(async (req) => {
     }
     return Response.json({
       success: true,
-      inserted: insertedRows?.length || 0,
-      duplicates: valid.length - (insertedRows?.length || 0),
+      inserted: insertedCount,
+      duplicates: valid.length - insertedCount,
       push,
     });
   } catch (error) {
