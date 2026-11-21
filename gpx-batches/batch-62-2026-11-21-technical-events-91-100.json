@@ -305,7 +305,10 @@
       "Great Wall and Nice 2027 dates/editions not officially confirmed."
     ],
     "noGpxFilesChanged": true,
-    "noAppRuntimeDataChanged": true
+    "noAppRuntimeDataChanged": true,
+    "currentEventDatesEntriesCoveredDirectly": 8,
+    "currentEventDatesEntriesCoveredByBatch63": 2,
+    "legacyEntriesNotInCurrentEventDates": 2
   },
   "followUps": [
     "Torlauf: parse the five recorded GPX links and reconcile Skyrace entry with current official 2027 programme.",
@@ -320,5 +323,27 @@
     "Nice: do not track as confirmed 2027 race until organizer announces an edition."
   ],
   "noGpxFilesChanged": true,
-  "noAppRuntimeDataChanged": true
+  "noAppRuntimeDataChanged": true,
+  "currentEventDatesCrossCheck": {
+    "currentCatalogRange": "event-dates.json insertion positions 91–100 (1-based)",
+    "overlappingIds": [
+      "kackar-by-utmb",
+      "wild-strubel",
+      "paraty-brazil",
+      "arberland-ultratrail",
+      "julian-alps-trail-run",
+      "berlin-marathon-major",
+      "adamello-ultratrail",
+      "nice-cote-d-azur"
+    ],
+    "currentEntriesCoveredByAuditBatch63": [
+      "alpin-team-trailrun",
+      "chihuahua-by-utmb"
+    ],
+    "legacyEntriesNotInCurrentCatalog": [
+      "Torlauf Dachstein",
+      "Ultra-Trail Great Wall by UTMB"
+    ],
+    "note": "This batch follows the historic top-level EVENTS order. Eight current catalog entries overlap directly; the other two current entries are covered by audit batch 63. Torlauf Dachstein and Ultra-Trail Great Wall are legacy entries not in the current event-dates range."
+  }
 }
