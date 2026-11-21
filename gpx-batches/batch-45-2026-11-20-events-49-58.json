@@ -1,7 +1,7 @@
 {
   "batch": 45,
   "checkedAt": "2026-11-20",
-  "scope": "Top-level events 49–58 in current EVENTS order; second-pass official-source and route/GPX audit",
+  "scope": "Official routes and GPX status audit for ten records in the historic/original top-level event list 49–58; this is not the current event-dates.json insertion range 49–58.",
   "policy": {
     "historicalGpx": "Existing GPX files remain valid until a new official file is released, downloaded and validated. Never delete or replace a historical file merely because a new edition is announced.",
     "binaryValidation": "External GPX binaries were not downloaded and parsed in this package. Official download/map availability is recorded separately from binary validation.",
@@ -327,5 +327,26 @@
       "followUp": "Keep event inactive/historical unless the organizer announces a new edition; retain the 2022 GPX as historical reference only."
     }
   ],
-  "nextBatch": "Continue with events 59-68 in the next ten-event package."
+  "nextBatch": "Continue with events 59-68 in the next ten-event package.",
+  "currentEventDatesCrossCheck": {
+    "currentCatalogRange": "event-dates.json insertion positions 49–58 (1-based)",
+    "overlappingIds": [
+      "zugspitz-ultratrail",
+      "schluchthof",
+      "tschirgant-sky",
+      "backyard-ultra",
+      "lavardedo-trail",
+      "austria-backyard-ultra",
+      "kaiserkrone",
+      "stubai-ultra-trail",
+      "brixen-marathon"
+    ],
+    "currentEntriesCoveredByAuditBatch58": [
+      "u-tlw"
+    ],
+    "legacyOrderEntriesOutsideCurrentRange": [
+      "ultra-x-110-slowenien"
+    ],
+    "note": "Nine current entries 49–58 overlap directly; U.TLW is covered by batch 58. Ultra X 110 Slovenia is a legacy-order entry at current catalog position 48, outside current positions 49–58."
+  }
 }
