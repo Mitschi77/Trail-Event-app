@@ -1,0 +1,426 @@
+{
+  "batch": 87,
+  "checkedAt": "2026-11-21",
+  "scope": "events 329-338 from event-dates.json",
+  "rules": [
+    "Official organizer sources prioritized; federation source explicitly labelled where organizer details are incomplete.",
+    "No previous-edition GPX may be treated as current without edition-specific binary retrieval and complete track parsing.",
+    "A Google My Maps link or GPX download control is not a parsed binary GPX.",
+    "Uncertain routes and contradictory distances remain flagged; no live records changed."
+  ],
+  "events": [
+    {
+      "sequence": 329,
+      "eventId": "murowana-goslina-polmaraton-2027",
+      "name": "Murowana Goślina Półmaraton 2027",
+      "date": null,
+      "location": "Murowana Goślina, Poland",
+      "status": "organizer-announced; exact-date-not-visible",
+      "routes": [
+        {
+          "name": "Half Marathon",
+          "distanceKm": 21.0975,
+          "status": "PZLA-certified course claimed by municipal organizer"
+        }
+      ],
+      "detail": "Municipal cultural/sports centre and municipality invite runners to the 2027 half marathon in the Zielonka Forest; page describes PZLA-certified course. The checked official page does not expose an exact event date or numeric elevation. Do not infer date from historic editions.",
+      "gpxStatus": "no 2027 binary GPX found or parsed",
+      "sources": [
+        "https://ckis.murowana-goslina.pl/kalendarz/murowana-goslina-polmaraton-2027/"
+      ]
+    },
+    {
+      "sequence": 330,
+      "eventId": "semimaraton-iasi-2027",
+      "name": "Semimaraton Iași",
+      "date": "2027-04-25",
+      "location": "Iași, Romania",
+      "status": "organizer-confirmed",
+      "routes": [
+        {
+          "name": "Half Marathon",
+          "distanceKm": 21,
+          "start": "Palace of Culture parking area",
+          "laps": 2,
+          "timeLimitHours": 3
+        },
+        {
+          "name": "10K",
+          "distanceKm": 10,
+          "laps": 1
+        },
+        {
+          "name": "5K",
+          "distanceKm": 5
+        },
+        {
+          "name": "Popular Run",
+          "distanceKm": 2.5
+        },
+        {
+          "name": "Disability race",
+          "distanceKm": 0.6
+        }
+      ],
+      "detail": "Official organizer homepage confirms 25 April 2027. Half marathon is two loops with passage through start zone; 10K one loop; 5K turnaround at Piața Mihai Eminescu; 2.5K turnaround at Piața Unirii. 21km is stated by organizer, not the exact standard 21.097. No GPX binary parsed.",
+      "gpxStatus": "course route details published; no 2027 GPX binary downloaded or parsed",
+      "sources": [
+        "https://semimaratoniasi.ro/",
+        "https://semimaratoniasi.ro/inscrieri/"
+      ]
+    },
+    {
+      "sequence": 331,
+      "eventId": "semimaraton-gerar-2027",
+      "name": "Semimaraton Gerar",
+      "date": "2027-01-30",
+      "location": "Bucharest, Romania",
+      "status": "organizer-date-confirmed; route-and-format-details-to-verify",
+      "routes": [
+        {
+          "name": "Team Half Marathon",
+          "distanceKm": 21.097,
+          "status": "team format; exact 2027 regulations not fully verified"
+        }
+      ],
+      "detail": "Organizer homepage confirms Semimaraton Gerar 2027 on 30 January 2027. The event name and earlier entry indicate team half marathon, but this pass did not establish the exact 2027 course, lap format, start times or GPX. Keep only date confirmed.",
+      "gpxStatus": "no 2027 GPX binary found or parsed",
+      "sources": [
+        "https://gerar.ro/",
+        "https://yoloevents.ro/event/semimaraton-gerar/"
+      ]
+    },
+    {
+      "sequence": 332,
+      "eventId": "omv-petrom-bucharest-half-marathon-2027",
+      "name": "OMV Petrom Bucharest Half Marathon",
+      "date": "2027-05-08/09",
+      "location": "Bucharest, Romania",
+      "status": "organizer-confirmed",
+      "routes": [
+        {
+          "name": "Half Marathon",
+          "date": "2027-05-09",
+          "distanceKm": 21.097
+        },
+        {
+          "name": "10K",
+          "date": "2027-05-09",
+          "distanceKm": 10
+        },
+        {
+          "name": "Relay",
+          "date": "2027-05-09",
+          "distanceKm": 21.097
+        }
+      ],
+      "detail": "Official 2027 rules confirm the 16th edition during 8–9 May 2027. Adult competitive races listed are half marathon, individual 10K and relay. Exact start times and 2027 route geometry not established in the checked rule excerpt.",
+      "gpxStatus": "no 2027 GPX binary found or parsed",
+      "sources": [
+        "https://www.bucuresti21km.ro/rules/",
+        "https://www.bucuresti21km.ro/en/rules/",
+        "https://www.bucuresti21km.ro/en/cursa-21km-half-marathon-bucharest/"
+      ]
+    },
+    {
+      "sequence": 333,
+      "eventId": "brasov-21k-2027",
+      "name": "Brașov 21K",
+      "date": "2027-04-18",
+      "location": "Brașov, Romania",
+      "status": "organizer-confirmed",
+      "routes": [
+        {
+          "name": "21K",
+          "distanceKm": 21.097,
+          "startTime": "09:00"
+        },
+        {
+          "name": "10K",
+          "distanceKm": 10
+        },
+        {
+          "name": "5K",
+          "distanceKm": 5
+        },
+        {
+          "name": "2.5K",
+          "distanceKm": 2.5
+        },
+        {
+          "name": "Kids Run",
+          "distanceKm": null
+        }
+      ],
+      "detail": "Official organizer rules confirm Sunday 18 April 2027 from 09:00 in Brașov. The race website lists 21K, 10K, 5K, 2.5K and Kids Run. The exact 21K course/route map and GPX are not contained in the checked rules excerpt; don't invent elevation.",
+      "gpxStatus": "no 2027 GPX binary found or parsed",
+      "sources": [
+        "https://brasov.21k.ro/regulament/",
+        "https://brasov.21k.ro/"
+      ]
+    },
+    {
+      "sequence": 334,
+      "eventId": "debrecen-maraton-2027",
+      "name": "Debrecen Marathon",
+      "date": "2027-04-04",
+      "location": "Debrecen, Hungary",
+      "status": "organizer-confirmed",
+      "routes": [
+        {
+          "name": "Marathon",
+          "distanceKm": 42.195,
+          "startTime": "08:30",
+          "elevationGainM": 50
+        },
+        {
+          "name": "Half Marathon",
+          "distanceKm": 21.097
+        },
+        {
+          "name": "Quarter Marathon",
+          "distanceKm": 10.548
+        },
+        {
+          "name": "5K",
+          "distanceKm": 5
+        }
+      ],
+      "detail": "Official organizer marathon page confirms 4 April 2027, 08:30, 42.195km and +50m ascent. It explicitly lists a downloadable 'Maraton Track 2027 gpx'. The linked binary was not downloaded or parsed in this audit; +50m remains organizer-published, not independently calculated. Separate distance files need checking.",
+      "gpxStatus": "official 2027 marathon GPX download control explicitly present; binary not downloaded or parsed",
+      "sources": [
+        "https://debrecenmaraton.hu/en/marathon-distance",
+        "https://debrecenmaraton.hu/en/competition-rules-1",
+        "https://debrecenmaraton.hu/en"
+      ],
+      "gpxValidationAttempt": {
+        "attemptedAt": "2026-11-21",
+        "uploadedFile": "maraton-track-2027(1).gpx",
+        "fileSizeBytes": 41239,
+        "sha256": "6074d9a46a1eefe083a9cd2957c36712dcba7ee9322e29bd0544bd384e030c96",
+        "xmlVersion": "GPX 1.1",
+        "creator": "https://gpx.studio",
+        "metadataName": "Negyedmaraton 10 km végleges",
+        "trackName": "Negyedmaraton 10 km végleges",
+        "segments": 1,
+        "trackPoints": 467,
+        "missingElevationPoints": 0,
+        "computedDistanceKm": 10.5707035,
+        "minElevationM": 117.25,
+        "maxElevationM": 131.25,
+        "rawElevationGainM": 83.1224,
+        "rawElevationLossM": 82.8724,
+        "gainThresholdM": {
+          "ignoreChangesBelow0_5m": 52.75,
+          "ignoreChangesBelow1m": 29.75,
+          "ignoreChangesBelow2m": 9.75,
+          "ignoreChangesBelow3m": 0
+        },
+        "maxConsecutivePointGapM": 254.26,
+        "startEndSeparationM": 2.19,
+        "timestampsPresent": false,
+        "result": "VALID GPX FILE BUT WRONG DISTANCE/COURSE FOR MARATHON",
+        "assessment": "The uploaded file explicitly names a 10 km quarter-marathon course, and its computed track length is 10.571 km. It is not the 42.195 km marathon track. Do not attach it to the marathon route. It may be a 10 km/quarter-marathon course candidate only after the organizer confirms edition, distance, and intended route. Elevation gain is sensitive to smoothing; raw +83.12m should not be published as authoritative. The point spacing includes a maximum gap of 254m, limiting detailed elevation reconstruction.",
+        "notes": "The file itself has no race-date metadata; creator is gpx.studio. The uploaded filename 'maraton-track-2027(1).gpx' does not match internal track name."
+      }
+    },
+    {
+      "sequence": 335,
+      "eventId": "xxiv-motherson-szigetkoz-half-marathon-2027",
+      "name": "XXIV. Motherson Szigetköz Félmaraton",
+      "date": "2027-04-04",
+      "location": "Mosonmagyaróvár, Hungary",
+      "status": "organizer-confirmed",
+      "routes": [
+        {
+          "name": "Half Marathon",
+          "distanceKm": 21.097
+        },
+        {
+          "name": "10K",
+          "distanceKm": 10
+        },
+        {
+          "name": "5K",
+          "distanceKm": 5
+        },
+        {
+          "name": "2K",
+          "distanceKm": 2
+        },
+        {
+          "name": "Kids",
+          "distanceKm": 0.4
+        }
+      ],
+      "detail": "Official Strucc Futóklub page confirms 4 April 2027, event centre UFM Aréna, Mosonmagyaróvár. 2027 entry page gives date and registration deadline 27 March. The checked official page confirms event date but detailed route geometry/elevation not published in extracted text.",
+      "gpxStatus": "no 2027 GPX binary found or parsed",
+      "sources": [
+        "https://struccfutoklub.hu/szigetkoz-felmaraton/",
+        "https://struccfutoklub.hu/versenykiiras/"
+      ]
+    },
+    {
+      "sequence": 336,
+      "eventId": "fut-a-ring-half-marathon-2027",
+      "name": "Fut a Ring Half Marathon",
+      "date": "2027-03-06",
+      "location": "Hungaroring, Mogyoród, Hungary",
+      "status": "organizer-confirmed",
+      "routes": [
+        {
+          "name": "Half Marathon",
+          "distanceKm": 21.1,
+          "startTime": "10:30",
+          "surface": "Hungaroring asphalt"
+        },
+        {
+          "name": "Half Marathon pairs",
+          "distanceKm": 21.1
+        },
+        {
+          "name": "Half Marathon trio",
+          "distanceKm": 21.1
+        },
+        {
+          "name": "Half Marathon relay",
+          "distanceKm": 21.1
+        },
+        {
+          "name": "10K",
+          "distanceKm": 10,
+          "startTime": "10:30"
+        },
+        {
+          "name": "Ring lap",
+          "distanceKm": 4.2,
+          "startTime": "09:30"
+        }
+      ],
+      "detail": "Official BSI organizer page confirms Saturday 6 March 2027 at Hungaroring. Half marathon individual/teams and 10K start 10:30; 4.2km circuit lap starts 09:30. The half is on the Formula 1 circuit asphalt. No GPX or ascent figure published in checked content.",
+      "gpxStatus": "no 2027 GPX binary found or parsed",
+      "sources": [
+        "https://futaring.hu/en/",
+        "https://futaring.hu/en/tavok/"
+      ]
+    },
+    {
+      "sequence": 337,
+      "eventId": "tihanyi-felmaraton-2027",
+      "name": "12. Pelso Clean Tihanyi Félmaraton",
+      "date": "2027-04-03",
+      "location": "Tihany, Hungary",
+      "status": "organizer-confirmed",
+      "routes": [
+        {
+          "name": "Pelso Clean Half Marathon",
+          "distanceKm": 21,
+          "startTime": "12:00"
+        },
+        {
+          "name": "Fanan",
+          "distanceKm": 12,
+          "startTime": "12:00"
+        },
+        {
+          "name": "DRK",
+          "distanceKm": 5,
+          "startTime": "12:00"
+        },
+        {
+          "name": "Polar",
+          "distanceKm": 3,
+          "startTime": "11:00"
+        },
+        {
+          "name": "Baby Run",
+          "distanceKm": 0.4,
+          "startTime": "10:00"
+        }
+      ],
+      "detail": "Official organizer race notice confirms 3 April 2027 at Club Tihany. Half marathon is 21km, 3h cutoff; 12km, 5km, 3km and 400m options are also specified. The route is shown via Google My Maps; this is not a GPX binary or parsed elevation profile.",
+      "gpxStatus": "official Google My Maps route reference; no 2027 GPX binary downloaded or parsed",
+      "sources": [
+        "https://futniszep.hu/versenykiiras/",
+        "https://futniszep.hu/versenyszabalyzat/"
+      ]
+    },
+    {
+      "sequence": 338,
+      "eventId": "strasimeno",
+      "name": "25ª Strasimeno",
+      "date": "2027-03-07",
+      "location": "Castiglione del Lago, Italy",
+      "status": "IUTA-federation-confirmed; organizer-2027-technical-details-partially-ambiguous",
+      "routes": [
+        {
+          "name": "10K",
+          "distanceKm": 10,
+          "status": "competitive finish listed by IUTA"
+        },
+        {
+          "name": "Half Marathon",
+          "distanceKm": 21,
+          "status": "competitive finish listed by IUTA"
+        },
+        {
+          "name": "34K",
+          "distanceKm": 34,
+          "status": "competitive finish listed by IUTA"
+        },
+        {
+          "name": "Ultra",
+          "distanceKm": 58,
+          "startTime": "09:15",
+          "status": "competitive finish listed by IUTA"
+        },
+        {
+          "name": "Marathon",
+          "distanceKm": 42.195,
+          "status": "NOT CONFIRMED as a 2027 competitive finish; fee table has 42km line but competitive finish list omits it"
+        }
+      ],
+      "detail": "IUTA announcement confirms Sunday 7 March 2027, 09:15 start from Castiglione del Lago and competitive finishes 10, 21, 34 and 58km, with walking options 9,18,33,58km. The same announcement's fee table contains a 42km price tier, but the competitive finish list does not include 42km. Therefore the database's 42.195km marathon route must remain unverified pending organizer clarification. IUTA announcement describes 58km as candidate for Grand Prix IUTA 2027; FIDAL non-stadia homologation stated.",
+      "gpxStatus": "no 2027 GPX binary found or parsed",
+      "sources": [
+        "https://www.strasimeno.it/",
+        "https://www.iutaitalia.it/2026/09/25-strasimeno-2027/"
+      ]
+    }
+  ],
+  "summary": {
+    "eventsReviewed": 10,
+    "organizerDateConfirmed": 8,
+    "organizerOrFederationConfirmed": 1,
+    "exactDateNotVisible": 1,
+    "secondaryOnly": 0,
+    "official2027GpxBinaryValidated": 0,
+    "binaryFilesDownloaded": 1,
+    "tracksParsed": 1,
+    "binaryMetricsCompared": 1,
+    "officialGpxDownloadControlsFound": 1,
+    "officialMapReferencesFound": 1,
+    "oldGpxFilesDeleted": 0,
+    "oldGpxFilesOverwritten": 0,
+    "appRuntimeFilesChanged": 0,
+    "appEventRecordsChanged": 0,
+    "auditOnly": true,
+    "binaryRetrievalAttempts": 2,
+    "binaryRetrievalSucceeded": 0,
+    "uploadedGpxFilesReviewed": 1
+  },
+  "followUps": [
+    "Debrecen: uploaded maraton-track-2027(1).gpx is internally named 'Negyedmaraton 10 km végleges' (quarter marathon 10 km), 10.571km computed. It is not the 42.195km marathon GPX. Keep it out of the marathon route; request the correct marathon file and organizer confirmation whether this 10km track is current 2027 course.",
+    "Debrecen: official endpoint /cdn/download/59235 returns application/gpx+xml, but available browser retrieval rejects this content type and the working environment cannot resolve external DNS. Obtain the file via a browser/manual upload or a GPX-capable download client, then hash and parse the complete track before validating distance and ascent.",
+    "Murowana Goślina: obtain exact 2027 date from organizer; current municipal page announces race but date not visible.",
+    "Iași: retrieve official route map file and validate exact 21km course geometry; don't infer D+.",
+    "Gerar: get detailed 2027 rules for team format, exact course, start and GPX.",
+    "Bucharest: verify individual start times and course GPX for 9 May half marathon.",
+    "Brașov: retrieve route map/GPX and individual starts for all distances.",
+    "Debrecen: download official 2027 marathon GPX binary, parse full track and compare organizer +50m; locate half/quarter/5K tracks.",
+    "Szigetköz: retrieve route files and elevation data for all 2027 distances.",
+    "Fut a Ring: determine circuit lap count/route GPX and elevation for 21.1km.",
+    "Tihany: convert organizer My Maps reference only if permitted and obtain official GPX; don't call map link a GPX.",
+    "Strasimeno: ask organizer whether a competitive 42km/42.195km finish exists; current IUTA list omits it although fee table includes 42km."
+  ]
+}
