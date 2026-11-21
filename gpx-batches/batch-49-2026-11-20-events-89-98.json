@@ -1,7 +1,7 @@
 {
   "batch": 49,
   "checkedAt": "2026-11-20",
-  "scope": "Top-level events 89–98 in current EVENTS order",
+  "scope": "Official route and GPX status audit for ten records in the historic/original top-level event list 89–98; this is not the current event-dates.json insertion range 89–98.",
   "status": "audit-only-checkpoint",
   "rules": [
     "Existing GPX files remain valid until a new official replacement has been published, downloaded, parsed and validated.",
@@ -346,5 +346,27 @@
     "https://julianalps.utmb.world/races-runners/runners/faq",
     "https://www.bmw-berlin-marathon.com/en/your-race/course/",
     "https://www.adamelloultratrail.it/en/"
-  ]
+  ],
+  "currentEventDatesCrossCheck": {
+    "currentCatalogRange": "event-dates.json insertion positions 89–98 (1-based)",
+    "overlappingIds": [
+      "torlauf-dachstein",
+      "ultra-trail-great-wall",
+      "kackar-by-utmb",
+      "wild-strubel",
+      "paraty-brazil",
+      "arberland-ultratrail",
+      "julian-alps-trail-run",
+      "berlin-marathon-major"
+    ],
+    "currentEntriesCoveredByAuditBatch62": [
+      "adamello-ultratrail",
+      "nice-cote-d-azur"
+    ],
+    "legacyEntriesCoveredByAuditBatch59": [
+      "mayrhofen-ultraks",
+      "munchen-backyard-ultra"
+    ],
+    "note": "This package follows the historic/original top-level list. Eight current entries overlap directly; Adamello and Nice are covered by batch 62. Mayrhofen Ultraks and Munich Backyard are legacy records outside current positions 89–98 and are covered by batch 59."
+  }
 }
