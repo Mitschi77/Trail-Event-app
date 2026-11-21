@@ -1,0 +1,465 @@
+{
+  "batch": 60,
+  "checkedAt": "2026-11-21",
+  "scope": "Official GPX availability and 2027 course-version review for top-level events 71–80",
+  "safetyRules": [
+    "Existing GPX files remain valid until a new official file is downloaded, parsed and validated.",
+    "No existing GPX files were deleted, overwritten or replaced.",
+    "A readable XML preview does not mean the track was parsed or its distance/elevation validated.",
+    "Do not label historic GPX files as current 2027 routes."
+  ],
+  "checks": [
+    {
+      "eventOrder": 71,
+      "event": "3Kings 3Hills Trail Festival",
+      "officialSource": "https://www.3kings-3hills.com/",
+      "factsSource": "https://www.3kings-3hills.com/en/facts/",
+      "date": "2027-07-23/24",
+      "routes": [
+        {
+          "name": "100 Miles Ultra Trail",
+          "distanceKm": 168,
+          "elevationGainHm": 6300
+        },
+        {
+          "name": "Ultra Trail XL",
+          "distanceKm": 117,
+          "elevationGainHm": 4400
+        },
+        {
+          "name": "Endurance Trail",
+          "distanceKm": 85,
+          "elevationGainHm": 3000
+        },
+        {
+          "name": "Trail Ultra",
+          "distanceKm": 58,
+          "elevationGainHm": 2400
+        },
+        {
+          "name": "Trail Marathon",
+          "distanceKm": 40,
+          "elevationGainHm": 1700
+        },
+        {
+          "name": "Base Trail",
+          "distanceKm": 26,
+          "elevationGainHm": 900
+        },
+        {
+          "name": "Shorty Trail",
+          "distanceKm": 16,
+          "elevationGainHm": 700
+        },
+        {
+          "name": "Traily Trail",
+          "distanceKm": 5,
+          "elevationGainHm": 100
+        }
+      ],
+      "gpxStatus": "organizer-confirms-2027-course-pages-with-GPX-data; direct-file-hrefs-not-extracted",
+      "binaryDownloaded": false,
+      "parsed": false,
+      "metricsCompared": false,
+      "detail": "Organizer facts page states the 2027 edition is 23–24 July in Haidmühle and lists eight courses (despite a summary sentence saying seven). Distances/ascent are edition-specific and revised for 2027. Do not use 2024 tracks. Extract each route page GPX separately."
+    },
+    {
+      "eventOrder": 72,
+      "event": "Davos X-Trails",
+      "officialSource": "https://www.davos-xtrails.ch/diamond-68-km",
+      "date": "2027-07-23/24",
+      "route": {
+        "name": "Diamond",
+        "distanceKm": 68.37,
+        "elevationGainHm": 3309
+      },
+      "gpxStatus": "official-2027-page-download-button-still-links-to-2026-file; stale-confirmed",
+      "directUrlsAttempted": 1,
+      "xmlTextReadable": true,
+      "binaryDownloaded": false,
+      "parsed": false,
+      "metricsCompared": false,
+      "observedUrl": "https://www.davos-xtrails.ch/fileadmin/user_upload/Gpx/StreckeDiamond2026.gpx",
+      "detail": "Official 2027 Diamond page confirms 68.37km/3309m and 24 July 2027. Clicking its GPX download opens a GPX 1.1 XML preview with track name Diamond Run (68), but the URL filename is StreckeDiamond2026.gpx. Treat it as historical 2026 data, not a 2027 replacement. No parser validation performed."
+    },
+    {
+      "eventOrder": 73,
+      "event": "The North Face Großglockner Ultra-Trail",
+      "officialSource": "https://www.ultratrail.at/de",
+      "date": "2027-07-22/25",
+      "routes": [
+        {
+          "name": "GGUT",
+          "distanceKm": 110,
+          "elevationGainHm": 6500
+        },
+        {
+          "name": "OTT",
+          "distanceKm": 84
+        },
+        {
+          "name": "GGT",
+          "distanceKm": 57,
+          "elevationGainHm": 3500
+        },
+        {
+          "name": "GWT",
+          "distanceKm": 37
+        },
+        {
+          "name": "KST",
+          "distanceKm": 16
+        }
+      ],
+      "gpxStatus": "five-official-race-formats-confirmed; no-public-direct-GPX-download-verified",
+      "binaryDownloaded": false,
+      "parsed": false,
+      "metricsCompared": false,
+      "detail": "Official event page confirms five 2027 competitions. GGUT 110km/6500hm and GGT 57km/3500hm are explicit on official pages. Route files are not publicly exposed as direct GPX in this pass; check official event app or athlete pack."
+    },
+    {
+      "eventOrder": 74,
+      "event": "SachsenTrail",
+      "officialSources": [
+        "https://www.sachsentrail.de/informationen/ausschreibung",
+        "https://www.sachsentrail.de/trails/ultratrail"
+      ],
+      "date": "2027-06-25/27",
+      "routes": [
+        {
+          "name": "UltraTrail",
+          "distanceKm": 74,
+          "elevationGainHm": 1920
+        },
+        {
+          "name": "HalfTrail",
+          "distanceKm": 36,
+          "elevationGainHm": 843
+        },
+        {
+          "name": "QuarterTrail",
+          "distanceKm": 20,
+          "elevationGainHm": 506
+        },
+        {
+          "name": "BaseTrail",
+          "distanceKm": 16,
+          "elevationGainHm": 357
+        },
+        {
+          "name": "FunTrail",
+          "distanceKm": 12.6,
+          "elevationGainHm": 347
+        },
+        {
+          "name": "UpHill Prolog",
+          "distanceKm": 4.2,
+          "elevationGainHm": 255
+        },
+        {
+          "name": "TeenTrail",
+          "distanceKm": 4,
+          "elevationGainHm": 70
+        },
+        {
+          "name": "KidsTrail",
+          "distanceKm": 1,
+          "elevationGainHm": 10
+        },
+        {
+          "name": "BambiniTrail",
+          "distanceKm": 0.4,
+          "elevationGainHm": 0
+        }
+      ],
+      "gpxStatus": "official-2027-event-and-route-distances-confirmed; GPX download page still exposes 2026 track",
+      "directUrlsAttempted": 1,
+      "binaryDownloaded": false,
+      "parsed": false,
+      "metricsCompared": false,
+      "observedUrl": "https://www.sachsentrail.de/fileadmin/events/SachsenTrail/Homepage/GPX-Dateien/2026_UltraTrail.gpx",
+      "detail": "Current official race pages show 25–27 June 2027 and 2027 course data. UltraTrail route page carries a 20 May 2026 status and GPX link to 2026_UltraTrail.gpx. The web viewer rejects application/gpx+xml; URL itself proves old version. Do not use it as 2027 track."
+    },
+    {
+      "eventOrder": 75,
+      "event": "Gauja Trail by UTMB",
+      "officialSource": "https://gauja.utmb.world/races",
+      "date": "2027-08-06/08",
+      "routes": [
+        {
+          "name": "Gauja Trail 100K",
+          "distanceKm": 91,
+          "elevationGainHm": 2200
+        },
+        {
+          "name": "Gauja Trail 50K",
+          "distanceKm": 53,
+          "elevationGainHm": 1200
+        },
+        {
+          "name": "Gauja Trail 20K",
+          "distanceKm": 21,
+          "elevationGainHm": 500
+        },
+        {
+          "name": "Gauja Trail 10K",
+          "distanceKm": 13.5,
+          "elevationGainHm": 300
+        },
+        {
+          "name": "Sigulda Three Castles",
+          "distanceKm": 12,
+          "elevationGainHm": 300
+        },
+        {
+          "name": "Gauja Youth",
+          "distanceKm": 6,
+          "elevationGainHm": 100
+        },
+        {
+          "name": "Gauja Kids",
+          "distanceKm": 1.6,
+          "elevationGainHm": 30
+        }
+      ],
+      "gpxStatus": "seven-official-2027-race-pages-and-Map-plus-GPX-navigation; direct-file-urls-not-extracted",
+      "binaryDownloaded": false,
+      "parsed": false,
+      "metricsCompared": false,
+      "detail": "Official UTMB race list confirms seven formats and 2027 dates. Individual map exports must be checked separately; no GPX binary retrieved."
+    },
+    {
+      "eventOrder": 76,
+      "event": "Quito Trail by UTMB",
+      "officialSource": "https://quito.utmb.world/",
+      "date": "2027-07-30/08-01",
+      "routes": [
+        {
+          "name": "80K Oso",
+          "distanceKm": 76,
+          "elevationGainHm": 4400
+        },
+        {
+          "name": "50K Nutria",
+          "distanceKm": 53,
+          "elevationGainHm": 2800
+        },
+        {
+          "name": "30K Tucán",
+          "distanceKm": 31,
+          "elevationGainHm": 1600
+        },
+        {
+          "name": "20K Quinde",
+          "distanceKm": 20,
+          "elevationGainHm": 1000
+        },
+        {
+          "name": "12K Humboldt",
+          "distanceKm": 13,
+          "elevationGainHm": 850
+        },
+        {
+          "name": "6K Rana",
+          "distanceKm": 6.5,
+          "elevationGainHm": 300
+        }
+      ],
+      "gpxStatus": "six-official-2027-races-confirmed; course-detail-pages-still-opening-soon; no-GPX-published",
+      "binaryDownloaded": false,
+      "parsed": false,
+      "metricsCompared": false,
+      "detail": "Official UTMB homepage confirms 30 July–1 August 2027 and six races with the listed distances/ascent. Detail pages are still marked Opening soon, so no official GPX is available yet."
+    },
+    {
+      "eventOrder": 77,
+      "event": "Salomon Pitz Alpine Glacier Trail",
+      "officialSource": "https://www.pitztal.com/de/salomon-pitz-alpine-glacier-trail.html",
+      "date": "2027-07-30/08-01",
+      "routes": [
+        {
+          "name": "P105 Salomon Ultra",
+          "distanceKm": 103,
+          "elevationGainHm": 6000
+        },
+        {
+          "name": "P90 Pitztaler Gletscher Ultra",
+          "distanceKm": 87,
+          "elevationGainHm": 5200
+        },
+        {
+          "name": "P60 Trail Experience",
+          "distanceKm": 63,
+          "elevationGainHm": 4300
+        },
+        {
+          "name": "P45 Glacier Trail",
+          "distanceKm": 45,
+          "elevationGainHm": 2900
+        },
+        {
+          "name": "P45 Rifflsee Trail",
+          "distanceKm": 43,
+          "elevationGainHm": 2100
+        },
+        {
+          "name": "P30 Taschachferner Trail",
+          "distanceKm": 27,
+          "elevationGainHm": 1300
+        },
+        {
+          "name": "P15 Zirbensteig Trail",
+          "distanceKm": 16,
+          "elevationGainHm": 800
+        },
+        {
+          "name": "P Young Talents",
+          "distanceKm": 8,
+          "elevationGainHm": 640
+        }
+      ],
+      "gpxStatus": "eight-official-2027-course-pages-linked; direct-GPX-file-hrefs-not-extracted",
+      "binaryDownloaded": false,
+      "parsed": false,
+      "metricsCompared": false,
+      "detail": "Current official 2027 page corrects route figures versus the older checkpoint: P105 103km/6000m, P90 87/5200, P60 63/4300, P45 Glacier 45/2900, P45 Rifflsee 43/2100, P30 27/1300, P15 16/800, Young Talents 8/640. Eight adult/youth course pages plus separate P Kids navigation. No file downloaded."
+    },
+    {
+      "eventOrder": 78,
+      "event": "KAT100 Austria by UTMB",
+      "officialSource": "https://kat.utmb.world/de/races/marathon-trail",
+      "date": "2027-08-05/07",
+      "routes": [
+        {
+          "name": "Marathon Trail",
+          "distanceKm": 52,
+          "elevationGainHm": 3100,
+          "startDate": "2027-08-07"
+        }
+      ],
+      "gpxStatus": "new-2027-Marathon-route-visible-online; GPX-file-download-not-yet-enabled-due-to-possible-small-route-adjustments",
+      "binaryDownloaded": false,
+      "parsed": false,
+      "metricsCompared": false,
+      "detail": "Official UTMB page confirms a completely new one-loop route of 52km/3100m+ for 7 August 2027. Route is viewable online for orientation but GPX download is explicitly unavailable pending minor adjustments. Do not use old two-loop GPX as 2027."
+    },
+    {
+      "eventOrder": 79,
+      "event": "Swiss Alps 100",
+      "officialSource": "https://www.swissalps100.com/de",
+      "date": "2027-08-06/08",
+      "routes": [
+        {
+          "name": "160K",
+          "distanceKm": 159.4,
+          "elevationGainHm": 10150
+        },
+        {
+          "name": "100K",
+          "distanceKm": 100.8,
+          "elevationGainHm": 6250
+        },
+        {
+          "name": "50K",
+          "distanceKm": 51.6,
+          "elevationGainHm": 3210
+        },
+        {
+          "name": "Vertical",
+          "distanceKm": 10,
+          "elevationGainHm": 1830
+        },
+        {
+          "name": "Matterhorning",
+          "distanceKm": 33.3,
+          "elevationGainHm": 4692,
+          "editionOnly": 2027
+        },
+        {
+          "name": "Kids Run",
+          "distanceKm": 1,
+          "elevationGainHm": 25
+        }
+      ],
+      "gpxStatus": "official-2027-route-download-pages-recorded; six-formats-currently-listed; no-binary-downloaded-or-parsed",
+      "binaryDownloaded": false,
+      "parsed": false,
+      "metricsCompared": false,
+      "detail": "Current organizer homepage shows Vertical 10K and Kids Run in addition to 50K/100K/160K and Matterhorning. Matterhorning is specifically a 2027 tenth-anniversary race. Previous checkpoint omitted Vertical and Kids Run. Download pages exist for major routes, but direct file URLs and file versions need separate checking."
+    },
+    {
+      "eventOrder": 80,
+      "event": "Allgäu Panorama Marathon",
+      "officialSource": "https://allgaeu-panorama-marathon.de/content/strecken/ultra/",
+      "date": "2027-edition",
+      "routes": [
+        {
+          "name": "Ultra",
+          "distanceKm": 69.5
+        }
+      ],
+      "gpxStatus": "official-interactive-Outdooractive-route-only; no-public-direct-GPX-file-found",
+      "binaryDownloaded": false,
+      "parsed": false,
+      "metricsCompared": false,
+      "detail": "Official Ultra page links to an Outdooractive map. Aid stations place the route finish at approximately 69.5km, but page does not expose a public organizer-hosted GPX download. Use organizer map or request file; do not invent direct GPX URL."
+    }
+  ],
+  "summary": {
+    "eventsCovered": 10,
+    "directGpxUrlsAttempted": 2,
+    "xmlPreviewsReadable": 1,
+    "localBinaryDownloads": 0,
+    "tracksParsed": 0,
+    "metricsCompared": 0,
+    "criticalFindings": [
+      "3Kings3Hills 2027 has eight distinct distances, with new 2027-specific metrics; prior checkpoint route count and older metrics should be reconciled.",
+      "Davos Diamond 2027 page links to StreckeDiamond2026.gpx; XML is readable but clearly old.",
+      "SachsenTrail 2027 race page currently exposes 2026_UltraTrail.gpx; reject as stale.",
+      "Pitz Alpine official 2027 metrics have changed from prior checkpoint values; update all eight distances to current official figures.",
+      "KAT100 Marathon Trail is a completely new 52km/3100m one-loop route, but GPX download remains disabled until final small adjustments.",
+      "Swiss Alps 100 current program includes Vertical 10K and Kids Run as well as Matterhorning, 50K, 100K and 160K."
+    ],
+    "noGpxFilesChanged": true,
+    "noAppRuntimeDataChanged": true,
+    "currentEventDatesEntriesCoveredDirectly": 8,
+    "currentEventDatesEntriesCoveredByBatch61": 2,
+    "legacyEntriesNotInCurrentEventDates": 2
+  },
+  "followUps": [
+    "3Kings3Hills: extract and validate GPX for all eight 2027 routes; ensure app metrics match 2027 facts page, not 2024 edition.",
+    "Davos X-Trails: obtain new 2027 Diamond GPX; inspect Gold/Silver/Bronze/Vertical and kids routes for correct version.",
+    "GGUT: retrieve current route files from official app or race pack; validate five race formats separately.",
+    "SachsenTrail: obtain 2027 GPX for Ultra, Half, Quarter, Base, Fun, Uphill and kids routes; current public Ultra link still points to 2026.",
+    "Gauja: export seven current UTMB Map + GPX routes and validate each.",
+    "Quito: recheck when race detail pages open and final GPX is published.",
+    "Pitz: reconcile app route data with official 2027 figures and retrieve eight route GPX exports; check P Kids separately.",
+    "KAT100: recheck after organizer finalizes new Marathon Trail route and enables download; old course remains historical.",
+    "Swiss Alps 100: reconcile app list to six organizer races plus any partner event; download and parse route files, retain Matterhorning as 2027-only.",
+    "Allgäu Panorama: ask organizer for Ultra GPX or export from official Outdooractive map when permitted."
+  ],
+  "noGpxFilesChanged": true,
+  "noAppRuntimeDataChanged": true,
+  "currentEventDatesCrossCheck": {
+    "currentCatalogRange": "event-dates.json insertion positions 71–80 (1-based)",
+    "overlappingIds": [
+      "the-north-face-grossglockner-ultra-trail",
+      "sachsentrail-erzgebirge",
+      "gauja-trail-by-utmb",
+      "quito-trail-ecuador",
+      "pitz-alpine-glacier-trail",
+      "kat100",
+      "swiss-alps-100",
+      "allgau-panorama-marathon"
+    ],
+    "currentEntriesCoveredByAuditBatch61": [
+      "last-soul-ultra",
+      "karnisches-ungetuem"
+    ],
+    "legacyEntriesNotInCurrentCatalog": [
+      "3Kings 3Hills Trail Festival",
+      "Davos X-Trails"
+    ],
+    "note": "This batch follows the historic top-level EVENTS order. Eight current catalog entries overlap directly; Last Soul Ultra and Karnisches Ungetüm are covered by audit batch 61. 3Kings 3Hills and Davos X-Trails are legacy entries not in the current event-dates range."
+  }
+}
