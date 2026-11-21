@@ -1,0 +1,320 @@
+{
+  "batch": 85,
+  "checkedAt": "2026-11-21",
+  "scope": "events 309-318 from event-dates.json",
+  "rules": [
+    "Organizer sources and official federation calendars prioritized; preserve contradictory dates or stale rulebook text.",
+    "Do not carry historical GPX/routes into 2027 without binary download and edition validation.",
+    "Course maps and download links do not count as parsed GPX binaries.",
+    "Flag duplicate events explicitly; do not merge or delete live records within audit-only PR.",
+    "Audit-only; no app runtime or live event records changed."
+  ],
+  "events": [
+    {
+      "sequence": 309,
+      "eventId": "wizz-air-skopje-marathon-2027",
+      "name": "Wizz Air Skopje Marathon",
+      "date": "2027-10-03",
+      "location": "Skopje, North Macedonia",
+      "status": "organizer-confirmed; conflicting-date-typo-in-terms",
+      "routes": [
+        {
+          "name": "Marathon",
+          "distanceKm": 42.195,
+          "startTime": "08:05"
+        },
+        {
+          "name": "Half Marathon",
+          "distanceKm": 21.097,
+          "startTime": "08:05"
+        },
+        {
+          "name": "Marathon Relay",
+          "distanceKm": 42.195,
+          "startTime": "08:05"
+        },
+        {
+          "name": "5K",
+          "distanceKm": 5,
+          "startTime": "08:00"
+        }
+      ],
+      "detail": "Organizer program page confirms race day 3 October 2027 and starts 08:05 for marathon/half/relay, 08:00 for 5K. Separate terms page title says 2027 but clause 1.2 has a clear year typo reading October 3, 2026 and a different time. Preserve discrepancy; use program page for provisional date and ask organizer to correct terms. AIMS/WA certification claimed by organizer; no 2027 GPX binary validated.",
+      "gpxStatus": "course-map link present; no 2027 binary downloaded or parsed",
+      "sources": [
+        "https://skopskimaraton.com.mk/en/info/program/",
+        "https://skopskimaraton.com.mk/en/terms-and-conditions/"
+      ]
+    },
+    {
+      "sequence": 310,
+      "eventId": "om-half-marathon-chisinau-2027",
+      "name": "OM Half Marathon Chișinău",
+      "date": "2027-04-25",
+      "location": "Chișinău, Moldova",
+      "status": "organizer-regulation-confirmed; internal-edition-text-contradiction",
+      "routes": [
+        {
+          "distanceKm": 21.097,
+          "startTime": "09:00",
+          "startFinish": "Piața Marii Adunări Naționale",
+          "status": "rules-state-measured-and-AIMS-certified"
+        },
+        {
+          "distanceKm": 10.5,
+          "status": "listed-in-2026-competition-paragraph; 2027 exact categories need check"
+        },
+        {
+          "distanceKm": 5,
+          "status": "listed-in-2026-competition-paragraph; 2027 exact categories need check"
+        }
+      ],
+      "detail": "Official 2027 regulation section 2 confirms Sunday 25 April 2027, 09:00, PMAN Chișinău, and says routes are measured/certified under AIMS. But section 3.1 says competitive races take place on Sunday 26 April 2026, clearly stale. Treat date/start as organizer-published with document inconsistency; ask for corrected regulation and route map. No GPX binary parsed.",
+      "gpxStatus": "route maps referenced by regulation; no 2027 binary downloaded or parsed",
+      "sources": [
+        "https://halfmarathon.md/en/regulament"
+      ]
+    },
+    {
+      "sequence": 311,
+      "eventId": "legal-half-marathon-2027",
+      "name": "LEGAL Half-Marathon",
+      "date": "2027-03-28",
+      "location": "Bucharest, Romania",
+      "status": "organizer-regulation-confirms-date; start-time-and-route-details-pending",
+      "routes": [
+        {
+          "distanceKm": 21.1,
+          "status": "listed as half marathon; start time not finalized"
+        },
+        {
+          "distanceKm": 10,
+          "status": "listed discipline; confirm in final program"
+        },
+        {
+          "distanceKm": 3,
+          "status": "listed discipline; confirm in final program"
+        }
+      ],
+      "detail": "Organizer regulation confirms Sunday 28 March 2027, Bucharest, start/finish on B-dul Unirii in front of Tribunalul București, number 37. Event begins 08:30 according to section 2; exact individual distance start times not provided in retrieved text. Maps are referenced on official site. Secondary AthRecs notes organizer labels programme provisional; do not treat its tentative starts as confirmed.",
+      "gpxStatus": "official maps referenced; no 2027 GPX binary validated",
+      "sources": [
+        "https://legalrun.ro/info/regulament/",
+        "https://www.athrecs.com/races/wa-legal-half-marathon-7222644"
+      ]
+    },
+    {
+      "sequence": 312,
+      "eventId": "zuerich-marathon-2027",
+      "name": "OCHSNER SPORT Zürich Marathon",
+      "date": "2027-04-11",
+      "location": "Zürich, Switzerland",
+      "status": "organizer-confirmed",
+      "routes": [
+        {
+          "name": "Marathon",
+          "distanceKm": 42.195,
+          "startTime": "08:00",
+          "start": "Quaibrücke",
+          "finish": "Sechseläutenplatz"
+        },
+        {
+          "name": "Half Marathon",
+          "distanceKm": 21.1,
+          "start": "Quaibrücke",
+          "finish": "Sechseläutenplatz"
+        },
+        {
+          "name": "On Z10",
+          "distanceKm": 10
+        }
+      ],
+      "detail": "Organizer confirms 11 April 2027. Marathon starts 08:00 at Quaibrücke and finishes Sechseläutenplatz; half marathon route goes along Lake Zürich through city to same finish. 10K also offered. Marathon and half are sold out per organizer page. No 2027 GPX or elevation metric validated.",
+      "gpxStatus": "no-2027-binary-downloaded-or-parsed",
+      "sources": [
+        "https://www.zuerichmarathon.ch/",
+        "https://www.zuerichmarathon.ch/marathon-2/marathon"
+      ]
+    },
+    {
+      "sequence": 313,
+      "eventId": "getpro-bath-half-2027",
+      "name": "GetPRO Bath Half",
+      "date": "2027-03-14",
+      "location": "Bath, England, United Kingdom",
+      "status": "organizer-confirmed",
+      "routes": [
+        {
+          "distanceKm": 21.0975,
+          "start": "Royal Victoria Park",
+          "surface": "road",
+          "terrain": "fast and flat"
+        }
+      ],
+      "detail": "London Marathon Events organizer page confirms Sunday 14 March 2027, Royal Victoria Park start, traffic-free city course, road surface, fast and flat. No official 2027 GPX or numeric ascent found.",
+      "gpxStatus": "no-2027-binary-downloaded-or-parsed",
+      "sources": [
+        "https://www.londonmarathonevents.co.uk/bath-half/event-overview"
+      ]
+    },
+    {
+      "sequence": 314,
+      "eventId": "pko-poznan-half-2027",
+      "name": "19. PKO Poznań Half Marathon",
+      "date": "2027-04-11",
+      "location": "Poznań, Poland",
+      "status": "organizer-confirms-date; AIMS-reports-date-change",
+      "routes": [
+        {
+          "distanceKm": 21.0975,
+          "start": "Roosevelta Street / Poznań International Fair",
+          "finish": "Plac Marka, Poznań International Fair"
+        }
+      ],
+      "detail": "Official organizer homepage countdown states 11 April 2027 at 09:00. AIMS news on 17 November 2026 says date changed to 11 April from previously published 18 April. Organizer news text contains year typo '11 April 2026' although page countdown clearly says 2027; use 11 April 2027 and preserve typo. Course page says route enters ENEA Stadium, then Grunwaldzka, finish Plac Marka. No GPX binary or ascent validated.",
+      "gpxStatus": "interactive course map; no 2027 GPX binary downloaded or parsed",
+      "sources": [
+        "https://halfmarathon.poznan.pl/",
+        "https://aims-worldrunning.org/news.html",
+        "https://halfmarathon.poznan.pl/en/runners-zone/course/"
+      ]
+    },
+    {
+      "sequence": 315,
+      "eventId": "cracovia-marathon-2027",
+      "name": "24. Cracovia Marathon",
+      "date": "2027-04-18",
+      "location": "Kraków, Poland",
+      "status": "city-organizer-and-AIMS-confirmed",
+      "routes": [
+        {
+          "distanceKm": 42.195,
+          "startFinish": "Main Market Square (Rynek Główny)"
+        }
+      ],
+      "detail": "City organizer announcement dated 4 May 2026 confirms Sunday 18 April 2027, start and finish at Main Market Square. AIMS independently lists 18 April 2027. AIMS advises consulting race site for route map; no detailed 2027 course/GPX or elevation verified.",
+      "gpxStatus": "no-2027-binary-downloaded-or-parsed",
+      "sources": [
+        "https://cracoviamaraton.pl/znamy-termin-24-cracovia-maratonu?hl=pl",
+        "https://aims-worldrunning.org/races/708.html"
+      ]
+    },
+    {
+      "sequence": 316,
+      "eventId": "pko-gdynia-half-2027",
+      "name": "PKO Gdynia Half Marathon",
+      "date": "2027-04-24",
+      "location": "Gdynia, Poland",
+      "status": "organizer-confirmed",
+      "routes": [
+        {
+          "distanceKm": 21.0975,
+          "startTime": "19:30",
+          "surface": "road"
+        }
+      ],
+      "detail": "Organizer registration page confirms 24 April 2027 and evening start at 19:30. Separate 2027 regulations PDF is linked by race listing; route page presently links to an older 2025 route illustration/OpenRunner, so do not treat it as 2027 GPX. No 2027 binary validated.",
+      "gpxStatus": "2027 rules PDF link found; route asset linked appears 2025; no current GPX binary validated",
+      "sources": [
+        "https://gdyniapolmaraton.pl/en/registration/",
+        "https://biib.run/race/pko-gdynia-half-marathon-poland-2a",
+        "https://aims-worldrunning.org/de/races/10134.html"
+      ]
+    },
+    {
+      "sequence": 317,
+      "eventId": "csob-bratislava-marathon-2027",
+      "name": "22. ČSOB Bratislava Marathon",
+      "date": "2027-04-10/11",
+      "location": "Bratislava, Slovakia",
+      "status": "organizer-regulations-and-event-page-confirmed",
+      "routes": [
+        {
+          "name": "Marathon",
+          "date": "2027-04-11",
+          "distanceKm": 42.195,
+          "startTime": "09:00"
+        },
+        {
+          "name": "Renault Half Marathon",
+          "date": "2027-04-11",
+          "distanceKm": 21.098,
+          "startTime": "09:00"
+        },
+        {
+          "name": "10K",
+          "date": "2027-04-10",
+          "distanceKm": 10,
+          "startTime": "16:00"
+        },
+        {
+          "name": "Mini Marathon",
+          "date": "2027-04-10",
+          "distanceKm": 4.2,
+          "startTime": "14:00"
+        }
+      ],
+      "detail": "Official 2027 regulations and event page confirm event weekend 10–11 April; marathon and half on Sunday 11 April at 09:00, 10K Saturday 10 April 16:00, mini 4.2K 14:00. Separate relay events are listed. No GPX binary or ascent metric verified in this pass.",
+      "gpxStatus": "no-2027-binary-downloaded-or-parsed",
+      "sources": [
+        "https://bratislavamarathon.sk/en/event/bratislava-marathon",
+        "https://bratislavamarathon.sk/assets/documents/bam-2027/vseobecne-en-v2.pdf"
+      ]
+    },
+    {
+      "sequence": 318,
+      "eventId": "maraton-treh-src-2027",
+      "name": "Maraton treh src (Three Hearts Marathon)",
+      "date": "2027-05-15",
+      "location": "Radenci, Slovenia",
+      "status": "duplicate-of-event-291-drei-herzen-marathon-radenci",
+      "routes": [
+        {
+          "name": "Radenska Classic Marathon",
+          "distanceKm": 42.195,
+          "startTime": "09:00"
+        },
+        {
+          "name": "Radenska Medium Half Marathon",
+          "distanceKm": 21.098,
+          "startTime": "09:00"
+        }
+      ],
+      "detail": "This record is the same event as sequence 291 'Drei-Herzen-Marathon Radenci', not a separate race. AIMS lists 15 May 2027 and organizer pages already checked for event 291 confirm marathon and half. Do not create duplicate event cards or double-count routes; merge/alias event IDs during a separate data-cleanup PR only after approval. GPX binary remains unvalidated.",
+      "gpxStatus": "same event as sequence 291; no binary GPX validated",
+      "sources": [
+        "https://aims-worldrunning.org/races/732.html",
+        "https://www.alias.maraton-radenci.si/en/runs/radenska-classic-marathon",
+        "https://www.alias.maraton-radenci.si/en/runs/radenska-medium-half-marathon"
+      ]
+    }
+  ],
+  "summary": {
+    "eventsReviewed": 10,
+    "datesConfirmed": 10,
+    "organizerConfirmed": 9,
+    "duplicateEventRecords": 1,
+    "official2027GpxBinaryValidated": 0,
+    "binaryFilesDownloaded": 0,
+    "tracksParsed": 0,
+    "binaryMetricsCompared": 0,
+    "officialCourseMapsOrRegulationLinksFound": 5,
+    "oldGpxFilesDeleted": 0,
+    "oldGpxFilesOverwritten": 0,
+    "appRuntimeFilesChanged": 0,
+    "appEventRecordsChanged": 0,
+    "auditOnly": true
+  },
+  "followUps": [
+    "Skopje: resolve terms page's 2026 date/time typo against program page's 3 Oct 2027 and 08:05/08:00; obtain GPX.",
+    "Chișinău: request corrected rules because section 3 refers to 26 April 2026 while section 2 says 25 April 2027; verify 2027 categories and route maps.",
+    "LEGAL Bucharest: await final individual starts, route map and GPX; organizer says programme is provisional.",
+    "Zürich: obtain 2027 GPX and ascent for marathon, half and 10K; sold-out status can change only via organizer.",
+    "Bath: obtain 2027 course file and parsed ascent; current organizer says fast/flat only.",
+    "Poznań: preserve AIMS date change to 11 April 2027; resolve organizer news typo 2026; retrieve 2027 GPX.",
+    "Cracovia: await official 2027 route map and GPX; don't assume prior edition track.",
+    "Gdynia: 2027 regulations linked but map asset appears 2025; request current GPX.",
+    "Bratislava: retrieve official GPX for marathon, half and 10K and parse separately.",
+    "Maraton treh src: treat as duplicate alias of sequence 291 Drei-Herzen-Marathon Radenci; propose separate deduplication PR after user approval."
+  ]
+}
