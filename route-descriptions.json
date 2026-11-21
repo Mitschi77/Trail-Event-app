@@ -156,7 +156,10 @@
           "https://www.s1trail.com/en/dati-ufficiali-corsa-della-bora-2027/",
           "https://www.s1trail.com/en/regolamento/"
         ],
-        "routePageUrl": "https://www.s1trail.com/en/s1-bora-ultra-116-km/"
+        "routePageUrl": "https://www.s1trail.com/en/s1-bora-ultra-116-km/",
+        "officialInfoPageLinkAllowed": true,
+        "officialGpxLinkAllowed": false,
+        "officialGpxLinkPermissionStatus": "pending"
       },
       "existingDataConflicts": [
         "Im bestehenden App-Datensatz ist der Bagnoli-Cut-off mit 22:00 gespeichert; die aktuelle offizielle 2027-Datenseite nennt 21:30. Keine Änderung am bestehenden Datensatz vorgenommen.",
@@ -253,7 +256,10 @@
           "https://www.s1trail.com/en/dati-ufficiali-corsa-della-bora-2027/",
           "https://www.s1trail.com/en/regolamento/"
         ],
-        "routePageUrl": "https://www.s1trail.com/en/s1-bora-ultra/"
+        "routePageUrl": "https://www.s1trail.com/en/s1-bora-ultra/",
+        "officialInfoPageLinkAllowed": true,
+        "officialGpxLinkAllowed": false,
+        "officialGpxLinkPermissionStatus": "pending"
       },
       "existingDataConflicts": [
         "Die vorhandenen Zwischen-Cut-offs stimmen mit den offiziellen 2027-Daten überein; das Ziel bei km 61,2 und der Zielschluss 08:30 sind im bestehenden Aid-Station-Array nicht als eigener Eintrag abgebildet."
@@ -348,7 +354,10 @@
           "https://www.s1trail.com/en/dati-ufficiali-corsa-della-bora-2027/",
           "https://www.s1trail.com/en/regolamento/"
         ],
-        "routePageUrl": "https://www.s1trail.com/en/s1-trail/"
+        "routePageUrl": "https://www.s1trail.com/en/s1-trail/",
+        "officialInfoPageLinkAllowed": true,
+        "officialGpxLinkAllowed": false,
+        "officialGpxLinkPermissionStatus": "pending"
       },
       "existingDataConflicts": [],
       "permissionStatus": {
@@ -434,7 +443,10 @@
           "https://www.s1trail.com/en/dati-ufficiali-corsa-della-bora-2027/",
           "https://www.s1trail.com/en/regolamento/"
         ],
-        "routePageUrl": "https://www.s1trail.com/en/s1-borderless-trail/"
+        "routePageUrl": "https://www.s1trail.com/en/s1-borderless-trail/",
+        "officialInfoPageLinkAllowed": true,
+        "officialGpxLinkAllowed": false,
+        "officialGpxLinkPermissionStatus": "pending"
       },
       "existingDataConflicts": [
         "Die vorhandenen App-Aid-Stationen stehen bei Medeazza 9,8 km, San Pelagio 21,4 km und Santa Croce 27,0 km. Die aktuelle offizielle 2027-Streckenseite nennt 10,1 km, 21,7 km und 27,4 km. Bestehende Werte nicht überschrieben; Aktualisierung als belegten Prüfpunkt vorgemerkt."
@@ -530,7 +542,10 @@
           "https://www.s1trail.com/en/dati-ufficiali-corsa-della-bora-2027/",
           "https://www.s1trail.com/en/regolamento/"
         ],
-        "routePageUrl": "https://www.s1trail.com/en/s1-half/"
+        "routePageUrl": "https://www.s1trail.com/en/s1-half/",
+        "officialInfoPageLinkAllowed": true,
+        "officialGpxLinkAllowed": false,
+        "officialGpxLinkPermissionStatus": "pending"
       },
       "existingDataConflicts": [
         "Die vorhandenen App-Aid-Stationen stehen bei Duino 5,5 km, Medeazza 10,1 km und Visogliano 19,6 km. Die aktuelle offizielle 2027-Streckenseite nennt 5,8 km, 10,4 km und 19,9 km. Bestehende Werte nicht überschrieben; Aktualisierung als belegten Prüfpunkt vorgemerkt."
@@ -611,7 +626,10 @@
           "https://www.s1trail.com/en/dati-ufficiali-corsa-della-bora-2027/",
           "https://www.s1trail.com/en/regolamento/"
         ],
-        "routePageUrl": "https://www.s1trail.com/en/s1-family-hike-2/"
+        "routePageUrl": "https://www.s1trail.com/en/s1-family-hike-2/",
+        "officialInfoPageLinkAllowed": true,
+        "officialGpxLinkAllowed": false,
+        "officialGpxLinkPermissionStatus": "pending"
       },
       "existingDataConflicts": [
         "Offizielle Distanz 14,8 km / 419 m D+ fehlt vollständig in der aktuellen App-Streckenliste; neuer Kandidat, noch nicht in EVENTS eingefügt."
@@ -676,7 +694,10 @@
           "https://www.s1trail.com/en/dati-ufficiali-corsa-della-bora-2027/",
           "https://www.s1trail.com/en/regolamento/"
         ],
-        "routePageUrl": "https://www.s1trail.com/en/borin/"
+        "routePageUrl": "https://www.s1trail.com/en/borin/",
+        "officialInfoPageLinkAllowed": true,
+        "officialGpxLinkAllowed": false,
+        "officialGpxLinkPermissionStatus": "pending"
       },
       "existingDataConflicts": [
         "Offizielle Distanz 5,5 km / 186 m D+ fehlt vollständig in der aktuellen App-Streckenliste; neuer Kandidat, noch nicht in EVENTS eingefügt."
