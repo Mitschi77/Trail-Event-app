@@ -1,0 +1,288 @@
+{
+  "schemaVersion": 1,
+  "preparedAt": "2026-11-21",
+  "integrationStatus": "research_draft_not_published_pending_rights_and_data_completion",
+  "organizer": "PLAN B event company GmbH",
+  "events": [
+    {
+      "eventId": "noft-wintertrail-2027",
+      "name": "NOFT / Night of the Trail – Wintertrail",
+      "edition": 2027,
+      "date": "2027-02-27",
+      "startLocation": "Region Garmisch-Partenkirchen; genaue Start-/Zielposition der Laufstrecken noch nicht veröffentlicht",
+      "routeCount": 2,
+      "sources": {
+        "organizerOverview": "https://www.planb-event.com/",
+        "linkedEventPage": "https://trail-magazin.de/noft/"
+      },
+      "rightsHolderNote": "Die NOFT-Seite wird vom TRAIL Magazin präsentiert; Zuständigkeit für Texte, Marke und visuelle Materialien zwischen PLAN B und TRAIL Magazin noch zu klären.",
+      "routes": [
+        {
+          "routeId": "noft-wintertrail-12k-2027",
+          "name": "NOFT Wintertrail 12K",
+          "distanceKm": 12.1,
+          "elevationGainM": null,
+          "courseSummary": "Winterliche Trailrunde in der Region Garmisch-Partenkirchen. Die Strecke ist als kürzere der beiden Wintertrail-Distanzen angekündigt; genaue Linienführung und Streckenbeschreibung sind noch nicht veröffentlicht.",
+          "surface": "Winterliche Wege und Trails; konkrete Untergrundanteile und technische Schwierigkeit nicht veröffentlicht.",
+          "highlights": [
+            "Wintertrail in der Bergregion Garmisch-Partenkirchen"
+          ],
+          "aidStations": null,
+          "cutoffs": null,
+          "mapUrl": null,
+          "elevationProfileUrl": null,
+          "gpxUrl": null,
+          "gpxStatus": "not_published_or_not_found_on_checked_official_page",
+          "dataQuality": [
+            "Höhenmeter fehlen",
+            "Streckenverlauf und Verpflegung noch nicht veröffentlicht",
+            "Startzeit 10:00 Uhr laut vorläufigem Programm; Änderungen vorbehalten"
+          ]
+        },
+        {
+          "routeId": "noft-wintertrail-18k-2027",
+          "name": "NOFT Wintertrail 18K",
+          "distanceKm": 18.8,
+          "elevationGainM": null,
+          "courseSummary": "Längere winterliche Trailrunde in der Region Garmisch-Partenkirchen. Die Strecke ist als längere der beiden Wintertrail-Distanzen angekündigt; genaue Linienführung und Streckenbeschreibung sind noch nicht veröffentlicht.",
+          "surface": "Winterliche Wege und Trails; konkrete Untergrundanteile und technische Schwierigkeit nicht veröffentlicht.",
+          "highlights": [
+            "Wintertrail in der Bergregion Garmisch-Partenkirchen"
+          ],
+          "aidStations": null,
+          "cutoffs": null,
+          "mapUrl": null,
+          "elevationProfileUrl": null,
+          "gpxUrl": null,
+          "gpxStatus": "not_published_or_not_found_on_checked_official_page",
+          "dataQuality": [
+            "Höhenmeter fehlen",
+            "Streckenverlauf und Verpflegung noch nicht veröffentlicht",
+            "Startzeit 10:00 Uhr laut vorläufigem Programm; Änderungen vorbehalten"
+          ]
+        }
+      ]
+    },
+    {
+      "eventId": "gravel-marathon-schliersee-thiersee-2027",
+      "name": "Gravel Marathon Schliersee–Thiersee",
+      "edition": 2027,
+      "date": "2027-03-20",
+      "startLocation": "Marathon: Schliersee; Dreiviertelmarathon: Fischbachau; Halbmarathon: Bayrischzell",
+      "finishLocation": "Thiersee, Österreich",
+      "sources": {
+        "organizerOverview": "https://www.planb-event.com/",
+        "officialEventPage": "https://www.gravel-marathon.de/",
+        "officialRegulations": "https://www.gravel-marathon.de/wp-content/uploads/2026/10/GST_Reglement_2027.pdf",
+        "officialTerms": "https://www.gravel-marathon.de/wp-content/uploads/2026/10/GST_AGB_2027.pdf"
+      },
+      "routes": [
+        {
+          "routeId": "gravel-marathon-42195-2027",
+          "name": "Gravel Marathon",
+          "distanceKm": 42.195,
+          "elevationGainM": 383,
+          "startLocation": "Schliersee, Deutschland",
+          "finishLocation": "Thiersee, Österreich",
+          "courseSummary": "Punkt-zu-Punkt-Lauf von Schliersee nach Thiersee. Die Route verläuft überwiegend auf gut laufbaren Schotter- und Forstwegen sowie befestigten Naturwegen; sie verbindet Bayern mit Tirol und enthält Anstiege und Abstiege.",
+          "surface": "Überwiegend Schotter- und Forstwege sowie befestigte Naturwege; einzelne Asphaltanteile möglich, exakte Anteile nicht veröffentlicht.",
+          "highlights": [
+            "Punkt-zu-Punkt-Verbindung Schliersee–Thiersee",
+            "Landschaft im bayerisch-tirolerischen Grenzraum"
+          ],
+          "aidStations": [
+            {
+              "km": 10,
+              "type": "Verpflegung",
+              "details": "Getränke, Obst, Speisen und Heißgetränke; Streckenzuordnung zu einzelnen Distanzen noch zu bestätigen"
+            },
+            {
+              "km": 20,
+              "type": "Verpflegung",
+              "details": "Getränke, Obst, Speisen und Heißgetränke; Streckenzuordnung zu einzelnen Distanzen noch zu bestätigen"
+            },
+            {
+              "km": 30,
+              "type": "Verpflegung",
+              "details": "Getränke, Obst, Speisen und Heißgetränke; Streckenzuordnung zu einzelnen Distanzen noch zu bestätigen"
+            },
+            {
+              "km": 5,
+              "type": "Wasserstelle"
+            },
+            {
+              "km": 15,
+              "type": "Wasserstelle"
+            },
+            {
+              "km": 25,
+              "type": "Wasserstelle"
+            },
+            {
+              "km": 35,
+              "type": "Wasserstelle"
+            }
+          ],
+          "cutoffs": null,
+          "mapUrl": null,
+          "elevationProfileUrl": null,
+          "gpxUrl": "https://www.gravel-marathon.de/",
+          "gpxStatus": "official_regulations_say_gpx_data_is_available_for_download_on_website_but_exact_route_links_and_file_metadata_not_checked; blocked_pending_explicit_permission",
+          "dataQuality": [
+            "Höhenmeter laut Reglement 383 hm",
+            "Verpflegungsstellen im Reglement bei km 10/20/30 und Wasserstellen bei km 5/15/25/35; genaue Zuordnung für die drei Startvarianten offen",
+            "Zeitlimits sollen laut Reglement auf der Website stehen, wurden auf den geprüften Seiten nicht konkret gefunden"
+          ]
+        },
+        {
+          "routeId": "gravel-marathon-3165-2027",
+          "name": "Dreiviertelmarathon",
+          "distanceKm": 31.65,
+          "elevationGainM": 368,
+          "startLocation": "Fischbachau, Deutschland",
+          "finishLocation": "Thiersee, Österreich",
+          "courseSummary": "Punkt-zu-Punkt-Gravel-Lauf von Fischbachau nach Thiersee. Überwiegend laufbare Schotter-, Forst- und befestigte Naturwege mit Höhenmetern bergauf und bergab.",
+          "surface": "Überwiegend Schotter- und Forstwege sowie befestigte Naturwege; exakte Anteile nicht veröffentlicht.",
+          "highlights": [
+            "Punkt-zu-Punkt-Verbindung von Fischbachau nach Thiersee",
+            "Landschaft im bayerisch-tirolerischen Grenzraum"
+          ],
+          "aidStations": "Verpflegung km 10/20/30 und Wasser km 5/15/25/35 laut Reglement; Zuordnung zur einzelnen Distanz nicht bestätigt",
+          "cutoffs": null,
+          "mapUrl": null,
+          "elevationProfileUrl": null,
+          "gpxUrl": "https://www.gravel-marathon.de/",
+          "gpxStatus": "official_regulations_say_gpx_data_is_available_for_download_on_website_but_exact_route_links_and_file_metadata_not_checked; blocked_pending_explicit_permission",
+          "dataQuality": [
+            "Höhenmeter laut Reglement 368 hm",
+            "Verpflegungsstellen-Zuordnung und Zeitlimits offen"
+          ]
+        },
+        {
+          "routeId": "gravel-marathon-211-2027",
+          "name": "Halbmarathon",
+          "distanceKm": 21.1,
+          "elevationGainM": 304,
+          "startLocation": "Bayrischzell, Deutschland",
+          "finishLocation": "Thiersee, Österreich",
+          "courseSummary": "Punkt-zu-Punkt-Gravel-Lauf von Bayrischzell nach Thiersee. Die Strecke nutzt überwiegend laufbare Schotter-, Forst- und befestigte Naturwege und weist Anstiege und Abstiege auf.",
+          "surface": "Überwiegend Schotter- und Forstwege sowie befestigte Naturwege; exakte Anteile nicht veröffentlicht.",
+          "highlights": [
+            "Punkt-zu-Punkt-Verbindung von Bayrischzell nach Thiersee",
+            "Landschaft im bayerisch-tirolerischen Grenzraum"
+          ],
+          "aidStations": "Verpflegung km 10/20/30 und Wasser km 5/15/25/35 laut Reglement; Zuordnung zur einzelnen Distanz nicht bestätigt",
+          "cutoffs": null,
+          "mapUrl": null,
+          "elevationProfileUrl": null,
+          "gpxUrl": "https://www.gravel-marathon.de/",
+          "gpxStatus": "official_regulations_say_gpx_data_is_available_for_download_on_website_but_exact_route_links_and_file_metadata_not_checked; blocked_pending_explicit_permission",
+          "dataQuality": [
+            "Höhenmeter laut Reglement 304 hm",
+            "Verpflegungsstellen-Zuordnung und Zeitlimits offen"
+          ]
+        }
+      ]
+    },
+    {
+      "eventId": "gapa-everesting-festival-2027",
+      "name": "GaPa Everesting-Festival",
+      "edition": 2027,
+      "dates": [
+        "2027-05-14",
+        "2027-05-15"
+      ],
+      "location": "Eckbauer, Garmisch-Partenkirchen",
+      "sources": {
+        "organizerOverview": "https://www.planb-event.com/",
+        "officialEventPage": "https://www.everesting-festival.com/",
+        "officialRegulations": "https://www.everesting-festival.com/wp-content/uploads/2026/08/PLANB_GEF_REGLEMENT_2027.pdf",
+        "officialTerms": "https://www.everesting-festival.com/wp-content/uploads/2026/07/PLANB_GEF_AGB_2027.pdf"
+      },
+      "routes": [
+        {
+          "routeId": "gapa-everesting-solo-2027",
+          "name": "Everesting Solo",
+          "distanceKm": null,
+          "elevationGainM": 8848,
+          "lapDistanceKm": 3.3,
+          "lapElevationGainM": 498,
+          "ascentCount": "bis zu 18; exakte Zielhöhe und Rundenzahl laut Reglement/Veranstalterformat noch abzugleichen",
+          "courseSummary": "Wiederholter Aufstieg von der Talstation zur Bergstation Eckbauer. Die ersten rund zwei Kilometer verlaufen auf breiteren Wegen mit wechselndem Schotter- und Asphaltanteil; anschließend folgen schmalere Wald- und Schotterwege. Nach jedem Aufstieg erfolgt die Rückfahrt mit der Gondel.",
+          "surface": "Breiter Schotter-/Asphaltweg im unteren Abschnitt, danach schmalere Wald- und Schotterwege.",
+          "highlights": [
+            "Eckbauer-Aufstieg",
+            "Berg- und Tal-Verpflegungsstation",
+            "Gondelrückfahrt zwischen den Aufstiegen"
+          ],
+          "aidStations": "Verpflegungsstelle am Berg und im Tal mit Getränken, Obst, warmen Speisen und Heißgetränken",
+          "cutoffs": "27,5 Stunden ab erstem Start am 14.05.2027 um 09:00; Zielschluss 15.05.2027 um 12:30",
+          "mapUrl": null,
+          "elevationProfileUrl": null,
+          "gpxUrl": null,
+          "gpxStatus": "no_gpx_reference_found_in_official_regulations_or_event_page; blocked_pending_explicit_permission",
+          "dataQuality": [
+            "Offizielle Seite nennt bis zu 8.848 hm; Reglement nennt 3,3 km und 498 hm pro Aufstieg sowie bis zu 18 Aufstiege. Diese Angaben ergeben keine vollständig konsistente exakte Gesamtdistanz/-höhe; nicht rechnerisch überschrieben."
+          ]
+        },
+        {
+          "routeId": "gapa-zugspitzing-solo-2027",
+          "name": "Zugspitzing Solo",
+          "distanceKm": null,
+          "elevationGainM": 2962,
+          "lapDistanceKm": 3.3,
+          "lapElevationGainM": 498,
+          "ascentCount": 6,
+          "courseSummary": "Sechs Aufstiege auf derselben Eckbauer-Route, um die Höhe der Zugspitze zu erreichen. Die ersten rund zwei Kilometer sind breiter und wechseln zwischen Schotter und Asphalt; danach folgen Wald- und Schotterwege. Rückfahrt nach jedem Aufstieg mit der Gondel.",
+          "surface": "Breiter Schotter-/Asphaltweg im unteren Abschnitt, danach schmalere Wald- und Schotterwege.",
+          "highlights": [
+            "Sechs Eckbauer-Aufstiege",
+            "Zielmarke 2.962 Höhenmeter",
+            "Gondelrückfahrt zwischen den Aufstiegen"
+          ],
+          "aidStations": "Verpflegungsstelle am Berg und im Tal mit Getränken, Obst, warmen Speisen und Heißgetränken",
+          "cutoffs": "27,5 Stunden ab erstem Start am 14.05.2027 um 09:00; Zielschluss 15.05.2027 um 12:30",
+          "mapUrl": null,
+          "elevationProfileUrl": null,
+          "gpxUrl": null,
+          "gpxStatus": "no_gpx_reference_found_in_official_regulations_or_event_page; blocked_pending_explicit_permission",
+          "dataQuality": [
+            "Offizielle Zielhöhe 2.962 hm; sechs Wiederholungen der im Reglement beschriebenen 498-hm-Runde weichen rechnerisch leicht ab. Offiziellen Zielwert beibehalten, Differenz dokumentieren."
+          ]
+        },
+        {
+          "routeId": "gapa-gapa500-2027",
+          "name": "GaPa500",
+          "distanceKm": null,
+          "elevationGainM": null,
+          "lapDistanceKm": 3.3,
+          "lapElevationGainM": 498,
+          "ascentCount": null,
+          "courseSummary": "GaPa500 wird als eigenes Format des Festivals geführt. Die genaue Streckenlänge, Höhenmeter, Rundenanzahl und das Wertungsformat sind aus den geprüften Seiten nicht eindeutig ableitbar; zugrunde liegender Eckbauer-Aufstieg wird im Reglement beschrieben.",
+          "surface": "Eckbauer-Aufstieg: zunächst breiter Schotter-/Asphaltweg, anschließend Wald- und Schotterwege; konkrete GaPa500-Variante nicht bestätigt.",
+          "highlights": [
+            "Eckbauer-Route im Rahmen des GaPa Everesting-Festivals"
+          ],
+          "aidStations": "Verpflegungsstellen am Berg und im Tal sind für das Festival beschrieben; GaPa500-spezifische Zuordnung nicht bestätigt",
+          "cutoffs": "Festival-Zielschluss 15.05.2027 um 12:30; GaPa500-spezifisches Zeitlimit nicht bestätigt",
+          "mapUrl": null,
+          "elevationProfileUrl": null,
+          "gpxUrl": null,
+          "gpxStatus": "no_gpx_reference_found_in_official_regulations_or_event_page; blocked_pending_explicit_permission",
+          "dataQuality": [
+            "Formatdetails und genaue Werte beim Veranstalter anzufragen; keine Strecke aus anderen Formaten abgeleitet."
+          ]
+        }
+      ]
+    }
+  ],
+  "rightsAndReuse": {
+    "officialTextCopied": false,
+    "ownFactualSummariesWritten": true,
+    "mapsProfilesLogosImagesOrGpxCopied": false,
+    "permissionStatus": "requested_pending",
+    "publicationAllowed": false,
+    "gpxDefault": "blocked",
+    "note": "Nur eigene sachliche Zusammenfassungen und Links auf Originalquellen. Keine geschützten Beschreibungstexte, Grafiken, Karten, Logos oder GPX-Dateien übernommen. GPX-Funktionen bleiben bis zur strecken- und funktionsbezogenen schriftlichen Freigabe gesperrt."
+  }
+}
