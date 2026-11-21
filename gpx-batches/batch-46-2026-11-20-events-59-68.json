@@ -1,7 +1,7 @@
 {
   "batch": 46,
   "checkedAt": "2026-11-20",
-  "scope": "Top-level events 59–68 in current EVENTS order",
+  "scope": "Official route and GPX status audit for ten records in the historic/original top-level event list 59–68; this is not the current event-dates.json insertion range 59–68.",
   "status": "audit-only-checkpoint",
   "rules": [
     "Existing GPX files remain valid until a replacement is officially published, downloaded, parsed and validated.",
@@ -375,5 +375,29 @@
     "https://www.mtut.de/trails/trail-t30/",
     "https://www.mtut.de/trails/trail-t13/",
     "https://www.dolomythsrun.it/en/"
-  ]
+  ],
+  "currentEventDatesCrossCheck": {
+    "currentCatalogRange": "event-dates.json insertion positions 59–68 (1-based)",
+    "overlappingIds": [
+      "obertauern-trailrun-summit",
+      "restonica-trail-corsica",
+      "trai-verbier-st-bernhard",
+      "piut",
+      "der-gletscher-trailrun",
+      "engadin-ut",
+      "maintal-ultratrail",
+      "dolomyths-run"
+    ],
+    "currentEntriesCoveredByAuditBatch59": [
+      "eiger-ultratrail",
+      "bucovina-ultra-rocks"
+    ],
+    "legacyEntriesCoveredByAuditBatch58": [
+      "u-tlw"
+    ],
+    "legacyOnlyEntriesNotInCurrentCatalog": [
+      "Großglockner Mountain Run"
+    ],
+    "note": "This package follows the historic/original event list. Eight current entries overlap directly; Eiger and Bucovina are covered by batch 59, and U.TLW by batch 58. Großglockner Mountain Run is a legacy-only record not present in the current event catalog."
+  }
 }
