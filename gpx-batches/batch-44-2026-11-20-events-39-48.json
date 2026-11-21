@@ -1,7 +1,7 @@
 {
   "batch": 44,
   "checkedAt": "2026-11-20",
-  "scope": "Top-level events 39-48 in current EVENTS order; second-pass official-source and route/GPX audit",
+  "scope": "Official route and GPX status audit for ten records in the historic/original top-level event list 39–48; this is not the current event-dates.json insertion range 39–48.",
   "policy": {
     "historicalGpx": "Existing GPX files remain valid until a new official file has been released, downloaded and validated. Never delete or replace a historical file merely because a new edition is announced.",
     "binaryValidation": "No external GPX binary in this package was downloaded and parsed by the available inspection tools. Direct links and official map export availability are recorded separately from binary validation.",
@@ -358,5 +358,31 @@
       "followUp": "Keep all five prior GPX links as candidates only; validate each file against the 2027 map and obtain the Easy Trail metrics from the organizer."
     }
   ],
-  "nextBatch": "Continue with events 49-58 in the next ten-event package."
+  "nextBatch": "Continue with events 49-58 in the next ten-event package.",
+  "currentEventDatesCrossCheck": {
+    "currentCatalogRange": "event-dates.json insertion positions 39–48 (1-based)",
+    "overlappingIds": [
+      "der-watz-mountainman",
+      "jenaer-backyard-ultra",
+      "dolomiti-extreme-trail",
+      "mozart",
+      "ultra-scotland",
+      "falkensteinlauf",
+      "trail-100-andorra",
+      "otscher-trail"
+    ],
+    "currentEntriesCoveredByAuditBatch45": [
+      "ultra-x-110-slowenien"
+    ],
+    "additionalCurrentEntryOutsideRange": [
+      "mountain-ultra-trail at current position 38; included as order 39 in this package"
+    ],
+    "currentEntriesNotYetCovered": [
+      "hochkonigman"
+    ],
+    "legacyOnlyEntriesNotInCurrentCatalog": [
+      "Hochkönig Ultraks"
+    ],
+    "note": "Eight current entries 39–48 overlap directly; Ultra X 110 Slovenia is covered by batch 45. Mountain Ultra Trail is also a current event at position 38 and is included here. The current Hochkönigman event is distinct from the legacy Hochkönig Ultraks record and still needs its own audit."
+  }
 }
