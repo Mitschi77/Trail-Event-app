@@ -85,4 +85,34 @@ if (!html.includes("sold-out-stamp") || !html.includes("soldOutRouteBadge(r)")) 
 if (!html.includes("SOLD OUT · AUSVERKAUFT") || !html.includes("sold-out-text")) throw new Error("Expanded event details must show the red sold-out notice.");
 if (!html.includes('data-field="registrationStatus"') || !html.includes("registrationStatus==='sold_out'")) throw new Error("Route editors must persist the available/sold-out registration status.");
 
+
+const gpxRestriction = html.match(/function routeGpxIsOrganizerRestricted\(route\)\{([^}]*)\}/)?.[1] || "";
+if (!gpxRestriction.includes("gpxUseProhibited") || !gpxRestriction.includes("gpxRestricted") || !gpxRestriction.includes("organizer-prohibited")) {
+  throw new Error("Organizer GPX restrictions must be recognized across supported restriction fields.");
+}
+const routeImportStart = html.indexOf("async function importRouteGpx(input)");
+const routeImportEnd = html.indexOf("document.addEventListener('change'", routeImportStart);
+const routeImport = routeImportStart >= 0 && routeImportEnd > routeImportStart ? html.slice(routeImportStart, routeImportEnd) : "";
+if (!routeImport.includes("routeGpxIsOrganizerRestricted(event.routes[ri])") || !routeImport.includes("GPX-Import gesperrt")) {
+  throw new Error("Local route GPX import must stop when the organizer prohibits use.");
+}
+const plannedImportStart = html.indexOf("async function importGpxForRoute(id,ri,input)");
+const plannedImportEnd = html.indexOf("function isGpxImportableUrl", plannedImportStart);
+const plannedImport = plannedImportStart >= 0 && plannedImportEnd > plannedImportStart ? html.slice(plannedImportStart, plannedImportEnd) : "";
+if (!plannedImport.includes("routeGpxIsOrganizerRestricted(route)") || !plannedImport.includes("untersagt die Übernahme")) {
+  throw new Error("Planned-route GPX import must enforce organizer restrictions.");
+}
+const remoteImportStart = html.indexOf("async function importRemoteGpxForRoute");
+const remoteImportEnd = html.indexOf("function ", remoteImportStart + 20);
+const remoteImport = remoteImportStart >= 0 ? html.slice(remoteImportStart, remoteImportEnd > remoteImportStart ? remoteImportEnd : remoteImportStart + 1800) : "";
+if (!remoteImport.includes("routeGpxIsOrganizerRestricted(route)") || !remoteImport.includes("untersagt die Übernahme")) {
+  throw new Error("Remote GPX import must enforce organizer restrictions.");
+}
+const supabaseLoaderStart = html.indexOf("async function ensureSupabaseLibrary()");
+const supabaseLoaderEnd = html.indexOf("async function connectPlannerCloud()", supabaseLoaderStart);
+const supabaseLoader = supabaseLoaderStart >= 0 && supabaseLoaderEnd > supabaseLoaderStart ? html.slice(supabaseLoaderStart, supabaseLoaderEnd) : "";
+if (!supabaseLoader.includes("https://unpkg.com/@supabase/supabase-js@2") || !supabaseLoader.includes("12000") || !supabaseLoader.includes("window.supabase?.createClient")) {
+  throw new Error("Cloud login must retry loading the Supabase client library with a bounded timeout.");
+}
+
 console.log("Validated " + inlineScripts.length + " inline script(s), key app features, sold-out status UI, and matching Push VAPID keys.");
