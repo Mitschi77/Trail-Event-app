@@ -327,6 +327,9 @@ window.showPlannedEventDetails=function(id,ri){prior(id,ri);const root=document.
     try{return JSON.parse(pre?.textContent||"{}");}catch{return null;}
   }
   function applyGpxUi(root){
+    // Do not mutate controls before the scoped registry is ready: a temporary
+    // fail-closed state must not permanently remove legacy-route UI elements.
+    if(!registryReady)return;
     const scope=root&&root.querySelectorAll?root:document;
     scope.querySelectorAll('[id^="routeInfo"]').forEach(panel=>{
       const route=routeFromPanel(panel);
