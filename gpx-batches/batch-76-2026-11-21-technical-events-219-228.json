@@ -1,0 +1,202 @@
+{
+  "batch": 76,
+  "checkedAt": "2026-11-21",
+  "scope": "events 219-228 from event-dates.json",
+  "rules": [
+    "Official organizer and FIDAL sources take precedence; secondary listings remain provisional.",
+    "Keep separate marathon and half-marathon event records and do not infer same-day staging without confirmation.",
+    "Historical course/GPX pages must not be promoted to 2027 without edition confirmation.",
+    "A GPX download control is not proof of binary download or complete track validation.",
+    "Do not delete or overwrite old GPX files until an official new binary is downloaded, parsed and validated.",
+    "Audit-only: no app runtime or live event records changed."
+  ],
+  "events": [
+    {
+      "sequence": 219,
+      "eventId": "maratona-reale",
+      "name": "Maratona Reale",
+      "edition": 2027,
+      "date": "2027-10-10",
+      "distanceKm": 42.195,
+      "location": "Venaria Reale, Piemonte, Italy",
+      "status": "FIDAL-2027-calendar-confirms-date-and-distance; organizer-details-pending",
+      "gpxStatus": "no-2027-gpx-binary-validated",
+      "detail": "FIDAL Piemonte 2027 calendar lists Maratona Reale, Venaria Reale, 10 October 2027, 42.195km. Secondary listings also show 21km and 10km companion races. Organizer 2027 detailed regulations and route not yet found; no GPX confirmed.",
+      "sources": [
+        "https://www.fidal.it/upload/Piemonte/Calendari%20Regionali/2026%2010%2023%20Torino%20LENZUOLONE%202027%20ordine%20data.pdf",
+        "https://www.baserunningteam.it/en/archive/weekend-reale-2026",
+        "https://www.maratoniamo.it/gara/maratona-reale-venaria-reale-maratona"
+      ]
+    },
+    {
+      "sequence": 220,
+      "eventId": "una-corsa-da-re-half-marathon",
+      "name": "Una Corsa da Re – Mezza Maratona",
+      "edition": 2027,
+      "date": "2027-10-10 provisional",
+      "distanceKm": 21.097,
+      "location": "Venaria Reale, Piemonte, Italy",
+      "status": "organizer-confirms-2027-edition-in-preparation; exact-date-not-yet-published-by-organizer",
+      "gpxStatus": "no-2027-gpx-confirmed",
+      "detail": "Organizer page says 2027 edition is in the works and offers a 2027 waiting list. A 2027 secondary listing assigns 10 October and 21.0975km, but organizer has not yet confirmed date/course. 2026 course described as certified through Reggia di Venaria, Parco La Mandria, San Gillio and Druento; not automatically valid for 2027.",
+      "sources": [
+        "https://www.baserunningteam.it/en/races/mezza-maratona",
+        "https://www.maratoniamo.it/gara/una-corsa-da-re-mezza-maratona-venaria-reale-mezza"
+      ]
+    },
+    {
+      "sequence": 221,
+      "eventId": "pisa-half-marathon",
+      "name": "Pisa Half Marathon",
+      "edition": 2027,
+      "date": "2027-10-10",
+      "distanceKm": 21.097,
+      "location": "Pisa, Toscana, Italy",
+      "status": "official-organizer-page-confirms",
+      "gpxStatus": "route-description-published; no-2027-gpx-binary-validated",
+      "detail": "Official organizer confirms 10 October 2027 and 21.097km. Course is FIDAL approved and described from San Rossore Park through city streets/historic centre to Piazza dei Miracoli. No 2027 GPX binary or numerical elevation profile validated.",
+      "sources": [
+        "https://www.mezzamaratonapisa.it/en",
+        "https://www.mezzamaratonapisa.it/en/half-marathon/route"
+      ]
+    },
+    {
+      "sequence": 222,
+      "eventId": "rome-half-marathon",
+      "name": "Wizz Air Rome Half Marathon by Brooks",
+      "edition": 2027,
+      "date": "2027-10-17",
+      "distanceKm": 21.0975,
+      "location": "Rome, Lazio, Italy",
+      "status": "official-organizer-date-confirmed; detailed-2027-rules-pending",
+      "gpxStatus": "no-2027-gpx-confirmed",
+      "detail": "Official organizer announcement dated 12 November 2026 confirms fourth edition on Sunday 17 October 2027. Event page confirms the race; course details are general and registration updates pending. No 2027 GPX or numeric elevation confirmed.",
+      "sources": [
+        "https://www.romehalfmarathon.it/en/wizz-air-confirms-its-role-as-title-sponsor-of-the-4th-edition/",
+        "https://www.romehalfmarathon.it/en/the-event/"
+      ]
+    },
+    {
+      "sequence": 223,
+      "eventId": "parma-marathon",
+      "name": "Parma Marathon",
+      "edition": 2027,
+      "date": "2027-10-17",
+      "distanceKm": 42.195,
+      "startTime": "09:15",
+      "startFinish": "Parco della Cittadella, Parma, Italy",
+      "status": "official-organizer-rules-and-course-page-confirmed",
+      "gpxStatus": "course-map-link-present; no-binary-gpx-validated",
+      "detail": "Official organizer page confirms 11th edition, 17 October 2027, 42.195km, certified FIDAL course, 09:15 start/finish at Parco della Cittadella. Page states approximately 130m maximum elevation difference, not cumulative ascent; no GPX binary parsed.",
+      "sources": [
+        "https://www.parmamarathon.it/distanze/maratona/",
+        "https://www.parmamarathon.it/distanze/maratona-regolamento/"
+      ]
+    },
+    {
+      "sequence": 224,
+      "eventId": "palermo-international-half-marathon",
+      "name": "Palermo International Half Marathon",
+      "edition": 2027,
+      "date": "2027-10-17",
+      "distanceKm": 21.0975,
+      "location": "Palermo, Sicily, Italy",
+      "status": "secondary-calendar-entry-only; organizer-regulation-pending",
+      "gpxStatus": "no-2027-gpx-confirmed",
+      "detail": "Secondary calendar entry lists 17 October 2027 and 21.0975km. Registration, rules, start time and course are all still to be defined; not yet organizer-confirmed.",
+      "sources": [
+        "https://www.maratoniamo.it/gara/palermo-international-half-marathon-palermo-mezza"
+      ]
+    },
+    {
+      "sequence": 225,
+      "eventId": "neapolis-marathon",
+      "name": "Neapolis Marathon",
+      "edition": 2027,
+      "date": "2027-10-24",
+      "distanceKm": 42.195,
+      "startTime": "08:00",
+      "startFinish": "Piazza del Plebiscito, Napoli, Italy",
+      "status": "official-organizer-page-confirms",
+      "gpxStatus": "organizer-gpx-link-exists-but-route-labelled-2026; not-2027-validated",
+      "detail": "Official organizer page confirms 24 October 2027, 42.195km, 08:00 start/finish at Piazza del Plebiscito and FIDAL-measured/homologated course. The route page includes GPX/PDF/FIT download controls but explicitly labels the displayed course as 2026. Do not treat the linked file as 2027 until edition is confirmed and binary parsed.",
+      "sources": [
+        "https://www.neapolismarathon.it/marathon/",
+        "https://www.neapolismarathon.it/percorso-marathon/"
+      ]
+    },
+    {
+      "sequence": 226,
+      "eventId": "neapolis-half-marathon",
+      "name": "Neapolis Half Marathon",
+      "edition": 2027,
+      "date": "2027-10-24",
+      "distanceKm": 21.0975,
+      "startTime": "08:00",
+      "startFinish": "Piazza del Plebiscito, Napoli, Italy",
+      "status": "official-organizer-page-confirms",
+      "gpxStatus": "no-2027-gpx-binary-validated",
+      "detail": "Official organizer page confirms 24 October 2027, 21.0975km, 08:00 start/finish at Piazza del Plebiscito and FIDAL measured/homologated course. No half-marathon 2027 GPX binary was retrieved or parsed.",
+      "sources": [
+        "https://www.neapolismarathon.it/half-marathon/"
+      ]
+    },
+    {
+      "sequence": 227,
+      "eventId": "venicemarathon",
+      "name": "Wizz Air Venicemarathon",
+      "edition": 2027,
+      "date": "2027-10-24",
+      "distanceKm": 42.195,
+      "location": "Venice, Veneto, Italy",
+      "status": "official-organizer-homepage-confirms-date; course-details-pending",
+      "gpxStatus": "no-2027-gpx-confirmed",
+      "detail": "Official Venicemarathon homepage countdown confirms 24 October 2027; AIMS calendar independently lists same date. No 2027 route map, start details or GPX binary validated.",
+      "sources": [
+        "https://www.venicemarathon.it/en/",
+        "https://aims-worldrunning.org/races/863.html"
+      ]
+    },
+    {
+      "sequence": 228,
+      "eventId": "venice-half-marathon",
+      "name": "Venice Half Marathon / Venicemarathon 21K",
+      "edition": 2027,
+      "date": "October 2027; exact day unconfirmed",
+      "distanceKm": 21.0975,
+      "location": "Venice / Mestre, Veneto, Italy",
+      "status": "secondary-calendar-listing-suggests-24-october; organizer-2027-date-not-confirmed",
+      "gpxStatus": "no-2027-gpx-confirmed",
+      "detail": "Secondary listing gives 24 October 2027, but another specialist race listing explicitly says organizer has not announced the 2027 21K date. FIDAL page currently found is for 25 October 2026 only. Do not automatically inherit the marathon's date; route description from 2026 is historical.",
+      "sources": [
+        "https://www.maratoniamo.it/gara/venice-half-marathon-venezia-mezza",
+        "https://euroslam.run/races/venice-half-marathon",
+        "https://www.fidal.it/calendario/V%5E-Venice-Half-Marathon21-0975km/COD14345"
+      ]
+    }
+  ],
+  "summary": {
+    "eventsReviewed": 10,
+    "official2027OrganizerOrFidalConfirmation": 7,
+    "secondaryOrUnconfirmed": 3,
+    "officialGpxControlsFound": 2,
+    "official2027GpxBinaryValidated": 0,
+    "binaryFilesDownloaded": 0,
+    "tracksParsed": 0,
+    "binaryMetricsCompared": 0,
+    "oldGpxFilesDeleted": 0,
+    "oldGpxFilesOverwritten": 0,
+    "appRuntimeFilesChanged": 0,
+    "appEventRecordsChanged": 0,
+    "auditOnly": true
+  },
+  "followUps": [
+    "Maratona Reale and Una Corsa da Re: await organizer detailed 2027 programme and route; 2027 half date currently secondary calendar only.",
+    "Pisa Half: retrieve official 2027 GPX and compare full track metrics; published course narrative does not provide numeric elevation.",
+    "Rome Half: await official 2027 course and GPX.",
+    "Parma: retrieve and parse official map/GPX; distinguish stated maximum elevation difference (~130m) from cumulative ascent.",
+    "Palermo Half: obtain organizer/FIDAL 2027 confirmation and regulation.",
+    "Neapolis Marathon: retrieve route assets only after confirming they have been updated from the 2026-labelled course; half GPX still needed.",
+    "Venicemarathon: await 2027 course files; Venice Half date is not yet organizer-confirmed."
+  ]
+}
