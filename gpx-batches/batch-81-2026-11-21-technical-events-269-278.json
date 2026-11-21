@@ -1,0 +1,216 @@
+{
+  "batch": 81,
+  "checkedAt": "2026-11-21",
+  "scope": "events 269-278 from event-dates.json",
+  "rules": [
+    "Official organizer, federation and municipal sources prioritized; secondary press used only where organizer confirmation was not directly located.",
+    "Date confirmation does not automatically confirm GPX, elevation or full route.",
+    "Do not carry forward 2026 route/GPX metrics into 2027.",
+    "Preserve conflicting published start times; do not choose one without clarification.",
+    "Audit-only file; no app runtime or live event records changed."
+  ],
+  "events": [
+    {
+      "sequence": 269,
+      "eventId": "belgian-half-marathon-championships",
+      "name": "Belgian Half Marathon Championships (Bashir's Run)",
+      "date": "2027-03-07",
+      "location": "Gentbrugge, Belgium",
+      "status": "World-Athletics-calendar-and-organizer-confirmed",
+      "distanceKm": 21.0975,
+      "start": "Wouter Weylandtstadion / Gentbrugge",
+      "detail": "World Athletics lists the Belgian national half marathon championships on 7 March 2027 at Wouter Weylandtstadion, Gentbrugge. Organizer Bashir's Run independently confirms 7 March 2027 and half marathon (BK) plus 10K/5K/youth races. No 2027 GPX or ascent data verified.",
+      "gpxStatus": "no-2027-binary-downloaded-or-parsed",
+      "sources": [
+        "https://worldathletics.org/competition/calendar-results?query=half+marathon",
+        "https://bashirsrun.be/bashirs-run"
+      ]
+    },
+    {
+      "sequence": 270,
+      "eventId": "mitja-marato-de-sitges",
+      "name": "Mitja Marató i Quart de Marató de Sitges",
+      "date": "2027-01-10",
+      "location": "Sitges, Catalonia, Spain",
+      "status": "municipal-tourism-event-page-confirms-date",
+      "distanceKm": 21.0975,
+      "start": "Passeig Marítim",
+      "startTime": "10:00",
+      "detail": "Sitges official tourism/event page lists 10 January 2027, half marathon start 10:00 and quarter marathon start 09:00. No official detailed 2027 course, elevation or GPX found in this pass.",
+      "gpxStatus": "no-2027-binary-downloaded-or-parsed",
+      "sources": [
+        "https://www.sitgesanytime.com/agenda/mitja-marato-i-quart-de-marato-de-sitges-2027/"
+      ]
+    },
+    {
+      "sequence": 271,
+      "eventId": "la-mitja-marato-internacional-de-granollers",
+      "name": "La Mitja Marató Internacional de Granollers, Les Franqueses i La Garriga",
+      "date": "2027-01-24",
+      "location": "Granollers / Les Franqueses / La Garriga, Catalonia, Spain",
+      "status": "organizer-confirmed",
+      "distanceKm": 21.0975,
+      "start": "Carrer Esteve Terradas / Carrer Francesc Serra",
+      "startTime": "10:30",
+      "detail": "Organizer confirms 41st edition on 24 January 2027. Official regulations list start and staged starts from 10:30 to 10:35. Course profile and GPX binary not verified; do not infer elevation.",
+      "gpxStatus": "no-2027-binary-downloaded-or-parsed",
+      "sources": [
+        "https://lamitja.cat/",
+        "https://lamitja.cat/reglament-la-mitja/"
+      ]
+    },
+    {
+      "sequence": 272,
+      "eventId": "media-maraton-ciudad-de-getafe",
+      "name": "Media Maratón Ciudad de Getafe",
+      "date": "2027-01-31",
+      "location": "Getafe, Madrid, Spain",
+      "status": "organizer-confirmed",
+      "distanceKm": 21.097,
+      "start": "Estadio Juan de la Cierva",
+      "finish": "Inside Estadio Juan de la Cierva",
+      "startTime": "10:30",
+      "detail": "Official organizer page confirms 31 January 2027 at 10:30, 21.097km, single urban loop, RFEA-homologated, flat course; start beside the stadium and finish inside. A course plan is published, but no GPX binary was downloaded or parsed.",
+      "gpxStatus": "official-course-map-available; no-2027-binary-downloaded-or-parsed",
+      "sources": [
+        "https://www.mediadegetafe.com/"
+      ]
+    },
+    {
+      "sequence": 273,
+      "eventId": "hyundai-mitja-marato-barcelona-by-brooks",
+      "name": "Hyundai Mitja Marató Barcelona by Brooks",
+      "date": "2027-02-14",
+      "location": "Barcelona, Catalonia, Spain",
+      "status": "date-confirmed-by-city-announcement-via-Europa-Press; 2027-course-detail-pending",
+      "distanceKm": 21.0975,
+      "detail": "Barcelona city date announcement reported by Europa Press confirms 14 February 2027. No 2027 organizer course page or GPX binary verified in this check. Keep 2026 route/elevation separate.",
+      "gpxStatus": "no-2027-binary-downloaded-or-parsed",
+      "sources": [
+        "https://www.europapress.es/deportes/noticia-barcelona-fija-14-febrero-14-marzo-2027-mitja-marato-marato-20260330134930.html"
+      ]
+    },
+    {
+      "sequence": 274,
+      "eventId": "grup-oliva-motor-mitja-de-cambrils",
+      "name": "Grup Oliva Motor Mitja de Cambrils",
+      "date": "2027-02-28",
+      "location": "Cambrils, Catalonia, Spain",
+      "status": "organizer-confirmed",
+      "distanceKm": 21.0975,
+      "startTime": "10:00",
+      "detail": "Official organizer site confirms 18th edition on 28 February 2027, start 10:00, with 21K course of two laps and 10K course of one lap. No GPX binary or elevation figure verified.",
+      "gpxStatus": "no-2027-binary-downloaded-or-parsed",
+      "sources": [
+        "https://mitjadecambrils.com/"
+      ]
+    },
+    {
+      "sequence": 275,
+      "eventId": "media-maraton-de-xativa",
+      "name": "Media Maratón de Xàtiva",
+      "date": "2027-02-28",
+      "location": "Xàtiva, Valencia, Spain",
+      "status": "organizer-regulation-confirmed",
+      "distanceKm": 21.097,
+      "start": "Albereda Jaume I",
+      "startTime": "10:00",
+      "detail": "Official regulation confirms 28 February 2027, 10:00 start, 21,097m and a two-lap course. No numeric elevation or GPX binary verified.",
+      "gpxStatus": "no-2027-binary-downloaded-or-parsed",
+      "sources": [
+        "https://mmxativa.com/reglamento-mitja-marato-de-xativa/"
+      ]
+    },
+    {
+      "sequence": 276,
+      "eventId": "totalenergies-media-maraton-de-malaga",
+      "name": "TotalEnergies Media Maratón Ciudad de Málaga",
+      "date": "2027-03-07",
+      "location": "Málaga, Andalucía, Spain",
+      "status": "organizer-regulation-confirmed",
+      "distanceKm": 21.097,
+      "start": "Paseo del Parque",
+      "finish": "Paseo del Parque",
+      "startTime": "08:15",
+      "detail": "Organizer rules confirm 7 March 2027, 08:15, 21.097km, RFEA/World Athletics certified course. Route description starts at Paseo del Parque and lists the port/sea-front roads including Paseo Marítimo Antonio Machado. No GPX binary or ascent data validated.",
+      "gpxStatus": "no-2027-binary-downloaded-or-parsed",
+      "sources": [
+        "https://www.mediamaratonmalaga.com/en/mlg-reglamento",
+        "https://www.mediamaratonmalaga.com/mlg-preguntas-frecuentes"
+      ]
+    },
+    {
+      "sequence": 277,
+      "eventId": "edp-lisbon-marathon-weekend",
+      "name": "EDP Lisbon Marathon Weekend",
+      "date": "2027-10-09/10",
+      "location": "Lisbon, Portugal",
+      "status": "organizer-confirmed",
+      "routes": [
+        {
+          "name": "EDP Lisbon Marathon",
+          "date": "2027-10-09",
+          "distanceKm": 42.195
+        },
+        {
+          "name": "Hyundai Half Marathon",
+          "date": "2027-10-10",
+          "distanceKm": 21.0975
+        },
+        {
+          "name": "EDP 8K",
+          "date": "2027-10-10",
+          "distanceKm": 8
+        }
+      ],
+      "detail": "Official Running Portugal page confirms race weekend 9–10 October 2027 and three races: marathon Saturday, half marathon and 8K Sunday. It provides broad course description but no detailed 2027 GPX or elevation metrics.",
+      "gpxStatus": "no-2027-binary-downloaded-or-parsed",
+      "sources": [
+        "https://www.lisboa-marathon.com/"
+      ]
+    },
+    {
+      "sequence": 278,
+      "eventId": "hyundai-porto-half-marathon",
+      "name": "Hyundai Porto Half Marathon",
+      "date": "2027-09-19",
+      "location": "Porto, Portugal",
+      "status": "organizer-confirmed",
+      "distanceKm": 21.095,
+      "start": "Avenida de Dom Carlos I, Esplanada do Castelo",
+      "startTime": "08:00 (info page also states 09:00 in a separate passage; discrepancy unresolved)",
+      "detail": "Organizer information page confirms Sunday 19 September 2027 and 21,095m. It states 08:00 in the event summary but elsewhere says 09:00 start; preserve the discrepancy and request organizer clarification. No 2027 GPX or elevation validated.",
+      "gpxStatus": "no-2027-binary-downloaded-or-parsed",
+      "sources": [
+        "https://www.porto-half-marathon.com/en/info.html"
+      ]
+    }
+  ],
+  "summary": {
+    "eventsReviewed": 10,
+    "datesConfirmed": 10,
+    "organizerConfirmed": 7,
+    "officialFederationOrMunicipalOrPressConfirmation": 3,
+    "official2027GpxBinaryValidated": 0,
+    "binaryFilesDownloaded": 0,
+    "tracksParsed": 0,
+    "binaryMetricsCompared": 0,
+    "oldGpxFilesDeleted": 0,
+    "oldGpxFilesOverwritten": 0,
+    "appRuntimeFilesChanged": 0,
+    "appEventRecordsChanged": 0,
+    "auditOnly": true
+  },
+  "followUps": [
+    "Belgian championships: request official measured course and GPX from Bashir's Run / Belgian federation.",
+    "Sitges: obtain organizer route and exact 2027 distance homologation; tourism page gives date/start but limited course detail.",
+    "Granollers: obtain 2027 official GPX and elevation; preserve regulation's staged start waves.",
+    "Getafe: request GPX binary and compare against published single-loop plan; no ascent metric yet.",
+    "Barcelona: verify 2027 route and GPX on organizer site before carrying over any 2026 route.",
+    "Cambrils: request 2027 GPX and elevation profile for two-lap half course.",
+    "Xàtiva: request official GPX and elevation for two-lap 21.097m course.",
+    "Málaga: request GPX and parse against 2027 RFEA/WA-certified route.",
+    "Lisbon: obtain separate 2027 GPX for marathon, half and 8K; never treat the weekend as one route.",
+    "Porto: ask organizer to resolve 08:00 vs 09:00 published start time and provide GPX."
+  ]
+}
