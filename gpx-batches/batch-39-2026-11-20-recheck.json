@@ -1,0 +1,104 @@
+{
+  "batch": 39,
+  "checkedAt": "2026-11-20",
+  "scope": "Second-pass official-source review of top-level events 9-18 (10 events)",
+  "status": "rechecked",
+  "events": [
+    {
+      "order": 9,
+      "name": "Tenerife Bluetrail by UTMB",
+      "gpxStatus": "Official 2027 event page confirms 110K, 82K, 68K, 47K, 24K and 47K Relay; official track page now exposes GPX download actions for all five main distances. Prior review only had direct 2027 file URLs for 82K and 68K; direct year-specific file targets for 110K/47K/24K still need verification before treating them as current. Relay GPX not separately confirmed.",
+      "sources": [
+        "https://tenerife.utmb.world/",
+        "https://tenerife.utmb.world/race/tracks"
+      ],
+      "followUp": "Resolve each download action and inspect filename/version; check whether relay shares the 47K course."
+    },
+    {
+      "order": 10,
+      "name": "Chianti Ultra Trail",
+      "gpxStatus": "Official 2027 GPX links were previously verified for CUT 73K and UTCC 120K. No additional 2027 track validation was completed in this pass; retain those links pending actual file parsing and metrics comparison.",
+      "followUp": "Download/parse both 2027 files and compare measured length/elevation with official course data."
+    },
+    {
+      "order": 11,
+      "name": "Ötzi Trailrun",
+      "gpxStatus": "An official direct GPX link was previously verified for Sunny Mountain Trail 30K. Binary parsing, CORS and route-metric comparison remain outstanding.",
+      "source": "https://www.merano-suedtirol.it/de/oetzi-trailrun-naturns/dein-lauf/sunny-mountain-trail.html",
+      "download": "https://www.merano-suedtirol.it/media/20ed251a-0d81-4b8a-a13d-2164258490f4/t123182821-sunny-mountain-trail-30km-2100hm.gpx",
+      "followUp": "Parse the official file and validate 30 km / 2,100 hm against the organizer profile."
+    },
+    {
+      "order": 12,
+      "name": "Vienna City Marathon",
+      "year": 2027,
+      "gpxStatus": "Correction to the previous checkpoint: the official VCM 2027 page now explicitly lists 'Download als GPX' and confirms the event on 18 April 2027 over 42.195 km. The earlier finding that only a 2026 GPX was available is superseded. The actual linked file URL and binary still need inspection.",
+      "sources": [
+        "https://www.vienna-marathon.com/index.html?go=marathon&lang=de",
+        "https://www.vienna-marathon.com/var/upload/public/2027/VCM-Streckenplaene_2027_SO_v1.pdf"
+      ],
+      "followUp": "Resolve the GPX link from the 2027 page, verify its filename/version and parse its track."
+    },
+    {
+      "order": 13,
+      "name": "Istrien / Istria100",
+      "gpxStatus": "Official UTMB GPX page lists five distances (168K, 110K, 69K, 42K and 21K). Previous checkpoint had direct 2027 file URLs only for 110K and 69K. Do not assume the other three are current-year files until their targets are inspected.",
+      "source": "https://istria.utmb.world/races-runners/runners/gpx-tracks",
+      "followUp": "Resolve all five download targets and verify edition/year before importing; parse and compare distances/elevation."
+    },
+    {
+      "order": 14,
+      "name": "Paris Marathon",
+      "gpxStatus": "Official route/profile page was previously located, but no official downloadable GPX has been verified. Treat the event's route map/profile as reference only; no unofficial GPX should be labelled official.",
+      "source": "https://www.schneiderelectricparismarathon.com/en/information/route-and-profiles",
+      "followUp": "Recheck the next edition's official course page for an organizer GPX download."
+    },
+    {
+      "order": 15,
+      "name": "Grand Raid Ventoux",
+      "gpxStatus": "Official UTMB race pages expose interactive Map + GPX sections for UGP 125K, GEV 87K and MMT 51K; direct downloadable file URLs have not been extracted or validated.",
+      "sources": [
+        "https://ventoux.utmb.world/races/grv100m",
+        "https://ventoux.utmb.world/races/grv100k",
+        "https://ventoux.utmb.world/races/GRV50K"
+      ],
+      "followUp": "Resolve the GPX export separately for each race and confirm the edition."
+    },
+    {
+      "order": 16,
+      "name": "Ultratrail Fränkische Schweiz",
+      "year": 2027,
+      "gpxStatus": "Official 2027 event is confirmed for 23–24 April. Organizer page now shows the 2027 format: 100 km / 3,930 hm new Ultratrail, plus 66 km Longtrail, 33 km Speedtrail and 15 km Shorttrail. The official Longtrail course page exposes a GPX export and reports 66.9 km / 2,750 hm. A 2027 GPX for the new 100K and remaining distances was not verified in this pass.",
+      "sources": [
+        "https://www.ultratrail-fraenkische-schweiz.de/",
+        "https://www.ultratrail-fraenkische-schweiz.de/en/trailrunning-strecke/ultratrail/"
+      ],
+      "followUp": "Export and parse the official Longtrail GPX; locate GPX exports for 100K, 33K and 15K and check route-year version."
+    },
+    {
+      "order": 17,
+      "name": "Hamburg Marathon",
+      "gpxStatus": "Previously found official HMH26 files are 2026 edition and remain stale for 2027. No HMH27 GPX verified in this pass.",
+      "source": "https://haspa-marathon-hamburg.de/strecke/",
+      "followUp": "Wait for HMH27 course file and retain HMH26 as historical."
+    },
+    {
+      "order": 18,
+      "name": "TCS London Marathon - Major",
+      "gpxStatus": "Official course page provides course map/description; no official GPX download was verified in this pass.",
+      "source": "https://www.londonmarathonevents.co.uk/london-marathon/course",
+      "followUp": "Use the official course map unless the organizer publishes a GPX."
+    }
+  ],
+  "summary": {
+    "eventsRechecked": 10,
+    "importantUpdates": [
+      "Vienna City Marathon 2027 page now explicitly offers a GPX download; previous stale-file-only assessment is superseded, pending inspection of the actual link.",
+      "Tenerife's official 2027 page confirms revised distances and the GPX downloads page offers the five main races; file targets need edition checks.",
+      "Istria100 official GPX page lists five distances, not just the two direct 2027 links previously recorded.",
+      "Ultratrail Fränkische Schweiz 2027 introduces a 100K / 3,930 hm race; the official 66.9 km Longtrail page offers GPX export."
+    ],
+    "gpxSafety": "No GPX binary was downloaded and parsed in this pass. Links and page-level availability are not equivalent to validated tracks. Old files remain retained as historical; no existing GPX files are deleted or replaced.",
+    "next": "Continue second-pass review with events 1-8."
+  }
+}
