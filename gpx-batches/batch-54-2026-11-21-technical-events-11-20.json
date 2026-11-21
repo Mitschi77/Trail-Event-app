@@ -333,7 +333,9 @@
     "parsedTracks": 0,
     "metricsCompared": 0,
     "attemptsBreakdown": "3 Ötzi files + 5 Istria files",
-    "important": "No binary GPX data was successfully obtained in this inspection environment. Unsupported content-type and inaccessible endpoints are tooling limitations, not proof of broken organizer links."
+    "important": "No binary GPX data was successfully obtained in this inspection environment. Unsupported content-type and inaccessible endpoints are tooling limitations, not proof of broken organizer links.",
+    "currentEventDatesEntriesCovered": 10,
+    "currentEventDatesEntriesNotCovered": 0
   },
   "followUps": [
     "Ötzi: run the three year-specific GPX downloads in an actual browser/CI fetcher; exclude 2025 Just-for-Fun file.",
@@ -347,5 +349,22 @@
     "Innsbruck Alpine: wait for IATF27 GPX downloads and validate all six routes."
   ],
   "noChangesToGpxFiles": true,
-  "noAppRuntimeDataChanged": true
+  "noAppRuntimeDataChanged": true,
+  "currentEventDatesCrossCheck": {
+    "currentCatalogRange": "event-dates.json insertion positions 11–20 (1-based)",
+    "overlappingEventNames": [
+      "Ötzi Trailrun Naturns",
+      "Vienna City Marathon",
+      "Istria 100 by UTMB",
+      "Schneider Electric Paris Marathon",
+      "Grand Raid Ventoux by UTMB",
+      "SALOMON Ultratrail Fränkische Schweiz",
+      "Haspa Marathon Hamburg",
+      "TCS London Marathon",
+      "Oh Meu Deus by UTMB",
+      "adidas Innsbruck Alpine Trailrun Festival"
+    ],
+    "allTenCurrentEntriesCovered": true,
+    "note": "All ten records in this package map to current event-dates.json positions 11–20 in order; no legacy-only or uncovered current entry identified."
+  }
 }
