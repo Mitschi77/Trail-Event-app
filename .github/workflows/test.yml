@@ -29,6 +29,42 @@ jobs:
       - name: Run app syntax and regression tests
         run: npm run test:syntax
       - name: Check Python workflow scripts
-        run: python3 -m py_compile scripts/update_event_dates.py scripts/validate_event_data.py scripts/submit_event_date_proposals.py
+        run: python3 -m py_compile scripts/update_event_dates.py scripts/validate_event_data.py scripts/submit_event_date_proposals.py scripts/submit_event_data_proposals.py scripts/test_submit_event_data_proposals.py
+      - name: Run Python regression tests
+        run: python3 -m unittest discover -s scripts -p 'test_*.py'
       - name: Validate event and route data, including date-feed route IDs
         run: python3 scripts/validate_event_data.py
+
+  proposal-ingestion-db-test:
+    name: Proposal ingestion PostgreSQL concurrency test
+    runs-on: ubuntu-latest
+    services:
+      postgres:
+        image: postgres:17
+        env:
+          POSTGRES_PASSWORD: postgres
+          POSTGRES_DB: trailtest
+        ports:
+          - 5432:5432
+        options: >-
+          --health-cmd "pg_isready -U postgres -d trailtest"
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install PostgreSQL client
+        run: sudo apt-get update && sudo apt-get install -y postgresql-client
+      - name: Test atomic proposal ingestion under concurrent requests
+        run: python3 scripts/run_proposal_ingestion_db_test.py
+        env:
+          PGHOST: localhost
+          PGPORT: 5432
+          PGUSER: postgres
+          PGPASSWORD: postgres
+          PGDATABASE: trailtest
