@@ -1,0 +1,204 @@
+{
+  "batch": 74,
+  "checkedAt": "2026-11-21",
+  "scope": "events 199-208 from event-dates.json",
+  "rules": [
+    "Official organizer sources take precedence; secondary calendar entries remain provisional.",
+    "Do not promote 2026 route details or GPX files to 2027 without explicit organizer confirmation.",
+    "Third-party GPX previews are not official binary downloads or validated tracks.",
+    "Do not delete or overwrite old GPX files until a new official binary is downloaded, fully parsed and validated.",
+    "Audit-only: no live event records or app runtime changed."
+  ],
+  "events": [
+    {
+      "sequence": 199,
+      "eventId": "padova-half-marathon",
+      "name": "Padova Half Marathon",
+      "edition": 2027,
+      "date": "2027-04-18",
+      "distanceKm": 21.097,
+      "startTime": "09:45",
+      "start": "Abano Terme (PD), Italy",
+      "finish": "Prato della Valle, Padova, Italy",
+      "status": "official-organizer-page-confirms",
+      "gpxStatus": "no-2027-gpx-binary-validated",
+      "detail": "Organizer's official page confirms 18 April 2027, 21.097km, 09:45 start at Abano Terme and finish at Prato della Valle. Route narrative runs via Montegrotto and Padua centre; no GPX binary or numeric ascent validated.",
+      "sources": [
+        "https://padovamarathon.com/en/halfmarathon/"
+      ]
+    },
+    {
+      "sequence": 200,
+      "eventId": "rimini-marathon",
+      "name": "Rimini Marathon",
+      "edition": 2027,
+      "date": "2027-04-18",
+      "distanceKm": 42.195,
+      "startTime": "09:00",
+      "startFinish": "Rotonda Lucio Battisti, Marina Centro, Rimini, Italy",
+      "status": "official-2027-regulation-confirmed",
+      "gpxStatus": "official-course-page-exists; no-binary-gpx-validated",
+      "detail": "Official 2027 regulation confirms 12th edition, 42.195km, 18 April, 09:00 start, measured and FIDAL-homologated course. Organizer describes route as mostly flat and fast, passing Rimini historic centre, Riccione and Misano Adriatico. No GPX binary parsed.",
+      "sources": [
+        "https://www.riminimarathon.it/regolamento-maratona/",
+        "https://www.riminimarathon.it/maratona/?lang=en",
+        "https://www.riminimarathon.it/domande-frequenti/"
+      ]
+    },
+    {
+      "sequence": 201,
+      "eventId": "rimini-half-marathon",
+      "name": "Rimini Half Marathon",
+      "edition": 2027,
+      "date": "2027-04-18",
+      "distanceKm": 21.097,
+      "startTime": "08:30",
+      "startFinish": "Rotonda Lucio Battisti, Marina Centro, Rimini, Italy",
+      "status": "official-organizer-page-confirms",
+      "gpxStatus": "course-map-page-published; no-binary-gpx-validated",
+      "detail": "Organizer FAQ confirms half marathon 18 April 2027 at 08:30. Official course page displays course map for 18 April 2027 and describes a flat course. No GPX binary downloaded or parsed.",
+      "sources": [
+        "https://www.riminimarathon.it/percorso-mezza-maratona-di-rimini/?lang=en",
+        "https://www.riminimarathon.it/domande-frequenti/"
+      ]
+    },
+    {
+      "sequence": 202,
+      "eventId": "trieste-42k",
+      "name": "Trieste Spring Run 42K",
+      "edition": 2027,
+      "date": "2027-05-02",
+      "distanceKm": 42.195,
+      "location": "Trieste, Friuli-Venezia Giulia, Italy",
+      "status": "official-organizer-save-the-date; detailed-2027-rules-pending",
+      "gpxStatus": "no-2027-gpx-confirmed",
+      "detail": "Organizer homepage announces return of the marathon in Trieste on Sunday 2 May 2027. The page has event details and route references from 2026; no 2027 route geometry, GPX or numeric ascent confirmed.",
+      "sources": [
+        "https://triestespringrun.com/"
+      ]
+    },
+    {
+      "sequence": 203,
+      "eventId": "trieste-21k",
+      "name": "Trieste Spring Run 21K",
+      "edition": 2027,
+      "date": "2027-05-02 provisional",
+      "distanceKm": 21.0975,
+      "location": "Trieste, Friuli-Venezia Giulia, Italy",
+      "status": "not-yet-confirmed-for-2027; organizer-page-only-confirms-42k-return",
+      "gpxStatus": "no-2027-gpx-confirmed",
+      "detail": "The organizer homepage's 21K description appears in the 2026 event context, while its 2027 save-the-date announcement explicitly highlights the return of the 42K. A separate 2027 half-marathon race is not confirmed in the checked organizer material. Keep this database event unconfirmed pending explicit 2027 announcement.",
+      "sources": [
+        "https://triestespringrun.com/",
+        "https://www.maratoniamo.it/gara/trieste-21k-trieste-mezza"
+      ]
+    },
+    {
+      "sequence": 204,
+      "eventId": "lucca-half-marathon",
+      "name": "Lucca Half Marathon",
+      "edition": 2027,
+      "date": "2027-05-02",
+      "distanceKm": 21.0975,
+      "location": "Lucca, Toscana, Italy",
+      "status": "provisional-calendar-only; organizer-rules-pending",
+      "gpxStatus": "no-2027-gpx-confirmed",
+      "detail": "2027 calendar entry lists 2 May and 21.0975km; organizer regulation, start time, route and GPX are not yet available in checked sources.",
+      "sources": [
+        "https://www.maratoniamo.it/gara/lucca-half-marathon-lucca-mezza"
+      ]
+    },
+    {
+      "sequence": 205,
+      "eventId": "collemar-athon",
+      "name": "ColleMar-athon",
+      "edition": 2027,
+      "date": "2027-05-09",
+      "distanceKm": 42.195,
+      "location": "Terre Roveresche to Fano, Marche, Italy",
+      "status": "provisional-calendar-2027-entry; official-site-still-shows-2026-details",
+      "gpxStatus": "third-party-gpx-preview-found; not-organizer-confirmed-or-binary-validated",
+      "detail": "2027 calendar lists 9 May 2027; however official organizer programme currently shows 3 May 2026 and route details for Barchi–Mondavio–Orciano–San Giorgio–Piagge–Cerasa–San Costanzo–Fano, start 09:00 and finish Arco d'Augusto. Do not assign 2026 route to 2027. Third-party GPX preview exists but cannot establish official edition validity.",
+      "sources": [
+        "https://www.collemar-athon.com/partecipa/programma/",
+        "https://www.maratoniamo.it/gara/collemar-athon-terre-roveresche-maratona",
+        "https://dojemo.com/en/gara/collemar-athon-terre-roveresche-2027",
+        "https://www.finishers.com/course/collemar-athon"
+      ]
+    },
+    {
+      "sequence": 206,
+      "eventId": "half-collemar-athon",
+      "name": "Half ColleMar-athon",
+      "edition": 2027,
+      "date": "2027-05-09",
+      "distanceKm": 21.0975,
+      "location": "Terre Roveresche, Marche, Italy",
+      "status": "provisional-calendar-2027-entry; official-2027-rules-not-found",
+      "gpxStatus": "third-party-track-preview-only; no-official-binary-validated",
+      "detail": "2027 calendar listing gives 9 May and 21.0975km; rules and start time still undefined. Official organizer programme currently contains 2026 schedule, not 2027. Do not use historic route as current.",
+      "sources": [
+        "https://www.maratoniamo.it/gara/half-collemar-athon-terre-roveresche-mezza-2027",
+        "https://www.collemar-athon.com/partecipa/programma/",
+        "https://www.finishers.com/course/collemar-athon"
+      ]
+    },
+    {
+      "sequence": 207,
+      "eventId": "placentia-half-marathon",
+      "name": "Placentia Half Marathon",
+      "edition": 2027,
+      "date": "2027-05-09",
+      "distanceKm": 21.097,
+      "startTime": "09:30",
+      "start": "Via Cavour, Piacenza, Italy",
+      "finish": "Piazza Cavalli, Piacenza, Italy",
+      "status": "official-2027-regulation-confirmed",
+      "gpxStatus": "no-official-2027-gpx-binary-validated",
+      "detail": "Official 30th edition regulation confirms 9 May 2027, 21.097km, start 09:30 from Via Cavour and finish in Piazza Cavalli. Some secondary event summary text says Piazza Cittadella, conflicting with official regulation; use official regulation. No GPX validated.",
+      "sources": [
+        "https://www.placentiahalfmarathon.it/30phm/regolamento/",
+        "https://www.maratoniamo.it/gara/placentia-half-marathon-piacenza-mezza"
+      ]
+    },
+    {
+      "sequence": 208,
+      "eventId": "bibione-half-marathon",
+      "name": "Bibione Half Marathon",
+      "edition": 2027,
+      "date": "2027-05-09",
+      "distanceKm": 21.0975,
+      "startTime": "09:00",
+      "location": "Bibione, Veneto, Italy",
+      "status": "official-organizer-page-confirms",
+      "gpxStatus": "route-description-published; no-binary-gpx-validated",
+      "detail": "Official organizer page confirms 11th edition on 9 May 2027, 21.0975km, 09:00 start and FIDAL-certified course on paved roads and traffic-closed unpaved sections. No binary GPX or numeric elevation profile validated.",
+      "sources": [
+        "https://bibionehalfmarathon.it/en/",
+        "https://bibionehalfmarathon.it/en/half-marathon/"
+      ]
+    }
+  ],
+  "summary": {
+    "eventsReviewed": 10,
+    "official2027OrganizerOrRegulationConfirmed": 5,
+    "provisionalOrUnconfirmed": 5,
+    "official2027GpxBinaryValidated": 0,
+    "courseMapOrTrackControlsFound": 3,
+    "binaryFilesDownloaded": 0,
+    "tracksParsed": 0,
+    "binaryMetricsCompared": 0,
+    "oldGpxFilesDeleted": 0,
+    "oldGpxFilesOverwritten": 0,
+    "appRuntimeFilesChanged": 0,
+    "appEventRecordsChanged": 0,
+    "auditOnly": true
+  },
+  "followUps": [
+    "Padova Half, Rimini Marathon/Half, Placentia and Bibione: obtain official 2027 GPX binaries and validate full track geometry and ascent/descent.",
+    "Trieste: confirm whether 21K will also be staged in 2027; organizer currently confirms 42K return only.",
+    "Lucca: await organizer regulation and route; calendar-only listing remains provisional.",
+    "ColleMar-athon and Half: wait for organizer 2027 programme/regulations; current official site still exposes 2026 details and third-party GPX is not accepted as official.",
+    "No GPX replacements until new official files are retrieved and parsed."
+  ]
+}
