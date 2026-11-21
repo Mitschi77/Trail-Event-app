@@ -108,6 +108,10 @@ async function harness(entry, gpxUrl = "https://example.org/course.gpx", withSto
   assert.equal(pending.window.routeGpxIsOrganizerRestricted(pending.legacyRoute), false, "unlisted routes must retain legacy GPX behavior");
   assert.equal(pending.window.renderGpxMap(pending.legacyRoute), "MAP_RENDERED", "unlisted routes must retain their existing GPX map behavior");
   assert.equal(pending.mapCalls(), 1, "unlisted route map rendering must remain available");
+  assert.equal(pending.window.routeHasDownloadableGpx(pending.legacyRoute), true, "unlisted route download links must retain legacy behavior");
+  await pending.window.fetch("https://example.org/legacy.gpx");
+  assert.equal(pending.calls(), 3, "unlisted route GPX fetch must retain legacy network behavior");
+  assert.equal(pending.window.isGpxImportableUrl("https://example.org/legacy.gpx", "verified"), true, "unlisted route GPX importability must retain legacy behavior");
 
   const fullPermissions = Object.fromEntries(policy.PROCESS_ACTIONS.map(key => [key, true]));
   const approvedEntry = policy.defaultEntry({
