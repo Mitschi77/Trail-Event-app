@@ -66,7 +66,7 @@ async function harness(entry, gpxUrl = "https://example.org/course.gpx", withSto
   const context = {
     window,
     document,
-    EVENTS: [{ id: "test-event", routes: [route] }],
+    EVENTS: [{ id: "test-event", routes: [route, { id: "legacy-route", route: "Unlisted legacy route", gpxDownloadUrl: "https://example.org/legacy.gpx" }] }],
     eventDataEdits,
     routeKey: () => "test-event::test-route",
     queuePlannerCloudSave: () => { cloudSaves += 1; },
@@ -77,7 +77,7 @@ async function harness(entry, gpxUrl = "https://example.org/course.gpx", withSto
   vm.runInNewContext(gateSource, context);
   await new Promise(resolve => setImmediate(resolve));
   return {
-    window, route, eventDataEdits,
+    window, route, legacyRoute: context.EVENTS[0].routes[1], eventDataEdits,
     calls: () => originalFetchCalls,
     mapCalls: () => mapCalls,
     persistCalls: () => persistCalls,
