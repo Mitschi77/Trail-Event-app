@@ -95,7 +95,8 @@
         "binaryDownloaded": false,
         "extracted": false,
         "parsed": false,
-        "metricsCompared": false
+        "metricsCompared": false,
+        "downloadAttempt": "Official GPX ZIP link confirmed on organizer page; web fetch rejected application/zip content, so no local binary obtained."
       },
       "detail": "Municipality confirms a new 2027 course through the historic centre, Renaissance walls and Parco Urbano. 42K and 21K awaiting FIDAL homologation. No ascent metric published; do not derive cumulative D+ from city terrain.",
       "sources": [
@@ -193,7 +194,7 @@
   ],
   "summary": {
     "eventsReviewed": 10,
-    "official2027GpxLinksFound": 2,
+    "official2027GpxLinksFound": 3,
     "official2027GpxBinaryValidated": 0,
     "official2027OrganizerRoutePagesFound": 5,
     "secondaryCalendarOnly": 4,
