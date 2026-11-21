@@ -294,7 +294,10 @@
       "Eiger 2027 official pages now display GPX downloads, replacing earlier 2026-stale status; actual file version still to validate."
     ],
     "noGpxFilesChanged": true,
-    "noAppRuntimeDataChanged": true
+    "noAppRuntimeDataChanged": true,
+    "currentEventDatesEntriesCoveredDirectly": 8,
+    "currentEventDatesEntriesCoveredByBatch60": 2,
+    "legacyEntriesNotInCurrentEventDates": 2
   },
   "followUps": [
     "Obertauern: refresh app route names/distances/elevation to current official eight competitions; download all seven direct GPX URLs and obtain map-only Extreme100/Panorama exports; verify Family Trail two tracks.",
@@ -309,5 +312,27 @@
     "Bucovina: verify 2027 file versions for five direct-link races; recheck Rumble Rock and RUNC Challenge."
   ],
   "noGpxFilesChanged": true,
-  "noAppRuntimeDataChanged": true
+  "noAppRuntimeDataChanged": true,
+  "currentEventDatesCrossCheck": {
+    "currentCatalogRange": "event-dates.json insertion positions 61–70 (1-based)",
+    "overlappingIds": [
+      "trai-verbier-st-bernhard",
+      "piut",
+      "der-gletscher-trailrun",
+      "engadin-ut",
+      "maintal-ultratrail",
+      "dolomyths-run",
+      "eiger-ultratrail",
+      "bucovina-ultra-rocks"
+    ],
+    "currentEntriesCoveredByAuditBatch60": [
+      "3kings-3hills",
+      "davos-x-trail"
+    ],
+    "legacyEntriesNotInCurrentCatalog": [
+      "Obertauern Trailrun Summit",
+      "Restonica Trail by UTMB"
+    ],
+    "note": "This batch follows the historic top-level EVENTS order. Eight current catalog entries overlap directly; 3Kings 3Hills and Davos X-Trails are covered by audit batch 60. Obertauern and Restonica are legacy entries not in the current event-dates range."
+  }
 }
