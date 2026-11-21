@@ -50,6 +50,19 @@ for (const required of ["parseGpx", "persistGpxData", "connectPlannerCloud"]) {
   if (!html.includes(required)) throw new Error("Required app feature is missing: " + required);
 }
 
+if (!html.includes("const PRE_RESTORE_DB_NAME='trail-event-local-backups-v1'") || !html.includes("async function savePreRestoreBackup(backup)") || !html.includes("await savePreRestoreBackup(previous)")) {
+  throw new Error("Cloud restore must save the pre-restore snapshot in IndexedDB before replacing local data.");
+}
+if (!html.includes("async function readPreRestoreBackup()") || !html.includes("backup=await readPreRestoreBackup()")) {
+  throw new Error("The pre-restore backup export must read the IndexedDB snapshot, with legacy fallback.");
+}
+const restoreStart = html.indexOf("async function useCloudDataLocally()");
+const restoreEnd = html.indexOf("function setCloudProfileIndicator", restoreStart);
+const restoreCode = restoreStart >= 0 && restoreEnd > restoreStart ? html.slice(restoreStart, restoreEnd) : "";
+if (!restoreCode.includes("await savePreRestoreBackup(previous)") || restoreCode.includes('localStorage.setItem("trailEventPreRestoreBackup"')) {
+  throw new Error("Cloud restore must not consume localStorage quota with a second full-size backup.");
+}
+
 if (!html.includes("async function ensureSupabaseLibrary()")) {
   throw new Error("Cloud login must provide a Supabase CDN fallback loader.");
 }
