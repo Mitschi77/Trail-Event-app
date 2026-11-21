@@ -104,7 +104,7 @@
       "name": "NLB Ljubljana Marathon",
       "date": "2027-10-16/17",
       "location": "Ljubljana, Slovenia",
-      "status": "organizer-confirmed",
+      "status": "organizer-confirmed; duplicate-of-event-320-nlb-ljubljana-marathon-2027",
       "routes": [
         {
           "name": "Marathon",
@@ -125,13 +125,14 @@
           "distanceKm": 10
         }
       ],
-      "detail": "Organizer confirms event weekend 16–17 October 2027 and the three race distances. Marathon course page gives 159m ascent and GPX download control; half marathon page gives 71m and GPX download control. These are organizer-published course figures, but the downloadable files were not fetched and parsed here; also confirm race-day assignment for each distance against final 2027 schedule.",
+      "detail": "Organizer confirms event weekend 16–17 October 2027 and the three race distances. Marathon course page gives 159m ascent and GPX download control; half marathon page gives 71m and GPX download control. These are organizer-published course figures, but the downloadable files were not fetched and parsed here; also confirm race-day assignment for each distance against final 2027 schedule. This is the same 2027 event as sequence 320 (NLB Ljubljana Marathon, 16–17 October 2027). Treat these as duplicate records; do not create duplicate event cards or double-count routes. Keep the event-ID alias/deduplication for a separate data-cleanup PR.",
       "gpxStatus": "official GPX download controls and published ascent values; no binary downloaded or parsed",
       "sources": [
         "https://ljubljanskimaraton.si/en/",
         "https://ljubljanamarathon.si/en/marathon",
         "https://ljubljanamarathon.si/en/zavarovalnica-vita-halfmarathon?url=en%2Fhalf-marathon"
-      ]
+      ],
+      "duplicateOfEventId": "nlb-ljubljana-marathon-2027"
     },
     {
       "sequence": 293,
@@ -347,7 +348,8 @@
     "oldGpxFilesOverwritten": 0,
     "appRuntimeFilesChanged": 0,
     "appEventRecordsChanged": 0,
-    "auditOnly": true
+    "auditOnly": true,
+    "duplicateEventRecords": 1
   },
   "followUps": [
     "Venloop: 2027 map/GPX release pending; current page explicitly uses 2026 maps until 2027 routes are known.",
@@ -359,6 +361,7 @@
     "Slavonska: request official rules, course map and GPX for 5K/10K/half and relays.",
     "Zagreb21: obtain separate 5K and half-marathon GPX binaries; course map is not binary validation.",
     "Osijek: obtain official course rules and GPX; verify exact distance and event weekend schedule.",
-    "Vis: confirm 2027 organizer rule and GPX; listing's +160m/-160m not independently validated."
+    "Vis: confirm 2027 organizer rule and GPX; listing's +160m/-160m not independently validated.",
+    "NLB Ljubljana Marathon: reconcile event IDs nlb-ljubljana-marathon (sequence 292) and nlb-ljubljana-marathon-2027 (sequence 320) in a separate data-cleanup PR; do not change live records in this audit."
   ]
 }
