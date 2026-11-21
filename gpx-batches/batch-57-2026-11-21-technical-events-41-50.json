@@ -1,0 +1,376 @@
+{
+  "batch": 57,
+  "checkedAt": "2026-11-21",
+  "scope": "Technical GPX availability and official route-version review for top-level events 41–50",
+  "safetyRules": [
+    "Existing GPX files remain valid until a replacement is officially downloaded, parsed and validated.",
+    "No GPX files were deleted, overwritten or replaced in this package.",
+    "An XML preview in a web viewer is not the same as downloading and validating the GPX with a route parser.",
+    "Do not promote historic or unconfirmed courses to the 2027 edition."
+  ],
+  "checks": [
+    {
+      "eventOrder": 41,
+      "event": "Jenaer Backyard Ultra",
+      "officialSource": "https://jenaerbackyardultra.de/",
+      "date": "2027-06-05",
+      "loop": {
+        "distanceKm": 6.7,
+        "elevationGainHmApprox": 150
+      },
+      "gpxStatus": "no-public-GPX-published",
+      "binaryDownloaded": false,
+      "parsed": false,
+      "metricsCompared": false,
+      "detail": "Organizer confirms 6.7km loop and approximately 150m ascent for 5 June 2027. No public GPX download found."
+    },
+    {
+      "eventOrder": 42,
+      "event": "Dolomiti Extreme Trail",
+      "officialSources": [
+        "https://www.dolomitiextremetrail.com/en/race/dxt-55k",
+        "https://www.dolomitiextremetrail.com/en/race/dxt-72k",
+        "https://www.dolomitiextremetrail.com/en/rules"
+      ],
+      "routes": [
+        {
+          "name": "DXT 103K",
+          "distanceKm": 102,
+          "elevationGainHm": 6500,
+          "gpxUrl": "https://www.dolomitiextremetrail.com/assets/gpx/dolomiti-extreme-trail-2027-dxt-103k.gpx"
+        },
+        {
+          "name": "DXT 72K",
+          "distanceKm": 76,
+          "elevationGainHm": 4800,
+          "gpxUrl": "https://www.dolomitiextremetrail.com/assets/gpx/dolomiti-extreme-trail-2027-dxt-72k.gpx"
+        },
+        {
+          "name": "DXT 55K",
+          "distanceKm": 58,
+          "elevationGainHm": 3600,
+          "gpxUrl": "https://www.dolomitiextremetrail.com/assets/gpx/dolomiti-extreme-trail-2027-dxt-55k.gpx"
+        },
+        {
+          "name": "DXT 35K",
+          "distanceKm": 38,
+          "elevationGainHm": 2500
+        },
+        {
+          "name": "DXT 22K",
+          "distanceKm": 21,
+          "elevationGainHm": 1140
+        },
+        {
+          "name": "DXT 11K",
+          "distanceKm": 13,
+          "elevationGainHm": 670
+        },
+        {
+          "name": "Mini DXT",
+          "distanceKm": 2.5
+        }
+      ],
+      "gpxStatus": "three-official-2027-GPX-urls-confirmed; two-XML-files-readable-in-web-text-viewer; no-local-download-or-parser-validation",
+      "directUrlsAttempted": 3,
+      "xmlTextReadable": 2,
+      "binaryDownloaded": false,
+      "parsed": false,
+      "metricsCompared": false,
+      "detail": "Official rules confirm seven routes and 2027 distances/elevation. Direct 55K and 72K GPX URLs returned readable GPX 1.1 XML in the web viewer with track names DXT55K_2027 and 72k. The 103K URL was inaccessible. No actual file was saved locally and no parser-based distance/ascent calculation was performed. The three other GPX links (35K/22K/11K) are not in the prior app checkpoint; check whether organizer publishes them."
+    },
+    {
+      "eventOrder": 43,
+      "event": "Hochkönig Ultraks",
+      "officialSource": "https://www.hochkoenig-ultraks.at/",
+      "date": "2027-06-04/06",
+      "routes": [
+        {
+          "name": "HK70",
+          "distanceKm": 71.5,
+          "elevationGainHm": 4150
+        },
+        {
+          "name": "HK48",
+          "distanceKm": 48,
+          "elevationGainHm": 2940
+        },
+        {
+          "name": "HK30 Extreme",
+          "distanceKm": 34,
+          "elevationGainHm": 2680
+        },
+        {
+          "name": "HK30 Panorama",
+          "distanceKm": 30.7,
+          "elevationGainHm": 2050
+        },
+        {
+          "name": "HK20",
+          "distanceKm": 20.5,
+          "elevationGainHm": 1020
+        },
+        {
+          "name": "HK Sprint",
+          "distanceKm": 10,
+          "elevationGainHm": 310
+        },
+        {
+          "name": "Vertical Race",
+          "distanceKm": 5.9,
+          "elevationGainHm": 1080
+        },
+        {
+          "name": "Raiffeisen Team Trail",
+          "distanceKm": 3.6,
+          "elevationGainHm": 120
+        },
+        {
+          "name": "Mini Ultraks",
+          "distancesKm": [
+            0.5,
+            1,
+            1.5
+          ]
+        }
+      ],
+      "gpxStatus": "2027-routes-and-metrics-confirmed; no-direct-GPX-links-found-on-current-event-homepage",
+      "binaryDownloaded": false,
+      "parsed": false,
+      "metricsCompared": false,
+      "detail": "Official event homepage gives the 4–6 June 2027 dates and nine formats including three Mini Ultraks youth distances. GPX direct files not exposed on homepage; request organizer or inspect individual course subpages."
+    },
+    {
+      "eventOrder": 44,
+      "event": "mozart 100 by UTMB",
+      "officialSources": [
+        "https://mozart.utmb.world/de/races/mozart100",
+        "https://mozart.utmb.world/races"
+      ],
+      "date": "2027-06-05",
+      "routes": [
+        {
+          "name": "mozart 100",
+          "distanceKm": 119,
+          "elevationGainHm": 6000
+        },
+        {
+          "name": "mozart Ultra",
+          "distanceKm": 84,
+          "elevationGainHm": 4800
+        },
+        {
+          "name": "mozart Marathon",
+          "distanceKm": 44,
+          "elevationGainHm": 1600
+        },
+        {
+          "name": "mozart Half Marathon",
+          "distanceKm": 28,
+          "elevationGainHm": 1100
+        },
+        {
+          "name": "mozart Lake Trail",
+          "distanceKm": 12,
+          "elevationGainHm": 200
+        },
+        {
+          "name": "mozart Ultra Relay",
+          "distanceKm": 84,
+          "elevationGainHm": 4800
+        }
+      ],
+      "gpxStatus": "official-2027-pages-and-map-plus-GPX-interface; no-direct-GPX-file-extracted",
+      "binaryDownloaded": false,
+      "parsed": false,
+      "metricsCompared": false,
+      "detail": "Official current pages confirm five solo distances and an Ultra Relay. Previous checkpoint's 72km/3300m Ultra value came from an older/cached homepage; current event page and race list show 84km/4800m. App route records need reconciliation, especially 119km mozart 100, 28km Half and 12km Lake Trail."
+    },
+    {
+      "eventOrder": 45,
+      "event": "Ultra Scotland",
+      "officialSources": [
+        "https://www.gbultras.com/ultra-scotland-50/",
+        "https://www.gbultras.com/ultra-scotland-100/"
+      ],
+      "date": "2027-06-05",
+      "routes": [
+        {
+          "name": "Ultra Scotland 50",
+          "distanceMiles": 56,
+          "elevationGainHm": 2560
+        },
+        {
+          "name": "Ultra Scotland 100",
+          "distanceMiles": 100
+        }
+      ],
+      "gpxStatus": "official-Racemap-embedded-map-exposes-High-Level-GPX-race-route; 100-mile-page-needs-individual-confirmation",
+      "binaryDownloaded": false,
+      "parsed": false,
+      "metricsCompared": false,
+      "detail": "Official 50-mile page states 56 miles and 2,560m ascent; it explicitly instructs users to select High Level GPX (Race Route) in the embedded map to download. The 100-mile course includes High Level and Low Level severe-weather alternatives in the prior checkpoint; exact 2027 GPX version must be chosen deliberately."
+    },
+    {
+      "eventOrder": 46,
+      "event": "Falkensteinlauf",
+      "officialSource": "https://www.falkensteinlauf.de/",
+      "date": "2027-07-17",
+      "gpxStatus": "date-confirmed; no-GPX-or-official-elevation-published",
+      "binaryDownloaded": false,
+      "parsed": false,
+      "metricsCompared": false,
+      "detail": "Organizer confirms 17 July 2027 and says registration will reopen end of 2026. Course description presently gives only surface and one short climb, not full route length or elevation. 2026 event page content must not be treated as a 2027 GPX."
+    },
+    {
+      "eventOrder": 47,
+      "event": "Trail 100 Andorra by UTMB",
+      "officialSources": [
+        "https://andorra.utmb.world/races/ultra-105k",
+        "https://andorra.utmb.world/races/trail-80k",
+        "https://andorra.utmb.world/races/trail-50k",
+        "https://andorra.utmb.world/races/trail-21k",
+        "https://andorra.utmb.world/races/trail-10k"
+      ],
+      "date": "2027-06-10/13",
+      "routes": [
+        {
+          "name": "Ultra 105K",
+          "distanceKm": 105,
+          "elevationGainHm": 6800,
+          "date": "2027-06-12"
+        }
+      ],
+      "gpxStatus": "official-Map-plus-GPX-interface-on-105K; no-direct-file-url-retrieved; Trail-21K-route-detail-link-now-present",
+      "binaryDownloaded": false,
+      "parsed": false,
+      "metricsCompared": false,
+      "detail": "Current 105K official page confirms 105km/6800m+, 12 June 2027, and Map + GPX tab. A current Trail 21K link appears in the race navigation, resolving the old 404 issue; confirm exact URL and course metrics in next pass. Other race pages should be checked individually."
+    },
+    {
+      "eventOrder": 48,
+      "event": "Ötscher Trail",
+      "officialSources": [
+        "https://www.oetschertrail.run/",
+        "https://www.oetschertrail.run/marathon-trail-powered-by-st-bernhard",
+        "https://www.oetschertrail.run/vertical-race",
+        "https://www.oetschertrail.run/easy-trail",
+        "https://www.oetschertrail.run/speed-trail",
+        "https://www.oetschertrail.run/skyrace"
+      ],
+      "date": "2027-06-04/06",
+      "routes": [
+        {
+          "name": "Vertical Race",
+          "distanceKm": 5.1,
+          "elevationGainHm": 1140
+        },
+        {
+          "name": "Marathon Trail"
+        },
+        {
+          "name": "Easy Trail"
+        },
+        {
+          "name": "Speed Trail"
+        },
+        {
+          "name": "Skyrace"
+        }
+      ],
+      "gpxStatus": "five-distinct-organizer-GPX-links-confirmed-in-prior-check; all-five-direct-URL-open-attempts-in-this-pass-inaccessible-to-web-viewer",
+      "directUrlsAttempted": 5,
+      "binaryDownloaded": false,
+      "parsed": false,
+      "metricsCompared": false,
+      "detail": "Official homepage confirms 4–6 June 2027 and five races. All five route-specific GPX URLs were attempted in this pass; web viewer returned inaccessible for each. This is a viewer limitation, not evidence that organizer files are broken. No files downloaded or parsed."
+    },
+    {
+      "eventOrder": 49,
+      "event": "Ultra X 110 Slowenien",
+      "officialSource": "https://ultra-x.co/ultra-marathon-races/",
+      "gpxStatus": "2027-edition-unverified; prior-linked-event-page-returned-404; no-GPX-confirmed",
+      "binaryDownloaded": false,
+      "parsed": false,
+      "metricsCompared": false,
+      "detail": "Do not treat the Ultra X calendar listing alone as a confirmed 2027 Slovenian event until organizer-specific event page/date is available."
+    },
+    {
+      "eventOrder": 50,
+      "event": "Zugspitz Ultratrail by UTMB",
+      "officialSources": [
+        "https://zugspitz.utmb.world/de/races/mittenwald-trail",
+        "https://zugspitz.utmb.world/de/races/leutasch-trail",
+        "https://zugspitz.utmb.world/de/races/ehrwald-trail",
+        "https://zugspitz.utmb.world/de/races/ultratrail",
+        "https://zugspitz.utmb.world/de/races/zut100",
+        "https://zugspitz.utmb.world/de/races/garmisch-partenkirchen-trail",
+        "https://zugspitz.utmb.world/de/races/grainau-trail"
+      ],
+      "date": "2027-06-17/20",
+      "gpxStatus": "seven-official-race-pages-identified-in-prior-check; direct-GPX-download-not-retrieved-in-this-pass",
+      "binaryDownloaded": false,
+      "parsed": false,
+      "metricsCompared": false,
+      "detail": "Keep the seven individual race variants separate. Official event pages exist, but this pass did not retrieve any route binary. Need verify the Map + GPX panel and current course data for each route individually."
+    }
+  ],
+  "summary": {
+    "eventsCovered": 10,
+    "directGpxUrlsAttempted": 8,
+    "xmlFilesReadableInWebViewer": 2,
+    "localBinaryDownloads": 0,
+    "tracksParsed": 0,
+    "metricsCompared": 0,
+    "criticalFindings": [
+      "DXT offers seven 2027 routes, not only the three prior direct-download routes. DXT55K and 72K GPX XML visible; no local parser validation.",
+      "Hochkönig Ultraks has nine formats including 0.5/1/1.5km Mini Ultraks distances.",
+      "Current Mozart 2027 route pages show 119/84/44/28/12km; older cached value 72km/3300m for Mozart Ultra is superseded by current 84km/4800m.",
+      "Ultra Scotland 50 official page explicitly exposes High Level GPX race route through its embedded Racemap.",
+      "Andorra Trail 21K detail link is now present in the current race navigation; old 404 checkpoint should be refreshed."
+    ],
+    "noGpxFilesChanged": true,
+    "noAppRuntimeDataChanged": true,
+    "currentEventDatesEntriesCoveredDirectly": 8,
+    "currentEventDatesEntriesCoveredByBatch58": 1,
+    "currentEventDatesEntriesNotCoveredByThisBatch": 1,
+    "legacyEntriesNotInCurrentEventDates": 2
+  },
+  "followUps": [
+    "DXT: retrieve and parse the two readable XML files with a GPX parser; retry 103K; locate official 35K/22K/11K GPX links and validate all seven routes.",
+    "Hochkönig: inspect individual 2027 course detail pages for GPX downloads and verify all nine formats.",
+    "Mozart: reconcile app routes with current 119/84/44/28/12km list plus relay; recheck official GPX exports when final maps are published.",
+    "Ultra Scotland: export High Level GPX from the official Racemap for both 50 and 100 mile; retain severe-weather alternative as separate variant if organizer confirms.",
+    "Falkensteinlauf: request GPX and full distance/elevation from organizer after 2027 registration opens.",
+    "Andorra: inspect all five current route pages and extract GPX after map data is confirmed.",
+    "Ötscher: manually retrieve the five organizer GPX links in a download-capable runtime and parse them; do not interpret web-viewer inaccessibility as broken URLs.",
+    "Ultra X Slovenia: seek organizer confirmation before marking 2027 as current.",
+    "Zugspitz: inspect all seven route pages for 2027 Map + GPX and confirm the route files individually."
+  ],
+  "noGpxFilesChanged": true,
+  "noAppRuntimeDataChanged": true,
+  "currentEventDatesCrossCheck": {
+    "currentCatalogRange": "event-dates.json insertion positions 41–50 (1-based)",
+    "overlappingIds": [
+      "dolomiti-extreme-trail",
+      "mozart",
+      "ultra-scotland",
+      "falkensteinlauf",
+      "trail-100-andorra",
+      "otscher-trail",
+      "ultra-x-110-slowenien",
+      "zugspitz-ultratrail"
+    ],
+    "currentEntriesCoveredByAuditBatch58": [
+      "schluchthof"
+    ],
+    "currentEntriesNotCoveredByThisBatch": [
+      "hochkonigman"
+    ],
+    "legacyEntriesNotInCurrentCatalog": [
+      "Jenaer Backyard Ultra",
+      "Hochkönig Ultraks"
+    ],
+    "note": "This batch follows the historic top-level EVENTS order. Eight current catalog entries overlap directly; Schluchthof is covered by audit batch 58. The current Hochkönigman entry is distinct from the legacy Hochkönig Ultraks entry and still needs its own audit."
+  }
+}
