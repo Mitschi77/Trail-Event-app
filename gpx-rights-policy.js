@@ -62,7 +62,7 @@
   }
   function isDirectFileUrl(url){
     const value = String(url || "");
-    return /\.gpx(?:$|[?#])/i.test(value) || /drive\.google\.com\/file\/d\//i.test(value);
+    return /\.gpx(?:$|[?#])/i.test(value) || /drive\.google\.com\/(?:file\/d\/|uc\?export=download)/i.test(value);
   }
   function shouldBlockFetch(url, entry, knownRouteGpx){
     if (!isDirectFileUrl(url) && !knownRouteGpx) return false;
