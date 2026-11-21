@@ -1,0 +1,275 @@
+{
+  "batch": 65,
+  "checkedAt": "2026-11-21",
+  "scope": "Technical GPX availability and edition-specific status for top-level events 121–128 in current EVENTS order; eight remaining entries complete the original 128-event list.",
+  "safety": [
+    "Existing GPX files remain valid as fallback until an official replacement is downloaded, parsed and validated.",
+    "Never delete, overwrite or replace historical GPX files during this audit.",
+    "A map panel, GPX button, direct link or third-party listing does not equal binary validation.",
+    "Do not mark any file validated unless its bytes have been obtained and its track parsed."
+  ],
+  "events": [
+    {
+      "order": 121,
+      "name": "Desert RATS Trail Running Festival by UTMB",
+      "date": "2027-04-08/11; races 2027-04-10/11",
+      "officialSource": "https://desertrats.utmb.world/races",
+      "routes": [
+        {"name": "100K", "distanceKm": 100, "elevationGainHm": 2050, "date": "2027-04-10"},
+        {"name": "50K", "distanceKm": 48, "elevationGainHm": 1050, "date": "2027-04-10"},
+        {"name": "21K", "distanceKm": 21, "elevationGainHm": 700, "date": "2027-04-11"},
+        {"name": "10K", "distanceKm": 9, "elevationGainHm": 200, "date": "2027-04-11"}
+      ],
+      "gpxStatus": "official-2027-race-pages-confirmed; checked-100K-GPX-link-resolves-to-2025-file; not-valid-for-2027",
+      "technicalAttempt": {
+        "officialRacePageChecked": true,
+        "directGpxLinkChecked": true,
+        "resolvedFileEdition": 2025,
+        "binaryDownloaded": false,
+        "parsed": false,
+        "metricsCompared": false,
+        "result": "The 2027 100K race page exposes a GPX download link, but the linked asset URL identifies a 2025 course file. Reject it as a 2027 replacement. Other route files were not individually binary-checked."
+      },
+      "sources": ["https://desertrats.utmb.world/", "https://desertrats.utmb.world/races/100K", "https://desertrats.utmb.world/races/50K"],
+      "rightsNote": "Do not import the 2025 file as a current course."
+    },
+    {
+      "order": 122,
+      "name": "Hiroshima Ultra-Trail by UTMB",
+      "date": "2027-04-09/11; races 2027-04-10/11",
+      "officialSource": "https://hiroshima.utmb.world/overview",
+      "routes": [
+        {"name": "HIROSHIMA 100K", "distanceKm": 95, "elevationGainHm": 5600, "date": "2027-04-10"},
+        {"name": "HIROSHIMA 50K", "distanceKm": 49, "elevationGainHm": 2800, "date": "2027-04-10"},
+        {"name": "HIROSHIMA 25K", "distanceKm": 25, "elevationGainHm": 880, "date": "2027-04-11"}
+      ],
+      "gpxStatus": "2027-race-pages-confirmed; no-public-GPX-download-link-found-on-checked-pages",
+      "technicalAttempt": {
+        "officialOverviewChecked": true,
+        "officialRacePagesChecked": true,
+        "eventScheduleChecked": true,
+        "directGpxEndpointFound": false,
+        "binaryDownloaded": false,
+        "parsed": false,
+        "metricsCompared": false,
+        "result": "No public GPX download link was found on the checked official race pages or event schedule."
+      },
+      "detail": "Updated official 2027 race pages display 95km/5600hm for 100K and 49km/2800hm for 50K. The 25K page displays 25km/880hm. These replace the older provisional measurements 94.6/5587 and 48.7/2755 in this audit checkpoint.",
+      "sources": ["https://hiroshima.utmb.world/overview", "https://hiroshima.utmb.world/races/HIROSHIMA100K", "https://hiroshima.utmb.world/races/HIROSHIMA50K", "https://hiroshima.utmb.world/races/HIROSHIMA25K", "https://hiroshima.utmb.world/runners/event-schedule"],
+      "rightsNote": "No GPX file was available to import."
+    },
+    {
+      "order": 123,
+      "name": "The Canyons Endurance Runs by UTMB",
+      "date": "2027-04-22/25; races 2027-04-23/24",
+      "officialSource": "https://canyons.utmb.world/races",
+      "routes": [
+        {"name": "100M", "distanceKm": 161, "elevationGainHm": 5550, "date": "2027-04-23"},
+        {"name": "100K", "distanceKm": 100, "elevationGainHm": 3750, "date": "2027-04-24"},
+        {"name": "50K", "distanceKm": 49.9, "elevationGainHm": 1700, "date": "2027-04-24"},
+        {"name": "25K", "distanceKm": 24.9, "elevationGainHm": 850, "date": "2027-04-23"}
+      ],
+      "gpxStatus": "2027-event-and-race-pages-confirmed; checked-GPX-assets-explicitly-labelled-2026; reject-as-2027",
+      "technicalAttempt": {
+        "officialRacePageChecked": true,
+        "directGpxLinkChecked": true,
+        "resolvedFileEdition": 2026,
+        "binaryDownloaded": false,
+        "parsed": false,
+        "metricsCompared": false,
+        "result": "The 100M GPX link resolves to a 2026 alternate GPX asset; the 100K page also labels its download as the 2026 GPX. Do not use either as a 2027 track."
+      },
+      "sources": ["https://canyons.utmb.world/runners/registration", "https://canyons.utmb.world/races/100M", "https://canyons.utmb.world/races/100K"],
+      "rightsNote": "Keep any 2026 assets historical; await explicitly versioned 2027 replacements."
+    },
+    {
+      "order": 124,
+      "name": "Rothrock by UTMB",
+      "date": "2027-05-14/16; races 2027-05-15/16",
+      "officialSource": "https://rothrock.utmb.world/register",
+      "routes": [
+        {"name": "50K", "distanceKm": 53.3, "elevationGainHm": 1550, "date": "2027-05-15"},
+        {"name": "25K", "distanceKm": 26.9, "elevationGainHm": 1188, "date": "2027-05-16"}
+      ],
+      "gpxStatus": "2027-race-pages-confirmed; both-checked-GPX-downloads-explicitly-labelled-2026; reject-as-2027",
+      "technicalAttempt": {
+        "officialRacePagesChecked": true,
+        "directGpxLinksChecked": true,
+        "resolvedFileEdition": 2026,
+        "binaryDownloaded": false,
+        "parsed": false,
+        "metricsCompared": false,
+        "result": "Both 50K and 25K pages explicitly warn that the downloadable GPX is the 2026 file and subject to change for 2027."
+      },
+      "detail": "Important correction: the official 2027 25K page reports 26.9km/1188hm, not an unverified nominal 25km. The 50K page reports 53.3km/1550hm.",
+      "sources": ["https://rothrock.utmb.world/register", "https://rothrock.utmb.world/races/50k", "https://rothrock.utmb.world/races/25K"],
+      "rightsNote": "Do not substitute either 2026 GPX for the 2027 route."
+    },
+    {
+      "order": 125,
+      "name": "Trail du Saint-Jacques by UTMB",
+      "date": "2027-06-18/20",
+      "officialSource": "https://saint-jacques.utmb.world/races",
+      "routes": [
+        {"name": "Ultra du Saint Jacques 100M", "distanceKm": 140, "elevationGainHm": 6000, "date": "2027-06-18"},
+        {"name": "Grand Trail du Saint Jacques 100K", "distanceKm": 88, "elevationGainHm": 3600, "date": "2027-06-19"},
+        {"name": "Monistrail 50K", "distanceKm": 55, "elevationGainHm": 2100, "date": "2027-06-20"},
+        {"name": "Les Chibottes 20K", "distanceKm": 28, "elevationGainHm": 750, "date": "2027-06-20"},
+        {"name": "Le 12 du Dolaizon", "distanceKm": 12, "elevationGainHm": 200, "date": "2027-06-19"},
+        {"name": "Rando 28km", "distanceKm": 28, "elevationGainHm": 750, "date": "2027-06-20"}
+      ],
+      "gpxStatus": "organizer-says-GPX-will-be-published-2027-06-11; not-yet-available-as-of-check",
+      "technicalAttempt": {
+        "officialRacePagesChecked": true,
+        "officialFaqChecked": true,
+        "directGpxEndpointFound": false,
+        "binaryDownloaded": false,
+        "parsed": false,
+        "metricsCompared": false,
+        "result": "Official FAQ explicitly says the GPX track will be available from Thursday 11 June 2027 on each race page. That publication date is still in the future."
+      },
+      "sources": ["https://saint-jacques.utmb.world/races", "https://saint-jacques.utmb.world/faq"],
+      "followUpDate": "2027-06-11",
+      "rightsNote": "Recheck on or after the organizer's stated release date."
+    },
+    {
+      "order": 126,
+      "name": "Torrencial Chile by UTMB",
+      "date": "2027-06-24/27",
+      "officialSource": "https://torrencial.utmb.world/races",
+      "routes": [
+        {"name": "PILOLCURA 100K", "distanceKm": 101, "elevationGainHm": 4100, "date": "2027-06-24"},
+        {"name": "ONCOL 65K", "distanceKm": 65, "elevationGainHm": 2600, "date": "2027-06-25"},
+        {"name": "LLANCAHUE 45K", "distanceKm": 45, "elevationGainHm": 1600, "date": "2027-06-27"},
+        {"name": "COLLICO 20K", "distanceKm": 20, "elevationGainHm": 800, "date": "2027-06-27"},
+        {"name": "CAU CAU 12K NOCTURNO", "distanceKm": 12, "elevationGainHm": 400, "date": "2027-06-26"},
+        {"name": "ISLA TEJA 6K", "distanceKm": 6.5, "elevationGainHm": 200, "date": "2027-06-26"}
+      ],
+      "gpxStatus": "2027-races-and-metrics-confirmed; no-public-GPX-download-panel-verified-on-checked-official-list",
+      "technicalAttempt": {
+        "officialRaceListChecked": true,
+        "officialEventOverviewChecked": true,
+        "directGpxEndpointFound": false,
+        "binaryDownloaded": false,
+        "parsed": false,
+        "metricsCompared": false,
+        "result": "Official pages list all six 2027 formats and measured values; no public GPX download panel was found on the checked event overview or race list."
+      },
+      "detail": "Isla Teja is officially 6.5km/200hm, not 6km. Preserve this measured value.",
+      "sources": ["https://torrencial.utmb.world/", "https://torrencial.utmb.world/races", "https://torrencial.utmb.world/es/runners/cronograma"],
+      "rightsNote": "No third-party route substituted."
+    },
+    {
+      "order": 127,
+      "name": "HOKA Val d'Aran by UTMB",
+      "date": "2027-07-07/11",
+      "officialSource": "https://valdaran.utmb.world/",
+      "tracksPage": "https://valdaran.utmb.world/race/tracks",
+      "routes": [
+        {"name": "VDA", "distanceKm": 163, "elevationGainHm": 10000},
+        {"name": "CDH", "distanceKm": 110, "elevationGainHm": 6400},
+        {"name": "TDL", "distanceKm": 75, "elevationGainHm": 5100},
+        {"name": "PDA", "distanceKm": 55, "elevationGainHm": 3300},
+        {"name": "EXP", "distanceKm": 32, "elevationGainHm": 2100},
+        {"name": "SKY", "distanceKm": 18, "elevationGainHm": 900},
+        {"name": "SKY Promesas", "distanceKm": 18, "elevationGainHm": 900},
+        {"name": "Vielha 10K", "distanceKm": 10, "elevationGainHm": 500}
+      ],
+      "gpxStatus": "official-track-index-lists-seven-downloads; three-links-have-2027-in-filename; CDH-link-is-2026; remaining-version-status-not-fully-checked",
+      "technicalAttempt": {
+        "officialTracksPageChecked": true,
+        "directGpxLinksResolved": 4,
+        "confirmed2027NamedLinks": ["VDA_2027_COLOMERS", "TDL_V1_2027", "PDA_2027_COLOMERS"],
+        "confirmedHistoricalLink": "CDH_2026_COLOMERS",
+        "binaryDownloaded": false,
+        "parsed": false,
+        "metricsCompared": false,
+        "result": "The official track index links VDA, CDH, TDL, PDA, EXP, SKY and Vielha 10K. VDA, TDL and PDA direct asset names include 2027; CDH resolves to a 2026-labelled asset. File bytes could not be retrieved by the available binary fetch path, so even the 2027-named files remain unvalidated. SKY Promesas is listed as a race but not as a separate entry on the track index."
+      },
+      "detail": "Do not equate a 2027 filename with a validated track. The organizer's index itself stores the files under a directory labelled 'GPX 2026 DEFINTIVOS EVENTO'; use the individual filenames and later parsed metadata/geometry to resolve edition. Keep SKY and SKY Promesas as distinct race records.",
+      "sources": ["https://valdaran.utmb.world/", "https://valdaran.utmb.world/races", "https://valdaran.utmb.world/race/tracks", "https://valdaran.utmb.world/races/vda", "https://valdaran.utmb.world/races/TDL", "https://valdaran.utmb.world/races/PDA"],
+      "rightsNote": "No file was stored, mirrored or displayed; the three 2027-named assets remain pending binary validation."
+    },
+    {
+      "order": 128,
+      "name": "Monte Rosa Walserwaeg by UTMB",
+      "date": "2027-07-15/18",
+      "officialSource": "https://mrww.utmb.world/races",
+      "routes": [
+        {"name": "Les sentiers des Valdôtains", "distanceKm": 120, "elevationGainHm": 8200, "date": "2027-07-16"},
+        {"name": "Monte Rosa Trail", "distanceKm": 82, "elevationGainHm": 6300, "date": "2027-07-16"},
+        {"name": "Walserwaeg Trail", "distanceKm": 43, "elevationGainHm": 3100, "date": "2027-07-17"},
+        {"name": "Gressoney Lys Trail", "distanceKm": 35, "elevationGainHm": 1700, "date": "2027-07-16"},
+        {"name": "Regina Margherita Trail", "distanceKm": 15, "elevationGainHm": 650, "date": "2027-07-18"},
+        {"name": "Junior Walser Trail", "distanceKm": 9, "elevationGainHm": 600, "date": "2027-07-18"},
+        {"name": "Becca Pink", "distanceKm": 4, "elevationGainHm": null, "date": "2027-07-16"}
+      ],
+      "gpxStatus": "2027-race-pages-and-map-gpx-panels-visible; checked-direct-GPX-assets-resolve-to-2026-for-SDV-and-WWT",
+      "technicalAttempt": {
+        "officialRacePagesChecked": true,
+        "directGpxLinksChecked": true,
+        "resolvedFileEdition": 2026,
+        "binaryDownloaded": false,
+        "parsed": false,
+        "metricsCompared": false,
+        "result": "The checked SDV and WWT direct links resolve to assets explicitly named 2026 (including 100m_2026). Do not use as 2027 tracks."
+      },
+      "detail": "Two official page-level discrepancies remain: SDV race header lists 120km/8200hm while its narrative says 120km/8300hm; WWT header/list gives 43km/3100hm while narrative says 43km/3200hm. Preserve both source values until organizer clarification or a validated current GPX resolves them.",
+      "sources": ["https://mrww.utmb.world/races", "https://mrww.utmb.world/races/sdv", "https://mrww.utmb.world/races/WWT"],
+      "rightsNote": "Retain 2026 files as historical only; no 2027 file has been validated."
+    }
+  ],
+  "summary": {
+    "eventsCovered": 8,
+    "originalTopLevelListComplete": true,
+    "official2027EventsConfirmed": 8,
+    "directGpxAssetsInspectedAtLinkLevel": 8,
+    "binaryFilesDownloaded": 0,
+    "tracksParsed": 0,
+    "metricsComparedFromBinary": 0,
+    "staleOrHistoricalAssetsIdentified": ["Desert RATS 100K: 2025", "Canyons 100M/100K: 2026", "Rothrock 50K/25K: 2026", "Val d'Aran CDH: 2026", "Monte Rosa SDV/WWT: 2026"],
+    "futurePublication": ["Trail du Saint-Jacques: 2027-06-11"],
+    "gpxFilesDeleted": 0,
+    "gpxFilesOverwritten": 0,
+    "appRuntimeFilesChanged": 0,
+    "appEventRecordsChanged": 0,
+    "criticalFindings": [
+      "Hiroshima current official 2027 metrics differ from the older provisional values; 95/5600, 49/2800 and 25/880 are now recorded in this audit.",
+      "Rothrock 25K official 2027 course is 26.9km/1188hm; the linked GPX is explicitly 2026.",
+      "Val d'Aran has three 2027-named GPX assets (VDA, TDL, PDA), but no binary could be obtained and parsed; CDH is explicitly 2026.",
+      "Monte Rosa SDV and WWT have unresolved official elevation discrepancies and checked GPX links are 2026.",
+      "No old GPX files were changed; no new GPX is marked validated."
+    ],
+    "noGpxFilesChanged": true,
+    "noAppRuntimeDataChanged": true
+  },
+  "followUps": [
+    "Desert RATS: wait for 2027-versioned files; checked 100K link still resolves to 2025.",
+    "Hiroshima: recheck for official GPX publication and parse all three tracks.",
+    "Canyons: wait for 2027 replacements for all four races; 2026 files remain historical.",
+    "Rothrock: wait for 2027 GPX replacements for 50K and 25K.",
+    "Saint-Jacques: recheck on or after 2027-06-11 and download each official race track.",
+    "Torrencial: recheck official GPX publication; preserve 6.5km Isla Teja value.",
+    "Val d'Aran: obtain and validate VDA/TDL/PDA files, confirm remaining 2027 editions and add SKY Promesas only if organizer provides a distinct track.",
+    "Monte Rosa: await true 2027-versioned files and ask organizer to resolve SDV/WWT elevation discrepancies."
+  ],
+  "sources": [
+    "https://desertrats.utmb.world/",
+    "https://desertrats.utmb.world/races/100K",
+    "https://hiroshima.utmb.world/overview",
+    "https://hiroshima.utmb.world/races/HIROSHIMA100K",
+    "https://hiroshima.utmb.world/races/HIROSHIMA50K",
+    "https://hiroshima.utmb.world/races/HIROSHIMA25K",
+    "https://canyons.utmb.world/runners/registration",
+    "https://canyons.utmb.world/races/100M",
+    "https://canyons.utmb.world/races/100K",
+    "https://rothrock.utmb.world/register",
+    "https://rothrock.utmb.world/races/50k",
+    "https://rothrock.utmb.world/races/25K",
+    "https://saint-jacques.utmb.world/faq",
+    "https://torrencial.utmb.world/races",
+    "https://valdaran.utmb.world/race/tracks",
+    "https://mrww.utmb.world/races/sdv",
+    "https://mrww.utmb.world/races/WWT"
+  ]
+}
