@@ -1,7 +1,7 @@
 {
   "batch": 47,
   "checkedAt": "2026-11-20",
-  "scope": "Top-level events 69–78 in current EVENTS order",
+  "scope": "Official route and GPX status audit for ten records in the historic/original top-level event list 69–78; this is not the current event-dates.json insertion range 69–78.",
   "status": "audit-only-checkpoint",
   "rules": [
     "Old GPX files remain valid until a replacement is officially published, downloaded, parsed and validated.",
@@ -479,5 +479,27 @@
     "https://quito.utmb.world/",
     "https://www.pitztal.com/en/salomon-pitz-alpine-glacier-trail.html",
     "https://kat.utmb.world/de/races/marathon-trail"
-  ]
+  ],
+  "currentEventDatesCrossCheck": {
+    "currentCatalogRange": "event-dates.json insertion positions 69–78 (1-based)",
+    "overlappingIds": [
+      "3kings-3hills",
+      "davos-x-trail",
+      "ggut",
+      "sachsentrail-erzgebirge",
+      "gauja-trail-by-utmb",
+      "quito-trail-ecuador",
+      "pitz-alpine-glacier-trail",
+      "kat100"
+    ],
+    "currentEntriesCoveredByAuditBatch60": [
+      "swiss-alps-100",
+      "allgau-panorama-marathon"
+    ],
+    "legacyEntriesCoveredByAuditBatch59": [
+      "eiger-ultratrail",
+      "bucovina-ultra-rocks"
+    ],
+    "note": "This package follows the historic/original list. Eight current entries overlap directly; Swiss Alps 100 and Allgäu Panorama are covered by batch 60. Eiger Ultra Trail and Bucovina Ultra Rocks are historic-order entries but remain in the current catalog at positions 67–68 and are covered by batch 59."
+  }
 }
