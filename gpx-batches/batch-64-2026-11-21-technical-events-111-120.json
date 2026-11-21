@@ -439,7 +439,10 @@
       "Austria Backyard Hochkönig 2027 course map section is still a placeholder; no GPX endpoint exists yet."
     ],
     "noGpxFilesChanged": true,
-    "noAppRuntimeDataChanged": true
+    "noAppRuntimeDataChanged": true,
+    "currentEventDatesEntriesCoveredInThisBatch": 7,
+    "currentEventDatesEntriesCoveredByBatch65": 3,
+    "legacyEntriesNotInCurrentEventDates": 3
   },
   "followUps": [
     "Austria Backyard Hochkönig: recheck once organizer publishes the route map and GPX; establish total loop ascent from the official file, not the 60hm climb segment.",
@@ -466,5 +469,29 @@
     "https://tarawera.utmb.world/",
     "https://puerto-vallarta.utmb.world/",
     "https://xtrail.utmb.world/races"
-  ]
+  ],
+  "currentEventDatesCrossCheck": {
+    "currentCatalogRange": "event-dates.json insertion positions 111–120 (1-based)",
+    "overlappingIds": [
+      "oman-by-utmb",
+      "mammutmarsch",
+      "megamarsch",
+      "vietnam-highlands-trail-by-utmb",
+      "tarawera-ultra-trail-by-utmb",
+      "puerto-vallarta-mexico-by-utmb",
+      "hoka-xtrail-kenting-by-utmb"
+    ],
+    "currentEntriesNotCoveredByThisBatch": [
+      "desert-rats-trail-running-festival-by-utmb",
+      "hiroshima-by-utmb",
+      "the-canyons-endurance-runs-by-utmb"
+    ],
+    "thoseThreeAreCoveredByAuditBatch": 65,
+    "legacyEntriesNotInCurrentCatalog": [
+      "Austria Backyard Ultra 24+1 Hochkönig",
+      "Puglia Terra delle Gravine by UTMB",
+      "3 Días Trail Ibiza"
+    ],
+    "note": "This package follows the historic/original EVENTS order. Seven entries overlap current event-dates positions 111–120; the other three current catalog entries are covered by audit batch 65. The three legacy entries at orders 111–113 are not in the current event-dates catalog."
+  }
 }
