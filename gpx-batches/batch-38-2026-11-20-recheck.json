@@ -1,0 +1,112 @@
+{
+  "batch": 38,
+  "checkedAt": "2026-11-20",
+  "scope": "Second-pass official-source review of top-level events 19-28 (10 events)",
+  "status": "rechecked",
+  "events": [
+    {
+      "order": 19,
+      "name": "Oh Meu Deus",
+      "gpxStatus": "Official UTMB race pages for OMD100M and OMD100K provide Map + GPX interactive sections. No direct GPX file URL or binary validated in this pass. Organizer warns routes may change due to ground conditions; do not treat an early map export as final.",
+      "sources": [
+        "https://ohmeudeus.utmb.world/races/omd100m",
+        "https://ohmeudeus.utmb.world/races/omd100k"
+      ],
+      "followUp": "Recheck after organizer route finalization and export the official files from both race pages."
+    },
+    {
+      "order": 20,
+      "name": "innsbruck Alpine",
+      "gpxStatus": "Organizer states GPX downloads are provided in advance for all races. The available K110 file still resolves to IATF26_K110_260429.gpx (2026 edition); it remains rejected for 2027. No current-year replacement binary validated.",
+      "source": "https://www.innsbruckalpine.at/anmeldung/leistungen/",
+      "followUp": "Wait for IATF27 files for every distance; retain 2026 tracks as historical."
+    },
+    {
+      "order": 21,
+      "name": "Trail Menorca Camí de Cavalls",
+      "year": 2027,
+      "routes": [
+        "TMCDC 185K",
+        "TMCN 100K",
+        "TMCS 85K",
+        "PTCN 58K",
+        "PTCS 44K",
+        "STCN 27K",
+        "STARTER 11K"
+      ],
+      "gpxStatus": "Previous review found official 2027 GPX links for all seven distances. This pass did not download/parse the binaries, so links remain organizer-source references rather than technically validated tracks.",
+      "source": "https://www.trailmenorca.es/en/carreras/tmcdc-185-km/",
+      "followUp": "Download and parse all seven 2027 files; compare track length/elevation with official course profiles."
+    },
+    {
+      "order": 22,
+      "name": "Malcesine Baldo Trail",
+      "gpxStatus": "Three organizer-linked GPX files were previously reachable (60K Ultra, 41K Marathon, 16K Short). A fourth candidate for the stated 26.4K medium course is named MBT_24k_medium.gpx, so filename/course distance mismatch remains unresolved. No binary parsed in this pass.",
+      "followUp": "Inspect all four GPX tracks; verify the medium track measures the official 26.4 km before adding it as a route."
+    },
+    {
+      "order": 23,
+      "name": "Ultra X 110 Scotland",
+      "gpxStatus": "Official organizer says race pack and route details are issued about one month before the event. No public 2027 GPX verified. Prior app has only three route options while organizer lists seven race options; reconcile after current race pack is released.",
+      "source": "https://ultra-x.co/event/ultra-marathon-in-scotland/",
+      "followUp": "Obtain the 2027 race pack and all seven official route files about one month before race day."
+    },
+    {
+      "order": 24,
+      "name": "Ternberg Trail Backyard Ultra",
+      "gpxStatus": "Organizer confirms 6.706 km / 351 hm and links a Garmin Connect route. No direct public GPX file was extracted or binary-validated.",
+      "sources": [
+        "https://www.austriabackyardultra.com/ternberg",
+        "https://connect.garmin.com/app/activity/10009450670"
+      ],
+      "followUp": "Export the organizer-linked Garmin course and validate its measured loop length/elevation."
+    },
+    {
+      "order": 25,
+      "name": "Chiemgau Trail",
+      "gpxStatus": "Existing GPX files relate to CTR26 (2026 edition); the 24 October 2026 event date has passed. No new edition or current GPX confirmed in this pass. Keep files historical.",
+      "followUp": "Wait for organizer's next-edition announcement and new course pack; do not reuse CTR26 as 2027."
+    },
+    {
+      "order": 26,
+      "name": "Transvulcania adidas",
+      "year": 2027,
+      "gpxStatus": "Official 2027 GPX previously found for the new 12K Light only. Other official links still point to TRV24 (2024) and are stale. No binary downloaded/parsed in this pass; do not promote old links to current.",
+      "sources": [
+        "https://transvulcania.com/de/",
+        "https://transvulcania.com/wp-content/uploads/gpx/sin-categorizar/Transvulcania_12K.gpx"
+      ],
+      "followUp": "Validate the 12K Light file and wait for fresh 2027 Ultra, Marathon, Half Marathon and Vertical GPX files."
+    },
+    {
+      "order": 27,
+      "name": "Ultra-Trail Australia by UTMB",
+      "gpxStatus": "Official race pages expose Map + GPX, but the current map content previously observed was labelled 2026. No 2027 track binary confirmed. Keep 2026 data historical until the organizer updates the map.",
+      "sources": [
+        "https://uta.utmb.world/races/utamiler",
+        "https://uta.utmb.world/races/uta100"
+      ],
+      "followUp": "Recheck each race page for an explicit 2027 map/file version before export."
+    },
+    {
+      "order": 28,
+      "name": "Trail Alsace by UTMB",
+      "gpxStatus": "Official FAQ states GPX files are sent by email 1-2 weeks before race week because routes cross private land. No public 2027 GPX verified; do not use older or unofficial tracks.",
+      "source": "https://alsace.utmb.world/races-runners/runners/infos-pratiques",
+      "followUp": "Request or check the participant GPX email in the final 1-2 weeks before the event."
+    }
+  ],
+  "summary": {
+    "eventsRechecked": 10,
+    "importantUpdates": [
+      "Trail Menorca has seven organizer-linked 2027 GPX files; binary validation remains outstanding.",
+      "Malcesine Baldo Trail's medium GPX filename says 24k while course page says 26.4 km; track must be measured before use.",
+      "Ultra X Scotland's app route list needs expansion to the organizer's seven formats once the 2027 race pack is issued.",
+      "Transvulcania 12K Light has a 2027 GPX link; other routes still point to stale 2024 files.",
+      "Ultra-Trail Australia Map + GPX content previously observed is 2026, not confirmed for 2027.",
+      "Trail Alsace and Oh Meu Deus have deliberate route/GPX timing restrictions."
+    ],
+    "gpxSafety": "No GPX binary was downloaded and parsed in this pass. Old files remain retained as historical and are not used as current replacements. No existing GPX files are deleted or replaced.",
+    "next": "Continue second-pass review with events 9-18."
+  }
+}
