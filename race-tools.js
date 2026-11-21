@@ -122,9 +122,25 @@ window.showPlannedEventDetails=function(id,ri){prior(id,ri);const root=document.
     }
     return null;
   };
+  // This organizer registry is scoped to its explicitly listed routes.
+  // Unlisted events keep the app's legacy GPX behavior; never apply one
+  // organizer's restrictions as a catalogue-wide default.
+  const legacyEntry={
+    status:"approved",
+    permissions:{
+      gpxFileFetch:true,
+      gpxFileImport:true,
+      gpxFileProcess:true,
+      gpxFileStore:true,
+      gpxFileMapDisplay:true,
+      gpxFileUserDownload:true,
+      gpxOfficialLink:true
+    },
+    restriction:{status:"clear"}
+  };
   const rightsFor=route=>{
     if(!route||!route.id)return policy.defaultEntry();
-    return registry.routes?.[String(route.id)]||policy.defaultEntry();
+    return registry.routes?.[String(route.id)]||legacyEntry;
   };
   const actualRoute=route=>{
     if(route?.id&&String(route.id).startsWith("review_")&&window.__gpxReviewRouteId){
@@ -179,7 +195,7 @@ window.showPlannedEventDetails=function(id,ri){prior(id,ri);const root=document.
   };
 
   window.gpxRightsRegistry=registry;
-  window.gpxRightsAllows=(routeId,action)=>policy.allows(registry.routes?.[String(routeId)]||policy.defaultEntry(),action);
+  window.gpxRightsAllows=(routeId,action)=>policy.allows(registry.routes?.[String(routeId)]||legacyEntry,action);
   window.routeGpxIsOrganizerRestricted=route=>!canProcess(route);
   window.routeHasDownloadableGpx=route=>{
     const href=route?.gpxDownloadUrl||route?.gpxUrl||"";
