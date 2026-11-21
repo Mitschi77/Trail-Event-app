@@ -349,51 +349,13 @@ window.showPlannedEventDetails=function(id,ri){prior(id,ri);const root=document.
     });
   }
 
+  // Rights restrictions block new fetch/import/process actions, but must never
+  // erase previously stored GPX files or derived profiles. Existing data stays
+  // available for recovery/review until a validated replacement is supplied.
   function purgeUnauthorizedGpxData(){
-    if(!registryReady)return {deferred:true};
-    let changed=false,routesCleared=0,recordsCleared=0;
-    const keys=["gpxTrack","gpxDistanceKm","gpxAscentHm","gpxDescentHm","gpxFileName"];
-    events().forEach((event,eventIndex)=>{
-      (event.routes||[]).forEach((route,routeIndex)=>{
-        if(canProcess(route))return;
-        let routeHadData=false;
-        const routeHadGpxFile=route.gpxTrack!==undefined||route.gpxFileName!==undefined;
-        keys.forEach(key=>{
-          if(route[key]!==undefined){delete route[key];routeHadData=true;changed=true;}
-        });
-        if(routeHadGpxFile||String(route.profileSource||"").startsWith("Streckendatei:")){
-          if(route.elevationProfile!==undefined){delete route.elevationProfile;routeHadData=true;changed=true;}
-          if(route.profileSource!==undefined){delete route.profileSource;routeHadData=true;changed=true;}
-        }
-        if(routeHadData)routesCleared++;
-        if(typeof eventDataEdits!=="undefined"&&eventDataEdits){
-          const key=typeof routeKey==="function"?routeKey(eventIndex,routeIndex):String(event.id)+"::"+String(route.id);
-          const edit=eventDataEdits[key];
-          if(edit){
-            let editHadData=false;
-            const editHadGpxFile=edit.gpxTrack!==undefined||edit.gpxFileName!==undefined;
-            keys.forEach(field=>{
-              if(edit[field]!==undefined){delete edit[field];editHadData=true;}
-            });
-            if(editHadGpxFile||String(edit.profileSource||"").startsWith("Streckendatei:")){
-              if(edit.elevationProfile!==undefined){delete edit.elevationProfile;editHadData=true;}
-              if(edit.profileSource!==undefined){delete edit.profileSource;editHadData=true;}
-            }
-            if(editHadData){
-              recordsCleared++;
-              changed=true;
-              if(!Object.keys(edit).length)delete eventDataEdits[key];
-            }
-          }
-        }
-      });
-    });
-    if(changed){
-      try{if(typeof eventDataEdits!=="undefined")localStorage.setItem("trailEventDataEdits",JSON.stringify(eventDataEdits));}catch{}
-      try{if(typeof queuePlannerCloudSave==="function")queuePlannerCloudSave();}catch{}
-    }
-    window.gpxRightsPurgeSummary={changed,routesCleared,recordsCleared,checkedAt:new Date().toISOString()};
-    return window.gpxRightsPurgeSummary;
+    const summary={changed:false,routesCleared:0,recordsCleared:0,retained:true,checkedAt:new Date().toISOString()};
+    window.gpxRightsPurgeSummary=summary;
+    return summary;
   }
 
   const originalRender=window.render;
