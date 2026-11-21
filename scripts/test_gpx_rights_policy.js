@@ -4,6 +4,7 @@ const policy = require("../gpx-rights-policy.js");
 const pending = policy.defaultEntry();
 assert.equal(policy.canProcess(pending), false, "pending rights must fail closed");
 assert.equal(policy.shouldBlockFetch("https://example.org/course.gpx", pending), true, "unapproved GPX fetch must be blocked");
+assert.equal(policy.shouldBlockFetch("https://drive.google.com/uc?export=download&id=123", pending), true, "Google Drive direct GPX download must be blocked");
 assert.equal(policy.shouldBlockFetch("https://example.org/course", pending), false, "ordinary non-GPX fetches must remain available");
 
 const linkOnly = policy.defaultEntry({
