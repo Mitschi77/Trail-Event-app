@@ -1,0 +1,88 @@
+{
+  "batch": 40,
+  "checkedAt": "2026-11-20",
+  "scope": "Second-pass official-source review of top-level events 1-8 (8 remaining events)",
+  "status": "rechecked",
+  "events": [
+    {
+      "order": 1,
+      "name": "La Corsa della Bora",
+      "gpxStatus": "Official 2027 information updated 18 Nov 2026 confirms seven formats and supersedes earlier figures. New certified values: Bora Ultra 116.2 km/3,930 hm; Trieste Ultra 61.2/2,323; TransKarst 55/1,594; Borderless 36.2/797; Half Trail 23.3/700; Family Hike 14.8/419; Borin 5.5/186. Official pages say final 2027 GPX is released in race week; no current GPX yet.",
+      "source": "https://www.s1trail.com/en/dati-ufficiali-corsa-della-bora-2027/",
+      "followUp": "Correct route metrics in app against the 18 Nov official figures; keep GPX pending until race week and then replace only after validation."
+    },
+    {
+      "order": 2,
+      "name": "Marathon des Sables",
+      "gpxStatus": "Clarify event identity: app entry's 100 km / 100-mile format matches MDS Ultra 2027 (8–13 Jan 2027), not the classic MDS Legendary 250 km event. Official MDS Ultra page lists the formats but no public GPX. Do not use historic desert tracks; route/roadbook remains organizer-controlled.",
+      "sources": [
+        "https://marathondessables.com/en/",
+        "https://marathondessables.com/en/evenement/mds-ultra-2027"
+      ],
+      "followUp": "Keep GPX unpublished until official participant route materials are released; make the app event label distinguish MDS Ultra from MDS Legendary."
+    },
+    {
+      "order": 3,
+      "name": "Arc of Attrition by UTMB",
+      "gpxStatus": "Official 2027 event has four races, not two: Arc 100M 174.4 km/5,534 hm (22 Jan), Arc 100K 83.8/2,738 (23 Jan), Arc 50K 47.3/1,370 and Arc 20K 24.4/826 (24 Jan). Official 100M page visibly has Map + GPX interactive section; direct GPX file is not exposed in page text. Existing app route count must expand from two to four. Prior checkpoint's mirrored direct file URLs were not re-downloaded or binary-validated in this pass.",
+      "sources": [
+        "https://arcofattrition.utmb.world/",
+        "https://arcofattrition.utmb.world/races/Arc100M"
+      ],
+      "followUp": "Add/verify all four race variants; export GPX separately from each official map and validate edition and metrics."
+    },
+    {
+      "order": 4,
+      "name": "MOUNTAINMAN Winterloop",
+      "gpxStatus": "Official 23 Jan 2027 page clarifies event format: a 7.5 km loop with approx. 110 hm per loop, 3/6/12-hour challenges, plus fixed Marathon 45 km/660 hm (6 loops) and Half Marathon 22.5 km/330 hm (3 loops). Official page says marked course and GPX track are included; Komoot route is linked. Earlier four generic app route labels do not match the 2027 formats. Actual GPX file not downloaded/parsed.",
+      "sources": [
+        "https://mountainman.de/winterloop/",
+        "https://www.komoot.com/tour/3022648619"
+      ],
+      "followUp": "Reconcile app route types with 2027 loop/challenge formats; obtain official participant GPX or export Komoot route and validate."
+    },
+    {
+      "order": 5,
+      "name": "Ultra Mediterrània",
+      "gpxStatus": "Official 2027 page (21–24 Jan) now lists several formats: 160 km/+8,000 hm; 86/+4,400; 50/+2,800; 25/+1,100; and a vertical format of 6 km timed climb plus 8 km neutralized descent/+720 hm. Official page exposes TRACK links and the official site previously linked a Google Drive folder of GPX files. Individual file names and direct URLs remain unverified.",
+      "source": "https://ultramediterrania.com/",
+      "followUp": "Open each official TRACK link/Drive folder, match files to all formats, and inspect GPX binaries before import."
+    },
+    {
+      "order": 6,
+      "name": "Transgrancanaria",
+      "gpxStatus": "Official 2027 regulations confirm 23–27 Feb race dates and expanded programme. Official stage page lists Open Agáldar 21.4 km/613 hm, KV El Gigante 5.5/1,090, Promo 12/869, Advanced 81.8/4,314 and Stages 120 km/6,886. Publicly indexed direct GPX links still point to 2026 files for Classic, Advanced, Marathon and Half; these are stale and must not be used as 2027. 2027 GPX for remaining race formats not verified.",
+      "sources": [
+        "https://transgrancanaria.net/en/regulations/",
+        "https://transgrancanaria.net/en/stages/"
+      ],
+      "followUp": "Wait for organizer's 2027 GPX files and map each race format individually; preserve 2026 tracks as historical."
+    },
+    {
+      "order": 7,
+      "name": "Donautrail",
+      "gpxStatus": "Official download page offers six separate GPX tracks (Linz 14, 22, 35, 55, 75 and 100). Organizer's terms explicitly restrict use to hiking/running and prohibit redistribution or uploading to other platforms. App must link to the organizer download page only; do not mirror, store or rehost the files.",
+      "source": "https://donautrail.at/downlaod-gpx-track-donautrail/",
+      "followUp": "Keep an external organizer link and require users to accept the organizer's download terms; do not copy GPX files into the repository."
+    },
+    {
+      "order": 8,
+      "name": "Psyland Backyard Ultra",
+      "gpxStatus": "Previous checkpoint identifies this as a historical event on 14 March 2026. No official 2027 edition or organizer GPX has been confirmed in this pass. Do not substitute a similarly named event or third-party loop.",
+      "followUp": "Keep historical status until the organizer announces a new edition and publishes its own course."
+    }
+  ],
+  "summary": {
+    "eventsRechecked": 8,
+    "importantUpdates": [
+      "Corsa della Bora official 18 Nov update supersedes earlier route metrics across all seven formats; final GPX still scheduled for race week.",
+      "Arc of Attrition is four 2027 race distances, not two; official race metrics are now recorded.",
+      "MountainMAN Winterloop has a 7.5 km loop and defined 3/6/12-hour, marathon and half-marathon formats; old app route labels need reconciliation.",
+      "Ultra Mediterrània 2027 lists five course formats with detailed distances/elevation.",
+      "Transgrancanaria 2027 is confirmed, but the currently indexed GPX downloads for key routes still point to 2026.",
+      "Donautrail's explicit no-redistribution rule means GPX files must not be copied or rehosted by the app."
+    ],
+    "gpxSafety": "No GPX binary was downloaded and parsed in this pass. Organizer links and interactive maps are not equivalent to validated local tracks. Old GPX files remain retained as historical; no existing files are deleted or replaced.",
+    "next": "Second-pass audit of top-level events 1-28 is now documented; continue with unresolved binary downloads, parsing, metric comparisons and app data corrections."
+  }
+}
