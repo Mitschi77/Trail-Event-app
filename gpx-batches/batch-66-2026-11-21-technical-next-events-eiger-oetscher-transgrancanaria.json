@@ -1,0 +1,178 @@
+{
+  "batch": 66,
+  "checkedAt": "2026-11-21",
+  "scope": [
+    "Eiger Ultra Trail by UTMB 2027",
+    "Ötscher Trail 2027",
+    "The North Face Transgrancanaria 2027"
+  ],
+  "rules": [
+    "Official organizer sources only for current event facts.",
+    "Old GPX files remain valid as fallback/history until an official replacement is actually downloaded, parsed and validated.",
+    "Never delete, overwrite or replace existing GPX files during this audit.",
+    "A public download button or visible XML preview is not equivalent to local binary download and parser validation.",
+    "Do not label a track as validated without obtaining the file bytes and parsing the complete track."
+  ],
+  "events": [
+    {
+      "name": "Eiger Ultra Trail by UTMB",
+      "edition": 2027,
+      "eventDate": "2027-07-14/18",
+      "officialSource": "https://eiger.utmb.world/de/races",
+      "routes": [
+        {"name": "E250 - UNESCO Trail", "distanceKm": 261, "elevationGainHm": 18000, "date": "2027-07-14", "startTime": "08:00"},
+        {"name": "E101 - Ultra Trail", "distanceKm": 101, "elevationGainHm": 6700, "date": "2027-07-17", "startTime": "04:00"},
+        {"name": "E51 - Panorama Trail", "distanceKm": 51, "elevationGainHm": 3100, "date": "2027-07-17", "startTime": "07:15"},
+        {"name": "E35 - North Face Trail", "distanceKm": 35, "elevationGainHm": 2500, "date": "2027-07-17", "startArea": "Burglauenen"},
+        {"name": "E16 - Pleasure Trail", "distanceKm": 16, "elevationGainHm": 950, "date": "2027-07-17", "startTime": "09:00"},
+        {"name": "Trail Surprise", "distanceKmRange": [12, 18], "elevationGainHmRange": [500, 1000], "date": "2027-07-16", "startTime": "12:30", "detail": "Organizer publishes the specific route/profile only three days before the race."}
+      ],
+      "gpxStatus": "race-pages-have-download-links-but-currently-linked-assets-are-historical-2026-or-2024; Trail-Surprise-route-not-yet-published",
+      "technicalAttempt": {
+        "officialRacePagesChecked": ["E250", "E101", "E51", "E35", "E16", "Trail Surprise"],
+        "directAssetTargetsInspected": ["E250", "E101", "E51", "E35", "E16"],
+        "assetVersions": {
+          "E250": "2026",
+          "E101": "2026",
+          "E51": "2026",
+          "E35": "2026",
+          "E16": "2024"
+        },
+        "binaryDownloaded": false,
+        "parsed": false,
+        "metricsCompared": false,
+        "result": "The official 2027 race pages link to files whose direct asset paths identify E250/E101/E51/E35 as 2026 and E16 as 2024. These must remain historical and must not replace any 2027 route. Trail Surprise has no GPX yet because the organizer states its route/profile is revealed three days before the race."
+      },
+      "safetyNote": "The organizer warns that original high-alpine trails E16/E35/E51/E101 are not suitable for use during winter; trails are not maintained or secured and avalanche/fall hazards exist.",
+      "sources": [
+        "https://eiger.utmb.world/de/races",
+        "https://eiger.utmb.world/races/e250",
+        "https://eiger.utmb.world/races/E101",
+        "https://eiger.utmb.world/races/e51",
+        "https://eiger.utmb.world/races/e35",
+        "https://eiger.utmb.world/races/e16",
+        "https://eiger.utmb.world/races/trail-surprise",
+        "https://eiger.utmb.world/de/discover/discover-the-trails/conditions-on-the-original-trails"
+      ],
+      "rightsNote": "No historical file copied into the 2027 app data."
+    },
+    {
+      "name": "Ötscher Trail",
+      "edition": 2027,
+      "eventDate": "2027-06-04/06",
+      "officialSource": "https://www.oetschertrail.run/",
+      "routes": [
+        {"name": "Vertical Race", "distanceKm": 5.1, "elevationGainHm": 1140, "date": "2027-06-04"},
+        {"name": "Marathon Trail powered by St. Bernhard", "distanceKm": 51.45, "elevationGainHm": 2432, "date": "2027-06-05"},
+        {"name": "Skyrace", "distanceKm": 24.8, "elevationGainHm": 2000, "date": "2027-06-06"},
+        {"name": "Speed Trail", "distanceKm": null, "elevationGainHm": null, "date": "2027-06-05"},
+        {"name": "Easy Trail", "distanceKm": null, "elevationGainHm": null, "date": "2027-06-05"}
+      ],
+      "gpxStatus": "official-Marathon-Trail-download-button-present; direct-file-version-not-confirmed; no-binary-validation",
+      "technicalAttempt": {
+        "officialEventPageChecked": true,
+        "officialMarathonPageChecked": true,
+        "officialMarathonGpxDownloadLinkFound": true,
+        "directFileVersionConfirmed": false,
+        "binaryDownloaded": false,
+        "parsed": false,
+        "metricsCompared": false,
+        "result": "The official Marathon Trail page exposes a direct GPX download link, but the linked filename does not identify the edition. The download could not be retrieved through the available binary-fetch path. Do not assume it is a 2027 track solely because the event page is showing 2027 dates."
+      },
+      "criticalDiscrepancy": {
+        "topic": "HERO cumulative distance/elevation",
+        "racePageComponentsSum": {"distanceKm": 81.35, "elevationGainHm": 5572},
+        "homePageHEROClaim": {"distanceKm": 78.4, "elevationGainHm": 5426},
+        "status": "official-source-conflict; do-not-overwrite-until-organizer-clarifies"
+      },
+      "detail": "The homepage's individual race values sum to 81.35km/5572hm for Vertical + Marathon + Skyrace, while a separate HERO description states 78.4km/5426hm. Keep both official figures and flag the discrepancy. The Marathon Trail is 51.45km/2432hm.",
+      "sources": [
+        "https://www.oetschertrail.run/",
+        "https://www.oetschertrail.run/marathon-trail-powered-by-st-bernhard",
+        "https://www.oetschertrail.run/skyrace",
+        "https://www.oetschertrail.run/vertical-race",
+        "https://www.oetschertrail.run/speed-trail",
+        "https://www.oetschertrail.run/easy-trail"
+      ],
+      "rightsNote": "No file downloaded, mirrored or imported."
+    },
+    {
+      "name": "The North Face Transgrancanaria",
+      "edition": 2027,
+      "eventDate": "2027-02-23/27",
+      "officialSource": "https://transgrancanaria.net/en/stages/",
+      "routes": [
+        {"name": "Classic 126K", "distanceKm": 126, "elevationGainHm": 6764, "date": "2027-02-26"},
+        {"name": "Advanced 82K", "distanceKm": 81.7, "elevationGainHm": 4314, "date": "2027-02-27"},
+        {"name": "Marathon 47K", "distanceKm": 47, "elevationGainHm": 1784, "date": "2027-02-26"},
+        {"name": "Half 23K", "distanceKm": 22.9, "elevationGainHm": 1817, "date": "2027-02-25"},
+        {"name": "Open Agáldar", "distanceKm": 21.4, "elevationGainHm": 613, "date": "2027-02-23"},
+        {"name": "Promo 12K", "distanceKm": 12, "elevationGainHm": 869, "date": "2027-02-25"},
+        {"name": "VK El Gigante", "distanceKm": 5.5, "elevationGainHm": 1090, "date": "2027-02-24"},
+        {"name": "Stages total", "distanceKm": 120, "elevationGainHm": 6886, "date": "2027-02-23/27", "detail": "Four stages: Open Agáldar, VK El Gigante, Promo and Advanced. Organizer rounds the total distance to 120km."}
+      ],
+      "gpxStatus": "2027-Open-Agaldar-GPX-endpoint-exists; other-checked-official-GPX-assets-are-2026; no-file-downloaded-or-locally-parsed",
+      "technicalAttempt": {
+        "officialRacePagesChecked": ["Classic", "Advanced", "Marathon", "Half", "Open Agáldar", "Promo", "VK El Gigante", "Stages"],
+        "confirmedHistorical2026Assets": [
+          "Classic: TGCC-2026-28052025-1-1.gpx",
+          "Advanced: TGCA-2026-18072025-1.gpx",
+          "Marathon: TGCM_2026_15102024-1.gpx",
+          "Half: TGCH-2026-05062025.gpx",
+          "Promo: TGCP-2026-28052025.gpx",
+          "VK El Gigante: TGC-KV-2026.gpx"
+        ],
+        "2027Asset": {
+          "name": "Open Agáldar",
+          "filename": "TGCO-2027-08052026-214-km-613-D-1368-D-.gpx",
+          "xmlPreviewObserved": true,
+          "trackName": "TGCG 2027 08052026 21,4 km 613 D+ 1368 D-",
+          "metadataTime": "2026-05-08T11:43:45Z",
+          "binaryDownloaded": false,
+          "parsed": false
+        },
+        "binaryDownloaded": false,
+        "parsed": false,
+        "metricsCompared": false,
+        "result": "The official Open Agáldar 2027 GPX URL is published and its XML preview identifies the track as 2027 with 21.4km/613m D+ in the track name. However, no local binary download or full XML parser validation was completed. All other checked official files for Classic, Advanced, Marathon, Half, Promo and VK are explicitly 2026 assets and must not be used as current 2027 tracks."
+      },
+      "detail": "The organizer's 2027 stage page lists 120km/6886hm for the four-stage event. Open Agáldar's official GPX is the only checked 2027-named route asset in this pass. The remaining 2026-labelled assets stay historical.",
+      "sources": [
+        "https://transgrancanaria.net/en/regulations/",
+        "https://transgrancanaria.net/en/stages/",
+        "https://transgrancanaria.net/en/classic-126km/",
+        "https://transgrancanaria.net/en/advanced-84km/",
+        "https://transgrancanaria.net/en/marathon-46km/",
+        "https://transgrancanaria.net/en/starter-21-km/",
+        "https://transgrancanaria.net/en/open-agaldar-21km/",
+        "https://transgrancanaria.net/en/promo-youth-12km/",
+        "https://transgrancanaria.net/en/vk-el-gigante/"
+      ],
+      "rightsNote": "Public organizer links were inspected only; no GPX was copied into the app or redistributed."
+    }
+  ],
+  "summary": {
+    "eventFamiliesCovered": 3,
+    "eigerCurrent2027AssetsVerified": 0,
+    "eigerHistoricalAssetsIdentified": 5,
+    "oetscherPublicGpxDownloadLinksFound": 1,
+    "oetscherEditionConfirmed": 0,
+    "transgrancanaria2027NamedGpxAssetsFound": 1,
+    "transgrancanariaHistorical2026AssetsIdentified": 6,
+    "binaryFilesDownloaded": 0,
+    "tracksParsed": 0,
+    "binaryMetricsCompared": 0,
+    "officialMetricDiscrepancies": 1,
+    "oldGpxFilesDeleted": 0,
+    "oldGpxFilesOverwritten": 0,
+    "appRuntimeFilesChanged": 0,
+    "appEventRecordsChanged": 0,
+    "noGpxFilesChanged": true,
+    "noAppRuntimeDataChanged": true
+  },
+  "followUps": [
+    "Eiger: wait for 2027 replacements for E250/E101/E51/E35/E16; recheck Trail Surprise three days before 16 July 2027.",
+    "Ötscher: obtain organizer confirmation that the generic Marathon GPX link is the 2027 file; request clarification of HERO total 81.35/5572 versus 78.4/5426; obtain missing Speed/Easy route metrics and GPX status.",
+    "Transgrancanaria: preserve six 2026 GPX assets as historical; obtain 2027 replacements for Classic, Advanced, Marathon, Half, Promo and VK; locally download/parse the Open Agáldar 2027 GPX before marking validated."
+  ]
+}
