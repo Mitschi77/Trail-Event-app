@@ -1,0 +1,205 @@
+{
+  "batch": 71,
+  "checkedAt": "2026-11-21",
+  "scope": "events 169-178 from event-dates.json",
+  "rules": [
+    "Official organizer sources preferred; secondary calendar records clearly marked provisional.",
+    "Do not reuse historical routes/GPX as 2027 tracks.",
+    "A Google Earth route, street list or course description is not a validated GPX file.",
+    "Do not delete or overwrite old GPX files until a new official binary is downloaded and parsed.",
+    "Audit-only; no live event records or runtime files changed."
+  ],
+  "events": [
+    {
+      "sequence": 169,
+      "eventId": "derthona-half-marathon",
+      "name": "Derthona Half Marathon",
+      "edition": 2027,
+      "date": "2027-03-07",
+      "distanceKm": 21.0975,
+      "location": "Tortona, Piemonte, Italy",
+      "status": "secondary-calendar-only; official organizer page still displays 2026 edition",
+      "gpxStatus": "no-2027-gpx-confirmed",
+      "detail": "2027 date and distance are listed by a race calendar. The organizer homepage checked still describes the 8 March 2026 edition, so do not mark 2027 organizer-confirmed or reuse the 2026 route.",
+      "sources": [
+        "https://www.derthonahalfmarathon.it/",
+        "https://www.maratoniamo.it/gara/derthona-half-marathon-tortona-mezza"
+      ]
+    },
+    {
+      "sequence": 170,
+      "eventId": "mare-sale-half-marathon",
+      "name": "Mare&Sale Half Marathon",
+      "edition": 2027,
+      "date": "2027-03-07",
+      "distanceKm": 21.0975,
+      "location": "Margherita di Savoia, Puglia, Italy",
+      "status": "2027 calendar listing; organizer regulation not yet available",
+      "gpxStatus": "no-2027-gpx-confirmed",
+      "detail": "Calendar listing identifies 7 March 2027, but explicitly says regulations, start time, registration and detailed information are still to be defined. FIDAL page currently accessible refers to 2026 only.",
+      "sources": [
+        "https://www.maratoniamo.it/gara/mare-sale-half-marathon-margherita-di-savoia-mezza",
+        "https://www.fidal.it/calendario/XVI%5E-Mare%26Sale-Half-Marathon/COD14403"
+      ]
+    },
+    {
+      "sequence": 171,
+      "eventId": "mezza-maratona-citta-di-termini-imerese",
+      "name": "Mezza Maratona Città di Termini Imerese",
+      "edition": 2027,
+      "date": "2027-03-14",
+      "distanceKm": 21.0975,
+      "location": "Termini Imerese, Sicilia, Italy",
+      "status": "calendar-only; organizer 2027 regulation not found",
+      "gpxStatus": "no-2027-gpx-confirmed",
+      "detail": "Race calendars list 14 March 2027 and 21.0975km; start time, regulation and course details are not yet available. Do not treat as fully organizer-confirmed.",
+      "sources": [
+        "https://www.maratoniamo.it/gara/mezza-maratona-citta-di-termini-imerese-termini-imerese-mezza",
+        "https://dojemo.com/gara/mezza-maratona-citta-di-termini-imerese-2027"
+      ]
+    },
+    {
+      "sequence": 172,
+      "eventId": "stracivitanova-banco-marchigiano-half-marathon",
+      "name": "Stracivitanova – Banco Marchigiano Half Marathon",
+      "edition": 2027,
+      "date": "2027-03-14",
+      "distanceKm": 21.097,
+      "location": "Civitanova Marche, Marche, Italy",
+      "startTime": "09:30",
+      "start": "Corso Umberto I",
+      "meetingPoint": "Piazza XX Settembre",
+      "status": "calendar listing based on FIDAL; organizer's full 2027 rules not found",
+      "gpxStatus": "no-GPX-track-published-in-checked-material",
+      "detail": "The listing describes a certified category-A half marathon plus 10.5km non-competitive and 4km family run. These details remain secondary pending official organizer regulation.",
+      "sources": [
+        "https://dojemo.com/en/gara/stracivitanova-banco-marchigiano-half-marathon-civitanova-marche-2027"
+      ]
+    },
+    {
+      "sequence": 173,
+      "eventId": "brescia-art-marathon",
+      "name": "Bossoni Brescia Art Marathon",
+      "edition": 2027,
+      "date": "2027-03-14",
+      "distancesKm": [
+        42.195,
+        21.097,
+        10
+      ],
+      "location": "Brescia, Lombardia, Italy",
+      "status": "organizer confirms 25th edition and three distances; route map/GPX not found",
+      "gpxStatus": "no-current-2027-gpx-confirmed",
+      "detail": "Organizer announces Sunday 14 March 2027 and pre-registration for 42K, 21K and 10K. A city calendar listing shows a conflicting timestamp of 13 March at 23:00; the organizer's explicit Sunday date takes precedence.",
+      "sources": [
+        "https://bresciamarathon.it/en/the-25th-bossoni-brescia-art-marathon-will-take-place-on-march-14-2027-pre-registration-is-now-open/",
+        "https://www.brescia.eu/en/events/brescia-art-marathon-2027"
+      ]
+    },
+    {
+      "sequence": 174,
+      "eventId": "brescia-half-marathon",
+      "name": "Gruppo Bossoni Half Marathon Brescia",
+      "edition": 2027,
+      "date": "2027-03-14",
+      "distanceKm": 21.097,
+      "startTime": "08:30",
+      "start": "Largo Formentone, Brescia",
+      "meetingPoint": "Piazza Vittoria, Brescia",
+      "status": "official 2027 rules and FIDAL homologation confirmed; GPX not found",
+      "gpxStatus": "no-official-2027-gpx-link-found",
+      "detail": "Organizer confirms 16th edition, 21.097km certified FIDAL course, start/finish in historic centre. Rules specify 08:30 start; no GPX download link was identified in checked regulation.",
+      "sources": [
+        "https://bresciamarathon.it/regolamento-21k/"
+      ]
+    },
+    {
+      "sequence": 175,
+      "eventId": "maratonina-comune-di-brugnera-alto-livenza",
+      "name": "Maratonina Comune di Brugnera – Alto Livenza",
+      "edition": 2027,
+      "date": "2027-03-14",
+      "distanceKm": 21.0975,
+      "location": "Brugnera, Friuli-Venezia Giulia, Italy",
+      "status": "secondary-calendar-only; organizer regulation not yet available",
+      "gpxStatus": "no-2027-gpx-confirmed",
+      "detail": "2027 listing gives date and distance, but says regulation, start time and detailed race information are still to be defined. No organizer route/GPX verified.",
+      "sources": [
+        "https://www.maratoniamo.it/gara/maratonina-comune-di-brugnera-alto-livenza-brugnera-mezza",
+        "https://dojemo.com/gara/maratonina-comune-di-brugnera-alto-livenza-2027"
+      ]
+    },
+    {
+      "sequence": 176,
+      "eventId": "scarpadoro-half-marathon",
+      "name": "Scarpadoro Half Marathon",
+      "edition": 2027,
+      "date": "2027-03-14",
+      "distanceKm": 21.097,
+      "startTime": "09:30",
+      "start": "Stadio Dante Merlo, Vigevano, Italy",
+      "status": "official 2027 regulation and street-by-street route published; no GPX file found",
+      "gpxStatus": "official-route-description-and-Google-Earth-link; no-GPX-download-validated",
+      "detail": "20th edition, FIDAL-certified course, one lap through Piazza Ducale/Castello Sforzesco then paved countryside roads. The organizer lists a Google Earth route link and a street-by-street sequence, but no GPX download link. Regulation contains an apparent typo in the final fee deadline (11/03/2026); not relevant to route validation.",
+      "sources": [
+        "https://scarpadoro.it/scarpadoro-half-marathon/regolamento-scarpadoro-half-marathon/",
+        "https://scarpadoro.it/scarpadoro-half-marathon/scarpadoro-half-marathon-e-5k/"
+      ]
+    },
+    {
+      "sequence": 177,
+      "eventId": "cervia-marathon",
+      "name": "Cervia Marathon",
+      "edition": 2027,
+      "date": "2027-03-21",
+      "distanceKm": 42.195,
+      "startTime": "08:30",
+      "startFinish": "Lungomare Grazia Deledda, opposite Bagno Marco 184, Cervia, Italy",
+      "status": "2027 event details from calendar report; official organizer regulation and route details not yet acquired",
+      "gpxStatus": "no-2027-gpx-confirmed",
+      "detail": "Current information says start/finish at the seafront and a 21km/10km Cervia Run at 10:00. The race calendar explicitly says the official regulation and detailed course are still pending.",
+      "sources": [
+        "https://www.maratoniamo.it/gara/cervia-marathon-cervia-maratona-2027",
+        "https://dojemo.com/gara/cervia-marathon-2027"
+      ]
+    },
+    {
+      "sequence": 178,
+      "eventId": "dogi-s-half-marathon",
+      "name": "Dogi's Half Marathon",
+      "edition": 2027,
+      "date": "2027-03-21",
+      "distanceKm": 21.0975,
+      "startTime": "09:15",
+      "startFinish": "Dolo, Venezia, Italy",
+      "status": "official 2027 regulation and certified course description published",
+      "gpxStatus": "no-public-GPX-download-link-found-in-checked-regulation",
+      "detail": "30th edition, certified FIDAL category A, one-loop paved course from Dolo along SR11 towards Mira, crossing the Brenta to Stra, through Fiesso d'Artico and back to Dolo. No GPX download link in the checked official regulation.",
+      "sources": [
+        "https://www.dogishalfmarathon.it/regolamento2027/"
+      ]
+    }
+  ],
+  "summary": {
+    "eventsReviewed": 10,
+    "official2027GpxBinaryValidated": 0,
+    "officialGpxDownloadLinksFound": 0,
+    "official2027OrganizerRoutePagesFound": 3,
+    "secondaryOrPartiallyConfirmedEvents": 6,
+    "binaryFilesDownloaded": 0,
+    "tracksParsed": 0,
+    "binaryMetricsCompared": 0,
+    "oldGpxFilesDeleted": 0,
+    "oldGpxFilesOverwritten": 0,
+    "appRuntimeFilesChanged": 0,
+    "appEventRecordsChanged": 0,
+    "auditOnly": true
+  },
+  "followUps": [
+    "Derthona: obtain organizer's 2027 regulation and confirm date/course; official page currently still displays 2026.",
+    "Mare&Sale, Termini Imerese, Stracivitanova, Brugnera and Cervia: obtain official organizer 2027 regulations and route/GPX files before promoting calendar-only information.",
+    "Brescia Art Marathon: reconcile city calendar's 13 March 23:00 timestamp with organizer's explicit Sunday 14 March date; request 2027 route GPX for all distances.",
+    "Scarpadoro: ask organizer for GPX file; current Google Earth link and text description do not qualify as parsed GPX.",
+    "Dogi's: request official GPX or download from organizer if later published."
+  ]
+}
