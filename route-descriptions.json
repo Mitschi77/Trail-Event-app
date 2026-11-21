@@ -1,0 +1,694 @@
+{
+  "schemaVersion": 1,
+  "preparedAt": "2026-11-21",
+  "integrationStatus": "draft_not_loaded_by_app_pending_organizer_permissions",
+  "organizer": "ASD SentieroUNO / S1 Trail",
+  "event": {
+    "appEventId": "la-corsa-della-bora",
+    "name": "La Corsa della Bora",
+    "edition": 2027,
+    "dates": [
+      "2027-01-09",
+      "2027-01-10"
+    ],
+    "location": "Golfo di Trieste / italienischer und slowenischer Karst; PortoPiccolo / Bora Village",
+    "officialRouteCount": 7,
+    "currentAppRouteCount": 5,
+    "missingAppRoutes": [
+      "S1 Family Hike & Trail 14.8 km / 419 m D+",
+      "S1 Borin 5.5 km / 186 m D+"
+    ],
+    "officialDataPage": "https://www.s1trail.com/en/dati-ufficiali-corsa-della-bora-2027/",
+    "officialDataPageUpdatedAt": "2026-11-18",
+    "sourcePriorityNote": "Die offizielle 2027-Datenseite erklärt ausdrücklich, dass ihre Angaben und die aktuellen s1trail.com-Seiten frühere Werte und nicht aktualisierte externe Portale ersetzen; technische Trace-de-Trail-Werte haben Vorrang."
+  },
+  "rightsAndReuse": {
+    "officialTextCopied": false,
+    "ownFactualSummariesWritten": true,
+    "officialMapsOrImagesCopied": false,
+    "gpxFilesCopiedOrDownloaded": false,
+    "permissionStatus": "pending",
+    "publicationAllowed": false,
+    "note": "Nur eigene sachliche Zusammenfassungen und Links zu Originalquellen. Keine geschützten Beschreibungstexte, Logos, Bilder, Karten oder GPX-Dateien übernommen. Die vorbereiteten Inhalte dürfen erst nach der jeweiligen schriftlichen Freigabe in der App veröffentlicht werden."
+  },
+  "sources": {
+    "officialDataPage": "https://www.s1trail.com/en/dati-ufficiali-corsa-della-bora-2027/",
+    "regulationsPage": "https://www.s1trail.com/en/regolamento/",
+    "officialWebsite": "https://www.s1trail.com/",
+    "contactEmailSource": "https://www.s1trail.com/wp-content/uploads/2024/11/20251127_Regolamento_KarstTrail_2025.pdf"
+  },
+  "routes": [
+    {
+      "routeId": "bora-ultra-105-3837",
+      "appRouteId": "bora-ultra-105-3837",
+      "name": "S1 Bora Ultra",
+      "distanceKm": 116.2,
+      "elevationGainM": 3930,
+      "date": "2027-01-09",
+      "startTime": "19:00",
+      "startLocation": "Piazza della Borsa, Trieste",
+      "finishLocation": "Bora Village, PortoPiccolo, Sistiana",
+      "maxTimeMinutes": 1500,
+      "maxTimeText": "25 Stunden; offizielles Zielschlussfenster Sonntag 10.01.2027 um 20:00",
+      "routeType": "competitive",
+      "courseSummary": "Nächtlicher Start im Zentrum von Triest und zunächst durch städtische Abschnitte und das Karstgebiet bis zur Life Base in PortoPiccolo bei km 61,2. Danach führt die lange Tagesetappe über Medeazza, Sela na Krasu, San Pelagio und Santa Croce zurück zum Bora Village. Die Strecke verbindet urbane Passagen mit steinigen Karst- und Waldwegen und vielen kurzen Gegenanstiegen.",
+      "surface": "Städtische Wege zu Beginn, danach überwiegend Karstpfade und Waldwege mit steinigem Untergrund, kurzen An- und Abstiegen sowie häufigen Richtungswechseln. Flache, gleichmäßig laufbare Abschnitte sind selten; genaue Untergrundanteile sind nicht veröffentlicht.",
+      "highlights": [
+        "Piazza della Borsa und nächtliches Triest",
+        "Val Rosandra und Opicina-Obelisk",
+        "Barcola/Miramare und die Küstenhänge",
+        "Sentiero Rilke und Duino",
+        "Karstabschnitte über Medeazza und Sela na Krasu",
+        "Life Base PortoPiccolo bei km 61,2",
+        "Sela na Krasu, San Pelagio und Santa Croce"
+      ],
+      "aidStations": [
+        {
+          "name": "Bagnoli",
+          "km": 13.2,
+          "cutoff": "21:30 (09.01.2027)",
+          "hotMeal": false,
+          "food": "Standardverpflegung",
+          "note": "Offizielle 2027-Seite nennt keinen warmen Teller an diesem Punkt."
+        },
+        {
+          "name": "Basovizza",
+          "km": 25.6,
+          "cutoff": "01:00 (10.01.2027)",
+          "hotMeal": true,
+          "food": "Pizza plus Standardverpflegung"
+        },
+        {
+          "name": "Obelisk",
+          "km": 35.3,
+          "cutoff": "03:00",
+          "hotMeal": true,
+          "food": "Heiße Brühe plus Standardverpflegung"
+        },
+        {
+          "name": "Contovello",
+          "km": 46.7,
+          "cutoff": "05:15",
+          "hotMeal": true,
+          "food": "Heiße Brühe plus Standardverpflegung"
+        },
+        {
+          "name": "Bora Village / Life Base",
+          "km": 61.2,
+          "cutoff": "08:15",
+          "hotMeal": true,
+          "food": "Warme Speisen; Life Base"
+        },
+        {
+          "name": "Medeazza",
+          "km": 71,
+          "cutoff": null,
+          "hotMeal": true,
+          "food": "Fruske-Karstspezialität: Wurst im hausgemachten Brot"
+        },
+        {
+          "name": "Sela na Krasu",
+          "km": 88.6,
+          "cutoff": "14:30",
+          "hotMeal": true,
+          "food": "Warmer Teller plus Standardverpflegung"
+        },
+        {
+          "name": "San Pelagio",
+          "km": 101.7,
+          "cutoff": "17:00",
+          "hotMeal": true,
+          "food": "Pizza plus Standardverpflegung"
+        },
+        {
+          "name": "Santa Croce",
+          "km": 107.4,
+          "cutoff": "18:00",
+          "hotMeal": false,
+          "food": "Standardverpflegung"
+        },
+        {
+          "name": "Ziel PortoPiccolo",
+          "km": 116.2,
+          "cutoff": "20:00 (Maximalzeit)",
+          "hotMeal": true,
+          "food": "Warme Zielverpflegung"
+        }
+      ],
+      "refreshmentSummary": "9 Zwischenverpflegungen, davon 7 mit warmem Teller; zusätzlich warme Zielverpflegung in PortoPiccolo. Standardangebot: salzige Kohlenhydrate (Brot/Zwieback/Cracker), Süßes/Gebäck, Obst (je nach Verfügbarkeit), Coca-Cola, heißer Tee, Mineralwasser mit Kohlensäure, Mineralsalze.",
+      "mapUrl": "https://tracedetrail.fr/en/iframe/10278",
+      "elevationProfileUrl": "https://tracedetrail.fr/en/iframe/10278",
+      "mapProfileType": "Trace de Trail – offizieller Roadbook-Link auf Karte/Split-Tabelle",
+      "roadbookUrl": "https://www.s1trail.com/en/roadbook-s1-bora-ultra/",
+      "routePageUrl": "https://www.s1trail.com/en/s1-bora-ultra-116-km/",
+      "gpx": {
+        "status": "withheld_until_race_week",
+        "publicDownloadUrl": null,
+        "officialDownloadPageUrl": null,
+        "noticeSummary": "Der Veranstalter hält den endgültigen GPX-Track bis zur Rennwoche zurück. Begründet wird dies mit möglichen kurzfristigen Strecken-/Sicherheitsänderungen und privaten Grundstücksabschnitten, die nur am Renntag aufgrund entsprechender Vereinbarungen geöffnet sind. Die Rennordnung weist Teilnehmende an, ausschließlich die vor dem Rennen per automatischer E-Mail versandte GPX-Datei zu verwenden.",
+        "publicFileAvailable": false,
+        "downloadPageChecked": true,
+        "metadataChecked": false,
+        "metadataStatus": "Kein öffentlich zugänglicher 2027-GPX-Download gefunden; daher keine GPX-Metadaten zur Prüfung verfügbar.",
+        "appPolicy": "GPX-Fetch, Laden, Import, Speichern, Verarbeitung, Kartendarstellung und Nutzer-Download gesperrt; reine Verlinkung ebenfalls gesperrt, bis sie separat schriftlich erlaubt wird.",
+        "permissionStatus": "pending",
+        "sources": [
+          "https://www.s1trail.com/en/dati-ufficiali-corsa-della-bora-2027/",
+          "https://www.s1trail.com/en/regolamento/"
+        ],
+        "routePageUrl": "https://www.s1trail.com/en/s1-bora-ultra-116-km/"
+      },
+      "existingDataConflicts": [
+        "Im bestehenden App-Datensatz ist der Bagnoli-Cut-off mit 22:00 gespeichert; die aktuelle offizielle 2027-Datenseite nennt 21:30. Keine Änderung am bestehenden Datensatz vorgenommen.",
+        "Der bestehende Datensatz enthält keine separate Zielverpflegungszeile bei km 116,2; die offizielle Seite beschreibt dort warme Zielverpflegung."
+      ],
+      "permissionStatus": {
+        "officialText": "pending",
+        "ownSummary": "pending",
+        "routeFacts": "pending",
+        "map": "pending",
+        "profile": "pending",
+        "gpx": "blocked_pending_permission"
+      }
+    },
+    {
+      "routeId": "trieste-ultra-61-2-2323",
+      "appRouteId": "trieste-ultra-61-2-2323",
+      "name": "S1 Trieste Ultra",
+      "distanceKm": 61.2,
+      "elevationGainM": 2323,
+      "date": "2027-01-09",
+      "startTime": "19:00",
+      "startLocation": "Piazza della Borsa, Trieste",
+      "finishLocation": "Bora Village, PortoPiccolo, Sistiana",
+      "maxTimeMinutes": 810,
+      "maxTimeText": "13 Stunden 30 Minuten; offizieller Zielschluss Sonntag 10.01.2027 um 08:30",
+      "routeType": "competitive",
+      "courseSummary": "Nächtliche Querung vom historischen Zentrum Triests in das Karstgebiet. Nach den Stadtpassagen geht es über die Val-Rosandra- und Karstwege zum Obelisk, anschließend über Barcola und die Hänge bei Contovello entlang der Küste zum Ziel in PortoPiccolo.",
+      "surface": "Mischung aus Stadtstraßen, Park- und Verbindungswegen sowie steinigen Karstpfaden und Küstenwegen. Die Karstabschnitte sind durch kurze Anstiege, Abstiege und Richtungswechsel geprägt; genaue Oberflächenanteile sind nicht veröffentlicht.",
+      "highlights": [
+        "Piazza della Borsa und Piazza Unità d'Italia",
+        "Historische Palazzi und Canal Grande",
+        "Val Rosandra",
+        "Opicina-Obelisk",
+        "Barcola und Miramare",
+        "Weinberge bei Contovello",
+        "Küstenabschnitt Costa dei Barbari"
+      ],
+      "aidStations": [
+        {
+          "name": "Bagnoli",
+          "km": 13.2,
+          "cutoff": "21:30 (09.01.2027)",
+          "hotMeal": true,
+          "food": "Warmer Teller laut Stationssymbol; Detailgericht nicht genannt"
+        },
+        {
+          "name": "Basovizza",
+          "km": 25.6,
+          "cutoff": "01:00 (10.01.2027)",
+          "hotMeal": null,
+          "food": "Standardverpflegung"
+        },
+        {
+          "name": "Obelisk",
+          "km": 35.3,
+          "cutoff": "03:00",
+          "hotMeal": null,
+          "food": "Standardverpflegung"
+        },
+        {
+          "name": "Contovello",
+          "km": 46.7,
+          "cutoff": "05:15",
+          "hotMeal": null,
+          "food": "Standardverpflegung"
+        },
+        {
+          "name": "Ziel PortoPiccolo",
+          "km": 61.2,
+          "cutoff": "08:30 (Maximalzeit)",
+          "hotMeal": null,
+          "food": "Zielverpflegung nicht näher aufgeschlüsselt"
+        }
+      ],
+      "refreshmentSummary": "Die Streckenseite weist Bagnoli ausdrücklich mit warmem Teller aus; die übrigen Zwischenpunkte führen Getränke und feste Verpflegung. Eine eindeutige Gesamtzahl warmer Mahlzeiten wurde nicht in die Daten übernommen, da die Stationssymbole und die zusammenfassende Zählung nicht vollständig übereinstimmen. Standardangebot an den Verpflegungspunkten: salzige Kohlenhydrate (Brot/Zwieback/Cracker), Süßes/Gebäck, Obst (je nach Verfügbarkeit), Coca-Cola, heißer Tee, Mineralwasser mit Kohlensäure, Mineralsalze.",
+      "mapUrl": "https://tracedetrail.fr/en/iframe/10280",
+      "elevationProfileUrl": "https://tracedetrail.fr/en/iframe/10280",
+      "mapProfileType": "Trace de Trail – offizieller Roadbook-Link auf Karte/Split-Tabelle",
+      "roadbookUrl": "https://www.s1trail.com/en/roadbook-s1-trieste-ultra/",
+      "routePageUrl": "https://www.s1trail.com/en/s1-bora-ultra/",
+      "gpx": {
+        "status": "withheld_until_race_week",
+        "publicDownloadUrl": null,
+        "officialDownloadPageUrl": null,
+        "noticeSummary": "Der Veranstalter hält den endgültigen GPX-Track bis zur Rennwoche zurück. Begründet wird dies mit möglichen kurzfristigen Strecken-/Sicherheitsänderungen und privaten Grundstücksabschnitten, die nur am Renntag aufgrund entsprechender Vereinbarungen geöffnet sind. Die Rennordnung weist Teilnehmende an, ausschließlich die vor dem Rennen per automatischer E-Mail versandte GPX-Datei zu verwenden.",
+        "publicFileAvailable": false,
+        "downloadPageChecked": true,
+        "metadataChecked": false,
+        "metadataStatus": "Kein öffentlich zugänglicher 2027-GPX-Download gefunden; daher keine GPX-Metadaten zur Prüfung verfügbar.",
+        "appPolicy": "GPX-Fetch, Laden, Import, Speichern, Verarbeitung, Kartendarstellung und Nutzer-Download gesperrt; reine Verlinkung ebenfalls gesperrt, bis sie separat schriftlich erlaubt wird.",
+        "permissionStatus": "pending",
+        "sources": [
+          "https://www.s1trail.com/en/dati-ufficiali-corsa-della-bora-2027/",
+          "https://www.s1trail.com/en/regolamento/"
+        ],
+        "routePageUrl": "https://www.s1trail.com/en/s1-bora-ultra/"
+      },
+      "existingDataConflicts": [
+        "Die vorhandenen Zwischen-Cut-offs stimmen mit den offiziellen 2027-Daten überein; das Ziel bei km 61,2 und der Zielschluss 08:30 sind im bestehenden Aid-Station-Array nicht als eigener Eintrag abgebildet."
+      ],
+      "permissionStatus": {
+        "officialText": "pending",
+        "ownSummary": "pending",
+        "routeFacts": "pending",
+        "map": "pending",
+        "profile": "pending",
+        "gpx": "blocked_pending_permission"
+      }
+    },
+    {
+      "routeId": "transkarst-ultra-59-1814",
+      "appRouteId": "transkarst-ultra-59-1814",
+      "name": "S1 TransKarst Ultra",
+      "distanceKm": 55,
+      "elevationGainM": 1594,
+      "date": "2027-01-10",
+      "startTime": "07:00",
+      "startLocation": "Bora Village, PortoPiccolo, Sistiana",
+      "finishLocation": "Bora Village, PortoPiccolo, Sistiana",
+      "maxTimeMinutes": 780,
+      "maxTimeText": "13 Stunden; offizieller Zielschluss 20:00",
+      "routeType": "competitive",
+      "courseSummary": "Vom Bora Village führt die Strecke über die Küsten- und Rilke-Abschnitte bei Duino ins Landesinnere. Über Medeazza und das slowenische Karstgebiet bei Sela na Krasu geht es weiter nach San Pelagio und Santa Croce; anschließend führt der Rückweg über Wald- und Karstwege wieder hinunter zum Meer und zum Bora Village.",
+      "surface": "CAI-Karstwege mit veranstalterspezifischen Verbindungsstücken, Waldpfade und steinige Karstpassagen. Häufige kurze Gegenanstiege und Richtungswechsel; keine Prozentangaben zum Untergrund veröffentlicht.",
+      "highlights": [
+        "Sentiero Rilke und weiße Klippen",
+        "Duino und Mithraeum-Umgebung",
+        "Medeazza und die Karstspezialität",
+        "Sela na Krasu im slowenischen Karst",
+        "San Pelagio und Lupinc-Großenkriegpark",
+        "Santa Croce und Rückkehr zur Küste"
+      ],
+      "aidStations": [
+        {
+          "name": "Medeazza",
+          "km": 9.8,
+          "cutoff": "09:45",
+          "hotMeal": true,
+          "food": "Fruske-Karstspezialität: Wurst im hausgemachten Brot"
+        },
+        {
+          "name": "Sela na Krasu",
+          "km": 27.4,
+          "cutoff": "13:45",
+          "hotMeal": true,
+          "food": "Warmer Teller"
+        },
+        {
+          "name": "San Pelagio",
+          "km": 40.6,
+          "cutoff": "16:45",
+          "hotMeal": true,
+          "food": "Pizza"
+        },
+        {
+          "name": "Santa Croce",
+          "km": 46.2,
+          "cutoff": "17:45",
+          "hotMeal": false,
+          "food": "Standardverpflegung"
+        },
+        {
+          "name": "Ziel PortoPiccolo",
+          "km": 55,
+          "cutoff": "20:00 (Maximalzeit)",
+          "hotMeal": null,
+          "food": "Zielverpflegung nicht näher aufgeschlüsselt"
+        }
+      ],
+      "refreshmentSummary": "4 Zwischenverpflegungen, davon 3 mit warmem Teller. Standardangebot: salzige Kohlenhydrate (Brot/Zwieback/Cracker), Süßes/Gebäck, Obst (je nach Verfügbarkeit), Coca-Cola, heißer Tee, Mineralwasser mit Kohlensäure, Mineralsalze.",
+      "mapUrl": "https://www.s1trail.com/en/s1-trail/",
+      "elevationProfileUrl": "https://www.s1trail.com/en/s1-trail/",
+      "mapProfileType": "Interaktive Karte und Höhen-/Splitdaten in der offiziellen Streckenseite eingebettet; kein separater direkter Kartenlink im Roadbook ermittelt",
+      "roadbookUrl": "https://www.s1trail.com/en/roadbook-s1-transkarst-ultra/",
+      "routePageUrl": "https://www.s1trail.com/en/s1-trail/",
+      "gpx": {
+        "status": "withheld_until_race_week",
+        "publicDownloadUrl": null,
+        "officialDownloadPageUrl": null,
+        "noticeSummary": "Der Veranstalter hält den endgültigen GPX-Track bis zur Rennwoche zurück. Begründet wird dies mit möglichen kurzfristigen Strecken-/Sicherheitsänderungen und privaten Grundstücksabschnitten, die nur am Renntag aufgrund entsprechender Vereinbarungen geöffnet sind. Die Rennordnung weist Teilnehmende an, ausschließlich die vor dem Rennen per automatischer E-Mail versandte GPX-Datei zu verwenden.",
+        "publicFileAvailable": false,
+        "downloadPageChecked": true,
+        "metadataChecked": false,
+        "metadataStatus": "Kein öffentlich zugänglicher 2027-GPX-Download gefunden; daher keine GPX-Metadaten zur Prüfung verfügbar.",
+        "appPolicy": "GPX-Fetch, Laden, Import, Speichern, Verarbeitung, Kartendarstellung und Nutzer-Download gesperrt; reine Verlinkung ebenfalls gesperrt, bis sie separat schriftlich erlaubt wird.",
+        "permissionStatus": "pending",
+        "sources": [
+          "https://www.s1trail.com/en/dati-ufficiali-corsa-della-bora-2027/",
+          "https://www.s1trail.com/en/regolamento/"
+        ],
+        "routePageUrl": "https://www.s1trail.com/en/s1-trail/"
+      },
+      "existingDataConflicts": [],
+      "permissionStatus": {
+        "officialText": "pending",
+        "ownSummary": "pending",
+        "routeFacts": "pending",
+        "map": "pending",
+        "profile": "pending",
+        "gpx": "blocked_pending_permission"
+      }
+    },
+    {
+      "routeId": "explorer-85-2993",
+      "appRouteId": "explorer-85-2993",
+      "name": "S1 Borderless Trail",
+      "distanceKm": 36.2,
+      "elevationGainM": 797,
+      "date": "2027-01-10",
+      "startTime": "09:00",
+      "startLocation": "Bora Village, PortoPiccolo, Sistiana",
+      "finishLocation": "Bora Village, PortoPiccolo, Sistiana",
+      "maxTimeMinutes": 430,
+      "maxTimeText": "7 Stunden 10 Minuten; offizieller Zielschluss 16:10",
+      "routeType": "competitive",
+      "courseSummary": "Vom Bora Village geht es zunächst auf der Straße hinauf zum Sentiero Rilke und entlang der Klippen unterhalb von Duino. Danach quert die Strecke den Karstkamm um Monte Ermada nahe der Grenze, mit Dolinen, Höhlen und Spuren des Ersten Weltkriegs; über San Pelagio und Santa Croce führt sie zurück zum Meer.",
+      "surface": "Straßenanstieg zum Rilke-Weg, schmale Küstenpfade, steinige Karst- und CAI-Wege sowie Waldabschnitte. Genaue Oberflächenanteile sind nicht veröffentlicht.",
+      "highlights": [
+        "Sentiero Rilke und Adriaklippen",
+        "Duino und Schloss Duino",
+        "Monte Ermada und grenznaher Karstkamm",
+        "Dolinen, Höhlen und Gelände des Ersten Weltkriegs",
+        "Grotta Dörfler und Monte Sambuco",
+        "San Pelagio, Lupinc-Park und Santa Croce"
+      ],
+      "aidStations": [
+        {
+          "name": "Medeazza",
+          "km": 10.1,
+          "cutoff": null,
+          "hotMeal": false,
+          "food": "Feste Verpflegung und Getränke"
+        },
+        {
+          "name": "San Pelagio",
+          "km": 21.7,
+          "cutoff": "13:15",
+          "hotMeal": false,
+          "food": "Feste Verpflegung und Getränke"
+        },
+        {
+          "name": "Santa Croce",
+          "km": 27.4,
+          "cutoff": "14:15",
+          "hotMeal": false,
+          "food": "Feste Verpflegung und Getränke"
+        },
+        {
+          "name": "Ziel PortoPiccolo",
+          "km": 36.2,
+          "cutoff": "16:10 (Maximalzeit)",
+          "hotMeal": null,
+          "food": "Zielverpflegung nicht näher aufgeschlüsselt"
+        }
+      ],
+      "refreshmentSummary": "Drei Zwischenverpflegungen mit Getränken und fester Verpflegung; auf der aktuellen Streckenseite ist kein warmer Teller an diesen drei Punkten markiert. Standardangebot soweit angegeben: salzige Kohlenhydrate (Brot/Zwieback/Cracker), Süßes/Gebäck, Obst (je nach Verfügbarkeit), Coca-Cola, heißer Tee, Mineralwasser mit Kohlensäure, Mineralsalze.",
+      "mapUrl": "https://www.s1trail.com/en/s1-borderless-trail/",
+      "elevationProfileUrl": "https://www.s1trail.com/en/s1-borderless-trail/",
+      "mapProfileType": "Interaktive Karte und Höhen-/Splitdaten in der offiziellen Streckenseite eingebettet",
+      "roadbookUrl": "https://www.s1trail.com/en/roadbook-s1-borderless-trail/",
+      "routePageUrl": "https://www.s1trail.com/en/s1-borderless-trail/",
+      "gpx": {
+        "status": "withheld_until_race_week",
+        "publicDownloadUrl": null,
+        "officialDownloadPageUrl": null,
+        "noticeSummary": "Der Veranstalter hält den endgültigen GPX-Track bis zur Rennwoche zurück. Begründet wird dies mit möglichen kurzfristigen Strecken-/Sicherheitsänderungen und privaten Grundstücksabschnitten, die nur am Renntag aufgrund entsprechender Vereinbarungen geöffnet sind. Die Rennordnung weist Teilnehmende an, ausschließlich die vor dem Rennen per automatischer E-Mail versandte GPX-Datei zu verwenden.",
+        "publicFileAvailable": false,
+        "downloadPageChecked": true,
+        "metadataChecked": false,
+        "metadataStatus": "Kein öffentlich zugänglicher 2027-GPX-Download gefunden; daher keine GPX-Metadaten zur Prüfung verfügbar.",
+        "appPolicy": "GPX-Fetch, Laden, Import, Speichern, Verarbeitung, Kartendarstellung und Nutzer-Download gesperrt; reine Verlinkung ebenfalls gesperrt, bis sie separat schriftlich erlaubt wird.",
+        "permissionStatus": "pending",
+        "sources": [
+          "https://www.s1trail.com/en/dati-ufficiali-corsa-della-bora-2027/",
+          "https://www.s1trail.com/en/regolamento/"
+        ],
+        "routePageUrl": "https://www.s1trail.com/en/s1-borderless-trail/"
+      },
+      "existingDataConflicts": [
+        "Die vorhandenen App-Aid-Stationen stehen bei Medeazza 9,8 km, San Pelagio 21,4 km und Santa Croce 27,0 km. Die aktuelle offizielle 2027-Streckenseite nennt 10,1 km, 21,7 km und 27,4 km. Bestehende Werte nicht überschrieben; Aktualisierung als belegten Prüfpunkt vorgemerkt."
+      ],
+      "permissionStatus": {
+        "officialText": "pending",
+        "ownSummary": "pending",
+        "routeFacts": "pending",
+        "map": "pending",
+        "profile": "pending",
+        "gpx": "blocked_pending_permission"
+      }
+    },
+    {
+      "routeId": "half-trail-23-3-700",
+      "appRouteId": "half-trail-23-3-700",
+      "name": "S1 Half Trail",
+      "distanceKm": 23.3,
+      "elevationGainM": 700,
+      "date": "2027-01-10",
+      "startVariants": [
+        {
+          "type": "competitive",
+          "time": "09:30"
+        },
+        {
+          "type": "non-competitive",
+          "time": "10:00"
+        }
+      ],
+      "startLocation": "Bora Village, PortoPiccolo, Sistiana",
+      "finishLocation": "Bora Village, PortoPiccolo, Sistiana",
+      "maxTimeMinutes": 370,
+      "maxTimeText": "6 Stunden 10 Minuten; offizielle Zielschlusszeit 15:40 für den kompetitiven 09:30-Start; für den nicht-kompetitiven Start ist keine separate Zielschlusszeit ausgewiesen",
+      "routeType": "competitive_and_non_competitive",
+      "courseSummary": "Vom Bora Village geht es hinunter zur Bucht von Sistiana und über Stufen und Straße hinauf zum Sentiero Rilke. Die Route folgt den Klippen nach Duino, umrundet Monte Ermada durch Dolinen, Kiefernwald und ehemalige Schützengräben und führt über Visogliano auf dem besser laufbaren Abschnitt zurück zum Meer.",
+      "surface": "Straßen- und Treppenanstieg, Küstenpfad am Rilke-Weg, steinige Karstpfade, Wald und ein vergleichsweise gut laufbarer Rückweg. Genaue Oberflächenanteile sind nicht veröffentlicht.",
+      "highlights": [
+        "Sistiana-Bucht und Sentiero Rilke",
+        "Duino und Schloss Duino",
+        "Monte-Ermada-Schleife",
+        "Dolinen, Kiefernwald und Spuren des Ersten Weltkriegs",
+        "Rückweg über Visogliano"
+      ],
+      "aidStations": [
+        {
+          "name": "Duino",
+          "km": 5.8,
+          "cutoff": null,
+          "hotMeal": true,
+          "food": "Warmer Teller plus Standardverpflegung"
+        },
+        {
+          "name": "Medeazza",
+          "km": 10.4,
+          "cutoff": null,
+          "hotMeal": false,
+          "food": "Standardverpflegung"
+        },
+        {
+          "name": "Visogliano",
+          "km": 19.9,
+          "cutoff": "14:45",
+          "hotMeal": false,
+          "food": "Standardverpflegung"
+        },
+        {
+          "name": "Ziel PortoPiccolo",
+          "km": 23.3,
+          "cutoff": "15:40 (Maximalzeit für den kompetitiven Start)",
+          "hotMeal": null,
+          "food": "Zielverpflegung nicht näher aufgeschlüsselt"
+        }
+      ],
+      "refreshmentSummary": "Drei Zwischenverpflegungen; Duino ist mit warmem Teller gekennzeichnet. Standardangebot: salzige Kohlenhydrate (Brot/Zwieback/Cracker), Süßes/Gebäck, Obst (je nach Verfügbarkeit), Coca-Cola, heißer Tee, Mineralwasser mit Kohlensäure, Mineralsalze.",
+      "mapUrl": "https://tracedetrail.fr/en/iframe/10286",
+      "elevationProfileUrl": "https://tracedetrail.fr/en/iframe/10286",
+      "mapProfileType": "Trace de Trail – offizieller Roadbook-Link auf Karte/Split-Tabelle",
+      "roadbookUrl": "https://www.s1trail.com/en/roadbook-s1-half-trail/",
+      "routePageUrl": "https://www.s1trail.com/en/s1-half/",
+      "gpx": {
+        "status": "withheld_until_race_week",
+        "publicDownloadUrl": null,
+        "officialDownloadPageUrl": null,
+        "noticeSummary": "Der Veranstalter hält den endgültigen GPX-Track bis zur Rennwoche zurück. Begründet wird dies mit möglichen kurzfristigen Strecken-/Sicherheitsänderungen und privaten Grundstücksabschnitten, die nur am Renntag aufgrund entsprechender Vereinbarungen geöffnet sind. Die Rennordnung weist Teilnehmende an, ausschließlich die vor dem Rennen per automatischer E-Mail versandte GPX-Datei zu verwenden.",
+        "publicFileAvailable": false,
+        "downloadPageChecked": true,
+        "metadataChecked": false,
+        "metadataStatus": "Kein öffentlich zugänglicher 2027-GPX-Download gefunden; daher keine GPX-Metadaten zur Prüfung verfügbar.",
+        "appPolicy": "GPX-Fetch, Laden, Import, Speichern, Verarbeitung, Kartendarstellung und Nutzer-Download gesperrt; reine Verlinkung ebenfalls gesperrt, bis sie separat schriftlich erlaubt wird.",
+        "permissionStatus": "pending",
+        "sources": [
+          "https://www.s1trail.com/en/dati-ufficiali-corsa-della-bora-2027/",
+          "https://www.s1trail.com/en/regolamento/"
+        ],
+        "routePageUrl": "https://www.s1trail.com/en/s1-half/"
+      },
+      "existingDataConflicts": [
+        "Die vorhandenen App-Aid-Stationen stehen bei Duino 5,5 km, Medeazza 10,1 km und Visogliano 19,6 km. Die aktuelle offizielle 2027-Streckenseite nennt 5,8 km, 10,4 km und 19,9 km. Bestehende Werte nicht überschrieben; Aktualisierung als belegten Prüfpunkt vorgemerkt."
+      ],
+      "permissionStatus": {
+        "officialText": "pending",
+        "ownSummary": "pending",
+        "routeFacts": "pending",
+        "map": "pending",
+        "profile": "pending",
+        "gpx": "blocked_pending_permission"
+      }
+    },
+    {
+      "routeId": "s1-family-hike-trail-14-8-419-2027",
+      "appRouteId": null,
+      "name": "S1 Family Hike & Trail",
+      "distanceKm": 14.8,
+      "elevationGainM": 419,
+      "date": "2027-01-10",
+      "startTime": "10:00",
+      "startLocation": "Bora Village, PortoPiccolo, Sistiana",
+      "finishLocation": "Bora Village, PortoPiccolo, Sistiana",
+      "maxTimeMinutes": 310,
+      "maxTimeText": "5 Stunden 10 Minuten; offizieller Zielschluss 15:10",
+      "routeType": "non_competitive",
+      "courseSummary": "Eine ruhigere Runde vom Bora Village zur Bucht von Sistiana, über Straße und Stufen hinauf zum Sentiero Rilke und entlang der Klippen nach Duino. Danach geht es durch Wald und über die unteren Hänge des Monte Ermada nach Visogliano und zurück zum Meer.",
+      "surface": "Straßen- und Treppenabschnitt, rund zwei Kilometer Küstenpfad am Rilke-Weg, Wald- und Karstpfade. Der Veranstalter beschreibt die Strecke als zugänglich und ohne ausgeprägte technische Passagen; Untergrundanteile sind nicht beziffert.",
+      "highlights": [
+        "Sistiana-Bucht",
+        "Sentiero Rilke mit Blick auf die Adria",
+        "Duino und Schloss Duino",
+        "Felsformation Dama Bianca",
+        "Wald und untere Hänge des Monte Ermada",
+        "Rückweg über Visogliano"
+      ],
+      "aidStations": [
+        {
+          "name": "Duino",
+          "km": 5.8,
+          "cutoff": null,
+          "hotMeal": false,
+          "food": "Standardverpflegung"
+        },
+        {
+          "name": "Visogliano",
+          "km": 11.3,
+          "cutoff": "14:45",
+          "hotMeal": true,
+          "food": "Warmer Teller plus Standardverpflegung"
+        },
+        {
+          "name": "Ziel PortoPiccolo",
+          "km": 14.8,
+          "cutoff": "15:10 (Maximalzeit)",
+          "hotMeal": null,
+          "food": "Zielverpflegung nicht näher aufgeschlüsselt"
+        }
+      ],
+      "refreshmentSummary": "Zwei Zwischenverpflegungen, davon eine mit warmem Teller (Visogliano). Standardangebot: salzige Kohlenhydrate (Brot/Zwieback/Cracker), Süßes/Gebäck, Obst (je nach Verfügbarkeit), Coca-Cola, heißer Tee, Mineralwasser mit Kohlensäure, Mineralsalze.",
+      "mapUrl": "https://tracedetrail.fr/en/iframe/10288",
+      "elevationProfileUrl": "https://tracedetrail.fr/en/iframe/10288",
+      "mapProfileType": "Trace de Trail – offizieller Roadbook-Link auf Karte/Split-Tabelle",
+      "roadbookUrl": "https://www.s1trail.com/roadbook-s1-family-hike-trail/",
+      "routePageUrl": "https://www.s1trail.com/en/s1-family-hike-2/",
+      "gpx": {
+        "status": "withheld_until_race_week",
+        "publicDownloadUrl": null,
+        "officialDownloadPageUrl": null,
+        "noticeSummary": "Der Veranstalter hält den endgültigen GPX-Track bis zur Rennwoche zurück. Begründet wird dies mit möglichen kurzfristigen Strecken-/Sicherheitsänderungen und privaten Grundstücksabschnitten, die nur am Renntag aufgrund entsprechender Vereinbarungen geöffnet sind. Die Rennordnung weist Teilnehmende an, ausschließlich die vor dem Rennen per automatischer E-Mail versandte GPX-Datei zu verwenden.",
+        "publicFileAvailable": false,
+        "downloadPageChecked": true,
+        "metadataChecked": false,
+        "metadataStatus": "Kein öffentlich zugänglicher 2027-GPX-Download gefunden; daher keine GPX-Metadaten zur Prüfung verfügbar.",
+        "appPolicy": "GPX-Fetch, Laden, Import, Speichern, Verarbeitung, Kartendarstellung und Nutzer-Download gesperrt; reine Verlinkung ebenfalls gesperrt, bis sie separat schriftlich erlaubt wird.",
+        "permissionStatus": "pending",
+        "sources": [
+          "https://www.s1trail.com/en/dati-ufficiali-corsa-della-bora-2027/",
+          "https://www.s1trail.com/en/regolamento/"
+        ],
+        "routePageUrl": "https://www.s1trail.com/en/s1-family-hike-2/"
+      },
+      "existingDataConflicts": [
+        "Offizielle Distanz 14,8 km / 419 m D+ fehlt vollständig in der aktuellen App-Streckenliste; neuer Kandidat, noch nicht in EVENTS eingefügt."
+      ],
+      "permissionStatus": {
+        "officialText": "pending",
+        "ownSummary": "pending",
+        "routeFacts": "pending",
+        "map": "pending",
+        "profile": "pending",
+        "gpx": "blocked_pending_permission"
+      }
+    },
+    {
+      "routeId": "s1-borin-5-5-186-2027",
+      "appRouteId": null,
+      "name": "S1 Borin",
+      "distanceKm": 5.5,
+      "elevationGainM": 186,
+      "date": "2027-01-10",
+      "startTime": "10:00",
+      "startLocation": "Strand von PortoPiccolo, Bora Village",
+      "finishLocation": "Bora Village, PortoPiccolo, Sistiana",
+      "maxTimeMinutes": 120,
+      "maxTimeText": "2 Stunden; offizieller Zielschluss 12:00; keine Zwischen-Cut-offs",
+      "routeType": "non_competitive",
+      "courseSummary": "Kurze Runde mit Start am Kiesstrand von PortoPiccolo, anschließendem Anstieg nach Sistiana und Rückkehr zum Bora Village. Der Veranstalter weist ausdrücklich auf einen Kiesstrandabschnitt und ungefähr 40 Stufen hin.",
+      "surface": "Kiesstrand und Treppen, dazu kurze Verbindungsabschnitte zwischen PortoPiccolo und Sistiana. Exakte Untergrundanteile sind nicht veröffentlicht.",
+      "highlights": [
+        "Start direkt am Strand von PortoPiccolo",
+        "Anstieg nach Sistiana",
+        "Rückkehr zum Bora Village",
+        "Kurze, niedrigschwellige Distanz für Einsteiger und Familien"
+      ],
+      "aidStations": [
+        {
+          "name": "Ziel PortoPiccolo",
+          "km": 5.5,
+          "cutoff": "12:00 (Maximalzeit)",
+          "hotMeal": false,
+          "food": "Getränke und feste Verpflegung"
+        }
+      ],
+      "refreshmentSummary": "Ein Verpflegungspunkt am Ziel; keine Zwischenverpflegungen oder Zwischen-Cut-offs ausgewiesen.",
+      "mapUrl": "https://tracedetrail.fr/en/iframe/10912",
+      "elevationProfileUrl": "https://tracedetrail.fr/en/iframe/10912",
+      "mapProfileType": "Trace de Trail – offizieller Roadbook-Link auf Karte/Split-Tabelle",
+      "roadbookUrl": "https://www.s1trail.com/en/roadbook-s1-borin/",
+      "routePageUrl": "https://www.s1trail.com/en/borin/",
+      "gpx": {
+        "status": "withheld_until_race_week",
+        "publicDownloadUrl": null,
+        "officialDownloadPageUrl": null,
+        "noticeSummary": "Der Veranstalter hält den endgültigen GPX-Track bis zur Rennwoche zurück. Begründet wird dies mit möglichen kurzfristigen Strecken-/Sicherheitsänderungen und privaten Grundstücksabschnitten, die nur am Renntag aufgrund entsprechender Vereinbarungen geöffnet sind. Die Rennordnung weist Teilnehmende an, ausschließlich die vor dem Rennen per automatischer E-Mail versandte GPX-Datei zu verwenden.",
+        "publicFileAvailable": false,
+        "downloadPageChecked": true,
+        "metadataChecked": false,
+        "metadataStatus": "Kein öffentlich zugänglicher 2027-GPX-Download gefunden; daher keine GPX-Metadaten zur Prüfung verfügbar.",
+        "appPolicy": "GPX-Fetch, Laden, Import, Speichern, Verarbeitung, Kartendarstellung und Nutzer-Download gesperrt; reine Verlinkung ebenfalls gesperrt, bis sie separat schriftlich erlaubt wird.",
+        "permissionStatus": "pending",
+        "sources": [
+          "https://www.s1trail.com/en/dati-ufficiali-corsa-della-bora-2027/",
+          "https://www.s1trail.com/en/regolamento/"
+        ],
+        "routePageUrl": "https://www.s1trail.com/en/borin/"
+      },
+      "existingDataConflicts": [
+        "Offizielle Distanz 5,5 km / 186 m D+ fehlt vollständig in der aktuellen App-Streckenliste; neuer Kandidat, noch nicht in EVENTS eingefügt."
+      ],
+      "permissionStatus": {
+        "officialText": "pending",
+        "ownSummary": "pending",
+        "routeFacts": "pending",
+        "map": "pending",
+        "profile": "pending",
+        "gpx": "blocked_pending_permission"
+      }
+    }
+  ]
+}
