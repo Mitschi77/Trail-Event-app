@@ -6,6 +6,7 @@ import unicodedata
 from datetime import datetime, timezone
 from pathlib import Path
 from urllib.parse import urlparse
+from event_source_status import classify_source_check_status
 
 ROOT = Path(__file__).resolve().parents[1]
 HTML = (ROOT / "index.html").read_text(encoding="utf-8")
@@ -315,10 +316,13 @@ for event in events:
         else:
             status = "unconfirmed"
 
+        current_sources_read = any(item.get("status") == "read" for item in source_status)
         record = {
             "eventId": event["id"],
             "checkedAt": updated,
             "status": status,
+            "sourceCheckStatus": classify_source_check_status(source_status),
+            "lastSuccessfulSourceCheckAt": updated if current_sources_read else previous.get("lastSuccessfulSourceCheckAt"),
             "sources": list(merged_sources.values()),
             "eventPeriod": merged_period,
             "routes": merged_routes
@@ -359,6 +363,7 @@ for event_id, (start_date, end_date, source_url, route_dates) in MANUAL_EVENT_PE
         "url": source_url, "status": "read", "verification": "manual-official-page"
     })
     record["checkedAt"] = updated
+    record["sourceCheckStatus"] = "manual"
     route_index_by_id = {
         route.get("id"): index
         for index, route in enumerate(event.get("routes", []))
@@ -388,6 +393,7 @@ for event_id, (source_url, note) in MANUAL_DISCONTINUED_EVENTS.items():
         "eventId": event_id, "checkedAt": updated, "sources": [], "routes": {}
     })
     record["checkedAt"] = updated
+    record["sourceCheckStatus"] = "manual"
     record["status"] = "discontinued"
     record["eventPeriod"] = None
     record["routes"] = {}
@@ -402,6 +408,7 @@ for event_id, source_url in MANUAL_UNCONFIRMED_SOURCES.items():
         "eventId": event_id, "checkedAt": updated, "sources": [], "routes": {}
     })
     record["checkedAt"] = updated
+    record["sourceCheckStatus"] = "manual"
     record["status"] = "unconfirmed"
     record["eventPeriod"] = None
     record["routes"] = {}
@@ -419,6 +426,7 @@ for event in events:
         "eventId": event["id"],
         "checkedAt": updated,
         "status": "unconfirmed",
+        "sourceCheckStatus": "not-checked",
         "sources": [],
         "eventPeriod": None,
         "routes": {}

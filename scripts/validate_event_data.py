@@ -1,7 +1,7 @@
 import json
 import math
 import re
-from datetime import date
+from datetime import date, datetime
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -23,6 +23,16 @@ def valid_date(value):
     try:
         date.fromisoformat(value)
         return True
+    except ValueError:
+        return False
+
+
+def valid_iso_timestamp(value):
+    if not isinstance(value, str) or not value.strip():
+        return False
+    try:
+        parsed = datetime.fromisoformat(value.strip().replace("Z", "+00:00"))
+        return parsed.tzinfo is not None and parsed.utcoffset() is not None
     except ValueError:
         return False
 
@@ -155,6 +165,21 @@ missing_feed_events = event_ids - set(feed_events)
 for missing_id in sorted(missing_feed_events):
     errors.append(f"{missing_id}: missing event-dates.json entry")
 for feed_event_id, feed_record in feed_events.items():
+    checked_at = feed_record.get("checkedAt")
+    if checked_at and not valid_iso_timestamp(checked_at):
+        errors.append(f"{feed_event_id}: checkedAt must be a valid ISO timestamp")
+    source_check = feed_record.get("sourceCheckStatus")
+    if source_check and source_check not in ("read", "partial", "unavailable", "not-checked", "manual"):
+        errors.append(f"{feed_event_id}: invalid sourceCheckStatus {source_check!r}")
+    last_success = feed_record.get("lastSuccessfulSourceCheckAt")
+    if last_success and not valid_iso_timestamp(last_success):
+        errors.append(f"{feed_event_id}: lastSuccessfulSourceCheckAt must be a valid ISO timestamp")
+    if feed_record.get("status") == "verified":
+        period = feed_record.get("eventPeriod") or {}
+        has_verified_period = bool(period.get("verified") and period.get("startDate"))
+        has_verified_route = any(item.get("verified") and item.get("date") for item in (feed_record.get("routes") or {}).values())
+        if not (has_verified_period or has_verified_route):
+            warnings.append(f"{feed_event_id}: status is verified but no verified event period or route date is present")
     if feed_event_id not in event_ids:
         warnings.append(f"event-dates.json contains stale event ID {feed_event_id!r}")
         continue
