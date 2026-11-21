@@ -62,7 +62,8 @@
         "metadataChecked": false,
         "metadataStatus": "no_public_2027_gpx_file_available_to_inspect",
         "appAction": "block_fetch_load_import_store_process_map_display_and_user_download_until_explicit_route_specific_permission_and_clear_restriction_status",
-        "officialInfoPageLinkAllowed": false
+        "officialInfoPageLinkAllowed": true,
+        "officialGpxLinkPermissionStatus": "pending"
       }
     },
     "bora-ultra-105-3837": {
@@ -103,7 +104,8 @@
         "metadataChecked": false,
         "metadataStatus": "no_public_2027_gpx_file_available_to_inspect",
         "appAction": "block_fetch_load_import_store_process_map_display_and_user_download_until_explicit_route_specific_permission_and_clear_restriction_status",
-        "officialInfoPageLinkAllowed": false
+        "officialInfoPageLinkAllowed": true,
+        "officialGpxLinkPermissionStatus": "pending"
       }
     },
     "transkarst-ultra-59-1814": {
@@ -144,7 +146,8 @@
         "metadataChecked": false,
         "metadataStatus": "no_public_2027_gpx_file_available_to_inspect",
         "appAction": "block_fetch_load_import_store_process_map_display_and_user_download_until_explicit_route_specific_permission_and_clear_restriction_status",
-        "officialInfoPageLinkAllowed": false
+        "officialInfoPageLinkAllowed": true,
+        "officialGpxLinkPermissionStatus": "pending"
       }
     },
     "trieste-ultra-61-2-2323": {
@@ -185,7 +188,8 @@
         "metadataChecked": false,
         "metadataStatus": "no_public_2027_gpx_file_available_to_inspect",
         "appAction": "block_fetch_load_import_store_process_map_display_and_user_download_until_explicit_route_specific_permission_and_clear_restriction_status",
-        "officialInfoPageLinkAllowed": false
+        "officialInfoPageLinkAllowed": true,
+        "officialGpxLinkPermissionStatus": "pending"
       }
     },
     "half-trail-23-3-700": {
@@ -226,7 +230,8 @@
         "metadataChecked": false,
         "metadataStatus": "no_public_2027_gpx_file_available_to_inspect",
         "appAction": "block_fetch_load_import_store_process_map_display_and_user_download_until_explicit_route_specific_permission_and_clear_restriction_status",
-        "officialInfoPageLinkAllowed": false
+        "officialInfoPageLinkAllowed": true,
+        "officialGpxLinkPermissionStatus": "pending"
       }
     },
     "mds-ultra-100-570": {
@@ -21197,7 +21202,8 @@
         "metadataChecked": false,
         "metadataStatus": "no_public_2027_gpx_file_available_to_inspect",
         "appAction": "block_fetch_load_import_store_process_map_display_and_user_download_until_explicit_route_specific_permission_and_clear_restriction_status",
-        "officialInfoPageLinkAllowed": false
+        "officialInfoPageLinkAllowed": true,
+        "officialGpxLinkPermissionStatus": "pending"
       }
     },
     "s1-borin-5-5-186-2027": {
@@ -21238,7 +21244,8 @@
         "metadataChecked": false,
         "metadataStatus": "no_public_2027_gpx_file_available_to_inspect",
         "appAction": "block_fetch_load_import_store_process_map_display_and_user_download_until_explicit_route_specific_permission_and_clear_restriction_status",
-        "officialInfoPageLinkAllowed": false
+        "officialInfoPageLinkAllowed": true,
+        "officialGpxLinkPermissionStatus": "pending"
       }
     }
   }
