@@ -256,7 +256,10 @@
       "Mayrhofen 2027 event dates confirmed, but prior official GPX hrefs remain old 2025/2026 files."
     ],
     "noGpxFilesChanged": true,
-    "noAppRuntimeDataChanged": true
+    "noAppRuntimeDataChanged": true,
+    "currentEventDatesEntriesCoveredDirectly": 8,
+    "currentEventDatesEntriesCoveredByBatch62": 2,
+    "legacyEntriesNotInCurrentEventDates": 2
   },
   "followUps": [
     "Last Soul: request official 2027 loop GPX and compare measured loop length to 6.706km.",
@@ -271,5 +274,27 @@
     "Munich Backyard: request direct organizer GPX and parse actual route length/elevation."
   ],
   "noGpxFilesChanged": true,
-  "noAppRuntimeDataChanged": true
+  "noAppRuntimeDataChanged": true,
+  "currentEventDatesCrossCheck": {
+    "currentCatalogRange": "event-dates.json insertion positions 81–90 (1-based)",
+    "overlappingIds": [
+      "ultraks-matterhorn",
+      "trans-alpine-run",
+      "utmb-mont-blanc",
+      "frankischer-backyard-ultra",
+      "dolomiti-di-brenta",
+      "infinite-trails",
+      "mayrhofen-ultraks",
+      "munchen-backyard-ultra"
+    ],
+    "currentEntriesCoveredByAuditBatch62": [
+      "torlauf-dachstein",
+      "ultra-trail-great-wall"
+    ],
+    "legacyEntriesNotInCurrentCatalog": [
+      "Last Soul Ultra",
+      "Karnisches Ungetüm"
+    ],
+    "note": "This batch follows the historic top-level EVENTS order. Eight current catalog entries overlap directly; Torlauf Dachstein and Ultra-Trail Great Wall are covered by audit batch 62. Last Soul Ultra and Karnisches Ungetüm are legacy entries not in the current event-dates range."
+  }
 }
