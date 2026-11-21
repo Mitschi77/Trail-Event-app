@@ -421,7 +421,10 @@
       "Swiss Alps 100 current program includes Vertical 10K and Kids Run as well as Matterhorning, 50K, 100K and 160K."
     ],
     "noGpxFilesChanged": true,
-    "noAppRuntimeDataChanged": true
+    "noAppRuntimeDataChanged": true,
+    "currentEventDatesEntriesCoveredDirectly": 8,
+    "currentEventDatesEntriesCoveredByBatch61": 2,
+    "legacyEntriesNotInCurrentEventDates": 2
   },
   "followUps": [
     "3Kings3Hills: extract and validate GPX for all eight 2027 routes; ensure app metrics match 2027 facts page, not 2024 edition.",
@@ -436,5 +439,27 @@
     "Allgäu Panorama: ask organizer for Ultra GPX or export from official Outdooractive map when permitted."
   ],
   "noGpxFilesChanged": true,
-  "noAppRuntimeDataChanged": true
+  "noAppRuntimeDataChanged": true,
+  "currentEventDatesCrossCheck": {
+    "currentCatalogRange": "event-dates.json insertion positions 71–80 (1-based)",
+    "overlappingIds": [
+      "the-north-face-grossglockner-ultra-trail",
+      "sachsentrail-erzgebirge",
+      "gauja-trail-by-utmb",
+      "quito-trail-ecuador",
+      "pitz-alpine-glacier-trail",
+      "kat100",
+      "swiss-alps-100",
+      "allgau-panorama-marathon"
+    ],
+    "currentEntriesCoveredByAuditBatch61": [
+      "last-soul-ultra",
+      "karnisches-ungetuem"
+    ],
+    "legacyEntriesNotInCurrentCatalog": [
+      "3Kings 3Hills Trail Festival",
+      "Davos X-Trails"
+    ],
+    "note": "This batch follows the historic top-level EVENTS order. Eight current catalog entries overlap directly; Last Soul Ultra and Karnisches Ungetüm are covered by audit batch 61. 3Kings 3Hills and Davos X-Trails are legacy entries not in the current event-dates range."
+  }
 }
