@@ -1,7 +1,7 @@
 {
   "batch": 48,
   "checkedAt": "2026-11-20",
-  "scope": "Top-level events 79–88 in current EVENTS order",
+  "scope": "Official route and GPX status audit for ten records in the historic/original top-level event list 79–88; this is not the current event-dates.json insertion range 79–88.",
   "status": "audit-only-checkpoint",
   "rules": [
     "Old GPX files remain valid until a new official GPX is published, downloaded, parsed and validated.",
@@ -273,5 +273,27 @@
     "https://www.dolomitidibrentatrail.it/en/routes/xterra45k/",
     "https://www.dolomitidibrentatrail.it/en/routes/21k/",
     "https://infinite-trails.com/gpx-racemap-2/"
-  ]
+  ],
+  "currentEventDatesCrossCheck": {
+    "currentCatalogRange": "event-dates.json insertion positions 79–88 (1-based)",
+    "overlappingIds": [
+      "last-soul-ultra",
+      "karnisches-ungetuem",
+      "ultraks-matterhorn",
+      "trans-alpine-run",
+      "utmb-mont-blanc",
+      "frankischer-backyard-ultra",
+      "dolomiti-di-brenta",
+      "infinite-trails"
+    ],
+    "currentEntriesCoveredByAuditBatch49": [
+      "mayrhofen-ultraks",
+      "munchen-backyard-ultra"
+    ],
+    "legacyEntriesCoveredByAuditBatch60": [
+      "swiss-alps-100",
+      "allgau-panorama-marathon"
+    ],
+    "note": "This package follows the historic/original top-level list. Eight current catalog entries overlap directly; Mayrhofen and Munich Backyard are covered by batch 49. Swiss Alps 100 and Allgäu Panorama are legacy-order entries but remain in the current catalog at positions 77–78 and are covered by batch 60."
+  }
 }
