@@ -203,7 +203,10 @@
       "MUT Miler route data still marked to be confirmed."
     ],
     "noGpxFilesChanged": true,
-    "noAppRuntimeDataChanged": true
+    "noAppRuntimeDataChanged": true,
+    "currentEventDatesEntriesCoveredDirectly": 9,
+    "currentEventDatesEntriesCoveredByBatch57": 1,
+    "duplicateEventCandidates": 1
   },
   "followUps": [
     "Ask Garda Trentino organizer to resolve 7,000m vs 5,800m and verify whether event 31/32 are duplicate records; then obtain 2027 GPX.",
@@ -215,5 +218,31 @@
     "Require organizer confirmation before retaining Ultra X Finland 2027 as a confirmed event.",
     "Recheck each of the six MUT race pages for confirmed route data and final GPX; prioritize MUT Miler status.",
     "Obtain WATZ stage GPX files through participant download and validate stage composition for Ultimate, Double and Final."
-  ]
+  ],
+  "currentEventDatesCrossCheck": {
+    "currentCatalogRange": "event-dates.json insertion positions 31–40 (1-based)",
+    "overlappingIds": [
+      "garda-trentino-trail-extra-100",
+      "garda-trentino-trail",
+      "mountainman",
+      "rennsteiglauf",
+      "greenloop-backyard-ultra",
+      "schwarzach-trail",
+      "ultra-x-110-finnland",
+      "mountain-ultra-trail",
+      "der-watz-mountainman"
+    ],
+    "currentEntriesCoveredByAuditBatch57": [
+      "jenaer-backyard-ultra"
+    ],
+    "duplicateCandidate": {
+      "legacyChecks": [
+        31,
+        32
+      ],
+      "canonicalCurrentEventId": "garda-trentino-trail-extra-100",
+      "note": "Both Garda Extra checks point to the same official 100km event page; retain one canonical event unless distinct event evidence appears."
+    },
+    "note": "Nine current catalog entries overlap directly; Jenaer Backyard Ultra is covered by audit batch 57. The two Garda Extra entries in this package are a likely duplicate pair."
+  }
 }
