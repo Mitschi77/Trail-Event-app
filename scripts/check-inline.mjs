@@ -5,6 +5,14 @@ const pushFunction = await readFile(
   new URL("../supabase/functions/send-event-review-push/index.ts", import.meta.url),
   "utf8"
 );
+const ownerTestPushFunction = await readFile(
+  new URL("../supabase/functions/send-owner-test-push/index.ts", import.meta.url),
+  "utf8"
+);
+const ownerTestPushCore = await readFile(
+  new URL("../supabase/functions/send-owner-test-push/core.mjs", import.meta.url),
+  "utf8"
+);
 const inlineScripts = [...html.matchAll(/<script(?:\s[^>]*)?>([\s\S]*?)<\/script>/gi)]
   .map(match => match[1].trim())
   .filter(Boolean);
@@ -79,6 +87,25 @@ if (!appVapidKey || !senderVapidKey) {
 }
 if (appVapidKey !== senderVapidKey) {
   throw new Error("The app subscription VAPID key does not match the push sender key.");
+}
+
+if (!html.includes('id="sendOwnerPushTest" type="button" onclick="window.trailOwnerPushTestClick(event)"')) {
+  throw new Error("Owner push test button must call its handler directly from the click.");
+}
+if (!html.includes("window.trailOwnerPushTestClick=async function(event)")) {
+  throw new Error("Owner push test button handler is missing.");
+}
+if (!ownerTestPushFunction.includes('from "./core.mjs"') || !ownerTestPushFunction.includes("Deno.serve(handler)")) {
+  throw new Error("Owner push Edge Function must serve the independently testable core handler.");
+}
+for (const required of ["claim_event_push_rate_limit", "get_trail_push_vapid_config", "sendNotification", "event_push_subscriptions", "eq(\"user_id\", ownerId)", "eq(\"user_id\", ownerId)"]) {
+  if (!ownerTestPushCore.includes(required)) throw new Error("Owner push core is missing required security behavior: " + required);
+}
+if (!ownerTestPushCore.includes("config.private_key") || !ownerTestPushCore.includes("webpush.setVapidDetails(config.subject, config.public_key, config.private_key)")) {
+  throw new Error("The owner push core must use the private VAPID key only from the secure configuration RPC.");
+}
+if (ownerTestPushFunction.includes("SUPABASE_SERVICE_ROLE_KEY") || ownerTestPushFunction.includes("private_key") && ownerTestPushFunction.includes("VAPID_PRIVATE_KEY =")) {
+  throw new Error("Server secrets must not be hardcoded or passed from the browser.");
 }
 
 if (!html.includes("sold-out-stamp") || !html.includes("soldOutRouteBadge(r)")) throw new Error("Sold-out routes must retain their red overview stamp.");
