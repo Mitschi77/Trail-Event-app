@@ -167,7 +167,10 @@
     "parsedTracks": 0,
     "metricsCompared": 0,
     "officialDownloadControlsOrRoutesRecorded": 7,
-    "important": "The inspection tools cannot currently retrieve external GPX binaries as file bytes. For Menorca and Malcesine this package records the official download endpoints/routes as pending technical validation; no success is claimed."
+    "important": "The inspection tools cannot currently retrieve external GPX binaries as file bytes. For Menorca and Malcesine this package records the official download endpoints/routes as pending technical validation; no success is claimed.",
+    "currentEventDatesEntriesCoveredDirectly": 9,
+    "currentEventDatesEntriesCoveredByBatch56": 1,
+    "legacyEntriesNotInCurrentEventDates": 1
   },
   "followUps": [
     "Trail Menorca: download and parse each of seven official 2027 files; compare actual track lengths/elevation.",
@@ -182,5 +185,26 @@
     "Alpenstadt City&Trail: wait for organizer publication and reconcile race list."
   ],
   "noChangesToGpxFiles": true,
-  "noAppRuntimeDataChanged": true
+  "noAppRuntimeDataChanged": true,
+  "currentEventDatesCrossCheck": {
+    "currentCatalogRange": "event-dates.json insertion positions 21–30 (1-based)",
+    "overlappingIds": [
+      "trail-menorca-cami-de-cavalls",
+      "malcesine-baldo-trail",
+      "ultra-x-110-scotland",
+      "ternberg-trail",
+      "chiemgau-trail",
+      "transvulcania-la-palma",
+      "ultra-tail-australia-by-utmb",
+      "trail-alsace-by-utmb",
+      "ultra-trail-snowdonia-eryri"
+    ],
+    "currentEntriesCoveredByAuditBatch56": [
+      "garda-trentino-trail-extra-100"
+    ],
+    "legacyEntriesNotInCurrentCatalog": [
+      "Alpenstadt City&Trail"
+    ],
+    "note": "This batch follows the historic top-level EVENTS order. Nine current catalog entries overlap directly; Garda Trentino Trail Extra 100 is covered by audit batch 56. Alpenstadt City&Trail is a legacy entry not present in the current event-dates range."
+  }
 }
