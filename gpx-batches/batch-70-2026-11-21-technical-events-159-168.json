@@ -127,10 +127,12 @@
       "distanceKm": 21.0975,
       "location": "Castiglione del Lago, Umbria, Italy",
       "gpxStatus": "secondary-calendar-only; official organizer 2027 route/GPX unconfirmed",
-      "detail": "Calendar listing confirms the date/location/distance provisionally; no official organizer 2027 route page or GPX verified in this pass.",
+      "detail": "Calendar listing confirms the date/location/distance provisionally; no official organizer 2027 route page or GPX verified in this pass. This is the 21km competitive finish within event 338 (25ª Strasimeno), not a separate event. Keep the event alias/route consolidation for a separate data-cleanup PR; do not create a duplicate event card.",
       "sources": [
         "https://www.maratoniamo.it/"
-      ]
+      ],
+      "status": "same-event-as-sequence-338-strasimeno; IUTA-confirms-21km-competitive-finish",
+      "duplicateOfEventId": "strasimeno"
     },
     {
       "sequence": 165,
@@ -141,10 +143,12 @@
       "distanceKm": 42.195,
       "location": "Castiglione del Lago, Umbria, Italy",
       "gpxStatus": "secondary-calendar-only; official organizer 2027 route/GPX unconfirmed",
-      "detail": "Calendar listing shows a full marathon at the same event/date. Official organizer confirmation and current course geometry/GPX remain outstanding.",
+      "detail": "Calendar listing shows a full marathon at the same event/date. Official organizer confirmation and current course geometry/GPX remain outstanding. The IUTA 2027 event announcement for sequence 338 lists competitive finishes at 10, 21, 34 and 58km; a 42km fee tier appears, but 42km is absent from the competitive finish list. Do not treat this as a confirmed 42.195km marathon.",
       "sources": [
         "https://www.maratoniamo.it/"
-      ]
+      ],
+      "status": "42km-marathon-competitive-finish-not-confirmed-by-IUTA; possible-fee-tier-only",
+      "relatedEventId": "strasimeno"
     },
     {
       "sequence": 166,
@@ -206,12 +210,15 @@
     "oldGpxFilesOverwritten": 0,
     "appRuntimeFilesChanged": 0,
     "appEventRecordsChanged": 0,
-    "auditOnly": true
+    "auditOnly": true,
+    "duplicateEventRecords": 1,
+    "unconfirmedDistanceClaims": 1
   },
   "followUps": [
     "Ferrara 21K and 42K: obtain and extract the official GPX ZIPs, then parse both tracks and compare computed distance; no local binary obtained yet.",
     "Bologna and Run Tune Up: recheck organizer site when 2027 maps/GPX/elevation profiles are published.",
     "Agnolotto, Run For Life and Strasimeno: obtain official organizer 2027 pages before treating date and route as confirmed.",
-    "Lago Maggiore Half: verify 2027 course and GPX with organizer; retain separate start/finish city detail."
+    "Lago Maggiore Half: verify 2027 course and GPX with organizer; retain separate start/finish city detail.",
+    "Strasimeno: consolidate the separate half-marathon alias into canonical event ID strasimeno in a data-cleanup PR; keep the 42km/42.195km marathon distance unconfirmed until organizer clarification."
   ]
 }
