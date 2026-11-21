@@ -1,0 +1,160 @@
+{
+  "schemaVersion": 1,
+  "preparedAt": "2026-11-21",
+  "organizer": "PLAN B event company GmbH",
+  "verifiedContact": {
+    "email": "info@planb-event.com",
+    "source": "https://www.planb-event.com/en/contact/",
+    "sourceType": "official_organizer_contact_page",
+    "status": "verified"
+  },
+  "bundledScope": [
+    {
+      "event": "DYNAFIT Transalpine Run",
+      "status": "previously_requested_2026-11-19; included in consolidated follow-up"
+    },
+    {
+      "event": "NOFT / Night of the Trail 2027 – Wintertrail",
+      "routes": [
+        "12.1 km",
+        "18.8 km"
+      ],
+      "status": "included_in_consolidated_request"
+    },
+    {
+      "event": "Gravel Marathon Schliersee–Thiersee 2027",
+      "routes": [
+        "42.195 km",
+        "31.65 km",
+        "21.1 km"
+      ],
+      "status": "included_in_consolidated_request"
+    },
+    {
+      "event": "GaPa Everesting-Festival 2027",
+      "routes": [
+        "Everesting Solo/Relays",
+        "Zugspitzing Solo",
+        "GaPa500",
+        "9-person relay"
+      ],
+      "status": "included_in_consolidated_request"
+    },
+    {
+      "event": "Madrisa Trail Klosters presented by LOWA 2026",
+      "routes": [
+        "11 km",
+        "24 km",
+        "33 km",
+        "54 km"
+      ],
+      "status": "historical_archive_scope_only; ownership/authority_to_confirm"
+    }
+  ],
+  "previousMessages": [
+    {
+      "date": "2026-11-19",
+      "to": "info@planb-event.com",
+      "subject": "Request for licensing contact and content permission – DYNAFIT Transalpine Run",
+      "status": "sent_copy_found"
+    },
+    {
+      "date": "2026-11-19",
+      "to": "juergen.kurapkat@planb-event.com",
+      "subject": "Anfrage zur Nutzung offizieller Veranstaltungsinhalte – DYNAFIT Transalpine Run",
+      "status": "sent_copy_found"
+    }
+  ],
+  "latestRequest": {
+    "date": "2026-11-21",
+    "to": "info@planb-event.com",
+    "subject": "Ergänzung und Bündelung der Rechteanfrage – PLAN B Lauf- und Trailveranstaltungen 2027",
+    "status": "submitted",
+    "sentCopy": "filed",
+    "deliveryConfirmation": "not_available",
+    "note": "Gesendet-Ordner vor Versand geprüft. Keine identische gebündelte Rechteanfrage gefunden; diese Nachricht ergänzt die beiden früheren Transalpine-Run-Nachrichten, statt eine bereits versandte Anfrage unverändert zu wiederholen."
+  },
+  "requestedPermissions": [
+    {
+      "use": "official_route_text_verbatim",
+      "status": "requested_no_permission_yet"
+    },
+    {
+      "use": "edited_or_shortened_route_text",
+      "status": "requested_no_permission_yet"
+    },
+    {
+      "use": "independent_factual_summaries_from_authorized_information",
+      "status": "requested_no_permission_yet"
+    },
+    {
+      "use": "route_facts_distance_elevation",
+      "status": "requested_no_permission_yet"
+    },
+    {
+      "use": "maps_and_route_geometry",
+      "status": "requested_no_permission_yet"
+    },
+    {
+      "use": "elevation_profiles",
+      "status": "requested_no_permission_yet"
+    },
+    {
+      "use": "gpx_file_fetch_load_import_store_process_map_display",
+      "status": "requested_no_permission_yet"
+    },
+    {
+      "use": "official_gpx_page_link_only",
+      "status": "requested_no_permission_yet"
+    },
+    {
+      "use": "event_names_and_event_marks",
+      "status": "requested_no_permission_yet"
+    },
+    {
+      "use": "logos_word_marks_and_combined_marks",
+      "status": "requested_no_permission_yet"
+    },
+    {
+      "use": "icons_pictograms_emblems_mascots",
+      "status": "requested_no_permission_yet"
+    },
+    {
+      "use": "other_event_specific_graphics_and_visual_design",
+      "status": "requested_no_permission_yet"
+    }
+  ],
+  "gpxQuestions": {
+    "restrictionNoticeAsked": true,
+    "exactMeaningAndSourceAsked": true,
+    "affectedRouteAsked": true,
+    "askWhetherFetchLoadImportStoreProcessMapDisplayDownloadProhibited": true,
+    "askWhetherLinkOnlyAllowedSeparately": true,
+    "currentAppPolicy": "deny_by_default",
+    "currentStatus": "all_route_gpx_functions_blocked_pending_explicit_route_specific_written_permission_and_clear_restriction_status"
+  },
+  "commercialUse": {
+    "currentPhase": "independent_noncommercial_information_app_under_development",
+    "commercialPermissionRequestedSeparately": true,
+    "currentPermissionDoesNotExtendToFutureCommercialUse": true,
+    "status": "awaiting_separate_response"
+  },
+  "brandAssets": {
+    "mediaKitAndLogoFilesRequested": true,
+    "brandGuidelinesRequested": true,
+    "constraintsRequested": [
+      "size",
+      "color",
+      "placement",
+      "attribution",
+      "duration",
+      "permitted_use",
+      "excluded_materials"
+    ]
+  },
+  "thirdPartyRights": {
+    "noft": "TRAIL Magazin is the presenting publisher; ownership and licensing responsibility for its editorial texts, event mark and visuals remains to be clarified. PLAN B was asked to identify/forward to the relevant rights holder.",
+    "madrisa": "Historical event is listed on PLAN B overview; rights authority for all event assets and 2027 continuation not confirmed."
+  },
+  "responseStatus": "no_reply_received_at_time_of_commit"
+}
