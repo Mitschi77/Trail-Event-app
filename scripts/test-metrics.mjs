@@ -129,7 +129,7 @@ assert.ok(html.includes("result.messages?.recordMesgs"), "FIT parser must read G
 assert.ok(html.includes("result.messages?.sessionMesgs"), "FIT parser must read Garmin sessionMesgs");
 assert.ok(html.includes("Number(p.positionLat)*180/2147483648") && html.includes("Number(p.positionLong)*180/2147483648"), "FIT semicircle coordinates must be converted to degrees");
 
-assert.ok(html.includes("manualIndex=runAttempts[key].findIndex"), "Activity imports must detect existing manual runs");
+assert.ok(html.includes("existing=Array.isArray(runAttempts[key])?runAttempts[key]:[]") && html.includes("manualIndex=existing.findIndex"), "Activity imports must detect existing manual runs without mutating source data before storage");
 assert.ok(html.includes("Ergebnis, Platz und Bewertung bleiben erhalten."), "Activity import must preserve manual race metadata");
 assert.ok(html.includes("sourceFile:file.name,sourceFileSize:file.size,sourceFileHash:fileHash,updatedAt:Date.now()"), "Merged activity imports must retain their duplicate-detection fingerprint");
 
@@ -142,7 +142,61 @@ assert.ok(html.includes("distanceDelta>=.15"), "Activity import must flag materi
 assert.ok(html.includes("Jetzt übernehmen?"), "Activity import preview must require confirmation");
 
 assert.ok(html.includes("async function activityFileFingerprint(file)"), "Activity imports must fingerprint files for duplicate detection");
+
+const persistGpxStart = html.indexOf("function persistGpxData(");
+const persistGpxEnd = html.indexOf("\nasync function importRouteGpx", persistGpxStart);
+assert.ok(persistGpxStart >= 0 && persistGpxEnd > persistGpxStart, "Atomic GPX persistence function boundaries must be present");
+const persistGpxSource = html.slice(persistGpxStart, persistGpxEnd).trim();
+function makePersistGpxHarness({failWrite=false, mismatchReadback=false, previousRaw='{"existing":{"keep":true}}'}={}) {
+  const route = {id:"route-a",km:10};
+  const event = {routes:[route]};
+  let stored = previousRaw;
+  let failNextWrite = failWrite;
+  let cloudSaves = 0;
+  const localStorage = {
+    getItem(key) { assert.equal(key,"trailEventDataEdits"); return mismatchReadback && stored!==previousRaw ? previousRaw : stored; },
+    setItem(key,value) {
+      assert.equal(key,"trailEventDataEdits");
+      if(failNextWrite && value!==previousRaw){failNextWrite=false;throw new Error("quota");}
+      stored=value;
+    },
+    removeItem(key) { assert.equal(key,"trailEventDataEdits"); stored=null; }
+  };
+  const factory = new Function("EVENTS","routeKey","initialEdits","localStorage","queuePlannerCloudSave",
+    "let eventDataEdits=initialEdits; "+persistGpxSource+"; return {persistGpxData,getEdits:()=>eventDataEdits};");
+  const initialEdits={existing:{keep:true}};
+  return {api:factory([event],(id,ri)=>id+":"+ri,initialEdits,localStorage,()=>cloudSaves++),
+    route,event,getStored:()=>stored,getCloudSaves:()=>cloudSaves,initialEdits};
+}
+const gpxData={track:[[1,2],[3,4]],distanceKm:10.2,ascentHm:450,descentHm:430,elevationProfile:[{km:0,hm:100},{km:10,hm:550}]};
+const successGpx=makePersistGpxHarness();
+assert.equal(successGpx.api.persistGpxData(successGpx.route,successGpx.event,0,gpxData,"route.gpx"),true);
+assert.equal(successGpx.route.gpxDistanceKm,10.2);
+assert.equal(successGpx.api.getEdits()["0:0"].gpxFileName,"route.gpx");
+assert.equal(successGpx.getStored(),JSON.stringify(successGpx.api.getEdits()));
+assert.equal(successGpx.getCloudSaves(),1);
+assert.throws(()=>successGpx.api.persistGpxData(successGpx.route,successGpx.event,1,gpxData,"bad.gpx"),/gehören nicht zur ausgewählten Strecke/);
+const failedGpx=makePersistGpxHarness({failWrite:true});
+assert.throws(()=>failedGpx.api.persistGpxData(failedGpx.route,failedGpx.event,0,gpxData,"quota.gpx"),/nicht sicher gespeichert/);
+assert.equal(failedGpx.route.gpxTrack,undefined,"Failed GPX writes must not mutate the route");
+assert.deepEqual(failedGpx.api.getEdits(),failedGpx.initialEdits,"Failed GPX writes must not mutate in-memory edits");
+assert.equal(failedGpx.getStored(),'{"existing":{"keep":true}}',"Failed GPX writes must restore the previous storage value");
+assert.equal(failedGpx.getCloudSaves(),0);
+const readbackGpx=makePersistGpxHarness({mismatchReadback:true});
+assert.throws(()=>readbackGpx.api.persistGpxData(readbackGpx.route,readbackGpx.event,0,gpxData,"mismatch.gpx"),/nicht sicher gespeichert/);
+assert.equal(readbackGpx.route.gpxTrack,undefined,"Failed GPX read-back must not mutate the route");
+assert.deepEqual(readbackGpx.api.getEdits(),readbackGpx.initialEdits);
+assert.equal(readbackGpx.getStored(),'{"existing":{"keep":true}}',"Failed GPX read-back must restore prior storage");
+assert.equal(readbackGpx.getCloudSaves(),0);
+
 assert.ok(html.includes("sourceFileHash:fileHash"), "Imported activity records must persist their file fingerprint");
+assert.ok(html.includes("oldAttempts=localStorage.getItem('trailEventRunAttempts'),oldRecords=localStorage.getItem('trailEventRunRecords')"), "Activity import must retain the prior local state for rollback");
+assert.ok(html.includes("localStorage.getItem('trailEventRunAttempts')!==attemptsRaw") && html.includes("localStorage.getItem('trailEventRunRecords')!==recordsRaw"), "Activity import must verify both persisted records before mutating in-memory state");
+assert.ok(html.includes("!Number.isInteger(ri)||!Array.isArray(event?.routes)||event.routes[ri]!==route"), "GPX persistence must validate the selected event and route identity");
+assert.ok(html.includes("previousRaw=localStorage.getItem('trailEventDataEdits')") && html.includes("localStorage.setItem('trailEventDataEdits',previousRaw)"), "GPX persistence must restore the previous storage value after a failed write or read-back");
+assert.ok(html.includes("previewLines.filter(Boolean).join('\\n')+'\\n\\nJetzt übernehmen?'"), "Activity confirmation must use actual newline escapes, not display literal backslash-n text");
+assert.ok(html.includes("eventDataEdits=nextEdits;route.gpxTrack=data.track"), "GPX route state must only change after storage read-back succeeds");
+
 assert.ok(html.includes("const data=await parseActivityTrack(file),route=event.routes[ri]"), "Route file import must await async FIT/TCX parsing");
 const organizerRestrictedRoute = routeById("linz55-55-1-1429");
 assert.equal(organizerRestrictedRoute?.gpxAvailability, "organizer-download-restricted", "Donautrail route must retain its explicit organizer GPX restriction");
@@ -477,3 +531,62 @@ assert.deepEqual(validatePlannerSnapshot({plannerKey: JSON.stringify({ok:true})}
 assert.throws(() => validatePlannerSnapshot({unknownKey: "{}"}), /Unbekannter oder ungültiger Datenbereich/);
 assert.throws(() => validatePlannerSnapshot({plannerKey: "{"}), /Beschädigte Daten/);
 assert.notDeepEqual(cloudSignature({plannerKey:"old"}), cloudSignature({plannerKey:"new"}), "Backup integrity signatures must change when stored data changes");
+
+
+// Execute the actual activity-import storage transaction from index.html.
+// The second write is forced to fail after the first write has succeeded.
+const activityStorageStart = html.indexOf("const attemptsRaw=JSON.stringify(nextAttempts)");
+const activityStorageMarker = "runAttempts=nextAttempts;runRecords=nextRecords;";
+const activityStorageEnd = html.indexOf(activityStorageMarker, activityStorageStart);
+assert.ok(activityStorageStart >= 0 && activityStorageEnd > activityStorageStart,
+  "Activity import storage transaction must remain extractable for failure testing");
+const activityStorageSource = html.slice(activityStorageStart, activityStorageEnd + activityStorageMarker.length);
+function makeActivityStorageHarness({ failRecordsWrite = false } = {}) {
+  const initialAttempts = { "0:0": [{ date: "2026-01-01", result: "Platz" }] };
+  const initialRecords = { "0:0": { done: false, year: "2026" } };
+  let runAttempts = initialAttempts;
+  let runRecords = initialRecords;
+  const values = new Map([
+    ["trailEventRunAttempts", JSON.stringify(initialAttempts)],
+    ["trailEventRunRecords", JSON.stringify(initialRecords)]
+  ]);
+  let failNextRecordsWrite = failRecordsWrite;
+  let cloudSaves = 0;
+  const localStorage = {
+    getItem(key) { return values.has(key) ? values.get(key) : null; },
+    setItem(key, value) {
+      if (key === "trailEventRunRecords" && failNextRecordsWrite) {
+        failNextRecordsWrite = false;
+        throw new Error("simulated quota failure on second write");
+      }
+      values.set(key, String(value));
+    },
+    removeItem(key) { values.delete(key); }
+  };
+  const execute = new Function("nextAttempts", "nextRecords", "localStorage",
+    "queuePlannerCloudSave", "initialAttempts", "initialRecords",
+    "let runAttempts=initialAttempts,runRecords=initialRecords;" +
+    activityStorageSource +
+    ";queuePlannerCloudSave();return {runAttempts,runRecords};");
+  const nextAttempts = { "0:0": [{ date: "2026-11-20", source: "file" }] };
+  const nextRecords = { "0:0": { done: true, year: "2026" } };
+  return {
+    execute: () => execute(nextAttempts, nextRecords, localStorage, () => cloudSaves++, initialAttempts, initialRecords),
+    values, initialAttempts, initialRecords, nextAttempts, nextRecords,
+    getCloudSaves: () => cloudSaves
+  };
+}
+const failedActivityStorage = makeActivityStorageHarness({ failRecordsWrite: true });
+assert.throws(() => failedActivityStorage.execute(), /Import nicht gespeichert/);
+assert.equal(failedActivityStorage.values.get("trailEventRunAttempts"),
+  JSON.stringify(failedActivityStorage.initialAttempts),
+  "A failed second write must roll back the already-written activity attempts");
+assert.equal(failedActivityStorage.values.get("trailEventRunRecords"),
+  JSON.stringify(failedActivityStorage.initialRecords),
+  "A failed second write must preserve the prior event status");
+assert.deepEqual(failedActivityStorage.initialAttempts, { "0:0": [{ date: "2026-01-01", result: "Platz" }] },
+  "Original in-memory attempts must remain unchanged after a failed import");
+assert.deepEqual(failedActivityStorage.initialRecords, { "0:0": { done: false, year: "2026" } },
+  "Original in-memory records must remain unchanged after a failed import");
+assert.equal(failedActivityStorage.getCloudSaves(), 0,
+  "A failed activity import must not queue cloud synchronization");
