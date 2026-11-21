@@ -1,0 +1,312 @@
+{
+  "batch": 84,
+  "checkedAt": "2026-11-21",
+  "scope": "events 299-308 from event-dates.json",
+  "rules": [
+    "Organizer and official institutional sources prioritized; race listing estimates labelled separately.",
+    "Do not carry old-edition GPX, routes or dates into 2027 without confirmation.",
+    "A GPX download control or course map does not count as a downloaded and parsed binary.",
+    "Distinguish official D+ from third-party ascent estimates and min/max elevation ranges.",
+    "Audit-only; no live event records or runtime files changed."
+  ],
+  "events": [
+    {
+      "sequence": 299,
+      "eventId": "plitvicki-maraton",
+      "name": "42. Plitvički Maraton",
+      "date": "2027-06-05/06",
+      "location": "Plitvička Jezera, Croatia",
+      "status": "national-park-authority-confirms-event-date-and-route-corridor",
+      "routes": [
+        {
+          "name": "Marathon",
+          "distanceKm": 42.195,
+          "ascentM": 1100,
+          "startTime": "09:00",
+          "status": "race-calendar-listed"
+        },
+        {
+          "name": "Half Marathon",
+          "distanceKm": 21.1,
+          "ascentM": 506,
+          "startTime": "09:00",
+          "status": "race-calendar-listed"
+        },
+        {
+          "name": "Wannabe 10",
+          "distanceKm": 9,
+          "ascentM": 263,
+          "status": "race-calendar-listed"
+        },
+        {
+          "name": "Plitvička petica",
+          "distanceKm": 5,
+          "ascentM": 146,
+          "startTime": "17:30",
+          "status": "race-calendar-listed"
+        }
+      ],
+      "detail": "Plitvice Lakes National Park authority decision confirms 42nd Plitvički Maraton on 5–6 June 2027 and publishes a course corridor Mukinje–Drežničko Selište–Poljanak–Plitvički Ljeskovac–Velika Poljana–Mukinje. Runners.hr lists distances and ascent estimates (marathon +1100m, half +506m, 9km +263m, 5km +146m); these metrics are race-listing data, not organizer-published GPX validation. Do not treat the 9km race as a 10km.",
+      "gpxStatus": "no-2027-binary-downloaded-or-parsed",
+      "sources": [
+        "https://np-plitvicka-jezera.hr/odluka-o-koncesijskom-odobrenju-42-plitvicki-maraton/",
+        "https://runners.hr/en/race/plitvicki-maraton"
+      ]
+    },
+    {
+      "sequence": 300,
+      "eventId": "powerade-belgrade-marathon",
+      "name": "40th Powerade Belgrade Marathon / European Running Championships",
+      "date": "2027-04-17/18",
+      "location": "Belgrade, Serbia",
+      "status": "AIMS-and-official-championship-registration-confirmed",
+      "routes": [
+        {
+          "name": "Half Marathon",
+          "date": "2027-04-17",
+          "distanceKm": 21.1,
+          "startTime": "09:00"
+        },
+        {
+          "name": "10K",
+          "date": "2027-04-17",
+          "distanceKm": 10,
+          "startTime": "18:00"
+        },
+        {
+          "name": "Marathon",
+          "date": "2027-04-18",
+          "distanceKm": 42.195,
+          "startTime": "08:00",
+          "ascentM": 399,
+          "status": "organizer-entered-elevation-estimate"
+        }
+      ],
+      "detail": "AIMS lists 40th Powerade Belgrade Marathon 17–18 April 2027. Official European Running Championships registration gives half 17 April 09:00, 10K 17 April 18:00, marathon 18 April 08:00. Trke Srbija event listing gives marathon 399m ascent but explicitly says this is organizer-entered information and GPX-derived ascent is not yet available. Course is also part of European Running Championships 2027.",
+      "gpxStatus": "no-2027-binary-downloaded-or-parsed",
+      "sources": [
+        "https://aims-worldrunning.org/races/1009.html",
+        "https://in.register.europeanrunningchampionships.com/2027-belgrade?currentPage=select-competition",
+        "https://trkesrbija.rs/trke/40-powerade-beogradski-maraton-maraton",
+        "https://europeanrunningchampionships.com/"
+      ]
+    },
+    {
+      "sequence": 301,
+      "eventId": "timisoara-21k-sportguru",
+      "name": "Timișoara 21K by SportGuru",
+      "date": "2027-03-21",
+      "location": "Timișoara, Romania",
+      "status": "organizer-confirmed",
+      "routes": [
+        {
+          "distanceKm": 21,
+          "start": "Piața Libertății",
+          "startTime": "09:00",
+          "timeLimitHours": 3,
+          "detail": "Two laps; 5.5km, 11km and 16.5km refreshment points"
+        }
+      ],
+      "detail": "Official organizer page confirms 21 March 2027, 09:00, start Piața Libertății, two laps, time limit 3h. The page provides an official regulation and course section but no GPX binary/elevation figure was validated.",
+      "gpxStatus": "course map section available; no 2027 binary downloaded or parsed",
+      "sources": [
+        "https://timisoara.21k.ro/cursa-21k/",
+        "https://timisoara.21k.ro/cursa-21k/?lang=en"
+      ]
+    },
+    {
+      "sequence": 302,
+      "eventId": "alba-iulia-city-race-2027",
+      "name": "Alba Iulia City Race",
+      "date": "2027-03-13",
+      "location": "Alba Iulia, Romania",
+      "status": "organizer-confirmed-date",
+      "routes": [],
+      "detail": "Official event homepage confirms 13 March 2027 and registration. The retrieved homepage does not provide confirmed 2027 race distances, course maps, start times or elevation; do not infer them from earlier editions.",
+      "gpxStatus": "no-2027-gpx-or-course-metrics-verified",
+      "sources": [
+        "https://albaiulia.cityrace.ro/"
+      ]
+    },
+    {
+      "sequence": 303,
+      "eventId": "dzi-marathon-stara-zagora-2027",
+      "name": "DZI Marathon Stara Zagora",
+      "date": null,
+      "location": "Stara Zagora, Bulgaria",
+      "status": "2027-branding-confirmed-date-not-yet-published",
+      "routes": [],
+      "detail": "DZI official announcement dated 17 September 2026 confirms Stara Zagora marathon will carry the DZI brand from 2027 under a three-year partnership. No specific 2027 race date, distances, route or GPX located in this check. Do not copy the 2026 Stara Zagora event date/course.",
+      "gpxStatus": "no-2027-gpx-or-course-details-verified",
+      "sources": [
+        "https://www.dzi.bg/en/news/view/dzi-obedinyava-vodeshtite-masovi-maratoni-v-balgariya-kato-tehen-ofitsialen-zastrahovatel"
+      ]
+    },
+    {
+      "sequence": 304,
+      "eventId": "sofia-half-marathon-2027",
+      "name": "Sofia Half Marathon",
+      "date": "2027-04-04",
+      "location": "Sofia, Bulgaria",
+      "status": "organizer-confirmed",
+      "routes": [
+        {
+          "distanceKm": 21.1,
+          "startTime": "09:00",
+          "startArea": "Alexander Nevsky Church",
+          "status": "World-Athletics-certified"
+        },
+        {
+          "distanceKm": 10,
+          "startTime": "09:10",
+          "status": "World-Athletics-certified"
+        },
+        {
+          "distanceKm": 5,
+          "startTime": "09:10",
+          "status": "route-certified"
+        }
+      ],
+      "detail": "Official organizer page confirms 4 April 2027, seventh edition. Half marathon 21.1km starts 09:00; 5K and 10K start 09:10. Organizer says all routes are World Athletics certified and publishes a combined route map. No GPX binary downloaded/parsed and no ascent figure given.",
+      "gpxStatus": "official-course-map-published; no-2027-binary-downloaded-or-parsed",
+      "sources": [
+        "https://sofiahalfmarathon.com/en/"
+      ]
+    },
+    {
+      "sequence": 305,
+      "eventId": "plovdiv-run-marathon-weekend-2027",
+      "name": "Plovdiv Run – Marathon Weekend",
+      "date": "2027-04-16/18",
+      "location": "Plovdiv, Bulgaria",
+      "status": "organizer-confirmed",
+      "routes": [
+        {
+          "name": "Marathon",
+          "date": "2027-04-18",
+          "distanceKm": 42.195,
+          "startFinish": "Plovdiv Rowing Base",
+          "laps": 2
+        },
+        {
+          "name": "Half Marathon",
+          "date": "2027-04-18",
+          "distanceKm": 21.0975,
+          "startFinish": "Plovdiv Rowing Base",
+          "laps": 1,
+          "ascentM": 17
+        },
+        {
+          "name": "10K",
+          "date": "2027-04-18",
+          "distanceKm": 10
+        },
+        {
+          "name": "5K",
+          "date": "2027-04-17",
+          "distanceKm": 5
+        }
+      ],
+      "detail": "Organizer confirms 16–18 April 2027. Marathon, half and 10K on Sunday 18 April; 5K Saturday 17 April. Half course one lap, marathon two laps. Half elevation gain shown as 17m; course certification to World Athletics/AIMS standards valid through 31 Dec 2031 if course unchanged. Official GPX download button exists. Binary not downloaded/parsed in this audit.",
+      "gpxStatus": "official-GPX-download-control-present; no-binary-downloaded-or-parsed",
+      "sources": [
+        "https://plovdiv.run/en"
+      ]
+    },
+    {
+      "sequence": 306,
+      "eventId": "sri-chinmoy-run-become-sofia-2027",
+      "name": "Sri Chinmoy Run and Become Marathon",
+      "date": "2027-05-02",
+      "location": "South Park, Sofia, Bulgaria",
+      "status": "organizer-confirmed",
+      "routes": [
+        {
+          "distanceKm": 42.195,
+          "startTime": "07:00",
+          "laps": 21
+        },
+        {
+          "distanceKm": 21.097,
+          "startTime": "07:00",
+          "laps": 10.5
+        },
+        {
+          "distanceKm": 5,
+          "startTime": "07:00",
+          "laps": 2.5
+        }
+      ],
+      "detail": "Organizer Run and Become AC confirms first official marathon on 2 May 2027 at South Park, Sofia, 07:00. Course is a 2km asphalt loop; marathon 21 laps, half 10.5 laps, 5K 2.5 laps; time limit 6h. No official elevation or GPX binary found.",
+      "gpxStatus": "no-2027-binary-downloaded-or-parsed",
+      "sources": [
+        "https://runandbecome.bg/marathon/"
+      ]
+    },
+    {
+      "sequence": 307,
+      "eventId": "dzi-marathon-varna-2027",
+      "name": "DZI Marathon Varna",
+      "date": null,
+      "location": "Varna, Bulgaria",
+      "status": "2027-branding-confirmed-date-not-yet-published",
+      "routes": [],
+      "detail": "DZI official announcement confirms Varna marathon will carry DZI branding from 2027 as part of a three-year partnership. No specific 2027 date, distances, route or GPX located in this check. Keep 2026 edition details historical only.",
+      "gpxStatus": "no-2027-gpx-or-course-details-verified",
+      "sources": [
+        "https://www.dzi.bg/en/news/view/dzi-obedinyava-vodeshtite-masovi-maratoni-v-balgariya-kato-tehen-ofitsialen-zastrahovatel"
+      ]
+    },
+    {
+      "sequence": 308,
+      "eventId": "nlb-rmc-banja-luka-half-2027",
+      "name": "NLB RMC Banja Luka Half Marathon",
+      "date": "2027-05-23",
+      "location": "Banja Luka, Bosnia and Herzegovina",
+      "status": "organizer-confirmed",
+      "routes": [
+        {
+          "distanceKm": 21,
+          "startTime": "08:00",
+          "laps": 2,
+          "startFinish": "Banja Luka Arena",
+          "timeLimitHours": 3,
+          "course": "flat, AIMS-measured and certified"
+        }
+      ],
+      "detail": "Organizer page confirms 23 May 2027, 08:00, 21,000m, two laps, start/finish at Banja Luka Arena, flat course measured and verified by AIMS. The rules text contains a stale year 2025 despite page date 2027; preserve this content inconsistency and request corrected rulebook. No GPX binary or ascent metric found.",
+      "gpxStatus": "organizer-course-map-available; no-2027-binary-downloaded-or-parsed",
+      "sources": [
+        "https://runandmore.org/en/races/half-marathon/74"
+      ]
+    }
+  ],
+  "summary": {
+    "eventsReviewed": 10,
+    "datesConfirmed": 8,
+    "brandOrEditionOnlyWithoutDate": 2,
+    "organizerConfirmed": 6,
+    "institutionalOrAIMSConfirmed": 2,
+    "official2027GpxBinaryValidated": 0,
+    "binaryFilesDownloaded": 0,
+    "tracksParsed": 0,
+    "binaryMetricsCompared": 0,
+    "officialGpxDownloadControlsFound": 1,
+    "oldGpxFilesDeleted": 0,
+    "oldGpxFilesOverwritten": 0,
+    "appRuntimeFilesChanged": 0,
+    "appEventRecordsChanged": 0,
+    "auditOnly": true
+  },
+  "followUps": [
+    "Plitvice: obtain official 2027 course GPX for marathon, half, 9km and 5km; listing D+ estimates are not binary validated.",
+    "Belgrade: request official championship GPX files for marathon, half and 10K; 399m marathon ascent is only organizer-entered estimate.",
+    "Timisoara: download and parse official 21K GPX; check two-lap course and 21km stated distance.",
+    "Alba Iulia: await 2027 race categories, regulations and route publication.",
+    "Stara Zagora and Varna: DZI brand announced for 2027 but dates and routes not yet located; do not invent or reuse 2026 data.",
+    "Sofia Half: retrieve individual 21.1/10/5K GPX and parse; published map alone is not binary validation.",
+    "Plovdiv: download official GPX for each course and parse; half D+17m published, not binary verified; marathon is two half laps.",
+    "Sri Chinmoy Sofia: request GPX and verify loop geometry; all races use a 2km asphalt loop.",
+    "Banja Luka: request corrected 2027 rulebook because page date says 2027 but embedded rules show 2025; download GPX and parse two loops."
+  ]
+}
