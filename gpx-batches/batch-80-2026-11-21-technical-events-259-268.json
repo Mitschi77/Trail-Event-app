@@ -1,0 +1,250 @@
+{
+  "batch": 80,
+  "checkedAt": "2026-11-21",
+  "scope": "events 259-268 from event-dates.json",
+  "rules": [
+    "Organizer and federation calendars preferred; World Athletics used for national championship/event calendar corroboration.",
+    "Do not copy 2026 routes, GPX or elevation to 2027 without explicit edition validation.",
+    "Elevation difference is not cumulative ascent.",
+    "Separate event date confirmation from route/distance confirmation.",
+    "Keep audit separate from live event records; no old GPX deletion or overwrite."
+  ],
+  "events": [
+    {
+      "sequence": 259,
+      "eventId": "neusiedler-see-marathon",
+      "name": "Neusiedler See Marathon + Wiener Städtische Halbmarathon",
+      "date": "2027-09-26",
+      "location": "Illmitz, Burgenland, Austria",
+      "status": "organizer-confirmed",
+      "routes": [
+        {
+          "distanceKm": 42.195,
+          "startTime": "09:00",
+          "startFinish": "Seebad Illmitz",
+          "status": "organizer-confirmed"
+        },
+        {
+          "distanceKm": 21.0975,
+          "startTime": "09:00",
+          "startFinish": "Seebad Illmitz",
+          "status": "organizer-confirmed"
+        }
+      ],
+      "gpxStatus": "official-download-area-mentioned; no 2027 binary downloaded or parsed",
+      "detail": "Official event page confirms both races, date and start. Course is described as very flat and includes Google Maps/Outdooractive and download-files area. AIMS certificate IDs AUT2026-306 and AUT2026-307 refer to 2026 certification; do not infer 2027 recertification from them.",
+      "sources": [
+        "https://neusiedlersee-marathon.at/"
+      ]
+    },
+    {
+      "sequence": 260,
+      "eventId": "oslo-marathon",
+      "name": "DNB Oslo Marathon",
+      "date": "2027-09-18",
+      "location": "Oslo, Norway",
+      "status": "World-Athletics-calendar-confirmed",
+      "routes": [
+        {
+          "distanceKm": 10,
+          "status": "2027 distance not separately confirmed"
+        },
+        {
+          "distanceKm": 21.1,
+          "status": "2027 distance not separately confirmed"
+        },
+        {
+          "distanceKm": 42.195,
+          "status": "2027 distance not separately confirmed"
+        }
+      ],
+      "gpxStatus": "2026 GPX links exist; organizer says 2027 course will be published closer to event; no 2027 binary validated",
+      "detail": "World Athletics calendar lists Oslo Marathon on 18 September 2027. Organizer course page currently shows 2026 maps/GPX and explicitly states 2027 course will be presented closer to the event. 2026 ascent figures (10k ~50m, half ~175m, marathon ~350m) must not be copied to 2027.",
+      "sources": [
+        "https://worldathletics.org/competition/calendar-results?competitionId=7236127",
+        "https://oslomaraton.no/en/loypa-2/"
+      ]
+    },
+    {
+      "sequence": 261,
+      "eventId": "oktoberfest-run-nitra-half-marathon",
+      "name": "Oktoberfest Run Nitra Half Marathon",
+      "date": "2027-09-18",
+      "location": "Nitra, Slovakia",
+      "status": "organizer-confirmed-date; 2027-half-distance-not-explicitly-separated-from-2026-program",
+      "routes": [
+        {
+          "distanceKm": 21.097,
+          "status": "2026 discipline page only; verify 2027 rules"
+        }
+      ],
+      "gpxStatus": "no official 2027 GPX binary found or validated",
+      "detail": "Organizer homepage confirms next edition 18 September 2027 and registration open. World Athletics also lists the half marathon on 18 September 2027. However, the visible discipline list is headed 2026 and shows 21.097km; obtain 2027 rules before confirming exact 2027 route/metrics.",
+      "sources": [
+        "https://oktoberfestrun.sk/de/",
+        "https://worldathletics.org/competition/calendar-results?competitionId=7236127"
+      ]
+    },
+    {
+      "sequence": 262,
+      "eventId": "minsk-half-marathon",
+      "name": "Minsk Half Marathon",
+      "date": "2027-09-12",
+      "location": "Minsk, Belarus",
+      "status": "World-Athletics-calendar-confirmed; conflicting-secondary-date-disregarded",
+      "routes": [
+        {
+          "distanceKm": 21.0975,
+          "status": "event name/calendar category confirms half marathon; detailed 2027 course pending"
+        }
+      ],
+      "gpxStatus": "no official 2027 GPX found",
+      "detail": "World Athletics calendar lists Minsk Half Marathon & 10 km on 12 September 2027 at Dinamo National Olympic Stadium. A secondary EuroSlam page suggests 5 September but explicitly says the organizer has not announced a date; prefer the World Athletics calendar as the stronger listing while flagging organizer confirmation pending.",
+      "sources": [
+        "https://worldathletics.org/competition/calendar-results?query=half+marathon",
+        "https://euroslam.run/races/minsk-half-marathon-2027"
+      ]
+    },
+    {
+      "sequence": 263,
+      "eventId": "drammen-halvmaraton",
+      "name": "Drammen Halvmaraton",
+      "date": "2027-09-04",
+      "location": "Drammen, Norway",
+      "status": "organizer-page-lists-date; distance-course-detail-pending",
+      "routes": [
+        {
+          "distanceKm": 21.0975,
+          "status": "event page says half marathon; exact 2027 route/metrics pending"
+        }
+      ],
+      "gpxStatus": "no 2027 GPX binary found",
+      "detail": "Organizer RUNDRM lists Saturday 4 September 2027 and half marathon. Start time and detailed route not yet provided (TBA).",
+      "sources": [
+        "https://rundrm.no/drammen-halvmaraton/"
+      ]
+    },
+    {
+      "sequence": 264,
+      "eventId": "lotto-poznan-marathon",
+      "name": "Lotto Poznań Marathon",
+      "date": "2027-10-24",
+      "location": "Poznań, Poland",
+      "status": "World-Athletics-calendar-confirmed; organizer-route-page-current-edition-needs-check",
+      "routes": [
+        {
+          "distanceKm": 42.195,
+          "status": "marathon distance inferred from event identity; 2027 organizer rules pending"
+        }
+      ],
+      "gpxStatus": "official route page contains GPX download control, but route edition not proven 2027; no binary downloaded or parsed",
+      "detail": "World Athletics lists Lotto 26. Poznań Marathon on 24 October 2027. Organizer route page describes a course starting at MTP, passing Old Market Square and Enea Stadium, finishing at MTP; it provides a GPX download control but the page does not clearly establish that the downloadable file is the 2027 edition. No transfer to current 2027 record until binary and edition validated.",
+      "sources": [
+        "https://worldathletics.org/competition/calendar-results?competitionId=7236093",
+        "https://marathon.poznan.pl/en/runners-zone/route/"
+      ]
+    },
+    {
+      "sequence": 265,
+      "eventId": "polish-half-marathon-championships",
+      "name": "Polish Half Marathon Championships",
+      "date": "2027-10-17",
+      "location": "Kraków, Poland",
+      "status": "World-Athletics-calendar-confirmed",
+      "routes": [
+        {
+          "distanceKm": 21.0975,
+          "status": "national half marathon championship; detailed course pending"
+        }
+      ],
+      "gpxStatus": "no 2027 GPX found",
+      "detail": "World Athletics calendar lists National Senior Half Marathon Championships in Kraków on 17 October 2027. No detailed organizer course or GPX verified.",
+      "sources": [
+        "https://worldathletics.org/competition/calendar-results?query=half+marathon"
+      ]
+    },
+    {
+      "sequence": 266,
+      "eventId": "3-country-marathon",
+      "name": "Sparkasse 3-Länder-Marathon",
+      "date": "2027-10-10",
+      "location": "Lindau (Germany) – Bregenz (Austria) via Switzerland",
+      "status": "organizer-confirmed",
+      "routes": [
+        {
+          "distanceKm": 42.195,
+          "startTime": "09:45",
+          "start": "Lindau harbour",
+          "finish": "Bregenz stadium",
+          "status": "organizer-confirmed"
+        }
+      ],
+      "gpxStatus": "no 2027 GPX binary downloaded or parsed",
+      "detail": "Organizer confirms date, 09:45 start, point-to-point course through Germany, Austria and Switzerland, finish in Bregenz. Elevation statement is 398m lowest to 415m highest (17m total elevation difference), not cumulative ascent. Mostly asphalt roads/paths; described as flat.",
+      "sources": [
+        "https://www.sparkasse-3-laender-marathon.at/de/wettbewerbe/sparkasse-marathon/",
+        "https://aims-worldrunning.org/races/839.html"
+      ]
+    },
+    {
+      "sequence": 267,
+      "eventId": "french-half-marathon-championships",
+      "name": "French Half Marathon Championships",
+      "date": "2027-05-09",
+      "location": "Troyes, France",
+      "status": "French-Athletics-Federation-and-World-Athletics-confirmed",
+      "routes": [
+        {
+          "distanceKm": 21.0975,
+          "status": "national senior half marathon championships; detailed course pending"
+        }
+      ],
+      "gpxStatus": "no 2027 GPX found",
+      "detail": "French Athletics Federation calendar lists French Half Marathon Championships on 9 May 2027 in Troyes; World Athletics calendar independently lists the same date/location and national senior road running championship.",
+      "sources": [
+        "https://www.athle.fr/contenu/calendrier-championnats-de-france/32",
+        "https://worldathletics.org/competition/calendar-results?query=half+marathon"
+      ]
+    },
+    {
+      "sequence": 268,
+      "eventId": "finnish-half-marathon-championships",
+      "name": "Finnish Half Marathon Championships",
+      "date": null,
+      "location": "Finland",
+      "status": "no-2027-national-championship-date-verified",
+      "routes": [],
+      "gpxStatus": "no official championship course/GPX found",
+      "detail": "No 2027 Finnish national half-marathon championship date/course found in the checked World Athletics or Finnish Athletics Federation calendar material. The Finnish Halfs page describes a six-event challenge series (Helsinki, Forssa, Turku, Jyväskylä, Espoo, Tampere) and is not evidence of a national championship. Do not substitute one of these series races for the championship record.",
+      "sources": [
+        "https://www.finnishhalfs.fi/",
+        "https://worldathletics.org/competition/calendar-results?query=half+marathon"
+      ]
+    }
+  ],
+  "summary": {
+    "eventsReviewed": 10,
+    "organizerConfirmedDate": 4,
+    "worldAthleticsOrFederationCalendarConfirmed": 6,
+    "official2027GpxBinaryValidated": 0,
+    "binaryFilesDownloaded": 0,
+    "tracksParsed": 0,
+    "binaryMetricsCompared": 0,
+    "oldGpxFilesDeleted": 0,
+    "oldGpxFilesOverwritten": 0,
+    "appRuntimeFilesChanged": 0,
+    "appEventRecordsChanged": 0,
+    "auditOnly": true
+  },
+  "followUps": [
+    "Neusiedler See: obtain 2027 GPX binaries from official download area and parse full tracks; AIMS references currently show 2026 certificate numbers.",
+    "Oslo: wait for official 2027 course release; never use current 2026 GPX as 2027.",
+    "Nitra: retrieve 2027 rules to confirm half-marathon distance, route and metrics separately from the 2026 discipline page.",
+    "Minsk: resolve 12 September World Athletics calendar vs secondary 5 September forecast against organizer publication.",
+    "Drammen: await start time, measured distance and detailed route.",
+    "Poznan: verify exact edition of official GPX download before use.",
+    "Polish and French championships: await host organizer route and measured-course details.",
+    "3-Country: request 2027 official GPX and compare full track; retain 17m as min-max elevation difference only.",
+    "Finnish championship: identify whether the event is actually scheduled in 2027; do not conflate with Finnish Halfs challenge series."
+  ]
+}
