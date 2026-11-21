@@ -105,6 +105,9 @@ async function harness(entry, gpxUrl = "https://example.org/course.gpx", withSto
   assert.deepEqual(pending.eventDataEdits["test-event::test-route"].gpxTrack, [{ lat: 45, lon: 13 }], "existing stored GPX edit must be retained");
   assert.equal(pending.localWrites(), 0, "rights checks must not rewrite or erase local planner data");
   assert.equal(pending.cloudSaves(), 0, "rights checks must not queue destructive cloud synchronization");
+  assert.equal(pending.window.routeGpxIsOrganizerRestricted(pending.legacyRoute), false, "unlisted routes must retain legacy GPX behavior");
+  assert.equal(pending.window.renderGpxMap(pending.legacyRoute), "MAP_RENDERED", "unlisted routes must retain their existing GPX map behavior");
+  assert.equal(pending.mapCalls(), 1, "unlisted route map rendering must remain available");
 
   const fullPermissions = Object.fromEntries(policy.PROCESS_ACTIONS.map(key => [key, true]));
   const approvedEntry = policy.defaultEntry({
