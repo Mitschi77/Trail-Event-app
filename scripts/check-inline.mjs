@@ -59,7 +59,7 @@ if (!html.includes("async function readPreRestoreBackup()") || !html.includes("b
 const restoreStart = html.indexOf("async function useCloudDataLocally()");
 const restoreEnd = html.indexOf("function setCloudProfileIndicator", restoreStart);
 const restoreCode = restoreStart >= 0 && restoreEnd > restoreStart ? html.slice(restoreStart, restoreEnd) : "";
-if (!restoreCode.includes("await savePreRestoreBackup(previous)") || restoreCode.includes('localStorage.setItem("trailEventPreRestoreBackup"')) {
+if (!restoreCode.includes("await savePreRestoreBackup(previous)") || !restoreCode.includes('recoveryButton.hidden=false') || restoreCode.includes('localStorage.setItem("trailEventPreRestoreBackup"')) {
   throw new Error("Cloud restore must not consume localStorage quota with a second full-size backup.");
 }
 
