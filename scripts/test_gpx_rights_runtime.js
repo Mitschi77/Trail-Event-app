@@ -30,7 +30,7 @@ async function harness(entry, gpxUrl = "https://example.org/course.gpx", withSto
     route.elevationProfile = [100, 200, 300];
     route.profileSource = "Streckendatei: course.gpx";
   }
-  const registry = { schemaVersion: 1, defaultPolicy: "deny", routes: { "test-route": entry } };
+  const registry = { schemaVersion: 1, defaultPolicy: "deny", routes: { "test-route": entry, "explorer-85-2993": entry } };
   const window = {
     GpxRightsPolicy: policy,
     fetch: async (url) => {
@@ -99,6 +99,9 @@ async function harness(entry, gpxUrl = "https://example.org/course.gpx", withSto
   assert.throws(() => pending.window.persistGpxData(pending.route), /GPX/);
   assert.equal(pending.persistCalls(), 0, "blocked route must not persist GPX data");
   assert.equal(pending.window.routeGpxIsOrganizerRestricted(pending.route), true);
+  const registeredButMissing = { id: "bora-ultra-105-3837", gpxDownloadUrl: "https://example.org/missing.gpx" };
+  assert.equal(pending.window.routeGpxIsOrganizerRestricted(registeredButMissing), true, "registered route missing a registry entry must fail closed");
+  assert.equal(pending.window.gpxRightsAllows("bora-ultra-105-3837", "gpxFileFetch"), false, "missing registered rights entry must never inherit legacy permission");
   assert.equal(pending.window.proposalGpxIsRestricted({ eventId: "test-event", routeId: "test-route" }), true);
   assert.equal(pending.window.reviewGpxUrl({ eventId: "test-event", routeId: "test-route" }), "");
   assert.deepEqual(pending.route.gpxTrack, [{ lat: 45, lon: 13 }], "existing in-memory GPX track must be retained");
