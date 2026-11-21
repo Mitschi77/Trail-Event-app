@@ -91,6 +91,55 @@ assert.ok(raceTools.includes("function segmentUi(id,ri,r)"), "GPX segment planne
 assert.ok(raceTools.includes("function segments(r,id,ri)"), "GPX elevation segments must be analyzed");
 
 assert.ok(raceTools.includes("Verpflegungs-Erinnerungen"), "Race strategy must calculate fueling reminders");
+
+const fuelScheduleStart = html.indexOf("function renderFuelSchedule(r,d){");
+const fuelScheduleEnd = html.indexOf("function renderRaceStrategy", fuelScheduleStart);
+assert.ok(fuelScheduleStart >= 0 && fuelScheduleEnd > fuelScheduleStart, "Fueling renderer boundaries must be present");
+const fuelScheduleSource = html.slice(fuelScheduleStart, fuelScheduleEnd).trim();
+const renderFuelSchedule = new Function("return (" + fuelScheduleSource + ")")();
+const noFuelPlan = renderFuelSchedule({km:50}, {pace:"Infinity", fuel:60});
+assert.match(noFuelPlan, /bitte Distanz und Zieltempo eintragen/);
+const minFuel = renderFuelSchedule({km:50}, {pace:10, fuel:-5});
+assert.match(minFuel, /Alle 15 Minuten/);
+const maxFuel = renderFuelSchedule({km:100}, {pace:10, fuel:999});
+assert.match(maxFuel, /Alle 240 Minuten/);
+const longUltra = renderFuelSchedule({km:500}, {pace:10, fuel:15});
+assert.equal((longUltra.match(/<tr>/g) || []).length, 41, "Ultra reminder table must cap at 40 data rows plus header");
+assert.match(longUltra, /Anzeige ist auf 40 Erinnerungen begrenzt/, "Ultra schedule must disclose when reminders are truncated");
+assert.match(longUltra, /Laufzeit ohne Pausen/, "Fuel schedule must label moving time without pauses");
+const exactlyForty = renderFuelSchedule({km:61}, {pace:10, fuel:15});
+assert.equal((exactlyForty.match(/<tr>/g) || []).length, 41, "A schedule with exactly 40 reminders must retain all rows");
+assert.doesNotMatch(exactlyForty, /Anzeige ist auf 40 Erinnerungen begrenzt/, "A schedule with no 41st reminder must not show a truncation warning");
+const noFullInterval = renderFuelSchedule({km:1}, {pace:5, fuel:60});
+assert.match(noFullInterval, /kein vollständiges Verpflegungsintervall/);
+
+const saveStrategyStart = html.indexOf("function saveRaceStrategy(id,ri){");
+const saveStrategyEnd = html.indexOf("function renderRaceChecklist", saveStrategyStart);
+assert.ok(saveStrategyStart >= 0 && saveStrategyEnd > saveStrategyStart, "Race strategy save handler must be present");
+const saveStrategySource = html.slice(saveStrategyStart, saveStrategyEnd).trim();
+const strategyInputs = {
+  strategyPace7_2: { value: "9.5" }, strategyPause7_2: { value: "45" },
+  strategyFuel7_2: { value: "30" }, strategyStart7_2: { value: "06:30" },
+  strategyNotes7_2: { value: "Konstant anlaufen" },
+  strategyResult7_2: { innerHTML: "old estimate" }, fuelSchedule7_2: { innerHTML: "old schedule" },
+};
+const strategyPersisted = [];
+const saveStrategy = new Function(
+  "document", "alert", "saveRacePlanData", "EVENTS", "renderStrategyEstimate", "renderFuelSchedule",
+  saveStrategySource + ";return saveRaceStrategy;"
+)(
+  { getElementById: id => strategyInputs[id] || null },
+  message => { throw new Error(message); },
+  (id, ri, patch) => { strategyPersisted.push({ id, ri, patch }); return true; },
+  { 7: { routes: [null, null, { km: 80 }] } },
+  (route, data) => "estimate:" + data.pace + ":" + data.pause,
+  (route, data) => "fuel:" + data.pace + ":" + data.fuel,
+);
+saveStrategy(7, 2);
+assert.deepEqual(strategyPersisted, [{ id: 7, ri: 2, patch: { raceStrategy: { pace: "9.5", pause: "45", fuel: "30", start: "06:30", notes: "Konstant anlaufen" } } }],
+  "Saving strategy must persist the edited pace, pauses and fueling interval for the selected route");
+assert.equal(strategyInputs.strategyResult7_2.innerHTML, "estimate:9.5:45", "Saving strategy must refresh the target-time estimate");
+assert.equal(strategyInputs.fuelSchedule7_2.innerHTML, "fuel:9.5:30", "Saving strategy must refresh the fueling schedule with the same saved pace and interval");
 assert.ok(raceTools.includes("angegebenen Maximalzeit"), "Race strategy must compare the estimate with the route cutoff");
 assert.ok(raceTools.includes("raceCheckCount"), "Checklist must show completed-item progress");
 assert.ok(raceTools.includes("groupDone"), "Checklist must show progress per category");
