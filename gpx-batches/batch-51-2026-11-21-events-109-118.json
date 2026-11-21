@@ -1,0 +1,346 @@
+{
+  "batch": 51,
+  "checkedAt": "2026-11-21",
+  "scope": "Official route and GPX-version audit for ten records in the historic/original top-level event list 109–118; this is not the current event-dates.json insertion range 109–118.",
+  "status": "audit-only-checkpoint",
+  "rules": [
+    "Existing GPX files remain valid until a replacement is officially published, downloaded, parsed and validated.",
+    "Do not delete or replace historical GPX files during this audit.",
+    "Map + GPX pages and download buttons do not count as binary validation."
+  ],
+  "events": [
+    {
+      "order": 109,
+      "name": "Kullamannen by UTMB",
+      "date": "2027-11-05/06",
+      "officialSource": "https://kullamannen.utmb.world/races",
+      "routes": [
+        {
+          "name": "Ultra 100 Miles",
+          "distanceKm": 168,
+          "elevationM": 2020,
+          "date": "2027-11-05"
+        },
+        {
+          "name": "Sprint Ultra 100K",
+          "distanceKm": 108,
+          "elevationM": 749,
+          "date": "2027-11-05"
+        },
+        {
+          "name": "Seventh Seal 50K",
+          "distanceKm": 53,
+          "elevationM": 727,
+          "date": "2027-11-06"
+        },
+        {
+          "name": "North Shore 20K",
+          "distanceKm": 22,
+          "elevationM": 96,
+          "date": "2027-11-06"
+        }
+      ],
+      "gpxStatus": "official-2027-course-pages; binary-validation-pending",
+      "note": "2027 dates and four distances confirmed directly by UTMB. North Shore is 22 km, not 20. Direct binary download/parse not performed."
+    },
+    {
+      "order": 110,
+      "name": "Mallorca by UTMB / Serra de Tramuntana",
+      "date": "2027 not listed in current official UTMB calendar",
+      "officialSource": "https://mallorca.utmb.world/races",
+      "routes": [
+        {
+          "name": "Serra de Tramuntana",
+          "distanceKm": 138,
+          "elevationM": 5350,
+          "edition": "2026"
+        },
+        {
+          "name": "Camins de Pedra en Sec",
+          "distanceKm": 104,
+          "elevationM": 3740,
+          "edition": "2026"
+        },
+        {
+          "name": "Els Tres Mils",
+          "distanceKm": 56,
+          "elevationM": 2450,
+          "edition": "2026"
+        },
+        {
+          "name": "Camins de s'Arxiduc",
+          "distanceKm": 26,
+          "elevationM": 1000,
+          "edition": "2026"
+        }
+      ],
+      "gpxStatus": "official-pages-still-show-2026; no-2027-edition-confirmed",
+      "note": "The official calendar and race pages still list 30 Oct–1 Nov 2026. Secondary calendar projections for 2027 are not sufficient to create a new edition. Keep 2026 routes historical."
+    },
+    {
+      "order": 111,
+      "name": "Austria Backyard Ultra 24+1 Hochkönig",
+      "date": "2027-10-25/26",
+      "officialSource": "https://www.austriabackyardultra.com/hochkoenig",
+      "routes": [
+        {
+          "name": "Backyard loop",
+          "distanceKm": 6.706,
+          "elevationM": null
+        }
+      ],
+      "gpxStatus": "official-event-confirmed; route-map-and-track-not-yet-published",
+      "note": "First Hochkönig 24+1 event confirmed for 25 Oct 2027 at 16:00. 6.706km loop; 24 standard yards plus a final 25th round. Organizer says route map/track follows."
+    },
+    {
+      "order": 112,
+      "name": "Puglia Terra delle Gravine by UTMB",
+      "date": "2027 not listed",
+      "officialSource": "https://utmb.world/",
+      "routes": [],
+      "gpxStatus": "no-current-2027-edition-or-gpx-verified",
+      "note": "No 2027 event page or current organizer GPX confirmed in official UTMB calendar. Do not reuse historical Puglia tracks."
+    },
+    {
+      "order": 113,
+      "name": "3 Días Trail Ibiza",
+      "date": "2027-11-26/28",
+      "officialSource": "https://3diastrailibiza.com/",
+      "statement": "https://3diastrailibiza.com/comunicado-oficial-celebracion-de-los-3-dias-trail-ibiza/",
+      "routes": [
+        {
+          "name": "Ultra",
+          "edition": "2026-course-details-only"
+        },
+        {
+          "name": "Trail Marathon",
+          "edition": "2026-course-details-only"
+        },
+        {
+          "name": "Half Marathon",
+          "edition": "2026-course-details-only"
+        },
+        {
+          "name": "Nocturna 10K",
+          "edition": "2026-course-details-only"
+        }
+      ],
+      "gpxStatus": "2027-date-confirmed; 2027-course-and-GPX-not-yet-published; 2026-stage-GPX-email-only-and-private-land-restricted",
+      "note": "Official Arista Eventos organizer calendar now lists 3 Días Trail Ibiza for 26–28 November 2027. The detailed 3diastrailibiza.com schedule and route pages still show the 2026 edition; do not carry those 2026 course details or GPX files into 2027. For the 2026 event, stage GPX was sent to registered participants by email because routes cross protected/private land.",
+      "status": "official-Arista-organizer-calendar-confirms-2027-date; detailed-course-pages-still-2026",
+      "official2027DateSource": "https://aristaeventos.es/"
+    },
+    {
+      "order": 114,
+      "name": "Oman by UTMB",
+      "date": "2026-12-10/12 official; 2027 not yet scheduled",
+      "officialSource": "https://oman.utmb.world/races",
+      "faq": "https://oman.utmb.world/runners/faq",
+      "routes": [
+        {
+          "name": "Hajar Ultra",
+          "distanceKm": 154,
+          "elevationM": 8000,
+          "edition": "2026"
+        },
+        {
+          "name": "Jabal Classic",
+          "distanceKm": 103,
+          "elevationM": 5000,
+          "edition": "2026"
+        },
+        {
+          "name": "Skyward Canyon",
+          "distanceKm": 50,
+          "elevationM": 2400,
+          "edition": "2026"
+        },
+        {
+          "name": "Old Capital Trail",
+          "distanceKm": 32,
+          "elevationM": 1400,
+          "edition": "2026"
+        },
+        {
+          "name": "Scenic Ascent",
+          "distanceKm": 21.5,
+          "elevationM": 550,
+          "edition": "2026"
+        }
+      ],
+      "gpxStatus": "official-2026-map-gpx-pages; 2027-edition-not-listed",
+      "note": "Official races page still shows 10–12 Dec 2026. FAQ allows deferral to a following 2027 edition if force majeure prevents 2026 race; this clause alone does not confirm 2027 event/date. Do not mark 2026 routes as 2027."
+    },
+    {
+      "order": 115,
+      "name": "Mammutmarsch München",
+      "date": "2027-07-31",
+      "officialSource": "https://mammutmarsch.de/events/muenchen",
+      "routes": [
+        {
+          "name": "100 km",
+          "distanceKm": 100,
+          "elevationM": null
+        },
+        {
+          "name": "75 km",
+          "distanceKm": 75,
+          "elevationM": null
+        }
+      ],
+      "gpxStatus": "2027-event-confirmed; no-public-gpx-download-on-event-page",
+      "note": "Official organizer confirms Saturday 31 July 2027, start/finish TV Planegg-Krailling. Two routes 75 and 100 km; no public GPX link visible on event page."
+    },
+    {
+      "order": 116,
+      "name": "Megamarsch München",
+      "date": "2027-05-15/16",
+      "officialSource": "https://www.megamarsch.de/m%C3%BCnchen",
+      "routes": [
+        {
+          "name": "100 km",
+          "distanceKm": 100,
+          "elevationM": null
+        }
+      ],
+      "gpxStatus": "2027-event-confirmed; route-file-release-about-two-weeks-before",
+      "note": "Official page confirms 15–16 May 2027, 100 km from Munich to Garmisch-Partenkirchen, within 24 hours. Route is released as Komoot download about two weeks before event and can change shortly before start."
+    },
+    {
+      "order": 117,
+      "name": "Vietnam Highlands Trail by UTMB",
+      "date": "2027-01-07/10",
+      "officialSource": "https://vietnamhighlands.utmb.world/",
+      "entryInfo": "https://vietnamhighlands.utmb.world/runners/entry-info",
+      "routes": [
+        {
+          "name": "100K Langbiang",
+          "distanceKm": 101.5,
+          "elevationM": null,
+          "date": "2027-01-09"
+        },
+        {
+          "name": "50K Elephant",
+          "distanceKm": 54.6,
+          "elevationM": null,
+          "date": "2027-01-09"
+        },
+        {
+          "name": "20K Pinhatt",
+          "distanceKm": 22.2,
+          "elevationM": null,
+          "date": "2027-01-09"
+        },
+        {
+          "name": "10K Tuyenlam",
+          "distanceKm": 10.6,
+          "elevationM": null,
+          "date": "2027-01-09"
+        },
+        {
+          "name": "5K Xuanhuong",
+          "distanceKm": 5,
+          "elevationM": null,
+          "date": "2027-01-10"
+        }
+      ],
+      "gpxStatus": "official-2027-gpx-files-linked-via-utmb-pages-and-drive; binary-validation-pending",
+      "note": "Official page confirms four main distances and updated actual course lengths. Organizer schedule includes an additional 5K on 10 Jan; add only if event database is intended to include fun runs. Older one-click Google Drive links still require actual import/parse test."
+    },
+    {
+      "order": 118,
+      "name": "Tarawera Ultra-Trail by UTMB",
+      "date": "2027-02-13/14",
+      "officialSource": "https://tarawera.utmb.world/runners/entry-info",
+      "routes": [
+        {
+          "name": "TMiler",
+          "distanceKm": null,
+          "elevationM": null
+        },
+        {
+          "name": "T102",
+          "distanceKm": 102,
+          "elevationM": null
+        },
+        {
+          "name": "T50",
+          "distanceKm": 50,
+          "elevationM": null
+        },
+        {
+          "name": "T21",
+          "distanceKm": 21,
+          "elevationM": null
+        },
+        {
+          "name": "T14",
+          "distanceKm": 14,
+          "elevationM": null
+        }
+      ],
+      "gpxStatus": "official-2027-course-pages-map-gpx; binary-validation-pending",
+      "note": "Official entry page confirms 13–14 Feb 2027 and five distances. T102/T50/T21/T14/TMiler. Exact current GPX binaries not downloaded or parsed."
+    }
+  ],
+  "followUps": [
+    "Kullamannen: test and parse four official 2027 GPX files, especially verify 168/108/53/22 km.",
+    "Mallorca: keep 2026 routes historical; monitor only for an explicit 2027 UTMB announcement.",
+    "Hochkönig 24+1: recheck organizer for route map and GPX publication.",
+    "Puglia: keep inactive/unconfirmed unless official 2027 announcement appears.",
+    "3 Días Trail Ibiza: recheck after 2026 race for 2027 date and organizer email GPX rules.",
+    "Oman: await official 2027 event calendar and updated race pages.",
+    "Mammutmarsch and Megamarsch: obtain participant Komoot/GPX routes when organizer releases them; validate after download.",
+    "Vietnam Highlands: test Drive imports, compare official distance values, and decide whether 5K fun run belongs in event database.",
+    "Tarawera: export each of five official GPX tracks and parse before marking validated."
+  ],
+  "sources": [
+    "https://kullamannen.utmb.world/registration",
+    "https://kullamannen.utmb.world/races",
+    "https://mallorca.utmb.world/races",
+    "https://utmb.world/",
+    "https://www.austriabackyardultra.com/hochkoenig",
+    "https://3diastrailibiza.com/",
+    "https://3diastrailibiza.com/comunicado-oficial-celebracion-de-los-3-dias-trail-ibiza/",
+    "https://oman.utmb.world/races",
+    "https://oman.utmb.world/runners/faq",
+    "https://mammutmarsch.de/events/muenchen",
+    "https://www.megamarsch.de/m%C3%BCnchen",
+    "https://www.megamarsch.de/",
+    "https://vietnamhighlands.utmb.world/",
+    "https://vietnamhighlands.utmb.world/runners/entry-info",
+    "https://vietnamhighlands.utmb.world/runners/event-schedule",
+    "https://tarawera.utmb.world/runners/entry-info"
+  ],
+  "currentEventDatesCrossCheck": {
+    "currentCatalogRange": "event-dates.json insertion positions 109–118 (1-based)",
+    "overlappingIds": [
+      "puglia-terra-delle-gravine",
+      "3trail-ibiza",
+      "oman-by-utmb",
+      "mammutmarsch",
+      "megamarsch",
+      "vietnam-highlands-trail-by-utmb",
+      "tarawera-ultra-trail-by-utmb"
+    ],
+    "currentEntriesCoveredByAuditBatch52": [
+      "puerto-vallarta-mexico-by-utmb",
+      "hoka-xtrail-kenting-by-utmb",
+      "desert-rats-trail-running-festival-by-utmb"
+    ],
+    "legacyEntriesNotInCurrentCatalogRange": [
+      "Kullamannen by UTMB",
+      "Mallorca by UTMB / Serra de Tramuntana",
+      "Austria Backyard Ultra 24+1 Hochkönig"
+    ],
+    "note": "This package follows the historic/original event list. Seven current catalog entries overlap directly; the other three current entries are covered by audit batch 52. Kullamannen, Mallorca and Austria Backyard are legacy records outside current positions 109–118. The 3 Días Trail Ibiza 2027 date is now confirmed by the official Arista organizer calendar; its 2027 course/GPX remains unpublished."
+  },
+  "summary": {
+    "eventsCovered": 10,
+    "currentEventDatesEntriesCoveredDirectly": 7,
+    "currentEventDatesEntriesCoveredByBatch52": 3,
+    "legacyEntriesNotInCurrentEventDatesRange": 3,
+    "ibiza2027DateConfirmedByArista": true,
+    "ibiza2027CourseGpxPublished": false
+  }
+}
