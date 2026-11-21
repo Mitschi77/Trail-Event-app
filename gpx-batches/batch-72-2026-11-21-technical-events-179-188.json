@@ -1,0 +1,206 @@
+{
+  "batch": 72,
+  "checkedAt": "2026-11-21",
+  "scope": "events 179-188 from event-dates.json",
+  "rules": [
+    "Use organizer primary sources when available; label calendar-only entries provisional.",
+    "Do not promote 2026 route material to the 2027 edition.",
+    "A route map control or PDF is not binary GPX validation.",
+    "Do not delete or overwrite old GPX files until a new official binary has been downloaded, parsed and validated.",
+    "Audit-only: no app runtime or live event records changed."
+  ],
+  "events": [
+    {
+      "sequence": 179,
+      "eventId": "mezza-maratona-di-agrigento",
+      "name": "Mezza Maratona della Concordia Agrigento",
+      "edition": 2027,
+      "date": "2027-03-21",
+      "distanceKm": 21.097,
+      "startTime": "09:00",
+      "start": "Viale Falcone Borsellino, San Leone, Agrigento, Italy",
+      "additionalRace": {
+        "name": "Trofeo Mario Mondello",
+        "distanceKm": 11,
+        "startTime": "09:45"
+      },
+      "status": "official-2027-regulation-published",
+      "gpxStatus": "no-official-2027-gpx-link-found",
+      "detail": "Organizer's official regulation confirms 23rd edition, 21.097km, date, start time/location and 11km companion race. No route map, cumulative ascent or GPX download link identified in the checked official regulation.",
+      "sources": [
+        "https://www.mezzamaratonadiagrigento.it/regolamento/",
+        "https://www.mezzamaratonadiagrigento.it/"
+      ]
+    },
+    {
+      "sequence": 180,
+      "eventId": "wizz-air-milano-marathon",
+      "name": "Wizz Air Milano Marathon",
+      "edition": 2027,
+      "date": "2027-04-04",
+      "distanceKm": 42.195,
+      "startTime": "08:15",
+      "location": "Milan, Italy",
+      "status": "official-2027-regulation-and-date-confirmed",
+      "gpxStatus": "2027-gpx-not-published-in-checked-material; route-page-still-displays-2026",
+      "detail": "Official 2027 rules confirm 25th edition, 42.195km and 4 April 2027, with 08:15 scheduled start. The official route page currently labels the course as 2026, so its Corso Sempione–Piazza Duomo route must remain historical and not be promoted to 2027. No 2027 GPX validated.",
+      "sources": [
+        "https://www.milanomarathon.it/en/practical-info/",
+        "https://www.milanomarathon.it/wp-content/uploads/2026/04/Rules-Wizz-Air-Milano-Marathon-2027_EN.pdf",
+        "https://www.milanomarathon.it/en/marathon/the-route/"
+      ]
+    },
+    {
+      "sequence": 181,
+      "eventId": "scoglittirace-half-marathon-trofeo-pescamare",
+      "name": "ScoglittiRace V Half Marathon Trofeo Pescamare",
+      "edition": 2027,
+      "date": "2027-04-04",
+      "distanceKm": 21.0975,
+      "location": "Vittoria / Scoglitti, Sicily, Italy",
+      "status": "provisional-calendar-entry; organizer-regulation-not-yet-published",
+      "gpxStatus": "no-2027-gpx-confirmed",
+      "detail": "Race calendar entry states 4 April 2027 and 21.0975km, but explicitly marks date/programme as awaiting confirmation and regulation/start time as to be defined. Keep provisional.",
+      "sources": [
+        "https://www.maratoniamo.it/gara/scoglittirace-v-half-marathon-trofeo-pescamare-vittoria-mezza",
+        "https://www.marathonworld.it/calendario-mezza-maratona-italia-2027"
+      ]
+    },
+    {
+      "sequence": 182,
+      "eventId": "half-marathon-la-mezza-del-metauro",
+      "name": "Half Marathon La Mezza del Metauro",
+      "edition": 2027,
+      "date": "2027-04-04",
+      "distanceKm": 21.0975,
+      "location": "Fossombrone, Marche, Italy",
+      "status": "provisional-calendar-entry; regulation-not-available",
+      "gpxStatus": "no-2027-gpx-confirmed",
+      "detail": "Race calendar lists date and distance; regulation, start time and course information are still marked as to be defined. No official organizer GPX confirmed.",
+      "sources": [
+        "https://www.maratoniamo.it/gara/half-marathon-la-mezza-del-metauro-fossombrone-mezza",
+        "https://www.marathonworld.it/calendario-mezza-maratona-italia-2027"
+      ]
+    },
+    {
+      "sequence": 183,
+      "eventId": "mezza-maratona-di-latina",
+      "name": "Mezza Maratona di Latina",
+      "edition": 2027,
+      "date": "2027-04-04",
+      "distanceKm": 21.0975,
+      "location": "Latina, Lazio, Italy",
+      "status": "provisional-calendar-entry; organizer-regulation-not-yet-published",
+      "gpxStatus": "no-2027-gpx-confirmed",
+      "detail": "Listed on the 2027 half-marathon calendar; start time, regulation and route details are still to be defined. No official organizer route or GPX verified.",
+      "sources": [
+        "https://www.maratoniamo.it/",
+        "https://www.marathonworld.it/calendario-mezza-maratona-italia-2027"
+      ]
+    },
+    {
+      "sequence": 184,
+      "eventId": "mezza-maratona-di-alessandria",
+      "name": "Mezza Maratona di Alessandria",
+      "edition": 2027,
+      "date": "2027-04-04",
+      "distanceKm": 21.0975,
+      "location": "Alessandria, Piemonte, Italy",
+      "status": "provisional-calendar-entry; organizer-regulation-not-yet-published",
+      "gpxStatus": "no-2027-gpx-confirmed",
+      "detail": "Calendar entry identifies 4 April 2027 and 21.0975km; time, regulation and route remain to be defined. No official GPX confirmed.",
+      "sources": [
+        "https://www.maratoniamo.it/gara/mezza-maratona-di-alessandria-alessandria-mezza",
+        "https://www.marathonworld.it/calendario-mezza-maratona-italia-2027"
+      ]
+    },
+    {
+      "sequence": 185,
+      "eventId": "mezza-maratona-del-sulcis",
+      "name": "Mezza Maratona del Sulcis / Cammino Minerario di Santa Barbara",
+      "edition": 2027,
+      "date": "2027-04-04",
+      "distanceKm": 21.0975,
+      "location": "Santadi, Sardinia, Italy",
+      "status": "provisional-calendar-entry; organizer-regulation-not-yet-published",
+      "gpxStatus": "no-2027-gpx-confirmed",
+      "detail": "2027 calendar entry identifies 4 April and 21.0975km; time, regulation and route are to be defined. 2026 edition's route must not be reused as 2027.",
+      "sources": [
+        "https://www.maratoniamo.it/gara/mezza-maratona-del-sulcis-cammino-minerario-di-santa-barbara-santadi-mezza",
+        "https://www.marathonworld.it/calendario-mezza-maratona-italia-2027"
+      ]
+    },
+    {
+      "sequence": 186,
+      "eventId": "mezza-due-laghi",
+      "name": "Mezza Due Laghi",
+      "edition": 2027,
+      "date": "2027-04-11",
+      "distanceKm": 21.0975,
+      "startTime": "09:00",
+      "startFinish": "Pala CIPIR Sports Hall, Gravellona Toce, Italy",
+      "status": "official-2027-event-page-and-rules-published",
+      "gpxStatus": "official-course-map-control-present-but-no-gpx-binary-retrieved-or-validated",
+      "detail": "Official event page confirms 11 April 2027, 21.0975km, start/finish at Pala CIPIR and 09:00 start. The official page exposes a course map and regulation controls, but the actual route geometry/GPX was not parsed in this pass.",
+      "sources": [
+        "https://mezza2laghi.it/it/",
+        "https://mezza2laghi.it/en/mezza-maratona/",
+        "https://egs-eventi.s3.eu-west-1.amazonaws.com/00000000/00100000/00106400/00106432/c6acb0704f244c05995783658ec29b24170ba97a44115bedad8c012f7243e916.pdf"
+      ]
+    },
+    {
+      "sequence": 187,
+      "eventId": "mezza-maratona-dei-fiori",
+      "name": "Mezza Maratona dei Fiori",
+      "edition": 2027,
+      "date": "2027-04-11",
+      "distanceKm": 21.0975,
+      "location": "San Benedetto del Tronto, Marche, Italy",
+      "status": "provisional-calendar-entry; regulation-not-yet-published",
+      "gpxStatus": "no-2027-gpx-confirmed",
+      "detail": "Calendar entry says 11 April 2027, but regulations, start time and detailed information are still to be defined. It is not yet a fully organizer-confirmed route.",
+      "sources": [
+        "https://www.maratoniamo.it/gara/mezza-maratona-dei-fiori-san-benedetto-del-tronto-mezza",
+        "https://www.marathonworld.it/calendario-mezza-maratona-italia-2027"
+      ]
+    },
+    {
+      "sequence": 188,
+      "eventId": "terni-half-marathon",
+      "name": "Terni Half Marathon",
+      "edition": 2027,
+      "date": "2027-04-11",
+      "distanceKm": 21.0975,
+      "location": "Terni, Umbria, Italy",
+      "status": "provisional-calendar-entry; regulation-not-yet-published",
+      "gpxStatus": "no-2027-gpx-confirmed",
+      "detail": "2027 calendar entry lists 11 April and 21.0975km; start time, regulation and route remain to be defined. Distinguish this Terni Half Marathon entry from the separate Mezza Maratona di San Valentino in February.",
+      "sources": [
+        "https://www.maratoniamo.it/gara/terni-half-marathon-terni-mezza",
+        "https://www.marathonworld.it/calendario-mezza-maratona-italia-2027"
+      ]
+    }
+  ],
+  "summary": {
+    "eventsReviewed": 10,
+    "official2027RegulationOrOrganizerPages": 3,
+    "provisionalCalendarOnly": 7,
+    "official2027GpxBinaryValidated": 0,
+    "officialGpxLinksOrControlsFound": 1,
+    "binaryFilesDownloaded": 0,
+    "tracksParsed": 0,
+    "binaryMetricsCompared": 0,
+    "oldGpxFilesDeleted": 0,
+    "oldGpxFilesOverwritten": 0,
+    "appRuntimeFilesChanged": 0,
+    "appEventRecordsChanged": 0,
+    "auditOnly": true
+  },
+  "followUps": [
+    "Agrigento: request GPX and numeric elevation profile; current official rules give distance/date/start only.",
+    "Milano: wait for the organizer to replace its 2026 route page with the 2027 route and publish a current GPX; do not use the 2026 route as current.",
+    "ScoglittiRace, Metauro, Latina, Alessandria and Sulcis: wait for organizer 2027 regulations and detailed routes; treat calendar data as provisional.",
+    "Mezza Due Laghi: retrieve and parse official course-map/download assets; verify whether an official GPX is available.",
+    "Mezza dei Fiori and Terni Half: wait for official regulations and route files."
+  ]
+}
