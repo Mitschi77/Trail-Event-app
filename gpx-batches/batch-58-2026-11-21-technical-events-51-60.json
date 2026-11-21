@@ -233,7 +233,10 @@
       "Austria Backyard 2027 confirms Frankenmarkt new course 19 June and Kirchdorf 25 September; old course link needs validation."
     ],
     "noGpxFilesChanged": true,
-    "noAppRuntimeDataChanged": true
+    "noAppRuntimeDataChanged": true,
+    "currentEventDatesEntriesCoveredDirectly": 8,
+    "currentEventDatesEntriesCoveredByBatch59": 2,
+    "legacyEntriesNotInCurrentEventDates": 2
   },
   "followUps": [
     "Retry Schluchthof official site later and request GPX directly if still unavailable.",
@@ -248,5 +251,27 @@
     "Großglockner Mountain Run: request official GPX when organizer publishes it; do not substitute third-party tracks."
   ],
   "noGpxFilesChanged": true,
-  "noAppRuntimeDataChanged": true
+  "noAppRuntimeDataChanged": true,
+  "currentEventDatesCrossCheck": {
+    "currentCatalogRange": "event-dates.json insertion positions 51–60 (1-based)",
+    "overlappingIds": [
+      "tschirgant-sky",
+      "backyard-ultra",
+      "lavardedo-trail",
+      "austria-backyard-ultra",
+      "kaiserkrone",
+      "stubai-ultra-trail",
+      "brixen-marathon",
+      "u-tlw"
+    ],
+    "currentEntriesCoveredByAuditBatch59": [
+      "obertauern-trailrun-summit",
+      "restonica-trail-corsica"
+    ],
+    "legacyEntriesNotInCurrentCatalog": [
+      "Schluchthof Backyard",
+      "Großglockner Mountain Run"
+    ],
+    "note": "This batch follows the historic top-level EVENTS order. Eight current catalog entries overlap directly; Obertauern and Restonica are covered by audit batch 59. Schluchthof Backyard and Großglockner Mountain Run are legacy entries not in the current event-dates range."
+  }
 }
