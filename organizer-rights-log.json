@@ -316,6 +316,16 @@
     "publicationStatus": "draft_branch_not_merged",
     "protectedAssetsCopied": false,
     "officialDescriptionTextCopied": false,
-    "gpxFilesDownloaded": false
+    "gpxFilesDownloaded": false,
+    "gpxRuntimeTest": "scripts/test_gpx_rights_runtime.js",
+    "testResults": {
+      "policyUnitTests": "passed",
+      "actualRaceToolsFetchGateMock": "passed",
+      "unauthorizedStoredGpxPurgeMock": "passed",
+      "blockedMapAndPersistenceMock": "passed",
+      "explicitlyApprovedRouteMock": "passed",
+      "linkOnlyPermissionSeparationMock": "passed",
+      "browserAndInstalledPwaVerification": "not_performed"
+    }
   }
 }
