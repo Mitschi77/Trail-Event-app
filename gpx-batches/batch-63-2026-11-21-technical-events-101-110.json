@@ -267,7 +267,11 @@
       "Alpin Team Trail, Chihuahua, StundenRundenLauf and Mallorca have no confirmed 2027 edition/course files in current official sources."
     ],
     "noGpxFilesChanged": true,
-    "noAppRuntimeDataChanged": true
+    "noAppRuntimeDataChanged": true,
+    "currentEventDatesEntriesCoveredDirectly": 7,
+    "currentEventDatesEntriesCoveredByBatch64": 2,
+    "currentEventDatesEntriesNotYetCovered": 1,
+    "legacyEntriesNotInCurrentEventDates": 3
   },
   "followUps": [
     "Alpin Team Trail: wait for next edition announcement and new K10/K23/K50 GPX.",
@@ -282,5 +286,30 @@
     "Mallorca: wait for official 2027 event confirmation before adding new track."
   ],
   "noGpxFilesChanged": true,
-  "noAppRuntimeDataChanged": true
+  "noAppRuntimeDataChanged": true,
+  "currentEventDatesCrossCheck": {
+    "currentCatalogRange": "event-dates.json insertion positions 101–110 (1-based)",
+    "overlappingIds": [
+      "trail-tarmac-pursuit",
+      "oberaudorf-trailfestival",
+      "taubertal-100",
+      "hoka-kodiak-ultra-marathons",
+      "munchen-marathon",
+      "kullamannen",
+      "mallorca-serra-de-tramuntana"
+    ],
+    "currentEntriesCoveredByAuditBatch64": [
+      "puglia-terra-delle-gravine",
+      "3trail-ibiza"
+    ],
+    "currentEntriesNotYetCoveredByAnyReviewedBatch": [
+      "24-1-challenge"
+    ],
+    "legacyEntriesNotInCurrentCatalog": [
+      "Alpin Team Trailrun",
+      "Chihuahua by UTMB",
+      "StundenRundenLauf (Chiemgauer100)"
+    ],
+    "note": "This batch follows the historic top-level EVENTS order. Seven current catalog entries overlap directly; Puglia and 3Trail Ibiza are represented in audit batch 64 (3 Días Trail Ibiza alias). The 24-1 Challenge still requires a separate audit. The 3Trail/3 Días date evidence in batch 64 needs a follow-up correction based on the official Arista 2027 event listing."
+  }
 }
