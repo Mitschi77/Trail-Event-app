@@ -1,0 +1,152 @@
+{
+  "batch": 31,
+  "checkedAt": "2026-11-20",
+  "scope": "Second official-source event, route and GPX validation of top-level events 84-88",
+  "status": "rechecked",
+  "events": [
+    {
+      "order": 84,
+      "name": "DYNAFIT Transalpine Run",
+      "year": 2027,
+      "eventDates": "18-24 September 2027",
+      "routes": [
+        [
+          "7-stage crossing (overall)",
+          ">250 km",
+          ">15,000 hm"
+        ]
+      ],
+      "gpx": "Official organizer now confirms the 2027 dates and describes a seven-stage crossing. Important version distinction: the organizer page still labels the route overview and 'All GPX Files' as 2026; no 2027 stage GPX files are published/verified yet. Do not use 2026 stage files as 2027.",
+      "source": "https://www.transalpine-run.com/en/information/",
+      "followUp": "Wait for 2027 stage locations and stage-by-stage GPX publication; validate all seven tracks individually."
+    },
+    {
+      "order": 85,
+      "name": "HOKA UTMB Mont-Blanc",
+      "year": 2027,
+      "eventDates": "22-28 August 2027",
+      "routes": [
+        [
+          "UTMB",
+          null,
+          null
+        ],
+        [
+          "CCC",
+          null,
+          null
+        ],
+        [
+          "OCC",
+          null,
+          null
+        ],
+        [
+          "PTL",
+          null,
+          null
+        ]
+      ],
+      "gpx": "Important update: official 2027 event dates and partial race schedule are now announced. UTMB and CCC start 25 August; OCC is 28 August; PTL runs 22-28 August. Other races are scheduled between 22 and 24 August. Full schedule is announced in December 2026. Current race list still mixes 2027 entries with 2026 TDS/ETC/MCC/YCC details; no full 2027 route/GPX set confirmed.",
+      "source": "https://montblanc.utmb.world/",
+      "followUp": "Recheck after full schedule announcement in December 2026, then verify each race's 2027 Map + GPX panel."
+    },
+    {
+      "order": 86,
+      "name": "Fränkischer Backyard Ultra",
+      "year": 2026,
+      "routes": [
+        [
+          "Backyard loop",
+          6.7,
+          90
+        ]
+      ],
+      "gpx": "Official organizer page remains explicitly titled Ausschreibung 2026 and gives 6.7 km / approx. 90 hm plus a GPX link. The event listing shows the 4 September 2026 edition only; no 2027 edition or new GPX verified. Keep the 2026 track historical, not current for 2027.",
+      "source": "https://www.fraenkischerbackyard.de/",
+      "followUp": "Recheck after organizer announces the 2027 date and publishes a new track."
+    },
+    {
+      "order": 87,
+      "name": "Dolomiti di Brenta Trail",
+      "year": 2027,
+      "eventDates": "11 September 2027",
+      "routes": [
+        [
+          "LONG / 64K",
+          64,
+          4200
+        ],
+        [
+          "MEDIUM / 45K",
+          45,
+          2850
+        ],
+        [
+          "SHORT / 21K",
+          21,
+          1250
+        ]
+      ],
+      "gpx": "Official organizer confirms all three 2027 distances and elevation gains. The organizer states that maps, descriptions and GPS tracks are documented on its site, but reserves the right to change routes until 31 July 2027, when final official tracks will be published. Current GPX should therefore be treated as provisional until that date; no file binary validated in this pass.",
+      "source": "https://www.dolomitidibrentatrail.it/en/routes/regulation/",
+      "followUp": "Recheck after 31 July 2027 and replace provisional tracks only with final official GPX."
+    },
+    {
+      "order": 88,
+      "name": "adidas INFINITE TRAILS Gastein",
+      "year": 2027,
+      "eventDates": "3-5 September 2027",
+      "routes": [
+        [
+          "60K Ultra",
+          60,
+          5000
+        ],
+        [
+          "45K Individual",
+          44.2,
+          3146
+        ],
+        [
+          "30K Individual",
+          30.6,
+          1859
+        ],
+        [
+          "15K Run",
+          13.6,
+          871
+        ],
+        [
+          "Team Race overall",
+          100,
+          7700
+        ],
+        [
+          "Team Loop S",
+          21.4,
+          1855
+        ]
+      ],
+      "gpx": "Official Gastein event page confirms 2027 dates, the 60K Ultra and individual 45K/30K/15K offerings plus team race format. The official GPX/Racemap download page still identifies its Trailbook and GPX pack as 2026; no 2027 GPX binary is verified. Team race comprises three runners taking loops S/M/L (about 21/35/44 km); do not treat these as independent individual race options.",
+      "sources": [
+        "https://www.gastein.com/erlebnisse-events/veranstaltungen/top-events/adidas-infinite-trails/",
+        "https://infinite-trails.com/en/gpx-racemap/"
+      ],
+      "followUp": "Wait for 2027 Trailbook and course pack; validate each individual and team-loop GPX separately."
+    }
+  ],
+  "summary": {
+    "eventsRechecked": 5,
+    "importantUpdates": [
+      "Transalpine Run 2027 dates confirmed 18-24 September, but the organizer's GPX links still point to the 2026 route overview/files.",
+      "UTMB Mont-Blanc 2027 is partially announced: UTMB/CCC 25 August, OCC 28 August, PTL 22-28 August; full schedule expected December 2026.",
+      "Dolomiti di Brenta Trail 2027 confirmed for 11 September; final GPX publication due 31 July 2027.",
+      "adidas INFINITE TRAILS 2027 confirmed for 3-5 September; the current GPX download pack is still 2026.",
+      "Fränkischer Backyard has only a 2026 organizer GPX and no confirmed 2027 edition."
+    ],
+    "gpxSafety": "No GPX binary was downloaded or validated in this pass. 2026 tracks remain historical and are not accepted as 2027 replacements. DBT and Infinite Trails final 2027 tracks are not yet published; Transalpine Run's 2027 stage tracks are not yet present.",
+    "next": "Continue second-pass review of events 79-83."
+  }
+}
