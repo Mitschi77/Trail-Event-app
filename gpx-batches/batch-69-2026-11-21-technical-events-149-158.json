@@ -1,0 +1,196 @@
+{
+  "batch": 69,
+  "checkedAt": "2026-11-21",
+  "scope": "events 149-158 in event-dates.json",
+  "rules": [
+    "Official organizer sources take priority.",
+    "Historical routes/GPX must not be promoted to 2027.",
+    "A course PDF or GPX link is not binary validation.",
+    "Never delete or overwrite an old GPX until a new official file is downloaded, parsed and validated.",
+    "Audit only; no live event or runtime changes."
+  ],
+  "events": [
+    {
+      "sequence": 149,
+      "eventId": "mezza-maratona-internazionale-delle-due-perle",
+      "name": "Mezza Maratona Internazionale delle Due Perle",
+      "date": "2027-01-31",
+      "distanceKm": 21.097,
+      "startTime": "08:45",
+      "route": "Santa Margherita Ligure–Portofino coastal road, turnaround, second passage at Portofino, finish in Santa Margherita",
+      "gpx": "2027 official route description; no GPX link found",
+      "sources": [
+        "https://www.mezzadelledueperle.it/regolamento-mezza-delle-due-perle/",
+        "https://www.mezzadelledueperle.it/percorso-e-info-mezza-maratona/"
+      ]
+    },
+    {
+      "sequence": 150,
+      "eventId": "portofino-marathon",
+      "name": "Portofino Marathon",
+      "date": "2027-01-31",
+      "distanceKm": 42.195,
+      "startTime": "09:15",
+      "start": "Rapallo",
+      "gpx": "2027 date and distance confirmed on organizer homepage; detailed route and GPX not found",
+      "sources": [
+        "https://portofinomarathon.it/"
+      ]
+    },
+    {
+      "sequence": 151,
+      "eventId": "white-marble-marathon",
+      "name": "White Marble Marathon",
+      "date": "2027-02-14",
+      "distanceKm": 42.195,
+      "startTime": "09:00",
+      "route": "Flat paved coastal route; Marina di Carrara–Marina di Massa–Cinquale, start/finish Marina di Carrara",
+      "gpx": "Official 2027 PDF course map; no GPX link found",
+      "sources": [
+        "https://www.whitemarblemarathon.com/en/wmm-42k-regulation/",
+        "https://www.whitemarblemarathon.com/en/marathon-route/"
+      ]
+    },
+    {
+      "sequence": 152,
+      "eventId": "white-marble-half-marathon",
+      "name": "WRA Half Marathon",
+      "date": "2027-02-14",
+      "distanceKm": 21.0975,
+      "startTime": "09:00",
+      "route": "Flat paved coastal route between Marina di Carrara and Marina di Massa",
+      "gpx": "Official 2027 PDF course map; no GPX link found",
+      "sources": [
+        "https://www.whitemarblemarathon.com/en/wra-21k-regulation/",
+        "https://www.whitemarblemarathon.com/en/half-marathon-route/"
+      ]
+    },
+    {
+      "sequence": 153,
+      "eventId": "corime-barletta-marathon",
+      "name": "Corime Barletta Marathon",
+      "date": "2027-02-14",
+      "distanceKm": 42.195,
+      "startTime": "09:00",
+      "startFinish": "Fossato del Castello, Barletta",
+      "gpx": "2027 listing/regulation found; route map, elevation and GPX not confirmed",
+      "sources": [
+        "https://www.maratoniamo.it/gara/corime-barletta-marathon-barletta-maratona",
+        "https://www.maratoniamo.it/gara/corime-barletta-marathon-2027"
+      ]
+    },
+    {
+      "sequence": 154,
+      "eventId": "corime-barletta-half-marathon",
+      "name": "Corime Barletta Half Marathon",
+      "date": "2027-02-14",
+      "distanceKm": 21.0975,
+      "startTime": "09:00",
+      "startFinish": "Fossato del Castello, Barletta",
+      "gpx": "2027 event listing found; separate official course map and GPX not confirmed",
+      "sources": [
+        "https://www.maratoniamo.it/gara/corime-barletta-marathon-barletta-maratona",
+        "https://www.maratoniamo.it/gara/corime-barletta-marathon-2027"
+      ]
+    },
+    {
+      "sequence": 155,
+      "eventId": "mezza-maratona-di-oristano",
+      "name": "Mezza Maratona di Oristano",
+      "date": "2027-02-14",
+      "distanceKm": 21,
+      "route": "Flat paved single circuit from historic centre over Tirso bridge, pinewood/coast to tourist port and back",
+      "gpx": "2027 route description on organizer site; no GPX link found",
+      "warning": "Page title still says 22 February 2026 while body announces 14 February 2027; verify/correct with organizer",
+      "sources": [
+        "https://www.mezzamaratonadioristano.com/"
+      ]
+    },
+    {
+      "sequence": 156,
+      "eventId": "mezza-maratona-di-san-valentino",
+      "name": "Mezza Maratona di San Valentino",
+      "date": "2027-02-21",
+      "distanceKm": 21.097,
+      "startTime": "09:30",
+      "location": "Terni",
+      "gpx": "2027 date and distance confirmed by organizer; detailed route and GPX not found",
+      "sources": [
+        "https://www.maratonadisanvalentino.it/la-gara/",
+        "https://www.maratonadisanvalentino.it/en/the-race/"
+      ]
+    },
+    {
+      "sequence": 157,
+      "eventId": "maratona-di-san-valentino",
+      "name": "Maratona di San Valentino",
+      "date": "2027-02-21",
+      "distanceKm": 42.195,
+      "startTime": "09:30",
+      "location": "Terni",
+      "route": "Valnerina out-and-back towards Arrone and Ferentillo, returning to Terni and passing near Cascata delle Marmore",
+      "gpx": "2027 organizer distance/date confirmed; current GPX not found",
+      "sources": [
+        "https://www.maratonadisanvalentino.it/la-gara/",
+        "https://www.maratonadisanvalentino.it/en/the-race/",
+        "https://aims-worldrunning.org/races/10052.html"
+      ]
+    },
+    {
+      "sequence": 158,
+      "eventId": "verdi-marathon",
+      "name": "Verdi Marathon",
+      "date": "2027-02-21",
+      "routes": [
+        {
+          "name": "Salso-Fidenza 10K label",
+          "distanceKm": 9.6
+        },
+        {
+          "name": "Half Marathon",
+          "distanceKm": 21.097,
+          "finish": "Fontanellato"
+        },
+        {
+          "name": "30K",
+          "distanceKm": 30,
+          "finish": "Soragna"
+        },
+        {
+          "name": "Marathon",
+          "distanceKm": 42.195,
+          "finish": "Busseto"
+        }
+      ],
+      "gpx": "2027 route pages and profile graphics; no current GPX link found",
+      "warning": "Organizer's 30K signup page also says 28.2km in one block, conflicting with current 30K page; 10K label is actually 9.6km. Do not silently resolve.",
+      "sources": [
+        "https://www.verdimarathon.it/",
+        "https://www.verdimarathon.it/21k/",
+        "https://www.verdimarathon.it/30k/",
+        "https://www.verdimarathon.it/42k/",
+        "https://www.verdimarathon.it/10k/",
+        "https://www.verdimarathon.it/iscrizioni-30k/"
+      ]
+    }
+  ],
+  "summary": {
+    "eventsReviewed": 10,
+    "official2027GpxBinaryValidated": 0,
+    "binaryFilesDownloaded": 0,
+    "tracksParsed": 0,
+    "binaryMetricsCompared": 0,
+    "oldGpxFilesDeleted": 0,
+    "oldGpxFilesOverwritten": 0,
+    "appRuntimeFilesChanged": 0,
+    "appEventRecordsChanged": 0,
+    "auditOnly": true
+  },
+  "followUps": [
+    "Two Perle and Portofino Marathon share the same date/locality but are separate event records; check organizer relationship and route overlap.",
+    "Request Portofino Marathon GPX and detailed official route.",
+    "Obtain current 2027 GPX files for White Marble, Corime Barletta and San Valentino.",
+    "Ask Oristano organizer to correct stale 2026 heading and publish GPX.",
+    "Resolve Verdi Marathon 30K 28.2km vs 30km discrepancy and 10K label vs 9.6km actual distance; request 2027 GPX."
+  ]
+}
