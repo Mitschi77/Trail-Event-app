@@ -1,0 +1,203 @@
+{
+  "batch": 78,
+  "checkedAt": "2026-11-21",
+  "scope": "events 239-248 from event-dates.json",
+  "rules": [
+    "Use official organizer and FIDAL sources first; secondary calendar listings remain provisional.",
+    "Do not transfer previous-edition route maps or GPX files to 2027 without explicit edition confirmation.",
+    "A GPX download control is not proof of a 2027 binary or completed track validation.",
+    "Do not delete or overwrite old GPX files until a new official binary is downloaded, parsed completely and validated.",
+    "Audit-only: no app runtime or live event records changed."
+  ],
+  "events": [
+    {
+      "sequence": 239,
+      "eventId": "maratonina-citta-di-crema",
+      "name": "Maratonina Città di Crema",
+      "edition": 2027,
+      "date": "2027-11-14",
+      "distanceKm": 21.0975,
+      "location": "Crema, Lombardia, Italy",
+      "status": "FIDAL-derived-calendar-listing; organizer-regulation-pending",
+      "gpxStatus": "no-2027-gpx-confirmed",
+      "detail": "Two calendar sources list 14 November 2027 and 21.1km; DoJemo attributes the listing to the FIDAL calendar. Organizer regulation, start time and route are not yet available; the calendar entry itself says programme/date remain subject to confirmation.",
+      "sources": [
+        "https://dojemo.com/gara/maratonina-citta-di-crema-2027",
+        "https://www.maratoniamo.it/gara/maratonina-citta-di-crema-crema-mezza",
+        "https://www.endu.net/it/events/maratonina_citta_di_crema"
+      ]
+    },
+    {
+      "sequence": 240,
+      "eventId": "tui-palermo-marathon",
+      "name": "TUI Palermo Marathon",
+      "edition": 2027,
+      "date": "2027-11-14 provisional",
+      "distanceKm": 42.195,
+      "location": "Palermo, Sicilia, Italy",
+      "status": "TUI-title-sponsor-confirmed-for-2027; date-from-secondary-calendar",
+      "gpxStatus": "no-2027-gpx-confirmed",
+      "detail": "TUI's official press release confirms it becomes title sponsor of Palermo Marathon from 2027. A 2027 race calendar lists Palermo Marathon on 14 November, but organizer-specific 2027 regulation, start time and route were not verified in this pass. Keep date provisional.",
+      "sources": [
+        "https://www.tuigroup.com/newsroom/news/the-next-tui-marathon-is-coming-tui-is-launching-a-partnership-with-the-palermo-marathon-and-extending-its-commitment-as-title-sponsor-of-the-tui-rhodes-marathon-until-2030",
+        "https://www.runnersworld.com/it/eventi/gare/a73592833/calendario-maratone-italia-2027/"
+      ]
+    },
+    {
+      "sequence": 241,
+      "eventId": "tui-palermo-half-marathon",
+      "name": "TUI Palermo Half Marathon",
+      "edition": 2027,
+      "date": "2027-11-14",
+      "distanceKm": 21.0975,
+      "location": "Palermo, Sicilia, Italy",
+      "status": "secondary-calendar-entry-only; organizer-regulation-pending",
+      "gpxStatus": "no-2027-gpx-confirmed",
+      "detail": "Maratoniamo lists 14 November 2027 and 21.0975km, explicitly with regulation, start time and details still to be defined. TUI title sponsorship is confirmed for Palermo Marathon from 2027, but that alone does not confirm half-marathon route details.",
+      "sources": [
+        "https://www.maratoniamo.it/gara/tui-palermo-half-marathon-palermo-mezza",
+        "https://www.tuigroup.com/newsroom/news/the-next-tui-marathon-is-coming-tui-is-launching-a-partnership-with-the-palermo-marathon-and-extending-its-commitment-as-title-sponsor-of-the-tui-rhodes-marathon-until-2030"
+      ]
+    },
+    {
+      "sequence": 242,
+      "eventId": "ravenna-half-marathon",
+      "name": "Ravenna Half Marathon",
+      "edition": 2027,
+      "date": "2027-11-14",
+      "distanceKm": 21.0975,
+      "location": "Ravenna, Emilia-Romagna, Italy",
+      "status": "FIDAL-2027-calendar-confirms-date-and-silver-category",
+      "gpxStatus": "no-2027-gpx-binary-validated",
+      "detail": "FIDAL's 2027 calendar lists Ravenna Half Marathon on 14 November as Silver category. No organizer 2027 regulation, start time, detailed route or GPX binary was validated in this pass.",
+      "sources": [
+        "https://casaatleticaitaliana.fidal.it/content/Maratone-e-mezze-219-eventi-nel-2027/186849",
+        "https://www.maratoniamo.it/gara/ravenna-half-marathon-ravenna-mezza"
+      ]
+    },
+    {
+      "sequence": 243,
+      "eventId": "maratona-di-ravenna-citta-d-arte",
+      "name": "Maratona di Ravenna Città d’Arte",
+      "edition": 2027,
+      "date": "2027-11-14",
+      "distanceKm": 42.195,
+      "location": "Ravenna, Emilia-Romagna, Italy",
+      "status": "FIDAL-2027-calendar-confirms-date-and-silver-category",
+      "gpxStatus": "no-2027-gpx-binary-validated",
+      "detail": "FIDAL's 2027 calendar lists the marathon on 14 November as Silver category. Organizer's 2027 course, start time, elevation profile and GPX were not confirmed in the checked sources; keep marathon separate from the half-marathon event.",
+      "sources": [
+        "https://casaatleticaitaliana.fidal.it/content/Maratone-e-mezze-219-eventi-nel-2027/186849",
+        "https://www.runnersworld.com/it/eventi/gare/a73592833/calendario-maratone-italia-2027/"
+      ]
+    },
+    {
+      "sequence": 244,
+      "eventId": "due-mari-marathon",
+      "name": "Due Mari Marathon",
+      "edition": 2027,
+      "date": "2027-11-14",
+      "distanceKm": 42.195,
+      "location": "Taranto, Puglia, Italy",
+      "status": "secondary-calendar-entry-only; organizer-regulation-pending",
+      "gpxStatus": "no-2027-gpx-confirmed",
+      "detail": "2027 calendar entry lists 14 November 2027 and 42.195km in Taranto; regulation, start time and route are still to be defined. No organizer route or GPX confirmed.",
+      "sources": [
+        "https://www.maratoniamo.it/gara/due-mari-marathon-taranto-maratona",
+        "https://www.runnersworld.com/it/eventi/gare/a73592833/calendario-maratone-italia-2027/"
+      ]
+    },
+    {
+      "sequence": 245,
+      "eventId": "san-francesco-marathon",
+      "name": "San Francesco Marathon",
+      "edition": 2027,
+      "date": "2027-11-21",
+      "distanceKm": 42.195,
+      "location": "Assisi, Umbria, Italy",
+      "status": "FIDAL-calendar-confirms-2027-edition-and-date; organizer-page-still-2026",
+      "gpxStatus": "no-2027-gpx-confirmed",
+      "detail": "FIDAL results/calendar search lists IV San Francesco Marathon 2027 on 21 November. Organizer marathon page still describes the 2026 edition on 22 November and same route as 2025; do not carry 2026 route details into 2027. Secondary 2027 listing gives 42.195km.",
+      "sources": [
+        "https://www.fidal.it/result.php?cerca=CORSO+FRANCESCO&id_sito=1",
+        "https://sanfrancescomarathon.it/maratona/",
+        "https://www.maratoniamo.it/gara/san-francesco-marathon-2027-assisi-maratona-2027"
+      ]
+    },
+    {
+      "sequence": 246,
+      "eventId": "verona-run-marathon",
+      "name": "Verona Run Marathon",
+      "edition": 2027,
+      "date": "2027-11-21",
+      "distanceKm": 42.195,
+      "location": "Verona, Veneto, Italy",
+      "status": "official-organizer-homepage-confirms-date; FIDAL-calendar-listed",
+      "gpxStatus": "official-route-page-has-gpx-control-but-course-image-labelled-2026; no-2027-binary-validated",
+      "detail": "Organizer homepage confirms Verona 21 November 2027; FIDAL 2027 calendar includes 42K. Official course page has GPX download and shows 2026 route image, so download edition must be verified and cannot be treated as 2027 without inspection. Route page states 09:00 start Corso Porta Nuova near Piazza Bra, finish Piazza Bra, but edition-specific confirmation pending.",
+      "sources": [
+        "https://www.veronarunmarathon.it/",
+        "https://www.veronarunmarathon.it/percorso-42k?lang=en",
+        "https://www.fidal.it/content/Maratone-e-mezze-219-eventi-nel-2027/186849"
+      ]
+    },
+    {
+      "sequence": 247,
+      "eventId": "verona-run-halfmarathon",
+      "name": "Verona Run Half Marathon",
+      "edition": 2027,
+      "date": "2027-11-21",
+      "distanceKm": 21.0975,
+      "location": "Verona, Veneto, Italy",
+      "status": "secondary-calendar-entry-and-organizer-marathon-date; half-edition-details-pending",
+      "gpxStatus": "official-route-page-has-21k-route-selector; no-2027-gpx-binary-validated",
+      "detail": "Maratoniamo lists Verona Run Halfmarathon on 21 November 2027; organizer homepage confirms the event weekend/date but its top announcement is not explicit about half-marathon details. Official route page includes interactive 42K/21K selector and GPX track control; route image labelled 2026, so do not promote the file as 2027 until confirmed.",
+      "sources": [
+        "https://www.veronarunmarathon.it/",
+        "https://www.veronarunmarathon.it/percorso-42k?lang=en",
+        "https://www.maratoniamo.it/gare-a/verona/2027"
+      ]
+    },
+    {
+      "sequence": 248,
+      "eventId": "savona-international-half-marathon",
+      "name": "Savona International Half Marathon",
+      "edition": 2027,
+      "date": "2027-11-21",
+      "distanceKm": 21.0975,
+      "startTime": "09:30",
+      "location": "Savona, Liguria, Italy",
+      "status": "official-organizer-homepage-confirms-date-and-start-time",
+      "gpxStatus": "no-2027-gpx-binary-validated",
+      "detail": "Official organizer homepage displays 21 November 2027 and 09:30 start in Savona. The 2026 FIDAL page confirms the 21.0975km course was homologated, but 2027 regulation/course file and GPX not found. Do not use 2026 homologation as proof of 2027 file.",
+      "sources": [
+        "https://www.savonahalfmarathon.it/",
+        "https://www.fidal.it/calendario/XII%5E-Savona-International-Half-Marathon/COD14801"
+      ]
+    }
+  ],
+  "summary": {
+    "eventsReviewed": 10,
+    "official2027OrganizerOrFidalDateConfirmation": 6,
+    "secondaryOrPartiallyConfirmed": 4,
+    "officialGpxDownloadControlsFound": 2,
+    "official2027GpxBinaryValidated": 0,
+    "binaryFilesDownloaded": 0,
+    "tracksParsed": 0,
+    "binaryMetricsCompared": 0,
+    "oldGpxFilesDeleted": 0,
+    "oldGpxFilesOverwritten": 0,
+    "appRuntimeFilesChanged": 0,
+    "appEventRecordsChanged": 0,
+    "auditOnly": true
+  },
+  "followUps": [
+    "Crema: wait for organizer rules; 14 November calendar entry remains subject to confirmation.",
+    "TUI Palermo: sponsorship confirmed from 2027; verify official 2027 marathon regulation, date and route. Half marathon remains calendar-only.",
+    "Ravenna Marathon and Half: obtain official organizer 2027 regulations, routes and GPX files.",
+    "Due Mari: await organizer regulation and route publication.",
+    "San Francesco: organizer page still describes 2026; verify 2027 course before carrying over track data.",
+    "Verona 42K and 21K: retrieve GPX binaries and verify course edition; current official route graphic is 2026-labelled.",
+    "Savona: obtain 2027 regulation and route/GPX; homepage date/start confirmed but track validation pending."
+  ]
+}
