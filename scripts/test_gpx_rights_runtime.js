@@ -100,11 +100,11 @@ async function harness(entry, gpxUrl = "https://example.org/course.gpx", withSto
   assert.equal(pending.window.routeGpxIsOrganizerRestricted(pending.route), true);
   assert.equal(pending.window.proposalGpxIsRestricted({ eventId: "test-event", routeId: "test-route" }), true);
   assert.equal(pending.window.reviewGpxUrl({ eventId: "test-event", routeId: "test-route" }), "");
-  assert.equal(pending.route.gpxTrack, undefined, "unauthorized in-memory GPX track must be purged");
-  assert.equal(pending.route.elevationProfile, undefined, "GPX-derived elevation profile must be purged");
-  assert.equal(pending.eventDataEdits["test-event::test-route"], undefined, "unauthorized stored GPX edit must be purged");
-  assert.equal(pending.localWrites(), 1, "sanitized route edits must be persisted locally");
-  assert.equal(pending.cloudSaves(), 1, "sanitized route edits must be queued for cloud sync");
+  assert.deepEqual(pending.route.gpxTrack, [{ lat: 45, lon: 13 }], "existing in-memory GPX track must be retained");
+  assert.deepEqual(pending.route.elevationProfile, [100, 200, 300], "existing GPX-derived elevation profile must be retained");
+  assert.deepEqual(pending.eventDataEdits["test-event::test-route"].gpxTrack, [{ lat: 45, lon: 13 }], "existing stored GPX edit must be retained");
+  assert.equal(pending.localWrites(), 0, "rights checks must not rewrite or erase local planner data");
+  assert.equal(pending.cloudSaves(), 0, "rights checks must not queue destructive cloud synchronization");
 
   const fullPermissions = Object.fromEntries(policy.PROCESS_ACTIONS.map(key => [key, true]));
   const approvedEntry = policy.defaultEntry({
