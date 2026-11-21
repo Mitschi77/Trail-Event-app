@@ -1,0 +1,497 @@
+{
+  "batch": 64,
+  "checkedAt": "2026-11-21",
+  "scope": "Technical GPX availability and edition-specific status for top-level events 111–120 in current EVENTS order",
+  "safety": [
+    "Existing GPX files remain valid as fallback until an official replacement is actually downloaded, parsed and validated.",
+    "Do not delete, overwrite or replace any historical GPX file during this audit.",
+    "A map panel, GPX button, third-party listing or direct link does not count as binary validation.",
+    "Do not fetch, store, mirror, process or display route GPX where organizer restrictions, private-land access conditions or rights remain unclear."
+  ],
+  "events": [
+    {
+      "order": 111,
+      "name": "Austria Backyard Ultra 24+1 Hochkönig",
+      "date": "2027-10-25/26",
+      "officialSource": "https://www.austriabackyardultra.com/hochkoenig",
+      "routes": [
+        {
+          "name": "Backyard loop",
+          "distanceKm": 6.706,
+          "elevationGainHm": null
+        }
+      ],
+      "gpxStatus": "official-event-and-distance-confirmed; route-map-section-still-says-follows; no-GPX-endpoint-found",
+      "technicalAttempt": {
+        "officialRoutePageChecked": true,
+        "directGpxEndpointFound": false,
+        "binaryDownloaded": false,
+        "parsed": false,
+        "metricsCompared": false,
+        "result": "No binary endpoint available to test. Official page gives route narrative but its dedicated route/map section is still a placeholder."
+      },
+      "detail": "The loop starts/finishes at ONKEL LENZ Clubhouse, passes Maria Alm village square and the golf course, includes an approximately 250m/60hm steep rise, then uses gravel/forest paths and returns on asphalt. This 60hm segment is not the total loop ascent. No total elevation gain should be inferred.",
+      "sources": [
+        "https://www.austriabackyardultra.com/hochkoenig"
+      ],
+      "rightsNote": "No GPX file found; no route file imported or copied."
+    },
+    {
+      "order": 112,
+      "name": "Puglia Terra delle Gravine by UTMB",
+      "date": "No 2027 edition listed in current official UTMB calendar",
+      "officialSource": "https://utmb.world/",
+      "routes": [],
+      "gpxStatus": "no-current-2027-edition-or-gpx-verified",
+      "technicalAttempt": {
+        "officialEventCalendarChecked": true,
+        "directGpxEndpointFound": false,
+        "binaryDownloaded": false,
+        "parsed": false,
+        "metricsCompared": false,
+        "result": "No current 2027 event/race page or official GPX endpoint confirmed."
+      },
+      "detail": "Historical Puglia routes must not be carried forward as a 2027 edition without a new official announcement.",
+      "sources": [
+        "https://utmb.world/"
+      ],
+      "rightsNote": "No historical route file reused."
+    },
+    {
+      "order": 113,
+      "name": "3 Días Trail Ibiza",
+      "date": "2026-11-27/29 confirmed; no 2027 edition announced",
+      "officialSource": "https://3diastrailibiza.com/",
+      "routes2026": [
+        {
+          "name": "Nocturna 10K",
+          "edition": 2026
+        },
+        {
+          "name": "Ultra",
+          "edition": 2026
+        },
+        {
+          "name": "Trail Marathon",
+          "edition": 2026
+        },
+        {
+          "name": "Half Marathon",
+          "edition": 2026
+        },
+        {
+          "name": "Diurna 10K",
+          "edition": 2026
+        }
+      ],
+      "gpxStatus": "2026-event-only; stage-files-sent-by-email-to-registered-participants; no-2027-file",
+      "technicalAttempt": {
+        "publicGpxPageChecked": true,
+        "publicDirectGpxEndpointFound": false,
+        "binaryDownloaded": false,
+        "parsed": false,
+        "metricsCompared": false,
+        "result": "No public GPX endpoint was found on the official event site. Prior official-source review records that stage GPX is emailed to registered participants about one week before the event."
+      },
+      "detail": "The official site currently shows the 27–29 November 2026 edition. Do not use any participant-email route files unless the organizer expressly authorizes app use. Prior organizer information says Saturday routes cross protected/private land.",
+      "sources": [
+        "https://3diastrailibiza.com/",
+        "https://3diastrailibiza.com/comunicado-oficial-celebracion-de-los-3-dias-trail-ibiza/"
+      ],
+      "rightsNote": "Participant-only distribution and protected/private land make third-party reuse unclear. No files requested, downloaded or copied."
+    },
+    {
+      "order": 114,
+      "name": "Oman by UTMB",
+      "date": "2026-12-10/12 official; no 2027 edition confirmed",
+      "officialSource": "https://oman.utmb.world/races",
+      "routes2026": [
+        {
+          "name": "Hajar Ultra",
+          "distanceKm": 154,
+          "elevationGainHm": 8000
+        },
+        {
+          "name": "Jabal Classic",
+          "distanceKm": 103,
+          "elevationGainHm": 5000
+        },
+        {
+          "name": "Skyward Canyon",
+          "distanceKm": 50,
+          "elevationGainHm": 2400
+        },
+        {
+          "name": "Old Capital Trail",
+          "distanceKm": 32,
+          "elevationGainHm": 1400
+        },
+        {
+          "name": "Scenic Ascent",
+          "distanceKm": 21.5,
+          "elevationGainHm": 550
+        }
+      ],
+      "gpxStatus": "official-pages-show-2026-edition; no-2027-course-files",
+      "technicalAttempt": {
+        "officialRacePageChecked": true,
+        "directGpxEndpointFound": false,
+        "binaryDownloaded": false,
+        "parsed": false,
+        "metricsCompared": false,
+        "result": "Current official race page still lists the December 2026 edition; no 2027 track version found."
+      },
+      "detail": "Keep all five route files, if present in the app, labelled 2026 historical. The FAQ's force-majeure deferral clause is not confirmation of a 2027 event.",
+      "sources": [
+        "https://oman.utmb.world/races",
+        "https://oman.utmb.world/runners/faq"
+      ],
+      "rightsNote": "No historical GPX promoted as 2027."
+    },
+    {
+      "order": 115,
+      "name": "Mammutmarsch München",
+      "date": "2027-07-31",
+      "officialSource": "https://mammutmarsch.de/events/muenchen",
+      "startFinish": "TV Planegg-Krailling, Sportplatz 1, 82152 Krailling, Deutschland",
+      "routes": [
+        {
+          "name": "100 km",
+          "distanceKm": 100,
+          "elevationGainHm": null
+        },
+        {
+          "name": "75 km",
+          "distanceKm": 75,
+          "elevationGainHm": null
+        }
+      ],
+      "gpxStatus": "2027-event-and-two-distances-confirmed; no-public-gpx-download-on-event-page",
+      "technicalAttempt": {
+        "officialEventPageChecked": true,
+        "directGpxEndpointFound": false,
+        "binaryDownloaded": false,
+        "parsed": false,
+        "metricsCompared": false,
+        "result": "The official event page describes both routes but exposes no public GPX download or course map link."
+      },
+      "detail": "The organizer describes routes through the Starnberger See, Ammersee and Isartal areas. Start-time windows remain unpublished. Elevation gain is not given on the event page.",
+      "sources": [
+        "https://mammutmarsch.de/events/muenchen"
+      ],
+      "rightsNote": "Await official route release; do not substitute routes from another Mammutmarsch edition or city."
+    },
+    {
+      "order": 116,
+      "name": "Megamarsch München",
+      "date": "2027-05-15/16",
+      "officialSource": "https://www.megamarsch.de/m%C3%BCnchen",
+      "routes": [
+        {
+          "name": "100 km",
+          "distanceKm": 100,
+          "elevationGainHm": 990
+        }
+      ],
+      "startLocation": "Wiesenfläche an der Eichthalstraße, 81547 München, Deutschland",
+      "finishLocation": "Olympia Skistadion, 82467 Garmisch-Partenkirchen, Deutschland",
+      "gpxStatus": "2027-event-confirmed; official-Komoot-route-promised-about-two-weeks-before-event; not-yet-published",
+      "technicalAttempt": {
+        "officialEventPageChecked": true,
+        "directGpxEndpointFound": false,
+        "binaryDownloaded": false,
+        "parsed": false,
+        "metricsCompared": false,
+        "result": "Official page says route will be available as a Komoot download approximately two weeks before the event. The course is provisional and may be changed after a final bicycle inspection two days before the event."
+      },
+      "detail": "The official page confirms 100km, approximately 990hm, four refreshment stations at roughly 20km intervals and a point-to-point route to Garmisch-Partenkirchen.",
+      "sources": [
+        "https://www.megamarsch.de/m%C3%BCnchen"
+      ],
+      "rightsNote": "No Komoot route available to inspect yet; obtain and validate only after official release."
+    },
+    {
+      "order": 117,
+      "name": "Vietnam Highlands Trail by UTMB",
+      "date": "2027-01-07/10; four official race distances on the entry page",
+      "officialSource": "https://vietnamhighlands.utmb.world/",
+      "routes": [
+        {
+          "name": "100K Langbiang",
+          "distanceKm": 101.5,
+          "elevationGainHm": 5722,
+          "startDate": "2027-01-09",
+          "officialGpxLink": true
+        },
+        {
+          "name": "50K Elephant",
+          "distanceKm": 54.6,
+          "elevationGainHm": 3106,
+          "startDate": "2027-01-09",
+          "officialGpxLink": true
+        },
+        {
+          "name": "20K Pinhatt",
+          "distanceKm": null,
+          "elevationGainHm": 1113,
+          "startDate": "2027-01-09",
+          "officialGpxLink": true,
+          "officialDistanceConflictKm": [
+            22.2,
+            22.8,
+            24.1
+          ]
+        },
+        {
+          "name": "10K Tuyen Lam",
+          "distanceKm": 10.6,
+          "elevationGainHm": 435,
+          "startDate": "2027-01-09",
+          "officialGpxLinkNotConfirmed": true
+        }
+      ],
+      "additionalFormatCandidate": {
+        "name": "5K Xuanhuong",
+        "distanceKm": 5,
+        "status": "appears in prior event schedule research but is not listed among the four race distances on the current official entry page; do not insert as an official race route without clarification"
+      },
+      "gpxStatus": "official-2027-GPX-download-controls-present-on-at-least-100K-50K-20K-race-pages; no-binaries-downloaded-or-parsed",
+      "technicalAttempt": {
+        "officialRacePagesChecked": true,
+        "officialGpxLinksFound": true,
+        "directBinaryFetchAttempted": false,
+        "binaryDownloaded": false,
+        "parsed": false,
+        "metricsCompared": false,
+        "result": "The official 100K, 50K and 20K race pages display GPX download controls. The actual files were not fetched because the organizer explicitly warns that routes pass through private land and some sections require tickets or prior permission."
+      },
+      "detail": "Major correction to provisional earlier data: 100K page gives 101.5km/5722hm; 50K gives 54.6km/3106hm; 10K gives 10.6km/435hm. The 20K Pinhatt page is internally inconsistent: page heading 24.1km, race details table 22.8km, and the event overview/older checkpoint 22.2km. Keep all three values in a discrepancy note; do not silently overwrite the stored distance.",
+      "accessWarning": "Official organizer warning: routes pass through tourist attractions and private land; some areas require an entry ticket or prior permission; route may not be fully prepared/safe outside race support; organizer strongly discourages running it outside the official event.",
+      "sources": [
+        "https://vietnamhighlands.utmb.world/races/100Klangbiang",
+        "https://vietnamhighlands.utmb.world/races/50Kelephant",
+        "https://vietnamhighlands.utmb.world/races/20Kpinhatt",
+        "https://vietnamhighlands.utmb.world/races/10Ktuyenlam",
+        "https://vietnamhighlands.utmb.world/runners/entry-info"
+      ],
+      "rightsNote": "Do not mirror, store, display or redistribute these GPX files in the app pending explicit organizer permission and clarification of the private-land access conditions. A public download control does not grant third-party app reuse rights."
+    },
+    {
+      "order": 118,
+      "name": "Tarawera Ultra-Trail by UTMB",
+      "date": "2027-02-13/14",
+      "officialSource": "https://tarawera.utmb.world/",
+      "routes": [
+        {
+          "name": "TMiler",
+          "distanceKm": 163,
+          "elevationGainHm": 3800
+        },
+        {
+          "name": "T102",
+          "distanceKm": 102,
+          "elevationGainHm": 2300
+        },
+        {
+          "name": "T50",
+          "distanceKm": 52,
+          "elevationGainHm": 1150
+        },
+        {
+          "name": "T21",
+          "distanceKm": 23,
+          "elevationGainHm": 400
+        },
+        {
+          "name": "T14",
+          "distanceKm": 14,
+          "elevationGainHm": 161
+        }
+      ],
+      "gpxStatus": "official-2027-race-formats-and-metrics-confirmed; no-download-endpoint-verified-on-checked-official-entry-page",
+      "technicalAttempt": {
+        "officialEntryPageChecked": true,
+        "officialHomepageChecked": true,
+        "gpxDownloadTextFoundOnEntryPage": false,
+        "binaryDownloaded": false,
+        "parsed": false,
+        "metricsCompared": false,
+        "result": "The official entry page lists all five distances but no GPX download control. The official homepage provides course details and maps/app information; no direct GPX endpoint was verified during this check."
+      },
+      "detail": "Corrected provisional values using the current official race homepage: TMiler 163km/3800hm, T102 102km/2300hm, T50 52km/1150hm, T21 23km/400hm, T14 14km/161hm. Third-party file-derived measurements are not substituted for organizer metrics.",
+      "sources": [
+        "https://tarawera.utmb.world/",
+        "https://tarawera.utmb.world/runners/entry-info"
+      ],
+      "rightsNote": "No third-party GPX file used as a substitute for an official organizer download."
+    },
+    {
+      "order": 119,
+      "name": "Puerto Vallarta México by UTMB",
+      "date": "2027-03-04/06",
+      "officialSource": "https://puerto-vallarta.utmb.world/",
+      "routes": [
+        {
+          "name": "Hikuri 81K",
+          "distanceKm": 81,
+          "elevationGainHm": 3900
+        },
+        {
+          "name": "Nakawé 53K",
+          "distanceKm": 53,
+          "elevationGainHm": 2500
+        },
+        {
+          "name": "Haramara 37K",
+          "distanceKm": 37,
+          "elevationGainHm": 1600
+        },
+        {
+          "name": "Ereno 20K",
+          "distanceKm": 20,
+          "elevationGainHm": 1050
+        },
+        {
+          "name": "Pata Salada 5K",
+          "distanceKm": 5,
+          "elevationGainHm": 200
+        }
+      ],
+      "gpxStatus": "official-2027-course-pages-and-GPX-links-listed-in-prior-source-audit; binary-validation-pending",
+      "technicalAttempt": {
+        "officialRacePagesPreviouslyChecked": true,
+        "directBinaryFetchAttempted": false,
+        "binaryDownloaded": false,
+        "parsed": false,
+        "metricsCompared": false,
+        "result": "Page-level official GPX availability is recorded in the previous event audit. No binary bytes or parsed track metrics were obtained in this technical pass."
+      },
+      "sources": [
+        "https://puerto-vallarta.utmb.world/"
+      ],
+      "rightsNote": "No old or unverified GPX substituted; await binary-capable validation."
+    },
+    {
+      "order": 120,
+      "name": "Xtrail Kenting by UTMB",
+      "date": "2027-03-05/07",
+      "officialSource": "https://xtrail.utmb.world/races",
+      "routes": [
+        {
+          "name": "Xtrail 100K",
+          "distanceKm": 98,
+          "elevationGainHm": 3291
+        },
+        {
+          "name": "Xtrail 50K",
+          "distanceKm": 50,
+          "elevationGainHm": 1496
+        },
+        {
+          "name": "Xtrail 25K",
+          "distanceKm": 26,
+          "elevationGainHm": 589
+        },
+        {
+          "name": "Xtrail 10K",
+          "distanceKm": 11,
+          "elevationGainHm": 201
+        },
+        {
+          "name": "Xtrail Kids Family Run",
+          "distanceKm": 2,
+          "elevationGainHm": 10
+        }
+      ],
+      "gpxStatus": "official-2027-race-pages-listed-in-prior-source-audit; binary-validation-pending",
+      "technicalAttempt": {
+        "officialRacePagesPreviouslyChecked": true,
+        "directBinaryFetchAttempted": false,
+        "binaryDownloaded": false,
+        "parsed": false,
+        "metricsCompared": false,
+        "result": "Official 2027 measured route values are recorded from the prior event audit. No binary file was downloaded or parsed in this technical package."
+      },
+      "detail": "Keep measured distances 98/50/26/11/2km rather than nominal race labels 100/50/25/10/Kids. No GPX file is marked validated.",
+      "sources": [
+        "https://xtrail.utmb.world/races"
+      ],
+      "rightsNote": "No binary validation or new app data import."
+    }
+  ],
+  "summary": {
+    "eventsCovered": 10,
+    "official2027EventsConfirmed": 7,
+    "no2027EditionOrRouteConfirmed": 3,
+    "directGpxBinariesDownloaded": 0,
+    "tracksParsed": 0,
+    "metricsCompared": 0,
+    "officialGpxControlsOrLinksObserved": 4,
+    "gpxFilesDeleted": 0,
+    "gpxFilesOverwritten": 0,
+    "appRuntimeFilesChanged": 0,
+    "appEventRecordsChanged": 0,
+    "criticalFindings": [
+      "Vietnam Highlands official GPX pages contain strong private-land and safety warnings; no GPX binaries were fetched or reused.",
+      "Vietnam Highlands 20K Pinhatt distance conflicts across official sources: 22.2km, 22.8km and 24.1km. Leave unresolved pending organizer clarification.",
+      "Tarawera 2027 official metrics have been corrected from the current homepage, but no direct official GPX endpoint was verified.",
+      "Megamarsch München route is due about two weeks before 15 May 2027 and may change two days before the event.",
+      "Austria Backyard Hochkönig 2027 course map section is still a placeholder; no GPX endpoint exists yet."
+    ],
+    "noGpxFilesChanged": true,
+    "noAppRuntimeDataChanged": true,
+    "currentEventDatesEntriesCoveredInThisBatch": 7,
+    "currentEventDatesEntriesCoveredByBatch65": 3,
+    "legacyEntriesNotInCurrentEventDates": 3
+  },
+  "followUps": [
+    "Austria Backyard Hochkönig: recheck once organizer publishes the route map and GPX; establish total loop ascent from the official file, not the 60hm climb segment.",
+    "Puglia: keep historical only until official 2027 UTMB listing appears.",
+    "3 Días Trail Ibiza: after the 2026 race, check for a 2027 announcement and request explicit rights for participant-email GPX before any app use.",
+    "Oman: wait for official 2027 event and track pages.",
+    "Mammutmarsch München: request or await the organizer's 2027 course file; verify both 75km and 100km.",
+    "Megamarsch München: retrieve official Komoot course around two weeks before the event; recheck final route changes two days before.",
+    "Vietnam Highlands: request written clarification of 20K distance conflict and explicit GPX/app reuse permission; do not download or republish private-land route files before permission.",
+    "Tarawera: identify official individual course GPX pages if they are released; compare five tracks against official metrics.",
+    "Puerto Vallarta: download and parse five official 2027 GPX files when a binary-capable environment is available and permission is confirmed.",
+    "Xtrail Kenting: download and parse five official 2027 GPX files when a binary-capable environment is available and permission is confirmed."
+  ],
+  "sources": [
+    "https://www.topografix.com/gpx.asp",
+    "https://www.topografix.com/GPX/1/1/index.htm",
+    "https://www.topografix.com/gpx_validation.asp",
+    "https://www.austriabackyardultra.com/hochkoenig",
+    "https://3diastrailibiza.com/",
+    "https://oman.utmb.world/races",
+    "https://mammutmarsch.de/events/muenchen",
+    "https://www.megamarsch.de/m%C3%BCnchen",
+    "https://vietnamhighlands.utmb.world/",
+    "https://tarawera.utmb.world/",
+    "https://puerto-vallarta.utmb.world/",
+    "https://xtrail.utmb.world/races"
+  ],
+  "currentEventDatesCrossCheck": {
+    "currentCatalogRange": "event-dates.json insertion positions 111–120 (1-based)",
+    "overlappingIds": [
+      "oman-by-utmb",
+      "mammutmarsch",
+      "megamarsch",
+      "vietnam-highlands-trail-by-utmb",
+      "tarawera-ultra-trail-by-utmb",
+      "puerto-vallarta-mexico-by-utmb",
+      "hoka-xtrail-kenting-by-utmb"
+    ],
+    "currentEntriesNotCoveredByThisBatch": [
+      "desert-rats-trail-running-festival-by-utmb",
+      "hiroshima-by-utmb",
+      "the-canyons-endurance-runs-by-utmb"
+    ],
+    "thoseThreeAreCoveredByAuditBatch": 65,
+    "legacyEntriesNotInCurrentCatalog": [
+      "Austria Backyard Ultra 24+1 Hochkönig",
+      "Puglia Terra delle Gravine by UTMB",
+      "3 Días Trail Ibiza"
+    ],
+    "note": "This package follows the historic/original EVENTS order. Seven entries overlap current event-dates positions 111–120; the other three current catalog entries are covered by audit batch 65. The three legacy entries at orders 111–113 are not in the current event-dates catalog."
+  }
+}
