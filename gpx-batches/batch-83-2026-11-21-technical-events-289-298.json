@@ -1,0 +1,367 @@
+{
+  "batch": 83,
+  "checkedAt": "2026-11-21",
+  "scope": "events 289-298 from event-dates.json",
+  "rules": [
+    "Use official organizer sources and federations first; label race-calendar and local press corroboration explicitly.",
+    "Never treat third-party GPX-derived ascent as organizer-confirmed.",
+    "Course maps/download controls are not binary GPX validation.",
+    "Keep 2026 GPX assets as historical/fallback until a 2027 binary is downloaded, fully parsed and compared.",
+    "Audit-only; no live event records or runtime files changed."
+  ],
+  "events": [
+    {
+      "sequence": 289,
+      "eventId": "arrow-venloop",
+      "name": "Arrow Venloop",
+      "date": "2027-03-21",
+      "location": "Venlo, Netherlands",
+      "status": "organizer-confirmed",
+      "routes": [
+        {
+          "distanceKm": 21.098,
+          "startTime": "14:00"
+        },
+        {
+          "distanceKm": 10,
+          "startTime": "12:00"
+        },
+        {
+          "distanceKm": 5,
+          "startTime": "10:50"
+        }
+      ],
+      "detail": "Organizer confirms 20th edition on Sunday 21 March 2027. Half marathon is 21,098m, starts 14:00; 10K 12:00; 5K 10:50. Organizer explicitly says maps currently displayed are 2026 until 2027 maps are known; GPX links are likewise not confirmed as 2027.",
+      "gpxStatus": "GPX links visible but course page says 2026 maps until 2027 routes known; no 2027 binary validated",
+      "sources": [
+        "https://venloop.nl/en/running/arrow-venloop/",
+        "https://venloop.nl/en/running/arrow-venloop/program/",
+        "https://venloop.nl/en/running/arrow-venloop/distances/"
+      ]
+    },
+    {
+      "sequence": 290,
+      "eventId": "du-motion-dubrovnik",
+      "name": "Du Motion Dubrovnik Half Marathon",
+      "date": "2027-04-25",
+      "location": "Dubrovnik, Croatia",
+      "status": "organizer-confirmed",
+      "routes": [
+        {
+          "distanceKm": 21.1,
+          "startTime": "09:30",
+          "start": "Stradun",
+          "finish": "Stradun"
+        }
+      ],
+      "detail": "Organizer confirms 25 April 2027, 09:30, 21.1km. Course description runs from Stradun through the Old Town and along the Dubrovnik coast, out to Komolac and back. Time limit 3 hours. No 2027 GPX binary or ascent figure validated.",
+      "gpxStatus": "no-2027-binary-downloaded-or-parsed",
+      "sources": [
+        "https://du-motion.com/races/half-marathon"
+      ]
+    },
+    {
+      "sequence": 291,
+      "eventId": "drei-herzen-marathon-radenci",
+      "name": "Drei-Herzen-Marathon Radenci",
+      "date": "2027-05-15",
+      "location": "Radenci, Slovenia",
+      "status": "organizer-confirmed",
+      "routes": [
+        {
+          "name": "Radenska Classic Marathon",
+          "distanceKm": 42.195,
+          "startTime": "09:00"
+        },
+        {
+          "name": "Radenska Medium Half Marathon",
+          "distanceKm": 21.098,
+          "startTime": "09:00"
+        },
+        {
+          "name": "Radenska Naturelle Run",
+          "distanceKm": 10,
+          "startTime": "09:15"
+        },
+        {
+          "name": "Oaza Run",
+          "distanceKm": 5.316,
+          "startTime": "09:15"
+        }
+      ],
+      "detail": "Organizer FAQ confirms 45th edition on 15 May 2027 and planned starts. Separate organizer route pages exist for marathon and half. A third-party GPX analysis reports 88m ascent but explicitly says organizer has not published an official ascent figure; do not store 88m as official. The GPX referenced by that third party is not downloaded/validated in this audit.",
+      "gpxStatus": "organizer route pages present; no 2027 binary locally downloaded or parsed",
+      "sources": [
+        "https://www.alias.maraton-radenci.si/de/haufig-gestellte-fragen/",
+        "https://www.alias.maraton-radenci.si/en/runs/radenska-classic-marathon",
+        "https://www.alias.maraton-radenci.si/en/runs/radenska-medium-half-marathon",
+        "https://www.beforerace.day/de/races/three-hearts-marathon-radenci/"
+      ]
+    },
+    {
+      "sequence": 292,
+      "eventId": "nlb-ljubljana-marathon",
+      "name": "NLB Ljubljana Marathon",
+      "date": "2027-10-16/17",
+      "location": "Ljubljana, Slovenia",
+      "status": "organizer-confirmed; duplicate-of-event-320-nlb-ljubljana-marathon-2027",
+      "routes": [
+        {
+          "name": "Marathon",
+          "date": "2027-10-17",
+          "distanceKm": 42.195,
+          "startTime": "09:00",
+          "officialAscentM": 159
+        },
+        {
+          "name": "Zavarovalnica Vita Half Marathon",
+          "date": "2027-10-17",
+          "distanceKm": 21.098,
+          "officialAscentM": 71
+        },
+        {
+          "name": "GARMIN Run",
+          "date": "2027-10-17",
+          "distanceKm": 10
+        }
+      ],
+      "detail": "Organizer confirms event weekend 16–17 October 2027 and the three race distances. Marathon course page gives 159m ascent and GPX download control; half marathon page gives 71m and GPX download control. These are organizer-published course figures, but the downloadable files were not fetched and parsed here; also confirm race-day assignment for each distance against final 2027 schedule. This is the same 2027 event as sequence 320 (NLB Ljubljana Marathon, 16–17 October 2027). Treat these as duplicate records; do not create duplicate event cards or double-count routes. Keep the event-ID alias/deduplication for a separate data-cleanup PR.",
+      "gpxStatus": "official GPX download controls and published ascent values; no binary downloaded or parsed",
+      "sources": [
+        "https://ljubljanskimaraton.si/en/",
+        "https://ljubljanamarathon.si/en/marathon",
+        "https://ljubljanamarathon.si/en/zavarovalnica-vita-halfmarathon?url=en%2Fhalf-marathon"
+      ],
+      "duplicateOfEventId": "nlb-ljubljana-marathon-2027"
+    },
+    {
+      "sequence": 293,
+      "eventId": "split-marathon",
+      "name": "Split Marathon / Tommy Half Marathon",
+      "date": "2027-02-12/14",
+      "location": "Split, Croatia",
+      "status": "AIMS-and-organizer-registration-confirmed",
+      "routes": [
+        {
+          "name": "Marathon 42K",
+          "date": "2027-02-14",
+          "distanceKm": 42.195,
+          "startTime": "09:00"
+        },
+        {
+          "name": "Tommy Half Marathon 21K",
+          "date": "2027-02-14",
+          "distanceKm": 21.0975,
+          "startTime": "09:00"
+        },
+        {
+          "name": "Mazda 10K",
+          "date": "2027-02-14",
+          "distanceKm": 10,
+          "startTime": "09:35"
+        },
+        {
+          "name": "Family Run&Fun 5K",
+          "date": "2027-02-13",
+          "distanceKm": 5,
+          "startTime": "14:00"
+        }
+      ],
+      "detail": "Organizer registration lists 12–14 February 2027, marathon and half marathon on 14 February at 09:00, 10K 09:35 and 5K on 13 February 14:00. AIMS confirms marathon date. Organizer rules say route maps are on event site, but no 2027 GPX binary or ascent data verified.",
+      "gpxStatus": "course map referenced in rules; no 2027 binary downloaded or parsed",
+      "sources": [
+        "https://live.splitmarathon.com/event/STM27/register",
+        "https://aims-worldrunning.org/races/10156.html",
+        "https://splitmarathon.com/wp-content/uploads/2026/05/pravila-maraton.pdf"
+      ]
+    },
+    {
+      "sequence": 294,
+      "eventId": "sibiu-international-marathon",
+      "name": "Sibiu International Marathon",
+      "date": "2027-05-29/30",
+      "location": "Sibiu, Romania",
+      "status": "organizer-confirmed",
+      "routes": [
+        {
+          "name": "Marathon",
+          "date": "2027-05-29",
+          "distanceKm": 42.195,
+          "ascentM": 580,
+          "startFinish": "Piața Mare"
+        },
+        {
+          "name": "Half Marathon",
+          "date": "2027-05-29",
+          "distanceKm": 21.1,
+          "startFinish": "Piața Mare"
+        },
+        {
+          "name": "10K",
+          "date": "2027-05-29",
+          "distanceKm": 10
+        },
+        {
+          "name": "Cross Run",
+          "date": "2027-05-29",
+          "distanceKm": 5
+        },
+        {
+          "name": "Kids races",
+          "date": "2027-05-30"
+        }
+      ],
+      "detail": "Organizer confirms 16th edition 29–30 May 2027. Marathon and half marathon both on 29 May, start/finish Piața Mare. Marathon page specifies 42.195km and cumulative positive elevation about 580m, street-by-street route and GPX download control. Half page gives 21.1km and route description; no ascent number stated in retrieved content. GPX binaries not downloaded/parsed.",
+      "gpxStatus": "official GPX download control on marathon page; no binary downloaded or parsed",
+      "sources": [
+        "https://maratonsibiu.ro/en/",
+        "https://maratonsibiu.ro/en/faqs-%C3%AEntreb%C4%83ri-frecvente",
+        "https://assets.maratonsibiu.ro/ro/2027/cursa/maraton",
+        "https://staging-assets.maratonsibiu.ro/en/2027/race/half-marathon"
+      ]
+    },
+    {
+      "sequence": 295,
+      "eventId": "10-slavonska-trka",
+      "name": "10. Slavonska Trka",
+      "date": "2027-02-13/14",
+      "location": "Slavonski Brod, Croatia",
+      "status": "organizer-information-via-local-press-and-race-calendar",
+      "routes": [
+        {
+          "name": "Night race",
+          "date": "2027-02-13",
+          "distanceKm": 5
+        },
+        {
+          "name": "Half Marathon",
+          "date": "2027-02-14",
+          "distanceKm": 21.097
+        },
+        {
+          "name": "10K",
+          "date": "2027-02-14",
+          "distanceKm": 10
+        },
+        {
+          "name": "Relays and kids",
+          "date": "2027-02-14"
+        }
+      ],
+      "detail": "Local report quotes organizer Ultramaraton klub Mazator: event 13–14 February 2027; 5K and relay Saturday, 10K/half marathon Sunday, start/finish Brod Fortress. Runners.hr race page confirms 14 February and half marathon 21.097km. No 2027 GPX or elevation verified.",
+      "gpxStatus": "no-2027-binary-downloaded-or-parsed",
+      "sources": [
+        "https://sbonline.net/clanak/otvorene-prijave-za-jubilarnu-10-slavonsku-trku-u-slavonskom-brodu",
+        "https://runners.hr/en/race/slavonska-trka"
+      ]
+    },
+    {
+      "sequence": 296,
+      "eventId": "zagreb21",
+      "name": "ZAGREB21 – Zagreb Spring Half Marathon",
+      "date": "2027-03-20/21",
+      "location": "Zagreb, Croatia",
+      "status": "organizer-confirmed",
+      "routes": [
+        {
+          "name": "5K",
+          "date": "2027-03-20",
+          "distanceKm": 5,
+          "startTime": "19:00"
+        },
+        {
+          "name": "Half Marathon and relays",
+          "date": "2027-03-21",
+          "distanceKm": 21.0975,
+          "startTime": "08:30"
+        }
+      ],
+      "detail": "Organizer confirms 5K on Saturday 20 March 2027 at 19:00; half marathon and relays Sunday 21 March at 08:30. Start at National and University Library, Hrvatske bratske zajednice 4. Course map is available, but no 2027 GPX binary or elevation value validated.",
+      "gpxStatus": "organizer course map available; no 2027 binary downloaded or parsed",
+      "sources": [
+        "https://zagreb21.run/en/"
+      ]
+    },
+    {
+      "sequence": 297,
+      "eventId": "osjecki-ferivi-polumaraton",
+      "name": "Osječki Ferivi Polumaraton",
+      "date": "2027-04-17",
+      "location": "Osijek, Croatia",
+      "status": "race-organizer listing and municipal event calendar corroborate",
+      "routes": [
+        {
+          "distanceKm": 21.1,
+          "status": "race listing confirms; official course/elevation pending"
+        },
+        {
+          "distanceKm": 5,
+          "status": "race listing confirms"
+        }
+      ],
+      "detail": "Race listing attributes event to Maraton klub Hrvatski sokol Osijek and confirms 17 April 2027, half marathon 21.1km and 5K. City sport calendar lists the event over 16–17 April, so use Saturday 17 April as the race day but retain the event-weekend note. No GPX or ascent validated.",
+      "gpxStatus": "no-2027-binary-downloaded-or-parsed",
+      "sources": [
+        "https://runners.hr/utrka/osjecki-ferivi-polumaraton",
+        "https://sportosijek.hr/dogadaji?event=osjecki-ferivi-polumaraton-2027"
+      ]
+    },
+    {
+      "sequence": 298,
+      "eventId": "viski-polumaraton",
+      "name": "Viški Polumaraton",
+      "date": "2027-05-15",
+      "location": "Vis, Croatia",
+      "status": "race listing confirms 3rd edition; organizer race info link available but no direct 2027 regulation inspected",
+      "routes": [
+        {
+          "distanceKm": 21.1,
+          "startTime": "08:30",
+          "ascentM": 160,
+          "descentM": 160
+        },
+        {
+          "distanceKm": 5,
+          "startTime": "08:25",
+          "ascentM": 10
+        }
+      ],
+      "detail": "Runners.hr 2027 listing confirms 3rd edition, 14–15 May event window; half marathon 21.1km starts 15 May at 08:30 and shows +160m/-160m; 5K starts 08:25 with +10m. These metrics are from the race listing, not independently parsed GPX. Organizer AK Forca; direct organizer rule/GPX still needs confirmation.",
+      "gpxStatus": "no-official-2027-binary-downloaded-or-parsed",
+      "sources": [
+        "https://runners.hr/en/race/viski-polumaraton",
+        "https://runners.hr/utrke/3-viski-polumaraton-2027-211km"
+      ]
+    }
+  ],
+  "summary": {
+    "eventsReviewed": 10,
+    "datesConfirmed": 10,
+    "organizerConfirmed": 7,
+    "otherOfficialOrRaceCalendarCorroboration": 3,
+    "official2027GpxBinaryValidated": 0,
+    "binaryFilesDownloaded": 0,
+    "tracksParsed": 0,
+    "binaryMetricsCompared": 0,
+    "officialGpxDownloadControlsOrLinksFound": 3,
+    "oldGpxFilesDeleted": 0,
+    "oldGpxFilesOverwritten": 0,
+    "appRuntimeFilesChanged": 0,
+    "appEventRecordsChanged": 0,
+    "auditOnly": true,
+    "duplicateEventRecords": 1
+  },
+  "followUps": [
+    "Venloop: 2027 map/GPX release pending; current page explicitly uses 2026 maps until 2027 routes are known.",
+    "Dubrovnik: obtain organizer GPX and numeric ascent for demanding coastal route.",
+    "Radenci: confirm official route files for both distances; do not copy third-party 88m D+ into official elevation field.",
+    "Ljubljana: retrieve 2027 marathon and half GPX binaries and parse; reconcile official marathon D+159m and half D+71m with binary elevation profile.",
+    "Split: obtain 2027 GPX for marathon and half; verify 10K/5K separately.",
+    "Sibiu: download marathon GPX and parse against organizer's 580m D+; obtain half-marathon elevation profile.",
+    "Slavonska: request official rules, course map and GPX for 5K/10K/half and relays.",
+    "Zagreb21: obtain separate 5K and half-marathon GPX binaries; course map is not binary validation.",
+    "Osijek: obtain official course rules and GPX; verify exact distance and event weekend schedule.",
+    "Vis: confirm 2027 organizer rule and GPX; listing's +160m/-160m not independently validated.",
+    "NLB Ljubljana Marathon: reconcile event IDs nlb-ljubljana-marathon (sequence 292) and nlb-ljubljana-marathon-2027 (sequence 320) in a separate data-cleanup PR; do not change live records in this audit."
+  ]
+}
