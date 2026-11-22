@@ -22,7 +22,7 @@
     "symbolsIconsPictogramsEmblemsMascots",
     "eventSpecificGraphics"
   ],
-  "routeCount": 4,
+  "routeCount": 9,
   "unlistedRoutePolicy": "deny",
   "routes": {
     "110-tausend-111-4074": {
@@ -172,6 +172,191 @@
         "officialGpxPageLinkAllowed": null,
         "note": "Official route page shows a 2027 GPX control. event-dates route slug says 124 km while current official page says 123 km; do not overwrite until confirmed."
       }
+    },
+    "m-trail-22-650": {
+      "eventId": "mountain-man-winter",
+      "eventName": "MOUNTAINMAN Winterloop Reit im Winkl",
+      "routeName": "Legacy M-Trail 22 km",
+      "status": "pending",
+      "permissions": {
+        "officialDescriptionVerbatim": false,
+        "editedDescription": false,
+        "originalSummary": false,
+        "routeFacts": false,
+        "mapsAndRouteLines": false,
+        "elevationProfiles": false,
+        "gpxFileFetch": false,
+        "gpxFileImport": false,
+        "gpxFileProcess": false,
+        "gpxFileStore": false,
+        "gpxFileMapDisplay": false,
+        "gpxFileUserDownload": false,
+        "gpxOfficialLink": false,
+        "eventNamesAndMarks": false,
+        "logosAndWordImageMarks": false,
+        "symbolsIconsPictogramsEmblemsMascots": false,
+        "eventSpecificGraphics": false
+      },
+      "restriction": {
+        "status": "not_checked",
+        "notice": null,
+        "sourceUrl": "https://mountainman.de/agb/",
+        "routeUrl": "https://mountainman.de/trailrunning-events/alps/reit-im-winkl/streckendetails/",
+        "checkedAt": "2026-11-22",
+        "downloadPageChecked": true,
+        "metadataChecked": false,
+        "metadataStatus": "not_inspected",
+        "officialGpxPageLinkAllowed": null,
+        "note": "Existing catalog route ID does not match the official 2027 Winterloop 7.5 km loop; retain as historical/legacy and keep blocked."
+      }
+    },
+    "l-trail-31-750": {
+      "eventId": "mountain-man-winter",
+      "eventName": "MOUNTAINMAN Winterloop Reit im Winkl",
+      "routeName": "Legacy L-Trail 31 km",
+      "status": "pending",
+      "permissions": {
+        "officialDescriptionVerbatim": false,
+        "editedDescription": false,
+        "originalSummary": false,
+        "routeFacts": false,
+        "mapsAndRouteLines": false,
+        "elevationProfiles": false,
+        "gpxFileFetch": false,
+        "gpxFileImport": false,
+        "gpxFileProcess": false,
+        "gpxFileStore": false,
+        "gpxFileMapDisplay": false,
+        "gpxFileUserDownload": false,
+        "gpxOfficialLink": false,
+        "eventNamesAndMarks": false,
+        "logosAndWordImageMarks": false,
+        "symbolsIconsPictogramsEmblemsMascots": false,
+        "eventSpecificGraphics": false
+      },
+      "restriction": {
+        "status": "not_checked",
+        "notice": null,
+        "sourceUrl": "https://mountainman.de/agb/",
+        "routeUrl": "https://mountainman.de/trailrunning-events/alps/reit-im-winkl/streckendetails/",
+        "checkedAt": "2026-11-22",
+        "downloadPageChecked": true,
+        "metadataChecked": false,
+        "metadataStatus": "not_inspected",
+        "officialGpxPageLinkAllowed": null,
+        "note": "Existing catalog route ID does not match the official 2027 Winterloop 7.5 km loop; retain as historical/legacy and keep blocked."
+      }
+    },
+    "watz-ultimate-111-5500": {
+      "eventId": "der-watz-mountainman",
+      "eventName": "MOUNTAINMAN Berchtesgaden Stage Run",
+      "routeName": "WATZ Ultimate 111 km",
+      "status": "pending",
+      "permissions": {
+        "officialDescriptionVerbatim": false,
+        "editedDescription": false,
+        "originalSummary": false,
+        "routeFacts": false,
+        "mapsAndRouteLines": false,
+        "elevationProfiles": false,
+        "gpxFileFetch": false,
+        "gpxFileImport": false,
+        "gpxFileProcess": false,
+        "gpxFileStore": false,
+        "gpxFileMapDisplay": false,
+        "gpxFileUserDownload": false,
+        "gpxOfficialLink": false,
+        "eventNamesAndMarks": false,
+        "logosAndWordImageMarks": false,
+        "symbolsIconsPictogramsEmblemsMascots": false,
+        "eventSpecificGraphics": false
+      },
+      "restriction": {
+        "status": "not_checked",
+        "notice": null,
+        "sourceUrl": "https://mountainman.de/agb/",
+        "routeUrl": "https://mountainman.de/trailrunning-events/alps/berchtesgaden/streckendetails-berchtesgaden-watz/",
+        "checkedAt": "2026-11-22",
+        "downloadPageChecked": true,
+        "metadataChecked": false,
+        "metadataStatus": "not_inspected",
+        "officialGpxPageLinkAllowed": null,
+        "note": "Official 2027 page says 111 km/5,300 hm; current catalog route ID says 5,500 hm. No rights permission; keep blocked."
+      }
+    },
+    "watz-double-57-2500": {
+      "eventId": "der-watz-mountainman",
+      "eventName": "MOUNTAINMAN Berchtesgaden Stage Run",
+      "routeName": "WATZ Double 57 km",
+      "status": "pending",
+      "permissions": {
+        "officialDescriptionVerbatim": false,
+        "editedDescription": false,
+        "originalSummary": false,
+        "routeFacts": false,
+        "mapsAndRouteLines": false,
+        "elevationProfiles": false,
+        "gpxFileFetch": false,
+        "gpxFileImport": false,
+        "gpxFileProcess": false,
+        "gpxFileStore": false,
+        "gpxFileMapDisplay": false,
+        "gpxFileUserDownload": false,
+        "gpxOfficialLink": false,
+        "eventNamesAndMarks": false,
+        "logosAndWordImageMarks": false,
+        "symbolsIconsPictogramsEmblemsMascots": false,
+        "eventSpecificGraphics": false
+      },
+      "restriction": {
+        "status": "not_checked",
+        "notice": null,
+        "sourceUrl": "https://mountainman.de/agb/",
+        "routeUrl": "https://mountainman.de/trailrunning-events/alps/berchtesgaden/streckendetails-berchtesgaden-watz/",
+        "checkedAt": "2026-11-22",
+        "downloadPageChecked": true,
+        "metadataChecked": false,
+        "metadataStatus": "not_inspected",
+        "officialGpxPageLinkAllowed": null,
+        "note": "Official route page lists 57 km/2,500 hm; no rights permission; keep blocked."
+      }
+    },
+    "watz-final-25-1300": {
+      "eventId": "der-watz-mountainman",
+      "eventName": "MOUNTAINMAN Berchtesgaden Stage Run",
+      "routeName": "WATZ Final 25 km",
+      "status": "pending",
+      "permissions": {
+        "officialDescriptionVerbatim": false,
+        "editedDescription": false,
+        "originalSummary": false,
+        "routeFacts": false,
+        "mapsAndRouteLines": false,
+        "elevationProfiles": false,
+        "gpxFileFetch": false,
+        "gpxFileImport": false,
+        "gpxFileProcess": false,
+        "gpxFileStore": false,
+        "gpxFileMapDisplay": false,
+        "gpxFileUserDownload": false,
+        "gpxOfficialLink": false,
+        "eventNamesAndMarks": false,
+        "logosAndWordImageMarks": false,
+        "symbolsIconsPictogramsEmblemsMascots": false,
+        "eventSpecificGraphics": false
+      },
+      "restriction": {
+        "status": "not_checked",
+        "notice": null,
+        "sourceUrl": "https://mountainman.de/agb/",
+        "routeUrl": "https://mountainman.de/trailrunning-events/alps/berchtesgaden/streckendetails-berchtesgaden-watz/",
+        "checkedAt": "2026-11-22",
+        "downloadPageChecked": true,
+        "metadataChecked": false,
+        "metadataStatus": "not_inspected",
+        "officialGpxPageLinkAllowed": null,
+        "note": "Official route page lists 25 km/1,300 hm; no rights permission; keep blocked."
+      }
     }
   },
   "additionalRoutesCoveredByDefaultDeny": [
@@ -204,6 +389,111 @@
       "eventId": "chianti-ultra-trail",
       "routeCode": "CWR 10",
       "reason": "No current catalog route ID identified in event-dates mapping; default deny applies. Official 2027 page currently resolves to a 2026-labelled GPX candidate."
+    },
+    {
+      "eventId": "mountain-man-winter",
+      "routeCode": "Winterloop 7.5 km / 110 hm",
+      "reason": "New 2027 loop has no current catalog route ID; default deny applies."
+    },
+    {
+      "eventId": "mountainman",
+      "routeCode": "Nesselwang XXL 70 km",
+      "reason": "No current catalog route ID; default deny applies."
+    },
+    {
+      "eventId": "mountainman",
+      "routeCode": "Nesselwang XL 42 km",
+      "reason": "No current catalog route ID; default deny applies."
+    },
+    {
+      "eventId": "mountainman",
+      "routeCode": "Nesselwang L 33 km",
+      "reason": "No current catalog route ID; default deny applies."
+    },
+    {
+      "eventId": "mountainman",
+      "routeCode": "Nesselwang M 22 km",
+      "reason": "No current catalog route ID; default deny applies."
+    },
+    {
+      "eventId": "mountainman",
+      "routeCode": "Nesselwang S 10 km",
+      "reason": "No current catalog route ID; default deny applies."
+    },
+    {
+      "eventId": "der-watz-mountainman",
+      "routeCode": "WATZ stage 1 29 km",
+      "reason": "Stage subroute has no separate catalog route ID; default deny applies."
+    },
+    {
+      "eventId": "der-watz-mountainman",
+      "routeCode": "WATZ stage 2 25 km",
+      "reason": "Stage subroute has no separate catalog route ID; default deny applies."
+    },
+    {
+      "eventId": "der-watz-mountainman",
+      "routeCode": "WATZ stage 3 32 km",
+      "reason": "Stage subroute has no separate catalog route ID; default deny applies."
+    },
+    {
+      "eventId": "der-watz-mountainman",
+      "routeCode": "WATZ stage 4 25 km",
+      "reason": "Stage subroute has no separate catalog route ID; default deny applies."
+    },
+    {
+      "eventId": null,
+      "routeCode": "Grossarltal XXL 70",
+      "reason": "Official 2027 event is not yet a separate event-dates entry; default deny applies."
+    },
+    {
+      "eventId": null,
+      "routeCode": "Grossarltal XL 50",
+      "reason": "Official 2027 event is not yet a separate event-dates entry; default deny applies."
+    },
+    {
+      "eventId": null,
+      "routeCode": "Grossarltal L 30",
+      "reason": "Official 2027 event is not yet a separate event-dates entry; default deny applies."
+    },
+    {
+      "eventId": null,
+      "routeCode": "Grossarltal M 21",
+      "reason": "Official 2027 event is not yet a separate event-dates entry; default deny applies."
+    },
+    {
+      "eventId": null,
+      "routeCode": "Grossarltal S 15",
+      "reason": "Official 2027 event is not yet a separate event-dates entry; default deny applies."
+    },
+    {
+      "eventId": null,
+      "routeCode": "Grossarltal XS 10",
+      "reason": "Official 2027 event is not yet a separate event-dates entry; default deny applies."
+    },
+    {
+      "eventId": null,
+      "routeCode": "Reit im Winkl XXL 73",
+      "reason": "Official 2027 event is not yet a separate event-dates entry; default deny applies."
+    },
+    {
+      "eventId": null,
+      "routeCode": "Reit im Winkl XL 52",
+      "reason": "Official 2027 event is not yet a separate event-dates entry; default deny applies."
+    },
+    {
+      "eventId": null,
+      "routeCode": "Reit im Winkl L 40",
+      "reason": "Official 2027 event is not yet a separate event-dates entry; default deny applies."
+    },
+    {
+      "eventId": null,
+      "routeCode": "Reit im Winkl M 26",
+      "reason": "Official 2027 event is not yet a separate event-dates entry; default deny applies."
+    },
+    {
+      "eventId": null,
+      "routeCode": "Reit im Winkl S 11",
+      "reason": "Official 2027 event is not yet a separate event-dates entry; default deny applies."
     }
   ],
   "safety": {
