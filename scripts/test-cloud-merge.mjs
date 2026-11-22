@@ -41,7 +41,7 @@ check('same field conflict is surfaced',
 check('deletion merges with unrelated update',
  {routeA:{x:1},routeB:{x:1}},
  {routeA:{x:1}},
- {routeA:{x:1},routeB:{x:2}},
- {routeA:{x:1},routeB:{x:2}});
+ {routeA:{x:2},routeB:{x:1}},
+ {routeA:{x:2}});
 
 console.log('Cloud route merge regression tests passed (4 cases).');
