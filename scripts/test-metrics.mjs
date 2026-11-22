@@ -639,3 +639,40 @@ assert.deepEqual(failedActivityStorage.initialRecords, { "0:0": { done: false, y
   "Original in-memory records must remain unchanged after a failed import");
 assert.equal(failedActivityStorage.getCloudSaves(), 0,
   "A failed activity import must not queue cloud synchronization");
+
+// Year overview: compact, accessible cards expose the actual route profile and cut-off data.
+assert.ok(html.includes('class="year-race-more"') && html.includes('Weitere Streckendetails &amp; Planung'),
+  "Year race details must use native details/summary disclosure controls");
+assert.ok(html.includes('class="year-race-head"'), "Year overview must render compact race-card headings");
+assert.ok(html.includes("+(yearInvoices||'')+profileInfo+detailButton"),
+  "Expanded year cards must include accommodation, invoices, elevation profile, cut-offs and route metrics");
+assert.ok(html.includes('const profileInfo=') && html.includes("+derivedPanel+profilePanel+cutoffPanel+pngPanel+"),
+  "Year overview profile section must retain derived metrics, elevation profile, cut-off and optional route image");
+assert.ok(html.includes('aria-controls="yearReview'),
+  "Year review toggle must expose the controlled panel to assistive technology");
+assert.ok(html.includes('year-profile-panels') && html.includes('renderElevationProfile(x.r,x.e,safeFrameUrl)') && html.includes('renderCutoffDetails(x.r)'),
+  "Year cards must keep the route elevation profile and cut-off renderer wired in");
+assert.ok(html.includes('--bg:#101713') && html.includes('--ink:#f0f5f1') && html.includes('color-scheme:dark'),
+  "The existing fixed dark theme and readable contrast tokens must remain in place");
+
+
+// Explanatory help must be tucked behind accessible green information controls.
+const infoTipCount = (html.match(/class="info-tip"/g) || []).length;
+assert.ok(infoTipCount >= 7, "Core app sections must provide contextual information behind the info icon");
+assert.ok(html.includes('aria-label="Informationen zur Jahresübersicht"') &&
+  html.includes('aria-label="Informationen zum Eventplaner"') &&
+  html.includes('aria-label="Informationen zur Laufhistorie"'),
+  "Year overview, event planner and run history info controls must have descriptive accessible labels");
+assert.ok(html.includes('aria-label="Informationen zu Suche und Filtern"') &&
+  html.includes('aria-label="Informationen zum Aktivitätsimport"') &&
+  html.includes('aria-label="Informationen zum Hinzufügen eines Events"'),
+  "Search, activity import and event creation help must be accessible");
+assert.ok(html.includes('class="info-tip-content"') &&
+  html.includes('.info-tip summary:focus-visible') &&
+  html.includes('.info-tip-content{'),
+  "Info controls must use the existing keyboard-focusable green icon and readable disclosure panel");
+assert.ok(html.includes('Eine automatische Kontosynchronisierung mit Garmin oder Strava ist derzeit nicht verbunden.'),
+  "Activity import help must not overstate direct Garmin or Strava synchronization");
+assert.ok(html.includes('Der Vorschlag bleibt bis zu deiner Freigabe unveröffentlicht.') &&
+  html.includes('Erst nach deiner ausdrücklichen Freigabe'),
+  "New event help must preserve manual approval before public publication");
