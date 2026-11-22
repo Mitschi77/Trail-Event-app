@@ -335,3 +335,26 @@ hr,.divider{border-color:var(--line)}
 @media(prefers-reduced-motion:reduce){
   #yearOverview .year-race{transition:none}
 }
+
+
+/* Alpine Performance – connected planning surfaces */
+.season-timeline,.calendar-card{
+  background:linear-gradient(145deg,#172634,#111c27);
+  border:1px solid #314657;border-radius:16px;
+  box-shadow:0 8px 24px #0003;
+}
+.season-timeline :where(h2,h3,h4),.calendar-card :where(h2,h3,h4){color:#edf3f7}
+.event-detail-group{
+  overflow:hidden;border:1px solid #304556;border-radius:13px;
+  background:#131f2b;
+}
+.event-detail-group>summary{
+  padding:12px 14px;background:#182a39;color:#e7eef3;
+  font-weight:800;cursor:pointer;
+}
+.event-detail-group[open]>summary{border-bottom:1px solid #304556;color:#ffad62}
+.event-detail-group-body{padding:12px 14px;color:#c5d0d9}
+@media(max-width:700px){
+  .season-timeline,.calendar-card{border-radius:13px}
+  .event-detail-group>summary{min-height:44px}
+}
