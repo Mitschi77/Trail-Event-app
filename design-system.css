@@ -252,3 +252,40 @@ hr,.divider{border-color:var(--line)}
   background:#2a211b;color:#f4d7bd!important;font-size:12px;line-height:1.5;
 }
 .gpx-planning-notice:before{content:"PLANUNGSHINWEIS";display:block;margin-bottom:4px;color:#ffad62;font-size:10px;font-weight:900;letter-spacing:.12em}
+
+
+/* Alpine Performance – yearly calendar and race-status accents */
+.year-calendar-year{
+  background:linear-gradient(145deg,#172837,#111d28);
+  border-color:#354b5d;box-shadow:0 10px 28px #0004;
+}
+.year-calendar-year h3{color:#ffad62}
+.year-calendar-month{background:#111d28;border-color:#304455}
+.year-calendar-month h4{color:#e6eef3}
+.year-calendar-week span{color:#93a8b7}
+.year-calendar-day{background:#1a2a38;color:#dce7ee;border:1px solid #2a4051}
+.year-calendar-day.empty{background:transparent;border:0}
+.year-calendar-day.today{outline:2px solid #ffad62;outline-offset:-2px}
+.year-calendar-day.has-event{background:#652d36;border-color:#a64c55;color:#fff}
+.year-calendar-day.has-hotel{background:#214d70;border-color:#3e739a;color:#fff}
+.year-calendar-day.has-event.has-hotel{background:linear-gradient(135deg,#79313b 0 50%,#24577f 50%);color:#fff}
+.year-calendar-legend{color:#c1ced7}
+.year-view-switch button.active{background:#f28a38;color:#111a22;border-color:#ffb36e}
+.sold-out-stamp{
+  border-color:#ff6b70;background:#351b22;color:#ff9a9e;
+  box-shadow:0 2px 8px #0006;text-shadow:0 1px #0005;
+}
+.sold-out-overview{
+  border-color:#bd535a;background:#351b22;color:#ffb0b2;
+}
+.sold-out-overview::before{color:#ff747b}
+.sold-out-text{border-left-color:#f05c64;background:#351b22;color:#ffb0b2}
+#yearOverview .year-race{
+  background:linear-gradient(145deg,#172634,#121d28);
+  border-color:#314657;border-left-color:#f28a38;
+  box-shadow:0 5px 18px #0003;
+}
+#yearOverview .year-race strong{color:#edf3f7}
+#yearOverview .year-race-meta{color:#aebdca}
+#yearOverview .year-heading{color:#ffad62}
+#yearOverview .year-totals{color:#e1eaf0;border-color:#304354}
