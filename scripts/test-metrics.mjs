@@ -675,13 +675,15 @@ assert.ok(html.includes('#yearOverview .year-group{display:grid') && html.includ
 assert.ok(html.includes("String(year).replace(/[^a-zA-Z0-9_-]/g,'_')") &&
   html.includes("const safeUid=String(uid).replace(/[^a-zA-Z0-9_-]/g,'_')"),
   "Jump targets and accommodation form identifiers must be valid for all event keys");
-assert.ok(serviceWorker.includes("const CACHE_NAME = 'trail-event-planner-v89'"),
+assert.ok(serviceWorker.includes("const CACHE_NAME = 'trail-event-planner-v90'"),
   "The PWA cache must be versioned for the updated release");
 
-assert.ok(seasonTools.includes('seasonDashboard') && seasonTools.includes('season-dashboard-next') && seasonTools.includes('season-dashboard-kpis'),
-  "The annual overview must include a compact season dashboard with next-race and season KPI sections");
-assert.ok(seasonTools.includes('window.renderYearOverview=function(){originalYearOverview();renderDashboard();}') && seasonTools.includes('data-season-target'),
-  "The season dashboard must refresh with the annual overview and link directly to existing race cards");
+assert.ok(html.includes('season-dashboard') && html.includes('season-next-race') && html.includes('season-dashboard-stats'),
+  "The annual overview must render one canonical season dashboard with next-race and season KPI sections");
+assert.ok(!seasonTools.includes('seasonDashboard') && seasonTools.includes('year-month-group') && seasonTools.includes('groupYearMonths'),
+  "The season module must not duplicate the dashboard and must group existing annual race cards into month accordions");
+assert.ok(seasonTools.includes('window.renderYearOverview=function(){originalYearOverview();groupYearMonths();}') && seasonTools.includes('year-month-races'),
+  "Month accordions must refresh after each annual overview render and preserve the original race cards");
 
 assert.ok(html.includes('--bg:#101713') && html.includes('--ink:#f0f5f1') && html.includes('color-scheme:dark'),
   "The existing fixed dark theme and readable contrast tokens must remain in place");
