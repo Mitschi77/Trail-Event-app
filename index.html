@@ -19961,7 +19961,53 @@ async function decideProposal(id,status){if(!isReviewOwner()||!cloudClient||!clo
 async function markProposalPublished(id){if(!isReviewOwner()||!cloudClient||!cloudUser||!cloudReady)return;const input=document.querySelector('[data-publication-ref="'+id+'"]'),reference=input?.value?.trim()||'';const validReference=new RegExp('^(https://github[.]com/Mitschi77/Trail-Event-app/(commit|pull)/[A-Za-z0-9._/-]+|[0-9a-fA-F]{7,40})$');if(!validReference.test(reference)){alert('Bitte einen gültigen GitHub-Commit-SHA oder Link zu Commit/PR eintragen.');return;}if(!confirm('Ist dieser Vorschlag bereits im öffentlichen App-Stand enthalten und die Pages-Veröffentlichung erfolgreich? Erst dann bestätigen.'))return;const {error}=await cloudClient.rpc('mark_event_proposal_published',{p_proposal_id:id,p_publication_ref:reference});if(error){alert('Veröffentlichung konnte nicht dokumentiert werden: '+error.message);return;}await renderReviewQueue();}async function submitRouteProposal(){const status=document.getElementById('proposalSubmitStatus'),eventId=document.getElementById('proposalEventSelect').value;if(!cloudClient||!cloudUser||!cloudReady){status.textContent='Bitte zuerst anmelden.';return;}if(!eventId){status.textContent='Bitte ein Rennen auswählen.';return;}const event=EVENTS.find(e=>e.id===eventId);const route={name:document.getElementById('proposalRouteName').value.trim(),km:document.getElementById('proposalRouteKm').value?Number(document.getElementById('proposalRouteKm').value):null,hm:document.getElementById('proposalRouteHm').value?Number(document.getElementById('proposalRouteHm').value):null,date:document.getElementById('proposalRouteDate').value||null,source:document.getElementById('proposalSource').value.trim()||null,note:document.getElementById('proposalNote').value.trim()||null};if(!route.name&&!route.note){status.textContent='Bitte Streckenname oder Korrekturhinweis angeben.';return;}status.textContent='Vorschlag wird eingereicht …';const {data:proposalRow,error}=await cloudClient.from('event_change_proposals').insert({submitted_by:cloudUser.id,proposal_type:'new_route',title:(route.name?'Neue Strecke: '+route.name:'Datenkorrektur: '+event.name),payload:{eventId,eventName:event.name,route}}).select('id').single();if(error){status.textContent='Einreichen fehlgeschlagen: '+error.message;return;}notifyReviewPushForProposal(proposalRow.id);status.textContent='Vorschlag ist eingegangen und wartet auf deine Freigabe.';['proposalRouteName','proposalRouteKm','proposalRouteHm','proposalRouteDate','proposalSource','proposalNote'].forEach(id=>document.getElementById(id).value='');if(isReviewOwner())renderReviewQueue();}const PUSH_VAPID_PUBLIC_KEY='BFGW4HjKtrfZcdQcJcmnG71jED1MsKXXkZTqDhDAzQh-k3UE3Sx_SPR97sG54tGi7gjQsmGkAnZO6ImY21VsEzA';
 async function notifyReviewPushForProposal(proposalId){try{const {error}=await cloudClient.functions.invoke('send-event-review-push',{body:{proposal_id:proposalId}});if(error)console.warn('Push-Benachrichtigung konnte nicht gesendet werden:',error.message);}catch(error){console.warn('Push-Benachrichtigung fehlgeschlagen:',error?.message||error);}}
 function pushBase64ToBytes(value){const pad='='.repeat((4-value.length%4)%4),base=(value+pad).replace(/-/g,'+').replace(/_/g,'/'),raw=atob(base);return Uint8Array.from(raw,c=>c.charCodeAt(0));}
-async function registerReviewPush(){const out=document.getElementById('reviewNotificationStatus');const button=document.getElementById('enableReviewNotifications');if(!isReviewOwner()||!cloudClient||!cloudUser){out.textContent='Bitte zuerst mit dem Inhaberkonto anmelden.';return;}if(!PUSH_VAPID_PUBLIC_KEY){out.textContent='Die Push-Schlüssel sind noch nicht vollständig eingerichtet. Die Geräte-Registrierung wird freigeschaltet, sobald der öffentliche VAPID-Schlüssel hinterlegt ist.';return;}if(!('serviceWorker'in navigator)||!('PushManager'in window)||!('Notification'in window)){out.textContent='Dieser Browser unterstützt Web-Push nicht.';return;}const isStandalone=window.matchMedia('(display-mode: standalone)').matches||window.navigator.standalone===true;const ua=navigator.userAgent;const isIOS=/iPhone|iPad|iPod/i.test(ua)||(navigator.platform==='MacIntel'&&navigator.maxTouchPoints>1);const isMacSafari=/Macintosh/.test(ua)&&/Safari/.test(ua)&&!/Chrome|Chromium|Edg|OPR/.test(ua)&&!isIOS;if(isIOS&&!isStandalone){out.textContent='iPhone/iPad: Bitte füge die Trailrunning-App zuerst über „Teilen“ → „Zum Home-Bildschirm“ hinzu. Öffne danach das App-Symbol und richte Push dort erneut ein.';return;}if(isMacSafari&&!isStandalone){out.textContent='Safari auf dem Mac: Web-Push funktioniert erst als Web-App im Dock. Öffne in Safari „Ablage“ → „Zum Dock hinzufügen“, starte die Trailrunning-App anschließend über das Dock und richte Push hier erneut ein.';return;}if(Notification.permission==='denied'){out.textContent='Safari blockiert Mitteilungen für diese Web-App. Erlaube Mitteilungen in den Safari-/macOS-Einstellungen und versuche es erneut.';return;}try{button.disabled=true;out.textContent='Benachrichtigungsfreigabe wird angefragt …';const permission=await Notification.requestPermission();if(permission!=='granted'){out.textContent='Benachrichtigungen wurden nicht freigegeben.';return;}out.textContent='Service Worker wird geprüft …';const registration=await Promise.race([navigator.serviceWorker.ready,new Promise((_,reject)=>setTimeout(()=>reject(new Error('Service Worker wurde nicht rechtzeitig bereit. Bitte App neu öffnen.')),15000))]);let subscription=await registration.pushManager.getSubscription();if(!subscription)subscription=await registration.pushManager.subscribe({userVisibleOnly:true,applicationServerKey:pushBase64ToBytes(PUSH_VAPID_PUBLIC_KEY)});const value=subscription.toJSON();const keys=value.keys||{};if(!value.endpoint||!keys.p256dh||!keys.auth)throw new Error('Der Browser hat kein vollständiges Push-Abonnement geliefert.');const {error}=await cloudClient.from('event_push_subscriptions').upsert({user_id:cloudUser.id,endpoint:value.endpoint,p256dh:keys.p256dh,auth_secret:keys.auth,user_agent:navigator.userAgent,updated_at:new Date().toISOString()},{onConflict:'user_id,endpoint'});if(error)throw error;out.textContent='Dieses Gerät ist für Push-Mitteilungen registriert.';startReviewForegroundNotifications();}catch(error){out.textContent='Push-Einrichtung fehlgeschlagen: '+(error?.message||'Unbekannter Fehler');}finally{button.disabled=false;}}
+async function registerReviewPush(){
+ const out=document.getElementById('reviewNotificationStatus');
+ const button=document.getElementById('enableReviewNotifications');
+ if(!out)return;
+ if(!isReviewOwner()||!cloudClient||!cloudUser){out.textContent='Bitte zuerst mit dem Inhaberkonto anmelden.';return;}
+ if(!PUSH_VAPID_PUBLIC_KEY){out.textContent='Der öffentliche Push-Schlüssel ist nicht verfügbar. Bitte die App-Konfiguration prüfen.';return;}
+ if(!window.isSecureContext||!('serviceWorker'in navigator)||!('PushManager'in window)||!('Notification'in window)){out.textContent='Web-Push wird auf diesem Gerät oder in diesem Browser nicht unterstützt. Bitte die installierte App über HTTPS öffnen.';return;}
+ const isStandalone=window.matchMedia('(display-mode: standalone)').matches||window.navigator.standalone===true;
+ const ua=navigator.userAgent;
+ const isIOS=/iPhone|iPad|iPod/i.test(ua)||(navigator.platform==='MacIntel'&&navigator.maxTouchPoints>1);
+ const isMacSafari=/Macintosh/.test(ua)&&/Safari/.test(ua)&&!/Chrome|Chromium|Edg|OPR/.test(ua)&&!isIOS;
+ if(isIOS&&!isStandalone){out.textContent='iPhone/iPad: Bitte zuerst „Teilen“ → „Zum Home-Bildschirm“ wählen und Push anschließend aus dem App-Symbol einrichten.';return;}
+ if(isMacSafari&&!isStandalone){out.textContent='Safari auf dem Mac: Bitte „Ablage“ → „Zum Dock hinzufügen“ wählen und Push aus der Dock-App einrichten.';return;}
+ if(Notification.permission==='denied'){out.textContent='Mitteilungen sind für diese App gesperrt. Bitte in den iOS-/Safari-Einstellungen erlauben und erneut versuchen.';return;}
+ try{
+  if(button)button.disabled=true;
+  out.textContent='Benachrichtigungsfreigabe wird angefragt …';
+  // Keep this permission request before the first await so iOS retains the direct tap gesture.
+  const permission=await Notification.requestPermission();
+  if(permission!=='granted'){out.textContent=permission==='denied'?'Mitteilungen wurden blockiert. Bitte die Berechtigung in den Geräteeinstellungen ändern.':'Keine Freigabe erteilt. Du kannst es später erneut versuchen.';return;}
+  out.textContent='Service Worker wird auf diesem Gerät registriert …';
+  // Do not rely only on the page-load handler: register explicitly from this action as well.
+  const swRegistration=await navigator.serviceWorker.register(new URL('./sw.js',document.baseURI),{updateViaCache:'none'});
+  await swRegistration.update().catch(()=>undefined);
+  const registration=await Promise.race([
+   navigator.serviceWorker.ready,
+   new Promise((_,reject)=>setTimeout(()=>reject(new Error('Service Worker wurde nicht rechtzeitig bereit (Aktivierung fehlgeschlagen). Bitte App vollständig schließen und erneut öffnen.')),15000))
+  ]);
+  if(!registration?.pushManager)throw new Error('Der aktive Service Worker unterstützt keine Push-Registrierung.');
+  out.textContent='Push-Abonnement wird angelegt …';
+  let subscription=await registration.pushManager.getSubscription();
+  if(!subscription)subscription=await registration.pushManager.subscribe({userVisibleOnly:true,applicationServerKey:pushBase64ToBytes(PUSH_VAPID_PUBLIC_KEY)});
+  const value=subscription.toJSON();
+  const keys=value.keys||{};
+  if(!value.endpoint||!keys.p256dh||!keys.auth)throw new Error('Der Browser hat kein vollständiges Push-Abonnement geliefert.');
+  out.textContent='Gerät wird sicher mit deinem Konto verknüpft …';
+  const {error}=await cloudClient.from('event_push_subscriptions').upsert({user_id:cloudUser.id,endpoint:value.endpoint,p256dh:keys.p256dh,auth_secret:keys.auth,user_agent:navigator.userAgent,updated_at:new Date().toISOString()},{onConflict:'user_id,endpoint'});
+  if(error)throw error;
+  out.textContent='Dieses Gerät ist für Push-Mitteilungen registriert.';
+  startReviewForegroundNotifications();
+ }catch(error){
+  console.error('Push-Einrichtung fehlgeschlagen',error);
+  out.textContent='Push-Einrichtung fehlgeschlagen: '+(error?.message||'Unbekannter Fehler');
+ }finally{
+  if(button)button.disabled=false;
+ }
+}
 window.registerReviewPush=registerReviewPush;
 window.trailOwnerPushTestClick=async function(event){
   event?.preventDefault?.();

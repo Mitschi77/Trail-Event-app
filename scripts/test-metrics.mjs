@@ -676,7 +676,7 @@ assert.ok(html.includes('#yearOverview .year-group{display:grid') && html.includ
 assert.ok(html.includes("String(year).replace(/[^a-zA-Z0-9_-]/g,'_')") &&
   html.includes("const safeUid=String(uid).replace(/[^a-zA-Z0-9_-]/g,'_')"),
   "Jump targets and accommodation form identifiers must be valid for all event keys");
-assert.ok(serviceWorker.includes("const CACHE_NAME = 'trail-event-planner-v92'"),
+assert.ok(serviceWorker.includes("const CACHE_NAME = 'trail-event-planner-v93'"),
   "The PWA cache must be versioned for the updated release");
 
 assert.ok(html.includes('season-dashboard') && html.includes('season-next-race') && html.includes('season-dashboard-stats'),
@@ -863,6 +863,12 @@ assert.ok(seasonTools.includes("@media(max-width:420px){.year-month-races"), "Ye
 assert.ok(seasonTools.includes("@media(prefers-reduced-motion:reduce){.year-month-chip"), "Timeline transitions must respect reduced-motion preferences");
 assert.ok(seasonTools.includes(".year-month-group[open]>summary"), "The active month must have a clear expanded state");
 
+
+// Web Push setup must explicitly register the service worker from the user action.
+assert.ok(html.includes("navigator.serviceWorker.register(new URL('./sw.js',document.baseURI)"), "Push setup must not depend solely on the asynchronous page-load registration");
+assert.ok(html.includes("Notification.requestPermission()") && html.indexOf("Notification.requestPermission()") < html.indexOf("navigator.serviceWorker.register(new URL('./sw.js',document.baseURI)"), "iOS permission request must remain before the first awaited service-worker setup");
+assert.ok(html.includes("Gerät wird sicher mit deinem Konto verknüpft"), "Push setup must expose progress while saving the device subscription");
+assert.ok(html.includes("id=\"enableReviewNotifications\"") && html.includes("window.trailReviewPushClick(event)"), "Push setup button must keep a direct, explicit click handler");
 
 // Alpine Performance v103 – clear planned/completed state and compact season timeline.
 assert.ok(seasonTools.includes("season-state-pill '+(completed?'is-completed':'is-planned')"), "Season cards must distinguish completed and planned races");
