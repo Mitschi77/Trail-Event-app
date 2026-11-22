@@ -797,3 +797,16 @@ assert.ok(html.includes("#yearTab .season-dashboard-stats") && html.includes("@m
   "The season cockpit must retain responsive mobile layout rules");
 assert.ok(html.includes("#yearTab .year-race-more>summary"),
   "Expandable race details must remain visually consistent and discoverable");
+
+
+// Alpine Performance event and route card visual regression checks.
+assert.ok(html.includes('id="trail-event-route-cards-v97"'),
+  "The event and route card design layer must be present");
+assert.ok(html.includes("#events .eventhead") && html.includes("#events .route"),
+  "Event headers and route cards must receive the unified visual treatment");
+assert.ok(html.includes("#events .routefoot") && html.includes("grid-template-columns:minmax(0,1fr)"),
+  "Route actions must remain full-width and touch-friendly on narrow screens");
+assert.ok(html.includes("#events .event.event-done") && html.includes("#events .route-done"),
+  "Completed event and route states must remain visually distinguishable");
+assert.ok(html.includes("prefers-reduced-motion:reduce"),
+  "Event card transitions must respect reduced-motion preferences");
