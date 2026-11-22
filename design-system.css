@@ -536,3 +536,10 @@ hr,.divider{border-color:var(--line)}
   color:var(--muted);font-size:10px;line-height:1.45
 }
 .year-season-summary-item{font-variant-numeric:tabular-nums}
+
+
+#yearOverview .year-season-summary-item[data-source="history"]{
+  border-color:color-mix(in srgb,#70b7e5 48%,var(--line));
+  background:linear-gradient(145deg,color-mix(in srgb,#70b7e5 13%,var(--card)),var(--card))
+}
+#yearOverview .year-season-summary-item[data-source="history"] strong{color:#83c4ef}
