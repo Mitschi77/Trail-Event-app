@@ -7,7 +7,7 @@ from html import unescape
 from pathlib import Path
 from urllib.parse import urljoin, urlparse
 from event_data_rules import extract_cutoff_hours, filter_shared_gpx_proposals, is_http_url, meaningful_elevation_gain
-from event_data_candidates import CANDIDATE_PATTERNS, extract_contexts, extract_date_values, extract_starttime_values, extract_race_cost_values, missing_candidate_fields
+from event_data_candidates import CANDIDATE_PATTERNS, extract_contexts, extract_date_values, extract_starttime_values, extract_race_cost_values, missing_candidate_fields, extract_profile_candidates, extract_timechart_candidates
 
 ROOT = Path(__file__).resolve().parents[1]
 HTML = (ROOT / "index.html").read_text(encoding="utf-8")
@@ -154,6 +154,27 @@ def route_scan(event, ri, route):
               "payload":{"source":"automated_event_data_finder","eventId":event.get("id"),"eventName":event.get("name"),"routeId":route.get("id"),"routeIndex":ri,
                 "field":"maxh","oldValue":current_hours,"newValue":cutoff_hours,"sourceUrl":final_url,
                 "evidence":"Explizite Zeitlimit-Angabe auf der zugeordneten Veranstalter-/Streckenseite erkannt. Wert und Streckenzuordnung vor Übernahme manuell prüfen.",
+                "checkedAt":NOW,"requiresOwnerApproval":True}})
+    # Profile and time-chart findings remain review leads, never imported values.
+    if not (route.get("elevationProfile") or route.get("profilePoints") or route.get("profileData")):
+        profile_candidates = extract_profile_candidates(page)
+        if profile_candidates:
+            props.append({"proposal_type":"data_correction",
+              "title":f"Höhenprofil-Quelle prüfen: {event.get('name')} · {route.get('name') or route.get('route') or ri}",
+              "payload":{"source":"automated_event_data_finder","eventId":str(event.get("id")),"eventName":event.get("name"),
+                "routeId":str(route.get("id") or ri),"routeIndex":ri,"field":"profileCandidate","oldValue":None,
+                "newValue":profile_candidates,"sourceUrl":final_url,
+                "evidence":"Nur Hinweis auf eine ausdrücklich als Höhenprofil gekennzeichnete SVG-Grafik. Keine Koordinaten oder Höhenwerte extrahiert; Achsen und Streckenzuordnung manuell prüfen.",
+                "checkedAt":NOW,"requiresOwnerApproval":True}})
+    if not (route.get("timeChart") or route.get("timeChartData") or route.get("checkpoints")):
+        time_candidates = extract_timechart_candidates(plain)
+        if time_candidates:
+            props.append({"proposal_type":"data_correction",
+              "title":f"Zeitplan/Kontrollstellen prüfen: {event.get('name')} · {route.get('name') or route.get('route') or ri}",
+              "payload":{"source":"automated_event_data_finder","eventId":str(event.get("id")),"eventName":event.get("name"),
+                "routeId":str(route.get("id") or ri),"routeIndex":ri,"field":"timeChartCandidate","oldValue":None,
+                "newValue":time_candidates,"sourceUrl":final_url,
+                "evidence":"Textfragmente mit explizitem Zeitplan-/Kontrollstellenbezug. Zeiten, km-Zuordnung und Streckenzugehörigkeit manuell verifizieren.",
                 "checkedAt":NOW,"requiresOwnerApproval":True}})
     # Raw official-page snippets only: date, start time and entry fee need manual verification.
     for field, missing in missing_candidate_fields(route).items():
