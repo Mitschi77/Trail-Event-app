@@ -289,3 +289,49 @@ hr,.divider{border-color:var(--line)}
 #yearOverview .year-race-meta{color:#aebdca}
 #yearOverview .year-heading{color:#ffad62}
 #yearOverview .year-totals{color:#e1eaf0;border-color:#304354}
+
+
+/* Alpine Performance – responsive season overview */
+#yearOverview .year-race{
+  position:relative;min-width:0;overflow:hidden;
+  border-radius:14px;
+  transition:transform .18s ease,border-color .18s ease,box-shadow .18s ease;
+}
+#yearOverview .year-race:focus-within{
+  border-color:#ffad62;box-shadow:0 0 0 2px #f28a3840,0 8px 22px #0004;
+}
+#yearOverview .year-race-head{gap:10px;min-width:0}
+#yearOverview .year-race strong{line-height:1.35;overflow-wrap:anywhere}
+#yearOverview .year-race-meta{line-height:1.5}
+.year-calendar-grid{align-items:stretch}
+.year-calendar-month{box-shadow:inset 0 1px #ffffff08,0 4px 12px #0002}
+.year-calendar-day{display:flex;flex-direction:column;justify-content:flex-start;gap:2px;overflow:hidden}
+.year-calendar-day .day-number{font-size:11px;line-height:1.25}
+.year-calendar-day .day-mark{color:#f5f8fa;font-size:8px;font-weight:750}
+.year-calendar-day.has-event .day-mark,.year-calendar-day.has-hotel .day-mark{color:#fff}
+.year-calendar-legend{align-items:center}
+.year-calendar-legend>*{display:inline-flex;align-items:center;gap:5px}
+@media(min-width:760px){
+  #yearOverview .year-group{grid-template-columns:repeat(2,minmax(0,1fr));align-items:start}
+  #yearOverview .year-heading,#yearOverview .year-totals,#yearOverview .year-load-chart{grid-column:1/-1}
+  .year-calendar-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
+}
+@media(max-width:700px){
+  #yearOverview .year-group{grid-template-columns:minmax(0,1fr)}
+  .year-calendar-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+  .year-calendar-year{padding:10px}
+  .year-calendar-month{padding:6px}
+  .year-calendar-day{min-height:30px;padding:2px}
+}
+@media(max-width:360px){
+  .year-calendar-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:5px}
+  .year-calendar-month{padding:4px}
+  .year-calendar-day{min-height:27px}
+  .year-calendar-day .day-mark{font-size:7px}
+}
+@media(hover:hover){
+  #yearOverview .year-race:hover{transform:translateY(-2px);border-color:#59778d;box-shadow:0 10px 24px #0005}
+}
+@media(prefers-reduced-motion:reduce){
+  #yearOverview .year-race{transition:none}
+}
