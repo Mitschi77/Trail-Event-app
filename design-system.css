@@ -380,3 +380,25 @@ hr,.divider{border-color:var(--line)}
  .checklist-group>label{min-height:42px;font-size:12px}
 }
 @media(prefers-reduced-motion:reduce){.race-check-track i,.checklist-group-track i{transition:none}}
+
+
+/* Alpine Performance – editable travel window per planned route */
+.travel-plan-editor{
+  margin:12px 0 2px;padding:13px;border:1px solid #40596b;border-radius:14px;
+  background:linear-gradient(145deg,#1b3040,#121f2c);
+  box-shadow:inset 3px 0 #f28a38,0 6px 18px #0002;
+}
+.travel-plan-editor h5{margin:0 0 5px;color:#ffbd85;font-size:14px}
+.travel-plan-editor .edit-grid{gap:9px;margin:10px 0}
+.travel-plan-editor label{display:grid;gap:5px;min-width:0;color:#b9c8d3;font-size:11px;font-weight:750}
+.travel-plan-editor input:not([type=checkbox]){
+  width:100%;min-width:0;min-height:40px;padding:8px 9px;
+  border:1px solid #40596b;border-radius:9px;background:#0e1923;color:#edf3f7;
+  color-scheme:dark;font:inherit;font-size:12px
+}
+.travel-plan-editor .travel-paid{display:flex;align-items:center;gap:9px;min-height:40px}
+.travel-plan-editor .travel-paid input{width:18px;height:18px;accent-color:#f28a38}
+.travel-plan-editor [data-travel-save]{min-height:42px;margin-top:3px}
+.travel-plan-editor [data-travel-status]{min-height:16px;margin:7px 0 0}
+@media(min-width:700px){.travel-plan-editor .edit-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:420px){.travel-plan-editor{padding:10px}.travel-plan-editor .edit-grid{gap:7px}}
