@@ -354,9 +354,9 @@ window.showPlannedEventDetails=function(id,ri){prior(id,ri);const root=document.
   // Rights restrictions block new fetch/import/process actions, but must never
   // erase previously stored GPX files or derived profiles. Existing data stays
   // available for recovery/review until a validated replacement is supplied.
-  function purgeUnauthorizedGpxData(){
+  function recordGpxRightsCheck(){
     const summary={changed:false,routesCleared:0,recordsCleared:0,retained:true,checkedAt:new Date().toISOString()};
-    window.gpxRightsPurgeSummary=summary;
+    window.gpxRightsCheckSummary=summary;
     return summary;
   }
 
@@ -380,7 +380,7 @@ window.showPlannedEventDetails=function(id,ri){prior(id,ri);const root=document.
   if(typeof originalApplyLocalEdits==="function"){
     window.applyLocalEventDataEdits=function(){
       const result=originalApplyLocalEdits.apply(this,arguments);
-      if(registryReady)purgeUnauthorizedGpxData();
+      if(registryReady)recordGpxRightsCheck();
       applyGpxUi(document);
       return result;
     };
@@ -434,7 +434,7 @@ window.showPlannedEventDetails=function(id,ri){prior(id,ri);const root=document.
   }
   Promise.all([loadPolicyScript(),loadRightsRegistry()]).then(()=>{
     registryReady=true;
-    purgeUnauthorizedGpxData();
+    recordGpxRightsCheck();
     applyGpxUi(document);
     if(typeof window.render==="function")window.render();
     if(typeof window.renderReviewQueue==="function")window.renderReviewQueue();
