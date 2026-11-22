@@ -126,4 +126,12 @@ assert.ok(source.includes("if(!document.hidden)resumePlannerCloudAfterReconnect(
 
 assert.ok(source.includes('Deine lokalen Änderungen bleiben erhalten.'),'Failed cloud save must clearly preserve local edits');
 
+const remoteCheckStart=source.indexOf('async function checkForRemotePlannerChanges(){');
+const remoteCheckEnd=source.indexOf('function startCloudChangeChecks()',remoteCheckStart);
+assert.notEqual(remoteCheckStart,-1,'Remote cloud reconciliation must exist');
+assert.notEqual(remoteCheckEnd,-1,'Remote cloud reconciliation boundary must exist');
+const remoteCheckBody=source.slice(remoteCheckStart,remoteCheckEnd);
+assert.ok(remoteCheckBody.includes('await savePreRestoreBackup({createdAt:new Date().toISOString(),keys:local})'),'Remote sync must back up local data in IndexedDB before applying cloud changes');
+assert.ok(!remoteCheckBody.includes("localStorage.setItem('trailEventPreRestoreBackup'"),'Remote sync must not store the full recovery snapshot in quota-limited localStorage');
+
 console.log('Cloud route merge and offline retry regression tests passed.');
