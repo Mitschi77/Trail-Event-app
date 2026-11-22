@@ -464,3 +464,27 @@ hr,.divider{border-color:var(--line)}
   #yearOverview .year-month-races .year-race-status-controls{gap:5px}
   #yearOverview .year-month-races .year-race-status select{padding-inline:5px;font-size:9px}
 }
+
+
+/* Alpine Performance – annual planning summary above the month navigator */
+#yearOverview .year-season-summary{
+  display:flex;flex-wrap:wrap;align-items:stretch;gap:7px;
+  margin:9px 0 3px;padding:0;
+}
+#yearOverview .year-season-summary-item{
+  display:inline-flex;align-items:baseline;gap:6px;min-height:34px;
+  padding:7px 10px;border:1px solid #304556;border-radius:9px;
+  background:linear-gradient(120deg,#192b3a,#121e29);
+}
+#yearOverview .year-season-summary-item strong{
+  color:#ffad62;font-size:13px;font-weight:900;font-variant-numeric:tabular-nums;
+}
+#yearOverview .year-season-summary-item small{
+  color:#b4c3cd;font-size:10px;font-weight:700;line-height:1.2;
+}
+@media(max-width:390px){
+  #yearOverview .year-season-summary{gap:5px}
+  #yearOverview .year-season-summary-item{min-height:32px;padding:6px 8px;gap:5px}
+  #yearOverview .year-season-summary-item strong{font-size:12px}
+  #yearOverview .year-season-summary-item small{font-size:9px}
+}
