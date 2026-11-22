@@ -754,3 +754,8 @@ assert.ok(!html.includes('<option value="paid" ${r.raceStatus==='),
 
 assert.ok(html.includes("if(runRecords[key].raceStatus==='paid'&&!runRecords[key].paymentStatus)runRecords[key].paymentStatus='paid'"),
   "Legacy paid race status must migrate to payment status before race progress is edited");
+
+assert.ok(html.includes('class="event-detail-overview"'), "Planned event details must show a compact route overview");
+assert.ok(html.includes("overviewMetric('Distanz',r.km,'km')"), "Compact overview must show the route distance when available");
+assert.ok(html.includes("routeMetricType(id)==='Marathon'"), "Marathon details must continue to omit trail elevation metrics");
+assert.ok(html.includes("r.gpxStatusNote||((Array.isArray(r.gpxTrack)"), "Compact overview must show only a grounded GPX status");
