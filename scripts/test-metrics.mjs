@@ -729,3 +729,16 @@ assert.ok(html.includes("'+soldOutRouteBadge(x.r)+statusControl+review+"),
   "The annual overview must show the SOLD OUT stamp on the selected route card");
 assert.ok(html.includes("const routeData=soldOutRouteBadge(r)+'<div class=\"event-detail-data\">"),
   "The event detail dialog must use the same SOLD OUT stamp as the event list");
+
+ 
+// Rennfortschritt und Zahlung sind getrennte persönliche Statusfelder.
+assert.ok(html.includes("function setRacePaymentStatus(id,ri,status)") && html.includes("runRecords[key].paymentStatus=status"),
+  "Payment status must have its own private per-route field and save handler");
+assert.ok(html.includes("function racePaymentStatus(id,ri,route)"),
+  "Imported paid receipts must remain a fallback for the payment status");
+assert.ok(html.includes("Zahlungsstatus<select onchange=\\"setRacePaymentStatus("),
+  "Event details must expose payment status separately from race progress");
+assert.ok(html.includes("year-race-status-controls") && html.includes("paymentStatus=racePaymentStatus(x.id,x.ri,x.r)"),
+  "Year overview cards must display race progress and payment status independently");
+assert.ok(!html.includes('<option value="paid" ${r.raceStatus==='),
+  "Run history must not offer paid as a race progress status");
