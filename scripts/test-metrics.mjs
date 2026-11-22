@@ -33,7 +33,7 @@ assert.equal(routeById("3kings-3hills-54-2300")?.raceCost, "79,00 €", "3Kings 
 assert.equal(routeById("3kings-3hills-54-2300")?.paidCost, "79,00 €", "3Kings 2027 paid total must match the paid invoice");
 assert.equal(routeById("3kings-3hills-54-2300")?.paidCostDate, "2026-08-17", "3Kings payment date must remain recorded");
 assert.equal(routeById("3kings-3hills-54-2300")?.paidCostStatus, "Bezahlt", "3Kings paid status must remain recorded");
-assert.ok(html.includes("const storedStatus=runRecords[routeKey(id,ri)]?.raceStatus;const currentStatus=storedStatus||(r.paidCostStatus==='Bezahlt'?'paid':'planned')"), "A verified paid receipt must set the displayed default race status to paid without overriding a saved user status");
+assert.ok(html.includes("return saved.paymentStatus||(saved.raceStatus==='paid'||route?.paidCostStatus==='Bezahlt'?'paid':'open')"), "A verified paid receipt must set the default payment status without overriding a saved user payment status");
 assert.ok(html.includes('"date":"2027-01-23","web":null,"starttime":null,"registration":null,"overnight":null,"hotelCost":null,"raceCost":"69,00 €","paidCost":"83,90 €","paidCostDate":"2026-09-17","paidCostStatus":"Bezahlt","paidCostDetails":"MOUNTAINMAN-Rechnung'), "MOUNTAINMAN 2027 date and paid total must match the invoice");
 assert.match(html, /"route"\s*:\s*"mozart Ultra"\s*,\s*"km"\s*:\s*84/, "2027 Mozart route must use the verified event name");
 assert.ok(html.includes("Storage.prototype.removeItem=function(key)"), "Removing a planner data key must trigger cloud synchronization");
