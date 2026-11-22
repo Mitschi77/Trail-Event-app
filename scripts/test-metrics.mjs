@@ -763,3 +763,15 @@ assert.ok(html.includes('class="event-detail-overview"'), "Planned event details
 assert.ok(html.includes("overviewMetric('Distanz',r.km,'km')"), "Compact overview must show the route distance when available");
 assert.ok(html.includes("routeMetricType(id)==='Marathon'"), "Marathon details must continue to omit trail elevation metrics");
 assert.ok(html.includes("r.gpxStatusNote||((Array.isArray(r.gpxTrack)"), "Compact overview must show only a grounded GPX status");
+
+// Explicit organizer GPX prohibitions get a visible red lock stamp in planned event details.
+assert.ok(html.includes("const gpxRestricted=routeGpxIsOrganizerRestricted(r)"),
+  "Event details must use the existing explicit organizer restriction predicate");
+assert.ok(html.includes("GPX durch Veranstalter gesperrt"),
+  "An explicitly prohibited GPX route must show the red organizer lock stamp");
+assert.ok(html.includes("const importData=gpxRestricted?'':"),
+  "The GPX file import control must be hidden when the organizer explicitly prohibits GPX use");
+assert.ok(html.includes("const gpxOverview=gpxRestricted?'⛔ Durch Veranstalter untersagt':"),
+  "The compact route overview must show the explicit GPX prohibition status");
+assert.ok(html.includes("Bereits gespeicherte Streckendaten bleiben unverändert erhalten."),
+  "The prohibition notice must confirm existing stored GPX data is retained");
