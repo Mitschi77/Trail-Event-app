@@ -144,6 +144,8 @@ async function harness(registry, routeUrl = "https://example.org/course.gpx", wi
   await approved.window.fetch("https://example.org/course.gpx");
   assert.equal(approved.networkCalls(), 2, "explicitly approved GPX fetch may reach network");
   assert.equal(approved.window.routeGpxIsOrganizerRestricted(approved.route), false);
+  assert.equal(approved.window.routeHasDownloadableGpx(approved.route), true, "approved direct GPX file may be offered for download");
+  assert.equal(approved.window.routeHasOfficialGpxPageLink(approved.route), false, "direct file URL is not a page-only link");
   assert.equal(approved.window.renderGpxMap(approved.route), "MAP_RENDERED");
   assert.equal(approved.mapCalls(), 1);
   approved.window.persistGpxData(approved.route);
