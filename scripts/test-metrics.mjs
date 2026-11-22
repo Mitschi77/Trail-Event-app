@@ -784,3 +784,16 @@ assert.ok(html.includes("Für Richtigkeit, Vollständigkeit und Aktualität übe
   "GPX help must disclaim guarantees for correctness, completeness and currentness");
 assert.ok(html.includes("Bitte lade vor Eventbeginn immer die aktuellste GPX-Datei direkt beim Veranstalter herunter und verwende diese."),
   "GPX help must instruct runners to use the latest organizer GPX before the event");
+
+
+// Alpine Performance season cockpit refresh: hierarchy and mobile-safe overview styling.
+assert.ok(html.includes('class="season-dashboard-heading"'),
+  "The year overview must introduce a clear season cockpit heading");
+assert.ok(html.includes("Dein Trailjahr auf einen Blick"),
+  "The season cockpit must explain its purpose at a glance");
+assert.ok(html.includes('id="trail-season-cockpit-refresh-v96"'),
+  "The season cockpit refresh stylesheet must be present");
+assert.ok(html.includes("#yearTab .season-dashboard-stats") && html.includes("@media(max-width:760px)"),
+  "The season cockpit must retain responsive mobile layout rules");
+assert.ok(html.includes("#yearTab .year-race-more>summary"),
+  "Expandable race details must remain visually consistent and discoverable");
