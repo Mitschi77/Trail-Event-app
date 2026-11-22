@@ -78,8 +78,8 @@ def extract_race_cost_values(text, limit=4):
     return found
 
 
-PROFILE_LABEL_RE = re.compile(r"(?i)(?:elevation\\s*profile|height\\s*profile|altitude\\s*profile|höhenprofil|höhen\\s*diagramm)")
-TIMECHART_LABEL_RE = re.compile(r"(?i)(?:time\\s*chart|cut[\\s-]?off\\s*(?:chart|table)|checkpoint\\s*(?:times?|schedule)|kontrollstellen\\s*(?:zeiten|plan)|zeitplan\\s*(?:der\\s*)?kontrollstellen)")
+PROFILE_LABEL_RE = re.compile(r"(?i)(?:elevation\s*profile|height\s*profile|altitude\s*profile|höhenprofil|höhen\s*diagramm)")
+TIMECHART_LABEL_RE = re.compile(r"(?i)(?:time\s*chart|cut[\s-]?off\s*(?:chart|table)|checkpoint\s*(?:times?|schedule)|kontrollstellen\s*(?:zeiten|plan)|zeitplan\s*(?:der\s*)?kontrollstellen)")
 HTML_TAG_RE = re.compile(r"<[^>]+>")
 
 
@@ -87,12 +87,12 @@ def extract_profile_candidates(html, limit=3):
     """Return bounded evidence snippets only for explicitly labelled embedded SVG profiles."""
     source = html or ""
     found = []
-    for match in re.finditer(r"<svg\\b[^>]*>.*?</svg\\s*>", source, re.IGNORECASE | re.DOTALL):
+    for match in re.finditer(r"<svg\b[^>]*>.*?</svg\s*>", source, re.IGNORECASE | re.DOTALL):
         header = match.group(0)[:1200]
         label_match = PROFILE_LABEL_RE.search(header)
         if not label_match:
             continue
-        label = re.sub(r"\\s+", " ", HTML_TAG_RE.sub(" ", header)).strip()[:180]
+        label = re.sub(r"\s+", " ", HTML_TAG_RE.sub(" ", header)).strip()[:180]
         evidence = "Eingebettete SVG-Grafik mit expliziter Profilkennzeichnung: " + (label or label_match.group(0))
         if evidence not in found:
             found.append(evidence)
@@ -103,7 +103,7 @@ def extract_profile_candidates(html, limit=3):
 
 def extract_timechart_candidates(text, limit=4):
     """Return short text evidence tied to explicit checkpoint/time-chart labels."""
-    source = re.sub(r"\\s+", " ", text or "")
+    source = re.sub(r"\s+", " ", text or "")
     found = []
     for match in TIMECHART_LABEL_RE.finditer(source):
         snippet = source[max(0, match.start()-100):min(len(source), match.end()+180)].strip()
