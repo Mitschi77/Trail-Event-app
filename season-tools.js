@@ -92,6 +92,17 @@ if(typeof originalYearOverview==='function'){
    const undatedCount=groups.find(group=>group.key==='undated')?.races.length||0;
    seasonSummary.append(summaryItem(races.length,races.length===1?'Rennen geplant':'Rennen geplant'),summaryItem(datedGroups.length,datedGroups.length===1?'Monat mit Terminen':'Monate mit Terminen'));
    if(undatedCount)seasonSummary.append(summaryItem(undatedCount,undatedCount===1?'Termin offen':'Termine offen'));
+   const startGaps=raceDates.slice(1).map((entry,index)=>Math.round((entry.date-raceDates[index].date)/86400000));
+   if(startGaps.length){
+    const shortestGap=Math.min(...startGaps);
+    const tightGaps=startGaps.filter(gap=>gap<14).length;
+    seasonSummary.append(summaryItem(shortestGap===0?'0 Tage':shortestGap+' Tage','Kürzester Startabstand'));
+    seasonSummary.append(summaryItem(tightGaps,tightGaps===1?'Abstand unter 14 Tagen':'Abstände unter 14 Tagen'));
+    const note=document.createElement('p');
+    note.className='year-season-summary-note';
+    note.textContent='Kalenderabstände zwischen Startterminen – keine automatische Bewertung deiner Regeneration oder Belastbarkeit.';
+    seasonSummary.append(note);
+   }
    const today=new Date(),currentKey=today.getUTCFullYear()+'-'+String(today.getUTCMonth()+1).padStart(2,'0');
    let active=groups.find(g=>g.key===currentKey);
    if(!active)active=groups.find(g=>g.date&&g.date.getTime()>=Date.UTC(today.getUTCFullYear(),today.getUTCMonth(),today.getUTCDate()));
