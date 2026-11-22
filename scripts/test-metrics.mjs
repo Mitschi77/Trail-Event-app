@@ -836,3 +836,12 @@ assert.ok(html.includes("color-scheme:dark") && html.includes("@media(max-width:
   "Accommodation inputs must remain readable and stack on narrow mobile screens");
 assert.ok(html.includes("function saveYearAccommodation") && html.includes("function renderYearAccommodationForm"),
   "The existing accommodation saving and rendering flows must remain intact");
+
+
+// Responsive Alpine navigation: sticky, touch-friendly, keyboard-accessible and reduced-motion aware.
+assert.ok(html.includes('id="trail-navigation-ux-v100"'), "The refreshed navigation stylesheet must be present");
+assert.ok(html.includes(".tabbar{position:sticky"), "The main navigation must remain available while scrolling");
+assert.ok(html.includes("scroll-snap-type:x proximity"), "The mobile navigation must support guided horizontal scrolling");
+assert.ok(html.includes("min-height:44px"), "Navigation controls must retain comfortable touch targets");
+assert.ok(html.includes(":focus-visible"), "Navigation controls must expose visible keyboard focus");
+assert.ok(html.includes("@media(prefers-reduced-motion:reduce)"), "Navigation must respect reduced-motion preferences");
