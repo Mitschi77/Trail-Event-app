@@ -488,3 +488,29 @@ hr,.divider{border-color:var(--line)}
   #yearOverview .year-season-summary-item strong{font-size:12px}
   #yearOverview .year-season-summary-item small{font-size:9px}
 }
+
+
+/* Alpine Performance – scan-friendly race facts without changing their source values */
+#yearOverview .year-month-races .year-race-meta{
+  display:flex;flex-wrap:wrap;align-items:center;gap:5px;margin:5px 0 7px
+}
+#yearOverview .year-month-races .year-race-meta-item{
+  display:inline-flex;align-items:center;min-height:22px;max-width:100%;
+  padding:3px 7px;border:1px solid #304657;border-radius:7px;
+  background:#0f1b26;color:#bdcbd5;font-size:10px;font-weight:650;
+  line-height:1.25;overflow-wrap:anywhere
+}
+#yearOverview .year-month-races .year-race-meta-item[data-meta-kind="date"]{
+  color:#ffbd85;border-color:#704c32;background:#2a211b;font-weight:800
+}
+#yearOverview .year-month-races .year-race-meta-item[data-meta-kind="distance"]{
+  color:#e7f0f5;border-color:#40586b;background:#1b3040;font-weight:800;
+  font-variant-numeric:tabular-nums
+}
+#yearOverview .year-month-races .year-race-meta-item[data-meta-kind="elevation"]{
+  color:#a9d5ef;border-color:#345b73;background:#142b3b;font-weight:800;
+  font-variant-numeric:tabular-nums
+}
+#yearOverview .year-month-races .year-race-meta-item[data-meta-kind="type"]{
+  color:#c5e3cb;border-color:#365a45;background:#182c22
+}
