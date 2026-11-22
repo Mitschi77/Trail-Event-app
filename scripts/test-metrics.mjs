@@ -782,5 +782,5 @@ assert.ok(html.includes("Die hier in der App veröffentlichte GPX-Strecke dient 
   "GPX help must clearly state that published route data is for planning only");
 assert.ok(html.includes("Für Richtigkeit, Vollständigkeit und Aktualität übernehmen wir keine Gewähr."),
   "GPX help must disclaim guarantees for correctness, completeness and currentness");
-assert.ok(html.includes("vor Eventbeginn immer die aktuellste GPX-Datei direkt beim Veranstalter herunterladen und verwende diese."),
+assert.ok(html.includes("Bitte lade vor Eventbeginn immer die aktuellste GPX-Datei direkt beim Veranstalter herunter und verwende diese."),
   "GPX help must instruct runners to use the latest organizer GPX before the event");
