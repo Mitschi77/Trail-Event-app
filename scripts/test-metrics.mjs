@@ -854,3 +854,11 @@ assert.ok(designSystem.includes(".event-detail-overview .event-detail-metric"), 
 assert.ok(designSystem.includes(".event-detail-overview .event-detail-gpx"), "GPX planning information must remain clearly separated from route metrics");
 assert.ok(designSystem.includes("@media(max-width:480px){.event-detail-overview"), "Route metrics must remain readable on narrow iPhone screens");
 assert.ok(designSystem.includes("@media(prefers-reduced-motion:no-preference)"), "Route detail hover polish must respect reduced-motion preferences");
+
+
+// Alpine Performance v102 – yearly timeline visual hierarchy and mobile controls.
+assert.ok(seasonTools.includes(".year-month-races .year-race{margin:7px 0;padding:12px"), "Yearly race entries must render as distinct compact cards");
+assert.ok(seasonTools.includes(".year-month-chip:focus-visible"), "Month navigation chips must expose keyboard focus");
+assert.ok(seasonTools.includes("@media(max-width:420px){.year-month-races"), "Yearly race cards must remain compact on narrow phones");
+assert.ok(seasonTools.includes("@media(prefers-reduced-motion:reduce){.year-month-chip"), "Timeline transitions must respect reduced-motion preferences");
+assert.ok(seasonTools.includes(".year-month-group[open]>summary"), "The active month must have a clear expanded state");
