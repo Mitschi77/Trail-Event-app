@@ -49,6 +49,20 @@ class CandidateExtractionTests(unittest.TestCase):
         self.assertFalse(missing_candidate_fields({"raceCost": 0})["raceCost"])
         self.assertTrue(missing_candidate_fields({"raceCost": None})["raceCost"])
 
+    def test_profile_candidate_requires_labelled_embedded_svg_and_never_returns_coordinates(self):
+        from scripts.event_data_candidates import extract_profile_candidates
+        html = '<svg aria-label="Höhenprofil"><polyline points="0,100 20,80 40,30"/></svg>'
+        result = extract_profile_candidates(html)
+        self.assertEqual(len(result), 1)
+        self.assertIn("Höhenprofil", result[0])
+        self.assertNotIn("0,100", result[0])
+        self.assertEqual(extract_profile_candidates('<svg><polyline points="0,100 20,80"/></svg>'), [])
+
+    def test_timechart_candidate_requires_explicit_checkpoint_or_timechart_label(self):
+        from scripts.event_data_candidates import extract_timechart_candidates
+        self.assertTrue(extract_timechart_candidates("Checkpoint times: KM 20 10:30; KM 40 13:00"))
+        self.assertEqual(extract_timechart_candidates("Start 10:30, Pasta party 18:00"), [])
+
 
 if __name__ == "__main__":
     unittest.main()
