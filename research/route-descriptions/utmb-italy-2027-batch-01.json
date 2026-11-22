@@ -97,7 +97,7 @@
             ],
             "routeSpecificLocations": "Vollständige Stationsliste nicht aus dem FAQ-Auszug übernommen; Race Guide vor dem Event abgleichen."
           },
-          "nutrition": "Offizielle FAQ nennt Getränke, süße und salzige Snacks, Brot sowie glutenfreie und vegane Optionen; keine Becher, eigene Trinkgefäße erforderlich. Buzet bietet warme Speisen.",
+          "nutrition": "Offizielle FAQ: NAAK ist Ernährungspartner. An den Stationen gibt es Getränke, süße und salzige Snacks, Brot, Obst, Gebäck, Käse, Wasser, Cola, Iso-Getränke, Kaffee, Tee und heiße Suppe; in Buzet bei 168K/110K zusätzlich warme Mahlzeiten. Glutenfreie und vegane Optionen sind auf Nachfrage bei Helfern erhältlich. Es werden keine Becher gestellt; eigene Trinkgefäße sind erforderlich. Die genaue Auswahl wird im Race Guide vor dem Rennen aktualisiert.",
           "cutoffs": {
             "finishHours": 45,
             "intermediateCheckpoints": "Nicht ausgelesen; Race Guide erforderlich."
@@ -144,7 +144,7 @@
             ],
             "routeSpecificLocations": "Vollständige Stationsliste nicht aus dem FAQ-Auszug übernommen; Race Guide vor dem Event abgleichen."
           },
-          "nutrition": "Offizielle FAQ nennt Getränke, süße und salzige Snacks, Brot sowie glutenfreie und vegane Optionen; keine Becher, eigene Trinkgefäße erforderlich. Buzet bietet warme Speisen.",
+          "nutrition": "Offizielle FAQ: NAAK ist Ernährungspartner. An den Stationen gibt es Getränke, süße und salzige Snacks, Brot, Obst, Gebäck, Käse, Wasser, Cola, Iso-Getränke, Kaffee, Tee und heiße Suppe; in Buzet bei 168K/110K zusätzlich warme Mahlzeiten. Glutenfreie und vegane Optionen sind auf Nachfrage bei Helfern erhältlich. Es werden keine Becher gestellt; eigene Trinkgefäße sind erforderlich. Die genaue Auswahl wird im Race Guide vor dem Rennen aktualisiert.",
           "cutoffs": {
             "finishHours": 28,
             "intermediateCheckpoints": "Nicht ausgelesen; Race Guide erforderlich."
@@ -190,7 +190,7 @@
             ],
             "routeSpecificLocations": "Vollständige Stationsliste nicht aus dem FAQ-Auszug übernommen; Race Guide vor dem Event abgleichen."
           },
-          "nutrition": "Offizielle FAQ nennt Getränke, süße und salzige Snacks, Brot sowie glutenfreie und vegane Optionen; keine Becher, eigene Trinkgefäße erforderlich.",
+          "nutrition": "Offizielle FAQ: NAAK ist Ernährungspartner. An den Stationen gibt es Getränke, süße und salzige Snacks, Brot, Obst, Gebäck, Käse, Wasser, Cola, Iso-Getränke, Kaffee, Tee und heiße Suppe; in Buzet bei 168K/110K zusätzlich warme Mahlzeiten. Glutenfreie und vegane Optionen sind auf Nachfrage bei Helfern erhältlich. Es werden keine Becher gestellt; eigene Trinkgefäße sind erforderlich. Die genaue Auswahl wird im Race Guide vor dem Rennen aktualisiert.",
           "cutoffs": {
             "finishHours": 15,
             "intermediateCheckpoints": "Nicht ausgelesen; Race Guide erforderlich."
@@ -233,7 +233,7 @@
             "supportAllowedAt": [],
             "routeSpecificLocations": "Vollständige Stationsliste nicht aus dem FAQ-Auszug übernommen; Race Guide vor dem Event abgleichen."
           },
-          "nutrition": "Offizielle FAQ nennt Getränke, süße und salzige Snacks, Brot sowie glutenfreie und vegane Optionen; keine Becher, eigene Trinkgefäße erforderlich.",
+          "nutrition": "Offizielle FAQ: NAAK ist Ernährungspartner. An den Stationen gibt es Getränke, süße und salzige Snacks, Brot, Obst, Gebäck, Käse, Wasser, Cola, Iso-Getränke, Kaffee, Tee und heiße Suppe; in Buzet bei 168K/110K zusätzlich warme Mahlzeiten. Glutenfreie und vegane Optionen sind auf Nachfrage bei Helfern erhältlich. Es werden keine Becher gestellt; eigene Trinkgefäße sind erforderlich. Die genaue Auswahl wird im Race Guide vor dem Rennen aktualisiert.",
           "cutoffs": {
             "finishHours": 8,
             "intermediateCheckpoints": "Nicht ausgelesen; Race Guide erforderlich."
@@ -276,7 +276,7 @@
             "supportAllowedAt": [],
             "routeSpecificLocations": "Vollständige Stationsliste nicht aus dem FAQ-Auszug übernommen; Race Guide vor dem Event abgleichen."
           },
-          "nutrition": "Offizielle FAQ nennt Getränke, süße und salzige Snacks, Brot sowie glutenfreie und vegane Optionen; keine Becher, eigene Trinkgefäße erforderlich.",
+          "nutrition": "Offizielle FAQ: NAAK ist Ernährungspartner. An den Stationen gibt es Getränke, süße und salzige Snacks, Brot, Obst, Gebäck, Käse, Wasser, Cola, Iso-Getränke, Kaffee, Tee und heiße Suppe; in Buzet bei 168K/110K zusätzlich warme Mahlzeiten. Glutenfreie und vegane Optionen sind auf Nachfrage bei Helfern erhältlich. Es werden keine Becher gestellt; eigene Trinkgefäße sind erforderlich. Die genaue Auswahl wird im Race Guide vor dem Rennen aktualisiert.",
           "cutoffs": {
             "finishHours": 4,
             "intermediateCheckpoints": "Nicht ausgelesen; Race Guide erforderlich."
@@ -327,7 +327,9 @@
         "futureCommercialUse": "asked_separately_pending",
         "mediaKitAndBrandGuidelines": "requested_pending",
         "publicationAllowed": false
-      }
+      },
+      "officialNutritionSponsor": "NAAK",
+      "aidStationSource": "https://istria.utmb.world/races-runners/other-information/FAQ"
     },
     {
       "eventId": "chianti-ultra-trail",
