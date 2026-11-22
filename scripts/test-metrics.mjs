@@ -652,6 +652,26 @@ assert.ok(html.includes('aria-controls="yearReview'),
   "Year review toggle must expose the controlled panel to assistive technology");
 assert.ok(html.includes('year-profile-panels') && html.includes('renderElevationProfile(x.r,x.e,safeFrameUrl)') && html.includes('renderCutoffDetails(x.r)'),
   "Year cards must keep the route elevation profile and cut-off renderer wired in");
+
+assert.ok(html.includes('Lauf in die Jahresplanung') && html.includes('function addEventToYearPlan(id,ri)'),
+  "Every route card must offer a direct action to add the selected route to the annual plan");
+assert.ok(html.includes('function renderYearAccommodationForm') && html.includes('function saveYearAccommodation(id,uid)'),
+  "The annual overview must provide a complete accommodation form with a persistent save action");
+assert.ok(html.includes("field('Check-in','CheckIn'") && html.includes("field('Check-out','CheckOut'") &&
+  html.includes("field('Gesamtpreis (€)','Price'") && html.includes("field('Bereits bezahlt (€)','Paid'"),
+  "Accommodation inputs must include dates, total price and paid amount");
+assert.ok(html.includes('trailPrivateBookings') && html.includes('queuePlannerCloudSave()'),
+  "Accommodation changes must use the existing private cloud-synchronized booking store");
+assert.ok(html.includes('Lauf eintragen / Ergebnis bearbeiten') && html.includes('savePlannedRun('),
+  "The year card must expose run result, actual distance, elevation, duration and rating inputs directly");
+assert.ok(html.includes('#yearOverview .year-group{display:grid') && html.includes('@media(min-width:760px)') && html.includes('year-jumpbar'),
+  "The annual overview must support tablet two-column cards and quick year navigation");
+assert.ok(html.includes("String(year).replace(/[^a-zA-Z0-9_-]/g,'_')") &&
+  html.includes("const safeUid=String(uid).replace(/[^a-zA-Z0-9_-]/g,'_')"),
+  "Jump targets and accommodation form identifiers must be valid for all event keys");
+assert.ok(html.includes("const CACHE_NAME = 'trail-event-planner-v83'"),
+  "The PWA cache must be versioned for the updated release");
+
 assert.ok(html.includes('--bg:#101713') && html.includes('--ink:#f0f5f1') && html.includes('color-scheme:dark'),
   "The existing fixed dark theme and readable contrast tokens must remain in place");
 
