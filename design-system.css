@@ -543,3 +543,22 @@ hr,.divider{border-color:var(--line)}
   background:linear-gradient(145deg,color-mix(in srgb,#70b7e5 13%,var(--card)),var(--card))
 }
 #yearOverview .year-season-summary-item[data-source="history"] strong{color:#83c4ef}
+
+
+/* Event metadata: UTMB values and organizer-reported sold-out status */
+#yearOverview .year-month-races .year-race-meta-item[data-meta-kind="utmb-index"],
+#yearOverview .year-month-races .year-race-meta-item[data-meta-kind="utmb-score"]{
+  border-color:#796b9d;background:#28243b;color:#d7c9ff;font-weight:800
+}
+#yearOverview .year-month-races .year-race-meta-item[data-meta-kind="soldout"]{
+  border-color:#bd535a;background:#351b22;color:#ffb0b2;font-weight:850
+}
+#yearOverview .year-month-races .year-race-head .sold-out-stamp{
+  display:inline-flex;align-items:center;justify-content:center;flex:none;
+  padding:5px 9px;border:2px solid #ff6b70;border-radius:5px;
+  font-size:9px;font-weight:950;letter-spacing:.12em;line-height:1;
+  transform:rotate(-5deg);white-space:nowrap
+}
+@media(max-width:420px){
+  #yearOverview .year-month-races .year-race-head .sold-out-stamp{font-size:8px;padding:4px 6px}
+}
