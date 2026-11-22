@@ -76,6 +76,30 @@ if(typeof originalYearOverview==='function'){
  window.renderYearOverview=function(){originalYearOverview();groupYearMonths();};
  const style=document.createElement('style');
  style.textContent=`.year-month-nav{display:flex;gap:6px;overflow-x:auto;padding:2px 1px 8px;margin:8px 0 2px;scrollbar-width:none}.year-month-nav::-webkit-scrollbar{display:none}.year-month-chip{flex:0 0 auto;padding:6px 10px;border:1px solid var(--line);border-radius:999px;background:var(--card);color:var(--muted);font-size:11px;font-weight:700;cursor:pointer}.year-month-chip.is-active{border-color:var(--green);background:rgba(63,113,78,.24);color:var(--ink)}.year-month-list{display:grid;gap:8px;margin:10px 0 12px}.year-month-group{border:1px solid var(--line);border-radius:12px;background:color-mix(in srgb,var(--card) 82%,transparent);overflow:hidden}.year-month-group>summary{display:flex;align-items:center;justify-content:space-between;gap:12px;list-style:none;cursor:pointer;padding:12px 13px;font-size:13px;font-weight:750;color:var(--ink)}.year-month-group[open]{border-color:color-mix(in srgb,var(--green) 40%,var(--line));box-shadow:0 7px 20px rgba(0,0,0,.12)}.year-race{padding:12px 0;border-top:1px solid var(--line)}.year-race-head{display:flex;align-items:flex-start;justify-content:space-between;gap:10px}.year-race-head>strong{font-size:14px;line-height:1.35;letter-spacing:-.01em}.year-race-head>.secondary{flex:none;min-width:36px;min-height:36px;padding:5px 9px}.year-race-meta{margin:5px 0 9px;font-size:11px;line-height:1.5;color:var(--muted)}.year-race-status-controls{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;margin:9px 0}.year-race-status{display:grid;gap:4px;min-width:0;font-size:10px;font-weight:750;color:var(--muted)}.year-race-status select{width:100%;min-width:0;min-height:38px;padding:6px 8px;border:1px solid var(--line);border-radius:9px;background:var(--bg);color:var(--ink);font:inherit;font-size:11px}.year-race-more{margin-top:7px;border:1px solid var(--line);border-radius:10px;background:rgba(0,0,0,.06)}.year-race-more>summary{padding:9px 11px;cursor:pointer;font-size:11px;font-weight:750;color:var(--green);list-style:none}.year-race-more>summary::-webkit-details-marker{display:none}.year-race-more>summary:after{content:'+';float:right;font-size:15px}.year-race-more[open]>summary:after{content:'−'}.year-race-more-content{padding:0 10px 10px}.year-race-more:focus-within{border-color:var(--green)}@media(max-width:420px){.year-race-status-controls{grid-template-columns:1fr 1fr;gap:6px}.year-race-status select{font-size:10px;padding:5px}}.year-month-group>summary::-webkit-details-marker{display:none}.year-month-group>summary::after{content:"+";font-size:17px;color:var(--green);line-height:1}.year-month-group[open]>summary::after{content:"−"}.year-month-title{min-width:0}.year-month-count{flex:none;color:var(--muted);font-size:11px;font-weight:600}.year-month-races{padding:0 12px 10px}.year-month-races .year-race:first-child{border-top:1px solid var(--line)}.year-month-group>summary:focus-visible{outline:2px solid var(--lime);outline-offset:-3px;border-radius:10px}@media(prefers-reduced-motion:no-preference){.year-month-group .year-month-races{animation:yearMonthReveal .16s ease-out}@keyframes yearMonthReveal{from{opacity:.6;transform:translateY(-3px)}to{opacity:1;transform:translateY(0)}}}`;
+
+/* Alpine Performance v102 – stronger hierarchy for the yearly season timeline */
+.year-month-nav{position:relative;gap:7px;padding:4px 2px 10px;margin:10px 0 4px;scroll-padding-inline:12px}
+.year-month-chip{min-height:36px;padding:7px 12px;border-color:color-mix(in srgb,var(--line) 82%,var(--green));background:color-mix(in srgb,var(--card) 92%,transparent);font-size:11px;letter-spacing:.01em;transition:background .16s ease,border-color .16s ease,color .16s ease}
+.year-month-chip.is-active{border-color:var(--green);background:linear-gradient(145deg,color-mix(in srgb,var(--green) 24%,var(--card)),var(--card));color:var(--ink);box-shadow:0 3px 10px rgba(0,0,0,.08)}
+.year-month-group{border-radius:14px;background:color-mix(in srgb,var(--card) 94%,transparent);transition:border-color .16s ease,box-shadow .16s ease}
+.year-month-group>summary{min-height:48px;padding:13px 14px;font-size:13px;letter-spacing:-.01em}
+.year-month-group[open]>summary{background:color-mix(in srgb,var(--green) 8%,transparent)}
+.year-month-count{padding:4px 8px;border:1px solid var(--line);border-radius:999px;background:var(--bg);font-variant-numeric:tabular-nums}
+.year-month-races{padding:5px 10px 11px}
+.year-month-races .year-race:first-child{border-top:0}
+.year-month-races .year-race{margin:7px 0;padding:12px;border:1px solid var(--line);border-radius:12px;background:var(--card);box-shadow:0 3px 12px rgba(0,0,0,.045)}
+.year-month-races .year-race:last-child{border-bottom:1px solid var(--line)}
+.year-month-races .year-race-head>strong{font-size:14px;line-height:1.35}
+.year-month-races .year-race-meta{margin:5px 0 8px;line-height:1.45}
+.year-month-races .year-race-status-controls{gap:7px;margin:8px 0}
+.year-month-races .year-race-status select{min-height:40px;border-radius:10px}
+.year-month-races .year-race-more{margin-top:8px;background:color-mix(in srgb,var(--bg) 78%,transparent)}
+.year-month-races .year-race-more[open]{border-color:color-mix(in srgb,var(--green) 55%,var(--line))}
+.year-month-races .year-race-more>summary{min-height:38px;display:flex;align-items:center;justify-content:space-between;gap:10px}
+.year-month-races .year-race-more>summary:after{margin-left:auto}
+.year-month-chip:focus-visible,.year-month-group>summary:focus-visible{outline:3px solid var(--lime);outline-offset:2px}
+@media(max-width:420px){.year-month-races{padding-inline:7px}.year-month-races .year-race{padding:10px}.year-month-group>summary{padding:11px 12px}.year-month-chip{padding-inline:10px}}
+@media(prefers-reduced-motion:reduce){.year-month-chip,.year-month-group{transition:none}}
  document.head.appendChild(style);
 }
 
