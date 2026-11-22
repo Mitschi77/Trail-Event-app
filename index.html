@@ -19987,7 +19987,7 @@ async function registerReviewPush(){
   await swRegistration.update().catch(()=>undefined);
   const registration=await Promise.race([
    navigator.serviceWorker.ready,
-   new Promise((_,reject)=>setTimeout(()=>reject(new Error('Service Worker wurde nicht rechtzeitig aktiv. Bitte App vollständig schließen und erneut öffnen.')),15000))
+   new Promise((_,reject)=>setTimeout(()=>reject(new Error('Service Worker wurde nicht rechtzeitig bereit. Bitte App vollständig schließen und erneut öffnen.')),15000))
   ]);
   if(!registration?.pushManager)throw new Error('Der aktive Service Worker unterstützt keine Push-Registrierung.');
   out.textContent='Push-Abonnement wird angelegt …';
