@@ -53,7 +53,10 @@ if(typeof originalYearOverview==='function'){
      const chip=document.createElement('span');
      chip.className='year-race-meta-item';
      chip.textContent=value;
-     if(/\\b\\d{2}\\.\\d{2}\\.\\d{4}\\b/.test(value))chip.dataset.metaKind='date';
+     if(/\\bUTMB\\s*Index\\b/i.test(value))chip.dataset.metaKind='utmb-index';
+     else if(/\\bUTMB\\s*(?:Score|Punkte)\\b/i.test(value))chip.dataset.metaKind='utmb-score';
+     else if(/\\b(?:sold[ -]?out|ausverkauft|ausgebucht)\\b/i.test(value))chip.dataset.metaKind='soldout';
+     else if(/\\b\\d{2}\\.\\d{2}\\.\\d{4}\\b/.test(value))chip.dataset.metaKind='date';
      else if(/\\b\\d+(?:[.,]\\d+)?\\s*km\\b/i.test(value))chip.dataset.metaKind='distance';
      else if(/\\b\\d+(?:[.,]\\d+)?\\s*(?:hm|m\\s*\\+?)\\b/i.test(value))chip.dataset.metaKind='elevation';
      else if(/\\b(?:backyard|marathon|halbmarathon|trail|ultra)\\b/i.test(value))chip.dataset.metaKind='type';
@@ -62,6 +65,18 @@ if(typeof originalYearOverview==='function'){
     meta.dataset.metaFormatted='1';
    };
    races.forEach(formatRaceMeta);
+   races.forEach(article=>{
+    const raw=article.querySelector('.year-race-meta')?.textContent||'';
+    if(/\\b(?:sold[ -]?out|ausverkauft|ausgebucht)\\b/i.test(raw)&&!article.querySelector('.sold-out-stamp')){
+     const stamp=document.createElement('span');
+     stamp.className='sold-out-stamp sold-out-overview';
+     stamp.textContent='SOLD OUT';
+     stamp.setAttribute('aria-label','Veranstaltung ausverkauft');
+     const head=article.querySelector('.year-race-head');
+     if(head)head.append(stamp);
+    }
+   });
+
    const raceDates=races.map(article=>{
     const text=article.querySelector('.year-race-meta')?.textContent||'';
     const match=text.match(/\\b(\\d{2})\\.(\\d{2})\\.(\\d{4})\\b/);
