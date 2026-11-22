@@ -10,7 +10,7 @@ assert.notEqual(start, -1, "GPX rights gate must be present");
 const gateSource = raceTools.slice(start);
 
 async function harness(registry, routeUrl = "https://example.org/course.gpx", withStoredData = true) {
-  let networkCalls = 0, mapCalls = 0, persistCalls = 0, remoteCalls = 0, localWrites = 0, cloudSaves = 0, activityImports = 0;
+  let networkCalls = 0, mapCalls = 0, persistCalls = 0, remoteCalls = 0, localRouteImports = 0, indexedRouteImports = 0, localWrites = 0, cloudSaves = 0, activityImports = 0;
   const route = { id: "test-route", route: "Test route", gpxDownloadUrl: routeUrl, gpxAvailability: "downloadable" };
   if (withStoredData) {
     route.gpxTrack = [{ lat: 45, lon: 13 }];
@@ -27,6 +27,8 @@ async function harness(registry, routeUrl = "https://example.org/course.gpx", wi
     renderGpxMap: () => { mapCalls++; return "MAP_RENDERED"; },
     initGpxMap: () => { mapCalls++; },
     persistGpxData: () => { persistCalls++; },
+    importRouteGpx: async () => { localRouteImports++; },
+    importGpxForRoute: async () => { indexedRouteImports++; },
     importRemoteGpxForRoute: async () => { remoteCalls++; },
     importActivityFile: async () => { activityImports++; return "ACTIVITY_IMPORTED"; },
     proposalGpxIsRestricted: () => false,
@@ -65,8 +67,8 @@ async function harness(registry, routeUrl = "https://example.org/course.gpx", wi
   return {
     window, route, unlistedRoute: context.EVENTS[0].routes[1], eventDataEdits,
     networkCalls: () => networkCalls, mapCalls: () => mapCalls, persistCalls: () => persistCalls,
-    remoteCalls: () => remoteCalls, localWrites: () => localWrites, cloudSaves: () => cloudSaves,
-    activityImports: () => activityImports
+    remoteCalls: () => remoteCalls, localRouteImports: () => localRouteImports, indexedRouteImports: () => indexedRouteImports,
+    localWrites: () => localWrites, cloudSaves: () => cloudSaves, activityImports: () => activityImports
   };
 }
 
@@ -82,6 +84,29 @@ async function harness(registry, routeUrl = "https://example.org/course.gpx", wi
   assert.equal(pending.persistCalls(), 0);
   assert.equal(pending.window.routeGpxIsOrganizerRestricted(pending.route), true);
   assert.equal(pending.window.routeHasDownloadableGpx(pending.route), false);
+  assert.equal(pending.window.routeHasOfficialGpxPageLink(pending.route), false);
+
+  const status = { textContent: "" };
+  const localInput = {
+    dataset: { gpxEvent: "test-event", gpxRoute: "test-route" },
+    value: "selected.gpx",
+    closest: () => ({ querySelector: () => status })
+  };
+  await pending.window.importRouteGpx(localInput);
+  assert.equal(pending.localRouteImports(), 0, "blocked local route import must not call the importer");
+  assert.equal(localInput.value, "", "blocked local route import must clear the selected file input");
+  assert.match(status.textContent, /GPX/);
+
+  const indexedInput = { value: "selected.gpx" };
+  await pending.window.importGpxForRoute(0, 0, indexedInput);
+  assert.equal(pending.indexedRouteImports(), 0, "blocked indexed route import must not call the importer");
+  assert.equal(indexedInput.value, "");
+
+  const remoteButton = { disabled: false, textContent: "GPX laden" };
+  await pending.window.importRemoteGpxForRoute(0, 0, "https://example.org/course.gpx", remoteButton);
+  assert.equal(pending.remoteCalls(), 0, "blocked remote route import must not reach the importer");
+  assert.equal(remoteButton.disabled, true);
+  assert.equal(remoteButton.textContent, "GPX gesperrt");
   assert.equal(pending.window.proposalGpxIsRestricted({ eventId: "test-event", routeId: "test-route" }), true);
   assert.equal(pending.window.reviewGpxUrl({ eventId: "test-event", routeId: "test-route" }), "");
   assert.deepEqual(pending.route.gpxTrack, [{ lat: 45, lon: 13 }], "existing in-memory GPX must be retained");
