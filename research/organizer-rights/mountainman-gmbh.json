@@ -1,0 +1,129 @@
+{
+  "schemaVersion": 1,
+  "checkedAt": "2026-11-22",
+  "organizer": "MOUNTAINMAN GmbH",
+  "legalEntity": "MOUNTAINMAN GmbH",
+  "projectPhase": "independent_non_commercial_project_only",
+  "affiliationClaimed": false,
+  "contact": {
+    "email": "info@mountainman.de",
+    "source": "https://mountainman.de/agb/",
+    "sourceType": "official AGB/contact/imprint",
+    "authority": "official organizer contact verified; third-party rights for Outdooractive/Komoot/media assets may require separate clearance"
+  },
+  "bundledEvents": [
+    {
+      "researchKey": "mountainman-winterloop-reit-im-winkl-2027",
+      "catalogEventId": "mountain-man-winter",
+      "routes": [
+        "7.5 km loop",
+        "3h",
+        "6h",
+        "12h",
+        "relay"
+      ]
+    },
+    {
+      "researchKey": "mountainman-nesselwang-2027",
+      "catalogEventId": "mountainman",
+      "routes": [
+        "XXL 70 km",
+        "XL 42 km",
+        "L 33 km",
+        "M 22 km",
+        "S 10 km",
+        "Kids 400 m"
+      ]
+    },
+    {
+      "researchKey": "mountainman-berchtesgaden-2027",
+      "catalogEventId": "der-watz-mountainman",
+      "routes": [
+        "WATZ Ultimate 111 km / 4 stages",
+        "WATZ Double 57 km / stages 3+4",
+        "WATZ Final 25 km / stage 4"
+      ]
+    },
+    {
+      "researchKey": "mountainman-grossarltal-2027",
+      "catalogEventId": null,
+      "routes": [
+        "XXL 70 km",
+        "XL 50 km",
+        "L 30 km",
+        "M 21 km",
+        "S 15 km",
+        "XS 10 km",
+        "Kids 400 m"
+      ]
+    },
+    {
+      "researchKey": "mountainman-reit-im-winkl-2027",
+      "catalogEventId": null,
+      "routes": [
+        "XXL 73 km",
+        "XL 52 km",
+        "L 40 km",
+        "M 26 km",
+        "S 11 km",
+        "Kids 400 m",
+        "Dogs Trail same geometries"
+      ]
+    }
+  ],
+  "emailHistory": [
+    {
+      "date": "2026-11-19",
+      "type": "initial_request_berchtesgaden",
+      "messageId": "<179509597051.114.5759607286918135562@me.com>",
+      "status": "sent_copy_filed"
+    },
+    {
+      "date": "2026-11-19",
+      "type": "initial_request_wintertrail",
+      "messageId": "<179509544651.137.16561932394556178273@me.com>",
+      "status": "sent_copy_filed"
+    },
+    {
+      "date": "2026-11-22",
+      "type": "single_consolidated_supplement_for_all_2027_mountainman_events",
+      "messageId": "<179531306372.76.10663404527510685886@me.com>",
+      "status": "submitted_sent_copy_filed",
+      "note": "Reply in existing Berchtesgaden thread; explicitly references and consolidates the earlier Wintertrail message."
+    }
+  ],
+  "responseStatus": "no_reply_found_as_of_2026-11-22",
+  "requestedPermissions": {
+    "officialTextVerbatim": "pending",
+    "shortenedOrEditedOfficialText": "pending",
+    "ownFactualSummaries": "pending",
+    "routeFacts": "pending",
+    "mapsAndRouteLines": "pending",
+    "elevationProfiles": "pending",
+    "gpxFetch": "pending",
+    "gpxLoadImport": "pending",
+    "gpxStore": "pending",
+    "gpxProcessAnalyse": "pending",
+    "gpxDisplayOnMap": "pending",
+    "gpxUserDownload": "pending",
+    "officialGpxPageLinkOnly": "pending",
+    "eventNamesAndMarks": "pending",
+    "logosAndWordImageMarks": "pending",
+    "symbolsIconsPictogramsEmblemsMascots": "pending",
+    "otherEventSpecificGraphics": "pending"
+  },
+  "gpxRestrictionRequest": {
+    "perEventAndRoute": "requested_pending",
+    "exactNoticeTextAndSource": "requested_pending",
+    "affectedRoute": "requested_pending",
+    "fileMetadataReview": "requested_pending",
+    "fetchLoadImportStoreProcessMapDisplayDownload": "requested_separately",
+    "officialPageLinkOnly": "requested_separately",
+    "appTechnicalDefault": "block"
+  },
+  "futureCommercialUse": "asked_separately; pending; any future commercial use requires a separate explicit written licence",
+  "mediaKitAndBrandGuidelines": "requested_pending",
+  "attributionSizeColourPlacementDuration": "requested_pending",
+  "exclusionsAndConditionalUses": "requested_pending",
+  "publicationAllowed": false
+}
