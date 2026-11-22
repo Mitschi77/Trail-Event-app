@@ -675,11 +675,15 @@ assert.ok(html.includes('#yearOverview .year-group{display:grid') && html.includ
 assert.ok(html.includes("String(year).replace(/[^a-zA-Z0-9_-]/g,'_')") &&
   html.includes("const safeUid=String(uid).replace(/[^a-zA-Z0-9_-]/g,'_')"),
   "Jump targets and accommodation form identifiers must be valid for all event keys");
-assert.ok(serviceWorker.includes("const CACHE_NAME = 'trail-event-planner-v91'"),
+assert.ok(serviceWorker.includes("const CACHE_NAME = 'trail-event-planner-v92'"),
   "The PWA cache must be versioned for the updated release");
 
 assert.ok(html.includes('season-dashboard') && html.includes('season-next-race') && html.includes('season-dashboard-stats'),
   "The annual overview must render one canonical season dashboard with next-race and season KPI sections");
+assert.ok(seasonTools.includes("details.addEventListener('toggle'") && seasonTools.includes("aria-current"),
+  "Opening a month manually must keep the month shortcut navigation in sync");
+assert.ok(seasonTools.includes(".year-race-status-controls{display:grid") && seasonTools.includes(".year-race-more>summary"),
+  "Annual race cards must use compact responsive status controls and clear expandable detail sections");
 assert.ok(!seasonTools.includes('seasonDashboard') && seasonTools.includes('year-month-group') && seasonTools.includes('groupYearMonths'),
   "The season module must not duplicate the dashboard and must group existing annual race cards into month accordions");
 assert.ok(seasonTools.includes('year-month-nav') && seasonTools.includes('data-month-target') && seasonTools.includes("target.scrollIntoView"),
