@@ -20095,10 +20095,53 @@ function collectLocalPlannerData(){const data={};CLOUD_KEYS.forEach(k=>{const v=
 const CLOUD_BASELINE_KEY='trailPlannerCloudBaseline_v1';
 function cloudSnapshotSignatures(data){const out={};Object.keys(data||{}).sort().forEach(k=>{const value=String(data[k]),input=k+'\\u0000'+value;let h=2166136261;for(let i=0;i<input.length;i++){h^=input.charCodeAt(i);h=Math.imul(h,16777619);}out[k]=(h>>>0).toString(16)+':'+value.length;});return out;}
 function readCloudBaselineSignatures(){try{return JSON.parse(localStorage.getItem(CLOUD_BASELINE_KEY)||'null');}catch(e){return null;}}
-function mergeCloudSnapshots(local,remote){const baseline=readCloudBaselineSignatures(),ls=cloudSnapshotSignatures(local),rs=cloudSnapshotSignatures(remote),merged={},conflicts=[];for(const k of CLOUD_KEYS){const l=Object.prototype.hasOwnProperty.call(local,k),r=Object.prototype.hasOwnProperty.call(remote,k),same=l===r&&(!l||local[k]===remote[k]);if(same){if(l)merged[k]=local[k];continue;}if(!baseline){conflicts.push(k);continue;}const b=baseline[k]??null,lc=l?(ls[k]||null):null,rc=r?(rs[k]||null):null,localChanged=lc!==b,remoteChanged=rc!==b;if(localChanged&&!remoteChanged){if(l)merged[k]=local[k];}else if(!localChanged&&remoteChanged){if(r)merged[k]=remote[k];}else if(!localChanged&&!remoteChanged){if(l)merged[k]=local[k];}else conflicts.push(k);}return{snapshot:merged,conflicts,remoteNeedsWrite:JSON.stringify(cloudSnapshotSignatures(merged))!==JSON.stringify(rs),localNeedsApply:JSON.stringify(cloudSnapshotSignatures(merged))!==JSON.stringify(ls)};}
+const CLOUD_BASELINE_DATA_KEY='trailPlannerCloudBaselineData_v1';
+function readCloudBaselineData(){try{const value=JSON.parse(localStorage.getItem(CLOUD_BASELINE_DATA_KEY)||'null');return value&&typeof value==='object'&&!Array.isArray(value)?value:null;}catch(e){return null;}}
+function jsonSame(a,b){return JSON.stringify(a)===JSON.stringify(b);}
+function mergeJsonThreeWay(base,local,remote,path,conflicts){
+ if(jsonSame(local,remote))return {value:local};
+ if(jsonSame(local,base))return {value:remote};
+ if(jsonSame(remote,base))return {value:local};
+ const plain=v=>v!==null&&typeof v==='object'&&!Array.isArray(v);
+ if(plain(base)&&plain(local)&&plain(remote)){
+  const out={},keys=new Set([...Object.keys(base),...Object.keys(local),...Object.keys(remote)]);
+  for(const key of keys){
+   const b=Object.prototype.hasOwnProperty.call(base,key)?base[key]:undefined;
+   const l=Object.prototype.hasOwnProperty.call(local,key)?local[key]:undefined;
+   const r=Object.prototype.hasOwnProperty.call(remote,key)?remote[key]:undefined;
+   const merged=mergeJsonThreeWay(b,l,r,path+'.'+key,conflicts);
+   if(merged.value!==undefined)out[key]=merged.value;
+  }
+  return {value:out};
+ }
+ conflicts.push(path);
+ return {value:local};
+}
+function mergeCloudSnapshots(local,remote){
+ const baseline=readCloudBaselineSignatures(),baselineData=readCloudBaselineData(),ls=cloudSnapshotSignatures(local),rs=cloudSnapshotSignatures(remote),merged={},conflicts=[];
+ for(const k of CLOUD_KEYS){
+  const l=Object.prototype.hasOwnProperty.call(local,k),r=Object.prototype.hasOwnProperty.call(remote,k),same=l===r&&(!l||local[k]===remote[k]);
+  if(same){if(l)merged[k]=local[k];continue;}
+  if(k==='trailEventDataEdits'&&baselineData&&Object.prototype.hasOwnProperty.call(baselineData,k)){
+   try{
+    const b=JSON.parse(baselineData[k]||'{}'),lv=JSON.parse(local[k]||'{}'),rv=JSON.parse(remote[k]||'{}');
+    const result=mergeJsonThreeWay(b,lv,rv,k,conflicts);
+    merged[k]=JSON.stringify(result.value);
+    continue;
+   }catch(e){conflicts.push(k);continue;}
+  }
+  if(!baseline){conflicts.push(k);continue;}
+  const b=baseline[k]??null,lc=l?(ls[k]||null):null,rc=r?(rs[k]||null):null,localChanged=lc!==b,remoteChanged=rc!==b;
+  if(localChanged&&!remoteChanged){if(l)merged[k]=local[k];}
+  else if(!localChanged&&remoteChanged){if(r)merged[k]=remote[k];}
+  else if(!localChanged&&!remoteChanged){if(l)merged[k]=local[k];}
+  else conflicts.push(k);
+ }
+ return {snapshot:merged,conflicts,remoteNeedsWrite:JSON.stringify(cloudSnapshotSignatures(merged))!==JSON.stringify(rs),localNeedsApply:JSON.stringify(cloudSnapshotSignatures(merged))!==JSON.stringify(ls)};
+}
 function validatePlannerSnapshot(snapshot){if(!snapshot||typeof snapshot!=='object'||Array.isArray(snapshot))throw new Error('Der Datenstand ist kein gültiges Objekt.');for(const [key,value] of Object.entries(snapshot)){if(!CLOUD_KEYS.includes(key)||typeof value!=='string')throw new Error('Unbekannter oder ungültiger Datenbereich: '+key);try{JSON.parse(value);}catch(e){throw new Error('Beschädigte Daten im Bereich '+key);}}return snapshot;}
 function applyPlannerSnapshot(snapshot){validatePlannerSnapshot(snapshot);const previous=collectLocalPlannerData();try{CLOUD_KEYS.forEach(k=>localStorage.removeItem(k));Object.entries(snapshot).forEach(([k,v])=>{localStorage.setItem(k,v);if(localStorage.getItem(k)!==v)throw new Error('Speichern nicht bestätigt: '+k);});CLOUD_KEYS.forEach(k=>{if(!Object.prototype.hasOwnProperty.call(snapshot,k)&&localStorage.getItem(k)!==null)throw new Error('Löschen nicht bestätigt: '+k);});}catch(error){try{CLOUD_KEYS.forEach(k=>localStorage.removeItem(k));Object.entries(previous).forEach(([k,v])=>{localStorage.setItem(k,v);if(localStorage.getItem(k)!==v)throw new Error('Rollback nicht bestätigt: '+k);});}catch(rollbackError){throw new Error('Wiederherstellung fehlgeschlagen und automatisches Zurückspielen nicht vollständig möglich. Die gesonderte Vorher-Sicherung bleibt erhalten.');}throw new Error('Übernahme abgebrochen. Der vorherige lokale Datenstand wurde zurückgespielt: '+(error?.message||'Speicherfehler'));}}
-function setCloudBaseline(data=collectLocalPlannerData()){try{localStorage.setItem(CLOUD_BASELINE_KEY,JSON.stringify(cloudSnapshotSignatures(data)));}catch(e){console.warn('Cloud-Vergleichsstand konnte nicht gespeichert werden',e);}}
+function setCloudBaseline(data=collectLocalPlannerData()){try{localStorage.setItem(CLOUD_BASELINE_KEY,JSON.stringify(cloudSnapshotSignatures(data)));localStorage.setItem(CLOUD_BASELINE_DATA_KEY,JSON.stringify(data));}catch(e){console.warn('Cloud-Vergleichsstand konnte nicht gespeichert werden',e);}}
 function localMatchesCloudBaseline(local=collectLocalPlannerData()){try{const raw=localStorage.getItem(CLOUD_BASELINE_KEY);if(!raw)return false;return JSON.stringify(cloudSnapshotSignatures(local))===raw;}catch(e){return false;}}
 function cloudCheckMessage(message){const el=document.getElementById('cloudCheckStatus');if(el)el.textContent=message;}
 async function checkForRemotePlannerChanges(){if(!cloudClient||!cloudUser){cloudCheckMessage('Kein Cloud-Konto verbunden.');return;}if(!cloudReady){cloudCheckMessage('Automatischer Abruf pausiert: Datenstand muss zuerst abgeglichen werden.');return;}if(cloudBusy||document.hidden)return;try{const {data,error}=await cloudClient.from('planner_data').select('data,updated_at').eq('user_id',cloudUser.id).maybeSingle();if(error)throw error;cloudCheckMessage('Letzter Cloud-Abgleich: '+new Date().toLocaleTimeString('de-DE',{hour:'2-digit',minute:'2-digit',second:'2-digit'})+(data?.updated_at?' · Cloud-Stand '+new Date(data.updated_at).toLocaleTimeString('de-DE',{hour:'2-digit',minute:'2-digit'}):' · kein Cloud-Datensatz'));if(!data?.data||!data.updated_at||data.updated_at===cloudUpdatedAt)return;const remote=data.data,local=collectLocalPlannerData(),resolution=mergeCloudSnapshots(local,remote);if(resolution.conflicts.length){cloudReady=false;document.getElementById('cloudConflictActions').style.display='flex';cloudMessage('Gleichzeitige Änderungen in denselben Datenbereichen erkannt. Beide Stände bleiben erhalten; bitte manuell entscheiden.');cloudCheckMessage('Konflikt in: '+resolution.conflicts.join(', '));return;}if(resolution.localNeedsApply){cloudReady=false;clearTimeout(cloudTimer);try{localStorage.setItem('trailEventPreRestoreBackup',JSON.stringify({createdAt:new Date().toISOString(),keys:local}));}catch(e){cloudMessage('Neue Cloud-Daten gefunden, aber lokale Sicherung war nicht möglich.');cloudCheckMessage('Abgleich gestoppt: lokale Sicherung fehlgeschlagen.');return;}applyPlannerSnapshot(resolution.snapshot);}cloudUpdatedAt=data.updated_at;cloudReady=true;if(resolution.remoteNeedsWrite){setCloudBaseline(remote);cloudCheckMessage('Änderungen aus getrennten Datenbereichen werden zusammengeführt …');await savePlannerCloud();return;}setCloudBaseline(resolution.snapshot);cloudMessage('☁️ Neue Cloud-Daten übernommen. App wird aktualisiert …');cloudCheckMessage('Abgleich erfolgreich · alle Bereiche stimmen überein.');location.reload();return;}catch(e){console.warn('Cloud-Abgleich nicht möglich',e);cloudCheckMessage('Cloud-Abruf fehlgeschlagen: '+(e?.message||'Unbekannter Fehler'));}}
