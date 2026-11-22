@@ -185,8 +185,14 @@ window.showPlannedEventDetails=function(id,ri){prior(id,ri);const root=document.
   window.gpxRightsRegistry=registry;
   window.gpxRightsAllows=(routeId,action)=>policy.allows(registry.routes?.[String(routeId)]||policy.defaultEntry(),action);
   window.routeGpxIsOrganizerRestricted=route=>!canProcess(route);
-  window.routeHasDownloadableGpx=route=>!!route&&canDownload(route);
-  window.routeHasOfficialGpxPageLink=route=>!!route&&canLink(route);
+  window.routeHasDownloadableGpx=route=>{
+    const urls=[route?.gpxDownloadUrl,route?.gpxUrl,route?.gpxFileUrl].filter(Boolean);
+    return !!route&&urls.some(url=>policy.isDirectFileUrl(url))&&canDownload(route);
+  };
+  window.routeHasOfficialGpxPageLink=route=>{
+    const urls=[route?.gpxDownloadUrl,route?.gpxUrl,route?.gpxFileUrl].filter(Boolean);
+    return !!route&&urls.some(url=>!policy.isDirectFileUrl(url))&&canLink(route);
+  };
   window.isGpxImportableUrl=(url,status)=>{
     if(/stale|historical|candidate|unversioned|needs-validation|not-current|not-published|not-verified|pending/i.test(String(status||"")))return false;
     const route=routeByGpxUrl(url);
