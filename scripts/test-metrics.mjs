@@ -2,6 +2,7 @@ import { readFile } from "node:fs/promises";
 import assert from "node:assert/strict";
 
 const html = await readFile(new URL("../index.html", import.meta.url), "utf8");
+const designSystem = await readFile(new URL("../design-system.css", import.meta.url), "utf8");
 const serviceWorker = await readFile(new URL("../sw.js", import.meta.url), "utf8");
 const raceTools = await readFile(new URL("../race-tools.js", import.meta.url), "utf8");
 const seasonTools = await readFile(new URL("../season-tools.js", import.meta.url), "utf8");
@@ -845,3 +846,11 @@ assert.ok(html.includes("scroll-snap-type:x proximity"), "The mobile navigation 
 assert.ok(html.includes("min-height:44px"), "Navigation controls must retain comfortable touch targets");
 assert.ok(html.includes(":focus-visible"), "Navigation controls must expose visible keyboard focus");
 assert.ok(html.includes("@media(prefers-reduced-motion:reduce)"), "Navigation must respect reduced-motion preferences");
+
+
+// Alpine Performance route detail visual regression checks.
+assert.ok(designSystem.includes("route-overview-ux-v101"), "Route overview metrics must use the refreshed visual hierarchy");
+assert.ok(designSystem.includes(".route-overview-ux-v101 .event-detail-metric"), "Route metrics must retain a consistent compact card layout");
+assert.ok(designSystem.includes(".route-overview-ux-v101 .event-detail-gpx"), "GPX planning information must remain clearly separated from route metrics");
+assert.ok(designSystem.includes("@media(max-width:480px){.event-detail-overview.route-overview-ux-v101"), "Route metrics must remain readable on narrow iPhone screens");
+assert.ok(designSystem.includes("@media(prefers-reduced-motion:no-preference)"), "Route detail hover polish must respect reduced-motion preferences");
