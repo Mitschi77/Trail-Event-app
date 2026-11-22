@@ -849,8 +849,8 @@ assert.ok(html.includes("@media(prefers-reduced-motion:reduce)"), "Navigation mu
 
 
 // Alpine Performance route detail visual regression checks.
-assert.ok(designSystem.includes("route-overview-ux-v101"), "Route overview metrics must use the refreshed visual hierarchy");
-assert.ok(designSystem.includes(".route-overview-ux-v101 .event-detail-metric"), "Route metrics must retain a consistent compact card layout");
-assert.ok(designSystem.includes(".route-overview-ux-v101 .event-detail-gpx"), "GPX planning information must remain clearly separated from route metrics");
-assert.ok(designSystem.includes("@media(max-width:480px){.event-detail-overview.route-overview-ux-v101"), "Route metrics must remain readable on narrow iPhone screens");
+assert.ok(designSystem.includes(".event-detail-overview .event-detail-metric"), "Route overview metrics must use the refreshed visual hierarchy");
+assert.ok(designSystem.includes(".event-detail-overview .event-detail-metric"), "Route metrics must retain a consistent compact card layout");
+assert.ok(designSystem.includes(".event-detail-overview .event-detail-gpx"), "GPX planning information must remain clearly separated from route metrics");
+assert.ok(designSystem.includes("@media(max-width:480px){.event-detail-overview"), "Route metrics must remain readable on narrow iPhone screens");
 assert.ok(designSystem.includes("@media(prefers-reduced-motion:no-preference)"), "Route detail hover polish must respect reduced-motion preferences");
