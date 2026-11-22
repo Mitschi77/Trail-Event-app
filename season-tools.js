@@ -43,6 +43,26 @@ if(typeof originalYearOverview==='function'){
    const groups=Array.from(buckets.values()).sort((a,b)=>{
     if(a.key==='undated')return 1;if(b.key==='undated')return -1;return a.key.localeCompare(b.key);
    });
+   const formatRaceMeta=article=>{
+    const meta=article.querySelector('.year-race-meta');
+    if(!meta||meta.dataset.metaFormatted==='1')return;
+    const parts=(meta.textContent||'').split(/\\s*(?:·|•|\\|)\\s*/).map(value=>value.trim()).filter(Boolean);
+    if(parts.length<2)return;
+    meta.replaceChildren();
+    parts.forEach(value=>{
+     const chip=document.createElement('span');
+     chip.className='year-race-meta-item';
+     chip.textContent=value;
+     if(/\\b\\d{2}\\.\\d{2}\\.\\d{4}\\b/.test(value))chip.dataset.metaKind='date';
+     else if(/\\b\\d+(?:[.,]\\d+)?\\s*km\\b/i.test(value))chip.dataset.metaKind='distance';
+     else if(/\\b\\d+(?:[.,]\\d+)?\\s*(?:hm|m\\s*\\+?)\\b/i.test(value))chip.dataset.metaKind='elevation';
+     else if(/\\b(?:backyard|marathon|halbmarathon|trail|ultra)\\b/i.test(value))chip.dataset.metaKind='type';
+     meta.append(chip);
+    });
+    meta.dataset.metaFormatted='1';
+   };
+   races.forEach(formatRaceMeta);
+
    const seasonSummary=document.createElement('div');
    seasonSummary.className='year-season-summary';
    seasonSummary.setAttribute('aria-label','Zusammenfassung der Jahresplanung');
@@ -69,7 +89,7 @@ if(typeof originalYearOverview==='function'){
     details.appendChild(content);list.appendChild(details);
    });
    const totals=yearGroup.querySelector(':scope > .year-totals');
-   if(totals){yearGroup.insertBefore(monthNav,totals);yearGroup.insertBefore(list,totals);}else{yearGroup.appendChild(monthNav);yearGroup.appendChild(list);}
+   if(totals){yearGroup.insertBefore(seasonSummary,totals);yearGroup.insertBefore(monthNav,totals);yearGroup.insertBefore(list,totals);}else{yearGroup.append(seasonSummary,monthNav,list);}
    monthNav.addEventListener('click',event=>{const chip=event.target.closest('[data-month-target]');if(!chip)return;const target=Array.from(list.children).find(node=>node.dataset.monthKey===chip.dataset.monthTarget);if(!target)return;list.querySelectorAll('.year-month-group').forEach(node=>node.open=node===target);monthNav.querySelectorAll('.year-month-chip').forEach(node=>{const selected=node===chip;node.classList.toggle('is-active',selected);node.setAttribute('aria-expanded',selected?'true':'false');if(selected)node.setAttribute('aria-current','true');else node.removeAttribute('aria-current');});target.scrollIntoView({behavior:'smooth',block:'start'});});
    list.querySelectorAll('.year-month-group').forEach(details=>details.addEventListener('toggle',()=>{
     if(!details.open)return;
