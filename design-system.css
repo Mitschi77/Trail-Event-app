@@ -514,3 +514,17 @@ hr,.divider{border-color:var(--line)}
 #yearOverview .year-month-races .year-race-meta-item[data-meta-kind="type"]{
   color:#c5e3cb;border-color:#365a45;background:#182c22
 }
+
+
+/* Annual planner – factual spacing and same-day race collision indicators */
+#yearOverview .year-month-races .year-race-spacing{
+  display:inline-flex;align-items:center;gap:5px;width:max-content;max-width:100%;
+  margin:1px 0 5px;padding:5px 8px;border:1px solid #6c5734;border-radius:8px;
+  background:#2a2419;color:#f3c77e;font-size:10px;font-weight:750;line-height:1.3
+}
+#yearOverview .year-month-races .year-race-spacing.is-conflict{
+  border-color:#914b45;background:#351f20;color:#ffb0a7
+}
+#yearOverview .year-month-races .year-race-spacing.is-close{
+  border-color:#665438;background:#2b271e;color:#f1d39a
+}
