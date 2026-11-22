@@ -823,3 +823,16 @@ assert.ok(html.includes("#historyTab #historyList .overview-stars"),
   "The existing four-star race rating must remain clearly visible");
 assert.ok(html.includes("@media(max-width:760px)") && html.includes("grid-template-columns:minmax(0,1fr)"),
   "History cards must collapse to a readable single column on mobile");
+
+
+// Alpine Performance accommodation planning card visual regression checks.
+assert.ok(html.includes('id="trail-accommodation-cards-v99"'),
+  "The integrated accommodation planning design layer must be present");
+assert.ok(html.includes("#yearTab .year-accommodation-form .edit-grid") && html.includes(".event-detail-accommodation-stack .year-accommodation-form .edit-grid"),
+  "Accommodation forms must share the same visual treatment in year cards and event details");
+assert.ok(html.includes("#yearTab .year-race-more-content>.stay .staylinks a"),
+  "Accommodation search links must be presented as consistent accessible actions");
+assert.ok(html.includes("color-scheme:dark") && html.includes("@media(max-width:560px)"),
+  "Accommodation inputs must remain readable and stack on narrow mobile screens");
+assert.ok(html.includes("function saveYearAccommodation") && html.includes("function renderYearAccommodationForm"),
+  "The existing accommodation saving and rendering flows must remain intact");
