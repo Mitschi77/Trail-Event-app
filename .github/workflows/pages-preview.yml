@@ -1,0 +1,55 @@
+name: Publish Alpine Performance preview
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages-preview
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out the current published app
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          path: site
+
+      - name: Check out the isolated PR preview
+        uses: actions/checkout@v4
+        with:
+          ref: preview/alpine-performance
+          path: preview-src
+
+      - name: Assemble site without changing the root app
+        run: |
+          mkdir -p site/preview
+          rsync -a --delete \
+            --exclude='.git' \
+            --exclude='.github' \
+            --exclude='ios' \
+            --exclude='node_modules' \
+            preview-src/ site/preview/
+          touch site/.nojekyll site/preview/.nojekyll
+
+      - name: Configure GitHub Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload combined site
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: site
+
+      - name: Deploy GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
