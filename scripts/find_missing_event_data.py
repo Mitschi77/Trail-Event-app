@@ -91,7 +91,7 @@ def route_scan(event, ri, route):
                     evidence="Direkt hinterlegte öffentliche GPX-Datei; Werte lokal aus Trackpunkten berechnet."
                     if warnings: evidence += " " + " ".join(warnings)
                     props.append({"proposal_type":"data_correction","title":f"GPX-Daten prüfen: {event.get('name')} · {route.get('name') or route.get('route') or ri}",
-                      "payload":{"source":"automated_event_data_finder","eventId":event.get("id"),"eventName":event.get("name"),"routeId":route.get("id"),"routeIndex":ri,
+                      "payload":{"source":"automated_event_data_finder","eventId":str(event.get("id") or ""),"eventName":event.get("name"),"routeId":str(route.get("id") or ri),"routeIndex":ri,
                         "field":"gpxMetrics","oldValue":{"km":route.get("km"),"hm":route.get("hm")},"newValue":metrics,"sourceUrl":actual,
                         "evidence":evidence,"reviewWarning":warnings or None,
                         "checkedAt":NOW,"requiresOwnerApproval":True}})
@@ -137,7 +137,7 @@ def route_scan(event, ri, route):
             evidence="Öffentlich erreichbare GPX-Datei von der verknüpften Strecken-/Veranstalterseite; Werte lokal aus Trackpunkten berechnet."
             if warnings: evidence += " " + " ".join(warnings)
             props.append({"proposal_type":"data_correction","title":f"GPX-Daten prüfen: {event.get('name')} · {route.get('name') or route.get('route') or ri}",
-              "payload":{"source":"automated_event_data_finder","eventId":event.get("id"),"eventName":event.get("name"),"routeId":route.get("id"),"routeIndex":ri,
+              "payload":{"source":"automated_event_data_finder","eventId":str(event.get("id") or ""),"eventName":event.get("name"),"routeId":str(route.get("id") or ri),"routeIndex":ri,
                 "field":"gpxMetrics","oldValue":{"km":route.get("km"),"hm":route.get("hm")},"newValue":metrics,"sourceUrl":actual,
                 "evidence":evidence,"reviewWarning":warnings or None,
                 "checkedAt":NOW,"requiresOwnerApproval":True}})
@@ -151,7 +151,7 @@ def route_scan(event, ri, route):
         except (TypeError,ValueError): current_hours=None
         if current_hours is None or abs(current_hours-cutoff_hours)>0.01:
             props.append({"proposal_type":"data_correction","title":f"Zeitlimit prüfen: {event.get('name')} · {route.get('name') or route.get('route') or ri}",
-              "payload":{"source":"automated_event_data_finder","eventId":event.get("id"),"eventName":event.get("name"),"routeId":route.get("id"),"routeIndex":ri,
+              "payload":{"source":"automated_event_data_finder","eventId":str(event.get("id") or ""),"eventName":event.get("name"),"routeId":str(route.get("id") or ri),"routeIndex":ri,
                 "field":"maxh","oldValue":current_hours,"newValue":cutoff_hours,"sourceUrl":final_url,
                 "evidence":"Explizite Zeitlimit-Angabe auf der zugeordneten Veranstalter-/Streckenseite erkannt. Wert und Streckenzuordnung vor Übernahme manuell prüfen.",
                 "checkedAt":NOW,"requiresOwnerApproval":True}})
@@ -206,8 +206,8 @@ def route_scan(event, ri, route):
             title = f"Startgeld prüfen: {event.get('name')} · {route.get('name') or route.get('route') or ri}"
         props.append({"proposal_type":"data_correction",
           "title":title,
-          "payload":{"source":"automated_event_data_finder","eventId":event.get("id"),"eventName":event.get("name"),
-            "routeId":route.get("id"),"routeIndex":ri,"field":field+"Candidate","oldValue":route.get(field),"newValue":new_value,"sourceUrl":final_url,
+          "payload":{"source":"automated_event_data_finder","eventId":str(event.get("id") or ""),"eventName":event.get("name"),
+            "routeId":str(route.get("id") or ri),"routeIndex":ri,"field":field+"Candidate","oldValue":route.get(field),"newValue":new_value,"sourceUrl":final_url,
             "evidence":evidence,
             "checkedAt":NOW,"requiresOwnerApproval":True}})
     return props
