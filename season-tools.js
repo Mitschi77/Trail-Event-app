@@ -55,11 +55,17 @@ if(typeof originalYearOverview==='function'){
      chip.textContent=value;
      if(/\\bUTMB\\s*Index\\b/i.test(value))chip.dataset.metaKind='utmb-index';
      else if(/\\bUTMB\\s*(?:Score|Punkte)\\b/i.test(value))chip.dataset.metaKind='utmb-score';
+     else if(/\\b(?:UTMB\\s*World\\s*Series|by\\s*UTMB)\\b/i.test(value))chip.dataset.metaKind='utmb-series';
      else if(/\\b(?:sold[ -]?out|ausverkauft|ausgebucht)\\b/i.test(value))chip.dataset.metaKind='soldout';
+     else if(/\\b(?:cut[ -]?off|kontrollzeiten|zeitlimit)\\b/i.test(value))chip.dataset.metaKind='cutoff';
+     else if(/\\b(?:max(?:imal)?\\.?\\s*\\d+(?:[.,]\\d+)?\\s*h|\\d+(?:[.,]\\d+)?\\s*h\\s*max)\\b/i.test(value))chip.dataset.metaKind='time-limit';
      else if(/\\b\\d{2}\\.\\d{2}\\.\\d{4}\\b/.test(value))chip.dataset.metaKind='date';
      else if(/\\b\\d+(?:[.,]\\d+)?\\s*km\\b/i.test(value))chip.dataset.metaKind='distance';
      else if(/\\b\\d+(?:[.,]\\d+)?\\s*(?:hm|m\\s*\\+?)\\b/i.test(value))chip.dataset.metaKind='elevation';
      else if(/\\b(?:backyard|marathon|halbmarathon|trail|ultra)\\b/i.test(value))chip.dataset.metaKind='type';
+
+     chip.setAttribute('aria-label',value);
+     chip.title=value;
      meta.append(chip);
     });
     meta.dataset.metaFormatted='1';
