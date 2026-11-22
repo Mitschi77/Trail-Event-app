@@ -1564,15 +1564,15 @@ window.trailReviewPushClick=function(event){
     button.textContent='Erneut versuchen';
   }
 };
-// Capture the tap before other page handlers; this also works if later app initialization fails.
-document.addEventListener('click',function(event){
-  const target=event.target;
-  const button=target instanceof Element ? target.closest('#enableReviewNotifications') : null;
+// Bind directly to the rendered control. This avoids delegated-click conflicts in iOS standalone mode.
+(function bindReviewPushButton(){
+  const button=document.getElementById('enableReviewNotifications');
   if(!button)return;
-  event.preventDefault();
-  event.stopPropagation();
-  window.trailReviewPushClick(event);
-},true);
+  button.addEventListener('pointerdown',function(){
+    const status=document.getElementById('reviewNotificationStatus');
+    if(status)status.textContent='Taste erkannt. Push-Einrichtung wird vorbereitet …';
+  },{passive:true});
+})();
 window.addEventListener('error',function(e){
   const status=document.getElementById('cloudCheckStatus');
   if(status)status.textContent='JavaScript-Fehler: '+(e.message||'Unbekannt')+' · Zeile '+(e.lineno||'?');
