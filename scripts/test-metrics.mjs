@@ -33,7 +33,7 @@ assert.equal(routeById("3kings-3hills-54-2300")?.raceCost, "79,00 €", "3Kings 
 assert.equal(routeById("3kings-3hills-54-2300")?.paidCost, "79,00 €", "3Kings 2027 paid total must match the paid invoice");
 assert.equal(routeById("3kings-3hills-54-2300")?.paidCostDate, "2026-08-17", "3Kings payment date must remain recorded");
 assert.equal(routeById("3kings-3hills-54-2300")?.paidCostStatus, "Bezahlt", "3Kings paid status must remain recorded");
-assert.ok(html.includes("const storedStatus=runRecords[routeKey(id,ri)]?.raceStatus;const currentStatus=storedStatus||(r.paidCostStatus==='Bezahlt'?'paid':'planned')"), "A verified paid receipt must set the displayed default race status to paid without overriding a saved user status");
+assert.ok(html.includes("return saved.paymentStatus||(saved.raceStatus==='paid'||route?.paidCostStatus==='Bezahlt'?'paid':'open')"), "A verified paid receipt must set the default payment status without overriding a saved user payment status");
 assert.ok(html.includes('"date":"2027-01-23","web":null,"starttime":null,"registration":null,"overnight":null,"hotelCost":null,"raceCost":"69,00 €","paidCost":"83,90 €","paidCostDate":"2026-09-17","paidCostStatus":"Bezahlt","paidCostDetails":"MOUNTAINMAN-Rechnung'), "MOUNTAINMAN 2027 date and paid total must match the invoice");
 assert.match(html, /"route"\s*:\s*"mozart Ultra"\s*,\s*"km"\s*:\s*84/, "2027 Mozart route must use the verified event name");
 assert.ok(html.includes("Storage.prototype.removeItem=function(key)"), "Removing a planner data key must trigger cloud synchronization");
@@ -648,7 +648,7 @@ assert.ok(html.includes("yearAccommodation=renderYearAccommodationForm") && html
   "Year cards must render accommodation, invoices, elevation profile, cut-offs and route metrics in their respective sections");
 assert.ok(html.includes('yearAccommodation=renderYearAccommodationForm'),
   "The year card must actually render the accommodation form, not only define it");
-assert.ok(html.includes("'+statusControl+review+'<details class=\"year-race-more\"><summary>Unterkunft"),
+assert.ok(html.includes("'+soldOutRouteBadge(x.r)+statusControl+review+'<details class=\"year-race-more\"><summary>Unterkunft"),
   "Run result entry must be directly visible on the year card outside the collapsible detail sections");
 assert.ok(html.includes('onclick="addEventToYearPlan(${id},${ri})"'),
   "The event route card must wire its annual planning action to the add handler");
@@ -702,3 +702,46 @@ assert.ok(html.includes('Eine automatische Kontosynchronisierung mit Garmin oder
 assert.ok(html.includes('Der Vorschlag bleibt bis zu deiner Freigabe unveröffentlicht.') &&
   html.includes('Erst nach deiner ausdrücklichen Freigabe'),
   "New event help must preserve manual approval before public publication");
+
+// Event detail and annual overview share the same accommodation editor and save path.
+assert.ok(html.includes("group('Unterkunft &amp; Buchung'") &&
+  html.includes("renderYearAccommodationForm(e,r,id,ri,'detail_'+e.id+'_'+r.id)") &&
+  html.includes('renderEventAccommodation(e,r,id,ri)'),
+  "Event detail dialog must reuse the annual overview accommodation form and booking summary");
+assert.ok(html.includes("if(!document.getElementById('plannedEventDetailModal')?.hidden)showPlannedEventDetails(id,ri)"),
+  "Saving accommodation from the event detail dialog must refresh the displayed booking summary");
+assert.ok(html.includes('.event-detail-accommodation-stack .year-accommodation-form') && html.includes('@media(max-width:520px){.event-detail-accommodation-stack .year-accommodation-form .edit-grid{grid-template-columns:minmax(0,1fr)}}'),
+  "The shared accommodation form must fit narrow iPhone screens and tablet widths");
+
+
+const soldOutHelperStart=html.indexOf("function routeSoldOut(r){");
+const soldOutHelperEnd=html.indexOf("}",soldOutHelperStart);
+const soldOutHelper=soldOutHelperStart>=0&&soldOutHelperEnd>soldOutHelperStart?html.slice(soldOutHelperStart,soldOutHelperEnd):"";
+assert.ok(soldOutHelper.includes("r?.soldOut==='boolean'") && soldOutHelper.includes("r?.registrationStatus==='sold_out'"),
+  "Sold-out state must come from explicit registration availability");
+assert.ok(!soldOutHelper.includes("raceStatus") && !soldOutHelper.includes("raceCost") && !soldOutHelper.includes("r?.status"),
+  "Race progress, payment and generic status must not trigger the SOLD OUT stamp");
+
+// The same red SOLD OUT stamp must appear in event catalog, year cards, and detail dialogs.
+assert.ok(html.includes("function soldOutRouteBadge(r)") && html.includes("return routeSoldOut(r)?'<span class=\"sold-out-stamp\""),
+  "Sold-out routes must use the established red stamp helper");
+assert.ok(html.includes("'+soldOutRouteBadge(x.r)+statusControl+review+"),
+  "The annual overview must show the SOLD OUT stamp on the selected route card");
+assert.ok(html.includes("const routeData=soldOutRouteBadge(r)+'<div class=\"event-detail-data\">"),
+  "The event detail dialog must use the same SOLD OUT stamp as the event list");
+
+ 
+// Rennfortschritt und Zahlung sind getrennte persönliche Statusfelder.
+assert.ok(html.includes("function setRacePaymentStatus(id,ri,status)") && html.includes("runRecords[key].paymentStatus=status"),
+  "Payment status must have its own private per-route field and save handler");
+assert.ok(html.includes("function racePaymentStatus(id,ri,route)"),
+  "Imported paid receipts must remain a fallback for the payment status");
+assert.ok(html.includes('Zahlungsstatus<select onchange="setRacePaymentStatus('),
+  "Event details must expose payment status separately from race progress");
+assert.ok(html.includes("year-race-status-controls") && html.includes("paymentStatus=racePaymentStatus(x.id,x.ri,x.r)"),
+  "Year overview cards must display race progress and payment status independently");
+assert.ok(!html.includes('<option value="paid" ${r.raceStatus==='),
+  "Run history must not offer paid as a race progress status");
+
+assert.ok(html.includes("if(runRecords[key].raceStatus==='paid'&&!runRecords[key].paymentStatus)runRecords[key].paymentStatus='paid'"),
+  "Legacy paid race status must migrate to payment status before race progress is edited");
