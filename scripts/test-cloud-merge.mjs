@@ -45,6 +45,58 @@ check('deletion merges with unrelated update',
  {routeA:{x:2}});
 
 
+// Simulate two devices that opened the same cloud snapshot and edited it
+// independently before either device had received the other's update.
+const twoDeviceBase = {
+ routeA: { travelPlan: { accommodation: 'Base A', paid: false } },
+ routeB: { travelPlan: { accommodation: 'Base B', paid: false } }
+};
+const iphoneRapidEdits = {
+ routeA: { travelPlan: { accommodation: 'iPhone A v2', paid: false } },
+ routeB: { travelPlan: { accommodation: 'Base B', paid: false } }
+};
+const ipadConcurrentEdits = {
+ routeA: { travelPlan: { accommodation: 'Base A', paid: true } },
+ routeB: { travelPlan: { accommodation: 'iPad B', paid: false } }
+};
+check('two devices merge rapid independent edits without data loss',
+ twoDeviceBase, iphoneRapidEdits, ipadConcurrentEdits,
+ {
+  routeA: { travelPlan: { accommodation: 'iPhone A v2', paid: true } },
+  routeB: { travelPlan: { accommodation: 'iPad B', paid: false } }
+});
+
+// After the first successful merge, both clients use that result as their
+// common baseline. A second rapid edit from each device must also converge.
+const firstConverged = {
+ routeA: { travelPlan: { accommodation: 'iPhone A v2', paid: true } },
+ routeB: { travelPlan: { accommodation: 'iPad B', paid: false } }
+};
+const iphoneSecondBurst = {
+ routeA: { travelPlan: { accommodation: 'iPhone A v3', paid: true } },
+ routeB: { travelPlan: { accommodation: 'iPad B', paid: false } }
+};
+const ipadSecondBurst = {
+ routeA: { travelPlan: { accommodation: 'iPhone A v2', paid: true } },
+ routeB: { travelPlan: { accommodation: 'iPad B v2', paid: false } }
+};
+check('two devices converge after a second burst of changes',
+ firstConverged, iphoneSecondBurst, ipadSecondBurst,
+ {
+  routeA: { travelPlan: { accommodation: 'iPhone A v3', paid: true } },
+  routeB: { travelPlan: { accommodation: 'iPad B v2', paid: false } }
+});
+
+// A real same-field race must remain visible as a conflict, not silently
+// choose whichever device happened to save last.
+check('two devices changing the same field report a conflict',
+ { routeA: { travelPlan: { accommodation: 'Base' } } },
+ { routeA: { travelPlan: { accommodation: 'iPhone' } } },
+ { routeA: { travelPlan: { accommodation: 'iPad' } } },
+ { routeA: { travelPlan: { accommodation: 'iPhone' } } },
+ ['trailEventDataEdits.routeA.travelPlan.accommodation']);
+
+
 const retryStart=source.indexOf('function cloudRetryDelay(attempt){');
 const retryEnd=source.indexOf('function schedulePlannerCloudRetry',retryStart);
 assert.notEqual(retryStart,-1,'Cloud retry delay helper must exist');
