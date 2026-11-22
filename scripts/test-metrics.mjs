@@ -865,7 +865,7 @@ assert.ok(seasonTools.includes(".year-month-group[open]>summary"), "The active m
 
 
 // Alpine Performance v103 – clear planned/completed state and compact season timeline.
-assert.ok(seasonTools.includes("season-state-pill is-completed") && seasonTools.includes("season-state-pill is-planned"), "Season cards must distinguish completed and planned races");
+assert.ok(seasonTools.includes("season-state-pill '+(completed?'is-completed':'is-planned')"), "Season cards must distinguish completed and planned races");
 assert.ok(seasonTools.includes("Als gelaufen markiert") && seasonTools.includes("Noch nicht als gelaufen markiert"), "State decoration must preserve the existing race completion source text");
 assert.ok(seasonTools.includes("#seasonRaceCards .season-recovery label:last-child input"), "Recovery estimates must be visually distinct from editable actual values");
 assert.ok(seasonTools.includes("#seasonTimeline .season-block") && seasonTools.includes("scroll-snap-type:x proximity"), "Season timeline blocks must remain clear and navigable on mobile");
