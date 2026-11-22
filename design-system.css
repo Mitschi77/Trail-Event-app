@@ -268,6 +268,12 @@ hr,.divider{border-color:var(--line)}
 .year-calendar-day.today{outline:2px solid #ffad62;outline-offset:-2px}
 .year-calendar-day.has-event{background:#652d36;border-color:#a64c55;color:#fff}
 .year-calendar-day.has-hotel{background:#214d70;border-color:#3e739a;color:#fff}
+.year-calendar-day .hotel-range-bar{display:block;flex:0 0 4px;width:100%;min-height:4px;margin-top:auto;background:#8fd5ff;border-radius:0;box-shadow:0 0 0 1px #0b2940}
+.year-calendar-day.hotel-range-start .hotel-range-bar{border-radius:4px 0 0 4px}
+.year-calendar-day.hotel-range-end .hotel-range-bar{border-radius:0 4px 4px 0}
+.year-calendar-day.hotel-range-start.hotel-range-end .hotel-range-bar{border-radius:4px}
+.year-calendar-day.has-event .hotel-range-bar{background:#8fd5ff;box-shadow:0 0 0 1px #381c25}
+
 .year-calendar-day.has-event.has-hotel{background:linear-gradient(135deg,#79313b 0 50%,#24577f 50%);color:#fff}
 .year-calendar-legend{color:#c1ced7}
 .year-view-switch button.active{background:#f28a38;color:#111a22;border-color:#ffb36e}
