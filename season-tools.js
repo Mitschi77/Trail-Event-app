@@ -51,7 +51,7 @@ if(typeof originalYearOverview==='function'){
    const monthNav=document.createElement('nav');monthNav.className='year-month-nav';monthNav.setAttribute('aria-label','Monatsnavigation');
    groups.forEach(g=>{
     const details=document.createElement('details');details.className='year-month-group';details.dataset.monthKey=g.key;details.id='month_'+String(yearGroup.id||'year').replace(/[^a-zA-Z0-9_-]/g,'_')+'_'+g.key.replace(/[^a-zA-Z0-9_-]/g,'_');details.open=g===active;
-    const chip=document.createElement('button');chip.type='button';chip.className='year-month-chip'+(g===active?' is-active':'');chip.dataset.monthTarget=g.key;chip.setAttribute('aria-label','Zum Monat '+g.label+' springen');chip.title=g.label;chip.textContent=(g.date?new Intl.DateTimeFormat('de-DE',{month:'short',timeZone:'UTC'}).format(g.date).replace('.',''): 'Offen')+' · '+g.races.length;monthNav.appendChild(chip);
+    const chip=document.createElement('button');chip.type='button';chip.className='year-month-chip'+(g===active?' is-active':'');chip.dataset.monthTarget=g.key;chip.setAttribute('aria-label','Zum Monat '+g.label+' springen');if(g===active)chip.setAttribute('aria-current','true');chip.title=g.label;chip.textContent=(g.date?new Intl.DateTimeFormat('de-DE',{month:'short',timeZone:'UTC'}).format(g.date).replace('.',''): 'Offen')+' · '+g.races.length;monthNav.appendChild(chip);
     const summary=document.createElement('summary');
     const title=document.createElement('span');title.className='year-month-title';title.textContent=g.label;
     const count=document.createElement('span');count.className='year-month-count';count.textContent=g.races.length+' '+(g.races.length===1?'Rennen':'Rennen');
@@ -65,10 +65,12 @@ if(typeof originalYearOverview==='function'){
    monthNav.addEventListener('click',event=>{const chip=event.target.closest('[data-month-target]');if(!chip)return;const target=Array.from(list.children).find(node=>node.dataset.monthKey===chip.dataset.monthTarget);if(!target)return;list.querySelectorAll('.year-month-group').forEach(node=>node.open=node===target);monthNav.querySelectorAll('.year-month-chip').forEach(node=>{const selected=node===chip;node.classList.toggle('is-active',selected);if(selected)node.setAttribute('aria-current','true');else node.removeAttribute('aria-current');});target.scrollIntoView({behavior:'smooth',block:'start'});});
    list.querySelectorAll('.year-month-group').forEach(details=>details.addEventListener('toggle',()=>{
     if(!details.open)return;
+    list.querySelectorAll('.year-month-group').forEach(other=>{if(other!==details)other.open=false;});
     monthNav.querySelectorAll('.year-month-chip').forEach(chip=>{
      const selected=chip.dataset.monthTarget===details.dataset.monthKey;
      chip.classList.toggle('is-active',selected);
-     if(selected)chip.setAttribute('aria-current','true');else chip.removeAttribute('aria-current');
+     if(selected){chip.setAttribute('aria-current','true');chip.scrollIntoView({behavior:'smooth',block:'nearest',inline:'center'});}
+     else chip.removeAttribute('aria-current');
     });
    }));
   });
