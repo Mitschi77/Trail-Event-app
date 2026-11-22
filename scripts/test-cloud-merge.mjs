@@ -49,7 +49,7 @@ const retryStart=source.indexOf('function cloudRetryDelay(attempt){');
 const retryEnd=source.indexOf('function schedulePlannerCloudRetry',retryStart);
 assert.notEqual(retryStart,-1,'Cloud retry delay helper must exist');
 assert.notEqual(retryEnd,-1,'Cloud retry scheduler boundary must exist');
-const retrySource=source.slice(retryStart,retryEnd)+'\\nglobalThis.cloudRetryDelay=cloudRetryDelay;';
+const retrySource=source.slice(retryStart,retryEnd)+'\nglobalThis.cloudRetryDelay=cloudRetryDelay;';
 const retryContext={};
 vm.runInNewContext(retrySource,retryContext);
 assert.deepEqual(
