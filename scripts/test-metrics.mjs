@@ -678,7 +678,6 @@ assert.ok(html.includes("String(year).replace(/[^a-zA-Z0-9_-]/g,'_')") &&
 assert.ok(serviceWorker.includes("const CACHE_NAME = 'trail-event-planner-v88'"),
   "The PWA cache must be versioned for the updated release");
 
-const seasonTools = fs.readFileSync(new URL('../season-tools.js', import.meta.url), 'utf8');
 assert.ok(seasonTools.includes('seasonDashboard') && seasonTools.includes('season-dashboard-next') && seasonTools.includes('season-dashboard-kpis'),
   "The annual overview must include a compact season dashboard with next-race and season KPI sections");
 assert.ok(seasonTools.includes('window.renderYearOverview=function(){originalYearOverview();renderDashboard();}') && seasonTools.includes('data-season-target'),
