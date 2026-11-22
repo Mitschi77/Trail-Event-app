@@ -107,3 +107,16 @@ header{padding-left:max(14px,env(safe-area-inset-left));padding-right:max(14px,e
 .event-detail-gpx small{flex:0 0 auto;margin:2px 0 0}
 .event-detail-gpx strong{min-width:0;font-size:12px;line-height:1.4;overflow-wrap:anywhere}
 @media(max-width:480px){.event-detail-overview{gap:6px}.event-detail-metric,.event-detail-gpx{padding:9px}.event-detail-metric strong{font-size:18px}.event-detail-gpx{display:block}.event-detail-gpx small{margin-bottom:4px}}
+
+
+/* Alpine Performance v101 – clearer route metrics and GPX planning status */
+.event-detail-overview{grid-template-columns:repeat(3,minmax(0,1fr));gap:9px;margin:14px 0 16px}
+.event-detail-overview .event-detail-metric{position:relative;display:flex;min-height:94px;flex-direction:column;justify-content:space-between;gap:8px;padding:13px;border-color:color-mix(in srgb,var(--line) 78%,#719a76);background:linear-gradient(155deg,color-mix(in srgb,var(--card) 94%,#789b7b 6%),var(--card));box-shadow:0 5px 16px #1026190b}
+.event-detail-overview .event-detail-metric small{font-size:10px;letter-spacing:.075em}
+.event-detail-overview .event-detail-metric strong{font-size:clamp(19px,2vw,24px);letter-spacing:-.035em;line-height:1.05}
+.event-detail-overview .event-detail-metric em{margin-left:3px;font-size:11px;letter-spacing:0}
+.event-detail-overview .event-detail-gpx{align-items:center;gap:10px;padding:12px 14px;border-color:color-mix(in srgb,var(--line) 75%,#719a76);background:color-mix(in srgb,var(--card) 94%,#789b7b 6%)}
+.event-detail-overview .event-detail-gpx small{font-size:10px;letter-spacing:.075em}
+.event-detail-overview .event-detail-gpx strong{font-size:13px;line-height:1.45}
+@media(max-width:480px){.event-detail-overview{gap:6px;margin:11px 0 13px}.event-detail-overview .event-detail-metric{min-height:82px;padding:10px 9px;gap:6px}.event-detail-overview .event-detail-metric small{font-size:9px}.event-detail-overview .event-detail-metric strong{font-size:18px}.event-detail-overview .event-detail-gpx{display:flex;align-items:flex-start;gap:8px;padding:10px}.event-detail-overview .event-detail-gpx small{flex:0 0 auto;margin:1px 0 0}.event-detail-overview .event-detail-gpx strong{font-size:12px}}
+@media(prefers-reduced-motion:no-preference){.event-detail-overview .event-detail-metric{transition:border-color .18s ease,box-shadow .18s ease,transform .18s ease}.event-detail-overview .event-detail-metric:hover{transform:translateY(-1px);border-color:#82a982;box-shadow:0 8px 20px #10261916}}
