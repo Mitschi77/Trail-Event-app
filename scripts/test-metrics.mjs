@@ -702,3 +702,11 @@ assert.ok(html.includes('Eine automatische Kontosynchronisierung mit Garmin oder
 assert.ok(html.includes('Der Vorschlag bleibt bis zu deiner Freigabe unveröffentlicht.') &&
   html.includes('Erst nach deiner ausdrücklichen Freigabe'),
   "New event help must preserve manual approval before public publication");
+
+// Event detail and annual overview share the same accommodation editor and save path.
+assert.ok(html.includes("group('Unterkunft &amp; Buchung', '<div class=\\\"event-detail-accommodation-stack\\\">'+renderYearAccommodationForm(e,r,id,ri,'detail_'+e.id+'_'+r.id)+renderEventAccommodation(e,r,id,ri)"),
+  "Event detail dialog must reuse the annual overview accommodation form and booking summary");
+assert.ok(html.includes("if(!document.getElementById('plannedEventDetailModal')?.hidden)showPlannedEventDetails(id,ri)"),
+  "Saving accommodation from the event detail dialog must refresh the displayed booking summary");
+assert.ok(html.includes('.event-detail-accommodation-stack .year-accommodation-form') && html.includes('@media(max-width:520px){.event-detail-accommodation-stack .year-accommodation-form .edit-grid{grid-template-columns:minmax(0,1fr)}}'),
+  "The shared accommodation form must fit narrow iPhone screens and tablet widths");
