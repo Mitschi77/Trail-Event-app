@@ -58,6 +58,20 @@ assert.deepEqual(
  'Cloud retry must use bounded exponential backoff'
 );
 assert.ok(source.includes("window.addEventListener('online'"),'Cloud save must resume when the device comes back online');
+
+const resumeStart=source.indexOf('async function resumePlannerCloudAfterReconnect(){');
+const resumeEnd=source.indexOf('function schedulePlannerCloudRetry',resumeStart);
+assert.notEqual(resumeStart,-1,'Reconnect reconciliation helper must exist');
+assert.notEqual(resumeEnd,-1,'Reconnect helper boundary must exist');
+const resumeBody=source.slice(resumeStart,resumeEnd);
+assert.ok(resumeBody.indexOf('await checkForRemotePlannerChanges()')<resumeBody.indexOf('queuePlannerCloudSave()'),'Remote changes must be reconciled before retrying local writes');
+const retryStartBody=source.indexOf('function schedulePlannerCloudRetry(){');
+const retryEndBody=source.indexOf("window.addEventListener('online'",retryStartBody);
+const retryBody=source.slice(retryStartBody,retryEndBody);
+assert.ok(retryBody.includes('resumePlannerCloudAfterReconnect()'),'Timed retries must reconcile the cloud before saving');
+assert.ok(source.includes("window.addEventListener('focus',resumePlannerCloudAfterReconnect)"),'Returning to the app must reconcile cloud state');
+assert.ok(source.includes("if(!document.hidden)resumePlannerCloudAfterReconnect()"),'Returning to a visible app must reconcile cloud state');
+
 assert.ok(source.includes('Deine lokalen Änderungen bleiben erhalten.'),'Failed cloud save must clearly preserve local edits');
 
 console.log('Cloud route merge and offline retry regression tests passed.');
