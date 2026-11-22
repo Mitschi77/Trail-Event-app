@@ -48,7 +48,7 @@ Deno.serve(async (req) => {
         payload?.source === "automated_event_data_finder" &&
         typeof payload.eventId === "string" &&
         typeof payload.routeId === "string" &&
-        ["gpxMetrics", "cutoffCandidate", "maxh", "dateCandidate", "starttimeCandidate", "raceCostCandidate"].includes(payload.field) &&
+        ["gpxMetrics", "cutoffCandidate", "maxh", "dateCandidate", "starttimeCandidate", "raceCostCandidate", "profileCandidate", "timeChartCandidate"].includes(payload.field) &&
         typeof payload.sourceUrl === "string" &&
         (payload.field.endsWith("Candidate") ? Array.isArray(payload.newValue) && payload.newValue.length > 0 && payload.newValue.length <= 4 && payload.newValue.every((item: unknown) => typeof item === "string" && item.length <= 500) : true) &&
         payload.requiresOwnerApproval === true;
