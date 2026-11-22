@@ -62,6 +62,27 @@ if(typeof originalYearOverview==='function'){
     meta.dataset.metaFormatted='1';
    };
    races.forEach(formatRaceMeta);
+   const raceDates=races.map(article=>{
+    const text=article.querySelector('.year-race-meta')?.textContent||'';
+    const match=text.match(/\\b(\\d{2})\\.(\\d{2})\\.(\\d{4})\\b/);
+    if(!match)return null;
+    const date=new Date(Date.UTC(Number(match[3]),Number(match[2])-1,Number(match[1])));
+    return Number.isNaN(date.getTime())?null:{article,date};
+   }).filter(Boolean).sort((a,b)=>a.date-b.date);
+   const dayMs=86400000;
+   raceDates.forEach((entry,index)=>{
+    const next=raceDates[index+1];
+    if(!next)return;
+    const gap=Math.round((next.date-entry.date)/dayMs);
+    const sameDate=gap===0;
+    if(!sameDate&&gap>21)return;
+    const notice=document.createElement('p');
+    notice.className='year-race-spacing'+(sameDate?' is-conflict':' is-close');
+    notice.setAttribute('role',sameDate?'status':'note');
+    notice.textContent=sameDate?'⚠ Terminüberschneidung mit einem weiteren Rennen':'↔ '+gap+' '+(gap===1?'Tag':'Tage')+' bis zum nächsten Rennen';
+    entry.article.appendChild(notice);
+   });
+
 
    const seasonSummary=document.createElement('div');
    seasonSummary.className='year-season-summary';
