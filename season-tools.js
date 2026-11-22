@@ -43,6 +43,14 @@ if(typeof originalYearOverview==='function'){
    const groups=Array.from(buckets.values()).sort((a,b)=>{
     if(a.key==='undated')return 1;if(b.key==='undated')return -1;return a.key.localeCompare(b.key);
    });
+   const seasonSummary=document.createElement('div');
+   seasonSummary.className='year-season-summary';
+   seasonSummary.setAttribute('aria-label','Zusammenfassung der Jahresplanung');
+   const summaryItem=(value,label)=>{const item=document.createElement('span');item.className='year-season-summary-item';const strong=document.createElement('strong');strong.textContent=String(value);const caption=document.createElement('small');caption.textContent=label;item.append(strong,caption);return item;};
+   const datedGroups=groups.filter(group=>group.key!=='undated');
+   const undatedCount=groups.find(group=>group.key==='undated')?.races.length||0;
+   seasonSummary.append(summaryItem(races.length,races.length===1?'Rennen geplant':'Rennen geplant'),summaryItem(datedGroups.length,datedGroups.length===1?'Monat mit Terminen':'Monate mit Terminen'));
+   if(undatedCount)seasonSummary.append(summaryItem(undatedCount,undatedCount===1?'Termin offen':'Termine offen'));
    const today=new Date(),currentKey=today.getUTCFullYear()+'-'+String(today.getUTCMonth()+1).padStart(2,'0');
    let active=groups.find(g=>g.key===currentKey);
    if(!active)active=groups.find(g=>g.date&&g.date.getTime()>=Date.UTC(today.getUTCFullYear(),today.getUTCMonth(),today.getUTCDate()));
