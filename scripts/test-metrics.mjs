@@ -864,6 +864,12 @@ assert.ok(seasonTools.includes("@media(prefers-reduced-motion:reduce){.year-mont
 assert.ok(seasonTools.includes(".year-month-group[open]>summary"), "The active month must have a clear expanded state");
 
 
+// Web Push setup must explicitly register the service worker from the user action.
+assert.ok(html.includes("navigator.serviceWorker.register(new URL('./sw.js',document.baseURI)"), "Push setup must not depend solely on the asynchronous page-load registration");
+assert.ok(html.includes("Notification.requestPermission()") && html.indexOf("Notification.requestPermission()") < html.indexOf("navigator.serviceWorker.register(new URL('./sw.js',document.baseURI)"), "iOS permission request must remain before the first awaited service-worker setup");
+assert.ok(html.includes("Gerät wird sicher mit deinem Konto verknüpft"), "Push setup must expose progress while saving the device subscription");
+assert.ok(html.includes("id=\"enableReviewNotifications\"") && html.includes("window.trailReviewPushClick(event)"), "Push setup button must keep a direct, explicit click handler");
+
 // Alpine Performance v103 – clear planned/completed state and compact season timeline.
 assert.ok(seasonTools.includes("season-state-pill '+(completed?'is-completed':'is-planned')"), "Season cards must distinguish completed and planned races");
 assert.ok(seasonTools.includes("Als gelaufen markiert") && seasonTools.includes("Noch nicht als gelaufen markiert"), "State decoration must preserve the existing race completion source text");
