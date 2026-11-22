@@ -41,27 +41,55 @@ assert.ok(html.includes("Storage.prototype.removeItem=function(key)"), "Removing
 assert.ok(html.includes("Storage.prototype.clear=function()") && html.includes("hadPlannerData"), "Clearing local planner data must trigger cloud synchronization");
 
 const cloudSignatureHelper = html.match(/function cloudSnapshotSignatures\(data\)\{[^\n]*\}/);
-const cloudMergeHelper = html.match(/function mergeCloudSnapshots\(local,remote\)\{[^\n]*\}/);
-assert.ok(cloudSignatureHelper && cloudMergeHelper, "Cloud snapshot merge helpers must remain testable");
+const cloudMergeStart = html.indexOf("function mergeCloudSnapshots(local,remote){");
+const cloudMergeEnd = html.indexOf("\nfunction validatePlannerSnapshot", cloudMergeStart);
+assert.ok(cloudSignatureHelper && cloudMergeStart>=0 && cloudMergeEnd>cloudMergeStart, "Cloud snapshot merge helpers must remain testable");
 const cloudSignature = new Function(cloudSignatureHelper[0] + "; return cloudSnapshotSignatures;")();
+const cloudMergeSource = html.slice(html.indexOf("function jsonSame(a,b)"), cloudMergeEnd);
 const mergeCloudSnapshots = new Function(
   "CLOUD_KEYS",
   "readCloudBaselineSignatures",
-  cloudSignatureHelper[0] + cloudMergeHelper[0] + "; return mergeCloudSnapshots;"
+  "readCloudBaselineData",
+  "cloudSnapshotSignatures",
+  "localStorage",
+  cloudMergeSource + "; return mergeCloudSnapshots;"
 );
 const unchangedCloudData = { plannerTestKey: "previous value" };
 const unchangedBaseline = cloudSignature(unchangedCloudData);
+const emptyStorage = { getItem: () => null };
 const deletionMerge = mergeCloudSnapshots(
   ["plannerTestKey"],
-  () => unchangedBaseline
+  () => unchangedBaseline,
+  () => null,
+  cloudSignature,
+  emptyStorage
 )({}, unchangedCloudData);
 assert.deepEqual(deletionMerge.snapshot, {}, "A local deletion must be retained when the cloud copy is unchanged");
 assert.equal(deletionMerge.remoteNeedsWrite, true, "A local deletion must be propagated to the cloud");
 const concurrentEditMerge = mergeCloudSnapshots(
   ["plannerTestKey"],
-  () => unchangedBaseline
+  () => unchangedBaseline,
+  () => null,
+  cloudSignature,
+  emptyStorage
 )({}, { plannerTestKey: "changed remotely" });
 assert.deepEqual(concurrentEditMerge.conflicts, ["plannerTestKey"], "A local deletion must not overwrite a concurrent remote edit");
+const routeBaseline = { routeA: { travelPlan: { accommodation: "Old", paid: false } }, routeB: { travelPlan: { accommodation: "B" } } };
+const routeLocal = { routeA: { travelPlan: { accommodation: "New", paid: false } }, routeB: { travelPlan: { accommodation: "B" } } };
+const routeRemote = { routeA: { travelPlan: { accommodation: "Old", paid: false } }, routeB: { travelPlan: { accommodation: "B2" } } };
+const routeSnapshot = { trailEventDataEdits: JSON.stringify(routeBaseline) };
+const routeMerged = mergeCloudSnapshots(
+  ["trailEventDataEdits"],
+  () => cloudSignature(routeSnapshot),
+  () => routeSnapshot,
+  cloudSignature,
+  emptyStorage
+)({ trailEventDataEdits: JSON.stringify(routeLocal) }, { trailEventDataEdits: JSON.stringify(routeRemote) });
+assert.deepEqual(routeMerged.conflicts, [], "Independent route edits must merge without conflict");
+assert.deepEqual(JSON.parse(routeMerged.snapshot.trailEventDataEdits), {
+  routeA: { travelPlan: { accommodation: "New", paid: false } },
+  routeB: { travelPlan: { accommodation: "B2" } }
+}, "Independent route edits must both be preserved");
 assert.equal(routeById("110-tausend-111-4074")?.raceCost, "215,00 € (inkl. 25 % MwSt.)", "Istria 2027 published entry fee must remain recorded");
 assert.equal(routeById("110-tausend-111-4074")?.paidCost, "296,44 €", "Istria 2027 paid receipt total must remain recorded");
 assert.equal(routeById("110-tausend-111-4074")?.paidCostDate, "2026-07-05", "Istria 2027 payment date must remain recorded");
