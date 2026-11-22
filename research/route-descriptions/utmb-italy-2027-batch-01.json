@@ -42,7 +42,7 @@
         "collaboration": "Sport box d.o.o. and local municipalities",
         "officialSource": "https://istria.utmb.world/races-runners/runners/regulations",
         "contact": "istria100@service.byutmb.world",
-        "contactSource": "https://istria.utmb.world/races-runners/other-information/FAQ",
+        "contactSource": "https://istria.utmb.world/races-runners/runners/regulations",
         "contactScope": "Official FAQ lists this address for media-related inquiries; rights-holder authority still requires confirmation."
       },
       "officialSources": [
@@ -79,7 +79,7 @@
           "elevationGainM": 6800,
           "maxRaceTimeHours": 45,
           "courseSummary": "Punkt-zu-Punkt-Ultratrail von der historischen Stadt Labin über den Učka-Gebirgszug und den Raum Buzet in das istrische Binnenland; über mittelalterliche Orte und Wald- sowie Talpassagen bis zum Ziel am Meer in Umag.",
-          "terrain": "Anspruchsvolle, teils technische Wege; felsige und schlammige Abschnitte, Wald- und Talwege, historische Bahntrasse sowie küstennahe Passagen laut offizieller Kursübersicht. Exakte Oberflächenanteile nicht veröffentlicht.",
+          "terrain": "Technisches Gelände mit tiefen Wäldern, historischer Bahntrasse und schlammigen Tälern; die offizielle Streckenbeschreibung verwendet zusätzlich den Begriff „coastering“. Genaue Oberflächenanteile sind nicht veröffentlicht.",
           "highlights": [
             "Labin und der Učka-Anstieg mit Blick auf die Kvarner-Bucht",
             "Buzet als Drop-Bag- und große Verpflegungsstation",
@@ -224,9 +224,8 @@
           "terrain": "Steile Anstiege und Gefälle, breite Wege und naturbelassene Singletrails; genaue Oberflächenanteile nicht veröffentlicht.",
           "highlights": [
             "Motovun und Grožnjan",
-            "Olivenhaine und Weinberge",
-            "mittelalterliche Hügelsiedlungen",
-            "Zielplatz am Meer in Umag"
+            "Steile Anstiege und Gefälle auf breiten Wegen und Singletrails",
+            "Ziel am Meer in Umag"
           ],
           "aidStations": {
             "countOnCourse": 3,
