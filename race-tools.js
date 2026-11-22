@@ -185,10 +185,8 @@ window.showPlannedEventDetails=function(id,ri){prior(id,ri);const root=document.
   window.gpxRightsRegistry=registry;
   window.gpxRightsAllows=(routeId,action)=>policy.allows(registry.routes?.[String(routeId)]||policy.defaultEntry(),action);
   window.routeGpxIsOrganizerRestricted=route=>!canProcess(route);
-  window.routeHasDownloadableGpx=route=>{
-    const href=route?.gpxDownloadUrl||route?.gpxUrl||"";
-    return policy.isDirectFileUrl(href)?canDownload(route):(canLink(route)||canDownload(route));
-  };
+  window.routeHasDownloadableGpx=route=>!!route&&canDownload(route);
+  window.routeHasOfficialGpxPageLink=route=>!!route&&canLink(route);
   window.isGpxImportableUrl=(url,status)=>{
     if(/stale|historical|candidate|unversioned|needs-validation|not-current|not-published|not-verified|pending/i.test(String(status||"")))return false;
     const route=routeByGpxUrl(url);
