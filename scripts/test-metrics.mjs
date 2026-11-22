@@ -713,6 +713,13 @@ assert.ok(html.includes("if(!document.getElementById('plannedEventDetailModal')?
 assert.ok(html.includes('.event-detail-accommodation-stack .year-accommodation-form') && html.includes('@media(max-width:520px){.event-detail-accommodation-stack .year-accommodation-form .edit-grid{grid-template-columns:minmax(0,1fr)}}'),
   "The shared accommodation form must fit narrow iPhone screens and tablet widths");
 
+
+const soldOutHelper=html.match(/function routeSoldOut\\(r\\)\\{([^}]+)\\}/)?.[1]||"";
+assert.ok(soldOutHelper.includes("r?.soldOut==='boolean'") && soldOutHelper.includes("r?.registrationStatus==='sold_out'"),
+  "Sold-out state must come from explicit registration availability");
+assert.ok(!soldOutHelper.includes("raceStatus") && !soldOutHelper.includes("raceCost") && !soldOutHelper.includes("r?.status"),
+  "Race progress, payment and generic status must not trigger the SOLD OUT stamp");
+
 // The same red SOLD OUT stamp must appear in event catalog, year cards, and detail dialogs.
 assert.ok(html.includes("function soldOutRouteBadge(r)") && html.includes("return routeSoldOut(r)?'<span class=\"sold-out-stamp\""),
   "Sold-out routes must use the established red stamp helper");
