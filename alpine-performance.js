@@ -62,21 +62,24 @@
           if(!matches.length)return;
           cell.classList.add('has-hotel');
           cell.dataset.calendarDate=key;
-          const starts=matches.some(x=>key===x.arrival);
-          const ends=matches.some(x=>key===x.departure);
-          cell.classList.toggle('hotel-range-start',starts);
-          cell.classList.toggle('hotel-range-end',ends);
+          cell.classList.remove('hotel-range-start','hotel-range-end');
           const oldTitle=cell.getAttribute('title')||'';
           cell.setAttribute('title',[oldTitle,...matches.map(x=>'Unterkunft: '+x.title)].filter(Boolean).join(' | '));
-          let mark=cell.querySelector('.hotel-mark');
-          if(!mark){
-            mark=document.createElement('span');
-            mark.className='day-mark hotel-mark';
-            cell.append(mark);
+          let stack=cell.querySelector('.hotel-mark');
+          if(!stack){
+            stack=document.createElement('span');
+            stack.className='day-mark hotel-mark hotel-range-stack';
+            cell.append(stack);
           }
-          mark.classList.add('hotel-range-bar');
-          mark.textContent='';
-          mark.setAttribute('aria-hidden','true');
+          stack.replaceChildren();
+          stack.setAttribute('aria-hidden','true');
+          matches.forEach(range=>{
+            const segment=document.createElement('span');
+            segment.className='hotel-range-bar';
+            if(key===range.arrival)segment.classList.add('start');
+            if(key===range.departure)segment.classList.add('end');
+            stack.append(segment);
+          });
         });
       });
     });
