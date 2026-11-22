@@ -119,10 +119,7 @@ if(typeof originalYearOverview==='function'){
      if(!attempt||!attempt.done||!attempt.date)return;
      const match=/^(\\d{4})-(\\d{2})-(\\d{2})/.exec(String(attempt.date));
      if(!match||match[1]!==seasonYear)return;
-     const outcome=String(attempt.result??attempt.status??attempt.outcome??'').trim().toLowerCase();
-     const dnf=attempt.dnf===true||/^(dnf|did not finish|nicht beendet)$/.test(outcome);
-     const ratingValue=Number(attempt.rating??attempt.stars);
-     historyRows.push({km:Number(attempt.actualKm)||0,hm:Number(attempt.actualHm)||0,dnf,rating:Number.isFinite(ratingValue)&&ratingValue>=1&&ratingValue<=4?ratingValue:null});
+     historyRows.push({km:Number(attempt.actualKm)||0,hm:Number(attempt.actualHm)||0});
     }));
     if(historyRows.length){
      const totalKm=historyRows.reduce((sum,row)=>sum+row.km,0);
@@ -132,13 +129,6 @@ if(typeof originalYearOverview==='function'){
       summaryItem(totalKm.toFixed(1)+' km','In der Laufhistorie'),
       summaryItem(Math.round(totalHm)+' hm','Erfasste Höhenmeter')
      ];
-      const dnfCount=historyRows.filter(row=>row.dnf).length;
-      const ratedRows=historyRows.filter(row=>row.rating!==null);
-      if(dnfCount)historyItems.push(summaryItem(dnfCount,dnfCount===1?'DNF':'DNF-Ergebnisse'));
-      if(ratedRows.length){
-       const average=ratedRows.reduce((sum,row)=>sum+row.rating,0)/ratedRows.length;
-       historyItems.push(summaryItem(average.toFixed(1)+' / 4','Ø Bewertung · '+ratedRows.length+' bewertet'));
-      }
      historyItems.forEach(item=>{item.dataset.source='history';item.setAttribute('aria-label',item.textContent.replace(/\\s+/g,' ').trim());});
      seasonSummary.append(...historyItems);
     }
