@@ -96,3 +96,14 @@ header{padding-left:max(14px,env(safe-area-inset-left));padding-right:max(14px,e
 @media(min-width:1100px){.routes{grid-template-columns:repeat(3,minmax(0,1fr))}#events{gap:16px}}
 #events[hidden],.tab-panel[hidden],.tab-panel[hidden] #events{display:none!important}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;transition-duration:.01ms!important;animation-duration:.01ms!important}}
+
+/* Compact route overview in the planned-event detail dialog */
+.event-detail-overview{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin:12px 0 14px}
+.event-detail-metric,.event-detail-gpx{min-width:0;padding:11px 12px;border:1px solid var(--line);border-radius:12px;background:var(--card)}
+.event-detail-metric small,.event-detail-gpx small{display:block;margin-bottom:4px;color:var(--muted);font-size:11px;font-weight:750;letter-spacing:.035em;text-transform:uppercase}
+.event-detail-metric strong{display:block;font-size:20px;line-height:1.15;font-variant-numeric:tabular-nums}
+.event-detail-metric em{margin-left:4px;color:var(--muted);font-size:11px;font-style:normal;font-weight:650}
+.event-detail-gpx{grid-column:1/-1;display:flex;align-items:flex-start;gap:12px}
+.event-detail-gpx small{flex:0 0 auto;margin:2px 0 0}
+.event-detail-gpx strong{min-width:0;font-size:12px;line-height:1.4;overflow-wrap:anywhere}
+@media(max-width:480px){.event-detail-overview{gap:6px}.event-detail-metric,.event-detail-gpx{padding:9px}.event-detail-metric strong{font-size:18px}.event-detail-gpx{display:block}.event-detail-gpx small{margin-bottom:4px}}
