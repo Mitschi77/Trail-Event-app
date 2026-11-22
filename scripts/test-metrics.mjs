@@ -641,11 +641,11 @@ assert.equal(failedActivityStorage.getCloudSaves(), 0,
   "A failed activity import must not queue cloud synchronization");
 
 // Year overview: compact, accessible cards expose the actual route profile and cut-off data.
-assert.ok(html.includes('class="year-race-more"') && html.includes('Weitere Streckendetails &amp; Planung'),
-  "Year race details must use native details/summary disclosure controls");
+assert.ok(html.includes('class="year-race-more"') && html.includes('Unterkunft &amp; Buchung') && html.includes('Strecke &amp; Eventdetails'),
+  "Year race details must separate accommodation and route information into two native disclosure sections");
 assert.ok(html.includes('class="year-race-head"'), "Year overview must render compact race-card headings");
-assert.ok(html.includes("+(yearStay||'')+yearAccommodation+(yearInvoices||'')") && html.includes("'+profileInfo+detailButton+repeatButton"),
-  "Year cards must keep accommodation and route details in separate, directly accessible sections");
+assert.ok(html.includes("yearAccommodation=renderYearAccommodationForm") && html.includes("yearInvoices=renderEventInvoices") && html.includes("profileInfo+detailButton+repeatButton"),
+  "Year cards must render accommodation, invoices, elevation profile, cut-offs and route metrics in their respective sections");
 assert.ok(html.includes('yearAccommodation=renderYearAccommodationForm'),
   "The year card must actually render the accommodation form, not only define it");
 assert.ok(html.includes("'+statusControl+review+'<details class=\"year-race-more\"><summary>Unterkunft"),
