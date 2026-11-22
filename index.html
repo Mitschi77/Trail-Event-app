@@ -1332,7 +1332,8 @@ header{padding-left:max(14px,calc((100vw - 1120px)/2));padding-right:max(14px,ca
   max-width:100%;
   min-width:0;
 }
-#yearOverview,.season-priority-summary,.season-training-panel,
+#yearOverview{grid-template-columns:minmax(0,1fr)}
+.season-priority-summary,.season-training-panel,
 .training-overview,.training-stats,.training-grid{
   grid-template-columns:repeat(2,minmax(0,1fr));
 }
