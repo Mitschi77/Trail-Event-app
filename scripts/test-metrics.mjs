@@ -675,7 +675,7 @@ assert.ok(html.includes('#yearOverview .year-group{display:grid') && html.includ
 assert.ok(html.includes("String(year).replace(/[^a-zA-Z0-9_-]/g,'_')") &&
   html.includes("const safeUid=String(uid).replace(/[^a-zA-Z0-9_-]/g,'_')"),
   "Jump targets and accommodation form identifiers must be valid for all event keys");
-assert.ok(serviceWorker.includes("const CACHE_NAME = 'trail-event-planner-v88'"),
+assert.ok(serviceWorker.includes("const CACHE_NAME = 'trail-event-planner-v89'"),
   "The PWA cache must be versioned for the updated release");
 
 assert.ok(seasonTools.includes('seasonDashboard') && seasonTools.includes('season-dashboard-next') && seasonTools.includes('season-dashboard-kpis'),
