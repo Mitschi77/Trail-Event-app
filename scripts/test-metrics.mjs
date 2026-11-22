@@ -644,8 +644,14 @@ assert.equal(failedActivityStorage.getCloudSaves(), 0,
 assert.ok(html.includes('class="year-race-more"') && html.includes('Weitere Streckendetails &amp; Planung'),
   "Year race details must use native details/summary disclosure controls");
 assert.ok(html.includes('class="year-race-head"'), "Year overview must render compact race-card headings");
-assert.ok(html.includes("+(yearInvoices||'')+profileInfo+detailButton"),
-  "Expanded year cards must include accommodation, invoices, elevation profile, cut-offs and route metrics");
+assert.ok(html.includes("+(yearStay||'')+yearAccommodation+(yearInvoices||'')") && html.includes("'+profileInfo+detailButton+repeatButton"),
+  "Year cards must keep accommodation and route details in separate, directly accessible sections");
+assert.ok(html.includes('yearAccommodation=renderYearAccommodationForm'),
+  "The year card must actually render the accommodation form, not only define it");
+assert.ok(html.includes("'+statusControl+review+'<details class=\"year-race-more\"><summary>Unterkunft"),
+  "Run result entry must be directly visible on the year card outside the collapsible detail sections");
+assert.ok(html.includes('onclick="addEventToYearPlan(${id},${ri})"'),
+  "The event route card must wire its annual planning action to the add handler");
 assert.ok(html.includes('const profileInfo=') && html.includes("+derivedPanel+profilePanel+cutoffPanel+pngPanel+"),
   "Year overview profile section must retain derived metrics, elevation profile, cut-off and optional route image");
 assert.ok(html.includes('aria-controls="yearReview'),
