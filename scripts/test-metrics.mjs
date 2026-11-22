@@ -862,3 +862,11 @@ assert.ok(seasonTools.includes(".year-month-chip:focus-visible"), "Month navigat
 assert.ok(seasonTools.includes("@media(max-width:420px){.year-month-races"), "Yearly race cards must remain compact on narrow phones");
 assert.ok(seasonTools.includes("@media(prefers-reduced-motion:reduce){.year-month-chip"), "Timeline transitions must respect reduced-motion preferences");
 assert.ok(seasonTools.includes(".year-month-group[open]>summary"), "The active month must have a clear expanded state");
+
+
+// Alpine Performance v103 – clear planned/completed state and compact season timeline.
+assert.ok(seasonTools.includes("season-state-pill '+(completed?'is-completed':'is-planned')"), "Season cards must distinguish completed and planned races");
+assert.ok(seasonTools.includes("Als gelaufen markiert") && seasonTools.includes("Noch nicht als gelaufen markiert"), "State decoration must preserve the existing race completion source text");
+assert.ok(seasonTools.includes("#seasonRaceCards .season-recovery label:last-child input"), "Recovery estimates must be visually distinct from editable actual values");
+assert.ok(seasonTools.includes("#seasonTimeline .season-block") && seasonTools.includes("scroll-snap-type:x proximity"), "Season timeline blocks must remain clear and navigable on mobile");
+assert.ok(seasonTools.includes("@media(prefers-reduced-motion:reduce){#seasonTimeline"), "Season timeline must respect reduced-motion preferences");

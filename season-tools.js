@@ -102,4 +102,59 @@ if(typeof originalYearOverview==='function'){
  document.head.appendChild(style);
 }
 
+
+/* Alpine Performance v103 – distinguish planned and completed races at a glance. */
+const seasonStatusCss=document.createElement('style');
+seasonStatusCss.id='season-status-visual-v103';
+seasonStatusCss.textContent=`
+#seasonRaceCards .season-race{display:grid;gap:11px;padding:14px;border-radius:14px;background:linear-gradient(145deg,color-mix(in srgb,var(--card) 96%,var(--green) 4%),var(--card));box-shadow:0 4px 14px rgba(0,0,0,.07)}
+#seasonRaceCards .season-race-head{align-items:flex-start}
+#seasonRaceCards .season-race-head>div>strong{display:block;font-size:14px;line-height:1.3;letter-spacing:-.015em}
+#seasonRaceCards .season-race-head>div>.plan-meta{margin:5px 0 0;font-size:11px;line-height:1.45}
+#seasonRaceCards .season-race-head>label{display:grid;gap:5px;min-width:145px;font-size:10px;font-weight:750;color:var(--muted)}
+#seasonRaceCards .season-priority{width:100%;min-height:40px;border-radius:10px;background:var(--bg);color:var(--ink);border-color:var(--line)}
+#seasonRaceCards .season-recovery{gap:8px;margin-top:0}
+#seasonRaceCards .season-recovery label{display:grid;align-content:start;gap:5px;padding:9px;border:1px solid var(--line);border-radius:10px;background:color-mix(in srgb,var(--bg) 70%,transparent);font-size:10px;line-height:1.35}
+#seasonRaceCards .season-recovery input{min-height:38px;margin:0;padding:7px 8px;border-radius:8px;background:var(--card);font-size:12px}
+#seasonRaceCards .season-recovery label:last-child input{font-weight:800;color:var(--green);border-color:color-mix(in srgb,var(--green) 45%,var(--line))}
+#seasonRaceCards .season-state-line{display:flex;align-items:center;flex-wrap:wrap;gap:7px;margin:0;padding-top:9px;border-top:1px solid var(--line);font-size:11px;line-height:1.45}
+#seasonRaceCards .season-state-pill{display:inline-flex;align-items:center;gap:5px;min-height:27px;padding:4px 9px;border:1px solid;border-radius:999px;font-size:10px;font-weight:800;letter-spacing:.01em}
+#seasonRaceCards .season-state-pill.is-completed{color:#b8e8c1;background:#193b28;border-color:#3c7951}
+#seasonRaceCards .season-state-pill.is-planned{color:#c7d7ef;background:#1c3047;border-color:#405e80}
+#seasonTimeline .season-priority-review{border-radius:14px;padding:14px;background:var(--card)}
+#seasonTimeline .season-year{padding:13px;border-radius:14px;background:color-mix(in srgb,var(--card) 88%,transparent)}
+#seasonTimeline .season-year h4{display:flex;align-items:center;gap:8px;font-size:14px}
+#seasonTimeline .season-lane{gap:8px;padding:8px 2px 12px;scroll-snap-type:x proximity;scroll-padding-inline:8px}
+#seasonTimeline .season-block{flex:var(--season-days,1) 0 118px;min-height:104px;padding:11px;border:1px solid var(--line);border-top:4px solid #8fc6a5;border-radius:12px;background:linear-gradient(155deg,color-mix(in srgb,var(--panel) 92%,var(--green) 8%),var(--card));scroll-snap-align:start;box-shadow:0 3px 10px rgba(0,0,0,.06)}
+#seasonTimeline .season-block strong{font-size:12px;line-height:1.35}
+#seasonTimeline .season-block.a{border-top-color:#e6a34a}#seasonTimeline .season-block.b{border-top-color:#6aa6d8}#seasonTimeline .season-block.c{border-top-color:#9b9b9b}
+#seasonTimeline .season-phase{font-size:10px;line-height:1.4}
+@media(max-width:520px){#seasonRaceCards .season-race{padding:11px}#seasonRaceCards .season-race-head>label{width:100%;min-width:0}#seasonRaceCards .season-recovery{grid-template-columns:repeat(2,minmax(0,1fr))}#seasonRaceCards .season-recovery label:last-child{grid-column:1/-1}#seasonTimeline .season-lane{margin-inline:-3px;padding-inline:3px}#seasonTimeline .season-block{flex-basis:126px}}
+@media(prefers-reduced-motion:reduce){#seasonTimeline .season-lane{scroll-behavior:auto}}
+`;
+document.head.querySelector('#season-status-visual-v103')?.remove();
+document.head.appendChild(seasonStatusCss);
+const originalSeasonStatusRender=window.renderSeasonEnhancements;
+if(typeof originalSeasonStatusRender==='function'){
+ const decorateSeasonStatus=()=>{
+  document.querySelectorAll('#seasonRaceCards .season-race').forEach(article=>{
+   const line=article.querySelector('.plan-meta:last-of-type');if(!line||line.dataset.statusDecorated==='1')return;
+   const originalText=line.textContent||'';
+   const completed=originalText.startsWith('Als gelaufen markiert');
+   const planned=originalText.startsWith('Noch nicht als gelaufen markiert');
+   if(!completed&&!planned)return;
+   const prefix=completed?'Als gelaufen markiert':'Noch nicht als gelaufen markiert';
+   const remainder=originalText.slice(prefix.length).replace(/^\\s*·?\\s*/,'');
+   line.textContent='';
+   line.classList.add('season-state-line');
+   const pill=document.createElement('span');pill.className='season-state-pill '+(completed?'is-completed':'is-planned');pill.textContent=completed?'✓ Absolviert':'○ Geplant';
+   line.appendChild(pill);
+   if(remainder)line.appendChild(document.createTextNode(' · '+remainder));
+   line.dataset.statusDecorated='1';
+  });
+ };
+ window.renderSeasonEnhancements=function(){originalSeasonStatusRender();decorateSeasonStatus();};
+ window.renderSeasonEnhancements();
+}
+
 })();
