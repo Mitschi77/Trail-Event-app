@@ -52,7 +52,7 @@
       "restriction": {
         "status": "not_checked",
         "notice": null,
-        "sourceUrl": "https://istria.utmb.world/races-runners/other-information/FAQ",
+        "sourceUrl": "https://istria.utmb.world/races-runners/runners/regulations",
         "routeUrl": "https://istria.utmb.world/races/110K",
         "checkedAt": "2026-11-22",
         "downloadPageChecked": true,
@@ -89,7 +89,7 @@
       "restriction": {
         "status": "not_checked",
         "notice": null,
-        "sourceUrl": "https://istria.utmb.world/races-runners/other-information/FAQ",
+        "sourceUrl": "https://istria.utmb.world/races-runners/runners/regulations",
         "routeUrl": "https://istria.utmb.world/races/69K",
         "checkedAt": "2026-11-22",
         "downloadPageChecked": true,
