@@ -704,9 +704,19 @@ assert.ok(html.includes('Der Vorschlag bleibt bis zu deiner Freigabe unveröffen
   "New event help must preserve manual approval before public publication");
 
 // Event detail and annual overview share the same accommodation editor and save path.
-assert.ok(html.includes("group('Unterkunft &amp; Buchung', '<div class=\\\"event-detail-accommodation-stack\\\">'+renderYearAccommodationForm(e,r,id,ri,'detail_'+e.id+'_'+r.id)+renderEventAccommodation(e,r,id,ri)"),
+assert.ok(html.includes("group('Unterkunft &amp; Buchung'") &&
+  html.includes("renderYearAccommodationForm(e,r,id,ri,'detail_'+e.id+'_'+r.id)") &&
+  html.includes('renderEventAccommodation(e,r,id,ri)'),
   "Event detail dialog must reuse the annual overview accommodation form and booking summary");
 assert.ok(html.includes("if(!document.getElementById('plannedEventDetailModal')?.hidden)showPlannedEventDetails(id,ri)"),
   "Saving accommodation from the event detail dialog must refresh the displayed booking summary");
 assert.ok(html.includes('.event-detail-accommodation-stack .year-accommodation-form') && html.includes('@media(max-width:520px){.event-detail-accommodation-stack .year-accommodation-form .edit-grid{grid-template-columns:minmax(0,1fr)}}'),
   "The shared accommodation form must fit narrow iPhone screens and tablet widths");
+
+// The same red SOLD OUT stamp must appear in event catalog, year cards, and detail dialogs.
+assert.ok(html.includes("function soldOutRouteBadge(r)") && html.includes("return routeSoldOut(r)?'<span class=\"sold-out-stamp\""),
+  "Sold-out routes must use the established red stamp helper");
+assert.ok(html.includes("'+soldOutRouteBadge(x.r)+statusControl+review+"),
+  "The annual overview must show the SOLD OUT stamp on the selected route card");
+assert.ok(html.includes("const routeData=soldOutRouteBadge(r)+'<div class=\"event-detail-data\">"),
+  "The event detail dialog must use the same SOLD OUT stamp as the event list");
