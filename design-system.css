@@ -590,3 +590,22 @@ hr,.divider{border-color:var(--line)}
  .race-detail-metric{padding:8px 6px}
  .race-detail-metric strong{font-size:13px}
 }
+
+
+/* Alpine elevation profile */
+.elevation-chart-wrap{margin:10px 0 13px;padding:11px;border:1px solid var(--line);border-radius:12px;background:var(--bg)}
+.elevation-chart-summary{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:7px;margin-bottom:8px}
+.elevation-chart-summary span{min-width:0;padding:7px;border-radius:9px;background:var(--card);text-align:center}
+.elevation-chart-summary b,.elevation-chart-summary small{display:block}
+.elevation-chart-summary b{font-size:14px;color:var(--ink);font-variant-numeric:tabular-nums}
+.elevation-chart-summary small{margin-top:3px;color:var(--muted);font-size:9px}
+.elevation-chart{display:block;width:100%;height:auto;overflow:visible}
+.elevation-chart line{stroke:var(--line);stroke-width:1;stroke-dasharray:4 5}
+.elevation-chart polygon{fill:#e98a3b22;stroke:none}
+.elevation-chart polyline{fill:none;stroke:#e98a3b;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;vector-effect:non-scaling-stroke}
+.elevation-chart text{fill:var(--muted);font-size:10px}
+.segment-table{margin-top:10px;border:1px solid var(--line);border-radius:10px;overflow:hidden}
+.segment-row{grid-template-columns:1fr .8fr .9fr;align-items:center;gap:6px}
+.segment-row b:nth-child(2),.segment-row span:nth-child(2){color:var(--ink);font-variant-numeric:tabular-nums}
+.segment-head{background:var(--bg);font-size:10px;font-weight:800}
+@media(max-width:440px){.elevation-chart-wrap{padding:8px}.elevation-chart-summary{gap:4px}.elevation-chart-summary span{padding:6px 3px}.elevation-chart-summary b{font-size:12px}.elevation-chart-summary small{font-size:8px}.segment-row{font-size:10px;padding:7px 5px}}
