@@ -62,15 +62,21 @@
           if(!matches.length)return;
           cell.classList.add('has-hotel');
           cell.dataset.calendarDate=key;
+          const starts=matches.some(x=>key===x.arrival);
+          const ends=matches.some(x=>key===x.departure);
+          cell.classList.toggle('hotel-range-start',starts);
+          cell.classList.toggle('hotel-range-end',ends);
           const oldTitle=cell.getAttribute('title')||'';
           cell.setAttribute('title',[oldTitle,...matches.map(x=>'Unterkunft: '+x.title)].filter(Boolean).join(' | '));
-          if(!cell.querySelector('.hotel-mark')){
-            const mark=document.createElement('span');
+          let mark=cell.querySelector('.hotel-mark');
+          if(!mark){
+            mark=document.createElement('span');
             mark.className='day-mark hotel-mark';
-            mark.textContent='■';
-            mark.setAttribute('aria-hidden','true');
             cell.append(mark);
           }
+          mark.classList.add('hotel-range-bar');
+          mark.textContent='';
+          mark.setAttribute('aria-hidden','true');
         });
       });
     });
