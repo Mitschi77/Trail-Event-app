@@ -103,7 +103,8 @@ async function harness(registry, routeUrl = "https://example.org/course.gpx", wi
     restriction: { status: "not_checked" }
   });
   const linkOnly = await harness({ schemaVersion: 1, defaultPolicy: "deny", routes: { "test-route": linkOnlyEntry } }, "https://example.org/course-info");
-  assert.equal(linkOnly.window.routeHasDownloadableGpx(linkOnly.route), true, "only separately approved official page link may be shown");
+  assert.equal(linkOnly.window.routeHasDownloadableGpx(linkOnly.route), false, "page-link permission must not be reported as file-download permission");
+  assert.equal(linkOnly.window.routeHasOfficialGpxPageLink(linkOnly.route), true, "separately approved official page link may be shown");
   await assert.rejects(linkOnly.window.fetch("https://example.org/course-info"), /GPX/);
   assert.equal(linkOnly.networkCalls(), 1, "link-only permission must not allow app fetch");
   assert.equal(linkOnly.window.routeGpxIsOrganizerRestricted(linkOnly.route), true);
