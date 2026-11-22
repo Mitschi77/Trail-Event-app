@@ -648,7 +648,7 @@ assert.ok(html.includes("yearAccommodation=renderYearAccommodationForm") && html
   "Year cards must render accommodation, invoices, elevation profile, cut-offs and route metrics in their respective sections");
 assert.ok(html.includes('yearAccommodation=renderYearAccommodationForm'),
   "The year card must actually render the accommodation form, not only define it");
-assert.ok(html.includes("'+statusControl+review+'<details class=\"year-race-more\"><summary>Unterkunft"),
+assert.ok(html.includes("'+soldOutRouteBadge(x.r)+statusControl+review+'<details class=\"year-race-more\"><summary>Unterkunft"),
   "Run result entry must be directly visible on the year card outside the collapsible detail sections");
 assert.ok(html.includes('onclick="addEventToYearPlan(${id},${ri})"'),
   "The event route card must wire its annual planning action to the add handler");
