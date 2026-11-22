@@ -528,3 +528,11 @@ hr,.divider{border-color:var(--line)}
 #yearOverview .year-month-races .year-race-spacing.is-close{
   border-color:#665438;background:#2b271e;color:#f1d39a
 }
+
+
+/* Compact season interval summary */
+.year-season-summary-note{
+  grid-column:1/-1;margin:0;padding-top:7px;border-top:1px solid var(--line);
+  color:var(--muted);font-size:10px;line-height:1.45
+}
+.year-season-summary-item{font-variant-numeric:tabular-nums}
