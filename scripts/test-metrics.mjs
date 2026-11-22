@@ -810,3 +810,16 @@ assert.ok(html.includes("#events .event.event-done") && html.includes("#events .
   "Completed event and route states must remain visually distinguishable");
 assert.ok(html.includes("prefers-reduced-motion:reduce"),
   "Event card transitions must respect reduced-motion preferences");
+
+
+// Alpine Performance personal race archive visual regression checks.
+assert.ok(html.includes('id="trail-history-archive-v98"'),
+  "The personal race archive design layer must be present");
+assert.ok(html.includes("#historyTab #historyStats") && html.includes("#historyTab #historyList"),
+  "History statistics and race entries must receive the unified archive layout");
+assert.ok(html.includes("#historyTab #historyList>.plan-card"),
+  "Each completed race must be presented as an individual archive card");
+assert.ok(html.includes("#historyTab #historyList .overview-stars"),
+  "The existing four-star race rating must remain clearly visible");
+assert.ok(html.includes("@media(max-width:760px)") && html.includes("grid-template-columns:minmax(0,1fr)"),
+  "History cards must collapse to a readable single column on mobile");
