@@ -609,3 +609,49 @@ hr,.divider{border-color:var(--line)}
 .segment-row b:nth-child(2),.segment-row span:nth-child(2){color:var(--ink);font-variant-numeric:tabular-nums}
 .segment-head{background:var(--bg);font-size:10px;font-weight:800}
 @media(max-width:440px){.elevation-chart-wrap{padding:8px}.elevation-chart-summary{gap:4px}.elevation-chart-summary span{padding:6px 3px}.elevation-chart-summary b{font-size:12px}.elevation-chart-summary small{font-size:8px}.segment-row{font-size:10px;padding:7px 5px}}
+
+
+/* Consistent map and GPX presentation across event and route details */
+.gpx-import{
+  position:relative;display:block;min-width:0;margin:12px 0;padding:14px;
+  border:1px solid #40586b;border-radius:14px;
+  background:linear-gradient(145deg,#192b3a,#111d28);
+  box-shadow:0 7px 20px #0003;overflow:hidden
+}
+.gpx-import:before{
+  content:"STRECKEN-DATEI";display:block;margin:0 0 8px;
+  color:#f4a45e;font-size:9px;font-weight:900;letter-spacing:.14em
+}
+.gpx-import :is(button,a){max-width:100%;overflow-wrap:anywhere}
+.gpx-import input[type=file]{max-width:100%;font-size:12px;color:#c8d6df}
+.gpx-import .gpx-planning-notice{margin-top:12px!important}
+.gpx-restriction{
+  display:flex;align-items:flex-start;gap:10px;margin:10px 0;padding:12px 13px;
+  border:1px solid #a94b55;border-left:4px solid #e05d68;border-radius:12px;
+  background:linear-gradient(120deg,#3a1d25,#281820);color:#ffe9e9;
+  font-size:12px;line-height:1.5
+}
+.map,.leaflet-container{
+  min-width:0;max-width:100%;border:1px solid #354b5d;border-radius:14px;
+  box-shadow:0 8px 22px #0003;overflow:hidden
+}
+.leaflet-container{font:inherit;isolation:isolate}
+.leaflet-control-zoom a{
+  background:#172b3b!important;color:#f1f6f9!important;border-color:#40586b!important
+}
+.leaflet-control-attribution{
+  background:#101d29dd!important;color:#c1ced7!important;font-size:9px!important
+}
+.leaflet-control-attribution a{color:#ffb36e!important}
+.leaflet-popup-content-wrapper,.leaflet-popup-tip{
+  background:#172b3b;color:#edf3f7;border:1px solid #40586b;
+  box-shadow:0 8px 24px #0008
+}
+.leaflet-popup-content{margin:11px 13px;font-size:12px;line-height:1.45}
+.leaflet-popup-content b,.leaflet-popup-content strong{color:#ffad62}
+.leaflet-popup-close-button{color:#e6eef3!important}
+@media(max-width:480px){
+  .gpx-import{padding:11px;border-radius:12px}
+  .map,.leaflet-container{border-radius:11px}
+  .leaflet-control-attribution{font-size:8px!important}
+}
