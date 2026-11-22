@@ -88,6 +88,26 @@ if(typeof originalYearOverview==='function'){
    seasonSummary.className='year-season-summary';
    seasonSummary.setAttribute('aria-label','Zusammenfassung der Jahresplanung');
    const summaryItem=(value,label)=>{const item=document.createElement('span');item.className='year-season-summary-item';const strong=document.createElement('strong');strong.textContent=String(value);const caption=document.createElement('small');caption.textContent=label;item.append(strong,caption);return item;};
+
+   const seasonYear=datedGroups[0]?.key.slice(0,4)||((yearGroup.textContent||'').match(/\\b20\\d{2}\\b/)||[])[0];
+   if(seasonYear){
+    const historyRows=[];
+    Object.values(runAttempts||{}).forEach(list=>(Array.isArray(list)?list:[]).forEach(attempt=>{
+     if(!attempt||!attempt.done||!attempt.date)return;
+     const match=/^(\\d{4})-(\\d{2})-(\\d{2})/.exec(String(attempt.date));
+     if(!match||match[1]!==seasonYear)return;
+     historyRows.push({km:Number(attempt.actualKm)||0,hm:Number(attempt.actualHm)||0});
+    }));
+    if(historyRows.length){
+     const totalKm=historyRows.reduce((sum,row)=>sum+row.km,0);
+     const totalHm=historyRows.reduce((sum,row)=>sum+row.hm,0);
+     seasonSummary.append(
+      summaryItem(historyRows.length,historyRows.length===1?'Lauf absolviert':'Läufe absolviert'),
+      summaryItem(totalKm.toFixed(1)+' km','In der Laufhistorie'),
+      summaryItem(Math.round(totalHm)+' hm','Erfasste Höhenmeter')
+     );
+    }
+   }
    const datedGroups=groups.filter(group=>group.key!=='undated');
    const undatedCount=groups.find(group=>group.key==='undated')?.races.length||0;
    seasonSummary.append(summaryItem(races.length,races.length===1?'Rennen geplant':'Rennen geplant'),summaryItem(datedGroups.length,datedGroups.length===1?'Monat mit Terminen':'Monate mit Terminen'));
