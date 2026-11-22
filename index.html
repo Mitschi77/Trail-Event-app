@@ -1766,6 +1766,192 @@ button:disabled{opacity:.55;cursor:not-allowed}
   .tab-button{transition:none}
 }
 </style>
+
+<style id="trail-design-system-v1">
+:root{
+  color-scheme:dark;
+  --app-bg:#0c1510;
+  --app-surface:#142019;
+  --app-surface-raised:#1a2920;
+  --app-surface-soft:#203127;
+  --app-border:#34483a;
+  --app-border-strong:#4b6652;
+  --app-text:#edf4ee;
+  --app-muted:#a9b8ad;
+  --app-accent:#a8d9b3;
+  --app-accent-strong:#d9f36a;
+  --app-danger:#ff6868;
+  --app-radius:18px;
+  --app-radius-small:12px;
+  --app-shadow:0 14px 36px #00000030;
+}
+html{scroll-padding-top:90px}
+body{
+  background:radial-gradient(ellipse at 50% -22%,#254331 0%,transparent 50%),var(--app-bg);
+  color:var(--app-text);
+  letter-spacing:.005em;
+}
+header{
+  background:linear-gradient(118deg,#101d15 0%,#17291e 58%,#1d3324 100%);
+  border-bottom:1px solid #49614c;
+  padding-bottom:24px;
+}
+.hero{max-width:1280px;margin:20px auto 0;padding:0 22px}
+.hero h1{
+  font-size:clamp(27px,3.5vw,40px);
+  line-height:1.08;
+  letter-spacing:-.045em;
+  margin:0;
+}
+.hero h1 br{display:none}
+.stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:9px;max-width:570px;margin-top:16px}
+.stat{
+  min-width:0;
+  padding:11px 14px;
+  border:1px solid #405846;
+  border-radius:14px;
+  background:linear-gradient(145deg,#203529,#18271e);
+}
+.stat b{font-size:22px;color:var(--app-accent-strong);font-variant-numeric:tabular-nums}
+.stat span{color:#c1d0c4;font-size:11px;font-weight:650;letter-spacing:.025em}
+.wrap{max-width:1320px;margin:22px auto;padding:0 22px}
+.tabbar{
+  position:sticky;
+  top:max(6px,env(safe-area-inset-top));
+  z-index:40;
+  display:flex;
+  flex-wrap:nowrap;
+  gap:6px;
+  overflow-x:auto;
+  padding:7px;
+  margin:0 0 18px;
+  border:1px solid #3b5141;
+  border-radius:16px;
+  background:#101c15eF;
+  box-shadow:0 10px 26px #0003;
+  backdrop-filter:blur(18px);
+  scrollbar-width:none;
+}
+.tabbar::-webkit-scrollbar{display:none}
+.tab-button,.tab-button#addTabButton{
+  flex:1 0 auto;
+  min-width:112px;
+  min-height:44px;
+  padding:10px 16px;
+  border:1px solid transparent;
+  border-radius:11px;
+  background:transparent;
+  color:var(--app-muted);
+  font-size:13px;
+  font-weight:760;
+  letter-spacing:.01em;
+  transition:background .16s ease,border-color .16s ease,color .16s ease;
+}
+.tab-button[aria-selected="true"]{
+  background:linear-gradient(135deg,#d9f36a,#b8df77);
+  border-color:#e2f995;
+  color:#17251a;
+  box-shadow:0 4px 14px #0003;
+}
+.tab-button:hover:not([aria-selected="true"]){background:#26392c;color:#eff8f0}
+.planner{
+  background:linear-gradient(180deg,#15231b 0%,#121e17 100%);
+  border:1px solid var(--app-border);
+  border-radius:var(--app-radius);
+  padding:clamp(16px,2vw,24px);
+  box-shadow:var(--app-shadow);
+}
+.planner h2,.planner h3{letter-spacing:-.025em}
+.planner h2{font-size:clamp(20px,2.2vw,26px);line-height:1.2;margin:0 0 7px;color:var(--app-text)}
+.planner h3{font-size:16px;line-height:1.3;color:#e4eee6}
+.planner-intro{color:var(--app-muted);font-size:13px;line-height:1.55;max-width:760px}
+.planner-panel,.year-group,.route,.plan-card,.integration-provider,.year-profile-panel{
+  background:var(--app-surface-raised);
+  border:1px solid var(--app-border);
+  border-radius:var(--app-radius-small);
+}
+.planner-panel{padding:16px}
+.year-group{padding:16px;margin:12px 0;box-shadow:0 5px 18px #00000018}
+.year-heading{margin-bottom:12px}
+.year-heading h3{font-size:19px;font-weight:800}
+.year-jumpbar{
+  top:76px;
+  gap:7px;
+  padding:9px 2px;
+  margin-bottom:12px;
+  background:linear-gradient(180deg,var(--app-bg) 70%,transparent);
+}
+.year-jumpbar a{
+  min-height:38px;
+  padding:7px 13px;
+  border-color:var(--app-border);
+  background:var(--app-surface);
+  color:var(--app-text);
+  font-size:12px;
+  font-weight:750;
+}
+.year-view-switch{margin:14px 0 18px}
+.year-view-switch button{min-height:42px;padding:9px 15px}
+.year-view-switch button.active{background:var(--app-accent-strong);border-color:var(--app-accent-strong);color:#17251a}
+.event{overflow:hidden;border:1px solid var(--app-border);border-radius:15px;background:var(--app-surface);box-shadow:0 5px 16px #0002}
+.eventhead{padding:15px 16px;background:var(--app-surface-raised);border-radius:14px}
+.eventhead:hover{background:#22362a}
+.eventtitle{font-size:16px;font-weight:800;letter-spacing:-.015em}
+.event .detail{background:#111d16;border-top:1px solid var(--app-border)}
+.field,.planner select,.planner input,.edit-grid input,.planner textarea{
+  min-height:44px;
+  border:1px solid var(--app-border-strong);
+  border-radius:11px;
+  background:#101b14;
+  color:var(--app-text);
+}
+.field:focus,.planner select:focus,.planner input:focus,.planner textarea:focus{border-color:var(--app-accent);box-shadow:0 0 0 3px #a8d9b322}
+.primary,.secondary{
+  min-height:44px;
+  border-radius:11px;
+  font-weight:760;
+  transition:transform .15s ease,background .15s ease,border-color .15s ease;
+}
+.primary{background:linear-gradient(135deg,#a8d9b3,#82bd91);color:#142218}
+.secondary{background:#213328;color:#dcebe0;border:1px solid #4a6450}
+.primary:hover,.secondary:hover{transform:translateY(-1px)}
+button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:2px solid var(--app-accent-strong);outline-offset:3px}
+.tag{border:1px solid #425b47;border-radius:999px}
+.info-tip summary{min-width:28px;min-height:28px}
+.plan-empty{border:1px dashed var(--app-border-strong);border-radius:14px;background:#15241a;color:var(--app-muted);padding:18px}
+.sold-out-stamp,.sold-out-badge,[class*="sold-out"]{text-shadow:none}
+@media(min-width:900px){
+  .hero{display:flex;align-items:flex-end;justify-content:space-between;gap:28px}
+  .stats{flex:0 1 570px;margin:0 0 1px auto}
+  .tabbar{justify-content:flex-start}
+}
+@media(max-width:700px){
+  header{padding-left:0;padding-right:0;padding-bottom:18px}
+  .hero{margin-top:16px;padding:0 14px}
+  .hero h1{font-size:28px}
+  .stats{gap:7px;margin-top:14px}
+  .stat{padding:9px 10px;border-radius:12px}
+  .stat b{font-size:19px}
+  .stat span{font-size:10px;line-height:1.25}
+  .wrap{margin-top:14px;padding:0 12px}
+  .tabbar{top:4px;margin-bottom:13px;border-radius:14px}
+  .tab-button,.tab-button#addTabButton{flex:0 0 auto;min-width:104px;padding:9px 12px}
+  .planner{padding:15px;border-radius:16px}
+  .planner-panel{padding:13px}
+  .year-group{padding:12px}
+  .year-jumpbar{top:64px}
+}
+@media(max-width:380px){
+  .hero h1{font-size:25px}
+  .stat{padding:8px 7px}
+  .stat b{font-size:18px}
+  .tab-button,.tab-button#addTabButton{min-width:96px;font-size:12px}
+}
+@media(prefers-reduced-motion:reduce){
+  .tab-button,.primary,.secondary{transition:none}
+}
+</style>
+
 </head><script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script><body>
 <header><div class="top"><div class="brand"><img src="./trail-icon.svg" alt="" width="34" height="34"> TRAILRUNNING-MANAGER</div><div class="utmb-header-index" aria-label="Persönlicher UTMB Index 436"><span class="utmb-header-mark" aria-hidden="true">▲</span><span class="utmb-header-copy"><small>UTMB INDEX</small><strong>436</strong></span><span class="utmb-header-link">↗</span></div><div class="pill"><button id="cloudProfileButton" type="button" aria-label="Anmelden – Cloud-Konto öffnen" title="Anmelden – Cloud-Konto öffnen" style="margin-left:6px;min-width:44px;min-height:44px;display:inline-flex;align-items:center;justify-content:center;gap:5px;border:1px solid #668074;border-radius:24px;background:#20372d;color:#fff;padding:5px 9px;text-decoration:none;cursor:pointer;touch-action:manipulation" onclick="event.preventDefault();event.stopPropagation();const d=document.getElementById('appMenuDropdown'),m=document.getElementById('appMenuButton'),p=document.getElementById('accountPanel'),t=document.getElementById('cloudAccountMenuToggle');d.hidden=false;m.setAttribute('aria-expanded','true');p.hidden=false;t.setAttribute('aria-expanded','true');t.textContent='☁️ Cloud-Konto schließen';const e=document.getElementById('cloudEmail');if(e)e.focus({preventScroll:true});"><svg id="cloudProfileIcon" width="24" height="24" viewBox="0 0 24 24" role="img" aria-label="Rotes Strichmännchen – abgemeldet"><circle cx="12" cy="5" r="2.5" fill="none" stroke="#ff6262" stroke-width="2"/><path d="M12 8v7m0-4-5 3m5-3 5 3m-5 1-4 6m4-6 4 6" fill="none" stroke="#ff6262" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button><button id="appMenuButton" type="button" class="app-menu-button" aria-label="Weitere Funktionen öffnen" aria-haspopup="true" aria-expanded="false" aria-controls="appMenuDropdown" title="Weitere Funktionen">···</button><button id="appSettingsButton" type="button" class="app-menu-button" aria-label="App-Einstellungen und Verbindungen öffnen" aria-haspopup="true" aria-expanded="false" aria-controls="appSettingsPanel" title="Einstellungen und Verbindungen" style="margin-left:5px"><svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 8.2a3.8 3.8 0 1 0 0 7.6 3.8 3.8 0 0 0 0-7.6Z" fill="none" stroke="currentColor" stroke-width="2"/><path d="m19.4 13.5 1.1.9-1.5 2.6-1.4-.5a7.8 7.8 0 0 1-1.6.9l-.2 1.5h-3l-.3-1.5a7.8 7.8 0 0 1-1.6-.9l-1.4.5L8 14.4l1.1-.9a7.5 7.5 0 0 1 0-1.9L8 10.7l1.5-2.6 1.4.5a7.8 7.8 0 0 1 1.6-.9l.3-1.5h3l.2 1.5a7.8 7.8 0 0 1 1.6.9l1.4-.5 1.5 2.6-1.1.9a7.5 7.5 0 0 1 0 1.9Z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg></button><div id="appSettingsPanel" class="app-menu-dropdown app-settings-panel" hidden><div class="app-menu-heading"><span>⚙️ App-Einstellungen &amp; Verbindungen</span><button id="closeAppSettingsButton" class="secondary" type="button">Schließen ✕</button></div><p class="app-menu-hint">Hier siehst du, welche Dienste die App benötigt, welche optional sind und ob sie auf diesem Gerät erreichbar sind. Passwörter und geheime Schlüssel gehören niemals in diese Übersicht.</p><div class="settings-group"><strong>Erforderlich für die Grundfunktionen</strong><div class="settings-connection"><span>GitHub Pages – App-Bereitstellung und Aktualisierungen</span><b id="connHosting">Prüfung …</b></div><div class="settings-connection"><span>Supabase – Cloud-Konto, Synchronisierung, Event-Prüfung und Datenbank</span><b id="connSupabase">Prüfung …</b></div><div class="settings-connection"><span>Browser-Speicher – lokale Einstellungen, Offline-Daten und Sicherungen</span><b id="connStorage">Prüfung …</b></div></div><div class="settings-group"><strong>Für Karten und Streckenprofile</strong><div class="settings-connection"><span>Leaflet über unpkg – Kartenanzeige</span><b id="connLeaflet">Prüfung …</b></div><div class="settings-connection"><span>OpenStreetMap – Kartenkacheln und Kartendaten</span><b id="connOsm">Wird bei Kartenaufruf geprüft</b></div></div><div class="settings-group"><strong>Optional – bei Bedarf aktivieren</strong><div class="settings-connection"><span>Web-Push – Mitteilungen zu eingereichten Änderungen</span><b id="connPush">Nicht eingerichtet</b></div><div class="settings-connection"><span>Garmin Connect / Strava – Aktivitätsdateien FIT, TCX oder GPX</span><b class="settings-neutral">Dateiimport verfügbar</b></div><div class="settings-connection"><span>Veranstalter-Websites – automatische Eventdaten-Erkennung über Supabase</span><b id="connEventScan">Bei Anmeldung verfügbar</b></div></div><div class="settings-group"><strong>Persönliche Einstellungen</strong><button class="secondary app-menu-item" type="button" onclick="document.getElementById('cloudProfileButton').click()">☁️ Cloud-Konto öffnen / anmelden</button><button class="secondary app-menu-item" type="button" onclick="document.getElementById('historyTabButton').click()">🏃 Laufhistorie &amp; Aktivitätsimport</button></div><p class="app-menu-hint">Garmin- und Strava-Passwörter werden nicht benötigt. Die App nutzt derzeit den Dateiimport, keine direkte Kontoverknüpfung. Für Karten ist keine OpenStreetMap-Anmeldung erforderlich.</p></div><div id="appMenuDropdown" class="app-menu-dropdown" role="menu" hidden><div class="app-menu-heading" style="display:flex;align-items:center;justify-content:space-between;gap:10px"><span>Menü · Daten &amp; Verwaltung</span><button id="closeAppMenuButton" type="button" class="secondary" aria-label="Menü schließen" style="min-height:36px;padding:5px 10px">Schließen ✕</button></div><div class="app-menu-section-title">Konto &amp; Synchronisierung</div><button id="cloudAccountMenuToggle" class="secondary app-menu-item" type="button" aria-expanded="false" aria-controls="accountPanel">☁️ Cloud-Konto öffnen</button><div id="accountPanel" class="app-menu-account" hidden><div style="font-weight:700;margin-bottom:5px">☁️ Cloud-Konto</div><div id="cloudStatus" style="font-size:13px;color:#d4e2d9;margin-bottom:10px">Melde dich an, um deine Laufplanung sicher in deiner Cloud zu speichern.</div><div id="cloudCheckStatus" role="status" aria-live="polite" style="font-size:11px;color:#b8d0c2;margin:-5px 0 10px">Automatischer Abruf noch nicht gestartet.</div><form id="cloudAuthForm" style="display:flex;gap:8px;flex-wrap:wrap"><input id="cloudEmail" type="email" required autocomplete="email" placeholder="E-Mail-Adresse" style="flex:1 1 190px;min-width:0;padding:11px;border-radius:9px;border:1px solid #789084;font:inherit"><input id="cloudPassword" type="password" required minlength="8" autocomplete="current-password" placeholder="Passwort (mind. 8 Zeichen)" style="flex:1 1 190px;min-width:0;padding:11px;border-radius:9px;border:1px solid #789084;font:inherit"><button class="primary" id="cloudLoginButton" type="button" onclick="event.preventDefault();if(typeof window.plannerLoginClick==='function')window.plannerLoginClick();else document.getElementById('cloudStatus').textContent='Cloud-Anmeldung wird initialisiert. Bitte kurz warten und erneut versuchen.'">Anmelden</button><button class="secondary" id="cloudSignup" type="button" onclick="plannerSignupClick()">Konto erstellen</button></form><div id="cloudAccountActions" hidden style="gap:8px;margin-top:8px"><button class="primary" id="restoreCloudData" type="button">Laufplanung und Laufhistorie aus der Cloud laden</button><button class="secondary" id="cloudLogout" type="button">Abmelden</button><button class="secondary" id="deleteCloudAccount" type="button" style="border-color:#d66;color:#ffb8b8">Konto endgültig löschen</button></div><div style="font-size:11px;color:#c4d5c9;margin-top:8px">Deine persönlichen Daten werden nur für dein angemeldetes Konto gespeichert. Verwende ein eigenes, sicheres Passwort.</div>
 </div><div class="app-menu-section-title">Speicher &amp; Datensicherung</div><div class="app-menu-info"><strong>☁️ Laufdaten geräteübergreifend</strong><p>Mit deinem Konto werden deine Laufplanung und gespeicherten Ergebnisse zwischen deinen Geräten synchronisiert. Melde dich dazu über den Bereich „Cloud-Konto“ an.</p><div id="appMenuCloudInfo" class="app-menu-hint">Noch nicht angemeldet – Synchronisierung ist nicht aktiv.</div></div><div class="app-menu-info"><strong>Gerätespeicher</strong><p id="storageHealth" aria-live="polite">Speicherstatus wird geprüft …</p><button class="secondary app-menu-item" id="protectStorageButton" type="button" onclick="requestPersistentStorage()">Speicherung auf diesem Gerät schützen</button></div><div class="app-menu-section-title">Sicherung verwalten</div><button class="secondary app-menu-item" id="exportBackup" type="button" role="menuitem">Datensicherung herunterladen</button><button class="secondary app-menu-item" id="downloadPreRestoreBackup" type="button" role="menuitem" hidden>Vorherigen Stand herunterladen</button><label class="secondary app-menu-item app-menu-label" for="importBackup" role="menuitem">Datensicherung wiederherstellen<input id="importBackup" type="file" accept="application/json,.json" hidden></label><div class="app-menu-hint">Sichere deine Planungen regelmäßig als JSON-Datei. Beim Wiederherstellen werden nur Daten aus einer gültigen Sicherung übernommen.</div><div id="cloudConflictActions" class="app-menu-conflict" style="display:none"><button class="secondary app-menu-item" id="downloadCloudBackup" type="button">Cloud-Sicherung herunterladen</button><button class="secondary app-menu-item" id="useCloudDataLocally" type="button">Cloud-Daten auf dieses Gerät übernehmen</button><button class="secondary app-menu-item" id="useLocalCloudData" type="button">Lokale Daten in Cloud übernehmen</button></div></div></div></div><div class="hero"><h1>Dein nächstes<br>Trail-Abenteuer.</h1><div class="stats"><div class="stat"><b id="eventCount">—</b><span>Hauptevents</span></div><div class="stat"><b id="routeCount">—</b><span>Strecken</span></div><div class="stat"><b>5 km</b><span>Unterkunftsradius</span></div></div></div></header>
@@ -19657,7 +19843,7 @@ function queuePlannerCloudSave(){if(!cloudReady||!cloudUser)return;clearTimeout(
 async function ensureSupabaseLibrary(){if(window.supabase?.createClient)return true;const sources=['https://unpkg.com/@supabase/supabase-js@2'];for(const src of sources){const loaded=await new Promise(resolve=>{const script=document.createElement('script');let settled=false;const finish=value=>{if(settled)return;settled=true;clearTimeout(timer);resolve(value);};const timer=setTimeout(()=>finish(false),12000);script.src=src;script.async=true;script.onload=()=>finish(!!window.supabase?.createClient);script.onerror=()=>finish(false);document.head.appendChild(script);});if(loaded)return true;}return !!window.supabase?.createClient;} async function connectPlannerCloud(){setCloudProfileIndicator(false);const authForm=document.getElementById('cloudAuthForm'),accountActions=document.getElementById('cloudAccountActions');if(authForm)authForm.hidden=false;if(accountActions)accountActions.hidden=true;if(!(await ensureSupabaseLibrary())){cloudMessage('Cloud-Dienst konnte über die verfügbaren Verbindungen nicht geladen werden. Bitte Internetverbindung prüfen und erneut versuchen.');return;}try{cloudClient=window.supabase.createClient(SUPABASE_URL,SUPABASE_PUBLISHABLE_KEY,{auth:{persistSession:true,autoRefreshToken:true,detectSessionInUrl:true}});cloudClient.auth.onAuthStateChange((event,session)=>{if(event==='SIGNED_IN'&&session?.user)setCloudProfileIndicator(true);else if(event==='SIGNED_OUT'){setCloudProfileIndicator(false);clearTimeout(cloudTimer);cloudReady=false;cloudSavePending=false;cloudUser=null;cloudMessage('Sitzung beendet. Deine lokalen Laufdaten bleiben auf diesem Gerät erhalten. Bitte melde dich erneut an.');}});const {data,error}=await cloudClient.auth.getSession();if(error)throw error;if(data?.session?.user){await activateCloudUser(data.session.user);return;}cloudMessage('Nicht angemeldet. Gib deine E-Mail-Adresse und dein Passwort ein.');}catch(error){console.error('Cloud-Initialisierung fehlgeschlagen',error);cloudMessage('Cloud-Verbindung fehlgeschlagen: '+(error?.message||'Bitte Seite neu laden.'));}}
 function plannerAccountBackupKey(userId){return 'trailPlannerAccountBackup_v1_'+userId;}
 function switchPlannerAccountData(previousUserId,nextUserId){if(!previousUserId||previousUserId===nextUserId)return;const currentKeys=collectLocalPlannerData();const currentBackup={version:1,userId:previousUserId,keys:currentKeys,baseline:localStorage.getItem(CLOUD_BASELINE_KEY),preRestoreBackup:localStorage.getItem('trailEventPreRestoreBackup'),restoreApprovedAt:localStorage.getItem('trailCloudRestoreApprovedAt'),privateDocsMigratedFor:localStorage.getItem('trailPrivateDocsMigratedFor')};try{localStorage.setItem(plannerAccountBackupKey(previousUserId),JSON.stringify(currentBackup));}catch(error){throw new Error('Kontowechsel gestoppt: Die bisherigen lokalen Laufdaten konnten nicht sicher zwischengespeichert werden. '+(error?.message||''));}let nextBackup=null;const rawNext=localStorage.getItem(plannerAccountBackupKey(nextUserId));if(rawNext){try{nextBackup=JSON.parse(rawNext);if(nextBackup?.version!==1||nextBackup?.userId!==nextUserId||!nextBackup.keys||typeof nextBackup.keys!=='object')throw new Error('Ungültige Kontosicherung.');validatePlannerSnapshot(nextBackup.keys);}catch(error){throw new Error('Kontowechsel gestoppt: Die lokale Sicherung des Zielkontos ist ungültig und wurde nicht verändert. '+(error?.message||''));}}CLOUD_KEYS.forEach(key=>localStorage.removeItem(key));localStorage.removeItem(CLOUD_BASELINE_KEY);localStorage.removeItem('trailEventPreRestoreBackup');localStorage.removeItem('trailCloudRestoreApprovedAt');localStorage.removeItem('trailPrivateDocsMigratedFor');if(nextBackup){applyPlannerSnapshot(nextBackup.keys);if(nextBackup.baseline)localStorage.setItem(CLOUD_BASELINE_KEY,nextBackup.baseline);if(nextBackup.preRestoreBackup)localStorage.setItem('trailEventPreRestoreBackup',nextBackup.preRestoreBackup);if(nextBackup.restoreApprovedAt)localStorage.setItem('trailCloudRestoreApprovedAt',nextBackup.restoreApprovedAt);if(nextBackup.privateDocsMigratedFor)localStorage.setItem('trailPrivateDocsMigratedFor',nextBackup.privateDocsMigratedFor);localStorage.removeItem(plannerAccountBackupKey(nextUserId));}}
-async function activateCloudUser(user){const previousUserId=localStorage.getItem('trailPlannerActiveUserId');if(previousUserId&&previousUserId!==user.id){cloudReady=false;switchPlannerAccountData(previousUserId,user.id);}else if(!previousUserId&&CLOUD_KEYS.some(k=>localStorage.getItem(k)!==null)){const transfer=confirm('Auf diesem Gerät liegen noch persönliche Trail-App-Daten ohne zugeordnetes Konto. Sollen diese Daten in das gerade angemeldete Konto übernommen werden? Nur bestätigen, wenn sie zu diesem Konto gehören. Bei „Abbrechen“ wird die Anmeldung beendet; die lokalen Daten bleiben unverändert.');if(!transfer){cloudMessage('Anmeldung abgebrochen. Die bisherigen lokalen Daten wurden nicht verändert und nicht übertragen. Sichere oder ordne sie zuerst dem richtigen Konto zu.');cloudUser=null;cloudReady=false;setCloudProfileIndicator(false);await cloudClient.auth.signOut();return;}}localStorage.setItem('trailPlannerActiveUserId',user.id);cloudUser=user;setCloudProfileIndicator(true);cloudReady=false;const authForm=document.getElementById('cloudAuthForm'),accountActions=document.getElementById('cloudAccountActions');if(authForm)authForm.hidden=true;if(accountActions)accountActions.hidden=false;document.getElementById('cloudProfileButton').hidden=false;document.getElementById('cloudProfileButton').setAttribute('aria-label','Cloud-Konto öffnen');document.getElementById('cloudProfileButton').title='Cloud-Konto öffnen';document.getElementById('cloudLogout').hidden=false;document.getElementById('deleteCloudAccount').hidden=false;document.getElementById('cloudConflictActions').style.display='none';cloudMessage('Anmeldung erfolgreich. Prüfe private Dokumente …');try{const privateDocsCheck=await cloudClient.storage.from('trail-private-documents').list(user.id,{limit:100,offset:0});const privateDocsPresent=!privateDocsCheck.error&&Array.isArray(privateDocsCheck.data)&&privateDocsCheck.data.length>=8;if(!privateDocsPresent||localStorage.getItem('trailPrivateDocsMigratedFor')!==user.id){const migration=await cloudClient.functions.invoke('migrate-personal-documents');if(!migration.error&&migration.data?.migrated===8&&!migration.data.failed?.length){localStorage.setItem('trailPrivateDocsMigratedFor',user.id);}else{cloudMessage('Deine Planungsdaten werden geladen. Einige PDF-Belege müssen noch in den privaten Speicher übertragen werden.');console.warn('Private Dokumentmigration unvollständig',migration.error||migration.data);}}cloudMessage('Anmeldung erfolgreich. Lade deine gespeicherten Laufdaten …');const {data,error}=await cloudClient.from('planner_data').select('data,updated_at').eq('user_id',user.id).maybeSingle();if(error)throw error;cloudUpdatedAt=data?.updated_at||null;const intentionalRestore=localStorage.getItem('trailCloudRestoreApprovedAt');if(intentionalRestore&&intentionalRestore===cloudUpdatedAt){localStorage.removeItem('trailCloudRestoreApprovedAt');cloudReady=true;applyLocalEventDataEdits();render();setCloudBaseline(collectLocalPlannerData());startCloudChangeChecks();cloudMessage('Cloud-Daten übernommen · automatische Gerätesynchronisierung aktiv.');updateReviewAccess();initProposalControls();if(isReviewOwner()){renderReviewQueue();startReviewForegroundNotifications();}return;}if(data?.data&&Object.keys(data.data).length){const local=collectLocalPlannerData(),localHasData=Object.keys(local).length>0;if(localHasData){const resolution=mergeCloudSnapshots(local,data.data);if(resolution.conflicts.length){cloudReady=false;document.getElementById('accountPanel').hidden=false;document.getElementById('cloudConflictActions').style.display='flex';cloudMessage('Gleichzeitige Änderungen in denselben Datenbereichen erkannt. Beide Stände bleiben erhalten; bitte manuell entscheiden.');const labels={trailEventPlannerState:'Laufplanung',trailRepeatPlanEntries:'Wiederholungsplanung',trailEventRunRecords:'Laufhistorie',trailEventRunAttempts:'Laufversuche',trailUserAddedEvents:'Eigene Events',trailEventRunTypes:'Wettkampftypen',trailEventDataEdits:'Event- und Streckendetails',trailRacePriorities:'Rennprioritäten'};cloudCheckMessage('Konflikt in: '+resolution.conflicts.map(k=>labels[k]||k).join(', '));return;}if(resolution.localNeedsApply){try{localStorage.setItem('trailEventPreRestoreBackup',JSON.stringify({createdAt:new Date().toISOString(),keys:local}));}catch(e){cloudReady=false;cloudMessage('Abgleich gestoppt: lokale Sicherung konnte nicht erstellt werden.');return;}applyPlannerSnapshot(resolution.snapshot);}cloudReady=true;if(resolution.remoteNeedsWrite){setCloudBaseline(data.data);startCloudChangeChecks();await savePlannerCloud();return;}applyLocalEventDataEdits();render();setCloudBaseline(resolution.snapshot);startCloudChangeChecks();cloudMessage('Angemeldet · automatische Gerätesynchronisierung aktiv. Datenbereiche sicher abgeglichen.');if(resolution.localNeedsApply){location.reload();return;}return;}applyPlannerSnapshot(data.data);cloudReady=true;applyLocalEventDataEdits();render();setCloudBaseline(collectLocalPlannerData());startCloudChangeChecks();cloudMessage('Angemeldet · deine Cloud-Daten wurden auf diesem Gerät wiederhergestellt.');location.reload();return;}cloudReady=true;applyLocalEventDataEdits();render();await savePlannerCloud();cloudMessage('Angemeldet · Synchronisierung aktiv. Deine bisherigen Daten auf diesem Gerät wurden erstmals in die Cloud übertragen.');}catch(error){cloudReady=false;console.error('Cloud-Daten konnten nach Anmeldung nicht geladen werden',error);cloudMessage('Anmeldung erfolgreich, aber Cloud-Daten konnten nicht geladen werden: '+(error?.message||'Unbekannter Fehler'));}finally{updateReviewAccess();initProposalControls();if(isReviewOwner()){renderReviewQueue();startReviewForegroundNotifications();}}}async function plannerLogin(e){e?.preventDefault?.();const email=document.getElementById('cloudEmail')?.value.trim(),password=document.getElementById('cloudPassword')?.value;if(!email||!password){cloudMessage('Bitte E-Mail-Adresse und Passwort eingeben.');return;}if(!cloudClient){cloudMessage('Anmeldung noch nicht bereit: Der Cloud-Dienst wurde nicht geladen. Bitte Seite neu laden und erneut versuchen.');return;}const button=document.getElementById('cloudLoginButton');if(button)button.disabled=true;cloudMessage('Anmeldung läuft …');try{const {data,error}=await cloudClient.auth.signInWithPassword({email,password});if(error)throw error;if(!data?.user)throw new Error('Der Anbieter hat keinen Benutzer zurückgegeben.');await activateCloudUser(data.user);}catch(err){cloudMessage('Anmeldung fehlgeschlagen: '+(err?.message||'Unbekannter Fehler'));}finally{if(button)button.disabled=false;}}
+async function activateCloudUser(user){const previousUserId=localStorage.getItem('trailPlannerActiveUserId');if(previousUserId&&previousUserId!==user.id){cloudReady=false;switchPlannerAccountData(previousUserId,user.id);}else if(!previousUserId&&CLOUD_KEYS.some(k=>localStorage.getItem(k)!==null)){const transfer=confirm('Auf diesem Gerät liegen noch persönliche Trail-App-Daten ohne zugeordnetes Konto. Sollen diese Daten in das gerade angemeldete Konto übernommen werden? Nur bestätigen, wenn sie zu diesem Konto gehören. Bei „Abbrechen“ wird die Anmeldung beendet; die lokalen Daten bleiben unverändert.');if(!transfer){cloudMessage('Anmeldung abgebrochen. Die bisherigen lokalen Daten wurden nicht verändert und nicht übertragen. Sichere oder ordne sie zuerst dem richtigen Konto zu.');cloudUser=null;cloudReady=false;setCloudProfileIndicator(false);await cloudClient.auth.signOut();return;}}localStorage.setItem('trailPlannerActiveUserId',user.id);cloudUser=user;setCloudProfileIndicator(true);cloudReady=false;const authForm=document.getElementById('cloudAuthForm'),accountActions=document.getElementById('cloudAccountActions');if(authForm)authForm.hidden=true;if(accountActions)accountActions.hidden=false;document.getElementById('cloudProfileButton').hidden=false;document.getElementById('cloudProfileButton').setAttribute('aria-label','Cloud-Konto öffnen');document.getElementById('cloudProfileButton').title='Cloud-Konto öffnen';document.getElementById('cloudLogout').hidden=false;document.getElementById('deleteCloudAccount').hidden=false;document.getElementById('cloudConflictActions').style.display='none';cloudMessage('Anmeldung erfolgreich. Prüfe private Dokumente …');try{const privateDocsCheck=await cloudClient.storage.from('trail-private-documents').list(user.id,{limit:100,offset:0});const privateDocsPresent=!privateDocsCheck.error&&Array.isArray(privateDocsCheck.data)&&privateDocsCheck.data.length>=8;if(!privateDocsPresent||localStorage.getItem('trailPrivateDocsMigratedFor')!==user.id){const migration=await cloudClient.functions.invoke('migrate-personal-documents');if(!migration.error&&migration.data?.migrated===8&&!migration.data.failed?.length){localStorage.setItem('trailPrivateDocsMigratedFor',user.id);}else{cloudMessage('Deine Planungsdaten werden geladen. Einige PDF-Belege müssen noch in den privaten Speicher übertragen werden.');console.warn('Private Dokumentmigration unvollständig',migration.error||migration.data);}}cloudMessage('Anmeldung erfolgreich. Lade deine gespeicherten Laufdaten …');const {data,error}=await cloudClient.from('planner_data').select('data,updated_at').eq('user_id',user.id).maybeSingle();if(error)throw error;cloudUpdatedAt=data?.updated_at||null;const intentionalRestore=localStorage.getItem('trailCloudRestoreApprovedAt');if(intentionalRestore&&intentionalRestore===cloudUpdatedAt){localStorage.removeItem('trailCloudRestoreApprovedAt');cloudReady=true;applyLocalEventDataEdits();render();setCloudBaseline(collectLocalPlannerData());startCloudChangeChecks();cloudMessage('Cloud-Daten übernommen · automatische Gerätesynchronisierung aktiv.');updateReviewAccess();initProposalControls();if(isReviewOwner()){renderReviewQueue();startReviewForegroundNotifications();}return;}if(data?.data&&Object.keys(data.data).length){const local=collectLocalPlannerData(),localHasData=Object.keys(local).length>0;if(localHasData){const resolution=mergeCloudSnapshots(local,data.data);if(resolution.conflicts.length){cloudReady=false;document.getElementById('accountPanel').hidden=false;document.getElementById('cloudConflictActions').style.display='flex';cloudMessage('Gleichzeitige Änderungen in denselben Datenbereichen erkannt. Beide Stände bleiben erhalten; bitte manuell entscheiden.');const labels={trailEventPlannerState:'Laufplanung',trailRepeatPlanEntries:'Wiederholungsplanung',trailEventRunRecords:'Laufhistorie',trailEventRunAttempts:'Laufversuche',trailUserAddedEvents:'Eigene Events',trailEventRunTypes:'Wettkampftypen',trailEventDataEdits:'Event- und Streckendetails',trailRacePriorities:'Rennprioritäten'};cloudCheckMessage('Konflikt in: '+resolution.conflicts.map(k=>labels[k]||k).join(', '));return;}if(resolution.localNeedsApply){try{localStorage.setItem('trailEventPreRestoreBackup',JSON.stringify({createdAt:new Date().toISOString(),keys:local}));}catch(e){cloudReady=false;cloudMessage('Abgleich gestoppt: lokale Sicherung konnte nicht erstellt werden.');return;}applyPlannerSnapshot(resolution.snapshot);}cloudReady=true;if(resolution.remoteNeedsWrite){setCloudBaseline(data.data);startCloudChangeChecks();await savePlannerCloud();return;}applyLocalEventDataEdits();render();setCloudBaseline(resolution.snapshot);startCloudChangeChecks();cloudMessage('Angemeldet · automatische Gerätesynchronisierung aktiv. Datenbereiche sicher abgeglichen.');if(resolution.localNeedsApply){location.reload();return;}return;}applyPlannerSnapshot(data.data);cloudReady=true;applyLocalEventDataEdits();render();setCloudBaseline(collectLocalPlannerData());startCloudChangeChecks();cloudMessage('Angemeldet · deine Cloud-Daten wurden auf diesem Gerät wiederhergestellt.');location.reload();return;}cloudReady=true;applyLocalEventDataEdits();render();await savePlannerCloud();cloudMessage('Angemeldet · Synchronisierung aktiv. Deine bisherigen Daten auf diesem Gerät wurden erstmals in die Cloud übertragen.');}catch(error){cloudReady=false;console.error('Cloud-Daten konnten nach Anmeldung nicht geladen werden',error);cloudMessage('Anmeldung erfolgreich, aber Cloud-Daten konnten nicht geladen werden: '+(error?.message||'Unbekannter Fehler'));}finally{updateReviewAccess();initProposalControls();if(isReviewOwner()){renderReviewQueue();startReviewForegroundNotifications();}if(cloudReady)switchTab('year');}}async function plannerLogin(e){e?.preventDefault?.();const email=document.getElementById('cloudEmail')?.value.trim(),password=document.getElementById('cloudPassword')?.value;if(!email||!password){cloudMessage('Bitte E-Mail-Adresse und Passwort eingeben.');return;}if(!cloudClient){cloudMessage('Anmeldung noch nicht bereit: Der Cloud-Dienst wurde nicht geladen. Bitte Seite neu laden und erneut versuchen.');return;}const button=document.getElementById('cloudLoginButton');if(button)button.disabled=true;cloudMessage('Anmeldung läuft …');try{const {data,error}=await cloudClient.auth.signInWithPassword({email,password});if(error)throw error;if(!data?.user)throw new Error('Der Anbieter hat keinen Benutzer zurückgegeben.');await activateCloudUser(data.user);}catch(err){cloudMessage('Anmeldung fehlgeschlagen: '+(err?.message||'Unbekannter Fehler'));}finally{if(button)button.disabled=false;}}
 async function plannerLoginClick(){const button=document.getElementById('cloudLoginButton');if(button)button.disabled=true;try{if(!cloudClient){cloudMessage('Cloud-Verbindung wird hergestellt …');await connectPlannerCloud().then(()=>{if(cloudUser)switchTab('year');});}if(!cloudClient){cloudMessage('Cloud-Anmeldung ist nicht verfügbar. Bitte prüfe die Internetverbindung und lade die Seite neu.');return;}await plannerLogin();}catch(error){console.error('Anmeldebutton fehlgeschlagen',error);cloudMessage('Anmeldung konnte nicht gestartet werden: '+(error?.message||'Unbekannter Fehler'));}finally{if(button)button.disabled=false;}}
 window.plannerLoginClick=plannerLoginClick;window.plannerSignupClick=plannerSignupClick;
 async function plannerSignupClick(){try{if(!cloudClient)await connectPlannerCloud();if(!cloudClient)throw new Error('Cloud-Dienst ist nicht erreichbar. Bitte Seite neu laden.');await plannerSignup();}catch(err){cloudMessage('Konto konnte nicht erstellt werden: '+(err?.message||'Unbekannter Fehler'));}}
