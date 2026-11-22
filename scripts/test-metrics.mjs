@@ -775,3 +775,12 @@ assert.ok(html.includes("const gpxOverview=gpxRestricted?'⛔ Durch Veranstalter
   "The compact route overview must show the explicit GPX prohibition status");
 assert.ok(html.includes("Bereits gespeicherte Streckendaten bleiben unverändert erhalten."),
   "The prohibition notice must confirm existing stored GPX data is retained");
+
+
+// Published GPX route data is planning-only and must carry an organizer-currentness disclaimer.
+assert.ok(html.includes("Die hier in der App veröffentlichte GPX-Strecke dient ausschließlich der Planung."),
+  "GPX help must clearly state that published route data is for planning only");
+assert.ok(html.includes("Für Richtigkeit, Vollständigkeit und Aktualität übernehmen wir keine Gewähr."),
+  "GPX help must disclaim guarantees for correctness, completeness and currentness");
+assert.ok(html.includes("Bitte lade vor Eventbeginn immer die aktuellste GPX-Datei direkt beim Veranstalter herunter und verwende diese."),
+  "GPX help must instruct runners to use the latest organizer GPX before the event");
