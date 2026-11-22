@@ -714,7 +714,9 @@ assert.ok(html.includes('.event-detail-accommodation-stack .year-accommodation-f
   "The shared accommodation form must fit narrow iPhone screens and tablet widths");
 
 
-const soldOutHelper=html.match(/function routeSoldOut\\(r\\)\\{([^}]+)\\}/)?.[1]||"";
+const soldOutHelperStart=html.indexOf("function routeSoldOut(r){");
+const soldOutHelperEnd=html.indexOf("}",soldOutHelperStart);
+const soldOutHelper=soldOutHelperStart>=0&&soldOutHelperEnd>soldOutHelperStart?html.slice(soldOutHelperStart,soldOutHelperEnd):"";
 assert.ok(soldOutHelper.includes("r?.soldOut==='boolean'") && soldOutHelper.includes("r?.registrationStatus==='sold_out'"),
   "Sold-out state must come from explicit registration availability");
 assert.ok(!soldOutHelper.includes("raceStatus") && !soldOutHelper.includes("raceCost") && !soldOutHelper.includes("r?.status"),
