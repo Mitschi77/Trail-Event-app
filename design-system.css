@@ -268,7 +268,11 @@ hr,.divider{border-color:var(--line)}
 .year-calendar-day.today{outline:2px solid #ffad62;outline-offset:-2px}
 .year-calendar-day.has-event{background:#652d36;border-color:#a64c55;color:#fff}
 .year-calendar-day.has-hotel{background:#214d70;border-color:#3e739a;color:#fff}
-.year-calendar-day .hotel-range-bar{display:block;flex:0 0 4px;width:100%;min-height:4px;margin-top:auto;background:#8fd5ff;border-radius:0;box-shadow:0 0 0 1px #0b2940}
+.year-calendar-day .hotel-range-stack{display:flex;flex-direction:column;gap:2px;width:100%;margin-top:auto}
+.year-calendar-day .hotel-range-bar{display:block;flex:0 0 4px;width:100%;min-height:4px;background:#8fd5ff;border-radius:0;box-shadow:0 0 0 1px #0b2940}
+.year-calendar-day .hotel-range-bar.start{border-radius:4px 0 0 4px}
+.year-calendar-day .hotel-range-bar.end{border-radius:0 4px 4px 0}
+.year-calendar-day .hotel-range-bar.start.end{border-radius:4px}
 .year-calendar-day.hotel-range-start .hotel-range-bar{border-radius:4px 0 0 4px}
 .year-calendar-day.hotel-range-end .hotel-range-bar{border-radius:0 4px 4px 0}
 .year-calendar-day.hotel-range-start.hotel-range-end .hotel-range-bar{border-radius:4px}
