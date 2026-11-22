@@ -44,4 +44,20 @@ check('deletion merges with unrelated update',
  {routeA:{x:2},routeB:{x:1}},
  {routeA:{x:2}});
 
-console.log('Cloud route merge regression tests passed (4 cases).');
+
+const retryStart=source.indexOf('function cloudRetryDelay(attempt){');
+const retryEnd=source.indexOf('function schedulePlannerCloudRetry',retryStart);
+assert.notEqual(retryStart,-1,'Cloud retry delay helper must exist');
+assert.notEqual(retryEnd,-1,'Cloud retry scheduler boundary must exist');
+const retrySource=source.slice(retryStart,retryEnd)+'\\nglobalThis.cloudRetryDelay=cloudRetryDelay;';
+const retryContext={};
+vm.runInNewContext(retrySource,retryContext);
+assert.deepEqual(
+ [0,1,2,3,4,5,6,99].map(retryContext.cloudRetryDelay),
+ [5000,15000,30000,60000,120000,300000,300000,300000],
+ 'Cloud retry must use bounded exponential backoff'
+);
+assert.ok(source.includes("window.addEventListener('online'"),'Cloud save must resume when the device comes back online');
+assert.ok(source.includes('Deine lokalen Änderungen bleiben erhalten.'),'Failed cloud save must clearly preserve local edits');
+
+console.log('Cloud route merge and offline retry regression tests passed.');
