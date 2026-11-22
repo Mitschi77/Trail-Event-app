@@ -120,3 +120,128 @@ header{padding-left:max(14px,env(safe-area-inset-left));padding-right:max(14px,e
 .event-detail-overview .event-detail-gpx strong{font-size:13px;line-height:1.45}
 @media(max-width:480px){.event-detail-overview{gap:6px;margin:11px 0 13px}.event-detail-overview .event-detail-metric{min-height:82px;padding:10px 9px;gap:6px}.event-detail-overview .event-detail-metric small{font-size:9px}.event-detail-overview .event-detail-metric strong{font-size:18px}.event-detail-overview .event-detail-gpx{display:flex;align-items:flex-start;gap:8px;padding:10px}.event-detail-overview .event-detail-gpx small{flex:0 0 auto;margin:1px 0 0}.event-detail-overview .event-detail-gpx strong{font-size:12px}}
 @media(prefers-reduced-motion:no-preference){.event-detail-overview .event-detail-metric{transition:border-color .18s ease,box-shadow .18s ease,transform .18s ease}.event-detail-overview .event-detail-metric:hover{transform:translateY(-1px);border-color:#82a982;box-shadow:0 8px 20px #10261916}}
+
+
+/* =========================================================
+   ALPINE PERFORMANCE – unified visual language
+   Dark alpine surfaces, glacier text, signal-orange actions.
+   ========================================================= */
+:root{
+  color-scheme:dark;
+  --bg:#0b1119;
+  --ink:#edf3f7;
+  --muted:#9aaab8;
+  --green:#f28a38;
+  --lime:#ffad62;
+  --line:#293746;
+  --card:#141e29;
+  --panel:#101a25;
+  --shadow:0 12px 34px #0008;
+  --ui-radius:16px;
+  --ui-radius-control:12px;
+}
+html,body{background:var(--bg);color:var(--ink)}
+body{
+  background:
+    radial-gradient(ellipse at 82% -12%,#23435a55 0,transparent 38rem),
+    linear-gradient(180deg,#0b1119 0%,#0d1620 48%,#0b1119 100%);
+  color:var(--ink);
+}
+header{
+  position:relative;
+  overflow:hidden;
+  background:linear-gradient(112deg,#101d2b 0%,#172b3d 58%,#10202e 100%);
+  border-bottom:1px solid #385064;
+  box-shadow:0 12px 36px #0005;
+}
+header:after{
+  content:"";position:absolute;inset:0;pointer-events:none;opacity:.12;
+  background-image:linear-gradient(145deg,transparent 48%,#b8d0df 49%,transparent 50%),linear-gradient(35deg,transparent 48%,#b8d0df 49%,transparent 50%);
+  background-size:86px 66px,116px 90px;
+  mask-image:linear-gradient(90deg,transparent,#000 55%,#000);
+}
+header .top,header .brand,header .utmb-header-index,header .app-menu-button{position:relative;z-index:1}
+.brand{color:#dce8ef;letter-spacing:.17em}
+.hero{position:relative}
+.hero h1{color:#f3f7fa;letter-spacing:-.045em}
+h1,h2,h3,h4{color:var(--ink);letter-spacing:-.025em}
+p,.note,.foot{color:var(--muted)}
+a,.event-detail-row a{color:#ffad62}
+button,.primary,.tab-button,.app-menu-item,.more-nav-item{
+  transition:background .18s ease,border-color .18s ease,transform .18s ease,box-shadow .18s ease;
+}
+.primary{
+  color:#101820!important;
+  background:linear-gradient(135deg,#ffb36e,#f18431)!important;
+  border:1px solid #ffbf83!important;
+  box-shadow:0 5px 16px #e8792838,inset 0 1px #fff7;
+  font-weight:850;
+}
+.primary:hover{transform:translateY(-1px);box-shadow:0 8px 22px #e8792848}
+.secondary,.tab-button,.app-menu-item,.more-nav-item{
+  background:#172432;color:#dce7ee;border:1px solid #34495b;
+}
+.secondary:hover,.tab-button:hover,.app-menu-item:hover,.more-nav-item:hover{
+  background:#213447;border-color:#58758b;
+}
+.tab-button[aria-selected="true"],.tab-button.active,.tab-button[aria-current="page"]{
+  background:#f28a38;color:#111a22;border-color:#ffb36e;font-weight:850;
+}
+.field,input,select,textarea,.planner select,.planner input,.edit-grid input{
+  background:#0e1823!important;color:#edf3f7!important;border:1px solid #344657!important;
+  accent-color:#f28a38;
+}
+::placeholder{color:#8293a2!important;opacity:1}
+:where(button,input,select,textarea,a,summary):focus-visible{outline-color:#ffad62}
+.event,.planner,.planner-panel,.planner-review,.route,.plan-card,.year-group,
+.event-filter-panel,.race-tools-section,.review-card,.integration-status,.integration-provider,
+.stat,.event-detail-data,.event-detail-group,.season-timeline,.calendar-card{
+  background:var(--card);color:var(--ink);border:1px solid var(--line);
+  box-shadow:0 8px 26px #0003;
+}
+.event{overflow:hidden}
+.eventhead{background:linear-gradient(105deg,#172635,#121d29);border-bottom:1px solid #2c3d4d}
+.eventtitle,.route strong,.event-detail-metric strong{color:#f1f6f9}
+.meta,.plan-meta,.year-race-meta,.routegrid,.event-detail-row{color:#c0ccd5}
+.event-detail-row{border-color:#293746}
+.event-detail-row b{color:#94a7b6}
+.event-detail-overview .event-detail-metric{
+  background:linear-gradient(150deg,#1a2a38,#121d28);
+  border-color:#344a5b;box-shadow:inset 0 1px #ffffff08,0 7px 20px #0003;
+}
+.event-detail-overview .event-detail-metric small,.event-detail-overview .event-detail-gpx small{
+  color:#a6bac8;letter-spacing:.1em;
+}
+.event-detail-overview .event-detail-metric strong{color:#ffb36e}
+.event-detail-overview .event-detail-gpx{
+  background:#172735;border-color:#344a5b;color:#e6eef3;
+}
+.tag,.pill{background:#203344;color:#dce9f0;border-color:#3b566a}
+.date{color:#ffad62;font-weight:850}
+.app-menu-dropdown{background:#111d29;color:var(--ink);border:1px solid #3a4e60;box-shadow:0 18px 46px #0009}
+.app-menu-heading{color:#ffad62}
+.app-menu-account,.app-menu-info{background:#182a39;border-color:#3a5366}
+.app-menu-hint,.app-menu-info p{color:#b4c4ce}
+.info-tip-content{background:#1a2a38;color:#e4edf2;border:1px solid #3b5264}
+.info-tip summary{background:#20384a;color:#ffb36e;border-color:#49677c}
+.event-filter-panel>summary{color:#edf3f7}
+.event-filter-panel .toolbar{background:#111d29}
+.event-detail-group summary,.year-jumpbar a{background:#172634;color:#e5edf2;border-color:#34495a}
+.year-jumpbar{background:var(--bg)}
+.stat{background:linear-gradient(150deg,#1a2b39,#111c27)}
+.stat strong,.stat b{color:#ffad62}
+.gpx-restriction{background:#351b21;border-color:#b94c56;color:#ffe9e9}
+.gpx-import{background:#111d29;border-color:#42596b;color:#dce7ed}
+.map,.leaflet-container{background:#101b26}
+.leaflet-popup-content-wrapper,.leaflet-popup-tip{background:#172635;color:#edf3f7}
+.empty{background:#131f2b;border:1px dashed #3b5264;border-radius:16px;color:#b8c7d1}
+hr,.divider{border-color:var(--line)}
+.badge,.status-badge{border-radius:999px}
+@media(max-width:700px){
+  header{padding-top:max(16px,env(safe-area-inset-top))}
+  .hero{margin-top:18px}
+  .eventhead{background:linear-gradient(110deg,#192a39,#121d29)}
+}
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{transition:none!important;scroll-behavior:auto!important}
+}
