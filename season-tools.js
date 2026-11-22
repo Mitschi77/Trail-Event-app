@@ -108,6 +108,8 @@ if(typeof originalYearOverview==='function'){
    const seasonSummary=document.createElement('div');
    seasonSummary.className='year-season-summary';
    seasonSummary.setAttribute('aria-label','Zusammenfassung der Jahresplanung');
+   const datedGroups=groups.filter(group=>group.key!=='undated');
+   const undatedCount=groups.find(group=>group.key==='undated')?.races.length||0;
    const summaryItem=(value,label)=>{const item=document.createElement('span');item.className='year-season-summary-item';const strong=document.createElement('strong');strong.textContent=String(value);const caption=document.createElement('small');caption.textContent=label;item.append(strong,caption);return item;};
 
    const seasonYear=datedGroups[0]?.key.slice(0,4)||((yearGroup.textContent||'').match(/\\b20\\d{2}\\b/)||[])[0];
@@ -131,8 +133,6 @@ if(typeof originalYearOverview==='function'){
      seasonSummary.append(...historyItems);
     }
    }
-   const datedGroups=groups.filter(group=>group.key!=='undated');
-   const undatedCount=groups.find(group=>group.key==='undated')?.races.length||0;
    seasonSummary.append(summaryItem(races.length,races.length===1?'Rennen geplant':'Rennen geplant'),summaryItem(datedGroups.length,datedGroups.length===1?'Monat mit Terminen':'Monate mit Terminen'));
    if(undatedCount)seasonSummary.append(summaryItem(undatedCount,undatedCount===1?'Termin offen':'Termine offen'));
    const startGaps=raceDates.slice(1).map((entry,index)=>Math.round((entry.date-raceDates[index].date)/86400000));
