@@ -742,3 +742,6 @@ assert.ok(html.includes("year-race-status-controls") && html.includes("paymentSt
   "Year overview cards must display race progress and payment status independently");
 assert.ok(!html.includes('<option value="paid" ${r.raceStatus==='),
   "Run history must not offer paid as a race progress status");
+
+assert.ok(html.includes("if(runRecords[key].raceStatus==='paid'&&!runRecords[key].paymentStatus)runRecords[key].paymentStatus='paid'"),
+  "Legacy paid race status must migrate to payment status before race progress is edited");
