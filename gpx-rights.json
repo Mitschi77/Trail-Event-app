@@ -213,5 +213,19 @@
     "userMessageRestricted": "GPX durch Veranstalter eingeschränkt – kein Download möglich",
     "userMessagePending": "GPX gesperrt – keine ausdrückliche Freigabe dokumentiert; kein Download möglich",
     "personalActivityImport": "Not wrapped by organizer-course guards."
-  }
+  },
+  "runtimePolicyVersion": "1.0.0",
+  "runtimeTestCoverage": [
+    "direct GPX fetch blocked before network",
+    "local route-file import blocked",
+    "indexed route import blocked",
+    "remote route import blocked",
+    "GPX map rendering blocked",
+    "GPX persistence blocked",
+    "official page link permission separated from file download permission",
+    "personal activity import remains available",
+    "existing stored tracks and derived profiles retained",
+    "unlisted routes fail closed",
+    "restriction status overrides positive permission flags"
+  ]
 }
