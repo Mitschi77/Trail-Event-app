@@ -101,11 +101,13 @@ if(typeof originalYearOverview==='function'){
     if(historyRows.length){
      const totalKm=historyRows.reduce((sum,row)=>sum+row.km,0);
      const totalHm=historyRows.reduce((sum,row)=>sum+row.hm,0);
-     seasonSummary.append(
+     const historyItems=[
       summaryItem(historyRows.length,historyRows.length===1?'Lauf absolviert':'Läufe absolviert'),
       summaryItem(totalKm.toFixed(1)+' km','In der Laufhistorie'),
       summaryItem(Math.round(totalHm)+' hm','Erfasste Höhenmeter')
-     );
+     ];
+     historyItems.forEach(item=>{item.dataset.source='history';item.setAttribute('aria-label',item.textContent.replace(/\\s+/g,' ').trim());});
+     seasonSummary.append(...historyItems);
     }
    }
    const datedGroups=groups.filter(group=>group.key!=='undated');
