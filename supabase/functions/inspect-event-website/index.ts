@@ -1,5 +1,4 @@
 import "jsr:@supabase/functions-js/edge-runtime.d.ts";
-import { request as httpsRequest } from "node:https";
 const cors={"Access-Control-Allow-Origin":"*","Access-Control-Allow-Headers":"authorization, x-client-info, apikey, content-type","Access-Control-Allow-Methods":"POST, OPTIONS"};
 function json(data:unknown,status=200){return new Response(JSON.stringify(data),{status,headers:{...cors,"Content-Type":"application/json"}});}
 function clean(v:unknown,max=500):string{return String(v??"").replace(/<[^>]*>/g," ").replace(/&nbsp;|&#160;/gi," ").replace(/&amp;/gi,"&").replace(/&quot;/gi,'"').replace(/&#39;|&apos;/gi,"'").replace(/&lt;/gi,"<").replace(/&gt;/gi,">").replace(/\s+/g," ").trim().slice(0,max);}
@@ -33,50 +32,108 @@ async function safeUrl(raw:string):Promise<URL>{
   await resolvePublicAddresses(u.hostname.toLowerCase());
   return u;
 }
-type PinnedResponse={status:number;headers:Record<string,string|string[]|undefined>;body:string};
+type PinnedResponse={status:number;headers:Record<string,string|undefined>;body:string};
+async function writeAll(conn:Deno.Conn,data:Uint8Array):Promise<void>{
+  let offset=0;
+  while(offset<data.length){
+    const written=await conn.write(data.subarray(offset));
+    if(written<=0)throw new Error("HTTPS-Verbindung wurde beim Senden unterbrochen.");
+    offset+=written;
+  }
+}
+function findHeaderEnd(data:Uint8Array):number{
+  for(let i=0;i<=data.length-4;i++)if(data[i]===13&&data[i+1]===10&&data[i+2]===13&&data[i+3]===10)return i;
+  return -1;
+}
+function concatBytes(chunks:Uint8Array[],total:number):Uint8Array{
+  const out=new Uint8Array(total);let offset=0;
+  for(const chunk of chunks){out.set(chunk,offset);offset+=chunk.length;}
+  return out;
+}
+function decodeChunkedBody(input:Uint8Array,maxBytes:number):Uint8Array{
+  const chunks:Uint8Array[]=[];let offset=0,total=0;
+  while(offset<input.length){
+    let lineEnd=-1;
+    for(let i=offset;i<input.length-1;i++)if(input[i]===13&&input[i+1]===10){lineEnd=i;break;}
+    if(lineEnd<0)throw new Error("Ungültige chunked HTTPS-Antwort.");
+    const line=new TextDecoder().decode(input.subarray(offset,lineEnd)).split(";")[0].trim();
+    const size=parseInt(line,16);
+    if(!Number.isFinite(size)||size<0)throw new Error("Ungültige chunked HTTPS-Antwort.");
+    offset=lineEnd+2;
+    if(size===0)return concatBytes(chunks,total);
+    if(offset+size+2>input.length)throw new Error("Unvollständige chunked HTTPS-Antwort.");
+    total+=size;
+    if(total>maxBytes)throw new Error("Die Antwort ist zu groß für den automatischen Import.");
+    chunks.push(input.subarray(offset,offset+size));
+    offset+=size;
+    if(input[offset]!==13||input[offset+1]!==10)throw new Error("Ungültige chunked HTTPS-Antwort.");
+    offset+=2;
+  }
+  throw new Error("Unvollständige chunked HTTPS-Antwort.");
+}
 async function pinnedHttpsGet(url:URL,maxBytes=2000000,timeoutMs=12000):Promise<PinnedResponse>{
   const host=url.hostname.toLowerCase();
   const addresses=await resolvePublicAddresses(host);
   let lastError:unknown=null;
   for(const address of addresses){
+    let connection:Deno.Conn|null=null;
+    const timeout=setTimeout(()=>{try{connection?.close();}catch{}},timeoutMs);
     try{
-      return await new Promise<PinnedResponse>((resolve,reject)=>{
-        const family=address.includes(":")?6:4;
-        const lookup=((_hostname:string,options:any,callback:any)=>{
-          if(options?.all)callback(null,[{address,family}]);
-          else callback(null,address,family);
-        }) as any;
-        const req=httpsRequest({
-          protocol:"https:",
-          hostname:host,
-          port:Number(url.port||443),
-          path:url.pathname+url.search,
-          method:"GET",
-          headers:{"User-Agent":"TrailEventPlannerBot/1.0","Accept":"text/html,application/xhtml+xml,application/gpx+xml,application/xml;q=0.9,*/*;q=0.8","Accept-Encoding":"identity","Connection":"close"},
-          agent:false,
-          servername:host,
-          lookup,
-        },response=>{
-          const chunks:Uint8Array[]=[];
-          let total=0;
-          response.on("data",(chunk:Uint8Array)=>{
-            total+=chunk.byteLength;
-            if(total>maxBytes){req.destroy(new Error("Die Antwort ist zu groß für den automatischen Import."));return;}
-            chunks.push(chunk);
-          });
-          response.on("end",()=>{
-            const bytes=new Uint8Array(total);
-            let offset=0;
-            for(const chunk of chunks){bytes.set(chunk,offset);offset+=chunk.byteLength;}
-            resolve({status:response.statusCode||0,headers:response.headers as Record<string,string|string[]|undefined>,body:new TextDecoder().decode(bytes)});
-          });
-          response.on("error",reject);
-        });
-        req.setTimeout(timeoutMs,()=>req.destroy(new Error("Zeitüberschreitung beim Abruf der Website.")));
-        req.on("error",reject);
-        req.end();
-      });
+      const tcp=await Deno.connect({hostname:address,port:443,transport:"tcp",signal:AbortSignal.timeout(timeoutMs)});
+      connection=tcp;
+      const tls=await Deno.startTls(tcp,{hostname:host});
+      connection=tls;
+      const request=[
+        "GET "+url.pathname+url.search+" HTTP/1.1",
+        "Host: "+host,
+        "User-Agent: TrailEventPlannerBot/1.0",
+        "Accept: text/html,application/xhtml+xml,application/gpx+xml,application/xml;q=0.9,*/*;q=0.8",
+        "Accept-Encoding: identity",
+        "Connection: close",
+        "",
+        "",
+      ].join("\r\n");
+      await writeAll(tls,new TextEncoder().encode(request));
+      const chunks:Uint8Array[]=[];let total=0;
+      while(true){
+        const buffer=new Uint8Array(16384);
+        const count=await tls.read(buffer);
+        if(count===null)break;
+        total+=count;
+        if(total>maxBytes+65536)throw new Error("Die Antwort ist zu groß für den automatischen Import.");
+        chunks.push(buffer.subarray(0,count));
+      }
+      const raw=concatBytes(chunks,total);
+      const headerEnd=findHeaderEnd(raw);
+      if(headerEnd<0||headerEnd>65536)throw new Error("Ungültiger HTTPS-Header.");
+      const headerText=new TextDecoder().decode(raw.subarray(0,headerEnd));
+      const headerLines=headerText.split("\r\n");
+      const statusMatch=headerLines.shift()?.match(/^HTTP\/1\.[01]\s+(\d{3})\b/);
+      if(!statusMatch)throw new Error("Ungültige HTTPS-Statuszeile.");
+      const headers:Record<string,string|undefined>={};
+      for(const line of headerLines){
+        const colon=line.indexOf(":");
+        if(colon<=0)continue;
+        const key=line.slice(0,colon).trim().toLowerCase();
+        const value=line.slice(colon+1).trim();
+        headers[key]=headers[key]?headers[key]+", "+value:value;
+      }
+      const rawBody=raw.subarray(headerEnd+4);
+      const transferEncoding=headers["transfer-encoding"]||"";
+      let bodyBytes:Uint8Array;
+      if(/(?:^|,)\s*chunked\s*(?:,|$)/i.test(transferEncoding))bodyBytes=decodeChunkedBody(rawBody,maxBytes);
+      else{
+        const contentLength=Number(headers["content-length"]);
+        if(Number.isFinite(contentLength)&&contentLength>=0){
+          if(contentLength>maxBytes)throw new Error("Die Antwort ist zu groß für den automatischen Import.");
+          if(rawBody.length<contentLength)throw new Error("Unvollständige HTTPS-Antwort.");
+          bodyBytes=rawBody.subarray(0,contentLength);
+        }else bodyBytes=rawBody;
+      }
+      if(bodyBytes.length>maxBytes)throw new Error("Die Antwort ist zu groß für den automatischen Import.");
+      return{status:Number(statusMatch[1]),headers,body:new TextDecoder().decode(bodyBytes)};
     }catch(error){lastError=error;}
+    finally{clearTimeout(timeout);try{connection?.close();}catch{}}
   }
   throw lastError instanceof Error?lastError:new Error("Keine geprüfte öffentliche IP-Adresse konnte erreicht werden.");
 }
