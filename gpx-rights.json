@@ -1,0 +1,521 @@
+{
+  "schemaVersion": 1,
+  "updatedAt": "2026-11-22",
+  "defaultPolicy": "deny",
+  "defaultPolicyNote": "Fail closed for every organizer course GPX route. An unlisted route receives a default pending/deny entry. No legacy allow-by-default. This registry does not delete or overwrite existing GPX data. Personal activity file imports are separate and remain outside organizer-course rights checks.",
+  "permissionKeys": [
+    "officialDescriptionVerbatim",
+    "editedDescription",
+    "originalSummary",
+    "routeFacts",
+    "mapsAndRouteLines",
+    "elevationProfiles",
+    "gpxFileFetch",
+    "gpxFileImport",
+    "gpxFileProcess",
+    "gpxFileStore",
+    "gpxFileMapDisplay",
+    "gpxFileUserDownload",
+    "gpxOfficialLink",
+    "eventNamesAndMarks",
+    "logosAndWordImageMarks",
+    "symbolsIconsPictogramsEmblemsMascots",
+    "eventSpecificGraphics"
+  ],
+  "routeCount": 9,
+  "unlistedRoutePolicy": "deny",
+  "routes": {
+    "110-tausend-111-4074": {
+      "eventId": "istrien",
+      "eventName": "Istria 100 by UTMB 2027",
+      "routeName": "Istria 110K",
+      "status": "pending",
+      "permissions": {
+        "officialDescriptionVerbatim": false,
+        "editedDescription": false,
+        "originalSummary": false,
+        "routeFacts": false,
+        "mapsAndRouteLines": false,
+        "elevationProfiles": false,
+        "gpxFileFetch": false,
+        "gpxFileImport": false,
+        "gpxFileProcess": false,
+        "gpxFileStore": false,
+        "gpxFileMapDisplay": false,
+        "gpxFileUserDownload": false,
+        "gpxOfficialLink": false,
+        "eventNamesAndMarks": false,
+        "logosAndWordImageMarks": false,
+        "symbolsIconsPictogramsEmblemsMascots": false,
+        "eventSpecificGraphics": false
+      },
+      "restriction": {
+        "status": "not_checked",
+        "notice": null,
+        "sourceUrl": "https://istria.utmb.world/races-runners/runners/regulations",
+        "routeUrl": "https://istria.utmb.world/races/110K",
+        "checkedAt": "2026-11-22",
+        "downloadPageChecked": true,
+        "metadataChecked": false,
+        "metadataStatus": "not_inspected",
+        "officialGpxPageLinkAllowed": null,
+        "note": "Official GPX tracks page lists a 110K file. Public availability is not permission; route page/header and description elevation figures conflict."
+      }
+    },
+    "69-tausend-70-2331": {
+      "eventId": "istrien",
+      "eventName": "Istria 100 by UTMB 2027",
+      "routeName": "Istria 69K",
+      "status": "pending",
+      "permissions": {
+        "officialDescriptionVerbatim": false,
+        "editedDescription": false,
+        "originalSummary": false,
+        "routeFacts": false,
+        "mapsAndRouteLines": false,
+        "elevationProfiles": false,
+        "gpxFileFetch": false,
+        "gpxFileImport": false,
+        "gpxFileProcess": false,
+        "gpxFileStore": false,
+        "gpxFileMapDisplay": false,
+        "gpxFileUserDownload": false,
+        "gpxOfficialLink": false,
+        "eventNamesAndMarks": false,
+        "logosAndWordImageMarks": false,
+        "symbolsIconsPictogramsEmblemsMascots": false,
+        "eventSpecificGraphics": false
+      },
+      "restriction": {
+        "status": "not_checked",
+        "notice": null,
+        "sourceUrl": "https://istria.utmb.world/races-runners/runners/regulations",
+        "routeUrl": "https://istria.utmb.world/races/69K",
+        "checkedAt": "2026-11-22",
+        "downloadPageChecked": true,
+        "metadataChecked": false,
+        "metadataStatus": "not_inspected",
+        "officialGpxPageLinkAllowed": null,
+        "note": "Official GPX tracks page lists a 69K file. Public availability is not permission; route page/header and description elevation figures conflict."
+      }
+    },
+    "cut-73-3000": {
+      "eventId": "chianti-ultra-trail",
+      "eventName": "Chianti Ultra Trail by UTMB 2027",
+      "routeName": "Chianti Ultra Trail 73K",
+      "status": "pending",
+      "permissions": {
+        "officialDescriptionVerbatim": false,
+        "editedDescription": false,
+        "originalSummary": false,
+        "routeFacts": false,
+        "mapsAndRouteLines": false,
+        "elevationProfiles": false,
+        "gpxFileFetch": false,
+        "gpxFileImport": false,
+        "gpxFileProcess": false,
+        "gpxFileStore": false,
+        "gpxFileMapDisplay": false,
+        "gpxFileUserDownload": false,
+        "gpxOfficialLink": false,
+        "eventNamesAndMarks": false,
+        "logosAndWordImageMarks": false,
+        "symbolsIconsPictogramsEmblemsMascots": false,
+        "eventSpecificGraphics": false
+      },
+      "restriction": {
+        "status": "not_checked",
+        "notice": null,
+        "sourceUrl": "https://chianti.utmb.world/runners/rules-regulation",
+        "routeUrl": "https://chianti.utmb.world/races/CUT",
+        "checkedAt": "2026-11-22",
+        "downloadPageChecked": true,
+        "metadataChecked": false,
+        "metadataStatus": "not_inspected",
+        "officialGpxPageLinkAllowed": null,
+        "note": "Official route page shows a 2027 GPX control. Direct file retrieval was not successful; no metadata or rights notice clearance."
+      }
+    },
+    "utcc-124-5200": {
+      "eventId": "chianti-ultra-trail",
+      "eventName": "Chianti Ultra Trail by UTMB 2027",
+      "routeName": "Ultra Trail Chianti Castles 120",
+      "status": "pending",
+      "permissions": {
+        "officialDescriptionVerbatim": false,
+        "editedDescription": false,
+        "originalSummary": false,
+        "routeFacts": false,
+        "mapsAndRouteLines": false,
+        "elevationProfiles": false,
+        "gpxFileFetch": false,
+        "gpxFileImport": false,
+        "gpxFileProcess": false,
+        "gpxFileStore": false,
+        "gpxFileMapDisplay": false,
+        "gpxFileUserDownload": false,
+        "gpxOfficialLink": false,
+        "eventNamesAndMarks": false,
+        "logosAndWordImageMarks": false,
+        "symbolsIconsPictogramsEmblemsMascots": false,
+        "eventSpecificGraphics": false
+      },
+      "restriction": {
+        "status": "not_checked",
+        "notice": null,
+        "sourceUrl": "https://chianti.utmb.world/runners/rules-regulation",
+        "routeUrl": "https://chianti.utmb.world/races/utcc",
+        "checkedAt": "2026-11-22",
+        "downloadPageChecked": true,
+        "metadataChecked": false,
+        "metadataStatus": "not_inspected",
+        "officialGpxPageLinkAllowed": null,
+        "note": "Official route page shows a 2027 GPX control. event-dates route slug says 124 km while current official page says 123 km; do not overwrite until confirmed."
+      }
+    },
+    "m-trail-22-650": {
+      "eventId": "mountain-man-winter",
+      "eventName": "MOUNTAINMAN Winterloop Reit im Winkl",
+      "routeName": "Legacy M-Trail 22 km",
+      "status": "pending",
+      "permissions": {
+        "officialDescriptionVerbatim": false,
+        "editedDescription": false,
+        "originalSummary": false,
+        "routeFacts": false,
+        "mapsAndRouteLines": false,
+        "elevationProfiles": false,
+        "gpxFileFetch": false,
+        "gpxFileImport": false,
+        "gpxFileProcess": false,
+        "gpxFileStore": false,
+        "gpxFileMapDisplay": false,
+        "gpxFileUserDownload": false,
+        "gpxOfficialLink": false,
+        "eventNamesAndMarks": false,
+        "logosAndWordImageMarks": false,
+        "symbolsIconsPictogramsEmblemsMascots": false,
+        "eventSpecificGraphics": false
+      },
+      "restriction": {
+        "status": "not_checked",
+        "notice": null,
+        "sourceUrl": "https://mountainman.de/agb/",
+        "routeUrl": "https://mountainman.de/trailrunning-events/alps/reit-im-winkl/streckendetails/",
+        "checkedAt": "2026-11-22",
+        "downloadPageChecked": true,
+        "metadataChecked": false,
+        "metadataStatus": "not_inspected",
+        "officialGpxPageLinkAllowed": null,
+        "note": "Existing catalog route ID does not match the official 2027 Winterloop 7.5 km loop; retain as historical/legacy and keep blocked."
+      }
+    },
+    "l-trail-31-750": {
+      "eventId": "mountain-man-winter",
+      "eventName": "MOUNTAINMAN Winterloop Reit im Winkl",
+      "routeName": "Legacy L-Trail 31 km",
+      "status": "pending",
+      "permissions": {
+        "officialDescriptionVerbatim": false,
+        "editedDescription": false,
+        "originalSummary": false,
+        "routeFacts": false,
+        "mapsAndRouteLines": false,
+        "elevationProfiles": false,
+        "gpxFileFetch": false,
+        "gpxFileImport": false,
+        "gpxFileProcess": false,
+        "gpxFileStore": false,
+        "gpxFileMapDisplay": false,
+        "gpxFileUserDownload": false,
+        "gpxOfficialLink": false,
+        "eventNamesAndMarks": false,
+        "logosAndWordImageMarks": false,
+        "symbolsIconsPictogramsEmblemsMascots": false,
+        "eventSpecificGraphics": false
+      },
+      "restriction": {
+        "status": "not_checked",
+        "notice": null,
+        "sourceUrl": "https://mountainman.de/agb/",
+        "routeUrl": "https://mountainman.de/trailrunning-events/alps/reit-im-winkl/streckendetails/",
+        "checkedAt": "2026-11-22",
+        "downloadPageChecked": true,
+        "metadataChecked": false,
+        "metadataStatus": "not_inspected",
+        "officialGpxPageLinkAllowed": null,
+        "note": "Existing catalog route ID does not match the official 2027 Winterloop 7.5 km loop; retain as historical/legacy and keep blocked."
+      }
+    },
+    "watz-ultimate-111-5500": {
+      "eventId": "der-watz-mountainman",
+      "eventName": "MOUNTAINMAN Berchtesgaden Stage Run",
+      "routeName": "WATZ Ultimate 111 km",
+      "status": "pending",
+      "permissions": {
+        "officialDescriptionVerbatim": false,
+        "editedDescription": false,
+        "originalSummary": false,
+        "routeFacts": false,
+        "mapsAndRouteLines": false,
+        "elevationProfiles": false,
+        "gpxFileFetch": false,
+        "gpxFileImport": false,
+        "gpxFileProcess": false,
+        "gpxFileStore": false,
+        "gpxFileMapDisplay": false,
+        "gpxFileUserDownload": false,
+        "gpxOfficialLink": false,
+        "eventNamesAndMarks": false,
+        "logosAndWordImageMarks": false,
+        "symbolsIconsPictogramsEmblemsMascots": false,
+        "eventSpecificGraphics": false
+      },
+      "restriction": {
+        "status": "not_checked",
+        "notice": null,
+        "sourceUrl": "https://mountainman.de/agb/",
+        "routeUrl": "https://mountainman.de/trailrunning-events/alps/berchtesgaden/streckendetails-berchtesgaden-watz/",
+        "checkedAt": "2026-11-22",
+        "downloadPageChecked": true,
+        "metadataChecked": false,
+        "metadataStatus": "not_inspected",
+        "officialGpxPageLinkAllowed": null,
+        "note": "Official 2027 page says 111 km/5,300 hm; current catalog route ID says 5,500 hm. No rights permission; keep blocked."
+      }
+    },
+    "watz-double-57-2500": {
+      "eventId": "der-watz-mountainman",
+      "eventName": "MOUNTAINMAN Berchtesgaden Stage Run",
+      "routeName": "WATZ Double 57 km",
+      "status": "pending",
+      "permissions": {
+        "officialDescriptionVerbatim": false,
+        "editedDescription": false,
+        "originalSummary": false,
+        "routeFacts": false,
+        "mapsAndRouteLines": false,
+        "elevationProfiles": false,
+        "gpxFileFetch": false,
+        "gpxFileImport": false,
+        "gpxFileProcess": false,
+        "gpxFileStore": false,
+        "gpxFileMapDisplay": false,
+        "gpxFileUserDownload": false,
+        "gpxOfficialLink": false,
+        "eventNamesAndMarks": false,
+        "logosAndWordImageMarks": false,
+        "symbolsIconsPictogramsEmblemsMascots": false,
+        "eventSpecificGraphics": false
+      },
+      "restriction": {
+        "status": "not_checked",
+        "notice": null,
+        "sourceUrl": "https://mountainman.de/agb/",
+        "routeUrl": "https://mountainman.de/trailrunning-events/alps/berchtesgaden/streckendetails-berchtesgaden-watz/",
+        "checkedAt": "2026-11-22",
+        "downloadPageChecked": true,
+        "metadataChecked": false,
+        "metadataStatus": "not_inspected",
+        "officialGpxPageLinkAllowed": null,
+        "note": "Official route page lists 57 km/2,500 hm; no rights permission; keep blocked."
+      }
+    },
+    "watz-final-25-1300": {
+      "eventId": "der-watz-mountainman",
+      "eventName": "MOUNTAINMAN Berchtesgaden Stage Run",
+      "routeName": "WATZ Final 25 km",
+      "status": "pending",
+      "permissions": {
+        "officialDescriptionVerbatim": false,
+        "editedDescription": false,
+        "originalSummary": false,
+        "routeFacts": false,
+        "mapsAndRouteLines": false,
+        "elevationProfiles": false,
+        "gpxFileFetch": false,
+        "gpxFileImport": false,
+        "gpxFileProcess": false,
+        "gpxFileStore": false,
+        "gpxFileMapDisplay": false,
+        "gpxFileUserDownload": false,
+        "gpxOfficialLink": false,
+        "eventNamesAndMarks": false,
+        "logosAndWordImageMarks": false,
+        "symbolsIconsPictogramsEmblemsMascots": false,
+        "eventSpecificGraphics": false
+      },
+      "restriction": {
+        "status": "not_checked",
+        "notice": null,
+        "sourceUrl": "https://mountainman.de/agb/",
+        "routeUrl": "https://mountainman.de/trailrunning-events/alps/berchtesgaden/streckendetails-berchtesgaden-watz/",
+        "checkedAt": "2026-11-22",
+        "downloadPageChecked": true,
+        "metadataChecked": false,
+        "metadataStatus": "not_inspected",
+        "officialGpxPageLinkAllowed": null,
+        "note": "Official route page lists 25 km/1,300 hm; no rights permission; keep blocked."
+      }
+    }
+  },
+  "additionalRoutesCoveredByDefaultDeny": [
+    {
+      "eventId": "istrien",
+      "routeCode": "168K",
+      "reason": "No current catalog route ID identified in event-dates mapping; default deny applies."
+    },
+    {
+      "eventId": "istrien",
+      "routeCode": "42K",
+      "reason": "No current catalog route ID identified in event-dates mapping; default deny applies."
+    },
+    {
+      "eventId": "istrien",
+      "routeCode": "21K",
+      "reason": "No current catalog route ID identified in event-dates mapping; default deny applies."
+    },
+    {
+      "eventId": "chianti-ultra-trail",
+      "routeCode": "CMT 46",
+      "reason": "No current catalog route ID identified in event-dates mapping; default deny applies."
+    },
+    {
+      "eventId": "chianti-ultra-trail",
+      "routeCode": "CHT 20",
+      "reason": "No current catalog route ID identified in event-dates mapping; default deny applies."
+    },
+    {
+      "eventId": "chianti-ultra-trail",
+      "routeCode": "CWR 10",
+      "reason": "No current catalog route ID identified in event-dates mapping; default deny applies. Official 2027 page currently resolves to a 2026-labelled GPX candidate."
+    },
+    {
+      "eventId": "mountain-man-winter",
+      "routeCode": "Winterloop 7.5 km / 110 hm",
+      "reason": "New 2027 loop has no current catalog route ID; default deny applies."
+    },
+    {
+      "eventId": "mountainman",
+      "routeCode": "Nesselwang XXL 70 km",
+      "reason": "No current catalog route ID; default deny applies."
+    },
+    {
+      "eventId": "mountainman",
+      "routeCode": "Nesselwang XL 42 km",
+      "reason": "No current catalog route ID; default deny applies."
+    },
+    {
+      "eventId": "mountainman",
+      "routeCode": "Nesselwang L 33 km",
+      "reason": "No current catalog route ID; default deny applies."
+    },
+    {
+      "eventId": "mountainman",
+      "routeCode": "Nesselwang M 22 km",
+      "reason": "No current catalog route ID; default deny applies."
+    },
+    {
+      "eventId": "mountainman",
+      "routeCode": "Nesselwang S 10 km",
+      "reason": "No current catalog route ID; default deny applies."
+    },
+    {
+      "eventId": "der-watz-mountainman",
+      "routeCode": "WATZ stage 1 29 km",
+      "reason": "Stage subroute has no separate catalog route ID; default deny applies."
+    },
+    {
+      "eventId": "der-watz-mountainman",
+      "routeCode": "WATZ stage 2 25 km",
+      "reason": "Stage subroute has no separate catalog route ID; default deny applies."
+    },
+    {
+      "eventId": "der-watz-mountainman",
+      "routeCode": "WATZ stage 3 32 km",
+      "reason": "Stage subroute has no separate catalog route ID; default deny applies."
+    },
+    {
+      "eventId": "der-watz-mountainman",
+      "routeCode": "WATZ stage 4 25 km",
+      "reason": "Stage subroute has no separate catalog route ID; default deny applies."
+    },
+    {
+      "eventId": null,
+      "routeCode": "Grossarltal XXL 70",
+      "reason": "Official 2027 event is not yet a separate event-dates entry; default deny applies."
+    },
+    {
+      "eventId": null,
+      "routeCode": "Grossarltal XL 50",
+      "reason": "Official 2027 event is not yet a separate event-dates entry; default deny applies."
+    },
+    {
+      "eventId": null,
+      "routeCode": "Grossarltal L 30",
+      "reason": "Official 2027 event is not yet a separate event-dates entry; default deny applies."
+    },
+    {
+      "eventId": null,
+      "routeCode": "Grossarltal M 21",
+      "reason": "Official 2027 event is not yet a separate event-dates entry; default deny applies."
+    },
+    {
+      "eventId": null,
+      "routeCode": "Grossarltal S 15",
+      "reason": "Official 2027 event is not yet a separate event-dates entry; default deny applies."
+    },
+    {
+      "eventId": null,
+      "routeCode": "Grossarltal XS 10",
+      "reason": "Official 2027 event is not yet a separate event-dates entry; default deny applies."
+    },
+    {
+      "eventId": null,
+      "routeCode": "Reit im Winkl XXL 73",
+      "reason": "Official 2027 event is not yet a separate event-dates entry; default deny applies."
+    },
+    {
+      "eventId": null,
+      "routeCode": "Reit im Winkl XL 52",
+      "reason": "Official 2027 event is not yet a separate event-dates entry; default deny applies."
+    },
+    {
+      "eventId": null,
+      "routeCode": "Reit im Winkl L 40",
+      "reason": "Official 2027 event is not yet a separate event-dates entry; default deny applies."
+    },
+    {
+      "eventId": null,
+      "routeCode": "Reit im Winkl M 26",
+      "reason": "Official 2027 event is not yet a separate event-dates entry; default deny applies."
+    },
+    {
+      "eventId": null,
+      "routeCode": "Reit im Winkl S 11",
+      "reason": "Official 2027 event is not yet a separate event-dates entry; default deny applies."
+    }
+  ],
+  "safety": {
+    "existingGpxRetention": "Preserve all existing stored tracks, filenames, derived profiles and user edits. Rights enforcement never deletes or rewrites them.",
+    "restrictionBehavior": "Block organizer-course GPX fetch, import, processing, storage, map display and user download unless each required action has explicit route-specific permission and restriction status is clear.",
+    "linkBehavior": "An official information/GPX page link requires its own explicit gpxOfficialLink permission. A direct .gpx URL requires explicit gpxFileUserDownload permission; link permission never authorizes file retrieval.",
+    "userMessageRestricted": "GPX durch Veranstalter eingeschränkt – kein Download möglich",
+    "userMessagePending": "GPX gesperrt – keine ausdrückliche Freigabe dokumentiert; kein Download möglich",
+    "personalActivityImport": "Not wrapped by organizer-course guards."
+  },
+  "runtimePolicyVersion": "1.0.0",
+  "runtimeTestCoverage": [
+    "direct GPX fetch blocked before network",
+    "local route-file import blocked",
+    "indexed route import blocked",
+    "remote route import blocked",
+    "GPX map rendering blocked",
+    "GPX persistence blocked",
+    "official page link permission separated from file download permission",
+    "personal activity import remains available",
+    "existing stored tracks and derived profiles retained",
+    "unlisted routes fail closed",
+    "restriction status overrides positive permission flags"
+  ]
+}
