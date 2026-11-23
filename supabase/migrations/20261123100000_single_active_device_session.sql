@@ -158,3 +158,19 @@ alter policy "submit authenticated proposals"
     and decided_at is null
     and (select private.is_current_auth_session_active())
   );
+
+
+-- A zero-argument wrapper lets authenticated Edge Function callers validate
+-- their own JWT session through PostgREST without exposing auth.sessions.
+create or replace function public.is_current_auth_session_active()
+returns boolean
+language sql
+stable
+security definer
+set search_path = pg_catalog
+as $function$
+  select private.is_current_auth_session_active();
+$function$;
+
+revoke all on function public.is_current_auth_session_active() from public, anon;
+grant execute on function public.is_current_auth_session_active() to authenticated;
