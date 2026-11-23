@@ -34,4 +34,34 @@ assert.match(
   'A logged-in device must recheck session ownership during cloud polling.'
 );
 
+const edgeFunctions = [
+  ['send-event-review-push', '../supabase/functions/send-event-review-push/index.ts'],
+  ['delete-own-account', '../supabase/functions/delete-own-account/index.ts'],
+  ['migrate-personal-documents', '../supabase/functions/migrate-personal-documents/index.ts'],
+];
+
+for (const [name, relativePath] of edgeFunctions) {
+  const source = fs.readFileSync(new URL(relativePath, import.meta.url), 'utf8');
+  assert.match(
+    source,
+    /rpc\(["']is_current_auth_session_active["']\)/,
+    name + ' must validate the caller session before privileged work.'
+  );
+  assert.match(
+    source,
+    /activeSession !== true/,
+    name + ' must reject a revoked or unverifiable session.'
+  );
+}
+
+const reviewPush = fs.readFileSync(
+  new URL('../supabase/functions/send-event-review-push/index.ts', import.meta.url),
+  'utf8'
+);
+assert.match(
+  reviewPush,
+  /if \(!internalCall\) \{[\s\S]*?rpc\(["']is_current_auth_session_active["']\)[\s\S]*?activeSession !== true/,
+  'Review push must check user sessions while retaining its trusted server-to-server path.'
+);
+
 console.log('Single-active-device app integration tests passed.');
