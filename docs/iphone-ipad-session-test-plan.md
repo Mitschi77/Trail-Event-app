@@ -72,4 +72,6 @@ Ablauf:
 
 Die lokalen Schlüssel werden ausschließlich zur Laufzeit vom lokalen CLI ausgegeben und als Job-Umgebungsvariablen verwendet. Es werden keine Produktions-Secrets benötigt. Die Testdaten und Container werden nach dem Lauf verworfen.
 
+Ergebnis am 23.11.2026: Der erste vollständige Lauf war erfolgreich (GitHub Actions Run 45185762018). Der Test hat zwei echte GoTrue-Sitzungen erzeugt, den Logout-Scope `others` ausgeführt, den alten Refresh-Token abgewiesen, den neuen Refresh-Token akzeptiert und den Zugriff des alten JWT auf Planner-Daten, Push-Abos, Änderungsvorschläge und private Dateien gesperrt. Ein Schreibversuch mit dem alten JWT wurde ebenfalls abgewiesen.
+
 Dieser Test deckt den echten GoTrue-/JWT-/PostgREST-/Storage-Ablauf ab, ersetzt aber weiterhin keinen Test mit zwei realen iOS-Geräten und prüft nicht die gehostete Supabase-Edge-Functions-Laufzeit.
