@@ -974,3 +974,20 @@ div[class*="utmb-result"] a,
 div[class*="utmb-score"] a{
   color:#7FD8FF!important;
 }
+
+
+/* NORTHBOUND menu refresh: compact hierarchy, neutral surfaces, consistent controls. */
+.app-menu-dropdown,.app-settings-panel{width:min(360px,calc(100vw - 28px))!important;padding:16px!important;color:#F5F7FA!important;background:linear-gradient(160deg,#17232D 0%,#0E1720 100%)!important;border:1px solid #344653!important;border-radius:16px!important;box-shadow:0 18px 48px #0009!important}
+.app-menu-heading{display:flex!important;align-items:center;justify-content:space-between;gap:12px;padding:0 0 12px!important;margin:0 0 12px!important;color:#F5F7FA!important;border-bottom:1px solid #344653}
+.app-menu-section-title,.settings-group>strong{display:block;margin:16px 2px 8px!important;color:#7FD8FF!important;font-size:11px!important;font-weight:850!important;letter-spacing:.09em;text-transform:uppercase}
+.app-menu-item{min-height:44px!important;margin:5px 0!important;padding:11px 12px!important;border:1px solid #344653!important;border-radius:10px!important;background:#172630!important;color:#F5F7FA!important}
+.app-menu-item:hover,.app-menu-item:focus-visible{background:#203443!important;border-color:#63849A!important}
+.app-menu-account,.app-menu-info,.app-menu-conflict{background:#111D27!important;border:1px solid #344653!important;color:#E7EEF3!important;border-radius:12px!important}
+.app-menu-account #cloudStatus,.app-menu-account #cloudCheckStatus,.app-menu-info p,.app-menu-hint{color:#B5C2CC!important}
+.app-menu-dropdown .secondary,.app-settings-panel .secondary{background:#1A2934!important;color:#EAF1F6!important;border-color:#405564!important}
+.app-menu-dropdown .primary,.app-settings-panel .primary{background:#FF6A00!important;color:#101820!important;border-color:#FF6A00!important}
+.utmb-score-stat b{color:#7FD8FF!important}.utmb-score-stat span{color:#B5C2CC!important}
+.more-nav-menu{min-width:230px;padding:8px!important;border:1px solid #344653!important;border-radius:13px!important;background:#111B25!important;box-shadow:0 14px 36px #0009!important}
+.more-nav-item{width:100%;min-height:44px!important;margin:3px 0!important;padding:10px 12px!important;border:1px solid transparent!important;border-radius:9px!important;background:transparent!important;color:#F5F7FA!important;text-align:left}
+.more-nav-item:hover,.more-nav-item:focus-visible{background:#1B2A35!important;border-color:#405564!important}
+@media(max-width:520px){.app-menu-dropdown,.app-settings-panel{position:fixed!important;top:calc(env(safe-area-inset-top) + 76px)!important;right:12px!important;left:12px!important;width:auto!important;max-height:calc(100dvh - 92px)!important}}
