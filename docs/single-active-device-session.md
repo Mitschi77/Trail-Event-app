@@ -45,7 +45,7 @@ Eine reine `verify_jwt`-Prüfung reicht nicht, weil sie nur die JWT-Gültigkeit 
 ## Rollout-Reihenfolge – noch nicht ausgeführt
 
 1. Migration in einer Testumgebung anwenden.
-2. PostgreSQL-Integrationstest für aktive und widerrufene Sitzungen auf Planungsdaten, private Dokumente, Push-Abos und Änderungsvorschläge ausführen.
+2. PostgreSQL-Integrationstest für aktive und widerrufene Sitzungen auf Planungsdaten, private Dokumente, Push-Abos und Änderungsvorschläge ausführen; zusätzlich fehlende Sitzungskennung, fremde Benutzer-Sitzung und das Rollback prüfen.
 3. Edge-Function-Tests und Deno-Typechecks ausführen.
 4. Rollback-Skript `supabase/rollback/20261123100000_single_active_device_session_rollback.sql` in der Testumgebung prüfen.
 5. Login auf iPhone und anschließend auf iPad testen; prüfen, dass das iPhone keine geschützten Cloud-Daten mehr lesen oder schreiben kann.
