@@ -73,9 +73,11 @@ if (!html.includes("if(!(await ensureSupabaseLibrary()))")) {
   throw new Error("Cloud login must wait for the Supabase fallback loader before creating the client.");
 }
 
-const signedOutHandler = html.match(/else if\(event==='SIGNED_OUT'\)\{([^}]*)\}/)?.[1] || "";
-if (!signedOutHandler.includes("Sitzung beendet.") || signedOutHandler.includes("CLOUD_KEYS.forEach")) {
-  throw new Error("Unexpected auth sign-out must preserve local planner data.");
+const signedOutHandler = html.match(/else if\(event==='SIGNED_OUT'\)\{([\\s\\S]*?)cloudMessage\(/)?.[1] || "";
+if (!signedOutHandler.includes("setCloudProfileIndicator(false)") ||
+    signedOutHandler.includes("CLOUD_KEYS.forEach") ||
+    !html.includes("Sitzung beendet oder auf einem anderen Gerät abgemeldet.")) {
+  throw new Error("Unexpected auth sign-out must preserve local planner data and explain the revoked session.");
 }
 
 
