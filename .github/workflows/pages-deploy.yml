@@ -1,4 +1,5 @@
 name: Deploy Trailrunning app to GitHub Pages
+# Fresh workflow run after Pages artifact retry collision
 
 on:
   push:
