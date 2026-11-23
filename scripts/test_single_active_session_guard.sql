@@ -2,8 +2,18 @@
 -- Run against a disposable PostgreSQL database as a superuser:
 -- psql -v ON_ERROR_STOP=1 -f scripts/test_single_active_session_guard.sql
 
-create role anon;
-create role authenticated;
+do $roles$
+begin
+  create role anon nologin;
+exception when duplicate_object then null;
+end
+$roles$;
+do $roles$
+begin
+  create role authenticated nologin;
+exception when duplicate_object then null;
+end
+$roles$;
 
 create schema auth;
 create table auth.sessions (id uuid primary key, user_id uuid not null);
