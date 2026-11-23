@@ -2483,6 +2483,12 @@ window.trailReviewPushClick=function(event){
 (function bindPushTouchDiagnostics(){
   if(document.documentElement.dataset.pushTouchDiagnostics==='1')return;
   document.documentElement.dataset.pushTouchDiagnostics='1';
+  function setBootStatus(){
+    const status=document.getElementById('reviewNotificationStatus');
+    if(status)status.textContent='Diagnose aktiv · Skript geladen · warte auf Berührung';
+  }
+  setBootStatus();
+  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',setBootStatus,{once:true});
   function describe(el){
     if(!el)return 'kein Element';
     const tag=(el.tagName||'ELEMENT').toLowerCase();
