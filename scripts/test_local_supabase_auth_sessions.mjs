@@ -102,6 +102,19 @@ assert.equal(await rpc(deviceA.access_token), false, 'Old iPhone JWT must be rej
 assert.equal((await rows('planner_data', deviceA.access_token)).length, 0, 'Revoked iPhone must not read planner data.');
 assert.equal((await rows('event_push_subscriptions', deviceA.access_token)).length, 0, 'Revoked iPhone must not read push subscriptions.');
 assert.equal((await rows('event_change_proposals', deviceA.access_token)).length, 0, 'Revoked iPhone must not read proposals.');
+assert.equal((await rows('planner_data', deviceB.access_token)).length, 1, 'Current iPad must retain planner access.');
+const staleInsert = await api('/rest/v1/planner_data', {
+  token: deviceA.access_token, method: 'POST',
+  body: { user_id: userId, data: { source: 'revoked-device' } },
+  headers: { Prefer: 'return=representation' },
+});
+assert.ok(!staleInsert.response.ok, 'Revoked iPhone must not insert planner data.');
+const staleStorageUpload = await fetch(new URL(`/storage/v1/object/trail-private-documents/${userId}/stale-device.txt`, baseUrl), {
+  method: 'POST',
+  headers: { apikey: anonKey, Authorization: `Bearer ${deviceA.access_token}`, 'Content-Type': 'text/plain' },
+  body: 'must-not-upload',
+});
+assert.ok(!staleStorageUpload.ok, 'Revoked iPhone must not upload private files.');
 const storageAfter = await fetch(new URL(`/storage/v1/object/authenticated/trail-private-documents/${userId}/session-test.txt`, baseUrl), {
   headers: { apikey: anonKey, Authorization: `Bearer ${deviceA.access_token}` },
 });
