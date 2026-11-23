@@ -910,3 +910,5 @@ assert.ok(seasonTools.includes("@media(prefers-reduced-motion:reduce){#seasonTim
 const alpinePerformance = await readFile(new URL("../alpine-performance.js", import.meta.url), "utf8");
 assert.ok(alpinePerformance.includes("document.title='ALTRIVO'"), "Browser title must use the ALTRIVO brand");
 assert.ok(alpinePerformance.includes("document.createTextNode(' ALTRIVO')"), "Visible app header must use the ALTRIVO brand");
+assert.ok(html.includes('<script src="./alpine-performance.js" defer></script>'), "The main app document must load the ALTRIVO branding script");
+assert.ok(serviceWorker.includes("'./alpine-performance.js'"), "The ALTRIVO branding script must be precached for offline launches");
