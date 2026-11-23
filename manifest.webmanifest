@@ -1,17 +1,13 @@
 {
-  "name": "Trailrunning-Manager",
-  "short_name": "Trailrunning",
+  "name": "NORTHBOUND — Beyond the Trail",
+  "short_name": "NORTHBOUND",
+  "description": "NORTHBOUND — Find your next line.",
   "start_url": "./",
   "scope": "./",
   "display": "standalone",
   "background_color": "#0B1117",
   "theme_color": "#0B1117",
   "icons": [
-    {
-      "src": "./trail-icon.svg",
-      "sizes": "any",
-      "type": "image/svg+xml",
-      "purpose": "any"
-    }
+    {"src":"./trail-icon.svg","sizes":"any","type":"image/svg+xml","purpose":"any"}
   ]
 }
