@@ -48,6 +48,7 @@ const edgeFunctions = [
   ['send-event-review-push', '../supabase/functions/send-event-review-push/index.ts'],
   ['delete-own-account', '../supabase/functions/delete-own-account/index.ts'],
   ['migrate-personal-documents', '../supabase/functions/migrate-personal-documents/index.ts'],
+  ['send-owner-test-push', '../supabase/functions/send-owner-test-push/core.mjs'],
 ];
 
 for (const [name, relativePath] of edgeFunctions) {
