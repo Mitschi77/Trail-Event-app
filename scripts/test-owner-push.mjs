@@ -184,4 +184,4 @@ for (const statusCode of [404, 410]) {
   assert.equal((await invoke(handler, { method: "OPTIONS" })).status, 200);
 }
 
-console.log("Owner push handler: 13 executable security and failure-path checks passed.");
+console.log("Owner push handler: 14 executable security and failure-path checks passed.");
