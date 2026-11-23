@@ -817,3 +817,138 @@ a,.date,.app-menu-heading,.year-calendar-year h3,
 @media(max-width:700px){
   .tabbar{border-radius:16px;background:rgba(11,17,23,.97)!important}
 }
+
+
+/* NORTHBOUND v102 — final stacking and neutral-surface pass */
+header{
+  overflow:visible!important;
+  isolation:isolate!important;
+  position:relative!important;
+  z-index:1000!important;
+}
+header:after{z-index:0!important;pointer-events:none!important}
+header>.top{position:relative!important;z-index:1002!important}
+header>.hero{position:relative!important;z-index:1!important}
+header .pill{position:relative!important;z-index:1003!important}
+header .app-menu-dropdown,
+header .app-settings-panel{
+  position:absolute!important;
+  z-index:10000!important;
+  max-height:min(78vh,760px)!important;
+  overflow-y:auto!important;
+  overscroll-behavior:contain;
+  background:#101922!important;
+  color:#F5F7FA!important;
+  border:1px solid #40505E!important;
+  box-shadow:0 22px 60px #000D!important;
+}
+@media(max-width:700px){
+  header .app-menu-dropdown,
+  header .app-settings-panel{
+    position:fixed!important;
+    top:calc(env(safe-area-inset-top,0px) + 82px)!important;
+    right:max(12px,env(safe-area-inset-right))!important;
+    left:auto!important;
+    width:min( min(440px, calc(100vw - 24px)), 440px)!important;
+    max-width:calc(100vw - 24px)!important;
+    max-height:calc(100dvh - env(safe-area-inset-top,0px) - 100px)!important;
+    z-index:2147483000!important;
+  }
+}
+/* One palette across every app surface; no green-tinted cards or chips. */
+:root{
+  --bg:#0B1117!important;
+  --ink:#F5F7FA!important;
+  --muted:#AAB5C0!important;
+  --line:#34414D!important;
+  --card:#151D25!important;
+  --panel:#101820!important;
+  --northbound-orange:#FF6A00!important;
+  --northbound-ice:#7FD8FF!important;
+}
+html,body,main.wrap,.wrap,.tab-panel{background-color:#0B1117!important;color:#F5F7FA!important}
+body{
+  background:
+    radial-gradient(ellipse at 82% -12%,#173044 0,transparent 38rem),
+    linear-gradient(180deg,#0B1117 0%,#101820 52%,#0B1117 100%)!important;
+}
+:is(.event,.planner,.planner-panel,.planner-review,.route,.plan-card,.year-group,
+.event-filter-panel,.race-tools-section,.review-card,.integration-status,
+.integration-provider,.stat,.event-detail-data,.event-detail-group,
+.season-timeline,.calendar-card,.year-calendar-year,.year-calendar-month,
+.year-season-summary,.year-profile-panel,.year-load-chart,.year-month-races,
+.event-detail-overview,.race-detail-overview,.elevation-chart-wrap,
+.segment-table,.gpx-import,.app-menu-account,.app-menu-info,
+.settings-group,.settings-connection,.info-tip-content,.empty,.plan-empty){
+  background-color:#131C25!important;
+  background-image:none!important;
+  color:#F5F7FA!important;
+  border-color:#2B3945!important;
+  box-shadow:0 8px 24px #0005!important;
+}
+.eventhead,#events .eventhead{
+  background:linear-gradient(105deg,#1A2732,#121B24)!important;
+  color:#F5F7FA!important;border-color:#2B3945!important;
+}
+.tag,#events .meta>.tag,
+.year-race-meta-item,.year-season-summary-item,
+.year-calendar-day,.year-view-switch,.year-view-switch button,
+.year-overview-nav-button,.secondary,.tab-button,.app-menu-item,.more-nav-item{
+  background:#18232D!important;color:#DCE6ED!important;border-color:#354653!important;
+}
+.date,#events .date{
+  background:#1D3442!important;color:#BFEAFF!important;border-color:#49687B!important;
+}
+.tab-button[aria-selected="true"],.tab-button.active,
+.tab-button[aria-current="page"],.year-view-switch button.active,
+.year-overview-nav-button[aria-current="true"]{
+  background:#FF6A00!important;color:#0B1117!important;border-color:#FF8A36!important;
+}
+.eventtitle,.route strong,.event-detail-metric strong,
+.year-race strong,.year-heading,h1,h2,h3,h4,
+.app-menu-heading,.settings-group>strong{color:#F5F7FA!important}
+.stat b,.stat strong,.year-season-summary-item strong,
+.event-detail-overview .event-detail-metric strong{color:#7FD8FF!important}
+a,.link,.date{color:#7FD8FF}
+:where(button,input,select,textarea,a,summary):focus-visible{outline-color:#7FD8FF!important}
+input,select,textarea,.field{background:#0E1720!important;color:#F5F7FA!important;border-color:#354653!important}
+::placeholder{color:#9AA8B4!important}
+#yearOverview .year-month-races .year-race-meta-item[data-meta-kind="type"],
+#yearOverview .year-month-races .year-race-meta-item[data-meta-kind="time-limit"]{
+  background:#18232D!important;color:#DCE6ED!important;border-color:#354653!important;
+}
+.event-detail-overview .event-detail-metric,
+.event-detail-overview .event-detail-gpx,
+.race-detail-metric,.race-detail-date,
+.year-season-summary-item,.year-calendar-month{
+  background:#18232D!important;border-color:#354653!important;
+}
+.year-calendar-day.has-hotel{background:#163449!important;border-color:#7FD8FF!important}
+.year-calendar-day.has-event{background:#512A31!important;border-color:#A85B63!important}
+.year-calendar-day.has-event.has-hotel{background:linear-gradient(135deg,#512A31 0 50%,#163449 50%)!important}
+.gpx-planning-notice{background:#202A32!important;color:#DCE6ED!important;border-color:#765333!important}
+.gpx-restriction{background:#351B21!important;color:#FFE9E9!important;border-color:#A94B55!important}
+.sold-out-stamp,.sold-out-overview,.sold-out-text{background:#351B22!important;color:#FFB0B2!important}
+.app-menu-hint,.app-menu-info p,.note,.foot,.meta,.plan-meta,.year-race-meta{color:#B5C2CC!important}
+
+
+/* Header finish: real contour-map lines, never the former diamond grid. */
+header:after{
+  opacity:.2!important;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 420 320' fill='none'%3E%3Cg stroke='%237FD8FF' stroke-width='1.15' stroke-linecap='round'%3E%3Cpath d='M-35 185C8 150 35 155 67 126S119 62 164 74s56 55 91 45 49-63 91-55 68 35 109 5 57-54 94-35'/%3E%3Cpath d='M-30 204C14 170 39 176 78 146s55-52 87-49 58 52 91 43 52-57 85-48 68 37 108 7 58-48 94-31'/%3E%3Cpath d='M-22 224C21 192 50 197 88 169s51-40 78-39 60 47 90 40 55-50 80-42 70 37 110 10 60-42 95-27'/%3E%3Cpath d='M-10 245C30 214 60 218 98 193s46-31 70-30 60 41 88 35 57-43 77-36 70 36 111 13 61-37 94-23'/%3E%3Cpath d='M25 265C58 240 78 242 112 220s39-23 60-22 57 34 82 29 55-35 73-29 66 31 105 15 58-31 86-18'/%3E%3Cpath d='M102 122c18-22 44-31 65-24 17 6 24 25 18 41-7 18-29 29-48 24-20-5-34-23-35-41Z'/%3E%3Cpath d='M113 123c14-16 34-22 49-17 13 5 18 18 13 30-5 13-21 21-35 17-15-4-25-17-27-30Z'/%3E%3Cpath d='M125 124c9-10 22-14 32-10 8 3 11 11 8 19-4 8-14 13-23 10-9-2-16-10-17-19Z'/%3E%3C/g%3C/svg%3E")!important;
+  background-repeat:no-repeat!important;
+  background-size:min(52vw,520px) auto!important;
+  background-position:right center!important;
+  mask-image:linear-gradient(90deg,transparent 0%,#000 38%,#000 100%)!important;
+}
+.pill button#cloudProfileButton{
+  background:#18232D!important;color:#F5F7FA!important;border-color:#40505E!important;
+}
+.app-menu-account #cloudStatus,
+.app-menu-account #cloudCheckStatus,
+.app-menu-account #cloudAuthForm input,
+.app-menu-account #cloudAccountActions,
+.app-menu-account .app-menu-hint{
+  color:#B5C2CC!important;border-color:#354653!important;
+}
+.app-menu-account #cloudAuthForm input{background:#0E1720!important}
