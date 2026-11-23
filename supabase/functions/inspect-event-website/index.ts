@@ -1,4 +1,5 @@
 import "jsr:@supabase/functions-js/edge-runtime.d.ts";
+import { request as httpsRequest } from "node:https";
 const cors={"Access-Control-Allow-Origin":"*","Access-Control-Allow-Headers":"authorization, x-client-info, apikey, content-type","Access-Control-Allow-Methods":"POST, OPTIONS"};
 function json(data:unknown,status=200){return new Response(JSON.stringify(data),{status,headers:{...cors,"Content-Type":"application/json"}});}
 function clean(v:unknown,max=500):string{return String(v??"").replace(/<[^>]*>/g," ").replace(/&nbsp;|&#160;/gi," ").replace(/&amp;/gi,"&").replace(/&quot;/gi,'"').replace(/&#39;|&apos;/gi,"'").replace(/&lt;/gi,"<").replace(/&gt;/gi,">").replace(/\s+/g," ").trim().slice(0,max);}
@@ -18,21 +19,83 @@ function isPublicIp(address:string):boolean{
     !normalized.startsWith("2001:db8")&&!normalized.startsWith("2001:0000")&&
     !normalized.startsWith("2002:")&&!normalized.startsWith("3fff:");
 }
+async function resolvePublicAddresses(host:string):Promise<string[]>{
+  if(host==="localhost"||host.endsWith(".localhost")||host.endsWith(".local")||host.includes(":")||/^\d{1,3}(?:\.\d{1,3}){3}$/.test(host))throw new Error("Bitte eine öffentliche Domain statt einer lokalen oder IP-Adresse verwenden.");
+  const resolved=await Promise.allSettled([Deno.resolveDns(host,"A"),Deno.resolveDns(host,"AAAA")]);
+  const addresses=[...new Set(resolved.flatMap(result=>result.status==="fulfilled"?result.value:[]))];
+  if(!addresses.length||addresses.some(address=>!isPublicIp(address)))throw new Error("Die Webadresse verweist nicht ausschließlich auf öffentliche IP-Adressen.");
+  return addresses;
+}
 async function safeUrl(raw:string):Promise<URL>{
   const u=new URL(raw);
   if(u.protocol!=="https:"||u.username||u.password)throw new Error("Nur öffentliche HTTPS-Webadressen sind erlaubt.");
-  const host=u.hostname.toLowerCase().replace(/^\[|\]$/g,"");
-  if(host==="localhost"||host.endsWith(".localhost")||host.endsWith(".local"))throw new Error("Diese Webadresse ist nicht öffentlich erreichbar.");
-  let addresses:string[]=[];
-  if(host.includes(":")||/^\d{1,3}(?:\.\d{1,3}){3}$/.test(host))addresses=[host];
-  else{
-    const resolved=await Promise.allSettled([Deno.resolveDns(host,"A"),Deno.resolveDns(host,"AAAA")]);
-    for(const result of resolved)if(result.status==="fulfilled")addresses.push(...result.value);
-  }
-  if(!addresses.length||addresses.some(address=>!isPublicIp(address)))throw new Error("Die Webadresse verweist nicht ausschließlich auf öffentliche IP-Adressen.");
+  await resolvePublicAddresses(u.hostname.toLowerCase());
   return u;
 }
-async function fetchHtml(url:URL):Promise<{html:string,url:URL}>{let target=url,response:Response|null=null;for(let n=0;n<4;n++){response=await fetch(target,{redirect:"manual",signal:AbortSignal.timeout(12000),headers:{"User-Agent":"TrailEventPlannerBot/1.0","Accept":"text/html,application/xhtml+xml"}});if([301,302,303,307,308].includes(response.status)){const loc=response.headers.get("location");if(!loc||n===3)throw new Error("Zu viele oder ungültige Weiterleitungen.");target=await safeUrl(new URL(loc,target).toString());continue;}break;}if(!response||!response.ok)throw new Error("Website nicht erreichbar (HTTP "+(response?.status||"unbekannt")+").");if(!/text\/html|application\/xhtml\+xml/i.test(response.headers.get("content-type")||""))throw new Error("Die Adresse liefert keine HTML-Webseite.");const html=await response.text();if(html.length>2000000)throw new Error("Die Webseite ist zu groß für den automatischen Import.");return{html,url:target};}
+type PinnedResponse={status:number;headers:Record<string,string|string[]|undefined>;body:string};
+async function pinnedHttpsGet(url:URL,maxBytes=2000000,timeoutMs=12000):Promise<PinnedResponse>{
+  const host=url.hostname.toLowerCase();
+  const addresses=await resolvePublicAddresses(host);
+  let lastError:unknown=null;
+  for(const address of addresses){
+    try{
+      return await new Promise<PinnedResponse>((resolve,reject)=>{
+        const family=address.includes(":")?6:4;
+        const lookup=((_hostname:string,options:any,callback:any)=>{
+          if(options?.all)callback(null,[{address,family}]);
+          else callback(null,address,family);
+        }) as any;
+        const req=httpsRequest({
+          protocol:"https:",
+          hostname:host,
+          port:Number(url.port||443),
+          path:url.pathname+url.search,
+          method:"GET",
+          headers:{"User-Agent":"TrailEventPlannerBot/1.0","Accept":"text/html,application/xhtml+xml,application/gpx+xml,application/xml;q=0.9,*/*;q=0.8","Accept-Encoding":"identity","Connection":"close"},
+          agent:false,
+          servername:host,
+          lookup,
+        },response=>{
+          const chunks:Uint8Array[]=[];
+          let total=0;
+          response.on("data",(chunk:Uint8Array)=>{
+            total+=chunk.byteLength;
+            if(total>maxBytes){req.destroy(new Error("Die Antwort ist zu groß für den automatischen Import."));return;}
+            chunks.push(chunk);
+          });
+          response.on("end",()=>{
+            const bytes=new Uint8Array(total);
+            let offset=0;
+            for(const chunk of chunks){bytes.set(chunk,offset);offset+=chunk.byteLength;}
+            resolve({status:response.statusCode||0,headers:response.headers as Record<string,string|string[]|undefined>,body:new TextDecoder().decode(bytes)});
+          });
+          response.on("error",reject);
+        });
+        req.setTimeout(timeoutMs,()=>req.destroy(new Error("Zeitüberschreitung beim Abruf der Website.")));
+        req.on("error",reject);
+        req.end();
+      });
+    }catch(error){lastError=error;}
+  }
+  throw lastError instanceof Error?lastError:new Error("Keine geprüfte öffentliche IP-Adresse konnte erreicht werden.");
+}
+async function fetchHtml(url:URL):Promise<{html:string,url:URL}>{
+  let target=url;
+  for(let n=0;n<4;n++){
+    const response=await pinnedHttpsGet(target,2000000,12000);
+    if([301,302,303,307,308].includes(response.status)){
+      const loc=response.headers.location;
+      if(typeof loc!=="string"||!loc||n===3)throw new Error("Zu viele oder ungültige Weiterleitungen.");
+      target=await safeUrl(new URL(loc,target).toString());
+      continue;
+    }
+    if(response.status<200||response.status>=300)throw new Error("Website nicht erreichbar (HTTP "+(response.status||"unbekannt")+".");
+    const contentType=response.headers["content-type"];
+    if(!/text\/html|application\/xhtml\+xml/i.test(typeof contentType==="string"?contentType:""))throw new Error("Die Adresse liefert keine HTML-Webseite.");
+    return{html:response.body,url:target};
+  }
+  throw new Error("Zu viele Weiterleitungen.");
+}
 function meta(html:string,key:string):string{for(const tag of html.matchAll(/<meta\b[^>]*>/gi)){const t=tag[0],n=t.match(/(?:property|name)\s*=\s*["']([^"']+)["']/i),c=t.match(/content\s*=\s*["']([^"']*)["']/i);if(n?.[1].toLowerCase()===key.toLowerCase()&&c?.[1])return clean(c[1]);}return"";}
 function collect(v:unknown,out:Record<string,unknown>[],d=0){if(d>8||out.length>30||!v)return;if(Array.isArray(v)){for(const x of v)collect(x,out,d+1);return;}if(typeof v!=="object")return;const o=v as Record<string,unknown>,types=Array.isArray(o["@type"])?o["@type"]:[o["@type"]];if(types.some(t=>/Event|Race|SportsEvent/i.test(String(t||""))))out.push(o);for(const x of Object.values(o))if(typeof x==="object")collect(x,out,d+1);}
 function dateOnly(v:unknown):string{if(!v)return"";const d=new Date(String(v));return Number.isNaN(d.getTime())?"":d.toISOString().slice(0,10);}
@@ -49,7 +112,7 @@ const stationLines=lines.filter(x=>/(verpflegung|aid\s*station|versorgung|refres
 const cutoffs=cutoffLines.slice(0,30).map(line=>{const km=line.match(/(\d{1,3}(?:[.,]\d{1,2})?)\s*km/i),time=line.match(/\b([01]?\d|2[0-3])[:.][0-5]\d\b/);return{name:line.slice(0,70),km:km?Number(km[1].replace(",",".")):null,time:time?time[0].replace(".",":"):null,source:source.toString(),verified:false};}).filter(x=>x.km!==null||x.time!==null);
 const aidStations=stationLines.slice(0,40).map(line=>{const km=line.match(/(\d{1,3}(?:[.,]\d{1,2})?)\s*km/i),time=line.match(/\b([01]?\d|2[0-3])[:.][0-5]\d\b/);return{name:line.slice(0,70),km:km?Number(km[1].replace(",",".")):null,food:/essen|food|verpflegung|ravitaillement/i.test(line)?line:null,drink:/getränk|drink|water|eau/i.test(line)?"Getränke":null,cutoffTime:time?time[0].replace(".",":"):null,source:source.toString(),verified:false};}).filter(x=>x.km!==null||x.name);
 let gpxUrl:string|null=null;for(const m of html.matchAll(/<a\b[^>]*href=["']([^"']+\.gpx(?:\?[^"']*)?)["'][^>]*>/gi)){try{const u=await safeUrl(new URL(m[1],source).toString());gpxUrl=u.toString();break;}catch{}}
-let gpxStats:Record<string,unknown>|null=null;if(gpxUrl){try{const u=await safeUrl(gpxUrl);if(u.hostname===source.hostname){const r=await fetch(u,{signal:AbortSignal.timeout(10000),headers:{"User-Agent":"TrailEventPlannerBot/1.0"}});if(r.ok&&/gpx|xml|octet-stream/i.test(r.headers.get("content-type")||"")){const xml=await r.text();if(xml.length<=5000000&&/<gpx\b/i.test(xml))gpxStats=extractGpxStats(xml);}}}catch{}}
+let gpxStats:Record<string,unknown>|null=null;if(gpxUrl){try{const u=await safeUrl(gpxUrl);if(u.hostname===source.hostname){const r=await pinnedHttpsGet(u,5000000,10000);const contentType=r.headers["content-type"];if(r.status>=200&&r.status<300&&/gpx|xml|octet-stream/i.test(typeof contentType==="string"?contentType:"")){const xml=r.body;if(xml.length<=5000000&&/<gpx\b/i.test(xml))gpxStats=extractGpxStats(xml);}}}catch{}}
 const type=/backyard/i.test(name+" "+desc)?"Backyard":/marathon/i.test(name)?"Marathon":/trail|ultra|mountain|sky.?race/i.test(name+" "+desc)?"Trailrunning / Ultra":"";
 return{fields:{name,date:date||fallback,startTime:"",location,startLocation:location,country,type,utmbScore},routes:routes.map(r=>({...r,utmbScore,gpxUrl,gpxStats,cutoffs,aidStations})),detected:{gpxUrl,gpxStats,utmbScore,cutoffs:cutoffs.length,aidStations:aidStations.length},warnings:[!name?"Kein eindeutiger Veranstaltungsname erkannt.":"",!date&&!fallback?"Kein sicheres Veranstaltungsdatum erkannt.":"",!routes.length?"Keine eindeutigen Streckenangaben erkannt.":"Streckendaten bitte mit der offiziellen Ausschreibung abgleichen.",!gpxUrl?"Kein direkter GPX-Link erkannt.":"GPX-Link gefunden; Trackdaten nur bei erfolgreichem Abruf übernommen.",utmbScore===null?"Kein eindeutiger UTMB Score erkannt.":"UTMB Score bitte auf Streckenbezug und Aktualität prüfen.",!cutoffs.length?"Keine eindeutigen Cut-off-Angaben erkannt.":"Cut-offs bitte mit der offiziellen Tabelle abgleichen.",!aidStations.length?"Keine eindeutigen Verpflegungsstellen erkannt.":"Verpflegungsstellen bitte mit der offiziellen Tabelle abgleichen.",!desc?"Keine Veranstaltungsbeschreibung gefunden.":""].filter(Boolean),source:source.toString()};}
 Deno.serve(async(req)=>{if(req.method==="OPTIONS")return new Response("ok",{headers:cors});if(req.method!=="POST")return json({error:"Method not allowed"},405);try{const body=await req.json();if(typeof body.url!=="string"||body.url.length>2000)return json({error:"Bitte eine gültige Webadresse übergeben."},400);const page=await fetchHtml(await safeUrl(body.url));return json(await extract(page.html,page.url));}catch(e){return json({error:clean(e instanceof Error?e.message:"Website konnte nicht ausgelesen werden.",300)},422);}});
