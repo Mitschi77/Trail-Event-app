@@ -116,6 +116,15 @@ create policy "submit authenticated proposals" on public.event_change_proposals
 
 \i supabase/migrations/20261123100000_single_active_device_session.sql
 
+
+-- Seed one row in each additional protected resource before switching roles.
+insert into storage.objects(bucket_id, name)
+values ('trail-private-documents', 'aaaaaaaa-aaaa-4aaa-8aaa-aaaaaaaaaaaa/plan.pdf');
+insert into public.event_push_subscriptions(user_id)
+values ('aaaaaaaa-aaaa-4aaa-8aaa-aaaaaaaaaaaa');
+insert into public.event_change_proposals(submitted_by, status)
+values ('aaaaaaaa-aaaa-4aaa-8aaa-aaaaaaaaaaaa', 'pending');
+
 insert into auth.sessions(id, user_id) values
   ('11111111-1111-4111-8111-111111111111', 'aaaaaaaa-aaaa-4aaa-8aaa-aaaaaaaaaaaa');
 
@@ -127,6 +136,15 @@ do $test$
 begin
   if public.is_current_auth_session_active() is not true then
     raise exception 'FAIL: active session helper rejected the current session';
+  end if;
+  if (select count(*) from storage.objects) <> 1 then
+    raise exception 'FAIL: active session cannot read private documents';
+  end if;
+  if (select count(*) from public.event_push_subscriptions) <> 1 then
+    raise exception 'FAIL: active session cannot read push subscriptions';
+  end if;
+  if (select count(*) from public.event_change_proposals) <> 1 then
+    raise exception 'FAIL: active session cannot read own proposals';
   end if;
 end
 $test$;
@@ -157,6 +175,46 @@ begin
   if visible_rows <> 0 then
     raise exception 'FAIL: stale session can still read planner_data';
   end if;
+
+  if (select count(*) from storage.objects) <> 0 then
+    raise exception 'FAIL: stale session can still read private documents';
+  end if;
+  if (select count(*) from public.event_push_subscriptions) <> 0 then
+    raise exception 'FAIL: stale session can still read push subscriptions';
+  end if;
+  if (select count(*) from public.event_change_proposals) <> 0 then
+    raise exception 'FAIL: stale session can still read own proposals';
+  end if;
+
+  update storage.objects set name = name || '.stale';
+  get diagnostics affected = row_count;
+  if affected <> 0 then
+    raise exception 'FAIL: stale session updated private documents';
+  end if;
+  update public.event_push_subscriptions set user_id = user_id;
+  get diagnostics affected = row_count;
+  if affected <> 0 then
+    raise exception 'FAIL: stale session updated push subscriptions';
+  end if;
+
+  begin
+    insert into storage.objects(bucket_id, name)
+    values ('trail-private-documents', 'aaaaaaaa-aaaa-4aaa-8aaa-aaaaaaaaaaaa/stale.pdf');
+    raise exception 'FAIL: stale session inserted a private document';
+  exception when insufficient_privilege then null;
+  end;
+  begin
+    insert into public.event_push_subscriptions(user_id)
+    values ('aaaaaaaa-aaaa-4aaa-8aaa-aaaaaaaaaaaa');
+    raise exception 'FAIL: stale session inserted a push subscription';
+  exception when insufficient_privilege then null;
+  end;
+  begin
+    insert into public.event_change_proposals(submitted_by, status)
+    values ('aaaaaaaa-aaaa-4aaa-8aaa-aaaaaaaaaaaa', 'pending');
+    raise exception 'FAIL: stale session submitted a proposal';
+  exception when insufficient_privilege then null;
+  end;
 end
 $test$;
 reset role;
@@ -175,6 +233,22 @@ begin
   if visible_rows <> 1 then
     raise exception 'FAIL: new active session cannot read planner_data';
   end if;
+  if (select count(*) from storage.objects) <> 1 then
+    raise exception 'FAIL: new active session cannot read private documents';
+  end if;
+  if (select count(*) from public.event_push_subscriptions) <> 1 then
+    raise exception 'FAIL: new active session cannot read push subscriptions';
+  end if;
+  if (select count(*) from public.event_change_proposals) <> 1 then
+    raise exception 'FAIL: new active session cannot read own proposals';
+  end if;
+
+  insert into storage.objects(bucket_id, name)
+  values ('trail-private-documents', 'aaaaaaaa-aaaa-4aaa-8aaa-aaaaaaaaaaaa/new-plan.pdf');
+  insert into public.event_push_subscriptions(user_id)
+  values ('aaaaaaaa-aaaa-4aaa-8aaa-aaaaaaaaaaaa');
+  insert into public.event_change_proposals(submitted_by, status)
+  values ('aaaaaaaa-aaaa-4aaa-8aaa-aaaaaaaaaaaa', 'pending');
 
   update public.planner_data
      set data = '{"from":"new-device"}'
