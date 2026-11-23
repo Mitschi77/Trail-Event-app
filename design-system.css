@@ -817,3 +817,116 @@ a,.date,.app-menu-heading,.year-calendar-year h3,
 @media(max-width:700px){
   .tabbar{border-radius:16px;background:rgba(11,17,23,.97)!important}
 }
+
+
+/* NORTHBOUND v102 — final stacking and neutral-surface pass */
+header{
+  overflow:visible!important;
+  isolation:isolate!important;
+  position:relative!important;
+  z-index:1000!important;
+}
+header:after{z-index:0!important;pointer-events:none!important}
+header>.top{position:relative!important;z-index:1002!important}
+header>.hero{position:relative!important;z-index:1!important}
+header .pill{position:relative!important;z-index:1003!important}
+header .app-menu-dropdown,
+header .app-settings-panel{
+  position:absolute!important;
+  z-index:10000!important;
+  max-height:min(78vh,760px)!important;
+  overflow-y:auto!important;
+  overscroll-behavior:contain;
+  background:#101922!important;
+  color:#F5F7FA!important;
+  border:1px solid #40505E!important;
+  box-shadow:0 22px 60px #000D!important;
+}
+@media(max-width:700px){
+  header .app-menu-dropdown,
+  header .app-settings-panel{
+    position:fixed!important;
+    top:calc(env(safe-area-inset-top,0px) + 82px)!important;
+    right:max(12px,env(safe-area-inset-right))!important;
+    left:auto!important;
+    width:min( min(440px, calc(100vw - 24px)), 440px)!important;
+    max-width:calc(100vw - 24px)!important;
+    max-height:calc(100dvh - env(safe-area-inset-top,0px) - 100px)!important;
+    z-index:2147483000!important;
+  }
+}
+/* One palette across every app surface; no green-tinted cards or chips. */
+:root{
+  --bg:#0B1117!important;
+  --ink:#F5F7FA!important;
+  --muted:#AAB5C0!important;
+  --line:#34414D!important;
+  --card:#151D25!important;
+  --panel:#101820!important;
+  --northbound-orange:#FF6A00!important;
+  --northbound-ice:#7FD8FF!important;
+}
+html,body,main.wrap,.wrap,.tab-panel{background-color:#0B1117!important;color:#F5F7FA!important}
+body{
+  background:
+    radial-gradient(ellipse at 82% -12%,#173044 0,transparent 38rem),
+    linear-gradient(180deg,#0B1117 0%,#101820 52%,#0B1117 100%)!important;
+}
+:is(.event,.planner,.planner-panel,.planner-review,.route,.plan-card,.year-group,
+.event-filter-panel,.race-tools-section,.review-card,.integration-status,
+.integration-provider,.stat,.event-detail-data,.event-detail-group,
+.season-timeline,.calendar-card,.year-calendar-year,.year-calendar-month,
+.year-season-summary,.year-profile-panel,.year-load-chart,.year-month-races,
+.event-detail-overview,.race-detail-overview,.elevation-chart-wrap,
+.segment-table,.gpx-import,.app-menu-account,.app-menu-info,
+.settings-group,.settings-connection,.info-tip-content,.empty,.plan-empty){
+  background-color:#131C25!important;
+  background-image:none!important;
+  color:#F5F7FA!important;
+  border-color:#2B3945!important;
+  box-shadow:0 8px 24px #0005!important;
+}
+.eventhead,#events .eventhead{
+  background:linear-gradient(105deg,#1A2732,#121B24)!important;
+  color:#F5F7FA!important;border-color:#2B3945!important;
+}
+.tag,#events .meta>.tag,
+.year-race-meta-item,.year-season-summary-item,
+.year-calendar-day,.year-view-switch,.year-view-switch button,
+.year-overview-nav-button,.secondary,.tab-button,.app-menu-item,.more-nav-item{
+  background:#18232D!important;color:#DCE6ED!important;border-color:#354653!important;
+}
+.date,#events .date{
+  background:#1D3442!important;color:#BFEAFF!important;border-color:#49687B!important;
+}
+.tab-button[aria-selected="true"],.tab-button.active,
+.tab-button[aria-current="page"],.year-view-switch button.active,
+.year-overview-nav-button[aria-current="true"]{
+  background:#FF6A00!important;color:#0B1117!important;border-color:#FF8A36!important;
+}
+.eventtitle,.route strong,.event-detail-metric strong,
+.year-race strong,.year-heading,h1,h2,h3,h4,
+.app-menu-heading,.settings-group>strong{color:#F5F7FA!important}
+.stat b,.stat strong,.year-season-summary-item strong,
+.event-detail-overview .event-detail-metric strong{color:#7FD8FF!important}
+a,.link,.date{color:#7FD8FF}
+:where(button,input,select,textarea,a,summary):focus-visible{outline-color:#7FD8FF!important}
+input,select,textarea,.field{background:#0E1720!important;color:#F5F7FA!important;border-color:#354653!important}
+::placeholder{color:#9AA8B4!important}
+#yearOverview .year-month-races .year-race-meta-item[data-meta-kind="type"],
+#yearOverview .year-month-races .year-race-meta-item[data-meta-kind="time-limit"]{
+  background:#18232D!important;color:#DCE6ED!important;border-color:#354653!important;
+}
+.event-detail-overview .event-detail-metric,
+.event-detail-overview .event-detail-gpx,
+.race-detail-metric,.race-detail-date,
+.year-season-summary-item,.year-calendar-month{
+  background:#18232D!important;border-color:#354653!important;
+}
+.year-calendar-day.has-hotel{background:#163449!important;border-color:#7FD8FF!important}
+.year-calendar-day.has-event{background:#512A31!important;border-color:#A85B63!important}
+.year-calendar-day.has-event.has-hotel{background:linear-gradient(135deg,#512A31 0 50%,#163449 50%)!important}
+.gpx-planning-notice{background:#202A32!important;color:#DCE6ED!important;border-color:#765333!important}
+.gpx-restriction{background:#351B21!important;color:#FFE9E9!important;border-color:#A94B55!important}
+.sold-out-stamp,.sold-out-overview,.sold-out-text{background:#351B22!important;color:#FFB0B2!important}
+.app-menu-hint,.app-menu-info p,.note,.foot,.meta,.plan-meta,.year-race-meta{color:#B5C2CC!important}
