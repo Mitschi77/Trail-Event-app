@@ -15,7 +15,7 @@ assert.match(source, /target=await safeUrl\(new URL\(loc,target\)\.toString\(\)\
 assert.match(source, /const u=await safeUrl\(new URL\(m\[1\],source\)\.toString\(\)\)/);
 assert.match(source, /fetchHtml\(await safeUrl\(body\.url\)\)/);
 assert.match(source, /const u=await safeUrl\(gpxUrl\)/);
-assert.match(source, /Nur öffentliche HTTPS-Webadressen sind erlaubt/);
+assert.match(source, /Nur öffentliche HTTPS-Webadressen ohne Zugangsdaten und Sonderports sind erlaubt/);
 
 assert.match(source, /import \{ request as httpsRequest \} from "node:https"/);
 assert.match(source, /async function resolvePublicAddresses\(host:string\)/);
