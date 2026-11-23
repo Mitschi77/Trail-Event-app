@@ -54,3 +54,22 @@ Dieser Plan prüft die Ein-Gerät-Regel mit zwei echten App-Installationen und e
 ## Freigaberegel
 
 Keine Migration auf Produktion, kein Edge-Function-Deployment, kein Merge und keine Veröffentlichung ohne ausdrückliche Freigabe nach Sichtung der Testergebnisse.
+
+## Automatisierter lokaler Supabase-E2E-Test (GitHub Actions)
+
+Zusätzlich zum manuellen iPhone-/iPad-Test gibt es jetzt einen CI-Test mit einer echten lokalen Supabase-Instanz. Er startet GoTrue/Auth, PostgREST und Storage in Docker auf dem GitHub-Runner; es wird kein gehostetes Supabase-Projekt und kein Supabase-Branch angelegt.
+
+Workflow: `.github/workflows/supabase-auth-session-e2e.yml`
+
+Ablauf:
+1. Lokalen Supabase-Stack mit festgelegter CLI-v2-Wartungsversion starten.
+2. Die unvollständige Produktions-Migrationskette bewusst nicht automatisch ausführen (`db.migrations.enabled = false`); stattdessen nur ein minimales, wegwerfbares Testschema anlegen.
+3. Genau die zu prüfende Session-Migration gegen die echte lokale Supabase-Auth-Datenbank anwenden.
+4. Ein isoliertes Testkonto über die lokale Auth-Admin-API anlegen und zwei echte Passwort-Sitzungen erzeugen.
+5. Den Logout-Scope `others` über den echten GoTrue-Endpunkt aufrufen.
+6. Mit dem noch nicht abgelaufenen alten JWT prüfen, dass die Session-RPC `false` liefert, Planner-Daten und private Dateien nicht mehr lesbar sind und neue Schreibzugriffe blockiert werden.
+7. Mit der aktuellen Sitzung prüfen, dass Zugriff und Refresh weiter funktionieren; mit dem widerrufenen Refresh-Token muss die Erneuerung scheitern.
+
+Die lokalen Schlüssel werden ausschließlich zur Laufzeit vom lokalen CLI ausgegeben und als Job-Umgebungsvariablen verwendet. Es werden keine Produktions-Secrets benötigt. Die Testdaten und Container werden nach dem Lauf verworfen.
+
+Dieser Test deckt den echten GoTrue-/JWT-/PostgREST-/Storage-Ablauf ab, ersetzt aber weiterhin keinen Test mit zwei realen iOS-Geräten und prüft nicht die gehostete Supabase-Edge-Functions-Laufzeit.
