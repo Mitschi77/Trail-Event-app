@@ -768,3 +768,49 @@ hr,.divider{border-color:var(--line)}
 @media(prefers-reduced-motion:reduce){
  #yearOverview .year-overview-nav-button{scroll-behavior:auto}
 }
+
+
+/* Navigation contrast repair – keep every primary section readable on iPhone. */
+.tabbar{
+  background:linear-gradient(145deg,#172838,#101b27)!important;
+  border:1px solid #3b5367!important;
+  box-shadow:0 8px 24px #0005!important;
+  opacity:1!important;
+}
+.tabbar .tab-button{
+  display:flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+  min-height:48px!important;
+  padding:12px 10px!important;
+  background:#1b2b3a!important;
+  color:#e6eef4!important;
+  border:1px solid #40596d!important;
+  opacity:1!important;
+  font-weight:750!important;
+  text-shadow:none!important;
+  filter:none!important;
+}
+.tabbar .tab-button:disabled{
+  background:#182635!important;
+  color:#bdcbd5!important;
+  opacity:1!important;
+  cursor:default;
+}
+.tabbar .tab-button[aria-selected="true"],
+.tabbar .tab-button.active,
+.tabbar .tab-button[aria-current="page"]{
+  background:linear-gradient(135deg,#f28a38,#d96d22)!important;
+  color:#111a22!important;
+  border-color:#ffb36e!important;
+  box-shadow:0 4px 14px #e8792838!important;
+  opacity:1!important;
+}
+.tabbar .tab-button:focus-visible{
+  outline:3px solid #ffbd83!important;
+  outline-offset:2px!important;
+}
+@media(max-width:480px){
+  .tabbar{gap:6px!important;padding:6px!important}
+  .tabbar .tab-button{font-size:13px!important;line-height:1.2!important}
+}
