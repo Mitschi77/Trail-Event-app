@@ -6,7 +6,7 @@ html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
 body{font-family:var(--ui-font);font-size:var(--ui-text);line-height:1.5;padding-bottom:env(safe-area-inset-bottom);-webkit-tap-highlight-color:transparent}
 button,input,select,textarea{font-family:var(--ui-font)}
 button,[role="button"],a{touch-action:manipulation}
-:where(button,input,select,textarea,a,summary):focus-visible{outline:3px solid #9bc9a9;outline-offset:2px}
+:where(button,input,select,textarea,a,summary):focus-visible{outline:3px solid #8fd5ff;outline-offset:2px}
 .wrap{width:min(100%,var(--ui-content-max));margin-inline:auto}
 .hero{width:min(calc(100% - 36px),var(--ui-content-max))}
 .hero h1{font-size:clamp(28px,3vw,40px);line-height:1.12}
@@ -111,15 +111,15 @@ header{padding-left:max(14px,env(safe-area-inset-left));padding-right:max(14px,e
 
 /* Alpine Performance v101 – clearer route metrics and GPX planning status */
 .event-detail-overview{grid-template-columns:repeat(3,minmax(0,1fr));gap:9px;margin:14px 0 16px}
-.event-detail-overview .event-detail-metric{position:relative;display:flex;min-height:94px;flex-direction:column;justify-content:space-between;gap:8px;padding:13px;border-color:color-mix(in srgb,var(--line) 78%,#719a76);background:linear-gradient(155deg,color-mix(in srgb,var(--card) 94%,#789b7b 6%),var(--card));box-shadow:0 5px 16px #1026190b}
+.event-detail-overview .event-detail-metric{position:relative;display:flex;min-height:94px;flex-direction:column;justify-content:space-between;gap:8px;padding:13px;border-color:color-mix(in srgb,var(--line) 78%,#f28a38);background:linear-gradient(155deg,color-mix(in srgb,var(--card) 94%,#f28a38 6%),var(--card));box-shadow:0 5px 16px #0000000b}
 .event-detail-overview .event-detail-metric small{font-size:10px;letter-spacing:.075em}
 .event-detail-overview .event-detail-metric strong{font-size:clamp(19px,2vw,24px);letter-spacing:-.035em;line-height:1.05}
 .event-detail-overview .event-detail-metric em{margin-left:3px;font-size:11px;letter-spacing:0}
-.event-detail-overview .event-detail-gpx{align-items:center;gap:10px;padding:12px 14px;border-color:color-mix(in srgb,var(--line) 75%,#719a76);background:color-mix(in srgb,var(--card) 94%,#789b7b 6%)}
+.event-detail-overview .event-detail-gpx{align-items:center;gap:10px;padding:12px 14px;border-color:color-mix(in srgb,var(--line) 75%,#f28a38);background:color-mix(in srgb,var(--card) 94%,#f28a38 6%)}
 .event-detail-overview .event-detail-gpx small{font-size:10px;letter-spacing:.075em}
 .event-detail-overview .event-detail-gpx strong{font-size:13px;line-height:1.45}
 @media(max-width:480px){.event-detail-overview{gap:6px;margin:11px 0 13px}.event-detail-overview .event-detail-metric{min-height:82px;padding:10px 9px;gap:6px}.event-detail-overview .event-detail-metric small{font-size:9px}.event-detail-overview .event-detail-metric strong{font-size:18px}.event-detail-overview .event-detail-gpx{display:flex;align-items:flex-start;gap:8px;padding:10px}.event-detail-overview .event-detail-gpx small{flex:0 0 auto;margin:1px 0 0}.event-detail-overview .event-detail-gpx strong{font-size:12px}}
-@media(prefers-reduced-motion:no-preference){.event-detail-overview .event-detail-metric{transition:border-color .18s ease,box-shadow .18s ease,transform .18s ease}.event-detail-overview .event-detail-metric:hover{transform:translateY(-1px);border-color:#82a982;box-shadow:0 8px 20px #10261916}}
+@media(prefers-reduced-motion:no-preference){.event-detail-overview .event-detail-metric{transition:border-color .18s ease,box-shadow .18s ease,transform .18s ease}.event-detail-overview .event-detail-metric:hover{transform:translateY(-1px);border-color:#ffad62;box-shadow:0 8px 20px #00000016}}
 
 
 /* =========================================================
@@ -156,8 +156,8 @@ header{
 }
 header:after{
   content:"";position:absolute;inset:0;pointer-events:none;opacity:.12;
-  background-image:linear-gradient(145deg,transparent 48%,#b8d0df 49%,transparent 50%),linear-gradient(35deg,transparent 48%,#b8d0df 49%,transparent 50%);
-  background-size:86px 66px,116px 90px;
+  background-image:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22260%22%20height%3D%22180%22%20viewBox%3D%220%200%20260%20180%22%20fill%3D%22none%22%3E%3Cg%20stroke%3D%22%23b8d0df%22%20stroke-width%3D%221.15%22%20opacity%3D%22.9%22%3E%3Cpath%20d%3D%22M-24%2093C-10%2040%2029%2010%2076%2015c42%204%2054%2038%2091%2038%2039%200%2053-34%2091-25%2026%206%2035%2029%2031%2055-6%2042-39%2069-82%2063-37-5-53-32-91-24-37%208-48%2042-88%2039-39-3-67-31-71-68Z%22%2F%3E%3Cpath%20d%3D%22M-5%2091C7%2051%2037%2029%2073%2031c34%202%2049%2030%2084%2030%2033%200%2050-27%2082-20%2022%205%2029%2024%2025%2045-5%2032-31%2053-64%2048-34-5-48-27-82-19-32%207-43%2033-76%2031-30-2-51-23-47-55Z%22%2F%3E%3Cpath%20d%3D%22M14%2089C24%2061%2045%2047%2072%2048c28%201%2043%2023%2075%2023%2028%200%2044-19%2070-14%2017%204%2022%2019%2018%2034-4%2024-25%2039-49%2035-29-4-42-21-70-14-26%206-36%2025-62%2023-23-2-39-17-40-46Z%22%2F%3E%3Cpath%20d%3D%22M33%2088C40%2070%2054%2062%2073%2063c21%201%2034%2017%2058%2017%2023%200%2036-13%2056-9%2013%203%2017%2014%2014%2025-3%2016-18%2027-36%2023-23-4-35-15-56-10-19%205-27%2017-46%2016-17-1-29-12-30-37Z%22%2F%3E%3Cpath%20d%3D%22M-14%20164c33-19%2059-15%2082%201%2023%2016%2044%2017%2066%202%2024-16%2048-18%2074-2%2022%2013%2040%2011%2062-4%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E");
+  background-size:260px 180px;
   mask-image:linear-gradient(90deg,transparent,#000 55%,#000);
 }
 header .top,header .brand,header .utmb-header-index,header .app-menu-button{position:relative;z-index:1}
