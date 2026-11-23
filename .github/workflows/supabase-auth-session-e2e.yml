@@ -1,0 +1,60 @@
+name: Supabase Auth session end-to-end test
+
+on:
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: supabase-auth-session-e2e-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  local-auth-session-e2e:
+    name: Real GoTrue sessions, Edge Runtime, PostgREST RLS and Storage
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Set up Supabase CLI
+        uses: supabase/setup-cli@689adcfb80d947100a1eab127289b97d1fb07b13
+        with:
+          version: v2.stable
+
+      - name: Verify CLI version and start isolated local stack
+        run: |
+          supabase --version
+          supabase start -x studio,logflare,vector,imgproxy,mailpit,postgres-meta,realtime
+
+      - name: Install PostgreSQL client
+        run: sudo apt-get update && sudo apt-get install -y postgresql-client
+
+      - name: Bootstrap disposable test schema and apply session migration
+        shell: bash
+        run: |
+          set -euo pipefail
+          eval "$(supabase status -o env)"
+          psql "$DB_URL" -v ON_ERROR_STOP=1 -f scripts/local_supabase_session_bootstrap.sql
+          psql "$DB_URL" -v ON_ERROR_STOP=1 -f supabase/migrations/20261123100000_single_active_device_session.sql
+          {
+            echo "SUPABASE_URL=$API_URL"
+            echo "SUPABASE_ANON_KEY=$ANON_KEY"
+            echo "SUPABASE_SERVICE_ROLE_KEY=$SERVICE_ROLE_KEY"
+          } >> "$GITHUB_ENV"
+
+      - name: Exercise real GoTrue sessions and revoked-session RLS
+        run: node scripts/test_local_supabase_auth_sessions.mjs
+
+      - name: Stop isolated local stack
+        if: always()
+        run: supabase stop --no-backup

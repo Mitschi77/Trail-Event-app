@@ -27,6 +27,8 @@ Deno.serve(async (req: Request) => {
     const userClient = createClient(url, anonKey, { global: { headers: { Authorization: authHeader } } });
     const { data: userData, error: userError } = await userClient.auth.getUser();
     if (userError || !userData.user) return json({ error: "Anmeldung erforderlich." }, 401);
+    const { data: activeSession, error: sessionError } = await userClient.rpc("is_current_auth_session_active");
+    if (sessionError || activeSession !== true) return json({ error: "Diese Sitzung wurde auf einem anderen Gerät beendet. Bitte erneut anmelden." }, 401);
     callerId = userData.user.id;
   }
 

@@ -30,8 +30,14 @@ jobs:
         uses: denoland/setup-deno@v2
         with:
           deno-version: v2.x
-      - name: Type-check owner push Edge Function
-        run: deno check --node-modules-dir=auto supabase/functions/send-owner-test-push/index.ts
+      - name: Type-check authenticated Edge Functions
+        run: |
+          deno check --node-modules-dir=auto supabase/functions/send-owner-test-push/index.ts
+          deno check --node-modules-dir=auto supabase/functions/send-event-review-push/index.ts
+          deno check --node-modules-dir=auto supabase/functions/delete-own-account/index.ts
+          deno check --node-modules-dir=auto supabase/functions/migrate-personal-documents/index.ts
+          deno check --node-modules-dir=auto supabase/functions/ingest-event-date-proposals/index.ts
+          deno check --node-modules-dir=auto supabase/functions/inspect-event-website/index.ts
       - name: Run app syntax and regression tests
         run: npm run test:syntax
       - name: Run Python event-data regression tests
@@ -68,6 +74,14 @@ jobs:
           python-version: "3.12"
       - name: Install PostgreSQL client
         run: sudo apt-get update && sudo apt-get install -y postgresql-client
+      - name: Test single-active-device session enforcement
+        run: psql -v ON_ERROR_STOP=1 -f scripts/test_single_active_session_guard.sql
+        env:
+          PGHOST: localhost
+          PGPORT: 5432
+          PGUSER: postgres
+          PGPASSWORD: postgres
+          PGDATABASE: trailtest
       - name: Test atomic proposal ingestion under concurrent requests
         run: python3 scripts/run_proposal_ingestion_db_test.py
         env:
