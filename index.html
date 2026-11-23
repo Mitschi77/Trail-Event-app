@@ -2158,6 +2158,11 @@ button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,te
 .more-nav-item{min-height:44px!important;border-radius:10px!important;padding:10px 12px!important;font-weight:650!important}
 @media(max-width:700px){.tabbar{top:calc(env(safe-area-inset-top,0px) + 4px);margin:10px -2px 14px;padding:5px;border-radius:14px;gap:5px}.tabbar>.tab-button{flex:0 0 auto;min-width:max-content;padding:9px 12px;font-size:12px}.tabbar .more-nav{margin-left:0}.tabbar .more-nav-trigger{min-width:68px;padding-inline:12px}}
 @media(prefers-reduced-motion:reduce){.tabbar>.tab-button{transition:none}}
+
+/* NORTHBOUND: subtle alpine contour lines, never a diamond grid */
+header{position:relative;isolation:isolate;overflow:hidden;background-color:#0B1117!important;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 420'%3E%3Cg fill='none' stroke='%237FD8FF' stroke-opacity='.19' stroke-width='1.4'%3E%3Cpath d='M-80 75 C80 5 140 145 275 85 S470 15 600 90 800 160 940 80 1110 10 1280 85'/%3E%3Cpath d='M-90 100 C55 30 145 170 285 110 S480 40 610 115 810 185 950 105 1120 35 1290 110'/%3E%3Cpath d='M-100 125 C45 55 150 195 295 135 S490 65 620 140 820 210 960 130 1130 60 1300 135'/%3E%3Cpath d='M-70 250 C65 170 170 310 310 245 S505 180 635 250 835 330 975 250 1145 170 1280 245'/%3E%3Cpath d='M-85 275 C50 195 180 335 325 270 S520 205 650 275 850 355 990 275 1160 195 1295 270'/%3E%3Cpath d='M-100 300 C35 220 190 360 340 295 S535 230 665 300 865 380 1005 300 1175 220 1310 295'/%3E%3Cpath d='M330 -35 C270 55 405 110 350 190 S290 315 375 455'/%3E%3Cpath d='M355 -35 C295 55 430 110 375 190 S315 315 400 455'/%3E%3Cpath d='M380 -35 C320 55 455 110 400 190 S340 315 425 455'/%3E%3C/g%3E%3C/svg%3E"),linear-gradient(118deg,#0B1117 0%,#121E29 62%,#0D1720 100%)!important;background-size:cover,cover!important}
+header:after{content:none!important;display:none!important}
+header>.top,header>.hero,header>.header-content{position:relative;z-index:1}
 </style>
 
 <style id="northbound-brand-identity">
