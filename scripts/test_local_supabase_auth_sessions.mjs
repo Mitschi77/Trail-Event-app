@@ -139,6 +139,32 @@ const storageAfter = await fetch(new URL(`/storage/v1/object/authenticated/trail
 });
 assert.notEqual(storageAfter.status, 200, 'Revoked iPhone must not read its private file.');
 
+// Every user-scoped privileged Edge Function must reject the revoked JWT
+// before performing any service-role action. These calls run against the local
+// Supabase Edge Runtime, not a mocked handler.
+for (const functionName of [
+  'send-owner-test-push',
+  'send-event-review-push',
+  'delete-own-account',
+  'migrate-personal-documents',
+]) {
+  const response = await fetch(new URL(`/functions/v1/${functionName}`, baseUrl), {
+    method: 'POST',
+    headers: {
+      apikey: anonKey,
+      Authorization: `Bearer ${deviceA.access_token}`,
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({}),
+  });
+  const responseText = await response.text();
+  assert.equal(
+    response.status,
+    401,
+    `${functionName} must reject a revoked session before privileged work; got HTTP ${response.status}: ${responseText}`,
+  );
+}
+
 const oldRefresh = await api('/auth/v1/token?grant_type=refresh_token', {
   method: 'POST', body: { refresh_token: deviceA.refresh_token },
 });
