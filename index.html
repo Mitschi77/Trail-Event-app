@@ -20391,4 +20391,27 @@ const seasonRoot=document.getElementById('yearOverview');if(seasonRoot){new Muta
 renderSeasonEnhancements();
 if('serviceWorker' in navigator&&location.protocol==='https:'){window.addEventListener('load',async()=>{try{const registration=await navigator.serviceWorker.register('./sw.js',{updateViaCache:'none'});await registration.update();window.addEventListener('pageshow',()=>registration.update().catch(()=>{}));document.addEventListener('visibilitychange',()=>{if(!document.hidden)registration.update().catch(()=>{});});}catch(error){console.warn('App-Aktualisierung nicht möglich',error);}});}
 refreshStorageHealth();</script><script src="./race-tools.js"></script><script src="./season-tools.js"></script><script src="./alpine-performance.js" defer></script>
-</body></html>
+<style id="northbound-global-surface-cleanup">
+/* NORTHBOUND global design tokens and final cascade */
+:root{color-scheme:dark;--bg:#0b1117;--ink:#f1f5f8;--muted:#aab7c2;--green:#ff6a00;--lime:#7fd8ff;--line:#2b3946;--card:#141e28;--shadow:0 10px 28px #0005}
+body{background:#0b1117!important;color:#f1f5f8!important}
+.app-menu-button,.app-menu-account,.app-menu-info,.utmb-profile-summary,.utmb-result-card,.settings-group{background:#14212c!important;border-color:#344b5d!important;color:#edf4f8!important}
+.app-menu-button:hover,.app-menu-button[aria-expanded=true],.app-menu-item:hover,.more-nav-item:hover{background:#203747!important;border-color:#7fd8ff!important}
+.app-menu-heading,.app-menu-info strong,.utmb-profile-summary>strong,.utmb-result-card>strong{color:#7fd8ff!important}
+.stat{background:#141e28!important;border-color:#304454!important}.stat b{color:#ff6a00!important}
+.tag,.event-status-tag,.year-status-count,.route-data-status.complete{background:#20313e!important;border:1px solid #3b5669!important;color:#dcecf5!important}
+.type-select,.field,select,input,textarea{background:#121c25!important;color:#edf4f8!important;border-color:#344958!important}
+.type-select:focus,.field:focus,select:focus,input:focus,textarea:focus{border-color:#7fd8ff!important;box-shadow:0 0 0 3px #7fd8ff20!important}
+.primary{background:#ff6a00!important;color:#101820!important}.secondary{background:#1a2a36!important;color:#c9efff!important;border-color:#466176!important}
+.plan-card,.route-edit,.route-info-tools,.run-record-summary,.planner-status,.planner-review,.stay,.empty,.year-calendar-year,.year-calendar-month,.info-tip-content{background:#15212b!important;border-color:#304454!important;color:#eaf1f6!important}
+.route.route-done{background:#18232d!important;border-color:#9b8450!important}
+.route.route-done strong,.run-record-summary>strong{color:#f0d58b!important}
+.link,.staylinks a.alt{color:#9cddf7!important;border-color:#40586a!important;background:#172632!important}.link:hover{background:#223847!important}
+.planner-status b,.planner-review-ok,.run-summary,.segment-head,.year-heading,.year-race-more>summary,.checklist-group strong,.official-equipment a,.event-detail-dialog h4,.route-description h4,.route-description a,.event-detail-row a,.year-calendar-year h3,.gpx-stat b{color:#7fd8ff!important}
+.run-tools input[type=checkbox],.review-select-label input{accent-color:#7fd8ff!important}
+.tabbar{background:#141e28!important}.tab-button[aria-selected=true],.year-view-switch button.active{background:#203747!important;color:#7fd8ff!important;border:1px solid #52748a!important}
+.year-status-count{background:#20313e!important;color:#dcecf5!important}
+.info-tip summary{border-color:#7fd8ff!important;color:#7fd8ff!important;background:#15212b!important}.info-tip[open] summary{background:#203747!important;color:#fff!important}
+.utmb-header-link{color:#7fd8ff!important}
+:where(button,a,input,select,textarea,[role=button]):focus-visible{outline:3px solid #7fd8ff!important;outline-offset:3px}
+</style>\n</body></html>
