@@ -75,3 +75,9 @@ Die lokalen Schlüssel werden ausschließlich zur Laufzeit vom lokalen CLI ausge
 Ergebnis am 23.11.2026: Zwei vollständige lokale Supabase-E2E-Läufe waren erfolgreich: Auth/RLS/Storage `45185762018` und Auth/RLS/Storage plus Edge-Runtime `45186627686`. Der Test hat zwei echte GoTrue-Sitzungen erzeugt, den Logout-Scope `others` ausgeführt, den alten Refresh-Token abgewiesen, den neuen Refresh-Token akzeptiert und den Zugriff des alten JWT auf Planner-Daten, Push-Abos, Änderungsvorschläge und private Dateien gesperrt. Ein Schreibversuch mit dem alten JWT wurde ebenfalls abgewiesen. Zusätzlich wurde der Website-Inspector in der lokalen Edge-Runtime mit einem echten HTTPS-Abruf erfolgreich ausgeführt; eine IP-Literal-Adresse wurde abgelehnt.
 
 Dieser Test ersetzt weiterhin keinen Test mit zwei realen iOS-Geräten. Die gehostete Produktions-Edge-Runtime wurde nicht verändert oder deployed.
+
+## Zusätzliche Abgrenzung der Edge-Function-Tests
+
+Der lokale Supabase-E2E-Workflow ruft derzeit den Website-Inspector in der echten lokalen Edge-Runtime auf und prüft dessen HTTPS-/DNS-Verhalten. Die vier benutzerbezogenen Funktionen `send-owner-test-push`, `send-event-review-push`, `delete-own-account` und `migrate-personal-documents` werden im Workflow aktuell **nicht** mit einem widerrufenen JWT ausgeführt. Für diese Funktionen bestehen im Branch Deno-Typechecks und statische Regressionstests, die den Session-RPC vor privilegierten Aktionen verlangen. Der echte Laufzeittest für diese vier Aufrufpfade bleibt Bestandteil von T06 und ist vor einer produktiven Freigabe nachzuholen.
+
+Das ist eine offene Testabdeckung, kein im Test nachgewiesener Funktionsfehler. Die Produktion wurde dafür nicht aufgerufen oder verändert.
