@@ -3,6 +3,16 @@ import fs from 'node:fs';
 
 const html = fs.readFileSync(new URL('../index.html', import.meta.url), 'utf8');
 
+assert.doesNotMatch(
+  html,
+  /auth\\.signOut\\(\\s*\\)/,
+  'Every logout path must be scoped explicitly; a bare signOut would revoke every device.'
+);
+assert.match(
+  html,
+  /auth\\.signOut\\(\\{scope:'local'\\}\\)/,
+  'Aborting account transfer or logging out must only end the current device session.'
+);
 assert.match(
   html,
   /auth\.signOut\(\{scope:'others'\}\)/,
