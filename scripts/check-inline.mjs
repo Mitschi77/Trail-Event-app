@@ -50,10 +50,10 @@ for (const required of ["parseGpx", "persistGpxData", "connectPlannerCloud"]) {
   if (!html.includes(required)) throw new Error("Required app feature is missing: " + required);
 }
 
-if (!html.includes("const PRE_RESTORE_DB_NAME='trail-event-local-backups-v1'") || !html.includes("async function savePreRestoreBackup(backup)") || !html.includes("await savePreRestoreBackup(previous)")) {
+if (!html.includes("const PRE_RESTORE_DB_NAME='trail-event-local-backups-v1'") || !html.includes("async function savePreRestoreBackup(backup,slot='latest')") || !html.includes("await savePreRestoreBackup(previous)")) {
   throw new Error("Cloud restore must save the pre-restore snapshot in IndexedDB before replacing local data.");
 }
-if (!html.includes("async function readPreRestoreBackup()") || !html.includes("backup=await readPreRestoreBackup()") || !html.includes("if(indexedBackup)return indexedBackup;const legacy=localStorage.getItem")) {
+if (!html.includes("async function readPreRestoreBackup(slot='latest')") || !html.includes("backup=await readPreRestoreBackup()") || !html.includes("if(indexedBackup)return indexedBackup;const legacy=localStorage.getItem")) {
   throw new Error("The pre-restore backup export must read the IndexedDB snapshot, with legacy fallback.");
 }
 const restoreStart = html.indexOf("async function useCloudDataLocally()");
