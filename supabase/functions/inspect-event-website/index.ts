@@ -9,15 +9,16 @@ function isPublicIp(address:string):boolean{
     const p=ip.split(".").map(Number);
     if(p.some(n=>!Number.isInteger(n)||n<0||n>255))return false;
     const [a,b,c]=p;
-    return !(a===0||a===10||a===127||a>=224||a===100&&b>=64&&b<=127||a===169&&b===254||a===172&&b>=16&&b<=31||a===192&&(b===0||b===168)||a===198&&(b===18||b===19||b===51&&c===100)||a===203&&b===0&&c===113);
+    return !(a===0||a===10||a===127||a>=224||a===100&&b>=64&&b<=127||a===169&&b===254||a===172&&b>=16&&b<=31||a===192&&(b===0||b===168||b===88&&c===99)||a===198&&(b===18||b===19||b===51&&c===100)||a===203&&b===0&&c===113);
   }
   if(!ip.includes(":"))return false;
   const normalized=ip.split("%")[0];
-  const first=normalized.split(":").find(Boolean)||"";
-  const prefix=parseInt(first.slice(0,4),16);
+  const parts=normalized.split(":");
+  const prefix=parseInt(parts[0]||"",16);
+  const second=parseInt(parts[1]||"0",16);
   return Number.isFinite(prefix)&&prefix>=0x2000&&prefix<=0x3fff&&
-    !normalized.startsWith("2001:db8")&&!normalized.startsWith("2001:0000")&&
-    !normalized.startsWith("2002:")&&!normalized.startsWith("3fff:");
+    !(prefix===0x2001&&(second<=0x01ff||second===0x0db8))&&
+    prefix!==0x2002&&prefix!==0x3fff;
 }
 async function resolvePublicAddresses(host:string):Promise<string[]>{
   if(host==="localhost"||host.endsWith(".localhost")||host.endsWith(".local")||host.includes(":")||/^\d{1,3}(?:\.\d{1,3}){3}$/.test(host))throw new Error("Bitte eine öffentliche Domain statt einer lokalen oder IP-Adresse verwenden.");
@@ -28,7 +29,7 @@ async function resolvePublicAddresses(host:string):Promise<string[]>{
 }
 async function safeUrl(raw:string):Promise<URL>{
   const u=new URL(raw);
-  if(u.protocol!=="https:"||u.username||u.password)throw new Error("Nur öffentliche HTTPS-Webadressen sind erlaubt.");
+  if(u.protocol!=="https:"||u.username||u.password||u.port)throw new Error("Nur öffentliche HTTPS-Webadressen ohne Zugangsdaten und Sonderports sind erlaubt.");
   await resolvePublicAddresses(u.hostname.toLowerCase());
   return u;
 }
