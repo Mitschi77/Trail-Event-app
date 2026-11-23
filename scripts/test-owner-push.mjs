@@ -10,6 +10,7 @@ function harness(options = {}) {
   const state = {
     clients: [],
     rpcCalls: [],
+    sessionCalls: [],
     tableCalls: [],
     deleted: [],
     sent: [],
@@ -26,6 +27,11 @@ function harness(options = {}) {
     state.clients.push(client);
     if (key === envValues.SUPABASE_ANON_KEY) {
       client.auth = { getUser: async () => options.authResult ?? { data: { user: { id: options.userId ?? OWNER } }, error: null } };
+      client.rpc = async (name) => {
+        state.sessionCalls.push(name);
+        if (name !== "is_current_auth_session_active") throw new Error("Unexpected user RPC " + name);
+        return options.sessionResult ?? { data: true, error: null };
+      };
       return client;
     }
     client.rpc = async (name, args) => {
@@ -95,6 +101,12 @@ async function result(response) { return response.json(); }
   const response = await invoke(handler);
   assert.equal(response.status, 401);
   assert.equal(state.clients.length, 1, "unauthenticated request must not create a service-role client");
+}
+{
+  const { handler, state } = harness({ sessionResult: { data: false, error: null } });
+  const response = await invoke(handler);
+  assert.equal(response.status, 401, "a revoked session must not reach privileged operations");
+  assert.equal(state.clients.length, 1, "revoked session must not create a service-role client");
 }
 {
   const { handler, state } = harness({ userId: OTHER });
