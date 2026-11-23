@@ -2497,13 +2497,13 @@ window.trailReviewPushClick=function(event){
     return tag+id+cls;
   }
   function report(event){
-    const panel=document.getElementById('reviewTab');
     const status=document.getElementById('reviewNotificationStatus');
-    if(!panel||panel.hidden||!status)return;
+    if(!status)return;
     const point=event.changedTouches&&event.changedTouches[0] ? event.changedTouches[0] : event;
     const hit=Number.isFinite(point.clientX)&&Number.isFinite(point.clientY)
       ? document.elementFromPoint(point.clientX,point.clientY) : event.target;
-    status.textContent='Diagnose '+event.type+': Ziel '+describe(event.target)+' · Treffer '+describe(hit);
+    const inReview=!!event.target?.closest?.('#reviewTab');
+    status.textContent='Diagnose '+event.type+': Ziel '+describe(event.target)+' · Treffer '+describe(hit)+(inReview?' · Prüfungsbereich':' · außerhalb Prüfung');
   }
   ['touchstart','pointerdown','click'].forEach(type=>document.addEventListener(type,report,{capture:true,passive:type==='touchstart'}));
 })();
