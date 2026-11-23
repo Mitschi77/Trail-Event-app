@@ -1,4 +1,4 @@
-const CACHE_NAME = 'trail-event-planner-v93';
+const CACHE_NAME = 'trail-event-planner-v94';
 const APP_SHELL = ['./', './index.html', './race-tools.js', './season-tools.js', './event-dates.json', './manifest.webmanifest', './trail-icon.svg'];
 
 self.addEventListener('install', event => {
@@ -23,7 +23,7 @@ self.addEventListener('push', event => {
   let payload = {};
   try { payload = event.data ? event.data.json() : {}; }
   catch (_) { payload = { body: event.data ? event.data.text() : '' }; }
-  const title = typeof payload.title === 'string' && payload.title ? payload.title : 'Trail Event Planner';
+  const title = typeof payload.title === 'string' && payload.title ? payload.title : 'ALTRIVO';
   const options = {
     body: typeof payload.body === 'string' ? payload.body : 'Es gibt einen neuen Änderungsvorschlag zur Prüfung.',
     icon: './trail-icon.svg',
