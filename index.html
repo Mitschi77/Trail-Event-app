@@ -2450,6 +2450,35 @@ window.trailReviewPushClick=function(event){
     window.trailReviewPushClick(event);
   });
 })();
+// Robust capture-phase binding for both push controls. This survives tab rendering
+// and prevents an earlier component handler from swallowing the tap.
+(function bindReviewPushControlsCapture(){
+  if(document.documentElement.dataset.reviewPushCaptureBound==='1')return;
+  document.documentElement.dataset.reviewPushCaptureBound='1';
+  document.addEventListener('pointerdown',function(event){
+    const button=event.target?.closest?.('#enableReviewNotifications,#sendOwnerPushTest');
+    if(!button)return;
+    const status=document.getElementById('reviewNotificationStatus');
+    if(status)status.textContent='Berührung erkannt – Push-Schaltfläche wird angesprochen …';
+  },true);
+  document.addEventListener('click',function(event){
+    const button=event.target?.closest?.('#enableReviewNotifications,#sendOwnerPushTest');
+    if(!button)return;
+    event.preventDefault();
+    event.stopPropagation();
+    const status=document.getElementById('reviewNotificationStatus');
+    if(!status)return;
+    if(button.id==='enableReviewNotifications'){
+      status.textContent='Klick erkannt – Push-Einrichtung startet …';
+      if(typeof window.trailReviewPushClick==='function')window.trailReviewPushClick(event);
+      else status.textContent='Push-Einrichtung ist nicht geladen. Bitte Seite neu laden.';
+      return;
+    }
+    status.textContent='Klick erkannt – Test-Push startet …';
+    if(typeof window.trailOwnerPushTestClick==='function')window.trailOwnerPushTestClick(event);
+    else status.textContent='Test-Push-Funktion ist nicht geladen. Bitte Seite neu laden.';
+  },true);
+})();
 window.addEventListener('error',function(e){
   const status=document.getElementById('cloudCheckStatus');
   if(status)status.textContent='JavaScript-Fehler: '+(e.message||'Unbekannt')+' · Zeile '+(e.lineno||'?');
