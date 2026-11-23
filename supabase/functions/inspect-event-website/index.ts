@@ -3,8 +3,8 @@ const cors={"Access-Control-Allow-Origin":"*","Access-Control-Allow-Headers":"au
 function json(data:unknown,status=200){return new Response(JSON.stringify(data),{status,headers:{...cors,"Content-Type":"application/json"}});}
 function clean(v:unknown,max=500):string{return String(v??"").replace(/<[^>]*>/g," ").replace(/&nbsp;|&#160;/gi," ").replace(/&amp;/gi,"&").replace(/&quot;/gi,'"').replace(/&#39;|&apos;/gi,"'").replace(/&lt;/gi,"<").replace(/&gt;/gi,">").replace(/\s+/g," ").trim().slice(0,max);}
 function isPublicIp(address:string):boolean{
-  const ip=address.toLowerCase().replace(/^\\[|\\]$/g,"");
-  if(/^\\d{1,3}(?:\\.\\d{1,3}){3}$/.test(ip)){
+  const ip=address.toLowerCase().replace(/^\[|\]$/g,"");
+  if(/^\d{1,3}(?:\.\d{1,3}){3}$/.test(ip)){
     const p=ip.split(".").map(Number);
     if(p.some(n=>!Number.isInteger(n)||n<0||n>255))return false;
     const [a,b,c]=p;
@@ -21,10 +21,10 @@ function isPublicIp(address:string):boolean{
 async function safeUrl(raw:string):Promise<URL>{
   const u=new URL(raw);
   if(u.protocol!=="https:"||u.username||u.password)throw new Error("Nur öffentliche HTTPS-Webadressen sind erlaubt.");
-  const host=u.hostname.toLowerCase().replace(/^\\[|\\]$/g,"");
+  const host=u.hostname.toLowerCase().replace(/^\[|\]$/g,"");
   if(host==="localhost"||host.endsWith(".localhost")||host.endsWith(".local"))throw new Error("Diese Webadresse ist nicht öffentlich erreichbar.");
   let addresses:string[]=[];
-  if(host.includes(":")||/^\\d{1,3}(?:\\.\\d{1,3}){3}$/.test(host))addresses=[host];
+  if(host.includes(":")||/^\d{1,3}(?:\.\d{1,3}){3}$/.test(host))addresses=[host];
   else{
     const resolved=await Promise.allSettled([Deno.resolveDns(host,"A"),Deno.resolveDns(host,"AAAA")]);
     for(const result of resolved)if(result.status==="fulfilled")addresses.push(...result.value);
