@@ -74,13 +74,7 @@ async function serviceInsert(table, row) {
 await serviceInsert('planner_data', { user_id: userId, data: { source: 'local-auth-e2e' } });
 await serviceInsert('event_push_subscriptions', { user_id: userId });
 await serviceInsert('event_change_proposals', { submitted_by: userId, status: 'pending' });
-await requireOk(await api(`/storage/v1/object/trail-private-documents/${userId}/session-test.txt`, {
-  token: serviceKey, key: serviceKey, method: 'POST',
-  headers: { 'Content-Type': 'text/plain', 'x-upsert': 'true' },
-  body: undefined,
-}), 'Storage upload placeholder').catch(error => { throw error; });
-
-// The object upload above uses raw bytes, so replace it with a direct request.
+// Seed a private file through Storage's HTTP API using the local service-role key.
 const upload = await fetch(new URL(`/storage/v1/object/trail-private-documents/${userId}/session-test.txt`, baseUrl), {
   method: 'POST',
   headers: { apikey: serviceKey, Authorization: `Bearer ${serviceKey}`, 'Content-Type': 'text/plain', 'x-upsert': 'true' },
