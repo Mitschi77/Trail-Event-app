@@ -84,3 +84,411 @@ window.showPlannedEventDetails=function(id,ri){prior(id,ri);const root=document.
   if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',repair,{once:true});
   else repair();
 })();
+
+
+/* Fail-closed GPX rights enforcement. This is deliberately separate from
+   personal activity imports: only organiser course GPX is governed here. */
+(function installGpxRightsGate(){
+  const fallbackPolicy = {
+    PROCESS_ACTIONS:["gpxFileFetch","gpxFileImport","gpxFileProcess","gpxFileStore","gpxFileMapDisplay"],
+    defaultEntry:function(){return {status:"pending",permissions:{},restriction:{status:"not_checked"}};},
+    allows:function(entry,action){
+      return !!entry && (entry.status==="approved"||entry.status==="partial") &&
+        entry.permissions?.[action]===true &&
+        (action==="gpxOfficialLink" || entry.restriction?.status==="clear");
+    },
+    canProcess:function(entry){return this.PROCESS_ACTIONS.every(key=>this.allows(entry,key));},
+    canDownload:function(entry){return this.allows(entry,"gpxFileUserDownload");},
+    canLink:function(entry){return this.allows(entry,"gpxOfficialLink");},
+    isDirectFileUrl:function(url){
+      const value=String(url||"");
+      return /\.gpx(?:$|[?#])/i.test(value) || /drive\.google\.com\/(?:file\/d\/|uc\?export=download)/i.test(value);
+    },
+    shouldBlockFetch:function(url,entry,knownRouteGpx){
+      return (this.isDirectFileUrl(url)||!!knownRouteGpx) && !this.canProcess(entry);
+    }
+  };
+  let policy=window.GpxRightsPolicy||fallbackPolicy;
+  let registry={schemaVersion:1,defaultPolicy:"deny",routes:{}};
+  let registryReady=false;
+  let registryLoadFailed=false;
+  // Keep the deny scope available even if the registry request is unavailable.
+  const restrictedRouteIds=new Set([
+    "explorer-85-2993",
+    "bora-ultra-105-3837",
+    "transkarst-ultra-59-1814",
+    "trieste-ultra-61-2-2323",
+    "half-trail-23-3-700",
+    "s1-family-hike-trail-14-8-419-2027",
+    "s1-borin-5-5-186-2027"
+  ]);
+  const events=()=>typeof EVENTS!=="undefined"&&Array.isArray(EVENTS)?EVENTS:[];
+  const escapeHtml=value=>String(value??"").replace(/[&<>"']/g,ch=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[ch]));
+  const findRouteById=id=>{
+    if(!id)return null;
+    for(const event of events()){
+      const route=(event.routes||[]).find(r=>String(r.id)===String(id));
+      if(route)return route;
+    }
+    return null;
+  };
+  // This organizer registry is scoped to its explicitly listed routes.
+  // Unlisted events keep the app's legacy GPX behavior; never apply one
+  // organizer's restrictions as a catalogue-wide default.
+  const legacyEntry={
+    status:"approved",
+    permissions:{
+      gpxFileFetch:true,
+      gpxFileImport:true,
+      gpxFileProcess:true,
+      gpxFileStore:true,
+      gpxFileMapDisplay:true,
+      gpxFileUserDownload:true,
+      gpxOfficialLink:true
+    },
+    restriction:{status:"clear"}
+  };
+  const isRegisteredRoute=route=>!!route?.id&&restrictedRouteIds.has(String(route.id));
+  const rightsFor=route=>{
+    if(!route||!route.id)return policy.defaultEntry();
+    // Every explicitly registered route must have its own registry entry.
+    // Missing entries are denied, never treated as an unlisted legacy route.
+    if(isRegisteredRoute(route)){
+      if(!registryReady||registryLoadFailed)return policy.defaultEntry();
+      return registry.routes?.[String(route.id)]||policy.defaultEntry();
+    }
+    return legacyEntry;
+  };
+  const actualRoute=route=>{
+    if(route?.id&&String(route.id).startsWith("review_")&&window.__gpxReviewRouteId){
+      return findRouteById(window.__gpxReviewRouteId)||null;
+    }
+    return route?.id?findRouteById(route.id)||route:null;
+  };
+  const canProcess=route=>!!route&&policy.canProcess(rightsFor(actualRoute(route)));
+  const canDownload=route=>!!route&&policy.canDownload(rightsFor(actualRoute(route)));
+  const canLink=route=>!!route&&policy.canLink(rightsFor(actualRoute(route)));
+  const blockedMessage=route=>{
+    const status=String(rightsFor(actualRoute(route)).restriction?.status||"not_checked").toLowerCase();
+    if(status==="withheld_until_race_week"||status.includes("restricted")||status.includes("prohibit")||status.includes("forbidden")){
+      return "GPX durch Veranstalter eingeschränkt – kein Download möglich.";
+    }
+    return "GPX gesperrt – keine ausdrückliche Freigabe dokumentiert; kein Download möglich.";
+  };
+  const routeForInput=input=>{
+    const event=events().find(e=>String(e.id)===String(input?.dataset?.gpxEvent||""));
+    return event?.routes?.find(r=>String(r.id)===String(input?.dataset?.gpxRoute||""))||null;
+  };
+  const routeFromPanel=panel=>{
+    const match=String(panel?.id||"").match(/^routeInfo(\d+)_(\d+)$/);
+    return match?events()[Number(match[1])]?.routes?.[Number(match[2])]||null:null;
+  };
+  const routeForPayload=payload=>{
+    const eventId=payload?.eventId||payload?.event?.id||payload?.route?.eventId||payload?.newRoute?.eventId;
+    const routeId=payload?.routeId||payload?.route?.id||payload?.newRoute?.id;
+    const routeName=payload?.routeName||payload?.route?.name||payload?.newRoute?.name;
+    if(routeId){
+      const byId=findRouteById(routeId);
+      if(byId)return byId;
+    }
+    const event=events().find(e=>String(e.id)===String(eventId));
+    if(event&&routeName){
+      const byName=(event.routes||[]).find(r=>[r.name,r.route].some(v=>String(v||"")===String(routeName)));
+      if(byName)return byName;
+    }
+    return null;
+  };
+  const routeByGpxUrl=url=>{
+    const value=String(url||"");
+    for(const event of events()){
+      for(const route of event.routes||[]){
+        if([route.gpxDownloadUrl,route.gpxUrl,route.gpxFileUrl].some(candidate=>candidate&&String(candidate)===value))return route;
+      }
+    }
+    return null;
+  };
+  const permissionForLink=(route,href)=>{
+    return policy.isDirectFileUrl(href)?canDownload(route):(canLink(route)||canDownload(route));
+  };
+
+  window.gpxRightsRegistry=registry;
+  window.gpxRightsAllows=(routeId,action)=>{
+    const id=String(routeId||"");
+    if(restrictedRouteIds.has(id)){
+      if(!registryReady||registryLoadFailed)return false;
+      const entry=registry.routes?.[id];
+      return !!entry&&policy.allows(entry,action);
+    }
+    return policy.allows(legacyEntry,action);
+  };
+  window.routeGpxIsOrganizerRestricted=route=>!canProcess(route);
+  window.routeHasDownloadableGpx=route=>{
+    const href=route?.gpxDownloadUrl||route?.gpxUrl||"";
+    return policy.isDirectFileUrl(href)?canDownload(route):(canLink(route)||canDownload(route));
+  };
+  window.isGpxImportableUrl=(url,status)=>{
+    if(/stale|historical|candidate|unversioned|needs-validation|not-current|not-published|not-verified|pending/i.test(String(status||"")))return false;
+    const route=routeByGpxUrl(url);
+    return policy.isDirectFileUrl(url)&&(!route||canProcess(route));
+  };
+
+  const originalProposalRestricted=window.proposalGpxIsRestricted;
+  window.proposalGpxIsRestricted=payload=>{
+    const route=routeForPayload(payload);
+    return !route||!canProcess(route);
+  };
+  const originalReviewGpxUrl=window.reviewGpxUrl;
+  window.reviewGpxUrl=payload=>{
+    const route=routeForPayload(payload);
+    if(!route||!canProcess(route)||!canDownload(route))return "";
+    return typeof originalReviewGpxUrl==="function"?originalReviewGpxUrl(payload):"";
+  };
+
+  const originalRenderGpxMap=window.renderGpxMap;
+  if(typeof originalRenderGpxMap==="function"){
+    window.renderGpxMap=function(route){
+      const source=actualRoute(route);
+      if(!source||!canProcess(source))return '<div class="gpx-map-status">'+escapeHtml(blockedMessage(source))+'</div>';
+      return originalRenderGpxMap.apply(this,arguments);
+    };
+  }
+  const originalInitGpxMap=window.initGpxMap;
+  if(typeof originalInitGpxMap==="function"){
+    window.initGpxMap=function(route){
+      const source=actualRoute(route);
+      if(!source||!canProcess(source))return;
+      return originalInitGpxMap.apply(this,arguments);
+    };
+  }
+  const originalPersistGpxData=window.persistGpxData;
+  if(typeof originalPersistGpxData==="function"){
+    window.persistGpxData=function(route,event,ri,data,fileName){
+      if(!canProcess(route))throw new Error(blockedMessage(route));
+      return originalPersistGpxData.apply(this,arguments);
+    };
+  }
+  const originalImportRouteGpx=window.importRouteGpx;
+  if(typeof originalImportRouteGpx==="function"){
+    window.importRouteGpx=async function(input){
+      const route=routeForInput(input);
+      if(!route||!canProcess(route)){
+        const status=input?.closest?.(".edit-grid,.year-profile-panel")?.querySelector(".gpx-status");
+        if(status)status.textContent=blockedMessage(route);
+        if(input)input.value="";
+        return;
+      }
+      return originalImportRouteGpx.apply(this,arguments);
+    };
+  }
+  const originalImportGpxForRoute=window.importGpxForRoute;
+  if(typeof originalImportGpxForRoute==="function"){
+    window.importGpxForRoute=async function(id,ri,input){
+      const route=events()[Number(id)]?.routes?.[Number(ri)];
+      if(!route||!canProcess(route)){
+        if(input)input.value="";
+        alert(blockedMessage(route));
+        return;
+      }
+      return originalImportGpxForRoute.apply(this,arguments);
+    };
+  }
+  const originalImportRemoteGpxForRoute=window.importRemoteGpxForRoute;
+  if(typeof originalImportRemoteGpxForRoute==="function"){
+    window.importRemoteGpxForRoute=async function(id,ri,url,button){
+      const route=events()[Number(id)]?.routes?.[Number(ri)];
+      if(!route||!canProcess(route)){
+        if(button){button.disabled=true;button.textContent="GPX gesperrt";}
+        alert(blockedMessage(route));
+        return;
+      }
+      return originalImportRemoteGpxForRoute.apply(this,arguments);
+    };
+  }
+  const originalOpenReviewGpx=window.openReviewGpx;
+  if(typeof originalOpenReviewGpx==="function"){
+    window.openReviewGpx=async function(input){
+      const article=input?.closest?.("article");
+      const pre=article?.querySelector?.("details.review-extra pre");
+      let payload=null;
+      try{payload=JSON.parse(pre?.textContent||"{}");}catch{}
+      const route=routeForPayload(payload);
+      const target=article?.querySelector?.("[data-review-gpx-preview]");
+      if(!route||!canProcess(route)){
+        if(target)target.innerHTML='<p class="plan-meta">'+escapeHtml(blockedMessage(route))+'</p>';
+        if(input)input.value="";
+        return;
+      }
+      const previous=window.__gpxReviewRouteId;
+      window.__gpxReviewRouteId=route.id;
+      try{return await originalOpenReviewGpx.apply(this,arguments);}
+      finally{window.__gpxReviewRouteId=previous;}
+    };
+  }
+
+  const originalFetch=window.fetch.bind(window);
+  window.fetch=function(input,init){
+    const url=typeof input==="string"?input:(input?.url||"");
+    const route=routeByGpxUrl(url);
+    const knownRouteGpx=!!route;
+    // The registry is the boundary between restricted and legacy routes.
+    // Do not allow course GPX activity until it has loaded successfully.
+    if(route&&isRegisteredRoute(route)&&(!registryReady||registryLoadFailed)){
+      return Promise.reject(new Error(blockedMessage(route)));
+    }
+    if(route&&policy.shouldBlockFetch(url,rightsFor(route),true)){
+      return Promise.reject(new Error(blockedMessage(route)));
+    }
+    // An unlisted URL keeps the pre-existing behavior once the registry is
+    // available; this organizer's seven entries are not a global deny list.
+    return originalFetch(input,init);
+  };
+
+  function reviewPayloadFromInput(input){
+    const article=input?.closest?.("article");
+    const pre=article?.querySelector?.("details.review-extra pre");
+    try{return JSON.parse(pre?.textContent||"{}");}catch{return null;}
+  }
+  function applyGpxUi(root){
+    // Do not mutate controls before the scoped registry is ready: a temporary
+    // fail-closed state must not permanently remove legacy-route UI elements.
+    if(!registryReady)return;
+    const scope=root&&root.querySelectorAll?root:document;
+    scope.querySelectorAll('[id^="routeInfo"]').forEach(panel=>{
+      const route=routeFromPanel(panel);
+      if(!route)return;
+      const linkAllowed=canLink(route),downloadAllowed=canDownload(route),processAllowed=canProcess(route);
+      panel.querySelectorAll("a[href]").forEach(link=>{
+        const href=link.getAttribute("href")||"";
+        const direct=policy.isDirectFileUrl(href);
+        const matches=[route.gpxDownloadUrl,route.gpxUrl,route.gpxFileUrl].some(v=>v&&String(v)===href);
+        const isGpx=direct||matches||/gpx/i.test(link.textContent||"");
+        if(isGpx&&!permissionForLink(route,href))link.remove();
+      });
+      if(!processAllowed){
+        panel.querySelectorAll("button").forEach(button=>{
+          if(/gpx/i.test(button.textContent||""))button.remove();
+        });
+      }
+      const hasGpxReference=!!(route.gpxDownloadUrl||route.gpxUrl||route.gpxAvailability||route.gpxStatusNote||route.gpxTrack||route.gpxFileName);
+      if(hasGpxReference&&!processAllowed&&!panel.querySelector("[data-gpx-rights-status]")){
+        const note=document.createElement("p");
+        note.className="plan-meta";
+        note.dataset.gpxRightsStatus="1";
+        note.textContent=linkAllowed&&!downloadAllowed
+          ?"GPX-Datei selbst nicht freigegeben; nur ein separat erlaubter offizieller GPX-Seitenlink darf angezeigt werden."
+          :blockedMessage(route);
+        panel.appendChild(note);
+      }
+    });
+    scope.querySelectorAll('input[data-gpx-event][data-gpx-route]').forEach(input=>{
+      const route=routeForInput(input);
+      if(route&&!canProcess(route)){
+        const message=blockedMessage(route);
+        if(!input.disabled)input.disabled=true;
+        if(input.title!==message)input.title=message;
+        const status=input.closest(".edit-grid,.year-profile-panel")?.querySelector(".gpx-status");
+        if(status&&status.textContent!==message)status.textContent=message;
+      }
+    });
+    scope.querySelectorAll("input[data-review-gpx]").forEach(input=>{
+      const route=routeForPayload(reviewPayloadFromInput(input));
+      if(!route||!canProcess(route)){
+        input.disabled=true;
+        input.title=blockedMessage(route);
+      }
+    });
+  }
+
+  // Rights restrictions block new fetch/import/process actions, but must never
+  // erase previously stored GPX files or derived profiles. Existing data stays
+  // available for recovery/review until a validated replacement is supplied.
+  function purgeUnauthorizedGpxData(){
+    const summary={changed:false,routesCleared:0,recordsCleared:0,retained:true,checkedAt:new Date().toISOString()};
+    window.gpxRightsPurgeSummary=summary;
+    return summary;
+  }
+
+  const originalRender=window.render;
+  if(typeof originalRender==="function"){
+    window.render=function(){
+      const result=originalRender.apply(this,arguments);
+      applyGpxUi(document);
+      return result;
+    };
+  }
+  const originalRenderReviewQueue=window.renderReviewQueue;
+  if(typeof originalRenderReviewQueue==="function"){
+    window.renderReviewQueue=function(){
+      const result=originalRenderReviewQueue.apply(this,arguments);
+      applyGpxUi(document);
+      return result;
+    };
+  }
+  const originalApplyLocalEdits=window.applyLocalEventDataEdits;
+  if(typeof originalApplyLocalEdits==="function"){
+    window.applyLocalEventDataEdits=function(){
+      const result=originalApplyLocalEdits.apply(this,arguments);
+      if(registryReady)purgeUnauthorizedGpxData();
+      applyGpxUi(document);
+      return result;
+    };
+  }
+
+  document.addEventListener("click",event=>{
+    const link=event.target?.closest?.("a[href]");
+    if(!link)return;
+    const href=link.getAttribute("href")||"";
+    const panel=link.closest('[id^="routeInfo"]');
+    const route=panel?routeFromPanel(panel):routeByGpxUrl(href);
+    const direct=policy.isDirectFileUrl(href);
+    const isGpx=direct||/gpx/i.test(link.textContent||"")||(route&&[route.gpxDownloadUrl,route.gpxUrl,route.gpxFileUrl].some(v=>v&&String(v)===href));
+    if(!isGpx)return;
+    if((route&&isRegisteredRoute(route)&&(!registryReady||registryLoadFailed)) || (route&&!permissionForLink(route,href))){
+      event.preventDefault();
+      event.stopImmediatePropagation();
+      alert(blockedMessage(route));
+    }
+  },true);
+
+  if(typeof MutationObserver!=="undefined"&&document.body){
+    const observer=new MutationObserver(()=>applyGpxUi(document));
+    observer.observe(document.body,{childList:true,subtree:true});
+  }
+  applyGpxUi(document);
+
+  function loadPolicyScript(){
+    if(window.GpxRightsPolicy){policy=window.GpxRightsPolicy;return Promise.resolve();}
+    return new Promise(resolve=>{
+      const script=document.createElement("script");
+      script.src="./gpx-rights-policy.js?v=20261121";
+      script.onload=()=>{policy=window.GpxRightsPolicy||fallbackPolicy;resolve();};
+      script.onerror=()=>resolve();
+      document.head.appendChild(script);
+    });
+  }
+  function loadRightsRegistry(){
+    return originalFetch("./gpx-rights.json?v=20261121",{cache:"no-store"})
+      .then(response=>{if(!response.ok)throw new Error("HTTP "+response.status);return response.json();})
+      .then(data=>{
+        if(data.defaultPolicy!=="deny"||!data.routes)throw new Error("Invalid GPX rights registry");
+        for(const routeId of restrictedRouteIds){
+          if(!Object.prototype.hasOwnProperty.call(data.routes,routeId))throw new Error("GPX rights registry is missing route "+routeId);
+        }
+        registry=data;
+        window.gpxRightsRegistry=data;
+      })
+      .catch(error=>{
+        registryLoadFailed=true;
+        registry={schemaVersion:1,defaultPolicy:"deny",routes:{}};
+        window.gpxRightsRegistry=registry;
+        window.gpxRightsRegistryError=String(error?.message||error);
+      });
+  }
+  Promise.all([loadPolicyScript(),loadRightsRegistry()]).then(()=>{
+    registryReady=true;
+    purgeUnauthorizedGpxData();
+    applyGpxUi(document);
+    if(typeof window.render==="function")window.render();
+    if(typeof window.renderReviewQueue==="function")window.renderReviewQueue();
+  });
+})();
