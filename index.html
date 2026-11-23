@@ -2325,6 +2325,57 @@ a{color:#9BDFFF}
  #events .event .route{padding:11px!important;border-radius:12px!important}
 }
 </style>
+
+<style id="northbound-global-surface-cleanup">
+/* NORTHBOUND: einheitliche alpine Farbwelt – keine grünen Legacy-Flächen */
+:root{
+  --bg:#0b1117;--ink:#f1f5f8;--muted:#aab7c2;
+  --green:#ff6a00;--lime:#7fd8ff;--line:#2b3946;
+  --card:#141e28;--shadow:0 10px 28px #0005;
+}
+body{background:var(--bg);color:var(--ink)}
+.app-menu-button,.app-menu-account,.app-menu-info,.utmb-profile-summary,.utmb-result-card{
+  background:#14212c!important;border-color:#344b5d!important;color:#edf4f8!important
+}
+.app-menu-button:hover,.app-menu-button[aria-expanded="true"]{background:#203747!important;border-color:#7fd8ff!important}
+.app-menu-heading,.app-menu-info strong,.utmb-profile-summary>strong,.utmb-result-card>strong{color:#7fd8ff!important}
+.stat{background:#141e28!important;border-color:#304454!important}
+.stat b{color:#ff6a00!important}
+.tag,.event-status-tag,.planner-route-preview-meta span,.route-edit,.route-info-tools,
+.run-record-summary,.planner-status,.planner-review,.plan-card,.stay,.empty,
+.year-calendar-year,.year-calendar-month,.settings-group{
+  background:#15212b!important;border-color:#304454!important;color:#eaf1f6!important
+}
+.tag{background:#20313e!important;border:1px solid #3b5669!important;color:#dcecf5!important}
+.type-select,.field,select,input,textarea{
+  background:#121c25!important;color:#edf4f8!important;border-color:#344958!important
+}
+.type-select:focus,.field:focus,select:focus,input:focus,textarea:focus{
+  border-color:#7fd8ff!important;box-shadow:0 0 0 3px #7fd8ff20!important
+}
+.primary{background:#ff6a00!important;color:#101820!important}
+.secondary{background:#1a2a36!important;color:#c9efff!important;border-color:#466176!important}
+.link{color:#9cddf7!important;border-color:#40586a!important;background:#172632!important}
+.link:hover{background:#223847!important}
+.route.route-done{background:#18232d!important;border-color:#9b8450!important}
+.route.route-done strong,.run-record-summary>strong{color:#f0d58b!important}
+.planner-status b,.planner-review-ok{color:#7fd8ff!important}
+.planner-review-warning{color:#f0bd72!important}
+.run-tools input[type="checkbox"],.review-select-label input{accent-color:#7fd8ff!important}
+.run-summary,.segment-head,.year-heading,.year-race-more>summary,.checklist-group strong,
+.official-equipment a,.event-detail-dialog h4,.route-description h4,.route-description a,
+.event-detail-row a,.year-calendar-year h3{color:#7fd8ff!important}
+.app-menu-item:hover,.more-nav-item:hover,.more-nav-item:focus-visible{background:#203747!important}
+.tabbar{background:#141e28!important}
+.tab-button[aria-selected="true"],.year-view-switch button.active{
+  background:#203747!important;color:#7fd8ff!important;border:1px solid #52748a!important
+}
+.event-status-tag{background:#20313e!important;color:#dcecf5!important}
+:where(button,a,input,select,textarea,[role="button"]):focus-visible{
+  outline:3px solid #7fd8ff!important;outline-offset:3px
+}
+</style>
+
 </head><script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script><body>
 <header><div class="top"><div class="brand"><img src="./northbound-logo.svg" alt="NORTHBOUND Mountain Motion" width="112" height="56"><span class="brand-wordmark">NORTHBOUND</span></div><div class="utmb-header-index" aria-label="Persönlicher UTMB Index 436"><span class="utmb-header-mark" aria-hidden="true">▲</span><span class="utmb-header-copy"><small>UTMB INDEX</small><strong>436</strong></span><span class="utmb-header-link">↗</span></div><div class="pill"><button id="appMenuButton" type="button" class="app-menu-button" aria-label="Hauptmenü öffnen" aria-haspopup="true" aria-expanded="false" aria-controls="appMenuDropdown" title="Hauptmenü">☰</button><div id="appMenuDropdown" class="app-menu-dropdown" role="menu" aria-label="Daten und Verwaltung" hidden>
 <span id="cloudProfileButton" hidden aria-hidden="true"></span><div class="app-menu-heading"><span>Menü</span><button id="closeAppMenuButton" type="button" class="secondary" aria-label="Menü schließen">Schließen ✕</button></div>
