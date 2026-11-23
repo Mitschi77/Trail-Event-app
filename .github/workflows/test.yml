@@ -6,11 +6,11 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: write
+  contents: read
 
 concurrency:
   group: app-tests-${{ github.ref }}
-  cancel-in-progress: false
+  cancel-in-progress: true
 
 jobs:
   test:
@@ -19,22 +19,6 @@ jobs:
     steps:
       - name: Check out repository
         uses: actions/checkout@v4
-        with:
-          ref: ${{ github.head_ref || github.ref_name }}
-      - name: Apply explicit single-device login enforcement
-        run: node scripts/apply_single_active_device_session.mjs
-      - name: Commit generated app integration to the pull request branch
-        if: github.event_name == 'pull_request'
-        run: |
-          if git diff --quiet -- index.html; then
-            echo "App integration already present."
-          else
-            git config user.name "github-actions[bot]"
-            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-            git add index.html
-            git commit -m "Apply single-active-device session enforcement"
-            git push origin "HEAD:${GITHUB_HEAD_REF}"
-          fi
       - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
