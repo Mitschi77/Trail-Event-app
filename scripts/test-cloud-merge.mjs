@@ -134,4 +134,19 @@ const remoteCheckBody=source.slice(remoteCheckStart,remoteCheckEnd);
 assert.ok(remoteCheckBody.includes('await savePreRestoreBackup({createdAt:new Date().toISOString(),keys:local})'),'Remote sync must back up local data in IndexedDB before applying cloud changes');
 assert.ok(!remoteCheckBody.includes("localStorage.setItem('trailEventPreRestoreBackup'"),'Remote sync must not store the full recovery snapshot in quota-limited localStorage');
 
+
+const conflictBranch=source.indexOf('if(resolution.conflicts.length){');
+const conflictBranchEnd=source.indexOf('if(resolution.localNeedsApply)',conflictBranch);
+assert.notEqual(conflictBranch,-1,'Conflicting snapshots must enter an explicit safety-stop branch');
+assert.notEqual(conflictBranchEnd,-1,'Conflict branch boundary must exist');
+const conflictBody=source.slice(conflictBranch,conflictBranchEnd);
+assert.ok(conflictBody.includes("savePreRestoreBackup({createdAt:conflictAt,source:'conflict-local',keys:local},'conflict-local')"),'Local conflict snapshot must be stored separately');
+assert.ok(conflictBody.includes("savePreRestoreBackup({createdAt:conflictAt,source:'conflict-cloud',cloudUpdatedAt:data.updated_at,keys:remote},'conflict-cloud')"),'Remote conflict snapshot must be stored separately');
+assert.ok(conflictBody.indexOf("'conflict-cloud'")<conflictBody.indexOf("cloudConflictActions').style.display='flex'"),'Conflict actions must remain hidden until both snapshots are secured');
+assert.ok(source.includes("get('conflict-local')")&&source.includes("get('conflict-cloud')"),'Both saved snapshots must be readable independently');
+assert.ok(source.includes('async function downloadConflictBackups()'),'User must be able to export both conflict versions together');
+assert.ok(source.includes('downloadConflictBackups);'),'Conflict export control must be wired');
+assert.ok(source.includes('Lokale Version als Cloud-Stand veröffentlichen'),'Local-version choice must be explicit');
+assert.ok(source.includes('Cloud-Version auf dieses Gerät übernehmen'),'Cloud-version choice must be explicit');
+
 console.log('Cloud route merge and offline retry regression tests passed.');
