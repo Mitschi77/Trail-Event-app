@@ -6,7 +6,7 @@ Die App verwendet vorläufig die Supabase-Auth-Sitzungen statt einer eigenen Ger
 
 1. Bei einer ausdrücklichen E-Mail-/Passwort-Anmeldung wird nach erfolgreicher Anmeldung `auth.signOut({ scope: "others" })` ausgeführt.
 2. Die gerade angemeldete Sitzung bleibt aktiv; alle anderen Auth-Sitzungen desselben Kontos werden widerrufen.
-3. Das bisherige Gerät erkennt die beendete Sitzung spätestens beim nächsten Token-Refresh. Der vorhandene Auth-Listener stoppt anschließend den Cloud-Polling-Timer und zeigt an, dass die lokalen Daten erhalten bleiben, aber nicht mehr synchronisiert werden.
+3. Supabase sendet bei `signOut({ scope: "others" })` kein direktes `SIGNED_OUT`-Ereignis an die anderen Geräte. Deshalb prüft das bisherige Gerät die Session-RPC beim Cloud-Polling; sobald die widerrufene Sitzung erkannt wird, stoppt die App den Polling-Timer und zeigt an, dass lokale Daten erhalten bleiben, aber nicht mehr synchronisiert werden. Ein zusätzlicher Token-Refresh kann ebenfalls den Widerruf erkennen.
 4. Die lokalen Daten des abgemeldeten Geräts werden nicht automatisch gelöscht.
 
 Ein automatischer App-Neustart mit einer bereits gespeicherten Sitzung darf **nicht** `signOut({ scope: "others" })` ausführen. Sonst könnte ein altes Gerät beim bloßen Öffnen die neuere Anmeldung wieder verdrängen. Deshalb wird die Abmeldung anderer Sitzungen ausschließlich an den expliziten Passwort-Login gebunden.
