@@ -93,9 +93,10 @@ window.showPlannedEventDetails=function(id,ri){prior(id,ri);const root=document.
     PROCESS_ACTIONS:["gpxFileFetch","gpxFileImport","gpxFileProcess","gpxFileStore","gpxFileMapDisplay"],
     defaultEntry:function(){return {status:"pending",permissions:{},restriction:{status:"not_checked"}};},
     allows:function(entry,action){
-      return !!entry && (entry.status==="approved"||entry.status==="partial") &&
-        entry.permissions?.[action]===true &&
-        (action==="gpxOfficialLink" || entry.restriction?.status==="clear");
+      if(!entry || (entry.status!=="approved"&&entry.status!=="partial") || entry.permissions?.[action]!==true)return false;
+      const restriction=entry.restriction||{};
+      if(action==="gpxOfficialLink")return restriction.status==="clear"||restriction.linkStatus==="allowed";
+      return restriction.status==="clear";
     },
     canProcess:function(entry){return this.PROCESS_ACTIONS.every(key=>this.allows(entry,key));},
     canDownload:function(entry){return this.allows(entry,"gpxFileUserDownload");},
