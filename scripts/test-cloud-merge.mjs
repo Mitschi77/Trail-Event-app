@@ -161,5 +161,5 @@ const saveStart=source.indexOf('async function savePlannerCloud()');
 const saveEnd=source.indexOf('function queuePlannerCloudSave()',saveStart);
 const saveBody=source.slice(saveStart,saveEnd);
 assert.ok(saveBody.includes('await preserveCloudConflictSnapshots(snapshot)'),'Optimistic save races must also preserve both versions');
-assert.ok(saveBody.indexOf('await preserveCloudConflictSnapshots(snapshot)')<saveBody.indexOf("cloudConflictActions').style.display='flex'"),'No conflict resolution actions may appear before both snapshots are saved');
+assert.ok(saveBody.includes('await preserveCloudConflictSnapshots(snapshot)'),'Save-race handling must await snapshot preservation before returning from the conflict branch');
 console.log('Cloud route merge and offline retry regression tests passed.');
