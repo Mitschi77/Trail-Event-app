@@ -904,3 +904,9 @@ assert.ok(seasonTools.includes("Als gelaufen markiert") && seasonTools.includes(
 assert.ok(seasonTools.includes("#seasonRaceCards .season-recovery label:last-child input"), "Recovery estimates must be visually distinct from editable actual values");
 assert.ok(seasonTools.includes("#seasonTimeline .season-block") && seasonTools.includes("scroll-snap-type:x proximity"), "Season timeline blocks must remain clear and navigable on mobile");
 assert.ok(seasonTools.includes("@media(prefers-reduced-motion:reduce){#seasonTimeline"), "Season timeline must respect reduced-motion preferences");
+
+
+// ALTRIVO identity must stay consistent across the app header and browser title.
+const alpinePerformance = await readFile(new URL("../alpine-performance.js", import.meta.url), "utf8");
+assert.ok(alpinePerformance.includes("document.title='ALTRIVO'"), "Browser title must use the ALTRIVO brand");
+assert.ok(alpinePerformance.includes("document.createTextNode(' ALTRIVO')"), "Visible app header must use the ALTRIVO brand");
