@@ -1,0 +1,238 @@
+{
+  "schemaVersion": 1,
+  "checkedAt": "2026-11-23",
+  "organizer": "Arista Eventos, S.L.",
+  "verifiedContacts": [
+    {
+      "email": "info@aristaeventos.com",
+      "source": "https://aristaeventos.es/",
+      "sourceType": "official-organizer-homepage",
+      "purpose": "general corporate contact; dedicated rights role not confirmed"
+    },
+    {
+      "email": "info@transgrancanaria.net",
+      "source": "https://transgrancanaria.net/en/contact/",
+      "sourceType": "official-event-contact-page",
+      "purpose": "The North Face Transgrancanaria"
+    },
+    {
+      "email": "info@3diastrail.com",
+      "source": "https://3diastrailibiza.com/reglamento/",
+      "sourceType": "official-event-contact-page",
+      "purpose": "3 Días Trail Ibiza"
+    }
+  ],
+  "priorMessages": [
+    {
+      "date": "2026-11-19",
+      "to": "info@3diastrail.com",
+      "subject": "Solicitud de autorización para utilizar contenidos oficiales – 3 Días Trail Ibiza",
+      "status": "sent-copy-found"
+    },
+    {
+      "date": "2026-11-20",
+      "to": "info@transgrancanaria.net",
+      "subject": "Anfrage zur Nutzung offizieller Streckenbeschreibungen und Streckeninformationen",
+      "status": "sent-copy-found"
+    }
+  ],
+  "consolidatedRequest": {
+    "date": "2026-11-23",
+    "to": "info@aristaeventos.com",
+    "cc": [
+      "info@transgrancanaria.net",
+      "info@3diastrail.com"
+    ],
+    "subject": "Solicitud consolidada de autorización de contenidos y derechos GPX – eventos Arista 2027",
+    "status": "submitted",
+    "sentCopyFiled": true,
+    "deliveryConfirmed": false,
+    "messageIdHeader": "<179539836595.56.11628292340475045426@me.com>",
+    "content": "One consolidated request for Transgrancanaria, 3 Días Trail Ibiza and additional official Arista 2027 portfolio events; separately requests all 12 material categories, non-commercial project permission, future commercial licence conditions, GPX operations, exact restriction notices/source/affected routes, link-only permission, media pack and brand guidelines."
+  },
+  "eventsInScope": [
+    "The North Face Transgrancanaria 2027 – all ten formats",
+    "3 Días Trail Ibiza 2027",
+    "Entre Cortijos 2027",
+    "Salesianas Run 2027",
+    "Fred. Olsen Express Transgrancanaria Bike 2027",
+    "Artenara Trail 2027",
+    "Run Stay Alive 2027",
+    "Ruta de Los Molinos 2027",
+    "360º The Challenge 2027"
+  ],
+  "permissionMatrix": {
+    "currentPhase": "independent-noncommercial-project-only",
+    "futureCommercial": "separate-explicit-licence-required",
+    "categories": [
+      {
+        "id": 1,
+        "kind": "official-route-description-verbatim",
+        "status": "pending"
+      },
+      {
+        "id": 2,
+        "kind": "edited-or-shortened-route-description",
+        "status": "pending"
+      },
+      {
+        "id": 3,
+        "kind": "independent-factual-summary-from-organizer-information",
+        "status": "pending"
+      },
+      {
+        "id": 4,
+        "kind": "factual-distance-elevation-route-facts",
+        "status": "pending"
+      },
+      {
+        "id": 5,
+        "kind": "maps-and-route-lines",
+        "status": "pending"
+      },
+      {
+        "id": 6,
+        "kind": "elevation-profiles",
+        "status": "pending"
+      },
+      {
+        "id": 7,
+        "kind": "gpx-file-operations",
+        "status": "pending",
+        "operations": [
+          "retrieve",
+          "load",
+          "import",
+          "store",
+          "process",
+          "display-on-map",
+          "offer-user-download"
+        ]
+      },
+      {
+        "id": 8,
+        "kind": "link-only-to-official-gpx-page",
+        "status": "pending"
+      },
+      {
+        "id": 9,
+        "kind": "event-names-and-event-marks",
+        "status": "pending"
+      },
+      {
+        "id": 10,
+        "kind": "logos-and-word-or-figurative-marks",
+        "status": "pending"
+      },
+      {
+        "id": 11,
+        "kind": "symbols-icons-pictograms-emblems-mascots",
+        "status": "pending"
+      },
+      {
+        "id": 12,
+        "kind": "other-event-specific-graphics-and-visual-design",
+        "status": "pending"
+      }
+    ]
+  },
+  "gpxRestrictionRegister": {
+    "defaultPolicy": "deny",
+    "transgrancanaria": {
+      "routeKeys": [
+        "transgrancanaria-classic-2027",
+        "transgrancanaria-advanced-2027",
+        "transgrancanaria-marathon-2027",
+        "transgrancanaria-half-2027",
+        "transgrancanaria-open-agaldar-2027",
+        "transgrancanaria-promo-2027",
+        "transgrancanaria-short-2027",
+        "transgrancanaria-family-trail-2027",
+        "transgrancanaria-kv-el-gigante-2027",
+        "transgrancanaria-stages-2027"
+      ],
+      "officialDownloadPageNotice": "Public route pages say GPX is the most reliable format for distance/elevation compared with KMZ and give download instructions. No explicit copyright notice, reuse permission or download prohibition was identified in the visible page text reviewed.",
+      "metadataChecked": false,
+      "appUsePermission": "not_granted",
+      "actionsBlocked": [
+        "retrieve",
+        "load",
+        "import",
+        "store",
+        "process",
+        "map-display",
+        "user-download"
+      ],
+      "officialPageLink": "pending-separate-permission"
+    },
+    "threeDaysTrailIbiza": {
+      "routeKeys": [
+        "2026-stage-1-night-10k",
+        "2026-stage-2-ultra-77-5k",
+        "2026-stage-2-marathon-45k",
+        "2026-stage-2-half-23-55k",
+        "2026-stage-2-starter-10k",
+        "2026-stage-3-daylight-10k"
+      ],
+      "notices": [
+        {
+          "exactText": "LOS TRACKS SE ENVIARAN VIA EMAIL UNA SEMANA ANTES. Pasamos por fincas privadas y zonas Sensibles de Xarxa Natura 2000.",
+          "source": "https://3diastrailibiza.com/ultra-trail-maraton-media-maraton-y-10k/",
+          "affectedRoutes": "2026 Stage 2 Ultra, Marathon, Half Marathon and 10K Starter",
+          "meaning": "Track files are emailed one week before the event because the course crosses private estates and sensitive Natura 2000 areas."
+        },
+        {
+          "exactText": "LOS TRACKS ESTARÁN DISPONIBLES UNA SEMANA ANTES. Pasamos por fincas privadas y zonas Sensibles de Xarxa Natura 2000.",
+          "source": "https://3diastrailibiza.com/diurna-10km/",
+          "affectedRoutes": "2026 Stage 3 Daylight Trail 10K",
+          "meaning": "Track files become available one week before the event because the course crosses private estates and sensitive Natura 2000 areas."
+        }
+      ],
+      "metadataChecked": false,
+      "current2027Status": "No 2027 route pages or GPX files found; 2026 notices are not automatically assumed to be identical in 2027, but default-deny remains.",
+      "actionsBlocked": [
+        "retrieve",
+        "load",
+        "import",
+        "store",
+        "process",
+        "map-display",
+        "user-download"
+      ],
+      "officialPageLink": "pending-separate-permission"
+    },
+    "userNotice": "GPX durch Veranstalter eingeschränkt – kein Download möglich",
+    "rule": "Any explicit restriction, download prohibition, missing written permission or unclear/contradictory rights status blocks the entire GPX pipeline before app-side retrieval. A page-link permission is separate."
+  },
+  "inboxCheck": {
+    "checkedAt": "2026-11-23",
+    "queries": [
+      "FROM aristaeventos.com",
+      "FROM transgrancanaria.net",
+      "FROM 3diastrail.com"
+    ],
+    "repliesFound": false
+  },
+  "mediaAndBrandGuidance": {
+    "mediaPackRequested": true,
+    "logoFilesRequested": true,
+    "brandGuidelinesRequested": true,
+    "constraintsRequested": [
+      "size",
+      "colour",
+      "placement",
+      "attribution",
+      "duration",
+      "permitted-context",
+      "expiry-or-removal",
+      "excluded-materials"
+    ]
+  },
+  "repositorySafety": {
+    "protectedContentCopied": false,
+    "gpxFilesDownloaded": false,
+    "gpxMetadataRead": false,
+    "liveEventDataChanged": false,
+    "publishedToApp": false
+  }
+}
