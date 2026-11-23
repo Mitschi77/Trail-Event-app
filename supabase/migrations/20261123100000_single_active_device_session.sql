@@ -5,8 +5,7 @@
 -- row has been removed. It does not replace the app-side logout UX.
 
 create schema if not exists private;
-revoke all on schema private from public, anon;
-grant usage on schema private to authenticated;
+revoke all on schema private from public, anon, authenticated;
 
 create or replace function private.is_current_auth_session_active()
 returns boolean
@@ -26,8 +25,7 @@ as $function$
     );
 $function$;
 
-revoke all on function private.is_current_auth_session_active() from public, anon;
-grant execute on function private.is_current_auth_session_active() to authenticated;
+revoke all on function private.is_current_auth_session_active() from public, anon, authenticated;
 
 drop policy if exists "Users can read own planner data" on public.planner_data;
 create policy "Users can read own planner data"
