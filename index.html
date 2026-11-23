@@ -2479,6 +2479,28 @@ window.trailReviewPushClick=function(event){
     else status.textContent='Test-Push-Funktion ist nicht geladen. Bitte Seite neu laden.';
   },true);
 })();
+// Temporary touch-target diagnostics for the owner push panel.
+(function bindPushTouchDiagnostics(){
+  if(document.documentElement.dataset.pushTouchDiagnostics==='1')return;
+  document.documentElement.dataset.pushTouchDiagnostics='1';
+  function describe(el){
+    if(!el)return 'kein Element';
+    const tag=(el.tagName||'ELEMENT').toLowerCase();
+    const id=el.id?'#'+el.id:'';
+    const cls=typeof el.className==='string'&&el.className.trim()?'.'+el.className.trim().split(/\s+/).slice(0,2).join('.'):'';
+    return tag+id+cls;
+  }
+  function report(event){
+    const panel=document.getElementById('reviewTab');
+    const status=document.getElementById('reviewNotificationStatus');
+    if(!panel||panel.hidden||!status)return;
+    const point=event.changedTouches&&event.changedTouches[0] ? event.changedTouches[0] : event;
+    const hit=Number.isFinite(point.clientX)&&Number.isFinite(point.clientY)
+      ? document.elementFromPoint(point.clientX,point.clientY) : event.target;
+    status.textContent='Diagnose '+event.type+': Ziel '+describe(event.target)+' · Treffer '+describe(hit);
+  }
+  ['touchstart','pointerdown','click'].forEach(type=>document.addEventListener(type,report,{capture:true,passive:type==='touchstart'}));
+})();
 window.addEventListener('error',function(e){
   const status=document.getElementById('cloudCheckStatus');
   if(status)status.textContent='JavaScript-Fehler: '+(e.message||'Unbekannt')+' · Zeile '+(e.lineno||'?');
