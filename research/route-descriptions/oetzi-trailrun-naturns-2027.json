@@ -1,0 +1,576 @@
+{
+  "schemaVersion": 1,
+  "researchType": "route-descriptions",
+  "organizer": {
+    "name": "Tourismusgenossenschaft Naturns",
+    "eventBrand": "Alpenplus Ötzi Trailrun Naturns",
+    "country": "Italy",
+    "contactEmail": "info@oetzi-trailrun.com",
+    "contactSource": "https://www.merano-suedtirol.it/de/oetzi-trailrun-naturns/impressum.html",
+    "contactVerifiedFromOfficialWebsite": true
+  },
+  "event": {
+    "eventId": "otzi-trairun",
+    "edition": 2027,
+    "eventPeriod": {
+      "start": "2027-04-08",
+      "end": "2027-04-10",
+      "status": "official_event_page_confirms"
+    },
+    "mainRaceDay": "2027-04-10",
+    "location": "Naturns, South Tyrol, Italy",
+    "currentCatalogRecord": {
+      "path": "event-dates.json",
+      "observedPeriod": {
+        "start": "2027-04-09",
+        "end": "2027-04-10"
+      },
+      "observedRouteIds": [
+        "sunny-mountain-trail-30-2100"
+      ],
+      "issue": "Catalog currently omits the 8 April Vertical and most 10 April formats; event period starts one day later than the official 8–10 April event period. Research only; no live record changed."
+    }
+  },
+  "sourcePolicy": {
+    "descriptions": "Original descriptions are not copied. The text below consists of independent factual summaries.",
+    "protectedMaterial": "No organizer logos, images, map tiles, profile images or GPX binaries copied.",
+    "officialLinksOnly": true
+  },
+  "sources": [
+    {
+      "id": "event-overview-de",
+      "url": "https://www.merano-suedtirol.it/de/oetzi-trailrun-naturns.html",
+      "type": "official_event_overview",
+      "verified": true
+    },
+    {
+      "id": "regulations-2027",
+      "url": "https://www.merano-suedtirol.it/media/fb5508ef-7963-49a2-b415-7e1abc2c092c/reglement-englisch-2027.pdf",
+      "type": "official_regulations_pdf",
+      "verified": true,
+      "notes": "PDF section 2 says 45 km / 3,400 hm for Ultra; section 3 incorrectly lists 30 km / 3,400 hm. The conflict is preserved."
+    },
+    {
+      "id": "program-2027",
+      "url": "https://www.merano-suedtirol.it/de/oetzi-trailrun-naturns/programm.html",
+      "type": "official_program",
+      "verified": true
+    },
+    {
+      "id": "ultra-route",
+      "url": "https://www.merano-suedtirol.it/en/oetzi-trailrun-naturno/your-race/oetzi-ultra-trail.html",
+      "type": "official_route_page",
+      "verified": true
+    },
+    {
+      "id": "sunny-route",
+      "url": "https://www.merano-suedtirol.it/en/oetzi-trailrun-naturno/your-race/sunny-mountain-trail.html",
+      "type": "official_route_page",
+      "verified": true
+    },
+    {
+      "id": "skyrace-route",
+      "url": "https://www.merano-suedtirol.it/en/oetzi-trailrun-naturno/your-race/naturno-skyrace.html",
+      "type": "official_route_page",
+      "verified": true
+    },
+    {
+      "id": "just-for-fun-route",
+      "url": "https://www.merano-suedtirol.it/en/oetzi-trailrun-naturno/your-race/oetzi-just-for-fun.html",
+      "type": "official_route_page",
+      "verified": true
+    },
+    {
+      "id": "junior-route",
+      "url": "https://www.merano-suedtirol.it/en/oetzi-trailrun-naturno/your-race/oetzi-junior-run.html",
+      "type": "official_route_page",
+      "verified": true
+    },
+    {
+      "id": "vertical-route",
+      "url": "https://www.merano-suedtirol.it/en/oetzi-trailrun-naturno/your-race/oetzi-vertical.html",
+      "type": "official_route_page",
+      "verified": true
+    },
+    {
+      "id": "kids-route",
+      "url": "https://www.merano-suedtirol.it/en/oetzi-trailrun-naturno/your-race/oetzi-kids-run.html",
+      "type": "official_route_page",
+      "verified": true
+    },
+    {
+      "id": "imprint-contact",
+      "url": "https://www.merano-suedtirol.it/de/oetzi-trailrun-naturns/impressum.html",
+      "type": "official_contact_and_imprint",
+      "verified": true
+    }
+  ],
+  "routeCount": 8,
+  "routes": [
+    {
+      "routeId": "oetzi-ultra-45-3400-2027",
+      "name": "Ötzi-Ultra Trail",
+      "date": "2027-04-10",
+      "startTime": "07:00",
+      "distanceKm": 45,
+      "elevationGainM": 3400,
+      "startFinish": "Rathausplatz Naturns",
+      "independentSummary": "Vom Rathausplatz führt die Strecke zunächst über Asphalt- und Schotterwege aus Naturns hinaus. Anschließend wechseln sich steile Anstiege, teils schnelle und anspruchsvolle Abstiege sowie längere Bergpfadabschnitte ab. Der Kurs verläuft über Höfe am Naturnser Sonnenberg, den Partschinser Höhenweg und den Meraner Höhenweg. Ein prägendes Highlight ist die anspruchsvolle 1.000-Stufen-Schlucht mit mehreren steilen Treppenpassagen und Hängebrücken. Die Schlussphase führt über einen langen Abstieg und weitere Trail-, Schotter- und Asphaltabschnitte zurück nach Naturns.",
+      "terrain": [
+        "Asphalt",
+        "Schotter",
+        "Bergpfade",
+        "steile Treppen",
+        "Hängebrücken"
+      ],
+      "highlights": [
+        "Naturnser Sonnenberg",
+        "Partschinser Wasserfall-Umgebung",
+        "Partschinser Höhenweg",
+        "Meraner Höhenweg",
+        "1.000-Stufen-Schlucht",
+        "Hängebrücken",
+        "höchster Streckenpunkt 1.584 m"
+      ],
+      "aidStations": [
+        {
+          "location": "Durster Hof",
+          "approxKm": 10
+        },
+        {
+          "location": "Hof Prünster",
+          "approxKm": 18
+        },
+        {
+          "location": "Dursterhof",
+          "approxKm": 26
+        },
+        {
+          "location": "Hochforch Hof",
+          "approxKm": 30
+        },
+        {
+          "location": "Seilbahn Unterstell",
+          "approxKm": 36,
+          "note": "Official route page calls this the 4th aid station, although Hochforch at km 30 is also called the 4th; station numbering requires organizer clarification."
+        }
+      ],
+      "catering": "Regulations describe water, energy drinks, bars, fruit and dried fruit at supply points; partial self-sufficiency applies. Water for bottles/Camelbak only; runners must carry their own cup.",
+      "cutoff": {
+        "status": "ambiguous_official_source",
+        "publishedFinish": "17:00",
+        "intermediate": [
+          {
+            "location": "Dursterhof",
+            "time": "12:30"
+          },
+          {
+            "location": "Unterstell mountain station",
+            "time": "15:30"
+          }
+        ],
+        "note": "Regulations section 21 says '10 or 7 hours' and lists finish at 16:00 or 17:00 without a clean route-to-time mapping. Program lists Ultra finish at 17:00. Confirm exact total and intermediate cut-offs with organizer."
+      },
+      "map": {
+        "status": "embedded_on_official_route_page",
+        "url": "https://www.merano-suedtirol.it/en/oetzi-trailrun-naturno/your-race/oetzi-ultra-trail.html"
+      },
+      "elevationProfile": {
+        "status": "not_found_as_separate_official_profile"
+      },
+      "gpx": {
+        "officialDownloadButton": true,
+        "officialInfoPage": "https://www.merano-suedtirol.it/en/oetzi-trailrun-naturno/your-race/oetzi-ultra-trail.html",
+        "binaryDownloaded": false,
+        "metadataInspected": false,
+        "restrictionNoticeFound": "No explicit GPX restriction wording found on the accessible route page; permission status remains unknown.",
+        "permissionStatus": "not_granted",
+        "appPolicy": "blocked_all_file_operations_and_link_pending_separate_permission"
+      },
+      "sourceIds": [
+        "ultra-route",
+        "regulations-2027",
+        "program-2027"
+      ]
+    },
+    {
+      "routeId": "sunny-mountain-trail-30-2100",
+      "name": "Sunny Mountain Trail",
+      "date": "2027-04-10",
+      "startTime": "09:00",
+      "distanceKm": 30,
+      "elevationGainM": 2100,
+      "startFinish": "Rathausplatz Naturns",
+      "independentSummary": "Nach dem Ortsabschnitt auf Asphalt und Schotter erreicht die Strecke nach rund drei Kilometern die Bergpfade. Es folgen ein längerer Anstieg zum Unterrainhof, ein anspruchsvoller Abstieg und weitere steile Anstiege über Höfe am Sonnenberg bis zum höchsten Punkt auf 1.584 m. Danach führt der Kurs über den Meraner Höhenweg zur 1.000-Stufen-Schlucht und über Hängebrücken sowie einen langen Abstieg bei Unterstell zurück nach Naturns.",
+      "terrain": [
+        "Asphalt",
+        "Schotter",
+        "Bergpfade",
+        "steile Anstiege und Abstiege",
+        "Treppen",
+        "Hängebrücken"
+      ],
+      "highlights": [
+        "Unterrainhof",
+        "Durster Hof",
+        "Gruberhof",
+        "höchster Punkt 1.584 m",
+        "Meraner Höhenweg",
+        "1.000-Stufen-Schlucht",
+        "Hängebrücken"
+      ],
+      "aidStations": [
+        {
+          "location": "Durster Hof",
+          "approxKm": 10
+        },
+        {
+          "location": "Hochforch Hof",
+          "approxKm": 16
+        },
+        {
+          "location": "Grub Hof",
+          "approxKm": null
+        },
+        {
+          "location": "Seilbahn Unterstell",
+          "approxKm": null
+        }
+      ],
+      "catering": "Regulations describe water, energy drinks, bars, fruit and dried fruit at supply points; partial self-sufficiency applies. Exact station-by-station menu not specified.",
+      "cutoff": {
+        "status": "official_program",
+        "time": "16:00",
+        "totalHoursFromStart": 7
+      },
+      "map": {
+        "status": "embedded_on_official_route_page",
+        "url": "https://www.merano-suedtirol.it/en/oetzi-trailrun-naturno/your-race/sunny-mountain-trail.html"
+      },
+      "elevationProfile": {
+        "status": "not_found_as_separate_official_profile"
+      },
+      "gpx": {
+        "officialDownloadButton": true,
+        "officialInfoPage": "https://www.merano-suedtirol.it/en/oetzi-trailrun-naturno/your-race/sunny-mountain-trail.html",
+        "binaryDownloaded": false,
+        "metadataInspected": false,
+        "restrictionNoticeFound": "No explicit GPX restriction wording found on the accessible route page; permission status remains unknown.",
+        "permissionStatus": "not_granted",
+        "appPolicy": "blocked_all_file_operations_and_link_pending_separate_permission"
+      },
+      "sourceIds": [
+        "sunny-route",
+        "regulations-2027",
+        "program-2027"
+      ]
+    },
+    {
+      "routeId": "naturns-skyrace-15-1150-2027",
+      "name": "Skyrace Naturns",
+      "date": "2027-04-10",
+      "startTime": "10:00",
+      "distanceKm": 15,
+      "elevationGainM": 1150,
+      "startFinish": "Rathausplatz Naturns",
+      "independentSummary": "Die Runde beginnt mit einem kurzen Asphaltabschnitt durch Naturns und wechselt rasch auf schmale Bergpfade. Ein steiler, rund 850 Höhenmeter umfassender Anstieg führt zum Grubhof. Anschließend verläuft die Strecke über den Meraner Höhenweg und weitere Pfade mit Hängebrücke zu den Höfen Galmein, Innerforch und Linthof. Ein langer Abstieg von rund 750 Höhenmetern, ein kurzer flacher Trailabschnitt und ein letzter Gegenanstieg führen zurück zum Rathausplatz.",
+      "terrain": [
+        "Asphalt",
+        "schmale Bergpfade",
+        "Höhenweg",
+        "Hängebrücke",
+        "Schotter"
+      ],
+      "highlights": [
+        "Grubhof",
+        "Meraner Höhenweg",
+        "Hängebrücke",
+        "Unterstell-Seilbahnstation"
+      ],
+      "aidStations": [
+        {
+          "location": "Seilbahn Unterstell",
+          "approxKm": null
+        }
+      ],
+      "catering": "Regulations give general supply-point provisions; the route page identifies Unterstell as a refreshment point. Full station list not published on route page.",
+      "cutoff": {
+        "status": "official_program",
+        "time": "16:00",
+        "totalHoursFromStart": 6
+      },
+      "map": {
+        "status": "embedded_on_official_route_page",
+        "url": "https://www.merano-suedtirol.it/en/oetzi-trailrun-naturno/your-race/naturno-skyrace.html"
+      },
+      "elevationProfile": {
+        "status": "not_found_as_separate_official_profile"
+      },
+      "gpx": {
+        "officialDownloadButton": true,
+        "officialInfoPage": "https://www.merano-suedtirol.it/en/oetzi-trailrun-naturno/your-race/naturno-skyrace.html",
+        "binaryDownloaded": false,
+        "metadataInspected": false,
+        "restrictionNoticeFound": "No explicit GPX restriction wording found on the accessible route page; permission status remains unknown.",
+        "permissionStatus": "not_granted",
+        "appPolicy": "blocked_all_file_operations_and_link_pending_separate_permission"
+      },
+      "sourceIds": [
+        "skyrace-route",
+        "regulations-2027",
+        "program-2027"
+      ]
+    },
+    {
+      "routeId": "oetzi-just-for-fun-8-400-2027",
+      "name": "Ötzi-Just for Fun",
+      "date": "2027-04-10",
+      "startTime": "10:20",
+      "distanceKm": 8,
+      "elevationGainM": 400,
+      "startFinish": "Rathausplatz Naturns",
+      "independentSummary": "Die Strecke führt zunächst über Asphalt- und Schotterwege durch Naturns. Nach etwa zwei Kilometern beginnt der Trailaufstieg zum Wallburgweg. Ein rund drei Kilometer langer aussichtsreicher Trailabschnitt prägt die Runde; danach folgen ein kurzer Gegenanstieg, ein Abstieg und ein letzter Anstieg vor dem Ziel am Rathausplatz.",
+      "terrain": [
+        "Asphalt",
+        "Schotter",
+        "Wald-/Bergpfade"
+      ],
+      "highlights": [
+        "Wallburgweg",
+        "Aussichten über Naturns"
+      ],
+      "aidStations": [],
+      "catering": "No route-specific aid station details published on the route page; general event regulations describe supply points but do not map them to this short route.",
+      "cutoff": {
+        "status": "official_program",
+        "time": "16:00"
+      },
+      "map": {
+        "status": "embedded_on_official_route_page",
+        "url": "https://www.merano-suedtirol.it/en/oetzi-trailrun-naturno/your-race/oetzi-just-for-fun.html"
+      },
+      "elevationProfile": {
+        "status": "not_found_as_separate_official_profile"
+      },
+      "gpx": {
+        "officialDownloadButton": true,
+        "officialInfoPage": "https://www.merano-suedtirol.it/en/oetzi-trailrun-naturno/your-race/oetzi-just-for-fun.html",
+        "binaryDownloaded": false,
+        "metadataInspected": false,
+        "restrictionNoticeFound": "No explicit GPX restriction wording found on the accessible route page; permission status remains unknown.",
+        "permissionStatus": "not_granted",
+        "appPolicy": "blocked_all_file_operations_and_link_pending_separate_permission"
+      },
+      "sourceIds": [
+        "just-for-fun-route",
+        "regulations-2027",
+        "program-2027"
+      ]
+    },
+    {
+      "routeId": "oetzi-junior-run-8-400-2027",
+      "name": "Ötzi-Junior Run",
+      "date": "2027-04-10",
+      "startTime": "10:20",
+      "distanceKm": 8,
+      "elevationGainM": 400,
+      "sameGeometryAs": "oetzi-just-for-fun-8-400-2027",
+      "startFinish": "Rathausplatz Naturns",
+      "independentSummary": "Es wird dieselbe 8-km-Strecke wie beim Ötzi-Just for Fun genutzt; die Junior-Wertung wird getrennt geführt. Der Kurs verläuft über Ortsstraßen, Schotter und Trails am Wallburgweg mit kurzem Schlussanstieg.",
+      "terrain": [
+        "Asphalt",
+        "Schotter",
+        "Wald-/Bergpfade"
+      ],
+      "highlights": [
+        "Wallburgweg",
+        "Aussichten über Naturns"
+      ],
+      "aidStations": [],
+      "catering": "No route-specific aid station details published.",
+      "cutoff": {
+        "status": "official_program",
+        "time": "16:00"
+      },
+      "map": {
+        "status": "embedded_on_official_route_page",
+        "url": "https://www.merano-suedtirol.it/en/oetzi-trailrun-naturno/your-race/oetzi-junior-run.html"
+      },
+      "elevationProfile": {
+        "status": "not_found_as_separate_official_profile"
+      },
+      "gpx": {
+        "officialDownloadButton": true,
+        "officialInfoPage": "https://www.merano-suedtirol.it/en/oetzi-trailrun-naturno/your-race/oetzi-junior-run.html",
+        "sameFileAs": "oetzi-just-for-fun-8-400-2027",
+        "binaryDownloaded": false,
+        "metadataInspected": false,
+        "permissionStatus": "not_granted",
+        "appPolicy": "blocked_all_file_operations_and_link_pending_separate_permission"
+      },
+      "sourceIds": [
+        "junior-route",
+        "regulations-2027",
+        "program-2027"
+      ]
+    },
+    {
+      "routeId": "oetzi-vertical-4-2-760-2027",
+      "name": "Ötzi-Vertical",
+      "date": "2027-04-08",
+      "startTime": "18:00",
+      "distanceKm": 4.2,
+      "elevationGainM": 760,
+      "start": "Talstation Seilbahn Unterstell",
+      "finish": "Bergstation Seilbahn Unterstell",
+      "independentSummary": "Vom Bereich der Talstation führt der Kurs über den Schießstandweg zum Einstieg in Weg Nr. 10. Anschließend folgt er diesem Weg bis zur Bergstation Unterstell. Das Profil besteht aus steilen und flacheren Abschnitten; auf kurzer Distanz werden 760 Höhenmeter überwunden.",
+      "terrain": [
+        "Weg/Trail",
+        "steile und flachere Abschnitte"
+      ],
+      "highlights": [
+        "Weg Nr. 10",
+        "Seilbahn Unterstell",
+        "durchgehender Anstieg"
+      ],
+      "aidStations": [],
+      "catering": "No route-specific aid station information published.",
+      "cutoff": {
+        "status": "official_regulations",
+        "time": "20:00",
+        "durationHours": 2
+      },
+      "map": {
+        "status": "embedded_on_official_route_page",
+        "url": "https://www.merano-suedtirol.it/en/oetzi-trailrun-naturno/your-race/oetzi-vertical.html"
+      },
+      "elevationProfile": {
+        "status": "not_found_as_separate_official_profile"
+      },
+      "gpx": {
+        "officialDownloadButton": true,
+        "officialInfoPage": "https://www.merano-suedtirol.it/en/oetzi-trailrun-naturno/your-race/oetzi-vertical.html",
+        "binaryDownloaded": false,
+        "metadataInspected": false,
+        "restrictionNoticeFound": "No explicit GPX restriction wording found on the accessible route page; permission status remains unknown.",
+        "permissionStatus": "not_granted",
+        "appPolicy": "blocked_all_file_operations_and_link_pending_separate_permission"
+      },
+      "sourceIds": [
+        "vertical-route",
+        "regulations-2027",
+        "program-2027"
+      ]
+    },
+    {
+      "routeId": "oetzi-kids-run-700m-2027",
+      "name": "Ötzi-Kids Run (700 m)",
+      "date": "2027-04-10",
+      "startTime": "10:30",
+      "distanceKm": 0.7,
+      "elevationGainM": 15,
+      "startFinish": "Naturns, innerorts; exact start/finish not separately specified",
+      "independentSummary": "Kurze, innerörtliche Kinderlaufstrecke mit altersgerechten Hindernissen. Der Veranstalter beschreibt einen sicheren Ortskurs; ein detaillierter Verlauf ist auf der offiziellen Streckenseite nicht veröffentlicht.",
+      "terrain": [
+        "innerörtliche Wege; genaue Untergründe nicht aufgeschlüsselt"
+      ],
+      "highlights": [
+        "altersgerechte Hindernisse",
+        "Kinderlauf"
+      ],
+      "aidStations": [],
+      "catering": "Not specified for this route.",
+      "cutoff": {
+        "status": "not_published",
+        "finishProgram": "12:30 award ceremony; not a confirmed route cutoff"
+      },
+      "map": {
+        "status": "embedded_on_official_route_page",
+        "url": "https://www.merano-suedtirol.it/en/oetzi-trailrun-naturno/your-race/oetzi-kids-run.html"
+      },
+      "elevationProfile": {
+        "status": "not_found_as_separate_official_profile"
+      },
+      "gpx": {
+        "officialDownloadButton": false,
+        "officialInfoPage": "https://www.merano-suedtirol.it/en/oetzi-trailrun-naturno/your-race/oetzi-kids-run.html",
+        "binaryDownloaded": false,
+        "metadataInspected": false,
+        "permissionStatus": "not_granted",
+        "appPolicy": "blocked_no_file_link_or_download"
+      },
+      "sourceIds": [
+        "kids-route",
+        "regulations-2027",
+        "program-2027"
+      ]
+    },
+    {
+      "routeId": "oetzi-kids-run-1400m-2027",
+      "name": "Ötzi-Kids Run (1,400 m)",
+      "date": "2027-04-10",
+      "startTime": "10:30",
+      "distanceKm": 1.4,
+      "elevationGainM": 15,
+      "startFinish": "Naturns, innerorts; exact start/finish not separately specified",
+      "independentSummary": "Längere der beiden innerörtlichen Kinderlaufvarianten mit altersgerechten Hindernissen. Ein detaillierter Verlauf und Untergrundmix sind auf der offiziellen Streckenseite nicht veröffentlicht.",
+      "terrain": [
+        "innerörtliche Wege; genaue Untergründe nicht aufgeschlüsselt"
+      ],
+      "highlights": [
+        "altersgerechte Hindernisse",
+        "Kinderlauf"
+      ],
+      "aidStations": [],
+      "catering": "Not specified for this route.",
+      "cutoff": {
+        "status": "not_published",
+        "finishProgram": "12:30 award ceremony; not a confirmed route cutoff"
+      },
+      "map": {
+        "status": "embedded_on_official_route_page",
+        "url": "https://www.merano-suedtirol.it/en/oetzi-trailrun-naturno/your-race/oetzi-kids-run.html"
+      },
+      "elevationProfile": {
+        "status": "not_found_as_separate_official_profile"
+      },
+      "gpx": {
+        "officialDownloadButton": false,
+        "officialInfoPage": "https://www.merano-suedtirol.it/en/oetzi-trailrun-naturno/your-race/oetzi-kids-run.html",
+        "binaryDownloaded": false,
+        "metadataInspected": false,
+        "permissionStatus": "not_granted",
+        "appPolicy": "blocked_no_file_link_or_download"
+      },
+      "sourceIds": [
+        "kids-route",
+        "regulations-2027",
+        "program-2027"
+      ]
+    }
+  ],
+  "unresolved": [
+    "Official 2027 regulations section 2 identifies the Ultra as 45 km / 3,400 hm, but section 3 says 30 km / 3,400 hm; the official route page and event overview both say 45 km. The 45 km figure is used provisionally with the PDF conflict flagged.",
+    "Ultra route page has conflicting aid-station numbering at km 30 and km 36; both positions are recorded, numbering needs organizer confirmation.",
+    "Ultra regulations state '10 or 7 hours' and list 16:00 or 17:00 finish without clear mapping; program says 17:00 for Ultra. Exact time limits need confirmation.",
+    "The official event period is 8–10 April 2027, while main catalog period is 9–10 April 2027.",
+    "Official route pages embed maps, but no separate public elevation profile URL was identified.",
+    "Kids route page has no official GPX button; exact map geometry, terrain, aid and cutoff data are unavailable.",
+    "No GPX metadata was inspected because no binary was downloaded."
+  ],
+  "rights": {
+    "status": "written_permission_pending",
+    "initialRequestSentAt": "2026-11-19T13:38:20Z",
+    "clarificationSentAt": "2026-11-23T05:08:14Z",
+    "clarificationSubject": "Re: Anfrage zur Nutzung offizieller Veranstaltungsinhalte – Alpenplus Ötzi Trailrun Naturns (Präzisierung GPX und Einzelrechte)",
+    "clarificationStatus": "submitted",
+    "sentCopyFiled": true,
+    "deliveryConfirmed": false
+  },
+  "integration": {
+    "liveEventDatesChanged": false,
+    "runtimeDataChanged": false,
+    "appPublished": false,
+    "routeGpxEnabled": false
+  }
+}
