@@ -1,0 +1,110 @@
+{
+  "schemaVersion": 1,
+  "organizerId": "tourismusgenossenschaft-naturns",
+  "organizerName": "Tourismusgenossenschaft Naturns",
+  "bundledEvents": [
+    {
+      "eventId": "otzi-trairun",
+      "eventName": "Alpenplus Ötzi Trailrun Naturns",
+      "edition": 2027,
+      "routeIds": [
+        "oetzi-ultra-45-3400-2027",
+        "sunny-mountain-trail-30-2100",
+        "naturns-skyrace-15-1150-2027",
+        "oetzi-just-for-fun-8-400-2027",
+        "oetzi-junior-run-8-400-2027",
+        "oetzi-vertical-4-2-760-2027",
+        "oetzi-kids-run-700m-2027",
+        "oetzi-kids-run-1400m-2027"
+      ]
+    }
+  ],
+  "officialContact": {
+    "email": "info@oetzi-trailrun.com",
+    "source": "https://www.merano-suedtirol.it/de/oetzi-trailrun-naturns/impressum.html",
+    "verification": "published on official organizer imprint/contact page"
+  },
+  "emailHistory": [
+    {
+      "date": "2026-11-19T13:38:20Z",
+      "type": "initial_request",
+      "status": "sent",
+      "recipient": "info@oetzi-trailrun.com",
+      "messageIdHeader": "<179509550065.96.11762242383782180184@me.com>"
+    },
+    {
+      "date": "2026-11-23T05:08:14Z",
+      "type": "supplement",
+      "status": "submitted",
+      "sentCopyFiled": true,
+      "deliveryConfirmed": false,
+      "subject": "Re: Anfrage zur Nutzung offizieller Veranstaltungsinhalte – Alpenplus Ötzi Trailrun Naturns (Präzisierung GPX und Einzelrechte)"
+    }
+  ],
+  "requestedUseCategories": [
+    "official_route_descriptions_verbatim",
+    "shortened_or_editorially_edited_official_route_descriptions",
+    "independent_factual_summaries_from_permitted_information",
+    "route_facts_distance_elevation_start_finish_cutoffs",
+    "maps_and_route_geometry",
+    "elevation_profiles",
+    "gpx_file_fetch_load_import_store_process_and_in_app_map_display",
+    "separate_link_to_official_gpx_download_page",
+    "event_names_and_event_brands",
+    "logos_and_word_or_device_marks",
+    "symbols_icons_pictograms_emblems_mascots",
+    "event_specific_graphics_and_visual_design"
+  ],
+  "gpxQuestions": {
+    "separatePermissionsRequested": [
+      "official_page_link",
+      "file_fetch",
+      "file_load",
+      "file_import",
+      "file_storage",
+      "file_processing",
+      "in_app_map_display",
+      "user_download"
+    ],
+    "restrictionDisclosureRequested": true,
+    "requestedExactNoticeLocationsAndAffectedRoutes": true,
+    "requestedConfirmationWhetherRestrictionBlocksEachOperation": true,
+    "requestedConfirmationWhetherLinkOnlyIsAllowed": true,
+    "statedFailClosedPolicy": "Any restriction notice, download ban, missing express permission or unclear rights status blocks all GPX file operations. A page link is shown only if link permission is separately explicit.",
+    "responseStatus": "pending"
+  },
+  "projectPhase": {
+    "current": "non-commercial independent information app under development",
+    "noOfficialAffiliationClaimed": true,
+    "commercialUseIncludedInCurrentRequest": false,
+    "futureCommercialPermissionAskedSeparately": true,
+    "futureCommercialPermissionStatus": "pending_separate_license"
+  },
+  "mediaAndBranding": {
+    "mediaPackRequested": true,
+    "logoFilesRequested": true,
+    "brandGuidelinesRequested": true,
+    "usageGuidanceRequested": [
+      "size",
+      "color",
+      "placement",
+      "attribution",
+      "term",
+      "permitted_use",
+      "excluded_materials",
+      "conditions"
+    ]
+  },
+  "response": {
+    "status": "no_reply_found_as_of_2026-11-23T05:07:00Z",
+    "restrictions": [],
+    "routeSpecificPermissions": []
+  },
+  "appEnforcement": {
+    "defaultDeny": true,
+    "noGPXAutoFetch": true,
+    "noLoadImportStoreProcessMapDisplayOrDownloadWithoutExplicitRouteSpecificPermission": true,
+    "linkRequiresSeparateExplicitPermission": true,
+    "currentAllRoutesBlocked": true
+  }
+}
