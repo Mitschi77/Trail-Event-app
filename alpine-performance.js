@@ -89,3 +89,18 @@
     renderTravelDays();
   };
 })();
+
+
+/* ALTRIVO brand identity: update the visible header and browser/PWA tab title. */
+(()=>{
+  const applyBrand=()=>{
+    document.title='ALTRIVO';
+    const brand=document.querySelector('header .brand');
+    if(!brand)return;
+    const icon=brand.querySelector('img');
+    brand.replaceChildren(...(icon?[icon]:[]),document.createTextNode(' ALTRIVO'));
+    brand.setAttribute('aria-label','ALTRIVO');
+  };
+  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',applyBrand,{once:true});
+  else applyBrand();
+})();
