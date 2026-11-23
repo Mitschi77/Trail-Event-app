@@ -2251,6 +2251,16 @@ a{color:#9BDFFF}
 .app-menu-group .app-menu-item{justify-content:flex-start;text-align:left}
 .stats .stat:last-child b{color:#7fd8ff}
 @media(max-width:700px){.app-menu-dropdown{max-height:min(78vh,680px);overflow:auto;overscroll-behavior:contain}.app-menu-group>summary{min-height:48px}.app-menu-auth-form input{font-size:16px}}
+</style><style id="northbound-no-green-final">
+:root{--green:#7FD8FF!important;--lime:#7FD8FF!important;--success:#7FD8FF!important;--success-bg:#172b38!important;--app-accent:#7FD8FF!important;--app-accent-strong:#7FD8FF!important;--focus:#7FD8FF!important}
+.info-tip summary{background:#172b38!important;border-color:#40586a!important;color:#7FD8FF!important}
+/* Event-Kategorien und Auswahlfelder: neutrale NORTHBOUND-Flächen statt Grün */
+.meta .tag,.tag{background:#1b2935!important;border:1px solid #405568!important;color:#dce8f0!important}
+.type-select,.meta .type-select{background:#172532!important;border:1px solid #496276!important;color:#dce8f0!important}
+.type-select option{background:#101b27!important;color:#edf4f8!important}
+.eventhead .tag,.eventhead .type-select{color:#dce8f0!important}
+.year-group details>summary,.year-group .booking-toggle,.year-group .route-toggle,.year-group .year-detail-toggle{color:#7FD8FF!important}
+.year-group button,.year-group summary{--lime:#7FD8FF}
 </style></head><script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script><body>
 <header><div class="top"><div class="brand"><img src="./northbound-logo.svg" alt="NORTHBOUND Mountain Motion" width="112" height="56"><span class="brand-wordmark">NORTHBOUND</span></div><div class="utmb-header-index" aria-label="Persönlicher UTMB Index 436"><span class="utmb-header-mark" aria-hidden="true">▲</span><span class="utmb-header-copy"><small>UTMB INDEX</small><strong>436</strong></span><span class="utmb-header-link">↗</span></div><div class="pill"><button id="appMenuButton" type="button" class="app-menu-button" aria-label="Hauptmenü öffnen" aria-haspopup="true" aria-expanded="false" aria-controls="appMenuDropdown" title="Hauptmenü">☰</button><div id="appMenuDropdown" class="app-menu-dropdown" role="menu" aria-label="Daten und Verwaltung" hidden>
 <span id="cloudProfileButton" hidden aria-hidden="true"></span><div class="app-menu-heading"><span>Menü</span><button id="closeAppMenuButton" type="button" class="secondary" aria-label="Menü schließen">Schließen ✕</button></div>
