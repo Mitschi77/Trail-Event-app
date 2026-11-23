@@ -13,6 +13,26 @@ assert.match(
   /auth\.signOut\(\{scope:'local'\}\)/,
   'Aborting account transfer or logging out must only end the current device session.'
 );
+const explicitLogin = html.match(/async function plannerLogin\\(e\\)\\{[\\s\\S]*?(?=\\nasync function plannerLoginClick)/)?.[0] || '';
+assert.match(
+  explicitLogin,
+  /auth\\.signOut\\(\\{scope:'others'\\}\\)/,
+  'Only an explicit password login may revoke other devices.'
+);
+const cloudRestore = html.match(/async function connectPlannerCloud\\(\\)[\\s\\S]*?(?=\\nfunction plannerAccountBackupKey)/)?.[0] || '';
+assert.ok(cloudRestore, 'Cloud restore function must remain discoverable for the session safety test.');
+assert.doesNotMatch(
+  cloudRestore,
+  /scope:'others'/,
+  'Restoring a persisted session must never revoke a newer device login.'
+);
+const localLogout = html.match(/async function plannerLogout\\(\\)[\\s\\S]*?(?=\\nconst originalLocalGetItem)/)?.[0] || '';
+assert.match(
+  localLogout,
+  /auth\\.signOut\\(\\{scope:'local'\\}\\)/,
+  'Manual logout must only end the current device session.'
+);
+
 assert.match(
   html,
   /auth\.signOut\(\{scope:'others'\}\)/,
