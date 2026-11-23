@@ -141,9 +141,6 @@ assert.notEqual(conflictBranch,-1,'Conflicting snapshots must enter an explicit 
 assert.notEqual(conflictBranchEnd,-1,'Conflict branch boundary must exist');
 const conflictBody=source.slice(conflictBranch,conflictBranchEnd);
 assert.ok(conflictBody.includes('await preserveCloudConflictSnapshots(local,remote,data.updated_at)'), 'Three-way conflicts must use the shared two-snapshot preservation helper');
-assert.ok(preserveBody.includes("savePreRestoreBackup({createdAt:conflictAt,source:'conflict-local',keys:localSnapshot},'conflict-local')"),'Local conflict snapshot must be stored separately by the helper');
-assert.ok(preserveBody.includes("savePreRestoreBackup({createdAt:conflictAt,source:'conflict-cloud',cloudUpdatedAt:updatedAt,keys:remote},'conflict-cloud')"),'Remote conflict snapshot must be stored separately by the helper');
-assert.ok(preserveBody.indexOf("'conflict-cloud'")<preserveBody.indexOf("actions.style.display='flex'"),'Conflict actions must remain hidden until both snapshots are secured');
 assert.ok(source.includes("readPreRestoreBackup('conflict-local')")&&source.includes("readPreRestoreBackup('conflict-cloud')"),'Both saved snapshots must be readable independently');
 assert.ok(source.includes('async function downloadConflictBackups()'),'User must be able to export both conflict versions together');
 assert.ok(source.includes('downloadConflictBackups);'),'Conflict export control must be wired');
@@ -156,6 +153,9 @@ const preserveEnd=source.indexOf('async function savePlannerCloud()',preserveSta
 assert.notEqual(preserveStart,-1,'Both conflicting snapshots must have a shared preservation helper');
 assert.notEqual(preserveEnd,-1,'Snapshot preservation helper boundary must exist');
 const preserveBody=source.slice(preserveStart,preserveEnd);
+assert.ok(preserveBody.includes("savePreRestoreBackup({createdAt:conflictAt,source:'conflict-local',keys:localSnapshot},'conflict-local')"),'Local conflict snapshot must be stored separately by the helper');
+assert.ok(preserveBody.includes("savePreRestoreBackup({createdAt:conflictAt,source:'conflict-cloud',cloudUpdatedAt:updatedAt,keys:remote},'conflict-cloud')"),'Remote conflict snapshot must be stored separately by the helper');
+assert.ok(preserveBody.indexOf("'conflict-cloud'")<preserveBody.indexOf("actions.style.display='flex'"),'Conflict actions must remain hidden until both snapshots are secured');
 assert.ok(preserveBody.includes("savePreRestoreBackup({createdAt:conflictAt,source:'conflict-local',keys:localSnapshot},'conflict-local')"),'Conflict helper must persist the local snapshot separately');
 assert.ok(preserveBody.includes("savePreRestoreBackup({createdAt:conflictAt,source:'conflict-cloud',cloudUpdatedAt:updatedAt,keys:remote},'conflict-cloud')"),'Conflict helper must persist the current cloud snapshot separately');
 const saveStart=source.indexOf('async function savePlannerCloud()');
