@@ -65,6 +65,25 @@ async function rpc(token) {
 assert.equal(await rpc(deviceA.access_token), true, 'iPhone session must initially be active.');
 assert.equal(await rpc(deviceB.access_token), true, 'iPad session must initially be active.');
 
+const inspectorResponse = await fetch(new URL('/functions/v1/inspect-event-website', baseUrl), {
+  method: 'POST',
+  headers: { apikey: anonKey, Authorization: `Bearer ${deviceA.access_token}`, 'Content-Type': 'application/json' },
+  body: JSON.stringify({ url: 'https://example.com' }),
+});
+const inspectorText = await inspectorResponse.text();
+assert.equal(inspectorResponse.status, 200, `Edge Runtime pinned HTTPS request failed: HTTP ${inspectorResponse.status}: ${inspectorText}`);
+const inspectorData = JSON.parse(inspectorText);
+assert.ok(inspectorData.fields?.name, 'Website inspector must parse the example website through the pinned HTTPS client.');
+
+const blockedInspectorResponse = await fetch(new URL('/functions/v1/inspect-event-website', baseUrl), {
+  method: 'POST',
+  headers: { apikey: anonKey, Authorization: `Bearer ${deviceA.access_token}`, 'Content-Type': 'application/json' },
+  body: JSON.stringify({ url: 'https://127.0.0.1/' }),
+});
+const blockedInspectorData = await blockedInspectorResponse.json();
+assert.equal(blockedInspectorResponse.status, 422, 'Website inspector must reject IP-literal URLs.');
+assert.match(blockedInspectorData.error || '', /öffentliche Domain/, 'Website inspector must explain why IP-literal URLs are blocked.');
+
 async function serviceInsert(table, row) {
   await requireOk(await api(`/rest/v1/${table}`, {
     token: serviceKey, key: serviceKey, method: 'POST', body: row,
