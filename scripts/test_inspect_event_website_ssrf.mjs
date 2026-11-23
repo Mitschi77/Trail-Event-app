@@ -4,7 +4,7 @@ import fs from 'node:fs';
 const source = fs.readFileSync(new URL('../supabase/functions/inspect-event-website/index.ts', import.meta.url), 'utf8');
 
 assert.ok(source.includes('if(/^\\d{1,3}(?:\\.\\d{1,3}){3}$/.test(ip))'), 'IPv4 detection must use working digit and dot escapes.');
-assert.ok(source.includes('replace(/^\\\\[|\\\\]$/g,"")'), 'IPv6 bracket stripping must use working bracket escapes.');
+assert.ok(source.includes(String.raw`replace(/^\\[|\\]$/g,"")`), 'IPv6 bracket stripping must use working bracket escapes.');
 assert.match(source, /async function safeUrl\(raw:string\):Promise<URL>/);
 assert.match(source, /Deno\.resolveDns\(host,"A"\)/);
 assert.match(source, /Deno\.resolveDns\(host,"AAAA"\)/);
