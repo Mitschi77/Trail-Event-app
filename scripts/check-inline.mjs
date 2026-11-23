@@ -29,8 +29,12 @@ for (const [index, source] of inlineScripts.entries()) {
   }
 }
 
-if (!/id="enableReviewNotifications"[^>]*onclick="window\.trailReviewPushClick\(event\)"/.test(html)) {
-  throw new Error("Push setup button must call its handler directly from the button click.");
+if (!/id="enableReviewNotifications"[^>]*type="button"/.test(html)) {
+  throw new Error("Push setup button is missing or is not a button.");
+}
+if (!html.includes("button.addEventListener('click',function(event){") ||
+    !html.includes("window.trailReviewPushClick(event);")) {
+  throw new Error("Push setup button must bind its handler directly to its click event.");
 }
 if (html.includes("notify.addEventListener('click',window.trailReviewPushClick)")) {
   throw new Error("Push setup must not depend on delayed proposal-control initialization.");
