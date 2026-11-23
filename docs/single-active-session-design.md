@@ -135,3 +135,53 @@ Die Bestandsaufnahme der Funktionsnamen und Policies ist noch keine vollständig
 13. GitHub-OIDC-Automation für Event-Vorschläge funktioniert weiterhin unabhängig von Geräte-Logins.
 14. Eigentümer- und Einreicherrechte bleiben inhaltlich unverändert, sind aber zusätzlich an die aktive Sitzung gebunden.
 
+## Aktuelle Supabase-Dokumentation und Auth-Schema-Prüfung
+
+Am 23.11.2026 wurde die aktuelle Supabase-Dokumentation zu User Sessions geprüft:
+
+- Jeder Supabase-Auth-Access-Token enthält `session_id`; die ID entspricht dem Primärschlüssel in `auth.sessions`.
+- Die eingebaute Einstellung „Single session per user“ ist laut Dokumentation nur für Pro-Pläne und höher verfügbar.
+- Die eingebaute Einstellung wirkt bei der nächsten Session-Erneuerung, nicht proaktiv beim Speichern der Einstellung. Die JWT-Laufzeit kommt zur Verzögerung hinzu.
+- Supabase empfiehlt keine JWT-Laufzeit unter fünf Minuten; der Standardwert von einer Stunde ist für viele Anwendungen vorgesehen.
+
+Dokumentation: https://supabase.com/docs/guides/auth/sessions
+
+### Tatsächliche Struktur von auth.sessions im Projekt
+
+Die read-only Schemaabfrage ergab:
+
+`id uuid NOT NULL`
+`user_id uuid NOT NULL`
+`created_at timestamptz NULL`
+`updated_at timestamptz NULL`
+`factor_id uuid NULL`
+`aal USER-DEFINED NULL`
+`not_after timestamptz NULL`
+`refreshed_at timestamp NULL`
+`user_agent text NULL`
+`ip inet NULL`
+`tag text NULL`
+`oauth_client_id uuid NULL`
+`refresh_token_hmac_key text NULL`
+`refresh_token_counter bigint NULL`
+`scopes text NULL`
+
+Es wurden keine Sitzungszeilen oder personenbezogenen Werte aus `auth.sessions` ausgelesen.
+
+### Konsequenz für den eigenen Sitzungswächter
+
+- Die Registrierung muss die JWT-Claim `session_id` verwenden und darf keine frei wählbare Session-ID aus dem Request-Body akzeptieren.
+- Vor der Aktivierung muss die ID in `auth.sessions` für `auth.uid()` existieren.
+- Ein transaktionsweiter Lock pro Benutzer muss parallele Registrierungen serialisieren.
+- Zusätzlich muss die Registrierung sicherstellen, dass keine neuere Auth-Sitzung existiert. Ein bloßer „last request wins“-Upsert wäre unsicher: Ein verspäteter Request des älteren Geräts könnte sonst die neuere Sitzung überschreiben.
+- `created_at` ist nullable. Gleichstände bzw. fehlende Werte dürfen nicht durch eine willkürliche UUID-Sortierung als sichere zeitliche Reihenfolge interpretiert werden. Solche Fälle müssen fail-closed behandelt oder durch eine verlässlichere serverseitige Reihenfolge gelöst werden.
+- Die Prüfung muss bei jedem privaten Datenzugriff erfolgen, nicht nur beim Login. Ein bereits ausgestelltes JWT des alten Geräts bleibt sonst bis zum Ablauf seiner Gültigkeit nutzbar.
+
+### Noch nicht entschiedene Architekturfrage
+
+Es ist noch nicht bestätigt, ob das aktive Supabase-Projekt einen Pro-Plan oder höher verwendet. Die eingebaute Einstellung kann daher noch nicht als verfügbar vorausgesetzt werden. Die eigene Sitzungsprüfung wird unabhängig davon als notwendige zweite Schutzschicht betrachtet.
+
+### Nicht ausgeführt
+
+Diese Dokumentation beschreibt den Entwurf. Es wurde weder eine Migration erstellt noch SQL ausgeführt, keine Policy verändert und keine Edge Function bereitgestellt. Die vorhandenen Auth- und Datenbankobjekte bleiben unverändert.
+
