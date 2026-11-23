@@ -1,4 +1,5 @@
 name: Deploy Trailrunning app to GitHub Pages
+# Trigger a clean, single-artifact deployment after the Northbound icon update.
 
 on:
   push:
