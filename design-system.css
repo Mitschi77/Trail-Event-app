@@ -848,3 +848,28 @@ header .top,header .brand,header .utmb-header-index,header .app-menu-button{posi
 @media(prefers-reduced-motion:reduce){
   body{background-attachment:scroll,scroll,scroll!important}
 }
+
+
+/* Alpine Performance – restrained topo detail in the annual season summary.
+   The pattern is confined to one summary surface; race cards stay calm. */
+#yearOverview .year-season-summary{
+  position:relative;
+  overflow:hidden;
+  isolation:isolate;
+  background-color:#111d28;
+  background-image:
+    linear-gradient(115deg,rgba(25,43,58,.97),rgba(17,29,40,.94)),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='360' height='180' viewBox='0 0 360 180'%3E%3Cg fill='none' stroke='%2399b4c4' stroke-opacity='.28' stroke-width='1'%3E%3Cpath d='M-20 30 C25 4 60 6 94 29 S160 58 196 30 270 0 310 25 350 48 390 20'/%3E%3Cpath d='M-20 43 C25 17 60 19 94 42 S160 71 196 43 270 13 310 38 350 61 390 33'/%3E%3Cpath d='M-20 56 C25 30 60 32 94 55 S160 84 196 56 270 26 310 51 350 74 390 46'/%3E%3Cpath d='M-20 118 C25 92 60 94 94 117 S160 146 196 118 270 88 310 113 350 136 390 108'/%3E%3Cpath d='M-20 131 C25 105 60 107 94 130 S160 159 196 131 270 101 310 126 350 149 390 121'/%3E%3C/g%3E%3Cpath d='M-20 69 C25 43 60 45 94 68 S160 97 196 69 270 39 310 64 350 87 390 59' fill='none' stroke='%23ff8a38' stroke-opacity='.52' stroke-width='1.4'/%3E%3C/svg%3E");
+  background-size:auto,360px 180px;
+  background-position:center,right center;
+  background-repeat:no-repeat,repeat;
+}
+#yearOverview .year-season-summary-item{
+  position:relative;
+  z-index:1;
+  background:rgba(14,27,38,.88);
+  backdrop-filter:blur(2px);
+}
+@media(max-width:480px){
+  #yearOverview .year-season-summary{background-position:center,right top}
+}
