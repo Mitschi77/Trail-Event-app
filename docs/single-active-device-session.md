@@ -20,6 +20,7 @@ Die Migration ergänzt:
 
 - `private.is_current_auth_session_active()`: prüft, ob die `session_id` des aktuellen JWT noch in `auth.sessions` existiert und zum angemeldeten Benutzer gehört.
 - `public.is_current_auth_session_active()`: parameterlose, nur für `authenticated` ausführbare RPC-Fassade für Edge Functions. Sie gibt ausschließlich den Status der aktuellen aufrufenden Sitzung zurück.
+- Das Schema `private` und die interne Helper-Funktion sind für `anon` und `authenticated` ausdrücklich nicht freigegeben. Nur die `SECURITY DEFINER`-RPC-Fassade ruft den Helper mit den Rechten ihres Eigentümers auf.
 - RLS-Prüfungen für `planner_data`, den privaten PDF-Bucket `trail-private-documents`, `event_push_subscriptions` und `event_change_proposals`.
 
 Damit kann ein altes, noch nicht abgelaufenes JWT diese geschützten Daten nicht mehr lesen oder verändern, sobald seine Auth-Sitzung entfernt wurde.
