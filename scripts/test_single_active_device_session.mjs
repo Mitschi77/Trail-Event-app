@@ -23,5 +23,15 @@ assert.match(
   /Sitzung beendet oder auf einem anderen Gerät abgemeldet/,
   'The user must be told why cloud sync stopped.'
 );
+assert.match(
+  html,
+  /async function activateCloudUser\(user\)\{const \{data:activeSession,error:sessionError\}=await cloudClient\.rpc\('is_current_auth_session_active'\)/,
+  'A persisted old session must be checked before loading cloud data.'
+);
+assert.match(
+  html,
+  /if\(cloudBusy\|\|document\.hidden\)return;try\{const \{data:activeSession,error:sessionError\}=await cloudClient\.rpc\('is_current_auth_session_active'\)/,
+  'A logged-in device must recheck session ownership during cloud polling.'
+);
 
 console.log('Single-active-device app integration tests passed.');
