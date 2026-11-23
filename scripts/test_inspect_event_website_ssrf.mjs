@@ -16,4 +16,20 @@ assert.match(source, /const u=await safeUrl\(new URL\(m\[1\],source\)\.toString\
 assert.match(source, /fetchHtml\(await safeUrl\(body\.url\)\)/);
 assert.match(source, /const u=await safeUrl\(gpxUrl\)/);
 assert.match(source, /Nur öffentliche HTTPS-Webadressen sind erlaubt/);
+
+assert.match(source, /import \{ request as httpsRequest \} from "node:https"/);
+assert.match(source, /async function resolvePublicAddresses\(host:string\)/);
+assert.match(source, /addresses\.some\(address=>!isPublicIp\(address\)\)/);
+assert.match(source, /const req=httpsRequest\(\{/);
+assert.match(source, /hostname:host/);
+assert.match(source, /servername:host/);
+assert.match(source, /agent:false/);
+assert.match(source, /lookup,/);
+assert.match(source, /callback\(null,address,family\)/);
+assert.match(source, /pinnedHttpsGet\(target,2000000,12000\)/);
+assert.match(source, /pinnedHttpsGet\(u,5000000,10000\)/);
+assert.doesNotMatch(source, /await fetch\(/, 'Outbound website requests must not use unpinned fetch().');
+assert.match(source, /u\.port\)throw new Error/);
+assert.match(source, /second<=0x01ff/);
+
 console.log('Website inspector SSRF guard regression tests passed.');
