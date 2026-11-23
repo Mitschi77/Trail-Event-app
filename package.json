@@ -7,9 +7,9 @@
     "build": "node scripts/prepare-native.mjs",
     "ios:add": "npm run build && cap add ios",
     "ios:sync": "npm run build && cap sync ios",
-    "ios:open": "cap open ios",
-    "ios:run": "cap run ios",
-    "test:syntax": "node --check sw.js && node --check race-tools.js && node --check season-tools.js && node scripts/check-inline.mjs && node scripts/test-owner-push.mjs && node scripts/test-metrics.mjs"
+    "ios:open": "npm run build && cap open ios",
+    "ios:run": "npm run build && cap run ios",
+    "test:syntax": "node --check sw.js && node --check race-tools.js && node --check season-tools.js && node --check cloud-conflict-session.mjs && node scripts/check-inline.mjs && node scripts/test-owner-push.mjs && node scripts/test-metrics.mjs && node scripts/test-cloud-conflict-session.mjs"
   },
   "dependencies": {
     "@capacitor/core": "^7.4.3",
