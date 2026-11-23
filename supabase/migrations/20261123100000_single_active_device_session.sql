@@ -72,3 +72,89 @@ create policy "Users can delete own planner data"
     (select auth.uid()) = user_id
     and (select private.is_current_auth_session_active())
   );
+
+-- Extend the same revoked-session check to the app's private documents and
+-- user-owned review/push records. This keeps a still-unexpired old JWT from
+-- using these RLS-protected resources after another device signs in.
+
+alter policy "Users can read own trail documents"
+  on storage.objects
+  using (
+    bucket_id = 'trail-private-documents'
+    and (storage.foldername(name))[1] = (select auth.uid())::text
+    and (select private.is_current_auth_session_active())
+  );
+
+alter policy "Users can upload own trail documents"
+  on storage.objects
+  with check (
+    bucket_id = 'trail-private-documents'
+    and (storage.foldername(name))[1] = (select auth.uid())::text
+    and (select private.is_current_auth_session_active())
+  );
+
+alter policy "Users can update own trail documents"
+  on storage.objects
+  using (
+    bucket_id = 'trail-private-documents'
+    and (storage.foldername(name))[1] = (select auth.uid())::text
+    and (select private.is_current_auth_session_active())
+  )
+  with check (
+    bucket_id = 'trail-private-documents'
+    and (storage.foldername(name))[1] = (select auth.uid())::text
+    and (select private.is_current_auth_session_active())
+  );
+
+alter policy "Users can delete own trail documents"
+  on storage.objects
+  using (
+    bucket_id = 'trail-private-documents'
+    and (storage.foldername(name))[1] = (select auth.uid())::text
+    and (select private.is_current_auth_session_active())
+  );
+
+alter policy "Users manage own push subscriptions"
+  on public.event_push_subscriptions
+  using (
+    (select auth.uid()) = user_id
+    and (select private.is_current_auth_session_active())
+  )
+  with check (
+    (select auth.uid()) = user_id
+    and (select private.is_current_auth_session_active())
+  );
+
+alter policy "owner and submitter read proposals"
+  on public.event_change_proposals
+  using (
+    (
+      (select auth.uid()) = 'a5d10e85-e559-4d44-9ee0-d8b8de08262f'::uuid
+      or submitted_by = (select auth.uid())
+    )
+    and (select private.is_current_auth_session_active())
+  );
+
+alter policy "owner decides proposals"
+  on public.event_change_proposals
+  using (
+    (select auth.uid()) = 'a5d10e85-e559-4d44-9ee0-d8b8de08262f'::uuid
+    and (select private.is_current_auth_session_active())
+  )
+  with check (
+    (select auth.uid()) = 'a5d10e85-e559-4d44-9ee0-d8b8de08262f'::uuid
+    and status = any (array['approved'::text, 'rejected'::text])
+    and decided_by = (select auth.uid())
+    and decided_at is not null
+    and (select private.is_current_auth_session_active())
+  );
+
+alter policy "submit authenticated proposals"
+  on public.event_change_proposals
+  with check (
+    submitted_by = (select auth.uid())
+    and status = 'pending'::text
+    and decided_by is null
+    and decided_at is null
+    and (select private.is_current_auth_session_active())
+  );
