@@ -952,3 +952,25 @@ header:after{
   color:#B5C2CC!important;border-color:#354653!important;
 }
 .app-menu-account #cloudAuthForm input{background:#0E1720!important}
+
+
+/* NORTHBOUND: UTMB profile/result panels use the same neutral surface as the rest of the app. */
+div[class*="utmb-profile"],
+div[class*="utmb-result"],
+div[class*="utmb-score"]{
+  background:linear-gradient(145deg,#1A2732 0%,#121B24 100%)!important;
+  color:#F5F7FA!important;
+  border:1px solid #40505E!important;
+  border-left:4px solid #FF6A00!important;
+  box-shadow:0 8px 24px #0005!important;
+}
+div[class*="utmb-profile"] :is(strong,b),
+div[class*="utmb-result"] :is(strong,b),
+div[class*="utmb-score"] :is(strong,b){
+  color:#F5F7FA!important;
+}
+div[class*="utmb-profile"] a,
+div[class*="utmb-result"] a,
+div[class*="utmb-score"] a{
+  color:#7FD8FF!important;
+}
