@@ -2295,6 +2295,36 @@ a{color:#9BDFFF}
  .event-filter-panel .toolbar{padding:10px!important;gap:8px!important}
 }
 </style>
+
+<style id="northbound-event-detail-polish">
+/* Event detail surfaces: consistent alpine dark theme */
+#events .event{background:#131C25!important;border-color:#293B49!important;color:#F5F7FA!important}
+#events .event .eventhead{background:transparent!important;color:#F5F7FA!important}
+#events .event .eventhead:hover{background:#172431!important}
+#events .event .detail{background:#101922!important;border-top:1px solid #293B49!important;color:#DCE8F0!important}
+#events .event .route{background:#15212C!important;border:1px solid #34495A!important;color:#EAF2F7!important;box-shadow:none!important}
+#events .event .route strong,#events .event .routegrid b{color:#F5F7FA!important}
+#events .event .routegrid,#events .event .route p,#events .event .route small{color:#AAB7C4!important}
+#events .event .run-record-summary,#events .event .route-info-tools{background:#172532!important;border:1px solid #34495A!important;color:#DCE8F0!important}
+#events .event .run-record-summary>strong,#events .event .route-info-heading{color:#7FD8FF!important}
+#events .event .route-data-status{background:#1B2935!important;color:#DCE8F0!important;border:1px solid #405363!important}
+#events .event .route-data-status.complete{background:#1B2935!important;color:#7FD8FF!important;border-color:#496B83!important}
+#events .event .link{background:#172532!important;color:#9BDFFF!important;border:1px solid #496276!important}
+#events .event .link:hover{background:#203446!important;border-color:#7FD8FF!important}
+#events .event .stay{background:#172532!important;border:1px solid #34495A!important;color:#EAF2F7!important}
+#events .event .stay p{color:#AAB7C4!important}
+#events .event .staylinks a{background:#FF6A00!important;color:#101820!important;border:1px solid #FF6A00!important}
+#events .event .staylinks a.alt{background:#172532!important;color:#9BDFFF!important;border-color:#496276!important}
+#events .event.event-done{background:#131C25!important;border-color:#806C3C!important;border-left:4px solid #D7B76B!important}
+#events .event.event-done .eventhead,#events .event.event-done .detail{background:#131C25!important;color:#F5F7FA!important}
+#events .event.event-done .eventhead:hover{background:#18232D!important}
+#events .event.event-done .route{border-color:#65583B!important}
+@media(max-width:560px){
+ #events .event .detail{padding:12px!important}
+ #events .event .routes{gap:8px!important}
+ #events .event .route{padding:11px!important;border-radius:12px!important}
+}
+</style>
 </head><script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script><body>
 <header><div class="top"><div class="brand"><img src="./northbound-logo.svg" alt="NORTHBOUND Mountain Motion" width="112" height="56"><span class="brand-wordmark">NORTHBOUND</span></div><div class="utmb-header-index" aria-label="Persönlicher UTMB Index 436"><span class="utmb-header-mark" aria-hidden="true">▲</span><span class="utmb-header-copy"><small>UTMB INDEX</small><strong>436</strong></span><span class="utmb-header-link">↗</span></div><div class="pill"><button id="appMenuButton" type="button" class="app-menu-button" aria-label="Hauptmenü öffnen" aria-haspopup="true" aria-expanded="false" aria-controls="appMenuDropdown" title="Hauptmenü">☰</button><div id="appMenuDropdown" class="app-menu-dropdown" role="menu" aria-label="Daten und Verwaltung" hidden>
 <span id="cloudProfileButton" hidden aria-hidden="true"></span><div class="app-menu-heading"><span>Menü</span><button id="closeAppMenuButton" type="button" class="secondary" aria-label="Menü schließen">Schließen ✕</button></div>
