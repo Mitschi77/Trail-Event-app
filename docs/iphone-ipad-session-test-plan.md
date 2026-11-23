@@ -49,7 +49,7 @@ Dieser Plan prüft die Ein-Gerät-Regel mit zwei echten App-Installationen und e
 - Der separate PostgreSQL-Test simuliert weiterhin gezielt RLS-Randfälle. Der zusätzliche lokale Supabase-E2E-Test deckt jetzt echte GoTrue-Sitzungen, JWT-Claims, PostgREST-RLS und Storage ab. Ein Test mit zwei realen iOS-Geräten und dem Safari-/PWA-Lebenszyklus steht noch aus.
 - Die App erkennt den Widerruf auf dem alten Gerät beim nächsten Polling bzw. Token-Refresh, nicht zwingend sofort.
 - Bereits ausgestellte signierte Storage-URLs können bis zum Ablauf ihrer Gültigkeit weiter funktionieren.
-- Die Website-Inspector-DNS-Prüfung kann DNS-Rebinding zwischen Prüfung und HTTP-Verbindungsaufbau nicht vollständig ausschließen; diese Funktion benötigt vor einer Sicherheitsfreigabe eine zusätzliche Lösung, die DNS-Prüfung und tatsächliche Zielverbindung bindet.
+- Die Website-Inspector-Prüfung löst A- und AAAA-Adressen auf und baut die Verbindung anschließend über die geprüfte IP mit Deno-TCP/TLS sowie ursprünglichem Hostnamen für SNI und Zertifikatsprüfung auf. Redirects und GPX-Abrufe verwenden denselben gepinnten Verbindungsweg. Die lokale Edge-Runtime-Prüfung hat einen echten HTTPS-Abruf erfolgreich ausgeführt und eine IP-Literal-Adresse abgewiesen. Eine produktive Freigabe setzt dennoch eine gesonderte Prüfung der konkreten Deployment-Umgebung voraus.
 
 ## Freigaberegel
 
@@ -69,9 +69,10 @@ Ablauf:
 5. Den Logout-Scope `others` über den echten GoTrue-Endpunkt aufrufen.
 6. Mit dem noch nicht abgelaufenen alten JWT prüfen, dass die Session-RPC `false` liefert, Planner-Daten und private Dateien nicht mehr lesbar sind und neue Schreibzugriffe blockiert werden.
 7. Mit der aktuellen Sitzung prüfen, dass Zugriff und Refresh weiter funktionieren; mit dem widerrufenen Refresh-Token muss die Erneuerung scheitern.
+8. Die vier privilegierten, benutzerbezogenen Edge Functions mit dem widerrufenen Access-Token direkt gegen die lokale Edge-Runtime aufrufen. Die Runtime wird mit `--no-verify-jwt` gestartet, damit die Prüfung ausdrücklich im jeweiligen Function-Handler erfolgt; alle vier Antworten müssen HTTP 401 sein: `send-owner-test-push`, `send-event-review-push`, `delete-own-account` und `migrate-personal-documents`.
 
 Die lokalen Schlüssel werden ausschließlich zur Laufzeit vom lokalen CLI ausgegeben und als Job-Umgebungsvariablen verwendet. Es werden keine Produktions-Secrets benötigt. Die Testdaten und Container werden nach dem Lauf verworfen.
 
-Ergebnis am 23.11.2026: Zwei vollständige lokale Supabase-E2E-Läufe waren erfolgreich: Auth/RLS/Storage `45185762018` und Auth/RLS/Storage plus Edge-Runtime `45186627686`. Der Test hat zwei echte GoTrue-Sitzungen erzeugt, den Logout-Scope `others` ausgeführt, den alten Refresh-Token abgewiesen, den neuen Refresh-Token akzeptiert und den Zugriff des alten JWT auf Planner-Daten, Push-Abos, Änderungsvorschläge und private Dateien gesperrt. Ein Schreibversuch mit dem alten JWT wurde ebenfalls abgewiesen. Zusätzlich wurde der Website-Inspector in der lokalen Edge-Runtime mit einem echten HTTPS-Abruf erfolgreich ausgeführt; eine IP-Literal-Adresse wurde abgelehnt.
+Ergebnis am 23.11.2026: Der aktuelle vollständige lokale Supabase-E2E-Lauf `45188491015` war erfolgreich. Er hat zwei echte GoTrue-Sitzungen erzeugt, den Logout-Scope `others` ausgeführt, den alten Refresh-Token abgewiesen, den neuen Refresh-Token akzeptiert und den Zugriff des alten JWT auf Planner-Daten, Push-Abos, Änderungsvorschläge und private Dateien gesperrt. Ein Schreibversuch mit dem alten JWT wurde ebenfalls abgewiesen. Anschließend wurden die vier privilegierten Edge Functions in der lokalen Supabase Edge Runtime mit dem widerrufenen iPhone-Access-Token aufgerufen; alle vier haben vor einer privilegierten Aktion mit HTTP 401 abgewiesen. Die Runtime wurde mit `--no-verify-jwt` gestartet, damit der Session-Guard im Handler und nicht nur das Gateway getestet wird. Frühere Läufe `45185762018` und `45186627686` waren ebenfalls erfolgreich.
 
 Dieser Test ersetzt weiterhin keinen Test mit zwei realen iOS-Geräten. Die gehostete Produktions-Edge-Runtime wurde nicht verändert oder deployed.
