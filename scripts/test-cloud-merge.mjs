@@ -140,9 +140,10 @@ const conflictBranchEnd=source.indexOf('if(resolution.localNeedsApply)',conflict
 assert.notEqual(conflictBranch,-1,'Conflicting snapshots must enter an explicit safety-stop branch');
 assert.notEqual(conflictBranchEnd,-1,'Conflict branch boundary must exist');
 const conflictBody=source.slice(conflictBranch,conflictBranchEnd);
-assert.ok(conflictBody.includes("savePreRestoreBackup({createdAt:conflictAt,source:'conflict-local',keys:local},'conflict-local')"),'Local conflict snapshot must be stored separately');
-assert.ok(conflictBody.includes("savePreRestoreBackup({createdAt:conflictAt,source:'conflict-cloud',cloudUpdatedAt:data.updated_at,keys:remote},'conflict-cloud')"),'Remote conflict snapshot must be stored separately');
-assert.ok(conflictBody.indexOf("'conflict-cloud'")<conflictBody.indexOf("getElementById('cloudConflictActions').style.display='flex'"),'Conflict actions must remain hidden until both snapshots are secured');
+assert.ok(conflictBody.includes('await preserveCloudConflictSnapshots(local,remote,data.updated_at)'), 'Three-way conflicts must use the shared two-snapshot preservation helper');
+assert.ok(preserveBody.includes("savePreRestoreBackup({createdAt:conflictAt,source:'conflict-local',keys:localSnapshot},'conflict-local')"),'Local conflict snapshot must be stored separately by the helper');
+assert.ok(preserveBody.includes("savePreRestoreBackup({createdAt:conflictAt,source:'conflict-cloud',cloudUpdatedAt:updatedAt,keys:remote},'conflict-cloud')"),'Remote conflict snapshot must be stored separately by the helper');
+assert.ok(preserveBody.indexOf("'conflict-cloud'")<preserveBody.indexOf("actions.style.display='flex'"),'Conflict actions must remain hidden until both snapshots are secured');
 assert.ok(source.includes("readPreRestoreBackup('conflict-local')")&&source.includes("readPreRestoreBackup('conflict-cloud')"),'Both saved snapshots must be readable independently');
 assert.ok(source.includes('async function downloadConflictBackups()'),'User must be able to export both conflict versions together');
 assert.ok(source.includes('downloadConflictBackups);'),'Conflict export control must be wired');
