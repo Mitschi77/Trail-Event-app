@@ -44,9 +44,9 @@ Dieser Plan prüft die Ein-Gerät-Regel mit zwei echten App-Installationen und e
 
 ## Noch nicht ausgeführt / bekannte Grenzen
 
-- Es wurde kein Supabase-Testprojekt und keine lokale Supabase-Instanz angelegt.
-- Im Repository ist derzeit keine `supabase/config.toml` vorhanden; eine lokale Supabase-Stack-Konfiguration müsste erst eingerichtet werden.
-- Der aktuelle CI-PostgreSQL-Test simuliert die relevanten Tabellen und JWT-Claims, aber nicht die echte Supabase-Auth-Implementierung oder den iOS-Safari-/PWA-Lebenszyklus.
+- Es wurde kein gehostetes Supabase-Testprojekt und kein Supabase-Branch angelegt. Die lokale, temporäre Supabase-Instanz wird automatisiert in GitHub Actions gestartet und nach dem Test mit `supabase stop --no-backup` entfernt.
+- `supabase/config.toml` enthält die minimale lokale CI-Konfiguration. Die vorhandene Produktions-Migrationskette wird in diesem Test absichtlich deaktiviert, weil sie von der noch nicht vollständig versionierten Produktions-Basisschemata abhängt.
+- Der separate PostgreSQL-Test simuliert weiterhin gezielt RLS-Randfälle. Der zusätzliche lokale Supabase-E2E-Test deckt jetzt echte GoTrue-Sitzungen, JWT-Claims, PostgREST-RLS und Storage ab. Ein Test mit zwei realen iOS-Geräten und dem Safari-/PWA-Lebenszyklus steht noch aus.
 - Die App erkennt den Widerruf auf dem alten Gerät beim nächsten Polling bzw. Token-Refresh, nicht zwingend sofort.
 - Bereits ausgestellte signierte Storage-URLs können bis zum Ablauf ihrer Gültigkeit weiter funktionieren.
 - Die Website-Inspector-DNS-Prüfung kann DNS-Rebinding zwischen Prüfung und HTTP-Verbindungsaufbau nicht vollständig ausschließen; diese Funktion benötigt vor einer Sicherheitsfreigabe eine zusätzliche Lösung, die DNS-Prüfung und tatsächliche Zielverbindung bindet.
@@ -72,6 +72,6 @@ Ablauf:
 
 Die lokalen Schlüssel werden ausschließlich zur Laufzeit vom lokalen CLI ausgegeben und als Job-Umgebungsvariablen verwendet. Es werden keine Produktions-Secrets benötigt. Die Testdaten und Container werden nach dem Lauf verworfen.
 
-Ergebnis am 23.11.2026: Der erste vollständige Lauf war erfolgreich (GitHub Actions Run 45185762018). Der Test hat zwei echte GoTrue-Sitzungen erzeugt, den Logout-Scope `others` ausgeführt, den alten Refresh-Token abgewiesen, den neuen Refresh-Token akzeptiert und den Zugriff des alten JWT auf Planner-Daten, Push-Abos, Änderungsvorschläge und private Dateien gesperrt. Ein Schreibversuch mit dem alten JWT wurde ebenfalls abgewiesen.
+Ergebnis am 23.11.2026: Zwei vollständige lokale Supabase-E2E-Läufe waren erfolgreich: Auth/RLS/Storage `45185762018` und Auth/RLS/Storage plus Edge-Runtime `45186627686`. Der Test hat zwei echte GoTrue-Sitzungen erzeugt, den Logout-Scope `others` ausgeführt, den alten Refresh-Token abgewiesen, den neuen Refresh-Token akzeptiert und den Zugriff des alten JWT auf Planner-Daten, Push-Abos, Änderungsvorschläge und private Dateien gesperrt. Ein Schreibversuch mit dem alten JWT wurde ebenfalls abgewiesen. Zusätzlich wurde der Website-Inspector in der lokalen Edge-Runtime mit einem echten HTTPS-Abruf erfolgreich ausgeführt; eine IP-Literal-Adresse wurde abgelehnt.
 
-Dieser Test deckt den echten GoTrue-/JWT-/PostgREST-/Storage-Ablauf ab, ersetzt aber weiterhin keinen Test mit zwei realen iOS-Geräten und prüft nicht die gehostete Supabase-Edge-Functions-Laufzeit.
+Dieser Test ersetzt weiterhin keinen Test mit zwei realen iOS-Geräten. Die gehostete Produktions-Edge-Runtime wurde nicht verändert oder deployed.
