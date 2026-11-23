@@ -6,7 +6,7 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: read
+  contents: write
 
 concurrency:
   group: app-tests-${{ github.ref }}
@@ -19,6 +19,22 @@ jobs:
     steps:
       - name: Check out repository
         uses: actions/checkout@v4
+        with:
+          ref: ${{ github.head_ref || github.ref_name }}
+      - name: Apply explicit single-device login enforcement
+        run: node scripts/apply_single_active_device_session.mjs
+      - name: Commit generated app integration to the pull request branch
+        if: github.event_name == 'pull_request'
+        run: |
+          if git diff --quiet -- index.html; then
+            echo "App integration already present."
+          else
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add index.html
+            git commit -m "Apply single-active-device session enforcement"
+            git push origin "HEAD:${GITHUB_HEAD_REF}"
+          fi
       - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
@@ -30,8 +46,12 @@ jobs:
         uses: denoland/setup-deno@v2
         with:
           deno-version: v2.x
-      - name: Type-check owner push Edge Function
-        run: deno check --node-modules-dir=auto supabase/functions/send-owner-test-push/index.ts
+      - name: Type-check authenticated Edge Functions
+        run: |
+          deno check --node-modules-dir=auto supabase/functions/send-owner-test-push/index.ts
+          deno check --node-modules-dir=auto supabase/functions/send-event-review-push/index.ts
+          deno check --node-modules-dir=auto supabase/functions/delete-own-account/index.ts
+          deno check --node-modules-dir=auto supabase/functions/migrate-personal-documents/index.ts
       - name: Run app syntax and regression tests
         run: npm run test:syntax
       - name: Run Python event-data regression tests
@@ -70,6 +90,14 @@ jobs:
         run: sudo apt-get update && sudo apt-get install -y postgresql-client
       - name: Test atomic proposal ingestion under concurrent requests
         run: python3 scripts/run_proposal_ingestion_db_test.py
+        env:
+          PGHOST: localhost
+          PGPORT: 5432
+          PGUSER: postgres
+          PGPASSWORD: postgres
+          PGDATABASE: trailtest
+      - name: Test single-active-device session enforcement
+        run: psql -v ON_ERROR_STOP=1 -f scripts/test_single_active_session_guard.sql
         env:
           PGHOST: localhost
           PGPORT: 5432
