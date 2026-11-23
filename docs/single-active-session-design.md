@@ -185,3 +185,16 @@ Es ist noch nicht bestätigt, ob das aktive Supabase-Projekt einen Pro-Plan oder
 
 Diese Dokumentation beschreibt den Entwurf. Es wurde weder eine Migration erstellt noch SQL ausgeführt, keine Policy verändert und keine Edge Function bereitgestellt. Die vorhandenen Auth- und Datenbankobjekte bleiben unverändert.
 
+## Supabase-Tarif des verbundenen Projekts
+
+Die read-only Projekt-/Organisationsabfrage ergab für das verbundene Projekt `trail-event-planner`:
+
+- Organisation: `Mitschi77's Org`
+- Tarif: `free`
+- Region: `eu-west-1`
+- Projektstatus: `ACTIVE_HEALTHY`
+
+Damit ist die native Supabase-Einstellung „Single session per user“ laut aktueller Dokumentation in diesem Projekt nicht verfügbar (Pro und höher). Es wird kein Upgrade ausgelöst und keine kostenpflichtige Testumgebung angelegt.
+
+**Architekturentscheidung:** Für die gewünschte Funktion wird eine eigene serverseitige aktive Sitzungsprüfung benötigt. Die eingebaute Supabase-Option bleibt nur eine mögliche spätere Alternative, falls der Tarif unabhängig davon geändert wird.
+
