@@ -45,9 +45,12 @@ Eine reine `verify_jwt`-Prüfung reicht nicht, weil sie nur die JWT-Gültigkeit 
 ## Rollout-Reihenfolge – noch nicht ausgeführt
 
 1. Migration in einer Testumgebung anwenden.
-2. PostgreSQL-Test für aktive und widerrufene Sitzungen ausführen.
+2. PostgreSQL-Integrationstest für aktive und widerrufene Sitzungen auf Planungsdaten, private Dokumente, Push-Abos und Änderungsvorschläge ausführen.
 3. Edge-Function-Tests und Deno-Typechecks ausführen.
-4. Login auf iPhone und anschließend auf iPad testen; prüfen, dass das iPhone keine Cloud-Daten mehr lesen oder schreiben kann.
-5. Erst nach erfolgreicher Prüfung die Migration und App-Version gemeinsam veröffentlichen.
+4. Rollback-Skript `supabase/rollback/20261123100000_single_active_device_session_rollback.sql` in der Testumgebung prüfen.
+5. Login auf iPhone und anschließend auf iPad testen; prüfen, dass das iPhone keine geschützten Cloud-Daten mehr lesen oder schreiben kann.
+6. Erst nach erfolgreicher Prüfung die Migration und App-Version gemeinsam veröffentlichen.
+
+Das Rollback stellt die bisherigen RLS-Ausdrücke wieder her und entfernt die neuen RPC-Funktionen. Vor einem Rollback müssen App und Edge Functions auf Versionen zurückgesetzt oder so angepasst werden, dass sie die neue RPC nicht mehr aufrufen.
 
 **Status dieses Branches:** Implementierungsvorschlag und Tests im Git-Branch. Keine Migration auf Supabase angewendet, keine Edge Function deployed, keine PR zusammengeführt und keine Live-App geändert.
