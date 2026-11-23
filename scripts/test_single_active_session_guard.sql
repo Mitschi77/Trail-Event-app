@@ -137,6 +137,23 @@ begin
   if public.is_current_auth_session_active() is not true then
     raise exception 'FAIL: active session helper rejected the current session';
   end if;
+
+  -- A valid user JWT without a session_id must never pass the guard.
+  perform set_config('request.jwt.claims',
+    '{"sub":"aaaaaaaa-aaaa-4aaa-8aaa-aaaaaaaaaaaa"}', true);
+  if public.is_current_auth_session_active() is not false then
+    raise exception 'FAIL: session guard accepted a JWT without session_id';
+  end if;
+
+  -- A session belonging to a different user must not authorize this JWT.
+  perform set_config('request.jwt.claims',
+    '{"sub":"aaaaaaaa-aaaa-4aaa-8aaa-aaaaaaaaaaaa","session_id":"33333333-3333-4333-8333-333333333333"}', true);
+  if public.is_current_auth_session_active() is not false then
+    raise exception 'FAIL: session guard accepted another user session';
+  end if;
+
+  perform set_config('request.jwt.claims',
+    '{"sub":"aaaaaaaa-aaaa-4aaa-8aaa-aaaaaaaaaaaa","session_id":"11111111-1111-4111-8111-111111111111"}', true);
   if (select count(*) from storage.objects) <> 1 then
     raise exception 'FAIL: active session cannot read private documents';
   end if;
@@ -261,4 +278,26 @@ end
 $test$;
 reset role;
 
-select 'single-active-session RLS integration test passed' as result;
+-- Verify the documented rollback on this disposable database.
+\i supabase/rollback/20261123100000_single_active_device_session_rollback.sql
+
+do $rollback_test$
+begin
+  if to_regprocedure('public.is_current_auth_session_active()') is not null then
+    raise exception 'FAIL: rollback left public session RPC installed';
+  end if;
+  if to_regprocedure('private.is_current_auth_session_active()') is not null then
+    raise exception 'FAIL: rollback left private session helper installed';
+  end if;
+  if position('is_current_auth_session_active' in coalesce((
+    select pg_get_expr(polqual, polrelid)
+    from pg_policy
+    where polrelid = 'public.planner_data'::regclass
+      and polname = 'Users can read own planner data'
+  ), '')) > 0 then
+    raise exception 'FAIL: rollback did not restore original planner_data policy';
+  end if;
+end
+$rollback_test$;
+
+select 'single-active-session RLS and rollback integration tests passed' as result;
