@@ -14,7 +14,7 @@ concurrency:
 
 jobs:
   local-auth-session-e2e:
-    name: Real GoTrue sessions, PostgREST RLS and Storage
+    name: Real GoTrue sessions, Edge Runtime, PostgREST RLS and Storage
     runs-on: ubuntu-latest
     timeout-minutes: 25
     steps:
@@ -34,7 +34,7 @@ jobs:
       - name: Verify CLI version and start isolated local stack
         run: |
           supabase --version
-          supabase start -x studio,logflare,vector,imgproxy,mailpit,postgres-meta,realtime,edge-runtime
+          supabase start -x studio,logflare,vector,imgproxy,mailpit,postgres-meta,realtime
 
       - name: Install PostgreSQL client
         run: sudo apt-get update && sudo apt-get install -y postgresql-client
