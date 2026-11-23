@@ -69,3 +69,69 @@ Je Benutzerkonto ist genau eine Supabase-Auth-Sitzung für den Zugriff auf priva
 ## Aktueller Stand
 
 Nur diese technische Vorprüfungsnotiz liegt auf dem Entwicklungszweig. Es wurden keine App-Dateien geändert, keine Datenbankobjekte angelegt oder verändert und keine Edge Functions bereitgestellt.
+
+## Erweiterte Bestandsaufnahme: weitere Zugriffswege
+
+### Öffentliche Tabellen und RLS
+
+- `event_change_proposals`
+  - SELECT: Eigentümerkonto oder jeweiliger Einreicher.
+  - INSERT: angemeldete Nutzer dürfen eigene Vorschläge im Status `pending` einreichen.
+  - UPDATE: ausschließlich das fest konfigurierte Eigentümerkonto; Status und Entscheidungsfelder werden zusätzlich eingeschränkt.
+  - Diese drei Zugriffspfade müssen bei einer Ein-Gerät-Sitzung jeweils zusätzlich die aktive Sitzung prüfen. Der Eigentümerzugriff darf nicht allein über eine feste User-ID privilegiert bleiben.
+- `event_push_rate_limits`
+  - Enthält Caller-ID und Sendezeitpunkt.
+  - Keine direkte Client-RLS-Policy in der abgefragten Policy-Liste sichtbar; Zugriff erfolgt über die SECURITY-DEFINER-Funktion `claim_event_push_rate_limit`.
+  - RPC-Berechtigungen und Aufruferprüfung müssen separat geprüft werden.
+- `planner_data`: vier getrennte SELECT/INSERT/UPDATE/DELETE-Regeln, derzeit nur mit `auth.uid() = user_id`.
+- `event_push_subscriptions`: eine ALL-Regel, derzeit nur mit `auth.uid() = user_id`.
+
+### Storage
+
+- Ein privater Bucket `trail-private-documents` ist vorhanden.
+- Vier Policies auf `storage.objects` erlauben SELECT, INSERT, UPDATE und DELETE, wenn der erste Pfadbestandteil der eigenen User-ID entspricht.
+- Diese Pfadprüfung bindet Dateien an ein Konto, aber nicht an dessen aktuell gültige Sitzung.
+- Alle vier Regeln müssen zusätzlich die aktive Sitzung prüfen. Der Bucket bleibt privat; Service-Role-Funktionen müssen ihre Benutzerberechtigung separat prüfen.
+
+### Datenbankfunktionen
+
+Die Bestandsaufnahme fand unter anderem folgende öffentliche Funktionen:
+
+- `claim_event_push_rate_limit(uuid)` – SECURITY DEFINER.
+- `get_trail_push_vapid_config()` – SECURITY DEFINER.
+- `ingest_event_change_proposals(jsonb)`.
+- `mark_event_proposal_published(uuid,text)`.
+- Triggerfunktionen zum Schutz von Vorschlägen und Planner-Daten.
+
+Für jede SECURITY-DEFINER-Funktion sind Ausführungsrechte, fester `search_path`, Eingabevalidierung und mögliche Umgehung der aktiven Sitzung zu prüfen. Insbesondere dürfen Funktionen, die privilegierte Änderungen vornehmen, nicht als alternativer Weg an der Sitzungsprüfung vorbeiführen.
+
+### Aktive Edge Functions und Konsequenzen
+
+Zum Prüfzeitpunkt sind folgende Funktionen aktiv:
+
+- `inspect-event-website` – JWT-Prüfung aktiviert; reine Website-Auswertung, aber Authentifizierungs- und Missbrauchsschutz weiterhin kontrollieren.
+- `migrate-personal-documents` – JWT-Prüfung aktiviert; liest Nutzeridentität und verwendet danach Service Role für private Storage-Uploads. Die Sitzung muss vor dem privilegierten Upload aktiv validiert werden.
+- `send-event-review-push` – JWT-Prüfung aktiviert; prüft den Nutzer, liest Vorschläge und Push-Abos über Service Role und versendet Benachrichtigungen. Für Benutzeraufrufe ist eine aktive Sitzungsprüfung vor jedem privilegierten Schritt nötig. Interne Service-Role-Aufrufe müssen als eigener, eng begrenzter Serverpfad behandelt werden.
+- `send-owner-test-push` – JWT-Prüfung aktiviert; vor privilegierten Push-Aktionen Sitzung und Eigentümerberechtigung prüfen.
+- `delete-own-account` – JWT-Prüfung aktiviert; nutzt Service Role zur Bereinigung privater Dateien und zur Kontolöschung. Vor dem irreversiblen Vorgang muss die Sitzung serverseitig aktiv validiert werden.
+- `ingest-event-date-proposals` – JWT-Prüfung deaktiviert, authentifiziert stattdessen GitHub Actions über OIDC/JWKS und erlaubt nur definierte Workflows auf `main`. Diese vertrauenswürdige Automationsidentität ist kein Geräte-Login und darf nicht von der Benutzer-Sitzungsregistrierung abhängig gemacht werden. Die bestehende OIDC-Prüfung muss unverändert erhalten bleiben.
+
+Die Bestandsaufnahme der Funktionsnamen und Policies ist noch keine vollständige Codeprüfung jeder Funktion. Vor Implementierung müssen die vollständigen Quelltexte aller sechs aktiven Funktionen sowie die zugehörigen SQL-Migrationen und RPC-Grants einzeln geprüft werden.
+
+## Architekturergänzung
+
+- Ein gemeinsamer SQL-Prüfbaustein muss von allen privaten Tabellen- und Storage-Policies verwendet werden.
+- Edge Functions, die Service Role einsetzen, benötigen eine explizite aktive Sitzungsvalidierung anhand des vom Client gelieferten JWT. Die Identität darf nicht aus dem Request-Body übernommen werden.
+- Interne Automationsaufrufe mit GitHub-OIDC oder streng kontrolliertem Server-zu-Server-Geheimnis bleiben getrennte Vertrauensdomänen.
+- Push-Zustellung selbst kann zeitlich verzögert sein; das ändert nicht die Berechtigung, die App-Daten zu lesen oder zu schreiben.
+- Die Sitzungsregistrierung muss atomar und gegen parallele Logins geschützt werden. Ein Client darf nicht selbst eine beliebige Sitzungs-ID als aktiv setzen können.
+
+## Ergänzte Abnahmetests
+
+9. Alte Sitzung kann keine Event-Vorschläge mehr lesen, einreichen oder entscheiden.
+10. Alte Sitzung kann private PDFs weder auflisten noch herunterladen, hochladen, ersetzen oder löschen.
+11. Alte Sitzung kann Push-Abos nicht mehr lesen oder verändern und keine privilegierten Push-Funktionen auslösen.
+12. Service-Role-Edge-Functions lehnen Benutzer-JWTs mit veralteter Sitzungs-ID ab, bevor sie privilegierte Aktionen ausführen.
+13. GitHub-OIDC-Automation für Event-Vorschläge funktioniert weiterhin unabhängig von Geräte-Logins.
+14. Eigentümer- und Einreicherrechte bleiben inhaltlich unverändert, sind aber zusätzlich an die aktive Sitzung gebunden.
+
