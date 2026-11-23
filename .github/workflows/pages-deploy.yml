@@ -49,6 +49,9 @@ jobs:
         with:
           path: .
 
+      - name: Allow Pages artifact metadata to settle
+        run: sleep 8
+
       - name: Deploy GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
