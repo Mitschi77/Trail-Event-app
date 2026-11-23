@@ -2,7 +2,7 @@ name: Supabase Auth session end-to-end test
 
 on:
   pull_request:
-    branches: [main]
+    branches: [main, fix/single-active-device-session]
   workflow_dispatch:
 
 permissions:
@@ -79,6 +79,13 @@ jobs:
 
       - name: Exercise real GoTrue sessions, RLS, Storage and privileged Edge Functions
         run: node scripts/test_local_supabase_auth_sessions.mjs
+
+      - name: Stop local Edge Runtime
+        if: always()
+        run: |
+          if [ -f "$RUNNER_TEMP/edge-runtime.pid" ]; then
+            kill "$(cat "$RUNNER_TEMP/edge-runtime.pid")" || true
+          fi
 
       - name: Stop isolated local stack
         if: always()
