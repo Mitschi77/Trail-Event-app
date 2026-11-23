@@ -129,10 +129,22 @@ async function harness(registry, routeUrl = "https://example.org/course.gpx", wi
   });
   const linkOnly = await harness({ schemaVersion: 1, defaultPolicy: "deny", routes: { "test-route": linkOnlyEntry } }, "https://example.org/course-info");
   assert.equal(linkOnly.window.routeHasDownloadableGpx(linkOnly.route), false, "page-link permission must not be reported as file-download permission");
-  assert.equal(linkOnly.window.routeHasOfficialGpxPageLink(linkOnly.route), true, "separately approved official page link may be shown");
+  assert.equal(linkOnly.window.routeHasOfficialGpxPageLink(linkOnly.route), false, "link must remain hidden while restriction status is unchecked");
   await assert.rejects(linkOnly.window.fetch("https://example.org/course-info"), /GPX/);
   assert.equal(linkOnly.networkCalls(), 1, "link-only permission must not allow app fetch");
   assert.equal(linkOnly.window.routeGpxIsOrganizerRestricted(linkOnly.route), true);
+
+  const linkAllowedEntry = policy.defaultEntry({
+    status: "partial",
+    permissions: { ...policy.defaultEntry().permissions, gpxOfficialLink: true },
+    restriction: { status: "restricted", linkStatus: "allowed" }
+  });
+  const linkAllowed = await harness({ schemaVersion: 1, defaultPolicy: "deny", routes: { "test-route": linkAllowedEntry } }, "https://example.org/course-info");
+  assert.equal(linkAllowed.window.routeHasOfficialGpxPageLink(linkAllowed.route), true, "only an explicit no-link-prohibition result may show the official page link");
+  assert.equal(linkAllowed.window.routeHasDownloadableGpx(linkAllowed.route), false);
+  assert.equal(linkAllowed.window.routeGpxIsOrganizerRestricted(linkAllowed.route), true, "link-only permission must not unblock GPX file processing");
+  await assert.rejects(linkAllowed.window.fetch("https://example.org/course-info"), /GPX/);
+  assert.equal(linkAllowed.networkCalls(), 1, "an allowed link must not trigger an app-side fetch");
 
   const fullPermissions = Object.fromEntries(policy.PROCESS_ACTIONS.map(key => [key, true]));
   const approvedEntry = policy.defaultEntry({

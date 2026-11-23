@@ -38,7 +38,8 @@
         checkedAt: null,
         downloadPageChecked: false,
         metadataChecked: false,
-        metadataStatus: "not_available"
+        metadataStatus: "not_available",
+        linkStatus: "not_checked"
       }
     }, extra || {});
   }
@@ -48,7 +49,7 @@
   function allows(entry, action){
     if (!reviewed(entry) || !entry.permissions || entry.permissions[action] !== true) return false;
     const restrictionStatus = entry.restriction && entry.restriction.status || "not_checked";
-    if (action === "gpxOfficialLink") return true;
+    if (action === "gpxOfficialLink") return restrictionStatus === "clear" || (entry.restriction && entry.restriction.linkStatus === "allowed");
     return restrictionStatus === "clear";
   }
   function canProcess(entry){

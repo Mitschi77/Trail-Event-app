@@ -20,10 +20,21 @@ const linkOnly = policy.defaultEntry({
   permissions: { ...policy.defaultEntry().permissions, gpxOfficialLink: true },
   restriction: { status: "not_checked" }
 });
-assert.equal(policy.canLink(linkOnly), true);
+assert.equal(policy.canLink(linkOnly), false, "link permission alone must not bypass an unchecked restriction register");
 assert.equal(policy.canDownload(linkOnly), false);
 assert.equal(policy.canProcess(linkOnly), false);
 assert.equal(policy.shouldBlockFetch("https://example.org/course-info", linkOnly, true), true);
+const linkExplicitlyAllowedDespiteFileRestriction = {
+  ...linkOnly,
+  restriction: { status: "restricted", linkStatus: "allowed" }
+};
+assert.equal(policy.canLink(linkExplicitlyAllowedDespiteFileRestriction), true, "a separately documented explicit link allowance may survive a file restriction");
+assert.equal(policy.canProcess(linkExplicitlyAllowedDespiteFileRestriction), false, "link allowance must never authorize GPX file processing");
+const linkProhibited = {
+  ...linkOnly,
+  restriction: { status: "restricted", linkStatus: "prohibited" }
+};
+assert.equal(policy.canLink(linkProhibited), false, "a link prohibition must override the link permission flag");
 
 const fullPermissions = Object.fromEntries(policy.PROCESS_ACTIONS.map(key => [key, true]));
 const approved = policy.defaultEntry({
