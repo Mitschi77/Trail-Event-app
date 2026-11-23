@@ -24,23 +24,34 @@ Deno.serve(async (req: Request) => {
   }
 
   const supabaseUrl = Deno.env.get("SUPABASE_URL");
+  const anonKey = Deno.env.get("SUPABASE_ANON_KEY");
   const serviceRoleKey = Deno.env.get("SUPABASE_SERVICE_ROLE_KEY");
-  if (!supabaseUrl || !serviceRoleKey) {
+  if (!supabaseUrl || !anonKey || !serviceRoleKey) {
     return new Response(JSON.stringify({ error: "Kontolöschung ist serverseitig noch nicht konfiguriert." }), {
       status: 503, headers: { ...corsHeaders, "Content-Type": "application/json" },
+    });
+  }
+
+  const userClient = createClient(supabaseUrl, anonKey, {
+    global: { headers: { Authorization: authorization } },
+    auth: { autoRefreshToken: false, persistSession: false },
+  });
+  const { data: { user }, error: userError } = await userClient.auth.getUser();
+  if (userError || !user) {
+    return new Response(JSON.stringify({ error: "Sitzung ungültig. Bitte erneut anmelden." }), {
+      status: 401, headers: { ...corsHeaders, "Content-Type": "application/json" },
+    });
+  }
+  const { data: activeSession, error: sessionError } = await userClient.rpc("is_current_auth_session_active");
+  if (sessionError || activeSession !== true) {
+    return new Response(JSON.stringify({ error: "Diese Sitzung wurde auf einem anderen Gerät beendet. Bitte erneut anmelden." }), {
+      status: 401, headers: { ...corsHeaders, "Content-Type": "application/json" },
     });
   }
 
   const admin = createClient(supabaseUrl, serviceRoleKey, {
     auth: { autoRefreshToken: false, persistSession: false },
   });
-  const { data: { user }, error: userError } = await admin.auth.getUser(token);
-  if (userError || !user) {
-    return new Response(JSON.stringify({ error: "Sitzung ungültig. Bitte erneut anmelden." }), {
-      status: 401, headers: { ...corsHeaders, "Content-Type": "application/json" },
-    });
-  }
-
   const { error: deleteError } = await admin.auth.admin.deleteUser(user.id);
   if (deleteError) {
     return new Response(JSON.stringify({ error: "Konto konnte nicht gelöscht werden. " + deleteError.message }), {
