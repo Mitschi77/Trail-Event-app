@@ -113,6 +113,13 @@ set request.jwt.claims = '{"sub":"aaaaaaaa-aaaa-4aaa-8aaa-aaaaaaaaaaaa","session
 set role authenticated;
 insert into public.planner_data(user_id, data)
 values ('aaaaaaaa-aaaa-4aaa-8aaa-aaaaaaaaaaaa', '{"from":"device-a"}');
+do $test$
+begin
+  if public.is_current_auth_session_active() is not true then
+    raise exception 'FAIL: active session helper rejected the current session';
+  end if;
+end
+$test$;
 reset role;
 
 -- Simulate signOut({ scope: 'others' }) removing the old auth session row.
@@ -124,6 +131,10 @@ declare
   affected integer;
   visible_rows integer;
 begin
+  if public.is_current_auth_session_active() is not false then
+    raise exception 'FAIL: revoked session helper still reports active';
+  end if;
+
   update public.planner_data
      set data = '{"from":"stale-device"}'
    where user_id = 'aaaaaaaa-aaaa-4aaa-8aaa-aaaaaaaaaaaa';
