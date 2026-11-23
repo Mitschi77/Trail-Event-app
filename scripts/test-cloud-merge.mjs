@@ -149,4 +149,17 @@ assert.ok(source.includes('downloadConflictBackups);'),'Conflict export control 
 assert.ok(source.includes('Lokale Version als Cloud-Stand veröffentlichen'),'Local-version choice must be explicit');
 assert.ok(source.includes('Cloud-Version auf dieses Gerät übernehmen'),'Cloud-version choice must be explicit');
 
+
+const preserveStart=source.indexOf('async function preserveCloudConflictSnapshots(');
+const preserveEnd=source.indexOf('async function savePlannerCloud()',preserveStart);
+assert.notEqual(preserveStart,-1,'Both conflicting snapshots must have a shared preservation helper');
+assert.notEqual(preserveEnd,-1,'Snapshot preservation helper boundary must exist');
+const preserveBody=source.slice(preserveStart,preserveEnd);
+assert.ok(preserveBody.includes("savePreRestoreBackup({createdAt:conflictAt,source:'conflict-local',keys:localSnapshot},'conflict-local')"),'Conflict helper must persist the local snapshot separately');
+assert.ok(preserveBody.includes("savePreRestoreBackup({createdAt:conflictAt,source:'conflict-cloud',cloudUpdatedAt:updatedAt,keys:remote},'conflict-cloud')"),'Conflict helper must persist the current cloud snapshot separately');
+const saveStart=source.indexOf('async function savePlannerCloud()');
+const saveEnd=source.indexOf('function queuePlannerCloudSave()',saveStart);
+const saveBody=source.slice(saveStart,saveEnd);
+assert.ok(saveBody.includes('await preserveCloudConflictSnapshots(snapshot)'),'Optimistic save races must also preserve both versions');
+assert.ok(saveBody.indexOf('await preserveCloudConflictSnapshots(snapshot)')<saveBody.indexOf("cloudConflictActions').style.display='flex'"),'No conflict resolution actions may appear before both snapshots are saved');
 console.log('Cloud route merge and offline retry regression tests passed.');
