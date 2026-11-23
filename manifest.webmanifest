@@ -1,7 +1,7 @@
 {
-  "name": "NORTHBOUND — Beyond the Trail",
+  "name": "NORTHBOUND — Endurance & Outdoor",
   "short_name": "NORTHBOUND",
-  "description": "NORTHBOUND — Find your next line.",
+  "description": "NORTHBOUND — Endurance, outdoor sports and adventure.",
   "start_url": "./",
   "scope": "./",
   "display": "standalone",
