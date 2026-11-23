@@ -116,6 +116,39 @@ create policy "submit authenticated proposals" on public.event_change_proposals
 
 \i supabase/migrations/20261123100000_single_active_device_session.sql
 
+-- The internal helper must remain private; only its authenticated wrapper is exposed.
+do $security_surface_test$
+begin
+  if has_schema_privilege('anon', 'private', 'USAGE')
+     or has_schema_privilege('authenticated', 'private', 'USAGE') then
+    raise exception 'FAIL: API roles can access the private helper schema';
+  end if;
+  if has_function_privilege('anon', 'private.is_current_auth_session_active()', 'EXECUTE')
+     or has_function_privilege('authenticated', 'private.is_current_auth_session_active()', 'EXECUTE') then
+    raise exception 'FAIL: API roles can execute the internal session helper directly';
+  end if;
+  if has_function_privilege('anon', 'public.is_current_auth_session_active()', 'EXECUTE') then
+    raise exception 'FAIL: anon can execute the authenticated session RPC';
+  end if;
+  if not has_function_privilege('authenticated', 'public.is_current_auth_session_active()', 'EXECUTE') then
+    raise exception 'FAIL: authenticated cannot execute the session RPC wrapper';
+  end if;
+end
+$security_surface_test$;
+
+set role anon;
+do $anon_rpc_test$
+begin
+  begin
+    perform public.is_current_auth_session_active();
+    raise exception 'FAIL: anon executed the authenticated session RPC';
+  exception when insufficient_privilege then null;
+  end;
+end
+$anon_rpc_test$;
+reset role;
+
+
 
 -- Seed one row in each additional protected resource before switching roles.
 insert into storage.objects(bucket_id, name)
