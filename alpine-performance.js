@@ -170,8 +170,8 @@ let feed=null,feedPromise=null;
 async function getFeed(){if(feed)return feed;if(!feedPromise)feedPromise=fetch(new URL('event-dates.json',document.baseURI),{cache:'no-store'}).then(r=>{if(!r.ok)throw Error('Prüfdaten nicht erreichbar');return r.json();}).then(x=>feed=x).catch(e=>{console.warn('NORTHBOUND Eventprüfung:',e);return feed={events:{}};});return feedPromise;}
 function badge(label,kind){const b=document.createElement('span');b.className='nb-quality-badge '+kind;b.textContent=label;return b;}
 function renderQuality(){
- const eventsRoot=document.getElementById('events'),host=document.getElementById('eventsTab')||eventsRoot?.parentElement;if(!host||typeof EVENTS==='undefined')return;
- let panel=document.getElementById(QUALITY_ID);if(!panel){panel=document.createElement('section');panel.id=QUALITY_ID;panel.className='nb-insight-panel nb-quality-panel';if(eventsRoot&&eventsRoot.parentElement===host)host.insertBefore(panel,eventsRoot);else host.prepend(panel);}
+ const host=document.getElementById('missingTab'),anchor=document.getElementById('officialQualitySummary');if(!host||typeof EVENTS==='undefined')return;
+ let panel=document.getElementById(QUALITY_ID);if(!panel){panel=document.createElement('section');panel.id=QUALITY_ID;panel.className='nb-insight-panel nb-quality-panel';if(anchor?.parentElement)anchor.insertAdjacentElement('afterend',panel);else host.querySelector('.planner')?.append(panel);}
  const records=feed?.events||{},rows=EVENTS.map(event=>({event,q:quality(event,records[event?.id]),record:records[event?.id]}));
  panel.replaceChildren();const header=document.createElement('div');header.className='nb-insight-head';const intro=document.createElement('div');intro.innerHTML='<span class="nb-eyebrow">NORTHBOUND · DATENBANK</span><h3>Event-Qualitätsanzeige</h3><p>Datenabdeckung, Quellenprüfung und Aktualität getrennt prüfen. Fehlende optionale GPX-Dateien oder Profile werden nicht automatisch als Fehler gewertet.</p>';header.append(intro);panel.append(header);
  const stale=rows.filter(x=>['stale','old','unknown'].includes(x.q.freshness)).length,review=rows.filter(x=>x.q.warnings.length).length;
