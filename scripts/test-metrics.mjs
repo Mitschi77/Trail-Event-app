@@ -880,6 +880,8 @@ assert.ok(html.includes("function shouldWrapHelpText(el){return !el.closest('.ap
   "Device status and synchronization details must not be hidden behind generated info icons");
 assert.ok(html.includes("shouldWrapHelpText(el)&&!el.dataset.infoConverted"),
   "Help conversion must skip informational menu cards while retaining info tips elsewhere");
+assert.ok(html.includes("Zuletzt geprüft: ") && html.includes("Cloud-Daten zuletzt geändert: "),
+  "The account panel must distinguish the local check time from the last remote cloud-data update");
 
 // Web Push setup must explicitly register the service worker from the user action.
 assert.ok(html.includes("navigator.serviceWorker.register(new URL('./sw.js',document.baseURI)"), "Push setup must not depend solely on the asynchronous page-load registration");
