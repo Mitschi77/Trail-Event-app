@@ -882,6 +882,12 @@ assert.ok(html.includes("shouldWrapHelpText(el)&&!el.dataset.infoConverted"),
   "Help conversion must skip informational menu cards while retaining info tips elsewhere");
 assert.ok(html.includes("Zuletzt geprüft: ") && html.includes("Cloud-Daten zuletzt geändert: "),
   "The account panel must distinguish the local check time from the last remote cloud-data update");
+assert.ok(html.includes("app-settings-intro") && html.includes("Karten &amp; Streckenprofile") && html.includes("Schnellzugriff"),
+  "Settings must use clear user-facing groups and quick actions");
+assert.ok(css.includes(".app-settings-content .settings-connection") && css.includes("@media(max-width:560px)"),
+  "Settings status rows must remain readable on narrow mobile screens");
+assert.ok(html.includes("Online bereitgestellt") && html.includes("Lokale Vorschau"),
+  "Hosting status must distinguish the published app from a local preview");
 
 // Web Push setup must explicitly register the service worker from the user action.
 assert.ok(html.includes("navigator.serviceWorker.register(new URL('./sw.js',document.baseURI)"), "Push setup must not depend solely on the asynchronous page-load registration");
