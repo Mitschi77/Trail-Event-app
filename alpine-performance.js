@@ -130,7 +130,7 @@ function recoveryPanel(){
  save.addEventListener('click',()=>{
   const days=Number(input.value);if(!Number.isInteger(days)||days<7||days>56){status.textContent='Bitte 7 bis 56 Tage eingeben.';return;}
   if(typeof seasonPriorities==='undefined'||!seasonPriorities){status.textContent='Saisonplanung nicht verfügbar.';return;}
-  seasonPriorities[RECOVERY_KEY]={days};try{if(typeof seasonSave==='function')seasonSave();else localStorage.setItem('seasonPriorities',JSON.stringify(seasonPriorities));status.textContent='Planungspuffer gespeichert.';recoveryPanel();}catch(e){status.textContent='Speichern fehlgeschlagen: '+e.message;}
+  seasonPriorities[RECOVERY_KEY]={days};try{if(typeof seasonSave==='function')seasonSave();else localStorage.setItem('seasonPriorities',JSON.stringify(seasonPriorities));recoveryPanel();const refreshed=document.querySelector('#'+RECOVERY_ID+' .nb-insight-status');if(refreshed)refreshed.textContent='Planungspuffer gespeichert.';}catch(e){status.textContent='Speichern fehlgeschlagen: '+e.message;}
  });
  if(!last){const empty=document.createElement('p');empty.className='nb-insight-empty';empty.textContent='Noch kein abgeschlossener Wettkampf mit Datum in der Laufhistorie gefunden.';panel.append(empty);return;}
  const end=new Date(last.date);end.setDate(end.getDate()+cfg.days);const today=new Date();today.setHours(12,0,0,0);
