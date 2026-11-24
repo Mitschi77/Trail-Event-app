@@ -308,4 +308,12 @@ if(typeof originalSeasonStatusRender==='function'){
  window.renderSeasonEnhancements();
 }
 
+  // Load the additive universal activity model without coupling it to legacy Trail data.
+  if (!window.SportYear && !document.querySelector('script[data-sport-year-core]')) {
+    const sportYearScript = document.createElement('script');
+    sportYearScript.src = './sport-year.js';
+    sportYearScript.defer = true;
+    sportYearScript.dataset.sportYearCore = '1';
+    document.head.appendChild(sportYearScript);
+  }
 })();
