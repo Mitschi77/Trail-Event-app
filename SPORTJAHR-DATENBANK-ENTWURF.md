@@ -36,6 +36,14 @@ Wichtige Supabase-Plattformänderung: Seit 30. Oktober 2026 werden neue Tabellen
 
 ## 3. Architekturentscheidung für die Erweiterung
 
+Das Sportmodell wird von Anfang an für mehrere Ausdauersportarten offen gehalten: **Laufen, Bike und Triathlon**. Weitere Sportarten dürfen nicht durch fest codierte Datenbank-Enums oder eine nur auf zwei Sportarten ausgelegte UI ausgeschlossen werden.
+
+Wichtig: Backyard ist keine gewöhnliche Distanz-Disziplin. Es ist ein eigenständiges, rundenbasiertes Wettkampfformat mit wiederkehrenden Starts und einer besonderen Leistungslogik. Die Datenstruktur muss Runden, Rundenzeiten, absolvierte Kilometer und Ausscheiden/DNF abbilden können.
+
+Triathlon ist ebenfalls eine eigenständige Sportart bzw. Wettkampfform mit mehreren Teildisziplinen (Schwimmen, Radfahren, Laufen). Eine Triathlon-Teilnahme muss Gesamtzeit und die einzelnen Splits/Teilstrecken speichern können. Die Radstrecke eines Triathlons darf nicht als separate Bike-Teilnahme doppelt gezählt werden.
+
+
+
 Der Eventkatalog und persönliche Aktivitäten sind unterschiedliche Dinge:
 
 - Der Eventkatalog enthält öffentliche Veranstaltungen und Strecken. Er bleibt in dieser ersten Erweiterungsstufe unverändert.
@@ -53,8 +61,8 @@ Noch nicht angewendet – Schemaentwurf zur Prüfung.
 |---|---|---|
 | id | uuid PK | stabile Aktivitäts-ID |
 | user_id | uuid FK auth.users | Eigentümer |
-| sport | text | `run`, `bike`, später erweiterbar |
-| discipline | text nullable | `road`, `trail`, `ultra`, `backyard`, `mtb`, `road_cycling`, `gravel` |
+| sport | text | `run`, `bike`, `triathlon`, offen für weitere Sportarten |
+| discipline | text nullable | z. B. `road`, `trail`, `ultra`, `backyard`, `mtb`, `road_cycling`, `gravel`, `sprint`, `olympic`, `middle_distance`, `long_distance` |
 | activity_type | text | `training`, `race`, `event` |
 | title | text | Anzeigename |
 | starts_at | timestamptz nullable | Beginn |
@@ -65,15 +73,17 @@ Noch nicht angewendet – Schemaentwurf zur Prüfung.
 | status | text | `planned`, `completed`, `cancelled`, `dnf` |
 | catalog_event_id | text nullable | optionale Referenz auf bestehende Event-ID |
 | catalog_route_id | text nullable | optionale Referenz auf bestehende Strecken-ID |
-| result | jsonb | sportartspezifisches Ergebnis |
-| metadata | jsonb | zusätzliche sportartspezifische Angaben |
+| result | jsonb | sportartspezifisches Ergebnis inklusive Backyard-Runden oder Triathlon-Splits |
+| metadata | jsonb | zusätzliche sportartspezifische Angaben; bei Bedarf strukturierte Teilabschnitte |
 | created_at / updated_at | timestamptz | Zeitstempel |
 
 ### Regeln
 - `sport`, `activity_type`, `title` und `status` sind Pflichtfelder.
 - Distanz, Höhenmeter und Dauer bleiben nullable; unbekannt ist nicht gleich null.
-- Lauf-/Trail-Felder wie UTMB Index, Cut-off und Backyard-Runden liegen in `result`/Metadaten und werden nur für passende Laufdisziplinen ausgewertet.
-- Bike-Aktivitäten erhalten keine UTMB-Felder.
+- Lauf-/Trail-Felder wie UTMB Index und Cut-off werden nur für passende Laufdisziplinen ausgewertet.
+- **Backyard:** `discipline=backyard`; Ergebnisdaten müssen mindestens absolvierte Runden, Rundenlänge (Standardwert 6,7 km, aber pro Event überschreibbar), daraus ermittelte/angegebene Gesamtkilometer, Gesamtzeit, Rundenzeiten bzw. Runden-Zeitstempel und Status (z. B. beendet, DNF/Ausscheiden) aufnehmen können. Die Rundenanzahl ist die zentrale Leistungskennzahl; Kilometer dürfen nicht die Rundenanzahl ersetzen. Höhenmeter und Cut-off bleiben optionale Event-/Rundendaten. Es darf nicht angenommen werden, dass jedes Backyard-Event exakt dieselbe Streckenlänge oder identische Regeln hat.
+- **Triathlon:** `sport=triathlon`; Ergebnisdaten müssen Gesamtzeit und drei getrennte Segmente für Schwimmen, Radfahren und Laufen abbilden können. Je Segment sind Distanz, Zeit und bei Bedarf Höhenmeter möglich. Wechselzeiten (T1/T2) sind getrennt speicherbar. Wettkampfformate wie Sprint, olympisch, Mitteldistanz/70.3 und Langdistanz/140.6 sind konfigurierbare Disziplin-/Formatwerte, keine fest verdrahtete abschließende Liste.
+- Bike-Aktivitäten außerhalb eines Triathlons erhalten keine UTMB-Felder. Die Rad-Teilstrecke eines Triathlons wird als Segment der Triathlon-Teilnahme gespeichert und nicht zusätzlich als eigenständige Bike-Aktivität gezählt.
 - `catalog_event_id` und `catalog_route_id` bleiben zunächst Textreferenzen, damit keine bestehende Event-ID-Struktur verändert werden muss.
 - Wiederholte Teilnahmen werden durch getrennte Zeilen gespeichert.
 
@@ -103,7 +113,9 @@ Bei einer späteren Migration:
 ## 7. Abnahmekriterien
 
 - Ein bestehender Benutzer kann seine bisherigen Trail-Planungen unverändert öffnen.
-- Neue Bike- und Trainingsaktivitäten lassen sich getrennt speichern und laden.
+- Neue Lauf-, Backyard-, Bike-, Triathlon- und Trainingsaktivitäten lassen sich getrennt speichern und laden.
+- Backyard-Ergebnisse behalten Rundenanzahl und Rundenzeiten als führende Kennzahlen.
+- Triathlon-Ergebnisse behalten Schwimm-, Rad-, Lauf- und Wechselzeiten getrennt sowie die Gesamtzeit.
 - Benutzer A kann keine Aktivitäten von Benutzer B lesen oder verändern.
 - Wiederholte Wettkampfteilnahmen bleiben getrennt.
 - Lauf- und Bike-Kennzahlen werden getrennt aggregiert.
