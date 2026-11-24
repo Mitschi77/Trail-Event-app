@@ -2212,3 +2212,212 @@ header>.hero .stat span{
 @media(max-width:350px){
   #events .routegrid{grid-template-columns:minmax(0,1fr)!important}
 }
+
+
+/* NORTHBOUND · Jahresübersicht & Kalender
+   Rein visuelle Überarbeitung; Planungs-, Termin- und Buchungslogik bleibt bestehen. */
+#yearTab>.planner{gap:14px}
+#yearTab>.planner>h2{
+  margin-bottom:3px;color:#F5F7FA;font-size:clamp(23px,3.4vw,31px);
+  letter-spacing:-.04em
+}
+#yearTab>.planner>.planner-intro{max-width:760px;color:#AFC0CC;font-size:13px;line-height:1.55}
+#yearTab .year-view-switch{
+  display:flex;gap:8px;flex-wrap:wrap;margin:16px 0 14px;
+  padding:5px;border:1px solid #344653;border-radius:13px;
+  background:#101820
+}
+#yearTab .year-view-switch button{
+  flex:1 1 150px;min-height:44px;border:1px solid transparent!important;
+  border-radius:9px!important;background:transparent!important;
+  color:#B7C6D0!important;font-size:12px;font-weight:800
+}
+#yearTab .year-view-switch button.active{
+  border-color:#FF6A00!important;background:#FF6A00!important;
+  color:#101820!important;box-shadow:0 3px 12px #FF6A0030
+}
+#yearTab #yearOverview{display:grid;gap:16px}
+#yearTab #yearOverview>.year-group{
+  position:relative;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:11px;padding:16px;border:1px solid #354653!important;
+  border-radius:17px!important;background:#111B24!important;
+  box-shadow:0 8px 24px #0003
+}
+#yearTab #yearOverview .year-heading{
+  position:relative;top:auto;grid-column:1/-1;
+  display:flex;align-items:center;justify-content:space-between;gap:12px;
+  margin:0;padding:2px 2px 13px;border-bottom:1px solid #354653;
+  background:transparent!important
+}
+#yearTab #yearOverview .year-heading h3{
+  color:#F5F7FA!important;font-size:clamp(23px,3vw,30px);
+  font-weight:900;letter-spacing:-.045em
+}
+#yearTab #yearOverview .year-summary{
+  color:#B8C7D1!important;font-size:11px;font-weight:750
+}
+#yearTab #yearOverview .year-status-summary{gap:5px;margin-top:6px}
+#yearTab #yearOverview .year-status-count{
+  border:1px solid #3B5262;border-radius:7px;
+  background:#1A2A36!important;color:#C9D8E1!important;
+  font-size:10px;font-weight:750
+}
+#yearTab #yearOverview .year-race{
+  min-width:0;margin:0!important;padding:13px!important;
+  border:1px solid #344653!important;border-left:3px solid #FF6A00!important;
+  border-radius:13px!important;background:#17232D!important;
+  box-shadow:0 3px 12px #0002;transition:border-color .18s ease,background .18s ease
+}
+#yearTab #yearOverview .year-race:focus-within{
+  border-color:#7FD8FF!important;box-shadow:0 0 0 2px #7FD8FF22
+}
+#yearTab #yearOverview .year-race-head>strong{
+  color:#F5F7FA!important;font-size:15px;line-height:1.35
+}
+#yearTab #yearOverview .year-race-meta{
+  margin-top:7px;color:#AFC0CC!important;font-size:11px;line-height:1.55
+}
+#yearTab #yearOverview .year-race-status-controls{gap:8px}
+#yearTab #yearOverview .year-race-status{
+  color:#AFC0CC!important;font-size:10px;font-weight:750
+}
+#yearTab #yearOverview .year-race-status select{
+  min-height:42px;border:1px solid #405565!important;
+  border-radius:9px!important;background:#101B24!important;
+  color:#F5F7FA!important;font-size:12px
+}
+#yearTab #yearOverview .year-race-more{
+  border-color:#344653!important
+}
+#yearTab #yearOverview .year-race-more>summary{
+  min-height:43px;color:#7FD8FF!important;font-size:11px;font-weight:800
+}
+#yearTab #yearOverview .year-totals{
+  grid-column:1/-1;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:8px;margin:0;padding:12px;border:1px solid #344653!important;
+  border-radius:12px;background:#101820!important;color:#DCE6ED!important
+}
+#yearTab #yearOverview .year-load-chart{
+  grid-column:1/-1;margin:0;padding:14px;border:1px solid #344653;
+  border-radius:13px;background:#101820!important;color:#F5F7FA!important
+}
+#yearTab #yearOverview .year-load-chart>strong{color:#BFEAFF!important}
+#yearTab #yearCalendar{display:grid;gap:15px}
+#yearTab .year-calendar-legend{
+  display:flex;align-items:center;gap:10px 18px;flex-wrap:wrap;
+  padding:12px 14px;border:1px solid #354653;border-radius:12px;
+  background:#111B24;color:#C5D2DB!important;font-size:11px;font-weight:750
+}
+#yearTab .year-calendar-legend>span{display:inline-flex;align-items:center;gap:8px}
+#yearTab .year-calendar-swatch{
+  display:inline-block;width:20px;height:7px;border-radius:4px;
+  background:#FF6A00;box-shadow:0 0 0 1px #FF6A0055
+}
+#yearTab .year-calendar-swatch.hotel{background:#7FD8FF;box-shadow:0 0 0 1px #7FD8FF55}
+#yearTab .year-calendar-year{
+  padding:16px!important;border:1px solid #354653!important;
+  border-radius:17px!important;background:#111B24!important;
+  box-shadow:0 8px 24px #0003
+}
+#yearTab .year-calendar-year>h3{
+  margin:0 0 14px;padding:0 0 11px;border-bottom:1px solid #354653;
+  color:#F5F7FA!important;font-size:25px;font-weight:900;letter-spacing:-.04em
+}
+#yearTab .year-calendar-grid{
+  display:grid;grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:12px;align-items:stretch
+}
+#yearTab .year-calendar-month{
+  min-width:0;padding:10px!important;border:1px solid #304351!important;
+  border-radius:12px!important;background:#0E1720!important;
+  box-shadow:inset 0 1px #FFFFFF08
+}
+#yearTab .year-calendar-month h4{
+  margin:0 0 9px;color:#BFEAFF!important;font-size:12px;
+  font-weight:850;letter-spacing:.04em;text-transform:uppercase
+}
+#yearTab .year-calendar-week,
+#yearTab .year-calendar-days{
+  display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:3px
+}
+#yearTab .year-calendar-week{margin-bottom:4px}
+#yearTab .year-calendar-week span{
+  color:#8095A4!important;font-size:9px;font-weight:800;text-align:center
+}
+#yearTab .year-calendar-day{
+  position:relative;min-width:0;min-height:42px;padding:4px!important;
+  display:flex;flex-direction:column;align-items:stretch;gap:3px;
+  overflow:hidden;border:1px solid #2D3E4B!important;
+  border-radius:6px!important;background:#17232D!important;
+  color:#DCE6ED!important
+}
+#yearTab .year-calendar-day.empty{border:0!important;background:transparent!important}
+#yearTab .year-calendar-day .day-number{
+  color:#C7D4DC;font-size:10px;font-weight:750;line-height:1.2
+}
+#yearTab .year-calendar-day.today{
+  outline:2px solid #FF6A00!important;outline-offset:-2px
+}
+#yearTab .year-calendar-day.has-event{
+  border-color:#A85B63!important;background:#512A31!important;color:#FFF!important
+}
+#yearTab .year-calendar-day.has-hotel{
+  border-color:#4C86A8!important;background:#163449!important;color:#F5F7FA!important
+}
+#yearTab .year-calendar-day.has-event.has-hotel{
+  border-color:#8D7890!important;
+  background:linear-gradient(135deg,#512A31 0 50%,#163449 50%)!important
+}
+#yearTab .year-calendar-day .race-duration-bar{
+  display:block;width:100%;min-height:5px;height:5px;margin-top:auto;
+  border:0;border-radius:0;background:#FF6A00!important;
+  box-shadow:0 0 0 1px #381C25;cursor:pointer
+}
+#yearTab .year-calendar-day .race-duration-bar.start{border-radius:5px 0 0 5px}
+#yearTab .year-calendar-day .race-duration-bar.end{border-radius:0 5px 5px 0}
+#yearTab .year-calendar-day .race-duration-bar.single{border-radius:5px}
+#yearTab .year-calendar-day .hotel-range-bar{background:#7FD8FF!important}
+#yearTab .year-calendar-day .day-mark{color:#F5F7FA!important;font-size:8px}
+#yearTab .year-calendar-day button:focus-visible{
+  outline:2px solid #F5F7FA;outline-offset:2px
+}
+#yearTab .year-calendar-day[title]{cursor:default}
+#yearTab .year-race-popup-card{
+  border-color:#405565!important;background:#131E28!important;color:#F5F7FA!important
+}
+#yearTab .year-race-popup-card h3{color:#F5F7FA!important}
+#yearTab .year-race-popup-row{border-color:#344653!important}
+#yearTab .year-race-popup-row span{color:#AFC0CC!important}
+#yearTab .year-race-popup-row strong{color:#BFEAFF!important}
+#yearTab .year-race-popup-close{background:#263744!important;color:#F5F7FA!important}
+@media(min-width:1200px){
+  #yearTab .year-calendar-grid{grid-template-columns:repeat(4,minmax(0,1fr))}
+}
+@media(max-width:900px){
+  #yearTab .year-calendar-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media(max-width:600px){
+  #yearTab #yearOverview>.year-group{grid-template-columns:minmax(0,1fr);gap:9px;padding:12px}
+  #yearTab #yearOverview .year-heading,
+  #yearTab #yearOverview .year-totals,
+  #yearTab #yearOverview .year-load-chart{grid-column:1}
+  #yearTab #yearOverview .year-heading{align-items:flex-start;flex-wrap:wrap}
+  #yearTab #yearOverview .year-summary{text-align:left}
+  #yearTab #yearOverview .year-race{padding:12px!important}
+  #yearTab #yearOverview .year-race-status-controls{grid-template-columns:minmax(0,1fr)}
+  #yearTab #yearOverview .year-totals{grid-template-columns:repeat(2,minmax(0,1fr))}
+  #yearTab .year-calendar-year{padding:11px!important}
+  #yearTab .year-calendar-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:7px}
+  #yearTab .year-calendar-month{padding:6px!important}
+  #yearTab .year-calendar-day{min-height:34px;padding:3px!important}
+  #yearTab .year-calendar-day .day-number{font-size:9px}
+  #yearTab .year-calendar-legend{gap:8px 12px;padding:10px;font-size:10px}
+}
+@media(max-width:380px){
+  #yearTab .year-calendar-grid{grid-template-columns:minmax(0,1fr)}
+  #yearTab .year-calendar-month{padding:9px!important}
+  #yearTab .year-calendar-day{min-height:40px}
+}
+@media(prefers-reduced-motion:reduce){
+  #yearTab #yearOverview .year-race{transition:none}
+}
