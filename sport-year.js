@@ -49,6 +49,14 @@
     };
   }
 
+  function normalizeSegments(segments) {
+    if (!Array.isArray(segments)) return [];
+    const normalized = segments.map(normalizeSegment);
+    const sequences = normalized.map(segment => segment.sequence);
+    if (new Set(sequences).size !== sequences.length) throw new RangeError('Segment-Reihenfolge muss eindeutig sein.');
+    return normalized.sort((a, b) => a.sequence - b.sequence);
+  }
+
   function normalizeActivity(activity) {
     if (!activity || typeof activity !== 'object') throw new TypeError('Aktivität muss ein Objekt sein.');
     const result = activity.result && typeof activity.result === 'object' && !Array.isArray(activity.result)
@@ -63,7 +71,11 @@
     };
     const startsAt = cleanText(activity.startsAt) || null;
     const endsAt = cleanText(activity.endsAt) || null;
-    if (startsAt && endsAt && Date.parse(endsAt) < Date.parse(startsAt)) {
+    const startMs = startsAt ? Date.parse(startsAt) : null;
+    const endMs = endsAt ? Date.parse(endsAt) : null;
+    if (startMs !== null && !Number.isFinite(startMs)) throw new TypeError('Beginn ist kein gültiger Zeitpunkt.');
+    if (endMs !== null && !Number.isFinite(endMs)) throw new TypeError('Ende ist kein gültiger Zeitpunkt.');
+    if (startMs !== null && endMs !== null && endMs < startMs) {
       throw new RangeError('Das Ende darf nicht vor dem Beginn liegen.');
     }
     return {
@@ -83,7 +95,7 @@
       catalogRouteId: cleanText(activity.catalogRouteId) || null,
       result,
       metadata,
-      segments: Array.isArray(activity.segments) ? activity.segments.map(normalizeSegment).sort((a, b) => a.sequence - b.sequence) : []
+      segments: normalizeSegments(activity.segments)
     };
   }
 
@@ -97,6 +109,11 @@
     if (lapTimesSeconds.some(value => !Number.isFinite(value) || value < 0)) {
       throw new RangeError('Rundenzeiten müssen nichtnegative Zahlen sein.');
     }
+    if (lapTimesSeconds.length > rounds) throw new RangeError('Es dürfen nicht mehr Rundenzeiten als absolvierte Runden erfasst werden.');
+    const eliminatedAfterRound = input.eliminatedAfterRound == null ? null : wholeNumber(input.eliminatedAfterRound, 'Ausscheiden nach Runde', 0);
+    if (eliminatedAfterRound !== null && eliminatedAfterRound > rounds) {
+      throw new RangeError('Ausscheidungsrunde darf nicht über der Rundenanzahl liegen.');
+    }
     return {
       format: 'backyard',
       rounds,
@@ -104,7 +121,7 @@
       totalDistanceKm: Number((rounds * lapLengthKm).toFixed(3)),
       lapTimesSeconds,
       outcome: cleanText(input.outcome) || 'in_progress',
-      eliminatedAfterRound: input.eliminatedAfterRound == null ? null : Number(input.eliminatedAfterRound)
+      eliminatedAfterRound
     };
   }
 
@@ -221,6 +238,7 @@
     DEFAULT_BACKYARD_LAP_KM,
     normalizeCatalogEntry,
     normalizeSegment,
+    normalizeSegments,
     normalizeActivity,
     normalizeBackyardResult,
     normalizeRacketResult,
