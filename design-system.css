@@ -2768,3 +2768,128 @@ header>.hero .stat span{
 @media(prefers-reduced-motion:reduce){
   #historyTab #historyList>.plan-card{transition:none!important}
 }
+
+
+/* NORTHBOUND · iPhone / iPad Feinschliff
+   Touch-Ziele, iOS-Safe-Areas, Safari-Formularzoom und scrollbare Dialoge.
+   Keine Änderungen an Navigation, Daten oder Eventlogik. */
+:root{
+  --nb-safe-top:env(safe-area-inset-top,0px);
+  --nb-safe-right:env(safe-area-inset-right,0px);
+  --nb-safe-bottom:env(safe-area-inset-bottom,0px);
+  --nb-safe-left:env(safe-area-inset-left,0px)
+}
+html{
+  -webkit-text-size-adjust:100%;
+  text-size-adjust:100%;
+  scroll-padding-top:calc(var(--nb-safe-top) + 76px);
+  scroll-padding-bottom:calc(var(--nb-safe-bottom) + 24px)
+}
+body{
+  min-height:100vh;
+  min-height:100dvh;
+  overflow-x:clip;
+  -webkit-tap-highlight-color:transparent
+}
+.wrap{
+  padding-left:max(14px,var(--nb-safe-left));
+  padding-right:max(14px,var(--nb-safe-right));
+  padding-bottom:max(22px,var(--nb-safe-bottom))
+}
+:where(button,a,summary,[role="button"],input[type="checkbox"],input[type="radio"]){
+  touch-action:manipulation
+}
+:where(button,a,summary,[role="button"]):focus-visible{
+  outline:3px solid #7FD8FF!important;
+  outline-offset:3px!important
+}
+:where(input,select,textarea){
+  max-width:100%;
+  color-scheme:dark
+}
+.event-detail-dialog,
+.elevation-profile-modal,
+.elevation-chart-modal,
+.elevation-popup,
+.profile-popup{
+  max-height:calc(100dvh - var(--nb-safe-top) - var(--nb-safe-bottom) - 20px);
+  overscroll-behavior:contain;
+  -webkit-overflow-scrolling:touch
+}
+.app-menu-dropdown{
+  max-height:calc(100dvh - var(--nb-safe-top) - var(--nb-safe-bottom) - 100px);
+  overscroll-behavior:contain;
+  -webkit-overflow-scrolling:touch
+}
+@media(max-width:700px){
+  html{scroll-padding-top:calc(var(--nb-safe-top) + 88px)}
+  header{
+    padding-top:max(12px,var(--nb-safe-top));
+    padding-left:max(12px,var(--nb-safe-left));
+    padding-right:max(12px,var(--nb-safe-right))
+  }
+  .wrap{
+    width:100%;
+    max-width:100%;
+    padding-left:max(12px,var(--nb-safe-left));
+    padding-right:max(12px,var(--nb-safe-right));
+    padding-bottom:max(24px,var(--nb-safe-bottom))
+  }
+  :where(button,.primary,.secondary,.tab-button,.more-nav-item,.app-menu-item){
+    min-height:44px
+  }
+  :where(input:not([type="checkbox"]):not([type="radio"]),select,textarea,.field){
+    min-height:44px;
+    font-size:16px!important
+  }
+  .toolbar,.planner-grid,.planner-columns,.edit-grid{
+    min-width:0
+  }
+  .toolbar>*,
+  .planner-grid>*,
+  .planner-columns>*,
+  .edit-grid>*{min-width:0;max-width:100%}
+  .event-detail-dialog,
+  .elevation-profile-modal,
+  .elevation-chart-modal,
+  .elevation-popup,
+  .profile-popup{
+    width:min(100% - 16px,760px)!important;
+    max-width:calc(100vw - 16px)!important;
+    max-height:calc(100dvh - var(--nb-safe-top) - var(--nb-safe-bottom) - 16px)!important;
+    margin:8px auto!important;
+    padding-bottom:max(14px,var(--nb-safe-bottom))!important;
+    overflow-y:auto!important;
+    overscroll-behavior:contain;
+    -webkit-overflow-scrolling:touch
+  }
+  .app-menu-dropdown{
+    left:max(10px,var(--nb-safe-left))!important;
+    right:max(10px,var(--nb-safe-right))!important;
+    width:auto!important;
+    max-width:none!important;
+    max-height:calc(100dvh - var(--nb-safe-top) - var(--nb-safe-bottom) - 96px)!important;
+    overflow-y:auto!important
+  }
+}
+@media(max-width:390px){
+  .wrap{padding-left:max(10px,var(--nb-safe-left));padding-right:max(10px,var(--nb-safe-right))}
+  .planner-grid,.planner-columns{gap:9px!important}
+  .toolbar{gap:7px!important}
+  .event-detail-dialog{padding:11px!important}
+}
+@media(min-width:701px) and (max-width:1100px){
+  .wrap{padding-left:max(18px,var(--nb-safe-left));padding-right:max(18px,var(--nb-safe-right))}
+  .planner-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .planner-columns{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@supports(padding:max(0px)){
+  body{padding-bottom:var(--nb-safe-bottom)}
+}
+@media(hover:none) and (pointer:coarse){
+  :where(button,a,summary,[role="button"]){-webkit-user-select:none;user-select:none}
+  :where(button,a,summary,[role="button"]):active{filter:brightness(1.08)}
+}
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto!important}
+}
