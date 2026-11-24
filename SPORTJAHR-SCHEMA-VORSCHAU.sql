@@ -179,6 +179,113 @@ create policy sport_activity_segments_delete_policy
     where a.id = activity_id and a.user_id = (select auth.uid())
   ));
 
+-- Zusätzliche Eigentümerprüfung für Fremdschlüssel:
+-- Ein gültiger UUID-Fremdschlüssel allein reicht nicht aus: sonst könnte ein
+-- Benutzer eine private Sportart eines anderen Benutzers referenzieren.
+-- Diese Trigger laufen standardmäßig als SECURITY INVOKER (kein SECURITY DEFINER).
+-- Die SELECT-Prüfungen unterliegen damit weiterhin den RLS-Regeln des Aufrufers.
+
+create or replace function public.sport_year_check_catalog_parent()
+returns trigger
+language plpgsql
+set search_path = ''
+as $
+begin
+  if new.parent_id is not null and not exists (
+    select 1
+    from public.sports_catalog parent
+    where parent.id = new.parent_id
+      and (
+        (new.is_system = true and parent.is_system = true)
+        or
+        (new.is_system = false and (
+          parent.is_system = true
+          or parent.user_id = new.user_id
+        ))
+      )
+  ) then
+    raise exception 'Übergeordnete Sportart ist nicht zugänglich.'
+      using errcode = '23503';
+  end if;
+  return new;
+end;
+$;
+
+drop trigger if exists sport_year_catalog_parent_guard on public.sports_catalog;
+create trigger sport_year_catalog_parent_guard
+before insert or update of parent_id, user_id, is_system
+on public.sports_catalog
+for each row execute function public.sport_year_check_catalog_parent();
+
+create or replace function public.sport_year_check_activity_sport()
+returns trigger
+language plpgsql
+set search_path = ''
+as $
+begin
+  if new.sport_id is not null and not exists (
+    select 1
+    from public.sports_catalog catalog
+    where catalog.id = new.sport_id
+      and (catalog.is_system = true or catalog.user_id = new.user_id)
+  ) then
+    raise exception 'Sportart ist nicht zugänglich.'
+      using errcode = '23503';
+  end if;
+  return new;
+end;
+$;
+
+drop trigger if exists sport_year_activity_sport_guard on public.sport_activities;
+create trigger sport_year_activity_sport_guard
+before insert or update of sport_id, user_id
+on public.sport_activities
+for each row execute function public.sport_year_check_activity_sport();
+
+create or replace function public.sport_year_check_segment_references()
+returns trigger
+language plpgsql
+set search_path = ''
+as $
+declare
+  activity_owner uuid;
+begin
+  select activity.user_id
+    into activity_owner
+  from public.sport_activities activity
+  where activity.id = new.activity_id;
+
+  if activity_owner is null or activity_owner <> (select auth.uid()) then
+    -- Service-role/admin operations may run without an end-user JWT.
+    -- The segment RLS policy remains the user-facing ownership boundary.
+    if (select auth.uid()) is not null then
+      raise exception 'Aktivität ist nicht zugänglich.'
+        using errcode = '23503';
+    end if;
+  end if;
+
+  if new.sport_id is not null and not exists (
+    select 1
+    from public.sports_catalog catalog
+    where catalog.id = new.sport_id
+      and (
+        catalog.is_system = true
+        or catalog.user_id = activity_owner
+      )
+  ) then
+    raise exception 'Segment-Sportart ist nicht zugänglich.'
+      using errcode = '23503';
+  end if;
+  return new;
+end;
+$;
+
+drop trigger if exists sport_year_segment_reference_guard on public.sport_activity_segments;
+create trigger sport_year_segment_reference_guard
+before insert or update of activity_id, sport_id
+on public.sport_activity_segments
+for each row execute function public.sport_year_check_segment_references();
+
 -- Bewusst keine anon-Rechte. Grants für authenticated werden erst nach Prüfung
 -- der Data-API-Exposition im Zielprojekt ergänzt.
 -- updated_at wird vorerst nicht automatisch geändert; ein vorhandener,
