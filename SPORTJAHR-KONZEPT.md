@@ -3,73 +3,82 @@
 Stand: 24. November 2026
 
 ## Ziel
-Die Anwendung entwickelt sich vom Trailrunning-Manager zu einem sportartenübergreifenden Jahres- und Wettkampfplaner. Trailrunning bleibt eine wichtige Disziplin, ist aber nicht mehr die begriffliche oder technische Klammer für das gesamte Jahr.
+Die Anwendung entwickelt sich vom Trailrunning-Manager zu einem universellen Sportjahr-, Trainings- und Wettkampfmanager für **gängige Sportarten**. Trailrunning bleibt ein fachlich besonders tiefes Modul, ist aber nicht mehr die technische oder begriffliche Grenze der Anwendung.
 
 Zentrale Bereiche: **Sport-Cockpit**, **Sportjahr**, **Wettkampf- & Trainingsplanung**, **Sporthistorie**.
 
-## Sportarten und Disziplinen
-Erste Ausbaustufe:
-- **Laufen**: Straßenlauf, Halbmarathon, Marathon, Trail, Ultra, Backyard.
-- **Bike**: Mountainbike, Rennrad und Gravel.
+## Sportarten – offener Umfang
+Das System wird nicht auf eine feste Liste begrenzt. Der Sportartenkatalog muss erweiterbar und konfigurierbar sein. Beispiele für den vorgesehenen Anwendungsbereich:
 
-Weitere Sportarten müssen später ergänzbar sein, ohne das Jahresmodell neu aufzubauen.
+- **Ausdauer und Outdoor:** Laufen, Trailrunning, Wandern, Radfahren (MTB, Rennrad, Gravel), Schwimmen, Rudern, Kanu/Kajak.
+- **Mehrkampf:** Triathlon, Duathlon, Staffel- und weitere Mehrdisziplinformate.
+- **Teamsport:** Fußball, Basketball, Handball, Volleyball, Hockey.
+- **Rückschlag- und Racketsport:** Tennis, Tischtennis, Badminton, Squash, Padel.
+- **Fitness und Kraft:** Fitnessstudio, Krafttraining, Gewichtheben, Functional Fitness.
+- **Winter- und Eissport:** Ski alpin, Langlauf, Snowboard, Eislauf.
+- **Weitere verbreitete Sportarten:** Turnen, Klettern, Tanzen, Kampfsport und individuelle Sportarten.
+
+Diese Beispiele sind keine abschließende Liste. Benutzerdefinierte Sportarten, Disziplinen und Wettkampfformate müssen ergänzt werden können, ohne Datenbankschema oder App-Grundstruktur ändern zu müssen.
 
 ## Verbindliche Begriffshierarchie
-1. **Sportart** – Laufen oder Bike.
-2. **Disziplin** – Marathon, Trail-Ultra, MTB, Rennrad, Gravel usw.
-3. **Aktivitätstyp** – Wettkampf, Training oder sonstiger Termin.
-4. **Aktivität/Veranstaltung** – konkreter Termin mit Strecke und Daten.
-5. **Durchführung** – persönliche Teilnahme an einem bestimmten Datum/Jahr. Eine Veranstaltung kann mehrfach absolviert werden.
+1. **Sportart** – z. B. Laufen, Fußball oder Tennis.
+2. **Disziplin/Variante** – z. B. Trail-Ultra, MTB, Einzel oder Doppel.
+3. **Aktivitätstyp** – Training, Wettkampf, Spiel, Trainingseinheit oder sonstiger Termin.
+4. **Aktivität/Ereignis** – konkreter Termin, Spiel, Wettkampf oder Training.
+5. **Durchführung/Teilnahme** – persönlicher Datensatz mit Datum, Ergebnis und Verlauf. Wiederholungen bleiben eigenständig.
 
-Sportart und Disziplin sind explizite Felder. Sie dürfen langfristig nicht aus dem Namen einer Veranstaltung abgeleitet werden.
+Sportart und Disziplin sind explizite Felder und dürfen nicht aus dem Namen abgeleitet werden. Der Katalog ist datengetrieben; keine geschlossene Enum-Liste.
 
 ## Gemeinsame Datenfelder
-- stabile ID und optionale externe Veranstaltungs-ID
+- stabile ID, Benutzerzuordnung und optionaler Bezug zu einem öffentlichen Event
 - Sportart, Disziplin und Aktivitätstyp
-- Name, Datum/Zeitraum, Ort und Land
-- Distanz (km, optional), Höhenmeter bergauf (m, optional)
-- geplante und tatsächliche Dauer
-- Status: geplant, absolviert, abgesagt oder DNF
-- Notizen, Quelle und Prüfstatus
+- Titel, Datum/Zeitraum, Ort und Land
+- optionale Distanz, Höhenmeter und Dauer
+- Status, Notizen, Quelle und Prüfstatus
+- Ergebnis-/Leistungsdaten in einer sportartspezifischen Struktur
 
-Nicht jede Sportart benötigt jedes Feld. Fachlich unpassende Werte bleiben leer und werden nicht als 0 dargestellt.
+Nicht jede Sportart benötigt Distanz, Höhenmeter oder Zeit. Fehlende bzw. fachlich unpassende Werte bleiben leer und werden nicht als 0 dargestellt.
 
-## Sportartspezifische Daten
+## Sportartspezifische Ergebnislogik
+Ein universelles Sportjahr darf nicht versuchen, alle Leistungen auf Kilometer und Höhenmeter zu reduzieren.
 
-### Laufen / Trail
-Cut-off, Zwischenzeiten, UTMB Index/Kategorie (nur falls zutreffend), GPX, Höhenprofil, Verpflegungsstellen, Pflichtausrüstung, Backyard-Runden, Platzierung und DNF.
+- **Laufen/Trail:** Distanz, Höhenmeter, Pace, Cut-off, Zwischenzeiten, GPX, Höhenprofil, Pflichtausrüstung, UTMB Index/Kategorie nur wenn zutreffend.
+- **Backyard:** eigenständiges rundenbasiertes Format. Rundenanzahl ist die führende Kennzahl; Rundenlänge ist eventbezogen konfigurierbar (6,7 km nur Standardwert), Rundenzeiten, Gesamtzeit und DNF/Ausscheiden bleiben erhalten.
+- **Bike:** MTB/Rennrad/Gravel und weitere Varianten; Distanz, Höhenmeter, Zeit, Untergrund, Strecke und Ergebnis.
+- **Triathlon/Mehrkampf:** Gesamtzeit plus geordnete Segmente (z. B. Schwimmen, Rad, Laufen) und Wechselzeiten. Ein Segment wird nicht zusätzlich als separate Sportaktivität gezählt.
+- **Teamsport:** Mannschaft/Team, Gegner, Spieltermin, Einsatz/Rolle und Ergebnis/Spielstand.
+- **Racketsport:** Gegner bzw. Doppelpartner, Matchformat, Sätze und Spielstand.
+- **Kraft/Fitness:** Übung, Sätze, Wiederholungen, Gewicht, Dauer und Trainingsprogramm.
+- **Schwimmen/Wassersport:** Distanz, Bahnen/Runden, Stil bzw. Disziplin, Zeit und optionale Segmentdaten.
+- **Winter-/Bergsport:** Disziplin, Zeit, Höhenmeter, Abfahrten/Routen und sportartspezifische Kennzahlen.
 
-### Bike
-Bike-Disziplin (MTB/Rennrad/Gravel), GPX, Höhenprofil, Zeit, Platzierung, DNF, Untergrund/Streckenhinweise und Bike-spezifische Ausrüstung.
-
-UTMB-Felder werden ausschließlich bei passenden Laufveranstaltungen angezeigt. Bike-Aktivitäten erhalten keine UTMB-Werte.
+Sportartspezifische Daten werden modular gespeichert. Gemeinsame Kernfelder bleiben schlank; komplexe Mehrfachsegmente erhalten eine strukturierte Segmentdarstellung. Neue Sportarten müssen ohne Migration der Kernstruktur hinzufügbar sein.
 
 ## Sport-Cockpit
-Sportartenübergreifend anzeigen:
-- nächster geplanter Wettkampf oder Termin
+- nächster Wettkampf, Spieltag oder geplanter Termin
 - geplante und absolvierte Aktivitäten
-- Jahresdistanz und Höhenmeter getrennt nach Sportart
+- Jahresziele und Fortschritt pro Sportart
 - Trainingsumfang und Verlauf
-- persönliche Jahresziele und Fortschritt
+- sportartspezifische Kennzahlen statt künstlicher Einheitswertung
 
-Lauf- und Bike-Kilometer werden getrennt ausgewiesen. Gemeinsame Zeit- oder Aktivitätszahlen können ergänzend erscheinen. Es gibt keine künstliche gemeinsame Leistungskennzahl.
+Kennzahlen verschiedener Sportarten werden nicht unpassend addiert oder in eine künstliche gemeinsame Leistungskennzahl umgerechnet.
 
 ## Sportjahr und Kalender
-- gemeinsamer chronologischer Kalender für Wettkämpfe, Training und relevante Buchungen
-- Filter für Sportart und Disziplin
-- sportartspezifische Symbole innerhalb der NORTHBOUND-Farbwelt
-- tatsächliche Dauer bei mehrtägigen Wettkämpfen
+- gemeinsamer chronologischer Kalender für Training, Wettkämpfe, Spiele und relevante Buchungen
+- Filter nach Sportart, Disziplin, Aktivitätstyp und Zeitraum
+- passende Symbole und kompakte sportartspezifische Informationen
+- mehrtägige Ereignisse mit korrekter Dauer
 - Unterkunft und Buchung bleiben mit dem jeweiligen Ereignis verknüpft
 
 ## Historie und Wiederholungen
-Jede Durchführung speichert ihr eigenes Datum, Ergebnis, tatsächliche Werte und ihre eigene Bewertung. Frühere Ergebnisse dürfen nicht überschrieben werden.
+Jede Durchführung speichert eigenes Datum, Ergebnis, tatsächliche Werte und Bewertung. Frühere Ergebnisse dürfen nicht überschrieben werden. Team-, Einzel- und Mehrkampfresultate müssen unterscheidbar sein.
 
 ## Migration und Rückwärtskompatibilität
 1. Bestehende Event-IDs, Strecken-IDs, Planner-Einträge, Ergebnisse, UTMB-Daten, GPX-Referenzen und Unterkunftsverknüpfungen bleiben erhalten.
-2. Der vorhandene Veranstaltungsbestand bleibt zunächst Laufbestand; vorhandene Trail-/Marathon-Unterscheidungen bleiben bestehen.
-3. Neue Sportart- und Disziplinfelder werden additiv eingeführt. Alte gespeicherte Planungen müssen weiter lesbar bleiben.
-4. Bike-Aktivitäten werden separat in das Sportjahr aufgenommen und dürfen nicht in Trail-/UTMB-Auswertungen geraten.
-5. Keine automatische Umdeutung vorhandener Laufdaten. Migrationen erhalten Tests für Altbestände und Wiederholungen.
+2. Der bestehende Lauf-/Trail-Veranstaltungsbestand bleibt unverändert und wird nicht pauschal umklassifiziert.
+3. Neue Sportarten und Disziplinen werden additiv und datengetrieben ergänzt.
+4. Sportartspezifische Kennzahlen dürfen nicht in falschen Modulen erscheinen.
+5. Keine automatische Umdeutung oder Löschung bestehender Daten. Migrationen benötigen Altbestands-, Duplikat- und Wiederholungstests.
 
 ## Navigation – Zielbild
 - Cockpit → **Sport-Cockpit**
@@ -81,15 +90,16 @@ Jede Durchführung speichert ihr eigenes Datum, Ergebnis, tatsächliche Werte un
 Beschriftungen werden erst umgestellt, wenn die zugehörigen Ansichten und Filter fachlich korrekt funktionieren.
 
 ## Umsetzungsreihenfolge
-1. Gemeinsames Datenmodell und Kompatibilitäts-/Migrationstests.
-2. Sportart- und Disziplinfelder in Planung und Historie.
-3. Bike-Aktivitäten und Bike-Wettkämpfe ergänzen.
-4. Sportjahr-Kalender mit Sportartfiltern.
-5. Sport-Cockpit mit getrennten Kennzahlen und nächsten Terminen.
+1. Offenes Sportarten-/Disziplinmodell und Kompatibilität absichern.
+2. Gemeinsame Aktivitäten und sportartspezifische Ergebnisstrukturen implementieren.
+3. Bestehende Lauf-/Trail-Funktionen unverändert integrieren.
+4. Weitere Sportarten modular ergänzen; zuerst generische Erfassung, danach spezialisierte Ergebnisansichten.
+5. Sportjahr-Kalender und Sport-Cockpit sportartenübergreifend aufbauen.
 6. Navigation und Beschriftungen auf Sportjahr umstellen.
-7. Bestehende Lauf-/Trail-/UTMB-Funktionen vollständig regressionsprüfen.
+7. Regressionstests für Altbestand, Wiederholungen und sportartspezifische Kennzahlen.
 
-## Nicht-Ziele der ersten Stufe
-- Keine neue Bike-Plattform-Synchronisation ohne gesonderte Freigabe.
-- Keine Umrechnung von Lauf- und Bike-Leistung in eine künstliche gemeinsame Kennzahl.
+## Nicht-Ziele
+- Keine geschlossene Sportartenliste.
+- Keine künstliche Umrechnung unterschiedlicher Sportleistungen in eine Einheitskennzahl.
 - Keine Löschung oder pauschale Neuzuordnung bestehender Veranstaltungen.
+- Keine produktive Datenbankmigration ohne gesonderte Sicherheits- und Abnahmeprüfung.
