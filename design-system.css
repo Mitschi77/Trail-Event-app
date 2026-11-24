@@ -1370,8 +1370,10 @@ input[type="checkbox"],input[type="radio"]{
   border:1px solid #40505E!important;
 }
 /* Completion badges and progress bars: ice blue on slate. */
-#plannedEventDetailContent :is(.race-cutoff-ok,.race-check-track i,.training-bar,.race-detail-metric strong){
+#plannedEventDetailContent :is(.race-cutoff-ok,.race-detail-metric strong){
   color:#7FD8FF!important;
+}
+#plannedEventDetailContent :is(.race-check-track i,.training-bar){
   background-color:#7FD8FF!important;
 }
 #plannedEventDetailContent .race-check-track i,
