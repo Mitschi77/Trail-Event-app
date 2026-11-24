@@ -78,6 +78,27 @@
       item.title = String(data.get('title') || '').trim() || 'Aktivität';
       item.distanceKm = distanceKm;
       item.elevationGainM = elevationGainM;
+      if (Array.isArray(item.segments) && item.segments.length) {
+        item.segments = item.segments.map((segment, index) => {
+          const next = { ...segment };
+          if (segment.distance != null) {
+            const value = parseNonNegative('segmentDistance_' + index);
+            if (value === null) throw new Error('Segmentdistanz muss eine Zahl ab 0 sein.');
+            next.distance = value;
+          }
+          if (segment.durationSeconds != null) {
+            const value = parseNonNegative('segmentDuration_' + index);
+            if (value === null) throw new Error('Segmentzeit muss eine Zahl ab 0 sein.');
+            next.durationSeconds = value;
+          }
+          return next;
+        });
+        const segmentDistances = item.segments.filter(segment => segment.distance != null)
+          .reduce((sum, segment) => sum + Number(segment.distance), 0);
+        if (item.segments.some(segment => segment.distance != null)) {
+          item.distanceKm = Number(segmentDistances.toFixed(3));
+        }
+      }
       this.editingId = null;
       this.render();
     }
@@ -210,6 +231,20 @@
               const input=document.createElement('input');input.name=name;input.value=String(value);input.type=name==='title'?'text':'number';if(name!=='title'){input.min='0';input.step='any';input.inputMode='decimal';input.required=false;}
               field.appendChild(input);form.appendChild(field);
             }
+            if (Array.isArray(item.segments)) {
+              item.segments.forEach((segment, index) => {
+                if (segment.distance != null) {
+                  const field=document.createElement('label');field.textContent=(segment.name || segment.segmentType || 'Segment')+' · Distanz (km)';
+                  const input=document.createElement('input');input.name='segmentDistance_'+index;input.type='number';input.min='0';input.step='any';input.value=String(segment.distance);
+                  field.appendChild(input);form.appendChild(field);
+                }
+                if (segment.durationSeconds != null) {
+                  const field=document.createElement('label');field.textContent=(segment.segmentType==='transition_1'?'Wechselzeit T1':segment.segmentType==='transition_2'?'Wechselzeit T2':(segment.name || segment.segmentType || 'Segment'))+' · Zeit (Sekunden)';
+                  const input=document.createElement('input');input.name='segmentDuration_'+index;input.type='number';input.min='0';input.step='1';input.value=String(segment.durationSeconds);
+                  field.appendChild(input);form.appendChild(field);
+                }
+              });
+            }
             const controls=document.createElement('div');controls.className='sy-edit-actions';
             const save=document.createElement('button');save.type='submit';save.textContent='Speichern';
             const cancel=document.createElement('button');cancel.type='button';cancel.dataset.action='cancel';cancel.dataset.id=item.id;cancel.textContent='Abbrechen';
@@ -234,7 +269,7 @@
             const label=document.createElement('p');label.textContent='Mehrkampf-/Aktivitätssegmente';body.appendChild(label);
             for(const segment of item.segments){
               const line=document.createElement('div');line.className='sy-segment';
-              const segmentName=segment.name || labels[segment.sportCode] || segment.sportCode || 'Segment';
+              const segmentName=segment.name || (segment.segmentType==='transition_1'?'Wechselzeit T1':segment.segmentType==='transition_2'?'Wechselzeit T2':labels[segment.sportCode] || segment.segmentType || 'Segment');
               const segmentFacts=[segment.distance!=null?Number(segment.distance).toFixed(1)+' '+(segment.distanceUnit||'km'):'',segment.durationSeconds!=null?durationLabel(segment.durationSeconds):''].filter(Boolean);
               line.textContent=segment.sequence+'. '+segmentName+(segmentFacts.length?' · '+segmentFacts.join(' · '):'');
               body.appendChild(line);
