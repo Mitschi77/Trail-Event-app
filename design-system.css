@@ -2893,3 +2893,84 @@ body{
 @media(prefers-reduced-motion:reduce){
   html{scroll-behavior:auto!important}
 }
+
+
+/* NORTHBOUND · Mobile QA pass 2
+   iPhone portrait/landscape, iPad split layouts and horizontally wide data tables. */
+:where(#events .route-info-panel,.segment-table,.review-compare-wrap,.review-compare-table-wrap){
+  max-width:100%;
+  min-width:0;
+  overscroll-behavior-x:contain;
+  -webkit-overflow-scrolling:touch
+}
+:where(#events .route-info-panel,.segment-table,.review-compare-wrap,.review-compare-table-wrap){
+  overflow-x:auto
+}
+:where(#events .route-info-panel table,.segment-table table,.review-compare-table){
+  max-width:100%;
+  border-collapse:separate;
+  border-spacing:0
+}
+#events .route-info-panel table,
+.segment-table table,
+.review-compare-table{
+  display:block;
+  width:100%;
+  overflow-x:auto;
+  -webkit-overflow-scrolling:touch
+}
+:where(.event,.route,.plan-card,.year-group,.calendar-card,.planner-panel,.planner-review,.nb-insight-panel,.nb-quality-row){
+  min-width:0;
+  overflow-wrap:anywhere
+}
+:where(.event,.route,.plan-card,.year-group,.calendar-card,.planner-panel,.planner-review) :where(img,svg,canvas,iframe){
+  max-width:100%
+}
+@media(max-width:700px){
+  :where(.toolbar,.planner-grid,.planner-columns,.edit-grid,.routegrid,.year-calendar-grid,.nb-quality-stats,.nb-recovery-suggestions)>*{
+    min-width:0
+  }
+  :where(.app-menu-dropdown,.event-detail-dialog,.elevation-profile-modal,.elevation-chart-modal,.elevation-popup,.profile-popup){
+    overscroll-behavior:contain;
+    scrollbar-gutter:stable
+  }
+  :where(.app-menu-dropdown,.event-detail-dialog,.elevation-profile-modal,.elevation-chart-modal,.elevation-popup,.profile-popup) :where(button,a,[role="button"]){
+    scroll-margin-block:12px
+  }
+  #events .route-info-panel table,
+  .segment-table table,
+  .review-compare-table{
+    min-width:520px
+  }
+  :where(.planner-grid,.planner-columns,.edit-grid)>label,
+  :where(.planner-grid,.planner-columns,.edit-grid)>div{
+    overflow-wrap:anywhere
+  }
+}
+@media(max-width:390px){
+  :where(.nb-quality-stats,.nb-quality-controls,.nb-recovery-suggestions){
+    grid-template-columns:minmax(0,1fr)
+  }
+  .nb-quality-stat:last-child{grid-column:auto}
+  :where(#events .route-info-panel,.segment-table,.review-compare-wrap,.review-compare-table-wrap){
+    margin-inline:-2px;
+    max-width:calc(100% + 4px)
+  }
+}
+@media(min-width:701px) and (max-width:1100px){
+  :where(.event,.route,.plan-card,.calendar-card,.planner-panel,.planner-review){
+    min-width:0
+  }
+  #events .route-info-panel table,
+  .segment-table table,
+  .review-compare-table{
+    max-width:100%
+  }
+}
+@media(orientation:landscape) and (max-height:500px){
+  :where(.app-menu-dropdown,.event-detail-dialog,.elevation-profile-modal,.elevation-chart-modal,.elevation-popup,.profile-popup){
+    max-height:calc(100dvh - var(--nb-safe-top) - var(--nb-safe-bottom) - 12px)!important;
+    overflow-y:auto!important;
+    overscroll-behavior:contain
+  }
+}
