@@ -9,7 +9,7 @@ assert.match(board, /document\.addEventListener\('sport-year-activity'/);
 assert.match(board, /data-year/);
 assert.match(board, /data-sport/);
 assert.match(board, /Gesamtdistanz/);
-assert.match(board, /Höhenmeter/);
+assert.match(board, /Höhenmeter/);\nassert.match(board, /data-duration/);\nassert.match(board, /Trainingszeit/);\nassert.match(board, /groupDuration/);\nassert.match(board, /groupHm/);
 assert.match(board, /Aktivitätsdetails/);
 assert.match(board, /Mehrkampf-\/Aktivitätssegmente/);
 assert.match(board, /durationLabel/);
