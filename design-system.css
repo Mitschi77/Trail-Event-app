@@ -3223,3 +3223,45 @@ html,body{background:var(--nb-bg);color:var(--nb-white)}
 @media(prefers-reduced-motion:reduce){
   .season-training-panel *{transition:none!important;animation:none!important}
 }
+
+
+/* Explicit cockpit mount: keep the independent start area visually distinct. */
+#seasonCockpit{
+  display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;
+  min-width:0;margin:0 0 14px
+}
+#seasonCockpit>:first-child{grid-column:1/-1}
+#seasonCockpit :is(.stat,.kpi,.metric,.cockpit-card,.season-card,.season-kpi,.season-metric){
+  min-width:0;border:1px solid #344B5D!important;border-radius:14px!important;
+  background:linear-gradient(145deg,#192A36,#121D27)!important;
+  color:var(--nb-white)!important
+}
+#seasonCockpit :is(.stat b,.kpi b,.metric b,.stat strong,.kpi strong,.metric strong){
+  color:var(--nb-ice)!important;font-variant-numeric:tabular-nums
+}
+#seasonCockpit :is(.next-race,.next-event,.season-next-race,.cockpit-next-race){
+  border-left:4px solid var(--nb-orange)!important
+}
+#seasonCockpit :is(.progress-ring,.season-progress-ring,.cockpit-progress-ring){
+  border-radius:50%;outline:1px solid #405565;outline-offset:3px
+}
+#seasonCockpit :is(.season-timeline,.season-lane,.cockpit-timeline){
+  display:flex;gap:8px;overflow-x:auto;scroll-snap-type:x proximity
+}
+#seasonCockpit :is(.season-block,.timeline-block,.cockpit-timeline-item){
+  flex:1 0 120px;scroll-snap-align:start;border-top:3px solid var(--nb-ice)!important
+}
+#events .routegrid>span{
+  display:grid;gap:3px;min-width:0;padding:9px 10px;
+  border:1px solid #344653;border-radius:10px;background:#101820
+}
+#events .routegrid>span b{font-size:17px;line-height:1.1;color:var(--nb-ice)!important}
+#events .routegrid>span small{color:var(--nb-muted);font-size:9px;text-transform:uppercase;letter-spacing:.05em}
+@media(max-width:760px){
+  #seasonCockpit{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+  #seasonCockpit>:first-child{grid-column:1/-1}
+}
+@media(max-width:420px){
+  #seasonCockpit{grid-template-columns:minmax(0,1fr)}
+  #seasonCockpit>:first-child{grid-column:auto}
+}
