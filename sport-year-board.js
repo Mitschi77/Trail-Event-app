@@ -99,10 +99,12 @@
         return (year === 'all' || y === year) && (sport === 'all' || x.sportCode === sport);
       }).sort((a,b) => String(b.startsAt || '').localeCompare(String(a.startsAt || '')));
       const km = selected.reduce((sum,x) => sum + (Number(x.distanceKm) || Number(x.result?.totalDistanceKm) || 0),0);
-      const hm = selected.reduce((sum,x) => sum + (Number(x.elevationGainM) || 0),0);\n      const duration = selected.reduce((sum,x) => sum + (Number(x.durationSeconds) || 0),0);
+      const hm = selected.reduce((sum,x) => sum + (Number(x.elevationGainM) || 0),0);
+      const duration = selected.reduce((sum,x) => sum + (Number(x.durationSeconds) || 0),0);
       this.querySelector('[data-count]').textContent = String(selected.length);
       this.querySelector('[data-km]').textContent = km.toFixed(1) + ' km';
-      this.querySelector('[data-hm]').textContent = Math.round(hm).toLocaleString('de-DE') + ' hm';\n      this.querySelector('[data-duration]').textContent = durationLabel(duration) || '0 min';
+      this.querySelector('[data-hm]').textContent = Math.round(hm).toLocaleString('de-DE') + ' hm';
+      this.querySelector('[data-duration]').textContent = durationLabel(duration) || '0 min';
       const list = this.querySelector('.sy-list');
       list.replaceChildren();
       if (!selected.length) { const empty=document.createElement('p');empty.className='sy-empty';empty.textContent='Noch keine Aktivitäten erfasst. Fülle oben das Formular aus und übernimm den Eintrag.';list.appendChild(empty);return; }
@@ -110,7 +112,11 @@
       selected.forEach(item => { const key=labels[item.sportCode] || item.sportCode || 'Andere Sportart'; if(!groups.has(key))groups.set(key,[]);groups.get(key).push(item); });
       for (const [name,items] of groups) {
         const section=document.createElement('section');section.className='sy-group';
-        const heading=document.createElement('h3');heading.textContent=name + ' · ' + items.length;\n        const groupKm=items.reduce((sum,x)=>sum+(Number(x.distanceKm)||Number(x.result?.totalDistanceKm)||0),0);\n        const groupHm=items.reduce((sum,x)=>sum+(Number(x.elevationGainM)||0),0);\n        const groupDuration=items.reduce((sum,x)=>sum+(Number(x.durationSeconds)||0),0);\n        const groupMeta=document.createElement('small');groupMeta.textContent=groupKm.toFixed(1)+' km · '+Math.round(groupHm).toLocaleString('de-DE')+' hm · '+(durationLabel(groupDuration)||'0 min');heading.appendChild(groupMeta);section.appendChild(heading);
+        const heading=document.createElement('h3');heading.textContent=name + ' · ' + items.length;
+        const groupKm=items.reduce((sum,x)=>sum+(Number(x.distanceKm)||Number(x.result?.totalDistanceKm)||0),0);
+        const groupHm=items.reduce((sum,x)=>sum+(Number(x.elevationGainM)||0),0);
+        const groupDuration=items.reduce((sum,x)=>sum+(Number(x.durationSeconds)||0),0);
+        const groupMeta=document.createElement('small');groupMeta.textContent=groupKm.toFixed(1)+' km · '+Math.round(groupHm).toLocaleString('de-DE')+' hm · '+(durationLabel(groupDuration)||'0 min');heading.appendChild(groupMeta);section.appendChild(heading);
         for (const item of items) {
           const row=document.createElement('article');row.className='sy-activity';
           const left=document.createElement('div'), title=document.createElement('strong'), meta=document.createElement('small');
