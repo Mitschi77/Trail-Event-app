@@ -693,11 +693,21 @@ assert.ok(seasonTools.includes('year-month-nav') && seasonTools.includes('data-m
 assert.ok(seasonTools.includes('window.renderYearOverview=function(){originalYearOverview();groupYearMonths();}') && seasonTools.includes('year-month-races'),
   "Month accordions must refresh after each annual overview render and preserve the original race cards");
 
-assert.ok(html.includes('--bg:#101713') && html.includes('--ink:#f0f5f1') && html.includes('color-scheme:dark'),
-  "The existing fixed dark theme and readable contrast tokens must remain in place");
+assert.ok(html.includes('--bg:#0b1117') && html.includes('--ink:#f1f5f8') && html.includes('color-scheme:dark'),
+  "The NORTHBOUND dark theme and readable contrast tokens must remain in place");
+
+assert.ok(html.includes('<details id="accountMenuGroup" class="app-menu-group">') &&
+  !html.includes('<details id="accountMenuGroup" class="app-menu-group" open>') &&
+  html.includes("if(accountGroup)accountGroup.open=false") &&
+  html.includes("if(accountGroup)accountGroup.open=true"),
+  "Account and synchronization must start collapsed, reset when the menu closes, and open explicitly when login is required");
+assert.ok(html.includes('#appMenuDropdown #missingCount{background:#243746!important') &&
+  html.includes('color:#BFEAFF!important'),
+  "The open-data count badge must use neutral graphite and ice-blue colors, never green");
 
 
-// Explanatory help must be tucked behind accessible green information controls.
+
+// Explanatory help must be tucked behind accessible NORTHBOUND information controls.
 const infoTipCount = (html.match(/class="info-tip"/g) || []).length;
 assert.ok(infoTipCount >= 7, "Core app sections must provide contextual information behind the info icon");
 assert.ok(html.includes('aria-label="Informationen zur Jahresübersicht"') &&
