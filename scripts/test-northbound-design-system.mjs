@@ -18,7 +18,12 @@ for (const selector of [
   "#events",
   "#yearOverview",
   "#plannerTab",
-  "#historyTab"
+  "#historyTab",
+  "#seasonTimeline",
+  "#seasonRaceCards",
+  "#yearCalendar",
+  "#northboundRecoveryPlanner",
+  "#northboundEventQuality"
 ]) {
   assert.ok(css.includes(selector), `Missing visual-first treatment: ${selector}`);
 }
