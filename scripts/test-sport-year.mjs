@@ -12,7 +12,6 @@ const triathlon = SportYear.normalizeActivity({
   disciplineCode: 'olympic',
   activityType: 'race',
   title: 'Triathlon',
-  distanceKm: 51.5,
   durationSeconds: 9000,
   segments: [
     { sequence: 3, segmentType: 'run', sportCode: 'running', distance: 10, distanceUnit: 'km' },
@@ -24,6 +23,8 @@ const triathlon = SportYear.normalizeActivity({
 assert.deepEqual(triathlon.segments.map(segment => segment.segmentType), ['swim', 'bike', 'run', 'transition']);
 const summary = SportYear.summarizeActivity(triathlon);
 assert.equal(summary.distanceKm, 51.5, 'Gesamtdistanz bleibt auf Aktivitätsebene; Segmente werden nicht addiert.');
+assert.equal(summary.durationSeconds, 9000, 'Trainingsdauer bleibt einmalig auf Aktivitätsebene; Wechselzeiten werden nicht doppelt addiert.');
+assert.equal(triathlon.segments.filter(segment => segment.durationSeconds !== null).reduce((sum, segment) => sum + segment.durationSeconds, 0), 120, 'Wechselzeit bleibt als Segmentdetail erhalten und wird nicht zur Aktivitätsdauer addiert.');
 assert.equal(summary.segmentCount, 4);
 
 const backyard = SportYear.normalizeBackyardResult({ rounds: 12, lapTimesSeconds: [3600, 3610], outcome: 'dnf' });
