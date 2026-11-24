@@ -2450,63 +2450,8 @@ window.trailReviewPushClick=function(event){
     window.trailReviewPushClick(event);
   });
 })();
-// Robust capture-phase binding for both push controls. This survives tab rendering
-// and prevents an earlier component handler from swallowing the tap.
-(function bindReviewPushControlsCapture(){
-  if(document.documentElement.dataset.reviewPushCaptureBound==='1')return;
-  document.documentElement.dataset.reviewPushCaptureBound='1';
-  document.addEventListener('pointerdown',function(event){
-    const button=event.target?.closest?.('#enableReviewNotifications,#sendOwnerPushTest');
-    if(!button)return;
-    const status=document.getElementById('reviewNotificationStatus');
-    if(status)status.textContent='Berührung erkannt – Push-Schaltfläche wird angesprochen …';
-  },true);
-  document.addEventListener('click',function(event){
-    const button=event.target?.closest?.('#enableReviewNotifications,#sendOwnerPushTest');
-    if(!button)return;
-    event.preventDefault();
-    event.stopPropagation();
-    const status=document.getElementById('reviewNotificationStatus');
-    if(!status)return;
-    if(button.id==='enableReviewNotifications'){
-      status.textContent='Klick erkannt – Push-Einrichtung startet …';
-      if(typeof window.trailReviewPushClick==='function')window.trailReviewPushClick(event);
-      else status.textContent='Push-Einrichtung ist nicht geladen. Bitte Seite neu laden.';
-      return;
-    }
-    status.textContent='Klick erkannt – Test-Push startet …';
-    if(typeof window.trailOwnerPushTestClick==='function')window.trailOwnerPushTestClick(event);
-    else status.textContent='Test-Push-Funktion ist nicht geladen. Bitte Seite neu laden.';
-  },true);
-})();
-// Temporary touch-target diagnostics for the owner push panel.
-(function bindPushTouchDiagnostics(){
-  if(document.documentElement.dataset.pushTouchDiagnostics==='1')return;
-  document.documentElement.dataset.pushTouchDiagnostics='1';
-  function setBootStatus(){
-    const status=document.getElementById('reviewNotificationStatus');
-    if(status)status.textContent='Diagnose aktiv · Skript geladen · warte auf Berührung';
-  }
-  setBootStatus();
-  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',setBootStatus,{once:true});
-  function describe(el){
-    if(!el)return 'kein Element';
-    const tag=(el.tagName||'ELEMENT').toLowerCase();
-    const id=el.id?'#'+el.id:'';
-    const cls=typeof el.className==='string'&&el.className.trim()?'.'+el.className.trim().split(/\s+/).slice(0,2).join('.'):'';
-    return tag+id+cls;
-  }
-  function report(event){
-    const status=document.getElementById('reviewNotificationStatus');
-    if(!status)return;
-    const point=event.changedTouches&&event.changedTouches[0] ? event.changedTouches[0] : event;
-    const hit=Number.isFinite(point.clientX)&&Number.isFinite(point.clientY)
-      ? document.elementFromPoint(point.clientX,point.clientY) : event.target;
-    const inReview=!!event.target?.closest?.('#reviewTab');
-    status.textContent='Diagnose '+event.type+': Ziel '+describe(event.target)+' · Treffer '+describe(hit)+(inReview?' · Prüfungsbereich':' · außerhalb Prüfung');
-  }
-  ['touchstart','pointerdown','click'].forEach(type=>document.addEventListener(type,report,{capture:true,passive:type==='touchstart'}));
-})();
+// Push controls use their own direct click handlers; no document-level interception.
+// Temporary touch diagnostics removed after click-path investigation.
 window.addEventListener('error',function(e){
   const status=document.getElementById('cloudCheckStatus');
   if(status)status.textContent='JavaScript-Fehler: '+(e.message||'Unbekannt')+' · Zeile '+(e.lineno||'?');
