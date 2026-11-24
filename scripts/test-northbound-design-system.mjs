@@ -1,9 +1,10 @@
 import assert from "node:assert/strict";
 import { readFile } from "node:fs/promises";
 
-const [css, season] = await Promise.all([
+const [css, season, alpine] = await Promise.all([
   readFile(new URL("../design-system.css", import.meta.url), "utf8"),
-  readFile(new URL("../season-tools.js", import.meta.url), "utf8")
+  readFile(new URL("../season-tools.js", import.meta.url), "utf8"),
+  readFile(new URL("../alpine-performance.js", import.meta.url), "utf8")
 ]);
 
 for (const color of ["#0B1117", "#FF6A00", "#7FD8FF", "#F5F7FA"]) {
@@ -33,5 +34,9 @@ assert.doesNotMatch(season, /var\(--green\)|var\(--lime\)/,
   "Injected season styles must not reintroduce legacy green/lime variables.");
 assert.match(season, /#FF6A00/);
 assert.match(season, /#7FD8FF/);
+assert.match(alpine, /document\.getElementById\(\x27missingTab\x27\)/,
+  "Event quality overview must live under Data & Verwaltung > Offene Angaben.");
+assert.doesNotMatch(alpine, /document\.getElementById\(\x27eventsTab\x27\)/,
+  "Event quality overview must not be mounted in the Events list.");
 
 console.log("NORTHBOUND visual-first design system tests passed.");
