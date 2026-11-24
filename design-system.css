@@ -3265,3 +3265,189 @@ html,body{background:var(--nb-bg);color:var(--nb-white)}
   #seasonCockpit{grid-template-columns:minmax(0,1fr)}
   #seasonCockpit>:first-child{grid-column:auto}
 }
+
+
+/* NORTHBOUND · concrete mounts verified against the current app modules. */
+#seasonTimeline{
+  display:grid;gap:12px;align-items:stretch;min-width:0
+}
+#seasonTimeline>.season-timeline,
+#seasonTimeline>.season-lane{
+  min-width:0
+}
+#seasonTimeline #northboundRecoveryPlanner{
+  order:2;min-width:0;padding:17px;border:1px solid #344B5D;border-radius:16px;
+  background:linear-gradient(145deg,#172633,#101820);box-shadow:0 10px 28px #0004
+}
+#northboundRecoveryPlanner .nb-insight-head{
+  display:flex;justify-content:space-between;align-items:flex-start;gap:14px
+}
+#northboundRecoveryPlanner .nb-insight-head h3{
+  margin:4px 0;color:var(--nb-white);font-size:18px;letter-spacing:-.03em
+}
+#northboundRecoveryPlanner .nb-insight-head p,
+#northboundRecoveryPlanner .nb-insight-status,
+#northboundRecoveryPlanner .nb-insight-empty{
+  color:var(--nb-muted);font-size:11px;line-height:1.5
+}
+#northboundRecoveryPlanner .nb-recovery-setting{
+  display:flex;align-items:end;gap:8px;flex-wrap:wrap
+}
+#northboundRecoveryPlanner .nb-recovery-setting label{
+  display:grid;gap:5px;color:var(--nb-muted);font-size:10px
+}
+#northboundRecoveryPlanner .nb-recovery-setting input{
+  width:110px;min-height:40px;background:#0B1117;color:var(--nb-white);
+  border:1px solid #405565;border-radius:9px;padding:8px
+}
+#northboundRecoveryPlanner .nb-recovery-setting button{
+  min-height:40px;background:var(--nb-orange);color:#0B1117;border:1px solid var(--nb-orange)
+}
+#northboundRecoveryPlanner .nb-recovery-last{
+  display:grid;gap:4px;padding:12px;margin:10px 0;border:1px solid #405565;
+  border-left:3px solid var(--nb-orange);border-radius:11px;background:#18232D
+}
+#northboundRecoveryPlanner .nb-recovery-last strong{color:var(--nb-white);font-size:13px}
+#northboundRecoveryPlanner .nb-recovery-last span{color:var(--nb-muted);font-size:10px}
+#northboundRecoveryPlanner .nb-recovery-timeline{
+  display:flex;gap:8px;min-width:0;overflow-x:auto;padding:4px 1px 10px
+}
+#northboundRecoveryPlanner .nb-recovery-phase{
+  display:grid;align-content:center;gap:5px;flex:1 0 115px;min-height:76px;
+  padding:11px;border:1px solid #405565;border-top:3px solid var(--nb-ice);
+  border-radius:11px;background:#18232D
+}
+#northboundRecoveryPlanner .nb-recovery-phase.two{border-top-color:var(--nb-orange)}
+#northboundRecoveryPlanner .nb-recovery-phase b{color:var(--nb-white);font-size:11px}
+#northboundRecoveryPlanner .nb-recovery-phase small{color:var(--nb-muted);font-size:10px}
+#seasonRaceCards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:11px;min-width:0}
+#seasonRaceCards>.season-race{
+  display:grid;align-content:start;gap:10px;min-width:0;padding:14px;
+  border:1px solid #344B5D;border-radius:15px;
+  background:linear-gradient(145deg,#182633,#111A23);box-shadow:0 8px 22px #0003
+}
+#seasonRaceCards .season-race-head{
+  display:grid;gap:5px;min-width:0
+}
+#seasonRaceCards .season-race-head :is(h3,h4,strong){
+  color:var(--nb-white);font-size:14px;line-height:1.3;overflow-wrap:anywhere
+}
+#seasonRaceCards .season-race .season-state-line{
+  display:flex;align-items:center;flex-wrap:wrap;gap:7px;color:var(--nb-muted);font-size:10px
+}
+#seasonRaceCards .season-state-pill{
+  display:inline-flex;align-items:center;gap:4px;padding:5px 8px;border-radius:999px;
+  border:1px solid #405565;background:#18232D;color:var(--nb-ice);
+  font-size:9px;font-weight:850;letter-spacing:.04em
+}
+#seasonRaceCards .season-state-pill.is-completed{
+  border-color:#405565;background:#172B39;color:var(--nb-ice)
+}
+#seasonRaceCards .season-state-pill.is-planned{
+  border-color:#765039;background:#30251F;color:#FFBD91
+}
+#seasonRaceCards .season-recovery{
+  display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px
+}
+#seasonRaceCards .season-recovery label{
+  display:grid;gap:4px;min-width:0;color:var(--nb-muted);font-size:10px
+}
+#seasonRaceCards .season-recovery input,
+#seasonRaceCards .season-recovery select{
+  min-width:0;max-width:100%;background:#0B1117;color:var(--nb-white);
+  border:1px solid #405565;border-radius:8px;padding:8px
+}
+#yearCalendar{
+  display:grid;gap:12px;min-width:0
+}
+#yearCalendar .year-calendar-year{
+  padding:13px;border:1px solid #344653;border-radius:15px;background:#121D27
+}
+#yearCalendar .year-calendar-year>h3{
+  color:var(--nb-white);font-size:16px;margin:0 0 10px
+}
+#yearCalendar .year-calendar-month{
+  padding:9px;border:1px solid #344653;border-radius:11px;background:#101820
+}
+#yearCalendar .year-calendar-month h4{
+  color:var(--nb-ice);font-size:11px;text-transform:uppercase;letter-spacing:.07em
+}
+#yearCalendar .year-calendar-days{
+  display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:4px
+}
+#yearCalendar .year-calendar-day{
+  display:grid;align-content:center;justify-items:center;gap:3px;min-width:0;min-height:38px;
+  padding:4px;border:1px solid transparent;border-radius:8px;
+  background:#18232D;color:#DCE6ED;font-size:10px;font-variant-numeric:tabular-nums
+}
+#yearCalendar .year-calendar-day.has-event{
+  background:#FF6A00!important;border-color:#FF6A00!important;color:#0B1117!important;font-weight:900
+}
+#yearCalendar .year-calendar-day.has-hotel{
+  background:#7FD8FF!important;border-color:#7FD8FF!important;color:#0B1117!important;font-weight:900
+}
+#yearCalendar .year-calendar-day.has-event.has-hotel{
+  background:linear-gradient(135deg,#FF6A00 0 50%,#7FD8FF 50% 100%)!important;
+  border-color:#F5F7FA!important;color:#0B1117!important
+}
+#yearCalendar .year-calendar-day.today{outline:2px solid #F5F7FA;outline-offset:1px}
+#yearCalendar .year-calendar-day.empty{background:transparent;border-color:transparent}
+#yearCalendar .hotel-range-stack{display:flex;gap:2px;width:100%;height:3px}
+#yearCalendar .hotel-range-bar{flex:1;height:3px;border-radius:4px;background:#0B1117}
+#northboundEventQuality{
+  margin:0 0 14px;padding:16px;border:1px solid #344B5D;border-radius:16px;
+  background:linear-gradient(145deg,#172633,#101820);box-shadow:0 10px 28px #0004
+}
+#northboundEventQuality .nb-insight-head h3{
+  color:var(--nb-white);font-size:18px;letter-spacing:-.03em
+}
+#northboundEventQuality .nb-insight-head p{
+  color:var(--nb-muted);font-size:11px;line-height:1.5;max-width:700px
+}
+#northboundEventQuality .nb-quality-stats{
+  display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:9px;margin:12px 0
+}
+#northboundEventQuality .nb-quality-stat{
+  min-width:0;padding:12px;border:1px solid #344B5D;border-radius:12px;
+  background:linear-gradient(145deg,#1A2A37,#121D27)
+}
+#northboundEventQuality .nb-quality-stat b{
+  display:block;color:var(--nb-ice);font-size:25px;font-variant-numeric:tabular-nums
+}
+#northboundEventQuality .nb-quality-stat span{
+  color:var(--nb-muted);font-size:10px;line-height:1.4
+}
+#northboundEventQuality .nb-quality-controls input,
+#northboundEventQuality .nb-quality-controls select{
+  min-height:40px;background:#0B1117;color:var(--nb-white);border:1px solid #405565;border-radius:9px
+}
+#northboundEventQuality .nb-quality-list{display:grid;gap:7px}
+#northboundEventQuality .nb-quality-row{
+  border:1px solid #344653;border-radius:11px;background:#121D27;overflow:hidden
+}
+#northboundEventQuality .nb-quality-row>summary{
+  min-height:50px;padding:10px 12px
+}
+#northboundEventQuality .nb-quality-row>summary b{color:var(--nb-white)}
+#northboundEventQuality .nb-quality-detail{border-top:1px solid #344653}
+#northboundEventQuality .nb-quality-value.good{color:var(--nb-ice)}
+#northboundEventQuality .nb-quality-value.warn{color:#FFBD91}
+#northboundEventQuality .nb-quality-value.bad{color:#F5F7FA!important}
+#northboundEventQuality .nb-quality-warnings{color:#FFBD91!important}
+@media(max-width:760px){
+  #seasonRaceCards{grid-template-columns:minmax(0,1fr)}
+  #northboundEventQuality .nb-quality-stats{grid-template-columns:repeat(2,minmax(0,1fr))}
+  #northboundEventQuality .nb-quality-stat:last-child{grid-column:1/-1}
+  #northboundRecoveryPlanner .nb-insight-head{display:grid}
+  #northboundRecoveryPlanner .nb-recovery-setting{width:100%}
+  #yearCalendar .year-calendar-year{padding:9px}
+  #yearCalendar .year-calendar-month{padding:6px}
+  #yearCalendar .year-calendar-day{min-height:34px}
+}
+@media(max-width:420px){
+  #seasonRaceCards>.season-race{padding:11px}
+  #northboundEventQuality{padding:11px}
+  #northboundEventQuality .nb-quality-stats{gap:6px}
+  #yearCalendar .year-calendar-days{gap:2px}
+  #yearCalendar .year-calendar-day{min-height:31px;padding:2px;font-size:9px}
+}
