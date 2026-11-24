@@ -1,7 +1,13 @@
-name: Publish Alpine Performance preview
+name: Publish isolated app preview
 
 on:
   workflow_dispatch:
+    inputs:
+      preview_ref:
+        description: "Git branch or tag to publish under /preview/"
+        required: true
+        type: string
+        default: "design/northbound-visual-first-2026-11-24"
 
 permissions:
   contents: read
@@ -25,10 +31,10 @@ jobs:
           ref: main
           path: site
 
-      - name: Check out the isolated PR preview
+      - name: Check out the selected preview branch
         uses: actions/checkout@v4
         with:
-          ref: preview/alpine-performance
+          ref: ${{ inputs.preview_ref }}
           path: preview-src
 
       - name: Assemble site without changing the root app
