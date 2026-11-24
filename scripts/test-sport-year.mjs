@@ -26,6 +26,8 @@ assert.equal(summary.distanceKm, 51.5, 'Gesamtdistanz bleibt auf Aktivitätseben
 assert.equal(summary.durationSeconds, 9000, 'Trainingsdauer bleibt einmalig auf Aktivitätsebene; Wechselzeiten werden nicht doppelt addiert.');
 assert.equal(triathlon.segments.filter(segment => segment.durationSeconds !== null).reduce((sum, segment) => sum + segment.durationSeconds, 0), 120, 'Wechselzeit bleibt als Segmentdetail erhalten und wird nicht zur Aktivitätsdauer addiert.');
 assert.equal(summary.segmentCount, 4);
+const distanceFallback = SportYear.normalizeActivity({ sportCode: 'triathlon', distanceKm: 5, segments: [{ sequence: 1, segmentType: 'transition', durationSeconds: 60 }] });
+assert.equal(distanceFallback.distanceKm, 5, 'Ohne Segmentdistanzen bleibt die manuell erfasste Gesamtdistanz erhalten.');
 
 const backyard = SportYear.normalizeBackyardResult({ rounds: 12, lapTimesSeconds: [3600, 3610], outcome: 'dnf' });
 assert.equal(backyard.totalDistanceKm, 80.4);
