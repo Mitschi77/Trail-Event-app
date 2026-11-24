@@ -16,6 +16,8 @@ assert.match(board, /Höhenmeter pro Monat/);
 assert.match(board, /Trainingszeit pro Monat/);
 assert.match(board, /sy-bars/);
 assert.match(board, /chartData/);
+assert.match(board, /key\.slice\(2,4\)/);
+assert.match(board, /Für diese Auswahl liegen noch keine datierten Aktivitäten vor/);
 assert.match(board, /monthGroups/);
 assert.match(board, /monthKm/);
 assert.match(board, /monthHm/);
