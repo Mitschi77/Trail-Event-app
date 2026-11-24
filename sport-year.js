@@ -108,6 +108,99 @@
     };
   }
 
+
+  function wholeNumber(value, label, minimum) {
+    const number = Number(value);
+    if (!Number.isInteger(number) || number < minimum) {
+      throw new RangeError(label + ' muss eine ganze Zahl ab ' + minimum + ' sein.');
+    }
+    return number;
+  }
+
+  function normalizeRacketResult(input) {
+    if (!input || typeof input !== 'object') throw new TypeError('Match-Ergebnis fehlt.');
+    const sets = Array.isArray(input.sets) ? input.sets.map((set, index) => {
+      if (!set || typeof set !== 'object') throw new TypeError('Satz ' + (index + 1) + ' ist ungültig.');
+      return {
+        home: wholeNumber(set.home, 'Punkte im Satz', 0),
+        away: wholeNumber(set.away, 'Punkte im Satz', 0),
+        tieBreakHome: set.tieBreakHome == null ? null : wholeNumber(set.tieBreakHome, 'Tie-Break', 0),
+        tieBreakAway: set.tieBreakAway == null ? null : wholeNumber(set.tieBreakAway, 'Tie-Break', 0)
+      };
+    }) : [];
+    return {
+      format: 'racket_match',
+      opponent: cleanText(input.opponent) || null,
+      partner: cleanText(input.partner) || null,
+      competition: cleanText(input.competition) || null,
+      sets,
+      outcome: cleanText(input.outcome) || 'played'
+    };
+  }
+
+  function normalizeTeamResult(input) {
+    if (!input || typeof input !== 'object') throw new TypeError('Spiel-Ergebnis fehlt.');
+    const scoreFor = wholeNumber(input.scoreFor, 'Eigener Spielstand', 0);
+    const scoreAgainst = wholeNumber(input.scoreAgainst, 'Gegnerischer Spielstand', 0);
+    return {
+      format: 'team_match',
+      team: cleanText(input.team) || null,
+      opponent: cleanText(input.opponent) || null,
+      competition: cleanText(input.competition) || null,
+      scoreFor,
+      scoreAgainst,
+      outcome: scoreFor > scoreAgainst ? 'win' : scoreFor < scoreAgainst ? 'loss' : 'draw',
+      role: cleanText(input.role) || null,
+      minutesPlayed: input.minutesPlayed == null ? null : wholeNumber(input.minutesPlayed, 'Einsatzminuten', 0)
+    };
+  }
+
+  function normalizeStrengthResult(input) {
+    if (!input || typeof input !== 'object') throw new TypeError('Krafttraining-Ergebnis fehlt.');
+    const exercises = Array.isArray(input.exercises) ? input.exercises.map((exercise, index) => {
+      if (!exercise || typeof exercise !== 'object' || !cleanText(exercise.name)) {
+        throw new TypeError('Übung ' + (index + 1) + ' benötigt einen Namen.');
+      }
+      const sets = Array.isArray(exercise.sets) ? exercise.sets.map((set, setIndex) => {
+        if (!set || typeof set !== 'object') throw new TypeError('Satz ' + (setIndex + 1) + ' ist ungültig.');
+        const reps = wholeNumber(set.reps, 'Wiederholungen', 0);
+        const weightKg = set.weightKg == null ? null : Number(set.weightKg);
+        if (weightKg !== null && (!Number.isFinite(weightKg) || weightKg < 0)) {
+          throw new RangeError('Gewicht muss eine nichtnegative Zahl sein.');
+        }
+        return { reps, weightKg };
+      }) : [];
+      return { name: cleanText(exercise.name), sets };
+    }) : [];
+    return { format: 'strength_training', exercises };
+  }
+
+  function normalizeSportResult(format, input) {
+    switch (cleanText(format).toLowerCase()) {
+      case 'backyard': return normalizeBackyardResult(input);
+      case 'racket_match':
+      case 'tennis':
+      case 'padel':
+      case 'badminton':
+      case 'squash':
+      case 'table_tennis': return normalizeRacketResult(input);
+      case 'team_match':
+      case 'football':
+      case 'handball':
+      case 'basketball':
+      case 'volleyball':
+      case 'hockey': return normalizeTeamResult(input);
+      case 'strength_training':
+      case 'fitness':
+      case 'weight_training': return normalizeStrengthResult(input);
+      default:
+        if (!input || typeof input !== 'object' || Array.isArray(input)) {
+          throw new TypeError('Sportartspezifisches Ergebnis muss ein Objekt sein.');
+        }
+        return { format: cleanText(format) || 'custom', ...input };
+    }
+  }
+
   function summarizeActivity(activity) {
     const normalized = normalizeActivity(activity);
     // Segmente sind Bestandteile einer Aktivität und werden nie zusätzlich zur Aktivität summiert.
@@ -130,6 +223,10 @@
     normalizeSegment,
     normalizeActivity,
     normalizeBackyardResult,
+    normalizeRacketResult,
+    normalizeTeamResult,
+    normalizeStrengthResult,
+    normalizeSportResult,
     summarizeActivity
   });
 
