@@ -1197,3 +1197,98 @@ input[type="checkbox"],input[type="radio"]{
   color:#DCE6ED!important;
   border-color:#34414D!important;
 }
+
+
+/* NORTHBOUND v106 — global, unscoped overrides for remaining legacy green components */
+:root{
+  --bg:#0B1117!important;
+  --card:#151D25!important;
+  --panel:#101820!important;
+  --line:#34414D!important;
+  --green:#FF6A00!important;
+  --lime:#7FD8FF!important;
+  --success:#7FD8FF!important;
+  --success-bg:#151D25!important;
+}
+/* Route detail cards are also rendered outside #events (planner/detail overlays). */
+.route,.routegrid,.route-metric,.route-data,.route-details,.route-profile,.route-info,.route-status,
+.route .route-metric,.route .route-data,.route .route-details,.route .route-profile,.route .route-info,.route .route-status,
+.status-badge,.route .status-badge,.route .tag,.route .pill,
+.route .success,.route .complete,.route .completed,.route .status-success,.route .data-complete{
+  background:#151D25!important;
+  background-color:#151D25!important;
+  background-image:none!important;
+  color:#DCE6ED!important;
+  border-color:#34414D!important;
+  box-shadow:none!important;
+}
+.route :is(button,a,.secondary):not(.primary){
+  background:#18232D!important;color:#DCE6ED!important;border-color:#40505E!important;
+}
+.route :is(.success,.complete,.completed,.status-success,.data-complete){
+  background:#18232D!important;color:#BFEAFF!important;border-color:#40586B!important;
+}
+/* Legacy Alpine-green metric blocks and route labels. */
+.route-metric,.route-data,.route-details .metric,.route-details .data,
+.route-info .metric,.route-info .data,.route-profile,.route-profile-wrap,
+.route-stat,.route-statistic,.route-fact,.route-facts,
+.event-detail-metric,.event-detail-gpx,.race-detail-metric,
+.race-detail-overview,.race-detail-tools,.race-tools-section{
+  background-color:#151D25!important;
+  background-image:none!important;
+  color:#DCE6ED!important;
+  border-color:#34414D!important;
+}
+/* Booking/accommodation sections and their nested callouts: no forest/olive panels. */
+[class*="travel"],[class*="hotel"],[class*="accommodation"],[class*="booking"],
+[id*="travel"],[id*="hotel"],[id*="accommodation"],[id*="booking"]{
+  --green:#FF6A00!important;
+  --success:#7FD8FF!important;
+}
+:is([class*="travel"],[class*="hotel"],[class*="accommodation"],[class*="booking"],[id*="travel"],[id*="hotel"],[id*="accommodation"],[id*="booking"]) :is(div,section,article,aside,header,summary,p,span){
+  background-color:transparent;
+  background-image:none!important;
+}
+:is([class*="travel"],[class*="hotel"],[class*="accommodation"],[class*="booking"],[id*="travel"],[id*="hotel"],[id*="accommodation"],[id*="booking"]){
+  background:#151D25!important;
+  background-color:#151D25!important;
+  background-image:none!important;
+  border-color:#34414D!important;
+  color:#DCE6ED!important;
+}
+:is([class*="travel"],[class*="hotel"],[class*="accommodation"],[class*="booking"]) :is(button.primary,a.primary,.primary){
+  background:#174A63!important;color:#F5F7FA!important;border-color:#5BBDEB!important;
+}
+/* Elevation charts, including modal copies and their parent cards. */
+.elevation-chart-wrap,.elevation-chart-summary,.elevation-chart-summary span,
+.elevation-chart-modal,.elevation-profile-modal,.elevation-popup,.profile-popup,
+.elevation-chart-container,.elevation-profile-container{
+  background:#151D25!important;
+  background-color:#151D25!important;
+  background-image:none!important;
+  border-color:#34414D!important;
+  color:#DCE6ED!important;
+}
+.elevation-chart polygon{fill:#243746!important}
+.elevation-chart polyline{stroke:#7FD8FF!important}
+.elevation-chart line{stroke:#43515E!important}
+.elevation-chart text{fill:#AAB8C4!important}
+/* Category/status chips everywhere: slate with ice-blue text. */
+.year-race-meta-item,.year-race-meta-item[data-meta-kind="type"],
+.year-race-meta-item[data-meta-kind="time-limit"],.year-race-meta-item[data-meta-kind="status"],
+.year-season-summary-item,.tag,.pill,.meta>.tag,
+:is(.completed,.complete,.success,.status-success,.data-complete,.is-complete,.is-success){
+  background:#18232D!important;
+  background-color:#18232D!important;
+  background-image:none!important;
+  color:#BFEAFF!important;
+  border-color:#40586B!important;
+  box-shadow:none!important;
+}
+/* Explicitly neutralize progress bars and success fills. */
+.race-check-track,.checklist-group-track,.race-check-track i,.checklist-group-track i,
+.progress,.progress-bar,.status-fill,.success-fill{
+  background:#243746!important;
+  background-image:none!important;
+  border-color:#40586B!important;
+}
