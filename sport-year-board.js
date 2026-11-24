@@ -55,9 +55,29 @@
       const item = this.items.find(entry => entry.id === form.dataset.id);
       if (!item) return;
       const data = new FormData(form);
+      const parseNonNegative = name => {
+        const raw = String(data.get(name) ?? '').trim();
+        if (raw === '') return 0;
+        const value = Number(raw);
+        return Number.isFinite(value) && value >= 0 ? value : null;
+      };
+      const distanceKm = parseNonNegative('distanceKm');
+      const elevationGainM = parseNonNegative('elevationGainM');
+      let error = form.querySelector('[data-edit-error]');
+      if (!error) {
+        error = document.createElement('p');
+        error.dataset.editError = 'true';
+        error.setAttribute('role','alert');
+        error.style.color = '#ffb19b';
+        form.appendChild(error);
+      }
+      if (distanceKm === null || elevationGainM === null) {
+        error.textContent = 'Bitte gib für Distanz und Höhenmeter jeweils eine Zahl ab 0 ein.';
+        return;
+      }
       item.title = String(data.get('title') || '').trim() || 'Aktivität';
-      item.distanceKm = Number(data.get('distanceKm')) || 0;
-      item.elevationGainM = Number(data.get('elevationGainM')) || 0;
+      item.distanceKm = distanceKm;
+      item.elevationGainM = elevationGainM;
       this.editingId = null;
       this.render();
     }
@@ -114,7 +134,7 @@
             const fields=[['title','Name',item.title||''],['distanceKm','Distanz (km)',item.distanceKm||item.result?.totalDistanceKm||''],['elevationGainM','Höhenmeter',item.elevationGainM||'']];
             for(const [name,label,value] of fields){
               const field=document.createElement('label');field.textContent=label;
-              const input=document.createElement('input');input.name=name;input.value=String(value);input.type=name==='title'?'text':'number';if(name!=='title'){input.min='0';input.step='any';}
+              const input=document.createElement('input');input.name=name;input.value=String(value);input.type=name==='title'?'text':'number';if(name!=='title'){input.min='0';input.step='any';input.inputMode='decimal';input.required=false;}
               field.appendChild(input);form.appendChild(field);
             }
             const controls=document.createElement('div');controls.className='sy-edit-actions';
