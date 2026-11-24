@@ -22,7 +22,7 @@
       if(sport==='backyard') html=this.field('Runden','rounds','number','min="0" required')+this.field('Rundenlänge (km)','lapLengthKm','number','min=".001" step=".001" value="6.7"')+this.field('Ausscheiden nach Runde','eliminatedAfterRound','number','min="0"');
       else if(['tennis','padel','badminton'].includes(sport)) html=this.field('Gegner','opponent')+this.field('Partner / Doppel','partner')+this.field('Sätze (z. B. 6:4, 7:6)','setsText','text','placeholder="6:4, 7:6"');
       else if(['football','handball','basketball','volleyball'].includes(sport)) html=this.field('Team','team')+this.field('Gegner','opponent')+this.field('Eigener Spielstand','scoreFor','number','min="0"')+this.field('Gegnerischer Spielstand','scoreAgainst','number','min="0"')+this.field('Einsatzminuten','minutesPlayed','number','min="0"');
-      else if(['strength_training','fitness'].includes(sport)) html=this.field('Übung','exerciseName')+this.field('Sätze','setCount','number','min="0"')+this.field('Wiederholungen','reps','number','min="0"')+this.field('Gewicht (kg)','weightKg','number','min="0" step=".5"')+this.field('Dauer (Sekunden)','setDurationSeconds','number','min="0"');
+      else if(['strength_training','fitness'].includes(sport)) html=this.field('Übung','exerciseName')+this.field('Sätze','setCount','number','min="1" max="100" value="3" required')+this.field('Wiederholungen','reps','number','min="0"')+this.field('Gewicht (kg)','weightKg','number','min="0" step=".5"')+this.field('Dauer (Sekunden)','setDurationSeconds','number','min="0"');
       else if(sport==='triathlon') html=this.field('Schwimmen (km)','swimKm','number','min="0" step=".001"')+this.field('Radfahren (km)','bikeKm','number','min="0" step=".001"')+this.field('Laufen (km)','runKm','number','min="0" step=".001"');
       else html='<p>Allgemeine Aktivitätsdaten. Weitere Sportarten bleiben über das offene Datenmodell erweiterbar.</p>';
       box.innerHTML=html;
@@ -31,10 +31,13 @@
       event.preventDefault(); const f=event.currentTarget, d=new FormData(f), n=k=>d.get(k)===''||d.get(k)==null?null:Number(d.get(k)), sport=d.get('sportCode');
       const a={title:d.get('title')||'Aktivität',sportCode:sport,startsAt:d.get('startsAt')||null,status:d.get('status'),location:d.get('location')||null,durationSeconds:n('durationMinutes')==null?null:n('durationMinutes')*60,distanceKm:n('distanceKm'),elevationGainM:n('elevationGainM'),result:{}};
       try {
+        if (!window.SportYear || typeof window.SportYear.normalizeActivity !== 'function') {
+          throw new Error('Sportjahr-Kern nicht geladen. Bitte die Vorschauseite mit beiden Skripten öffnen.');
+        }
         if(sport==='backyard') a.result=window.SportYear.normalizeBackyardResult({rounds:n('rounds'),lapLengthKm:n('lapLengthKm')||6.7,eliminatedAfterRound:n('eliminatedAfterRound')});
         else if(['football','handball','basketball','volleyball'].includes(sport)) a.result=window.SportYear.normalizeTeamResult({team:d.get('team'),opponent:d.get('opponent'),scoreFor:n('scoreFor'),scoreAgainst:n('scoreAgainst'),minutesPlayed:n('minutesPlayed')});
         else if(['tennis','padel','badminton'].includes(sport)) { const sets=String(d.get('setsText')||'').split(',').map(x=>x.trim()).filter(Boolean).map(x=>{const m=x.match(/^(\d+)\s*:\s*(\d+)$/);if(!m)throw Error('Sätze bitte als 6:4, 7:6 eingeben.');return {home:+m[1],away:+m[2]};}); a.result=window.SportYear.normalizeRacketResult({opponent:d.get('opponent'),partner:d.get('partner'),sets}); }
-        else if(['strength_training','fitness'].includes(sport)) { const name=String(d.get('exerciseName')||'').trim(), count=n('setCount')||0; a.result=window.SportYear.normalizeStrengthResult({exercises:name?[{name,sets:Array.from({length:Math.min(count,100)},()=>({reps:n('reps'),durationSeconds:n('setDurationSeconds'),weightKg:n('weightKg')}))}]:[]}); }
+        else if(['strength_training','fitness'].includes(sport)) { const name=String(d.get('exerciseName')||'').trim(), count=n('setCount')||0; if(name && (!Number.isInteger(count)||count<1||count>100)) throw Error('Bitte 1 bis 100 Sätze angeben.'); a.result=window.SportYear.normalizeStrengthResult({exercises:name?[{name,sets:Array.from({length:count},()=>({reps:n('reps'),durationSeconds:n('setDurationSeconds'),weightKg:n('weightKg')}))}]:[]}); }
         else if(sport==='triathlon') a.segments=[['swim','swimming','swimKm'],['bike','cycling','bikeKm'],['run','running','runKm']].map((x,i)=>({sequence:i+1,segmentType:x[0],sportCode:x[1],distance:n(x[2]),distanceUnit:'km'})).filter(x=>x.distance!==null);
         const normalized=window.SportYear.normalizeActivity(a);
         this.querySelector('.message').textContent='Eingaben geprüft. Noch nicht gespeichert – Datenbankanbindung folgt.';
