@@ -29,6 +29,16 @@
     }
     submitActivity(event) {
       event.preventDefault(); const f=event.currentTarget, d=new FormData(f), n=k=>d.get(k)===''||d.get(k)==null?null:Number(d.get(k)), sport=d.get('sportCode');
+      const numericInputs=[...f.querySelectorAll('input[type="number"]')];
+      for (const input of numericInputs) {
+        if (input.value === '') continue;
+        const value=Number(input.value), min=input.min===''?null:Number(input.min), max=input.max===''?null:Number(input.max);
+        if (!Number.isFinite(value) || (min!==null && value<min) || (max!==null && value>max) || (input.step==='1' && !Number.isInteger(value))) {
+          this.querySelector('.message').textContent='Bitte prüfe das Feld „'+(input.closest('label')?.childNodes[0]?.textContent.trim()||input.name)+'“. Der Wert liegt außerhalb des erlaubten Bereichs.';
+          input.focus();
+          return;
+        }
+      }
       const a={title:d.get('title')||'Aktivität',sportCode:sport,startsAt:d.get('startsAt')||null,status:d.get('status'),location:d.get('location')||null,durationSeconds:n('durationMinutes')==null?null:n('durationMinutes')*60,distanceKm:n('distanceKm'),elevationGainM:n('elevationGainM'),result:{}};
       try {
         if (!window.SportYear || typeof window.SportYear.normalizeActivity !== 'function') {
