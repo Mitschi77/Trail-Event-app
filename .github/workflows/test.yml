@@ -2,7 +2,7 @@ name: App syntax and regression tests
 
 on:
   pull_request:
-    branches: [main]
+    branches: [main, sportjahr-schema-preview]
   workflow_dispatch:
 
 permissions:
