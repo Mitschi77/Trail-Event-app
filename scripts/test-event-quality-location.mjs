@@ -1,0 +1,10 @@
+import assert from "node:assert/strict";
+import { readFile } from "node:fs/promises";
+const html = await readFile(new URL("../index.html", import.meta.url), "utf8");
+assert.match(html, /id="qualityTabButton"[^>]*aria-controls="qualityTab"/, "Datenqualität belongs in Daten & Verwaltung");
+assert.match(html, /id="qualityTab"[^>]*role="tabpanel"/, "Datenqualität has its own panel");
+assert.match(html, /id="officialQualitySummary"/, "Official quality summary is shown in the quality panel");
+assert.match(html, /function renderEventQualityOverview\(\)/, "Quality overview renders all event routes");
+assert.match(html, /if\(name==='quality'\)renderEventQualityOverview\(\)/, "Opening quality panel refreshes it");
+assert.doesNotMatch(html, /\$\{routeDataStatus\(r,e\)\}/, "Detailed quality status is no longer shown in Events");
+console.log("Event quality location regression tests passed.");
