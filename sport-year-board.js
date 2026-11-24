@@ -75,29 +75,44 @@
         error.textContent = 'Bitte gib für Distanz und Höhenmeter jeweils eine Zahl ab 0 ein.';
         return;
       }
-      item.title = String(data.get('title') || '').trim() || 'Aktivität';
-      item.distanceKm = distanceKm;
-      item.elevationGainM = elevationGainM;
+      let nextSegments = item.segments;
       if (Array.isArray(item.segments) && item.segments.length) {
-        item.segments = item.segments.map((segment, index) => {
+        nextSegments = [];
+        for (let index = 0; index < item.segments.length; index += 1) {
+          const segment = item.segments[index];
           const next = { ...segment };
           if (segment.distance != null) {
             const value = parseNonNegative('segmentDistance_' + index);
-            if (value === null) throw new Error('Segmentdistanz muss eine Zahl ab 0 sein.');
+            if (value === null) {
+              error.textContent = 'Segmentdistanz muss eine Zahl ab 0 sein.';
+              return;
+            }
             next.distance = value;
           }
           if (segment.durationSeconds != null) {
             const value = parseNonNegative('segmentDuration_' + index);
-            if (value === null) throw new Error('Segmentzeit muss eine Zahl ab 0 sein.');
+            if (value === null) {
+              error.textContent = 'Segmentzeit muss eine Zahl ab 0 sein.';
+              return;
+            }
             next.durationSeconds = value;
           }
-          return next;
-        });
-        const segmentDistances = item.segments.filter(segment => segment.distance != null)
-          .reduce((sum, segment) => sum + Number(segment.distance), 0);
-        if (item.segments.some(segment => segment.distance != null)) {
-          item.distanceKm = Number(segmentDistances.toFixed(3));
+          nextSegments.push(next);
         }
+      }
+      item.title = String(data.get('title') || '').trim() || 'Aktivität';
+      item.elevationGainM = elevationGainM;
+      if (nextSegments !== item.segments) {
+        item.segments = nextSegments;
+        const segmentDistances = nextSegments.filter(segment => segment.distance != null)
+          .reduce((sum, segment) => sum + Number(segment.distance), 0);
+        if (nextSegments.some(segment => segment.distance != null)) {
+          item.distanceKm = Number(segmentDistances.toFixed(3));
+        } else {
+          item.distanceKm = distanceKm;
+        }
+      } else {
+        item.distanceKm = distanceKm;
       }
       this.editingId = null;
       this.render();
