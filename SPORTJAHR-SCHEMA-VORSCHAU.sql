@@ -189,7 +189,7 @@ create or replace function public.sport_year_check_catalog_parent()
 returns trigger
 language plpgsql
 set search_path = ''
-as $
+as $sport_year$
 begin
   if new.parent_id is not null and not exists (
     select 1
@@ -209,7 +209,7 @@ begin
   end if;
   return new;
 end;
-$;
+$sport_year$;
 
 drop trigger if exists sport_year_catalog_parent_guard on public.sports_catalog;
 create trigger sport_year_catalog_parent_guard
@@ -221,7 +221,7 @@ create or replace function public.sport_year_check_activity_sport()
 returns trigger
 language plpgsql
 set search_path = ''
-as $
+as $sport_year$
 begin
   if new.sport_id is not null and not exists (
     select 1
@@ -234,7 +234,7 @@ begin
   end if;
   return new;
 end;
-$;
+$sport_year$;
 
 drop trigger if exists sport_year_activity_sport_guard on public.sport_activities;
 create trigger sport_year_activity_sport_guard
@@ -278,7 +278,7 @@ begin
   end if;
   return new;
 end;
-$;
+$sport_year$;
 
 drop trigger if exists sport_year_segment_reference_guard on public.sport_activity_segments;
 create trigger sport_year_segment_reference_guard
