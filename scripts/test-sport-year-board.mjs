@@ -15,6 +15,8 @@ assert.match(board, /Distanz pro Monat/);
 assert.match(board, /Höhenmeter pro Monat/);
 assert.match(board, /Trainingszeit pro Monat/);
 assert.match(board, /sy-bars/);
+assert.match(board, /overflow-x:auto/);
+assert.match(board, /aria-label',key\+'/);
 assert.match(board, /chartData/);
 assert.match(board, /key\.slice\(2,4\)/);
 assert.match(board, /Für diese Auswahl liegen noch keine datierten Aktivitäten vor/);
