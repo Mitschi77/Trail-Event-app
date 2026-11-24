@@ -1334,3 +1334,82 @@ input[type="checkbox"],input[type="radio"]{
 :is([class*="travel"],[class*="hotel"],[class*="accommodation"],[class*="booking"]) :is(a,button).primary{
   background:#174A63!important;color:#F5F7FA!important;border-color:#5BBDEB!important;
 }
+
+
+/* NORTHBOUND v108 — screenshot-driven removal of remaining olive/green detail surfaces */
+:root,body{
+  --green:#7FD8FF!important;
+  --success:#7FD8FF!important;
+  --success-bg:#18232D!important;
+  --lime:#7FD8FF!important;
+}
+/* Route detail and personal race preparation panels (including nested metric tiles). */
+.race-detail-overview,.race-detail-tools,.race-detail-metric,
+.race-tools-section,.checklist-group,.checklist-group label,
+.segment-table,.segment-row,.race-season-context,
+.event-detail-group,.event-detail-group-body,.event-detail-data,
+.route-detail,.route-details,.route-data,.route-metric,.route-stat,
+#plannedEventDetailContent .plan-meta,
+#plannedEventDetailContent .race-detail-overview *,
+#plannedEventDetailContent .race-detail-tools *{
+  background-color:#151D25!important;
+  background-image:none!important;
+  border-color:#34414D!important;
+  color:#DCE6ED!important;
+}
+#plannedEventDetailContent .race-detail-overview,
+#plannedEventDetailContent .race-detail-tools,
+#plannedEventDetailContent .race-tools-section,
+#plannedEventDetailContent .checklist-group,
+#plannedEventDetailContent .segment-table{
+  background:#151D25!important;
+  border:1px solid #34414D!important;
+}
+#plannedEventDetailContent :is(.race-detail-metric,.checklist-group label,.segment-row,.race-season-context){
+  background:#18232D!important;
+  border:1px solid #40505E!important;
+}
+/* Completion badges and progress bars: ice blue on slate. */
+#plannedEventDetailContent :is(.race-cutoff-ok,.race-check-track i,.training-bar,.race-detail-metric strong){
+  color:#7FD8FF!important;
+  background-color:#7FD8FF!important;
+}
+#plannedEventDetailContent .race-check-track i,
+#plannedEventDetailContent .training-bar{
+  background:#7FD8FF!important;
+}
+/* The enlarged elevation chart is rendered in a separate modal layer. */
+.elevation-chart-wrap,
+.elevation-chart-wrap *,
+.elevation-chart-modal,.elevation-chart-modal *,
+.elevation-profile-modal,.elevation-profile-modal *,
+.elevation-popup,.elevation-popup *,
+.profile-popup,.profile-popup *{
+  background-color:transparent!important;
+  background-image:none!important;
+  border-color:#34414D!important;
+  color:#DCE6ED!important;
+}
+.elevation-chart-wrap,.elevation-chart-modal,.elevation-profile-modal,.elevation-popup,.profile-popup{
+  background:#151D25!important;
+}
+.elevation-chart-wrap .elevation-chart,
+.elevation-chart-modal .elevation-chart,
+.elevation-profile-modal .elevation-chart{
+  background:#151D25!important;
+}
+.elevation-chart-wrap .elevation-chart-summary span{
+  background:#18232D!important;
+}
+.elevation-chart polygon{fill:#243746!important}
+.elevation-chart polyline{stroke:#7FD8FF!important}
+.elevation-chart line{stroke:#43515E!important}
+.elevation-chart text{fill:#AAB8C4!important}
+/* Accommodation callouts and map action must not inherit legacy success green. */
+:is([class*="travel"],[class*="hotel"],[class*="accommodation"],[class*="booking"],[id*="travel"],[id*="hotel"],[id*="accommodation"],[id*="booking"]) :is(.success,.complete,.completed,.status-success,.primary){
+  background:#18232D!important;
+  background-color:#18232D!important;
+  background-image:none!important;
+  border-color:#40586B!important;
+  color:#BFEAFF!important;
+}
