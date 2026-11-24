@@ -145,20 +145,28 @@
         tieBreakAway: set.tieBreakAway == null ? null : wholeNumber(set.tieBreakAway, 'Tie-Break', 0)
       };
     }) : [];
+    for (const [index, set] of sets.entries()) {
+      if ((set.tieBreakHome === null) !== (set.tieBreakAway === null)) {
+        throw new TypeError('Tie-Break benötigt die Punkte beider Seiten (Satz ' + (index + 1) + ').');
+      }
+    }
     return {
       format: 'racket_match',
       opponent: cleanText(input.opponent) || null,
       partner: cleanText(input.partner) || null,
       competition: cleanText(input.competition) || null,
       sets,
-      outcome: cleanText(input.outcome) || 'played'
+      outcome: cleanText(input.outcome) || (sets.length ? 'played' : 'scheduled')
     };
   }
 
   function normalizeTeamResult(input) {
     if (!input || typeof input !== 'object') throw new TypeError('Spiel-Ergebnis fehlt.');
-    const scoreFor = wholeNumber(input.scoreFor, 'Eigener Spielstand', 0);
-    const scoreAgainst = wholeNumber(input.scoreAgainst, 'Gegnerischer Spielstand', 0);
+    const hasScoreFor = input.scoreFor != null && input.scoreFor !== '';
+    const hasScoreAgainst = input.scoreAgainst != null && input.scoreAgainst !== '';
+    if (hasScoreFor !== hasScoreAgainst) throw new TypeError('Beide Spielstände müssen gemeinsam angegeben werden.');
+    const scoreFor = hasScoreFor ? wholeNumber(input.scoreFor, 'Eigener Spielstand', 0) : null;
+    const scoreAgainst = hasScoreAgainst ? wholeNumber(input.scoreAgainst, 'Gegnerischer Spielstand', 0) : null;
     return {
       format: 'team_match',
       team: cleanText(input.team) || null,
@@ -166,7 +174,7 @@
       competition: cleanText(input.competition) || null,
       scoreFor,
       scoreAgainst,
-      outcome: scoreFor > scoreAgainst ? 'win' : scoreFor < scoreAgainst ? 'loss' : 'draw',
+      outcome: scoreFor === null ? (cleanText(input.outcome) || 'scheduled') : scoreFor > scoreAgainst ? 'win' : scoreFor < scoreAgainst ? 'loss' : 'draw',
       role: cleanText(input.role) || null,
       minutesPlayed: input.minutesPlayed == null ? null : wholeNumber(input.minutesPlayed, 'Einsatzminuten', 0)
     };
@@ -180,12 +188,17 @@
       }
       const sets = Array.isArray(exercise.sets) ? exercise.sets.map((set, setIndex) => {
         if (!set || typeof set !== 'object') throw new TypeError('Satz ' + (setIndex + 1) + ' ist ungültig.');
-        const reps = wholeNumber(set.reps, 'Wiederholungen', 0);
+        const reps = set.reps == null ? null : wholeNumber(set.reps, 'Wiederholungen', 0);
+        const durationSeconds = set.durationSeconds == null ? null : Number(set.durationSeconds);
+        if (durationSeconds !== null && (!Number.isFinite(durationSeconds) || durationSeconds < 0)) {
+          throw new RangeError('Satzdauer muss eine nichtnegative Zahl sein.');
+        }
+        if (reps === null && durationSeconds === null) throw new TypeError('Ein Satz benötigt Wiederholungen oder eine Dauer.');
         const weightKg = set.weightKg == null ? null : Number(set.weightKg);
         if (weightKg !== null && (!Number.isFinite(weightKg) || weightKg < 0)) {
           throw new RangeError('Gewicht muss eine nichtnegative Zahl sein.');
         }
-        return { reps, weightKg };
+        return { reps, durationSeconds, weightKg };
       }) : [];
       return { name: cleanText(exercise.name), sets };
     }) : [];
