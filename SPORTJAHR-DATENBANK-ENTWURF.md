@@ -34,90 +34,140 @@ Die Event-/Streckendatenbank wird im Frontend als `EVENTS`-Datenbestand geladen.
 
 Wichtige Supabase-Plattformänderung: Seit 30. Oktober 2026 werden neue Tabellen im Schema `public` nicht mehr automatisch über die Data API exponiert. Neue Tabellen benötigen deshalb eine explizite Entscheidung zu Data-API-Exposition, Grants und RLS. Siehe Supabase Changelog: https://supabase.com/changelog/breaking-change-enabling-data-api-by-default
 
-## 3. Architekturentscheidung für die Erweiterung
+## 3. Architekturentscheidung: universelles Sportmodell
 
-Das Sportmodell wird von Anfang an für mehrere Ausdauersportarten offen gehalten: **Laufen, Bike und Triathlon**. Weitere Sportarten dürfen nicht durch fest codierte Datenbank-Enums oder eine nur auf zwei Sportarten ausgelegte UI ausgeschlossen werden.
+Das Sportjahr umfasst **gängige Sportarten**, nicht nur Ausdauer- und Outdoorsport. Beispiele sind Laufen, Bike, Schwimmen, Triathlon, Wandern, Teamsport (z. B. Fußball/Handball/Basketball), Racketsport (z. B. Tennis/Padel/Tischtennis), Kraft/Fitness, Winter-/Eissport, Wasser-, Berg-, Kampf- und weitere Sportarten. Die Liste ist ausdrücklich nicht abschließend.
 
-Wichtig: Backyard ist keine gewöhnliche Distanz-Disziplin. Es ist ein eigenständiges, rundenbasiertes Wettkampfformat mit wiederkehrenden Starts und einer besonderen Leistungslogik. Die Datenstruktur muss Runden, Rundenzeiten, absolvierte Kilometer und Ausscheiden/DNF abbilden können.
+Sportarten und Disziplinen dürfen nicht als feste PostgreSQL-Enums oder als geschlossene Frontend-Auswahlliste implementiert werden. Sie müssen über einen erweiterbaren Katalog bzw. konfigurierbare Datensätze verwaltet werden. Benutzerdefinierte Sportarten und Disziplinen müssen möglich sein.
 
-Triathlon ist ebenfalls eine eigenständige Sportart bzw. Wettkampfform mit mehreren Teildisziplinen (Schwimmen, Radfahren, Laufen). Eine Triathlon-Teilnahme muss Gesamtzeit und die einzelnen Splits/Teilstrecken speichern können. Die Radstrecke eines Triathlons darf nicht als separate Bike-Teilnahme doppelt gezählt werden.
+### Fachliche Grundregeln
+- Sportart, Disziplin/Variante und Aktivitätstyp sind getrennte Merkmale.
+- Training, Wettkampf, Spiel und sonstiger Termin sind unterscheidbare Aktivitätstypen.
+- Gemeinsame Felder bleiben optional, wenn sie nicht für jede Sportart sinnvoll sind.
+- Sportartspezifische Ergebnisse dürfen nicht auf Distanz, Höhenmeter und Zeit reduziert werden.
+- Mehrfachsegmente (Triathlon, Staffel, Mehrkampf) müssen geordnet und getrennt speicherbar sein.
+- Team- und Einzelresultate müssen beide abbildbar sein.
+- Eine einzelne Aktivität darf nicht durch Segmente versehentlich mehrfach in Summen gezählt werden.
 
+**Backyard** ist ein eigenständiges rundenbasiertes Wettkampfformat. Die Rundenanzahl ist die führende Leistungskennzahl. Rundenlänge (6,7 km nur Standardwert), Rundenzeiten/Zeitstempel, Gesamtzeit, Gesamtdistanz und DNF/Ausscheiden müssen erhalten bleiben.
 
+**Triathlon/Mehrkampf** benötigt Gesamtzeit und geordnete Segmente, z. B. Schwimmen, Radfahren, Laufen, plus getrennte Wechselzeiten T1/T2. Ein Radsegment eines Triathlons ist keine separate Bike-Aktivität.
 
-Der Eventkatalog und persönliche Aktivitäten sind unterschiedliche Dinge:
+Der Eventkatalog und persönliche Aktivitäten bleiben getrennt:
+- Öffentliche Events und Strecken bleiben im bestehenden Katalog.
+- Persönliche Aktivitäten sind private Datensätze für Training, Wettkampfteilnahme, Spiel und weitere Termine.
+- Eine persönliche Teilnahme kann optional auf einen Katalogeintrag und eine Strecke verweisen.
+- Wiederholte Teilnahmen sind eigenständige Datensätze.
 
-- Der Eventkatalog enthält öffentliche Veranstaltungen und Strecken. Er bleibt in dieser ersten Erweiterungsstufe unverändert.
-- Persönliche Aktivitäten sind private Datensätze des Benutzers: Training, Wettkampfteilnahme und weitere Sporttermine.
-- Eine persönliche Wettkampfteilnahme kann optional auf eine Veranstaltung und Strecke im Katalog verweisen.
-- Wiederholte Teilnahmen an derselben Veranstaltung sind eigenständige persönliche Datensätze.
+Die bestehende `planner_data`-JSONB-Struktur bleibt für ihre vorhandenen Schlüssel unangetastet. Neue Aktivitäten werden nicht ohne Versions-/Konfliktstrategie in den alten Gesamtblob geschrieben.
 
-Die vorhandene `planner_data`-JSONB-Struktur bleibt für ihre bestehenden Schlüssel unangetastet. Neue Sportaktivitäten sollen nicht als unbekannter Schlüssel in den alten JSONB-Gesamtblob geschrieben werden, solange nicht geklärt ist, ob ältere App-Versionen den Blob vollständig überschreiben. Für neue Aktivitäten wird deshalb eine eigene Tabelle bevorzugt.
+## 4. Zielmodell – additive Tabellen
 
-## 4. Entwurf der Tabelle `sport_activities`
+Noch nicht angewendet. Dies ist ein fachlicher Entwurf, keine produktive Migration.
 
-Noch nicht angewendet – Schemaentwurf zur Prüfung.
+### 4.1 `sports_catalog`
+Erweiterbarer Katalog für Sportarten und Disziplinen:
+- `id` UUID oder stabiler Textcode
+- `parent_id` nullable für Hierarchie (Sportart → Disziplin → Variante)
+- `code` Text, eindeutig
+- `name` Text
+- `category` Text nullable (z. B. Ausdauer, Team, Racket, Fitness, Winter, Wasser)
+- `is_system` Boolean
+- `is_active` Boolean
+- `metadata` JSONB für optionale Anzeige-/Fachhinweise
 
+Keine DB-Enums für Sportarten oder Disziplinen. Systemeinträge können global angeboten werden; persönliche Einträge müssen einem Benutzer zugeordnet oder anderweitig eindeutig abgegrenzt werden.
+
+### 4.2 `sport_activities`
 | Feld | Typ | Zweck |
 |---|---|---|
 | id | uuid PK | stabile Aktivitäts-ID |
 | user_id | uuid FK auth.users | Eigentümer |
-| sport | text | `run`, `bike`, `triathlon`, offen für weitere Sportarten |
-| discipline | text nullable | z. B. `road`, `trail`, `ultra`, `backyard`, `mtb`, `road_cycling`, `gravel`, `sprint`, `olympic`, `middle_distance`, `long_distance` |
-| activity_type | text | `training`, `race`, `event` |
+| sport_id | uuid/text FK | Sportart bzw. Disziplinbezug aus Katalog |
+| activity_type | text | training, race, match, event o. ä.; erweiterbar |
 | title | text | Anzeigename |
-| starts_at | timestamptz nullable | Beginn |
-| ends_at | timestamptz nullable | Ende |
-| distance_km | numeric nullable | Distanz |
-| elevation_gain_m | integer nullable | Höhenmeter |
+| starts_at / ends_at | timestamptz nullable | Beginn und Ende |
+| location | text nullable | Ort |
+| distance_km | numeric nullable | nur wenn sinnvoll |
+| elevation_gain_m | integer nullable | nur wenn sinnvoll |
 | duration_seconds | integer nullable | Dauer |
-| status | text | `planned`, `completed`, `cancelled`, `dnf` |
-| catalog_event_id | text nullable | optionale Referenz auf bestehende Event-ID |
+| status | text | planned, completed, cancelled, dnf o. ä. |
+| catalog_event_id | text nullable | optionale Referenz auf bestehenden Event-Katalog |
 | catalog_route_id | text nullable | optionale Referenz auf bestehende Strecken-ID |
-| result | jsonb | sportartspezifisches Ergebnis inklusive Backyard-Runden oder Triathlon-Splits |
-| metadata | jsonb | zusätzliche sportartspezifische Angaben; bei Bedarf strukturierte Teilabschnitte |
+| result | jsonb | sportartspezifisches Ergebnis |
+| metadata | jsonb | weitere Angaben, Quelle, Notizen |
 | created_at / updated_at | timestamptz | Zeitstempel |
 
-### Regeln
-- `sport`, `activity_type`, `title` und `status` sind Pflichtfelder.
-- Distanz, Höhenmeter und Dauer bleiben nullable; unbekannt ist nicht gleich null.
-- Lauf-/Trail-Felder wie UTMB Index und Cut-off werden nur für passende Laufdisziplinen ausgewertet.
-- **Backyard:** `discipline=backyard`; Ergebnisdaten müssen mindestens absolvierte Runden, Rundenlänge (Standardwert 6,7 km, aber pro Event überschreibbar), daraus ermittelte/angegebene Gesamtkilometer, Gesamtzeit, Rundenzeiten bzw. Runden-Zeitstempel und Status (z. B. beendet, DNF/Ausscheiden) aufnehmen können. Die Rundenanzahl ist die zentrale Leistungskennzahl; Kilometer dürfen nicht die Rundenanzahl ersetzen. Höhenmeter und Cut-off bleiben optionale Event-/Rundendaten. Es darf nicht angenommen werden, dass jedes Backyard-Event exakt dieselbe Streckenlänge oder identische Regeln hat.
-- **Triathlon:** `sport=triathlon`; Ergebnisdaten müssen Gesamtzeit und drei getrennte Segmente für Schwimmen, Radfahren und Laufen abbilden können. Je Segment sind Distanz, Zeit und bei Bedarf Höhenmeter möglich. Wechselzeiten (T1/T2) sind getrennt speicherbar. Wettkampfformate wie Sprint, olympisch, Mitteldistanz/70.3 und Langdistanz/140.6 sind konfigurierbare Disziplin-/Formatwerte, keine fest verdrahtete abschließende Liste.
-- Bike-Aktivitäten außerhalb eines Triathlons erhalten keine UTMB-Felder. Die Rad-Teilstrecke eines Triathlons wird als Segment der Triathlon-Teilnahme gespeichert und nicht zusätzlich als eigenständige Bike-Aktivität gezählt.
-- `catalog_event_id` und `catalog_route_id` bleiben zunächst Textreferenzen, damit keine bestehende Event-ID-Struktur verändert werden muss.
-- Wiederholte Teilnahmen werden durch getrennte Zeilen gespeichert.
+Die finale FK-/Kataloghierarchie ist vor einer Migration anhand der tatsächlichen UI- und Abfrageanforderungen zu präzisieren. Die Tabelle darf keine geschlossene Sportartenliste erzwingen.
 
-## 5. RLS- und API-Anforderungen
+### 4.3 `sport_activity_segments`
+Für Triathlon, Duathlon, Staffeln, Mehrkampf und andere zusammengesetzte Aktivitäten:
+- `id` UUID PK
+- `activity_id` FK auf `sport_activities`
+- `sequence` Integer für die Reihenfolge
+- `sport_id` nullable
+- `segment_type` Text (z. B. swim, bike, run, transition)
+- `name` Text nullable
+- `distance` Numeric nullable plus Einheit
+- `duration_seconds` Integer nullable
+- `result` JSONB für weitere Segmentwerte
+
+Segmente gehören zur Hauptaktivität und werden nicht als eigenständige Aktivitäten aggregiert.
+
+### 4.4 Sportartspezifische Resultate
+Kernfelder bleiben schlank. Ergebnisdetails liegen strukturiert in `result` bzw. bei Bedarf in Segment-/Runden-Unterdatensätzen:
+- Backyard: Rundenanzahl, Rundenlänge, Rundenzeiten/Zeitstempel, DNF/Ausscheiden.
+- Teamsport: Team, Gegner, Spielstand, Rolle/Einsatz.
+- Racketsport: Gegner/Partner, Matchformat, Sätze und Spielstand.
+- Kraft/Fitness: Übung, Sätze, Wiederholungen, Gewicht.
+- Schwimmen: Bahnen, Stil, Distanz, Splits.
+- Wintersport: Disziplin, Lauf-/Abfahrtszeit, Höhenmeter und Routenwerte.
+
+Bei wiederkehrenden oder umfangreichen Messreihen (z. B. Backyard-Runden) ist eine eigene Kindtabelle einer unstrukturierten JSONB-Liste vorzuziehen, sofern Abfragen/Auswertungen darauf aufbauen sollen.
+
+## 5. Regeln für bestehende Spezialmodule
+
+- Lauf-/Trail-Felder wie UTMB Index, GPX, Cut-off und Pflichtausrüstung werden nur für passende Laufveranstaltungen angezeigt.
+- Bike-Aktivitäten erhalten keine UTMB-Felder.
+- Backyard-Rundenanzahl bleibt führend; Kilometer ersetzen sie nicht.
+- Triathlon-Segmente werden nicht als separate Aktivitäten gezählt.
+- Marathon, Halbmarathon und andere Laufarten behalten ihre bestehenden Fachregeln.
+- `catalog_event_id` und `catalog_route_id` bleiben zunächst kompatible Textreferenzen; bestehende IDs werden nicht geändert.
+- Wiederholte Teilnahmen werden als getrennte persönliche Datensätze gespeichert.
+
+## 6. RLS- und API-Anforderungen
 
 Bei einer späteren Migration:
 - RLS sofort aktivieren.
 - SELECT: `auth.uid() = user_id`.
-- INSERT: `WITH CHECK (auth.uid() = user_id)`.
+- INSERT: `WITH CHECK (auth.uid() = user_id`.
 - UPDATE: sowohl `USING` als auch `WITH CHECK` mit `auth.uid() = user_id`.
 - DELETE: `auth.uid() = user_id`.
 - Tabellenrechte für `authenticated` nur dann gewähren, wenn die Tabelle über die Data API genutzt werden soll.
-- Keine `anon`-Freigabe.
+- Keine `anon`-Freigabe für private Aktivitäten.
 - Keine `SECURITY DEFINER`-Funktion für normale CRUD-Vorgänge.
-- Nach DDL die Supabase Security Advisors ausführen und Zugriffe mit zwei Benutzerkontexten testen.
+- Katalog-Lesezugriff und persönliche Katalogeinträge getrennt absichern.
+- Nach DDL Supabase Security Advisors ausführen und Zugriffe mit zwei Benutzerkontexten testen.
 
-## 6. Migrationsstrategie
+## 7. Migrationsstrategie
 
-1. Zuerst Schema und RLS in einem isolierten Entwicklungs-/Testkontext prüfen.
-2. Neue Tabelle additiv anlegen; keine Änderung oder Löschung an `planner_data`.
-3. Bestehende Trail-Daten nicht automatisch in die neue Tabelle kopieren. Erst nach eindeutigem Mapping und mit Duplikat-/Vollständigkeitsprüfung.
-4. Neue Bike- und Trainingsaktivitäten zunächst nur in der neuen Tabelle speichern.
+1. Schema und RLS zuerst isoliert testen.
+2. Neue Tabellen additiv anlegen; `planner_data` nicht ändern oder löschen.
+3. Bestehende Trail-Daten nicht automatisch kopieren. Mapping, Vollständigkeit und Duplikate zuerst prüfen.
+4. Neue Aktivitäten schrittweise im neuen Modell speichern.
 5. Bestehende Trail-Planung bleibt bis zur vollständigen Umstellung auf dem bisherigen Speicherweg.
-6. Dual-Read/Write nur mit expliziter Versions- und Konfliktstrategie; keine stillen Blob-Überschreibungen.
-7. Erst nach Tests wird die neue Aktivitätsliste in Sportjahr und Sport-Cockpit eingebunden.
+6. Dual-Read/Write nur mit Versions- und Konfliktstrategie.
+7. Erst nach Tests Aktivitätsliste, Sportjahr und Cockpit anbinden.
 
-## 7. Abnahmekriterien
+## 8. Abnahmekriterien
 
-- Ein bestehender Benutzer kann seine bisherigen Trail-Planungen unverändert öffnen.
-- Neue Lauf-, Backyard-, Bike-, Triathlon- und Trainingsaktivitäten lassen sich getrennt speichern und laden.
-- Backyard-Ergebnisse behalten Rundenanzahl und Rundenzeiten als führende Kennzahlen.
-- Triathlon-Ergebnisse behalten Schwimm-, Rad-, Lauf- und Wechselzeiten getrennt sowie die Gesamtzeit.
-- Benutzer A kann keine Aktivitäten von Benutzer B lesen oder verändern.
-- Wiederholte Wettkampfteilnahmen bleiben getrennt.
-- Lauf- und Bike-Kennzahlen werden getrennt aggregiert.
-- Fehlende sportartspezifische Werte bleiben NULL.
-- Bestehende UTMB- und GPX-Funktionen bleiben unverändert.
+- Bestehende Trail-Planungen, Event-IDs, Strecken, UTMB-Daten und GPX-Referenzen bleiben unverändert nutzbar.
+- Aktivitäten unterschiedlicher Sportarten können gespeichert und geladen werden, ohne neue Sportarten durch Schemaänderungen freischalten zu müssen.
+- Benutzerdefinierte Sportarten/Disziplinen sind möglich.
+- Backyard-Runden und Triathlonsegmente werden fachlich korrekt gespeichert.
+- Team-, Racket-, Kraft-/Fitness- und weitere Resultattypen sind im Ergebnisfeld abbildbar.
+- Segmente werden nicht doppelt als Aktivitäten gezählt.
+- Benutzer A kann keine privaten Aktivitäten von Benutzer B lesen oder ändern.
+- Wiederholte Teilnahmen bleiben getrennt.
+- Nicht zutreffende Messwerte bleiben NULL.
+- Keine produktive Migration erfolgt allein durch diesen Entwurf.
