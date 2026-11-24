@@ -3474,3 +3474,75 @@ html,body{background:var(--nb-bg);color:var(--nb-white)}
   #cockpitTab .cockpit-description,
   #cockpitTab .season-dashboard-description{display:block!important;margin:0!important;line-height:1.45!important}
 }
+
+
+/* Cockpit: target the actual rendered season-dashboard markup. */
+#cockpitTab .season-dashboard{
+  display:grid!important;
+  grid-template-columns:minmax(0,1fr)!important;
+  gap:12px!important;
+  width:100%;
+}
+#cockpitTab .season-dashboard-heading{
+  display:grid!important;
+  grid-template-columns:minmax(0,1fr)!important;
+  gap:6px!important;
+  min-width:0;
+  padding:2px 0 8px!important;
+}
+#cockpitTab .season-dashboard-heading span{
+  display:block!important;
+  color:var(--nb-ice)!important;
+  font-size:10px!important;
+  font-weight:850!important;
+  line-height:1.35!important;
+  letter-spacing:.14em!important;
+}
+#cockpitTab .season-dashboard-heading strong{
+  display:block!important;
+  color:var(--nb-white)!important;
+  font-size:clamp(19px,5vw,24px)!important;
+  line-height:1.18!important;
+  letter-spacing:-.03em!important;
+}
+#cockpitTab .season-dashboard-heading small{
+  display:block!important;
+  color:var(--nb-muted)!important;
+  font-size:13px!important;
+  line-height:1.45!important;
+}
+#cockpitTab .season-next-race{
+  width:100%;
+  min-width:0;
+}
+@media(max-width:700px){
+  .hero{
+    width:auto!important;
+    margin:12px 14px 0!important;
+    padding:15px!important;
+    border-radius:17px!important;
+  }
+  .hero h1{
+    margin:0 0 8px!important;
+    font-size:clamp(25px,7vw,32px)!important;
+    line-height:1.08!important;
+  }
+  .hero .hero-kicker{
+    margin:8px 0 12px!important;
+    font-size:10px!important;
+    letter-spacing:.11em!important;
+  }
+  .hero .stats{
+    display:grid!important;
+    grid-template-columns:repeat(2,minmax(0,1fr))!important;
+    gap:7px!important;
+    margin-top:10px!important;
+  }
+  .hero .stat{
+    min-width:0!important;
+    min-height:70px!important;
+    padding:9px 11px!important;
+  }
+  .hero .stat:last-child{grid-column:1/-1}
+  .hero .stat b{font-size:clamp(22px,6vw,29px)!important}
+}
