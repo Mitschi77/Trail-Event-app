@@ -94,7 +94,7 @@
             }
           }
           if(!facts.length && !(Array.isArray(item.segments)&&item.segments.length)){const p=document.createElement('p');p.textContent='Keine zusätzlichen Details erfasst.';body.appendChild(p);}
-          detailBox.appendChild(body);section.appendChild(detailBox);section.appendChild(row);
+          section.appendChild(row);detailBox.appendChild(body);section.appendChild(detailBox);
         }
         list.appendChild(section);
       }
