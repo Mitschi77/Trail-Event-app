@@ -1129,3 +1129,71 @@ input[type="checkbox"],input[type="radio"]{
 .race-check-track i,.checklist-group-track i{
   background:linear-gradient(90deg,#7FD8FF,#FF6A00)!important;
 }
+
+
+/* NORTHBOUND v105 — screenshot-driven green removal across planner and event cards */
+:root{
+  --green:#FF6A00!important;
+  --lime:#7FD8FF!important;
+  --success:#7FD8FF!important;
+  --success-bg:#151D25!important;
+}
+/* The booking / accommodation block must use graphite, not forest green. */
+:is([class*="travel"],[class*="hotel"],[class*="accommodation"],[id*="travel"],[id*="hotel"]):not(button):not(a){
+  background-color:#151D25!important;
+  background-image:none!important;
+  border-color:#34414D!important;
+  color:#DCE6ED!important;
+}
+:is([class*="travel"],[class*="hotel"],[class*="accommodation"],[id*="travel"],[id*="hotel"]) :is(.card,.panel,.box,.notice,.info,.content,.inner,.section){
+  background:#151D25!important;
+  background-image:none!important;
+  border-color:#34414D!important;
+  color:#DCE6ED!important;
+}
+:is([class*="travel"],[class*="hotel"],[class*="accommodation"],[id*="travel"],[id*="hotel"]) :is(button.primary,a.primary,.primary){
+  background:#174A63!important;
+  background-image:none!important;
+  border-color:#5BBDEB!important;
+  color:#F5F7FA!important;
+}
+/* Elevation chart: neutral graphite canvas and ice-blue profile line. */
+.elevation-chart-wrap,
+.elevation-chart-wrap :is(svg,canvas),
+.elevation-chart-summary span{
+  background:#151D25!important;
+  background-color:#151D25!important;
+  border-color:#34414D!important;
+}
+.elevation-chart :is(polyline,path){
+  stroke:#7FD8FF!important;
+}
+.elevation-chart :is(polygon){
+  fill:#243746!important;
+}
+.elevation-chart line{stroke:#43515E!important}
+/* Race-type chips, completion indicators and status pills are slate, never olive. */
+#yearOverview .year-month-races .year-race-meta-item[data-meta-kind="type"],
+#yearOverview .year-month-races .year-race-meta-item[data-meta-kind="time-limit"],
+#yearOverview .year-month-races .year-race-meta-item[data-meta-kind="status"],
+#events .tag,#events .pill,#events .meta>.tag,
+#yearOverview .tag,#yearOverview .pill,
+.year-race-meta-item[data-meta-kind="type"],
+.year-race-meta-item[data-meta-kind="time-limit"],
+.year-race-meta-item[data-meta-kind="status"],
+:is(.completed,.complete,.success,.status-success,.data-complete,.is-complete,.is-success){
+  background:#18232D!important;
+  background-image:none!important;
+  color:#BFEAFF!important;
+  border-color:#40586B!important;
+  box-shadow:none!important;
+}
+/* Green-tinted card bodies and panels in the event and planner areas. */
+#events :is(.route,.routegrid,.route-details,.route-data,.route-metric,.route-profile,.route-info,.route-status),
+#yearOverview :is(.year-race,.year-month-races,.year-season-summary-item),
+:is(.checklist-group,.checklist-group-travel,.checklist-group-track,.race-check-track,.planner-panel,.planner-review,.event-detail-group-body){
+  background:#151D25!important;
+  background-image:none!important;
+  color:#DCE6ED!important;
+  border-color:#34414D!important;
+}
