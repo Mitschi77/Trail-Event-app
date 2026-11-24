@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-11-22",
+  "updatedAt": "2026-11-24",
   "defaultPolicy": "deny",
   "defaultPolicyNote": "Fail closed for every organizer course GPX route. An unlisted route receives a default pending/deny entry. No legacy allow-by-default. This registry does not delete or overwrite existing GPX data. Personal activity file imports are separate and remain outside organizer-course rights checks.",
   "permissionKeys": [
@@ -22,7 +22,7 @@
     "symbolsIconsPictogramsEmblemsMascots",
     "eventSpecificGraphics"
   ],
-  "routeCount": 9,
+  "routeCount": 11,
   "unlistedRoutePolicy": "deny",
   "routes": {
     "110-tausend-111-4074": {
@@ -357,6 +357,80 @@
         "officialGpxPageLinkAllowed": null,
         "note": "Official route page lists 25 km/1,300 hm; no rights permission; keep blocked."
       }
+    },
+    "mds-ultra-100-570": {
+      "eventId": "marathon-de-sables",
+      "eventName": "MDS Ultra 2027",
+      "routeName": "MDS Ultra 100 km",
+      "status": "pending",
+      "permissions": {
+        "officialDescriptionVerbatim": false,
+        "editedDescription": false,
+        "originalSummary": false,
+        "routeFacts": false,
+        "mapsAndRouteLines": false,
+        "elevationProfiles": false,
+        "gpxFileFetch": false,
+        "gpxFileImport": false,
+        "gpxFileProcess": false,
+        "gpxFileStore": false,
+        "gpxFileMapDisplay": false,
+        "gpxFileUserDownload": false,
+        "gpxOfficialLink": false,
+        "eventNamesAndMarks": false,
+        "logosAndWordImageMarks": false,
+        "symbolsIconsPictogramsEmblemsMascots": false,
+        "eventSpecificGraphics": false
+      },
+      "restriction": {
+        "status": "not_checked",
+        "notice": null,
+        "sourceUrl": "https://marathondessables.com/en/evenement/mds-ultra-2027",
+        "routeUrl": "https://marathondessables.com/en/evenement/mds-ultra-2027",
+        "checkedAt": "2026-11-24",
+        "downloadPageChecked": false,
+        "metadataChecked": false,
+        "metadataStatus": "not_inspected",
+        "officialGpxPageLinkAllowed": false,
+        "note": "The official 2027 event page does not expose a public route-GPX download page or file. A GPS beacon mentioned on the page is for participant tracking and is not a route GPX. No binary was downloaded and no metadata was inspected. Written permission is pending; all file operations and page links remain denied."
+      }
+    },
+    "mds-ultra-miles-164-700": {
+      "eventId": "marathon-de-sables",
+      "eventName": "MDS Ultra 2027",
+      "routeName": "MDS Ultra 100 miles / approximately 160 km",
+      "status": "pending",
+      "permissions": {
+        "officialDescriptionVerbatim": false,
+        "editedDescription": false,
+        "originalSummary": false,
+        "routeFacts": false,
+        "mapsAndRouteLines": false,
+        "elevationProfiles": false,
+        "gpxFileFetch": false,
+        "gpxFileImport": false,
+        "gpxFileProcess": false,
+        "gpxFileStore": false,
+        "gpxFileMapDisplay": false,
+        "gpxFileUserDownload": false,
+        "gpxOfficialLink": false,
+        "eventNamesAndMarks": false,
+        "logosAndWordImageMarks": false,
+        "symbolsIconsPictogramsEmblemsMascots": false,
+        "eventSpecificGraphics": false
+      },
+      "restriction": {
+        "status": "not_checked",
+        "notice": null,
+        "sourceUrl": "https://marathondessables.com/en/evenement/mds-ultra-2027",
+        "routeUrl": "https://marathondessables.com/en/evenement/mds-ultra-2027",
+        "checkedAt": "2026-11-24",
+        "downloadPageChecked": false,
+        "metadataChecked": false,
+        "metadataStatus": "not_inspected",
+        "officialGpxPageLinkAllowed": false,
+        "note": "The official 2027 event page does not expose a public route-GPX download page or file. A GPS beacon mentioned on the page is for participant tracking and is not a route GPX. No binary was downloaded and no metadata was inspected. Written permission is pending; all file operations and page links remain denied."
+      }
     }
   },
   "additionalRoutesCoveredByDefaultDeny": [
@@ -494,6 +568,61 @@
       "eventId": null,
       "routeCode": "Reit im Winkl S 11",
       "reason": "Official 2027 event is not yet a separate event-dates entry; default deny applies."
+    },
+    {
+      "eventId": null,
+      "routeCode": "MDS 120 Atlantic Coast: 70 km, 100 km, 120 km (3-stage choices)",
+      "reason": "2027 event is listed by the official MDS calendar but has no current event-dates route ID in the app. Default deny applies; route-specific written permission is pending."
+    },
+    {
+      "eventId": null,
+      "routeCode": "MDS Legendary Sahara: approximately 250 km / 6 stages (2027 exact stage distances unpublished)",
+      "reason": "2027 event is listed by the official MDS calendar but has no current event-dates route ID in the app. Default deny applies; route-specific written permission is pending."
+    },
+    {
+      "eventId": null,
+      "routeCode": "MDS 120 Cappadocia: 70 km, 100 km, 120 km",
+      "reason": "2027 event is listed by the official MDS calendar but has no current event-dates route ID in the app. Default deny applies; route-specific written permission is pending."
+    },
+    {
+      "eventId": null,
+      "routeCode": "MDS Handi Sahara: approximately 70 km / 3 stages",
+      "reason": "2027 event is listed by the official MDS calendar but has no current event-dates route ID in the app. Default deny applies; route-specific written permission is pending."
+    },
+    {
+      "eventId": null,
+      "routeCode": "MDS 120 Morocco: 70 km, 100 km, 120 km",
+      "reason": "2027 event is listed by the official MDS calendar but has no current event-dates route ID in the app. Default deny applies; route-specific written permission is pending."
+    },
+    {
+      "eventId": null,
+      "routeCode": "MDS Royal Trek Morocco: approximately 70–120 km / flexible timed stages",
+      "reason": "2027 event is listed by the official MDS calendar but has no current event-dates route ID in the app. Default deny applies; route-specific written permission is pending."
+    },
+    {
+      "eventId": null,
+      "routeCode": "MDS 120 Jordan: 70 km, 100 km, 120 km",
+      "reason": "2027 event is listed by the official MDS calendar but has no current event-dates route ID in the app. Default deny applies; route-specific written permission is pending."
+    },
+    {
+      "eventId": null,
+      "routeCode": "MDS Trek Peru: 60–100 km / 3 walking stages",
+      "reason": "2027 event is listed by the official MDS calendar but has no current event-dates route ID in the app. Default deny applies; route-specific written permission is pending."
+    },
+    {
+      "eventId": null,
+      "routeCode": "MDS 120 Peru: list says 70–120 km; detailed page says 80/100/120 km",
+      "reason": "2027 event is listed by the official MDS calendar but has no current event-dates route ID in the app. Default deny applies; route-specific written permission is pending."
+    },
+    {
+      "eventId": null,
+      "routeCode": "MDS Crazy Loops La Rosière 2027: event-listing entry only; linked detail page remains 2026",
+      "reason": "2027 event is listed by the official MDS calendar but has no current event-dates route ID in the app. Default deny applies; route-specific written permission is pending."
+    },
+    {
+      "eventId": null,
+      "routeCode": "MDS Crazy Loops Courchevel 2027: event-listing entry only; linked detail page remains 2026",
+      "reason": "2027 event is listed by the official MDS calendar but has no current event-dates route ID in the app. Default deny applies; route-specific written permission is pending."
     }
   ],
   "safety": {
