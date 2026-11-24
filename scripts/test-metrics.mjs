@@ -875,6 +875,12 @@ assert.ok(seasonTools.includes("@media(prefers-reduced-motion:reduce){.year-mont
 assert.ok(seasonTools.includes(".year-month-group[open]>summary"), "The active month must have a clear expanded state");
 
 
+// Menu information: device and synchronization status stays visible; only longer help copy is collapsed.
+assert.ok(html.includes("function shouldWrapHelpText(el){return !el.closest('.app-menu-info')&&el.id!=='storageHealth';}"),
+  "Device status and synchronization details must not be hidden behind generated info icons");
+assert.ok(html.includes("shouldWrapHelpText(el)&&!el.dataset.infoConverted"),
+  "Help conversion must skip informational menu cards while retaining info tips elsewhere");
+
 // Web Push setup must explicitly register the service worker from the user action.
 assert.ok(html.includes("navigator.serviceWorker.register(new URL('./sw.js',document.baseURI)"), "Push setup must not depend solely on the asynchronous page-load registration");
 assert.ok(html.includes("Notification.requestPermission()") && html.indexOf("Notification.requestPermission()") < html.indexOf("navigator.serviceWorker.register(new URL('./sw.js',document.baseURI)"), "iOS permission request must remain before the first awaited service-worker setup");
