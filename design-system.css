@@ -1783,3 +1783,20 @@ body{line-height:1.52}
   border-color:#40586B!important;
   color:#BFEAFF!important;
 }
+
+
+/* NORTHBOUND settings: compact, readable status rows on phone and desktop. */
+.app-settings-content{display:grid;gap:10px;min-width:0}
+.app-settings-intro{margin:2px 3px 4px;color:var(--nb-muted,#aab7c2);font-size:12px;line-height:1.5}
+.app-settings-content .settings-group{margin:0;padding:13px;border:1px solid #344b5d;border-radius:13px;background:#14212c}
+.app-settings-content .settings-group>strong{display:block;margin:0 0 8px;color:#7fd8ff;font-size:13px;font-weight:800}
+.app-settings-content .settings-connection{display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:center;gap:12px;padding:10px 0;border-top:1px solid #ffffff12;font-size:12px;line-height:1.4}
+.app-settings-content .settings-connection:first-of-type{border-top:0}
+.app-settings-content .settings-connection b{max-width:180px;white-space:normal;color:#ffbd91;font-size:11px;font-weight:750;text-align:right}
+.app-settings-content .settings-connection b.settings-ok{color:#7fd8ff}
+.app-settings-content .settings-connection b.settings-neutral{color:#b9c8d2}
+.app-settings-content .app-menu-item{width:100%;margin:7px 0 0;min-height:44px}
+@media(max-width:560px){
+ .app-settings-content .settings-connection{grid-template-columns:minmax(0,1fr);gap:4px;align-items:start}
+ .app-settings-content .settings-connection b{max-width:none;text-align:left}
+}

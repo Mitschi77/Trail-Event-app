@@ -875,6 +875,20 @@ assert.ok(seasonTools.includes("@media(prefers-reduced-motion:reduce){.year-mont
 assert.ok(seasonTools.includes(".year-month-group[open]>summary"), "The active month must have a clear expanded state");
 
 
+// Menu information: device and synchronization status stays visible; only longer help copy is collapsed.
+assert.ok(html.includes("function shouldWrapHelpText(el){return !el.closest('.app-menu-info')&&el.id!=='storageHealth';}"),
+  "Device status and synchronization details must not be hidden behind generated info icons");
+assert.ok(html.includes("shouldWrapHelpText(el)&&!el.dataset.infoConverted"),
+  "Help conversion must skip informational menu cards while retaining info tips elsewhere");
+assert.ok(html.includes("Zuletzt geprüft: ") && html.includes("Cloud-Daten zuletzt geändert: "),
+  "The account panel must distinguish the local check time from the last remote cloud-data update");
+assert.ok(html.includes("app-settings-intro") && html.includes("Karten &amp; Streckenprofile") && html.includes("Schnellzugriff"),
+  "Settings must use clear user-facing groups and quick actions");
+assert.ok(designSystem.includes(".app-settings-content .settings-connection") && designSystem.includes("@media(max-width:560px)"),
+  "Settings status rows must remain readable on narrow mobile screens");
+assert.ok(html.includes("Online bereitgestellt") && html.includes("Lokale Vorschau"),
+  "Hosting status must distinguish the published app from a local preview");
+
 // Web Push setup must explicitly register the service worker from the user action.
 assert.ok(html.includes("navigator.serviceWorker.register(new URL('./sw.js',document.baseURI)"), "Push setup must not depend solely on the asynchronous page-load registration");
 assert.ok(html.includes("Notification.requestPermission()") && html.indexOf("Notification.requestPermission()") < html.indexOf("navigator.serviceWorker.register(new URL('./sw.js',document.baseURI)"), "iOS permission request must remain before the first awaited service-worker setup");
