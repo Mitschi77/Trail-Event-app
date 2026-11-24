@@ -553,7 +553,8 @@ assert.ok(malcesine60k.aidStations.every(station => station.km >= 0 && station.k
 console.log("Validated race priorities, training phases and actual-race recovery.");
 
 assert.ok(html.includes('data-newroute="gpxUrl"'), "New race form must accept a discovered GPX download URL");
-assert.ok(html.includes('data-newroute="utmbScore"'), "New race form must accept a discovered UTMB score");
+assert.ok(!html.includes('data-newroute="utmbScore"') && !html.includes("UTMB Score") && !html.includes("UTMB SCORE") && !html.includes("eventUtmbScoreBadge("), "UTMB score must be removed from the app UI and new race form");
+assert.ok(html.includes('id="personalUtmbIndex"') && html.includes("UTMB Index"), "The personal UTMB Index must remain the single UTMB metric in the header");
 assert.ok(html.includes('data-newroute="cutoffs"'), "New race form must retain automatically detected cutoff data");
 assert.ok(html.includes('data-newroute="aidStations"'), "New race form must retain automatically detected aid stations");
 assert.ok(html.includes("cutoffs:parseJson('cutoffs'),aidStations:parseJson('aidStations')"), "Cutoffs and aid stations must be saved in the review proposal");
