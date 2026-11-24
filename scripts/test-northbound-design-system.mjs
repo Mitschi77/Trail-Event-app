@@ -14,6 +14,7 @@ for (const selector of [
   ".season-training-ring",
   ".season-training-compare-row",
   "#cockpitTab",
+  "#seasonCockpit",
   "#events",
   "#yearOverview",
   "#plannerTab",
