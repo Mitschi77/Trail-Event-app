@@ -35,6 +35,10 @@ assert.equal(SportYear.normalizeBackyardResult({ rounds: 3, lapLengthKm: 5 }).to
 assert.throws(() => SportYear.normalizeBackyardResult({ rounds: -1 }), /Rundenanzahl/);
 assert.throws(() => SportYear.normalizeActivity({ startsAt: '2026-05-02', endsAt: '2026-05-01' }), /Ende darf nicht vor dem Beginn/);
 assert.throws(() => SportYear.normalizeActivity({ distanceKm: -2 }), /Distanz/);
+assert.throws(() => SportYear.normalizeActivity({ startsAt: 'kein-datum' }), /gültiger Zeitpunkt/);
+assert.throws(() => SportYear.normalizeActivity({ segments: [{ sequence: 1 }, { sequence: 1 }] }), /Reihenfolge muss eindeutig/);
+assert.throws(() => SportYear.normalizeBackyardResult({ rounds: 1, lapTimesSeconds: [3600, 3610] }), /mehr Rundenzeiten/);
+assert.throws(() => SportYear.normalizeBackyardResult({ rounds: 2, eliminatedAfterRound: 3 }), /Ausscheidungsrunde/);
 
 
 const tennis = SportYear.normalizeSportResult('tennis', {
