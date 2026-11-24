@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0b1117">
+  <title>Sportjahr – Eingabemaske Vorschau</title>
+  <style>
+    *{box-sizing:border-box}body{margin:0;padding:24px;background:#080d12;color:#f5f7fa;font:16px/1.5 system-ui,-apple-system,sans-serif}
+    main{max-width:980px;margin:0 auto}.notice{margin:0 0 18px;padding:12px 15px;border:1px solid #40515e;border-left:4px solid #ff6a00;border-radius:9px;background:#111c25;color:#dce5eb}
+    a{color:#7fd8ff}.top{margin-bottom:20px}.top small{color:#ff6a00;letter-spacing:.16em;font-weight:800}
+    @media(max-width:600px){body{padding:12px}}
+  </style>
+  <script defer src="sport-year.js"></script>
+  <script defer src="sport-year-entry.js"></script>
+  <script defer src="sport-year-board.js"></script>
+</head>
+<body>
+  <main>
+    <header class="top"><small>NORTHBOUND · SPORTJAHR</small><h1>Funktionsvorschau</h1></header>
+    <p class="notice"><strong>Nur Vorschau:</strong> Diese Eingabemaske prüft die Daten lokal im Browser. Es wird nichts in Supabase oder in deinem persönlichen Trainings-/Eventbestand gespeichert. Die bestehende Trail-App bleibt unverändert.</p>
+    <sport-year-entry></sport-year-entry>
+    <sport-year-board></sport-year-board>
+    <p><a href="https://github.com/Mitschi77/Trail-Event-app/pull/360">Technischer Entwicklungsstand in PR #360</a></p>
+  </main>
+</body>
+</html>
