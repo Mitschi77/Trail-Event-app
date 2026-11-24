@@ -15,7 +15,7 @@ assert.match(board, /Mehrkampf-\/Aktivitätssegmente/);
 assert.match(board, /durationLabel/);
 assert.match(board, /segment\.sequence/);
 assert.match(board, /replaceChildren/);
-assert.match(board, /data-action=action/);
+assert.match(board, /dataset\.action=action/);
 assert.match(board, /handleAction\(event\)/);
 assert.match(board, /saveEdit\(event\)/);
 assert.match(board, /this\.items = this\.items\.filter/);
