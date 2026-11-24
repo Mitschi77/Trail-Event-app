@@ -974,3 +974,158 @@ div[class*="utmb-result"] a,
 div[class*="utmb-score"] a{
   color:#7FD8FF!important;
 }
+
+
+/* NORTHBOUND v103 — mobile filter clarity and neutral alpine surfaces */
+@media(max-width:560px){
+  .event-filter-panel .toolbar{
+    display:grid!important;
+    grid-template-columns:minmax(0,1fr)!important;
+    gap:12px!important;
+    padding:14px!important;
+  }
+  .event-filter-panel .toolbar-field,
+  .event-filter-panel .toolbar-field>*,
+  .event-filter-panel .field{
+    min-width:0!important;
+    width:100%!important;
+    max-width:100%!important;
+    box-sizing:border-box!important;
+  }
+  .event-filter-panel .toolbar-field{
+    display:flex!important;
+    flex-direction:column!important;
+    align-items:stretch!important;
+    gap:6px!important;
+    font-size:13px!important;
+    line-height:1.4!important;
+    white-space:normal!important;
+  }
+  .event-filter-panel .toolbar-field label,
+  .event-filter-panel .toolbar-field>label{
+    display:block!important;
+    white-space:normal!important;
+    overflow-wrap:anywhere!important;
+  }
+  .event-filter-panel input,
+  .event-filter-panel select,
+  .event-filter-panel .field{
+    min-height:50px!important;
+    padding:11px 13px!important;
+    font-size:15px!important;
+    line-height:1.35!important;
+    text-overflow:ellipsis!important;
+  }
+  .event-filter-panel .radius-location-field{grid-column:1/-1!important}
+  .event-filter-panel .radius-action-field{
+    display:grid!important;
+    grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr)!important;
+    gap:9px!important;
+    align-items:stretch!important;
+  }
+  .event-filter-panel .radius-action-field button{
+    min-width:0!important;
+    width:100%!important;
+    padding:10px!important;
+    white-space:normal!important;
+    line-height:1.25!important;
+  }
+}
+@media(min-width:561px) and (max-width:759px){
+  .event-filter-panel .toolbar{grid-template-columns:repeat(2,minmax(0,1fr))!important}
+  .event-filter-panel .toolbar-field{min-width:0!important}
+  .event-filter-panel .toolbar-field label{white-space:normal!important}
+  .event-filter-panel input,.event-filter-panel select{min-width:0!important;width:100%!important}
+}
+/* The route cards use graphite/slate surfaces; green is not a brand surface. */
+#events .route,
+#events .route .route-metric,
+#events .route .route-data,
+#events .route .route-details,
+#events .route .route-profile,
+#events .route .route-info,
+#events .route .route-status,
+#events .route .status-badge,
+#events .route .tag,
+#events .route .pill{
+  background-color:#18232D!important;
+  background-image:none!important;
+  color:#DCE6ED!important;
+  border-color:#354653!important;
+}
+#events .route :is(button:not(.primary),a.secondary,.secondary){
+  background:#18232D!important;
+  color:#DCE6ED!important;
+  border-color:#40505E!important;
+}
+#events .route :is(.success,.complete,.completed,.status-success,.data-complete){
+  background:#1D3442!important;
+  color:#BFEAFF!important;
+  border-color:#49687B!important;
+}
+/* Remove remaining green-tinted completion panels and accents without changing status meaning. */
+:is(.checklist-group,.checklist-group-travel,.race-check-track,.checklist-group-track){
+  background:#18232D!important;
+  border-color:#354653!important;
+}
+.checklist-group-travel{box-shadow:inset 3px 0 #7FD8FF!important}
+#yearOverview .year-month-races .year-race-meta-item[data-meta-kind="time-limit"]{
+  background:#18232D!important;color:#DCE6ED!important;border-color:#354653!important;
+}
+
+
+/* NORTHBOUND v104 — absolute ban on green-tinted UI surfaces */
+:root{
+  --green:#FF6A00!important;
+  --lime:#7FD8FF!important;
+  --success:#7FD8FF!important;
+  --success-bg:#18232D!important;
+}
+/* Former green completion/time-limit chips become neutral slate. */
+#yearOverview .year-month-races .year-race-meta-item[data-meta-kind="time-limit"],
+#yearOverview .year-month-races .year-race-meta-item[data-meta-kind="type"],
+#yearOverview .year-month-races .year-race-meta-item[data-meta-kind="cutoff"],
+.year-race-meta-item[data-meta-kind="time-limit"],
+.year-race-meta-item[data-meta-kind="type"],
+.year-race-meta-item[data-meta-kind="cutoff"]{
+  background:#18232D!important;
+  color:#DCE6ED!important;
+  border-color:#354653!important;
+}
+/* Planner, route and completion details: graphite only, with ice-blue status accents. */
+.checklist-group,.checklist-group-travel,
+.checklist-group-track,.race-check-track,
+.travel-plan-editor,.travel-plan-editor *,
+.route .route-metric,.route .route-data,.route .route-details,
+.route .route-profile,.route .route-info,.route .route-status,
+.route .status-badge,.route .tag,.route .pill,
+.route [class*="success"],.route [class*="complete"],
+.race-tools-section,.planner-panel,.planner-review,
+.event-detail-group-body,.event-detail-group summary,
+.year-race,.year-month-races,.year-season-summary-item{
+  background-color:#151D25!important;
+  background-image:none!important;
+  color:#DCE6ED!important;
+  border-color:#34414D!important;
+}
+.checklist-group-travel,.travel-plan-editor{
+  box-shadow:inset 3px 0 #7FD8FF!important;
+}
+.checklist-group-travel :is(b,strong,h3,h4),
+.travel-plan-editor :is(b,strong,h3,h4){
+  color:#F5F7FA!important;
+}
+:is(.success,.complete,.completed,.status-success,.data-complete,
+[data-status="success"],[data-status="complete"],[data-state="success"]){
+  background:#18232D!important;
+  color:#BFEAFF!important;
+  border-color:#49687B!important;
+}
+/* No emerald/olive tones in form controls, progress or selected states. */
+input,select,textarea,progress,
+input[type="checkbox"],input[type="radio"]{
+  accent-color:#FF6A00!important;
+}
+.race-check-track i,.checklist-group-track i{
+  background:linear-gradient(90deg,#7FD8FF,#FF6A00)!important;
+}
