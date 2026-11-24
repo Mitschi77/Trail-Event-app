@@ -20,6 +20,8 @@ assert.match(board, /aria-label',key\+'/);
 assert.match(board, /chartData/);
 assert.match(board, /key\.slice\(2,4\)/);
 assert.match(board, /Für diese Auswahl liegen noch keine datierten Aktivitäten vor/);
+assert.match(board, /if\(!chartData\.length\)/);
+assert.match(board, /} else \{/);
 assert.match(board, /monthGroups/);
 assert.match(board, /monthKm/);
 assert.match(board, /monthHm/);
