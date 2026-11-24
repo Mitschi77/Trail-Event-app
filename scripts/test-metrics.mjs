@@ -696,6 +696,16 @@ assert.ok(seasonTools.includes('window.renderYearOverview=function(){originalYea
 assert.ok(html.includes('--bg:#0b1117') && html.includes('--ink:#f1f5f8') && html.includes('color-scheme:dark'),
   "The NORTHBOUND dark theme and readable contrast tokens must remain in place");
 
+assert.ok(html.includes('<details id="accountMenuGroup" class="app-menu-group">') &&
+  !html.includes('<details id="accountMenuGroup" class="app-menu-group" open>') &&
+  html.includes("if(accountGroup)accountGroup.open=false") &&
+  html.includes("if(accountGroup)accountGroup.open=true"),
+  "Account and synchronization must start collapsed, reset when the menu closes, and open explicitly when login is required");
+assert.ok(html.includes('#appMenuDropdown #missingCount{background:#243746!important') &&
+  html.includes('color:#BFEAFF!important'),
+  "The open-data count badge must use neutral graphite and ice-blue colors, never green");
+
+
 
 // Explanatory help must be tucked behind accessible NORTHBOUND information controls.
 const infoTipCount = (html.match(/class="info-tip"/g) || []).length;
