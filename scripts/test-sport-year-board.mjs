@@ -20,7 +20,7 @@ assert.match(board, /handleAction\(event\)/);
 assert.match(board, /saveEdit\(event\)/);
 assert.match(board, /this\.items = this\.items\.filter/);
 assert.match(board, /item\.title = String\(data\.get\('title'\)/);
-assert.match(board, /item\.distanceKm = Number\(data\.get\('distanceKm'\)/);
+assert.match(board, /item\.distanceKm = distanceKm/);
 assert.match(board, /item\.elevationGainM = elevationGainM/);
 assert.match(board, /Number\.isFinite\(value\) && value >= 0/);
 assert.match(board, /Bitte gib für Distanz und Höhenmeter jeweils eine Zahl ab 0 ein/);
