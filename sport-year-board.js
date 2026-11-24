@@ -13,12 +13,15 @@
       if (this.dataset.ready) return;
       this.dataset.ready = '1';
       this.items = [];
+      this.editingId = null;
       this.innerHTML = '<section class="sy-board"><header><h2>Dein Sportjahr</h2><p class="sy-muted">In dieser Vorschau nur im Arbeitsspeicher – beim Neuladen werden die Einträge verworfen.</p></header><div class="sy-stats"><article><strong data-count>0</strong><span>Aktivitäten</span></article><article><strong data-km>0 km</strong><span>Gesamtdistanz</span></article><article><strong data-hm>0 hm</strong><span>Höhenmeter</span></article></div><div class="sy-filter"><label>Jahr<select data-year><option value="all">Alle Jahre</option></select></label><label>Sportart<select data-sport><option value="all">Alle Sportarten</option></select></label></div><div class="sy-list" aria-live="polite"></div></section>';
       this.querySelector('[data-year]').addEventListener('change', () => this.render());
       this.querySelector('[data-sport]').addEventListener('change', () => this.render());
+      this.querySelector('.sy-list').addEventListener('click', event => this.handleAction(event));
+      this.querySelector('.sy-list').addEventListener('submit', event => this.saveEdit(event));
       document.addEventListener('sport-year-activity', event => this.addActivity(event.detail));
       const style = document.createElement('style');
-      style.textContent = '.sy-board{margin:24px 0;background:#0b1117;border:1px solid #273541;border-radius:16px;padding:20px;color:#f5f7fa}.sy-board h2{margin:0 0 5px}.sy-muted,.sy-group small{color:#aebbc6}.sy-stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin:16px 0}.sy-stats article{padding:13px;background:#111c25;border:1px solid #273541;border-radius:10px}.sy-stats strong,.sy-stats span{display:block}.sy-stats strong{font-size:22px;color:#7fd8ff}.sy-stats span{font-size:12px;color:#aebbc6}.sy-filter{display:flex;gap:12px;flex-wrap:wrap;margin:14px 0}.sy-filter label{display:grid;gap:5px;font-size:12px;color:#dce5eb}.sy-filter select{min-width:150px;padding:9px;background:#111c25;color:#f5f7fa;border:1px solid #40515e;border-radius:8px}.sy-group{margin:18px 0}.sy-group h3{font-size:15px;color:#ff6a00;border-bottom:1px solid #34434f;padding-bottom:7px}.sy-activity{display:flex;justify-content:space-between;gap:12px;padding:12px 0;border-bottom:1px solid #24323d}.sy-activity strong{display:block}.sy-activity small{display:block;color:#aebbc6}.sy-detail{margin-top:9px}.sy-detail summary{color:#7fd8ff;cursor:pointer;font-size:13px}.sy-detail-content{margin-top:8px;padding:10px;background:#111c25;border:1px solid #273541;border-radius:8px;color:#dce5eb;font-size:13px}.sy-detail-content p{margin:4px 0}.sy-segment{padding:7px 0;border-top:1px solid #34434f}.sy-empty{padding:18px;border:1px dashed #40515e;border-radius:10px;color:#aebbc6}@media(max-width:560px){.sy-board{padding:14px}.sy-stats{grid-template-columns:1fr 1fr}.sy-activity{display:block}}';
+      style.textContent = '.sy-board{margin:24px 0;background:#0b1117;border:1px solid #273541;border-radius:16px;padding:20px;color:#f5f7fa}.sy-board h2{margin:0 0 5px}.sy-muted,.sy-group small{color:#aebbc6}.sy-stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin:16px 0}.sy-stats article{padding:13px;background:#111c25;border:1px solid #273541;border-radius:10px}.sy-stats strong,.sy-stats span{display:block}.sy-stats strong{font-size:22px;color:#7fd8ff}.sy-stats span{font-size:12px;color:#aebbc6}.sy-filter{display:flex;gap:12px;flex-wrap:wrap;margin:14px 0}.sy-filter label{display:grid;gap:5px;font-size:12px;color:#dce5eb}.sy-filter select{min-width:150px;padding:9px;background:#111c25;color:#f5f7fa;border:1px solid #40515e;border-radius:8px}.sy-group{margin:18px 0}.sy-group h3{font-size:15px;color:#ff6a00;border-bottom:1px solid #34434f;padding-bottom:7px}.sy-activity{display:flex;justify-content:space-between;gap:12px;padding:12px 0;border-bottom:1px solid #24323d}.sy-activity strong{display:block}.sy-activity small{display:block;color:#aebbc6}.sy-actions{display:flex;gap:7px;flex-wrap:wrap;margin-top:8px}.sy-actions button,.sy-edit button{padding:7px 10px;border:1px solid #40515e;border-radius:7px;background:#17232d;color:#f5f7fa;cursor:pointer}.sy-actions button[data-remove]{border-color:#9b4a36;color:#ffb19b}.sy-edit{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin:10px 0;padding:10px;background:#111c25;border:1px solid #40515e;border-radius:8px}.sy-edit label{display:grid;gap:4px;font-size:12px;color:#aebbc6}.sy-edit input{min-width:0;width:100%;box-sizing:border-box;padding:8px;background:#0b1117;color:#f5f7fa;border:1px solid #40515e;border-radius:6px}.sy-edit .sy-edit-actions{display:flex;gap:7px;align-items:end}.sy-detail{margin-top:9px}.sy-detail summary{color:#7fd8ff;cursor:pointer;font-size:13px}.sy-detail-content{margin-top:8px;padding:10px;background:#111c25;border:1px solid #273541;border-radius:8px;color:#dce5eb;font-size:13px}.sy-detail-content p{margin:4px 0}.sy-segment{padding:7px 0;border-top:1px solid #34434f}.sy-empty{padding:18px;border:1px dashed #40515e;border-radius:10px;color:#aebbc6}@media(max-width:560px){.sy-board{padding:14px}.sy-stats{grid-template-columns:1fr 1fr}.sy-activity{display:block}}';
       document.head.appendChild(style);
       this.render();
     }
@@ -26,6 +29,36 @@
       if (!activity || typeof activity !== 'object') return;
       this.items.push({...activity, id:'preview-' + (this.items.length + 1)});
       this.refreshFilters();
+      this.render();
+    }
+    handleAction(event) {
+      const button = event.target.closest('button[data-action]');
+      if (!button) return;
+      const id = button.dataset.id;
+      if (button.dataset.action === 'remove') {
+        this.items = this.items.filter(item => item.id !== id);
+        if (this.editingId === id) this.editingId = null;
+        this.refreshFilters();
+        this.render();
+      } else if (button.dataset.action === 'edit') {
+        this.editingId = id;
+        this.render();
+      } else if (button.dataset.action === 'cancel') {
+        this.editingId = null;
+        this.render();
+      }
+    }
+    saveEdit(event) {
+      const form = event.target.closest('form[data-edit-form]');
+      if (!form) return;
+      event.preventDefault();
+      const item = this.items.find(entry => entry.id === form.dataset.id);
+      if (!item) return;
+      const data = new FormData(form);
+      item.title = String(data.get('title') || '').trim() || 'Aktivität';
+      item.distanceKm = Number(data.get('distanceKm')) || 0;
+      item.elevationGainM = Number(data.get('elevationGainM')) || 0;
+      this.editingId = null;
       this.render();
     }
     refreshFilters() {
@@ -69,6 +102,27 @@
           const distance=Number(item.distanceKm) || Number(item.result?.totalDistanceKm) || 0;
           right.textContent=[distance ? distance.toFixed(1)+' km' : '',item.elevationGainM ? Math.round(item.elevationGainM)+' hm' : '',item.result?.rounds!=null ? item.result.rounds+' Runden' : ''].filter(Boolean).join(' · ');
           row.append(left,right);
+          const actions=document.createElement('div');actions.className='sy-actions';
+          for(const [action,label] of [['edit','Bearbeiten'],['remove','Entfernen']]){
+            const button=document.createElement('button');button.type='button';button.dataset.action=action;button.dataset.id=item.id;button.textContent=label;
+            if(action==='remove')button.dataset.remove='true';
+            actions.appendChild(button);
+          }
+          const entry=document.createElement('div');entry.append(row,actions);
+          if(this.editingId===item.id){
+            const form=document.createElement('form');form.className='sy-edit';form.dataset.editForm='true';form.dataset.id=item.id;
+            const fields=[['title','Name',item.title||''],['distanceKm','Distanz (km)',item.distanceKm||item.result?.totalDistanceKm||''],['elevationGainM','Höhenmeter',item.elevationGainM||'']];
+            for(const [name,label,value] of fields){
+              const field=document.createElement('label');field.textContent=label;
+              const input=document.createElement('input');input.name=name;input.value=String(value);input.type=name==='title'?'text':'number';if(name!=='title'){input.min='0';input.step='any';}
+              field.appendChild(input);form.appendChild(field);
+            }
+            const controls=document.createElement('div');controls.className='sy-edit-actions';
+            const save=document.createElement('button');save.type='submit';save.textContent='Speichern';
+            const cancel=document.createElement('button');cancel.type='button';cancel.dataset.action='cancel';cancel.dataset.id=item.id;cancel.textContent='Abbrechen';
+            controls.append(save,cancel);form.appendChild(controls);entry.appendChild(form);
+          }
+
           const detailBox=document.createElement('details');detailBox.className='sy-detail';
           const summary=document.createElement('summary');summary.textContent='Aktivitätsdetails';detailBox.appendChild(summary);
           const body=document.createElement('div');body.className='sy-detail-content';
@@ -94,7 +148,7 @@
             }
           }
           if(!facts.length && !(Array.isArray(item.segments)&&item.segments.length)){const p=document.createElement('p');p.textContent='Keine zusätzlichen Details erfasst.';body.appendChild(p);}
-          section.appendChild(row);detailBox.appendChild(body);section.appendChild(detailBox);
+          detailBox.appendChild(body);entry.appendChild(detailBox);section.appendChild(entry);
         }
         list.appendChild(section);
       }
