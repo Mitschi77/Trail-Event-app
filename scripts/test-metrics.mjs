@@ -884,7 +884,7 @@ assert.ok(html.includes("Zuletzt geprüft: ") && html.includes("Cloud-Daten zule
   "The account panel must distinguish the local check time from the last remote cloud-data update");
 assert.ok(html.includes("app-settings-intro") && html.includes("Karten &amp; Streckenprofile") && html.includes("Schnellzugriff"),
   "Settings must use clear user-facing groups and quick actions");
-assert.ok(css.includes(".app-settings-content .settings-connection") && css.includes("@media(max-width:560px)"),
+assert.ok(designSystem.includes(".app-settings-content .settings-connection") && designSystem.includes("@media(max-width:560px)"),
   "Settings status rows must remain readable on narrow mobile screens");
 assert.ok(html.includes("Online bereitgestellt") && html.includes("Lokale Vorschau"),
   "Hosting status must distinguish the published app from a local preview");
