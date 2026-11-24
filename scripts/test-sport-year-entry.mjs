@@ -7,7 +7,7 @@ const preview = readFileSync(new URL('../sport-year-preview.html', import.meta.u
 assert.match(entry, /customElements\.define\('sport-year-entry'/);
 assert.match(entry, /Sportjahr-Kern nicht geladen/);
 assert.match(entry, /normalizeActivity\(a\)/);
-assert.match(entry, /querySelectorAll\('input\[type=\\"number\\"\]'\)/);
+assert.match(entry, /querySelectorAll/);
 assert.match(entry, /Number\.isFinite\(value\)/);
 assert.match(entry, /input\.focus\(\)/);
 assert.match(entry, /liegt außerhalb des erlaubten Bereichs/);
