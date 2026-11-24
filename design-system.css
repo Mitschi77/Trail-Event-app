@@ -2916,8 +2916,17 @@ body{
 .review-compare-table{
   display:block;
   width:100%;
+  min-width:0;
+  max-width:100%;
   overflow-x:auto;
   -webkit-overflow-scrolling:touch
+}
+#events .route-info-panel table :is(thead,tbody),
+.segment-table table :is(thead,tbody),
+.review-compare-table :is(thead,tbody){
+  display:table;
+  width:max-content;
+  min-width:100%
 }
 :where(.event,.route,.plan-card,.year-group,.calendar-card,.planner-panel,.planner-review,.nb-insight-panel,.nb-quality-row){
   min-width:0;
@@ -2940,7 +2949,12 @@ body{
   #events .route-info-panel table,
   .segment-table table,
   .review-compare-table{
-    min-width:520px
+    min-width:0
+  }
+  #events .route-info-panel table :is(th,td),
+  .segment-table table :is(th,td),
+  .review-compare-table :is(th,td){
+    min-width:76px
   }
   :where(.planner-grid,.planner-columns,.edit-grid)>label,
   :where(.planner-grid,.planner-columns,.edit-grid)>div{
