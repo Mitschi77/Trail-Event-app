@@ -512,7 +512,7 @@ hr,.divider{border-color:var(--line)}
   font-variant-numeric:tabular-nums
 }
 #yearOverview .year-month-races .year-race-meta-item[data-meta-kind="type"]{
-  color:#c5e3cb;border-color:#365a45;background:#182c22
+  color:#ffbd85;border-color:#704c32;background:#2a211b
 }
 
 
@@ -688,7 +688,7 @@ hr,.divider{border-color:var(--line)}
   color:#f3d7a2;border-color:#80643a;background:#302719;font-weight:750
 }
 #yearOverview .year-month-races .year-race-meta-item[data-meta-kind="time-limit"]{
-  color:#c8e6db;border-color:#416e60;background:#172e29;font-weight:800;
+  color:#bfeaff;border-color:#345b73;background:#142b3b;font-weight:800;
   font-variant-numeric:tabular-nums
 }
 #yearOverview .year-month-races .year-race-status-controls{
