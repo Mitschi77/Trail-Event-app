@@ -182,7 +182,7 @@ create policy sport_activity_segments_delete_policy
 -- Zusätzliche Eigentümerprüfung für Fremdschlüssel:
 -- Ein gültiger UUID-Fremdschlüssel allein reicht nicht aus: sonst könnte ein
 -- Benutzer eine private Sportart eines anderen Benutzers referenzieren.
--- Diese Trigger laufen standardmäßig als SECURITY INVOKER (kein SECURITY DEFINER).
+-- Diese Trigger laufen standardmäßig mit den Rechten des aufrufenden Benutzers.
 -- Die SELECT-Prüfungen unterliegen damit weiterhin den RLS-Regeln des Aufrufers.
 
 create or replace function public.sport_year_check_catalog_parent()
@@ -246,7 +246,7 @@ create or replace function public.sport_year_check_segment_references()
 returns trigger
 language plpgsql
 set search_path = ''
-as $
+as $sport_year$
 declare
   activity_owner uuid;
 begin
