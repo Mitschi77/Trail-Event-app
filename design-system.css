@@ -1292,3 +1292,45 @@ input[type="checkbox"],input[type="radio"]{
   background-image:none!important;
   border-color:#40586B!important;
 }
+
+
+/* NORTHBOUND v107 — final Alpine Performance palette enforcement */
+#seasonRaceCards .season-state-pill.is-completed{
+  color:#BFEAFF!important;background:#18232D!important;border-color:#40586B!important;
+}
+#seasonTimeline .season-block{
+  border-top-color:#7FD8FF!important;
+  background:linear-gradient(155deg,#18232D,#151D25)!important;
+}
+/* The route-detail and elevation popup markup is rendered by the planner, outside #events. */
+.elevation-chart-wrap{
+  background:#151D25!important;background-color:#151D25!important;background-image:none!important;
+  border-color:#34414D!important;color:#DCE6ED!important;
+}
+.elevation-chart-wrap .elevation-chart-summary span{
+  background:#18232D!important;background-color:#18232D!important;border-color:#34414D!important;
+}
+.elevation-chart polygon{fill:#243746!important;stroke:none!important}
+.elevation-chart polyline{stroke:#7FD8FF!important;fill:none!important}
+.elevation-chart line{stroke:#43515E!important}
+.elevation-chart text{fill:#AAB8C4!important}
+/* The event/route summary chips shown above detail panels. */
+#events .eventhead~*,#events .route,
+#events .route :is(.route-metric,.route-data,.route-details,.route-profile,.route-info,.route-status,.tag,.pill,.status-badge),
+#events .route .route-data *,
+#events .route .route-details *{
+  --success:#7FD8FF!important;
+}
+#events .route :is(.route-metric,.route-data,.route-details,.route-profile,.route-info,.route-status,.tag,.pill,.status-badge,.success,.complete,.completed){
+  background:#18232D!important;background-color:#18232D!important;background-image:none!important;
+  color:#DCE6ED!important;border-color:#40586B!important;
+}
+/* Green primary accommodation map button becomes a restrained deep-slate action, not green. */
+:is([class*="travel"],[class*="hotel"],[class*="accommodation"],[class*="booking"]) a,
+:is([class*="travel"],[class*="hotel"],[class*="accommodation"],[class*="booking"]) button{
+  background-color:#18232D!important;background-image:none!important;
+  color:#BFEAFF!important;border-color:#40586B!important;
+}
+:is([class*="travel"],[class*="hotel"],[class*="accommodation"],[class*="booking"]) :is(a,button).primary{
+  background:#174A63!important;color:#F5F7FA!important;border-color:#5BBDEB!important;
+}
