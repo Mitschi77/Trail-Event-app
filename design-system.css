@@ -1415,3 +1415,338 @@ input[type="checkbox"],input[type="radio"]{
   border-color:#40586B!important;
   color:#BFEAFF!important;
 }
+
+
+
+/* =========================================================
+   NORTHBOUND UI OVERHAUL · 2026-11-24
+   Shared visual hierarchy for cockpit, events, calendar,
+   planning, history and responsive navigation.
+   No data, business rules or existing control IDs changed.
+   ========================================================= */
+:root{
+  --nb-bg:#0B1117;
+  --nb-surface:#131C25;
+  --nb-surface-raised:#18232D;
+  --nb-surface-soft:#101820;
+  --nb-line:#34414D;
+  --nb-text:#F5F7FA;
+  --nb-muted:#AAB5C0;
+  --nb-ice:#7FD8FF;
+  --nb-orange:#FF6A00;
+  --nb-orange-soft:#FFAD62;
+  --nb-radius:16px;
+  --nb-radius-small:11px;
+  --nb-shadow:0 12px 32px #0006;
+}
+html,body{background:var(--nb-bg);color:var(--nb-text)}
+body{line-height:1.52}
+:where(button,input,select,textarea,a,summary,[tabindex]):focus-visible{
+  outline:2px solid var(--nb-ice)!important;outline-offset:3px!important
+}
+:where(button,a,summary,[role="button"]){-webkit-tap-highlight-color:transparent}
+:where(.primary,.secondary,.more-nav-item,.app-menu-item,.tab-button,.link){
+  min-height:44px;touch-action:manipulation
+}
+
+/* 1 · Single, predictable navigation */
+.app-menu-dropdown{
+  width:min(390px,calc(100vw - 24px))!important;
+  padding:14px!important;
+  border:1px solid #40505E!important;
+  border-radius:18px!important;
+  background:#101922!important;
+  color:var(--nb-text)!important;
+  box-shadow:0 24px 64px #000D!important;
+}
+.app-menu-heading{
+  position:sticky;top:-14px;z-index:3;
+  display:flex;align-items:center;justify-content:space-between;gap:10px;
+  margin:-14px -14px 10px!important;padding:13px 14px!important;
+  background:#101922!important;border-bottom:1px solid var(--nb-line);
+  color:var(--nb-text)!important
+}
+.northbound-primary-links{display:grid;gap:7px}
+.northbound-menu-group{
+  margin:0!important;padding:5px!important;
+  border:1px solid #2B3945!important;border-radius:13px;
+  background:#131C25!important
+}
+.northbound-menu-group>summary,.app-menu-group>summary{
+  display:flex;align-items:center;justify-content:space-between;gap:10px;
+  min-height:46px;padding:10px 11px!important;border-radius:9px;
+  color:var(--nb-text)!important;font-size:13px;font-weight:800;
+  cursor:pointer;list-style:none
+}
+.northbound-menu-group>summary::-webkit-details-marker,
+.app-menu-group>summary::-webkit-details-marker{display:none}
+.northbound-menu-group>summary:after,.app-menu-group>summary:after{
+  content:"＋";color:var(--nb-ice);font-size:16px;font-weight:500
+}
+.northbound-menu-group[open]>summary:after,.app-menu-group[open]>summary:after{content:"−"}
+.northbound-menu-group>.more-nav-item{
+  width:calc(100% - 8px);margin:3px 4px!important;
+  justify-content:flex-start;padding:10px 12px!important;
+  border:1px solid transparent!important;border-radius:9px!important;
+  background:transparent!important;color:#DCE6ED!important;
+  text-align:left;font-size:13px;font-weight:650
+}
+.northbound-menu-group>.more-nav-item:hover,
+.northbound-menu-group>.more-nav-item:focus-visible{
+  background:#1C2A36!important;border-color:#40505E!important
+}
+.northbound-menu-group>.more-nav-item[aria-pressed="true"],
+.northbound-menu-group>.more-nav-item[aria-current="page"]{
+  background:#30251F!important;border-color:var(--nb-orange)!important;
+  color:#FFBD91!important
+}
+.app-menu-group{margin-top:10px!important;border-top:1px solid var(--nb-line)!important;padding-top:8px!important}
+.app-menu-account{background:#131C25!important;border:1px solid #34414D!important;border-radius:13px!important}
+@media(max-width:700px){
+  .app-menu-dropdown{
+    top:calc(env(safe-area-inset-top,0px) + 72px)!important;
+    right:max(12px,env(safe-area-inset-right))!important;
+    left:auto!important;width:min(420px,calc(100vw - 24px))!important;
+    max-height:calc(100dvh - env(safe-area-inset-top,0px) - 88px)!important;
+    border-radius:16px!important
+  }
+}
+
+/* 2 · Cockpit: clearer hero and useful metric hierarchy */
+.hero{max-width:var(--ui-content-max);margin-inline:auto}
+.hero h1{max-width:900px;font-size:clamp(29px,4.5vw,46px);letter-spacing:-.045em}
+.hero p{max-width:680px;color:var(--nb-muted)}
+.stats{
+  display:grid!important;grid-template-columns:repeat(4,minmax(0,1fr));
+  gap:10px!important;margin-top:20px!important
+}
+.stat{
+  min-width:0!important;min-height:104px;padding:15px!important;
+  display:flex;flex-direction:column;justify-content:space-between;gap:9px;
+  border:1px solid #2B3945!important;border-radius:15px!important;
+  background:linear-gradient(145deg,#18232D,#111922)!important;
+  box-shadow:0 8px 24px #0004!important
+}
+.stat b,.stat strong{
+  color:var(--nb-ice)!important;font-size:clamp(21px,2.6vw,30px);
+  line-height:1.05;font-variant-numeric:tabular-nums;letter-spacing:-.035em
+}
+.stat span{color:#B8C5CE!important;font-size:11px;line-height:1.35}
+@media(max-width:760px){.stats{grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:8px!important}.stat{min-height:88px;padding:12px!important}}
+@media(max-width:360px){.stat{padding:10px!important}.stat b,.stat strong{font-size:20px}}
+
+/* 3 · Event discovery: scan-friendly cards and filters */
+.event-filter-panel{
+  overflow:hidden;border:1px solid #2B3945!important;
+  border-radius:16px!important;background:#131C25!important
+}
+.event-filter-panel>summary{
+  display:flex;align-items:center;justify-content:space-between;
+  gap:12px;color:var(--nb-text)!important;font-weight:800
+}
+.event-filter-panel .toolbar{background:transparent!important}
+.toolbar{grid-template-columns:minmax(0,1.5fr) repeat(2,minmax(130px,.8fr))}
+.field,.toolbar .field,.planner input,.planner select,.edit-grid input{
+  background:#0E1720!important;color:var(--nb-text)!important;
+  border:1px solid #354653!important;border-radius:11px!important
+}
+.field:focus,.planner input:focus,.planner select:focus{
+  border-color:var(--nb-ice)!important;box-shadow:0 0 0 3px #7FD8FF20!important
+}
+#events{align-items:stretch}
+#events>.event{height:fit-content;min-width:0;border:1px solid #2B3945!important;border-radius:16px!important;overflow:hidden}
+#events .eventhead{
+  min-height:82px;padding:15px!important;
+  background:linear-gradient(110deg,#1A2732,#121B24)!important;
+  border-bottom:1px solid #2B3945!important
+}
+#events .eventtitle{font-size:16px;font-weight:800;line-height:1.35;color:var(--nb-text)!important}
+#events .meta{gap:6px}
+#events .meta>.tag,.tag,.type-select{
+  background:#18232D!important;color:#DCE6ED!important;border:1px solid #354653!important
+}
+#events .date{
+  display:inline-flex;align-items:center;justify-content:center;
+  min-height:30px;padding:5px 8px;border:1px solid #49687B!important;
+  border-radius:8px;background:#1D3442!important;color:#BFEAFF!important;
+  font-size:11px;font-weight:850
+}
+#events .detail{background:#101820!important;border-top:1px solid #2B3945!important}
+#events .route{
+  background:#151F29!important;border:1px solid #2E3D49!important;
+  border-radius:13px!important
+}
+#events .route strong{color:var(--nb-text)!important}
+#events .routegrid{color:#B8C5CE!important}
+#events .routegrid b{color:#F5F7FA!important}
+#events .link,.link{
+  color:var(--nb-ice)!important;border-color:#405565!important;
+  background:#17232D!important;border-radius:9px!important
+}
+#events .link:hover,.link:hover{background:#203342!important}
+.resultsline{color:var(--nb-muted)!important;font-size:12px}
+
+/* 4 · Event detail: consistent information blocks and readable metrics */
+.event-detail-overlay{background:#050A10D9!important;backdrop-filter:blur(7px)}
+.event-detail-dialog{
+  background:#101922!important;color:var(--nb-text)!important;
+  border:1px solid #40505E!important;border-radius:18px!important;
+  box-shadow:0 24px 70px #000D!important
+}
+.event-detail-head{
+  position:sticky;top:-18px;z-index:4;padding:4px 0 12px;
+  background:#101922!important;border-bottom:1px solid #34414D
+}
+.event-detail-head h2{color:var(--nb-text)!important}
+.event-detail-group{
+  border:1px solid #2B3945!important;border-radius:12px!important;
+  background:#131C25!important;overflow:hidden
+}
+.event-detail-group>summary{
+  min-height:48px;background:#18232D!important;color:#F5F7FA!important;
+  font-weight:750
+}
+.event-detail-group-body{padding:10px 12px 13px}
+.event-detail-row{border-color:#2B3945!important;color:#C5D0D8!important}
+.event-detail-row b{color:#91A4B2!important}
+.event-detail-row a{color:var(--nb-ice)!important}
+.event-detail-overview .event-detail-metric,
+.race-detail-metric{
+  background:linear-gradient(145deg,#1B2A36,#131C25)!important;
+  border:1px solid #354653!important;border-radius:12px!important
+}
+.event-detail-overview .event-detail-metric strong{color:var(--nb-ice)!important}
+.event-detail-overview .event-detail-gpx{
+  background:#17232D!important;border:1px solid #354653!important
+}
+.elevation-chart-wrap{background:#101820!important;border:1px solid #34414D!important}
+.elevation-chart polyline{stroke:var(--nb-orange)!important;stroke-width:3.5}
+.elevation-chart polygon{fill:#FF6A0022!important}
+.elevation-chart text{fill:#B9C6D0!important}
+
+/* 5 · Year overview: calendar first, race blocks easy to scan */
+#yearOverview .year-overview-nav{
+  background:#101922F2!important;border:1px solid #34414D!important;
+  border-radius:13px!important;backdrop-filter:blur(14px)
+}
+#yearOverview .year-overview-nav-button{
+  background:#18232D!important;color:#DCE6ED!important;border-color:#354653!important
+}
+#yearOverview .year-overview-nav-button[aria-current="true"]{
+  background:var(--nb-orange)!important;color:#0B1117!important;border-color:#FF8A36!important
+}
+#yearOverview .year-season-summary{
+  background:linear-gradient(145deg,#18232D,#111922)!important;
+  border:1px solid #34414D!important;border-radius:15px!important
+}
+#yearOverview .year-season-summary-item{
+  background:#101820!important;border:1px solid #2B3945!important;border-radius:10px!important
+}
+#yearOverview .year-season-summary-item strong{color:var(--nb-ice)!important}
+#yearOverview .year-calendar-year{
+  background:#131C25!important;border:1px solid #34414D!important;border-radius:16px!important
+}
+#yearOverview .year-calendar-month{
+  background:#101820!important;border:1px solid #2B3945!important;border-radius:12px!important
+}
+#yearOverview .year-calendar-day{
+  background:#18232D!important;color:#DCE6ED!important;border-color:#34414D!important
+}
+#yearOverview .year-calendar-day.has-event{
+  background:#512A31!important;color:#FFF!important;border-color:#A85B63!important
+}
+#yearOverview .year-calendar-day.has-hotel{
+  background:#163449!important;color:#F5F7FA!important;border-color:#4C86A8!important
+}
+#yearOverview .year-calendar-day.has-event.has-hotel{
+  background:linear-gradient(135deg,#512A31 0 50%,#163449 50%)!important
+}
+#yearOverview .year-race{
+  background:#151F29!important;border:1px solid #34414D!important;
+  border-left:3px solid var(--nb-orange)!important;border-radius:12px!important
+}
+#yearOverview .year-race strong{color:var(--nb-text)!important}
+#yearOverview .year-race-meta-item{background:#18232D!important;color:#DCE6ED!important;border-color:#354653!important}
+.year-load-chart{background:#101820!important;border:1px solid #34414D!important}
+.load-fill{background:var(--nb-ice)!important}
+.load-fill.actual{background:var(--nb-orange-soft)!important}
+
+/* 6 · Planning: clearer hierarchy without changing planner logic */
+.planner{
+  background:#131C25!important;border:1px solid #34414D!important;
+  border-radius:17px!important;box-shadow:var(--nb-shadow)!important
+}
+.planner h2,.planner h3,.planner-panel h3{color:var(--nb-text)!important}
+.planner-intro,.planner small{color:var(--nb-muted)!important}
+.planner-grid{gap:12px!important}
+.planner-panel,.planner-review,.plan-card{
+  background:#101820!important;border:1px solid #2E3D49!important;
+  border-radius:13px!important
+}
+.planner-review-stat{background:#18232D!important;border:1px solid #34414D!important}
+.planner-review-stat b{color:var(--nb-ice)!important}
+.planner-status{background:#18232D!important;color:var(--nb-text)!important;border:1px solid #34414D!important}
+.primary{
+  background:var(--nb-orange)!important;color:#0B1117!important;
+  border:1px solid #FF8A36!important;box-shadow:0 5px 16px #FF6A0030!important;
+  font-weight:850!important
+}
+.primary:hover{background:#FF812A!important}
+.secondary{
+  background:#18232D!important;color:#DCE6ED!important;
+  border:1px solid #40505E!important
+}
+
+/* 7 · Running history: results and ratings get their own visual emphasis */
+#historyList>.plan-card{
+  background:#131C25!important;border:1px solid #34414D!important;
+  border-radius:14px!important;padding:14px!important
+}
+#historyList .plan-card strong{color:var(--nb-text)!important}
+#historyList .plan-meta{color:var(--nb-muted)!important}
+#historyList .overview-stars,.overview-stars{color:#FFBE65!important}
+#historyList .run-summary{color:var(--nb-ice)!important}
+#historyList .run-record-summary{
+  background:#101820!important;border:1px solid #34414D!important
+}
+#historyList .run-record-summary>strong{color:var(--nb-ice)!important}
+.star-btn.active{color:#FFBE65!important}
+.run-tools,.route-edit,.race-tools-section{
+  background:#101820!important;border:1px solid #34414D!important
+}
+
+/* 8 · iPhone/iPad/Desktop: same interaction grammar, adaptive density */
+@media(max-width:700px){
+  .wrap{padding-left:max(14px,env(safe-area-inset-left));padding-right:max(14px,env(safe-area-inset-right))}
+  .toolbar{grid-template-columns:minmax(0,1fr) minmax(0,1fr)!important}
+  .toolbar>input:first-child{grid-column:1/-1}
+  #events{grid-template-columns:minmax(0,1fr)!important;gap:10px!important}
+  .eventhead{grid-template-columns:minmax(0,1fr) auto!important}
+  .event-detail-overlay{padding:8px!important}
+  .event-detail-dialog{max-height:calc(100dvh - 16px)!important;padding:13px!important}
+  .event-detail-head{top:-13px}
+  .event-detail-overview{grid-template-columns:repeat(3,minmax(0,1fr))!important}
+  .event-detail-row{grid-template-columns:1fr!important;gap:3px!important}
+  .planner{padding:14px!important}
+  .planner-grid,.planner-columns{grid-template-columns:minmax(0,1fr)!important}
+  .planner-grid .event-choice,.planner-grid .primary{grid-column:auto!important}
+  #historyList{grid-template-columns:minmax(0,1fr)!important}
+  #yearOverview .year-season-summary{grid-template-columns:repeat(2,minmax(0,1fr))!important}
+  .app-menu-dropdown{overscroll-behavior:contain}
+}
+@media(min-width:701px) and (max-width:1099px){
+  .wrap{padding-inline:22px}
+  .hero{width:min(calc(100% - 44px),var(--ui-content-max))}
+  #events{grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:13px!important}
+  .planner-columns{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media(min-width:1100px){
+  #events{grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:16px!important}
+  .wrap{padding-inline:26px}
+}
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{scroll-behavior:auto!important;transition:none!important;animation:none!important}
+}
+
+/* NORTHBOUND: keine grünen Statusflächen – Eventtyp in Eisblau/Schiefer */
+#yearOverview .year-month-races .year-race-meta-item[data-meta-kind="type"]{color:#a9d5ef!important;border-color:#345b73!important;background:#142b3b!important}
