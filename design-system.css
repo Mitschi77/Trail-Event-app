@@ -2570,3 +2570,201 @@ header>.hero .stat span{
 @media(prefers-reduced-motion:reduce){
   .planner *{scroll-behavior:auto!important;transition:none!important;animation:none!important}
 }
+
+
+/* NORTHBOUND · Laufhistorie & Leistungsübersicht · 2026-11-24
+   Visuelle Aufwertung des persönlichen Rennarchivs und der Trainingsdaten.
+   Vorhandene Laufdaten, Bewertungen, Import- und Sortierfunktionen bleiben unverändert. */
+#historyTab>.planner{
+  gap:14px!important;
+  border:1px solid #344653!important;
+  background:linear-gradient(145deg,#121E28,#0F1922)!important;
+  box-shadow:0 14px 36px #0005!important
+}
+#historyTab>.planner>h2{
+  display:flex;align-items:center;gap:10px;
+  margin:0 0 3px!important;color:#F5F7FA!important;
+  font-size:clamp(24px,3.4vw,32px)!important;
+  font-weight:900;letter-spacing:-.045em
+}
+#historyTab>.planner>.planner-intro{
+  max-width:760px;color:#AFC0CC!important;
+  font-size:12px;line-height:1.6
+}
+#historyTab>.planner>.planner-panel{
+  position:relative;margin:12px 0 15px!important;
+  padding:16px!important;border:1px solid #344B5D!important;
+  border-radius:15px!important;background:linear-gradient(150deg,#172633,#111B25)!important;
+  box-shadow:inset 0 1px #FFFFFF08,0 7px 22px #0003!important
+}
+#historyTab .planner-panel h3{
+  margin:0 0 9px!important;color:#BFEAFF!important;
+  font-size:14px!important;font-weight:900
+}
+#historyTab .planner-panel .planner-intro,
+#historyTab .planner-panel .note{
+  color:#AFC0CC!important;font-size:11px;line-height:1.55
+}
+#historyTab .planner-panel .note a{color:#7FD8FF!important;text-decoration:underline;text-underline-offset:3px}
+#historyTab .planner-grid{
+  display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr));
+  align-items:end;gap:11px!important;margin:13px 0!important
+}
+#historyTab .planner-grid label{
+  display:flex;min-width:0;flex-direction:column;gap:6px;
+  color:#AFC0CC!important;font-size:11px!important;font-weight:800
+}
+#historyTab .planner-grid :is(select,input){
+  width:100%;min-width:0;min-height:46px!important;
+  padding:10px 12px!important;border:1px solid #405565!important;
+  border-radius:10px!important;background:#101B24!important;
+  color:#F5F7FA!important;font-size:14px!important
+}
+#historyTab .planner-grid button{min-height:46px!important}
+#historyTab #activityImportStatus{
+  padding:10px 12px;border-left:2px solid #7FD8FF;
+  border-radius:0 9px 9px 0;background:#14232D;
+  color:#B8C8D3!important;font-size:11px;line-height:1.5
+}
+#historyTab>.planner>.toolbar{
+  display:flex!important;max-width:100%!important;
+  justify-content:flex-end;gap:10px;margin:15px 0 10px!important
+}
+#historyTab #historySort{
+  width:min(100%,360px);min-height:46px!important;
+  padding:10px 13px!important;border:1px solid #405565!important;
+  border-radius:10px!important;background:#101B24!important;
+  color:#F5F7FA!important;font-size:13px!important
+}
+#historyTab #historyStats{
+  display:grid!important;grid-template-columns:repeat(4,minmax(0,1fr));
+  gap:9px!important;margin:0 0 16px!important
+}
+#historyTab #historyStats>.stat{
+  position:relative;display:flex;min-width:0;min-height:94px!important;
+  flex-direction:column;justify-content:center;gap:8px;
+  padding:14px!important;overflow:hidden;
+  border:1px solid #354B5B!important;border-radius:14px!important;
+  background:linear-gradient(145deg,#1A2A37,#121D27)!important;
+  box-shadow:inset 0 1px #FFFFFF08,0 7px 20px #0003!important
+}
+#historyTab #historyStats>.stat:before{
+  content:"";position:absolute;left:0;top:13px;bottom:13px;width:3px;
+  border-radius:0 3px 3px 0;background:#7FD8FF
+}
+#historyTab #historyStats>.stat:nth-child(2):before,
+#historyTab #historyStats>.stat:nth-child(3):before{background:#FF6A00}
+#historyTab #historyStats>.stat b{
+  color:#F5F7FA!important;font-size:clamp(22px,2.7vw,31px)!important;
+  line-height:1;font-weight:900;letter-spacing:-.04em;
+  font-variant-numeric:tabular-nums
+}
+#historyTab #historyStats>.stat span{
+  color:#AFC0CC!important;font-size:10px!important;
+  font-weight:800;letter-spacing:.055em;text-transform:uppercase
+}
+#historyTab #historyStats>.utmb-profile-summary{
+  grid-column:1/-1;margin:0!important;padding:15px!important;
+  border:1px solid #38566A!important;border-radius:14px!important;
+  background:linear-gradient(115deg,#172B39,#12202B)!important;
+  color:#DCE6ED!important
+}
+#historyTab #historyStats>.utmb-profile-summary>strong{
+  color:#BFEAFF!important;font-size:13px;font-weight:900
+}
+#historyTab #historyStats>.utmb-profile-summary .plan-meta{color:#AFC0CC!important}
+#historyTab #historyStats>.utmb-profile-summary a{color:#7FD8FF!important}
+#historyTab #historyStats>.utmb-profile-summary .routegrid{
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(110px,1fr));
+  gap:8px;margin-top:10px
+}
+#historyTab #historyStats>.utmb-profile-summary .routegrid>span{
+  padding:9px 10px;border:1px solid #344B5D;border-radius:9px;
+  background:#101B24;color:#AFC0CC;font-size:10px
+}
+#historyTab #historyStats>.utmb-profile-summary .routegrid b{
+  display:block;margin-top:4px;color:#F5F7FA;font-size:17px
+}
+#historyTab #historyList{
+  display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:12px!important;align-items:stretch
+}
+#historyTab #historyList>.plan-card{
+  position:relative;display:flex;min-width:0;flex-direction:column;gap:9px;
+  margin:0!important;padding:15px!important;overflow:hidden;
+  border:1px solid #354653!important;border-left:3px solid #FF6A00!important;
+  border-radius:15px!important;background:linear-gradient(150deg,#192833,#121D27)!important;
+  color:#E5EDF2!important;box-shadow:0 7px 22px #0003!important;
+  transition:border-color .18s ease,transform .18s ease,box-shadow .18s ease
+}
+#historyTab #historyList>.plan-card:hover{
+  border-color:#60798B!important;box-shadow:0 11px 27px #0005!important
+}
+#historyTab #historyList>.plan-card:focus-within{
+  border-color:#7FD8FF!important;box-shadow:0 0 0 2px #7FD8FF22!important
+}
+#historyTab #historyList .history-card-head{
+  display:flex;align-items:flex-start;justify-content:space-between;gap:10px
+}
+#historyTab #historyList .history-card-head>strong{
+  min-width:0;color:#F5F7FA!important;font-size:15px;
+  font-weight:850;line-height:1.35;letter-spacing:-.015em
+}
+#historyTab #historyList .history-card-head+.plan-meta,
+#historyTab #historyList .plan-meta{
+  margin:1px 0 3px!important;color:#AFC0CC!important;
+  font-size:11px;line-height:1.55;overflow-wrap:anywhere
+}
+#historyTab #historyList .plan-meta b{color:#F5F7FA!important}
+#historyTab #historyList .plan-actions{
+  display:flex;align-items:center;gap:8px;flex-wrap:wrap;
+  margin-top:auto;padding-top:11px;border-top:1px solid #344653
+}
+#historyTab #historyList .rating-label{
+  color:#AFC0CC!important;font-size:10px;font-weight:800
+}
+#historyTab #historyList .overview-stars{
+  color:#FFBD91!important;font-size:16px;letter-spacing:2px
+}
+#historyTab #historyList .plan-actions button{
+  min-height:40px;margin-left:auto;padding:8px 11px;
+  border:1px solid #405565!important;border-radius:9px!important;
+  background:#1B2B37!important;color:#BFEAFF!important;
+  font-size:11px;font-weight:800
+}
+#historyTab #historyList .history-delete{
+  flex:0 0 38px;width:38px;min-height:38px!important;
+  border:1px solid #76504A!important;border-radius:9px!important;
+  background:#352522!important;color:#FFB7AD!important
+}
+#historyTab #historyList .plan-empty{
+  grid-column:1/-1;padding:26px 18px!important;
+  border:1px dashed #405565!important;border-radius:14px!important;
+  background:#101B24!important;color:#AFC0CC!important;
+  text-align:center;font-size:12px;line-height:1.6
+}
+#historyTab .info-tip summary:focus-visible,
+#historyTab :is(button,select,input,a):focus-visible{
+  outline:3px solid #7FD8FF!important;outline-offset:2px
+}
+@media(max-width:760px){
+  #historyTab>.planner{padding:15px!important}
+  #historyTab>.planner>.planner-panel{padding:13px!important}
+  #historyTab #historyStats{grid-template-columns:repeat(2,minmax(0,1fr))}
+  #historyTab #historyStats>.stat{min-height:80px!important;padding:12px!important}
+  #historyTab #historyList{grid-template-columns:minmax(0,1fr);gap:9px!important}
+  #historyTab #historyList>.plan-card{padding:13px!important}
+  #historyTab>.planner>.toolbar{justify-content:stretch}
+  #historyTab #historySort{width:100%}
+}
+@media(max-width:420px){
+  #historyTab>.planner{padding:12px!important}
+  #historyTab .planner-grid{grid-template-columns:minmax(0,1fr)!important}
+  #historyTab #historyStats>.stat{min-height:72px!important;padding:10px!important}
+  #historyTab #historyStats>.stat b{font-size:23px!important}
+  #historyTab #historyList .plan-actions{align-items:stretch}
+  #historyTab #historyList .plan-actions button{width:100%;margin-left:0}
+}
+@media(prefers-reduced-motion:reduce){
+  #historyTab #historyList>.plan-card{transition:none!important}
+}
