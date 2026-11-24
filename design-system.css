@@ -3451,3 +3451,7 @@ html,body{background:var(--nb-bg);color:var(--nb-white)}
   #yearCalendar .year-calendar-days{gap:2px}
   #yearCalendar .year-calendar-day{min-height:31px;padding:2px;font-size:9px}
 }
+
+#missingTab #northboundEventQuality{margin:14px 0 18px}
+#missingTab #northboundEventQuality .nb-insight-head{margin-bottom:12px}
+#missingTab #northboundEventQuality .nb-quality-row[open]{border-color:#49677A}
