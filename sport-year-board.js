@@ -241,9 +241,13 @@
           if(this.editingId===item.id){
             const form=document.createElement('form');form.className='sy-edit';form.dataset.editForm='true';form.dataset.id=item.id;
             const fields=[['title','Name',item.title||''],['distanceKm','Distanz (km)',item.distanceKm||item.result?.totalDistanceKm||''],['elevationGainM','Höhenmeter',item.elevationGainM||'']];
+            const hasSegmentDistances = Array.isArray(item.segments) && item.segments.some(segment => segment.distance != null);
             for(const [name,label,value] of fields){
-              const field=document.createElement('label');field.textContent=label;
+              const field=document.createElement('label');
+              const derivedDistance = name === 'distanceKm' && hasSegmentDistances;
+              field.textContent = derivedDistance ? 'Gesamtdistanz (aus Segmenten)' : label;
               const input=document.createElement('input');input.name=name;input.value=String(value);input.type=name==='title'?'text':'number';if(name!=='title'){input.min='0';input.step='any';input.inputMode='decimal';input.required=false;}
+              if (derivedDistance) { input.readOnly = true; input.setAttribute('aria-label','Gesamtdistanz wird aus den Segmentdistanzen berechnet'); }
               field.appendChild(input);form.appendChild(field);
             }
             if (Array.isArray(item.segments)) {
