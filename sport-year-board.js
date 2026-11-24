@@ -119,7 +119,11 @@
         values.seconds+=Number(item.durationSeconds)||0;
       });
       const chartData=[...chartMonths].sort(([a],[b])=>a.localeCompare(b));
-      if(!chartData.length){const empty=document.createElement('p');empty.className='sy-empty';empty.textContent='Für diese Auswahl liegen noch keine datierten Aktivitäten vor.';chart.appendChild(empty);}
+      if(!chartData.length){
+        const empty=document.createElement('p');empty.className='sy-empty';
+        empty.textContent='Für diese Auswahl liegen noch keine datierten Aktivitäten vor.';
+        chart.appendChild(empty);
+      } else {
       for(const [metric,label,format] of [
         ['km','Distanz pro Monat',value=>value.toFixed(1)+' km'],
         ['hm','Höhenmeter pro Monat',value=>Math.round(value).toLocaleString('de-DE')+' hm'],
@@ -137,6 +141,7 @@
           cell.append(value,bar,month);bars.appendChild(cell);
         }
         section.append(heading,bars);chart.appendChild(section);
+      }
       }
       const months = this.querySelector('[data-months]');
       months.replaceChildren();
