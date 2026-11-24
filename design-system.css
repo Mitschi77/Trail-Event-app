@@ -1747,3 +1747,39 @@ body{line-height:1.52}
 @media(prefers-reduced-motion:reduce){
   *,*::before,*::after{scroll-behavior:auto!important;transition:none!important;animation:none!important}
 }
+
+
+/* NORTHBOUND menu audit · neutralize legacy green count badges */
+.northbound-menu-group .more-nav-item :is(
+  .badge,.count,[class*="badge"],[class*="count"]
+){
+  background:#243746!important;
+  background-color:#243746!important;
+  background-image:none!important;
+  border:1px solid #40586B!important;
+  color:#BFEAFF!important;
+  box-shadow:none!important;
+}
+.northbound-menu-group .more-nav-item :is(
+  .badge,.count,[class*="badge"],[class*="count"]
+)::before,
+.northbound-menu-group .more-nav-item :is(
+  .badge,.count,[class*="badge"],[class*="count"]
+)::after{
+  background:transparent!important;
+  color:inherit!important;
+}
+.app-menu-account>summary{
+  color:#F5F7FA!important;
+}
+.app-menu-account[open]>summary{
+  border-bottom:1px solid #34414D!important;
+}
+.app-menu-account>summary::after{
+  color:#FF6A00!important;
+}
+.app-menu-account :is(button,a,.more-nav-item){
+  background:#18232D!important;
+  border-color:#40586B!important;
+  color:#BFEAFF!important;
+}
