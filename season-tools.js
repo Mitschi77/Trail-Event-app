@@ -283,4 +283,50 @@ if(typeof originalSeasonStatusRender==='function'){
  window.renderSeasonEnhancements();
 }
 
+
+
+/* NORTHBOUND Recovery Calendar: visualizes the existing recovery heuristic. */
+const recoveryCalendarStyle=document.createElement('style');
+recoveryCalendarStyle.id='northbound-recovery-calendar-style';
+recoveryCalendarStyle.textContent='.nb-recovery-calendar{margin:0 0 16px;padding:15px;border:1px solid var(--line);border-radius:16px;background:linear-gradient(145deg,#17232e,#101820);color:#f1f5f8}.nb-recovery-calendar h3{margin:0;font-size:16px;color:#f5f7fa}.nb-recovery-sub{margin:4px 0 12px;color:#aab7c2;font-size:12px}.nb-recovery-summary{display:flex;gap:8px;flex-wrap:wrap;margin:10px 0 14px}.nb-recovery-stat{padding:8px 10px;border:1px solid #344656;border-radius:10px;background:#0e1720;min-width:110px}.nb-recovery-stat b,.nb-recovery-stat small{display:block}.nb-recovery-stat b{font-size:15px;color:#7fd8ff}.nb-recovery-stat small{font-size:10px;color:#aab7c2}.nb-recovery-months{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.nb-recovery-month{min-width:0;padding:10px;border:1px solid #2b3946;border-radius:12px;background:#111b25}.nb-recovery-month h4{margin:0 0 9px;color:#f5f7fa;font-size:12px;text-transform:capitalize}.nb-recovery-weekdays,.nb-recovery-days{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:4px}.nb-recovery-weekdays span{text-align:center;color:#8293a1;font-size:9px;font-weight:700;padding:3px 0}.nb-recovery-day{display:grid;place-items:center;min-height:31px;border:1px solid transparent;border-radius:7px;background:#1b2834;color:#c6d0d8;font-size:10px}.nb-recovery-day.is-outside{opacity:.25}.nb-recovery-day.is-recovery{background:#173747;border-color:#39718b;color:#bcecff}.nb-recovery-day.is-base{background:#263542;border-color:#526575;color:#e0e8ef}.nb-recovery-day.is-build{background:#24445a;border-color:#4d88ad;color:#d9f1ff}.nb-recovery-day.is-peak{background:#49331f;border-color:#b77932;color:#ffe0b1}.nb-recovery-day.is-taper{background:#3e3025;border-color:#a66c32;color:#ffd39a}.nb-recovery-day.is-race{background:#ff6a00;border-color:#ff8b3c;color:#101820;font-weight:900}.nb-recovery-day.is-today{outline:2px solid #f5f7fa;outline-offset:1px}.nb-recovery-legend{display:flex;gap:7px 12px;flex-wrap:wrap;margin:12px 0 0;color:#b7c4ce;font-size:10px}.nb-recovery-legend span{display:inline-flex;align-items:center;gap:5px}.nb-recovery-legend i{width:9px;height:9px;border-radius:3px;display:inline-block}.nb-recovery-note{margin:10px 0 0;color:#93a3b0;font-size:10px;line-height:1.5}@media(max-width:620px){.nb-recovery-months{grid-template-columns:1fr}.nb-recovery-month{padding:9px}.nb-recovery-day{min-height:34px}}';
+document.getElementById(recoveryCalendarStyle.id)?.remove();
+document.head.appendChild(recoveryCalendarStyle);
+function nbRecoveryCalendar(){
+ const root=document.getElementById('seasonTimeline');if(!root||!Array.isArray(EVENTS))return;
+ root.querySelector('.nb-recovery-calendar')?.remove();
+ const races=[];
+ const add=(id,ri)=>{const e=EVENTS[id],r=e?.routes?.[ri];if(!e||!r||r.archived)return;const key=routeKey(id,ri),attempts=(Array.isArray(runAttempts?.[key])?runAttempts[key]:[]).filter(a=>a?.done&&/^\d{4}-\d{2}-\d{2}$/.test(String(a.date||''))).sort((a,b)=>String(a.date).localeCompare(String(b.date)));races.push({e,r,id,ri,key,date:seasonDate(e,ri),last:attempts.at(-1)||null});};
+ (plannedEventIds||[]).forEach((id,i)=>add(id,Number.isInteger(plannedRouteIndices[id])?plannedRouteIndices[id]:(i===0?plannedBaseRouteIndex:0)));
+ (plannedRepeatEntries||[]).forEach(x=>add(x.id,x.ri));
+ if(!races.length)return;
+ const completed=races.filter(x=>x.last).sort((a,b)=>String(b.last.date).localeCompare(String(a.last.date)));
+ const today=new Date();today.setHours(0,0,0,0);
+ const base=completed[0]||races.filter(x=>x.date&&x.date<=today).sort((a,b)=>b.date-a.date)[0];
+ if(!base)return;
+ const actual=!!base.last,startKey=actual?base.last.date:base.date.toISOString().slice(0,10),start=new Date(startKey+'T12:00:00');
+ const record=base.last?{actualKm:base.last.actualKm,actualHm:base.last.actualHm,actualDurationHours:(Number(base.last.hours)||0)+(Number(base.last.minutes)||0)/60,raceStatus:base.last.result==='DNF'?'dnf':base.last.raceStatus}:runRecords[base.key]||{};
+ const recoveryDays=seasonRecoveryDays(base.e,base.r,record),recoveryEnd=new Date(start);recoveryEnd.setDate(recoveryEnd.getDate()+recoveryDays);
+ const next=races.filter(x=>x.date&&x.date>start).sort((a,b)=>a.date-b.date)[0]||null,planEnd=next?.date||new Date(recoveryEnd.getTime()+56*86400000),gapDays=Math.max(0,Math.ceil((planEnd-recoveryEnd)/86400000)),phases=typeof seasonPhaseSegments==='function'?seasonPhaseSegments(gapDays,seasonPriorities[next?.key]||'B'):[];
+ const phaseAt=date=>{
+  if(date.getTime()===start.getTime()||(next&&date.getTime()===next.date.getTime()))return 'race';
+  if(date>start&&date<=recoveryEnd)return 'recovery';
+  if(date>recoveryEnd&&date<planEnd){let cursor=new Date(recoveryEnd);for(const phase of phases){const end=new Date(cursor);end.setDate(end.getDate()+phase.days);if(date>cursor&&date<=end)return phase.kind;cursor=end;}return 'base';}
+  return '';
+ };
+ const todayKey=new Date().toISOString().slice(0,10),months=[],monthStart=new Date(today.getFullYear(),today.getMonth(),1);
+ for(let m=0;m<2;m++)months.push(new Date(monthStart.getFullYear(),monthStart.getMonth()+m,1));
+ const monthHtml=months.map(month=>{
+  const offset=(new Date(month.getFullYear(),month.getMonth(),1).getDay()+6)%7,days=new Date(month.getFullYear(),month.getMonth()+1,0).getDate(),cells=[];
+  for(let i=0;i<offset;i++)cells.push('<span class="nb-recovery-day is-outside" aria-hidden="true"></span>');
+  for(let day=1;day<=days;day++){const date=new Date(month.getFullYear(),month.getMonth(),day,12),key=date.toISOString().slice(0,10),kind=phaseAt(date),label=kind==='race'?'Wettkampf':kind==='recovery'?'Regeneration':kind==='base'?'Grundlage':kind==='build'?'Aufbau':kind==='peak'?'Spezifischer Aufbau':kind==='taper'?'Taper':'Kein Planabschnitt';cells.push('<span class="nb-recovery-day '+(kind?'is-'+kind:'')+(key===todayKey?' is-today':'')+'" title="'+key+' · '+label+'" aria-label="'+key+' · '+label+'">'+day+'</span>');}
+  return '<section class="nb-recovery-month"><h4>'+new Intl.DateTimeFormat('de-DE',{month:'long',year:'numeric'}).format(month)+'</h4><div class="nb-recovery-weekdays"><span>Mo</span><span>Di</span><span>Mi</span><span>Do</span><span>Fr</span><span>Sa</span><span>So</span></div><div class="nb-recovery-days">'+cells.join('')+'</div></section>';
+ }).join('');
+ const nextLabel=next?next.e.name+' · '+dateLabel(next.date):'Noch kein nächstes Rennen geplant';
+ const panel=document.createElement('section');panel.className='nb-recovery-calendar';
+ panel.innerHTML='<h3>Visuelle Regenerationsplanung</h3><p class="nb-recovery-sub">Ausgangspunkt: '+esc(base.e.name)+' · '+esc(base.r.route||'Strecke')+' · '+start.toLocaleDateString('de-DE')+(actual?' · tatsächlich gelaufen':' · geplanter Termin')+'</p><div class="nb-recovery-summary"><div class="nb-recovery-stat"><b>'+recoveryDays+' Tage</b><small>Orientierung Regeneration</small></div><div class="nb-recovery-stat"><b>'+recoveryEnd.toLocaleDateString('de-DE')+'</b><small>Ende der Regenerationsphase</small></div><div class="nb-recovery-stat"><b>'+esc(nextLabel)+'</b><small>Nächster geplanter Wettkampf</small></div></div><div class="nb-recovery-months">'+monthHtml+'</div><div class="nb-recovery-legend"><span><i style="background:#173747"></i>Regeneration</span><span><i style="background:#263542"></i>Grundlage</span><span><i style="background:#24445a"></i>Aufbau</span><span><i style="background:#49331f"></i>Spezifisch</span><span><i style="background:#3e3025"></i>Taper</span><span><i style="background:#ff6a00"></i>Wettkampf</span></div><p class="nb-recovery-note">Visualisierung der bestehenden Planungsheuristik aus Distanz, Höhenmetern, tatsächlicher Dauer und DNF-Status. Keine medizinische oder trainingswissenschaftliche Freigabe.</p>';
+ root.prepend(panel);
+}
+const priorRecoveryRender=window.renderSeasonEnhancements;
+if(typeof priorRecoveryRender==='function'){window.renderSeasonEnhancements=function(){priorRecoveryRender();nbRecoveryCalendar();};window.renderSeasonEnhancements();}
+
 })();
