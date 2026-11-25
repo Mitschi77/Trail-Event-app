@@ -84,14 +84,30 @@ export function getStravaCredentials() {
 }
 
 function decodeBase64(value: string): Uint8Array {
-  const binary = atob(value);
+  // Accept standard Base64 and unpadded Base64URL values copied from common key generators.
+  const compact = value.trim().replace(/\\s+/g, "").replace(/-/g, "+").replace(/_/g, "/");
+  if (!/^[A-Za-z0-9+/]*={0,2}$/.test(compact) || compact.length % 4 === 1) {
+    throw new Error("invalid_base64_encoding");
+  }
+  const padded = compact + "=".repeat((4 - compact.length % 4) % 4);
+  const binary = atob(padded);
   const bytes = new Uint8Array(binary.length);
   for (let i = 0; i < binary.length; i++) bytes[i] = binary.charCodeAt(i);
   return bytes;
 }
 
 function decodeEncryptionKey(value: string): Uint8Array {
-  const normalized = value.trim();
+  let normalized = value.trim();
+  // Allow a JSON-wrapped default value if a secret manager exported its key map.
+  try {
+    const parsed = JSON.parse(normalized);
+    if (parsed && typeof parsed.default === "string") normalized = parsed.default.trim();
+  } catch {
+    // The normal raw key format is not JSON.
+  }
+  if (normalized.startsWith("hex:")) normalized = normalized.slice(4);
+  if (normalized.startsWith("base64:")) normalized = normalized.slice(7);
+
   // A 64-character hexadecimal key is convenient to generate locally on iOS.
   if (/^[0-9a-fA-F]{64}$/.test(normalized)) {
     const bytes = new Uint8Array(32);
@@ -100,7 +116,18 @@ function decodeEncryptionKey(value: string): Uint8Array {
     }
     return bytes;
   }
-  return decodeBase64(normalized);
+
+  try {
+    const decoded = decodeBase64(normalized);
+    if (decoded.length === 32) return decoded;
+  } catch {
+    // Fall through to the explicit 32-byte raw-text compatibility format.
+  }
+
+  // Also accept a 32-character UTF-8 secret; this is unambiguous by byte length.
+  const raw = new TextEncoder().encode(normalized);
+  if (raw.length === 32) return raw;
+  throw new Error("invalid_strava_token_encryption_key");
 }
 
 function asArrayBuffer(value: Uint8Array): ArrayBuffer {
