@@ -48,6 +48,11 @@ def main():
        jsonb_build_object('trailEventRunRecords', jsonb_build_object(
          'race-a::route-1', jsonb_build_object('done', true),
          'race-b::route-1', jsonb_build_object('done', false)
+       ), 'trailEventRunAttempts', jsonb_build_object(
+         'race-a::route-1', jsonb_build_array(
+           jsonb_build_object('date','2025-09-12','year','2025','done',true,'createdAt',1757678400000),
+           jsonb_build_object('date','2026-09-12','year','2026','done',true,'createdAt',1789214400000)
+         )
        ))),
       ('00000000-0000-0000-0000-000000000002',
        jsonb_build_object('trailEventRunRecords', jsonb_build_object(
@@ -56,7 +61,9 @@ def main():
     insert into public.strava_activities(id, user_id, provider_activity_id) values
       ('10000000-0000-0000-0000-000000000001', '00000000-0000-0000-0000-000000000001', 101),
       ('10000000-0000-0000-0000-000000000002', '00000000-0000-0000-0000-000000000001', 102),
-      ('10000000-0000-0000-0000-000000000003', '00000000-0000-0000-0000-000000000002', 201);
+      ('10000000-0000-0000-0000-000000000003', '00000000-0000-0000-0000-000000000002', 201),
+      ('10000000-0000-0000-0000-000000000004', '00000000-0000-0000-0000-000000000001', 103),
+      ('10000000-0000-0000-0000-000000000005', '00000000-0000-0000-0000-000000000001', 104);
     """
     psql(sql=setup)
     psql(file=MIGRATION)
@@ -65,7 +72,9 @@ def main():
     insert into public.strava_race_activity_links(user_id, activity_id, run_record_key, stage_order, stage_name)
     values
       ('00000000-0000-0000-0000-000000000001', '10000000-0000-0000-0000-000000000001', 'race-a::route-1', 1, 'Stage 1'),
-      ('00000000-0000-0000-0000-000000000001', '10000000-0000-0000-0000-000000000002', 'race-a::route-1', 2, 'Stage 2');
+      ('00000000-0000-0000-0000-000000000001', '10000000-0000-0000-0000-000000000002', 'race-a::route-1', 2, 'Stage 2'),
+      ('00000000-0000-0000-0000-000000000001', '10000000-0000-0000-0000-000000000004', 'race-a::route-1::attempt::2025-09-12::1757678400000', 1, '2025 repeat'),
+      ('00000000-0000-0000-0000-000000000001', '10000000-0000-0000-0000-000000000005', 'race-a::route-1::attempt::2026-09-12::1789214400000', 1, '2026 repeat');
 
     do $$
     begin
@@ -118,6 +127,13 @@ def main():
       exception when check_violation then null;
       end;
       begin
+        update public.planner_data
+           set data = jsonb_set(data, '{trailEventRunAttempts,race-a::route-1}', '[]'::jsonb)
+         where user_id = '00000000-0000-0000-0000-000000000001';
+        raise exception 'Expected repeat-removal protection';
+      exception when check_violation then null;
+      end;
+      begin
         delete from public.planner_data where user_id = '00000000-0000-0000-0000-000000000001';
         raise exception 'Expected parent-delete protection';
       exception when check_violation then null;
@@ -134,9 +150,9 @@ def main():
     select count(*) from public.strava_activities;
     """
     count = psql(sql=tests)
-    if count.splitlines()[-1] != "3":
-        raise AssertionError(f"Existing Strava activity rows changed; expected 3, got {count}")
-    print("Strava race-link PostgreSQL migration test passed: valid stages, ownership, uniqueness, completed-record guards, unlink flow, and activity preservation.")
+    if count.splitlines()[-1] != "5":
+        raise AssertionError(f"Existing Strava activity rows changed; expected 5, got {count}")
+    print("Strava race-link PostgreSQL migration test passed: valid stages, repeat participations across years, ownership, uniqueness, completed-record guards, unlink flow, and activity preservation.")
 
 
 if __name__ == "__main__":
