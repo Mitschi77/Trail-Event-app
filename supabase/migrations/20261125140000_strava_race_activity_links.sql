@@ -115,3 +115,29 @@ drop trigger if exists protect_linked_strava_race_records on public.planner_data
 create trigger protect_linked_strava_race_records
   before update of data on public.planner_data
   for each row execute function public.protect_linked_strava_race_records();
+
+-- Also protect the parent planner row itself: deleting it must not leave
+-- Strava assignments pointing at a participation record that no longer exists.
+create or replace function public.prevent_linked_planner_data_delete()
+returns trigger
+language plpgsql
+set search_path = ''
+as $$
+begin
+  if exists (
+    select 1
+      from public.strava_race_activity_links l
+     where l.user_id = old.user_id
+  ) then
+    raise exception 'Planner data with linked Strava activities cannot be deleted; unlink the activities first'
+      using errcode = '23514';
+  end if;
+
+  return old;
+end;
+$$;
+
+drop trigger if exists prevent_linked_planner_data_delete on public.planner_data;
+create trigger prevent_linked_planner_data_delete
+  before delete on public.planner_data
+  for each row execute function public.prevent_linked_planner_data_delete();
