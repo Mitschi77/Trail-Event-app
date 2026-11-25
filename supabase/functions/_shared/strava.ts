@@ -80,6 +80,19 @@ function decodeBase64(value: string): Uint8Array {
   return bytes;
 }
 
+function decodeEncryptionKey(value: string): Uint8Array {
+  const normalized = value.trim();
+  // A 64-character hexadecimal key is convenient to generate locally on iOS.
+  if (/^[0-9a-fA-F]{64}$/.test(normalized)) {
+    const bytes = new Uint8Array(32);
+    for (let i = 0; i < 32; i++) {
+      bytes[i] = Number.parseInt(normalized.slice(i * 2, i * 2 + 2), 16);
+    }
+    return bytes;
+  }
+  return decodeBase64(normalized);
+}
+
 function asArrayBuffer(value: Uint8Array): ArrayBuffer {
   const copy = new Uint8Array(value.byteLength);
   copy.set(value);
@@ -95,7 +108,7 @@ function encodeBase64(value: Uint8Array): string {
 async function encryptionKey(): Promise<CryptoKey> {
   const encoded = Deno.env.get("STRAVA_TOKEN_ENCRYPTION_KEY");
   if (!encoded) throw new Error("missing_strava_token_encryption_key");
-  const raw = decodeBase64(encoded.trim());
+  const raw = decodeEncryptionKey(encoded);
   if (raw.length !== 32) throw new Error("invalid_strava_token_encryption_key");
   return await crypto.subtle.importKey("raw", asArrayBuffer(raw), { name: "AES-GCM" }, false, ["encrypt", "decrypt"]);
 }
