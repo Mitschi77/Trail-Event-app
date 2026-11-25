@@ -144,3 +144,9 @@ assert.ok(js.includes("activateNav(index)"));
 assert.ok(js.includes("aria-controls",));
 assert.ok(css.includes(".community-detail-block>h4"));
 assert.ok(css.includes("[aria-current=\"location\"]"));
+
+assert.ok(js.includes("community-card-cover-fallback"));
+assert.ok(js.includes("Streckenfoto folgt"));
+assert.ok(js.includes("addCoverFallback"));
+assert.ok(css.includes(".community-card-cover-fallback{"));
+assert.ok(css.includes("-webkit-line-clamp:3"));
