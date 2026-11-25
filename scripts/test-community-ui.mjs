@@ -150,3 +150,9 @@ assert.ok(js.includes("Streckenfoto folgt"));
 assert.ok(js.includes("addCoverFallback"));
 assert.ok(css.includes(".community-card-cover-fallback{"));
 assert.ok(css.includes("-webkit-line-clamp:3"));
+
+assert.ok(js.includes("rows.map(t=>t.id)"));
+assert.ok(js.includes("IntersectionObserver"));
+assert.ok(js.includes("rootMargin:'320px 0px'"));
+assert.ok(js.includes("observer.observe(card)"));
+assert.ok(js.includes("!card.isConnected"));
