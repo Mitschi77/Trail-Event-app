@@ -8,6 +8,7 @@ assert.match(html, /<script src="\.\/community\.js"><\/script>/);
 assert.match(html, /class="northbound-primary-links"/);
 assert.match(js, /id='communityTabButton'/);
 assert.ok(js.includes("section.id='northboundCommunity'"));
+assert.ok(js.includes("const panel=root();if(panel)panel.hidden=true;return original(name);"));
 assert.match(js, /data-community-view="discover"/);
 assert.match(js, /data-community-view="mine"/);
 assert.match(js, /from\(TABLE\)/);
