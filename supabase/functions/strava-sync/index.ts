@@ -44,7 +44,7 @@ Deno.serve(async (req: Request) => {
         client_secret: clientSecret,
         grant_type: "refresh_token",
         refresh_token: refreshToken,
-      }));
+      }), "https://www.strava.com/oauth/token");
       if (!refreshed.access_token || !refreshed.refresh_token || !refreshed.expires_at) {
         return json({ error: "token_refresh_incomplete" }, 502);
       }
