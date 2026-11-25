@@ -156,3 +156,9 @@ assert.ok(js.includes("IntersectionObserver"));
 assert.ok(js.includes("rootMargin:'320px 0px'"));
 assert.ok(js.includes("observer.observe(card)"));
 assert.ok(js.includes("!card.isConnected"));
+
+assert.ok(js.includes("['Höhenspanne',elevationSpan===null?'—':elevationSpan+' m']"));
+assert.ok(js.includes("['Aufstieg je km',climbPerKm===null?'—':climbPerKm+' hm/km']"));
+assert.ok(js.includes("['Start / Ziel'"));
+assert.ok(js.includes("['Trackpunkte',stats.points.length.toLocaleString('de-DE')]"));
+assert.ok(css.includes(".community-detail>.community-gpx-metrics{grid-template-columns:repeat(5"));
