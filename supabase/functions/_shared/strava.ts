@@ -125,8 +125,11 @@ export function randomState(): string {
   return Array.from(bytes).map((b) => b.toString(16).padStart(2, "0")).join("");
 }
 
-export async function exchangeStravaToken(body: URLSearchParams) {
-  const response = await fetch("https://www.strava.com/api/v3/oauth/token", {
+export async function exchangeStravaToken(
+  body: URLSearchParams,
+  endpoint = "https://www.strava.com/api/v3/oauth/token",
+) {
+  const response = await fetch(endpoint, {
     method: "POST",
     headers: { "Content-Type": "application/x-www-form-urlencoded" },
     body,
