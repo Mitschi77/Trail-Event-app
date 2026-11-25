@@ -191,13 +191,18 @@
     },
     "donautrail": {
       "eventId": "donautrail",
-      "checkedAt": "2026-11-18T14:25:00.201965+00:00",
+      "checkedAt": "2026-11-25T02:39:28+01:00",
       "status": "verified",
       "sources": [
         {
           "url": "https://donautrail.at/",
           "status": "read",
-          "verification": "manual-official-page"
+          "verification": "official-2027-event-date"
+        },
+        {
+          "url": "https://donautrail.at/impressum/",
+          "status": "read",
+          "verification": "official-contact-and-rights-restriction"
         }
       ],
       "eventPeriod": {
@@ -205,23 +210,8 @@
         "endDate": "2027-03-13",
         "verified": true
       },
-      "routes": {
-        "0": {
-          "routeId": "linz55-55-1-1429",
-          "date": "2027-03-13",
-          "verified": true
-        },
-        "1": {
-          "routeId": "linz75-76-1835",
-          "date": "2027-03-13",
-          "verified": true
-        },
-        "2": {
-          "routeId": "linz100-100-2150",
-          "date": "2027-03-13",
-          "verified": true
-        }
-      }
+      "routes": {},
+      "note": "Organizer's written response permits the event date only and expressly prohibits storing route data. Route records are removed in this draft; see research/organizer-rights/trailabenteuer-verein-2027.json. No live data changed."
     },
     "psyland-backyard-ultra": {
       "eventId": "psyland-backyard-ultra",
