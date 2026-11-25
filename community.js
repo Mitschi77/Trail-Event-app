@@ -298,7 +298,7 @@ async function saveTrail(event){
   for(const file of files){const isGpx=file===gpx,kind=isGpx?'gpx':'image',contentType=await communityUploadMime(file,kind);const safe=file.name.normalize('NFKD').replace(/[^a-zA-Z0-9._-]+/g,'-').slice(-90)||'file';const path=cloudUser.id+'/'+trailId+'/'+crypto.randomUUID()+'-'+safe;
    const {error:assetError}=await c.from(ASSETS).insert({trail_id:trailId,owner_id:cloudUser.id,asset_kind:kind,storage_path:path,content_type:contentType,file_size:file.size,download_enabled:isGpx&&gpxEnabled});
    if(assetError)throw assetError;
-   const {error:uploadError}=await c.storage.from(BUCKET).upload(path,file,{contentType,upsert:false});if(uploadError)throw uploadError;uploaded.push(path);
+   const uploadBody=new Blob([file],{type:contentType});const {error:uploadError}=await c.storage.from(BUCKET).upload(path,uploadBody,{contentType,upsert:false});if(uploadError)throw new Error('Upload von '+file.name+' ('+contentType+') fehlgeschlagen: '+uploadError.message);uploaded.push(path);
   }
   setStatus(editingTrail?'Trail erfolgreich aktualisiert.':visibility==='public'?'Trail veröffentlicht.':'Trail privat gespeichert.');form.reset();closeForm();active='mine';document.querySelector('[data-community-view="mine"]')?.click();await load();
  }catch(error){setStatus('Speichern/Upload fehlgeschlagen: '+error.message,true);if(uploaded.length){try{await c.storage.from(BUCKET).remove(uploaded);}catch(_){}}if(trailId&&!editingTrail){try{await c.from(TABLE).delete().eq('id',trailId).eq('owner_id',cloudUser.id);}catch(_){}}}
