@@ -74,7 +74,9 @@ def main():
       ('10000000-0000-0000-0000-000000000001',
        '00000000-0000-0000-0000-000000000001', 'Public Trail', 'public', 'published', false),
       ('10000000-0000-0000-0000-000000000002',
-       '00000000-0000-0000-0000-000000000001', 'Private Trail', 'private', 'published', true);
+       '00000000-0000-0000-0000-000000000001', 'Private Trail', 'private', 'published', true),
+      ('10000000-0000-0000-0000-000000000003',
+       '00000000-0000-0000-0000-000000000001', 'Public GPX Trail', 'public', 'published', true);
 
     insert into public.community_trail_assets(
       trail_id, owner_id, asset_kind, storage_path, content_type, download_enabled
@@ -90,12 +92,22 @@ def main():
       ('10000000-0000-0000-0000-000000000002',
        '00000000-0000-0000-0000-000000000001', 'gpx',
        '00000000-0000-0000-0000-000000000001/10000000-0000-0000-0000-000000000002/private.gpx',
-       'application/gpx+xml', true);
+       'application/gpx+xml', true),
+      ('10000000-0000-0000-0000-000000000003',
+       '00000000-0000-0000-0000-000000000001', 'gpx',
+       '00000000-0000-0000-0000-000000000001/10000000-0000-0000-0000-000000000003/allowed.gpx',
+       'application/gpx+xml', true),
+      ('10000000-0000-0000-0000-000000000003',
+       '00000000-0000-0000-0000-000000000001', 'gpx',
+       '00000000-0000-0000-0000-000000000001/10000000-0000-0000-0000-000000000003/asset-disabled.gpx',
+       'application/gpx+xml', false);
 
     insert into storage.objects(bucket_id, name) values
       ('community-trail-assets', '00000000-0000-0000-0000-000000000001/10000000-0000-0000-0000-000000000001/cover.jpg'),
       ('community-trail-assets', '00000000-0000-0000-0000-000000000001/10000000-0000-0000-0000-000000000001/route.gpx'),
-      ('community-trail-assets', '00000000-0000-0000-0000-000000000001/10000000-0000-0000-0000-000000000002/private.gpx');
+      ('community-trail-assets', '00000000-0000-0000-0000-000000000001/10000000-0000-0000-0000-000000000002/private.gpx'),
+      ('community-trail-assets', '00000000-0000-0000-0000-000000000001/10000000-0000-0000-0000-000000000003/allowed.gpx'),
+      ('community-trail-assets', '00000000-0000-0000-0000-000000000001/10000000-0000-0000-0000-000000000003/asset-disabled.gpx');
     """
     psql(sql=fixtures)
 
@@ -105,13 +117,13 @@ def main():
     select set_config('request.jwt.claim.sub', '00000000-0000-0000-0000-000000000002', false);
     do $$
     begin
-      if (select count(*) from public.community_trails) <> 1 then
+      if (select count(*) from public.community_trails) <> 2 then
         raise exception 'Public trail visibility leaked or private trail was hidden incorrectly';
       end if;
-      if (select count(*) from public.community_trail_assets) <> 1 then
+      if (select count(*) from public.community_trail_assets) <> 2 then
         raise exception 'Public asset metadata policy should expose only the public image';
       end if;
-      if (select count(*) from storage.objects where bucket_id='community-trail-assets') <> 1 then
+      if (select count(*) from storage.objects where bucket_id='community-trail-assets') <> 2 then
         raise exception 'Storage policy exposed private or download-disabled GPX data';
       end if;
       if (select count(*) from public.community_profiles) <> 1 then
@@ -171,13 +183,13 @@ def main():
     select set_config('request.jwt.claim.sub', '00000000-0000-0000-0000-000000000001', false);
     do $$
     begin
-      if (select count(*) from public.community_trails) <> 2 then
+      if (select count(*) from public.community_trails) <> 3 then
         raise exception 'Owner cannot see all of their trails';
       end if;
-      if (select count(*) from public.community_trail_assets) <> 3 then
+      if (select count(*) from public.community_trail_assets) <> 5 then
         raise exception 'Owner cannot see all of their assets';
       end if;
-      if (select count(*) from storage.objects where bucket_id='community-trail-assets') <> 3 then
+      if (select count(*) from storage.objects where bucket_id='community-trail-assets') <> 5 then
         raise exception 'Owner cannot access all of their storage objects';
       end if;
     end $$;
