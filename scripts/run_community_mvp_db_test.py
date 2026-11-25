@@ -7,6 +7,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 MIGRATION = ROOT / "supabase/migrations/20261125170000_community_mvp.sql"
+MAP_MIGRATION = ROOT / "supabase/migrations/20261125173000_community_map_locations.sql"
 
 
 def psql(*, sql=None, file=None):
@@ -62,6 +63,7 @@ def main():
     """
     psql(sql=setup)
     psql(file=MIGRATION)
+    psql(file=MAP_MIGRATION)
 
     fixtures = """
     insert into public.community_profiles(user_id, display_name, profile_visibility) values
@@ -69,14 +71,15 @@ def main():
       ('00000000-0000-0000-0000-000000000002', 'Runner B', 'public');
 
     insert into public.community_trails(
-      id, owner_id, title, visibility, publication_status, gpx_download_enabled
+      id, owner_id, title, visibility, publication_status, gpx_download_enabled,
+      map_location_enabled, start_latitude, start_longitude
     ) values
       ('10000000-0000-0000-0000-000000000001',
-       '00000000-0000-0000-0000-000000000001', 'Public Trail', 'public', 'published', false),
+       '00000000-0000-0000-0000-000000000001', 'Public Trail', 'public', 'published', false, true, 47.1, 12.2),
       ('10000000-0000-0000-0000-000000000002',
-       '00000000-0000-0000-0000-000000000001', 'Private Trail', 'private', 'published', true),
+       '00000000-0000-0000-0000-000000000001', 'Private Trail', 'private', 'published', true, false, null, null),
       ('10000000-0000-0000-0000-000000000003',
-       '00000000-0000-0000-0000-000000000001', 'Public GPX Trail', 'public', 'published', true);
+       '00000000-0000-0000-0000-000000000001', 'Public GPX Trail', 'public', 'published', true, false, null, null);
 
     insert into public.community_trail_assets(
       trail_id, owner_id, asset_kind, storage_path, content_type, download_enabled
@@ -128,6 +131,16 @@ def main():
       end if;
       if (select count(*) from public.community_profiles) <> 1 then
         raise exception 'Private profile was exposed to another account';
+      end if;
+      if (select count(*) from public.community_trails where map_location_enabled) <> 1 then
+        raise exception 'Public map should expose only the explicitly opted-in trail';
+      end if;
+      if not exists (
+        select 1 from public.community_trails
+        where id='10000000-0000-0000-0000-000000000001'
+          and start_latitude=47.1 and start_longitude=12.2
+      ) then
+        raise exception 'Opted-in public map coordinates are missing';
       end if;
     end $$;
 
@@ -228,7 +241,7 @@ def main():
     result = psql(sql=tests)
     if result.splitlines()[-1] != "f|26214400":
         raise AssertionError(f"Community bucket must be private with 25 MiB limit, got {result}")
-    print("Community MVP PostgreSQL test passed: private/public trail visibility, profile privacy, asset/GPX access, storage RLS, ownership, comments, favorites and upload constraints.")
+    print("Community MVP PostgreSQL test passed: private/public trail visibility, profile privacy, opt-in map coordinate privacy, asset/GPX access, storage RLS, ownership, comments, favorites and upload constraints.")
 
 
 if __name__ == "__main__":
