@@ -6,9 +6,9 @@ const esc=value=>String(value??'').replace(/[&<>"']/g,ch=>({'&':'&amp;','<':'&lt
 const fmtDistance=m=>Number.isFinite(Number(m))?(Number(m)/1000).toLocaleString('de-DE',{maximumFractionDigits:1})+' km':'—';
 const fmtHm=m=>Number.isFinite(Number(m))?Math.round(Number(m)).toLocaleString('de-DE')+' hm':'—';
 function parseGpxText(xml){
- if(typeof xml!=='string'||!/<(?:\\w+:)?(?:gpx|trk|rte)\\b/i.test(xml))throw new Error('Die Datei enthält kein gültiges GPX-Dokument.');
- const points=[],re=/<(?:[\\w.-]+:)?(?:trkpt|rtept)\\b([^>]*)>([\\s\\S]*?)<\\/(?:[\\w.-]+:)?(?:trkpt|rtept)\\s*>/gi;let match;
- while((match=re.exec(xml))){const lat=Number((match[1].match(/\\blat=["']([^"']+)["']/i)||[])[1]),lon=Number((match[1].match(/\\blon=["']([^"']+)["']/i)||[])[1]);const em=match[2].match(/<(?:[\\w.-]+:)?ele\\b[^>]*>\\s*(-?\\d+(?:\\.\\d+)?)\\s*<\\/(?:[\\w.-]+:)?ele\\s*>/i);const ele=em?Number(em[1]):null;if(Number.isFinite(lat)&&Number.isFinite(lon)&&Math.abs(lat)<=90&&Math.abs(lon)<=180)points.push({lat,lon,ele:Number.isFinite(ele)?ele:null});}
+ if(typeof xml!=='string'||!/<(?:\w+:)?(?:gpx|trk|rte)\b/i.test(xml))throw new Error('Die Datei enthält kein gültiges GPX-Dokument.');
+ const points=[],re=/<(?:[\w.-]+:)?(?:trkpt|rtept)\b([^>]*)>([\s\S]*?)<\/(?:[\w.-]+:)?(?:trkpt|rtept)\s*>/gi;let match;
+ while((match=re.exec(xml))){const lat=Number((match[1].match(/\blat=["']([^"']+)["']/i)||[])[1]),lon=Number((match[1].match(/\blon=["']([^"']+)["']/i)||[])[1]);const em=match[2].match(/<(?:[\w.-]+:)?ele\b[^>]*>\s*(-?\d+(?:\.\d+)?)\s*<\/(?:[\w.-]+:)?ele\s*>/i);const ele=em?Number(em[1]):null;if(Number.isFinite(lat)&&Number.isFinite(lon)&&Math.abs(lat)<=90&&Math.abs(lon)<=180)points.push({lat,lon,ele:Number.isFinite(ele)?ele:null});}
  if(points.length<2)throw new Error('Die GPX-Datei enthält weniger als zwei gültige Streckenpunkte.');
  const rad=v=>v*Math.PI/180,haversine=(a,b)=>{const dLat=rad(b.lat-a.lat),dLon=rad(b.lon-a.lon),x=Math.sin(dLat/2)**2+Math.cos(rad(a.lat))*Math.cos(rad(b.lat))*Math.sin(dLon/2)**2;return 6371000*2*Math.atan2(Math.sqrt(x),Math.sqrt(1-x));};
  let distance=0,ascent=0,descent=0,min=Infinity,max=-Infinity;const profile=[];
