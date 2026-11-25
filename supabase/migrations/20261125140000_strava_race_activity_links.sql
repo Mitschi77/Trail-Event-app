@@ -55,8 +55,12 @@ begin
   select coalesce(nullif(pd.data ->> 'trailEventRunRecords', '')::jsonb, '{}'::jsonb)
     into records
     from public.planner_data pd
-   where pd.user_id = new.user_id;
+   where pd.user_id = new.user_id
+   for update;
 
+  -- Serialize assignment creation with concurrent planner-data updates/deletes.
+  -- The row lock prevents a race in which a participation is removed just as
+  -- its Strava activity is being linked.
   run_record := records -> new.run_record_key;
 
   if run_record is null
