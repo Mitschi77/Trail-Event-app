@@ -722,8 +722,8 @@ assert.ok(html.includes('class="info-tip-content"') &&
   html.includes('.info-tip summary:focus-visible') &&
   html.includes('.info-tip-content{'),
   "Info controls must use the existing keyboard-focusable green icon and readable disclosure panel");
-assert.ok(html.includes('Eine automatische Kontosynchronisierung mit Garmin oder Strava ist derzeit nicht verbunden.'),
-  "Activity import help must not overstate direct Garmin or Strava synchronization");
+assert.ok(html.includes('Strava-Aktivitäten werden automatisch über die Kontoverbindung synchronisiert. Garmin Connect bleibt vorerst beim Dateiimport.'),
+  "Activity import help must distinguish the working Strava account connection from Garmin file import");
 assert.ok(html.includes('Der Vorschlag bleibt bis zu deiner Freigabe unveröffentlicht.') &&
   html.includes('Erst nach deiner ausdrücklichen Freigabe'),
   "New event help must preserve manual approval before public publication");
