@@ -727,6 +727,7 @@ assert.ok(html.includes('Strava-Aktivitäten werden automatisch über die Kontov
 assert.ok(html.includes('id="stravaConnectedBadge"') && html.includes('Strava verbunden'), "A connected Strava account must show a compact connected status instead of the connect button");
 assert.ok(html.includes("onclick=" + String.fromCharCode(34) + "syncStravaActivities('recent')" + String.fromCharCode(34)) && html.includes("onclick=" + String.fromCharCode(34) + "syncStravaActivities('backfill')" + String.fromCharCode(34)), "Recent sync and historical backfill must invoke distinct actions");
 assert.ok(html.includes('id="stravaSyncProgress"') && html.includes('id="stravaSyncProgressBar"'), "Strava synchronization must expose an accessible loading progress indicator");
+assert.ok(html.includes('Ältere Aktivitäten werden von Strava nachgeladen'), "Historical backfill must identify its own loading state");
 assert.ok(html.includes('Der Vorschlag bleibt bis zu deiner Freigabe unveröffentlicht.') &&
   html.includes('Erst nach deiner ausdrücklichen Freigabe'),
   "New event help must preserve manual approval before public publication");
