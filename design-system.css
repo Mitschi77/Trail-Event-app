@@ -3659,3 +3659,16 @@ html,body{background:var(--nb-bg);color:var(--nb-white)}
 .community-existing-asset-info small{font-size:11px;color:#aebdca;overflow-wrap:anywhere}
 .community-existing-asset button{flex:0 0 auto;min-width:100px}
 @media(max-width:620px){.community-existing-asset{align-items:stretch;flex-direction:column}.community-existing-asset button{width:100%}}
+
+/* Trail cards: visual cover, compact facts and clear action hierarchy */
+.community-card{position:relative;overflow:hidden;gap:9px;padding:0 0 16px;border:1px solid #30475b;border-radius:18px;background:linear-gradient(155deg,#172b3d 0%,#101d2b 72%);box-shadow:0 12px 28px #0003}
+.community-card-cover{display:block;width:100%;height:clamp(150px,24vw,220px);object-fit:cover;background:#0c1722}
+.community-card>h3,.community-card>.community-region,.community-card>.community-metrics,.community-card>.community-difficulty,.community-card>.community-description,.community-card>.community-secondary,.community-card>.community-state,.community-card>.community-card-previews{margin-left:16px;margin-right:16px}
+.community-card>h3{margin-top:8px;margin-bottom:0;font-size:clamp(17px,2vw,21px);line-height:1.2;color:#f4f8fc}
+.community-card>.community-region{margin-top:0;margin-bottom:0;color:#9fb3c4;font-size:12px}
+.community-card>.community-metrics{display:flex;flex-wrap:wrap;gap:8px;margin-top:3px;margin-bottom:0;color:#f3f7fb;font-size:14px;font-weight:800;font-variant-numeric:tabular-nums}
+.community-card>.community-difficulty{align-self:flex-start;margin-top:0;padding:5px 9px;border:1px solid #49647b;border-radius:999px;background:#20384b;color:#c9eaff;font-size:11px;font-weight:750}
+.community-card>.community-description{margin-top:0;margin-bottom:0;color:#c0ccd6;font-size:13px;line-height:1.45}
+.community-card .community-card-previews{margin-top:4px;margin-bottom:4px}
+.community-card>.community-secondary{margin-top:4px}
+@media(max-width:620px){.community-card-cover{height:164px}.community-card>h3,.community-card>.community-region,.community-card>.community-metrics,.community-card>.community-difficulty,.community-card>.community-description,.community-card>.community-secondary,.community-card>.community-state,.community-card>.community-card-previews{margin-left:13px;margin-right:13px}}
