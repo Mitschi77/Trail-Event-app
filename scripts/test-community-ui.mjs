@@ -21,6 +21,16 @@ assert.ok(js.includes("communitySort"));
 assert.ok(js.includes("communityResetFilters"));
 assert.ok(js.includes("surface_summary"));
 assert.ok(js.includes("communityResultCount"));
+assert.ok(js.includes("communityDiscoveryMap"));
+assert.ok(js.includes("renderDiscoveryMap(rows)"));
+assert.ok(js.includes("map_location_enabled"));
+assert.ok(js.includes("start_latitude"));
+assert.ok(js.includes("start_longitude"));
+assert.ok(js.includes("mapLocationEnabled=form.elements.map_location_enabled.checked"));
+assert.ok(js.includes("Startpunkt auf der öffentlichen Community-Karte anzeigen"));
+assert.ok(js.includes("Nur freigegebene Startpunkte werden angezeigt."));
+assert.ok(js.includes("communityDiscoveryRenderToken"));
+
 assert.ok(js.includes("distance-asc"));
 assert.ok(js.includes("ascent-desc"));
 assert.match(js, /from\(TABLE\)/);
