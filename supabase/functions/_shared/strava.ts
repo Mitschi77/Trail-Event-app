@@ -48,6 +48,16 @@ export function getAdminClient() {
   const secret = getNamedKey("SUPABASE_SECRET_KEYS", "SUPABASE_SERVICE_ROLE_KEY");
   if (!secret) throw new Error("missing_supabase_server_key");
   return createClient(getSupabaseUrl(), secret, {
+    // New sb_secret keys must be sent via apikey only, not Authorization: Bearer.
+    // supabase-js adds Authorization by default, so strip it for server-key requests.
+    global: {
+      headers: { apikey: secret },
+      fetch: (input, init) => {
+        const headers = new Headers(init?.headers);
+        headers.delete("Authorization");
+        return fetch(input, { ...init, headers });
+      },
+    },
     auth: { persistSession: false, autoRefreshToken: false, detectSessionInUrl: false },
   });
 }
