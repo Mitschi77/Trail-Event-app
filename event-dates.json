@@ -2528,18 +2528,73 @@
     },
     "3kings-3hills": {
       "eventId": "3kings-3hills",
-      "checkedAt": "2026-11-18T14:25:00.201965+00:00",
+      "checkedAt": "2026-11-25T02:39:28+01:00",
       "status": "verified",
       "sources": [
         {
-          "url": "https://www.3kings-3hills.com/ultra-trail/",
+          "url": "https://www.3kings-3hills.com/",
           "status": "read",
-          "error": "<urlopen error timed out>"
+          "verification": "official_event_homepage"
         },
         {
           "url": "https://www.3kings-3hills.com/fakten/",
           "status": "read",
-          "verification": "manual-official-page"
+          "verification": "official_2027_facts_table"
+        },
+        {
+          "url": "https://www.3kings-3hills.com/regeln/",
+          "status": "read",
+          "verification": "official_2027_regulations"
+        },
+        {
+          "url": "https://www.3kings-3hills.com/programm/",
+          "status": "read",
+          "verification": "official_2027_program"
+        },
+        {
+          "url": "https://www.3kings-3hills.com/impressum/",
+          "status": "read",
+          "verification": "official_contact_and_imprint"
+        },
+        {
+          "url": "https://www.3kings-3hills.com/100-miles-ultra-trail-167-km/",
+          "status": "read",
+          "verification": "official_route_page"
+        },
+        {
+          "url": "https://www.3kings-3hills.com/117km-ultra-xl/",
+          "status": "read",
+          "verification": "official_route_page"
+        },
+        {
+          "url": "https://www.3kings-3hills.com/85-km-endurance-trail/",
+          "status": "read",
+          "verification": "official_route_page"
+        },
+        {
+          "url": "https://www.3kings-3hills.com/ultra-trail/",
+          "status": "read",
+          "verification": "official_route_page"
+        },
+        {
+          "url": "https://www.3kings-3hills.com/40k-marathon-trail/",
+          "status": "read",
+          "verification": "official_route_page"
+        },
+        {
+          "url": "https://www.3kings-3hills.com/base-trail/",
+          "status": "read",
+          "verification": "official_route_page"
+        },
+        {
+          "url": "https://www.3kings-3hills.com/shorty-trail/",
+          "status": "read",
+          "verification": "official_route_page"
+        },
+        {
+          "url": "https://www.3kings-3hills.com/3k3h-traily-trail/",
+          "status": "read",
+          "verification": "official_route_page"
         }
       ],
       "eventPeriod": {
@@ -2549,43 +2604,43 @@
       },
       "routes": {
         "0": {
-          "routeId": "base-trail-26-900",
-          "date": "2027-07-24",
+          "routeId": "100-miles-ultra-168-6300",
+          "date": "2027-07-23",
           "verified": true
         },
         "1": {
-          "routeId": "marathon-40-1650",
-          "date": "2027-07-24",
+          "routeId": "ultra-trail-xl-117-4400",
+          "date": "2027-07-23",
           "verified": true
         },
         "2": {
-          "routeId": "3kings-3hills-54-2300",
-          "date": "2027-07-24",
-          "verified": true
-        },
-        "3": {
           "routeId": "endurance-trail-85-3000",
           "date": "2027-07-24",
           "verified": true
         },
+        "3": {
+          "routeId": "ultra-58-2400",
+          "date": "2027-07-24",
+          "verified": true
+        },
         "4": {
-          "routeId": "ultratrail-xl-117-4467",
+          "routeId": "marathon-trail-40-1700",
           "date": "2027-07-24",
           "verified": true
         },
         "5": {
-          "routeId": "100-miles-ultra-168-6300",
+          "routeId": "base-trail-26-900",
           "date": "2027-07-24",
           "verified": true
         },
         "6": {
-          "routeId": "ultratrail-xl-117-4467",
-          "date": "2027-07-23",
+          "routeId": "shorty-trail-16-700",
+          "date": "2027-07-24",
           "verified": true
         },
         "7": {
-          "routeId": "100-miles-ultra-168-6300",
-          "date": "2027-07-23",
+          "routeId": "traily-trail-5-100",
+          "date": "2027-07-24",
           "verified": true
         }
       }
