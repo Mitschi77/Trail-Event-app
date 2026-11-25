@@ -722,8 +722,10 @@ assert.ok(html.includes('class="info-tip-content"') &&
   html.includes('.info-tip summary:focus-visible') &&
   html.includes('.info-tip-content{'),
   "Info controls must use the existing keyboard-focusable green icon and readable disclosure panel");
-assert.ok(html.includes('Strava-Aktivitäten werden automatisch über die Kontoverbindung synchronisiert. Garmin Connect bleibt vorerst beim Dateiimport.'),
-  "Activity import help must distinguish the working Strava account connection from Garmin file import");
+assert.ok(html.includes('Strava-Aktivitäten werden automatisch über die verbundene Strava-Verbindung synchronisiert. Ein manueller Dateiimport ist hier nicht mehr vorgesehen.'),
+  "Activity history help must explain automatic Strava sync and the removal of manual file import");
+assert.ok(!html.includes('id="activityImportFile"') && !html.includes('onclick="importActivityToHistory()"'),
+  "The obsolete manual activity file importer must stay removed");
 assert.ok(html.includes('id="stravaConnectedBadge"') && html.includes('Strava verbunden'), "A connected Strava account must show a compact connected status instead of the connect button");
 assert.ok(html.includes("onclick=" + String.fromCharCode(34) + "syncStravaActivities('recent')" + String.fromCharCode(34)) && html.includes("onclick=" + String.fromCharCode(34) + "syncStravaActivities('backfill')" + String.fromCharCode(34)), "Recent sync and historical backfill must invoke distinct actions");
 assert.ok(html.includes('id="stravaSyncProgress"') && html.includes('id="stravaSyncProgressBar"'), "Strava synchronization must expose an accessible loading progress indicator");
