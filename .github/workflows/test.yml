@@ -32,6 +32,11 @@ jobs:
           deno-version: v2.x
       - name: Type-check owner push Edge Function
         run: deno check --node-modules-dir=auto supabase/functions/send-owner-test-push/index.ts
+      - name: Type-check Strava Edge Functions
+        run: |
+          deno check --node-modules-dir=auto supabase/functions/strava-connect/index.ts
+          deno check --node-modules-dir=auto supabase/functions/strava-callback/index.ts
+          deno check --node-modules-dir=auto supabase/functions/strava-sync/index.ts
       - name: Run app syntax and regression tests
         run: npm run test:syntax
       - name: Run Python event-data regression tests
