@@ -12,7 +12,7 @@ function parseGpxText(xml){
  if(points.length<2)throw new Error('Die GPX-Datei enthält weniger als zwei gültige Streckenpunkte.');
  const rad=v=>v*Math.PI/180,haversine=(a,b)=>{const dLat=rad(b.lat-a.lat),dLon=rad(b.lon-a.lon),x=Math.sin(dLat/2)**2+Math.cos(rad(a.lat))*Math.cos(rad(b.lat))*Math.sin(dLon/2)**2;return 6371000*2*Math.atan2(Math.sqrt(x),Math.sqrt(1-x));};
  let distance=0,ascent=0,descent=0,min=Infinity,max=-Infinity;const profile=[];
- points.forEach((p,i)=>{if(i)distance+=haversine(points[i-1],p);if(p.ele!==null){min=Math.min(min,p.ele);max=Math.max(max,p.ele);if(i&&points[i-1].ele!==null){const delta=p.ele-points[i-1].ele;if(delta>0)ascent+=delta;else descent-=delta;}profile.push({distance,elevation:p.ele});}});
+ points.forEach((p,i)=>{if(i)distance+=haversine(points[i-1],p);if(p.ele!==null){min=Math.min(min,p.ele);max=Math.max(max,p.ele);if(i&&points[i-1].ele!==null){const delta=p.ele-points[i-1].ele;if(delta>0)ascent+=delta;else descent-=delta;}profile.push({distance,elevation:p.ele,lat:p.lat,lon:p.lon});}});
  return {points,distance_m:Math.round(distance),ascent_m:Math.round(ascent),descent_m:Math.round(descent),min_elevation_m:Number.isFinite(min)?Math.round(min):null,max_elevation_m:Number.isFinite(max)?Math.round(max):null,profile};
 }
 function renderGpxVisuals(container,stats){
@@ -37,6 +37,31 @@ function renderGpxVisuals(container,stats){
   svg.append(make('circle',{cx:12+(route[0].lon-minLon)/dx*276,cy:108-(route[0].lat-minLat)/dy*96,r:4,fill:'#61d095'}),make('circle',{cx:12+(route.at(-1).lon-minLon)/dx*276,cy:108-(route.at(-1).lat-minLat)/dy*96,r:4,fill:'#ff8a36'}));
   addFigure('Streckenverlauf · schematische Vorschau',svg);
  }
+}
+function wireGpxProfileMapSync(container,stats,mapController){
+ const figure=container.querySelector('.community-gpx-figure'),svg=figure?.querySelector('svg');
+ if(!svg||stats.profile.length<2)return;
+ const ns='http://www.w3.org/2000/svg',make=(tag,attrs)=>{const el=document.createElementNS(ns,tag);Object.entries(attrs).forEach(([k,v])=>el.setAttribute(k,String(v)));return el;};
+ const vals=stats.profile,lo=Math.min(...vals.map(p=>p.elevation)),hi=Math.max(...vals.map(p=>p.elevation)),rawSpan=Math.max(1,hi-lo),plotMin=lo-rawSpan*.08,plotMax=hi+rawSpan*.08,end=Math.max(1,stats.distance_m),left=58,right=580,top=38,bottom=198;
+ const cursor=make('line',{x1:left,y1:top,x2:left,y2:bottom,stroke:'#35b8ff','stroke-width':2,'stroke-dasharray':'4 3','pointer-events':'none'});
+ const dot=make('circle',{cx:left,cy:bottom,r:5,fill:'#35b8ff',stroke:'#fff','stroke-width':2,'pointer-events':'none'});
+ const hit=make('rect',{x:left,y:top,width:right-left,height:bottom-top,fill:'transparent','pointer-events':'all',tabindex:0,role:'slider','aria-label':'Position auf dem Höhenprofil auswählen','aria-valuemin':0,'aria-valuemax':Math.round(end),'aria-valuenow':0,'aria-valuetext':'0 km'});
+ svg.append(cursor,dot,hit);
+ const selectAt=fraction=>{
+  const distance=Math.max(0,Math.min(1,fraction))*end;let low=0,high=vals.length-1;
+  while(low<high){const mid=(low+high)>>1;if(vals[mid].distance<distance)low=mid+1;else high=mid;}
+  const index=low>0&&Math.abs(vals[low-1].distance-distance)<Math.abs(vals[low].distance-distance)?low-1:low,point=vals[index];
+  const x=left+(point.distance/end)*(right-left),y=bottom-((point.elevation-plotMin)/(plotMax-plotMin))*(bottom-top);
+  cursor.setAttribute('x1',x);cursor.setAttribute('x2',x);dot.setAttribute('cx',x);dot.setAttribute('cy',y);
+  hit.setAttribute('aria-valuenow',Math.round(point.distance));hit.setAttribute('aria-valuetext',(point.distance/1000).toLocaleString('de-DE',{maximumFractionDigits:2})+' km, '+Math.round(point.elevation)+' m');
+  mapController?.setPosition(point);
+ };
+ const fractionFromEvent=e=>{const rect=svg.getBoundingClientRect();return rect.width?((e.clientX-rect.left)/rect.width*600-left)/(right-left):0;};
+ hit.addEventListener('pointerdown',e=>{hit.setPointerCapture?.(e.pointerId);selectAt(fractionFromEvent(e));});
+ hit.addEventListener('pointermove',e=>{if(e.buttons||e.pointerType==='touch')selectAt(fractionFromEvent(e));});
+ hit.addEventListener('click',e=>selectAt(fractionFromEvent(e)));
+ hit.addEventListener('keydown',e=>{const current=Number(hit.getAttribute('aria-valuenow'))/end;if(e.key==='ArrowRight'||e.key==='ArrowUp'){e.preventDefault();selectAt(current+.02);}else if(e.key==='ArrowLeft'||e.key==='ArrowDown'){e.preventDefault();selectAt(current-.02);}else if(e.key==='Home'){e.preventDefault();selectAt(0);}else if(e.key==='End'){e.preventDefault();selectAt(1);}});
+ const hint=document.createElement('p');hint.className='community-hint';hint.textContent='Höhenprofil antippen oder mit den Pfeiltasten bewegen – die blaue Markierung zeigt dieselbe Position auf der Karte.';figure.append(hint);selectAt(0);
 }
 function renderGpxMetrics(container,stats){
  container.setAttribute('aria-label','GPX-Streckenkennzahlen');
@@ -118,11 +143,13 @@ async function renderGpxMap(container,stats){
   const view=L.map(map,{scrollWheelZoom:false,keyboard:true,zoomControl:true}).fitBounds(bounds,{padding:[18,18]});
   map.addEventListener('northbound-map-resize',()=>setTimeout(()=>view.invalidateSize(),100));
   L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',{maxZoom:19,attribution:'&copy; <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap contributors</a>'}).addTo(view);
-  L.polyline(points,{color:'#ff8a36',weight:4,opacity:.95}).addTo(view);
+  const routeLine=L.polyline(points,{color:'#ff8a36',weight:4,opacity:.95}).addTo(view);
   L.circleMarker(points[0],{radius:6,color:'#0b5131',fillColor:'#61d095',fillOpacity:1}).bindTooltip('Start').addTo(view);
   L.circleMarker(points[points.length-1],{radius:6,color:'#8b3f17',fillColor:'#ff8a36',fillOpacity:1}).bindTooltip('Ziel').addTo(view);
+  const positionMarker=L.circleMarker(points[0],{radius:8,color:'#ffffff',weight:2,fillColor:'#35b8ff',fillOpacity:1}).bindTooltip('Profilposition').addTo(view);
   setTimeout(()=>view.invalidateSize(),80);
- }catch(error){const message=document.createElement('p');message.className='community-hint';message.textContent='Kartenansicht nicht verfügbar: '+error.message+' Die schematische Streckenansicht bleibt sichtbar.';figure.append(message);}
+  return {setPosition(point){positionMarker.setLatLng([point.lat,point.lon]);},fitRoute(){view.fitBounds(routeLine.getBounds(),{padding:[18,18]});}};
+ }catch(error){const message=document.createElement('p');message.className='community-hint';message.textContent='Kartenansicht nicht verfügbar: '+error.message+' Die schematische Streckenansicht bleibt sichtbar.';figure.append(message);return null;}
 }
 
 async function renderDiscoveryMap(rows){
@@ -346,7 +373,7 @@ async function detail(t){
    }
   const lightboxItems=[];for(const asset of images){const {data,error}=await c.storage.from(BUCKET).createSignedUrl(asset.storage_path,600);if(error)continue;const figure=document.createElement('figure');const img=document.createElement('img');img.src=data.signedUrl;img.alt=asset.alt_text||asset.caption||(asset.asset_kind==='elevation_profile'?'Höhenprofil':'Trail-Bild');img.loading='lazy';img.tabIndex=0;img.setAttribute('role','button');img.setAttribute('aria-label','Bild vergrößern: '+img.alt);const item={src:data.signedUrl,alt:img.alt,caption:asset.caption||''};lightboxItems.push(item);const open=()=>openCommunityLightbox(lightboxItems,lightboxItems.length-1);img.addEventListener('click',open);img.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();open();}});figure.append(img);if(asset.caption){const cap=document.createElement('figcaption');cap.textContent=asset.caption;figure.append(cap);}if(active==='mine'&&t.owner_id===cloudUser.id){const remove=document.createElement('button');remove.type='button';remove.className='community-secondary';remove.textContent='Bild entfernen';remove.addEventListener('click',()=>deleteTrailAsset(t,asset,feedback));figure.append(remove);}gallery.append(figure);}
   if(!images.length){galleryBlock.hidden=true;}
-  if(gpx&&gpxStats&&gpxSignedUrl){const a=document.createElement('a');a.className='community-secondary community-download';a.href=gpxSignedUrl;a.download='trail-'+t.id+'.gpx';a.rel='noopener';a.textContent='GPX-Datei herunterladen';files.append(a);const stats=gpxStats;renderGpxMetrics(statsPanel,stats);await renderGpxMap(routeSection,stats);renderGpxVisuals(routeSection,stats);if(active==='mine'&&t.owner_id===cloudUser.id){const remove=document.createElement('button');remove.type='button';remove.className='community-secondary';remove.textContent='GPX-Datei entfernen';remove.addEventListener('click',()=>deleteTrailAsset(t,gpx,feedback));files.append(remove);}}else if(gpxCandidates.length){const note=document.createElement('p');note.className='community-hint';note.textContent='GPX-Datei ist registriert, konnte aber nicht geöffnet werden. Bitte die Datei in „Trail bearbeiten“ erneut hochladen.';files.append(note);if(active==='mine'&&t.owner_id===cloudUser.id){const remove=document.createElement('button');remove.type='button';remove.className='community-secondary';remove.textContent='Ungültige GPX-Einträge entfernen';remove.addEventListener('click',async()=>{for(const candidate of gpxCandidates)await deleteTrailAsset(t,candidate,feedback);});files.append(remove);}}
+  if(gpx&&gpxStats&&gpxSignedUrl){const a=document.createElement('a');a.className='community-secondary community-download';a.href=gpxSignedUrl;a.download='trail-'+t.id+'.gpx';a.rel='noopener';a.textContent='GPX-Datei herunterladen';files.append(a);const stats=gpxStats;renderGpxMetrics(statsPanel,stats);const mapController=await renderGpxMap(routeSection,stats);renderGpxVisuals(routeSection,stats);wireGpxProfileMapSync(routeSection,stats,mapController);if(active==='mine'&&t.owner_id===cloudUser.id){const remove=document.createElement('button');remove.type='button';remove.className='community-secondary';remove.textContent='GPX-Datei entfernen';remove.addEventListener('click',()=>deleteTrailAsset(t,gpx,feedback));files.append(remove);}}else if(gpxCandidates.length){const note=document.createElement('p');note.className='community-hint';note.textContent='GPX-Datei ist registriert, konnte aber nicht geöffnet werden. Bitte die Datei in „Trail bearbeiten“ erneut hochladen.';files.append(note);if(active==='mine'&&t.owner_id===cloudUser.id){const remove=document.createElement('button');remove.type='button';remove.className='community-secondary';remove.textContent='Ungültige GPX-Einträge entfernen';remove.addEventListener('click',async()=>{for(const candidate of gpxCandidates)await deleteTrailAsset(t,candidate,feedback);});files.append(remove);}}
   routeBlock.hidden=!gpx;
   filesBlock.hidden=!files.children.length;
   const reviews=reviewResult.data||[],avg=reviews.length?reviews.reduce((sum,r)=>sum+r.rating,0)/reviews.length:0;
