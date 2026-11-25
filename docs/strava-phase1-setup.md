@@ -26,7 +26,7 @@ Add \`STRAVA_TOKEN_ENCRYPTION_KEY\` as a new Edge Function secret. Generate a ra
 openssl rand -base64 32
 \`\`\`
 
-Never commit this key or share it in chat. The Edge Functions use AES-256-GCM to encrypt both access and refresh tokens before storing them.
+Never commit this key or share it in chat. The Edge Functions use AES-256-GCM to encrypt both access and refresh tokens before storing them. Keep a secure backup: changing this key without first decrypting and re-encrypting existing token rows will make the saved connection unusable.
 
 The app return URL defaults to \`https://mitschi77.github.io/Trail-Event-app/\`. If the app URL changes, set \`NORTHBOUND_APP_URL\` as a Function Secret to the new trusted URL.
 
