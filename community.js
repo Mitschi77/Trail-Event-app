@@ -196,6 +196,26 @@ function render(){
  if(!rows.length){const empty=document.createElement('div');empty.className='community-empty';empty.textContent=active==='mine'?'Deine Trails erscheinen hier. Lege deinen ersten Trail an.':'Keine Trails passen zu deiner Suche. Passe die Filter an oder setze die Filter zurück.';list.append(empty);}
  const count=document.createElement('p');count.id='communityResultCount';count.className='community-hint';count.textContent=rows.length+' von '+trails.length+' Trails angezeigt';list.before(count);if(communitySelectedTrailId)selectDiscoveryTrail(communitySelectedTrailId,false,false);
 }
+async function deleteTrailAsset(t,asset,feedback){
+ if(!client()||t.owner_id!==cloudUser.id){setStatus('Nur der Ersteller kann Dateien entfernen.',true);return;}
+ if(!confirm((asset.asset_kind==='gpx'?'GPX-Datei':'Bild')+' wirklich aus diesem Trail entfernen?'))return;
+ feedback.textContent='Datei wird entfernt …';
+ try{
+  const c=client();
+  const {error:storageError}=await c.storage.from(BUCKET).remove([asset.storage_path]);
+  if(storageError)throw storageError;
+  const {error:rowError}=await c.from(ASSETS).delete().eq('id',asset.id).eq('trail_id',t.id).eq('owner_id',cloudUser.id);
+  if(rowError)throw rowError;
+  if(asset.asset_kind==='gpx'){
+   const {error:trailError}=await c.from(TABLE).update({map_location_enabled:false,start_latitude:null,start_longitude:null,gpx_download_enabled:false}).eq('id',t.id).eq('owner_id',cloudUser.id);
+   if(trailError)throw trailError;
+  }
+  feedback.textContent='Datei wurde entfernt.';
+  await load();
+  const fresh=trails.find(x=>x.id===t.id);
+  if(fresh)await detail(fresh);
+ }catch(error){feedback.textContent='Datei konnte nicht entfernt werden: '+error.message;feedback.classList.add('is-error');}
+}
 async function detail(t){
  const d=$('communityDetail');d.hidden=false;$('communityTrailList').hidden=true;$('communityTrailForm').hidden=true;d.replaceChildren();
  const back=document.createElement('button');back.type='button';back.className='community-secondary';back.textContent='← Zurück';back.addEventListener('click',()=>{d.hidden=true;$('communityTrailList').hidden=false;});
@@ -226,9 +246,9 @@ async function detail(t){
     mapToggle.addEventListener('click',()=>updateMapLocation(t,!t.map_location_enabled,gpx,feedback,mapToggle));d.append(mapToggle);
     if(mapToggle.disabled){const note=document.createElement('p');note.className='community-hint';note.textContent='Für die Kartenfreigabe muss der Trail öffentlich veröffentlicht sein.';d.append(note);}
    }
-  for(const asset of images){const {data,error}=await c.storage.from(BUCKET).createSignedUrl(asset.storage_path,600);if(error)continue;const figure=document.createElement('figure');const img=document.createElement('img');img.src=data.signedUrl;img.alt=asset.alt_text||asset.caption|| (asset.asset_kind==='elevation_profile'?'Höhenprofil':'Trail-Bild');img.loading='lazy';figure.append(img);if(asset.caption){const cap=document.createElement('figcaption');cap.textContent=asset.caption;figure.append(cap);}gallery.append(figure);}
+  for(const asset of images){const {data,error}=await c.storage.from(BUCKET).createSignedUrl(asset.storage_path,600);if(error)continue;const figure=document.createElement('figure');const img=document.createElement('img');img.src=data.signedUrl;img.alt=asset.alt_text||asset.caption|| (asset.asset_kind==='elevation_profile'?'Höhenprofil':'Trail-Bild');img.loading='lazy';figure.append(img);if(asset.caption){const cap=document.createElement('figcaption');cap.textContent=asset.caption;figure.append(cap);}if(active==='mine'&&t.owner_id===cloudUser.id){const remove=document.createElement('button');remove.type='button';remove.className='community-secondary';remove.textContent='Bild entfernen';remove.addEventListener('click',()=>deleteTrailAsset(t,asset,feedback));figure.append(remove);}gallery.append(figure);}
   if(!images.length){const empty=document.createElement('p');empty.className='community-hint';empty.textContent='Für diesen Trail wurden noch keine Bilder oder Höhenprofile hinterlegt.';gallery.append(empty);}
-  if(gpx){const {data,error}=await c.storage.from(BUCKET).createSignedUrl(gpx.storage_path,600);if(!error){const a=document.createElement('a');a.className='community-secondary community-download';a.href=data.signedUrl;a.download='trail-'+t.id+'.gpx';a.rel='noopener';a.textContent='GPX-Datei herunterladen';files.append(a);try{const response=await fetch(data.signedUrl);if(!response.ok)throw new Error('GPX konnte nicht gelesen werden');const stats=parseGpxText(await response.text());renderGpxMetrics(files,stats);renderGpxVisuals(gallery,stats);await renderGpxMap(gallery,stats);}catch(parseError){const note=document.createElement('p');note.className='community-hint';note.textContent='GPX-Vorschau nicht verfügbar: '+parseError.message;files.append(note);}}else{const note=document.createElement('p');note.className='community-hint';note.textContent='GPX-Datei vorhanden, aber derzeit nicht freigegeben.';files.append(note);}}
+  if(gpx){const {data,error}=await c.storage.from(BUCKET).createSignedUrl(gpx.storage_path,600);if(!error){const a=document.createElement('a');a.className='community-secondary community-download';a.href=data.signedUrl;a.download='trail-'+t.id+'.gpx';a.rel='noopener';a.textContent='GPX-Datei herunterladen';files.append(a);try{const response=await fetch(data.signedUrl);if(!response.ok)throw new Error('GPX konnte nicht gelesen werden');const stats=parseGpxText(await response.text());renderGpxMetrics(files,stats);renderGpxVisuals(gallery,stats);await renderGpxMap(gallery,stats);}catch(parseError){const note=document.createElement('p');note.className='community-hint';note.textContent='GPX-Vorschau nicht verfügbar: '+parseError.message;files.append(note);}}else{const note=document.createElement('p');note.className='community-hint';note.textContent='GPX-Datei vorhanden, aber derzeit nicht freigegeben.';files.append(note);}if(active==='mine'&&t.owner_id===cloudUser.id){const remove=document.createElement('button');remove.type='button';remove.className='community-secondary';remove.textContent='GPX-Datei entfernen';remove.addEventListener('click',()=>deleteTrailAsset(t,gpx,feedback));files.append(remove);}}
   const reviews=reviewResult.data||[],avg=reviews.length?reviews.reduce((sum,r)=>sum+r.rating,0)/reviews.length:0;
    const writtenReviews=(reviewResult.data||[]).filter(r=>String(r.review_text||'').trim());
    writtenReviews.forEach(r=>{const item=document.createElement('article');item.className='community-comment';const score=document.createElement('strong');score.textContent='★ '+r.rating+'/5';const text=document.createElement('p');text.textContent=r.review_text;const date=document.createElement('small');date.textContent=new Date(r.created_at).toLocaleDateString('de-DE');item.append(score,text,date);reviewSection.append(item);});
