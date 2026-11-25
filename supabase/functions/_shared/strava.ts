@@ -80,6 +80,12 @@ function decodeBase64(value: string): Uint8Array {
   return bytes;
 }
 
+function asArrayBuffer(value: Uint8Array): ArrayBuffer {
+  const copy = new Uint8Array(value.byteLength);
+  copy.set(value);
+  return copy.buffer;
+}
+
 function encodeBase64(value: Uint8Array): string {
   let binary = "";
   for (const byte of value) binary += String.fromCharCode(byte);
@@ -91,16 +97,16 @@ async function encryptionKey(): Promise<CryptoKey> {
   if (!encoded) throw new Error("missing_strava_token_encryption_key");
   const raw = decodeBase64(encoded.trim());
   if (raw.length !== 32) throw new Error("invalid_strava_token_encryption_key");
-  return await crypto.subtle.importKey("raw", raw, { name: "AES-GCM" }, false, ["encrypt", "decrypt"]);
+  return await crypto.subtle.importKey("raw", asArrayBuffer(raw), { name: "AES-GCM" }, false, ["encrypt", "decrypt"]);
 }
 
 export async function encryptToken(token: string) {
   const key = await encryptionKey();
   const iv = crypto.getRandomValues(new Uint8Array(12));
   const encrypted = await crypto.subtle.encrypt(
-    { name: "AES-GCM", iv },
+    { name: "AES-GCM", iv: asArrayBuffer(iv) },
     key,
-    new TextEncoder().encode(token),
+    asArrayBuffer(new TextEncoder().encode(token)),
   );
   return { ciphertext: encodeBase64(new Uint8Array(encrypted)), iv: encodeBase64(iv) };
 }
@@ -108,9 +114,9 @@ export async function encryptToken(token: string) {
 export async function decryptToken(ciphertext: string, ivValue: string): Promise<string> {
   const key = await encryptionKey();
   const clear = await crypto.subtle.decrypt(
-    { name: "AES-GCM", iv: decodeBase64(ivValue) },
+    { name: "AES-GCM", iv: asArrayBuffer(decodeBase64(ivValue)) },
     key,
-    decodeBase64(ciphertext),
+    asArrayBuffer(decodeBase64(ciphertext)),
   );
   return new TextDecoder().decode(clear);
 }
