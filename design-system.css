@@ -3672,3 +3672,11 @@ html,body{background:var(--nb-bg);color:var(--nb-white)}
 .community-card .community-card-previews{margin-top:4px;margin-bottom:4px}
 .community-card>.community-secondary{margin-top:4px}
 @media(max-width:620px){.community-card-cover{height:164px}.community-card>h3,.community-card>.community-region,.community-card>.community-metrics,.community-card>.community-difficulty,.community-card>.community-description,.community-card>.community-secondary,.community-card>.community-state,.community-card>.community-card-previews{margin-left:13px;margin-right:13px}}
+
+/* Compact in-page navigation for long trail details */
+.community-detail-nav{position:sticky;top:calc(var(--nb-header-height,64px) + 6px);z-index:8;display:flex;gap:7px;overflow-x:auto;overscroll-behavior-inline:contain;padding:9px 10px;margin:12px 0 18px;border:1px solid #344b60;border-radius:14px;background:rgba(12,25,38,.94);backdrop-filter:blur(14px);scrollbar-width:thin}
+.community-detail-nav-button{flex:0 0 auto;min-height:38px;padding:8px 13px;border:1px solid #3a5268;border-radius:999px;background:#172b3d;color:#c6d5e1;font-size:12px;font-weight:750;white-space:nowrap}
+.community-detail-nav-button.is-active{border-color:#ff9b50;background:#55351f;color:#fff2e7;box-shadow:0 0 0 1px #ff9b5033 inset}
+.community-detail [id^="community-detail-section-"]{scroll-margin-top:calc(var(--nb-header-height,64px) + 76px)}
+.community-detail-nav-button:focus-visible{outline:2px solid #ff9b50;outline-offset:2px}
+@media(max-width:620px){.community-detail-nav{margin:10px -2px 16px;padding:8px}.community-detail-nav-button{min-height:40px;padding:8px 12px}}
