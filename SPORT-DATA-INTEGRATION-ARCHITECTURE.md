@@ -14,32 +14,34 @@ Die vorhandenen Dateiimporte (FIT, TCX, GPX) bleiben erhalten und werden nicht d
 
 - REST API mit OAuth 2.0; Nutzer autorisieren die App auf der Strava-Seite.
 - Die App benötigt nur die tatsächlich verwendeten Scopes. Für den geplanten Import ist zunächst lesender Aktivitätszugriff ausreichend.
-- Access Tokens sind kurzlebig; Refresh Tokens müssen serverseitig verwaltet und bei Rotation atomar ersetzt werden.
-- Neue Anwendungen starten im Single-Player-Modus (nur das eigene Konto). Die offizielle Dokumentation nennt eine Strava-Mitgliedschaft als Voraussetzung zum Erstellen einer API-Anwendung.
-- Erweiterter Zugriff beginnt mit einer begrenzten Athletenkapazität; für mehr Nutzer ist eine Prüfung durch Strava erforderlich.
-- Webhooks sind für Aktivitätsänderungen und Deautorisierung der bessere Mechanismus als aggressives Polling. Rate Limits müssen beachtet werden.
-- Strava hat für den 4. Januar 2027 eine neue API-Basis-URL angekündigt. Die Basis-URL darf deshalb nicht an mehreren Stellen hart codiert werden.
+- Access Tokens sind kurzlebig (laut aktueller Doku sechs Stunden). Refresh Tokens müssen serverseitig verwaltet und bei jeder Token-Erneuerung atomar aktualisiert werden, da Strava ein neues Refresh Token ausgeben und das vorherige sofort ungültig machen kann.
+- Neue Anwendungen starten im Single-Player-Modus (Athletenkapazität 1). Die API-Einstellungen können den Zugang auf 10 Athleten erhöhen; für mehr Nutzer ist eine Strava-Prüfung erforderlich. Bis dahin können keine weiteren Athleten autorisiert werden.
+- Webhooks sind laut Strava erforderlich, um Deautorisierung und Aktivitätsänderungen zu erkennen und unnötiges Polling zu vermeiden. Rate Limits müssen beachtet werden.
+- Für die Deautorisierung ist seit 1. Juni 2026 der neue Endpoint `POST https://www.strava.com/oauth/revoke` verfügbar und empfohlen. Der bisherige Endpoint `/oauth/deauthorize` soll ab 1. Juni 2027 nicht mehr unterstützt werden. Die Implementierung muss deshalb den neuen Revoke-Endpunkt verwenden.
+- API-Endpunkte und Callback-Domain werden zentral konfiguriert, nicht in mehreren UI-Dateien hart codiert.
 
 Offizielle Dokumentation:
 - https://developers.strava.com/docs/getting-started/
 - https://developers.strava.com/docs/authentication/
+- https://developers.strava.com/docs/webhooks/
 - https://developers.strava.com/docs/rate-limits/
-- https://developers.strava.com/docs/changelog/
 
 ### Garmin Connect
 
 Garmin unterscheidet zwischen persönlicher Nutzung und einer Mehrnutzer-/Business-Integration:
 
-- Personal API: für die eigenen Garmin-Connect-Daten eines einzelnen Nutzers. Die Einrichtung erfolgt über Garmin Connect und einen persönlichen API-Key; Daten werden per Pull abgerufen. Diese Variante ist nicht für eine kommerzielle Mehrnutzer-App gedacht.
-- Business Starter: Organisationszugang mit Activity API und weiteren APIs; Aktivitätsdaten werden per Push geliefert, historische Daten sind laut Programmübersicht nicht enthalten und die Nutzerkapazität ist begrenzt.
-- Enterprise: kann Push oder Ping/Pull, historische Daten und größere Nutzerzahlen umfassen; Freigabe und Konditionen legt Garmin fest.
-- Die Activity API kann Aktivitätszusammenfassungen sowie FIT-Dateien bereitstellen. Vollständige Detaildaten sind vom freigegebenen Programmumfang abhängig.
+- Personal API: für die eigenen Garmin-Connect-Daten eines einzelnen Nutzers. Die persönliche API-Key-Erstellung erfolgt in Garmin Connect; der Key wird nur einmal angezeigt und kann mit einer Ablaufzeit von 30, 90, 180 Tagen oder einem Jahr erstellt werden.
+- Der Personal API Key wird serverseitig zum Erzeugen eines OAuth2-Access-Tokens verwendet. Dieses Token ist 24 Stunden gültig; Refresh Tokens werden nicht unterstützt. Ein neues Access Token wird mit dem persönlichen API Key angefordert.
+- Personal API liefert Aktivitätsdaten als JSON und FIT und unterstützt ausschließlich Pull. Sie ist nicht für kommerzielle Apps mit mehreren Endnutzern vorgesehen.
+- Business Starter: Organisationszugang mit Activity API und weiteren APIs; Aktivitätsdaten werden per Push geliefert, historische Daten sind nicht enthalten und die Nutzerkapazität ist begrenzt.
+- Enterprise: kann Push oder Ping/Pull, historische Daten (mindestens ein Monat laut Programmübersicht) und größere Nutzerzahlen umfassen; Freigabe und Konditionen legt Garmin fest.
 
 Offizielle Dokumentation:
 - https://developer.garmin.com/gc-developer-program/overview/
+- https://developer.garmin.com/gc-developer-program/personal/personal-faq/
+- https://developer.garmin.com/gc-developer-program/personal/swagger-docs
 - https://developer.garmin.com/gc-developer-program/enterprise/activity-api/
 - https://developer.garmin.com/gc-developer-program/enterprise/program-faq/
-- https://support.garmin.com/en-US/?faq=HfTwLfw1Gn2A7WS1GdAMH8
 
 ## Zielarchitektur
 
@@ -119,9 +121,9 @@ Die Oberfläche zeigt keine grünen Erfolgsflächen im NORTHBOUND-Design. Status
 ### Phase 1 – Strava Einzelkonto-Test
 
 Voraussetzungen:
-- Betreiber legt eine Strava-API-Anwendung im eigenen Strava-Konto an.
+- Betreiber legt eine Strava-API-Anwendung im eigenen Strava-Konto an und prüft die aktuell verfügbare Athletenkapazität im API-Dashboard.
 - Client-ID, Client-Secret und Callback-Domain werden ausschließlich in Supabase Function Secrets konfiguriert.
-- OAuth-Callback, minimale Read-Scopes, Tokenrotation, Deautorisierung und ein manueller Import werden mit einem Testkonto geprüft.
+- OAuth-Callback, minimale Read-Scopes, Tokenrotation, Webhook-Deautorisierung, neuer Revoke-Endpunkt und ein manueller Import werden mit einem Testkonto geprüft.
 - Neue App bleibt zunächst Single-Player; keine Mehrnutzerfreigabe behaupten.
 
 ### Phase 2 – Garmin
@@ -149,7 +151,7 @@ Voraussetzungen:
 
 ## Offene Voraussetzungen
 
-- Strava API-App und passende Freigabe durch den Betreiber.
+- Strava API-App und aktuell im API-Dashboard verfügbare Athletenkapazität.
 - Garmin Personal API Key für den persönlichen Test bzw. Garmin Business Program Freigabe für Mehrnutzerbetrieb.
 - Bestätigte Supabase-Projektkonfiguration und Callback-Domain.
 - Entscheidung, ob GPS-/FIT-Rohdaten gespeichert werden sollen (Standard: nein).
