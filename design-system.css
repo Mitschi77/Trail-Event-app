@@ -3632,3 +3632,19 @@ html,body{background:var(--nb-bg);color:var(--nb-white)}
  .community-route-section .community-gpx-figure svg{min-height:190px}
  .community-card-previews .community-gpx-figure svg{height:64px;max-height:64px}
 }
+
+/* Accessible Community image lightbox */
+.community-gallery img{cursor:zoom-in;transition:transform .18s ease,filter .18s ease}
+.community-gallery img:hover{filter:brightness(1.06)}
+.community-gallery img:focus-visible{outline:3px solid #78d8ff;outline-offset:3px}
+.community-lightbox{position:fixed;inset:0;z-index:10000;display:flex;align-items:center;justify-content:center;padding:clamp(12px,3vw,32px);background:rgba(3,9,16,.94);backdrop-filter:blur(12px)}
+.community-lightbox-panel{position:relative;width:min(1100px,100%);max-height:94dvh;display:flex;flex-direction:column;gap:12px;padding:14px;border:1px solid #40566b;border-radius:20px;background:linear-gradient(145deg,#172a3c,#0b1622);box-shadow:0 24px 80px #0009}
+.community-lightbox-close{align-self:flex-end;border:1px solid #40566b;border-radius:10px;background:#1b2d40;color:#f4f8fc;padding:10px 14px;font-weight:700}
+.community-lightbox-stage{min-height:0;display:grid;grid-template-columns:48px minmax(0,1fr) 48px;align-items:center;gap:10px}
+.community-lightbox-image{display:block;max-width:100%;width:auto;height:auto;max-height:calc(88dvh - 120px);object-fit:contain;justify-self:center;border-radius:10px}
+.community-lightbox-prev,.community-lightbox-next{width:44px;height:52px;border:1px solid #40566b;border-radius:12px;background:#1b2d40;color:#f5f8fb;font-size:32px;line-height:1}
+.community-lightbox-prev:disabled,.community-lightbox-next:disabled{opacity:.35}
+.community-lightbox-footer{display:flex;align-items:center;justify-content:space-between;gap:12px;color:#b7c7d4;font-size:13px}
+.community-lightbox-caption{margin:0;overflow-wrap:anywhere}
+.community-lightbox-count{white-space:nowrap;color:#7ed9ff;font-variant-numeric:tabular-nums}
+@media(max-width:620px){.community-lightbox{padding:8px}.community-lightbox-panel{padding:9px;border-radius:14px}.community-lightbox-stage{grid-template-columns:34px minmax(0,1fr) 34px;gap:5px}.community-lightbox-prev,.community-lightbox-next{width:34px;height:42px;font-size:25px}.community-lightbox-image{max-height:calc(88dvh - 130px)}}
