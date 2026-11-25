@@ -205,10 +205,20 @@ async function detail(t){
   ]);
   for(const result of [assetResult,reviewResult,commentResult,favoriteResult,myReviewResult])if(result.error)throw result.error;
   const assets=assetResult.data||[],images=assets.filter(a=>a.asset_kind==='image'||a.asset_kind==='elevation_profile'),gpx=assets.find(a=>a.asset_kind==='gpx');
+   if(active==='mine'){
+    const mapToggle=document.createElement('button');mapToggle.type='button';mapToggle.className='community-secondary';
+    mapToggle.textContent=t.map_location_enabled?'Startpunkt von öffentlicher Karte entfernen':'Startpunkt auf öffentlicher Karte freigeben';
+    mapToggle.disabled=t.visibility!=='public'||t.publication_status!=='published';
+    mapToggle.title=mapToggle.disabled?'Trail zuerst öffentlich veröffentlichen.':'Die Freigabe zeigt nur den GPX-Startpunkt, nicht die gesamte private Adresse.';
+    mapToggle.addEventListener('click',()=>updateMapLocation(t,!t.map_location_enabled,gpx,feedback,mapToggle));d.append(mapToggle);
+    if(mapToggle.disabled){const note=document.createElement('p');note.className='community-hint';note.textContent='Für die Kartenfreigabe muss der Trail öffentlich veröffentlicht sein.';d.append(note);}
+   }
   for(const asset of images){const {data,error}=await c.storage.from(BUCKET).createSignedUrl(asset.storage_path,600);if(error)continue;const figure=document.createElement('figure');const img=document.createElement('img');img.src=data.signedUrl;img.alt=asset.alt_text||asset.caption|| (asset.asset_kind==='elevation_profile'?'Höhenprofil':'Trail-Bild');img.loading='lazy';figure.append(img);if(asset.caption){const cap=document.createElement('figcaption');cap.textContent=asset.caption;figure.append(cap);}gallery.append(figure);}
   if(!images.length){const empty=document.createElement('p');empty.className='community-hint';empty.textContent='Für diesen Trail wurden noch keine Bilder oder Höhenprofile hinterlegt.';gallery.append(empty);}
   if(gpx){const {data,error}=await c.storage.from(BUCKET).createSignedUrl(gpx.storage_path,600);if(!error){const a=document.createElement('a');a.className='community-secondary community-download';a.href=data.signedUrl;a.download='trail-'+t.id+'.gpx';a.rel='noopener';a.textContent='GPX-Datei herunterladen';files.append(a);try{const response=await fetch(data.signedUrl);if(!response.ok)throw new Error('GPX konnte nicht gelesen werden');const stats=parseGpxText(await response.text());renderGpxMetrics(files,stats);renderGpxVisuals(gallery,stats);await renderGpxMap(gallery,stats);}catch(parseError){const note=document.createElement('p');note.className='community-hint';note.textContent='GPX-Vorschau nicht verfügbar: '+parseError.message;files.append(note);}}else{const note=document.createElement('p');note.className='community-hint';note.textContent='GPX-Datei vorhanden, aber derzeit nicht freigegeben.';files.append(note);}}
   const reviews=reviewResult.data||[],avg=reviews.length?reviews.reduce((sum,r)=>sum+r.rating,0)/reviews.length:0;
+   const writtenReviews=(reviewResult.data||[]).filter(r=>String(r.review_text||'').trim());
+   writtenReviews.forEach(r=>{const item=document.createElement('article');item.className='community-comment';const score=document.createElement('strong');score.textContent='★ '+r.rating+'/5';const text=document.createElement('p');text.textContent=r.review_text;const date=document.createElement('small');date.textContent=new Date(r.created_at).toLocaleDateString('de-DE');item.append(score,text,date);reviewSection.append(item);});
   const reviewSection=document.createElement('section');reviewSection.className='community-feedback-section';const reviewTitle=document.createElement('h4');reviewTitle.textContent='Bewertungen';const average=document.createElement('p');average.textContent=reviews.length?('★ '+avg.toLocaleString('de-DE',{maximumFractionDigits:1})+'/5 · '+reviews.length+' Bewertung(en)'):'Noch keine Bewertungen';reviewSection.append(reviewTitle,average);
   const reviewForm=document.createElement('form');reviewForm.className='community-inline-form';const stars=document.createElement('select');stars.name='rating';stars.setAttribute('aria-label','Deine Bewertung');for(let n=5;n>=1;n--){const option=document.createElement('option');option.value=String(n);option.textContent=n+' Sterne';if(myReviewResult.data?.rating===n)option.selected=true;stars.append(option);}const reviewText=document.createElement('textarea');reviewText.name='review_text';reviewText.maxLength=3000;reviewText.rows=2;reviewText.placeholder='Dein Eindruck (optional)';reviewText.value=myReviewResult.data?.review_text||'';const saveReview=document.createElement('button');saveReview.type='submit';saveReview.className='community-secondary';saveReview.textContent='Bewertung speichern';reviewForm.append(stars,reviewText,saveReview);reviewForm.addEventListener('submit',async e=>{e.preventDefault();const payload={trail_id:t.id,user_id:cloudUser.id,rating:Number(stars.value),review_text:reviewText.value.trim()||null};const result=await c.from('community_trail_reviews').upsert(payload,{onConflict:'trail_id,user_id'});if(result.error){feedback.textContent='Bewertung konnte nicht gespeichert werden: '+result.error.message;return;}detail(t);});reviewSection.append(reviewForm);
   if(t.visibility==='public'&&t.publication_status==='published'){
@@ -223,6 +233,26 @@ async function detail(t){
  }catch(error){feedback.textContent='Trail-Details konnten nicht vollständig geladen werden: '+error.message;feedback.classList.add('is-error');}
 }
 async function updateVisibility(t){const c=client();if(!c)return;const visibility=t.visibility==='public'?'private':'public',status=visibility==='public'?'published':'draft';try{const {error}=await c.from(TABLE).update({visibility,publication_status:status,published_at:visibility==='public'?new Date().toISOString():null,map_location_enabled:false,start_latitude:null,start_longitude:null}).eq('id',t.id).eq('owner_id',cloudUser.id);if(error)throw error;setStatus('Sichtbarkeit aktualisiert.');await load();$('communityDetail').hidden=true;}catch(e){setStatus('Änderung fehlgeschlagen: '+e.message,true);}}
+async function updateMapLocation(t,enabled,gpx,feedback,button){
+ const c=client();if(!c)return;
+ if(enabled&&(t.visibility!=='public'||t.publication_status!=='published')){feedback.textContent='Bitte veröffentliche den Trail zuerst.';return;}
+ button.disabled=true;button.textContent='Aktualisiere Freigabe …';
+ try{
+  let coordinates={map_location_enabled:false,start_latitude:null,start_longitude:null};
+  if(enabled){
+   if(!gpx)throw new Error('Für die Kartenfreigabe wird eine GPX-Datei benötigt.');
+   const {data:signed,error:signedError}=await c.storage.from(BUCKET).createSignedUrl(gpx.storage_path,120);
+   if(signedError)throw signedError;
+   const response=await fetch(signed.signedUrl);if(!response.ok)throw new Error('GPX-Datei konnte nicht gelesen werden.');
+   const stats=parseGpxText(await response.text());const start=stats.points[0];
+   coordinates={map_location_enabled:true,start_latitude:start.lat,start_longitude:start.lon};
+  }
+  const {error}=await c.from(TABLE).update(coordinates).eq('id',t.id).eq('owner_id',cloudUser.id);
+  if(error)throw error;
+  setStatus(enabled?'Startpunkt wird auf der öffentlichen Community-Karte angezeigt.':'Startpunkt wurde von der öffentlichen Karte entfernt.');
+  await load();$('communityDetail').hidden=true;
+ }catch(error){feedback.textContent='Kartenfreigabe konnte nicht geändert werden: '+error.message;feedback.classList.add('is-error');button.disabled=false;button.textContent=t.map_location_enabled?'Startpunkt von öffentlicher Karte entfernen':'Startpunkt auf öffentlicher Karte freigeben';}
+}
 async function saveTrail(event){
  event.preventDefault();if(busy)return;const c=client();if(!c){setStatus('Bitte zuerst anmelden.',true);return;}const form=event.currentTarget,data=new FormData(form),title=String(data.get('title')||'').trim();if(!title){setStatus('Bitte einen Trail-Namen eingeben.',true);return;}
  const images=Array.from(form.elements.images.files||[]),gpx=form.elements.gpx.files?.[0]||null,files=[...images,...(gpx?[gpx]:[])];if(files.some(f=>f.size>26214400)){setStatus('Eine Datei überschreitet 25 MB.',true);return;}
