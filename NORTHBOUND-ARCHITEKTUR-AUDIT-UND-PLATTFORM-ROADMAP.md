@@ -4,7 +4,7 @@
 **Basis:** Repository `Mitschi77/Trail-Event-app`, Branch `main`, Commit `2b6e44c1f8da3682fe123c517eb21085f4b67650`  
 **Supabase-Projekt:** `trail-event-planner` (`oycfmdovrnvhcwxmpanl`), Region `eu-west-1`, Status beim Audit: `ACTIVE_HEALTHY`
 
-> Dieses Dokument ist eine Bestandsaufnahme und ein Architekturvorschlag. Es führt keine Datenbankmigration aus, ändert keine Produktionsdaten und aktiviert keine neuen App-Funktionen.
+> Dieses Dokument ist eine Bestandsaufnahme und ein Architekturvorschlag. Die bestehende Produktiv-App wird als unmittelbare UI- und Abnahmeumgebung genutzt. Datenbankmigrationen und sicherheitskritische Änderungen werden davon getrennt kontrolliert vorbereitet und erst nach ausdrücklicher Freigabe ausgeführt.
 
 ## 1. Kurzfassung
 
@@ -216,7 +216,7 @@ Wichtige Integritätsregeln:
 
 Jede Migration und jeder Release muss mindestens folgende Prüfungen bestehen:
 
-- Migration läuft auf einer Entwicklungs-/Testumgebung und ist reproduzierbar.
+- UI- und Funktionsabnahme erfolgt direkt in der bestehenden NORTHBOUND-Produktiv-App. Datenbankmigrationen werden vorab technisch geprüft, reproduzierbar dokumentiert und nur nach ausdrücklicher Freigabe kontrolliert auf Produktion angewendet.
 - RLS-Tests decken Eigentümer, andere angemeldete Nutzer und nicht angemeldete Zugriffe ab.
 - Storage-Policies verhindern private Datei-Leaks.
 - Bestehende Event-, Planner- und Laufhistorien-Funktionen bleiben regressionsfrei.
@@ -225,14 +225,14 @@ Jede Migration und jeder Release muss mindestens folgende Prüfungen bestehen:
 - iPhone, iPad und Web werden geprüft.
 - Synchronisationskonflikte und Offline-Zustände werden getestet.
 - Rollback-/Wiederherstellungsweg ist dokumentiert.
-- Produktion wird erst nach Review und ausdrücklicher Release-Freigabe geändert.
+- Änderungen an der laufenden App dürfen direkt in der Produktiv-App ausprobiert werden; Datenbankmigrationen, Datenumbauten, Storage-Änderungen und sicherheitskritische Eingriffe benötigen weiterhin Review, dokumentierten Rückweg und ausdrückliche Freigabe.
 
 ## 8. Nächste konkrete Arbeitsschritte
 
 1. Bestehende Auth-, Edge-Function- und Storage-Implementierung vollständig erfassen.
 2. Den aktuellen UI-/Menüstand und die offenen UI-PRs auf Basis des aktuellen `main` konsolidieren; keine alten divergierten Branches ungeprüft mergen.
 3. Eine Community-MVP-Spezifikation mit exakten Tabellen, Beziehungen, RLS-Policies und Storage-Regeln erstellen.
-4. Diese Spezifikation zunächst als SQL-Vorschau und Tests auf einer Entwicklungsumgebung prüfen.
-5. Erst danach die erste additive Migration vorbereiten.
+4. Die UI in der bestehenden Produktiv-App schrittweise integrieren und dort mit dem tatsächlichen Nutzungskontext abnehmen.
+5. Additive Datenbankmigrationen separat reviewen, Auswirkungen und Rückweg dokumentieren und erst nach ausdrücklicher Freigabe kontrolliert anwenden.
 
-**Status:** Dokumentations- und Architekturvorschlag. Noch keine Community-Tabellen, keine Produktionsmigration und keine Änderungen an bestehenden Nutzerdaten.
+**Status:** Dokumentations- und Architekturvorschlag. Die Produktiv-App ist die vorgesehene UI-Test- und Abnahmeumgebung. Community-Datenbankmigrationen sind vorbereitet, aber noch nicht in Produktion ausgeführt; bestehende Nutzerdaten bleiben unangetastet.
