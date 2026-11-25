@@ -12,7 +12,7 @@ function parseGpxText(xml){
  if(points.length<2)throw new Error('Die GPX-Datei enthält weniger als zwei gültige Streckenpunkte.');
  const rad=v=>v*Math.PI/180,haversine=(a,b)=>{const dLat=rad(b.lat-a.lat),dLon=rad(b.lon-a.lon),x=Math.sin(dLat/2)**2+Math.cos(rad(a.lat))*Math.cos(rad(b.lat))*Math.sin(dLon/2)**2;return 6371000*2*Math.atan2(Math.sqrt(x),Math.sqrt(1-x));};
  let distance=0,ascent=0,descent=0,min=Infinity,max=-Infinity;const profile=[];
- points.forEach((p,i)=>{if(i)distance+=haversine(points[i-1],p);if(p.ele!==null){min=Math.min(min,p.ele);max=Math.max(max,p.ele);if(i&&points[i-1].ele!==null){const delta=p.ele-points[i-1].ele;if(delta>0)ascent+=delta;else descent-=delta;}profile.push({distance,elevation:p.ele});}});
+ points.forEach((p,i)=>{if(i)distance+=haversine(points[i-1],p);if(p.ele!==null){min=Math.min(min,p.ele);max=Math.max(max,p.ele);if(i&&points[i-1].ele!==null){const delta=p.ele-points[i-1].ele;if(delta>0)ascent+=delta;else descent-=delta;}profile.push({distance,elevation:p.ele,lat:p.lat,lon:p.lon});}});
  return {points,distance_m:Math.round(distance),ascent_m:Math.round(ascent),descent_m:Math.round(descent),min_elevation_m:Number.isFinite(min)?Math.round(min):null,max_elevation_m:Number.isFinite(max)?Math.round(max):null,profile};
 }
 function renderGpxVisuals(container,stats){
