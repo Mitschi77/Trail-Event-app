@@ -44,7 +44,7 @@ function renderGpxMetrics(container,stats){
  values.forEach(([label,value])=>{const item=document.createElement('div');item.className='community-gpx-metric';const strong=document.createElement('strong');strong.textContent=value;const caption=document.createElement('span');caption.textContent=label;item.append(strong,caption);panel.append(item);});
  container.append(panel);
 }
-let leafletLoader=null,communityMapSequence=0,communityDiscoveryMap=null,communityDiscoveryMarkers=null;
+let leafletLoader=null,communityMapSequence=0,communityDiscoveryMap=null,communityDiscoveryMarkers=null,communityDiscoveryRenderToken=0;
 function loadLeaflet(){
  if(window.L)return Promise.resolve(window.L);
  if(leafletLoader)return leafletLoader;
@@ -77,13 +77,13 @@ async function renderGpxMap(container,stats){
 }
 
 async function renderDiscoveryMap(rows){
- const figure=$('communityDiscoveryMap');if(!figure)return;
+ const token=++communityDiscoveryRenderToken;const figure=$('communityDiscoveryMap');if(!figure)return;
  const locations=active==='discover'?rows.filter(t=>t.map_location_enabled===true&&Number.isFinite(Number(t.start_latitude))&&Number.isFinite(Number(t.start_longitude))):[];
  if(!locations.length){figure.hidden=true;if(communityDiscoveryMap){communityDiscoveryMap.remove();communityDiscoveryMap=null;communityDiscoveryMarkers=null;}return;}
  figure.hidden=false;
  const mapElement=$('communityDiscoveryMapCanvas');if(!mapElement)return;
  try{
-  const L=await loadLeaflet();if(!mapElement.isConnected||active!=='discover')return;
+  const L=await loadLeaflet();if(token!==communityDiscoveryRenderToken||!mapElement.isConnected||active!=='discover')return;
   if(!communityDiscoveryMap){communityDiscoveryMap=L.map(mapElement,{scrollWheelZoom:false,zoomControl:true}).setView([locations[0].start_latitude,locations[0].start_longitude],8);L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',{maxZoom:19,attribution:'&copy; <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap contributors</a>'}).addTo(communityDiscoveryMap);communityDiscoveryMarkers=L.layerGroup().addTo(communityDiscoveryMap);}
   communityDiscoveryMarkers.clearLayers();const bounds=[];
   locations.forEach(t=>{const point=[Number(t.start_latitude),Number(t.start_longitude)];bounds.push(point);const marker=L.marker(point).addTo(communityDiscoveryMarkers);marker.bindPopup('<strong>'+esc(t.title)+'</strong><br>'+esc([t.region_name,t.country_code].filter(Boolean).join(' · ')||'Region nicht angegeben')+'<br>'+esc(fmtDistance(t.distance_m))+' · '+esc(fmtHm(t.ascent_m))+'<br><button type="button" class="community-map-open" data-community-map-trail="'+esc(t.id)+'">Trail ansehen</button>');marker.on('popupopen',event=>{const button=event.popup.getElement()?.querySelector('[data-community-map-trail]');button?.addEventListener('click',()=>{const selected=trails.find(item=>item.id===button.dataset.communityMapTrail);if(selected)detail(selected);});});});
