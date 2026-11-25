@@ -1,0 +1,216 @@
+{
+  "schemaVersion": 1,
+  "organizerId": "siimple-gmbh",
+  "organizerName": "siimple GmbH",
+  "eventBrand": "3Kings3Hills",
+  "officialContact": {
+    "email": "servus@3kings-3hills.com",
+    "source": "https://www.3kings-3hills.com/impressum/",
+    "verifiedFromOfficialImprint": true
+  },
+  "bundledEvents": [
+    {
+      "eventId": "3kings-3hills",
+      "edition": 2027,
+      "dates": [
+        "2027-07-23",
+        "2027-07-24"
+      ],
+      "routes": [
+        {
+          "routeId": "100-miles-ultra-168-6300",
+          "name": "100 Miles Ultra Trail",
+          "distanceKm": 168
+        },
+        {
+          "routeId": "ultra-trail-xl-117-4400",
+          "name": "Ultra Trail XL",
+          "distanceKm": 117
+        },
+        {
+          "routeId": "endurance-trail-85-3000",
+          "name": "Endurance Trail",
+          "distanceKm": 85
+        },
+        {
+          "routeId": "ultra-58-2400",
+          "name": "Ultra Trail",
+          "distanceKm": 58
+        },
+        {
+          "routeId": "marathon-trail-40-1700",
+          "name": "Marathon Trail",
+          "distanceKm": 40
+        },
+        {
+          "routeId": "base-trail-26-900",
+          "name": "Base Trail",
+          "distanceKm": 26
+        },
+        {
+          "routeId": "shorty-trail-16-700",
+          "name": "Shorty Trail",
+          "distanceKm": 16
+        },
+        {
+          "routeId": "traily-trail-5-100",
+          "name": "Traily Trail",
+          "distanceKm": 5
+        }
+      ]
+    }
+  ],
+  "priorWrittenResponse": {
+    "date": "2026-11-20 08:19",
+    "sender": "Rainer Jungwirth <r.jungwirth@siimple.de>",
+    "evidence": "Quoted in user's sent email dated 2026-11-24; original inbox item not found.",
+    "permissions": [
+      "logo",
+      "event data",
+      "route descriptions",
+      "elevation profiles",
+      "maps",
+      "photos"
+    ],
+    "conditions": [
+      "Do not create the impression of an official organizer website or official affiliation.",
+      "GPX files should be linked to the organizer website."
+    ]
+  },
+  "requestedUseCategories": [
+    {
+      "id": 1,
+      "category": "official_route_descriptions_verbatim",
+      "status": "general route-description permission received; verbatim scope pending"
+    },
+    {
+      "id": 2,
+      "category": "shortened_or_editorially_edited_route_descriptions",
+      "status": "pending itemised confirmation"
+    },
+    {
+      "id": 3,
+      "category": "independent_factual_summaries_from_permitted_information",
+      "status": "pending itemised confirmation"
+    },
+    {
+      "id": 4,
+      "category": "route_facts_distance_elevation_start_finish_cutoffs",
+      "status": "general event-data permission received; field scope pending"
+    },
+    {
+      "id": 5,
+      "category": "maps_and_route_geometry",
+      "status": "maps generally permitted; exact route geometry withheld until two weeks before event on seven route pages"
+    },
+    {
+      "id": 6,
+      "category": "elevation_profiles",
+      "status": "generally permitted by written reply; direct profile image visible on four route pages"
+    },
+    {
+      "id": 7,
+      "category": "gpx_file_fetch_load_import_store_process_map_display_and_user_download",
+      "status": "not authorized; fail closed pending separate written permission"
+    },
+    {
+      "id": 8,
+      "category": "link_to_official_gpx_downloads",
+      "status": "organizer expressly asked for GPX links to its website; route-specific GPX URL not supplied"
+    },
+    {
+      "id": 9,
+      "category": "event_names_and_event_brands",
+      "status": "event-data permission received generally; brand-specific terms pending"
+    },
+    {
+      "id": 10,
+      "category": "logos_and_word_or_device_marks",
+      "status": "logo permission received generally; brand guidelines and conditions pending"
+    },
+    {
+      "id": 11,
+      "category": "symbols_icons_pictograms_emblems_mascots",
+      "status": "pending itemised confirmation"
+    },
+    {
+      "id": 12,
+      "category": "other_event_specific_graphics_and_visual_design",
+      "status": "photos generally permitted; other graphics pending"
+    }
+  ],
+  "projectPhase": {
+    "current": "independent non-commercial information app under development",
+    "noOfficialAffiliationClaimed": true,
+    "commercialUseIncluded": false,
+    "futureCommercialPermission": "not granted; separate license requested"
+  },
+  "gpx": {
+    "linkOnlyInstruction": "Link GPX files to organizer website.",
+    "fileOperations": {
+      "fetch": false,
+      "load": false,
+      "import": false,
+      "store": false,
+      "process": false,
+      "mapDisplay": false,
+      "userDownload": false
+    },
+    "directPublicDownloadUrlFound": false,
+    "restrictionNotices": {
+      "exactRouteRelease": "Exact route geometry is released only two weeks before the event for nature-conservation reasons on seven official route pages.",
+      "gpxSpecificLicenseOrDownloadBan": "No explicit GPX file license or download ban found in accessible page text; clarification pending."
+    },
+    "binaryDownloaded": false,
+    "metadataInspected": false,
+    "failClosed": true
+  },
+  "brandGuidelines": {
+    "mediaPackRequested": true,
+    "logoFilesRequested": true,
+    "brandGuidelinesRequested": true,
+    "usageRulesRequested": [
+      "size",
+      "color",
+      "placement",
+      "attribution",
+      "term",
+      "permitted use",
+      "excluded materials",
+      "conditions"
+    ]
+  },
+  "emailHistory": [
+    {
+      "date": "2026-11-24",
+      "type": "user_acknowledgement_of_existing_permission",
+      "status": "sent",
+      "sentCopyFiled": true
+    },
+    {
+      "date": "2026-11-25",
+      "type": "itemised_clarification",
+      "to": "servus@3kings-3hills.com",
+      "status": "submitted",
+      "sentCopyFiled": true,
+      "deliveryConfirmed": false,
+      "messageIdHeader": "<179557093587.119.14301383713978174225@me.com>"
+    }
+  ],
+  "response": {
+    "itemisedClarification": "pending",
+    "routeSpecificPermissions": [],
+    "restrictions": []
+  },
+  "appEnforcement": {
+    "defaultDeny": true,
+    "routeDescriptionsAndFacts": "Use independent summaries and factual fields within the general written permission; verbatim scope and exact fields pending confirmation.",
+    "gpxFileOperationsBlocked": true,
+    "officialWebsiteLinkOnly": true
+  },
+  "repository": {
+    "researchPackage": "draft branch",
+    "liveCatalogChanged": false,
+    "appPublished": false
+  }
+}
