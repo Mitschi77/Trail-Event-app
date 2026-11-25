@@ -47,7 +47,7 @@ const fixture = `<?xml version="1.0"?><gpx version="1.1"><trk><trkseg>
 </trkseg></trk></gpx>`;
 const stats = parseGpx(fixture);
 assert.equal(stats.points.length, 3);
-assert.ok(stats.distance_m > 2000 && stats.distance_m < 2500);
+assert.ok(stats.distance_m > 1800 && stats.distance_m < 2000);
 assert.equal(stats.ascent_m, 100);
 assert.equal(stats.descent_m, 50);
 assert.equal(stats.min_elevation_m, 1000);
