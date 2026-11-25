@@ -9,7 +9,7 @@
     "ios:sync": "npm run build && cap sync ios",
     "ios:open": "cap open ios",
     "ios:run": "cap run ios",
-    "test:syntax": "node --check sw.js && node --check race-tools.js && node --check season-tools.js && node --check sport-year.js && node scripts/test-sport-year.mjs && node --check alpine-performance.js && node scripts/check-inline.mjs && node scripts/test-cockpit-separation.mjs && node scripts/test-northbound-cockpit.mjs && node scripts/test-owner-push.mjs && node scripts/test-metrics.mjs && node scripts/test-northbound-insights.mjs && node scripts/test-northbound-mobile.mjs && node scripts/test-northbound-design-system.mjs"
+    "test:syntax": "node --check strava-race-links.js && node --check sw.js && node --check race-tools.js && node --check season-tools.js && node --check sport-year.js && node scripts/test-sport-year.mjs && node --check alpine-performance.js && node scripts/check-inline.mjs && node scripts/test-cockpit-separation.mjs && node scripts/test-northbound-cockpit.mjs && node scripts/test-owner-push.mjs && node scripts/test-metrics.mjs && node scripts/test-northbound-insights.mjs && node scripts/test-northbound-mobile.mjs && node scripts/test-northbound-design-system.mjs"
   },
   "dependencies": {
     "@capacitor/core": "^7.4.3",
