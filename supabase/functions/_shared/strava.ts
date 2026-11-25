@@ -96,7 +96,7 @@ function decodeBase64(value: string): Uint8Array {
   return bytes;
 }
 
-async function decodeEncryptionKey(value: string): Promise<Uint8Array> {
+async async function decodeEncryptionKey(value: string): Promise<Uint8Array> {
   let normalized = value.trim();
   // Allow a JSON-wrapped default value if a secret manager exported its key map.
   try {
