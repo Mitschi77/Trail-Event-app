@@ -168,7 +168,7 @@ def main():
     do $$
     begin
       if (select count(*) from public.community_trails
-          where owner_id='00000000-0000-0000-0000-000000000001') <> 1 then
+          where id='10000000-0000-0000-0000-000000000002') <> 0 then
         raise exception 'Account B can see another account private trail';
       end if;
       if (select count(*) from public.community_profiles
