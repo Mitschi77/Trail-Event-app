@@ -7,7 +7,7 @@ const js = await readFile(new URL("../community.js", import.meta.url), "utf8");
 assert.match(html, /<script src="\.\/community\.js"><\/script>/);
 assert.match(html, /class="northbound-primary-links"/);
 assert.match(js, /id='communityTabButton'/);
-assert.match(js, /id="northboundCommunity"/);
+assert.match(js, /section\\.id='northboundCommunity'/);
 assert.match(js, /data-community-view="discover"/);
 assert.match(js, /data-community-view="mine"/);
 assert.match(js, /from\(TABLE\)/);
