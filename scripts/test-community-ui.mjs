@@ -30,6 +30,12 @@ assert.ok(js.includes("mapLocationEnabled=form.elements.map_location_enabled.che
 assert.ok(js.includes("Startpunkt auf der öffentlichen Community-Karte anzeigen"));
 assert.ok(js.includes("Nur freigegebene Startpunkte werden angezeigt."));
 assert.ok(js.includes("communityDiscoveryRenderToken"));
+assert.ok(js.includes("function selectDiscoveryTrail(id,focusMap=false)"));
+assert.ok(js.includes("communityDiscoveryMarkersByTrail.set(t.id,marker)"));
+assert.ok(js.includes("community-card is-map-selected"));
+assert.ok(js.includes("community-show-on-map"));
+assert.ok(js.includes("Auf Karte zeigen"));
+assert.ok(js.includes("data-community-card-id"));
 
 assert.ok(js.includes("distance-asc"));
 assert.ok(js.includes("ascent-desc"));
