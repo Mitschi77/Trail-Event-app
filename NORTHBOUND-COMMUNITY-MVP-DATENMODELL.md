@@ -2,7 +2,7 @@
 
 **Stand:** 25.11.2026  
 **Ziel:** Technische Spezifikation für die erste additive Community-Ausbaustufe.  
-**Status:** Entwurf – keine SQL-Migration, keine Tabellenanlage und keine Änderung an Produktionsdaten.
+**Status:** SQL-Migration als Draft-PR vorbereitet; PostgreSQL-17- und RLS-/Storage-CI-Tests erfolgreich. Nicht in Supabase-Produktion angewendet. Keine produktiven Tabellen oder Buckets angelegt.
 
 ## 1. Leitlinien
 
@@ -15,7 +15,7 @@
 
 ## 2. Phase 1 – Tabellenentwurf
 
-Die folgenden Tabellen sind ein fachlicher Entwurf. Exakte SQL-Typen, Constraints, Indizes und Fremdschlüssel werden erst nach Prüfung der vorhandenen Auth-, Storage- und Namenskonventionen finalisiert.
+Die nachfolgenden Tabellen sind im Draft-PR als additive Migration umgesetzt. Die produktive Datenbank bleibt unverändert, bis die Migration separat geprüft und ausdrücklich freigegeben wird.
 
 ### 2.1 `community_profiles`
 
