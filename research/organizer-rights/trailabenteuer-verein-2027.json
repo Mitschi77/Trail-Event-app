@@ -38,14 +38,7 @@
       "eventId": null,
       "name": "SST Winterchallenge",
       "edition": "2026/2027",
-      "dates": {
-        "fixed": "2027-01-09",
-        "individualWindow": {
-          "from": "2026-12-01",
-          "to": "2027-02-28"
-        }
-      },
-      "datePermission": "not_separately_confirmed"
+      "datePermission": "pending_explicit_confirmation"
     },
     {
       "eventId": null,
