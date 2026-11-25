@@ -163,7 +163,7 @@ async function load(){
  const c=client();if(!c){setStatus('Bitte anmelden, um die Trail Community zu nutzen. Öffentliche Trails sind nach Freischaltung der Community-Datenbank sichtbar.');$('communityTrailList').replaceChildren();return;}
  setStatus('Lade Trails …');
  try{
-  let q=c.from(TABLE).select('id,owner_id,title,description,visibility,publication_status,distance_m,ascent_m,descent_m,difficulty,surface_summary,region_name,country_code,gpx_download_enabled,map_location_enabled,start_latitude,start_longitude,created_at,published_at').order('updated_at',{ascending:false}).limit(100);
+  let q=c.from(TABLE).select('id,owner_id,title,description,visibility,publication_status,distance_m,ascent_m,descent_m,difficulty,surface_summary,start_location_label,region_name,country_code,gpx_download_enabled,map_location_enabled,start_latitude,start_longitude,created_at,published_at').order('updated_at',{ascending:false}).limit(100);
   q=active==='mine'?q.eq('owner_id',cloudUser.id):q.eq('visibility','public').eq('publication_status','published');
   const {data,error}=await q;if(error)throw error;trails=data||[];render();setStatus(trails.length?trails.length+' Trail(s) gefunden.':active==='mine'?'Du hast noch keine eigenen Trails.':'Noch keine öffentlichen Trails vorhanden.'); 
  }catch(error){trails=[];render();setStatus(/relation .* does not exist|schema cache/i.test(error.message||'')?'Die Community-Datenbank ist noch nicht freigeschaltet. Die Migration wartet auf die separate Freigabe.':'Trails konnten nicht geladen werden: '+error.message,true);}
