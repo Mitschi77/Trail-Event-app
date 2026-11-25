@@ -79,7 +79,7 @@ async function renderGpxMap(container,stats){
 async function renderDiscoveryMap(rows){
  const token=++communityDiscoveryRenderToken;const figure=$('communityDiscoveryMap');if(!figure)return;
  const locations=active==='discover'?rows.filter(t=>t.map_location_enabled===true&&Number.isFinite(Number(t.start_latitude))&&Number.isFinite(Number(t.start_longitude))):[];
- if(!locations.length){figure.hidden=true;if(communityDiscoveryMap){communityDiscoveryMap.remove();communityDiscoveryMap=null;communityDiscoveryMarkers=null;}return;}
+ if(!locations.length){figure.hidden=true;communitySelectedTrailId=null;communityDiscoveryMarkersByTrail.clear();if(communityDiscoveryMap){communityDiscoveryMap.remove();communityDiscoveryMap=null;communityDiscoveryMarkers=null;}return;}
  figure.hidden=false;
  const mapElement=$('communityDiscoveryMapCanvas');if(!mapElement)return;
  try{
@@ -92,13 +92,13 @@ async function renderDiscoveryMap(rows){
  }catch(error){figure.hidden=false;const note=$('communityDiscoveryMapStatus');if(note)note.textContent='Karte nicht verfügbar: '+error.message;}
 }
 
-function selectDiscoveryTrail(id,focusMap=false){
+function selectDiscoveryTrail(id,focusMap=false,scrollCard=true){
  communitySelectedTrailId=id;
  document.querySelectorAll('[data-community-card-id]').forEach(card=>{const selected=card.dataset.communityCardId===id;card.classList.toggle('is-map-selected',selected);if(selected)card.setAttribute('aria-current','true');else card.removeAttribute('aria-current');});
  communityDiscoveryMarkersByTrail.forEach((item,key)=>{item.setZIndexOffset(key===id?1000:0);item.setOpacity(key===id?1:.72);});
  const marker=communityDiscoveryMarkersByTrail.get(id);
  if(marker&&communityDiscoveryMap&&focusMap){communityDiscoveryMap.panTo(marker.getLatLng(),{animate:true});marker.openPopup();}
- if(!focusMap){const card=Array.from(document.querySelectorAll('[data-community-card-id]')).find(item=>item.dataset.communityCardId===id);card?.scrollIntoView({behavior:'smooth',block:'nearest'});}
+ if(!focusMap&&scrollCard){const card=Array.from(document.querySelectorAll('[data-community-card-id]')).find(item=>item.dataset.communityCardId===id);card?.scrollIntoView({behavior:'smooth',block:'nearest'});}
 }
 
 window.NorthboundCommunityGPX={parse:parseGpxText};
@@ -177,10 +177,11 @@ function render(){
   return (!difficulty||t.difficulty===difficulty)&&matchesTerm&&matchesRegion&&matchesSurface&&(minDistance===null||(distance!==null&&distance>=minDistance))&&(maxDistance===null||(distance!==null&&distance<=maxDistance))&&(maxAscent===null||(ascent!==null&&ascent<=maxAscent));
  });
  rows.sort((a,b)=>{if(sort==='distance-asc')return (a.distance_m??Infinity)-(b.distance_m??Infinity);if(sort==='distance-desc')return (b.distance_m??-Infinity)-(a.distance_m??-Infinity);if(sort==='ascent-desc')return (b.ascent_m??-Infinity)-(a.ascent_m??-Infinity);if(sort==='title')return a.title.localeCompare(b.title,'de');return new Date(b.created_at||0)-new Date(a.created_at||0);});
+ if(communitySelectedTrailId&&!rows.some(t=>t.id===communitySelectedTrailId))communitySelectedTrailId=null;
  renderDiscoveryMap(rows);list.replaceChildren();
  rows.forEach(t=>{const card=document.createElement('article');card.className='community-card';card.dataset.communityCardId=t.id;const title=document.createElement('h3');title.textContent=t.title;const regionEl=document.createElement('p');regionEl.className='community-region';regionEl.textContent=[t.region_name,t.country_code].filter(Boolean).join(' · ')||'Region nicht angegeben';const metrics=document.createElement('div');metrics.className='community-metrics';metrics.textContent=fmtDistance(t.distance_m)+'  ·  '+fmtHm(t.ascent_m);const difficultyEl=document.createElement('span');difficultyEl.className='community-difficulty';difficultyEl.textContent=labels[t.difficulty]||'Schwierigkeit offen';const desc=document.createElement('p');desc.textContent=t.description||'Keine Beschreibung vorhanden.';desc.className='community-description';const surfaceEl=document.createElement('p');surfaceEl.className='community-region';surfaceEl.textContent=t.surface_summary?'Untergrund: '+t.surface_summary:'';const action=document.createElement('button');action.type='button';action.className='community-secondary';action.textContent=active==='mine'?'Details / verwalten':'Trail ansehen';action.addEventListener('click',()=>detail(t));card.append(title,regionEl,metrics,difficultyEl,desc);if(t.surface_summary)card.append(surfaceEl);card.append(action);if(active==='discover'&&t.map_location_enabled===true){const mapAction=document.createElement('button');mapAction.type='button';mapAction.className='community-secondary community-show-on-map';mapAction.textContent='Auf Karte zeigen';mapAction.addEventListener('click',()=>selectDiscoveryTrail(t.id,true));card.append(mapAction);}if(active==='mine'){const status=document.createElement('span');status.className='community-state';status.textContent=t.visibility==='private'?'Privat':t.publication_status==='draft'?'Entwurf':'Öffentlich';card.append(status);}list.append(card);});
  if(!rows.length){const empty=document.createElement('div');empty.className='community-empty';empty.textContent=active==='mine'?'Deine Trails erscheinen hier. Lege deinen ersten Trail an.':'Keine Trails passen zu deiner Suche. Passe die Filter an oder setze die Filter zurück.';list.append(empty);}
- const count=document.createElement('p');count.id='communityResultCount';count.className='community-hint';count.textContent=rows.length+' von '+trails.length+' Trails angezeigt';list.before(count);
+ const count=document.createElement('p');count.id='communityResultCount';count.className='community-hint';count.textContent=rows.length+' von '+trails.length+' Trails angezeigt';list.before(count);if(communitySelectedTrailId)selectDiscoveryTrail(communitySelectedTrailId,false,false);
 }
 async function detail(t){
  const d=$('communityDetail');d.hidden=false;$('communityTrailList').hidden=true;$('communityTrailForm').hidden=true;d.replaceChildren();
