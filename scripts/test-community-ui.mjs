@@ -143,6 +143,8 @@ assert.equal(stats.descent_m, 50);
 assert.equal(stats.min_elevation_m, 1000);
 assert.equal(stats.max_elevation_m, 1100);
 assert.equal(stats.profile.length, 3);
+assert.equal(stats.profile[1].lat, 47.0000);
+assert.equal(stats.profile[1].lon, 12.0100);
 assert.throws(() => parseGpx("<gpx><trk/></gpx>"), /weniger als zwei/);
 
 console.log("NORTHBOUND Community UI regression tests passed.");
