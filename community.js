@@ -40,7 +40,10 @@ function renderGpxVisuals(container,stats){
 }
 function renderGpxMetrics(container,stats){
  container.setAttribute('aria-label','GPX-Streckenkennzahlen');
- const values=[['Distanz',fmtDistance(stats.distance_m)],['Aufstieg',fmtHm(stats.ascent_m)],['Abstieg',fmtHm(stats.descent_m)],['Höchster Punkt',stats.max_elevation_m===null?'—':stats.max_elevation_m+' m'],['Tiefster Punkt',stats.min_elevation_m===null?'—':stats.min_elevation_m+' m']];
+ const elevationSpan=stats.min_elevation_m===null||stats.max_elevation_m===null?null:stats.max_elevation_m-stats.min_elevation_m;
+ const climbPerKm=stats.distance_m>0?Math.round(stats.ascent_m/(stats.distance_m/1000)):null;
+ const startElevation=stats.points[0]?.ele,endElevation=stats.points[stats.points.length-1]?.ele;
+ const values=[['Distanz',fmtDistance(stats.distance_m)],['Aufstieg',fmtHm(stats.ascent_m)],['Abstieg',fmtHm(stats.descent_m)],['Höchster Punkt',stats.max_elevation_m===null?'—':stats.max_elevation_m+' m'],['Tiefster Punkt',stats.min_elevation_m===null?'—':stats.min_elevation_m+' m'],['Höhenspanne',elevationSpan===null?'—':elevationSpan+' m'],['Aufstieg je km',climbPerKm===null?'—':climbPerKm+' hm/km'],['Start / Ziel',startElevation===null||endElevation===null?'—':Math.round(startElevation)+' / '+Math.round(endElevation)+' m'],['Trackpunkte',stats.points.length.toLocaleString('de-DE')]];
  values.forEach(([label,value])=>{const item=document.createElement('div');item.className='community-gpx-metric';const strong=document.createElement('strong');strong.textContent=value;const caption=document.createElement('span');caption.textContent=label;item.append(strong,caption);container.append(item);});
 }
 async function loadTrailCardPreviews(rows){
