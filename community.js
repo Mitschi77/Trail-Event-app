@@ -101,6 +101,17 @@ function selectDiscoveryTrail(id,focusMap=false,scrollCard=true){
  if(!focusMap&&scrollCard){const card=Array.from(document.querySelectorAll('[data-community-card-id]')).find(item=>item.dataset.communityCardId===id);card?.scrollIntoView({behavior:'smooth',block:'nearest'});}
 }
 
+async function communityUploadMime(file,kind){
+ const ext=(file.name.split('.').pop()||'').toLowerCase(),bytes=new Uint8Array(await file.slice(0,16).arrayBuffer());
+ if(kind==='gpx'){if(ext!=='gpx')throw new Error('Die Streckendatei muss die Endung .gpx haben.');return 'application/gpx+xml';}
+ let mime=ext==='jpg'||ext==='jpeg'?'image/jpeg':ext==='png'?'image/png':ext==='webp'?'image/webp':'';
+ if(!mime)throw new Error('Nur JPG-, PNG- und WebP-Bilder sind erlaubt: '+file.name);
+ const jpeg=bytes[0]===0xff&&bytes[1]===0xd8&&bytes[2]===0xff;
+ const png=bytes[0]===0x89&&bytes[1]===0x50&&bytes[2]===0x4e&&bytes[3]===0x47&&bytes[4]===0x0d&&bytes[5]===0x0a&&bytes[6]===0x1a&&bytes[7]===0x0a;
+ const webp=bytes[0]===0x52&&bytes[1]===0x49&&bytes[2]===0x46&&bytes[3]===0x46&&bytes[8]===0x57&&bytes[9]===0x45&&bytes[10]===0x42&&bytes[11]===0x50;
+ if(!(mime==='image/jpeg'&&jpeg)&&!(mime==='image/png'&&png)&&!(mime==='image/webp'&&webp))throw new Error('Der Bildinhalt passt nicht zur Dateiendung: '+file.name);
+ return mime;
+}
 window.NorthboundCommunityGPX={parse:parseGpxText};
 
 const labels={easy:'Leicht',moderate:'Mittel',difficult:'Schwer',technical:'Technisch',expert:'Experte'};
@@ -264,10 +275,10 @@ async function saveTrail(event){
  try{
   const gpxStats=gpx?parseGpxText(await gpx.text()):null;const mapLocationEnabled=form.elements.map_location_enabled.checked&&visibility==='public'&&(!!gpxStats||!!editingTrail?.map_location_enabled);const row={owner_id:cloudUser.id,title,description:String(data.get('description')||''),region_name:String(data.get('region_name')||'').trim()||null,country_code:String(data.get('country_code')||'').trim().toUpperCase()||null,distance_m:data.get('distance_km')?Number(data.get('distance_km'))*1000:(gpxStats?.distance_m||null),ascent_m:data.get('ascent_m')?Number(data.get('ascent_m')):(gpxStats?.ascent_m??null),descent_m:data.get('descent_m')?Number(data.get('descent_m')):(gpxStats?.descent_m??null),difficulty:String(data.get('difficulty')||'')||null,surface_summary:String(data.get('surface_summary')||'').trim()||null,start_location_label:String(data.get('start_location_label')||'').trim()||null,map_location_enabled:mapLocationEnabled,start_latitude:mapLocationEnabled?(gpxStats?gpxStats.points[0].lat:editingTrail.start_latitude):null,start_longitude:mapLocationEnabled?(gpxStats?gpxStats.points[0].lon:editingTrail.start_longitude):null,visibility,publication_status:visibility==='public'?'published':'draft',gpx_download_enabled:gpxEnabled,published_at:visibility==='public'?new Date().toISOString():null};
   if(editingTrail){trailId=editingTrail.id;const {error}=await c.from(TABLE).update(row).eq('id',trailId).eq('owner_id',cloudUser.id);if(error)throw error;}else{const {data:created,error}=await c.from(TABLE).insert(row).select('id').single();if(error)throw error;trailId=created.id;}
-  for(const file of files){const isGpx=file===gpx,kind=isGpx?'gpx':'image';if(!isGpx&&!['image/jpeg','image/png','image/webp'].includes(file.type)){throw new Error('Nicht unterstützter Bilddateityp: '+file.name);}const safe=file.name.normalize('NFKD').replace(/[^a-zA-Z0-9._-]+/g,'-').slice(-90)||'file';const path=cloudUser.id+'/'+trailId+'/'+crypto.randomUUID()+'-'+safe;
-   const {error:assetError}=await c.from(ASSETS).insert({trail_id:trailId,owner_id:cloudUser.id,asset_kind:kind,storage_path:path,content_type:isGpx?'application/gpx+xml':file.type,file_size:file.size,download_enabled:isGpx&&gpxEnabled});
+  for(const file of files){const isGpx=file===gpx,kind=isGpx?'gpx':'image',contentType=await communityUploadMime(file,kind);const safe=file.name.normalize('NFKD').replace(/[^a-zA-Z0-9._-]+/g,'-').slice(-90)||'file';const path=cloudUser.id+'/'+trailId+'/'+crypto.randomUUID()+'-'+safe;
+   const {error:assetError}=await c.from(ASSETS).insert({trail_id:trailId,owner_id:cloudUser.id,asset_kind:kind,storage_path:path,content_type:contentType,file_size:file.size,download_enabled:isGpx&&gpxEnabled});
    if(assetError)throw assetError;
-   const {error:uploadError}=await c.storage.from(BUCKET).upload(path,file,{contentType:isGpx?'application/gpx+xml':file.type,upsert:false});if(uploadError)throw uploadError;uploaded.push(path);
+   const {error:uploadError}=await c.storage.from(BUCKET).upload(path,file,{contentType,upsert:false});if(uploadError)throw uploadError;uploaded.push(path);
   }
   setStatus(editingTrail?'Trail erfolgreich aktualisiert.':visibility==='public'?'Trail veröffentlicht.':'Trail privat gespeichert.');form.reset();closeForm();active='mine';document.querySelector('[data-community-view="mine"]')?.click();await load();
  }catch(error){setStatus('Speichern/Upload fehlgeschlagen: '+error.message,true);if(uploaded.length){try{await c.storage.from(BUCKET).remove(uploaded);}catch(_){}}if(trailId&&!editingTrail){try{await c.from(TABLE).delete().eq('id',trailId).eq('owner_id',cloudUser.id);}catch(_){}}}
