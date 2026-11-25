@@ -75,9 +75,45 @@
         error.textContent = 'Bitte gib für Distanz und Höhenmeter jeweils eine Zahl ab 0 ein.';
         return;
       }
+      let nextSegments = item.segments;
+      if (Array.isArray(item.segments) && item.segments.length) {
+        nextSegments = [];
+        for (let index = 0; index < item.segments.length; index += 1) {
+          const segment = item.segments[index];
+          const next = { ...segment };
+          if (segment.distance != null) {
+            const value = parseNonNegative('segmentDistance_' + index);
+            if (value === null) {
+              error.textContent = 'Segmentdistanz muss eine Zahl ab 0 sein.';
+              return;
+            }
+            next.distance = value;
+          }
+          if (segment.durationSeconds != null) {
+            const value = parseNonNegative('segmentDuration_' + index);
+            if (value === null) {
+              error.textContent = 'Segmentzeit muss eine Zahl ab 0 sein.';
+              return;
+            }
+            next.durationSeconds = value;
+          }
+          nextSegments.push(next);
+        }
+      }
       item.title = String(data.get('title') || '').trim() || 'Aktivität';
-      item.distanceKm = distanceKm;
       item.elevationGainM = elevationGainM;
+      if (nextSegments !== item.segments) {
+        item.segments = nextSegments;
+        const segmentDistances = nextSegments.filter(segment => segment.distance != null)
+          .reduce((sum, segment) => sum + Number(segment.distance), 0);
+        if (nextSegments.some(segment => segment.distance != null)) {
+          item.distanceKm = Number(segmentDistances.toFixed(3));
+        } else {
+          item.distanceKm = distanceKm;
+        }
+      } else {
+        item.distanceKm = distanceKm;
+      }
       this.editingId = null;
       this.render();
     }
@@ -205,10 +241,28 @@
           if(this.editingId===item.id){
             const form=document.createElement('form');form.className='sy-edit';form.dataset.editForm='true';form.dataset.id=item.id;
             const fields=[['title','Name',item.title||''],['distanceKm','Distanz (km)',item.distanceKm||item.result?.totalDistanceKm||''],['elevationGainM','Höhenmeter',item.elevationGainM||'']];
+            const hasSegmentDistances = Array.isArray(item.segments) && item.segments.some(segment => segment.distance != null);
             for(const [name,label,value] of fields){
-              const field=document.createElement('label');field.textContent=label;
+              const field=document.createElement('label');
+              const derivedDistance = name === 'distanceKm' && hasSegmentDistances;
+              field.textContent = derivedDistance ? 'Gesamtdistanz (aus Segmenten)' : label;
               const input=document.createElement('input');input.name=name;input.value=String(value);input.type=name==='title'?'text':'number';if(name!=='title'){input.min='0';input.step='any';input.inputMode='decimal';input.required=false;}
+              if (derivedDistance) { input.readOnly = true; input.setAttribute('aria-label','Gesamtdistanz wird aus den Segmentdistanzen berechnet'); }
               field.appendChild(input);form.appendChild(field);
+            }
+            if (Array.isArray(item.segments)) {
+              item.segments.forEach((segment, index) => {
+                if (segment.distance != null) {
+                  const field=document.createElement('label');field.textContent=(segment.name || segment.segmentType || 'Segment')+' · Distanz (km)';
+                  const input=document.createElement('input');input.name='segmentDistance_'+index;input.type='number';input.min='0';input.step='any';input.value=String(segment.distance);
+                  field.appendChild(input);form.appendChild(field);
+                }
+                if (segment.durationSeconds != null) {
+                  const field=document.createElement('label');field.textContent=(segment.segmentType==='transition_1'?'Wechselzeit T1':segment.segmentType==='transition_2'?'Wechselzeit T2':(segment.name || segment.segmentType || 'Segment'))+' · Zeit (Sekunden)';
+                  const input=document.createElement('input');input.name='segmentDuration_'+index;input.type='number';input.min='0';input.step='1';input.value=String(segment.durationSeconds);
+                  field.appendChild(input);form.appendChild(field);
+                }
+              });
             }
             const controls=document.createElement('div');controls.className='sy-edit-actions';
             const save=document.createElement('button');save.type='submit';save.textContent='Speichern';
@@ -234,7 +288,7 @@
             const label=document.createElement('p');label.textContent='Mehrkampf-/Aktivitätssegmente';body.appendChild(label);
             for(const segment of item.segments){
               const line=document.createElement('div');line.className='sy-segment';
-              const segmentName=segment.name || labels[segment.sportCode] || segment.sportCode || 'Segment';
+              const segmentName=segment.name || (segment.segmentType==='transition_1'?'Wechselzeit T1':segment.segmentType==='transition_2'?'Wechselzeit T2':labels[segment.sportCode] || segment.segmentType || 'Segment');
               const segmentFacts=[segment.distance!=null?Number(segment.distance).toFixed(1)+' '+(segment.distanceUnit||'km'):'',segment.durationSeconds!=null?durationLabel(segment.durationSeconds):''].filter(Boolean);
               line.textContent=segment.sequence+'. '+segmentName+(segmentFacts.length?' · '+segmentFacts.join(' · '):'');
               body.appendChild(line);

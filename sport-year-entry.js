@@ -28,7 +28,7 @@
       box.innerHTML=html;
     }
     submitActivity(event) {
-      event.preventDefault(); const f=event.currentTarget, d=new FormData(f), n=k=>d.get(k)===''||d.get(k)==null?null:Number(d.get(k)), sport=d.get('sportCode');
+      event.preventDefault(); const f=event.target.closest('form') || this.querySelector('form'); if (!f) return; const d=new FormData(f), n=k=>d.get(k)===''||d.get(k)==null?null:Number(d.get(k)), sport=d.get('sportCode');
       const numericInputs=[...f.querySelectorAll('input[type="number"]')];
       for (const input of numericInputs) {
         if (input.value === '') continue;

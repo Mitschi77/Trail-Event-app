@@ -69,6 +69,11 @@
       if (!Number.isFinite(number) || number < 0) throw new RangeError(label + ' muss eine nichtnegative Zahl sein.');
       return number;
     };
+    const segments = normalizeSegments(activity.segments);
+    const segmentDistances = segments.filter(segment => segment.distance !== null);
+    const derivedDistanceKm = segmentDistances.length
+      ? Number(segmentDistances.reduce((sum, segment) => sum + segment.distance, 0).toFixed(3))
+      : null;
     const startsAt = cleanText(activity.startsAt) || null;
     const endsAt = cleanText(activity.endsAt) || null;
     const startMs = startsAt ? Date.parse(startsAt) : null;
@@ -87,7 +92,7 @@
       startsAt,
       endsAt,
       location: cleanText(activity.location) || null,
-      distanceKm: numeric(activity.distanceKm, 'Distanz'),
+      distanceKm: derivedDistanceKm !== null ? derivedDistanceKm : numeric(activity.distanceKm, 'Distanz'),
       elevationGainM: numeric(activity.elevationGainM, 'Höhenmeter'),
       durationSeconds: numeric(activity.durationSeconds, 'Dauer'),
       status: cleanText(activity.status) || 'planned',
@@ -95,7 +100,7 @@
       catalogRouteId: cleanText(activity.catalogRouteId) || null,
       result,
       metadata,
-      segments: normalizeSegments(activity.segments)
+      segments
     };
   }
 
