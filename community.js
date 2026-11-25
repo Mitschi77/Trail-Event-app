@@ -125,7 +125,7 @@ async function saveTrail(event){
    const {error:uploadError}=await c.storage.from(BUCKET).upload(path,file,{contentType:isGpx?(file.type||'application/gpx+xml'):file.type,upsert:false});if(uploadError)throw uploadError;uploaded.push(path);
   }
   setStatus(visibility==='public'?'Trail veröffentlicht.':'Trail privat gespeichert.');form.reset();closeForm();active='mine';document.querySelector('[data-community-view="mine"]')?.click();await load();
- }catch(error){setStatus('Speichern/Upload fehlgeschlagen: '+error.message,true);if(trailId){try{await c.from(TABLE).delete().eq('id',trailId).eq('owner_id',cloudUser.id);}catch(_){}}}
+ }catch(error){setStatus('Speichern/Upload fehlgeschlagen: '+error.message,true);if(uploaded.length){try{await c.storage.from(BUCKET).remove(uploaded);}catch(_){}}if(trailId){try{await c.from(TABLE).delete().eq('id',trailId).eq('owner_id',cloudUser.id);}catch(_){}}}
  finally{busy=false;button.disabled=false;button.textContent='Trail speichern';}
 }
 function styles(){if($('northboundCommunityStyles'))return;const style=document.createElement('style');style.id='northboundCommunityStyles';style.textContent=`
