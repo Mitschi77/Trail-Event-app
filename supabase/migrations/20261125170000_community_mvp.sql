@@ -52,7 +52,10 @@ create table if not exists public.community_trail_assets (
   asset_kind text not null check (asset_kind in ('image', 'gpx', 'elevation_profile')),
   bucket_id text not null default 'community-trail-assets'
     check (bucket_id = 'community-trail-assets'),
-  storage_path text not null unique check (length(btrim(storage_path)) > 0),
+  storage_path text not null unique check (
+    length(btrim(storage_path)) > 0
+    and storage_path like owner_id::text || '/' || trail_id::text || '/%'
+  ),
   content_type text not null,
   file_size bigint check (file_size is null or file_size between 1 and 26214400),
   checksum_sha256 text check (checksum_sha256 is null or checksum_sha256 ~ '^[a-f0-9]{64}$'),
@@ -197,11 +200,11 @@ create policy community_trail_assets_read_visible on public.community_trail_asse
     owner_id = (select auth.uid())
     or exists (
       select 1 from public.community_trails t
-      where t.id = trail_id
-        and t.owner_id = owner_id
+      where t.id = community_trail_assets.trail_id
+        and t.owner_id = community_trail_assets.owner_id
         and t.visibility = 'public'
         and t.publication_status = 'published'
-        and (asset_kind <> 'gpx' or download_enabled)
+        and (community_trail_assets.asset_kind <> 'gpx' or community_trail_assets.download_enabled)
     )
   );
 create policy community_trail_assets_insert_own on public.community_trail_assets
@@ -293,7 +296,13 @@ create policy community_trail_comments_insert_own on public.community_trail_comm
 create policy community_trail_comments_update_own on public.community_trail_comments
   for update to authenticated
   using (user_id = (select auth.uid()))
-  with check (user_id = (select auth.uid()));
+  with check (
+    user_id = (select auth.uid())
+    and exists (
+      select 1 from public.community_trails t
+      where t.id = trail_id and t.visibility = 'public' and t.publication_status = 'published'
+    )
+  );
 create policy community_trail_comments_delete_own on public.community_trail_comments
   for delete to authenticated using (user_id = (select auth.uid()));
 
