@@ -45,23 +45,22 @@ function renderGpxMetrics(container,stats){
 }
 async function loadTrailCardPreviews(rows){
  if(!rows.length||!client())return;
- const ids=rows.slice(0,24).map(t=>t.id);
+ const visible=rows.slice(0,24),ids=visible.map(t=>t.id);
  try{
-  const c=client(),{data,error}=await c.from(ASSETS).select('id,trail_id,asset_kind,storage_path,created_at').in('trail_id',ids).eq('asset_kind','gpx').order('created_at',{ascending:false});
+  const c=client(),{data,error}=await c.from(ASSETS).select('id,trail_id,asset_kind,storage_path,created_at').in('trail_id',ids).order('created_at',{ascending:false});
   if(error)throw error;
-  const candidates=new Map();
-  (data||[]).forEach(a=>{if(!candidates.has(a.trail_id))candidates.set(a.trail_id,[]);candidates.get(a.trail_id).push(a);});
-  for(const t of rows.slice(0,24)){
+  const byTrail=new Map();
+  (data||[]).forEach(asset=>{if(!byTrail.has(asset.trail_id))byTrail.set(asset.trail_id,[]);byTrail.get(asset.trail_id).push(asset);});
+  for(const t of visible){
    const card=Array.from(document.querySelectorAll('[data-community-card-id]')).find(el=>el.dataset.communityCardId===t.id);
-   const assets=candidates.get(t.id)||[];if(!card||!assets.length)continue;
-   for(const asset of assets){
+   if(!card)continue;
+   const assets=byTrail.get(t.id)||[],imageAsset=assets.find(a=>a.asset_kind==='image');
+   if(imageAsset){try{const {data:signed,error:signError}=await c.storage.from(BUCKET).createSignedUrl(imageAsset.storage_path,180);if(!signError&&signed?.signedUrl){const cover=document.createElement('img');cover.className='community-card-cover';cover.src=signed.signedUrl;cover.alt='Streckenfoto: '+t.title;cover.loading='lazy';cover.decoding='async';cover.addEventListener('error',()=>cover.remove(),{once:true});card.insertBefore(cover,card.firstChild);}}catch(_){}}
+   for(const asset of assets.filter(a=>a.asset_kind==='gpx')){
     try{
-     const {data:signed,error:signError}=await c.storage.from(BUCKET).createSignedUrl(asset.storage_path,180);
-     if(signError||!signed?.signedUrl)continue;
-     const response=await fetch(signed.signedUrl);if(!response.ok)continue;
-     const stats=parseGpxText(await response.text());if(stats.points.length<2)continue;
-     const preview=document.createElement('div');preview.className='community-card-previews';preview.setAttribute('aria-label','Streckenvorschau und Höhenprofil');
-     renderGpxVisuals(preview,stats);
+     const {data:signed,error:signError}=await c.storage.from(BUCKET).createSignedUrl(asset.storage_path,180);if(signError||!signed?.signedUrl)continue;
+     const response=await fetch(signed.signedUrl);if(!response.ok)continue;const stats=parseGpxText(await response.text());if(stats.points.length<2)continue;
+     const preview=document.createElement('div');preview.className='community-card-previews';preview.setAttribute('aria-label','Streckenvorschau und Höhenprofil');renderGpxVisuals(preview,stats);
      const figures=Array.from(preview.children);if(figures.length===2){figures[0].classList.add('community-preview-elevation');figures[1].classList.add('community-preview-route');}
      const action=card.querySelector('button');card.insertBefore(preview,action||null);break;
     }catch(_){continue;}
