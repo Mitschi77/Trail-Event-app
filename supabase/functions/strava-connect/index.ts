@@ -29,6 +29,7 @@ Deno.serve(async (req: Request) => {
       const stateHash = await sha256Hex(state);
       const expiresAt = new Date(Date.now() + 10 * 60 * 1000).toISOString();
 
+      await admin.from("strava_oauth_states").delete().lt("expires_at", new Date().toISOString());
       const { error } = await admin.from("strava_oauth_states").insert({
         state_hash: stateHash,
         user_id: user.id,
