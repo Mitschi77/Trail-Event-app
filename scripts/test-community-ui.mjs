@@ -86,6 +86,9 @@ assert.ok(js.includes("ArrowLeft"));
 assert.ok(js.includes("ArrowRight"));
 assert.ok(css.includes(".community-lightbox{position:fixed"));
 assert.ok(js.includes("async function loadTrailCardPreviews(rows)"));
+assert.ok(js.includes("community-card-cover"));
+assert.ok(js.includes("cover.loading='lazy'"));
+
 assert.ok(js.includes("community-card-previews"));
 assert.ok(js.includes("container.append(item)"));
 assert.ok(css.includes(".community-detail>.community-gpx-metrics{display:grid;grid-template-columns:repeat(5"));
