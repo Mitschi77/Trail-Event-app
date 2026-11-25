@@ -3648,3 +3648,14 @@ html,body{background:var(--nb-bg);color:var(--nb-white)}
 .community-lightbox-caption{margin:0;overflow-wrap:anywhere}
 .community-lightbox-count{white-space:nowrap;color:#7ed9ff;font-variant-numeric:tabular-nums}
 @media(max-width:620px){.community-lightbox{padding:8px}.community-lightbox-panel{padding:9px;border-radius:14px}.community-lightbox-stage{grid-template-columns:34px minmax(0,1fr) 34px;gap:5px}.community-lightbox-prev,.community-lightbox-next{width:34px;height:42px;font-size:25px}.community-lightbox-image{max-height:calc(88dvh - 130px)}}
+
+/* Community owner file management */
+.community-existing-assets{margin-top:8px;padding:14px;border:1px solid #344b60;border-radius:14px;background:#0e1a27}
+.community-existing-assets h4{margin:0 0 10px;color:#eef5fb;font-size:14px}
+.community-existing-assets-list{display:grid;gap:8px}
+.community-existing-asset{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:10px 12px;border:1px solid #34485a;border-radius:10px;background:#142638}
+.community-existing-asset-info{display:grid;gap:4px;min-width:0}
+.community-existing-asset-info strong{font-size:13px;color:#f3f7fb}
+.community-existing-asset-info small{font-size:11px;color:#aebdca;overflow-wrap:anywhere}
+.community-existing-asset button{flex:0 0 auto;min-width:100px}
+@media(max-width:620px){.community-existing-asset{align-items:stretch;flex-direction:column}.community-existing-asset button{width:100%}}
