@@ -5,6 +5,7 @@ const entry = readFileSync(new URL('../sport-year-entry.js', import.meta.url), '
 const preview = readFileSync(new URL('../sport-year-preview.html', import.meta.url), 'utf8');
 
 assert.match(entry, /customElements\.define\('sport-year-entry'/);
+assert.match(entry, /event\.target\.closest\('form'\) \|\| this\.querySelector\('form'\)/, 'Submit handler must read the actual form, not the custom-element event currentTarget.');
 assert.match(entry, /Sportjahr-Kern nicht geladen/);
 assert.match(entry, /normalizeActivity\(a\)/);
 assert.match(entry, /segmentType:'transition_1'/);
