@@ -45,28 +45,49 @@ function renderGpxMetrics(container,stats){
 }
 async function loadTrailCardPreviews(rows){
  if(!rows.length||!client())return;
- const visible=rows.slice(0,24),ids=visible.map(t=>t.id);
+ const ids=rows.map(t=>t.id),cards=new Map(Array.from(document.querySelectorAll('[data-community-card-id]')).map(card=>[card.dataset.communityCardId,card]));
  try{
   const c=client(),{data,error}=await c.from(ASSETS).select('id,trail_id,asset_kind,storage_path,created_at').in('trail_id',ids).order('created_at',{ascending:false});
   if(error)throw error;
   const byTrail=new Map();
   (data||[]).forEach(asset=>{if(!byTrail.has(asset.trail_id))byTrail.set(asset.trail_id,[]);byTrail.get(asset.trail_id).push(asset);});
-  for(const t of visible){
-   const card=Array.from(document.querySelectorAll('[data-community-card-id]')).find(el=>el.dataset.communityCardId===t.id);
-   if(!card)continue;
+  const addCoverFallback=(card,t)=>{
+   if(!card.isConnected||card.querySelector('.community-card-cover,.community-card-cover-fallback'))return;
+   const cover=document.createElement('div');cover.className='community-card-cover-fallback';cover.setAttribute('role','img');cover.setAttribute('aria-label','Noch kein Streckenfoto für '+t.title);
+   cover.innerHTML='<svg viewBox="0 0 640 240" aria-hidden="true" focusable="false"><defs><linearGradient id="nbTrailSky" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#203d52"/><stop offset="1" stop-color="#0b1724"/></linearGradient></defs><path d="M0 0H640V240H0Z" fill="url(#nbTrailSky)"/><path d="M0 190 150 64 240 150 350 42 520 190 640 104V240H0Z" fill="#29495b"/><path d="m170 240 180-198 150 198Z" fill="#385d6c"/><path d="m260 142 90-100 75 99-45-18-29 22-30-19-27 23Z" fill="#9cb5bd" opacity=".72"/><path d="M0 213c120-28 210-10 320 4s210-14 320-35v58H0Z" fill="#142c3b"/><path d="M65 207c90-35 150-22 226-3s145 13 250-25" fill="none" stroke="#ff9b50" stroke-width="4" stroke-linecap="round" stroke-dasharray="7 10"/></svg><span>Streckenfoto folgt</span>';
+   card.insertBefore(cover,card.firstChild);
+  };
+  const processed=new WeakSet();
+  const processCard=async entry=>{
+   const t=entry.target?rows.find(item=>item.id===entry.target.dataset.communityCardId):entry.trail;
+   const card=entry.target||cards.get(t?.id);
+   if(!t||!card||!card.isConnected||processed.has(card))return;
+   processed.add(card);
    const assets=byTrail.get(t.id)||[],imageAsset=assets.find(a=>a.asset_kind==='image');
-   const addCoverFallback=()=>{if(card.querySelector('.community-card-cover,.community-card-cover-fallback'))return;const cover=document.createElement('div');cover.className='community-card-cover-fallback';cover.setAttribute('role','img');cover.setAttribute('aria-label','Noch kein Streckenfoto für '+t.title);cover.innerHTML='<svg viewBox="0 0 640 240" aria-hidden="true" focusable="false"><defs><linearGradient id="nbTrailSky" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#203d52"/><stop offset="1" stop-color="#0b1724"/></linearGradient></defs><path d="M0 0H640V240H0Z" fill="url(#nbTrailSky)"/><path d="M0 190 150 64 240 150 350 42 520 190 640 104V240H0Z" fill="#29495b"/><path d="m170 240 180-198 150 198Z" fill="#385d6c"/><path d="m260 142 90-100 75 99-45-18-29 22-30-19-27 23Z" fill="#9cb5bd" opacity=".72"/><path d="M0 213c120-28 210-10 320 4s210-14 320-35v58H0Z" fill="#142c3b"/><path d="M65 207c90-35 150-22 226-3s145 13 250-25" fill="none" stroke="#ff9b50" stroke-width="4" stroke-linecap="round" stroke-dasharray="7 10"/></svg><span>Streckenfoto folgt</span>';card.insertBefore(cover,card.firstChild);};
-   if(imageAsset){try{const {data:signed,error:signError}=await c.storage.from(BUCKET).createSignedUrl(imageAsset.storage_path,180);if(!signError&&signed?.signedUrl){const cover=document.createElement('img');cover.className='community-card-cover';cover.src=signed.signedUrl;cover.alt='Streckenfoto: '+t.title;cover.loading='lazy';cover.decoding='async';cover.addEventListener('error',addCoverFallback,{once:true});card.insertBefore(cover,card.firstChild);}else addCoverFallback();}catch(_){addCoverFallback();}}else addCoverFallback();
+   if(imageAsset){
+    try{
+     const {data:signed,error:signError}=await c.storage.from(BUCKET).createSignedUrl(imageAsset.storage_path,180);
+     if(!card.isConnected)return;
+     if(!signError&&signed?.signedUrl){const cover=document.createElement('img');cover.className='community-card-cover';cover.src=signed.signedUrl;cover.alt='Streckenfoto: '+t.title;cover.loading='lazy';cover.decoding='async';cover.addEventListener('error',()=>addCoverFallback(card,t),{once:true});card.insertBefore(cover,card.firstChild);}
+     else addCoverFallback(card,t);
+    }catch(_){addCoverFallback(card,t);}
+   }else addCoverFallback(card,t);
+   if(!card.isConnected)return;
    for(const asset of assets.filter(a=>a.asset_kind==='gpx')){
     try{
-     const {data:signed,error:signError}=await c.storage.from(BUCKET).createSignedUrl(asset.storage_path,180);if(signError||!signed?.signedUrl)continue;
-     const response=await fetch(signed.signedUrl);if(!response.ok)continue;const stats=parseGpxText(await response.text());if(stats.points.length<2)continue;
+     const {data:signed,error:signError}=await c.storage.from(BUCKET).createSignedUrl(asset.storage_path,180);if(signError||!signed?.signedUrl||!card.isConnected)continue;
+     const response=await fetch(signed.signedUrl);if(!response.ok||!card.isConnected)continue;
+     const stats=parseGpxText(await response.text());if(stats.points.length<2||!card.isConnected)continue;
      const preview=document.createElement('div');preview.className='community-card-previews';preview.setAttribute('aria-label','Streckenvorschau und Höhenprofil');renderGpxVisuals(preview,stats);
      const figures=Array.from(preview.children);if(figures.length===2){figures[0].classList.add('community-preview-elevation');figures[1].classList.add('community-preview-route');}
      const action=card.querySelector('button');card.insertBefore(preview,action||null);break;
     }catch(_){continue;}
    }
-  }
+  };
+  const observer=typeof IntersectionObserver==='function'?new IntersectionObserver(entries=>{
+   entries.forEach(entry=>{if(entry.isIntersecting){observer.unobserve(entry.target);processCard(entry).catch(error=>console.warn('Trail-Vorschau konnte nicht geladen werden.',error));}});
+  },{rootMargin:'320px 0px'}):null;
+  cards.forEach((card,id)=>{const t=rows.find(item=>item.id===id);if(!t)return;if(observer)observer.observe(card);else processCard({trail:t}).catch(error=>console.warn('Trail-Vorschau konnte nicht geladen werden.',error));});
  }catch(error){console.warn('Trail-Kartenvorschauen konnten nicht geladen werden.',error);}
 }
 let leafletLoader=null,communityMapSequence=0,communityDiscoveryMap=null,communityDiscoveryMarkers=null,communityDiscoveryRenderToken=0;
