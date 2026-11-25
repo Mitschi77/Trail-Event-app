@@ -1,7 +1,9 @@
 -- Strava race assignment links.
 -- Keeps imported Strava activities immutable and stores race/stage assignments separately.
--- A run_record_key references the existing JSON key in planner_data.data->>'trailEventRunRecords'
--- (format: eventId::routeKey). No existing activity or run-history row is rewritten.
+-- A run_record_key references a completed participation in planner_data JSON:
+-- eventId::routeKey for the primary record, or
+-- eventId::routeKey::attempt::YYYY-MM-DD[::createdAt] for a repeat participation.
+-- No existing activity or run-history row is rewritten.
 
 create unique index if not exists strava_activities_id_user_uidx
   on public.strava_activities (id, user_id);
@@ -49,25 +51,62 @@ language plpgsql
 set search_path = ''
 as $$
 declare
+  planner jsonb;
   records jsonb;
+  attempts jsonb;
   run_record jsonb;
+  attempt_key text[];
+  attempt_list jsonb;
+  attempt_item jsonb;
 begin
-  select coalesce(nullif(pd.data ->> 'trailEventRunRecords', '')::jsonb, '{}'::jsonb)
-    into records
+  select pd.data
+    into planner
     from public.planner_data pd
    where pd.user_id = new.user_id
    for update;
 
   -- Serialize assignment creation with concurrent planner-data updates/deletes.
-  -- The row lock prevents a race in which a participation is removed just as
-  -- its Strava activity is being linked.
-  run_record := records -> new.run_record_key;
-
-  if run_record is null
-     or jsonb_typeof(run_record) <> 'object'
-     or coalesce((run_record ->> 'done')::boolean, false) is not true then
-    raise exception 'Strava activity can only be linked to an existing completed race record owned by this user'
+  if planner is null then
+    raise exception 'No planner data exists for this user'
       using errcode = '23514';
+  end if;
+
+  attempt_key := regexp_match(
+    new.run_record_key,
+    '^(.*)::attempt::([0-9]{4}-[0-9]{2}-[0-9]{2})(::([0-9]+))?$'
+  );
+
+  if attempt_key is not null then
+    attempts := coalesce(nullif(planner ->> 'trailEventRunAttempts', '')::jsonb, '{}'::jsonb);
+    attempt_list := attempts -> attempt_key[1];
+
+    if jsonb_typeof(attempt_list) = 'array' then
+      select item
+        into attempt_item
+        from jsonb_array_elements(attempt_list) as item
+       where item ->> 'date' = attempt_key[2]
+         and coalesce((item ->> 'done')::boolean, false) is true
+         and (
+           attempt_key[4] is null
+           or item ->> 'createdAt' = attempt_key[4]
+         )
+       limit 1;
+    end if;
+
+    if attempt_item is null then
+      raise exception 'Strava activity can only be linked to an existing completed repeat participation owned by this user'
+        using errcode = '23514';
+    end if;
+  else
+    records := coalesce(nullif(planner ->> 'trailEventRunRecords', '')::jsonb, '{}'::jsonb);
+    run_record := records -> new.run_record_key;
+
+    if run_record is null
+       or jsonb_typeof(run_record) <> 'object'
+       or coalesce((run_record ->> 'done')::boolean, false) is not true then
+      raise exception 'Strava activity can only be linked to an existing completed race record owned by this user'
+        using errcode = '23514';
+    end if;
   end if;
 
   new.updated_at := now();
@@ -91,23 +130,47 @@ set search_path = ''
 as $$
 declare
   records jsonb;
+  attempts jsonb;
+  attempt_key text[];
+  attempt_list jsonb;
 begin
   if new.data is not distinct from old.data then
     return new;
   end if;
 
   records := coalesce(nullif(new.data ->> 'trailEventRunRecords', '')::jsonb, '{}'::jsonb);
+  attempts := coalesce(nullif(new.data ->> 'trailEventRunAttempts', '')::jsonb, '{}'::jsonb);
 
   if exists (
     select 1
       from public.strava_race_activity_links l
      where l.user_id = new.user_id
-       and (
-         not (records ? l.run_record_key)
-         or coalesce(((records -> l.run_record_key) ->> 'done')::boolean, false) is not true
+       and not (
+         l.run_record_key ~ '::attempt::[0-9]{4}-[0-9]{2}-[0-9]{2}(::[0-9]+)?$'
+         and exists (
+           select 1
+             from jsonb_array_elements(
+               case
+                 when jsonb_typeof(attempts -> regexp_replace(l.run_record_key, '::attempt::[0-9]{4}-[0-9]{2}-[0-9]{2}(::[0-9]+)?$', '')) = 'array'
+                 then attempts -> regexp_replace(l.run_record_key, '::attempt::[0-9]{4}-[0-9]{2}-[0-9]{2}(::[0-9]+)?$', '')
+                 else '[]'::jsonb
+               end
+             ) as item
+            where item ->> 'date' = (regexp_match(l.run_record_key, '::attempt::([0-9]{4}-[0-9]{2}-[0-9]{2})'))[1]
+              and coalesce((item ->> 'done')::boolean, false) is true
+              and (
+                (regexp_match(l.run_record_key, '::attempt::[0-9]{4}-[0-9]{2}-[0-9]{2}(::([0-9]+))?$'))[2] is null
+                or item ->> 'createdAt' = (regexp_match(l.run_record_key, '::attempt::[0-9]{4}-[0-9]{2}-[0-9]{2}(::([0-9]+))?$'))[2]
+              )
+         )
+       )
+       and not (
+         l.run_record_key !~ '::attempt::[0-9]{4}-[0-9]{2}-[0-9]{2}(::[0-9]+)?$'
+         and records ? l.run_record_key
+         and coalesce(((records -> l.run_record_key) ->> 'done')::boolean, false) is true
        )
   ) then
-    raise exception 'A race record with linked Strava activities cannot be removed or marked as not completed; unlink its activities first'
+    raise exception 'A linked race participation cannot be removed or marked as not completed; unlink its Strava activities first'
       using errcode = '23514';
   end if;
 
