@@ -95,8 +95,9 @@ async function renderDiscoveryMap(rows){
 function selectDiscoveryTrail(id,focusMap=false){
  communitySelectedTrailId=id;
  document.querySelectorAll('[data-community-card-id]').forEach(card=>{const selected=card.dataset.communityCardId===id;card.classList.toggle('is-map-selected',selected);if(selected)card.setAttribute('aria-current','true');else card.removeAttribute('aria-current');});
+ communityDiscoveryMarkersByTrail.forEach((item,key)=>{item.setZIndexOffset(key===id?1000:0);item.setOpacity(key===id?1:.72);});
  const marker=communityDiscoveryMarkersByTrail.get(id);
- if(marker&&communityDiscoveryMap){marker.setZIndexOffset(communitySelectedTrailId===id?1000:0);if(focusMap){communityDiscoveryMap.panTo(marker.getLatLng(),{animate:true});marker.openPopup();}}
+ if(marker&&communityDiscoveryMap&&focusMap){communityDiscoveryMap.panTo(marker.getLatLng(),{animate:true});marker.openPopup();}
  if(!focusMap){const card=Array.from(document.querySelectorAll('[data-community-card-id]')).find(item=>item.dataset.communityCardId===id);card?.scrollIntoView({behavior:'smooth',block:'nearest'});}
 }
 
