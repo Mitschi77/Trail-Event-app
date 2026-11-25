@@ -209,7 +209,7 @@ def main():
     reset role;
 
     -- Constraints reject malformed path, unsupported MIME and duplicate review.
-    do $$
+    do $mapcheck$
     begin
       begin
         insert into public.community_trail_assets(
@@ -256,7 +256,7 @@ def main():
         raise exception 'Expected invalid latitude rejection';
       exception when check_violation then null;
       end;
-    end $;
+    end $mapcheck$;
 
     select public, file_size_limit from storage.buckets where id='community-trail-assets';
     """
