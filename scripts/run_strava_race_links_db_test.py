@@ -114,22 +114,22 @@ def main():
     -- Verify the authenticated table policy exposes only the current user's links.
     set role authenticated;
     select set_config('request.jwt.claim.sub', '00000000-0000-0000-0000-000000000001', false);
-    do $
+    do $$
     begin
       if (select count(*) from public.strava_race_activity_links) <> 4 then
         raise exception 'RLS should expose exactly the four links owned by the current user';
       end if;
-    end $;
+    end $$;
     select set_config('request.jwt.claim.sub', '00000000-0000-0000-0000-000000000002', false);
-    do $
+    do $$
     begin
       if (select count(*) from public.strava_race_activity_links) <> 0 then
         raise exception 'RLS leaked links belonging to another user';
       end if;
-    end $;
+    end $$;
     reset role;
 
-    do $
+    do $$
     begin
       begin
         update public.planner_data
