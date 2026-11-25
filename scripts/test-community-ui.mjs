@@ -38,6 +38,8 @@ assert.ok(js.includes("communityDiscoveryMarkersByTrail.set(t.id,marker)"));
 assert.ok(js.includes("community-card is-map-selected"));
 assert.ok(js.includes("community-show-on-map"));
 assert.ok(js.includes("Auf Karte zeigen"));
+assert.ok(js.includes("selectDiscoveryTrail(communitySelectedTrailId,false,false)"));
+assert.ok(js.includes("communityDiscoveryMarkersByTrail.clear()"));
 assert.ok(js.includes("data-community-card-id"));
 
 assert.ok(js.includes("distance-asc"));
