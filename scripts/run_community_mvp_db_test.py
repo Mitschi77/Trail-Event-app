@@ -234,7 +234,29 @@ def main():
         raise exception 'Expected unsupported MIME rejection';
       exception when check_violation then null;
       end;
-    end $$;
+      begin
+        insert into public.community_trails(
+          owner_id, title, visibility, publication_status,
+          map_location_enabled, start_latitude, start_longitude
+        ) values (
+          '00000000-0000-0000-0000-000000000001',
+          'Private map pin', 'private', 'draft', true, 47.0, 12.0
+        );
+        raise exception 'Expected private map location rejection';
+      exception when check_violation then null;
+      end;
+      begin
+        insert into public.community_trails(
+          owner_id, title, visibility, publication_status,
+          map_location_enabled, start_latitude, start_longitude
+        ) values (
+          '00000000-0000-0000-0000-000000000001',
+          'Invalid map pin', 'public', 'published', true, 97.0, 12.0
+        );
+        raise exception 'Expected invalid latitude rejection';
+      exception when check_violation then null;
+      end;
+    end $;
 
     select public, file_size_limit from storage.buckets where id='community-trail-assets';
     """
