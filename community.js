@@ -45,23 +45,22 @@ function renderGpxMetrics(container,stats){
 }
 async function loadTrailCardPreviews(rows){
  if(!rows.length||!client())return;
- const ids=rows.slice(0,24).map(t=>t.id);
+ const visible=rows.slice(0,24),ids=visible.map(t=>t.id);
  try{
-  const c=client(),{data,error}=await c.from(ASSETS).select('id,trail_id,asset_kind,storage_path,created_at').in('trail_id',ids).eq('asset_kind','gpx').order('created_at',{ascending:false});
+  const c=client(),{data,error}=await c.from(ASSETS).select('id,trail_id,asset_kind,storage_path,created_at').in('trail_id',ids).order('created_at',{ascending:false});
   if(error)throw error;
-  const candidates=new Map();
-  (data||[]).forEach(a=>{if(!candidates.has(a.trail_id))candidates.set(a.trail_id,[]);candidates.get(a.trail_id).push(a);});
-  for(const t of rows.slice(0,24)){
+  const byTrail=new Map();
+  (data||[]).forEach(asset=>{if(!byTrail.has(asset.trail_id))byTrail.set(asset.trail_id,[]);byTrail.get(asset.trail_id).push(asset);});
+  for(const t of visible){
    const card=Array.from(document.querySelectorAll('[data-community-card-id]')).find(el=>el.dataset.communityCardId===t.id);
-   const assets=candidates.get(t.id)||[];if(!card||!assets.length)continue;
-   for(const asset of assets){
+   if(!card)continue;
+   const assets=byTrail.get(t.id)||[],imageAsset=assets.find(a=>a.asset_kind==='image');
+   if(imageAsset){try{const {data:signed,error:signError}=await c.storage.from(BUCKET).createSignedUrl(imageAsset.storage_path,180);if(!signError&&signed?.signedUrl){const cover=document.createElement('img');cover.className='community-card-cover';cover.src=signed.signedUrl;cover.alt='Streckenfoto: '+t.title;cover.loading='lazy';cover.decoding='async';cover.addEventListener('error',()=>cover.remove(),{once:true});card.insertBefore(cover,card.firstChild);}}catch(_){}}
+   for(const asset of assets.filter(a=>a.asset_kind==='gpx')){
     try{
-     const {data:signed,error:signError}=await c.storage.from(BUCKET).createSignedUrl(asset.storage_path,180);
-     if(signError||!signed?.signedUrl)continue;
-     const response=await fetch(signed.signedUrl);if(!response.ok)continue;
-     const stats=parseGpxText(await response.text());if(stats.points.length<2)continue;
-     const preview=document.createElement('div');preview.className='community-card-previews';preview.setAttribute('aria-label','Streckenvorschau und Höhenprofil');
-     renderGpxVisuals(preview,stats);
+     const {data:signed,error:signError}=await c.storage.from(BUCKET).createSignedUrl(asset.storage_path,180);if(signError||!signed?.signedUrl)continue;
+     const response=await fetch(signed.signedUrl);if(!response.ok)continue;const stats=parseGpxText(await response.text());if(stats.points.length<2)continue;
+     const preview=document.createElement('div');preview.className='community-card-previews';preview.setAttribute('aria-label','Streckenvorschau und Höhenprofil');renderGpxVisuals(preview,stats);
      const figures=Array.from(preview.children);if(figures.length===2){figures[0].classList.add('community-preview-elevation');figures[1].classList.add('community-preview-route');}
      const action=card.querySelector('button');card.insertBefore(preview,action||null);break;
     }catch(_){continue;}
@@ -321,9 +320,10 @@ async function detail(t){
   if(!images.length){gallery.hidden=true;}
   if(gpx&&gpxStats&&gpxSignedUrl){const a=document.createElement('a');a.className='community-secondary community-download';a.href=gpxSignedUrl;a.download='trail-'+t.id+'.gpx';a.rel='noopener';a.textContent='GPX-Datei herunterladen';files.append(a);const stats=gpxStats;renderGpxMetrics(statsPanel,stats);await renderGpxMap(routeSection,stats);renderGpxVisuals(routeSection,stats);if(active==='mine'&&t.owner_id===cloudUser.id){const remove=document.createElement('button');remove.type='button';remove.className='community-secondary';remove.textContent='GPX-Datei entfernen';remove.addEventListener('click',()=>deleteTrailAsset(t,gpx,feedback));files.append(remove);}}else if(gpxCandidates.length){const note=document.createElement('p');note.className='community-hint';note.textContent='GPX-Datei ist registriert, konnte aber nicht geöffnet werden. Bitte die Datei in „Trail bearbeiten“ erneut hochladen.';files.append(note);if(active==='mine'&&t.owner_id===cloudUser.id){const remove=document.createElement('button');remove.type='button';remove.className='community-secondary';remove.textContent='Ungültige GPX-Einträge entfernen';remove.addEventListener('click',async()=>{for(const candidate of gpxCandidates)await deleteTrailAsset(t,candidate,feedback);});files.append(remove);}}
   const reviews=reviewResult.data||[],avg=reviews.length?reviews.reduce((sum,r)=>sum+r.rating,0)/reviews.length:0;
-   const writtenReviews=(reviewResult.data||[]).filter(r=>String(r.review_text||'').trim());
-   writtenReviews.forEach(r=>{const item=document.createElement('article');item.className='community-comment';const score=document.createElement('strong');score.textContent='★ '+r.rating+'/5';const text=document.createElement('p');text.textContent=r.review_text;const date=document.createElement('small');date.textContent=new Date(r.created_at).toLocaleDateString('de-DE');item.append(score,text,date);reviewSection.append(item);});
-  const reviewSection=document.createElement('section');reviewSection.className='community-feedback-section';const reviewTitle=document.createElement('h4');reviewTitle.textContent='Bewertungen';const average=document.createElement('p');average.textContent=reviews.length?('★ '+avg.toLocaleString('de-DE',{maximumFractionDigits:1})+'/5 · '+reviews.length+' Bewertung(en)'):'Noch keine Bewertungen';reviewSection.append(reviewTitle,average);
+  const reviewSection=document.createElement('section');reviewSection.className='community-feedback-section';
+  const writtenReviews=(reviewResult.data||[]).filter(r=>String(r.review_text||'').trim());
+  writtenReviews.forEach(r=>{const item=document.createElement('article');item.className='community-comment';const score=document.createElement('strong');score.textContent='★ '+r.rating+'/5';const text=document.createElement('p');text.textContent=r.review_text;const date=document.createElement('small');date.textContent=new Date(r.created_at).toLocaleDateString('de-DE');item.append(score,text,date);reviewSection.append(item);});
+const reviewTitle=document.createElement('h4');reviewTitle.textContent='Bewertungen';const average=document.createElement('p');average.textContent=reviews.length?('★ '+avg.toLocaleString('de-DE',{maximumFractionDigits:1})+'/5 · '+reviews.length+' Bewertung(en)'):'Noch keine Bewertungen';reviewSection.append(reviewTitle,average);
   const reviewForm=document.createElement('form');reviewForm.className='community-inline-form';const stars=document.createElement('select');stars.name='rating';stars.setAttribute('aria-label','Deine Bewertung');for(let n=5;n>=1;n--){const option=document.createElement('option');option.value=String(n);option.textContent=n+' Sterne';if(myReviewResult.data?.rating===n)option.selected=true;stars.append(option);}const reviewText=document.createElement('textarea');reviewText.name='review_text';reviewText.maxLength=3000;reviewText.rows=2;reviewText.placeholder='Dein Eindruck (optional)';reviewText.value=myReviewResult.data?.review_text||'';const saveReview=document.createElement('button');saveReview.type='submit';saveReview.className='community-secondary';saveReview.textContent='Bewertung speichern';reviewForm.append(stars,reviewText,saveReview);reviewForm.addEventListener('submit',async e=>{e.preventDefault();const payload={trail_id:t.id,user_id:cloudUser.id,rating:Number(stars.value),review_text:reviewText.value.trim()||null};const result=await c.from('community_trail_reviews').upsert(payload,{onConflict:'trail_id,user_id'});if(result.error){feedback.textContent='Bewertung konnte nicht gespeichert werden: '+result.error.message;return;}detail(t);});reviewSection.append(reviewForm);
   if(t.visibility==='public'&&t.publication_status==='published'){
   const commentsSection=document.createElement('section');commentsSection.className='community-feedback-section';const commentsTitle=document.createElement('h4');commentsTitle.textContent='Kommentare';commentsSection.append(commentsTitle);
@@ -333,6 +333,10 @@ async function detail(t){
   if(active!=='mine'){const report=document.createElement('button');report.type='button';report.className='community-secondary';report.textContent='Trail melden';report.addEventListener('click',async()=>{const reason=prompt('Warum möchtest du diesen Trail melden? (unsafe, spam, copyright, abuse, privacy, other)','unsafe');if(!reason)return;const allowed=['unsafe','spam','copyright','abuse','privacy','other'];if(!allowed.includes(reason)){feedback.textContent='Bitte einen gültigen Meldegrund eingeben: '+allowed.join(', ');return;}const result=await c.from('community_reports').insert({reporter_id:cloudUser.id,target_type:'trail',target_id:t.id,reason_code:reason});feedback.textContent=result.error?'Meldung fehlgeschlagen: '+result.error.message:'Danke. Deine Meldung wurde übermittelt.';});actions.append(report);}
   d.append(reviewSection,commentsSection,actions);
   }
+  const detailNav=document.createElement('nav');detailNav.className='community-detail-nav';detailNav.setAttribute('aria-label','Trail-Detailbereiche');
+  const navTargets=[{label:'Überblick',target:meta},{label:'Strecke',target:statsPanel},{label:'Fotos',target:gallery,show:images.length>0},{label:'Dateien',target:files,show:files.children.length>0},{label:'Community',target:d.querySelector('.community-feedback-section'),show:!!d.querySelector('.community-feedback-section')}].filter(item=>item.show!==false&&item.target);
+  navTargets.forEach((item,index)=>{item.target.id='community-detail-section-'+index;const button=document.createElement('button');button.type='button';button.className='community-detail-nav-button'+(index===0?' is-active':'');button.textContent=item.label;button.addEventListener('click',()=>{d.querySelectorAll('.community-detail-nav-button').forEach(el=>el.classList.remove('is-active'));button.classList.add('is-active');item.target.scrollIntoView({behavior:'smooth',block:'start'});});detailNav.append(button);});
+  if(navTargets.length>1)d.insertBefore(detailNav,statsPanel);
   feedback.textContent='Details geladen.';
  }catch(error){feedback.textContent='Trail-Details konnten nicht vollständig geladen werden: '+error.message;feedback.classList.add('is-error');}
 }
