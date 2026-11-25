@@ -3680,3 +3680,15 @@ html,body{background:var(--nb-bg);color:var(--nb-white)}
 .community-detail [id^="community-detail-section-"]{scroll-margin-top:calc(var(--nb-header-height,64px) + 76px)}
 .community-detail-nav-button:focus-visible{outline:2px solid #ff9b50;outline-offset:2px}
 @media(max-width:620px){.community-detail-nav{margin:10px -2px 16px;padding:8px}.community-detail-nav-button{min-height:40px;padding:8px 12px}}
+
+
+/* Trail detail sections: consistent hierarchy and active scroll navigation */
+.community-detail-block{min-width:0;margin:22px 0 28px;padding:0}
+.community-detail-block>h4{margin:0 0 12px;color:#f1f6fb;font-size:clamp(17px,2.2vw,20px);font-weight:800;letter-spacing:-.02em}
+.community-detail-route .community-gpx-metrics{margin-top:0}
+.community-detail-photos .community-gallery{margin-top:0}
+.community-detail-files .community-files{margin-top:0}
+.community-detail-nav-button[aria-current="location"]{border-color:#ff9b50;background:#55351f;color:#fff2e7;box-shadow:0 0 0 1px #ff9b5033 inset}
+.community-detail-nav-button.is-active{border-color:#ff9b50;background:#55351f;color:#fff2e7}
+.community-detail-block[id^="community-detail-section-"]{scroll-margin-top:calc(var(--nb-header-height,64px) + 82px)}
+@media(max-width:620px){.community-detail-block{margin:18px 0 24px}.community-detail-block>h4{margin-bottom:10px}}
