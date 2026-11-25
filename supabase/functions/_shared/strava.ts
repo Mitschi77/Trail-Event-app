@@ -96,7 +96,7 @@ function decodeBase64(value: string): Uint8Array {
   return bytes;
 }
 
-function decodeEncryptionKey(value: string): Uint8Array {
+async function decodeEncryptionKey(value: string): Promise<Uint8Array> {
   let normalized = value.trim();
   // Allow a JSON-wrapped default value if a secret manager exported its key map.
   try {
@@ -115,6 +115,14 @@ function decodeEncryptionKey(value: string): Uint8Array {
       bytes[i] = Number.parseInt(normalized.slice(i * 2, i * 2 + 2), 16);
     }
     return bytes;
+  }
+
+  // Bitwarden-style 64-character lowercase alphanumeric random strings are
+  // not necessarily hexadecimal. Derive a fixed 256-bit AES key from the
+  // complete random string instead of truncating it or misreading it as Base64.
+  if (/^[a-z0-9]{64}$/.test(normalized)) {
+    const digest = await crypto.subtle.digest("SHA-256", new TextEncoder().encode(normalized));
+    return new Uint8Array(digest);
   }
 
   try {
@@ -145,7 +153,7 @@ function encodeBase64(value: Uint8Array): string {
 async function encryptionKey(): Promise<CryptoKey> {
   const encoded = Deno.env.get("STRAVA_TOKEN_ENCRYPTION_KEY");
   if (!encoded) throw new Error("missing_strava_token_encryption_key");
-  const raw = decodeEncryptionKey(encoded);
+  const raw = await decodeEncryptionKey(encoded);
   if (raw.length !== 32) throw new Error("invalid_strava_token_encryption_key");
   return await crypto.subtle.importKey("raw", asArrayBuffer(raw), { name: "AES-GCM" }, false, ["encrypt", "decrypt"]);
 }
