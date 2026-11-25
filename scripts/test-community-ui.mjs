@@ -136,3 +136,11 @@ assert.equal(stats.profile.length, 3);
 assert.throws(() => parseGpx("<gpx><trk/></gpx>"), /weniger als zwei/);
 
 console.log("NORTHBOUND Community UI regression tests passed.");
+
+assert.ok(js.includes("const routeBlock=document.createElement('section')"));
+assert.ok(js.includes("{label:'Strecke',target:routeBlock"));
+assert.ok(js.includes("new IntersectionObserver(entries=>"));
+assert.ok(js.includes("activateNav(index)"));
+assert.ok(js.includes("aria-controls",));
+assert.ok(css.includes(".community-detail-block>h4"));
+assert.ok(css.includes("[aria-current=\"location\"]"));
