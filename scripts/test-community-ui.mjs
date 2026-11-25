@@ -167,3 +167,8 @@ assert.ok(js.includes("['Aufstieg je km',climbPerKm===null?'—':climbPerKm+' hm
 assert.ok(js.includes("['Start / Ziel'"));
 assert.ok(js.includes("['Trackpunkte',stats.points.length.toLocaleString('de-DE')]"));
 assert.ok(css.includes(".community-detail>.community-gpx-metrics{grid-template-columns:repeat(5"));
+
+assert.ok(js.includes("plotMin=lo-rawSpan*.08"), "Elevation profile must include headroom above the highest point");
+assert.ok(js.includes("top=38,bottom=198"), "Elevation profile must keep clear space around the plotted line");
+assert.ok(js.includes("white-space:nowrap;overflow-wrap:normal"), "GPX metric values must not wrap awkwardly");
+assert.ok(js.includes(".community-gpx-metric.is-primary strong{font-size:clamp(16px,1.8vw,22px)}"), "Primary GPX metrics must have stronger visual hierarchy");
