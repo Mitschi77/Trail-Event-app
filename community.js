@@ -137,7 +137,7 @@ function shell(){
    <label class="wide">Untergrund<input name="surface_summary" maxlength="500" placeholder="z. B. Waldwege, Fels, Schotter"></label>
    <label class="wide">Startpunkt-Bezeichnung (optional)<input name="start_location_label" maxlength="160" placeholder="Keine private Wohnadresse angeben"></label>
    <label class="wide">Bilder (JPG, PNG, WebP; max. 25 MB je Datei)<input name="images" type="file" accept="image/jpeg,image/png,image/webp" multiple></label>
-   <label class="wide">GPX-Datei (optional; max. 25 MB)<input name="gpx" type="file" accept=".gpx,application/gpx+xml,application/xml,text/xml"></label>
+   <label class="wide">GPX-Datei (optional; max. 25 MB)<input name="gpx" type="file" accept=".gpx,*/*"></label>
    <label class="community-check"><input name="visibility" type="checkbox"> Trail öffentlich veröffentlichen</label>
    <label class="community-check"><input name="gpx_download_enabled" type="checkbox"> GPX-Download erlauben</label>
    <label class="community-check wide"><input name="map_location_enabled" type="checkbox"> Startpunkt auf der öffentlichen Community-Karte anzeigen</label>
@@ -255,17 +255,17 @@ async function updateMapLocation(t,enabled,gpx,feedback,button){
 }
 async function saveTrail(event){
  event.preventDefault();if(busy)return;const c=client();if(!c){setStatus('Bitte zuerst anmelden.',true);return;}const form=event.currentTarget,data=new FormData(form),title=String(data.get('title')||'').trim();if(!title){setStatus('Bitte einen Trail-Namen eingeben.',true);return;}
- const images=Array.from(form.elements.images.files||[]),gpx=form.elements.gpx.files?.[0]||null,files=[...images,...(gpx?[gpx]:[])];if(files.some(f=>f.size>26214400)){setStatus('Eine Datei überschreitet 25 MB.',true);return;}
+ const images=Array.from(form.elements.images.files||[]),gpx=form.elements.gpx.files?.[0]||null,files=[...images,...(gpx?[gpx]:[])];if(files.some(f=>f.size>26214400)){setStatus('Eine Datei überschreitet 25 MB.',true);return;}if(gpx&&!/\.gpx$/i.test(gpx.name)){setStatus('Bitte eine Datei mit der Endung .gpx auswählen.',true);return;}
  const visibility=form.elements.visibility.checked?'public':'private',gpxEnabled=form.elements.gpx_download_enabled.checked&&visibility==='public';
  busy=true;const button=$('communitySaveTrail');button.disabled=true;button.textContent='Speichere …';setStatus('Trail wird gespeichert …');
  let trailId=null,uploaded=[];
  try{
   const gpxStats=gpx?parseGpxText(await gpx.text()):null;const mapLocationEnabled=form.elements.map_location_enabled.checked&&visibility==='public'&&!!gpxStats;const row={owner_id:cloudUser.id,title,description:String(data.get('description')||''),region_name:String(data.get('region_name')||'').trim()||null,country_code:String(data.get('country_code')||'').trim().toUpperCase()||null,distance_m:data.get('distance_km')?Number(data.get('distance_km'))*1000:(gpxStats?.distance_m||null),ascent_m:data.get('ascent_m')?Number(data.get('ascent_m')):(gpxStats?.ascent_m??null),descent_m:data.get('descent_m')?Number(data.get('descent_m')):(gpxStats?.descent_m??null),difficulty:String(data.get('difficulty')||'')||null,surface_summary:String(data.get('surface_summary')||'').trim()||null,start_location_label:String(data.get('start_location_label')||'').trim()||null,map_location_enabled:mapLocationEnabled,start_latitude:mapLocationEnabled?gpxStats.points[0].lat:null,start_longitude:mapLocationEnabled?gpxStats.points[0].lon:null,visibility,publication_status:visibility==='public'?'published':'draft',gpx_download_enabled:gpxEnabled,published_at:visibility==='public'?new Date().toISOString():null};
   const {data:created,error}=await c.from(TABLE).insert(row).select('id').single();if(error)throw error;trailId=created.id;
-  for(const file of files){const isGpx=file===gpx,kind=isGpx?'gpx':'image',allowed=isGpx?['application/gpx+xml','application/xml','text/xml','']:['image/jpeg','image/png','image/webp'];if(!allowed.includes(file.type)){throw new Error('Nicht unterstützter Dateityp: '+file.name);}const safe=file.name.normalize('NFKD').replace(/[^a-zA-Z0-9._-]+/g,'-').slice(-90)||'file';const path=cloudUser.id+'/'+trailId+'/'+crypto.randomUUID()+'-'+safe;
-   const {error:assetError}=await c.from(ASSETS).insert({trail_id:trailId,owner_id:cloudUser.id,asset_kind:kind,storage_path:path,content_type:isGpx?(file.type||'application/gpx+xml'):file.type,file_size:file.size,download_enabled:isGpx&&gpxEnabled});
+  for(const file of files){const isGpx=file===gpx,kind=isGpx?'gpx':'image';if(!isGpx&&!['image/jpeg','image/png','image/webp'].includes(file.type)){throw new Error('Nicht unterstützter Bilddateityp: '+file.name);}const safe=file.name.normalize('NFKD').replace(/[^a-zA-Z0-9._-]+/g,'-').slice(-90)||'file';const path=cloudUser.id+'/'+trailId+'/'+crypto.randomUUID()+'-'+safe;
+   const {error:assetError}=await c.from(ASSETS).insert({trail_id:trailId,owner_id:cloudUser.id,asset_kind:kind,storage_path:path,content_type:isGpx?'application/gpx+xml':file.type,file_size:file.size,download_enabled:isGpx&&gpxEnabled});
    if(assetError)throw assetError;
-   const {error:uploadError}=await c.storage.from(BUCKET).upload(path,file,{contentType:isGpx?(file.type||'application/gpx+xml'):file.type,upsert:false});if(uploadError)throw uploadError;uploaded.push(path);
+   const {error:uploadError}=await c.storage.from(BUCKET).upload(path,file,{contentType:isGpx?'application/gpx+xml':file.type,upsert:false});if(uploadError)throw uploadError;uploaded.push(path);
   }
   setStatus(visibility==='public'?'Trail veröffentlicht.':'Trail privat gespeichert.');form.reset();closeForm();active='mine';document.querySelector('[data-community-view="mine"]')?.click();await load();
  }catch(error){setStatus('Speichern/Upload fehlgeschlagen: '+error.message,true);if(uploaded.length){try{await c.storage.from(BUCKET).remove(uploaded);}catch(_){}}if(trailId){try{await c.from(TABLE).delete().eq('id',trailId).eq('owner_id',cloudUser.id);}catch(_){}}}
