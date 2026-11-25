@@ -204,7 +204,10 @@ create policy community_trail_assets_read_visible on public.community_trail_asse
         and t.owner_id = community_trail_assets.owner_id
         and t.visibility = 'public'
         and t.publication_status = 'published'
-        and (community_trail_assets.asset_kind <> 'gpx' or community_trail_assets.download_enabled)
+        and (
+          community_trail_assets.asset_kind <> 'gpx'
+          or (t.gpx_download_enabled and community_trail_assets.download_enabled)
+        )
     )
   );
 create policy community_trail_assets_insert_own on public.community_trail_assets
@@ -329,7 +332,7 @@ create policy community_assets_storage_read on storage.objects
           or (
             t.visibility = 'public'
             and t.publication_status = 'published'
-            and (a.asset_kind <> 'gpx' or a.download_enabled)
+            and (a.asset_kind <> 'gpx' or (t.gpx_download_enabled and a.download_enabled))
           )
         )
     )
