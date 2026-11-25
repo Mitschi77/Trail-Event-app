@@ -39,10 +39,35 @@ function renderGpxVisuals(container,stats){
  }
 }
 function renderGpxMetrics(container,stats){
- const panel=document.createElement('section');panel.className='community-gpx-metrics';panel.setAttribute('aria-label','GPX-Streckenkennzahlen');
+ container.setAttribute('aria-label','GPX-Streckenkennzahlen');
  const values=[['Distanz',fmtDistance(stats.distance_m)],['Aufstieg',fmtHm(stats.ascent_m)],['Abstieg',fmtHm(stats.descent_m)],['Höchster Punkt',stats.max_elevation_m===null?'—':stats.max_elevation_m+' m'],['Tiefster Punkt',stats.min_elevation_m===null?'—':stats.min_elevation_m+' m']];
- values.forEach(([label,value])=>{const item=document.createElement('div');item.className='community-gpx-metric';const strong=document.createElement('strong');strong.textContent=value;const caption=document.createElement('span');caption.textContent=label;item.append(strong,caption);panel.append(item);});
- container.append(panel);
+ values.forEach(([label,value])=>{const item=document.createElement('div');item.className='community-gpx-metric';const strong=document.createElement('strong');strong.textContent=value;const caption=document.createElement('span');caption.textContent=label;item.append(strong,caption);container.append(item);});
+}
+async function loadTrailCardPreviews(rows){
+ if(!rows.length||!client())return;
+ const ids=rows.slice(0,24).map(t=>t.id);
+ try{
+  const c=client(),{data,error}=await c.from(ASSETS).select('id,trail_id,asset_kind,storage_path,created_at').in('trail_id',ids).eq('asset_kind','gpx').order('created_at',{ascending:false});
+  if(error)throw error;
+  const candidates=new Map();
+  (data||[]).forEach(a=>{if(!candidates.has(a.trail_id))candidates.set(a.trail_id,[]);candidates.get(a.trail_id).push(a);});
+  for(const t of rows.slice(0,24)){
+   const card=Array.from(document.querySelectorAll('[data-community-card-id]')).find(el=>el.dataset.communityCardId===t.id);
+   const assets=candidates.get(t.id)||[];if(!card||!assets.length)continue;
+   for(const asset of assets){
+    try{
+     const {data:signed,error:signError}=await c.storage.from(BUCKET).createSignedUrl(asset.storage_path,180);
+     if(signError||!signed?.signedUrl)continue;
+     const response=await fetch(signed.signedUrl);if(!response.ok)continue;
+     const stats=parseGpxText(await response.text());if(stats.points.length<2)continue;
+     const preview=document.createElement('div');preview.className='community-card-previews';preview.setAttribute('aria-label','Streckenvorschau und Höhenprofil');
+     renderGpxVisuals(preview,stats);
+     const figures=Array.from(preview.children);if(figures.length===2){figures[0].classList.add('community-preview-elevation');figures[1].classList.add('community-preview-route');}
+     const action=card.querySelector('button');card.insertBefore(preview,action||null);break;
+    }catch(_){continue;}
+   }
+  }
+ }catch(error){console.warn('Trail-Kartenvorschauen konnten nicht geladen werden.',error);}
 }
 let leafletLoader=null,communityMapSequence=0,communityDiscoveryMap=null,communityDiscoveryMarkers=null,communityDiscoveryRenderToken=0;
 function loadLeaflet(){
@@ -193,6 +218,7 @@ function render(){
  if(communitySelectedTrailId&&!rows.some(t=>t.id===communitySelectedTrailId))communitySelectedTrailId=null;
  renderDiscoveryMap(rows);list.replaceChildren();
  rows.forEach(t=>{const card=document.createElement('article');card.className='community-card';card.dataset.communityCardId=t.id;const title=document.createElement('h3');title.textContent=t.title;const regionEl=document.createElement('p');regionEl.className='community-region';regionEl.textContent=[t.region_name,t.country_code].filter(Boolean).join(' · ')||'Region nicht angegeben';const metrics=document.createElement('div');metrics.className='community-metrics';metrics.textContent=fmtDistance(t.distance_m)+'  ·  '+fmtHm(t.ascent_m);const difficultyEl=document.createElement('span');difficultyEl.className='community-difficulty';difficultyEl.textContent=labels[t.difficulty]||'Schwierigkeit offen';const desc=document.createElement('p');desc.textContent=t.description||'Keine Beschreibung vorhanden.';desc.className='community-description';const surfaceEl=document.createElement('p');surfaceEl.className='community-region';surfaceEl.textContent=t.surface_summary?'Untergrund: '+t.surface_summary:'';const action=document.createElement('button');action.type='button';action.className='community-secondary';action.textContent=active==='mine'?'Details / verwalten':'Trail ansehen';action.addEventListener('click',()=>detail(t));card.append(title,regionEl,metrics,difficultyEl,desc);if(t.surface_summary)card.append(surfaceEl);card.append(action);if(active==='discover'&&t.map_location_enabled===true){const mapAction=document.createElement('button');mapAction.type='button';mapAction.className='community-secondary community-show-on-map';mapAction.textContent='Auf Karte zeigen';mapAction.addEventListener('click',()=>selectDiscoveryTrail(t.id,true));card.append(mapAction);}if(active==='mine'){const status=document.createElement('span');status.className='community-state';status.textContent=t.visibility==='private'?'Privat':t.publication_status==='draft'?'Entwurf':'Öffentlich';card.append(status);}list.append(card);});
+ loadTrailCardPreviews(rows);
  if(!rows.length){const empty=document.createElement('div');empty.className='community-empty';empty.textContent=active==='mine'?'Deine Trails erscheinen hier. Lege deinen ersten Trail an.':'Keine Trails passen zu deiner Suche. Passe die Filter an oder setze die Filter zurück.';list.append(empty);}
  const count=document.createElement('p');count.id='communityResultCount';count.className='community-hint';count.textContent=rows.length+' von '+trails.length+' Trails angezeigt';list.before(count);if(communitySelectedTrailId)selectDiscoveryTrail(communitySelectedTrailId,false,false);
 }

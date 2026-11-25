@@ -4,6 +4,7 @@ import vm from "node:vm";
 
 const html = await readFile(new URL("../index.html", import.meta.url), "utf8");
 const js = await readFile(new URL("../community.js", import.meta.url), "utf8");
+const css = await readFile(new URL("../design-system.css", import.meta.url), "utf8");
 
 assert.match(html, /<script src="\.\/community\.js"><\/script>/);
 assert.match(html, /class="northbound-primary-links"/);
@@ -71,6 +72,11 @@ assert.ok(js.includes("renderGpxMetrics(statsPanel,stats)"));
 assert.ok(js.includes("community-route-section"));
 assert.ok(js.includes("aria-label", "Trail-Fotogalerie"));
 assert.ok(js.includes("function renderGpxMetrics(container,stats)"));
+assert.ok(js.includes("async function loadTrailCardPreviews(rows)"));
+assert.ok(js.includes("community-card-previews"));
+assert.ok(js.includes("container.append(item)"));
+assert.ok(css.includes(".community-detail>.community-gpx-metrics{display:grid;grid-template-columns:repeat(5"));
+assert.ok(css.includes(".community-card-previews{display:grid;grid-template-columns:repeat(2"));
 assert.ok(js.includes("Höhenprofil · Entfernung und Höhe"));
 assert.ok(js.includes("Entfernung und Höhe"));
 assert.ok(js.includes("Karte vergrößern"));
