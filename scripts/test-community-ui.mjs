@@ -26,6 +26,7 @@ assert.match(js, /community_trail_favorites/);
 assert.match(js, /community_reports/);
 assert.match(js, /t\.visibility==='public'&&t\.publication_status==='published'/);
 assert.match(js, /GPX-Datei herunterladen/);
+assert.match(js, /storage\.from\(BUCKET\)\.remove\(uploaded\)/);
 assert.match(js, /26214400/);
 assert.match(js, /Bitte anmelden/);
 assert.match(js, /Die Community-Datenbank ist noch nicht freigeschaltet/);
