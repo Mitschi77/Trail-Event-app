@@ -19,6 +19,8 @@ Deno.serve(async (req: Request) => {
   try {
     const user = await requireUser(req);
     if (!user) return json({ error: "authentication_required" }, 401);
+    const requestBody = await req.json().catch(() => ({}));
+    const mode = requestBody?.mode === "backfill" ? "backfill" : "recent";
 
     const admin = getAdminClient();
     const { data: connection, error: lookupError } = await admin.from("strava_connections")
@@ -77,14 +79,17 @@ Deno.serve(async (req: Request) => {
     const now = new Date();
     const fetched: any[] = [];
     let historyPage: any[] = [];
-    if (connection.last_synced_at) {
+    const shouldFetchHistory = !connection.history_complete &&
+      (mode === "backfill" || (!connection.last_synced_at && !connection.history_before));
+
+    if (mode === "recent" && connection.last_synced_at) {
       const incremental = new URLSearchParams({ per_page: String(PAGE_SIZE), page: "1" });
       const after = Math.max(0, Math.floor(new Date(connection.last_synced_at).getTime() / 1000) - 259200);
       incremental.set("after", String(after));
       fetched.push(...await fetchPage(incremental));
     }
 
-    if (!connection.history_complete) {
+    if (shouldFetchHistory) {
       const history = new URLSearchParams({ per_page: String(PAGE_SIZE), page: "1" });
       if (connection.history_before) history.set("before", String(connection.history_before));
       historyPage = await fetchPage(history);
@@ -121,27 +126,40 @@ Deno.serve(async (req: Request) => {
 
     let historyBefore = connection.history_before as number | null;
     let historyComplete = Boolean(connection.history_complete);
-    if (!historyComplete) {
+    if (shouldFetchHistory) {
       if (historyPage.length < PAGE_SIZE) {
         historyComplete = true;
         historyBefore = null;
       } else {
         const oldest = Math.min(...historyPage.map((item) => Math.floor(new Date(item.start_date).getTime() / 1000)).filter(Number.isFinite));
-        if (Number.isFinite(oldest)) historyBefore = oldest - 1;
+        if (!Number.isFinite(oldest)) return json({ error: "history_cursor_unavailable" }, 502);
+        historyBefore = oldest - 1;
       }
     }
 
-    const { error: cursorError } = await admin.from("strava_connections").update({
-      last_synced_at: now.toISOString(),
-      history_before: historyBefore,
-      history_complete: historyComplete,
+    const connectionUpdate: Record<string, unknown> = {
       updated_at: now.toISOString(),
-    }).eq("user_id", user.id);
+    };
+    if (mode === "recent") connectionUpdate.last_synced_at = now.toISOString();
+    if (shouldFetchHistory) {
+      connectionUpdate.history_before = historyBefore;
+      connectionUpdate.history_complete = historyComplete;
+    }
+    const { error: cursorError } = await admin.from("strava_connections").update(connectionUpdate)
+      .eq("user_id", user.id);
     if (cursorError) return json({ error: "sync_cursor_update_failed" }, 500);
 
+    const { count: totalActivities, error: countError } = await admin.from("strava_activities")
+      .select("provider_activity_id", { count: "exact", head: true })
+      .eq("user_id", user.id)
+      .eq("provider", "strava");
+    if (countError) return json({ error: "activity_count_failed" }, 500);
+
     return json({
+      mode,
       imported_or_updated: rows.length,
       history_page_count: historyPage.length,
+      total_activities: totalActivities ?? 0,
       history_complete: historyComplete,
       more_history_available: !historyComplete,
       last_synced_at: now.toISOString(),
