@@ -67,6 +67,7 @@ def main():
     """
     psql(sql=setup)
     psql(file=MIGRATION)
+    psql(sql='grant select on public.planner_data to authenticated;')
 
     tests = """
     insert into public.strava_race_activity_links(user_id, activity_id, run_record_key, stage_order, stage_name)
@@ -110,7 +111,25 @@ def main():
       end;
     end $$;
 
-    do $$
+    -- Verify the authenticated table policy exposes only the current user's links.
+    set role authenticated;
+    select set_config('request.jwt.claim.sub', '00000000-0000-0000-0000-000000000001', false);
+    do $
+    begin
+      if (select count(*) from public.strava_race_activity_links) <> 4 then
+        raise exception 'RLS should expose exactly the four links owned by the current user';
+      end if;
+    end $;
+    select set_config('request.jwt.claim.sub', '00000000-0000-0000-0000-000000000002', false);
+    do $
+    begin
+      if (select count(*) from public.strava_race_activity_links) <> 0 then
+        raise exception 'RLS leaked links belonging to another user';
+      end if;
+    end $;
+    reset role;
+
+    do $
     begin
       begin
         update public.planner_data
