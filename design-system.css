@@ -3692,3 +3692,14 @@ html,body{background:var(--nb-bg);color:var(--nb-white)}
 .community-detail-nav-button.is-active{border-color:#ff9b50;background:#55351f;color:#fff2e7}
 .community-detail-block[id^="community-detail-section-"]{scroll-margin-top:calc(var(--nb-header-height,64px) + 82px)}
 @media(max-width:620px){.community-detail-block{margin:18px 0 24px}.community-detail-block>h4{margin-bottom:10px}}
+
+
+/* NORTHBOUND fallback artwork for trails without uploaded photos */
+.community-card-cover-fallback{position:relative;display:block;width:100%;height:clamp(150px,24vw,220px);overflow:hidden;background:#102233}
+.community-card-cover-fallback svg{display:block;width:100%;height:100%;object-fit:cover}
+.community-card-cover-fallback span{position:absolute;right:12px;bottom:10px;padding:5px 9px;border:1px solid #ffffff30;border-radius:999px;background:#0b1724c9;color:#c5d4df;font-size:10px;font-weight:700;letter-spacing:.04em}
+.community-card-cover-fallback:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,#07152133,transparent 65%);pointer-events:none}
+.community-card>.community-description{display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.community-card>.community-metrics{align-items:center}
+.community-card>.community-state{margin-top:auto;align-self:flex-start}
+@media(max-width:620px){.community-card-cover-fallback{height:164px}}
