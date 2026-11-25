@@ -32,6 +32,14 @@ assert.ok(saveTrailSource.indexOf("const gpxStats=gpx?parseGpxText") < saveTrail
 assert.ok(!saveTrailSource.slice(0, saveTrailSource.indexOf("const gpxStats=gpx?parseGpxText")).includes("gpxStats"));
 assert.ok(js.includes("Startpunkt auf der öffentlichen Community-Karte anzeigen"));
 assert.ok(js.includes("Nur freigegebene Startpunkte werden angezeigt."));
+assert.ok(js.includes("async function updateMapLocation(t,enabled,gpx,feedback,button)"));
+assert.ok(js.includes("Startpunkt auf öffentlicher Karte freigeben"));
+assert.ok(js.includes("Startpunkt von öffentlicher Karte entfernen"));
+assert.ok(js.includes("coordinates={map_location_enabled:true,start_latitude:start.lat,start_longitude:start.lon}"));
+assert.ok(js.includes("map_location_enabled:false,start_latitude:null,start_longitude:null"));
+assert.ok(js.includes("const writtenReviews=(reviewResult.data||[]).filter(r=>String(r.review_text||'').trim())"));
+assert.ok(js.includes("text.textContent=r.review_text"));
+
 assert.ok(js.includes("communityDiscoveryRenderToken"));
 assert.ok(js.includes("function selectDiscoveryTrail(id,focusMap=false,scrollCard=true)"));
 assert.ok(js.includes("communityDiscoveryMarkersByTrail.set(t.id,marker)"));
