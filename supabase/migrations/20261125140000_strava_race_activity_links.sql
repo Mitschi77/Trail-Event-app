@@ -83,7 +83,7 @@ begin
     if jsonb_typeof(attempt_list) = 'array' then
       select item
         into attempt_item
-        from jsonb_array_elements(attempt_list) as item
+        from jsonb_array_elements(attempt_list) as elements(item)
        where item ->> 'date' = attempt_key[2]
          and coalesce((item ->> 'done')::boolean, false) is true
          and (
@@ -155,7 +155,7 @@ begin
                  then attempts -> regexp_replace(l.run_record_key, '::attempt::[0-9]{4}-[0-9]{2}-[0-9]{2}(::[0-9]+)?$', '')
                  else '[]'::jsonb
                end
-             ) as item
+             ) as elements(item)
             where item ->> 'date' = (regexp_match(l.run_record_key, '::attempt::([0-9]{4}-[0-9]{2}-[0-9]{2})'))[1]
               and coalesce((item ->> 'done')::boolean, false) is true
               and (
