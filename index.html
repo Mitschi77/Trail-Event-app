@@ -20125,7 +20125,7 @@ function saveYearAccommodation(id,uid){
  const safeUid=String(uid).replace(/[^a-zA-Z0-9_-]/g,'_'),val=suffix=>document.getElementById('yearHotel'+suffix+safeUid)?.value?.trim()||'',title=val('Title'),address=val('Address'),hotelUrl=val('Url'),checkIn=val('CheckIn'),checkOut=val('CheckOut'),plannedYear=val('Year'),guests=val('Guests'),priceText=val('Price'),paidText=val('Paid'),dueDate=val('DueDate'),status=document.getElementById('yearHotelStatus'+safeUid)?.value||'Offen';
  if(!title&&!address&&!checkIn&&!hotelUrl){alert('Bitte mindestens Hotelname, Adresse, Check-in oder Buchungslink eintragen.');return;}
  if(checkIn&&checkOut&&checkOut<checkIn){alert('Check-out darf nicht vor Check-in liegen.');return;}
- const price=priceText===''?undefined:Number(priceText),paidAmount=paidText===''?0:Number(paidText);
+ const price=priceText===''?undefined:Number(priceText),paidAmount=status==='Bezahlt'?(price??0):(paidText===''?0:Number(paidText));
  if((price!==undefined&&(!Number.isFinite(price)||price<0))||!Number.isFinite(paidAmount)||paidAmount<0||(price===undefined&&paidAmount>0)||(price!==undefined&&paidAmount>price)){alert('Bitte gültige Unterkunftskosten eintragen. Der bezahlte Betrag darf den Gesamtpreis nicht überschreiten; bei einer Zahlung muss ein Gesamtpreis hinterlegt sein.');return;}
  if(guests!==''&&(!Number.isInteger(Number(guests))||Number(guests)<1)){alert('Bitte eine gültige Gästezahl eintragen.');return;}
  const bookings=readPrivatePlannerObject('trailPrivateBookings'),previous=bookings[e.id]||{},stays=getAccommodationStays(previous),editRaw=document.getElementById('yearHotelEditIndex'+safeUid)?.value??'',editIndex=editRaw===''?-1:Number(editRaw);
