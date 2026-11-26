@@ -340,7 +340,7 @@
     "No separate official email address for Triatlon klub GPS was found. The official event contact info@caven.run is verified; request asks the event mailbox to forward to both joint organisers and identify rights holders."
   ],
   "rights": {
-    "status": "written_permission_pending",
+    "status": "contact_open_auto_discard_notice_received",
     "requestRecipient": "info@caven.run",
     "requestDate": "2026-11-26",
     "sentCopyFiled": true,
@@ -349,7 +349,14 @@
     "all12MaterialCategoriesAsked": true,
     "gpxRestrictionsAndSeparateLinkPermissionAsked": true,
     "commercialUseAskedSeparately": true,
-    "mediaKitAndBrandGuidelinesRequested": true
+    "mediaKitAndBrandGuidelinesRequested": true,
+    "autoResponseReceivedAt": "2026-11-26T01:24:27Z",
+    "autoResponseSummary": "The published info@caven.run mailbox automatically discards incoming email and directs correspondents to the S1 Trail contact page and WhatsApp assistant; no human rights decision received.",
+    "alternativeOfficialChannels": [
+      "https://www.s1trail.com/contact/",
+      "https://wa.me/39040411341"
+    ],
+    "humanRightsResponseFound": false
   },
   "integration": {
     "liveEventDatesChanged": false,
