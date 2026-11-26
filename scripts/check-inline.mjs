@@ -82,6 +82,18 @@ if (!signedOutHandler.includes("Sitzung beendet.") || signedOutHandler.includes(
   throw new Error("Unexpected auth sign-out must preserve local planner data.");
 }
 
+const logoutStart = html.indexOf("async function clearPersonalDeviceDataAfterLogout()");
+const logoutEnd = html.indexOf("async function plannerLogout()", logoutStart);
+const logoutCode = logoutStart >= 0 && logoutEnd > logoutStart ? html.slice(logoutStart, logoutEnd) : "";
+if (!logoutCode.includes("CLOUD_KEYS") || !logoutCode.includes("trailPlannerAccountBackup_v1_") ||
+    !logoutCode.includes("indexedDB.deleteDatabase(PRE_RESTORE_DB_NAME)") ||
+    !logoutCode.includes("sessionStorage.clear()") || !logoutCode.includes("cloudUser=null")) {
+  throw new Error("Explicit logout must clear all personal local stores and account backups.");
+}
+if (!html.includes("northboundLoggedOut") || !html.includes("event.persisted")) {
+  throw new Error("Logout must prevent private pages from reappearing from the browser back-forward cache.");
+}
+
 
 if (!html.includes("function plannerAccountBackupKey(userId)")) {
   throw new Error("Account-specific local planner backups are missing.");
