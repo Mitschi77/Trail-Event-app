@@ -20054,7 +20054,7 @@ function saveRaceTravelCost(id,uid){
  if(!requirePlannerLogin('deine persönlichen Reisekosten')||!cloudUser||!cloudReady)return;
  const e=EVENTS[id];if(!e?.id)return;const safeUid=String(uid).replace(/[^a-zA-Z0-9_-]/g,'_'),get=s=>document.getElementById('raceCost'+s+safeUid)?.value?.trim()||'',category=document.getElementById('raceCostCategory'+safeUid)?.value||'Sonstiges',label=get('Label'),amount=Number(get('Amount')),paidAmount=Number(get('Paid')||0),date=get('Date'),plannedYear=get('Year'),notes=get('Notes'),editRaw=document.getElementById('raceCostEdit'+safeUid)?.value??'',editIndex=editRaw===''?-1:Number(editRaw);
  if(!get('Amount')||!Number.isFinite(amount)||amount<0||!Number.isFinite(paidAmount)||paidAmount<0||paidAmount>amount){alert('Bitte gültige Beträge eintragen. Der bezahlte Betrag darf den Gesamtbetrag nicht überschreiten.');return;}
- if(!/^\\d{4}$/.test(plannedYear)){alert('Bitte ein gültiges vierstelliges Planungsjahr eintragen.');return;}
+ if(!/^\d{4}$/.test(plannedYear)){alert('Bitte ein gültiges vierstelliges Planungsjahr eintragen.');return;}
  const all=readPrivatePlannerObject('trailPrivateTravelCosts'),items=Array.isArray(all[e.id])?all[e.id]:[],item={id:editIndex>=0?(items[editIndex]?.id||'legacy'):'cost-'+Date.now().toString(36),category,label,amount,paidAmount,date,plannedYear,notes,updatedAt:new Date().toISOString()};
  if(editIndex>=0&&!items[editIndex]){alert('Dieser Kosteneintrag wurde zwischenzeitlich geändert. Bitte aktualisiere die Ansicht.');return;}
  all[e.id]=editIndex>=0?items.map((x,i)=>i===editIndex?item:x):[...items,item];
