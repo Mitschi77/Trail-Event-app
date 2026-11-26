@@ -101,12 +101,15 @@
       "date": "2026-11-26",
       "type": "joint_caven_run_rights_request",
       "recipient": "info@caven.run",
-      "status": "submitted_and_sent_copy_filed",
+      "status": "auto_discarded_by_mail_system",
       "subject": "Permission request – Čaven Run 2027 – independent non-commercial running app",
       "messageIdHeader": "<179565625745.77.14680370253005531148@me.com>",
       "deliveryConfirmed": false,
       "responseFound": false,
-      "note": "One bundled request addressed to the official Čaven Run event contact for both joint organisers Triatlon klub GPS and ASD SentieroUNO; asks the contact to forward to all relevant rights holders."
+      "note": "One bundled request addressed to the official Čaven Run event contact for both joint organisers Triatlon klub GPS and ASD SentieroUNO; asks the contact to forward to all relevant rights holders.",
+      "autoResponseAt": "2026-11-26T01:24:27Z",
+      "autoResponseMessage": "The official info@caven.run mailbox states that incoming email is automatically discarded and directs correspondents to https://www.s1trail.com/contact/ and https://wa.me/39040411341.",
+      "humanRightsReplyFound": false
     }
   ],
   "inboxCheck": {
@@ -359,7 +362,13 @@
         "user_download"
       ],
       "officialGpxLink": false,
-      "appMessage": "GPX gesperrt – keine ausdrückliche Freigabe dokumentiert; kein Download möglich."
+      "appMessage": "GPX gesperrt – keine ausdrückliche Freigabe dokumentiert; kein Download möglich.",
+      "mailboxStatus": "info@caven.run auto-discards incoming email; no substantive rights reply",
+      "alternativeOfficialChannels": [
+        "https://www.s1trail.com/contact/",
+        "https://wa.me/39040411341"
+      ],
+      "rightsHolderStatus": "open; Triatlon klub GPS direct email not verified"
     }
   },
   "routePermissionDefaults": {
@@ -371,9 +380,16 @@
     "routeSpecificWrittenPermissionRequired": true
   },
   "response": {
-    "status": "no_reply_found_as_of_2026-11-26",
+    "status": "no_substantive_rights_reply_as_of_2026-11-26; Caven mailbox auto-discard notice received",
     "routeSpecificPermissions": [],
-    "restrictionsConfirmedByOrganizer": []
+    "restrictionsConfirmedByOrganizer": [],
+    "autoResponses": [
+      {
+        "date": "2026-11-26T01:24:27Z",
+        "from": "info@caven.run",
+        "summary": "Automatic notice says email is discarded; directs to official S1 Trail contact page and WhatsApp. Not a rights decision."
+      }
+    ]
   },
   "integration": {
     "liveEventDatesChanged": false,
