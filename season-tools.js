@@ -344,7 +344,6 @@ async function loadStravaCockpit(){
  const user=typeof cloudUser!=='undefined'&&cloudUser?cloudUser.id:null;
  if(!user||typeof cloudClient==='undefined'||!cloudClient){stravaCockpitPanel(null,'Bitte anmelden und Strava im Bereich Training verbinden.');return;}
  if(stravaCockpitUser!==user){stravaCockpitUser=user;stravaCockpitRows=null;stravaCockpitRequest=null;}
- if(stravaCockpitRows){stravaCockpitPanel(stravaCockpitRows);return;}
  stravaCockpitPanel(null,'Importierte Aktivitäten werden abgerufen …');
  if(stravaCockpitRequest)return;
  const start=new Date();start.setDate(start.getDate()-90);
