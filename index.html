@@ -2398,6 +2398,16 @@ body{background:var(--bg);color:var(--ink)}
 .northbound-menu-group[open]>.more-nav-item:last-child{margin-bottom:12px!important}
 @media(max-width:700px){.northbound-primary-links .more-nav-item{min-height:52px!important;font-size:14px!important}}
 </style>
+
+<style id="northbound-menu-group-parity">
+/* Obere drei Akkordeon-Gruppen exakt an die Kartenoptik der unteren Menüpunkte angleichen */
+#appMenuDropdown .northbound-primary-links{display:block!important;width:100%!important;max-width:none!important;box-sizing:border-box!important;padding:0!important;margin:0 0 8px!important}
+#appMenuDropdown .northbound-primary-links>.northbound-menu-group{display:block!important;width:100%!important;max-width:none!important;box-sizing:border-box!important;margin:8px 0!important;padding:0!important;border:1px solid #34495b!important;border-radius:22px!important;background:#142230!important;overflow:hidden!important}
+#appMenuDropdown .northbound-primary-links>.northbound-menu-group>summary{display:flex!important;align-items:center!important;justify-content:space-between!important;box-sizing:border-box!important;width:100%!important;min-height:68px!important;padding:13px 26px!important;border:0!important;border-radius:0!important;color:#eaf3f8!important;font-size:16px!important;font-weight:750!important;background:transparent!important}
+#appMenuDropdown .northbound-primary-links>.northbound-menu-group[open]>summary{border-bottom:1px solid #34495b!important}
+@media(max-width:700px){#appMenuDropdown .northbound-primary-links{width:100%!important}#appMenuDropdown .northbound-primary-links>.northbound-menu-group{width:100%!important;margin:8px 0!important}#appMenuDropdown .northbound-primary-links>.northbound-menu-group>summary{min-height:68px!important;padding:13px 26px!important;font-size:16px!important}}
+</style>
+
 </head><script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script><body>
 <header><div class="top"><div class="brand"><img src="./northbound-logo.svg" alt="NORTHBOUND Mountain Motion" width="112" height="56"><span class="brand-wordmark">NORTHBOUND</span></div><div class="pill"><button id="appMenuButton" type="button" class="app-menu-button" aria-label="Hauptmenü öffnen" aria-expanded="false" aria-controls="appMenuDropdown" title="Hauptmenü">☰</button><div id="appMenuDropdown" class="app-menu-dropdown" role="navigation" aria-label="Hauptmenü" hidden>
 <span id="cloudProfileButton" hidden aria-hidden="true"></span><div class="app-menu-heading"><span>Menü</span><button id="closeAppMenuButton" type="button" class="secondary" aria-label="Menü schließen">Schließen ✕</button></div>
