@@ -2377,6 +2377,27 @@ body{background:var(--bg);color:var(--ink)}
 </style>
 
 <style id="northbound-menu-accordion">.northbound-primary-links{padding:0;margin:0 0 8px;border:0}.northbound-menu-group{margin:8px 0}.northbound-menu-group>summary{min-height:46px;font-size:13px}.northbound-menu-group>.more-nav-item{margin-left:8px;width:calc(100% - 16px)}</style>
+
+<style id="northbound-menu-link-cards-fix">
+/* Einheitliche Kartenoptik für Unterpunkte in den oberen Menügruppen */
+.northbound-primary-links .more-nav-item{
+ display:flex!important;align-items:center!important;justify-content:flex-start!important;
+ width:calc(100% - 24px)!important;min-height:52px!important;margin:8px 12px!important;
+ padding:12px 14px!important;border:1px solid #34495b!important;border-radius:11px!important;
+ background:#172532!important;color:#eaf2f7!important;font-size:14px!important;font-weight:700!important;
+ text-align:left!important;box-shadow:inset 0 1px 0 #ffffff08!important;outline:none!important
+}
+.northbound-primary-links .more-nav-item:hover,
+.northbound-primary-links .more-nav-item:focus-visible{
+ border-color:#58758a!important;background:#1b2d3c!important;color:#f5f9fc!important;outline:2px solid #7fd8ff!important;outline-offset:1px!important
+}
+.northbound-primary-links .more-nav-item[aria-pressed="true"]{
+ border-color:#ff6a00!important;background:#30251f!important;color:#ffb078!important;box-shadow:inset 3px 0 0 #ff6a00!important
+}
+.northbound-menu-group>summary{border-radius:10px}
+.northbound-menu-group[open]>.more-nav-item:last-child{margin-bottom:12px!important}
+@media(max-width:700px){.northbound-primary-links .more-nav-item{min-height:52px!important;font-size:14px!important}}
+</style>
 </head><script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script><body>
 <header><div class="top"><div class="brand"><img src="./northbound-logo.svg" alt="NORTHBOUND Mountain Motion" width="112" height="56"><span class="brand-wordmark">NORTHBOUND</span></div><div class="pill"><button id="appMenuButton" type="button" class="app-menu-button" aria-label="Hauptmenü öffnen" aria-expanded="false" aria-controls="appMenuDropdown" title="Hauptmenü">☰</button><div id="appMenuDropdown" class="app-menu-dropdown" role="navigation" aria-label="Hauptmenü" hidden>
 <span id="cloudProfileButton" hidden aria-hidden="true"></span><div class="app-menu-heading"><span>Menü</span><button id="closeAppMenuButton" type="button" class="secondary" aria-label="Menü schließen">Schließen ✕</button></div>
