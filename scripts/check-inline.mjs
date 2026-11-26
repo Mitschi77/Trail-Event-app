@@ -98,6 +98,12 @@ if (!html.includes("northboundLoggedOut") || !html.includes("event.persisted") |
 }
 
 
+if (html.includes('<b id="personalUtmbIndex">436</b>') ||
+    !html.includes("if(!cloudUser){const index=document.getElementById('personalUtmbIndex')") ||
+    !html.includes("Melde dich an, um dein persönliches Saison-Cockpit zu sehen.")) {
+  throw new Error("Personal UTMB index and season planning must stay hidden until an authenticated user is active.");
+}
+
 if (!html.includes("function plannerAccountBackupKey(userId)")) {
   throw new Error("Account-specific local planner backups are missing.");
 }
