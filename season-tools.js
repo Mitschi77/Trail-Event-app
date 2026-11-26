@@ -34,7 +34,7 @@ function panel(){
 }
 const css=document.createElement('style');css.textContent='.season-training-panel{margin:14px 0;padding:14px;border:1px solid var(--line);border-radius:14px;background:var(--card)}.season-training-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.season-training-grid>div{padding:10px;border:1px solid var(--line);border-radius:10px;min-width:0}.season-training-grid b,.season-training-grid span,.season-training-grid small{display:block}.season-training-grid b{font-size:16px}.season-training-grid span,.season-training-grid small{font-size:11px;color:var(--muted)}.season-training-track{height:7px;background:var(--line);border-radius:8px;overflow:hidden;margin-top:7px}.season-training-track i{display:block;height:100%;background:#FF6A00}.season-training-settings{margin-top:12px}.season-training-settings summary{cursor:pointer;font-weight:700;color:#FF6A00;padding:8px 0}.season-training-note{display:block;font-size:12px;font-weight:700;color:var(--muted)}.season-training-note textarea{display:block;width:100%;margin:5px 0 9px;padding:9px;border:1px solid var(--line);border-radius:8px;background:var(--bg);color:var(--ink);font:inherit}@media(max-width:380px){.season-training-grid{grid-template-columns:1fr}}';document.head.appendChild(css);
 const original=window.renderSeasonEnhancements;if(typeof original!=='function')return;
-window.renderSeasonEnhancements=function(){original();const root=document.getElementById('seasonTimeline');if(!root)return;root.querySelector('.season-training-panel')?.remove();root.insertAdjacentHTML('afterbegin',panel());const save=document.getElementById('saveSeasonTraining');save?.addEventListener('click',()=>{const next={...settings()};document.querySelectorAll('[data-train-setting]').forEach(el=>{const k=el.dataset.trainSetting;next[k]=k==='notes'?el.value:Math.max(0,Number(el.value)||0);});if(next.weeklyKm>500||next.weeklyHm>20000||next.sessions>14||next.longRun>150){document.getElementById('seasonTrainingStatus').textContent='Bitte prüfe die eingegebenen Zielwerte.';return;}seasonPriorities[STORE]=next;seasonSave();document.getElementById('seasonTrainingStatus').textContent='Trainingsziele gespeichert und mit deiner Saisonplanung synchronisiert.';});};
+window.renderSeasonEnhancements=function(){original();const root=document.getElementById('seasonCockpit');if(!root)return;root.querySelector('.season-training-panel')?.remove();root.insertAdjacentHTML('beforeend',panel());const save=document.getElementById('saveSeasonTraining');save?.addEventListener('click',()=>{const next={...settings()};document.querySelectorAll('[data-train-setting]').forEach(el=>{const k=el.dataset.trainSetting;next[k]=k==='notes'?el.value:Math.max(0,Number(el.value)||0);});if(next.weeklyKm>500||next.weeklyHm>20000||next.sessions>14||next.longRun>150){document.getElementById('seasonTrainingStatus').textContent='Bitte prüfe die eingegebenen Zielwerte.';return;}seasonPriorities[STORE]=next;seasonSave();document.getElementById('seasonTrainingStatus').textContent='Trainingsziele gespeichert und mit deiner Saisonplanung synchronisiert.';});};
 window.renderSeasonEnhancements();
 
 
@@ -316,4 +316,25 @@ if(typeof originalSeasonStatusRender==='function'){
     sportYearScript.dataset.sportYearCore = '1';
     document.head.appendChild(sportYearScript);
   }
+
+
+/* Keep the live training summary mounted when the cockpit is refreshed. */
+const originalCockpitRender=window.renderSeasonCockpit;
+if(typeof originalCockpitRender==='function'){
+ window.renderSeasonCockpit=function(){
+  originalCockpitRender();
+  const root=document.getElementById('seasonCockpit');
+  if(!root)return;
+  root.querySelector('.season-training-panel')?.remove();
+  root.insertAdjacentHTML('beforeend',panel());
+  const save=document.getElementById('saveSeasonTraining');
+  save?.addEventListener('click',()=>{
+   const next={...settings()};
+   document.querySelectorAll('[data-train-setting]').forEach(el=>{const k=el.dataset.trainSetting;next[k]=k==='notes'?el.value:Math.max(0,Number(el.value)||0);});
+   if(next.weeklyKm>500||next.weeklyHm>20000||next.sessions>14||next.longRun>150){document.getElementById('seasonTrainingStatus').textContent='Bitte prüfe die eingegebenen Zielwerte.';return;}
+   seasonPriorities[STORE]=next;seasonSave();document.getElementById('seasonTrainingStatus').textContent='Trainingsziele gespeichert und mit deiner Saisonplanung synchronisiert.';
+  });
+ };
+ window.renderSeasonCockpit();
+}
 })();
