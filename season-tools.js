@@ -337,4 +337,54 @@ if(typeof originalCockpitRender==='function'){
  };
  window.renderSeasonCockpit();
 }
+
+
+/* Read imported Strava activities separately from completed race records.
+   This keeps Training and Competitions as independent data domains. */
+let stravaCockpitUser=null,stravaCockpitRows=null,stravaCockpitRequest=null;
+function stravaWeekStart(date){const d=new Date(date);d.setHours(0,0,0,0);d.setDate(d.getDate()-((d.getDay()+6)%7));return d;}
+function stravaMetric(rows){return rows.reduce((v,a)=>({km:v.km+(Number(a.distance_m)||0)/1000,hm:v.hm+(Number(a.total_elevation_gain_m)||0),seconds:v.seconds+(Number(a.moving_time_seconds)||0),count:v.count+1}),{km:0,hm:0,seconds:0,count:0});}
+function stravaCockpitPanel(rows,message){
+ const root=document.getElementById('seasonCockpit');if(!root)return;
+ root.querySelector('#strava-cockpit-panel')?.remove();
+ const box=document.createElement('section');box.id='strava-cockpit-panel';box.className='season-training-panel';
+ if(!rows){box.innerHTML='<div class="season-training-heading"><div><span class="nb-eyebrow">NORTHBOUND · TRAINING</span><h3>Dein Training aus Strava</h3><p>'+escText(message||'Trainingsaktivitäten werden geladen …')+'</p></div></div>';root.appendChild(box);return;}
+ const now=new Date(),week=stravaWeekStart(now),prev=new Date(week);prev.setDate(prev.getDate()-7);
+ const currentRows=rows.filter(a=>a.started_at&&new Date(a.started_at)>=week),previousRows=rows.filter(a=>a.started_at&&new Date(a.started_at)>=prev&&new Date(a.started_at)<week);
+ const current=stravaMetric(currentRows),previous=stravaMetric(previousRows);
+ const fmt=n=>Number(n||0).toLocaleString('de-DE',{maximumFractionDigits:1});
+ const hours=(n)=>((n||0)/3600).toLocaleString('de-DE',{maximumFractionDigits:1})+' h';
+ const types={};
+ currentRows.forEach(a=>{const raw=String(a.sport_type||'Other').toLowerCase();let label=/run|trail|hike|walk/.test(raw)?'Run & Trail':/ride|bike|cycling|virtualride/.test(raw)?'Bike':/yoga/.test(raw)?'Yoga':raw==='other'?'Weitere':String(a.sport_type||'Weitere');types[label]=(types[label]||0)+1;});
+ const typeHtml=Object.entries(types).sort((a,b)=>b[1]-a[1]).map(([label,count])=>'<span class="strava-sport-chip">'+escText(label)+' <b>'+count+'</b></span>').join('')||'<span class="plan-meta">Noch keine Aktivitäten in dieser Woche</span>';
+ const stat=(value,label)=>'<div class="season-kpi"><strong>'+value+'</strong><span>'+label+'</span></div>';
+ box.innerHTML='<div class="season-training-heading"><div><span class="nb-eyebrow">NORTHBOUND · TRAINING</span><h3>Deine Strava-Woche</h3><p>Importierte Trainingsaktivitäten – unabhängig von deinen Wettkampfergebnissen.</p></div><span class="season-training-period">AKTUELLE WOCHE</span></div><div class="season-dashboard-stats">'+stat(fmt(current.km)+' km','Distanz')+stat(Math.round(current.hm).toLocaleString('de-DE')+' hm','Höhenmeter')+stat(current.count,'Aktivitäten')+stat(hours(current.seconds),'Bewegungszeit')+'</div><div class="strava-sport-breakdown"><strong>Sportarten diese Woche</strong><div>'+typeHtml+'</div></div><p class="season-training-note">Vorwoche: '+fmt(previous.km)+' km · '+Math.round(previous.hm).toLocaleString('de-DE')+' hm · '+previous.count+' Aktivitäten · '+hours(previous.seconds)+'. Grundlage: '+rows.length+' importierte Strava-Aktivitäten im geladenen Zeitraum.</p></div>';
+ root.appendChild(box);
+}
+async function loadStravaCockpit(){
+ const root=document.getElementById('seasonCockpit');if(!root)return;
+ const user=typeof cloudUser!=='undefined'&&cloudUser?cloudUser.id:null;
+ if(!user||typeof cloudClient==='undefined'||!cloudClient){stravaCockpitPanel(null,'Bitte anmelden und Strava im Bereich Training verbinden.');return;}
+ if(stravaCockpitUser!==user){stravaCockpitUser=user;stravaCockpitRows=null;stravaCockpitRequest=null;}
+ if(stravaCockpitRows){stravaCockpitPanel(stravaCockpitRows);return;}
+ stravaCockpitPanel(null,'Importierte Aktivitäten werden abgerufen …');
+ if(stravaCockpitRequest)return;
+ const start=new Date();start.setDate(start.getDate()-90);
+ stravaCockpitRequest=(async()=>{
+  const {data,error}=await cloudClient.from('strava_activities').select('provider_activity_id,name,sport_type,started_at,distance_m,moving_time_seconds,total_elevation_gain_m').gte('started_at',start.toISOString()).order('started_at',{ascending:false}).limit(1000);
+  if(error)throw error;
+  stravaCockpitRows=Array.isArray(data)?data:[];
+  stravaCockpitPanel(stravaCockpitRows,stravaCockpitRows.length?'':'Noch keine Strava-Aktivitäten importiert. Öffne Training und synchronisiere Strava.');
+ })().catch(error=>{stravaCockpitPanel(null,'Strava-Daten konnten nicht geladen werden. Bitte Verbindung und Synchronisation im Bereich Training prüfen.');}).finally(()=>{stravaCockpitRequest=null;});
+ await stravaCockpitRequest;
+}
+const stravaCockpitStyle=document.createElement('style');
+stravaCockpitStyle.textContent='#strava-cockpit-panel .season-dashboard-stats{margin-top:12px}#strava-cockpit-panel .season-kpi{min-width:0}#strava-cockpit-panel .season-kpi strong{font-size:19px}#strava-cockpit-panel .strava-sport-breakdown{margin-top:13px}#strava-cockpit-panel .strava-sport-breakdown>strong{font-size:12px}#strava-cockpit-panel .strava-sport-breakdown>div{display:flex;flex-wrap:wrap;gap:7px;margin-top:8px}.strava-sport-chip{display:inline-flex;align-items:center;gap:7px;padding:6px 10px;border:1px solid var(--line);border-radius:999px;background:var(--bg);font-size:11px}.strava-sport-chip b{color:#FF6A00}';
+document.head.querySelector('#strava-cockpit-style')?.remove();stravaCockpitStyle.id='strava-cockpit-style';document.head.appendChild(stravaCockpitStyle);
+const cockpitRenderWithStrava=window.renderSeasonCockpit;
+if(typeof cockpitRenderWithStrava==='function'){
+ window.renderSeasonCockpit=function(){cockpitRenderWithStrava();loadStravaCockpit();};
+ window.renderSeasonCockpit();
+}
+
 })();
