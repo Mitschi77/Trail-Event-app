@@ -2415,6 +2415,34 @@ body{background:var(--bg);color:var(--ink)}
 @media(max-width:700px){#appMenuDropdown .northbound-primary-links{width:100%!important}#appMenuDropdown .northbound-primary-links>.northbound-menu-group{width:100%!important;margin:8px 0!important}#appMenuDropdown .northbound-primary-links>.northbound-menu-group>summary{min-height:48px!important;padding:13px 14px!important;font-size:13px!important}}
 </style>
 
+
+<style id="northbound-open-contour-surfaces">
+/* Fewer nested panels let the alpine contour artwork breathe through. */
+#yearTab .season-dashboard{
+  border:0!important;
+  background:transparent!important;
+  box-shadow:none!important;
+  padding:8px 0!important;
+}
+#yearTab .season-dashboard:after{opacity:.45}
+#yearTab .season-next-race{
+  border:0!important;
+  border-left:4px solid #FF6A00!important;
+  border-radius:0 13px 13px 0!important;
+  background:linear-gradient(105deg,#172631bb 0%,#101a2380 100%)!important;
+  box-shadow:none!important;
+}
+#yearTab .season-kpi{
+  background:linear-gradient(145deg,#172631a8,#101a2370)!important;
+  border:1px solid #7fd8ff35!important;
+  box-shadow:none!important;
+}
+@media(max-width:760px){
+  #yearTab .season-dashboard{padding:6px 0!important}
+  #yearTab .season-next-race{padding:14px 15px!important}
+}
+</style>
+
 </head><script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script><body><div id="nbMontBlancTopo" aria-hidden="true"></div>
 <header><div class="top"><div class="brand"><img src="./northbound-logo.svg" alt="NORTHBOUND Mountain Motion" width="112" height="56"><span class="brand-wordmark">NORTHBOUND</span></div><div class="pill"><button id="appMenuButton" type="button" class="app-menu-button" aria-label="Hauptmenü öffnen" aria-expanded="false" aria-controls="appMenuDropdown" title="Hauptmenü">☰</button><div id="appMenuDropdown" class="app-menu-dropdown" role="navigation" aria-label="Hauptmenü" hidden>
 <span id="cloudProfileButton" hidden aria-hidden="true"></span><div class="app-menu-heading"><span>Menü</span><button id="closeAppMenuButton" type="button" class="secondary" aria-label="Menü schließen">Schließen ✕</button></div>
