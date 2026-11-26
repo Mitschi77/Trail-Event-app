@@ -90,6 +90,13 @@ if (!logoutCode.includes("CLOUD_KEYS") || !logoutCode.includes("trailPlannerAcco
     !logoutCode.includes("sessionStorage.clear()") || !logoutCode.includes("cloudUser=null")) {
   throw new Error("Explicit logout must clear all personal local stores and account backups.");
 }
+if (!html.includes("function updatePersonalUtmbIndexVisibility()") ||
+    !html.includes("personalUtmbIndexStat") ||
+    !html.includes("if(!(cloudUser&&cloudReady))") ||
+    !html.includes("deine persönliche Saisonplanung, Laufhistorie und deinen UTMB Index zu sehen")) {
+  throw new Error("Logged-out cockpit must not expose personal race planning, running history, or UTMB Index.");
+}
+
 if (!html.includes("northboundLoggedOut") || !html.includes("event.persisted") ||
     !html.includes("db.onversionchange=()=>db.close()") ||
     !html.includes("northboundLogoutSignal") || !html.includes("new BroadcastChannel('northbound-auth')") ||
