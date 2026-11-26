@@ -33,20 +33,26 @@
           "2027-06-20"
         ],
         "routes": 5
-      }
-    ],
-    "relatedSeriesWithoutConfirmed2027Edition": [
-      {
-        "name": "Sardon Run",
-        "lastEditionFound": 2026,
-        "status": "no 2027 date or route schedule found"
       },
       {
+        "eventId": "sardon-run-2027",
+        "name": "Sardon Run",
+        "date": "2027-08-21",
+        "routeStatus": "final route list pending; Sardonzin redesign announced; 100 km non-stop in preparation"
+      },
+      {
+        "eventId": "caven-run-2027-preview",
         "name": "Čaven Run",
-        "lastEditionFound": 2026,
-        "status": "no 2027 date or route schedule found"
+        "date": null,
+        "routeStatus": "2027 preview: 60 km ultra and new Čaven Vrh; final date/routes pending",
+        "jointOrganisers": [
+          "Triatlon klub GPS",
+          "ASD SentieroUNO"
+        ],
+        "officialEventContact": "info@caven.run"
       }
-    ]
+    ],
+    "relatedSeriesWithoutConfirmed2027Edition": []
   },
   "correspondence": [
     {
@@ -79,6 +85,28 @@
       "deliveryConfirmed": false,
       "responseFound": false,
       "note": "Follow-up sent in the existing thread after checking Sent and Inbox; no duplicate first request was sent."
+    },
+    {
+      "date": "2026-11-26",
+      "type": "scope_correction_sardon_and_caven",
+      "recipient": "info@s1trail.com",
+      "status": "submitted_and_sent_copy_filed",
+      "subject": "Re: Itemised permission request – La Corsa della Bora 2027 – independent non-commercial app",
+      "messageIdHeader": "<179565624119.118.436474513108950591@me.com>",
+      "deliveryConfirmed": false,
+      "responseFound": false,
+      "note": "Corrects the earlier statement that no Sardon 2027 date was found; adds Sardon Run 2027 (21 August) and asks who controls rights for jointly organised Čaven Run."
+    },
+    {
+      "date": "2026-11-26",
+      "type": "joint_caven_run_rights_request",
+      "recipient": "info@caven.run",
+      "status": "submitted_and_sent_copy_filed",
+      "subject": "Permission request – Čaven Run 2027 – independent non-commercial running app",
+      "messageIdHeader": "<179565625745.77.14680370253005531148@me.com>",
+      "deliveryConfirmed": false,
+      "responseFound": false,
+      "note": "One bundled request addressed to the official Čaven Run event contact for both joint organisers Triatlon klub GPS and ASD SentieroUNO; asks the contact to forward to all relevant rights holders."
     }
   ],
   "inboxCheck": {
@@ -279,6 +307,59 @@
       "officialPublicGpxAvailableNow": false,
       "metadataInspected": false,
       "linkPermission": "not confirmed; separate permission requested"
+    },
+    "sardonRun2027": {
+      "eventId": "sardon-run-2027",
+      "routes2027": "not yet finalised; do not reuse 2026 route files or distances as 2027 data",
+      "officialNoticeStatus": "no route-specific 2027 GPX restriction notice verified yet",
+      "official2026GpsLink": "A GPS-track download link is visible on the official 2026 Sardon Ultra Stage page; it was not opened or downloaded.",
+      "sourceUrls": [
+        "https://www.sardon.run/de/",
+        "https://www.sardon.run/sardon-ultra-stage/"
+      ],
+      "permissionStatus": "not_granted",
+      "binaryDownloaded": false,
+      "metadataInspected": false,
+      "appMustBlock": [
+        "fetch",
+        "load",
+        "import",
+        "store",
+        "process",
+        "in_app_map_display",
+        "user_download"
+      ],
+      "officialGpxLink": false,
+      "appMessage": "GPX gesperrt – keine ausdrückliche Freigabe dokumentiert; kein Download möglich."
+    },
+    "cavenRun2027": {
+      "eventId": "caven-run-2027-preview",
+      "routes2027": "not finalised; official preview mentions a 60 km ultra and a new Čaven Vrh, no event date found",
+      "jointOrganisers": [
+        "Triatlon klub GPS",
+        "ASD SentieroUNO"
+      ],
+      "officialEventContact": "info@caven.run",
+      "officialMapIframes2026": [
+        "https://tracedetrail.fr/en/iframe/10661",
+        "https://tracedetrail.fr/en/iframe/10662",
+        "https://tracedetrail.fr/fr/iframe/10845"
+      ],
+      "officialNoticeStatus": "no explicit GPX restriction notice found in accessible official page text; direct Trace de Trail pages were not accessible and GPX metadata was not inspected",
+      "permissionStatus": "not_granted",
+      "binaryDownloaded": false,
+      "metadataInspected": false,
+      "appMustBlock": [
+        "fetch",
+        "load",
+        "import",
+        "store",
+        "process",
+        "in_app_map_display",
+        "user_download"
+      ],
+      "officialGpxLink": false,
+      "appMessage": "GPX gesperrt – keine ausdrückliche Freigabe dokumentiert; kein Download möglich."
     }
   },
   "routePermissionDefaults": {
