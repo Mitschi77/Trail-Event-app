@@ -1,0 +1,362 @@
+{
+  "schemaVersion": 1,
+  "preparedAt": "2026-11-26",
+  "event": {
+    "eventId": "caven-run-2027-preview",
+    "name": "Čaven Run",
+    "location": "Lokavec, Slovenia",
+    "edition2027": {
+      "date": null,
+      "status": "preview_only",
+      "announcedFormats": [
+        "60 km Ultra",
+        "new Čaven Vrh"
+      ],
+      "finalRouteDetails": "not published"
+    }
+  },
+  "organisers": [
+    {
+      "name": "Triatlon klub GPS",
+      "role": "joint organiser",
+      "officialAddress": "Ulica Milana Klemenčiča 5, 5270 Ajdovščina, Slovenia",
+      "email": "not published on the official event page; not guessed"
+    },
+    {
+      "name": "ASD SentieroUNO",
+      "role": "joint organiser",
+      "officialAddress": "Strada Costiera 158, 34151 Trieste, Italy",
+      "email": "info@s1trail.com",
+      "emailSource": "https://www.alpeadriaultra.com/en/privacy-policy/"
+    }
+  ],
+  "officialEventContact": {
+    "email": "info@caven.run",
+    "source": "https://www.caven.run/sl/",
+    "verified": true,
+    "scope": "official Čaven Run event contact; request asks it to forward to both joint organisers and identify rights holders"
+  },
+  "sourcePolicy": {
+    "descriptions": "Only independent factual summaries are stored; no official prose copied.",
+    "protectedMaterial": "No logos, images, map tiles, profile images or GPX files copied.",
+    "historicalData": "2026 route values are historical only and must not be reused as 2027 values without written organiser confirmation."
+  },
+  "sources": [
+    {
+      "url": "https://www.caven.run/sl/",
+      "type": "official_event_overview_and_contact",
+      "verified": true
+    },
+    {
+      "url": "https://www.caven.run/en/",
+      "type": "official_event_page",
+      "verified": true
+    },
+    {
+      "url": "https://www.caven.run/sl/#",
+      "type": "official_rules_and_event_details",
+      "verified": true,
+      "notes": "Page includes the 2026 rules, joint organisers and 2027 preview."
+    },
+    {
+      "url": "https://tracedetrail.fr/en/iframe/10661",
+      "type": "organiser_embedded_map_profile",
+      "verified": true,
+      "route": "Čaven Trail 2026"
+    },
+    {
+      "url": "https://tracedetrail.fr/en/iframe/10662",
+      "type": "organiser_embedded_map_profile",
+      "verified": true,
+      "route": "Čaven Vertikal 2026"
+    },
+    {
+      "url": "https://tracedetrail.fr/fr/iframe/10845",
+      "type": "organiser_embedded_map_profile",
+      "verified": true,
+      "route": "Čaven Vrh 2026"
+    }
+  ],
+  "historicalEdition": {
+    "year": 2026,
+    "date": "2026-11-21",
+    "originallyScheduled": "2026-10-24",
+    "postponed": true,
+    "postponementReason": "official event page cites forecast heavy rain, possible snow at altitude and strong bora; mountain rescue consultation",
+    "location": "Lokavec, Slovenia"
+  },
+  "historicalRoutes": [
+    {
+      "routeId": "caven-trail-18-1354-2026",
+      "name": "Čaven Trail",
+      "edition": 2026,
+      "date": "2026-11-21",
+      "startTime": "09:30",
+      "start": "Lokavec",
+      "finish": "Lokavec",
+      "distanceKm": 18,
+      "elevationGainM": 1354,
+      "elevationLossM": null,
+      "courseType": "loop",
+      "timeLimitMinutes": 360,
+      "latestFinish": "15:30",
+      "summary": "Loop from Lokavec climbing through forest to Koča Antona Bavčerja on Čaven, continuing along the ridge to Kucelj before descending and returning to Lokavec. The route combines a steep forest ascent, exposed ridge sections and a descending trail back to the village.",
+      "terrain": [
+        "steep forest paths",
+        "mountain trails",
+        "ridge path",
+        "descending woodland trail"
+      ],
+      "highlights": [
+        "Lokavec",
+        "Koča Antona Bavčerja",
+        "Kucelj",
+        "views over the Vipava Valley, Karst and Gulf of Trieste"
+      ],
+      "aidPoints": [
+        {
+          "point": "Potok",
+          "km": 2.4
+        },
+        {
+          "point": "Koča Antona Bavčerja",
+          "km": 4.5
+        },
+        {
+          "point": "Srednječavenska pot",
+          "km": 8.6
+        }
+      ],
+      "timeGates": [
+        {
+          "point": "Koča Antona Bavčerja",
+          "km": 4.5,
+          "time": "12:30"
+        },
+        {
+          "point": "Srednječavenska pot",
+          "km": 8.6,
+          "time": "13:59"
+        }
+      ],
+      "catering": "Official rules describe food and drink at aid stations; participants must be self-sufficient between checkpoints. Bottles are topped up only with water or energy drink; no aid-station menu by route is published in the accessible page.",
+      "mandatoryEquipment": [
+        "mobile phone",
+        "personal eco cup",
+        "headlamp for Trail and Vrh",
+        "additional bad-weather equipment may be required"
+      ],
+      "mapProfile": {
+        "status": "official page embeds Trace de Trail map/profile",
+        "officialPage": "https://www.caven.run/sl/",
+        "traceDeTrailIframe": "https://tracedetrail.fr/en/iframe/10661"
+      },
+      "gpx": {
+        "permissionStatus": "not_granted",
+        "officialDownloadLinkFound": false,
+        "explicitRestrictionNotice": "not found in accessible official page text",
+        "directTracePage": "not accessible in this review; only embedded iframe identified",
+        "binaryDownloaded": false,
+        "metadataInspected": false,
+        "fileFetch": false,
+        "loadImport": false,
+        "store": false,
+        "process": false,
+        "mapDisplay": false,
+        "userDownload": false,
+        "officialGpxLink": false,
+        "appMessage": "GPX gesperrt – keine ausdrückliche Freigabe dokumentiert; kein Download möglich."
+      }
+    },
+    {
+      "routeId": "caven-vertikal-4-3-1081-2026",
+      "name": "Čaven Vertikal",
+      "edition": 2026,
+      "date": "2026-11-21",
+      "startTime": "11:00",
+      "start": "Lokavec",
+      "finish": "Koča Antona Bavčerja",
+      "distanceKm": 4.3,
+      "elevationGainM": 1081,
+      "elevationLossM": null,
+      "courseType": "point-to-point",
+      "timeLimitMinutes": 133,
+      "latestFinish": "13:13",
+      "summary": "A direct, steep vertical ascent from Lokavec to Koča Antona Bavčerja on Čaven. The route is described by the organiser as a vertical kilometre, with almost continuous climbing over a short distance.",
+      "terrain": [
+        "steep mountain trail",
+        "forest ascent",
+        "upper mountain path"
+      ],
+      "highlights": [
+        "Lokavec",
+        "Koča Antona Bavčerja",
+        "Čaven summit area",
+        "views towards the Vipava Valley"
+      ],
+      "aidPoints": [
+        {
+          "point": "Intermediate refreshment",
+          "km": 2.4
+        },
+        {
+          "point": "Koča Antona Bavčerja",
+          "km": 4.3
+        }
+      ],
+      "timeGates": [],
+      "catering": "Two refreshment points are listed: km 2.4 and the finish. No itemised menu published.",
+      "mandatoryEquipment": [
+        "mobile phone",
+        "personal eco cup",
+        "additional bad-weather equipment may be required"
+      ],
+      "mapProfile": {
+        "status": "official page embeds Trace de Trail map/profile",
+        "officialPage": "https://www.caven.run/sl/",
+        "traceDeTrailIframe": "https://tracedetrail.fr/en/iframe/10662"
+      },
+      "gpx": {
+        "permissionStatus": "not_granted",
+        "officialDownloadLinkFound": false,
+        "explicitRestrictionNotice": "not found in accessible official page text",
+        "directTracePage": "not accessible in this review; only embedded iframe identified",
+        "binaryDownloaded": false,
+        "metadataInspected": false,
+        "fileFetch": false,
+        "loadImport": false,
+        "store": false,
+        "process": false,
+        "mapDisplay": false,
+        "userDownload": false,
+        "officialGpxLink": false,
+        "appMessage": "GPX gesperrt – keine ausdrückliche Freigabe dokumentiert; kein Download möglich."
+      }
+    },
+    {
+      "routeId": "caven-vrh-23-1535-2026",
+      "name": "Čaven Vrh",
+      "edition": 2026,
+      "date": "2026-11-21",
+      "startTime": "09:00",
+      "start": "Lokavec",
+      "finish": "Lokavec",
+      "distanceKm": 23,
+      "elevationGainM": 1535,
+      "elevationLossM": null,
+      "courseType": "loop",
+      "timeLimitMinutes": 480,
+      "latestFinish": "17:00",
+      "summary": "Mountain loop from Lokavec through forest to Koča Antona Bavčerja, then along the ridge to Kucelj and westwards across Veliki rob and Čaven to Sekulak. The route returns east beneath the ridge and descends to Lokavec, with sustained high-level views over the Vipava Valley, Karst and Gulf of Trieste.",
+      "terrain": [
+        "forest climb",
+        "mountain ridge trail",
+        "exposed rocky mountain path",
+        "undulating descent trail"
+      ],
+      "highlights": [
+        "Koča Antona Bavčerja",
+        "Kucelj",
+        "Veliki rob",
+        "Čaven",
+        "Sekulak",
+        "Vipava Valley and Gulf of Trieste views"
+      ],
+      "aidPoints": [
+        {
+          "point": "Potok",
+          "km": 2.4
+        },
+        {
+          "point": "Koča Antona Bavčerja",
+          "km": 4.5
+        },
+        {
+          "point": "Srednječavenska pot",
+          "km": 13.7
+        }
+      ],
+      "waterPoints": 2,
+      "timeGates": [
+        {
+          "point": "Koča Antona Bavčerja",
+          "km": 4.5,
+          "time": "12:30"
+        },
+        {
+          "point": "Srednječavenska pot",
+          "km": 13.7,
+          "time": "13:59"
+        }
+      ],
+      "catering": "Official rules list food and drink at refreshment stations and two water points. Participants must be self-sufficient between stations.",
+      "mandatoryEquipment": [
+        "mobile phone",
+        "personal eco cup",
+        "headlamp for Trail and Vrh",
+        "additional bad-weather equipment may be required"
+      ],
+      "mapProfile": {
+        "status": "official page embeds Trace de Trail map/profile",
+        "officialPage": "https://www.caven.run/sl/",
+        "traceDeTrailIframe": "https://tracedetrail.fr/fr/iframe/10845"
+      },
+      "gpx": {
+        "permissionStatus": "not_granted",
+        "officialDownloadLinkFound": false,
+        "explicitRestrictionNotice": "not found in accessible official page text",
+        "directTracePage": "not accessible in this review; only embedded iframe identified",
+        "binaryDownloaded": false,
+        "metadataInspected": false,
+        "fileFetch": false,
+        "loadImport": false,
+        "store": false,
+        "process": false,
+        "mapDisplay": false,
+        "userDownload": false,
+        "officialGpxLink": false,
+        "appMessage": "GPX gesperrt – keine ausdrückliche Freigabe dokumentiert; kein Download möglich."
+      }
+    }
+  ],
+  "planned2027Formats": [
+    {
+      "name": "Čaven Ultra",
+      "distanceNameKm": 60,
+      "status": "announced in official 2027 preview; no final date, elevation, route, aid or cutoff details published"
+    },
+    {
+      "name": "new Čaven Vrh",
+      "distanceNameKm": null,
+      "status": "announced as a new 2027 mountain race; no final distance/elevation/date or route details published"
+    }
+  ],
+  "unresolved": [
+    "2027 event date is not published in the official page checked on 26 November 2026.",
+    "The announced 60 km Ultra has no published ascent/descent, start/finish, route, aid stations, cut-offs, map/profile or GPX details yet.",
+    "The new 2027 Čaven Vrh must not be assumed to be the 2026 23 km / 1,535 m course; no 2027 route specifications are published.",
+    "2026 routes are historical only. The event page says the 2026 edition was moved from 24 October to 21 November due to weather and mountain-rescue safety advice.",
+    "Official pages embed Trace de Trail iframes, but direct route pages were not accessible in this review. No GPX download link or explicit GPX restriction notice was found in accessible page text; no GPX binary was downloaded and no metadata was inspected.",
+    "No separate official email address for Triatlon klub GPS was found. The official event contact info@caven.run is verified; request asks the event mailbox to forward to both joint organisers and identify rights holders."
+  ],
+  "rights": {
+    "status": "written_permission_pending",
+    "requestRecipient": "info@caven.run",
+    "requestDate": "2026-11-26",
+    "sentCopyFiled": true,
+    "deliveryConfirmed": false,
+    "responseFound": false,
+    "all12MaterialCategoriesAsked": true,
+    "gpxRestrictionsAndSeparateLinkPermissionAsked": true,
+    "commercialUseAskedSeparately": true,
+    "mediaKitAndBrandGuidelinesRequested": true
+  },
+  "integration": {
+    "liveEventDatesChanged": false,
+    "eventsAddedToMain": false,
+    "routeDescriptionsLoadedIntoApp": false,
+    "appPublished": false,
+    "routeGpxEnabled": false,
+    "preparedForReview": true
+  }
+}
