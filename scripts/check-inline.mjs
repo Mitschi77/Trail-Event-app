@@ -86,11 +86,14 @@ const logoutStart = html.indexOf("async function clearPersonalDeviceDataAfterLog
 const logoutEnd = html.indexOf("async function plannerLogout()", logoutStart);
 const logoutCode = logoutStart >= 0 && logoutEnd > logoutStart ? html.slice(logoutStart, logoutEnd) : "";
 if (!logoutCode.includes("CLOUD_KEYS") || !logoutCode.includes("trailPlannerAccountBackup_v1_") ||
-    !logoutCode.includes("indexedDB.deleteDatabase(PRE_RESTORE_DB_NAME)") ||
+    !html.includes("async function retryPendingPreRestoreBackupDbDelete()") ||
     !logoutCode.includes("sessionStorage.clear()") || !logoutCode.includes("cloudUser=null")) {
   throw new Error("Explicit logout must clear all personal local stores and account backups.");
 }
-if (!html.includes("northboundLoggedOut") || !html.includes("event.persisted")) {
+if (!html.includes("northboundLoggedOut") || !html.includes("event.persisted") ||
+    !html.includes("db.onversionchange=()=>db.close()") ||
+    !html.includes("northboundLogoutSignal") || !html.includes("new BroadcastChannel('northbound-auth')") ||
+    !html.includes("window.addEventListener('storage'")) {
   throw new Error("Logout must prevent private pages from reappearing from the browser back-forward cache.");
 }
 
