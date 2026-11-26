@@ -20499,4 +20499,19 @@ body{background:#0b1117!important;color:#f1f5f8!important}
 /* NORTHBOUND: Strava-Verbindungsbutton bei bestehender Verbindung zuverlässig ausblenden */
 #stravaConnectButton[hidden]{display:none!important}
 </style>
-<script src="./strava-race-links.js"></script><script src="./community.js"></script></body></html>
+<script src="./strava-race-links.js"></script><script src="./community.js"></script>
+<script id="northbound-menu-accordion-behavior">
+/* Menügruppen verhalten sich wie die aufklappbaren Bereiche der Eventliste:
+   pro Ebene bleibt jeweils nur eine Gruppe geöffnet. */
+(function(){
+  const groups=document.querySelectorAll('#appMenuDropdown details.app-menu-group');
+  groups.forEach(group=>group.addEventListener('toggle',()=>{
+    if(!group.open)return;
+    const parent=group.parentElement;
+    parent?.querySelectorAll(':scope > details.app-menu-group[open]').forEach(other=>{
+      if(other!==group)other.open=false;
+    });
+  }));
+})();
+</script>
+</body></html>
