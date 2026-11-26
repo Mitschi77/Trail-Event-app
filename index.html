@@ -20370,29 +20370,102 @@ const stravaRoutePreviewCache=new Map();
 const stravaRoutePreviewMaps=new Map();
 async function loadStravaRoutePreview(id,element){if(!element||element.dataset.loaded==='1'||element.dataset.loading==='1')return;element.dataset.loading='1';try{let coords=stravaRoutePreviewCache.get(String(id));if(!coords){const payload=await stravaInvoke('strava-activity-detail',{activity_id:String(id)}),streams=payload.streams||{},detail=payload.detail||{};coords=streams.latlng||stravaDecodePolyline(detail.map?.polyline||detail.map?.summary_polyline||'');if(coords.length)stravaRoutePreviewCache.set(String(id),coords);}if(!coords||coords.length<2){element.innerHTML='<span class="plan-meta">Keine GPS-Route verfügbar</span>';element.dataset.loaded='1';return;}if(!window.L){element.innerHTML='<span class="plan-meta">Kartenansicht nicht verfügbar</span>';return;}element.innerHTML='';const map=L.map(element,{zoomControl:false,scrollWheelZoom:false,dragging:false,doubleClickZoom:false,boxZoom:false,keyboard:false,touchZoom:false,attributionControl:false});L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',{maxZoom:19,attribution:'© OpenStreetMap'}).addTo(map);L.polyline(coords,{color:'#f29a52',weight:4,opacity:.95,lineCap:'round',lineJoin:'round'}).addTo(map);L.circleMarker(coords[0],{radius:5,color:'#fff',weight:2,fillColor:'#35c878',fillOpacity:1}).addTo(map);L.circleMarker(coords[coords.length-1],{radius:5,color:'#fff',weight:2,fillColor:'#f29a52',fillOpacity:1}).addTo(map);map.fitBounds(L.latLngBounds(coords).pad(.12),{animate:false});stravaRoutePreviewMaps.set(String(id),map);element.dataset.loaded='1';setTimeout(()=>map.invalidateSize(),80);}catch(error){element.innerHTML='<span class="plan-meta">Streckenvorschau konnte nicht geladen werden</span>';element.dataset.loading='';}}
 function observeStravaRoutePreviews(root){if(!root)return;const previews=[...root.querySelectorAll('[data-strava-route-preview]')];if(!('IntersectionObserver'in window)){previews.slice(0,4).forEach(el=>loadStravaRoutePreview(el.dataset.stravaRoutePreview,el));return;}const observer=new IntersectionObserver(entries=>{entries.forEach(entry=>{if(entry.isIntersecting){const el=entry.target;observer.unobserve(el);loadStravaRoutePreview(el.dataset.stravaRoutePreview,el);}});},{rootMargin:'180px 0px'});previews.forEach(el=>observer.observe(el));}
-function stravaSportIcon(sportType){const key=String(sportType||'').replace(/[^a-z]/gi,'').toLowerCase();const paths={
-run:'<circle cx="15.5" cy="4.5" r="2"/><path d="m12.5 8 3.5 2 2.5 4M12.5 8l-3 4-3 2M13 10l-1 5-4 4m7-4 4 4 3 1"/>',
-trail:'<path d="m2 19 7-10 4 5 3-4 6 9H2Z"/><path d="m7 19 3-5 2 2 2-3"/><circle cx="15.5" cy="5" r="1.7"/><path d="m13 8 3 2 2 3m-5-3-2 4-3 2m6-1 3 3"/>',
+function stravaSportIcon(sportType){
+const key=String(sportType||'').replace(/[^a-z0-9]/gi,'').toLowerCase();
+const paths={
+run:'<circle cx="15.5" cy="4.5" r="1.8"/><path d="m12.5 8 3.5 2 2.5 4M12.5 8l-3 4-3 2M13 10l-1 5-4 4m7-4 4 4 3 1"/>',
+trail:'<path d="m1.8 19 6.5-9 3.1 4 3.7-6 7.1 11H1.8Z"/><path d="m7 19 3.2-5 2.2 2 2.2-3"/><circle cx="16.3" cy="4.2" r="1.6"/><path d="m14.2 7 2.2 2 2 3m-4.2-3-2.5 3.5-2.4 1.4m5.8-.2 3.1 3.2"/>',
 track:'<path d="M3 17c2-7 6-10 11-10s7 3 7 7-3 7-8 7H5"/><path d="M6 17c2-4 5-6 8-6s4 2 4 4-2 4-5 4H7"/><circle cx="14.5" cy="3.5" r="1.5"/>',
 treadmill:'<path d="M3 19h18M5 19l2-5h11l2 5M7 14l2-5h4"/><circle cx="14.5" cy="5" r="1.7"/><path d="m12 8 3 2 2 3m-5-3-3 3-2 1m7-1 3 2"/>',
-bike:'<circle cx="5.5" cy="17" r="4"/><circle cx="18.5" cy="17" r="4"/><path d="m5.5 17 4-8 4 8H5.5l4-8h5l4 8m-7-11h3"/>',
-mtb:'<circle cx="5" cy="17" r="4"/><circle cx="19" cy="17" r="4"/><path d="m5 17 4-8 4 8H5l4-8h5l5 8m-8-8 3-3 3 1M8 9 6 7"/>',
-gravel:'<circle cx="5" cy="17" r="3.5"/><circle cx="19" cy="17" r="3.5"/><path d="m5 17 4-7 4 7H5l4-7h5l5 7m-9-7 1-3h4"/>',
-ski:'<path d="m3 20 18-5M4 22l18-5M7 16l4-8 3 3 2-5 4 10"/><path d="m10 8 2-3 2 3"/>',
-snowboard:'<path d="M3 19 21 5M5 21 23 7"/><path d="m8 16 3-5 3 1 2-4"/>',
-hike:'<path d="m3 20 7-10 4 5 3-4 4 9H3Z"/><circle cx="12" cy="5" r="1.8"/><path d="m10 8 2 3 3 2m-5-3-2 4-2 2m8-3 2 4m-9-2-2 6m12-6 2 6"/>',
+roadBike:'<circle cx="5" cy="17" r="3.4"/><circle cx="19" cy="17" r="3.4"/><path d="m5 17 4-7 4 7H5l4-7h5l5 7m-8-7-1-3h4"/>',
+mtb:'<circle cx="5" cy="17" r="3.8"/><circle cx="19" cy="17" r="3.8"/><path d="m5 17 4-8 4 8H5l4-8h5l5 8m-8-8 3-3 3 1M8 9 6 7"/>',
+gravel:'<circle cx="5" cy="17" r="3.8"/><circle cx="19" cy="17" r="3.8"/><path d="m5 17 4-7 4 7H5l4-7h5l5 7"/><path d="m7 7 1-2m3 2 1-2m3 2 1-2"/>',
+indoorBike:'<circle cx="6" cy="17" r="3"/><circle cx="18" cy="17" r="3"/><path d="m6 17 4-8 4 8H6l4-8h5l3 8M9 5h6m-3-2v2"/>',
+hike:'<path d="m2 20 7-10 4 5 3-4 6 9H2Z"/><circle cx="12" cy="5" r="1.7"/><path d="m10 8 2 3 3 2m-5-3-2 4-2 2m8-3 2 4m-9-2-2 6m12-6 2 6"/>',
+mountain:'<path d="m2 20 8-14 3 5 2-3 7 12H2Z"/><path d="m7 20 3-5 2 2 3-5 4 8"/>',
+viaFerrata:'<path d="m2 20 8-14 3 5 2-3 7 12H2Z"/><path d="M7 16h10M9 12h7M11 8h4"/><circle cx="12" cy="4" r="1.4"/>',
 climb:'<path d="m3 20 8-15 3 6 3-4 4 13H3Z"/><circle cx="13" cy="7" r="1.5"/><path d="m12 9-3 4 3 2 3-3m-6 1-3 4m9-4 3 4"/>',
-walk:'<circle cx="13" cy="4.5" r="1.8"/><path d="m11 8 3 3 3 1m-6-3-3 4-3 2m7-2-1 5-4 4m6-4 4 4m-9-7-2 7m13-11 2 12"/>',
-swim:'<circle cx="8" cy="8" r="2"/><path d="m10 10 5 1 3-3m-8 2-3 3m-4 5c2-2 4-2 6 0s4 2 6 0 4-2 6 0M3 21c2-2 4-2 6 0s4 2 6 0 4-2 6 0"/>',
-row:'<path d="M4 18h16M7 18l3-6m7 6-3-6M12 4v8m-3-7 3-2 3 2M4 9l5 3m11-3-5 3"/>',
-kayak:'<path d="M3 15c4-5 14-5 18 0-4 5-14 5-18 0Z"/><path d="M12 12 8 4m8 16 4-8M6 6l4-3m8 18 3-3"/>',
-tri:'<path d="m12 3 8 5v8l-8 5-8-5V8l8-5Z"/><path d="m7 14 3-5 3 5 4-5"/>',
-strength:'<path d="M4 9v6m3-9v12m10-12v12m3-9v6M7 12h10"/>',
-yoga:'<circle cx="12" cy="4" r="1.8"/><path d="M12 7v5m0-3-6-3m6 3 6-3M12 12l-5 8m5-8 5 8M5 20h14"/>',
+snowshoe:'<path d="M5 4 2.5 20M10 4 7.5 20M14 4l-2.5 16M19 4l-2.5 16"/><path d="M3 9h16M2 15h16"/>',
+walk:'<circle cx="13" cy="4.5" r="1.8"/><path d="m11 8 3 3 3 1m-6-3-3 4-3 2m7-2-1 5-4 4m6-4 4 4m-9-7-2 7"/>',
+skiTour:'<path d="m2 20 19-5M3 22l19-5M7 17l4-9 3 3 3-6 4 11"/><path d="m10 8 2-3 2 3M6 10l-2-4m-1 5 3-1"/>',
+alpineSki:'<path d="m2 19 19-5M3 22l19-5"/><path d="m7 16 3-7 3 3 3-6 4 10"/><path d="m10 9 2-3 2 3"/>',
+nordicSki:'<path d="M3 20 21 16M3 22l18-4"/><circle cx="12" cy="4" r="1.5"/><path d="m11 7 2 4 3 2m-5-4-4 3-3 1m9-2 3 4m-9-2-2 7m11-7 3 7"/>',
+snowboard:'<path d="M3 19 21 5M5 21 23 7"/><path d="m8 16 3-5 3 1 2-4"/>',
+swim:'<circle cx="8" cy="7" r="1.8"/><path d="m10 9 5 1 3-3m-8 2-3 3m-4 6c2-2 4-2 6 0s4 2 6 0 4-2 6 0M3 22c2-2 4-2 6 0s4 2 6 0 4-2 6 0"/>',
+openWater:'<circle cx="8" cy="7" r="1.8"/><path d="m10 9 5 1 3-3m-8 2-3 3m-4 6c2-2 4-2 6 0s4 2 6 0 4-2 6 0M3 22c2-2 4-2 6 0s4 2 6 0 4-2 6 0"/><path d="M19 3v4m-2-2h4"/>',
+row:'<path d="M4 19h16M7 19l3-7m7 7-3-7M12 4v8m-3-7 3-2 3 2M4 9l5 3m11-3-5 3"/>',
+kayak:'<path d="M2 15c4-5 16-5 20 0-4 5-16 5-20 0Z"/><path d="m12 12-4-8m8 16 4-8M6 6l4-3m8 18 3-3"/>',
+tri:'<path d="m12 2.5 8.5 5v9L12 21.5l-8.5-5v-9l8.5-5Z"/><path d="m6.5 14 3-5 3 5 5-6"/>',
+duathlon:'<circle cx="8" cy="5" r="1.5"/><path d="m7 8 3 3 3 1m-6-3-3 4-2 1m8-2-1 5-4 4m6-4 4 4"/><circle cx="18" cy="17" r="3"/>',
+strength:'<path d="M3 9v6m3-9v12m12-12v12m3-9v6M6 12h12"/>',
+hiit:'<path d="m13 2-8 12h6l-1 8 9-13h-6l1-7Z"/>',
+gym:'<path d="M4 9v6m3-9v12m10-12v12m3-9v6M7 12h10"/><path d="M12 3v2m0 14v2"/>',
+mobility:'<circle cx="12" cy="4" r="1.6"/><path d="M12 7v5m0-3L5 7m7 2 7-2M12 12l-6 8m6-8 6 8M3 20h18"/>',
+yoga:'<circle cx="12" cy="4" r="1.7"/><path d="M12 7v4m0-2-7-3m7 3 7-3M12 11l-7 8m7-8 7 8M5 19h14"/>',
+pilates:'<circle cx="12" cy="4" r="1.6"/><path d="M12 7c-4 0-6 3-6 6s3 5 6 5 6-2 6-5-2-6-6-6ZM4 21h16M8 18l-3 3m11-3 3 3"/>',
 tennis:'<path d="M5 4c7-2 15 4 14 11-1 5-7 7-12 4C1 16 1 8 5 4Z"/><path d="M4 7c4 1 8 5 10 12M18 6c-4 2-7 6-8 12"/>',
-team:'<circle cx="8" cy="8" r="2"/><circle cx="17" cy="8" r="2"/><path d="M3 19c0-4 2-6 5-6s5 2 5 6m0 0c0-4 2-6 4-6 3 0 4 2 4 6"/>',
+padel:'<path d="M5 3c6-1 12 4 12 10s-5 9-10 7C1 18 1 7 5 3Z"/><path d="m17 15 4 5M7 7l1 1m4-1 1 1m-7 5 1 1m5-1 1 1"/>',
+team:'<circle cx="8" cy="7" r="2"/><circle cx="17" cy="7" r="2"/><path d="M3 19c0-4 2-6 5-6s5 2 5 6m0 0c0-4 2-6 4-6 3 0 4 2 4 6"/>',
+golf:'<path d="M5 21V3l12 4-12 4"/><path d="M3 21h18"/>',
+skate:'<path d="M3 17h18l-2 3H5l-2-3Z"/><circle cx="7" cy="21" r="1"/><circle cx="17" cy="21" r="1"/><path d="m8 14 4-7 4 3"/>',
+surf:'<path d="M2 17c5-5 15-5 20 0-5 5-15 5-20 0Z"/><path d="M12 13c0-5 3-8 7-9m-4 4 4-4 1 5"/>',
 other:'<circle cx="12" cy="12" r="8"/><path d="m8 12 3 3 5-6"/>'
-};let id='other';if(/trailrun/.test(key))id='trail';else if(/mountainbikeride|mtb/.test(key))id='mtb';else if(/gravelride/.test(key))id='gravel';else if(/ride|cycling|velomobile/.test(key))id='bike';else if(/virtualrun|run/.test(key))id='run';else if(/trackandfield/.test(key))id='track';else if(/treadmill/.test(key))id='treadmill';else if(/snowboard/.test(key))id='snowboard';else if(/ski|alpineperformance|backcountryski/.test(key))id='ski';else if(/hike|mountaineering|snowshoe|nordicwalking/.test(key))id='hike';else if(/climb|viaferrata/.test(key))id='climb';else if(/walk/.test(key))id='walk';else if(/openwaterswim|swim/.test(key))id='swim';else if(/row/.test(key))id='row';else if(/kayak|canoe/.test(key))id='kayak';else if(/triathlon|duathlon/.test(key))id='tri';else if(/weighttraining|strengthtraining|workout|crossfit|hiit|fitness/.test(key))id='strength';else if(/yoga|pilates|mobility|stretch/.test(key))id='yoga';else if(/tennis|padel/.test(key))id='tennis';else if(/soccer|football|basketball|volleyball|team/.test(key))id='team';return '<svg class="northbound-sport-icon" viewBox="0 0 24 24" width="23" height="23" fill="none" stroke="#b9d9e8" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">'+paths[id]+'</svg>';}
+};
+const exact={
+run:'run',virtualrun:'run',trailrun:'trail',trailrunning:'trail',
+trackandfield:'track',treadmill:'treadmill',
+ride:'roadBike',cycling:'roadBike',roadcycling:'roadBike',ebikeride:'roadBike',handcycle:'roadBike',velomobile:'roadBike',virtualride:'indoorBike',
+mountainbikeride:'mtb',emountainbikeride:'mtb',mtb:'mtb',gravelride:'gravel',
+hike:'hike',hiking:'hike',mountaineering:'mountain',alpineclimbing:'mountain',viaferrata:'viaFerrata',rockclimbing:'climb',climbing:'climb',
+snowshoe:'snowshoe',snowshoeing:'snowshoe',walk:'walk',walking:'walk',nordicwalking:'walk',
+backcountryski:'skiTour',skitouring:'skiTour',skitour:'skiTour',alpineSki:'alpineSki',alpineski:'alpineSki',downhillski:'alpineSki',nordicski:'nordicSki',rollerski:'nordicSki',crosscountryski:'nordicSki',snowboard:'snowboard',
+swim:'swim',openwaterswim:'openWater',rowing:'row',row:'row',kayaking:'kayak',canoeing:'kayak',standuppaddling:'kayak',
+triathlon:'tri',duathlon:'duathlon',
+weighttraining:'strength',strengthtraining:'strength',workout:'gym',crossfit:'hiit',hiit:'hiit',fitness:'gym',elliptical:'gym',stairstepper:'gym',
+yoga:'yoga',pilates:'pilates',mobility:'mobility',stretching:'mobility',
+tennis:'tennis',padel:'padel',soccer:'team',football:'team',basketball:'team',volleyball:'team',team:'team',
+golf:'golf',skateboard:'skate',inlineskate:'skate',iceskate:'skate',surfing:'surf'
+};
+let id=exact[key];
+if(!id){
+if(/trail/.test(key))id='trail';
+else if(/emountainbike|mountainbike|mtb/.test(key))id='mtb';
+else if(/gravel/.test(key))id='gravel';
+else if(/ebike|virtualride|indoorcycling|spinning/.test(key))id='indoorBike';
+else if(/ride|cycling|velomobile|handcycle/.test(key))id='roadBike';
+else if(/virtualrun|treadmill|run/.test(key))id=/treadmill/.test(key)?'treadmill':'run';
+else if(/trackandfield|track/.test(key))id='track';
+else if(/snowboard/.test(key))id='snowboard';
+else if(/backcountryski|skitour/.test(key))id='skiTour';
+else if(/nordic|crosscountryski|rollerski/.test(key))id='nordicSki';
+else if(/ski/.test(key))id='alpineSki';
+else if(/viaferrata/.test(key))id='viaFerrata';
+else if(/mountaineer|alpineclimb/.test(key))id='mountain';
+else if(/climb/.test(key))id='climb';
+else if(/snowshoe/.test(key))id='snowshoe';
+else if(/nordicwalking|walk/.test(key))id='walk';
+else if(/openwater/.test(key))id='openWater';
+else if(/swim/.test(key))id='swim';
+else if(/row/.test(key))id='row';
+else if(/kayak|canoe|paddl/.test(key))id='kayak';
+else if(/triathlon/.test(key))id='tri';
+else if(/duathlon/.test(key))id='duathlon';
+else if(/crossfit|hiit/.test(key))id='hiit';
+else if(/weighttraining|strength/.test(key))id='strength';
+else if(/elliptical|stairstepper|workout|fitness/.test(key))id='gym';
+else if(/pilates/.test(key))id='pilates';
+else if(/yoga/.test(key))id='yoga';
+else if(/mobility|stretch/.test(key))id='mobility';
+else if(/padel/.test(key))id='padel';
+else if(/tennis/.test(key))id='tennis';
+else if(/soccer|football|basketball|volleyball|team/.test(key))id='team';
+else if(/golf/.test(key))id='golf';
+else if(/skate|iceskate/.test(key))id='skate';
+else if(/surf/.test(key))id='surf';
+else id='other';
+}
+return '<svg class="northbound-sport-icon" viewBox="0 0 24 24" width="23" height="23" fill="none" stroke="#b9d9e8" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">'+paths[id]+'</svg>';
+}
 function renderStravaActivityRows(){const root=document.getElementById('stravaActivityList');if(!root)return;const search=(document.getElementById('stravaActivitySearch')?.value||'').trim().toLocaleLowerCase('de-DE'),sport=document.getElementById('stravaSportFilter')?.value||'',sort=document.getElementById('stravaActivitySort')?.value||'dateDesc';let rows=stravaActivityCache.filter(x=>(!sport||x.sport_type===sport)&&(!search||String(x.name||'').toLocaleLowerCase('de-DE').includes(search)));rows.sort((a,b)=>sort==='dateAsc'?new Date(a.started_at||0)-new Date(b.started_at||0):sort==='distanceDesc'?(Number(b.distance_m)||0)-(Number(a.distance_m)||0):sort==='elevationDesc'?(Number(b.total_elevation_gain_m)||0)-(Number(a.total_elevation_gain_m)||0):new Date(b.started_at||0)-new Date(a.started_at||0));const count=document.getElementById('stravaActivityCount');if(count)count.textContent=rows.length+' Trainingseinheiten · '+stravaActivityCache.length+' Strava-Aktivitäten insgesamt';if(!rows.length){root.innerHTML='<div class="plan-empty">Noch keine '+(stravaHistoryCategory==='race'?'Wettkämpfe':'Trainingseinheiten')+' zugeordnet. Du kannst Aktivitäten über die Auswahl in jeder Karte verschieben.</div>';return;}root.innerHTML=rows.map(x=>{const date=x.started_at?new Date(x.started_at).toLocaleDateString('de-DE',{day:'2-digit',month:'2-digit',year:'numeric'}):'Datum unbekannt';const details=[date,x.sport_type||'Aktivität',stravaFormatDistance(x.distance_m),stravaFormatDuration(x.moving_time_seconds),x.total_elevation_gain_m!=null?Math.round(Number(x.total_elevation_gain_m)).toLocaleString('de-DE')+' hm':null].filter(Boolean).join(' · ');return '<article class="community-card strava-activity-card" style="padding:15px;border:1px solid #34485a;border-radius:14px;background:#121f2e;min-width:0"><div class="strava-route-preview" data-strava-route-preview="'+esc(x.provider_activity_id)+'" role="img" aria-label="Echte GPS-Streckenvorschau" style="width:100%;height:154px;margin:0 0 12px;border-radius:10px;overflow:hidden;background:#0b1722;display:flex;align-items:center;justify-content:center"></div><strong style="display:flex;align-items:center;gap:9px;margin:0 0 8px;font-size:17px;line-height:1.35;color:#f1f4f6"><span style="display:inline-flex;align-items:center;justify-content:center;flex:0 0 24px;width:24px;height:24px;color:#b9d9e8">'+stravaSportIcon(x.sport_type)+'</span><span>'+esc(x.name||'Strava-Aktivität')+'</span></strong><div class="community-region" style="font-size:13px;line-height:1.5;margin-top:4px">'+esc(details)+'</div><button type="button" class="secondary" style="display:inline-flex!important;align-items:center;width:max-content!important;max-width:100%;min-height:44px;margin-top:14px;padding:9px 14px;font-size:13px;flex:none" data-strava-detail="'+esc(x.provider_activity_id)+'">Details &amp; Strecke öffnen</button></article>';}).join('');observeStravaRoutePreviews(root);}
 async function setStravaActivityCategory(id,category){if(!['training','race'].includes(category)||!cloudClient||!cloudUser)return;const row=stravaActivityCache.find(x=>String(x.provider_activity_id)===String(id));if(!row)return;const previous=row.activity_category||'training';row.activity_category=category;renderStravaActivityRows();const {error}=await cloudClient.from('strava_activities').update({activity_category:category}).eq('user_id',cloudUser.id).eq('provider','strava').eq('provider_activity_id',String(id));if(error){row.activity_category=previous;renderStravaActivityRows();stravaSetStatus('Einordnung konnte nicht gespeichert werden: '+error.message);return;}stravaSetStatus('Aktivität wurde '+(category==='race'?'den Wettkämpfen':'dem Training')+' zugeordnet.');}
 function setStravaHistoryCategory(category){stravaHistoryCategory=category==='race'?'race':'training';const training=document.getElementById('trainingHistoryPane'),races=document.getElementById('completedRaceHistoryPane');if(training)training.hidden=stravaHistoryCategory!=='training';if(races)races.hidden=stravaHistoryCategory!=='race';if(stravaHistoryCategory==='race'&&typeof renderHistory==='function')renderHistory();else renderStravaActivityRows();}
