@@ -3724,3 +3724,22 @@ html,body{background:var(--nb-bg);color:var(--nb-white)}
 .event-filter-panel[open]>summary:after,
 #eventsTab .event-filter-panel[open]>summary:after,
 #northboundCommunity .community-filter-panel[open]>summary:after{content:"−"!important;color:#FF6A00!important;}
+
+/* NORTHBOUND-Menü: einheitliche, klare Akkordeon-Flächen */
+.app-menu-dropdown{background:#0f1924!important;border:1px solid #344b5d!important;border-radius:22px!important;box-shadow:0 18px 48px #0008!important}
+.app-menu-heading{padding:16px 18px!important;border-bottom:1px solid #344b5d!important;color:#eaf2f7!important;font-size:18px!important;font-weight:850!important}
+.northbound-primary-links{padding:12px 14px!important;margin:0!important;border:0!important}
+.northbound-menu-group{margin:7px 0!important;padding:0!important;border:1px solid #344b5d!important;border-radius:15px!important;background:linear-gradient(145deg,#142330,#101b26)!important;overflow:hidden}
+.northbound-menu-group>summary{display:flex!important;align-items:center!important;justify-content:space-between!important;gap:12px!important;min-height:54px!important;padding:13px 16px!important;color:#edf3f7!important;font-size:15px!important;font-weight:800!important;list-style:none!important;cursor:pointer!important}
+.northbound-menu-group>summary::-webkit-details-marker{display:none!important}
+.northbound-menu-group>summary:after{content:"＋"!important;color:#ff6a00!important;font-size:25px!important;font-weight:500!important;line-height:1!important}
+.northbound-menu-group[open]>summary:after{content:"−"!important}
+.northbound-menu-group[open]>summary{border-bottom:1px solid #344b5d!important}
+.northbound-primary-links .more-nav-item{min-height:46px!important;padding:11px 16px!important;margin:2px 10px!important;width:calc(100% - 20px)!important;border:1px solid transparent!important;border-radius:11px!important;background:transparent!important;color:#dce7ef!important;font-size:14px!important;font-weight:650!important}
+.northbound-primary-links .more-nav-item[aria-pressed="true"],.northbound-primary-links .more-nav-item[aria-current="page"]{background:#30251f!important;border-color:#ff6a00!important;color:#ffbd91!important}
+#stravaMenuGroup #stravaIntegrationCard{margin:0!important;padding:12px!important;border:0!important;border-radius:0!important;background:transparent!important;box-shadow:none!important}
+#stravaMenuGroup #stravaSyncDetails{border:0!important;background:transparent!important}
+#stravaMenuGroup #stravaSyncDetails>summary{display:none!important}
+#stravaMenuGroup .planner-intro,#stravaMenuGroup .plan-meta{font-size:12px!important}
+#stravaMenuGroup .plan-actions{display:grid!important;grid-template-columns:1fr!important}
+#stravaMenuGroup .plan-actions button{width:100%!important}
