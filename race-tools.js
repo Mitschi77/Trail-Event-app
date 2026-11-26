@@ -174,3 +174,37 @@ const observer=new MutationObserver(records=>records.forEach(record=>record.adde
 observer.observe(document.documentElement,{childList:true,subtree:true});
 window.addEventListener('DOMContentLoaded',()=>enhanceEditor(document),{once:true});
 })();
+
+
+// NORTHBOUND: paid start-fee overlay on the complete event selection window.
+// The payment state itself remains in runRecords.paymentStatus (setRacePaymentStatus).
+(()=>{'use strict';
+ const style=document.createElement('style');
+ style.id='northbound-start-fee-paid-overlay-style';
+ style.textContent=`
+ #plannedEventDetailModal .event-detail-dialog{position:relative;isolation:isolate}
+ #plannedEventDetailModal .start-fee-paid-overlay{position:absolute;inset:0;z-index:30;display:grid;place-items:center;pointer-events:none;overflow:hidden;border-radius:inherit;background:rgba(7,13,19,.10)}
+ #plannedEventDetailModal .start-fee-paid-overlay[hidden]{display:none}
+ #plannedEventDetailModal .start-fee-paid-overlay span{display:block;max-width:90%;padding:12px 24px;border:7px double rgba(255,106,0,.72);border-radius:8px;color:rgba(255,106,0,.76);font-size:clamp(34px,8vw,68px);font-weight:950;letter-spacing:.12em;line-height:1;text-align:center;transform:rotate(-13deg);text-shadow:0 2px 8px rgba(0,0,0,.18);background:rgba(11,17,23,.10);box-shadow:0 5px 24px rgba(0,0,0,.10)}
+ @media(max-width:520px){#plannedEventDetailModal .start-fee-paid-overlay span{padding:9px 14px;border-width:5px;letter-spacing:.08em}}
+ `;
+ document.head.querySelector('#northbound-start-fee-paid-overlay-style')?.remove();
+ document.head.appendChild(style);
+ function sync(){
+  const modal=document.getElementById('plannedEventDetailModal');
+  const dialog=modal?.querySelector('.event-detail-dialog');
+  if(!dialog)return;
+  let overlay=dialog.querySelector('.start-fee-paid-overlay');
+  if(!overlay){overlay=document.createElement('div');overlay.className='start-fee-paid-overlay';overlay.setAttribute('aria-hidden','true');overlay.innerHTML='<span>✓ BEZAHLT</span>';dialog.appendChild(overlay);}
+  const payment=modal.querySelector('.race-status-control select[onchange*="setRacePaymentStatus"]');
+  overlay.hidden=payment?.value!=='paid';
+ }
+ document.addEventListener('change',event=>{
+  if(event.target instanceof HTMLSelectElement&&event.target.matches('.race-status-control select[onchange*="setRacePaymentStatus"]'))requestAnimationFrame(sync);
+ });
+ const observer=new MutationObserver(sync);
+ observer.observe(document.documentElement,{childList:true,subtree:true});
+ document.addEventListener('DOMContentLoaded',sync);
+ window.addEventListener('pageshow',sync);
+ sync();
+})();
