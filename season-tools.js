@@ -33,9 +33,11 @@ function panel(){
  '<details class="season-training-settings"><summary>Wochenziele anpassen</summary><div class="edit-grid"><label>Wochenkilometer<input type="number" min="0" max="500" step="1" data-train-setting="weeklyKm" value="'+escText(d.weeklyKm)+'"></label><label>Höhenmeter pro Woche<input type="number" min="0" max="20000" step="100" data-train-setting="weeklyHm" value="'+escText(d.weeklyHm)+'"></label><label>Einheiten pro Woche<input type="number" min="0" max="14" step="1" data-train-setting="sessions" value="'+escText(d.sessions)+'"></label><label>Langer Lauf (km)<input type="number" min="0" max="150" step="1" data-train-setting="longRun" value="'+escText(d.longRun)+'"></label></div><label class="season-training-note">Hinweise / Schwerpunkt<textarea rows="2" data-train-setting="notes">'+escText(d.notes)+'</textarea></label><button type="button" class="secondary" id="saveSeasonTraining">Trainingsziele speichern</button><p class="plan-meta" id="seasonTrainingStatus" aria-live="polite"></p></details></section>';
 }
 const css=document.createElement('style');css.textContent='.season-training-panel{margin:14px 0;padding:14px;border:1px solid var(--line);border-radius:14px;background:var(--card)}.season-training-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.season-training-grid>div{padding:10px;border:1px solid var(--line);border-radius:10px;min-width:0}.season-training-grid b,.season-training-grid span,.season-training-grid small{display:block}.season-training-grid b{font-size:16px}.season-training-grid span,.season-training-grid small{font-size:11px;color:var(--muted)}.season-training-track{height:7px;background:var(--line);border-radius:8px;overflow:hidden;margin-top:7px}.season-training-track i{display:block;height:100%;background:#FF6A00}.season-training-settings{margin-top:12px}.season-training-settings summary{cursor:pointer;font-weight:700;color:#FF6A00;padding:8px 0}.season-training-note{display:block;font-size:12px;font-weight:700;color:var(--muted)}.season-training-note textarea{display:block;width:100%;margin:5px 0 9px;padding:9px;border:1px solid var(--line);border-radius:8px;background:var(--bg);color:var(--ink);font:inherit}@media(max-width:380px){.season-training-grid{grid-template-columns:1fr}}';document.head.appendChild(css);
-const original=window.renderSeasonEnhancements;if(typeof original!=='function')return;
-window.renderSeasonEnhancements=function(){original();const root=document.getElementById('seasonTimeline');if(!root)return;root.querySelector('.season-training-panel')?.remove();root.insertAdjacentHTML('afterbegin',panel());const save=document.getElementById('saveSeasonTraining');save?.addEventListener('click',()=>{const next={...settings()};document.querySelectorAll('[data-train-setting]').forEach(el=>{const k=el.dataset.trainSetting;next[k]=k==='notes'?el.value:Math.max(0,Number(el.value)||0);});if(next.weeklyKm>500||next.weeklyHm>20000||next.sessions>14||next.longRun>150){document.getElementById('seasonTrainingStatus').textContent='Bitte prüfe die eingegebenen Zielwerte.';return;}seasonPriorities[STORE]=next;seasonSave();document.getElementById('seasonTrainingStatus').textContent='Trainingsziele gespeichert und mit deiner Saisonplanung synchronisiert.';});};
-window.renderSeasonEnhancements();
+const original=window.renderSeasonEnhancements;
+if(typeof original==='function'){
+ window.renderSeasonEnhancements=function(){original();const root=document.getElementById('seasonTimeline');if(!root)return;root.querySelector('.season-training-panel')?.remove();root.insertAdjacentHTML('afterbegin',panel());const save=document.getElementById('saveSeasonTraining');save?.addEventListener('click',()=>{const next={...settings()};document.querySelectorAll('[data-train-setting]').forEach(el=>{const k=el.dataset.trainSetting;next[k]=k==='notes'?el.value:Math.max(0,Number(el.value)||0);});if(next.weeklyKm>500||next.weeklyHm>20000||next.sessions>14||next.longRun>150){document.getElementById('seasonTrainingStatus').textContent='Bitte prüfe die eingegebenen Zielwerte.';return;}seasonPriorities[STORE]=next;seasonSave();document.getElementById('seasonTrainingStatus').textContent='Trainingsziele gespeichert und mit deiner Saisonplanung synchronisiert.';});};
+ window.renderSeasonEnhancements();
+}
 
 
 /* Group the existing annual race cards into compact, accessible month accordions.
@@ -316,4 +318,57 @@ if(typeof originalSeasonStatusRender==='function'){
     sportYearScript.dataset.sportYearCore = '1';
     document.head.appendChild(sportYearScript);
   }
+
+
+/* Read imported Strava activities separately from completed race records. */
+let stravaCockpitUser=null,stravaCockpitRows=null,stravaCockpitRequest=null;
+function stravaWeekStart(date){const d=new Date(date);d.setHours(0,0,0,0);d.setDate(d.getDate()-((d.getDay()+6)%7));return d;}
+function stravaMetric(rows){return rows.reduce((v,a)=>({km:v.km+(Number(a.distance_m)||0)/1000,hm:v.hm+(Number(a.total_elevation_gain_m)||0),seconds:v.seconds+(Number(a.moving_time_seconds)||0),count:v.count+1}),{km:0,hm:0,seconds:0,count:0});}
+function stravaCockpitPanel(rows,message){
+ const root=document.getElementById('seasonCockpit');if(!root)return;
+ root.querySelector('#strava-cockpit-panel')?.remove();
+ const box=document.createElement('section');box.id='strava-cockpit-panel';box.className='season-training-panel';
+ if(!rows){box.innerHTML='<div class="season-training-heading"><div><span class="nb-eyebrow">NORTHBOUND · TRAINING</span><h3>Dein Training aus Strava</h3><p>'+escText(message||'Trainingsaktivitäten werden geladen …')+'</p></div></div>';root.appendChild(box);return;}
+ const now=new Date(),week=stravaWeekStart(now),prev=new Date(week);prev.setDate(prev.getDate()-7);
+ const currentRows=rows.filter(a=>a.started_at&&new Date(a.started_at)>=week),previousRows=rows.filter(a=>a.started_at&&new Date(a.started_at)>=prev&&new Date(a.started_at)<week);
+ const current=stravaMetric(currentRows),previous=stravaMetric(previousRows);
+ const fmt=n=>Number(n||0).toLocaleString('de-DE',{maximumFractionDigits:1});
+ const hours=n=>((n||0)/3600).toLocaleString('de-DE',{maximumFractionDigits:1})+' h';
+ const types={};
+ currentRows.forEach(a=>{const raw=String(a.sport_type||'Other').toLowerCase();let label=/run|trail|hike|walk/.test(raw)?'Run & Trail':/ride|bike|cycling/.test(raw)?'Bike':/yoga/.test(raw)?'Yoga':raw==='other'?'Weitere':String(a.sport_type||'Weitere');types[label]=(types[label]||0)+1;});
+ const typeHtml=Object.entries(types).sort((a,b)=>b[1]-a[1]).map(([label,count])=>'<span class="strava-sport-chip">'+escText(label)+' <b>'+count+'</b></span>').join('')||'<span class="plan-meta">Noch keine Aktivitäten in dieser Woche</span>';
+ const stat=(value,label)=>'<div class="season-kpi"><strong>'+value+'</strong><span>'+label+'</span></div>';
+ box.innerHTML='<div class="season-training-heading"><div><span class="nb-eyebrow">NORTHBOUND · TRAINING</span><h3>Deine Strava-Woche</h3><p>Importierte Trainingsaktivitäten – unabhängig von deinen Wettkampfergebnissen.</p></div><span class="season-training-period">AKTUELLE WOCHE</span></div><div class="season-dashboard-stats">'+stat(fmt(current.km)+' km','Distanz')+stat(Math.round(current.hm).toLocaleString('de-DE')+' hm','Höhenmeter')+stat(current.count,'Aktivitäten')+stat(hours(current.seconds),'Bewegungszeit')+'</div><div class="strava-sport-breakdown"><strong>Sportarten diese Woche</strong><div>'+typeHtml+'</div></div><p class="season-training-note">Vorwoche: '+fmt(previous.km)+' km · '+Math.round(previous.hm).toLocaleString('de-DE')+' hm · '+previous.count+' Aktivitäten · '+hours(previous.seconds)+'. Grundlage: '+rows.length+' importierte Strava-Aktivitäten der letzten 90 Tage.</p></div>';
+ root.appendChild(box);
+}
+async function loadStravaCockpit(){
+ const root=document.getElementById('seasonCockpit');if(!root)return;
+ const user=typeof cloudUser!=='undefined'&&cloudUser?cloudUser.id:null;
+ if(!user||typeof cloudClient==='undefined'||!cloudClient){stravaCockpitPanel(null,'Bitte anmelden und Strava im Bereich Training verbinden.');return;}
+ if(stravaCockpitUser!==user){stravaCockpitUser=user;stravaCockpitRows=null;stravaCockpitRequest=null;}
+ stravaCockpitPanel(null,'Importierte Aktivitäten werden abgerufen …');
+ if(stravaCockpitRequest)return;
+ const start=new Date();start.setDate(start.getDate()-90);
+ stravaCockpitRequest=(async()=>{
+  const [{data,error},{data:raceLinks,error:linksError}]=await Promise.all([
+   cloudClient.from('strava_activities').select('id,provider_activity_id,name,sport_type,started_at,distance_m,moving_time_seconds,total_elevation_gain_m').gte('started_at',start.toISOString()).order('started_at',{ascending:false}).limit(1000),
+   cloudClient.from('strava_race_activity_links').select('activity_id').eq('user_id',user)
+  ]);
+  if(error)throw error;
+  if(linksError)throw linksError;
+  const raceActivityIds=new Set((raceLinks||[]).map(link=>String(link.activity_id)));
+  stravaCockpitRows=(Array.isArray(data)?data:[]).filter(activity=>!raceActivityIds.has(String(activity.id)));
+  stravaCockpitPanel(stravaCockpitRows);
+ })().catch(()=>{stravaCockpitPanel(null,'Strava-Daten konnten nicht geladen werden. Bitte Verbindung und Synchronisation im Bereich Training prüfen.');}).finally(()=>{stravaCockpitRequest=null;});
+ await stravaCockpitRequest;
+}
+const stravaCockpitStyle=document.createElement('style');
+stravaCockpitStyle.textContent='#strava-cockpit-panel .season-dashboard-stats{margin-top:12px}#strava-cockpit-panel .season-kpi{min-width:0}#strava-cockpit-panel .season-kpi strong{font-size:19px}#strava-cockpit-panel .strava-sport-breakdown{margin-top:13px}#strava-cockpit-panel .strava-sport-breakdown>strong{font-size:12px}#strava-cockpit-panel .strava-sport-breakdown>div{display:flex;flex-wrap:wrap;gap:7px;margin-top:8px}.strava-sport-chip{display:inline-flex;align-items:center;gap:7px;padding:6px 10px;border:1px solid var(--line);border-radius:999px;background:var(--bg);font-size:11px}.strava-sport-chip b{color:#FF6A00}';
+stravaCockpitStyle.id='strava-cockpit-style';document.head.querySelector('#strava-cockpit-style')?.remove();document.head.appendChild(stravaCockpitStyle);
+const originalStravaCockpitRender=window.renderSeasonCockpit;
+if(typeof originalStravaCockpitRender==='function'){
+ window.renderSeasonCockpit=function(){originalStravaCockpitRender();loadStravaCockpit();};
+ window.renderSeasonCockpit();
+}
+
 })();
