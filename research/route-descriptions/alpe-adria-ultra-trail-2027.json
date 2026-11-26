@@ -50,13 +50,30 @@
       },
       {
         "name": "Sardon Run",
-        "lastOfficialEditionFound": 2026,
-        "status2027": "no 2027 date/programme confirmed in sources checked on 2026-11-26"
+        "edition": 2027,
+        "date": "2027-08-21",
+        "routeCount": "not yet finalised",
+        "status2027": "date officially confirmed; Sardonzin redesign and route changes announced; a 100 km non-stop format is in preparation; final route list, distances and elevation are not yet published.",
+        "historical2026Routes": [
+          7,
+          17,
+          22,
+          48.4,
+          71
+        ],
+        "note": "Do not carry 2026 route data forward as 2027 without organiser confirmation."
       },
       {
         "name": "Čaven Run",
-        "lastOfficialEditionFound": 2026,
-        "status2027": "no 2027 date/programme confirmed in sources checked on 2026-11-26"
+        "edition": 2027,
+        "date": null,
+        "status2027": "official preview announces a 60 km ultra and a new Čaven Vrh; no 2027 date or final route specifications found.",
+        "jointOrganisers": [
+          "Triatlon klub GPS",
+          "ASD SentieroUNO"
+        ],
+        "officialEventContact": "info@caven.run",
+        "note": "2026 rules name both organisations as joint organisers; permission for shared event materials must be confirmed with the appropriate rights holder(s)."
       }
     ]
   },
@@ -97,6 +114,27 @@
     {
       "url": "https://www.s1trail.com/en/alpi-adriatico-quattro-gare-2026-2027/",
       "type": "official_organizer_event_group_overview"
+    },
+    {
+      "url": "https://www.sardon.run/de/",
+      "type": "official_Sardon_Run_event_page",
+      "authority": "ASD SentieroUNO",
+      "verified": true,
+      "notes": "Confirms next edition on 21 August 2027; 2027 route changes announced but final route list not yet published."
+    },
+    {
+      "url": "https://www.sardon.run/sardon-ultra-stage/",
+      "type": "official_Sardon_Ultra_Stage_page",
+      "authority": "ASD SentieroUNO",
+      "verified": true,
+      "notes": "States that a 100 km non-stop format is in preparation for 2027; 2026 route set is historical."
+    },
+    {
+      "url": "https://www.caven.run/sl/",
+      "type": "official_Caven_Run_event_page",
+      "authority": "joint organisers",
+      "verified": true,
+      "notes": "Announces 2027 preview: 60 km ultra and new Caven Vrh; no date/final route specs found."
     }
   ],
   "events": [
@@ -963,7 +1001,8 @@
     "Direct Trace de Trail route pages and their explicit GPX notices were found for five routes only. For Valbruna 10, Grego 8, Lussari 24 and Oitzinger 12, the official pages link/embeds maps, profiles and checkpoint tables, but a separate direct route page with its own GPX notice was not independently verified in this run.",
     "The organizer says GPX becomes available five days before each Alpe Adria race. No 2027 GPX binary was downloaded; metadata was not inspected.",
     "Complete named aid-point details were not available in the accessible text for Grego 8, Lussari 24 or Oitzinger 12; their official checkpoint tables remain linked for later review.",
-    "Sardon Run and Čaven Run are confirmed as ASD SentieroUNO event families, but only 2026 editions were found; no 2027 routes or dates are confirmed in the checked official sources."
+    "Sardon Run 2027 is dated 21 August 2027, but the organiser has not yet published the final 2027 route list; 2026 routes (7, 17, 22, 48.4 and 71 km) are historical only. A 100 km non-stop format is in preparation, not confirmed as a final route.",
+    "Čaven Run 2027 preview announces a 60 km ultra and a new Čaven Vrh but no date or final route specifications. The event is jointly organised by Triatlon klub GPS and ASD SentieroUNO; separate rights-holder approval may be needed."
   ],
   "integration": {
     "liveEventDatesChanged": false,
