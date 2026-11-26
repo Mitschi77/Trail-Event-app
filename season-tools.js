@@ -350,9 +350,14 @@ async function loadStravaCockpit(){
  if(stravaCockpitRequest)return;
  const start=new Date();start.setDate(start.getDate()-90);
  stravaCockpitRequest=(async()=>{
-  const {data,error}=await cloudClient.from('strava_activities').select('provider_activity_id,name,sport_type,started_at,distance_m,moving_time_seconds,total_elevation_gain_m').gte('started_at',start.toISOString()).order('started_at',{ascending:false}).limit(1000);
+  const [{data,error},{data:raceLinks,error:linksError}]=await Promise.all([
+   cloudClient.from('strava_activities').select('id,provider_activity_id,name,sport_type,started_at,distance_m,moving_time_seconds,total_elevation_gain_m').gte('started_at',start.toISOString()).order('started_at',{ascending:false}).limit(1000),
+   cloudClient.from('strava_race_activity_links').select('activity_id').eq('user_id',user)
+  ]);
   if(error)throw error;
-  stravaCockpitRows=Array.isArray(data)?data:[];
+  if(linksError)throw linksError;
+  const raceActivityIds=new Set((raceLinks||[]).map(link=>String(link.activity_id)));
+  stravaCockpitRows=(Array.isArray(data)?data:[]).filter(activity=>!raceActivityIds.has(String(activity.id)));
   stravaCockpitPanel(stravaCockpitRows);
  })().catch(()=>{stravaCockpitPanel(null,'Strava-Daten konnten nicht geladen werden. Bitte Verbindung und Synchronisation im Bereich Training prüfen.');}).finally(()=>{stravaCockpitRequest=null;});
  await stravaCockpitRequest;
