@@ -299,5 +299,28 @@
     "routeDescriptionsLoadedIntoApp": false,
     "gpxRightsRuntimeChanged": false,
     "appPublished": false
-  }
+  },
+  "requestedMaterialCategories": [
+    "official_route_descriptions_verbatim",
+    "shortened_or_editorially_edited_official_route_descriptions",
+    "independent_factual_summaries_based_on_permitted_information",
+    "route_facts_distance_and_elevation",
+    "maps_and_route_lines",
+    "elevation_profiles",
+    "gpx_files_embedded_or_displayed_in_app_and_user_download",
+    "separate_link_to_official_gpx_download_page",
+    "event_names_and_event_marks",
+    "logos_and_word_image_marks",
+    "symbols_icons_pictograms_emblems_mascots",
+    "other_event_specific_graphics_and_visual_design"
+  ],
+  "gpxFileOperationsAskedSeparately": [
+    "access_or_fetch",
+    "load_or_import",
+    "store",
+    "process_or_analyse",
+    "display_on_app_map",
+    "offer_for_user_download",
+    "link_only_to_official_gpx_page"
+  ]
 }
