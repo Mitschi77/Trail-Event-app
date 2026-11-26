@@ -111,3 +111,66 @@ window.showPlannedEventDetails=function(id,ri){prior(id,ri);const root=document.
   if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',repair,{once:true});
   else repair();
 })();
+
+// Sold-out status hardening: distinguish sold out from closed registration or waitlist.
+(()=>{'use strict';
+const STATUS_OPTIONS=[
+ ['','Unbekannt'],
+ ['available','Plätze verfügbar'],
+ ['sold_out','Ausverkauft'],
+ ['registration_closed','Anmeldung geschlossen'],
+ ['waitlist','Warteliste']
+];
+function normalizeStatus(route){
+ const value=String(route?.registrationStatus||'').trim().toLowerCase();
+ if(['available','sold_out','registration_closed','waitlist'].includes(value))return value;
+ if(route?.soldOut===true)return 'sold_out';
+ return '';
+}
+function soldOut(route){return normalizeStatus(route)==='sold_out';}
+function badge(route){
+ if(!soldOut(route))return '';
+ const source=String(route.registrationStatusSource||'').trim();
+ const checked=String(route.registrationStatusCheckedAt||'').trim();
+ const checkedDate=checked?new Date(checked+'T12:00:00'):null;
+ const stale=checkedDate&&Number.isFinite(checkedDate.getTime())&&((Date.now()-checkedDate.getTime())>30*86400000);
+ const title=['Status: Ausverkauft',source?'Quelle: '+source:'Quelle noch nicht hinterlegt',checked?'Geprüft: '+checked:'Prüfdatum fehlt',stale?'Achtung: Prüfung älter als 30 Tage':''].filter(Boolean).join(' · ');
+ return '<span class="sold-out-stamp" role="status" aria-label="Strecke ausverkauft" title="'+String(title).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))+'">SOLD OUT</span>';
+}
+if(typeof window.routeSoldOut==='function')window.routeSoldOut=soldOut;
+if(typeof window.soldOutRouteBadge==='function')window.soldOutRouteBadge=badge;
+if(typeof window.soldOutOverviewTag==='function'){
+ window.soldOutOverviewTag=function(event){
+  const count=(event?.routes||[]).filter(soldOut).length;
+  return count?'<span class="sold-out-overview" role="status">'+count+' '+(count===1?'Strecke':'Strecken')+' SOLD OUT</span>':'';
+ };
+}
+function enhanceEditor(root){
+ (root||document).querySelectorAll('select[data-field="registrationStatus"]').forEach(select=>{
+  STATUS_OPTIONS.forEach(([value,label])=>{
+   if(![...select.options].some(option=>option.value===value)){
+    const option=document.createElement('option');option.value=value;option.textContent=label;select.appendChild(option);
+   }
+  });
+  const grid=select.closest('.edit-grid');
+  if(!grid)return;
+  const addField=(key,label,type,value)=>{
+   if(grid.querySelector('[data-field="'+key+'"]'))return;
+   const wrapper=document.createElement('label');wrapper.textContent=label;
+   const input=document.createElement('input');input.type=type;input.dataset.field=key;
+   input.value=value||'';if(type==='url')input.placeholder='https://…';
+   wrapper.appendChild(input);grid.appendChild(wrapper);
+  };
+  const route=typeof EVENTS!=='undefined'?(()=>{const card=select.closest('.event');const id=Number(card?.dataset.eventId);const event=EVENTS[id];const editor=select.closest('.route');const name=editor?.querySelector('.route>strong')?.textContent?.trim();return event?.routes?.find(r=>(r.route||'Strecke ohne Namen')===name)||null;})():null;
+  addField('registrationStatusSource','Offizielle Quelle zum Anmeldestatus (URL)','url',route?.registrationStatusSource);
+  addField('registrationStatusCheckedAt','Zuletzt offiziell geprüft','date',route?.registrationStatusCheckedAt);
+ }
+ );
+}
+enhanceEditor(document);
+const observer=new MutationObserver(records=>records.forEach(record=>record.addedNodes.forEach(node=>{
+ if(node.nodeType===1)enhanceEditor(node);
+})));
+observer.observe(document.documentElement,{childList:true,subtree:true});
+window.addEventListener('DOMContentLoaded',()=>enhanceEditor(document),{once:true});
+})();
