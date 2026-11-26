@@ -334,9 +334,35 @@ function stravaCockpitPanel(rows,message){
  const current=stravaMetric(currentRows),previous=stravaMetric(previousRows);
  const fmt=n=>Number(n||0).toLocaleString('de-DE',{maximumFractionDigits:1});
  const hours=n=>((n||0)/3600).toLocaleString('de-DE',{maximumFractionDigits:1})+' h';
+ const sportIcon=(kind)=>{
+  const paths={
+   run:'<circle cx="15.5" cy="4.5" r="2"/><path d="m13 8-3 4 4 3 2 6m-6-9-4 2-3 5m7-8 5 1 3 4m-8 5-3 4"/>',
+   trail:'<path d="m2 20 7-12 4 6 3-4 6 10H2Z"/><circle cx="14.5" cy="5" r="1.7"/><path d="m13 8-2 3 3 2 2 5m-5-7-3 2"/>',
+   bike:'<circle cx="6" cy="17" r="4"/><circle cx="18" cy="17" r="4"/><path d="m6 17 4-8 4 8H6l4-8h5m-1-3h3"/>',
+   yoga:'<circle cx="12" cy="4.5" r="2"/><path d="m12 7  -2 5 2 3 2-3-2-5m-2 5-5 3m9-3 5 3m-9 0-2 5m6-5 2 5"/>',
+   hike:'<path d="m2 20 7-13 4 6 3-4 6 11H2Z"/><path d="m9 20 3-5 3 5"/>',
+   swim:'<path d="M3 16c2 0 2-2 4-2s2 2 4 2 2-2 4-2 2 2 4 2 2-2 3-2M3 20c2 0 2-2 4-2s2 2 4 2 2-2 4-2 2 2 4 2 2-2 3-2"/><circle cx="16" cy="5" r="2"/><path d="m14 8-4 3 4 2 3-2"/>',
+   strength:'<path d="M4 9v6m4-9v12m8-12v12m4-9v6M8 12h8"/>',
+   winter:'<path d="M12 2v20M4 7l16 10M4 17 20 7M9 4l3 2 3-2m-6 16 3-2 3 2M3 10l1-3 3 0m10 10 3 0 1-3M3 14l1 3 3 0m10-10 3 0 1 3"/>',
+   other:'<path d="M3 12h4l3-7 4 14 3-7h4"/>'
+  };
+  return '<svg class="strava-sport-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">'+(paths[kind]||paths.other)+'</svg>';
+ };
+ const sportMeta=raw=>{
+  const key=String(raw||'Other').toLowerCase();
+  if(/trail/.test(key))return{label:'Trail',icon:'trail'};
+  if(/^(run|virtualrun)$/.test(key))return{label:'Run',icon:'run'};
+  if(/ride|bike|cycling/.test(key))return{label:'Bike',icon:'bike'};
+  if(/yoga/.test(key))return{label:'Yoga',icon:'yoga'};
+  if(/hike|walk|snowshoe/.test(key))return{label:'Wandern',icon:'hike'};
+  if(/swim|kayak|canoe|paddle|surf|row/.test(key))return{label:'Wasser',icon:'swim'};
+  if(/weight|workout|crossfit|strength|elliptical/.test(key))return{label:'Kraft',icon:'strength'};
+  if(/ski|snowboard|skate|ice/.test(key))return{label:'Winter',icon:'winter'};
+  return{label:raw&&key!=='other'?String(raw):'Weitere',icon:'other'};
+ };
  const types={};
- currentRows.forEach(a=>{const raw=String(a.sport_type||'Other').toLowerCase();let label=/run|trail|hike|walk/.test(raw)?'Run & Trail':/ride|bike|cycling/.test(raw)?'Bike':/yoga/.test(raw)?'Yoga':raw==='other'?'Weitere':String(a.sport_type||'Weitere');types[label]=(types[label]||0)+1;});
- const typeHtml=Object.entries(types).sort((a,b)=>b[1]-a[1]).map(([label,count])=>'<span class="strava-sport-chip">'+escText(label)+' <b>'+count+'</b></span>').join('')||'<span class="plan-meta">Noch keine Aktivitäten in dieser Woche</span>';
+ currentRows.forEach(a=>{const meta=sportMeta(a.sport_type);types[meta.label]??={count:0,icon:meta.icon};types[meta.label].count++;});
+ const typeHtml=Object.entries(types).sort((a,b)=>b[1].count-a[1].count).map(([label,meta])=>'<span class="strava-sport-chip">'+sportIcon(meta.icon)+' <span>'+escText(label)+'</span> <b>'+meta.count+'</b></span>').join('')||'<span class="plan-meta">Noch keine Aktivitäten in dieser Woche</span>';
  const stat=(value,label)=>'<div class="season-kpi"><strong>'+value+'</strong><span>'+label+'</span></div>';
  box.innerHTML='<div class="season-training-heading"><div><span class="nb-eyebrow">NORTHBOUND · TRAINING</span><h3>Deine Strava-Woche</h3><p>Importierte Trainingsaktivitäten – unabhängig von deinen Wettkampfergebnissen.</p></div><span class="season-training-period">AKTUELLE WOCHE</span></div><div class="season-dashboard-stats">'+stat(fmt(current.km)+' km','Distanz')+stat(Math.round(current.hm).toLocaleString('de-DE')+' hm','Höhenmeter')+stat(current.count,'Aktivitäten')+stat(hours(current.seconds),'Bewegungszeit')+'</div><div class="strava-sport-breakdown"><strong>Sportarten diese Woche</strong><div>'+typeHtml+'</div></div><p class="season-training-note">Vorwoche: '+fmt(previous.km)+' km · '+Math.round(previous.hm).toLocaleString('de-DE')+' hm · '+previous.count+' Aktivitäten · '+hours(previous.seconds)+'. Grundlage: '+rows.length+' importierte Strava-Aktivitäten der letzten 90 Tage.</p></div>';
  root.appendChild(box);
@@ -363,7 +389,7 @@ async function loadStravaCockpit(){
  await stravaCockpitRequest;
 }
 const stravaCockpitStyle=document.createElement('style');
-stravaCockpitStyle.textContent='#strava-cockpit-panel .season-dashboard-stats{margin-top:12px}#strava-cockpit-panel .season-kpi{min-width:0}#strava-cockpit-panel .season-kpi strong{font-size:19px}#strava-cockpit-panel .strava-sport-breakdown{margin-top:13px}#strava-cockpit-panel .strava-sport-breakdown>strong{font-size:12px}#strava-cockpit-panel .strava-sport-breakdown>div{display:flex;flex-wrap:wrap;gap:7px;margin-top:8px}.strava-sport-chip{display:inline-flex;align-items:center;gap:7px;padding:6px 10px;border:1px solid var(--line);border-radius:999px;background:var(--bg);font-size:11px}.strava-sport-chip b{color:#FF6A00}';
+stravaCockpitStyle.textContent='#strava-cockpit-panel .season-dashboard-stats{margin-top:12px}#strava-cockpit-panel .season-kpi{min-width:0}#strava-cockpit-panel .season-kpi strong{font-size:19px}#strava-cockpit-panel .strava-sport-breakdown{margin-top:13px}#strava-cockpit-panel .strava-sport-breakdown>strong{font-size:12px}#strava-cockpit-panel .strava-sport-breakdown>div{display:flex;flex-wrap:wrap;gap:7px;margin-top:8px}.strava-sport-chip{display:inline-flex;align-items:center;gap:7px;padding:7px 11px;border:1px solid var(--line);border-radius:999px;background:var(--bg);font-size:11px}.strava-sport-icon{width:17px;height:17px;flex:0 0 17px;color:#79D7F5}.strava-sport-chip b{color:#FF6A00;font-variant-numeric:tabular-nums}';
 stravaCockpitStyle.id='strava-cockpit-style';document.head.querySelector('#strava-cockpit-style')?.remove();document.head.appendChild(stravaCockpitStyle);
 const originalStravaCockpitRender=window.renderSeasonCockpit;
 if(typeof originalStravaCockpitRender==='function'){
