@@ -1,0 +1,433 @@
+{
+  "schemaVersion": 1,
+  "checkedAt": "2026-11-23",
+  "organizer": {
+    "name": "Ultra X",
+    "legalEntity": "World Ultra Corporation Ltd",
+    "officialRaceCalendar": "https://ultra-x.co/ultra-marathon-races/",
+    "officialContactPage": "https://ultra-x.co/contact-us/",
+    "rightsMailbox": "contact@ultra-x.co",
+    "rightsMailboxEvidence": "The address appears in the official Ultra X volunteer information PDF hosted on ultra-x.co. The contact page itself exposes a contact form; the published address is not identified as a dedicated licensing mailbox."
+  },
+  "scope": {
+    "currentCatalogEventIds": [
+      "ultra-x-110-scotland",
+      "ultra-x-110-finnland",
+      "ultra-x-110-slowenien"
+    ],
+    "catalogCrossCheck": "event-dates.json contains these three Ultra X records. Scotland has a verified 2027 period but no route objects; Finland and Slovenia have no event period and no route objects.",
+    "official2027Portfolio": {
+      "listedOnOfficialCalendar": [
+        "Spring Trail Series",
+        "Ultra X Scotland",
+        "Ultra X Kenya",
+        "Ultra X Wales",
+        "Ultra X England",
+        "Ultra X Jordan",
+        "Ultra X South Africa",
+        "Ultra X Madeira",
+        "Ultra X Morocco",
+        "Ultra X Rwanda"
+      ],
+      "note": "Only Ultra X Scotland among these ten current official-calendar entries matches the three existing Ultra X records in event-dates.json. The other nine are recorded as possible catalog additions for separate duplicate/date review, not inserted into live event data."
+    }
+  },
+  "events": [
+    {
+      "eventId": "ultra-x-110-scotland",
+      "name": "Ultra X Scotland",
+      "edition": 2027,
+      "eventDate": {
+        "start": "2027-05-01",
+        "end": "2027-05-02",
+        "status": "officially-published"
+      },
+      "officialEventPage": "https://ultra-x.co/event/ultra-marathon-in-scotland/",
+      "description": {
+        "summary": "Mehrere Trail-Distanzen führen durch die schottischen Highlands rund um Loch Ness. Die Startorte unterscheiden sich je Distanz: Inverness für den 100-Miler, Dores für die 110-km-, 50-km-, 25-km- und Dash-Optionen sowie Fort Augustus für 60 km.",
+        "surface": "Die Veranstalterseite bezeichnet die Strecken als Trails, veröffentlicht auf der geprüften Seite aber keine belastbare Aufteilung nach Naturweg, Schotter, Straße oder technischem Untergrund.",
+        "highlights": [
+          "Loch Ness und Great Glen",
+          "Schottische Highlands",
+          "Start-/Zielregionen Inverness, Dores und Fort Augustus"
+        ],
+        "aid": "Laut offizieller Seite ungefähr alle 10 km vollständig bestückte Verpflegungsstationen. Distanzspezifische Versorgung und Drop-Bag-Regeln sind dem finalen Race Pack vorbehalten.",
+        "racePack": "Detaillierte Informationen, Zeiten und Cut-offs werden laut Veranstalter ungefähr einen Monat vor dem Rennen an registrierte Teilnehmende gesendet."
+      },
+      "routeSource": "https://ultra-x.co/event/ultra-marathon-in-scotland/",
+      "routes": [
+        {
+          "key": "ultra-x-scotland-100-mile-2027",
+          "catalogRouteId": null,
+          "name": "Loch Ness Monster 100 miler",
+          "nominalDistanceKm": 160.934,
+          "elevationGainM": null,
+          "start": {
+            "place": "Inverness",
+            "date": "2027-05-01",
+            "localTime": "04:00"
+          },
+          "courseSummary": "Lange Trailroute durch die Highlands im Loch-Ness-Gebiet; die offizielle Seite nennt Inverness als Start. Ein detaillierter 2027-Untergrund- oder Abschnittsverlauf ist auf der öffentlichen Seite nicht beschrieben.",
+          "terrain": "Trail; genaue Untergrundanteile nicht veröffentlicht.",
+          "highlights": [
+            "Inverness",
+            "Loch Ness",
+            "Scottish Highlands"
+          ],
+          "aid": "Voll bestückte Stationen ungefähr alle 10 km laut Veranstalter.",
+          "cutoff": {
+            "value": "40 Stunden",
+            "status": "official-page"
+          },
+          "elevationProfileUrl": "https://ultra-x.co/uploads/2025/12/scotland-100-miler-scaled.png",
+          "elevationProfileStatus": "official-image-link-found; asset is stored under a 2025/12 path and is not explicitly versioned as 2027; do not treat its plotted metrics as confirmed 2027 data",
+          "mapUrl": null,
+          "gpxUrl": null,
+          "gpxStatus": "No public 2027 GPX URL found. Race-page kit guidance requires a GPX on the participant's phone; participant distribution method and reuse rights remain unconfirmed.",
+          "missing": [
+            "2027 ascent/descent values in text",
+            "surface breakdown",
+            "official public map",
+            "public GPX endpoint",
+            "aid-station names and exact distances"
+          ]
+        },
+        {
+          "key": "ultra-x-scotland-110-single-2027",
+          "catalogRouteId": null,
+          "name": "110 km single stage",
+          "nominalDistanceKm": 110,
+          "elevationGainM": null,
+          "start": {
+            "place": "Dores",
+            "date": "2027-05-01",
+            "localTime": "07:00"
+          },
+          "courseSummary": "Ein durchgehender 110-km-Trailwettbewerb im schottischen Highlands-/Loch-Ness-Gebiet. Die öffentliche Seite beschreibt keinen eigenständigen Abschnittsverlauf für die Single-Stage-Variante.",
+          "terrain": "Trail; genaue Untergrundanteile nicht veröffentlicht.",
+          "highlights": [
+            "Dores",
+            "Loch Ness",
+            "Scottish Highlands"
+          ],
+          "aid": "Voll bestückte Stationen ungefähr alle 10 km laut Veranstalter.",
+          "cutoff": {
+            "value": "30 Stunden",
+            "status": "official-page"
+          },
+          "elevationProfileUrl": null,
+          "elevationProfileStatus": "No separate 2027 single-stage profile identified. The published 110-km graphic is visibly divided into Stage 1 and Stage 2 and is not assigned to this single-stage route.",
+          "mapUrl": null,
+          "gpxUrl": null,
+          "gpxStatus": "No public 2027 GPX URL found; participant distribution and permissions not confirmed.",
+          "missing": [
+            "2027 elevation",
+            "dedicated profile",
+            "map",
+            "GPX endpoint",
+            "detailed course/terrain description",
+            "aid-station names"
+          ]
+        },
+        {
+          "key": "ultra-x-scotland-110-two-stage-2027",
+          "catalogRouteId": null,
+          "name": "110 km over two stages",
+          "nominalDistanceKm": 110,
+          "elevationGainM": null,
+          "start": {
+            "place": "Dores",
+            "date": "2027-05-01",
+            "localTime": "07:00"
+          },
+          "courseSummary": "Zweistufige 110-km-Option mit Übernachtung/Camping; die Veranstaltergrafik für 110 km zeigt zwei Abschnitte. Die im Diagramm sichtbaren Abschnittslängen summieren sich auf rund 123 km (60 + 63 km) und widersprechen damit dem nominalen Namen; keine der beiden Angaben wird ohne Veranstalterklärung als finale Streckenlänge festgeschrieben.",
+          "terrain": "Trail; genaue Untergrundanteile nicht veröffentlicht.",
+          "highlights": [
+            "Dores",
+            "Loch Ness",
+            "Zweistufiges Format mit Camp"
+          ],
+          "aid": "Voll bestückte Stationen ungefähr alle 10 km laut Veranstalter.",
+          "cutoff": {
+            "value": null,
+            "status": "Not separately published on the public event page; detailed race pack promised to entrants."
+          },
+          "elevationProfileUrl": "https://ultra-x.co/uploads/2025/12/scotland-110km-scaled.png",
+          "elevationProfileStatus": "official-image-link-found; chart is labelled Stage 1/Stage 2 and displays 60 km + 63 km; asset path is 2025/12 and 2027 edition validity is not confirmed",
+          "mapUrl": null,
+          "gpxUrl": null,
+          "gpxStatus": "No public 2027 GPX URL found; participant distribution and permissions not confirmed.",
+          "missing": [
+            "official resolution of 110 km vs 60+63 km profile labels",
+            "2027 ascent/descent values",
+            "surface breakdown",
+            "map",
+            "GPX endpoint",
+            "stage cut-offs and overnight logistics"
+          ]
+        },
+        {
+          "key": "ultra-x-scotland-60-2027",
+          "catalogRouteId": null,
+          "name": "60 km",
+          "nominalDistanceKm": 60,
+          "elevationGainM": null,
+          "start": {
+            "place": "Fort Augustus",
+            "date": "2027-05-02",
+            "localTime": "07:00"
+          },
+          "courseSummary": "Trailwettbewerb im Highlands-/Loch-Ness-Gebiet mit Start in Fort Augustus. Die öffentliche Veranstalterseite nennt keine detaillierte Weg- oder Untergrundbeschreibung.",
+          "terrain": "Trail; genaue Untergrundanteile nicht veröffentlicht.",
+          "highlights": [
+            "Fort Augustus",
+            "Loch Ness",
+            "Scottish Highlands"
+          ],
+          "aid": "Voll bestückte Stationen ungefähr alle 10 km laut Veranstalter.",
+          "cutoff": {
+            "value": "2 bis 2,5 Stunden je 10 km",
+            "status": "official-page"
+          },
+          "elevationProfileUrl": "https://ultra-x.co/uploads/2025/12/scotland-60km-scaled.png",
+          "elevationProfileStatus": "official-image-link-found; chart labels approximately 63.0 km; asset path is 2025/12 and not explicitly confirmed as the 2027 edition",
+          "mapUrl": null,
+          "gpxUrl": null,
+          "gpxStatus": "No public 2027 GPX URL found; participant distribution and permissions not confirmed.",
+          "missing": [
+            "2027 ascent/descent values",
+            "surface breakdown",
+            "map",
+            "GPX endpoint",
+            "aid-station names"
+          ]
+        },
+        {
+          "key": "ultra-x-scotland-50-2027",
+          "catalogRouteId": null,
+          "name": "50 km",
+          "nominalDistanceKm": 50,
+          "elevationGainM": null,
+          "start": {
+            "place": "Dores",
+            "date": "2027-05-01",
+            "localTime": "08:00"
+          },
+          "courseSummary": "Trailwettbewerb ab Dores durch die Highlands am Loch Ness. Die öffentliche Seite enthält keine detaillierte Weg- oder Untergrundbeschreibung.",
+          "terrain": "Trail; genaue Untergrundanteile nicht veröffentlicht.",
+          "highlights": [
+            "Dores",
+            "Loch Ness",
+            "Scottish Highlands"
+          ],
+          "aid": "Voll bestückte Stationen ungefähr alle 10 km laut Veranstalter.",
+          "cutoff": {
+            "value": "2 bis 2,5 Stunden je 10 km",
+            "status": "official-page"
+          },
+          "elevationProfileUrl": "https://ultra-x.co/uploads/2025/12/scotland-50km-scaled.png",
+          "elevationProfileStatus": "official-image-link-found; chart labels approximately 51.0 km; asset path is 2025/12 and not explicitly confirmed as the 2027 edition",
+          "mapUrl": null,
+          "gpxUrl": null,
+          "gpxStatus": "No public 2027 GPX URL found; participant distribution and permissions not confirmed.",
+          "missing": [
+            "2027 ascent/descent values",
+            "surface breakdown",
+            "map",
+            "GPX endpoint",
+            "aid-station names"
+          ]
+        },
+        {
+          "key": "ultra-x-scotland-25-2027",
+          "catalogRouteId": null,
+          "name": "25 km",
+          "nominalDistanceKm": 25,
+          "elevationGainM": null,
+          "start": {
+            "place": "Dores",
+            "date": "2027-05-01",
+            "localTime": "11:00"
+          },
+          "courseSummary": "Kurze Trailoption ab Dores im Highlands-/Loch-Ness-Gebiet. Eine genaue Wegbeschreibung oder Untergrundaufteilung ist öffentlich nicht angegeben.",
+          "terrain": "Trail; genaue Untergrundanteile nicht veröffentlicht.",
+          "highlights": [
+            "Dores",
+            "Loch Ness"
+          ],
+          "aid": "Die allgemeine Veranstalterseite nennt voll bestückte Stationen ungefähr alle 10 km; konkrete Versorgung für diese Distanz nicht einzeln ausgewiesen.",
+          "cutoff": {
+            "value": null,
+            "status": "Not published separately on the public page."
+          },
+          "elevationProfileUrl": "https://ultra-x.co/uploads/2025/12/UltraX-RacePage-Scotland-26-Elevation-25-V2-scaled.png",
+          "elevationProfileStatus": "official-image-link-found; filename explicitly contains Scotland-26, so this is a historical 2026-labelled asset and is not accepted as a 2027 profile",
+          "mapUrl": null,
+          "gpxUrl": null,
+          "gpxStatus": "No public 2027 GPX URL found; participant distribution and permissions not confirmed.",
+          "missing": [
+            "2027 ascent/descent values",
+            "2027 profile",
+            "surface breakdown",
+            "map",
+            "GPX endpoint",
+            "aid-station details"
+          ]
+        },
+        {
+          "key": "ultra-x-scotland-dash-2027",
+          "catalogRouteId": null,
+          "name": "The Dash",
+          "nominalDistanceKm": null,
+          "distanceConflict": {
+            "eventDescriptionKm": 16,
+            "eventSummaryAndProfileLabelKm": 12,
+            "profileImageUrl": "https://ultra-x.co/uploads/2025/12/ultra-x-scotland-elevation-12-scaled.png",
+            "status": "unresolved"
+          },
+          "elevationGainM": null,
+          "start": {
+            "place": "Dores",
+            "date": "2027-05-02",
+            "localTime": "12:00"
+          },
+          "courseSummary": "Kurze Dash-Trailoption ab Dores. Die offizielle Detailbeschreibung nennt 16 km, während die Distanzübersicht und die Profilüberschrift 12 km nennen. Strecke und Profil dürfen erst nach Bestätigung eindeutig zugeordnet werden.",
+          "terrain": "Trail; genaue Untergrundanteile nicht veröffentlicht.",
+          "highlights": [
+            "Dores",
+            "Loch Ness"
+          ],
+          "aid": "Keine distanzspezifischen Angaben veröffentlicht.",
+          "cutoff": {
+            "value": null,
+            "status": "Not published."
+          },
+          "elevationProfileUrl": "https://ultra-x.co/uploads/2025/12/ultra-x-scotland-elevation-12-scaled.png",
+          "elevationProfileStatus": "official-image-link-found; filename says 12; asset path 2025/12; chart labels about 10.4 km; not accepted as a verified 2027 Dash profile",
+          "mapUrl": null,
+          "gpxUrl": null,
+          "gpxStatus": "No public 2027 GPX URL found; participant distribution and permissions not confirmed.",
+          "missing": [
+            "correct 2027 Dash distance",
+            "2027 elevation",
+            "surface breakdown",
+            "map",
+            "GPX endpoint",
+            "aid and cutoff"
+          ]
+        }
+      ],
+      "rights": "pending-explicit-written-permission",
+      "gpxPolicy": "block-fetch-import-storage-processing-map-display-download; official-page-link-also-pending-separate-permission"
+    },
+    {
+      "eventId": "ultra-x-110-finnland",
+      "name": "Ultra X 110 Finland",
+      "edition": 2027,
+      "eventDate": null,
+      "officialEventPage": null,
+      "status": "no-2027-edition-confirmed",
+      "description": null,
+      "routes": [],
+      "sources": [
+        "https://ultra-x.co/ultra-marathon-races/",
+        "https://ultra-x.co/contact-us/"
+      ],
+      "note": "The current official 2027 calendar does not list Finland; the old event record has no date or route objects. The former 2026 event reference in an official volunteer pack is historical only. No 2027 course, distance, elevation, profile, map or GPX data accepted."
+    },
+    {
+      "eventId": "ultra-x-110-slowenien",
+      "name": "Ultra X I Feel Slovenia",
+      "edition": 2027,
+      "eventDate": null,
+      "officialEventPage": "https://ultra-x.co/event/ultra-marathon-in-slovenia/",
+      "status": "no-2027-edition-confirmed",
+      "description": null,
+      "routes": [],
+      "sources": [
+        "https://ultra-x.co/ultra-marathon-races/",
+        "https://ultra-x.co/event/ultra-marathon-in-slovenia/",
+        "https://ultra-x.co/contact-us/"
+      ],
+      "note": "The official calendar does not list Slovenia for 2027; the former event page currently returns 404. The database record has no event period or route objects. Do not carry forward 2026 route data into 2027."
+    }
+  ],
+  "rights": {
+    "status": "consolidated-request-submitted-awaiting-response",
+    "nonCommercialPhaseOnly": true,
+    "futureCommercialLicenceSeparate": true,
+    "previousIndividualRequests": [
+      "2026-11-19 Ultra X Scotland",
+      "2026-11-19 Ultra X 110 Finland",
+      "2026-11-19 Ultra X 110 Slovenia"
+    ],
+    "consolidatedSupplement": {
+      "date": "2026-11-23",
+      "recipient": "contact@ultra-x.co",
+      "contactSource": "https://ultra-x.co/uploads/2026/03/UltraX-VolunteerPack-2026-V3.pdf",
+      "contactPage": "https://ultra-x.co/contact-us/",
+      "status": "submitted",
+      "sentCopyFiled": true,
+      "messageIdHeader": "<179539809127.141.11422802018798287503@me.com>",
+      "replyToThread": "Ultra X Scotland request from 2026-11-19"
+    },
+    "inboxCheck": {
+      "checkedAt": "2026-11-23",
+      "searches": [
+        "FROM contact@ultra-x.co",
+        "FROM ultra-x.co",
+        "SUBJECT Ultra X"
+      ],
+      "repliesFound": false
+    },
+    "permissionCategories": [
+      "verbatim-official-course-descriptions",
+      "edited-or-shortened-course-descriptions",
+      "independent-factual-summaries-from-organizer-provided-information",
+      "factual-route-data-distance-elevation-start-finish-checkpoints",
+      "maps-and-route-lines",
+      "elevation-profiles",
+      "gpx-retrieval-import-storage-processing-map-display-and-user-download-separated",
+      "link-only-to-official-gpx-download-page",
+      "event-names-and-event-trademarks",
+      "logos-and-word-or-figurative-marks",
+      "symbols-icons-pictograms-emblems-and-mascots",
+      "other-event-specific-graphics-and-visual-design"
+    ],
+    "gpxQuestionsExplicitlyIncluded": [
+      "identify exact restriction/copyright/licence/download-ban wording and its location",
+      "identify affected event and distance",
+      "confirm whether retrieval, loading, import, storage, processing, map display and user download are prohibited",
+      "confirm separately whether link-only to official page is permitted",
+      "explain how restrictions should be shown in app",
+      "state all conditions and exceptions"
+    ],
+    "commercialQuestion": "Asked separately whether a later commercial licence is possible and under what conditions; not included in current non-commercial permission.",
+    "response": null
+  },
+  "safety": {
+    "noProtectedTextCopied": true,
+    "noMapsOrProfilesCopied": true,
+    "noLogosOrGraphicsCopied": true,
+    "noGpxBinariesDownloaded": true,
+    "noGpxMetadataInspected": true,
+    "noLiveEventDataChanged": true,
+    "allOrganizerGpxRoutesRemainBlocked": true,
+    "note": "Only original-source URLs and independently written factual summaries are stored. Profile image URLs are references only; no profile image is copied into the repository or app."
+  },
+  "sources": [
+    "https://ultra-x.co/ultra-marathon-races/",
+    "https://ultra-x.co/event/ultra-marathon-in-scotland/",
+    "https://ultra-x.co/event/ultra-marathon-in-finland/",
+    "https://ultra-x.co/event/ultra-marathon-in-slovenia/",
+    "https://ultra-x.co/faqs/",
+    "https://ultra-x.co/contact-us/",
+    "https://ultra-x.co/uploads/2025/12/scotland-100-miler-scaled.png",
+    "https://ultra-x.co/uploads/2025/12/scotland-110km-scaled.png",
+    "https://ultra-x.co/uploads/2025/12/scotland-60km-scaled.png",
+    "https://ultra-x.co/uploads/2025/12/scotland-50km-scaled.png",
+    "https://ultra-x.co/uploads/2025/12/UltraX-RacePage-Scotland-26-Elevation-25-V2-scaled.png",
+    "https://ultra-x.co/uploads/2025/12/ultra-x-scotland-elevation-12-scaled.png",
+    "https://ultra-x.co/uploads/2026/03/UltraX-VolunteerPack-2026-V3.pdf"
+  ]
+}

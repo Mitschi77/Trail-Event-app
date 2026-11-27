@@ -1,0 +1,185 @@
+{
+  "schemaVersion": 1,
+  "checkedAt": "2026-11-23",
+  "organizer": "Ultra X / World Ultra Corporation Ltd",
+  "catalogEvents": [
+    "ultra-x-110-scotland",
+    "ultra-x-110-finnland",
+    "ultra-x-110-slowenien"
+  ],
+  "verifiedContact": {
+    "email": "contact@ultra-x.co",
+    "evidenceUrl": "https://ultra-x.co/uploads/2026/03/UltraX-VolunteerPack-2026-V3.pdf",
+    "evidence": "The official Ultra X volunteer information PDF hosted on ultra-x.co publishes contact@ultra-x.co for questions. The official contact page also provides a contact form but does not itself display a licensing email.",
+    "rightsRoleConfirmed": false
+  },
+  "requests": [
+    {
+      "date": "2026-11-19",
+      "event": "Ultra X Scotland",
+      "status": "sent",
+      "note": "Initial event-specific request; scope was less detailed than the later consolidated supplement."
+    },
+    {
+      "date": "2026-11-19",
+      "event": "Ultra X 110 Finland",
+      "status": "sent",
+      "note": "Initial event-specific request; scope was less detailed than the later consolidated supplement."
+    },
+    {
+      "date": "2026-11-19",
+      "event": "Ultra X 110 Slovenia",
+      "status": "sent",
+      "note": "Initial event-specific request; scope was less detailed than the later consolidated supplement."
+    },
+    {
+      "date": "2026-11-23",
+      "event": "All three catalog events, consolidated",
+      "status": "submitted",
+      "recipient": "contact@ultra-x.co",
+      "thread": "Reply to existing Ultra X Scotland email thread",
+      "messageIdHeader": "<179539809127.141.11422802018798287503@me.com>",
+      "sentCopyFiled": true,
+      "deliveryConfirmed": false,
+      "content": "Requested independent written permission for the non-commercial project phase only; 12 separately selectable material/use categories; GPX fetch/import/storage/processing/map display/download separated from link-only; exact restriction notices, source locations and affected routes; future commercial licensing separately; media pack, logos and brand guidelines; permission to forward to the rights contact."
+    }
+  ],
+  "permissionMatrix": {
+    "phase": "non-commercial-project-only",
+    "futureCommercial": "separate-explicit-licence-required",
+    "categories": [
+      {
+        "id": 1,
+        "kind": "official-description-verbatim",
+        "status": "pending"
+      },
+      {
+        "id": 2,
+        "kind": "official-description-edited-or-shortened",
+        "status": "pending"
+      },
+      {
+        "id": 3,
+        "kind": "independent-factual-summary",
+        "status": "pending"
+      },
+      {
+        "id": 4,
+        "kind": "factual-distance-elevation-data",
+        "status": "pending"
+      },
+      {
+        "id": 5,
+        "kind": "maps-and-route-lines",
+        "status": "pending"
+      },
+      {
+        "id": 6,
+        "kind": "elevation-profiles",
+        "status": "pending"
+      },
+      {
+        "id": 7,
+        "kind": "gpx-file-operations",
+        "status": "pending",
+        "operations": [
+          "fetch",
+          "load",
+          "import",
+          "store",
+          "process",
+          "display-on-map",
+          "offer-download"
+        ]
+      },
+      {
+        "id": 8,
+        "kind": "link-only-to-official-gpx-page",
+        "status": "pending"
+      },
+      {
+        "id": 9,
+        "kind": "event-names-and-trademarks",
+        "status": "pending"
+      },
+      {
+        "id": 10,
+        "kind": "logos-and-word-or-figurative-marks",
+        "status": "pending"
+      },
+      {
+        "id": 11,
+        "kind": "symbols-icons-pictograms-emblems-mascots",
+        "status": "pending"
+      },
+      {
+        "id": 12,
+        "kind": "other-event-specific-graphics-and-visual-design",
+        "status": "pending"
+      }
+    ]
+  },
+  "gpxRestrictionRegister": {
+    "defaultPolicy": "deny",
+    "routeIds": [
+      "ultra-x-scotland-100-mile-2027",
+      "ultra-x-scotland-110-single-2027",
+      "ultra-x-scotland-110-two-stage-2027",
+      "ultra-x-scotland-60-2027",
+      "ultra-x-scotland-50-2027",
+      "ultra-x-scotland-25-2027",
+      "ultra-x-scotland-dash-2027"
+    ],
+    "noticeCheck": {
+      "officialScotlandPage": "No explicit download prohibition or GPX restriction wording identified on the public event page reviewed.",
+      "participantKitList": "Requires a GPX file to be uploaded to the participant's phone for certain distances; this is not permission for third-party retrieval, storage, display or redistribution.",
+      "gpxMetadata": "Not inspected; no GPX binary retrieved.",
+      "routeSpecificRestrictions": "Unknown pending organizer confirmation."
+    },
+    "actionsBlockedUntilExplicitPermission": [
+      "automatic-fetch",
+      "load",
+      "import",
+      "store",
+      "process",
+      "map-display",
+      "user-download"
+    ],
+    "officialPageLink": "blocked-pending-separate-link-permission",
+    "userNotice": "GPX durch Veranstalter eingeschränkt – kein Download möglich",
+    "rule": "Any restriction notice, download prohibition, missing explicit permission or unclear/contradictory rights status blocks the entire organizer-GPX pipeline before network retrieval. A page-link permission is separate."
+  },
+  "replyStatus": {
+    "checkedAt": "2026-11-23",
+    "inboxQueries": [
+      "FROM contact@ultra-x.co",
+      "FROM ultra-x.co",
+      "SUBJECT Ultra X"
+    ],
+    "repliesFound": false,
+    "restrictionsConfirmed": false,
+    "permissionGranted": false
+  },
+  "mediaAndBrandGuidance": {
+    "mediaPackRequested": true,
+    "logoFilesRequested": true,
+    "brandGuidelinesRequested": true,
+    "requestedConditions": [
+      "size",
+      "colour",
+      "placement",
+      "source-attribution",
+      "permitted-context",
+      "duration",
+      "expiry-or-removal",
+      "exclusions-and-conditions"
+    ]
+  },
+  "repositorySafety": {
+    "protectedContentCopied": false,
+    "gpxFilesDownloaded": false,
+    "gpxMetadataRead": false,
+    "liveEventDataChanged": false,
+    "publishedToApp": false
+  }
+}
