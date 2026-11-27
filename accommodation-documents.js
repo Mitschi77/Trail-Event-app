@@ -24,7 +24,7 @@
     return html.replace(/<\/article>/g,function(close){
       const stay=stays[index++];
       if(!stay)return close;
-      const stayId=safePart(stay.id||'legacy');
+      const stayId=safePart(stay.id||('stay-'+index));
       return panel(String(e.id),stayId)+close;
     });
   }
@@ -83,6 +83,30 @@
       if(removed.error)throw removed.error;
       const all=read();all[eventId][stayId]=docs.filter((_,i)=>i!==index);write(all);refreshPanel(eventId,stayId);
     }catch(error){if(status)status.textContent='Löschen fehlgeschlagen: '+(error&&error.message||'Unbekannter Fehler');}
+  }
+  async function cleanupRemovedStay(eventId,stayId){
+    const all=read(),docs=all[eventId]&&all[eventId][stayId];
+    if(!Array.isArray(docs)||!docs.length)return;
+    const paths=docs.map(doc=>doc.storagePath).filter(path=>typeof path==='string'&&path.startsWith(window.cloudUser.id+'/'));
+    try{
+      if(paths.length){const result=await window.cloudClient.storage.from(BUCKET).remove(paths);if(result.error)throw result.error;}
+      delete all[eventId][stayId];if(!Object.keys(all[eventId]).length)delete all[eventId];write(all);
+    }catch(error){if(typeof window.cloudMessage==='function')window.cloudMessage('Aufenthalt entfernt; zugehörige Dokumente konnten nicht automatisch bereinigt werden: '+(error&&error.message||'Unbekannter Fehler'));}
+  }
+  if(typeof window.removeAccommodationStay==='function'){
+    const originalRemove=window.removeAccommodationStay;
+    window.removeAccommodationStay=function(id,stayId,uid){
+      const event=window.EVENTS&&window.EVENTS[id],eventId=event&&String(event.id);
+      const before=eventId&&window.getAccommodationStays?window.getAccommodationStays((window.readPrivatePlannerObject('trailPrivateBookings')||{})[eventId]||{}):[];
+      const index=before.findIndex((stay,i)=>String(stay.id||('stay-'+i))===String(stayId));
+      const removed= index>=0 ? before[index] : null;
+      const result=originalRemove.apply(this,arguments);
+      if(removed&&eventId){
+        const after=window.getAccommodationStays((window.readPrivatePlannerObject('trailPrivateBookings')||{})[eventId]||{});
+        if(!after.some((stay,i)=>String(stay.id||('stay-'+i))===String(stayId)))cleanupRemovedStay(eventId,safePart(removed.id||('stay-'+index)));
+      }
+      return result;
+    };
   }
   if(typeof window.renderYearAccommodationForm==='function'){
     const original=window.renderYearAccommodationForm;
