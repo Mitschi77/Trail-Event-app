@@ -66,11 +66,21 @@ const sandbox = {
 sandbox.EVENTS = window.EVENTS;
 vm.runInNewContext(moduleSource, sandbox, { filename: "accommodation-documents.js" });
 
-const bookings = { "event-1": { stays: [{ id: "stay-abc", title: "Mountain Hotel" }] } };
+const bookings = { "event-1": { stays: [
+  { id: "stay-abc", title: "Mountain Hotel", provider: "Altanbieter A" },
+  { id: "stay-def", title: "Valley Guesthouse", provider: "Altanbieter B" }
+] } };
 local.set("trailPrivateBookings", JSON.stringify(bookings));
+const existingDocuments = {
+  "event-1": {
+    "stay-abc": [{ id: "existing-doc-a", storagePath: "user-123/bookings/event-1/stay-abc/old.pdf", originalName: "alte-buchungsbestaetigung.pdf" }],
+    "stay-def": [{ id: "existing-doc-b", storagePath: "user-123/bookings/event-1/stay-def/old.eml", originalName: "alte-korrespondenz.eml" }]
+  }
+};
+local.set("trailPrivateBookingDocuments", JSON.stringify(existingDocuments));
 const rendered = window.renderYearAccommodationForm({ id: "event-1" }, {}, 0, 0, "test");
 assert.match(rendered, /data-stay-documents="event-1"/);
-assert.match(rendered, /data-stay-id="stay-abc"/);
+assert.match(rendered, /data-stay-id="stay-abc"/);\nassert.match(rendered, /data-stay-id="stay-def"/, "each accommodation stay must get its own booking record and document area");
 assert.match(rendered, /Buchungsunterlagen/);
 assert.match(rendered, /Buchungsakte/);
 assert.match(rendered, /data-booking-record-field="provider"/);
@@ -124,11 +134,56 @@ const recordButton = {
   closest(selector) { return selector === ".stay-booking-record" ? recordPanel : null; }
 };
 await listeners.click[0]({ target: { closest(selector) { return selector === "[data-booking-record-save]" ? recordButton : null; } } });
-const savedBooking = JSON.parse(local.get("trailPrivateBookings"))["event-1"].stays[0];
+let savedBookings = JSON.parse(local.get("trailPrivateBookings"))["event-1"].stays;
+const firstStay = savedBookings.find(stay => stay.id === "stay-abc");
+const secondStay = savedBookings.find(stay => stay.id === "stay-def");
 for (const [key, value] of Object.entries(recordValues)) {
-  assert.equal(savedBooking[key], value, `booking record field ${key} must be saved to the matching stay`);
+  assert.equal(firstStay[key], value, `booking record field ${key} must be saved to the matching stay`);
 }
+assert.equal(secondStay.provider, "Altanbieter B", "saving the first stay must not overwrite the second stay");
+assert.equal(secondStay.bookingReference, undefined, "the second stay must not inherit the first stay's booking reference");
 assert.match(recordStatus.textContent, /Gespeichert/);
 assert.ok(cloudSaveCalls > 0, "saving the booking record must queue private planner cloud synchronization");
+
+// Save a different booking record for the second stay and verify both records remain isolated.
+const secondValues = {
+  provider: "Talpension",
+  bookingReference: "VAL-2027-19",
+  cancellationUntil: "2027-06-15",
+  cancellationPolicy: "Kostenlos bis 15. Juni",
+  contactName: "Büro",
+  contactEmail: "tal@example.test",
+  contactPhone: "+49 987 654"
+};
+const secondInputs = Object.entries(secondValues).map(([key, value]) => ({
+  dataset: { bookingRecordField: key }, value
+}));
+const secondStatus = { textContent: "" };
+const secondPanel = {
+  querySelectorAll(selector) { assert.equal(selector, "[data-booking-record-field]"); return secondInputs; },
+  querySelector(selector) { return selector === ".stay-booking-record-status" ? secondStatus : null; }
+};
+const secondButton = {
+  dataset: { eventId: "event-1", stayId: "stay-def" },
+  closest(selector) { return selector === ".stay-booking-record" ? secondPanel : null; }
+};
+await listeners.click[0]({ target: { closest(selector) { return selector === "[data-booking-record-save]" ? secondButton : null; } } });
+savedBookings = JSON.parse(local.get("trailPrivateBookings"))["event-1"].stays;
+const savedFirst = savedBookings.find(stay => stay.id === "stay-abc");
+const savedSecond = savedBookings.find(stay => stay.id === "stay-def");
+for (const [key, value] of Object.entries(recordValues)) {
+  assert.equal(savedFirst[key], value, `saving another stay must preserve first stay field ${key}`);
+}
+for (const [key, value] of Object.entries(secondValues)) {
+  assert.equal(savedSecond[key], value, `second stay field ${key} must be saved to the second stay only`);
+}
+
+// Booking-record saves must never rewrite, detach, or delete existing uploaded booking documents.
+assert.deepEqual(
+  JSON.parse(local.get("trailPrivateBookingDocuments")),
+  existingDocuments,
+  "existing booking documents for every stay must remain byte-for-byte equivalent at the metadata level"
+);
+assert.equal(removals.length, 1, "saving booking records must not trigger document deletion");
 
 console.log("Accommodation per-stay private document regression tests passed.");
