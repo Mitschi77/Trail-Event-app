@@ -133,6 +133,7 @@ const recordButton = {
   dataset: { eventId: "event-1", stayId: "stay-abc" },
   closest(selector) { return selector === ".stay-booking-record" ? recordPanel : null; }
 };
+const cloudSavesBeforeFirstRecord = cloudSaveCalls;
 await listeners.click[0]({ target: { closest(selector) { return selector === "[data-booking-record-save]" ? recordButton : null; } } });
 let savedBookings = JSON.parse(local.get("trailPrivateBookings"))["event-1"].stays;
 const firstStay = savedBookings.find(stay => stay.id === "stay-abc");
@@ -143,7 +144,7 @@ for (const [key, value] of Object.entries(recordValues)) {
 assert.equal(secondStay.provider, "Altanbieter B", "saving the first stay must not overwrite the second stay");
 assert.equal(secondStay.bookingReference, undefined, "the second stay must not inherit the first stay's booking reference");
 assert.match(recordStatus.textContent, /Gespeichert/);
-assert.ok(cloudSaveCalls > 0, "saving the booking record must queue private planner cloud synchronization");
+assert.ok(cloudSaveCalls > cloudSavesBeforeFirstRecord, "saving the booking record must queue private planner cloud synchronization");
 
 // Save a different booking record for the second stay and verify both records remain isolated.
 const secondValues = {
