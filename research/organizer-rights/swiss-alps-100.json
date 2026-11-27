@@ -9,12 +9,14 @@
   },
   "bundledEvents": [
     {
-      "eventIdCandidate": "swiss-alps-100",
+      "eventId": "swiss-alps-100",
       "edition": 2027,
-      "routeIds": [
-        "swiss-alps-100-160k-2027",
-        "swiss-alps-100-100k-2027",
-        "swiss-alps-100-50k-2027",
+      "currentCatalogRouteIds": [
+        "swiss-alps-100-50-3210",
+        "swiss-alps-100-100-6242",
+        "swiss-alps-100-160-10004"
+      ],
+      "additionalRouteIds": [
         "swiss-alps-100-vertical-2027",
         "swiss-alps-100-matterhorning-2027",
         "swiss-alps-100-kids-1k-2027"
@@ -76,5 +78,18 @@
   },
   "mediaPackRequested": true,
   "brandGuidelinesRequested": true,
-  "commercialLicenceAskedSeparately": true
+  "commercialLicenceAskedSeparately": true,
+  "catalogCoverage": {
+    "eventRecordFound": true,
+    "existingRouteIds": [
+      "swiss-alps-100-50-3210",
+      "swiss-alps-100-100-6242",
+      "swiss-alps-100-160-10004"
+    ],
+    "additionalFormatsNotInCatalog": [
+      "Vertical",
+      "Matterhorning",
+      "Gletschi Kids Run"
+    ]
+  }
 }
