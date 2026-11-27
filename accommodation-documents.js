@@ -22,9 +22,10 @@
     const stays=window.getAccommodationStays(booking);
     let index=0;
     return html.replace(/<\/article>/g,function(close){
-      const stay=stays[index++];
+      const stay=stays[index];
       if(!stay)return close;
       const stayId=safePart(stay.id||('stay-'+index));
+      index++;
       return panel(String(e.id),stayId)+close;
     });
   }
