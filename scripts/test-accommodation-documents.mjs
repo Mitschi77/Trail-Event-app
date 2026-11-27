@@ -48,6 +48,7 @@ const window = {
   requirePlannerLogin() { return true; },
   cloudMessage() {},
   confirm() { return true; },
+  confirm() { return true; },
   open() { return { location: { href: "" }, close() {} }; },
   renderYearAccommodationForm() { return '<article class="accommodation-booking-card">Stay</article>'; },
   removeAccommodationStay() {},
