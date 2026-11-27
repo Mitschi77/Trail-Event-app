@@ -20029,6 +20029,12 @@ function renderSeasonCockpit(){
  root.innerHTML='<section class="season-dashboard" aria-label="Saison im Überblick"><div class="season-dashboard-heading"><span>SAISONCOCKPIT</span><strong>Dein Trailjahr auf einen Blick</strong><small>Alle geplanten und absolvierten Läufe an einem Ort</small></div><div class="season-next-race">'+(upcomingRace?'<div class="season-next-label">ALS NÄCHSTES GEPLANT</div><h3>'+esc(upcomingRace.e.name)+'</h3><p>'+dateLabel(upcomingRace.date)+' · '+esc(upcomingRace.r.km||'—')+' km · '+esc(upcomingRace.r.hm||'—')+' hm</p>'+(upcomingRace.e.start?'<span class="season-next-location">'+esc(upcomingRace.e.start)+'</span>':'')+'<button class="secondary" type="button" onclick="showPlannedEventDetails('+upcomingRace.id+','+upcomingRace.ri+')">Renn-Details öffnen ↗</button>':'<div class="season-next-label">NÄCHSTER SCHRITT</div><h3>Noch kein kommendes Rennen</h3><p>Plane dein nächstes Trail-Abenteuer und baue deine Saison auf.</p><button class="primary" type="button" onclick="switchTab(\'planner\')">Rennen planen</button>')+'</div><div class="season-dashboard-stats"><div class="season-kpi"><strong>'+allPlannedRaces.length+'</strong><span>geplante Rennen</span></div><div class="season-kpi"><strong>'+plannedKm.toLocaleString("de-DE",{maximumFractionDigits:1})+'</strong><span>geplante Kilometer</span></div><div class="season-kpi"><strong>'+plannedHm.toLocaleString("de-DE")+'</strong><span>geplante Höhenmeter</span></div><div class="season-kpi"><strong>'+completedRunCount+'</strong><span>absolvierte Läufe</span></div></div></section>';
 }
 
+function accommodationStayPaidAmount(stay,price){
+ const status=String(stay?.status||'').trim().toLocaleLowerCase('de-DE');
+ if(status==='bezahlt'||status.includes('vollständig bezahlt')||status.includes('vollstaendig bezahlt'))return price;
+ const paid=Number(stay?.paidAmount||0);
+ return Number.isFinite(paid)&&paid>0?Math.min(price,paid):0;
+}
 function accommodationCostTotals(year,eventId){
  const bookings=cloudUser&&cloudReady?readPrivatePlannerObject('trailPrivateBookings')||{}:{},totals={total:0,paid:0,open:0,stays:0,pricedStays:0};
  Object.entries(bookings).forEach(([id,booking])=>{
@@ -20040,9 +20046,10 @@ function accommodationCostTotals(year,eventId){
    if(String(year)!==stayYear)return;
    totals.stays++;
    if(stay.price===undefined||stay.price===null||stay.price==='')return;
-   const price=Number(stay.price),paid=Number(stay.paidAmount||0);
-   if(!Number.isFinite(price)||price<0||!Number.isFinite(paid)||paid<0)return;
-   totals.total+=price;totals.paid+=Math.min(price,paid);totals.open+=Math.max(0,price-paid);totals.pricedStays++;
+   const price=Number(stay.price);
+   if(!Number.isFinite(price)||price<0)return;
+   const paid=accommodationStayPaidAmount(stay,price);
+   totals.total+=price;totals.paid+=paid;totals.open+=Math.max(0,price-paid);totals.pricedStays++;
   });
  });
  return totals;
@@ -20186,7 +20193,7 @@ function renderYearAccommodationForm(e,r,id,ri,uid){
  const hasEventStay=!!eventDate&&stays.some(stay=>stay.status!=='Storniert'&&stay.checkIn&&stay.checkOut&&String(stay.checkIn)<=eventDate&&String(stay.checkOut)>=eventDate);
  const cards=stays.map((stay,index)=>{const link=stay.hotelUrl||stay.bookingUrl||stay.url||'',safeLink=/^https?:\/\//i.test(String(link))?String(link):'';return '<article class="accommodation-booking-card"><div class="accommodation-booking-head"><strong>'+esc(stay.title||'Unterkunft')+'</strong><span>'+esc(stay.status||'Offen')+'</span></div>'+(stay.address?'<p>'+esc(stay.address)+'</p>':'')+'<div class="accommodation-booking-meta">'+(stay.checkIn?'Check-in '+esc(stay.checkIn):'')+(stay.checkOut?' · Check-out '+esc(stay.checkOut):'')+(stay.plannedYear?' · '+esc(stay.plannedYear):'')+'</div><div class="accommodation-booking-meta">'+(stay.price!==undefined?'Gesamt '+money(stay.price):'')+(stay.paidAmount!==undefined?' · Bezahlt '+money(stay.paidAmount):'')+(stay.remainingAmount!==undefined?' · Offen '+money(stay.remainingAmount):'')+'</div>'+(safeLink?'<a href="'+esc(safeLink)+'" target="_blank" rel="noopener">Buchung öffnen ↗</a>':'')+'<div class="accommodation-card-actions"><button type="button" class="alt" onclick="editAccommodationStay('+id+','+index+',\''+safeUid+'\')">Bearbeiten</button><button type="button" class="accommodation-remove" onclick="removeAccommodationStay('+id+',\''+String(stay.id||('stay-'+index)).replace(/[^a-zA-Z0-9_-]/g,'_')+'\',\''+safeUid+'\')">Entfernen</button></div></article>';}).join('');
  const field=(label,suffix,value,type='text',step='')=>'<label>'+label+'<input id="yearHotel'+suffix+safeUid+'" type="'+type+'" '+(step?'step="'+step+'" ':'')+'value="'+esc(value??'')+'"></label>';
- const hotelStatus=['Offen','Angefragt','Gebucht','Bezahlt','Storniert'];
+ const hotelStatus=['Offen','Angefragt','Gebucht','Bezahlt','Bestätigt und vollständig bezahlt','Storniert'];
  const defaultYear=eventDate.slice(0,4),defaultCheckIn=shiftAccommodationDate(eventDate,-1),defaultCheckOut=shiftAccommodationDate(eventDate,1);
  const search=hasEventStay?'':'<div class="accommodation-search-optional"><h4>Unterkunft in Zielnähe finden</h4>'+stayLinks(e,r)+'</div>';
  return '<div class="year-accommodation-form"><div class="accommodation-stay-list">'+(cards||'<p class="plan-meta">Noch keine Unterkunft hinterlegt.</p>')+'</div><details class="accommodation-add"><summary>+ Unterkunft hinzufügen</summary><div class="accommodation-add-body">'+search+'<h4 id="yearHotelFormHeading'+safeUid+'">Aufenthalt erfassen</h4><p class="accommodation-date-hint">Check-in und Check-out sind bereits passend zum Wettkampf vorgeschlagen und können geändert werden.</p><input type="hidden" id="yearHotelEditIndex'+safeUid+'" value=""><div class="edit-grid">'+field('Hotel / Airbnb','Title','','text')+field('Adresse','Address','','text')+field('Buchungslink','Url','','url')+field('Check-in','CheckIn',defaultCheckIn,'date')+field('Check-out','CheckOut',defaultCheckOut,'date')+field('Planungsjahr','Year',defaultYear,'number')+field('Gäste','Guests','','number')+field('Gesamtpreis (€)','Price','','number','0.01')+field('Bereits bezahlt (€)','Paid','','number','0.01')+field('Zahlung fällig am','DueDate','','date')+'<label>Buchungsstatus<select id="yearHotelStatus'+safeUid+'">'+hotelStatus.map(v=>'<option value="'+v+'" '+(v==='Offen'?'selected':'')+'>'+v+'</option>').join('')+'</select></label></div><button class="primary" type="button" onclick="saveYearAccommodation('+id+',\''+uid+'\')">Aufenthalt speichern</button></div></details></div>';
@@ -20198,7 +20205,7 @@ function saveYearAccommodation(id,uid){
  const safeUid=String(uid).replace(/[^a-zA-Z0-9_-]/g,'_'),val=suffix=>document.getElementById('yearHotel'+suffix+safeUid)?.value?.trim()||'',title=val('Title'),address=val('Address'),hotelUrl=val('Url'),checkIn=val('CheckIn'),checkOut=val('CheckOut'),plannedYear=val('Year'),guests=val('Guests'),priceText=val('Price'),paidText=val('Paid'),dueDate=val('DueDate'),status=document.getElementById('yearHotelStatus'+safeUid)?.value||'Offen';
  if(!title&&!address&&!checkIn&&!hotelUrl){alert('Bitte mindestens Hotelname, Adresse, Check-in oder Buchungslink eintragen.');return;}
  if(checkIn&&checkOut&&checkOut<checkIn){alert('Check-out darf nicht vor Check-in liegen.');return;}
- const price=priceText===''?undefined:Number(priceText),paidAmount=status==='Bezahlt'?(price??0):(paidText===''?0:Number(paidText));
+ const price=priceText===''?undefined:Number(priceText),fullyPaidStatus=status==='Bezahlt'||String(status).toLocaleLowerCase('de-DE').includes('vollständig bezahlt')||String(status).toLocaleLowerCase('de-DE').includes('vollstaendig bezahlt'),paidAmount=fullyPaidStatus?(price??0):(paidText===''?0:Number(paidText));
  if((price!==undefined&&(!Number.isFinite(price)||price<0))||!Number.isFinite(paidAmount)||paidAmount<0||(price===undefined&&paidAmount>0)||(price!==undefined&&paidAmount>price)){alert('Bitte gültige Unterkunftskosten eintragen. Der bezahlte Betrag darf den Gesamtpreis nicht überschreiten; bei einer Zahlung muss ein Gesamtpreis hinterlegt sein.');return;}
  if(guests!==''&&(!Number.isInteger(Number(guests))||Number(guests)<1)){alert('Bitte eine gültige Gästezahl eintragen.');return;}
  const bookings=readPrivatePlannerObject('trailPrivateBookings'),previous=bookings[e.id]||{},stays=getAccommodationStays(previous),editRaw=document.getElementById('yearHotelEditIndex'+safeUid)?.value??'',editIndex=editRaw===''?-1:Number(editRaw);

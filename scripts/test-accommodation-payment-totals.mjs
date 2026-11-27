@@ -1,0 +1,15 @@
+import assert from "node:assert/strict";
+import { readFile } from "node:fs/promises";
+import vm from "node:vm";
+const html = await readFile(new URL("../index.html", import.meta.url), "utf8");
+const match = html.match(/function accommodationStayPaidAmount\(stay,price\)\{[\s\S]*?\n\}/);
+assert.ok(match, "accommodation paid-amount normalizer must exist");
+const sandbox = { Number, String, Math };
+vm.runInNewContext(match[0], sandbox);
+const paid = vm.runInNewContext("accommodationStayPaidAmount", sandbox);
+assert.equal(paid({ status: "Bezahlt", paidAmount: 0 }, 442.16), 442.16);
+assert.equal(paid({ status: "Bestätigt und vollständig bezahlt", paidAmount: 0 }, 442.16), 442.16);
+assert.equal(paid({ status: "Bestätigt und vollständig bezahlt", paidAmount: 100 }, 442.16), 442.16);
+assert.equal(paid({ status: "Gebucht", paidAmount: 100 }, 442.16), 100);
+assert.equal(paid({ status: "Offen", paidAmount: 0 }, 442.16), 0);
+console.log("Accommodation payment-status regression tests passed.");
