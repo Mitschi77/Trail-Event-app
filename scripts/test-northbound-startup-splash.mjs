@@ -7,8 +7,8 @@ const worker = readFileSync(new URL('../sw.js', import.meta.url), 'utf8');
 
 assert.match(html, /id="northboundStartupSplash"/, 'startup splash markup is present');
 assert.match(html, /northbound-logo\.svg/, 'splash uses the NORTHBOUND brand mark');
-assert.match(html, /northbound-splash-runner/, 'trail runner animation is present');
-assert.match(html, /northbound-splash-cyclist/, 'road cyclist animation is present');
+assert.match(html, /nb-splash-athlete runner/, 'trail runner animation is present');
+assert.match(html, /nb-splash-athlete cyclist/, 'road cyclist animation is present');
 assert.ok(html.indexOf('northboundStartupSplash') < html.indexOf('<header>'), 'splash is mounted before the app header');
 assert.match(splash, /await window\.connectPlannerCloud\(\)/, 'startup waits for the existing cloud initialization');
 assert.match(splash, /finally\s*\{\s*finish\(\)/, 'splash is removed after cloud initialization settles');
