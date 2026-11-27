@@ -5,6 +5,12 @@ const html = readFileSync(new URL('../index.html', import.meta.url), 'utf8');
 const splash = readFileSync(new URL('../startup-splash.js', import.meta.url), 'utf8');
 const worker = readFileSync(new URL('../sw.js', import.meta.url), 'utf8');
 
+// External Leaflet must never block HTML parsing before the splash can render.
+const leafletTag = html.match(/<script\\b[^>]*src="https:\/\/unpkg\\.com\/leaflet@1\\.9\\.4\/dist\/leaflet\\.js"[^>]*><\\/script>/);
+assert.ok(leafletTag, 'Leaflet script tag is present');
+assert.match(leafletTag[0], /\\bdefer\\b/, 'Leaflet is deferred so splash markup can render immediately');
+assert.ok(html.indexOf(leafletTag[0]) < html.indexOf('</head>'), 'Leaflet is loaded from the document head without blocking body parsing');
+
 assert.match(html, /id="northboundStartupSplash"/, 'startup splash markup is present');
 assert.match(html, /position:fixed!important;inset:0!important/, 'splash is pinned to all viewport edges');
 assert.match(html, /height:100dvh!important/, 'splash fills the dynamic iPhone viewport');
