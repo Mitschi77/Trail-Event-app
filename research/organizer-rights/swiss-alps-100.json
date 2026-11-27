@@ -1,0 +1,80 @@
+{
+  "schemaVersion": 1,
+  "organizerId": "swiss-alps-100",
+  "organizerName": "Swiss Alps 100 Endurance Run",
+  "officialContact": {
+    "email": "rd@swissalps100.com",
+    "source": "https://www.swissalps100.com/de/courses/kids-run",
+    "verifiedOnOfficialSite": true
+  },
+  "bundledEvents": [
+    {
+      "eventIdCandidate": "swiss-alps-100",
+      "edition": 2027,
+      "routeIds": [
+        "swiss-alps-100-160k-2027",
+        "swiss-alps-100-100k-2027",
+        "swiss-alps-100-50k-2027",
+        "swiss-alps-100-vertical-2027",
+        "swiss-alps-100-matterhorning-2027",
+        "swiss-alps-100-kids-1k-2027"
+      ]
+    }
+  ],
+  "requestedUseCategories": [
+    "official_route_descriptions_verbatim",
+    "shortened_or_editorially_edited_official_descriptions",
+    "independent_factual_summaries",
+    "route_facts_distance_elevation_start_finish_aid_cutoffs",
+    "maps_and_route_geometry",
+    "elevation_profiles",
+    "gpx_file_fetch_load_import_store_process_map_display_user_download",
+    "link_only_to_official_gpx_download",
+    "event_names_and_event_marks",
+    "logos_and_word_device_marks",
+    "symbols_icons_pictograms_emblems_mascots",
+    "event_specific_graphics_and_visual_design"
+  ],
+  "emailHistory": [
+    {
+      "date": "2026-11-19",
+      "type": "initial_request",
+      "status": "sent",
+      "messageIdHeader": "<179509582942.95.14594941735116380354@me.com>"
+    },
+    {
+      "date": "2026-11-26T19:50:39Z",
+      "type": "organizer_reply",
+      "status": "received",
+      "messageIdHeader": "<GV0P278MB18007B50FFBEEACC78E2BF7EF1422@GV0P278MB1800.CHEP278.PROD.OUTLOOK.COM>",
+      "response": "You can use any material you wish."
+    },
+    {
+      "date": "2026-11-27",
+      "type": "itemised_clarification",
+      "status": "submitted",
+      "messageIdHeader": "<179574223314.114.16730177029781169680@me.com>",
+      "sentCopyFiled": true,
+      "deliveryConfirmed": false
+    }
+  ],
+  "permissionAssessment": {
+    "currentPhase": "non-commercial independent information app under development",
+    "broadWrittenPermission": true,
+    "routeSpecificScopeConfirmed": false,
+    "all12CategoriesItemised": false,
+    "futureCommercialPermission": "not granted"
+  },
+  "gpxPolicy": {
+    "restrictionDisclosureRequested": true,
+    "exactWordingAndSourceRequested": true,
+    "affectedRoutesRequested": true,
+    "fetchLoadImportStoreProcessMapDisplayDownload": "blocked_pending_clarification",
+    "officialLink": "blocked_pending_separate_confirmation",
+    "noBinaryDownloaded": true,
+    "noMetadataInspected": true
+  },
+  "mediaPackRequested": true,
+  "brandGuidelinesRequested": true,
+  "commercialLicenceAskedSeparately": true
+}
