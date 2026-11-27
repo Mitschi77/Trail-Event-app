@@ -96,7 +96,7 @@
   if(typeof window.removeAccommodationStay==='function'){
     const originalRemove=window.removeAccommodationStay;
     window.removeAccommodationStay=function(id,stayId,uid){
-      const event=window.EVENTS&&window.EVENTS[id],eventId=event&&String(event.id);
+      const event=typeof EVENTS!=='undefined'?EVENTS[id]:null,eventId=event&&String(event.id);
       const before=eventId&&window.getAccommodationStays?window.getAccommodationStays((window.readPrivatePlannerObject('trailPrivateBookings')||{})[eventId]||{}):[];
       const index=before.findIndex((stay,i)=>String(stay.id||('stay-'+i))===String(stayId));
       const removed= index>=0 ? before[index] : null;
