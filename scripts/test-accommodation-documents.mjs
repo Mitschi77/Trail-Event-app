@@ -27,6 +27,7 @@ const local = new Map();
 const uploads = [];
 const removals = [];
 let signedUrlCalls = 0;
+let cloudSaveCalls = 0;
 const storage = {
   upload: async (path, file, options) => { uploads.push({ path, file, options }); return { error: null }; },
   remove: async paths => { removals.push(paths); return { error: null }; },
@@ -43,7 +44,7 @@ const window = {
   cloudReady: true,
   cloudClient: { storage: { from: bucket => { assert.equal(bucket, "trail-private-documents"); return storage; } } },
   readPrivatePlannerObject(key) { try { return JSON.parse(local.get(key) || "{}"); } catch { return {}; } },
-  queuePlannerCloudSave() {},
+  queuePlannerCloudSave() { cloudSaveCalls++; },
   getAccommodationStays(booking) { return Array.isArray(booking.stays) ? booking.stays : []; },
   requirePlannerLogin() { return true; },
   cloudMessage() {},
@@ -71,6 +72,11 @@ const rendered = window.renderYearAccommodationForm({ id: "event-1" }, {}, 0, 0,
 assert.match(rendered, /data-stay-documents="event-1"/);
 assert.match(rendered, /data-stay-id="stay-abc"/);
 assert.match(rendered, /Buchungsunterlagen/);
+assert.match(rendered, /Buchungsakte/);
+assert.match(rendered, /data-booking-record-field="provider"/);
+assert.match(rendered, /data-booking-record-field="bookingReference"/);
+assert.match(rendered, /data-booking-record-field="cancellationUntil"/);
+assert.match(rendered, /data-booking-record-field="cancellationPolicy"/);
 
 const status = { textContent: "" };
 const typeSelect = { value: "invoice" };
@@ -95,5 +101,34 @@ const deleteButton = { dataset: { eventId: "event-1", stayId: "stay-abc", stayDo
 await listeners.click[0]({ target: { closest(selector) { return selector === "[data-stay-doc-delete]" ? deleteButton : null; } } });
 assert.equal(removals.length, 1, "deleting a document must remove the private storage object");
 assert.equal(JSON.parse(local.get("trailPrivateBookingDocuments"))["event-1"]["stay-abc"].length, 0);
+
+const recordValues = {
+  provider: "Alpenhotel",
+  bookingReference: "AB-2027-42",
+  cancellationUntil: "2027-05-01",
+  cancellationPolicy: "Kostenlos bis 1. Mai",
+  contactName: "Rezeption",
+  contactEmail: "info@example.test",
+  contactPhone: "+49 123 456"
+};
+const recordInputs = Object.entries(recordValues).map(([key, value]) => ({
+  dataset: { bookingRecordField: key }, value
+}));
+const recordStatus = { textContent: "" };
+const recordPanel = {
+  querySelectorAll(selector) { assert.equal(selector, "[data-booking-record-field]"); return recordInputs; },
+  querySelector(selector) { return selector === ".stay-booking-record-status" ? recordStatus : null; }
+};
+const recordButton = {
+  dataset: { eventId: "event-1", stayId: "stay-abc" },
+  closest(selector) { return selector === ".stay-booking-record" ? recordPanel : null; }
+};
+await listeners.click[0]({ target: { closest(selector) { return selector === "[data-booking-record-save]" ? recordButton : null; } } });
+const savedBooking = JSON.parse(local.get("trailPrivateBookings"))["event-1"].stays[0];
+for (const [key, value] of Object.entries(recordValues)) {
+  assert.equal(savedBooking[key], value, `booking record field ${key} must be saved to the matching stay`);
+}
+assert.match(recordStatus.textContent, /Gespeichert/);
+assert.ok(cloudSaveCalls > 0, "saving the booking record must queue private planner cloud synchronization");
 
 console.log("Accommodation per-stay private document regression tests passed.");
