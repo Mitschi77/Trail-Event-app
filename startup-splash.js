@@ -1,32 +1,44 @@
-/* NORTHBOUND startup splash: logo-first reveal, full-screen iOS coverage and safe cloud handoff. */
+/* NORTHBOUND startup splash: logo-first reveal, full viewport coverage and safe cloud handoff. */
 (() => {
   'use strict';
   const splash = document.getElementById('northboundStartupSplash');
   if (!splash) return;
 
   document.documentElement.classList.add('northbound-startup-lock');
+  document.body.classList.add('northbound-startup-lock');
 
-  // Keep the splash stretched between all viewport edges. Avoid a fixed 100dvh
-  // height, which can leave the bottom of the iPhone visual viewport uncovered.
-  splash.style.setProperty('position', 'fixed', 'important');
-  splash.style.setProperty('inset', '0', 'important');
-  splash.style.setProperty('height', 'auto', 'important');
-  splash.style.setProperty('min-height', '100vh', 'important');
-  splash.style.setProperty('width', 'auto', 'important');
-  splash.style.setProperty('z-index', '2147483647', 'important');
+  // Explicit viewport dimensions are more reliable on iOS than auto height
+  // combined with inset constraints. Keep the splash above fixed app controls.
+  Object.entries({
+    position: 'fixed',
+    top: '0',
+    right: '0',
+    bottom: '0',
+    left: '0',
+    width: '100vw',
+    height: '100dvh',
+    minHeight: '100vh',
+    maxHeight: 'none',
+    boxSizing: 'border-box',
+    overflow: 'hidden',
+    zIndex: '2147483647',
+    transform: 'none'
+  }).forEach(([property, value]) => splash.style.setProperty(property.replace(/[A-Z]/g, m => '-' + m.toLowerCase()), value, 'important'));
+
   splash.classList.add('nb-splash-logo-first');
 
-  // The first paint contains the NORTHBOUND mark only. Bring in the athletes
-  // after the logo has appeared, rather than making the animation part of startup.
   const style = document.createElement('style');
   style.id = 'northbound-splash-art-direction';
   style.textContent = `
+    html.northbound-startup-lock,html.northbound-startup-lock body{
+      overflow:hidden!important;overscroll-behavior:none!important
+    }
+    body.northbound-startup-lock{position:relative!important}
     #northboundStartupSplash.nb-splash-logo-first .nb-splash-athlete{
       opacity:0!important;visibility:hidden!important;transition:opacity .45s ease,visibility .45s ease!important
     }
     #northboundStartupSplash .nb-splash-athlete{
-      filter:drop-shadow(0 10px 18px #020912aa)!important;
-      animation-timing-function:linear!important
+      filter:drop-shadow(0 10px 18px #020912aa)!important;animation-timing-function:linear!important
     }
     #northboundStartupSplash .nb-splash-athlete.runner{
       width:clamp(150px,36vw,220px)!important;animation-duration:8.5s!important
@@ -58,10 +70,11 @@
     finished = true;
     splash.classList.add('is-leaving');
     document.documentElement.classList.remove('northbound-startup-lock');
+    document.body.classList.remove('northbound-startup-lock');
     window.setTimeout(() => splash.remove(), 420);
   };
 
-  // Reveal the motion only after the logo has had time to render.
+  // Show the brand mark alone before revealing the sport artwork.
   window.setTimeout(() => splash.classList.remove('nb-splash-logo-first'), 950);
 
   const boot = async () => {
