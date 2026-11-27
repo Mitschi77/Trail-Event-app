@@ -6,7 +6,7 @@ const splash = readFileSync(new URL('../startup-splash.js', import.meta.url), 'u
 const worker = readFileSync(new URL('../sw.js', import.meta.url), 'utf8');
 
 assert.match(html, /id="northboundStartupSplash"/, 'startup splash markup is present');
-assert.match(html, /position:fixed!important;top:0!important;right:0!important;bottom:0!important;left:0!important/, 'splash is pinned to all viewport edges');
+assert.match(html, /position:fixed!important;inset:0!important/, 'splash is pinned to all viewport edges');
 assert.match(html, /height:100dvh!important/, 'splash fills the dynamic iPhone viewport');
 assert.match(html, /z-index:2147483647!important/, 'splash stays above the entire app');
 assert.match(html, /html\.northbound-startup-lock body>\#northboundStartupSplash/, 'startup lock enforces the full-screen overlay');
