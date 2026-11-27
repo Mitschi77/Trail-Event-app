@@ -11,8 +11,7 @@
   function read(){try{return window.readPrivatePlannerObject(KEY)||{};}catch(e){try{return JSON.parse(localStorage.getItem(KEY)||'{}')||{};}catch(_){return {};}}}
   function write(data){localStorage.setItem(KEY,JSON.stringify(data));if(typeof window.queuePlannerCloudSave==='function')window.queuePlannerCloudSave();}
   function getDocs(eventId,stayId){const all=read(),byEvent=all[eventId]||{};return Array.isArray(byEvent[stayId])?byEvent[stayId]:[];}
-  function bookingRecordPanel(eventId,stay){
-    const stayId=safePart(stay.id||'stay-0');
+  function bookingRecordPanel(eventId,stay,stayId){
     const fields=[
       ['provider','Anbieter','text'],
       ['bookingReference','Buchungsnummer','text'],
@@ -57,7 +56,7 @@
       if(!stay)return close;
       const stayId=safePart(stay.id||('stay-'+index));
       index++;
-      return bookingRecordPanel(String(e.id),stay)+panel(String(e.id),stayId)+close;
+      return bookingRecordPanel(String(e.id),stay,stayId)+panel(String(e.id),stayId)+close;
     });
   }
   function refreshPanel(eventId,stayId){
