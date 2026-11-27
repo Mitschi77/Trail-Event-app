@@ -1,0 +1,66 @@
+{
+  "schemaVersion": 1,
+  "organizerId": "ar-events-allgaeu-panorama-marathon",
+  "organizerName": "AR Events",
+  "officialContact": {
+    "email": "reusch@laufladen-sonthofen.de",
+    "source": "https://www.allgaeu-panorama-marathon.de/content/impressum/",
+    "role": "Wettkampfbüro / Der Laufladen – Axel Reusch",
+    "verifiedOnOfficialSite": true
+  },
+  "bundledEvents": [
+    {
+      "eventId": "allgau-panorama-marathon",
+      "edition": 2027,
+      "routeIds": [
+        "ultra-69-7-3125",
+        "apm-marathon-42-2-2027",
+        "apm-hoernerlauf-18-1110-2027",
+        "apm-half-21-1-143-2027",
+        "apm-half-reverse-21-1-2027",
+        "apm-rennergy-5k-4-9-6-2027",
+        "apm-kids-run-600m-2027",
+        "apm-kids-run-1000m-2027"
+      ]
+    }
+  ],
+  "requestedUseCategories": [
+    "official_route_descriptions_verbatim",
+    "shortened_or_editorially_edited_official_descriptions",
+    "independent_factual_summaries",
+    "route_facts_distance_elevation_start_finish_aid_cutoffs",
+    "maps_and_route_geometry",
+    "elevation_profiles",
+    "gpx_file_fetch_load_import_store_process_map_display_user_download",
+    "link_only_to_official_gpx_download",
+    "event_names_and_event_marks",
+    "logos_and_word_device_marks",
+    "symbols_icons_pictograms_emblems_mascots",
+    "event_specific_graphics_and_visual_design"
+  ],
+  "emailHistory": [
+    {
+      "date": "2026-11-27",
+      "type": "initial_bundled_rights_request",
+      "status": "submitted",
+      "sentCopyFiled": true,
+      "deliveryConfirmed": false,
+      "messageIdHeader": "<179574246769.115.12387978182665529307@me.com>"
+    }
+  ],
+  "permissionAssessment": {
+    "currentPhase": "non-commercial independent information app under development",
+    "writtenPermission": "pending",
+    "futureCommercialPermission": "not granted"
+  },
+  "gpxPolicy": {
+    "restrictionDisclosureRequested": true,
+    "exactNoticeLocationAndAffectedRoutesRequested": true,
+    "fetchLoadImportStoreProcessMapDisplayDownload": "blocked_pending_explicit_permission",
+    "officialLink": "blocked_pending_separate_permission",
+    "noBinaryDownloaded": true,
+    "noMetadataInspected": true
+  },
+  "mediaPackRequested": true,
+  "brandGuidelinesRequested": true
+}
