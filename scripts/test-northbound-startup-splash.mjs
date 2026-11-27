@@ -17,9 +17,12 @@ assert.match(html, /nb-splash-runner-body/, 'runner has a natural movement cycle
 assert.match(html, /nb-splash-wheel/, 'road bike wheels animate');
 assert.match(html, /nb-bike-frame/, 'road bike uses a detailed frame');
 assert.ok(html.indexOf('northboundStartupSplash') < html.indexOf('<header>'), 'splash is mounted before the app header');
-assert.match(splash, /await window\.connectPlannerCloud\(\)/, 'startup waits for the existing cloud initialization');
+assert.match(splash, /nbRunnerStride/, 'runner is rendered as a filled athlete silhouette');
+assert.match(splash, /nbCycleKit/, 'cyclist is rendered with filled kit shapes');
+assert.match(splash, /northbound-splash-art-direction/, 'premium athlete art direction is injected');
+assert.match(splash, /await window.connectPlannerCloud\(\)/, 'startup waits for the existing cloud initialization');
 assert.match(splash, /finally\s*\{\s*finish\(\)/, 'splash is removed after cloud initialization settles');
 assert.match(worker, /startup-splash\.js/, 'service worker caches the splash controller');
-assert.match(worker, /trail-event-planner-v116/, 'service worker cache version is bumped');
+assert.match(worker, /trail-event-planner-v117/, 'service worker cache version is bumped');
 
 console.log('NORTHBOUND startup splash checks passed.');
