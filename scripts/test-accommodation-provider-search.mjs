@@ -34,4 +34,13 @@ assert.match(result, /checkin=2027-08-08/);
 assert.match(result, /checkout=2027-08-10/);
 assert.doesNotMatch(result, /Startdorf/);
 assert.match(result, /Bis 5 km/);
+const legacyDestination = stayLinks(
+  { id: 'event-legacy', country: 'Deutschland', startLocation: 'Startdorf' },
+  { id: 'route-legacy', date: '2027-01-23', start: 'Reit im Winkl', startLocation: 'Startdorf' }
+);
+assert.match(legacyDestination, /ss=Reit%20im%20Winkl%2C%20Deutschland/);
+assert.match(legacyDestination, /checkin=2027-01-22/);
+assert.match(legacyDestination, /checkout=2027-01-24/);
+assert.doesNotMatch(legacyDestination, /Startdorf/);
+
 console.log('Accommodation provider search regression tests passed.');
