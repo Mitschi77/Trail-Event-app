@@ -17,6 +17,6 @@ assert.ok(html.indexOf('northboundStartupSplash') < html.indexOf('<header>'), 's
 assert.match(splash, /await window\.connectPlannerCloud\(\)/, 'startup waits for the existing cloud initialization');
 assert.match(splash, /finally\s*\{\s*finish\(\)/, 'splash is removed after cloud initialization settles');
 assert.match(worker, /startup-splash\.js/, 'service worker caches the splash controller');
-assert.match(worker, /trail-event-planner-v114/, 'service worker cache version is bumped');
+assert.match(worker, /trail-event-planner-v115/, 'service worker cache version is bumped');
 
 console.log('NORTHBOUND startup splash checks passed.');
