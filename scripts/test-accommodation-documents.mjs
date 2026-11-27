@@ -67,7 +67,7 @@ vm.runInNewContext(moduleSource, sandbox, { filename: "accommodation-documents.j
 
 const bookings = { "event-1": { stays: [{ id: "stay-abc", title: "Mountain Hotel" }] } };
 local.set("trailPrivateBookings", JSON.stringify(bookings));
-const rendered = window.renderYearAccommodationForm({}, {}, 0, 0, "test");
+const rendered = window.renderYearAccommodationForm({ id: "event-1" }, {}, 0, 0, "test");
 assert.match(rendered, /data-stay-documents="event-1"/);
 assert.match(rendered, /data-stay-id="stay-abc"/);
 assert.match(rendered, /Buchungsunterlagen/);
