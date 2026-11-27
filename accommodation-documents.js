@@ -113,12 +113,12 @@
     const original=window.renderYearAccommodationForm;
     window.renderYearAccommodationForm=function(e,r,id,ri,uid){return enhance(original.apply(this,arguments),e);};
   }
-  document.addEventListener('change',function(event){if(event.target.matches('[data-stay-doc-upload]'))upload(event.target);});
+  document.addEventListener('change',function(event){if(event.target.matches('[data-stay-doc-upload]'))return upload(event.target);});
   document.addEventListener('click',function(event){
     const open=event.target.closest('[data-stay-doc-open]');
-    if(open){openDoc(open.dataset.eventId,open.dataset.stayId,Number(open.dataset.stayDocOpen));return;}
+    if(open)return openDoc(open.dataset.eventId,open.dataset.stayId,Number(open.dataset.stayDocOpen));
     const del=event.target.closest('[data-stay-doc-delete]');
-    if(del)deleteDoc(del.dataset.eventId,del.dataset.stayId,Number(del.dataset.stayDocDelete),del);
+    if(del)return deleteDoc(del.dataset.eventId,del.dataset.stayId,Number(del.dataset.stayDocDelete),del);
   });
   const style=document.createElement('style');
   style.textContent='.stay-documents{margin:12px 0 4px;padding:11px;border:1px solid #344b5d;border-radius:10px;background:#101a23}.stay-documents h4{margin:0 0 8px;color:#9cddf7;font-size:13px}.stay-document-row{display:grid;grid-template-columns:auto minmax(0,1fr) auto;gap:7px;align-items:center;padding:7px 0;border-top:1px solid #2b3946;font-size:11px}.stay-document-type{color:#9cddf7;font-weight:700}.stay-document-name{overflow-wrap:anywhere}.stay-document-actions{display:flex;gap:5px}.stay-document-actions button{border:1px solid #40586a;border-radius:7px;background:#172632;color:#c9efff;padding:5px 7px;font:inherit}.stay-document-actions .stay-document-delete{color:#ffb4a8}.stay-document-upload{display:flex;gap:8px;align-items:end;flex-wrap:wrap;margin-top:9px}.stay-document-upload label{display:grid;gap:5px;font-size:11px;font-weight:700}.stay-document-upload input{max-width:100%;font-size:11px}.stay-document-upload select{max-width:100%;padding:7px;border-radius:7px}.stay-document-status{margin:7px 0 0;font-size:11px;color:#aab7c2}';
