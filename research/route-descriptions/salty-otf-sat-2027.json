@@ -1,0 +1,1123 @@
+{
+  "schemaVersion": 1,
+  "researchType": "route-descriptions",
+  "checkedAt": "2026-11-27T02:13:53+01:00",
+  "organizer": {
+    "name": "SALTY GmbH / SALTY Trailrunning",
+    "country": "Germany and Italy",
+    "legalOrganizerSource": "https://saltytrailrunning.com/en-de/policies/terms-of-service",
+    "officialContacts": [
+      {
+        "email": "otf@saltytrailrunning.com",
+        "source": "https://saltytrailrunning.com/en-de/pages/otf"
+      },
+      {
+        "email": "sat@saltytrailrunning.com",
+        "source": "https://saltytrailrunning.com/en-de/pages/sat"
+      }
+    ]
+  },
+  "events": [
+    {
+      "eventId": "oberaudorf-trailfestival",
+      "edition": 2027,
+      "eventPeriod": {
+        "start": "2027-09-30",
+        "end": "2027-10-03"
+      },
+      "catalogRecordFound": true,
+      "currentCatalogRouteIds": [
+        "brunnstein-speed-24-1473",
+        "sudelfeld-ultra-42-8-2395",
+        "wendelstein-ultra-56-5-3228",
+        "otf-100-102-5500"
+      ],
+      "missingCatalogRoute": "Hocheck Short [S]",
+      "officialMarketingDistancesKm": [
+        12,
+        21,
+        42,
+        60,
+        100
+      ],
+      "officialDetailDistancesKm": [
+        12.4,
+        24,
+        42.8,
+        56.5,
+        104.5
+      ],
+      "discrepancy": "The OTF overview calls the second race 21K, while the official detailed Brünnstein Speed page states 24 km. All detailed values are preserved pending organizer clarification."
+    },
+    {
+      "eventIdCandidate": "schnalstal-alpine-trail",
+      "edition": 2027,
+      "eventPeriod": {
+        "start": "2027-07-29",
+        "end": "2027-07-31"
+      },
+      "catalogRecordFound": false,
+      "officialCoreDistances": [
+        "ULTRA",
+        "SKY",
+        "SCENIC",
+        "VERTICAL",
+        "SPEED"
+      ],
+      "additionalKidsRun": true
+    },
+    {
+      "eventIdCandidate": "sat-trail-camp",
+      "edition": 2027,
+      "eventPeriod": {
+        "start": "2027-06-23",
+        "end": "2027-06-27"
+      },
+      "catalogRecordFound": false,
+      "eventType": "training_camp_not_race",
+      "excludeFromRaceRouteCount": true
+    }
+  ],
+  "sourcePolicy": {
+    "summaries": "Independent factual summaries only; no official prose copied verbatim.",
+    "protectedAssets": "No logos, images, maps, elevation-profile images or GPX binaries copied.",
+    "sourceLinksOnly": true
+  },
+  "sources": [
+    {
+      "id": "otf-home",
+      "url": "https://saltytrailrunning.com/en-de/pages/otf",
+      "type": "official_event_overview",
+      "verified": true
+    },
+    {
+      "id": "otf-program",
+      "url": "https://saltytrailrunning.com/en-noteu/pages/otf-program",
+      "type": "official_program",
+      "verified": true
+    },
+    {
+      "id": "otf-100",
+      "url": "https://saltytrailrunning.com/en-de/pages/otf-100",
+      "type": "official_route_page",
+      "verified": true
+    },
+    {
+      "id": "otf-xl",
+      "url": "https://saltytrailrunning.com/en-de/pages/otf-ultra",
+      "type": "official_route_page",
+      "verified": true
+    },
+    {
+      "id": "otf-l",
+      "url": "https://saltytrailrunning.com/en-de/pages/otf-sudelfeld",
+      "type": "official_route_page",
+      "verified": true
+    },
+    {
+      "id": "otf-m",
+      "url": "https://saltytrailrunning.com/en-de/pages/otf-speed",
+      "type": "official_route_page",
+      "verified": true
+    },
+    {
+      "id": "otf-s",
+      "url": "https://saltytrailrunning.com/en-de/pages/otf-short",
+      "type": "official_route_page",
+      "verified": true
+    },
+    {
+      "id": "otf-kids",
+      "url": "https://saltytrailrunning.com/en-de/pages/otf-kids-run",
+      "type": "official_route_page",
+      "verified": true,
+      "notes": "Page currently shows 2026 distances only; 2027 data not confirmed."
+    },
+    {
+      "id": "sat-home",
+      "url": "https://saltytrailrunning.com/en-de/pages/sat",
+      "type": "official_event_overview",
+      "verified": true
+    },
+    {
+      "id": "sat-program",
+      "url": "https://saltytrailrunning.com/en-de/pages/sat-program",
+      "type": "official_program",
+      "verified": true
+    },
+    {
+      "id": "sat-ultra",
+      "url": "https://saltytrailrunning.com/en-de/pages/sat-ultra",
+      "type": "official_route_page",
+      "verified": true
+    },
+    {
+      "id": "sat-sky",
+      "url": "https://saltytrailrunning.com/en-de/pages/sat-sky",
+      "type": "official_route_page",
+      "verified": true
+    },
+    {
+      "id": "sat-scenic",
+      "url": "https://saltytrailrunning.com/en-de/pages/sat-scenic",
+      "type": "official_route_page",
+      "verified": true
+    },
+    {
+      "id": "sat-vertical",
+      "url": "https://saltytrailrunning.com/en-de/pages/sat-vertical",
+      "type": "official_route_page",
+      "verified": true
+    },
+    {
+      "id": "sat-speed",
+      "url": "https://saltytrailrunning.com/en-de/pages/sat-speed",
+      "type": "official_route_page",
+      "verified": true
+    },
+    {
+      "id": "sat-kids",
+      "url": "https://saltytrailrunning.com/en-de/pages/sat-kids-run",
+      "type": "official_route_page",
+      "verified": true
+    },
+    {
+      "id": "sat-camp",
+      "url": "https://saltytrailrunning.com/en-de/pages/sat-camp",
+      "type": "non-race_training_camp",
+      "verified": true
+    },
+    {
+      "id": "terms",
+      "url": "https://saltytrailrunning.com/en-de/policies/terms-of-service",
+      "type": "official_terms_and_organizer_identity",
+      "verified": true
+    }
+  ],
+  "routeCount": 12,
+  "routes": [
+    {
+      "routeId": "otf-100-2027",
+      "name": "OTF 100 [XXL]",
+      "eventId": "oberaudorf-trailfestival",
+      "date": "2027-10-01",
+      "startTime": "21:00",
+      "distanceKm": 104.5,
+      "elevationGainM": 4992,
+      "start": "DYNAFIT Speed Factory, Kiefersfelden, Germany",
+      "finish": "Kurpark, Oberaudorf, Germany",
+      "cutoff": {
+        "finish": "2027-10-03T01:00",
+        "hours": 28,
+        "intermediate": [
+          {
+            "name": "Pinegg",
+            "km": "42.2 km",
+            "time": "Sat 09:00"
+          },
+          {
+            "name": "Archduke Johann Pass",
+            "km": "52.2 km",
+            "time": "Sat 12:00"
+          },
+          {
+            "name": "Bäckeralm",
+            "km": "70.1 km",
+            "time": "Sat 16:00"
+          },
+          {
+            "name": "Brünnsteinhaus",
+            "km": "82.9 km",
+            "time": "Sat 20:00"
+          },
+          {
+            "name": "Rechenau",
+            "km": "97 km",
+            "time": "Sat 23:30"
+          }
+        ]
+      },
+      "independentSummary": "Ein langer Nacht- und Tag-Ultratrail von Kiefersfelden nach Oberaudorf. Die Route verbindet mehrere markante Gipfel und Joche, darunter Köglhörndl, Hundsalmjoch, Ascherjöchl, Plessenberg, Heuberg, Kienberg, Burgstein, Großer Traithen, Unterbergjoch, Steilnerjoch und Schwarzenberg. Die Veranstalterbeschreibung weist auf lange Anstiege und technisch anspruchsvolle Abstiege hin.",
+      "terrain": [
+        "Bergtrails",
+        "Waldwege",
+        "steile und technische Anstiege/Abstiege"
+      ],
+      "highlights": [
+        "Köglhörndl",
+        "Hundsalmjoch",
+        "Ascherjöchl",
+        "Plessenberg",
+        "Großer Traithen",
+        "Unterbergjoch",
+        "Steilnerjoch",
+        "Schwarzenberg"
+      ],
+      "aidStations": [
+        {
+          "name": "Thiersee",
+          "km": 9.8
+        },
+        {
+          "name": "Kala-Alm",
+          "km": 16.9
+        },
+        {
+          "name": "Buchackealm",
+          "km": 25.9
+        },
+        {
+          "name": "Pinegg",
+          "km": 42.2
+        },
+        {
+          "name": "Archduke Johann Pass",
+          "km": 52.2
+        },
+        {
+          "name": "Ackernalm",
+          "km": 59.8
+        },
+        {
+          "name": "Bäckeralm",
+          "km": 70.1
+        },
+        {
+          "name": "Brünnsteinhaus",
+          "km": 82.9
+        },
+        {
+          "name": "Giessenbach",
+          "km": 93.3
+        },
+        {
+          "name": "Rechenau",
+          "km": 97
+        },
+        {
+          "name": "Finish",
+          "km": 104.5
+        }
+      ],
+      "catering": "An den Stationen Wasser, Maurten-Getränk, Cola/Tee, Gele, Obst, Gemüse, salzige Snacks und teils Brühe/Kuchen; Rechenau ist laut Seite nur eine Cut-off-Kontrolle. Am Ziel Pizza und Getränk.",
+      "officialSourceDiscrepancies": {
+        "topDistanceKm": 104.5,
+        "keyFactsDistanceKm": 104,
+        "narrativeDistanceKm": 104,
+        "topElevationGainM": 4992,
+        "keyFactsElevationGainM": 5000,
+        "narrativeElevationGainM": 5900,
+        "finishAidTableCumulativeGainM": 5463,
+        "action": "preserve all values; request organizer confirmation"
+      },
+      "map": {
+        "status": "no standalone public map URL located; route page retained",
+        "url": "https://saltytrailrunning.com/en-de/pages/otf-100"
+      },
+      "elevationProfile": {
+        "status": "no standalone profile URL located",
+        "url": "https://saltytrailrunning.com/en-de/pages/otf-100"
+      },
+      "gpx": {
+        "permissionStatus": "not_granted",
+        "restrictionNotice": "No explicit download ban located on accessible official page; this is not a usage permission.",
+        "fileOperationsBlocked": true,
+        "officialPageLinkBlocked": true,
+        "publicDownloadUrl": "not_found",
+        "binaryDownloaded": false,
+        "metadataInspected": false,
+        "officialPage": "https://saltytrailrunning.com/en-de/pages/otf-100",
+        "pageMentions": "GPX track is part of participant package and must be loaded on device; no public direct file link identified."
+      },
+      "catalogRouteId": "otf-100-102-5500",
+      "sourceIds": [
+        "otf-home",
+        "otf-100",
+        "otf-program"
+      ]
+    },
+    {
+      "routeId": "otf-wendelstein-ultra-2027",
+      "name": "Wendelstein Ultra [XL]",
+      "eventId": "oberaudorf-trailfestival",
+      "date": "2027-10-02",
+      "startTime": "07:00",
+      "distanceKm": 56.5,
+      "elevationGainM": 3228,
+      "elevationLossM": 3228,
+      "startFinish": "Kurpark, Oberaudorf, Germany",
+      "cutoff": {
+        "finish": "21:00",
+        "hours": 14,
+        "intermediate": [
+          {
+            "name": "Brünnsteinhaus",
+            "km": 35,
+            "time": "16:00"
+          }
+        ]
+      },
+      "independentSummary": "Der Kurs führt zunächst über gut laufbare Trails aus Oberaudorf zum Wildbarren. Danach folgen offene Bergbereiche am Sudelfeld und steilere, technisch anspruchsvolle Abstiege. Über Grandlkaser und Rechenau geht es mit einem letzten Anstieg zurück nach Oberaudorf.",
+      "terrain": [
+        "laufbare Wald- und Bergtrails",
+        "offene alpine Bergwege",
+        "steile technische Abstiege"
+      ],
+      "highlights": [
+        "Wildbarren 1.448 m",
+        "Sudelfeld",
+        "Grandlkaser",
+        "Rechenau",
+        "Brünnsteinhaus"
+      ],
+      "aidStations": [
+        {
+          "name": "Bichlersee",
+          "km": 10.7
+        },
+        {
+          "name": "Brösel-Alm",
+          "km": 24.8
+        },
+        {
+          "name": "Brünnsteinhaus",
+          "km": 35,
+          "cutoff": "16:00"
+        },
+        {
+          "name": "Giessenbach",
+          "km": 47.8
+        },
+        {
+          "name": "Finish",
+          "km": 56.5,
+          "cutoff": "21:00"
+        }
+      ],
+      "catering": "Wasser, Sportdrink, Cola/Tee, Gele, Obst und salzige Snacks; größere Stationen zusätzlich mit Käse, Salami, Brühe und Kuchen. Ziel mit Pizza und Finisher-Getränk.",
+      "map": {
+        "status": "no standalone public map URL located",
+        "url": "https://saltytrailrunning.com/en-de/pages/otf-ultra"
+      },
+      "elevationProfile": {
+        "status": "no standalone profile URL located",
+        "url": "https://saltytrailrunning.com/en-de/pages/otf-ultra"
+      },
+      "gpx": {
+        "permissionStatus": "not_granted",
+        "restrictionNotice": "No explicit download ban located on accessible official page; this is not a usage permission.",
+        "fileOperationsBlocked": true,
+        "officialPageLinkBlocked": true,
+        "publicDownloadUrl": "not_found",
+        "binaryDownloaded": false,
+        "metadataInspected": false,
+        "officialPage": "https://saltytrailrunning.com/en-de/pages/otf-ultra",
+        "pageMentions": "GPX track required on watch/mobile and included in participant package; no public direct file link identified."
+      },
+      "catalogRouteId": "wendelstein-ultra-56-5-3228",
+      "sourceIds": [
+        "otf-home",
+        "otf-xl",
+        "otf-program"
+      ]
+    },
+    {
+      "routeId": "otf-sudelfeld-trail-2027",
+      "name": "Sudelfeld Trail [L]",
+      "eventId": "oberaudorf-trailfestival",
+      "date": "2027-10-02",
+      "startTime": "09:00",
+      "distanceKm": 42.8,
+      "elevationGainM": 2395,
+      "elevationLossM": 2389,
+      "startFinish": "Kurpark, Oberaudorf, Germany",
+      "cutoff": {
+        "finish": "19:00",
+        "hours": 10,
+        "intermediate": [
+          {
+            "name": "Brünnsteinhaus",
+            "km": 27.6,
+            "time": "16:00"
+          }
+        ]
+      },
+      "independentSummary": "Die Runde steigt auf Waldwegen und breiten Pfaden zum Fuchsstein an, führt über das offene Sudelfeld und verbindet technische Berganstiege mit einem konzentrierten Abstieg. Der Schlussabschnitt ist wellig und führt zurück zum Kurpark.",
+      "terrain": [
+        "Waldwege",
+        "breite Forst- und Bergpfade",
+        "technische Anstiege und Abstiege"
+      ],
+      "highlights": [
+        "Fuchsstein 891 m",
+        "Sudelfeld",
+        "Brünnsteinhaus",
+        "Panoramablicke auf die Bergwelt"
+      ],
+      "aidStations": [
+        {
+          "name": "Brösel-Alm",
+          "km": 15
+        },
+        {
+          "name": "Brünnsteinhaus",
+          "km": 27.6,
+          "cutoff": "16:00"
+        },
+        {
+          "name": "Finish",
+          "km": 42.7,
+          "cutoff": "19:00"
+        }
+      ],
+      "catering": "Wasser, Sportdrink, Cola/Tee, Gele, Obst und Snacks; am Brünnsteinhaus zusätzlich Brühe und herzhafte Speisen; Ziel mit Pizza und Getränk.",
+      "map": {
+        "status": "no standalone public map URL located",
+        "url": "https://saltytrailrunning.com/en-de/pages/otf-sudelfeld"
+      },
+      "elevationProfile": {
+        "status": "no standalone profile URL located",
+        "url": "https://saltytrailrunning.com/en-de/pages/otf-sudelfeld"
+      },
+      "gpx": {
+        "permissionStatus": "not_granted",
+        "restrictionNotice": "No explicit download ban located on accessible official page; this is not a usage permission.",
+        "fileOperationsBlocked": true,
+        "officialPageLinkBlocked": true,
+        "publicDownloadUrl": "not_found",
+        "binaryDownloaded": false,
+        "metadataInspected": false,
+        "officialPage": "https://saltytrailrunning.com/en-de/pages/otf-sudelfeld"
+      },
+      "catalogRouteId": "sudelfeld-ultra-42-8-2395",
+      "sourceIds": [
+        "otf-home",
+        "otf-l",
+        "otf-program"
+      ]
+    },
+    {
+      "routeId": "otf-brunnstein-speed-2027",
+      "name": "Brünnstein Speed [M]",
+      "eventId": "oberaudorf-trailfestival",
+      "date": "2027-10-02",
+      "startTime": "09:45",
+      "distanceKm": 24,
+      "elevationGainM": 1473,
+      "elevationLossM": 1473,
+      "startFinish": "Kurpark, Oberaudorf, Germany",
+      "cutoff": {
+        "finish": "16:00",
+        "hours": 6.25
+      },
+      "independentSummary": "Nach einem welligen und gut laufbaren Einstieg führt die Strecke zum Brünnstein auf 1.634 m. Der Anstieg beginnt auf Forstwegen und wird auf Trails steiler; anschließend folgt ein technischer Abstieg und ein wechselnder Abschnitt Richtung Rechenau, bevor Trails zurück nach Oberaudorf führen.",
+      "terrain": [
+        "rollende Trails",
+        "Forstweg",
+        "steiler Bergtrail",
+        "technischer Abstieg",
+        "kurzer Asphaltabschnitt"
+      ],
+      "highlights": [
+        "Brünnstein 1.634 m",
+        "Rechenau",
+        "Rückkehr zum Kurpark"
+      ],
+      "aidStations": [
+        {
+          "name": "Brünnsteinhaus",
+          "km": 9
+        },
+        {
+          "name": "Finish",
+          "km": 23.1,
+          "cutoff": "16:00"
+        }
+      ],
+      "catering": "Brünnsteinhaus mit Wasser, Sportdrink, Cola/Tee, Gele, Obst, Gemüse, salzigen Snacks und teils Brühe/Kuchen; Ziel mit Wasser, Pizza und Finisher-Getränk.",
+      "map": {
+        "status": "no standalone public map URL located",
+        "url": "https://saltytrailrunning.com/en-de/pages/otf-speed"
+      },
+      "elevationProfile": {
+        "status": "no standalone profile URL located",
+        "url": "https://saltytrailrunning.com/en-de/pages/otf-speed"
+      },
+      "gpx": {
+        "permissionStatus": "not_granted",
+        "restrictionNotice": "No explicit download ban located on accessible official page; this is not a usage permission.",
+        "fileOperationsBlocked": true,
+        "officialPageLinkBlocked": true,
+        "publicDownloadUrl": "not_found",
+        "binaryDownloaded": false,
+        "metadataInspected": false,
+        "officialPage": "https://saltytrailrunning.com/en-de/pages/otf-speed",
+        "pageMentions": "GPX is recommended on GPS watch/mobile; no public direct file link identified."
+      },
+      "catalogRouteId": "brunnstein-speed-24-1473",
+      "sourceIds": [
+        "otf-home",
+        "otf-m",
+        "otf-program"
+      ]
+    },
+    {
+      "routeId": "otf-hocheck-short-2027",
+      "name": "Hocheck Short [S]",
+      "eventId": "oberaudorf-trailfestival",
+      "date": "2027-10-02",
+      "startTime": "10:15",
+      "distanceKm": 12.4,
+      "elevationGainM": 506,
+      "elevationLossM": 506,
+      "startFinish": "Kurpark, Oberaudorf, Germany",
+      "cutoff": {
+        "finish": "14:00",
+        "hours": 3.75
+      },
+      "independentSummary": "Eine kurze, wechselhafte Runde mit vielen Trails und schnellen Forstwegpassagen. Der Kurs kombiniert steile und flache Abschnitte, führt über den höchsten Punkt auf etwa 840 m und kehrt über einen schnellen Abstieg sowie einen kurzen Asphaltabschnitt zum Kurpark zurück.",
+      "terrain": [
+        "Trailpfade",
+        "schnelle Forstwege",
+        "Asphaltabschnitt",
+        "steile und rollende Passagen"
+      ],
+      "highlights": [
+        "Hocheck",
+        "höchster Punkt etwa 840 m",
+        "schneller Abstieg nach Oberaudorf"
+      ],
+      "aidStations": [],
+      "catering": "Keine streckenspezifischen Verpflegungsstationen auf der offiziellen Seite ausgewiesen; Zielverpflegung nicht näher spezifiziert.",
+      "map": {
+        "status": "no standalone public map URL located",
+        "url": "https://saltytrailrunning.com/en-de/pages/otf-short"
+      },
+      "elevationProfile": {
+        "status": "no standalone profile URL located",
+        "url": "https://saltytrailrunning.com/en-de/pages/otf-short"
+      },
+      "gpx": {
+        "permissionStatus": "not_granted",
+        "restrictionNotice": "No explicit download ban located on accessible official page; this is not a usage permission.",
+        "fileOperationsBlocked": true,
+        "officialPageLinkBlocked": true,
+        "publicDownloadUrl": "not_found",
+        "binaryDownloaded": false,
+        "metadataInspected": false,
+        "officialPage": "https://saltytrailrunning.com/en-de/pages/otf-short"
+      },
+      "catalogRouteId": null,
+      "sourceIds": [
+        "otf-home",
+        "otf-s",
+        "otf-program"
+      ]
+    },
+    {
+      "routeId": "otf-kids-nextgen-2027-pending",
+      "name": "Kids & Next Gen Run",
+      "eventId": "oberaudorf-trailfestival",
+      "date": "2027-10-01",
+      "distanceKm": null,
+      "elevationGainM": null,
+      "startFinish": "Kurpark, Oberaudorf, Germany",
+      "cutoff": {
+        "status": "2027 details not published"
+      },
+      "independentSummary": "Der offizielle OTF-Überblick führt 2027 einen Kids Run und Next Gen Run auf. Die erreichbare Detailseite enthält derzeit nur die 2026-Angaben (250 m und 1,7 km); diese werden nicht als 2027-Distanzen übernommen.",
+      "terrain": [
+        "innerörtlicher Veranstaltungsbereich; 2027-Untergrund nicht veröffentlicht"
+      ],
+      "highlights": [
+        "Kids Run",
+        "Next Gen Run"
+      ],
+      "aidStations": [],
+      "catering": "2027 nicht separat veröffentlicht.",
+      "map": {
+        "status": "no 2027 map identified",
+        "url": "https://saltytrailrunning.com/en-de/pages/otf-kids-run"
+      },
+      "elevationProfile": {
+        "status": "not published"
+      },
+      "gpx": {
+        "permissionStatus": "not_granted",
+        "restrictionNotice": "No explicit download ban located on accessible official page; this is not a usage permission.",
+        "fileOperationsBlocked": true,
+        "officialPageLinkBlocked": true,
+        "publicDownloadUrl": "not_found",
+        "binaryDownloaded": false,
+        "metadataInspected": false,
+        "officialPage": "https://saltytrailrunning.com/en-de/pages/otf-kids-run"
+      },
+      "catalogRouteId": null,
+      "sourceIds": [
+        "otf-home",
+        "otf-kids",
+        "otf-program"
+      ],
+      "historical2026Reference": {
+        "kidsRunKm": 0.25,
+        "nextGenRunKm": 1.7,
+        "notValidFor2027": true
+      }
+    },
+    {
+      "routeId": "sat-ultra-2027",
+      "name": "SAT ULTRA",
+      "eventIdCandidate": "schnalstal-alpine-trail",
+      "date": "2027-07-31",
+      "startTime": "04:00",
+      "distanceKm": 51.8,
+      "elevationGainM": 4420,
+      "startFinish": "Unser Frau, Schnalstal, Italy",
+      "cutoff": {
+        "finish": "20:30",
+        "hours": 16.5,
+        "intermediate": [
+          {
+            "name": "Finailhof",
+            "km": 22.2,
+            "time": "10:30"
+          },
+          {
+            "name": "Schöne Aussicht / Bella Vista",
+            "km": 30.3,
+            "time": "14:00"
+          }
+        ]
+      },
+      "independentSummary": "Ein technisch anspruchsvoller Hochgebirgstrail von Unser Frau über Similaunhütte, Finailhof, Grawand und Bella Vista zurück über Kurzras und Bergl-Alm. Die Route verläuft lange oberhalb von 3.000 m und umfasst exponierte Grate, Fels- und Geröllpassagen sowie lange steile Auf- und Abstiege.",
+      "terrain": [
+        "hoch alpine Pfade",
+        "Fels und Geröll",
+        "exponierte Grate",
+        "steile technische Abstiege"
+      ],
+      "highlights": [
+        "Similaunhütte über 3.000 m",
+        "Ötzi-Fundgebiet",
+        "Grawand",
+        "Im Hinteren Eis",
+        "Hintereisferner",
+        "Weißkugel",
+        "höchster Bereich etwa 3.250 m"
+      ],
+      "aidStations": [
+        {
+          "name": "Similaunhütte 1",
+          "km": 8.2
+        },
+        {
+          "name": "Similaunhütte 2",
+          "km": 15.1
+        },
+        {
+          "name": "Finailhof",
+          "km": 22.2
+        },
+        {
+          "name": "Grawand",
+          "km": 27.6
+        },
+        {
+          "name": "Bella Vista Hütte",
+          "km": 30.3
+        },
+        {
+          "name": "Kurzras",
+          "km": 40.4
+        },
+        {
+          "name": "Bergl-Alm",
+          "km": 45.4
+        },
+        {
+          "name": "Finish",
+          "km": 51.8
+        }
+      ],
+      "catering": "Je nach Station Wasser, Maurten Drink Mix, Cola/Tee/Brühe, Gele, Obst, Gemüse, Salami/Käse, Nüsse, Brezeln, Kuchen und Süßigkeiten; am Ziel warme Mahlzeit und Getränk. Veranstalter weist darauf hin, dass einzelne Artikel ausgehen können.",
+      "map": {
+        "status": "official route page and course visuals; no separate map URL extracted",
+        "url": "https://saltytrailrunning.com/en-de/pages/sat-ultra"
+      },
+      "elevationProfile": {
+        "status": "no separate downloadable profile URL located",
+        "url": "https://saltytrailrunning.com/en-de/pages/sat-ultra"
+      },
+      "gpx": {
+        "permissionStatus": "not_granted",
+        "restrictionNotice": "No explicit download ban located on accessible official page; this is not a usage permission.",
+        "fileOperationsBlocked": true,
+        "officialPageLinkBlocked": true,
+        "publicDownloadUrl": "not_found",
+        "binaryDownloaded": false,
+        "metadataInspected": false,
+        "officialPage": "https://saltytrailrunning.com/en-de/pages/sat-ultra",
+        "pageMentions": "GPX track is mandatory on watch/mobile; no public download URL identified."
+      },
+      "catalogEventId": null,
+      "sourceIds": [
+        "sat-home",
+        "sat-ultra",
+        "sat-program"
+      ]
+    },
+    {
+      "routeId": "sat-sky-2027",
+      "name": "SAT SKY",
+      "eventIdCandidate": "schnalstal-alpine-trail",
+      "date": "2027-07-31",
+      "startTime": "07:30",
+      "distanceKm": 34.9,
+      "elevationGainM": 2626,
+      "startFinish": "Unser Frau, Schnalstal, Italy",
+      "cutoff": {
+        "finish": "18:00",
+        "hours": 11,
+        "intermediate": [
+          {
+            "name": "Schöne Aussicht",
+            "time": "14:00"
+          }
+        ]
+      },
+      "independentSummary": "Die 2027 aktualisierte Skyrunning-Runde führt von Unser Frau über Vernagt und Finailhof zum Grawand, weiter über Schöne Aussicht und einen hochalpinen Grat oberhalb von 3.000 m Richtung Im Hinteren Eis. Danach folgt ein langer technischer Abstieg nach Kurzras und ein weiterer Anstieg zur Bergl-Alm vor dem Schlussabstieg.",
+      "terrain": [
+        "hoch alpine Trails",
+        "felsige und ausgesetzte Gratpassagen",
+        "technische Abstiege",
+        "steile Anstiege"
+      ],
+      "highlights": [
+        "Grawand über 3.200 m",
+        "Schöne Aussicht",
+        "Im Hinteren Eis",
+        "Hintereisferner",
+        "Weißkugel",
+        "fast 14 km oberhalb 2.500 m"
+      ],
+      "aidStations": [
+        {
+          "name": "Grawand",
+          "km": 10.8
+        },
+        {
+          "name": "Bella Vista Hütte",
+          "km": 13.4
+        },
+        {
+          "name": "Kurzras",
+          "km": 23.7
+        },
+        {
+          "name": "Bergl-Alm",
+          "km": 28.7
+        },
+        {
+          "name": "Finish",
+          "km": 34.9
+        }
+      ],
+      "catering": "Wasser an Grawand; an Bella Vista Getränke, Gele, Obst und Snacks; an Kurzras Getränke, Brühe und breitere Verpflegung; Bergl-Alm Getränke/Obst/Snacks; Ziel mit warmer Mahlzeit und Getränk.",
+      "map": {
+        "status": "official route page and course visuals; no separate map URL extracted",
+        "url": "https://saltytrailrunning.com/en-de/pages/sat-sky"
+      },
+      "elevationProfile": {
+        "status": "no separate downloadable profile URL located",
+        "url": "https://saltytrailrunning.com/en-de/pages/sat-sky"
+      },
+      "gpx": {
+        "permissionStatus": "not_granted",
+        "restrictionNotice": "No explicit download ban located on accessible official page; this is not a usage permission.",
+        "fileOperationsBlocked": true,
+        "officialPageLinkBlocked": true,
+        "publicDownloadUrl": "not_found",
+        "binaryDownloaded": false,
+        "metadataInspected": false,
+        "officialPage": "https://saltytrailrunning.com/en-de/pages/sat-sky"
+      },
+      "catalogEventId": null,
+      "sourceIds": [
+        "sat-home",
+        "sat-sky",
+        "sat-program"
+      ]
+    },
+    {
+      "routeId": "sat-scenic-2027",
+      "name": "SAT SCENIC",
+      "eventIdCandidate": "schnalstal-alpine-trail",
+      "date": "2027-07-31",
+      "startTime": "08:30",
+      "distanceKm": 24.2,
+      "elevationGainM": 1495,
+      "startFinish": "Unser Frau, Schnalstal, Italy",
+      "cutoff": {
+        "hours": 6
+      },
+      "independentSummary": "Eine neue 2027-Strecke von Unser Frau über Vernagt und Kurzras in hochalpines Gelände und über Neue Heilbronner Hütte sowie Bergl-Alm zurück. Mehr als die Hälfte des Kurses liegt oberhalb von 2.000 m; der höchste Punkt liegt bei ungefähr 2.770 m.",
+      "terrain": [
+        "Tal- und Bergtrails",
+        "hoch alpine Pfade",
+        "felsige und wurzelige Abstiege"
+      ],
+      "highlights": [
+        "Vernagt",
+        "Kurzras",
+        "Neue Heilbronner Hütte",
+        "Bergl-Alm",
+        "höchster Punkt etwa 2.770 m"
+      ],
+      "aidStations": [
+        {
+          "name": "Kurzras",
+          "km": 10.2
+        },
+        {
+          "name": "Neue Heilbronner Hütte",
+          "km": 15.6
+        },
+        {
+          "name": "Bergl-Alm",
+          "km": 18.1
+        },
+        {
+          "name": "Finish",
+          "km": 24.2
+        }
+      ],
+      "catering": "Die offizielle Seite markiert Hydration und Nutrition für die Stationen derzeit als 'details coming soon'; keine belastbare Menüangabe.",
+      "map": {
+        "status": "official route page and course visuals; no separate map URL extracted",
+        "url": "https://saltytrailrunning.com/en-de/pages/sat-scenic"
+      },
+      "elevationProfile": {
+        "status": "no separate downloadable profile URL located",
+        "url": "https://saltytrailrunning.com/en-de/pages/sat-scenic"
+      },
+      "gpx": {
+        "permissionStatus": "not_granted",
+        "restrictionNotice": "No explicit download ban located on accessible official page; this is not a usage permission.",
+        "fileOperationsBlocked": true,
+        "officialPageLinkBlocked": true,
+        "publicDownloadUrl": "not_found",
+        "binaryDownloaded": false,
+        "metadataInspected": false,
+        "officialPage": "https://saltytrailrunning.com/en-de/pages/sat-scenic"
+      },
+      "catalogEventId": null,
+      "sourceIds": [
+        "sat-home",
+        "sat-scenic",
+        "sat-program"
+      ]
+    },
+    {
+      "routeId": "sat-vertical-2027",
+      "name": "SAT VERTICAL",
+      "eventIdCandidate": "schnalstal-alpine-trail",
+      "date": "2027-07-29",
+      "startTime": "16:00",
+      "distanceKm": 8.3,
+      "elevationGainM": 1305,
+      "start": "Kurzras, Schnalstal, Italy",
+      "finish": "Grawand, Schnalstal, Italy (3,251 m)",
+      "cutoff": {
+        "hours": 2.5
+      },
+      "independentSummary": "Ein nahezu ununterbrochener steiler Aufstieg von Kurzras nach Grawand. Die Strecke nutzt zunächst laufbare, später technische Bergpfade; je nach Gelände kommen Fixseile und Geröllpassagen hinzu. Es gibt keine flache Erholungsphase.",
+      "terrain": [
+        "steile alpine Pfade",
+        "Geröll",
+        "technische Passagen",
+        "Fixseile in steilem Gelände"
+      ],
+      "highlights": [
+        "Grawand auf 3.251 m",
+        "gemeinsame Abschnitte mit Ultra und Sky",
+        "hoch gelegener Zielpunkt"
+      ],
+      "aidStations": [],
+      "catering": "Keine Verpflegungsstation oder Menüangabe auf der zugänglichen Detailseite ausgewiesen.",
+      "map": {
+        "status": "official route page and course visuals; no separate map URL extracted",
+        "url": "https://saltytrailrunning.com/en-de/pages/sat-vertical"
+      },
+      "elevationProfile": {
+        "status": "no separate downloadable profile URL located",
+        "url": "https://saltytrailrunning.com/en-de/pages/sat-vertical"
+      },
+      "gpx": {
+        "permissionStatus": "not_granted",
+        "restrictionNotice": "No explicit download ban located on accessible official page; this is not a usage permission.",
+        "fileOperationsBlocked": true,
+        "officialPageLinkBlocked": true,
+        "publicDownloadUrl": "not_found",
+        "binaryDownloaded": false,
+        "metadataInspected": false,
+        "officialPage": "https://saltytrailrunning.com/en-de/pages/sat-vertical"
+      },
+      "catalogEventId": null,
+      "sourceIds": [
+        "sat-home",
+        "sat-vertical",
+        "sat-program"
+      ]
+    },
+    {
+      "routeId": "sat-speed-2027",
+      "name": "SAT SPEED",
+      "eventIdCandidate": "schnalstal-alpine-trail",
+      "date": "2027-07-31",
+      "startTime": "09:30",
+      "distanceKm": 10,
+      "elevationGainM": 288,
+      "startFinish": "Unser Frau, Schnalstal, Italy",
+      "cutoff": {
+        "hours": 4
+      },
+      "independentSummary": "Eine vergleichsweise laufbare Runde um den Vernagter Stausee im oberen Schnalstal. Über 80 Prozent der Strecke sind laut Veranstalter Trails; der Charakter ist wellig und flüssig, mit alpiner Umgebung und Gletscherblicken.",
+      "terrain": [
+        "über 80 % Trail",
+        "wellige, laufbare Bergpfade",
+        "einzelne technisch anspruchsvolle Passagen"
+      ],
+      "highlights": [
+        "Vernagter Stausee",
+        "Blick auf die Gletscher der Texelgruppe",
+        "flüssige Trailabschnitte"
+      ],
+      "aidStations": [],
+      "catering": "Keine Streckenverpflegung auf der Detailseite ausgewiesen; Eventbereich bietet Essen und Getränke.",
+      "map": {
+        "status": "official route page and course visuals; no separate map URL extracted",
+        "url": "https://saltytrailrunning.com/en-de/pages/sat-speed"
+      },
+      "elevationProfile": {
+        "status": "no separate downloadable profile URL located",
+        "url": "https://saltytrailrunning.com/en-de/pages/sat-speed"
+      },
+      "gpx": {
+        "permissionStatus": "not_granted",
+        "restrictionNotice": "No explicit download ban located on accessible official page; this is not a usage permission.",
+        "fileOperationsBlocked": true,
+        "officialPageLinkBlocked": true,
+        "publicDownloadUrl": "not_found",
+        "binaryDownloaded": false,
+        "metadataInspected": false,
+        "officialPage": "https://saltytrailrunning.com/en-de/pages/sat-speed"
+      },
+      "catalogEventId": null,
+      "sourceIds": [
+        "sat-home",
+        "sat-speed",
+        "sat-program"
+      ]
+    },
+    {
+      "routeId": "sat-kids-run-600m-2027",
+      "name": "SAT Kids Run",
+      "eventIdCandidate": "schnalstal-alpine-trail",
+      "date": "2027-07-31",
+      "startTime": "11:30 / 11:45",
+      "distanceKm": 0.6,
+      "elevationGainM": null,
+      "startFinish": "Unser Frau, Schnalstal, Italy",
+      "cutoff": {
+        "status": "not_published"
+      },
+      "independentSummary": "Ein kurzer Kinderlauf von ungefähr 600 m im Start-/Zielbereich von Unser Frau. Zwei Altersgruppen starten zeitversetzt; ein detaillierter Streckenverlauf und Höhenmeter sind nicht veröffentlicht.",
+      "terrain": [
+        "Veranstaltungsgelände; genaue Untergrundaufteilung nicht veröffentlicht"
+      ],
+      "highlights": [
+        "Bambini 3–8 Jahre",
+        "Ragazzi 9–12 Jahre",
+        "Teilnahmegebühr für gemeinnützigen Zweck"
+      ],
+      "aidStations": [],
+      "catering": "Finisher-Catering ist im Paket genannt; keine Streckenverpflegung.",
+      "map": {
+        "status": "no separate map published",
+        "url": "https://saltytrailrunning.com/en-de/pages/sat-kids-run"
+      },
+      "elevationProfile": {
+        "status": "not published"
+      },
+      "gpx": {
+        "permissionStatus": "not_granted",
+        "restrictionNotice": "No explicit download ban located on accessible official page; this is not a usage permission.",
+        "fileOperationsBlocked": true,
+        "officialPageLinkBlocked": true,
+        "publicDownloadUrl": "not_found",
+        "binaryDownloaded": false,
+        "metadataInspected": false,
+        "officialPage": "https://saltytrailrunning.com/en-de/pages/sat-kids-run"
+      },
+      "catalogEventId": null,
+      "sourceIds": [
+        "sat-home",
+        "sat-kids",
+        "sat-program"
+      ]
+    }
+  ],
+  "unresolved": [
+    "OTF overview rounds distances to 12K/21K/42K/60K/100K; detail pages state 12.4/24/42.8/56.5/104.5 km. The 21K vs 24 km difference needs organizer confirmation.",
+    "OTF100 official page shows 4,992 hm in the page header, 5,000 hm in route facts, 5,900 hm in narrative, and 5,463 hm at the finish aid table. No value was overwritten.",
+    "OTF Kids and Next Gen route page currently contains 2026 distances only (250 m and 1.7 km); 2027 distances and cut-offs are unverified.",
+    "SAT Kids Run is approximately 600 m; elevation and cut-off are not published.",
+    "No standalone map/profile asset URLs were identified; official route pages are retained as sources.",
+    "No public direct GPX download URL was identified for SALTY routes. Some OTF pages say GPX is included in the participant package or recommended/required on a device; that does not grant app-use permission.",
+    "The SAT Camp is a training camp, not a race event, and is excluded from race-route count."
+  ],
+  "rights": {
+    "requestDate": "2026-11-27",
+    "status": "submitted",
+    "sentCopyFiled": true,
+    "deliveryConfirmed": false,
+    "messageIdHeader": "<179574224179.57.12348423308967523249@me.com>",
+    "recipient": "dh@saltytrailrunning.com",
+    "cc": [
+      "otf@saltytrailrunning.com",
+      "sat@saltytrailrunning.com"
+    ],
+    "priorResponse": "Dominik Hartmann asked for app name and address; this reply supplied NORTHBOUND working name, registered domain and repository address.",
+    "requestedUseCategories": [
+      "official_route_descriptions_verbatim",
+      "shortened_or_editorially_edited_official_descriptions",
+      "independent_factual_summaries",
+      "route_facts_distance_elevation_start_finish_aid_cutoffs",
+      "maps_and_route_geometry",
+      "elevation_profiles",
+      "gpx_file_fetch_load_import_store_process_map_display_user_download",
+      "link_only_to_official_gpx_download",
+      "event_names_and_event_marks",
+      "logos_and_word_device_marks",
+      "symbols_icons_pictograms_emblems_mascots",
+      "event_specific_graphics_and_visual_design"
+    ],
+    "gpxQuestions": {
+      "restrictionNoticesRequested": true,
+      "exactNoticeLocationAndAffectedRoutesRequested": true,
+      "fetchLoadImportStoreProcessMapDisplayDownloadSeparated": true,
+      "linkOnlyPermissionSeparated": true,
+      "allFileOperationsBlockedUntilExpressPermission": true,
+      "linkBlockedUntilExpressPermission": true
+    },
+    "projectPhase": "non-commercial independent information app under development; no official affiliation claimed",
+    "futureCommercialPermission": "asked separately; not granted",
+    "mediaPackAndBrandGuidelinesRequested": true
+  },
+  "integration": {
+    "liveEventDatesChanged": false,
+    "routeDescriptionsIntegrated": false,
+    "appPublished": false,
+    "gpxEnabled": false
+  }
+}
