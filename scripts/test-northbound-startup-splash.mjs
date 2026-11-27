@@ -6,6 +6,10 @@ const splash = readFileSync(new URL('../startup-splash.js', import.meta.url), 'u
 const worker = readFileSync(new URL('../sw.js', import.meta.url), 'utf8');
 
 assert.match(html, /id="northboundStartupSplash"/, 'startup splash markup is present');
+assert.match(html, /position:fixed!important;top:0!important;right:0!important;bottom:0!important;left:0!important/, 'splash is pinned to all viewport edges');
+assert.match(html, /height:100dvh!important/, 'splash fills the dynamic iPhone viewport');
+assert.match(html, /z-index:2147483647!important/, 'splash stays above the entire app');
+assert.match(html, /html\.northbound-startup-lock body>\#northboundStartupSplash/, 'startup lock enforces the full-screen overlay');
 assert.match(html, /northbound-logo\.svg/, 'splash uses the NORTHBOUND brand mark');
 assert.match(html, /nb-splash-athlete runner/, 'trail runner animation is present');
 assert.match(html, /nb-splash-athlete cyclist/, 'road cyclist animation is present');
