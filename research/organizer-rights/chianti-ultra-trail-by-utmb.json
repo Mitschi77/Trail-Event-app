@@ -1,0 +1,90 @@
+{
+  "schemaVersion": 1,
+  "checkedAt": "2026-11-22",
+  "organizer": "Chianti Ultra Trail by UTMB",
+  "legalEntity": "UTMB Italy srls / Chianti Ultra Trail SSD",
+  "projectPhase": "independent_non_commercial_project_only",
+  "affiliationClaimed": false,
+  "commercialPermission": "not_requested_for_current_phase; separate future commercial possibility and conditions asked; pending",
+  "contact": {
+    "email": "chianti@service.utmb.world",
+    "source": "https://chianti.utmb.world/runners/rules-regulation",
+    "sourceType": "official organizer website",
+    "authority": "official contact found; rights-holder authority to be confirmed"
+  },
+  "bundledEvents": [
+    {
+      "eventId": "chianti-ultra-trail",
+      "routes": [
+        "UTCC 120",
+        "CUT 73",
+        "CMT 46",
+        "CHT 20",
+        "CWR 10"
+      ]
+    }
+  ],
+  "emailHistory": [
+    {
+      "date": "2026-11-19",
+      "type": "initial_permission_request",
+      "messageId": "<179509549543.95.14950342421546731319@me.com>",
+      "status": "sent_copy_filed",
+      "note": "Initial request covered broad event content but did not itemise every material category or GPX restriction handling."
+    },
+    {
+      "date": "2026-11-22T02:50:35+01:00",
+      "type": "supplemental_itemised_request_in_same_thread",
+      "messageId": "<179531224493.114.13383464634031801285@me.com>",
+      "status": "submitted_sent_copy_filed",
+      "note": "Adds all separate material categories, route-by-route GPX restriction questions, explicit technical block rule, separate link permission and separate future commercial question."
+    }
+  ],
+  "requestedPermissions": {
+    "officialTextVerbatim": "pending",
+    "shortenedOrEditedOfficialText": "pending",
+    "ownFactualSummaries": "pending",
+    "routeFacts": "pending",
+    "mapsAndRouteLines": "pending",
+    "elevationProfiles": "pending",
+    "gpxFileAccessFetch": "pending",
+    "gpxLoadImport": "pending",
+    "gpxStore": "pending",
+    "gpxProcessAnalyse": "pending",
+    "gpxDisplayOnMap": "pending",
+    "gpxUserDownload": "pending",
+    "officialGpxPageLinkOnly": "pending",
+    "eventNamesAndMarks": "pending",
+    "logosAndWordImageMarks": "pending",
+    "symbolsIconsPictogramsEmblemsMascots": "pending",
+    "otherEventSpecificGraphics": "pending"
+  },
+  "gpxRestrictions": {
+    "perRouteStatus": "awaiting organizer confirmation",
+    "exactNoticeText": "unknown",
+    "noticeSource": "not yet confirmed",
+    "affectedRoutes": [],
+    "metadataInspected": false,
+    "technicalDefault": "block",
+    "blockWhen": [
+      "restriction notice or download prohibition exists",
+      "no explicit written permission for the specific GPX action",
+      "rights status missing, unclear or contradictory"
+    ],
+    "blockActions": [
+      "fetch",
+      "load/import",
+      "store",
+      "process/analyse",
+      "display on map",
+      "user download"
+    ],
+    "officialLinkPermission": "separate decision required; link only if expressly allowed",
+    "appNotice": "GPX durch Veranstalter eingeschränkt – kein Download möglich"
+  },
+  "mediaKitAndBrandGuidelines": "requested_pending",
+  "attributionAndUseConditions": "requested_pending",
+  "exclusionsOrConditionalUses": "requested_pending",
+  "responseStatus": "no_reply_found_as_of_2026-11-22",
+  "appPublicationAllowed": false
+}

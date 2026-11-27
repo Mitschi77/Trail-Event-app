@@ -1,0 +1,614 @@
+{
+  "schemaVersion": 1,
+  "createdAt": "2026-11-22T02:46:42+01:00",
+  "scope": "Research-only route-description package for Istria 100 by UTMB and Chianti Ultra Trail by UTMB 2027; not approved for app publication.",
+  "authoring": {
+    "verbatimOfficialTextCopied": false,
+    "summariesAreOriginalFactualParaphrases": true,
+    "thirdPartyImagesMapsProfilesLogosOrGpxCopied": false,
+    "rightsPermissionStatus": "requested_pending",
+    "publicationAllowed": false,
+    "note": "All summaries below are original factual summaries based on the linked official sources. They are research drafts only and must not be published or reused until the relevant written permission is received."
+  },
+  "gpxPolicy": {
+    "default": "blocked",
+    "allowedOnlyAfter": "explicit written route-specific permission for each requested GPX action and confirmation that no restriction/download prohibition applies",
+    "actionsTrackedSeparately": [
+      "fetch",
+      "load_import",
+      "store",
+      "process_analyse",
+      "display_on_map",
+      "user_download",
+      "official_page_link"
+    ],
+    "restrictionNoticeCheck": "visible official pages reviewed; no complete rights clearance established",
+    "metadataInspected": false,
+    "technicalRequirement": "When permission is missing, unclear, contradictory, or a restriction applies, the route GPX loader must reject the request before network retrieval/import; hiding the download button alone is insufficient.",
+    "userNotice": "GPX durch Veranstalter eingeschränkt – kein Download möglich",
+    "officialLink": "blocked unless linking is separately confirmed as allowed"
+  },
+  "events": [
+    {
+      "eventId": "istrien",
+      "eventName": "Istria 100 by UTMB",
+      "edition": 2027,
+      "eventPeriod": {
+        "startDate": "2027-04-02",
+        "endDate": "2027-04-04"
+      },
+      "organizer": {
+        "legalEntity": "IRONMAN CROATIA d.o.o.",
+        "collaboration": "Sport box d.o.o. and local municipalities",
+        "officialSource": "https://istria.utmb.world/races-runners/runners/regulations",
+        "contact": "istria100@service.byutmb.world",
+        "contactSource": "https://istria.utmb.world/races-runners/runners/regulations",
+        "contactScope": "Official FAQ lists this address for media-related inquiries; rights-holder authority still requires confirmation."
+      },
+      "officialSources": [
+        "https://istria.utmb.world/",
+        "https://istria.utmb.world/races",
+        "https://istria.utmb.world/races-runners/other-information/FAQ",
+        "https://istria.utmb.world/races-runners/runners/regulations",
+        "https://istria.utmb.world/races-runners/runners/gpx-tracks",
+        "https://istria.utmb.world/races/168k",
+        "https://istria.utmb.world/races/110K",
+        "https://istria.utmb.world/races/69K",
+        "https://istria.utmb.world/races/42K",
+        "https://istria.utmb.world/races/21k"
+      ],
+      "routeInventory": {
+        "officialWebsiteListsFiveDistances": true,
+        "currentEventDatesRouteIdsKnown": [
+          "110-tausend-111-4074",
+          "69-tausend-70-2331"
+        ],
+        "note": "The current event-dates.json route mapping contains only the 110K and 69K route IDs; the official event page lists five races. Do not infer missing catalog IDs or silently add duplicates."
+      },
+      "routes": [
+        {
+          "routeCode": "168K",
+          "catalogRouteId": null,
+          "start": {
+            "place": "Labin",
+            "date": "2027-04-02",
+            "time": "17:00"
+          },
+          "finish": "Umag",
+          "distanceKm": 168,
+          "elevationGainM": 6800,
+          "maxRaceTimeHours": 45,
+          "courseSummary": "Punkt-zu-Punkt-Ultratrail von der historischen Stadt Labin über den Učka-Gebirgszug und den Raum Buzet in das istrische Binnenland; über mittelalterliche Orte und Wald- sowie Talpassagen bis zum Ziel am Meer in Umag.",
+          "terrain": "Technisches Gelände mit tiefen Wäldern, historischer Bahntrasse und schlammigen Tälern; die offizielle Streckenbeschreibung verwendet zusätzlich den Begriff „coastering“. Genaue Oberflächenanteile sind nicht veröffentlicht.",
+          "highlights": [
+            "Labin und der Učka-Anstieg mit Blick auf die Kvarner-Bucht",
+            "Buzet als Drop-Bag- und große Verpflegungsstation",
+            "mittelalterliche Orte wie Motovun",
+            "Zieleinlauf in Umag am Meer"
+          ],
+          "aidStations": {
+            "countOnCourse": 10,
+            "finishStationAdditional": true,
+            "supportAllowedAt": [
+              "Mošćenička Draga",
+              "Poklon",
+              "Buzet",
+              "Livade"
+            ],
+            "routeSpecificLocations": "Vollständige Stationsliste nicht aus dem FAQ-Auszug übernommen; Race Guide vor dem Event abgleichen."
+          },
+          "nutrition": "Offizielle FAQ: NAAK ist Ernährungspartner. An den Stationen gibt es Getränke, süße und salzige Snacks, Brot, Obst, Gebäck, Käse, Wasser, Cola, Iso-Getränke, Kaffee, Tee und heiße Suppe; in Buzet bei 168K/110K zusätzlich warme Mahlzeiten. Glutenfreie und vegane Optionen sind auf Nachfrage bei Helfern erhältlich. Es werden keine Becher gestellt; eigene Trinkgefäße sind erforderlich. Die genaue Auswahl wird im Race Guide vor dem Rennen aktualisiert.",
+          "cutoffs": {
+            "finishHours": 45,
+            "intermediateCheckpoints": "Nicht ausgelesen; Race Guide erforderlich."
+          },
+          "mapUrl": "https://istria.utmb.world/races/168k",
+          "elevationProfileUrl": "https://istria.utmb.world/races/168k",
+          "gpxUrl": "https://istria.utmb.world/races-runners/runners/gpx-tracks",
+          "gpxRouteLinkListed": true,
+          "gpxRestrictionReview": {
+            "noticeFound": "No explicit restriction notice identified in the visible official page text; not a clearance.",
+            "metadataInspected": false,
+            "status": "blocked_pending_explicit_permission"
+          },
+          "dataQuality": [
+            "Offizielle Kopfwerte 168 km / 6.800 m+; kein abweichender Wert im gelesenen FAQ."
+          ]
+        },
+        {
+          "routeCode": "110K",
+          "catalogRouteId": "110-tausend-111-4074",
+          "start": {
+            "place": "Buzet",
+            "date": "2027-04-03",
+            "time": "07:00"
+          },
+          "finish": "Umag",
+          "distanceKm": 111,
+          "elevationGainM": 4200,
+          "maxRaceTimeHours": 28,
+          "courseSummary": "Rundkursartige Passage ab Buzet in Richtung Ćićarija mit Anstieg zu Gomila und Žbevnica; Rückkehr zur großen Verpflegungs- und Drop-Bag-Station in Buzet, danach über das istrische Hügelland und historische Orte wie Motovun, Grožnjan und Oprtalj nach Umag.",
+          "terrain": "Im Gebirgsabschnitt felsig und anspruchsvoll; danach laut offizieller Beschreibung leichteres, hügeliges Binnenland. Exakte Oberflächenanteile nicht veröffentlicht.",
+          "highlights": [
+            "Ćićarija und die Gipfel Gomila sowie Žbevnica",
+            "Buzet als größte Verpflegungsstation",
+            "mittelalterliche Orte Motovun, Grožnjan und Oprtalj",
+            "Ziel in Umag"
+          ],
+          "aidStations": {
+            "countOnCourse": 7,
+            "finishStationAdditional": true,
+            "supportAllowedAt": [
+              "Buzet",
+              "Livade"
+            ],
+            "routeSpecificLocations": "Vollständige Stationsliste nicht aus dem FAQ-Auszug übernommen; Race Guide vor dem Event abgleichen."
+          },
+          "nutrition": "Offizielle FAQ: NAAK ist Ernährungspartner. An den Stationen gibt es Getränke, süße und salzige Snacks, Brot, Obst, Gebäck, Käse, Wasser, Cola, Iso-Getränke, Kaffee, Tee und heiße Suppe; in Buzet bei 168K/110K zusätzlich warme Mahlzeiten. Glutenfreie und vegane Optionen sind auf Nachfrage bei Helfern erhältlich. Es werden keine Becher gestellt; eigene Trinkgefäße sind erforderlich. Die genaue Auswahl wird im Race Guide vor dem Rennen aktualisiert.",
+          "cutoffs": {
+            "finishHours": 28,
+            "intermediateCheckpoints": "Nicht ausgelesen; Race Guide erforderlich."
+          },
+          "mapUrl": "https://istria.utmb.world/races/110K",
+          "elevationProfileUrl": "https://istria.utmb.world/races/110K",
+          "gpxUrl": "https://istria.utmb.world/races-runners/runners/gpx-tracks",
+          "gpxRouteLinkListed": true,
+          "gpxRestrictionReview": {
+            "noticeFound": "No explicit restriction notice identified in the visible official page text; not a clearance.",
+            "metadataInspected": false,
+            "status": "blocked_pending_explicit_permission"
+          },
+          "dataQuality": [
+            "Kopfwert 4.200 m+; Fließtext der Streckenbeschreibung nennt ca. 4.074 m. Veranstalterbestätigung erforderlich; Katalogwert nicht überschreiben."
+          ]
+        },
+        {
+          "routeCode": "69K",
+          "catalogRouteId": "69-tausend-70-2331",
+          "start": {
+            "place": "Buzet",
+            "date": "2027-04-03",
+            "time": "09:00"
+          },
+          "finish": "Umag",
+          "distanceKm": 69.6,
+          "elevationGainM": 2400,
+          "maxRaceTimeHours": 15,
+          "courseSummary": "Von der Altstadt Buzets über das Gebiet des Butoniga-Sees und durch das zentrale istrische Hügelland; die Route passiert historische Orte wie Motovun, Oprtalj, Završje und Grožnjan und endet in Umag.",
+          "terrain": "Wechsel aus weicheren Wegabschnitten und istrischem Fels; steile Anstiege, Gefälle, Bachquerungen sowie schlammige und steinige Passagen sind laut Veranstalterbeschreibung zu erwarten.",
+          "highlights": [
+            "Buzet und das Gebiet des Butoniga-Sees",
+            "mittelalterliche Orte Motovun, Oprtalj, Završje und Grožnjan",
+            "Olivenhaine und Weinberge",
+            "Zieleinlauf in Umag"
+          ],
+          "aidStations": {
+            "countOnCourse": 4,
+            "finishStationAdditional": true,
+            "supportAllowedAt": [
+              "Livade"
+            ],
+            "routeSpecificLocations": "Vollständige Stationsliste nicht aus dem FAQ-Auszug übernommen; Race Guide vor dem Event abgleichen."
+          },
+          "nutrition": "Offizielle FAQ: NAAK ist Ernährungspartner. An den Stationen gibt es Getränke, süße und salzige Snacks, Brot, Obst, Gebäck, Käse, Wasser, Cola, Iso-Getränke, Kaffee, Tee und heiße Suppe; in Buzet bei 168K/110K zusätzlich warme Mahlzeiten. Glutenfreie und vegane Optionen sind auf Nachfrage bei Helfern erhältlich. Es werden keine Becher gestellt; eigene Trinkgefäße sind erforderlich. Die genaue Auswahl wird im Race Guide vor dem Rennen aktualisiert.",
+          "cutoffs": {
+            "finishHours": 15,
+            "intermediateCheckpoints": "Nicht ausgelesen; Race Guide erforderlich."
+          },
+          "mapUrl": "https://istria.utmb.world/races/69K",
+          "elevationProfileUrl": "https://istria.utmb.world/races/69K",
+          "gpxUrl": "https://istria.utmb.world/races-runners/runners/gpx-tracks",
+          "gpxRouteLinkListed": true,
+          "gpxRestrictionReview": {
+            "noticeFound": "No explicit restriction notice identified in the visible official page text; not a clearance.",
+            "metadataInspected": false,
+            "status": "blocked_pending_explicit_permission"
+          },
+          "dataQuality": [
+            "Kopfwert 2.400 m+; Fließtext nennt ca. 2.331 m. Veranstalterbestätigung erforderlich; Katalogwert nicht überschreiben."
+          ]
+        },
+        {
+          "routeCode": "42K",
+          "catalogRouteId": null,
+          "start": {
+            "place": "Motovun",
+            "date": "2027-04-03",
+            "time": "12:00"
+          },
+          "finish": "Umag",
+          "distanceKm": 42,
+          "elevationGainM": 1000,
+          "maxRaceTimeHours": 8,
+          "courseSummary": "Start am Fuß des mittelalterlichen Motovun, Anstieg durch den Ort und Verbindung mit den längeren Strecken; über breite Wege und Singletrails durch die istrischen Hügel und historische Ortschaften bis zum Zielplatz in Umag.",
+          "terrain": "Steile Anstiege und Gefälle, breite Wege und naturbelassene Singletrails; genaue Oberflächenanteile nicht veröffentlicht.",
+          "highlights": [
+            "Motovun und Grožnjan",
+            "Steile Anstiege und Gefälle auf breiten Wegen und Singletrails",
+            "Ziel am Meer in Umag"
+          ],
+          "aidStations": {
+            "countOnCourse": 3,
+            "finishStationAdditional": true,
+            "supportAllowedAt": [],
+            "routeSpecificLocations": "Vollständige Stationsliste nicht aus dem FAQ-Auszug übernommen; Race Guide vor dem Event abgleichen."
+          },
+          "nutrition": "Offizielle FAQ: NAAK ist Ernährungspartner. An den Stationen gibt es Getränke, süße und salzige Snacks, Brot, Obst, Gebäck, Käse, Wasser, Cola, Iso-Getränke, Kaffee, Tee und heiße Suppe; in Buzet bei 168K/110K zusätzlich warme Mahlzeiten. Glutenfreie und vegane Optionen sind auf Nachfrage bei Helfern erhältlich. Es werden keine Becher gestellt; eigene Trinkgefäße sind erforderlich. Die genaue Auswahl wird im Race Guide vor dem Rennen aktualisiert.",
+          "cutoffs": {
+            "finishHours": 8,
+            "intermediateCheckpoints": "Nicht ausgelesen; Race Guide erforderlich."
+          },
+          "mapUrl": "https://istria.utmb.world/races/42K",
+          "elevationProfileUrl": "https://istria.utmb.world/races/42K",
+          "gpxUrl": "https://istria.utmb.world/races-runners/runners/gpx-tracks",
+          "gpxRouteLinkListed": true,
+          "gpxRestrictionReview": {
+            "noticeFound": "No explicit restriction notice identified in the visible official page text; not a clearance.",
+            "metadataInspected": false,
+            "status": "blocked_pending_explicit_permission"
+          },
+          "dataQuality": [
+            "Kopfwert 1.000 m+; Fließtext nennt 1.153 m+. Veranstalterbestätigung erforderlich; Katalogwert nicht überschreiben."
+          ]
+        },
+        {
+          "routeCode": "21K",
+          "catalogRouteId": null,
+          "start": {
+            "place": "Grožnjan",
+            "date": "2027-04-04",
+            "time": "10:00"
+          },
+          "finish": "Umag",
+          "distanceKm": 21.5,
+          "elevationGainM": 157,
+          "maxRaceTimeHours": 4,
+          "courseSummary": "Einsteigerfreundliche, gut laufbare Verbindung vom mittelalterlichen Grožnjan über einen vergleichsweise einfachen Weg bis zum Meer und zum Ziel am Hauptplatz von Umag.",
+          "terrain": "Laufbare, überwiegend einfache Wege laut Veranstalter; genaue Untergrundanteile nicht veröffentlicht.",
+          "highlights": [
+            "Start im historischen Grožnjan",
+            "leichter Verlauf Richtung Adriaküste",
+            "Ziel am Hauptplatz von Umag"
+          ],
+          "aidStations": {
+            "countOnCourse": 1,
+            "finishStationAdditional": true,
+            "supportAllowedAt": [],
+            "routeSpecificLocations": "Vollständige Stationsliste nicht aus dem FAQ-Auszug übernommen; Race Guide vor dem Event abgleichen."
+          },
+          "nutrition": "Offizielle FAQ: NAAK ist Ernährungspartner. An den Stationen gibt es Getränke, süße und salzige Snacks, Brot, Obst, Gebäck, Käse, Wasser, Cola, Iso-Getränke, Kaffee, Tee und heiße Suppe; in Buzet bei 168K/110K zusätzlich warme Mahlzeiten. Glutenfreie und vegane Optionen sind auf Nachfrage bei Helfern erhältlich. Es werden keine Becher gestellt; eigene Trinkgefäße sind erforderlich. Die genaue Auswahl wird im Race Guide vor dem Rennen aktualisiert.",
+          "cutoffs": {
+            "finishHours": 4,
+            "intermediateCheckpoints": "Nicht ausgelesen; Race Guide erforderlich."
+          },
+          "mapUrl": "https://istria.utmb.world/races/21k",
+          "elevationProfileUrl": "https://istria.utmb.world/races/21k",
+          "gpxUrl": "https://istria.utmb.world/races-runners/runners/gpx-tracks",
+          "gpxRouteLinkListed": true,
+          "gpxRestrictionReview": {
+            "noticeFound": "No explicit restriction notice identified in the visible official page text; not a clearance.",
+            "metadataInspected": false,
+            "status": "blocked_pending_explicit_permission"
+          },
+          "dataQuality": [
+            "Kopfwert 157 m+; FAQ rundet auf ca. 200 m. Veranstalterbestätigung erforderlich; Katalogwert nicht überschreiben."
+          ]
+        }
+      ],
+      "rightsStatus": {
+        "initialRequestSentAt": "2026-11-19T13:39:05Z",
+        "initialMessageId": "<179509554585.57.13164417586618386056@me.com>",
+        "supplementalRequestSentAt": "2026-11-22T02:50:34+01:00",
+        "supplementalMessageId": "<179531223482.114.2574698286699116336@me.com>",
+        "contactVerifiedAtOfficialSource": true,
+        "contactSource": "https://istria.utmb.world/races-runners/other-information/FAQ",
+        "deliveryStatus": "submitted_and_sent_copy_filed",
+        "responseStatus": "pending_no_reply_found",
+        "requestedMaterialCategories": {
+          "officialTextVerbatim": "requested_pending",
+          "shortenedOrEditedOfficialText": "requested_pending",
+          "ownFactualSummaries": "requested_pending",
+          "routeFacts": "requested_pending",
+          "mapsAndRouteLines": "requested_pending",
+          "elevationProfiles": "requested_pending",
+          "gpxFileAccessFetch": "requested_pending",
+          "gpxLoadImport": "requested_pending",
+          "gpxStore": "requested_pending",
+          "gpxProcessAnalyse": "requested_pending",
+          "gpxDisplayOnMap": "requested_pending",
+          "gpxUserDownload": "requested_pending",
+          "officialGpxPageLinkOnly": "requested_pending",
+          "eventNamesAndMarks": "requested_pending",
+          "logosAndWordImageMarks": "requested_pending",
+          "symbolsIconsPictogramsEmblemsMascots": "requested_pending",
+          "otherEventSpecificGraphics": "requested_pending"
+        },
+        "gpxRestrictionQuestions": "requested_pending_route_by_route",
+        "futureCommercialUse": "asked_separately_pending",
+        "mediaKitAndBrandGuidelines": "requested_pending",
+        "publicationAllowed": false
+      },
+      "officialNutritionSponsor": "NAAK",
+      "aidStationSource": "https://istria.utmb.world/races-runners/other-information/FAQ"
+    },
+    {
+      "eventId": "chianti-ultra-trail",
+      "eventName": "Chianti Ultra Trail by UTMB",
+      "edition": 2027,
+      "eventPeriod": {
+        "startDate": "2027-03-18",
+        "endDate": "2027-03-21"
+      },
+      "organizer": {
+        "legalEntity": "UTMB Italy srls",
+        "collaboration": "Chianti Ultra Trail SSD and local municipalities",
+        "officialSource": "https://chianti.utmb.world/runners/rules-regulation",
+        "contact": "chianti@service.utmb.world",
+        "contactSource": "https://chianti.utmb.world/runners/rules-regulation",
+        "contactScope": "Official regulations list this address for event claims; rights-holder authority still requires confirmation."
+      },
+      "officialSources": [
+        "https://chianti.utmb.world/",
+        "https://chianti.utmb.world/races",
+        "https://chianti.utmb.world/runners/faq",
+        "https://chianti.utmb.world/runners/rules-regulation",
+        "https://chianti.utmb.world/aidstations",
+        "https://chianti.utmb.world/races/utcc",
+        "https://chianti.utmb.world/races/CUT",
+        "https://chianti.utmb.world/races/CMT",
+        "https://chianti.utmb.world/races/CHT",
+        "https://chianti.utmb.world/races/CWR"
+      ],
+      "routeInventory": {
+        "officialWebsiteListsFiveDistances": true,
+        "currentEventDatesRouteIdsKnown": [
+          "cut-73-3000",
+          "utcc-124-5200"
+        ],
+        "note": "The official site lists five distances. event-dates.json currently maps CUT and UTCC only; UTCC routeId slug says 124 km while the current official page says 123 km. Three shorter formats are not represented in this event-dates route map. Do not silently overwrite or create duplicates."
+      },
+      "routes": [
+        {
+          "routeCode": "UTCC 120",
+          "catalogRouteId": "utcc-124-5200",
+          "start": {
+            "place": "Radda in Chianti",
+            "date": "2027-03-20",
+            "time": "04:00"
+          },
+          "finish": "Radda in Chianti",
+          "distanceKm": 123,
+          "elevationGainM": 5200,
+          "maxRaceTimeHours": 26.5,
+          "courseSummary": "Lange Runde durch die Hügellandschaft des Chianti mit Schwerpunkt auf historischen Orten, Burgen und Weinbergen; Start und Ziel in Radda in Chianti.",
+          "terrain": "Hügeliges Weinbaugebiet; exakte Anteile von Schotter, Waldweg, Asphalt und Singletrail sind in den gelesenen offiziellen Texten nicht ausgewiesen.",
+          "highlights": [
+            "Chianti-Hügelland",
+            "Weinberge und historische Orte/Burgen",
+            "Drop-Bag-Station in Gaiole in Chianti"
+          ],
+          "aidStations": {
+            "locationsKnown": [
+              "Gaiole in Chianti (Drop-Bag)"
+            ],
+            "fullList": "Offizielle Aid-stations-Seite ist verlinkt, Stationsliste im Abruf nicht sichtbar; nicht vollständig verifiziert."
+          },
+          "nutrition": "Nicht route-spezifisch ausgelesen; Veranstalterangaben anfordern.",
+          "cutoffs": {
+            "finishHours": 26.5,
+            "intermediateCheckpoints": "Nicht ausgelesen; Veranstalterangaben anfordern."
+          },
+          "mapUrl": "https://chianti.utmb.world/races/utcc",
+          "elevationProfileUrl": "https://chianti.utmb.world/races/utcc",
+          "gpxUrl": "https://pdf.utmb.world/raw/upload/v1780669402/chianti/Races/gpx%20files/UTCC_120_K_2027_01_8d79fda70b.gpx",
+          "gpxPageUrl": "https://chianti.utmb.world/races/utcc",
+          "gpxVersion": "2027-named official link",
+          "gpxRestrictionReview": {
+            "noticeFound": "No explicit restriction notice identified in visible route page text; not a clearance.",
+            "metadataInspected": false,
+            "status": "blocked_pending_explicit_permission"
+          },
+          "dataQuality": [
+            "event-dates.json routeId includes 124 km; current official page reports 123 km. Preserve existing catalog data until a separate approved correction."
+          ]
+        },
+        {
+          "routeCode": "CUT 73",
+          "catalogRouteId": "cut-73-3000",
+          "start": {
+            "place": "Radda in Chianti",
+            "date": "2027-03-20",
+            "time": "07:00"
+          },
+          "finish": "Radda in Chianti",
+          "distanceKm": 73,
+          "elevationGainM": 3000,
+          "maxRaceTimeHours": 16,
+          "courseSummary": "Hügelige Langstrecke durch die Weinberge des Chianti; der Veranstalter beschreibt den Lauf als Tagesroute von Sonnenaufgang bis Sonnenuntergang. Start und Ziel in Radda in Chianti.",
+          "terrain": "Hügel- und Weinberglandschaft; exakte Untergrundverteilung nicht veröffentlicht in den abgerufenen offiziellen Angaben.",
+          "highlights": [
+            "Weinberge des Chianti",
+            "Hügellandschaft und historische Ortschaften",
+            "Drop-Bag-Station Castello di Albola"
+          ],
+          "aidStations": {
+            "locationsKnown": [
+              "Castello di Albola (Drop-Bag)"
+            ],
+            "fullList": "Offizielle Aid-stations-Seite ist verlinkt, Stationsliste im Abruf nicht sichtbar; nicht vollständig verifiziert."
+          },
+          "nutrition": "Nicht route-spezifisch ausgelesen; Veranstalterangaben anfordern.",
+          "cutoffs": {
+            "finishHours": 16,
+            "intermediateCheckpoints": "Nicht ausgelesen; Veranstalterangaben anfordern."
+          },
+          "mapUrl": "https://chianti.utmb.world/races/CUT",
+          "elevationProfileUrl": "https://chianti.utmb.world/races/CUT",
+          "gpxUrl": "https://pdf.utmb.world/raw/upload/v1777382308/chianti/Races/gpx%20files/2027/CUT_73_K_2027_a4e001e60a.gpx",
+          "gpxPageUrl": "https://chianti.utmb.world/races/CUT",
+          "gpxVersion": "2027-named official link",
+          "gpxRestrictionReview": {
+            "noticeFound": "No explicit restriction notice identified in visible route page text; not a clearance.",
+            "metadataInspected": false,
+            "status": "blocked_pending_explicit_permission"
+          },
+          "dataQuality": []
+        },
+        {
+          "routeCode": "CMT 46",
+          "catalogRouteId": null,
+          "start": {
+            "place": "Castellina in Chianti",
+            "date": "2027-03-19",
+            "time": "09:00"
+          },
+          "finish": "Not confirmed in extracted official text",
+          "distanceKm": 46,
+          "elevationGainM": 1650,
+          "maxRaceTimeHours": 9,
+          "courseSummary": "Strecke durch die sanften Hügel rund um Castellina in Chianti; die offizielle Kurzbeschreibung hebt den landschaftlichen Charakter des Chianti hervor.",
+          "terrain": "Hügelige Landschaft; konkrete Weg- und Untergrundarten nicht aus den gelesenen offiziellen Angaben ableitbar.",
+          "highlights": [
+            "Hügel rund um Castellina in Chianti",
+            "Chianti-Landschaft"
+          ],
+          "aidStations": {
+            "locationsKnown": [],
+            "fullList": "Nicht ausgelesen; Veranstalterangaben anfordern."
+          },
+          "nutrition": "Nicht veröffentlicht bzw. nicht ausgelesen.",
+          "cutoffs": {
+            "finishHours": 9,
+            "intermediateCheckpoints": "Nicht ausgelesen."
+          },
+          "mapUrl": "https://chianti.utmb.world/races/CMT",
+          "elevationProfileUrl": "https://chianti.utmb.world/races/CMT",
+          "gpxUrl": null,
+          "gpxPageUrl": "https://chianti.utmb.world/races/CMT",
+          "gpxVersion": "Download control text visible; direct URL not resolved",
+          "gpxRestrictionReview": {
+            "noticeFound": "No explicit restriction notice identified in visible route page text; not a clearance.",
+            "metadataInspected": false,
+            "status": "blocked_pending_explicit_permission"
+          },
+          "dataQuality": [
+            "Offizielle Seite zeigt Map + GPX und Download-GPX-Beschriftung; konkreter Datei-Endpunkt nicht sicher ermittelt."
+          ]
+        },
+        {
+          "routeCode": "CHT 20",
+          "catalogRouteId": null,
+          "start": {
+            "place": "Gaiole in Chianti",
+            "date": "2027-03-21",
+            "time": "09:30"
+          },
+          "finish": "Not confirmed in extracted official text",
+          "distanceKm": 20,
+          "elevationGainM": 920,
+          "maxRaceTimeHours": 4,
+          "courseSummary": "Kürzere Trailrunde mit Aussichtspunkten, mittelalterlichen Dörfern und Weinbergen des Chianti; Start in Gaiole in Chianti.",
+          "terrain": "Hügelige Landschaft; konkrete Weg- und Untergrundarten nicht aus den gelesenen offiziellen Angaben ableitbar.",
+          "highlights": [
+            "Mittelalterliche Dörfer",
+            "Weinberge und Aussichtspunkte"
+          ],
+          "aidStations": {
+            "locationsKnown": [],
+            "fullList": "Nicht ausgelesen; Veranstalterangaben anfordern."
+          },
+          "nutrition": "Nicht veröffentlicht bzw. nicht ausgelesen.",
+          "cutoffs": {
+            "finishHours": 4,
+            "intermediateCheckpoints": "Nicht ausgelesen."
+          },
+          "mapUrl": "https://chianti.utmb.world/races/CHT",
+          "elevationProfileUrl": "https://chianti.utmb.world/races/CHT",
+          "gpxUrl": "https://pdf.utmb.world/raw/upload/v1777382304/chianti/Races/gpx%20files/2027/CHT_20_K_2027_5ead6459d8.gpx",
+          "gpxPageUrl": "https://chianti.utmb.world/races/CHT",
+          "gpxVersion": "2027-named official link",
+          "gpxRestrictionReview": {
+            "noticeFound": "No explicit restriction notice identified in visible route page text; not a clearance.",
+            "metadataInspected": false,
+            "status": "blocked_pending_explicit_permission"
+          },
+          "dataQuality": []
+        },
+        {
+          "routeCode": "CWR 10",
+          "catalogRouteId": null,
+          "start": {
+            "place": "Radda in Chianti",
+            "date": "2027-03-21",
+            "time": "08:30"
+          },
+          "finish": "Not confirmed in extracted official text",
+          "distanceKm": 10,
+          "elevationGainM": 400,
+          "maxRaceTimeHours": 2,
+          "courseSummary": "Kurze Laufveranstaltung für Teilnehmende, die einen Tag zwischen den Weinbergen des Chianti erleben möchten; Start in Radda in Chianti.",
+          "terrain": "Weinberglandschaft; konkrete Weg- und Untergrundarten nicht aus den gelesenen offiziellen Angaben ableitbar.",
+          "highlights": [
+            "Weinberge des Chianti",
+            "Kurze Distanz mit moderatem Höhenunterschied"
+          ],
+          "aidStations": {
+            "locationsKnown": [],
+            "fullList": "Nicht ausgelesen; Veranstalterangaben anfordern."
+          },
+          "nutrition": "Nicht veröffentlicht bzw. nicht ausgelesen.",
+          "cutoffs": {
+            "finishHours": 2,
+            "intermediateCheckpoints": "Nicht ausgelesen."
+          },
+          "mapUrl": "https://chianti.utmb.world/races/CWR",
+          "elevationProfileUrl": "https://chianti.utmb.world/races/CWR",
+          "gpxUrl": "https://pdf.utmb.world/raw/upload/v1772526039/chianti/Races/gpx%20files/CWR_10_K_2026_0c96df8a12.gpx",
+          "gpxPageUrl": "https://chianti.utmb.world/races/CWR",
+          "gpxVersion": "2026-labelled stale file on 2027 page; not accepted as current",
+          "gpxRestrictionReview": {
+            "noticeFound": "No explicit restriction notice identified in visible route page text; not a clearance.",
+            "metadataInspected": false,
+            "status": "blocked_pending_explicit_permission"
+          },
+          "dataQuality": [
+            "The official 2027 page still links to a GPX filename labelled 2026. Do not use as 2027; ask organizer for the correct 2027 file."
+          ]
+        }
+      ],
+      "rightsStatus": {
+        "initialRequestSentAt": "2026-11-19T13:38:15Z",
+        "initialMessageId": "<179509549543.95.14950342421546731319@me.com>",
+        "supplementalRequestSentAt": "2026-11-22T02:50:35+01:00",
+        "supplementalMessageId": "<179531224493.114.13383464634031801285@me.com>",
+        "contactVerifiedAtOfficialSource": true,
+        "contactSource": "https://chianti.utmb.world/runners/rules-regulation",
+        "deliveryStatus": "submitted_and_sent_copy_filed",
+        "responseStatus": "pending_no_reply_found",
+        "requestedMaterialCategories": {
+          "officialTextVerbatim": "requested_pending",
+          "shortenedOrEditedOfficialText": "requested_pending",
+          "ownFactualSummaries": "requested_pending",
+          "routeFacts": "requested_pending",
+          "mapsAndRouteLines": "requested_pending",
+          "elevationProfiles": "requested_pending",
+          "gpxFileAccessFetch": "requested_pending",
+          "gpxLoadImport": "requested_pending",
+          "gpxStore": "requested_pending",
+          "gpxProcessAnalyse": "requested_pending",
+          "gpxDisplayOnMap": "requested_pending",
+          "gpxUserDownload": "requested_pending",
+          "officialGpxPageLinkOnly": "requested_pending",
+          "eventNamesAndMarks": "requested_pending",
+          "logosAndWordImageMarks": "requested_pending",
+          "symbolsIconsPictogramsEmblemsMascots": "requested_pending",
+          "otherEventSpecificGraphics": "requested_pending"
+        },
+        "gpxRestrictionQuestions": "requested_pending_route_by_route",
+        "futureCommercialUse": "asked_separately_pending",
+        "mediaKitAndBrandGuidelines": "requested_pending",
+        "publicationAllowed": false
+      }
+    }
+  ]
+}

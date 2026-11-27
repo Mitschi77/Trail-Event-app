@@ -1,0 +1,90 @@
+{
+  "schemaVersion": 1,
+  "checkedAt": "2026-11-22",
+  "organizer": "Istria 100 by UTMB",
+  "legalEntity": "IRONMAN CROATIA d.o.o. / Sport box d.o.o.",
+  "projectPhase": "independent_non_commercial_project_only",
+  "affiliationClaimed": false,
+  "commercialPermission": "not_requested_for_current_phase; separate future commercial possibility and conditions asked; pending",
+  "contact": {
+    "email": "istria100@service.byutmb.world",
+    "source": "https://istria.utmb.world/races-runners/runners/regulations",
+    "sourceType": "official organizer website",
+    "authority": "Official regulations list the address for claims; rights-holder authority still requires confirmation."
+  },
+  "bundledEvents": [
+    {
+      "eventId": "istrien",
+      "routes": [
+        "168K",
+        "110K",
+        "69K",
+        "42K",
+        "21K"
+      ]
+    }
+  ],
+  "emailHistory": [
+    {
+      "date": "2026-11-19",
+      "type": "initial_permission_request",
+      "messageId": "<179509554585.57.13164417586618386056@me.com>",
+      "status": "sent_copy_filed",
+      "note": "Initial request covered broad event content but did not itemise every material category or GPX restriction handling."
+    },
+    {
+      "date": "2026-11-22T02:50:34+01:00",
+      "type": "supplemental_itemised_request_in_same_thread",
+      "messageId": "<179531223482.114.2574698286699116336@me.com>",
+      "status": "submitted_sent_copy_filed",
+      "note": "Adds all separate material categories, route-by-route GPX restriction questions, explicit technical block rule, separate link permission and separate future commercial question."
+    }
+  ],
+  "requestedPermissions": {
+    "officialTextVerbatim": "pending",
+    "shortenedOrEditedOfficialText": "pending",
+    "ownFactualSummaries": "pending",
+    "routeFacts": "pending",
+    "mapsAndRouteLines": "pending",
+    "elevationProfiles": "pending",
+    "gpxFileAccessFetch": "pending",
+    "gpxLoadImport": "pending",
+    "gpxStore": "pending",
+    "gpxProcessAnalyse": "pending",
+    "gpxDisplayOnMap": "pending",
+    "gpxUserDownload": "pending",
+    "officialGpxPageLinkOnly": "pending",
+    "eventNamesAndMarks": "pending",
+    "logosAndWordImageMarks": "pending",
+    "symbolsIconsPictogramsEmblemsMascots": "pending",
+    "otherEventSpecificGraphics": "pending"
+  },
+  "gpxRestrictions": {
+    "perRouteStatus": "awaiting organizer confirmation",
+    "exactNoticeText": "unknown",
+    "noticeSource": "not yet confirmed",
+    "affectedRoutes": [],
+    "metadataInspected": false,
+    "technicalDefault": "block",
+    "blockWhen": [
+      "restriction notice or download prohibition exists",
+      "no explicit written permission for the specific GPX action",
+      "rights status missing, unclear or contradictory"
+    ],
+    "blockActions": [
+      "fetch",
+      "load/import",
+      "store",
+      "process/analyse",
+      "display on map",
+      "user download"
+    ],
+    "officialLinkPermission": "separate decision required; link only if expressly allowed",
+    "appNotice": "GPX durch Veranstalter eingeschränkt – kein Download möglich"
+  },
+  "mediaKitAndBrandGuidelines": "requested_pending",
+  "attributionAndUseConditions": "requested_pending",
+  "exclusionsOrConditionalUses": "requested_pending",
+  "responseStatus": "no_reply_found_as_of_2026-11-22",
+  "appPublicationAllowed": false
+}
