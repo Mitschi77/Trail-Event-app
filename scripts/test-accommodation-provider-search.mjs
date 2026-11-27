@@ -44,3 +44,9 @@ assert.match(legacyDestination, /checkout=2027-01-24/);
 assert.doesNotMatch(legacyDestination, /Startdorf/);
 
 console.log('Accommodation provider search regression tests passed.');
+
+const providerIndex = result.indexOf('Booking.com – Unterkünfte suchen');
+const mapIndex = result.indexOf('<details class="accommodation-map-details">');
+assert.ok(providerIndex >= 0 && mapIndex > providerIndex, 'provider choices must appear before the optional map');
+assert.match(result, /<summary>Karte und Umkreissuche anzeigen<\/summary>/);
+assert.match(result, /class="accommodation-map"/);
