@@ -17,8 +17,14 @@
       "end": "2027-08-08"
     },
     "location": "Fiesch, Switzerland",
-    "catalogRecordFound": false,
-    "action": "research candidate only; no live event record created"
+    "catalogRecordFound": true,
+    "action": "research addendum only; no live event or route data changed",
+    "eventId": "swiss-alps-100",
+    "currentCatalogRouteIds": [
+      "swiss-alps-100-50-3210",
+      "swiss-alps-100-100-6242",
+      "swiss-alps-100-160-10004"
+    ]
   },
   "sourcePolicy": {
     "summaries": "Independent factual summaries only; no official prose copied verbatim.",
@@ -206,7 +212,8 @@
         "home",
         "schedule",
         "160k"
-      ]
+      ],
+      "catalogRouteId": "swiss-alps-100-160-10004"
     },
     {
       "routeId": "swiss-alps-100-100k-2027",
@@ -307,7 +314,8 @@
         "home",
         "schedule",
         "100k"
-      ]
+      ],
+      "catalogRouteId": "swiss-alps-100-100-6242"
     },
     {
       "routeId": "swiss-alps-100-50k-2027",
@@ -388,7 +396,8 @@
         "home",
         "schedule",
         "50k"
-      ]
+      ],
+      "catalogRouteId": "swiss-alps-100-50-3210"
     },
     {
       "routeId": "swiss-alps-100-vertical-2027",
@@ -584,10 +593,10 @@
   },
   "unresolved": [
     "Matterhorning official course page states 33.30 km but lap table totals 30.40 km (4 x 7.60 km).",
-    "The existing main catalog has no Swiss Alps 100 event record; no live event or route was added.",
     "Direct media URLs for interactive maps/elevation-profile graphics were not extracted; official route pages are retained as source URLs.",
     "GPX file download link and binary metadata were not inspected; 50K and 100K pages expose GPX download buttons in search-rendered page content, but exact file URLs were not extracted.",
-    "The event reply grants broad permission ('You can use any material you wish') but does not itemize individual uses, route scope, GPX operations or commercial rights; clarification is pending."
+    "The event reply grants broad permission ('You can use any material you wish') but does not itemize individual uses, route scope, GPX operations or commercial rights; clarification is pending.",
+    "The main event-date feed already contains the Swiss Alps 100 event and three route IDs: 50K (50 km / 3,210 hm), 100K (100 km / 6,242 hm), 160K (160 km / 10,004 hm). Official 2027 route pages show 51.6/3,210, 100.8/6,250 and 159.4/10,150 respectively; preserve all catalog values and do not overwrite until reconciled."
   ],
   "rights": {
     "initialRequest": {
