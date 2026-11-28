@@ -1,0 +1,205 @@
+{
+  "schemaVersion": 1,
+  "organizerId": "mountainman-gmbh",
+  "organizerName": "MOUNTAINMAN GmbH",
+  "officialContact": {
+    "email": "info@mountainman.de",
+    "source": "https://mountainman.de/impressum/",
+    "verification": "Published in official website imprint",
+    "verifiedOn": "2026-11-28"
+  },
+  "bundledEvents": [
+    {
+      "eventId": "mountainman-nikolaus-trail-pommelsbrunn-2026",
+      "name": "Nikolaus-Trail Pommelsbrunn",
+      "edition": 2026,
+      "routeCount": 5
+    },
+    {
+      "eventId": "mountainman-winterloop-reit-im-winkl-2027",
+      "name": "Winterloop Reit im Winkl",
+      "edition": 2027,
+      "routeCount": 1,
+      "formats": [
+        "12H",
+        "6H",
+        "3H",
+        "Marathon",
+        "Half Marathon",
+        "Relay"
+      ]
+    },
+    {
+      "eventId": "mountainman-dogs-winterloop-reit-im-winkl-2027",
+      "name": "Dogs-Winterloop Reit im Winkl",
+      "edition": 2027,
+      "routeCount": 1,
+      "geometrySharedWith": "mountainman-winterloop-reit-im-winkl-2027"
+    },
+    {
+      "eventId": "mountainman-nesselwang-2027",
+      "name": "Nesselwang",
+      "edition": 2027,
+      "routeCount": 6,
+      "dogVariants": [
+        "M-Trail",
+        "S-Trail"
+      ]
+    },
+    {
+      "eventId": "der-watz-mountainman",
+      "name": "Berchtesgaden WATZ Stage Run",
+      "edition": 2027,
+      "routeCount": 4,
+      "formats": [
+        "WATZ Ultimate",
+        "WATZ Double",
+        "WATZ Final"
+      ]
+    },
+    {
+      "eventId": "mountainman-grossarltal-2027",
+      "name": "Grossarltal",
+      "edition": 2027,
+      "routeCount": 7
+    },
+    {
+      "eventId": "mountainman-reit-im-winkl-2027",
+      "name": "Reit im Winkl",
+      "edition": 2027,
+      "routeCount": 6,
+      "dogVariants": [
+        "M-Trail",
+        "S-Trail"
+      ]
+    }
+  ],
+  "previousRequests": [
+    {
+      "date": "2026-11-19",
+      "subject": "Anfrage zur Nutzung offizieller Veranstaltungsinhalte – MOUNTAINMAN Berchtesgaden WATZ",
+      "status": "sent",
+      "recipient": "info@mountainman.de"
+    },
+    {
+      "date": "2026-11-19",
+      "subject": "Anfrage zur Nutzung offizieller Veranstaltungsinhalte – MOUNTAINMAN Wintertrail",
+      "status": "sent",
+      "recipient": "info@mountainman.de"
+    },
+    {
+      "date": "2026-11-22",
+      "subject": "Re: Anfrage zur Nutzung offizieller Veranstaltungsinhalte – MOUNTAINMAN (gebündelte Rechteanfrage 2027)",
+      "status": "sent",
+      "sentCopyFiled": true,
+      "recipient": "info@mountainman.de",
+      "note": "Existing thread consolidated the five 2027 events: Winterloop, Nesselwang, Berchtesgaden, Grossarltal and Reit im Winkl. No new initial request was sent."
+    }
+  ],
+  "latestSupplement": {
+    "date": "2026-11-28T01:06:00Z",
+    "subject": "Re: Anfrage zur Nutzung offizieller Veranstaltungsinhalte – MOUNTAINMAN (gebündelte Rechteanfrage 2027) – Ergänzung Pommelsbrunn 2026 & Dogs-Winterloop",
+    "recipient": "info@mountainman.de",
+    "status": "submitted",
+    "sentCopy": "filed",
+    "messageIdHeader": "<179582815803.57.14753156498217300845@me.com>",
+    "deliveryConfirmed": false,
+    "replyToExistingThread": true,
+    "note": "Supplement adds Pommelsbrunn 2026 and Dogs-Winterloop 2027, and asks that Nesselwang/Reit dog variants be included in the same consolidated review."
+  },
+  "requestedUseCategories": [
+    "official_route_descriptions_verbatim",
+    "shortened_or_editorially_edited_official_route_descriptions",
+    "independent_factual_summaries_based_on_permitted_information",
+    "route_facts_distance_elevation_start_finish_aid_cutoffs",
+    "maps_and_route_geometry",
+    "elevation_profiles",
+    "gpx_file_fetch_load_import_store_process_in_app_map_display_user_download_each_separately",
+    "separate_link_to_official_gpx_information_or_download_page",
+    "event_names_and_event_brands",
+    "logos_and_word_or_device_marks",
+    "symbols_icons_pictograms_emblems_mascots",
+    "event_specific_graphics_and_visual_design"
+  ],
+  "gpxPermissionsRequestedSeparately": [
+    "official_page_link",
+    "file_fetch_or_retrieval",
+    "file_load",
+    "file_import",
+    "file_storage",
+    "file_processing_or_analysis",
+    "in_app_map_display",
+    "user_download"
+  ],
+  "gpxRestrictionQuestions": {
+    "asksWhetherRestrictionNoticesExist": true,
+    "asksForExactMeaningAndWording": true,
+    "asksForNoticeLocationAndAffectedRoute": true,
+    "asksWhetherNoticeBlocksFetchLoadImportStoreProcessMapDisplayAndUserDownload": true,
+    "asksWhetherLinkOnlyRemainsAllowed": true,
+    "asksHowAppShouldDisplayRestrictions": true,
+    "asksForGPXMetadataNoticesWhereAccessible": true,
+    "failClosedPolicyCommunicated": true,
+    "appDisplayWhenNoPermission": "GPX-Nutzung nicht freigegeben – kein Download möglich",
+    "appDisplayWhenOrganizerRestrictionConfirmed": "GPX durch Veranstalter eingeschränkt – kein Download möglich"
+  },
+  "projectPhase": {
+    "current": "non-commercial independent information app under development",
+    "noPartnershipOrOfficialAffiliationClaimed": true,
+    "publicAvailabilityIsNotPermission": true,
+    "commercialUseIncludedInCurrentPermissionRequest": false,
+    "futureCommercialUseAskedSeparately": true,
+    "futureCommercialPermissionStatus": "pending_separate_license"
+  },
+  "brandingAndMedia": {
+    "mediaPackRequested": true,
+    "logoFilesRequested": true,
+    "brandGuidelinesRequested": true,
+    "usageGuidanceRequested": [
+      "file_format",
+      "size",
+      "color",
+      "placement",
+      "clear_space",
+      "attribution",
+      "term",
+      "permitted_context",
+      "excluded_materials",
+      "conditions"
+    ]
+  },
+  "response": {
+    "status": "no_reply_found_as_of_2026-11-28",
+    "inboxSearch": [
+      "subject contains MOUNTAINMAN",
+      "sender domain mountainman.de"
+    ],
+    "repliesFound": 0,
+    "restrictionsReceived": [],
+    "routeSpecificPermissions": []
+  },
+  "appEnforcement": {
+    "defaultDeny": true,
+    "allMountainmanRoutesCurrentlyBlocked": true,
+    "noAutomaticGPXFetch": true,
+    "noLoadImportStoreProcessMapDisplayOrDownloadWithoutExplicitRouteSpecificPermission": true,
+    "linkRequiresSeparateExplicitPermission": true,
+    "metadataInspectionAllowedOnlyAfterPermission": true
+  },
+  "catalogIntegrity": {
+    "eventDatesChanged": false,
+    "existingRouteIdsOverwritten": false,
+    "legacyWintertrailRoutesPreserved": true,
+    "newEventsNotAddedToLiveCatalog": true
+  },
+  "officialRightsNotices": {
+    "source": "https://mountainman.de/impressum/",
+    "checkedOn": "2026-11-28",
+    "siteContentCopyright": "The imprint states that website contents and works created by the site operators are protected by German copyright and that reproduction, adaptation, distribution and exploitation outside statutory limits require written consent from the relevant author/creator.",
+    "downloadCopyNotice": "The imprint states that downloads and copies of the website are permitted only for private, non-commercial use.",
+    "trademarkNotice": "The imprint states MOUNTAINMAN® is an EU-wide registered mark (DPMA register EM017514324).",
+    "thirdPartyPlatformNotice": "The imprint states the website uses Komoot technology and content; rights to third-party material may be held separately.",
+    "gpxSpecificRestrictionNotice": "No route-specific GPX prohibition wording was identified in the reviewed official event HTML. The general website copyright/trademark notices are not treated as a definitive GPX-file licence or a GPX-specific prohibition.",
+    "implications": "No official MOUNTAINMAN logo/mark, website description, map, profile, photo or GPX file is reproduced in the research package. App use of marks, visual assets and third-party Komoot/Outdooractive material remains blocked pending express permission from the relevant rightsholder."
+  }
+}

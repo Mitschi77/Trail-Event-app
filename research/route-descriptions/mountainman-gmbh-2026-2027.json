@@ -1,0 +1,2460 @@
+{
+  "schemaVersion": 1,
+  "researchType": "route-descriptions",
+  "checkedAt": "2026-11-28T01:06:37Z",
+  "organizer": {
+    "id": "mountainman-gmbh",
+    "name": "MOUNTAINMAN GmbH",
+    "officialWebsite": "https://mountainman.de/",
+    "contactEmail": "info@mountainman.de",
+    "contactSource": "https://mountainman.de/impressum/",
+    "contactVerifiedOnOfficialWebsite": true
+  },
+  "sourcePolicy": {
+    "descriptions": "All route texts below are independent factual summaries in our own wording; no official description is copied verbatim.",
+    "protectedAssets": "No logos, images, maps, profile graphics, Outdooractive/Komoot route files or GPX binaries copied.",
+    "publicAvailabilityIsNotPermission": true,
+    "mapAndProfilePolicy": "Official event pages embed or link to Outdooractive/Komoot. Only the original organizer pages are referenced here; no embedded third-party map/profile data has been reproduced."
+  },
+  "sources": [
+    {
+      "id": "imprint",
+      "url": "https://mountainman.de/impressum/",
+      "type": "official_imprint_contact",
+      "verified": true
+    },
+    {
+      "id": "event-overview-nesselwang",
+      "url": "https://mountainman.de/trailrunning-events/alps/nesselwang/",
+      "type": "official_event_overview",
+      "verified": true
+    },
+    {
+      "id": "route-details-nesselwang",
+      "url": "https://mountainman.de/trailrunning-events/alps/nesselwang/streckendetails/",
+      "type": "official_route_details",
+      "verified": true
+    },
+    {
+      "id": "kids-nesselwang",
+      "url": "https://mountainman.de/trailrunning-events/alps/nesselwang/kids-trail/",
+      "type": "official_kids_event_page",
+      "verified": true
+    },
+    {
+      "id": "dogs-nesselwang",
+      "url": "https://mountainman.de/trailrunning-events/alps/nesselwang/dogs-trail/",
+      "type": "official_dog_variant_page",
+      "verified": true
+    },
+    {
+      "id": "event-overview-reit",
+      "url": "https://mountainman.de/trailrunning-events/alps/reit-im-winkl/",
+      "type": "official_event_overview",
+      "verified": true
+    },
+    {
+      "id": "route-details-reit",
+      "url": "https://mountainman.de/trailrunning-events/alps/reit-im-winkl/streckendetails-reit-im-winkl/",
+      "type": "official_route_details",
+      "verified": true
+    },
+    {
+      "id": "kids-reit",
+      "url": "https://mountainman.de/produkt/anmeldung-mountainman-kids-trail-reit-im-winkl-25-09-2027/",
+      "type": "official_kids_event_registration",
+      "verified": true
+    },
+    {
+      "id": "dogs-reit",
+      "url": "https://mountainman.de/trailrunning-events/alps/reit-im-winkl/dogs-trail/",
+      "type": "official_dog_variant_page",
+      "verified": true
+    },
+    {
+      "id": "event-overview-grossarltal",
+      "url": "https://mountainman.de/trailrunning-events/alps/grossarltal/",
+      "type": "official_event_overview",
+      "verified": true
+    },
+    {
+      "id": "route-details-grossarltal",
+      "url": "https://mountainman.de/trailrunning-events/alps/grossarltal/streckendetails/",
+      "type": "official_route_details",
+      "verified": true
+    },
+    {
+      "id": "kids-grossarltal",
+      "url": "https://mountainman.de/produkt/anmeldung-mountainman-kids-trail-grossarltal-27-08-2027/",
+      "type": "official_kids_event_registration",
+      "verified": true
+    },
+    {
+      "id": "event-overview-watz",
+      "url": "https://mountainman.de/trailrunning-events/alps/berchtesgaden/",
+      "type": "official_event_overview",
+      "verified": true
+    },
+    {
+      "id": "route-details-watz",
+      "url": "https://mountainman.de/trailrunning-events/alps/berchtesgaden/streckendetails-berchtesgaden-watz/",
+      "type": "official_stage_overview",
+      "verified": true
+    },
+    {
+      "id": "watz-stage-1",
+      "url": "https://mountainman.de/trailrunning-events/alps/berchtesgaden/1-etappe-watz/",
+      "type": "official_stage_page",
+      "verified": true
+    },
+    {
+      "id": "watz-stage-2",
+      "url": "https://mountainman.de/trailrunning-events/alps/berchtesgaden/2-etappen-watz/",
+      "type": "official_stage_page",
+      "verified": true
+    },
+    {
+      "id": "watz-stage-3",
+      "url": "https://mountainman.de/trailrunning-events/alps/berchtesgaden/3-etappe-watz/",
+      "type": "official_stage_page",
+      "verified": true
+    },
+    {
+      "id": "watz-stage-4-attempted",
+      "url": "https://mountainman.de/trailrunning-events/alps/berchtesgaden/4-etappe-waz/",
+      "type": "official_stage_page",
+      "verified": false,
+      "status": "404_on_2026-11-28",
+      "note": "The event overview still contains the stage-4 summary; the linked stage page could not be opened."
+    },
+    {
+      "id": "winterloop",
+      "url": "https://mountainman.de/winterloop/",
+      "type": "official_event_and_route_page",
+      "verified": true
+    },
+    {
+      "id": "dogs-winterloop",
+      "url": "https://mountainman.de/trailrunning-events/alps/winterloop-reit-im-winkl/dogs-trail/",
+      "type": "official_dog_event_page",
+      "verified": true
+    },
+    {
+      "id": "event-overview-pommelsbrunn",
+      "url": "https://mountainman.de/trailrunning-events/hills/nikolaustrail-pommelsbrunn/",
+      "type": "official_event_overview",
+      "verified": true
+    },
+    {
+      "id": "route-details-pommelsbrunn",
+      "url": "https://mountainman.de/trailrunning-events/hills/nikolaustrail-pommelsbrunn/streckendetails-pommelsbrunn/",
+      "type": "official_route_details",
+      "verified": true
+    }
+  ],
+  "events": [
+    {
+      "eventId": "mountainman-nikolaus-trail-pommelsbrunn-2026",
+      "existingCatalogEventId": null,
+      "name": "MOUNTAINMAN Nikolaus-Trail Pommelsbrunn",
+      "edition": 2026,
+      "dateRange": {
+        "start": "2026-12-05",
+        "end": "2026-12-06",
+        "status": "official"
+      },
+      "location": "Pommelsbrunn, Germany",
+      "status": "upcoming_and_sold_out_on_official_page",
+      "routeIds": [
+        "pommelsbrunn-xl-43-1320-2026",
+        "pommelsbrunn-l-32-1050-2026",
+        "pommelsbrunn-m-17-530-2026",
+        "pommelsbrunn-s-12-370-2026",
+        "pommelsbrunn-family-5-130-2026"
+      ],
+      "raceFormats": [
+        {
+          "name": "Double Challenge",
+          "description": "Kombinationswertung: Samstag XL oder L plus Sonntag M oder S; keine zusätzliche Streckengeometrie."
+        }
+      ],
+      "sourceIds": [
+        "event-overview-pommelsbrunn",
+        "route-details-pommelsbrunn"
+      ]
+    },
+    {
+      "eventId": "mountainman-winterloop-reit-im-winkl-2027",
+      "existingCatalogEventId": "mountain-man-winter",
+      "name": "MOUNTAINMAN Winterloop Reit im Winkl",
+      "edition": 2027,
+      "date": "2027-01-23",
+      "location": "Reit im Winkl, Germany",
+      "status": "official",
+      "routeIds": [
+        "winterloop-reit-7-5-110-2027"
+      ],
+      "raceFormats": [
+        {
+          "name": "12H Extrem",
+          "start": "09:00",
+          "end": "21:00",
+          "fixedDistance": false,
+          "publishedExample": "16 loops = 120 km / 1,760 hm"
+        },
+        {
+          "name": "6H Challenge",
+          "start": "12:00",
+          "end": "18:00",
+          "fixedDistance": false
+        },
+        {
+          "name": "3H Moonlight",
+          "start": "17:00",
+          "end": "20:00",
+          "fixedDistance": false
+        },
+        {
+          "name": "Marathon",
+          "start": "10:00",
+          "end": "18:00",
+          "loops": 6,
+          "distanceKm": 45,
+          "elevationGainM": 660
+        },
+        {
+          "name": "Half Marathon",
+          "start": "13:00",
+          "end": "18:00",
+          "loops": 3,
+          "distanceKm": 22.5,
+          "elevationGainM": 330
+        },
+        {
+          "name": "Relay",
+          "description": "Teams of 2–4 share the same loop; no separate route geometry."
+        }
+      ],
+      "identityNote": "The current official 2027 page describes a 7.5 km snow loop. The main catalog's existing 2026 fallback routes (22 km and 31 km) are not overwritten or mapped to this loop until the organizer confirms whether Winterloop replaces or is distinct from the former Wintertrail.",
+      "sourceIds": [
+        "winterloop"
+      ]
+    },
+    {
+      "eventId": "mountainman-dogs-winterloop-reit-im-winkl-2027",
+      "existingCatalogEventId": null,
+      "name": "MOUNTAINMAN Dogs-Winterloop Reit im Winkl",
+      "edition": 2027,
+      "date": "2027-01-24",
+      "location": "Reit im Winkl, Germany",
+      "status": "official",
+      "routeIds": [
+        "winterloop-reit-7-5-110-2027"
+      ],
+      "raceFormats": [
+        {
+          "name": "3H Dogs-Winterloop-Challenge",
+          "start": "08:00",
+          "durationHours": 3,
+          "distancePerLoopKm": 7.5,
+          "elevationGainPerLoopM": 110,
+          "aidStationsPerLoop": 1,
+          "note": "Separate event day and dog-only field; same physical loop geometry."
+        }
+      ],
+      "sourceIds": [
+        "dogs-winterloop",
+        "winterloop"
+      ]
+    },
+    {
+      "eventId": "mountainman-nesselwang-2027",
+      "existingCatalogEventId": "mountainman",
+      "name": "MOUNTAINMAN Nesselwang presented by Endress+Hauser",
+      "edition": 2027,
+      "dateRange": {
+        "start": "2027-05-07",
+        "end": "2027-05-08",
+        "status": "official"
+      },
+      "location": "Nesselwang, Germany",
+      "status": "official",
+      "routeIds": [
+        "nesselwang-xxl-70-3900-2027",
+        "nesselwang-xl-42-2750-2027",
+        "nesselwang-l-33-2000-2027",
+        "nesselwang-m-21-1300-2027",
+        "nesselwang-s-10-800-2027",
+        "nesselwang-kids-0-4-2027"
+      ],
+      "variants": [
+        {
+          "routeIds": [
+            "nesselwang-m-21-1300-2027",
+            "nesselwang-s-10-800-2027"
+          ],
+          "type": "Dogs-Trail",
+          "note": "Same routes except the dog route bypasses a roughly 500 m metal-stair section via a root path; official page says same length and elevation."
+        }
+      ],
+      "sourceIds": [
+        "event-overview-nesselwang",
+        "route-details-nesselwang",
+        "kids-nesselwang",
+        "dogs-nesselwang"
+      ]
+    },
+    {
+      "eventId": "der-watz-mountainman",
+      "existingCatalogEventId": "der-watz-mountainman",
+      "name": "MOUNTAINMAN Berchtesgaden – Watzmann Stage Run",
+      "edition": 2027,
+      "dateRange": {
+        "start": "2027-06-02",
+        "end": "2027-06-06",
+        "status": "official"
+      },
+      "location": "Berchtesgaden, Germany",
+      "status": "official",
+      "routeIds": [
+        "watz-stage-1-29-1300-2027",
+        "watz-stage-2-25-1500-2027",
+        "watz-stage-3-32-1200-2027",
+        "watz-stage-4-25-1250-2027"
+      ],
+      "raceFormats": [
+        {
+          "existingRouteId": "der-watz-4-tage-111-5500",
+          "name": "WATZ Ultimate",
+          "days": 4,
+          "distanceKm": 111,
+          "elevationGainM": 5300,
+          "status": "official_package_value"
+        },
+        {
+          "existingRouteId": "watz-double-57-2500",
+          "name": "WATZ Double",
+          "days": 2,
+          "stages": [
+            3,
+            4
+          ],
+          "distanceKm": 57,
+          "elevationGainM": 2500,
+          "status": "official_package_value"
+        },
+        {
+          "existingRouteId": "watz-final-25-1300",
+          "name": "WATZ Final",
+          "days": 1,
+          "stage": 4,
+          "distanceKm": 25,
+          "elevationGainM": 1300,
+          "status": "official_package_value"
+        }
+      ],
+      "note": "Existing package route IDs are retained; the four stage records are additional route-level research and are not live catalog changes.",
+      "sourceIds": [
+        "event-overview-watz",
+        "route-details-watz",
+        "watz-stage-1",
+        "watz-stage-2",
+        "watz-stage-3",
+        "watz-stage-4-attempted"
+      ]
+    },
+    {
+      "eventId": "mountainman-grossarltal-2027",
+      "existingCatalogEventId": null,
+      "name": "MOUNTAINMAN Grossarltal",
+      "edition": 2027,
+      "dateRange": {
+        "start": "2027-08-27",
+        "end": "2027-08-28",
+        "status": "official"
+      },
+      "location": "Grossarl, Austria",
+      "status": "official",
+      "routeIds": [
+        "grossarltal-xxl-70-3850-2027",
+        "grossarltal-xl-50-2700-2027",
+        "grossarltal-l-30-1600-2027",
+        "grossarltal-m-21-1200-2027",
+        "grossarltal-s-15-900-2027",
+        "grossarltal-xs-10-600-2027",
+        "grossarltal-kids-0-4-2027"
+      ],
+      "sourceIds": [
+        "event-overview-grossarltal",
+        "route-details-grossarltal",
+        "kids-grossarltal"
+      ]
+    },
+    {
+      "eventId": "mountainman-reit-im-winkl-2027",
+      "existingCatalogEventId": null,
+      "name": "MOUNTAINMAN Reit im Winkl",
+      "edition": 2027,
+      "dateRange": {
+        "start": "2027-09-24",
+        "end": "2027-09-25",
+        "status": "official"
+      },
+      "location": "Reit im Winkl, Germany",
+      "status": "official",
+      "routeIds": [
+        "reit-xxl-73-3200-2027",
+        "reit-xl-52-2000-2027",
+        "reit-l-40-1500-2027",
+        "reit-m-26-900-2027",
+        "reit-s-11-300-2027",
+        "reit-kids-0-4-2027"
+      ],
+      "variants": [
+        {
+          "routeIds": [
+            "reit-m-26-900-2027",
+            "reit-s-11-300-2027"
+          ],
+          "type": "Dogs-Trail",
+          "note": "Same route geometry with separate dog start. Dogs page lists 938 hm for M and 304 hm for S, versus 900+ / 300+ hm on the regular event overview; values are preserved as a discrepancy."
+        }
+      ],
+      "sourceIds": [
+        "event-overview-reit",
+        "route-details-reit",
+        "kids-reit",
+        "dogs-reit"
+      ]
+    }
+  ],
+  "routes": [
+    {
+      "routeId": "pommelsbrunn-xl-43-1320-2026",
+      "eventId": "mountainman-nikolaus-trail-pommelsbrunn-2026",
+      "name": "XL Nussknacker-Trail",
+      "date": "2026-12-05",
+      "distanceKm": 43,
+      "elevationGainM": 1320,
+      "startTime": "08:00",
+      "finishCutoff": "17:00",
+      "timeLimitHours": 9,
+      "independentSummary": "Zwei große Schleifen verbinden die Hersbrucker Schweiz: zunächst die Nordrunde über Zankelstein und das Hirschbachtal mit Felsformationen und Höhlen, danach die Südrunde über Mühlkoppe und Hochberg zum Aussichtspunkt Hohler Fels am Happurger Stausee. Wald- und Wiesenwege wechseln mit anspruchsvollen Trailpassagen und längeren Anstiegen.",
+      "terrain": [
+        "Waldwege",
+        "Wiesenwege",
+        "felsige Trails",
+        "steile Anstiege",
+        "Downhills"
+      ],
+      "highlights": [
+        "Zankelstein",
+        "Hirschbachtal",
+        "Höhenglücksteig-Umgebung",
+        "Prellstein",
+        "Mühlkoppe",
+        "Hochberg",
+        "Hohler Fels",
+        "Happurger Stausee"
+      ],
+      "aidStations": [
+        {
+          "location": "Gasthof zum Neutrasfelsen",
+          "km": 10
+        },
+        {
+          "location": "Gasthof Goldener Hirsch",
+          "km": 14
+        },
+        {
+          "location": "Hotel Lindenhof",
+          "km": 21
+        },
+        {
+          "location": "Pommelsbrunn",
+          "km": 26
+        },
+        {
+          "location": "Arzlohe",
+          "km": 35
+        }
+      ],
+      "cutoff": [
+        {
+          "location": "Pommelsbrunn / VP4",
+          "km": 26,
+          "time": "13:00"
+        }
+      ],
+      "map": {
+        "status": "Outdooractive_embed_on_official_details_page",
+        "url": "https://mountainman.de/trailrunning-events/hills/nikolaustrail-pommelsbrunn/streckendetails-pommelsbrunn/"
+      },
+      "elevationProfile": {
+        "status": "available_via_organizer_linked_Komoot_or_Outdooractive",
+        "directUrl": null
+      },
+      "gpx": {
+        "officialDownloadControlPresent": true,
+        "statedDelivery": "Komoot voucher code issued before event",
+        "binaryDownloaded": false,
+        "metadataInspected": false,
+        "restrictionNoticeFound": "No GPX-specific restriction notice identified in the reviewed organizer HTML; metadata not inspected.",
+        "permissionStatus": "not_granted",
+        "appPolicy": "block_fetch_load_import_store_process_map_display_and_user_download; link_only_also_pending"
+      },
+      "sourceIds": [
+        "event-overview-pommelsbrunn",
+        "route-details-pommelsbrunn"
+      ]
+    },
+    {
+      "routeId": "pommelsbrunn-l-32-1050-2026",
+      "eventId": "mountainman-nikolaus-trail-pommelsbrunn-2026",
+      "name": "L Krampus-Trail by Altra",
+      "date": "2026-12-05",
+      "distanceKm": 32,
+      "elevationGainM": 1050,
+      "startTime": "09:30",
+      "finishCutoff": "17:00",
+      "timeLimitHours": 7.5,
+      "independentSummary": "Die Strecke kombiniert die Nordrunde des 1000-hmr-Wegs über Zankelstein und Wälder bis zum Hotel Lindenhof mit einer Südrunde über Mühlkoppe und Hochberg. Der Hohle Fels bietet einen weiten Blick über die Hersbrucker Schweiz, bevor abwechslungsreiche Trails zurück nach Pommelsbrunn führen.",
+      "terrain": [
+        "Waldwege",
+        "Wiesenwege",
+        "Trailpfade",
+        "Uphills",
+        "Downhills"
+      ],
+      "highlights": [
+        "1000-hmr-Weg",
+        "Zankelstein",
+        "Hotel Lindenhof",
+        "Mühlkoppe",
+        "Hochberg",
+        "Hohler Fels"
+      ],
+      "aidStations": [
+        {
+          "location": "Hotel Lindenhof",
+          "km": 10
+        },
+        {
+          "location": "Pommelsbrunn",
+          "km": 15
+        },
+        {
+          "location": "Arzlohe",
+          "km": 25
+        }
+      ],
+      "cutoff": [
+        {
+          "location": "Pommelsbrunn / VP2",
+          "km": 15,
+          "time": "12:30"
+        }
+      ],
+      "map": {
+        "status": "Outdooractive_embed_on_official_details_page",
+        "url": "https://mountainman.de/trailrunning-events/hills/nikolaustrail-pommelsbrunn/streckendetails-pommelsbrunn/"
+      },
+      "elevationProfile": {
+        "status": "available_via_organizer_linked_Komoot_or_Outdooractive",
+        "directUrl": null
+      },
+      "gpx": {
+        "officialDownloadControlPresent": true,
+        "statedDelivery": "Komoot voucher code issued before event",
+        "binaryDownloaded": false,
+        "metadataInspected": false,
+        "restrictionNoticeFound": "No GPX-specific restriction notice identified in the reviewed organizer HTML; metadata not inspected.",
+        "permissionStatus": "not_granted",
+        "appPolicy": "block_all_file_operations_and_link_pending_separate_permission"
+      },
+      "sourceIds": [
+        "event-overview-pommelsbrunn",
+        "route-details-pommelsbrunn"
+      ]
+    },
+    {
+      "routeId": "pommelsbrunn-m-17-530-2026",
+      "eventId": "mountainman-nikolaus-trail-pommelsbrunn-2026",
+      "name": "M Knecht-Ruprecht-Trail by N-Ergie",
+      "date": "2026-12-06",
+      "distanceKm": 17,
+      "elevationGainM": 530,
+      "startTime": "09:00",
+      "dogStartTime": "12:00",
+      "finishCutoff": "17:00",
+      "independentSummary": "Nach einem kurzen flachen Auftakt steigt die Route zur Mühlkoppe an und führt über abwechslungsreiche Waldtrails und den Hochberg nach Arzlohe. Von dort geht es mit weiterem Anstieg zum Hohlen Fels und anschließend über Downhills zurück nach Pommelsbrunn.",
+      "terrain": [
+        "Waldtrails",
+        "Wiesenwege",
+        "Uphills",
+        "Downhills"
+      ],
+      "highlights": [
+        "Mühlkoppe",
+        "Hochberg",
+        "Arzlohe",
+        "Hohler Fels",
+        "Happurger Stausee"
+      ],
+      "aidStations": [
+        {
+          "location": "Arzlohe",
+          "km": 9
+        }
+      ],
+      "cutoff": {
+        "status": "none_published"
+      },
+      "variants": [
+        {
+          "type": "with_dog",
+          "startTime": "12:00",
+          "sameGeometry": true
+        }
+      ],
+      "map": {
+        "status": "Outdooractive_embed_on_official_details_page",
+        "url": "https://mountainman.de/trailrunning-events/hills/nikolaustrail-pommelsbrunn/streckendetails-pommelsbrunn/"
+      },
+      "elevationProfile": {
+        "status": "available_via_organizer_linked_Komoot_or_Outdooractive",
+        "directUrl": null
+      },
+      "gpx": {
+        "officialDownloadControlPresent": true,
+        "binaryDownloaded": false,
+        "metadataInspected": false,
+        "restrictionNoticeFound": "No GPX-specific restriction notice identified in the reviewed organizer HTML; metadata not inspected.",
+        "permissionStatus": "not_granted",
+        "appPolicy": "block_all_file_operations_and_link_pending_separate_permission"
+      },
+      "sourceIds": [
+        "event-overview-pommelsbrunn",
+        "route-details-pommelsbrunn"
+      ]
+    },
+    {
+      "routeId": "pommelsbrunn-s-12-370-2026",
+      "eventId": "mountainman-nikolaus-trail-pommelsbrunn-2026",
+      "name": "S Grinch-Trail",
+      "date": "2026-12-06",
+      "distanceKm": 12,
+      "elevationGainM": 370,
+      "startTime": "10:00",
+      "dogStartTime": "13:00",
+      "finishCutoff": "17:00",
+      "independentSummary": "Die Route verlässt Pommelsbrunn über Wiesen- und Waldtrails in Richtung Arzlohe. Nach der Verpflegungsstelle folgt der Anstieg zum Hohlen Fels mit Aussicht auf den Happurger Stausee, danach führt ein weiterer kurzer Gegenanstieg und ein flüssiger Abstieg zurück zum Ziel.",
+      "terrain": [
+        "Wiesenwege",
+        "Waldtrails",
+        "Uphills",
+        "Downhills"
+      ],
+      "highlights": [
+        "Arzlohe",
+        "Hohler Fels",
+        "Happurger Stausee"
+      ],
+      "aidStations": [
+        {
+          "location": "Arzlohe",
+          "km": 4
+        }
+      ],
+      "cutoff": {
+        "status": "none_published"
+      },
+      "variants": [
+        {
+          "type": "with_dog",
+          "startTime": "13:00",
+          "sameGeometry": true
+        }
+      ],
+      "map": {
+        "status": "Outdooractive_embed_on_official_details_page",
+        "url": "https://mountainman.de/trailrunning-events/hills/nikolaustrail-pommelsbrunn/streckendetails-pommelsbrunn/"
+      },
+      "elevationProfile": {
+        "status": "available_via_organizer_linked_Komoot_or_Outdooractive",
+        "directUrl": null
+      },
+      "gpx": {
+        "officialDownloadControlPresent": true,
+        "binaryDownloaded": false,
+        "metadataInspected": false,
+        "restrictionNoticeFound": "No GPX-specific restriction notice identified in the reviewed organizer HTML; metadata not inspected.",
+        "permissionStatus": "not_granted",
+        "appPolicy": "block_all_file_operations_and_link_pending_separate_permission"
+      },
+      "sourceIds": [
+        "event-overview-pommelsbrunn",
+        "route-details-pommelsbrunn"
+      ]
+    },
+    {
+      "routeId": "pommelsbrunn-family-5-130-2026",
+      "eventId": "mountainman-nikolaus-trail-pommelsbrunn-2026",
+      "name": "Family Wichtel-Trail by VGN",
+      "date": "2026-12-05",
+      "distanceKm": 5,
+      "elevationGainM": 130,
+      "startTime": "11:00",
+      "finishCutoff": "17:00",
+      "timeLimitHours": 3,
+      "independentSummary": "Familienwanderung auf einer mit Wichtel-Symbolen markierten Route mit versteckten Wichteltüren. Ein besonderer Halt ist die Reckenberg-Lama-Farm; die Teilnahme erfolgt ohne Zeitmessung.",
+      "terrain": [
+        "Wanderwege",
+        "Orts- und Naturwege; genaue Untergrundanteile nicht ausgewiesen"
+      ],
+      "highlights": [
+        "Wichteltüren",
+        "Reckenberg-Lama-Farm",
+        "Weihnachtsdorf im Ziel"
+      ],
+      "aidStations": [],
+      "cutoff": {
+        "status": "none_published"
+      },
+      "map": {
+        "status": "Outdooractive_embed_on_official_details_page",
+        "url": "https://mountainman.de/trailrunning-events/hills/nikolaustrail-pommelsbrunn/streckendetails-pommelsbrunn/"
+      },
+      "elevationProfile": {
+        "status": "available_via_organizer_linked_Komoot_or_Outdooractive",
+        "directUrl": null
+      },
+      "gpx": {
+        "officialDownloadControlPresent": true,
+        "binaryDownloaded": false,
+        "metadataInspected": false,
+        "restrictionNoticeFound": "No GPX-specific restriction notice identified in the reviewed organizer HTML; metadata not inspected.",
+        "permissionStatus": "not_granted",
+        "appPolicy": "block_all_file_operations_and_link_pending_separate_permission"
+      },
+      "sourceIds": [
+        "event-overview-pommelsbrunn",
+        "route-details-pommelsbrunn"
+      ]
+    },
+    {
+      "routeId": "winterloop-reit-7-5-110-2027",
+      "eventId": "mountainman-winterloop-reit-im-winkl-2027",
+      "name": "Winterloop Reit im Winkl – eine Runde",
+      "date": "2027-01-23",
+      "distanceKm": 7.5,
+      "elevationGainM": 110,
+      "startFinish": "Festsaal Reit im Winkl",
+      "startElevationM": 680,
+      "highestPointM": 730,
+      "lowestPointM": 660,
+      "independentSummary": "Rundkurs vom Festsaal zum Benzeck-Skilift und durch den Ort zurück zum Basecamp. Die Strecke verläuft auf offiziellen Winterwanderwegen und Loipen mit gewalztem Schnee; je nach Wetter kann der Untergrund pulvrig, fest, nass oder eisig sein. Nach jeder Runde führt der Kurs wieder zur Verpflegung und Ruhezone im Festsaal.",
+      "terrain": [
+        "gewalzter Schnee",
+        "Winterwanderwege",
+        "Loipen",
+        "kurze Ortsabschnitte"
+      ],
+      "highlights": [
+        "Benzeck-Skilift",
+        "verschneite Winterlandschaft",
+        "Festsaal-Basecamp"
+      ],
+      "aidStations": [
+        {
+          "location": "Festsaal Basecamp",
+          "km": 7.5,
+          "repeat": "after_each_loop",
+          "provisions": [
+            "warmer Tee",
+            "snacks",
+            "refill"
+          ]
+        }
+      ],
+      "cutoff": {
+        "status": "time_window_based",
+        "note": "Only completed loops at time expiry count; an unfinished loop may be completed but is not counted."
+      },
+      "map": {
+        "status": "organizer_page_links_to_komoot",
+        "url": null,
+        "note": "The organizer page recommends a Komoot route download and mentions a GPX track, but the exact route URL was not extracted; no generic Komoot URL is stored as a substitute."
+      },
+      "elevationProfile": {
+        "status": "not_found_as_separate_public_profile"
+      },
+      "gpx": {
+        "officialGPXTrackMentioned": true,
+        "directDownloadUrl": null,
+        "binaryDownloaded": false,
+        "metadataInspected": false,
+        "restrictionNoticeFound": "No GPX-specific restriction notice identified on the organizer page; metadata not inspected.",
+        "permissionStatus": "not_granted",
+        "appPolicy": "block_all_file_operations_and_link_pending_separate_permission"
+      },
+      "sourceIds": [
+        "winterloop"
+      ]
+    },
+    {
+      "routeId": "nesselwang-xxl-70-3900-2027",
+      "eventId": "mountainman-nesselwang-2027",
+      "name": "XXL-Trail Ultratrail",
+      "date": "2027-05-08",
+      "distanceKm": 70,
+      "elevationGainM": 3900,
+      "startTime": "06:00",
+      "finishCutoff": "20:00",
+      "timeLimitHours": 14,
+      "independentSummary": "Vom Biathlon-Zentrum führt die Route über den Wasserfallweg zur Kappeler Alp, danach über Kappel und Pfronten auf den Breitenberg und durch das Vilstal. Anschließend trifft sie auf die XL-Strecke und führt über alpine Pfade und Almen zurück nach Nesselwang.",
+      "terrain": [
+        "Treppenweg",
+        "Wurzelwege",
+        "Bergpfade",
+        "Almen",
+        "Talwege"
+      ],
+      "highlights": [
+        "Wasserfallweg",
+        "Kappeler Alp",
+        "Breitenberg",
+        "Vilstal",
+        "Allgäuer Seenland"
+      ],
+      "aidStations": [
+        {
+          "location": "Kappeler Alp",
+          "km": 8
+        },
+        {
+          "location": "Talstation Breitenbergbahn",
+          "km": 19
+        },
+        {
+          "location": "Breitenberg",
+          "km": 30
+        },
+        {
+          "location": "Vilstalstraße",
+          "km": 39
+        },
+        {
+          "location": "Alpe Stubental",
+          "km": 51
+        },
+        {
+          "location": "Alpe Untere Reuter Wanne",
+          "km": 58
+        },
+        {
+          "location": "Skiklub Nesselwang",
+          "km": 68
+        }
+      ],
+      "cutoff": [
+        {
+          "location": "Kappel",
+          "km": 10,
+          "time": "09:00",
+          "consequence": "redirect to XL; out of classification"
+        },
+        {
+          "location": "Vilstalstraße",
+          "km": 39,
+          "time": "13:00",
+          "consequence": "DNF; public transport return"
+        },
+        {
+          "location": "Pfeifferberg route split",
+          "km": 51,
+          "time": "15:30",
+          "consequence": "redirect to M; out of classification"
+        }
+      ],
+      "map": {
+        "status": "Outdooractive_embed_on_official_details_page",
+        "url": "https://mountainman.de/trailrunning-events/alps/nesselwang/streckendetails/"
+      },
+      "elevationProfile": {
+        "status": "available_via_Outdooractive_embed",
+        "directUrl": null
+      },
+      "gpx": {
+        "officialRouteDownloadGuidance": "Komoot voucher code before event; Outdooractive embed on route details page",
+        "binaryDownloaded": false,
+        "metadataInspected": false,
+        "restrictionNoticeFound": "No GPX-specific restriction notice identified in the reviewed organizer HTML; metadata not inspected.",
+        "permissionStatus": "not_granted",
+        "appPolicy": "block_all_file_operations_and_link_pending_separate_permission"
+      },
+      "sourceIds": [
+        "event-overview-nesselwang",
+        "route-details-nesselwang",
+        "dogs-nesselwang"
+      ]
+    },
+    {
+      "routeId": "nesselwang-xl-42-2750-2027",
+      "eventId": "mountainman-nesselwang-2027",
+      "name": "XL-Trail",
+      "date": "2027-05-08",
+      "distanceKm": 42,
+      "elevationGainM": 2750,
+      "startTime": "08:00",
+      "finishCutoff": "20:00",
+      "timeLimitHours": 12,
+      "independentSummary": "Der Kurs steigt über den Wasserfallweg zur Kappeler Alp, führt in einen langen Downhill und anschließend über einen weiteren Anstieg zu Aussichtsgipfeln und Almen. Danach geht es über fordernde Trails ins Tal und auf flacheren Wegen zurück nach Nesselwang.",
+      "terrain": [
+        "Treppenweg",
+        "Bergpfade",
+        "Waldtrails",
+        "Almwege",
+        "Talwege"
+      ],
+      "highlights": [
+        "Wasserfallweg",
+        "Kappeler Alp",
+        "Allgäuer Seenland",
+        "Berggipfel und Almen"
+      ],
+      "aidStations": [
+        {
+          "location": "Kappeler Alp",
+          "km": 8
+        },
+        {
+          "location": "Sportheim Böck",
+          "km": 15
+        },
+        {
+          "location": "Alpe Stubental",
+          "km": 22
+        },
+        {
+          "location": "Alpe Untere Reuter Wanne",
+          "km": 29
+        },
+        {
+          "location": "Skiklub Nesselwang",
+          "km": 39
+        }
+      ],
+      "cutoff": [
+        {
+          "location": "Sportheim Böck",
+          "km": 15,
+          "time": "12:30",
+          "consequence": "redirect to S; DNF from XL classification"
+        },
+        {
+          "location": "Pfeifferberg route split",
+          "km": 23.8,
+          "time": "15:30",
+          "consequence": "redirect to M; out of classification"
+        }
+      ],
+      "dataConflict": "Event overview lists 3 VP, while the detailed route page lists 5 VP; detailed route list retained. The elevation is stated as 2,750+ hm on the overview; route detail does not repeat it.",
+      "map": {
+        "status": "Outdooractive_embed_on_official_details_page",
+        "url": "https://mountainman.de/trailrunning-events/alps/nesselwang/streckendetails/"
+      },
+      "elevationProfile": {
+        "status": "available_via_Outdooractive_embed",
+        "directUrl": null
+      },
+      "gpx": {
+        "officialRouteDownloadGuidance": "Komoot voucher code before event; Outdooractive embed on route details page",
+        "binaryDownloaded": false,
+        "metadataInspected": false,
+        "restrictionNoticeFound": "No GPX-specific restriction notice identified in the reviewed organizer HTML; metadata not inspected.",
+        "permissionStatus": "not_granted",
+        "appPolicy": "block_all_file_operations_and_link_pending_separate_permission"
+      },
+      "sourceIds": [
+        "event-overview-nesselwang",
+        "route-details-nesselwang"
+      ]
+    },
+    {
+      "routeId": "nesselwang-l-33-2000-2027",
+      "eventId": "mountainman-nesselwang-2027",
+      "name": "L-Trail",
+      "date": "2027-05-08",
+      "distanceKm": 33,
+      "elevationGainM": 2000,
+      "startTime": "08:30",
+      "finishCutoff": "20:00",
+      "timeLimitHours": 11.5,
+      "independentSummary": "Die Strecke folgt zunächst dem Wasserfallweg zum Sportheim Böck und führt über Pfeifferberg und Reuter Wanne mit weiten Allgäuer Aussichten. Nach einem längeren Abstieg geht es über den Kappeler Höhenweg zurück nach Nesselwang.",
+      "terrain": [
+        "Treppenweg",
+        "Wurzelwege",
+        "Bergpfade",
+        "Downhills",
+        "Höhenweg"
+      ],
+      "highlights": [
+        "Wasserfallweg",
+        "Sportheim Böck",
+        "Pfeifferberg",
+        "Reuter Wanne",
+        "Kappeler Höhenweg"
+      ],
+      "aidStations": [
+        {
+          "location": "Sportheim Böck",
+          "km": 5
+        },
+        {
+          "location": "Alpe Stubental",
+          "km": 12
+        },
+        {
+          "location": "Alpe Untere Reuter Wanne",
+          "km": 19
+        },
+        {
+          "location": "Skiklub Nesselwang",
+          "km": 30
+        }
+      ],
+      "cutoff": [
+        {
+          "location": "Sportheim Böck",
+          "km": 5,
+          "time": "12:30",
+          "consequence": "redirect to S; DNF from L classification"
+        },
+        {
+          "location": "Pfeifferberg route split",
+          "km": 13.9,
+          "time": "15:30",
+          "consequence": "redirect to M; DNF from L classification"
+        }
+      ],
+      "map": {
+        "status": "Outdooractive_embed_on_official_details_page",
+        "url": "https://mountainman.de/trailrunning-events/alps/nesselwang/streckendetails/"
+      },
+      "elevationProfile": {
+        "status": "available_via_Outdooractive_embed",
+        "directUrl": null
+      },
+      "gpx": {
+        "officialRouteDownloadGuidance": "Komoot voucher code before event; Outdooractive embed on route details page",
+        "binaryDownloaded": false,
+        "metadataInspected": false,
+        "restrictionNoticeFound": "No GPX-specific restriction notice identified in the reviewed organizer HTML; metadata not inspected.",
+        "permissionStatus": "not_granted",
+        "appPolicy": "block_all_file_operations_and_link_pending_separate_permission"
+      },
+      "sourceIds": [
+        "event-overview-nesselwang",
+        "route-details-nesselwang"
+      ]
+    },
+    {
+      "routeId": "nesselwang-m-21-1300-2027",
+      "eventId": "mountainman-nesselwang-2027",
+      "name": "M-Trail by Altra",
+      "date": "2027-05-08",
+      "distanceKm": 21,
+      "elevationGainM": 1300,
+      "startTime": "09:00",
+      "finishCutoff": "18:00",
+      "timeLimitHours": 9,
+      "independentSummary": "Vom Wasserfallweg geht es zum Sportheim Böck mit Blick auf Neuschwanstein. Danach führt die Route an Edelsberg und Pfeifferberg vorbei ins Tal nach Bayerstetten und über den Kappeler Höhenweg zurück zum Ziel.",
+      "terrain": [
+        "Treppenweg",
+        "Wurzelwege",
+        "Bergpfade",
+        "Talwege",
+        "Höhenweg"
+      ],
+      "highlights": [
+        "Wasserfallweg",
+        "Sportheim Böck",
+        "Schloss Neuschwanstein",
+        "Edelsberg",
+        "Pfeifferberg",
+        "Kappeler Höhenweg"
+      ],
+      "aidStations": [
+        {
+          "location": "Sportheim Böck",
+          "km": 5
+        },
+        {
+          "location": "Alpe Stubental",
+          "km": 12
+        },
+        {
+          "location": "Skiklub Nesselwang",
+          "km": 19
+        }
+      ],
+      "cutoff": [
+        {
+          "location": "Sportheim Böck",
+          "km": 5,
+          "time": "12:30",
+          "consequence": "redirect to S; DNF from M classification"
+        }
+      ],
+      "dataConflict": "The event overview lists 22 km / 1,300+ hm; the dedicated route detail page labels this route 21 km. The detailed route distance (21 km) is retained provisionally and the 22 km overview value is preserved as an unresolved conflict.",
+      "map": {
+        "status": "Outdooractive_embed_on_official_details_page",
+        "url": "https://mountainman.de/trailrunning-events/alps/nesselwang/streckendetails/"
+      },
+      "elevationProfile": {
+        "status": "available_via_Outdooractive_embed",
+        "directUrl": null
+      },
+      "gpx": {
+        "officialRouteDownloadGuidance": "Komoot voucher code before event; Outdooractive embed on route details page",
+        "binaryDownloaded": false,
+        "metadataInspected": false,
+        "restrictionNoticeFound": "No GPX-specific restriction notice identified in the reviewed organizer HTML; metadata not inspected.",
+        "permissionStatus": "not_granted",
+        "appPolicy": "block_all_file_operations_and_link_pending_separate_permission"
+      },
+      "sourceIds": [
+        "event-overview-nesselwang",
+        "route-details-nesselwang",
+        "dogs-nesselwang"
+      ]
+    },
+    {
+      "routeId": "nesselwang-s-10-800-2027",
+      "eventId": "mountainman-nesselwang-2027",
+      "name": "S-Trail",
+      "date": "2027-05-08",
+      "distanceKm": 10,
+      "elevationGainM": 800,
+      "startTime": "10:00",
+      "finishCutoff": "18:00",
+      "timeLimitHours": 8,
+      "independentSummary": "Ein steiler Aufstieg über den Wasserfallweg und Wurzelpfade führt zur Kappeler Alp. Anschließend verläuft die Strecke über abwechslungsreiche Waldtrails und an der Wallfahrtskirche Maria Trost vorbei zurück zum Trendsportzentrum.",
+      "terrain": [
+        "Treppenweg",
+        "Wurzelpfade",
+        "Waldtrails",
+        "Almwege"
+      ],
+      "highlights": [
+        "Wasserfallweg",
+        "Kappeler Alp",
+        "Maria Trost"
+      ],
+      "aidStations": [
+        {
+          "location": "Kappeler Alp",
+          "km": 5
+        }
+      ],
+      "cutoff": {
+        "status": "none_published_on_route_detail_page"
+      },
+      "map": {
+        "status": "Outdooractive_embed_on_official_details_page",
+        "url": "https://mountainman.de/trailrunning-events/alps/nesselwang/streckendetails/"
+      },
+      "elevationProfile": {
+        "status": "available_via_Outdooractive_embed",
+        "directUrl": null
+      },
+      "gpx": {
+        "officialRouteDownloadGuidance": "Komoot voucher code before event; Outdooractive embed on route details page",
+        "binaryDownloaded": false,
+        "metadataInspected": false,
+        "restrictionNoticeFound": "No GPX-specific restriction notice identified in the reviewed organizer HTML; metadata not inspected.",
+        "permissionStatus": "not_granted",
+        "appPolicy": "block_all_file_operations_and_link_pending_separate_permission"
+      },
+      "sourceIds": [
+        "event-overview-nesselwang",
+        "route-details-nesselwang",
+        "dogs-nesselwang"
+      ]
+    },
+    {
+      "routeId": "nesselwang-kids-0-4-2027",
+      "eventId": "mountainman-nesselwang-2027",
+      "name": "Kids-Trail",
+      "date": "2027-05-07",
+      "distanceKm": 0.4,
+      "elevationGainM": null,
+      "startTime": "15:00",
+      "durationMinutes": 30,
+      "independentSummary": "Kurzer Rundkurs am Trendsportzentrum für Kinder von etwa 3 bis 12 Jahren. Die Runde kann innerhalb des 30-Minuten-Zeitfensters beliebig oft gelaufen werden; es gibt keine Zeitmessung.",
+      "terrain": [
+        "Rundkurs am Eventgelände; genaue Untergrundanteile nicht veröffentlicht"
+      ],
+      "highlights": [
+        "kindgerechter Rundkurs",
+        "Finisher-Medaille"
+      ],
+      "aidStations": [],
+      "cutoff": {
+        "status": "time_window_based",
+        "durationMinutes": 30
+      },
+      "map": {
+        "status": "not_published"
+      },
+      "elevationProfile": {
+        "status": "not_published"
+      },
+      "gpx": {
+        "officialDownloadControlPresent": false,
+        "binaryDownloaded": false,
+        "metadataInspected": false,
+        "permissionStatus": "not_granted",
+        "appPolicy": "no_gpx_function"
+      },
+      "sourceIds": [
+        "kids-nesselwang"
+      ]
+    },
+    {
+      "routeId": "watz-stage-1-29-1300-2027",
+      "eventId": "der-watz-mountainman",
+      "name": "WATZ Etappe 1 – Berchtesgaden to Marktschellenberg",
+      "date": "2027-06-03",
+      "distanceKm": 29,
+      "elevationGainM": 1300,
+      "startTime": "09:00",
+      "finishCutoff": "17:00",
+      "timeLimitHours": 8,
+      "independentSummary": "Start im Kurgarten vor dem AlpenCongress in Berchtesgaden. Die Etappe steigt in die Bergwelt rund um Kehlstein und Obersalzberg, führt über alpine Trails mit offenen Panoramablicken wieder talwärts und endet in Marktschellenberg am Fuß des Untersbergs.",
+      "terrain": [
+        "alpine Trails",
+        "Waldpassagen",
+        "Bergpfade",
+        "Talabstieg"
+      ],
+      "highlights": [
+        "Kehlstein",
+        "Obersalzberg",
+        "Panorama Berchtesgadener Alpen",
+        "Watzmannblick",
+        "Untersberg",
+        "Ziel Marktschellenberg"
+      ],
+      "aidStations": [
+        {
+          "count": 2,
+          "locations": "Exact names and kilometres not published on the stage page."
+        }
+      ],
+      "cutoff": {
+        "status": "no_intermediate_cutoff_published",
+        "finish": "17:00"
+      },
+      "dataConflict": "The main stage overview lists 29 km / 1,250+ hm; the dedicated stage page lists 29 km / 1,300 hm. Dedicated stage page value retained with conflict flagged.",
+      "map": {
+        "status": "Outdooractive_embed_on_official_stage_page",
+        "url": "https://mountainman.de/trailrunning-events/alps/berchtesgaden/1-etappe-watz/"
+      },
+      "elevationProfile": {
+        "status": "Outdooractive_embed",
+        "directUrl": null
+      },
+      "gpx": {
+        "officialDownloadControlPresent": false,
+        "binaryDownloaded": false,
+        "metadataInspected": false,
+        "permissionStatus": "not_granted",
+        "appPolicy": "block_all_file_operations_and_link_pending_separate_permission"
+      },
+      "sourceIds": [
+        "event-overview-watz",
+        "route-details-watz",
+        "watz-stage-1"
+      ]
+    },
+    {
+      "routeId": "watz-stage-2-25-1500-2027",
+      "eventId": "der-watz-mountainman",
+      "name": "WATZ Etappe 2 – Marktschellenberg to Bischofswiesen",
+      "date": "2027-06-04",
+      "distanceKm": 25,
+      "elevationGainM": 1500,
+      "startTime": "09:00",
+      "finishCutoff": "17:00",
+      "timeLimitHours": 8,
+      "independentSummary": "Vom Marktplatz in Marktschellenberg führt die Etappe zunächst durch die Almbachklamm und anschließend über die Kneifelspitze und Maria Gern in die Bergwelt Richtung Bischofswiesen. Der Kurs enthält längere Anstiege, Waldpassagen und aussichtsreiche Trailabschnitte.",
+      "terrain": [
+        "Schluchtwege",
+        "Waldtrails",
+        "Bergpfade",
+        "längere Anstiege"
+      ],
+      "highlights": [
+        "Almbachklamm",
+        "Kneifelspitze",
+        "Maria Gern",
+        "Blick auf Watzmann und Untersberg"
+      ],
+      "aidStations": [
+        {
+          "count": 2,
+          "locations": "Exact names and kilometres not published on the stage page."
+        }
+      ],
+      "cutoff": {
+        "status": "no_intermediate_cutoff_published",
+        "finish": "17:00"
+      },
+      "map": {
+        "status": "Outdooractive_embed_on_official_stage_page",
+        "url": "https://mountainman.de/trailrunning-events/alps/berchtesgaden/2-etappen-watz/"
+      },
+      "elevationProfile": {
+        "status": "Outdooractive_embed",
+        "directUrl": null
+      },
+      "gpx": {
+        "officialDownloadControlPresent": false,
+        "binaryDownloaded": false,
+        "metadataInspected": false,
+        "permissionStatus": "not_granted",
+        "appPolicy": "block_all_file_operations_and_link_pending_separate_permission"
+      },
+      "sourceIds": [
+        "event-overview-watz",
+        "route-details-watz",
+        "watz-stage-2"
+      ]
+    },
+    {
+      "routeId": "watz-stage-3-32-1200-2027",
+      "eventId": "der-watz-mountainman",
+      "name": "WATZ Etappe 3 – Bischofswiesen to Ramsau",
+      "date": "2027-06-05",
+      "distanceKm": 32,
+      "elevationGainM": 1200,
+      "startTime": "09:00",
+      "finishCutoff": "17:00",
+      "timeLimitHours": 8,
+      "independentSummary": "Von Bischofswiesen steigt die Route über Trails zur Götschenalm und zum Götschenkopf. Im weiteren Verlauf führen die Wege zum Hintersee und durch den Zauberwald nach Ramsau. Diese Etappe bildet zugleich den Auftakt des WATZ Double.",
+      "terrain": [
+        "Bergtrails",
+        "Waldpfade",
+        "Uferwege",
+        "felsige Waldpassagen"
+      ],
+      "highlights": [
+        "Götschenalm",
+        "Götschenkopf",
+        "Hintersee",
+        "Zauberwald",
+        "Schlafende Hexe"
+      ],
+      "aidStations": [
+        {
+          "count": 2,
+          "locations": "Exact names and kilometres not published on the stage page."
+        }
+      ],
+      "cutoff": {
+        "status": "no_intermediate_cutoff_published",
+        "finish": "17:00"
+      },
+      "dataConflict": "Dedicated stage page states 32 km / 1,200 hm. The main route-detail overview states 28 km / 1,110+ hm. The 32 km figure also makes the published WATZ Double package total of 57 km consistent with stage 4 at 25 km. Both values are preserved; organizer confirmation requested.",
+      "map": {
+        "status": "Outdooractive_embed_on_official_stage_page",
+        "url": "https://mountainman.de/trailrunning-events/alps/berchtesgaden/3-etappe-watz/"
+      },
+      "elevationProfile": {
+        "status": "Outdooractive_embed",
+        "directUrl": null
+      },
+      "gpx": {
+        "officialDownloadControlPresent": false,
+        "binaryDownloaded": false,
+        "metadataInspected": false,
+        "permissionStatus": "not_granted",
+        "appPolicy": "block_all_file_operations_and_link_pending_separate_permission"
+      },
+      "sourceIds": [
+        "event-overview-watz",
+        "route-details-watz",
+        "watz-stage-3"
+      ]
+    },
+    {
+      "routeId": "watz-stage-4-25-1250-2027",
+      "eventId": "der-watz-mountainman",
+      "name": "WATZ Etappe 4 – Ramsau to Berchtesgaden",
+      "date": "2027-06-06",
+      "distanceKm": 25,
+      "elevationGainM": 1250,
+      "startFinish": "Ramsau to Berchtesgaden Kurgarten",
+      "independentSummary": "Nach einem ruhigeren Abschnitt entlang der Ramsauer Ache führt die Etappe an der Wimbachklamm vorbei und steigt zum Grünstein mit Blick auf Königssee und Watzmann. Danach folgen Abschnitte an der Bobbahn und am Königssee sowie ein letzter Anstieg am Hohen Brand. Der Zieleinlauf führt durch die Berchtesgadener Fußgängerzone in den Kurgarten.",
+      "terrain": [
+        "Talwege",
+        "Schluchtwege",
+        "Bergpfade",
+        "Ortsdurchquerung"
+      ],
+      "highlights": [
+        "Ramsauer Ache",
+        "Wimbachklamm",
+        "Grünstein",
+        "Königssee",
+        "Watzmann",
+        "Hoher Brand",
+        "Berchtesgaden Kurgarten"
+      ],
+      "aidStations": [
+        {
+          "status": "not_published_on_accessible_stage_overview"
+        }
+      ],
+      "cutoff": {
+        "status": "not_published_on_accessible_stage_overview"
+      },
+      "dataConflict": "Main route-detail overview lists 25 km / 1,250 hm; WATZ Final package overview lists 25 km / 1,300+ hm. The linked dedicated stage-4 URL returned 404 on 2026-11-28; no further detail verified.",
+      "map": {
+        "status": "Outdooractive_embed_on_main_route_details_page",
+        "url": "https://mountainman.de/trailrunning-events/alps/berchtesgaden/streckendetails-berchtesgaden-watz/"
+      },
+      "elevationProfile": {
+        "status": "Outdooractive_embed",
+        "directUrl": null
+      },
+      "gpx": {
+        "officialDownloadControlPresent": false,
+        "binaryDownloaded": false,
+        "metadataInspected": false,
+        "permissionStatus": "not_granted",
+        "appPolicy": "block_all_file_operations_and_link_pending_separate_permission"
+      },
+      "sourceIds": [
+        "event-overview-watz",
+        "route-details-watz",
+        "watz-stage-4-attempted"
+      ]
+    },
+    {
+      "routeId": "grossarltal-xxl-70-3850-2027",
+      "eventId": "mountainman-grossarltal-2027",
+      "name": "XXL-Trail by Hotel Tauernhof",
+      "date": "2027-08-28",
+      "distanceKm": 70,
+      "elevationGainM": 3850,
+      "startTime": "03:00",
+      "finishCutoff": "19:00",
+      "timeLimitHours": 16,
+      "independentSummary": "Lange Ultratrailrunde mit ausgedehnten Singletrails über Gipfel und schmale Grate. Die Strecke führt an mehreren traditionellen Almen vorbei und verbindet hochalpine Abschnitte mit langen An- und Abstiegen.",
+      "terrain": [
+        "Singletrails",
+        "Gratwege",
+        "Gipfelpfade",
+        "Almwege",
+        "lange Anstiege und Abstiege"
+      ],
+      "highlights": [
+        "Gehwolfalm",
+        "Bichlalm",
+        "Filzmoosalm",
+        "Loosbühelalm",
+        "Kleinarler Hütte",
+        "Maurachalm",
+        "Karseggalm",
+        "Gerstreitalm",
+        "Salzburger Almenweg"
+      ],
+      "aidStations": [
+        {
+          "location": "Gehwolfalm",
+          "km": 6
+        },
+        {
+          "location": "Großarler Genuss",
+          "km": 16
+        },
+        {
+          "location": "Bichlalm",
+          "km": 25
+        },
+        {
+          "location": "Filzmoosalm",
+          "km": 33
+        },
+        {
+          "location": "Loosbühelalm",
+          "km": 35
+        },
+        {
+          "location": "Kleinarler Hütte",
+          "km": 44
+        },
+        {
+          "location": "Maurachalm",
+          "km": 49
+        },
+        {
+          "location": "Karseggalm",
+          "km": 53
+        },
+        {
+          "location": "Gerstreitalm",
+          "km": 64
+        }
+      ],
+      "cutoff": [
+        {
+          "location": "Großarl",
+          "km": 20,
+          "time": "08:00",
+          "consequence": "DNF"
+        },
+        {
+          "location": "after Ellmaualm",
+          "km": 40,
+          "time": "13:00",
+          "consequence": "redirect to L; DNF from XXL classification"
+        }
+      ],
+      "dataConflict": "The route detail introduction says 6 routes from 10–68 km, while the 2027 event overview and the XXL detail section both publish 70 km. The 70 km event-specific value is retained with the page inconsistency flagged.",
+      "map": {
+        "status": "Outdooractive_embed_on_official_details_page",
+        "url": "https://mountainman.de/trailrunning-events/alps/grossarltal/streckendetails/"
+      },
+      "elevationProfile": {
+        "status": "available_via_Outdooractive_embed",
+        "directUrl": null
+      },
+      "gpx": {
+        "officialDownloadControlPresent": true,
+        "binaryDownloaded": false,
+        "metadataInspected": false,
+        "restrictionNoticeFound": "No GPX-specific restriction notice identified in the reviewed organizer HTML; metadata not inspected.",
+        "permissionStatus": "not_granted",
+        "appPolicy": "block_all_file_operations_and_link_pending_separate_permission"
+      },
+      "sourceIds": [
+        "event-overview-grossarltal",
+        "route-details-grossarltal"
+      ]
+    },
+    {
+      "routeId": "grossarltal-xl-50-2700-2027",
+      "eventId": "mountainman-grossarltal-2027",
+      "name": "XL-Ultratrail by Intersport Lackner",
+      "date": "2027-08-28",
+      "distanceKm": 50,
+      "elevationGainM": 2700,
+      "startTime": "07:00",
+      "finishCutoff": "19:00",
+      "timeLimitHours": 12,
+      "independentSummary": "Nach dem Ortsdurchlauf steigt die Strecke über die Himmelsleiter rund sechs Kilometer und etwa 850 Höhenmeter zur Bichlalm. Danach führt sie über Gipfel und Grate zu den Trögseen und ein Stück auf dem Salzburger Almenweg. Über Karseggalm und Gerstreitalm geht es auf flowigen Downhills zurück nach Großarl.",
+      "terrain": [
+        "steiler Uphill",
+        "Singletrails",
+        "Gratwege",
+        "Almwege",
+        "Downhills"
+      ],
+      "highlights": [
+        "Himmelsleiter",
+        "Bichlalm",
+        "Trögseen",
+        "Salzburger Almenweg",
+        "Karseggalm",
+        "Gerstreitalm"
+      ],
+      "aidStations": [
+        {
+          "location": "Bichlalm",
+          "km": 6
+        },
+        {
+          "location": "Filzmoosalm",
+          "km": 14
+        },
+        {
+          "location": "Loosbühelalm",
+          "km": 16
+        },
+        {
+          "location": "Kleinarler Hütte",
+          "km": 25
+        },
+        {
+          "location": "Maurachalm",
+          "km": 30
+        },
+        {
+          "location": "Karseggalm",
+          "km": 34
+        },
+        {
+          "location": "Gerstreitalm",
+          "km": 45
+        }
+      ],
+      "cutoff": [
+        {
+          "location": "route split to L",
+          "km": 21,
+          "time": "13:00",
+          "consequence": "redirect to L; DNF from XL classification"
+        }
+      ],
+      "map": {
+        "status": "Outdooractive_embed_on_official_details_page",
+        "url": "https://mountainman.de/trailrunning-events/alps/grossarltal/streckendetails/"
+      },
+      "elevationProfile": {
+        "status": "available_via_Outdooractive_embed",
+        "directUrl": null
+      },
+      "gpx": {
+        "officialDownloadControlPresent": true,
+        "binaryDownloaded": false,
+        "metadataInspected": false,
+        "restrictionNoticeFound": "No GPX-specific restriction notice identified in the reviewed organizer HTML; metadata not inspected.",
+        "permissionStatus": "not_granted",
+        "appPolicy": "block_all_file_operations_and_link_pending_separate_permission"
+      },
+      "sourceIds": [
+        "event-overview-grossarltal",
+        "route-details-grossarltal"
+      ]
+    },
+    {
+      "routeId": "grossarltal-l-30-1600-2027",
+      "eventId": "mountainman-grossarltal-2027",
+      "name": "L-Trail by Altra",
+      "date": "2027-08-28",
+      "distanceKm": 30,
+      "elevationGainM": 1600,
+      "startTime": "07:00",
+      "finishCutoff": "19:00",
+      "timeLimitHours": 12,
+      "independentSummary": "Nach dem Start im Ort führt die Himmelsleiter rund sechs Kilometer und etwa 850 Höhenmeter zur Bichlalm. Anschließend geht es über Gipfel und Almen durch die Bergwelt des Großarltals zurück.",
+      "terrain": [
+        "steiler Uphill",
+        "Singletrails",
+        "Almwege",
+        "Downhills"
+      ],
+      "highlights": [
+        "Himmelsleiter",
+        "Bichlalm",
+        "Filzmoosalm",
+        "Loosbühelalm",
+        "Gerstreitalm"
+      ],
+      "aidStations": [
+        {
+          "location": "Bichlalm",
+          "km": 6
+        },
+        {
+          "location": "Filzmoosalm",
+          "km": 14
+        },
+        {
+          "location": "Loosbühelalm",
+          "km": 16
+        },
+        {
+          "location": "Gerstreitalm",
+          "km": 25
+        }
+      ],
+      "cutoff": [
+        {
+          "location": "route split",
+          "km": 16,
+          "time": "14:00",
+          "consequence": "DNF"
+        }
+      ],
+      "map": {
+        "status": "Outdooractive_embed_on_official_details_page",
+        "url": "https://mountainman.de/trailrunning-events/alps/grossarltal/streckendetails/"
+      },
+      "elevationProfile": {
+        "status": "available_via_Outdooractive_embed",
+        "directUrl": null
+      },
+      "gpx": {
+        "officialDownloadControlPresent": true,
+        "binaryDownloaded": false,
+        "metadataInspected": false,
+        "restrictionNoticeFound": "No GPX-specific restriction notice identified in the reviewed organizer HTML; metadata not inspected.",
+        "permissionStatus": "not_granted",
+        "appPolicy": "block_all_file_operations_and_link_pending_separate_permission"
+      },
+      "sourceIds": [
+        "event-overview-grossarltal",
+        "route-details-grossarltal"
+      ]
+    },
+    {
+      "routeId": "grossarltal-m-21-1200-2027",
+      "eventId": "mountainman-grossarltal-2027",
+      "name": "M-Trail by Gehwolfalm",
+      "date": "2027-08-28",
+      "distanceKm": 21,
+      "elevationGainM": 1200,
+      "startTime": "08:00",
+      "finishCutoff": "19:00",
+      "timeLimitHours": 11,
+      "independentSummary": "Von Großarl steigt der Trail bis auf etwa 2.000 Meter zum Fulseck. Nach dem aussichtsreichen Gipfelabschnitt führt ein überwiegend flowiger Downhill zurück ins Ziel.",
+      "terrain": [
+        "Bergpfade",
+        "Singletrails",
+        "langer Anstieg",
+        "flowiger Downhill"
+      ],
+      "highlights": [
+        "Fulseck",
+        "Aussicht auf die umliegenden Gebirgsketten",
+        "Gehwolfalm"
+      ],
+      "aidStations": [
+        {
+          "location": "Gehwolfalm",
+          "km": 6
+        },
+        {
+          "location": "Großarler Genuss",
+          "km": 16
+        }
+      ],
+      "cutoff": {
+        "status": "none"
+      },
+      "map": {
+        "status": "Outdooractive_embed_on_official_details_page",
+        "url": "https://mountainman.de/trailrunning-events/alps/grossarltal/streckendetails/"
+      },
+      "elevationProfile": {
+        "status": "available_via_Outdooractive_embed",
+        "directUrl": null
+      },
+      "gpx": {
+        "officialDownloadControlPresent": true,
+        "binaryDownloaded": false,
+        "metadataInspected": false,
+        "restrictionNoticeFound": "No GPX-specific restriction notice identified in the reviewed organizer HTML; metadata not inspected.",
+        "permissionStatus": "not_granted",
+        "appPolicy": "block_all_file_operations_and_link_pending_separate_permission"
+      },
+      "sourceIds": [
+        "event-overview-grossarltal",
+        "route-details-grossarltal"
+      ]
+    },
+    {
+      "routeId": "grossarltal-s-15-900-2027",
+      "eventId": "mountainman-grossarltal-2027",
+      "name": "S-Trail by Sport2000 Kendlbacher",
+      "date": "2027-08-28",
+      "distanceKm": 15,
+      "elevationGainM": 900,
+      "startTime": "09:00",
+      "finishCutoff": "19:00",
+      "timeLimitHours": 10,
+      "independentSummary": "Nach einem kurzen Abschnitt entlang der Großarler Ache steigt die Route über Bergwiesen zum Gipfel und weiter zur Heugathalm. Über die Gerstreitalm führt ein fordernder Abstieg zurück nach Großarl.",
+      "terrain": [
+        "Bergwiesen",
+        "Singletrails",
+        "Almwege",
+        "anspruchsvoller Abstieg"
+      ],
+      "highlights": [
+        "Großarler Ache",
+        "Heugathalm",
+        "Gerstreitalm"
+      ],
+      "aidStations": [
+        {
+          "location": "Heugathalm",
+          "km": 5
+        },
+        {
+          "location": "Gerstreitalm",
+          "km": 10
+        }
+      ],
+      "cutoff": {
+        "status": "none"
+      },
+      "map": {
+        "status": "Outdooractive_embed_on_official_details_page",
+        "url": "https://mountainman.de/trailrunning-events/alps/grossarltal/streckendetails/"
+      },
+      "elevationProfile": {
+        "status": "available_via_Outdooractive_embed",
+        "directUrl": null
+      },
+      "gpx": {
+        "officialDownloadControlPresent": true,
+        "binaryDownloaded": false,
+        "metadataInspected": false,
+        "restrictionNoticeFound": "No GPX-specific restriction notice identified in the reviewed organizer HTML; metadata not inspected.",
+        "permissionStatus": "not_granted",
+        "appPolicy": "block_all_file_operations_and_link_pending_separate_permission"
+      },
+      "sourceIds": [
+        "event-overview-grossarltal",
+        "route-details-grossarltal"
+      ]
+    },
+    {
+      "routeId": "grossarltal-xs-10-600-2027",
+      "eventId": "mountainman-grossarltal-2027",
+      "name": "XS-Trail",
+      "date": "2027-08-28",
+      "distanceKm": 10,
+      "elevationGainM": 600,
+      "startTime": "10:00",
+      "finishCutoff": "19:00",
+      "timeLimitHours": 9,
+      "independentSummary": "Nach einem kurzen Ortsabschnitt steigt die Strecke etwa drei Kilometer und rund 400 Höhenmeter zur Verpflegung an der Großarler Genuss. Anschließend führt sie überwiegend bergab ins Ziel.",
+      "terrain": [
+        "Ortswege",
+        "steiler Bergpfad",
+        "Downhill"
+      ],
+      "highlights": [
+        "Großarler Genuss",
+        "Bergblick auf das Tal der Almen"
+      ],
+      "aidStations": [
+        {
+          "location": "Großarler Genuss",
+          "km": 5
+        }
+      ],
+      "cutoff": {
+        "status": "none"
+      },
+      "map": {
+        "status": "Outdooractive_embed_on_official_details_page",
+        "url": "https://mountainman.de/trailrunning-events/alps/grossarltal/streckendetails/"
+      },
+      "elevationProfile": {
+        "status": "available_via_Outdooractive_embed",
+        "directUrl": null
+      },
+      "gpx": {
+        "officialDownloadControlPresent": true,
+        "binaryDownloaded": false,
+        "metadataInspected": false,
+        "restrictionNoticeFound": "No GPX-specific restriction notice identified in the reviewed organizer HTML; metadata not inspected.",
+        "permissionStatus": "not_granted",
+        "appPolicy": "block_all_file_operations_and_link_pending_separate_permission"
+      },
+      "sourceIds": [
+        "event-overview-grossarltal",
+        "route-details-grossarltal"
+      ]
+    },
+    {
+      "routeId": "grossarltal-kids-0-4-2027",
+      "eventId": "mountainman-grossarltal-2027",
+      "name": "Kids-Trail",
+      "date": "2027-08-27",
+      "distanceKm": 0.4,
+      "elevationGainM": null,
+      "startTime": "15:00",
+      "independentSummary": "Kurzer Kinder-Rundkurs im Freizeitgelände für Teilnehmende von etwa 3 bis 12 Jahren. Keine Zeitmessung; kleine Finisher-Verpflegung und Medaille.",
+      "terrain": [
+        "Freizeitgelände; genauer Untergrund nicht veröffentlicht"
+      ],
+      "highlights": [
+        "Kinderlauf",
+        "Finisher-Medaille"
+      ],
+      "aidStations": [],
+      "cutoff": {
+        "status": "not_published"
+      },
+      "map": {
+        "status": "not_published"
+      },
+      "elevationProfile": {
+        "status": "not_published"
+      },
+      "gpx": {
+        "officialDownloadControlPresent": false,
+        "binaryDownloaded": false,
+        "metadataInspected": false,
+        "permissionStatus": "not_granted",
+        "appPolicy": "no_gpx_function"
+      },
+      "sourceIds": [
+        "event-overview-grossarltal",
+        "kids-grossarltal"
+      ]
+    },
+    {
+      "routeId": "reit-xxl-73-3200-2027",
+      "eventId": "mountainman-reit-im-winkl-2027",
+      "name": "XXL-Ultratrail",
+      "date": "2027-09-25",
+      "distanceKm": 73,
+      "elevationGainM": 3200,
+      "startTime": "06:00",
+      "finishCutoff": "20:00",
+      "timeLimitHours": 14,
+      "independentSummary": "Die Zusatzschleife verläuft auf teils technischen Wegen des Chiemseeblick Premiumwanderwegs Alpin bis knapp 1.300 Meter. Nach langem Downhill geht es über Winklmoosalm, Möseralm und Durchkaseralm weiter auf dem Gletscherblickweg über Straubinger Haus und Hindenburghütte zurück nach Reit im Winkl.",
+      "terrain": [
+        "technische Bergpfade",
+        "Almwege",
+        "Höhenwege",
+        "lange Downhills"
+      ],
+      "highlights": [
+        "Chiemseeblick",
+        "Winklmoosalm",
+        "Steinplatte",
+        "Möseralm",
+        "Durchkaseralm",
+        "Gletscherblickweg",
+        "Straubinger Haus",
+        "Hindenburghütte"
+      ],
+      "aidStations": [
+        {
+          "location": "Stoibenmöseralm",
+          "km": 11
+        },
+        {
+          "location": "Reit im Winkl",
+          "km": 20
+        },
+        {
+          "location": "Nattersbergalm",
+          "km": 32
+        },
+        {
+          "location": "Sonnenalm",
+          "km": 40
+        },
+        {
+          "location": "Durchkaseralm",
+          "km": 53
+        },
+        {
+          "location": "Hindenburghütte",
+          "km": 62
+        },
+        {
+          "location": "Gut Steinbach",
+          "km": 66
+        },
+        {
+          "location": "Zwerchenbergalm",
+          "km": 69
+        }
+      ],
+      "cutoff": [
+        {
+          "location": "Reit im Winkl",
+          "km": 20,
+          "time": "10:30",
+          "consequence": "DNF"
+        },
+        {
+          "location": "Parkplatz Seegatterl",
+          "km": 35,
+          "time": "13:00",
+          "consequence": "DNF"
+        },
+        {
+          "location": "Hindenburghütte",
+          "km": 61,
+          "time": "17:30",
+          "consequence": "DNF"
+        }
+      ],
+      "map": {
+        "status": "Outdooractive_embed_on_official_details_page",
+        "url": "https://mountainman.de/trailrunning-events/alps/reit-im-winkl/streckendetails-reit-im-winkl/"
+      },
+      "elevationProfile": {
+        "status": "available_via_Outdooractive_embed",
+        "directUrl": null
+      },
+      "gpx": {
+        "officialDownloadControlPresent": true,
+        "binaryDownloaded": false,
+        "metadataInspected": false,
+        "restrictionNoticeFound": "No GPX-specific restriction notice identified in the reviewed organizer HTML; metadata not inspected.",
+        "permissionStatus": "not_granted",
+        "appPolicy": "block_all_file_operations_and_link_pending_separate_permission"
+      },
+      "sourceIds": [
+        "event-overview-reit",
+        "route-details-reit"
+      ]
+    },
+    {
+      "routeId": "reit-xl-52-2000-2027",
+      "eventId": "mountainman-reit-im-winkl-2027",
+      "name": "XL-Ultratrail",
+      "date": "2027-09-25",
+      "distanceKm": 52,
+      "elevationGainM": 2000,
+      "startTime": "07:00",
+      "finishCutoff": "20:00",
+      "timeLimitHours": 13,
+      "independentSummary": "Die Route steigt zur Winklmoosalm, quert Bergwiesen nach Österreich zur Möseralm und führt über Durchkaseralm, Gletscherblickweg, Straubinger Haus, Hemmersuppenalm und Hindenburghütte. Über die Klausenbachklamm geht es zurück ins Ziel.",
+      "terrain": [
+        "Bergwiesen",
+        "Singletrails",
+        "Almwege",
+        "Wurzelwege",
+        "Downhills"
+      ],
+      "highlights": [
+        "Winklmoosalm",
+        "Möseralm",
+        "Steinplatte",
+        "Durchkaseralm",
+        "Gletscherblickweg",
+        "Straubinger Haus",
+        "Hindenburghütte",
+        "Klausenbachklamm"
+      ],
+      "aidStations": [
+        {
+          "location": "Nattersbergalm",
+          "km": 12
+        },
+        {
+          "location": "Sonnenalm",
+          "km": 20
+        },
+        {
+          "location": "Durchkaseralm",
+          "km": 33
+        },
+        {
+          "location": "Hindenburghütte",
+          "km": 42
+        },
+        {
+          "location": "Gut Steinbach",
+          "km": 46
+        },
+        {
+          "location": "Zwerchenbergalm",
+          "km": 49
+        }
+      ],
+      "cutoff": [
+        {
+          "location": "Parkplatz Seegatterl",
+          "km": 15,
+          "time": "13:00",
+          "consequence": "DNF"
+        },
+        {
+          "location": "Hindenburghütte",
+          "km": 40,
+          "time": "17:30",
+          "consequence": "DNF"
+        }
+      ],
+      "map": {
+        "status": "Outdooractive_embed_on_official_details_page",
+        "url": "https://mountainman.de/trailrunning-events/alps/reit-im-winkl/streckendetails-reit-im-winkl/"
+      },
+      "elevationProfile": {
+        "status": "available_via_Outdooractive_embed",
+        "directUrl": null
+      },
+      "gpx": {
+        "officialDownloadControlPresent": true,
+        "binaryDownloaded": false,
+        "metadataInspected": false,
+        "restrictionNoticeFound": "No GPX-specific restriction notice identified in the reviewed organizer HTML; metadata not inspected.",
+        "permissionStatus": "not_granted",
+        "appPolicy": "block_all_file_operations_and_link_pending_separate_permission"
+      },
+      "sourceIds": [
+        "event-overview-reit",
+        "route-details-reit"
+      ]
+    },
+    {
+      "routeId": "reit-l-40-1500-2027",
+      "eventId": "mountainman-reit-im-winkl-2027",
+      "name": "L-Trail",
+      "date": "2027-09-25",
+      "distanceKm": 40,
+      "elevationGainM": 1500,
+      "startTime": "07:00",
+      "finishCutoff": "20:00",
+      "timeLimitHours": 13,
+      "independentSummary": "Vom Märchenwald geht es über Gut Steinbach und Nattersbergalm zum Seegatterl. Danach steigt die Strecke über Wurzelwege zur Durchkaseralm und folgt dem aussichtsreichen Gletscherblickweg zum Straubinger Haus. Über Hemmersuppenalm, Hindenburghütte und Klausenbachklamm geht es zurück.",
+      "terrain": [
+        "Waldwege",
+        "Wurzelpfade",
+        "Almwege",
+        "Höhenwege",
+        "Downhills"
+      ],
+      "highlights": [
+        "Märchenwald",
+        "Gut Steinbach",
+        "Nattersbergalm",
+        "Durchkaseralm",
+        "Gletscherblickweg",
+        "Straubinger Haus",
+        "Hemmersuppenalm",
+        "Hindenburghütte",
+        "Klausenbachklamm"
+      ],
+      "aidStations": [
+        {
+          "location": "Nattersbergalm",
+          "km": 11
+        },
+        {
+          "location": "Durchkaseralm",
+          "km": 20
+        },
+        {
+          "location": "Hindenburghütte",
+          "km": 29
+        },
+        {
+          "location": "Gut Steinbach",
+          "km": 33
+        }
+      ],
+      "cutoff": [
+        {
+          "location": "Hindenburghütte",
+          "km": 30,
+          "time": "17:30",
+          "consequence": "DNF"
+        }
+      ],
+      "map": {
+        "status": "Outdooractive_embed_on_official_details_page",
+        "url": "https://mountainman.de/trailrunning-events/alps/reit-im-winkl/streckendetails-reit-im-winkl/"
+      },
+      "elevationProfile": {
+        "status": "available_via_Outdooractive_embed",
+        "directUrl": null
+      },
+      "gpx": {
+        "officialDownloadControlPresent": true,
+        "binaryDownloaded": false,
+        "metadataInspected": false,
+        "restrictionNoticeFound": "No GPX-specific restriction notice identified in the reviewed organizer HTML; metadata not inspected.",
+        "permissionStatus": "not_granted",
+        "appPolicy": "block_all_file_operations_and_link_pending_separate_permission"
+      },
+      "sourceIds": [
+        "event-overview-reit",
+        "route-details-reit"
+      ]
+    },
+    {
+      "routeId": "reit-m-26-900-2027",
+      "eventId": "mountainman-reit-im-winkl-2027",
+      "name": "M-Trail by Altra",
+      "date": "2027-09-25",
+      "distanceKm": 26,
+      "elevationGainM": 900,
+      "startTime": "09:00",
+      "finishCutoff": "20:00",
+      "timeLimitHours": 11,
+      "independentSummary": "Durch den Märchenwald und vorbei an Gut Steinbach führt die Strecke zur Hemmersuppenalm. Dort folgt eine aussichtsreiche Hochalm-Schleife, bevor es wieder ins Tal und über einen letzten Anstieg zur Zwerchenbergalm geht. Trails führen von dort zurück ins Ziel.",
+      "terrain": [
+        "Waldwege",
+        "Almwege",
+        "Bergpfade",
+        "Downhills"
+      ],
+      "highlights": [
+        "Märchenwald",
+        "Gut Steinbach",
+        "Hemmersuppenalm",
+        "Zwerchenbergalm"
+      ],
+      "aidStations": [
+        {
+          "location": "Hindenburghütte",
+          "km": 13
+        },
+        {
+          "location": "Gut Steinbach",
+          "km": 17
+        },
+        {
+          "location": "Zwerchenbergalm",
+          "km": 20
+        }
+      ],
+      "cutoff": {
+        "status": "none"
+      },
+      "variants": [
+        {
+          "type": "with_dog",
+          "distanceKm": 26,
+          "elevationGainM": 938,
+          "startTime": "09:30",
+          "sameGeometry": true,
+          "note": "Official Dogs-Trail page gives 938+ hm; regular overview gives 900+ hm."
+        }
+      ],
+      "map": {
+        "status": "Outdooractive_embed_on_official_details_page",
+        "url": "https://mountainman.de/trailrunning-events/alps/reit-im-winkl/streckendetails-reit-im-winkl/"
+      },
+      "elevationProfile": {
+        "status": "available_via_Outdooractive_embed",
+        "directUrl": null
+      },
+      "gpx": {
+        "officialDownloadControlPresent": true,
+        "binaryDownloaded": false,
+        "metadataInspected": false,
+        "restrictionNoticeFound": "No GPX-specific restriction notice identified in the reviewed organizer HTML; metadata not inspected.",
+        "permissionStatus": "not_granted",
+        "appPolicy": "block_all_file_operations_and_link_pending_separate_permission"
+      },
+      "sourceIds": [
+        "event-overview-reit",
+        "route-details-reit",
+        "dogs-reit"
+      ]
+    },
+    {
+      "routeId": "reit-s-11-300-2027",
+      "eventId": "mountainman-reit-im-winkl-2027",
+      "name": "S-Trail",
+      "date": "2027-09-25",
+      "distanceKm": 11,
+      "elevationGainM": 300,
+      "startTime": "10:00",
+      "finishCutoff": "20:00",
+      "timeLimitHours": 10,
+      "independentSummary": "Vom Start geht es durch den Märchenwald und am Gut Steinbach vorbei hinauf zur Zwerchenbergalm. Über Weiden, Waldwege und die Klausenbachklamm führt der Kurs zurück nach Reit im Winkl.",
+      "terrain": [
+        "Waldwege",
+        "Weiden",
+        "Bergpfade",
+        "Schluchtwege"
+      ],
+      "highlights": [
+        "Märchenwald",
+        "Gut Steinbach",
+        "Zwerchenbergalm",
+        "Klausenbachklamm"
+      ],
+      "aidStations": [
+        {
+          "location": "Gut Steinbach",
+          "km": 3
+        },
+        {
+          "location": "Zwerchenbergalm",
+          "km": 6
+        }
+      ],
+      "cutoff": {
+        "status": "none"
+      },
+      "variants": [
+        {
+          "type": "with_dog",
+          "distanceKm": 11,
+          "elevationGainM": 304,
+          "startTime": "10:30",
+          "sameGeometry": true,
+          "note": "Official Dogs-Trail page gives 304+ hm; regular overview gives 300+ hm."
+        }
+      ],
+      "map": {
+        "status": "Outdooractive_embed_on_official_details_page",
+        "url": "https://mountainman.de/trailrunning-events/alps/reit-im-winkl/streckendetails-reit-im-winkl/"
+      },
+      "elevationProfile": {
+        "status": "available_via_Outdooractive_embed",
+        "directUrl": null
+      },
+      "gpx": {
+        "officialDownloadControlPresent": true,
+        "binaryDownloaded": false,
+        "metadataInspected": false,
+        "restrictionNoticeFound": "No GPX-specific restriction notice identified in the reviewed organizer HTML; metadata not inspected.",
+        "permissionStatus": "not_granted",
+        "appPolicy": "block_all_file_operations_and_link_pending_separate_permission"
+      },
+      "sourceIds": [
+        "event-overview-reit",
+        "route-details-reit",
+        "dogs-reit"
+      ]
+    },
+    {
+      "routeId": "reit-kids-0-4-2027",
+      "eventId": "mountainman-reit-im-winkl-2027",
+      "name": "Kids-Trail",
+      "date": "2027-09-24",
+      "distanceKm": 0.4,
+      "elevationGainM": null,
+      "startTime": "17:00",
+      "durationMinutes": 30,
+      "independentSummary": "Kinder-Rundkurs am Sportplatz und teilweise über den Wiesenhügel für Kinder von etwa 3 bis 12 Jahren. Innerhalb von 30 Minuten können beliebig viele Runden gelaufen werden; keine Zeitmessung.",
+      "terrain": [
+        "Sportplatz",
+        "Wiesenhügel"
+      ],
+      "highlights": [
+        "kindgerechter Rundkurs",
+        "Finisher-Medaille"
+      ],
+      "aidStations": [],
+      "cutoff": {
+        "status": "time_window_based",
+        "durationMinutes": 30
+      },
+      "map": {
+        "status": "not_published"
+      },
+      "elevationProfile": {
+        "status": "not_published"
+      },
+      "gpx": {
+        "officialDownloadControlPresent": false,
+        "binaryDownloaded": false,
+        "metadataInspected": false,
+        "permissionStatus": "not_granted",
+        "appPolicy": "no_gpx_function"
+      },
+      "sourceIds": [
+        "event-overview-reit",
+        "kids-reit"
+      ]
+    }
+  ],
+  "raceFormats": [
+    {
+      "eventId": "mountainman-winterloop-reit-im-winkl-2027",
+      "name": "12H Extrem",
+      "distanceType": "variable_loops",
+      "start": "09:00",
+      "end": "21:00"
+    },
+    {
+      "eventId": "mountainman-winterloop-reit-im-winkl-2027",
+      "name": "6H Challenge",
+      "distanceType": "variable_loops",
+      "start": "12:00",
+      "end": "18:00"
+    },
+    {
+      "eventId": "mountainman-winterloop-reit-im-winkl-2027",
+      "name": "3H Moonlight",
+      "distanceType": "variable_loops",
+      "start": "17:00",
+      "end": "20:00"
+    },
+    {
+      "eventId": "mountainman-winterloop-reit-im-winkl-2027",
+      "name": "Marathon",
+      "distanceKm": 45,
+      "elevationGainM": 660,
+      "loops": 6
+    },
+    {
+      "eventId": "mountainman-winterloop-reit-im-winkl-2027",
+      "name": "Half Marathon",
+      "distanceKm": 22.5,
+      "elevationGainM": 330,
+      "loops": 3
+    },
+    {
+      "eventId": "mountainman-dogs-winterloop-reit-im-winkl-2027",
+      "name": "3H Dogs-Winterloop",
+      "distanceType": "variable_loops",
+      "loopDistanceKm": 7.5,
+      "loopElevationGainM": 110,
+      "start": "08:00",
+      "end": "11:00"
+    },
+    {
+      "eventId": "der-watz-mountainman",
+      "name": "WATZ Ultimate",
+      "distanceKm": 111,
+      "elevationGainM": 5300,
+      "stages": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "eventId": "der-watz-mountainman",
+      "name": "WATZ Double",
+      "distanceKm": 57,
+      "elevationGainM": 2500,
+      "stages": [
+        3,
+        4
+      ]
+    },
+    {
+      "eventId": "der-watz-mountainman",
+      "name": "WATZ Final",
+      "distanceKm": 25,
+      "elevationGainM": 1300,
+      "stages": [
+        4
+      ]
+    },
+    {
+      "eventId": "mountainman-nikolaus-trail-pommelsbrunn-2026",
+      "name": "Double Challenge",
+      "distanceType": "combination",
+      "note": "Saturday XL or L plus Sunday M or S; no additional route geometry."
+    }
+  ],
+  "unresolved": [
+    "Existing catalog event mountainman currently has Nesselwang 2027 dates but no routes. The six Nesselwang route records are prepared separately; event-dates.json is not changed.",
+    "Existing catalog event der-watz-mountainman already has three package route IDs. Those IDs are retained; four stage records are additional research records, not live replacements.",
+    "Existing catalog event mountain-man-winter has 2026 fallback routes 22 km / 650 hm and 31 km / 750 hm. The 2027 Winterloop is a 7.5 km loop. No automatic overwrite or event-identity merge is made until organizer confirmation.",
+    "Pommelsbrunn 2026, Grossarltal 2027, Reit im Winkl 2027 and Dogs-Winterloop 2027 do not have separate current event records in main event-dates.json; no live event entries were added.",
+    "Nesselwang M-Trail is 22 km / 1,300+ hm on the overview but 21 km on the dedicated route detail page. Both are preserved; 21 km is the detail-page value.",
+    "Nesselwang XL overview lists 3 aid stations but dedicated route details list 5. Detailed station list is retained and discrepancy flagged.",
+    "Reit im Winkl Dogs-Trail lists 938 hm for M and 304 hm for S while the main event overview lists 900+ and 300+ hm; same route geometry is stated by organizer, but the numerical differences remain open.",
+    "Grossarltal route detail introduction says 6 routes from 10–68 km, while event overview and XXL detail list 70 km. The 70 km value is retained with conflict flagged.",
+    "WATZ Stage 1: dedicated page says 1,300 hm; main route overview says 1,250+ hm.",
+    "WATZ Stage 3: dedicated stage page says 32 km / 1,200 hm; route overview says 28 km / 1,110+ hm. The 32 km page value is consistent with the 57 km WATZ Double package when combined with Stage 4 at 25 km.",
+    "WATZ Stage 4: route overview says 25 km / 1,250 hm; WATZ Final package says 25 km / 1,300+ hm. The linked stage-4 page returned 404 on 2026-11-28.",
+    "No GPX binary was downloaded for any route, so GPX metadata and embedded file-level rights notices were not inspected. Accessible organizer HTML pages did not show an explicit GPX restriction notice, but all app GPX operations remain blocked pending explicit permission."
+  ],
+  "integration": {
+    "researchFilesCreated": true,
+    "eventDatesChanged": false,
+    "runtimeDataChanged": false,
+    "protectedAssetsCopied": false,
+    "gpxFilesDownloaded": false,
+    "gpxOperationsEnabled": false,
+    "appPublished": false
+  }
+}
