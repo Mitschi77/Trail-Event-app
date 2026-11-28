@@ -1,0 +1,244 @@
+{
+  "schemaVersion": 1,
+  "organizerId": "marathon-des-sables-waa",
+  "organizerName": "Marathon des Sables / WAA",
+  "bundledEvents": [
+    {
+      "eventId": "marathon-de-sables",
+      "eventName": "MDS Ultra 2027",
+      "edition": 2027,
+      "dates": [
+        "2027-01-08",
+        "2027-01-13"
+      ],
+      "sourceUrl": "https://marathondessables.com/en/evenement/mds-ultra-2027",
+      "catalogStatus": "existing_catalog_event"
+    },
+    {
+      "eventId": null,
+      "eventName": "MDS 120 Atlantic Coast 2027",
+      "edition": 2027,
+      "dates": [
+        "2027-01-23",
+        "2027-01-30"
+      ],
+      "sourceUrl": "https://marathondessables.com/en/evenement/mds-120-atlantic-coast-2027",
+      "catalogStatus": "not_found_in_event-dates.json"
+    },
+    {
+      "eventId": null,
+      "eventName": "MDS Legendary Sahara 2027",
+      "edition": 2027,
+      "dates": [
+        "2027-04-02",
+        "2027-04-12"
+      ],
+      "sourceUrl": "https://marathondessables.com/en/event/mds-legendary-2027",
+      "catalogStatus": "not_found_in_event-dates.json"
+    },
+    {
+      "eventId": null,
+      "eventName": "MDS 120 Cappadocia 2027",
+      "edition": 2027,
+      "dates": [
+        "2027-06-19",
+        "2027-06-26"
+      ],
+      "sourceUrl": "https://marathondessables.com/en/event/mds-120-cappadocia-2027",
+      "catalogStatus": "not_found_in_event-dates.json"
+    },
+    {
+      "eventId": null,
+      "eventName": "MDS Handi 2027",
+      "edition": 2027,
+      "dates": [
+        "2027-10-01",
+        "2027-10-09"
+      ],
+      "sourceUrl": "https://marathondessables.com/en/evenement/mds-handi-2027",
+      "catalogStatus": "not_found_in_event-dates.json"
+    },
+    {
+      "eventId": null,
+      "eventName": "MDS 120 Morocco 2027",
+      "edition": 2027,
+      "dates": [
+        "2027-10-01",
+        "2027-10-09"
+      ],
+      "sourceUrl": "https://marathondessables.com/en/event/mds-120-morocco-2027",
+      "catalogStatus": "not_found_in_event-dates.json"
+    },
+    {
+      "eventId": null,
+      "eventName": "MDS Royal Trek Morocco 2027",
+      "edition": 2027,
+      "dates": [
+        "2027-10-10",
+        "2027-10-19"
+      ],
+      "sourceUrl": "https://marathondessables.com/en/event/mds-royal-trek-morocco-2027",
+      "catalogStatus": "not_found_in_event-dates.json"
+    },
+    {
+      "eventId": null,
+      "eventName": "MDS 120 Jordan 2027",
+      "edition": 2027,
+      "dates": [
+        "2027-10-30",
+        "2027-11-06"
+      ],
+      "sourceUrl": "https://marathondessables.com/en/event/mds-120-jordan-2027",
+      "catalogStatus": "not_found_in_event-dates.json"
+    },
+    {
+      "eventId": null,
+      "eventName": "MDS Trek Peru 2027",
+      "edition": 2027,
+      "dates": [
+        "2027-11-27",
+        "2027-12-04"
+      ],
+      "sourceUrl": "https://marathondessables.com/en/evenement/mds-trek-perou-2027",
+      "catalogStatus": "not_found_in_event-dates.json"
+    },
+    {
+      "eventId": null,
+      "eventName": "MDS 120 Peru 2027",
+      "edition": 2027,
+      "dates": [
+        "2027-11-27",
+        "2027-12-04"
+      ],
+      "sourceUrl": "https://marathondessables.com/en/event/mds-120-perou",
+      "catalogStatus": "not_found_in_event-dates.json"
+    },
+    {
+      "eventId": null,
+      "eventName": "MDS Crazy Loops La Rosière 2027",
+      "edition": 2027,
+      "dates": [
+        "2027-07-16",
+        "2027-07-18"
+      ],
+      "sourceUrl": "https://marathondessables.com/en/events",
+      "catalogStatus": "official_calendar_entry_detail_page_stale_2026"
+    },
+    {
+      "eventId": null,
+      "eventName": "MDS Crazy Loops Courchevel 2027",
+      "edition": 2027,
+      "dates": [
+        "2027-07-30",
+        "2027-08-01"
+      ],
+      "sourceUrl": "https://marathondessables.com/en/events",
+      "catalogStatus": "official_calendar_entry_detail_page_stale_2026"
+    }
+  ],
+  "officialContact": {
+    "email": "contact@marathondessables.com",
+    "source": "https://marathondessables.com/fr/politiques-de-traitement-des-donnees",
+    "verification": "published in the official MDS data-processing/privacy policy contact section",
+    "authority": "The address is officially published, but the rights/licensing department and the legal rights holder for all event brands still need confirmation."
+  },
+  "legalEntityNote": "Current official privacy policy identifies WHAT AN ADVENTURE (WAA) as data controller; older official terms mention ATLANTIDE ORGANISATION INTERNATIONALE. The supplement asks which entity owns or administers the requested rights and can authorize each event.",
+  "emailHistory": [
+    {
+      "date": "2026-11-19T13:36:58Z",
+      "type": "initial_request",
+      "recipient": "contact@marathondessables.com",
+      "subject": "Demande d’autorisation d’utilisation de contenus officiels – application trail",
+      "status": "sent_copy_found",
+      "deliveryConfirmed": false
+    },
+    {
+      "date": "2026-11-24",
+      "type": "consolidated_supplement",
+      "recipient": "contact@marathondessables.com",
+      "subject": "Complément à ma demande du 19 novembre – droits d’utilisation et GPX, événements MDS 2027",
+      "status": "submitted",
+      "sentCopyFiled": true,
+      "deliveryConfirmed": false,
+      "messageIdHeader": "<179548468913.57.854853149870390945@me.com>"
+    }
+  ],
+  "preSendMailboxCheck": {
+    "sentFolderSearched": true,
+    "priorRequestFound": true,
+    "duplicateInitialRequestSent": false,
+    "inboxSearched": true,
+    "noReplyFound": true,
+    "alternateOfficialAddressChecked": "contact@halfmarathondessables.com",
+    "noReplyFromAlternateAddress": true
+  },
+  "requestedUseCategories": [
+    "official_route_descriptions_verbatim",
+    "shortened_or_edited_official_route_descriptions",
+    "independent_factual_summaries_from_permitted_information",
+    "route_facts_distance_elevation_start_finish_cutoffs_aid",
+    "maps_and_route_geometry",
+    "elevation_profiles",
+    "gpx_file_fetch_load_import_store_process_and_in_app_map_display",
+    "separate_link_to_official_gpx_download_page",
+    "event_names_and_event_brands",
+    "logos_and_word_image_marks",
+    "symbols_icons_pictograms_emblems_mascots",
+    "event_specific_graphics_and_visual_design"
+  ],
+  "gpxQuestions": {
+    "restrictionNoticeAsked": true,
+    "exactNoticeTextAndLocationAsked": true,
+    "affectedRouteAsked": true,
+    "effectsOnFetchLoadImportStoreProcessMapDisplayAndDownloadAsked": true,
+    "separateOfficialLinkPermissionAsked": true,
+    "failClosedPolicyExplained": true
+  },
+  "projectPhase": {
+    "current": "non-commercial independent information app under development",
+    "noOfficialAffiliationClaimed": true,
+    "commercialUseIncludedInCurrentRequest": false,
+    "futureCommercialUseAskedSeparately": true,
+    "futureCommercialPermissionStatus": "pending_separate_license"
+  },
+  "mediaAndBranding": {
+    "mediaPackRequested": true,
+    "logoFilesRequested": true,
+    "brandGuidelinesRequested": true,
+    "usageGuidanceRequested": [
+      "size",
+      "color",
+      "placement",
+      "attribution",
+      "term",
+      "permitted_use",
+      "excluded_materials",
+      "conditions"
+    ]
+  },
+  "response": {
+    "status": "pending",
+    "routeSpecificPermissions": [],
+    "restrictions": [],
+    "commercialLicenseTerms": null
+  },
+  "gpxEnforcement": {
+    "defaultDeny": true,
+    "allMdsRoutesCurrentlyBlocked": true,
+    "fileFetchLoadImportStoreProcessMapDisplayDownloadAllowed": false,
+    "officialPageLinkAllowed": false,
+    "reason": "No written route-specific permission. No public GPX download page found on the checked official event pages. No binary or metadata inspected."
+  },
+  "repository": {
+    "routeResearchFile": "research/route-descriptions/marathon-des-sables-2027.json",
+    "gpxRightsRegistryUpdatedInDependentBranch": true,
+    "gpxRightsRegistryBranch": "research/marathon-des-sables-gpx-deny-2026-11-24",
+    "explicitCatalogRouteIds": [
+      "mds-ultra-100-570",
+      "mds-ultra-miles-164-700"
+    ],
+    "candidateEventsCoveredByDefaultDeny": 11,
+    "liveEventDatesChanged": false,
+    "appPublished": false
+  }
+}
