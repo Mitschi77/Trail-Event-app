@@ -1,0 +1,169 @@
+{
+  "schemaVersion": 1,
+  "updatedAt": "2026-11-26",
+  "eventId": "caven-run-2027-preview",
+  "eventName": "Čaven Run",
+  "jointOrganisers": [
+    "Triatlon klub GPS",
+    "ASD SentieroUNO"
+  ],
+  "officialEventWebsite": "https://www.caven.run/sl/",
+  "officialContact": {
+    "email": "info@caven.run",
+    "source": "https://www.caven.run/sl/",
+    "verified": true,
+    "notes": "Published in the official event page at the questions/contact section. No separate Triatlon klub GPS email was found; no address was guessed.",
+    "emailStatus": "mailbox auto-discards incoming email; do not resend",
+    "autoResponseReceivedAt": "2026-11-26T01:24:27Z",
+    "autoResponseSummary": "The official mailbox replied that the email is automatically discarded and directs correspondents to the S1 Trail contact page and official WhatsApp assistant.",
+    "alternativeOfficialChannels": [
+      "https://www.s1trail.com/contact/",
+      "https://www.s1trail.com/sl/contact/",
+      "https://wa.me/39040411341"
+    ],
+    "rightsContactStatus": "open; no usable direct email for Triatlon klub GPS verified"
+  },
+  "organiserEvidence": {
+    "jointOrganisersSource": "https://www.caven.run/sl/",
+    "rulebookSource": "https://www.caven.run/sl/",
+    "lines": "2026 rules name Triatlon klub GPS and ASD SentieroUNO as organisers; official page lists both organisations and their addresses."
+  },
+  "eventScope": {
+    "historical2026Routes": [
+      "Čaven Trail 18 km / 1,354 m D+",
+      "Čaven Vertikal 4.3 km / 1,081 m D+",
+      "Čaven Vrh 23 km / 1,535 m D+"
+    ],
+    "future2027Preview": [
+      "Čaven Ultra 60 km announced, details pending",
+      "new Čaven Vrh announced, details pending"
+    ],
+    "eventDate2027": null
+  },
+  "correspondence": [
+    {
+      "date": "2026-11-26",
+      "type": "joint_organiser_rights_request",
+      "recipient": "info@caven.run",
+      "status": "auto_discarded_by_mail_system",
+      "subject": "Permission request – Čaven Run 2027 – independent non-commercial running app",
+      "messageIdHeader": "<179565625745.77.14680370253005531148@me.com>",
+      "deliveryConfirmed": false,
+      "responseFound": false,
+      "requestScope": "Single bundled request for both named joint organisers; asked event contact to forward to all relevant rights holders.",
+      "autoResponseAt": "2026-11-26T01:24:27Z",
+      "autoResponseMessage": "This email is automatically discarded by the system. Use the official contact channels at https://www.s1trail.com/contact/ or https://wa.me/39040411341.",
+      "humanRightsReplyFound": false
+    }
+  ],
+  "requestedMaterialCategories": [
+    "official_route_descriptions_verbatim",
+    "shortened_or_editorially_edited_official_route_descriptions",
+    "independent_factual_summaries_based_on_permitted_information",
+    "route_facts_distance_and_elevation",
+    "maps_and_route_lines",
+    "elevation_profiles",
+    "gpx_files_embedded_or_displayed_in_app_and_user_download",
+    "separate_link_to_official_gpx_download_page",
+    "event_names_and_event_marks",
+    "logos_and_word_image_marks",
+    "symbols_icons_pictograms_emblems_mascots",
+    "other_event_specific_graphics_and_visual_design"
+  ],
+  "gpxFileOperationsAskedSeparately": [
+    "access_or_fetch",
+    "load_or_import",
+    "store",
+    "process_or_analyse",
+    "display_on_app_map",
+    "offer_for_user_download",
+    "link_only_to_official_gpx_page"
+  ],
+  "projectPhase": {
+    "current": "non-commercial independent information app under development",
+    "noOfficialAffiliationClaimed": true,
+    "futureCommercialUseAskedSeparately": true,
+    "commercialPermissionGranted": false,
+    "separateFutureLicenceRequired": true
+  },
+  "mediaAndBranding": {
+    "mediaKitRequested": true,
+    "logoFilesRequested": true,
+    "brandGuidelinesRequested": true,
+    "usageRulesRequested": [
+      "size",
+      "colour",
+      "placement",
+      "clear_space",
+      "attribution",
+      "source_credit",
+      "duration",
+      "permitted_contexts",
+      "excluded_materials",
+      "conditional_uses"
+    ]
+  },
+  "gpxProtection": {
+    "defaultPolicy": "deny",
+    "routes": [
+      {
+        "routeId": "caven-trail-18-1354-2026",
+        "permissionStatus": "not_granted",
+        "restrictionNoticeStatus": "no explicit notice found in accessible official page text",
+        "officialRoutePageLinkStoredAsSource": true,
+        "officialGpxLink": false
+      },
+      {
+        "routeId": "caven-vertikal-4-3-1081-2026",
+        "permissionStatus": "not_granted",
+        "restrictionNoticeStatus": "no explicit notice found in accessible official page text",
+        "officialRoutePageLinkStoredAsSource": true,
+        "officialGpxLink": false
+      },
+      {
+        "routeId": "caven-vrh-23-1535-2026",
+        "permissionStatus": "not_granted",
+        "restrictionNoticeStatus": "no explicit notice found in accessible official page text",
+        "officialRoutePageLinkStoredAsSource": true,
+        "officialGpxLink": false
+      },
+      {
+        "routeId": "caven-ultra-60-2027",
+        "permissionStatus": "not_granted",
+        "restrictionNoticeStatus": "route not yet published",
+        "officialGpxLink": false
+      },
+      {
+        "routeId": "caven-vrh-2027",
+        "permissionStatus": "not_granted",
+        "restrictionNoticeStatus": "route not yet published",
+        "officialGpxLink": false
+      }
+    ],
+    "appMustBlock": [
+      "fetch",
+      "load",
+      "import",
+      "store",
+      "process",
+      "in_app_map_display",
+      "user_download"
+    ],
+    "officialGpxPageLinkAllowed": false,
+    "appMessage": "GPX gesperrt – keine ausdrückliche Freigabe dokumentiert; kein Download möglich.",
+    "metadataInspected": false,
+    "binaryDownloaded": false
+  },
+  "response": {
+    "status": "automatic_discard_notice_only; no substantive rights response",
+    "routeSpecificPermissions": [],
+    "restrictionsConfirmedByOrganiser": []
+  },
+  "integration": {
+    "liveEventDatesChanged": false,
+    "appDataChanged": false,
+    "gpxRightsRuntimeChanged": false,
+    "appPublished": false
+  },
+  "rightsContactStatus": "open; use official contact page/WhatsApp; no guessed Triatlon klub GPS email"
+}
