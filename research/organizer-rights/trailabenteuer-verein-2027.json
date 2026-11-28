@@ -1,0 +1,264 @@
+{
+  "schemaVersion": 1,
+  "organizerId": "trailabenteuer-verein",
+  "organizerName": "Trailabenteuer – Verein für Outdoor- und Natursport",
+  "country": "Austria",
+  "officialContact": {
+    "email": "office@trailabenteuer.com",
+    "source": "https://donautrail.at/impressum/",
+    "verifiedFromOfficialImprint": true
+  },
+  "organizerWebsite": "https://trailabenteuer.com/",
+  "bundledEvents": [
+    {
+      "eventId": "donautrail",
+      "name": "Linz24 Donautrail",
+      "edition": 2027,
+      "date": "2027-03-13",
+      "datePermission": "explicitly_allowed",
+      "routeDataPermission": "denied_by_organizer"
+    },
+    {
+      "eventId": "sternsteintrail",
+      "name": "Sparkasse Sternsteintrail",
+      "edition": 2027,
+      "date": "2027-09-18",
+      "datePermission": "explicitly_allowed",
+      "routeDataPermission": "denied_by_organizer"
+    },
+    {
+      "eventId": "northtrails-hike-run",
+      "name": "Raiffeisen Northtrails Hike & Run",
+      "edition": 2027,
+      "date": "2027-05-22",
+      "datePermission": "explicitly_allowed",
+      "routeDataPermission": "denied_by_organizer"
+    },
+    {
+      "eventId": null,
+      "name": "SST Winterchallenge",
+      "edition": "2026/2027",
+      "datePermission": "pending_explicit_confirmation"
+    },
+    {
+      "eventId": null,
+      "name": "TRAUN-UP / TRAUN-UP EXTREM",
+      "edition": 2027,
+      "date": "not published; registration information says from mid-December 2026",
+      "datePermission": "not_confirmed",
+      "routeDataPermission": "not_confirmed"
+    },
+    {
+      "eventId": null,
+      "name": "Abenteuer Donausteig",
+      "edition": "by request",
+      "date": "no fixed event date",
+      "datePermission": "not_applicable_to_fixed_event_catalog",
+      "routeDataPermission": "not_confirmed"
+    }
+  ],
+  "officialSources": [
+    {
+      "url": "https://trailabenteuer.com/",
+      "type": "organizer_homepage",
+      "verified": true,
+      "notes": "Lists Sternsteintrail, Donautrail, Traun-UP and Northtrails Hike & Run."
+    },
+    {
+      "url": "https://donautrail.at/",
+      "type": "official_event_page",
+      "verified": true,
+      "notes": "Confirms Donautrail date 13 March 2027."
+    },
+    {
+      "url": "https://donautrail.at/impressum/",
+      "type": "official_imprint_and_contact",
+      "verified": true,
+      "notes": "Publishes office@trailabenteuer.com and copyright/database storage restriction."
+    },
+    {
+      "url": "https://sternsteintrail.at/",
+      "type": "official_event_page",
+      "verified": true,
+      "notes": "Confirms Sternsteintrail 18 September 2027 and Winterchallenge dates."
+    },
+    {
+      "url": "https://www.northtrails.run/",
+      "type": "official_event_page",
+      "verified": true,
+      "notes": "Confirms Northtrails Hike & Run 22 May 2027."
+    },
+    {
+      "url": "https://trailabenteuer.com/traunup/",
+      "type": "official_event_page",
+      "verified": true,
+      "notes": "2027 registration information; no fixed date published."
+    },
+    {
+      "url": "https://trailabenteuer.com/abenteuer-donausteig/",
+      "type": "official_tour_offer",
+      "verified": true,
+      "notes": "Guided multi-day tour offer; dates by request."
+    },
+    {
+      "url": "https://donautrail.at/app-hike/",
+      "type": "official_participant_information",
+      "verified": true,
+      "notes": "Mentions GPX provision to registered participants; no public direct GPX URL inspected."
+    }
+  ],
+  "rightsResponse": {
+    "date": "2026-11-24 09:52",
+    "sender": "Christoph <office@trailabenteuer.com>",
+    "evidence": "Quoted in user's sent reply dated 2026-11-24; no separate matching inbox item found.",
+    "exactShortQuote": "Streckdaten dürfen ausnahmslos nicht hinterlegt werden.",
+    "permitted": "For Donautrail, Sternsteintrail and Northtrails Hike & Run the organizer permits recording the event date.",
+    "denied": "Route data may not be stored for those three events.",
+    "reason": "Organizer cites ongoing issues with landowners and a deliberately conservative approach."
+  },
+  "officialCopyrightNotice": {
+    "source": "https://donautrail.at/impressum/",
+    "meaning": "Website content, layout and design are protected; use of all content, especially storage in databases, reproduction and commercial use, is prohibited or requires prior written permission."
+  },
+  "requestedUseCategories": [
+    {
+      "id": 1,
+      "category": "official_route_descriptions_verbatim",
+      "status": "denied for the three named events under blanket route-data refusal; other offers pending"
+    },
+    {
+      "id": 2,
+      "category": "shortened_or_editorially_edited_route_descriptions",
+      "status": "denied for the three named events; other offers pending"
+    },
+    {
+      "id": 3,
+      "category": "independent_factual_summaries_from_permitted_information",
+      "status": "denied for the three named events; other offers pending"
+    },
+    {
+      "id": 4,
+      "category": "route_facts_distance_elevation_start_finish_cutoffs",
+      "status": "denied for the three named events; other offers pending"
+    },
+    {
+      "id": 5,
+      "category": "maps_and_route_geometry",
+      "status": "denied for the three named events; other offers pending"
+    },
+    {
+      "id": 6,
+      "category": "elevation_profiles",
+      "status": "denied for the three named events; other offers pending"
+    },
+    {
+      "id": 7,
+      "category": "gpx_file_fetch_load_import_store_process_map_display_and_user_download",
+      "status": "blocked under route-data denial; specific GPX interpretation requested"
+    },
+    {
+      "id": 8,
+      "category": "link_to_official_gpx_downloads",
+      "status": "not expressly permitted; fail closed pending clarification"
+    },
+    {
+      "id": 9,
+      "category": "event_names_and_event_brands",
+      "status": "date entry permitted for three named events; explicit name/brand scope pending"
+    },
+    {
+      "id": 10,
+      "category": "logos_and_word_or_device_marks",
+      "status": "not answered; no use"
+    },
+    {
+      "id": 11,
+      "category": "symbols_icons_pictograms_emblems_mascots",
+      "status": "not answered; no use"
+    },
+    {
+      "id": 12,
+      "category": "other_event_specific_graphics_and_visual_design",
+      "status": "not answered; no use"
+    }
+  ],
+  "projectPhase": {
+    "current": "independent non-commercial information app under development",
+    "noOfficialAffiliationClaimed": true,
+    "commercialUseIncluded": false,
+    "futureCommercialPermission": "not granted; separate permission requested"
+  },
+  "gpx": {
+    "fileOperations": {
+      "fetch": false,
+      "load": false,
+      "import": false,
+      "store": false,
+      "process": false,
+      "mapDisplay": false,
+      "userDownload": false
+    },
+    "linkPermission": "pending_explicit_confirmation",
+    "restrictionNotices": "No exact GPX notice or per-route restriction was supplied. Organizer's blanket route-data prohibition applies; official GPX link pages and GPX metadata were not inspected or downloaded.",
+    "binaryDownloaded": false,
+    "metadataInspected": false,
+    "failClosed": true
+  },
+  "emailHistory": [
+    {
+      "date": "2026-11-19",
+      "type": "initial_permission_request",
+      "to": "office@trailabenteuer.com",
+      "status": "sent",
+      "messageIdHeader": "<179509544199.57.3230901802133515264@me.com>"
+    },
+    {
+      "date": "2026-11-24",
+      "type": "organizer_reply",
+      "from": "office@trailabenteuer.com",
+      "status": "received_as_quoted_reply",
+      "quotedInSentReply": true
+    },
+    {
+      "date": "2026-11-24",
+      "type": "user_acknowledgement",
+      "status": "sent",
+      "sentCopyFiled": true,
+      "messageIdHeader": "<9F1FE0C6-34ED-4F49-9F65-302695B78546@icloud.com>"
+    },
+    {
+      "date": "2026-11-25",
+      "type": "itemised_clarification",
+      "to": "office@trailabenteuer.com",
+      "status": "submitted",
+      "sentCopyFiled": true,
+      "deliveryConfirmed": false,
+      "messageIdHeader": "<179557093171.119.7594153916133076115@me.com>"
+    }
+  ],
+  "response": {
+    "itemisedClarification": "pending",
+    "routeSpecificPermissions": [],
+    "restrictions": [
+      "No route data may be stored for Donautrail, Sternsteintrail and Northtrails Hike & Run."
+    ]
+  },
+  "appEnforcement": {
+    "defaultDeny": true,
+    "permittedDataForNamedEvents": [
+      "event date only"
+    ],
+    "routeDataBlocked": true,
+    "gpxFileOperationsBlocked": true,
+    "officialGpxLinkBlockedUntilSeparatePermission": true
+  },
+  "currentCatalog": {
+    "eventId": "donautrail",
+    "existingRouteEntryCount": 3,
+    "proposedDraftChange": "Remove all route entries and retain the permitted event period only; no live change has been made."
+  },
+  "integration": {
+    "mainCatalogChanged": false,
+    "appPublished": false
+  }
+}
