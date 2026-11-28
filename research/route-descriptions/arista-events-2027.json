@@ -1,0 +1,975 @@
+{
+  "schemaVersion": 1,
+  "checkedAt": "2026-11-23",
+  "organizer": {
+    "name": "Arista Eventos, S.L.",
+    "officialWebsite": "https://aristaeventos.es/",
+    "officialPortfolioPage": "https://aristaeventos.es/",
+    "officialContactEmail": "info@aristaeventos.com",
+    "contactSource": "Official Arista Eventos homepage; also event-specific official contact pages for Transgrancanaria and 3 Días Trail Ibiza."
+  },
+  "catalogCrossCheck": {
+    "eventIds": [
+      "transgrancanaria",
+      "3trail-ibiza"
+    ],
+    "transgrancanariaCurrentRoutes": [
+      {
+        "routeId": "classic-125km-125-6764",
+        "catalogDistanceKm": 125,
+        "elevationGainM": 6764,
+        "officialPageDistanceKm": 126,
+        "officialTechnicalFinishKm": 126,
+        "conflict": "Official 2027 route page and technical table state 126 km; homepage summary says 125 km. Keep current catalog value until organizer clarifies."
+      },
+      {
+        "routeId": "advanced-81km-81-4314",
+        "catalogDistanceKm": 81,
+        "elevationGainM": 4314,
+        "officialPageLabelKm": 82,
+        "officialTechnicalFinishKm": 81.7,
+        "conflict": "Official 2027 route page title/summary says 82 km; technical table finish is 81.7 km; homepage and current catalog label 81 km."
+      }
+    ],
+    "threeDaysIbizaCurrentRoutes": [
+      {
+        "routeId": "ultra-trail-73-5-2100",
+        "catalogDate": "2026-11-28",
+        "fallback": true,
+        "fallbackYear": 2026,
+        "status": "historical fallback only; do not promote to 2027"
+      }
+    ],
+    "duplicatePolicy": "All Transgrancanaria modalities belong to the existing transgrancanaria event. Stages is a composite format referencing four component routes, not four duplicate routes. 3 Días Trail Ibiza 2026 route details remain historical; no 2027 route object is created."
+  },
+  "events": [
+    {
+      "eventId": "transgrancanaria",
+      "name": "The North Face Transgrancanaria",
+      "edition": 2027,
+      "eventWindow": {
+        "officialHomepageStart": "2027-02-22",
+        "officialHomepageEnd": "2027-02-28",
+        "catalogStart": "2027-02-23",
+        "catalogEnd": "2027-02-27",
+        "raceDays": "2027-02-23/27",
+        "status": "official-event-confirmed-date-window-conflict"
+      },
+      "officialHomepage": "https://transgrancanaria.net/en/",
+      "officialOrganizerAnnouncement": "https://aristaeventos.es/the-north-face-transgrancanaria-2027-ya-tiene-fecha-oficial-del-24-al-28-de-febrero/",
+      "eventSummary": "Gran Canaria event week with point-to-point and mountain-trail races across the island. The official 2027 programme lists ten formats including a four-day Stages option.",
+      "routes": [
+        {
+          "key": "transgrancanaria-classic-2027",
+          "catalogRouteId": "classic-125km-125-6764",
+          "name": "Classic",
+          "date": "2027-02-26",
+          "start": {
+            "place": "Las Canteras, Las Palmas de Gran Canaria",
+            "time": "23:59"
+          },
+          "finish": "Maspalomas, Parque Sur",
+          "distanceKm": {
+            "officialRoutePage": 126,
+            "officialHomepageSummary": 125,
+            "technicalTableFinish": 126
+          },
+          "elevationGainM": 6764,
+          "elevationLossM": null,
+          "maxTime": "30 hours",
+          "description": "Lange Querung Gran Canarias von Las Canteras bis Maspalomas mit mehr als 6.700 Höhenmetern. Die Strecke führt über zahlreiche Kontroll- und Versorgungsorte im Inselinneren; die öffentliche Streckenbeschreibung betont die körperliche und mentale Ausdaueranforderung.",
+          "terrain": "Trail-/Berglauf; eine belastbare prozentuale Aufteilung nach Naturpfad, Schotter und Straße ist nicht veröffentlicht.",
+          "highlights": [
+            "Las Canteras",
+            "Arucas",
+            "Teror",
+            "Moya/Fontanales",
+            "Artenara",
+            "Tejeda",
+            "El Garañón",
+            "Tunte",
+            "Ayagaures",
+            "Maspalomas"
+          ],
+          "aidStations": [
+            {
+              "name": "Tenoya",
+              "km": 10.7,
+              "cutoff": "Saturday 02:00",
+              "externalAssistance": false,
+              "food": "Liquid-only: water, cola and salts"
+            },
+            {
+              "name": "Arucas",
+              "km": 19.3,
+              "cutoff": "Saturday 03:40",
+              "externalAssistance": true
+            },
+            {
+              "name": "Teror",
+              "km": 31.6,
+              "cutoff": "Saturday 06:10",
+              "externalAssistance": true
+            },
+            {
+              "name": "Moya / Fontanales",
+              "km": 43.1,
+              "cutoff": "Saturday 08:50",
+              "externalAssistance": true
+            },
+            {
+              "name": "El Hornillo",
+              "km": 52.7,
+              "cutoff": "Saturday 11:30",
+              "externalAssistance": false
+            },
+            {
+              "name": "Artenara",
+              "km": 66.8,
+              "cutoff": "Saturday 15:10",
+              "externalAssistance": true
+            },
+            {
+              "name": "Tejeda",
+              "km": 79.2,
+              "cutoff": "Saturday 18:00",
+              "externalAssistance": true
+            },
+            {
+              "name": "El Garañón Lodge",
+              "km": 90.8,
+              "cutoff": "Saturday 20:45",
+              "externalAssistance": true,
+              "lifeBag": true
+            },
+            {
+              "name": "Tunte",
+              "km": 98.4,
+              "cutoff": "Saturday 23:25",
+              "externalAssistance": true
+            },
+            {
+              "name": "Ayagaures",
+              "km": 112,
+              "cutoff": "Sunday 02:25",
+              "externalAssistance": false
+            },
+            {
+              "name": "Finish Maspalomas",
+              "km": 126,
+              "cutoff": "Sunday 06:00"
+            }
+          ],
+          "cutoffMeaning": "Checkpoint times are latest departure times, not arrival times.",
+          "elevationProfile": {
+            "available": true,
+            "editionLabel": "2027",
+            "officialPage": "https://transgrancanaria.net/en/classic-126km/",
+            "directImageUrl": null,
+            "status": "profile shown on official route page; not copied"
+          },
+          "map": {
+            "fullRouteMapUrl": null,
+            "checkpointMapLinks": true,
+            "status": "only individual checkpoint map links identified"
+          },
+          "gpx": {
+            "officialDownloadButton": true,
+            "officialPage": "https://transgrancanaria.net/en/classic-126km/",
+            "directUrlResolved": false,
+            "binaryDownloaded": false,
+            "metadataInspected": false,
+            "rights": "pending-explicit-permission"
+          },
+          "notes": [
+            "Official page states GPX is the preferred format for reading distance/elevation compared with KMZ.",
+            "No menu details were published for most stations in the inspected table.",
+            "External assistance is prohibited at Tenoya, El Hornillo and Ayagaures; life bags at Fontanales and El Garañón."
+          ]
+        },
+        {
+          "key": "transgrancanaria-advanced-2027",
+          "catalogRouteId": "advanced-81km-81-4314",
+          "name": "Advanced",
+          "date": "2027-02-27",
+          "start": {
+            "place": "Teror",
+            "time": "09:00"
+          },
+          "finish": "Maspalomas, Parque Sur",
+          "distanceKm": {
+            "officialRoutePageLabel": 82,
+            "technicalTableFinish": 81.7,
+            "homepageSummary": 81,
+            "catalog": 81
+          },
+          "elevationGainM": 4314,
+          "elevationLossM": 4873,
+          "maxTime": "21 hours",
+          "description": "Punkt-zu-Punkt-Trail von Teror nach Maspalomas. Der erste Teil führt durch das grünere Inselinnere mit Nublo Rural Park, Tejeda-Caldera und den Orten Artenara und Tejeda; der südliche Abschnitt wird deutlich trockener.",
+          "terrain": "Bergpfade und technische Trailabschnitte; genaue Untergrundanteile nicht veröffentlicht.",
+          "highlights": [
+            "Teror und Basilika Nuestra Señora del Pino",
+            "Nublo Rural Park",
+            "Caldera de Tejeda",
+            "Artenara",
+            "Tejeda",
+            "südliche Inselhänge",
+            "Maspalomas"
+          ],
+          "aidStations": [
+            {
+              "name": "Moya / Fontanales",
+              "km": 12.2,
+              "cutoff": "Saturday 11:55",
+              "externalAssistance": false
+            },
+            {
+              "name": "Artenara",
+              "km": 22.4,
+              "cutoff": "Saturday 14:30",
+              "externalAssistance": true
+            },
+            {
+              "name": "Tejeda",
+              "km": 34.8,
+              "cutoff": "Saturday 18:00",
+              "externalAssistance": true
+            },
+            {
+              "name": "El Garañón Lodge",
+              "km": 46.4,
+              "cutoff": "Saturday 20:45",
+              "externalAssistance": true,
+              "dropBag": true
+            },
+            {
+              "name": "Tunte",
+              "km": 55.3,
+              "cutoff": "Saturday 23:25",
+              "externalAssistance": true
+            },
+            {
+              "name": "Ayagaures",
+              "km": 66.9,
+              "cutoff": "Sunday 02:25",
+              "externalAssistance": false
+            },
+            {
+              "name": "Finish Maspalomas",
+              "km": 81.7,
+              "cutoff": "Sunday 06:00"
+            }
+          ],
+          "elevationProfile": {
+            "available": true,
+            "editionLabel": "2027",
+            "officialPage": "https://transgrancanaria.net/en/advanced-84km/",
+            "directImageUrl": null,
+            "status": "profile shown on official route page; not copied"
+          },
+          "map": {
+            "fullRouteMapUrl": null,
+            "checkpointMapLinks": true,
+            "status": "checkpoint map links shown; no full route map URL resolved"
+          },
+          "gpx": {
+            "officialDownloadButton": true,
+            "officialPage": "https://transgrancanaria.net/en/advanced-84km/",
+            "directUrlResolved": false,
+            "binaryDownloaded": false,
+            "metadataInspected": false,
+            "rights": "pending-explicit-permission"
+          },
+          "notes": [
+            "Technical table finish is 81.7 km, while route page headline says 82 km and homepage/catalog use 81 km.",
+            "External assistance is prohibited at Fontanales and Ayagaures.",
+            "Drop bag point at El Garañón."
+          ]
+        },
+        {
+          "key": "transgrancanaria-marathon-2027",
+          "catalogRouteId": null,
+          "name": "Marathon",
+          "date": "2027-02-26",
+          "start": {
+            "place": "Tejeda",
+            "time": "09:30"
+          },
+          "finish": "Maspalomas, Parque Sur",
+          "distanceKm": {
+            "officialRoutePage": 47,
+            "homepageSummary": 46,
+            "technicalTableFinish": 47
+          },
+          "elevationGainM": 1784,
+          "elevationLossM": 2800,
+          "maxTime": "11 hours",
+          "description": "Schnelle, aber zunächst anspruchsvolle Punkt-zu-Punkt-Strecke ab Tejeda. Nach dem Anstieg zum Inselhochpunkt folgt eine steile, technische Abfahrt über den La-Plata-Trail. Danach führen die Versorgungsorte Tunte und Ayagaures zu zwei weiteren sanfteren Anstiegen vor dem Ziel in Maspalomas.",
+          "terrain": "Technische Trailabfahrt und Bergpfade; genaue Oberflächenanteile nicht veröffentlicht.",
+          "highlights": [
+            "Tejeda",
+            "Inselhochpunkt",
+            "La Plata Trail",
+            "Tunte",
+            "Ayagaures",
+            "Maspalomas"
+          ],
+          "aidStations": [
+            {
+              "name": "El Garañón",
+              "km": 11.7,
+              "cutoff": "12:40 (wave-dependent)",
+              "externalAssistance": true
+            },
+            {
+              "name": "Tunte",
+              "km": 21.2,
+              "cutoff": "14:50 (wave-dependent)",
+              "externalAssistance": true
+            },
+            {
+              "name": "Ayagaures",
+              "km": 32.8,
+              "cutoff": "17:50 (wave-dependent)",
+              "externalAssistance": false
+            },
+            {
+              "name": "Finish Maspalomas",
+              "km": 47,
+              "cutoff": "20:50 (wave-dependent)"
+            }
+          ],
+          "cutoffNote": "Organizer states cut-off times vary by starting wave; published technical table lists +20-minute wave adjustments.",
+          "elevationProfile": {
+            "available": true,
+            "editionLabel": "2027",
+            "officialPage": "https://transgrancanaria.net/en/marathon-46km/",
+            "directImageUrl": null,
+            "status": "profile shown on official route page; not copied"
+          },
+          "map": {
+            "fullRouteMapUrl": null,
+            "checkpointMapLinks": true,
+            "status": "individual checkpoint maps available"
+          },
+          "gpx": {
+            "officialDownloadButton": true,
+            "officialPage": "https://transgrancanaria.net/en/marathon-46km/",
+            "directUrlResolved": false,
+            "binaryDownloaded": false,
+            "metadataInspected": false,
+            "rights": "pending-explicit-permission"
+          }
+        },
+        {
+          "key": "transgrancanaria-half-2027",
+          "catalogRouteId": null,
+          "name": "Half",
+          "date": "2027-02-25",
+          "start": {
+            "place": "Santa Lucía de Tirajana",
+            "time": "09:00"
+          },
+          "finish": "Tejeda",
+          "distanceKm": 22.9,
+          "elevationGainM": 1817,
+          "elevationLossM": 1456,
+          "maxTime": "6 hours 30 minutes",
+          "description": "Trailroute auf der Südseite Gran Canarias durch die Caldera de Tirajana und die Landschaften Llanos de Pargana und Llanos de la Pez. Der markante Anstieg führt über den Paso de La Plata; anschließend folgt eine technische Abfahrt durch La Culata nach Tejeda.",
+          "terrain": "Technischer Abstieg und Bergpfade; genaue Untergrundanteile nicht veröffentlicht.",
+          "highlights": [
+            "Santa Lucía de Tirajana",
+            "Caldera de Tirajana",
+            "Llanos de Pargana",
+            "Llanos de la Pez",
+            "Paso de La Plata",
+            "La Culata",
+            "Tejeda"
+          ],
+          "aidStations": [
+            {
+              "name": "Tunte",
+              "km": 5,
+              "cutoff": "10:10"
+            },
+            {
+              "name": "El Garañón Lodge",
+              "km": 14.8,
+              "cutoff": "13:00",
+              "externalAssistance": true
+            },
+            {
+              "name": "La Culata",
+              "km": 18.6,
+              "cutoff": "14:00",
+              "externalAssistance": false
+            },
+            {
+              "name": "Finish Tejeda",
+              "km": 22.9,
+              "cutoff": "15:30"
+            }
+          ],
+          "elevationProfile": {
+            "available": true,
+            "editionLabel": "2026",
+            "officialPage": "https://transgrancanaria.net/fr/starter-21-km/",
+            "directImageUrl": null,
+            "status": "image alt label is 2026; do not treat as a confirmed 2027 profile"
+          },
+          "map": {
+            "fullRouteMapUrl": null,
+            "checkpointMapLinks": true,
+            "status": "individual checkpoint map links shown"
+          },
+          "gpx": {
+            "officialDownloadButton": true,
+            "officialPage": "https://transgrancanaria.net/fr/starter-21-km/",
+            "directUrlResolved": false,
+            "binaryDownloaded": false,
+            "metadataInspected": false,
+            "rights": "pending-explicit-permission"
+          }
+        },
+        {
+          "key": "transgrancanaria-open-agaldar-2027",
+          "catalogRouteId": null,
+          "name": "Open Agáldar",
+          "date": "2027-02-23",
+          "start": {
+            "place": "San José de Caideros",
+            "time": "09:00"
+          },
+          "finish": "Gáldar",
+          "distanceKm": 21.4,
+          "elevationGainM": 613,
+          "elevationLossM": 1368,
+          "maxTime": "5 hours 30 minutes",
+          "description": "Landschaftlich abwechslungsreicher Trail durch die Gemeinde Gáldar: von grünen mittleren Höhenlagen und Weideflächen über die rötlichen Böden am Pico Viento bis zu Cardón-Beständen, dem Barranco de El Juncal und dem historisch bedeutsamen Amagro-Gebiet.",
+          "terrain": "Sender und Barranco-Querung; genaue Oberflächenanteile nicht veröffentlicht.",
+          "highlights": [
+            "San José de Caideros",
+            "Pico Viento",
+            "El Agazal",
+            "Barranco de El Juncal",
+            "Montaña de Amagro",
+            "Gáldar"
+          ],
+          "aidStations": [
+            {
+              "name": "Agazal",
+              "km": 9.5,
+              "cutoff": "11:43",
+              "externalAssistance": false
+            },
+            {
+              "name": "Amagro",
+              "km": 15.1,
+              "cutoff": "13:02",
+              "externalAssistance": false
+            },
+            {
+              "name": "Finish Gáldar",
+              "km": 21.4,
+              "cutoff": "14:29"
+            }
+          ],
+          "elevationProfile": {
+            "available": true,
+            "editionLabel": "2027",
+            "officialPage": "https://transgrancanaria.net/carreras/open-agaldar-21km/",
+            "directImageUrl": null,
+            "status": "2027-labelled profile displayed on official page"
+          },
+          "map": {
+            "fullRouteMapUrl": null,
+            "checkpointMapLinks": true,
+            "status": "checkpoint map links only; no public GPX button found on page"
+          },
+          "gpx": {
+            "officialDownloadButton": false,
+            "officialPage": "https://transgrancanaria.net/carreras/open-agaldar-21km/",
+            "directUrlResolved": false,
+            "binaryDownloaded": false,
+            "metadataInspected": false,
+            "rights": "pending-explicit-permission"
+          }
+        },
+        {
+          "key": "transgrancanaria-promo-2027",
+          "catalogRouteId": null,
+          "name": "Promo",
+          "date": "2027-02-25",
+          "start": {
+            "place": "Artenara",
+            "time": "10:30"
+          },
+          "finish": "Tejeda",
+          "distanceKm": 12,
+          "elevationGainM": 869,
+          "elevationLossM": 1053,
+          "maxTime": "6 hours 30 minutes",
+          "description": "Trail zwischen den hoch gelegenen Gemeinden Artenara und Tejeda. Der Verlauf führt durch den dichten Kiefernwald von Pinos de Gáldar und entlang der Caldera de Tejeda.",
+          "terrain": "Waldwege und Bergpfade; genaue Untergrundanteile nicht veröffentlicht.",
+          "highlights": [
+            "Artenara",
+            "Pinos de Gáldar",
+            "Caldera de Tejeda",
+            "Parador de Tejeda",
+            "Tejeda"
+          ],
+          "aidStations": [
+            {
+              "name": "Parador de Tejeda",
+              "km": 6.9,
+              "cutoff": "14:00",
+              "externalAssistance": false
+            },
+            {
+              "name": "Finish Tejeda",
+              "km": 12,
+              "cutoff": "16:30"
+            }
+          ],
+          "elevationProfile": {
+            "available": true,
+            "editionLabel": "2027",
+            "officialPage": "https://transgrancanaria.net/carreras/promo/",
+            "directImageUrl": null,
+            "status": "2027-labelled profile displayed on official page"
+          },
+          "map": {
+            "fullRouteMapUrl": null,
+            "checkpointMapLinks": true,
+            "status": "checkpoint map links only; no public GPX button found on page"
+          },
+          "gpx": {
+            "officialDownloadButton": false,
+            "officialPage": "https://transgrancanaria.net/carreras/promo/",
+            "directUrlResolved": false,
+            "binaryDownloaded": false,
+            "metadataInspected": false,
+            "rights": "pending-explicit-permission"
+          }
+        },
+        {
+          "key": "transgrancanaria-short-2027",
+          "catalogRouteId": null,
+          "name": "Short",
+          "date": "2027-02-27",
+          "start": {
+            "place": "Teror",
+            "time": "10:00"
+          },
+          "finish": "Teror",
+          "distanceKm": {
+            "nominal": 5,
+            "technicalTable": 4.9
+          },
+          "elevationGainM": 264,
+          "elevationLossM": 264,
+          "maxTime": {
+            "routePage": "2 hours",
+            "homepageSummary": "1 hour 30 minutes"
+          },
+          "description": "Kurze Trailrunde vollständig in Teror, mit Start und Ziel vor der Basilika Nuestra Señora del Pino. Die offizielle Tabelle nennt den Kontrollpunkt El Álamo bei Kilometer 2.",
+          "terrain": "Trail; genaue Oberflächenanteile nicht veröffentlicht.",
+          "highlights": [
+            "Teror",
+            "Basilika Nuestra Señora del Pino",
+            "El Álamo"
+          ],
+          "aidStations": [
+            {
+              "name": "El Álamo",
+              "km": 2,
+              "cutoff": "10:45"
+            },
+            {
+              "name": "Finish Teror",
+              "km": 4.9,
+              "cutoff": "12:00"
+            }
+          ],
+          "elevationProfile": {
+            "available": true,
+            "editionLabel": "2026",
+            "officialPage": "https://transgrancanaria.net/en/youth/",
+            "directImageUrl": null,
+            "status": "image alt label is 2026; not a confirmed 2027 profile"
+          },
+          "map": {
+            "fullRouteMapUrl": null,
+            "checkpointMapLinks": true,
+            "status": "individual checkpoint map links shown"
+          },
+          "gpx": {
+            "officialDownloadButton": true,
+            "officialPage": "https://transgrancanaria.net/en/youth/",
+            "directUrlResolved": false,
+            "binaryDownloaded": false,
+            "metadataInspected": false,
+            "rights": "pending-explicit-permission"
+          },
+          "notes": [
+            "The page also offers an alternative training track because Parque de Sintes is not open to the public. That alternative is not the race-day route and must never replace the official race track."
+          ]
+        },
+        {
+          "key": "transgrancanaria-family-trail-2027",
+          "catalogRouteId": null,
+          "name": "Family Trail",
+          "date": "2027-02-27",
+          "start": {
+            "place": "Teror",
+            "time": "10:00"
+          },
+          "finish": "Teror",
+          "distanceKm": {
+            "nominal": 5,
+            "technicalTable": 4.9
+          },
+          "elevationGainM": 264,
+          "elevationLossM": 264,
+          "maxTime": {
+            "routePage": "2 hours",
+            "homepageSummary": "1 hour 30 minutes"
+          },
+          "description": "Familienformat für Kinder und Begleitpersonen; die Veranstaltung findet vollständig in Teror statt und die Anmeldung erfolgt als gemeinsames Team.",
+          "terrain": "Trail; genaue Oberflächenanteile nicht veröffentlicht.",
+          "highlights": [
+            "Teror",
+            "Basilika Nuestra Señora del Pino",
+            "El Álamo"
+          ],
+          "aidStations": [
+            {
+              "name": "El Álamo",
+              "km": 2,
+              "cutoff": "10:45"
+            },
+            {
+              "name": "Finish Teror",
+              "km": 4.9,
+              "cutoff": "12:00"
+            }
+          ],
+          "elevationProfile": {
+            "available": true,
+            "editionLabel": "2026",
+            "officialPage": "https://transgrancanaria.net/en/family-trail-12km/",
+            "directImageUrl": null,
+            "status": "image alt label is 2026; not a confirmed 2027 profile"
+          },
+          "map": {
+            "fullRouteMapUrl": null,
+            "checkpointMapLinks": true,
+            "status": "individual checkpoint map links shown"
+          },
+          "gpx": {
+            "officialDownloadButton": true,
+            "officialPage": "https://transgrancanaria.net/en/family-trail-12km/",
+            "directUrlResolved": false,
+            "binaryDownloaded": false,
+            "metadataInspected": false,
+            "rights": "pending-explicit-permission"
+          },
+          "notes": [
+            "Do not merge with Short solely because distances and checkpoint values look similar; geometry must be independently validated and organizer permission obtained."
+          ]
+        },
+        {
+          "key": "transgrancanaria-kv-el-gigante-2027",
+          "catalogRouteId": null,
+          "name": "KV El Gigante",
+          "date": "2027-02-24",
+          "start": {
+            "place": "Valle de Agaete",
+            "time": "15:00"
+          },
+          "finish": "Tamadaba",
+          "distanceKm": 5.5,
+          "elevationGainM": 1090,
+          "elevationLossM": null,
+          "maxTime": "1 hour 45 minutes",
+          "description": "Sehr steiler Bergaufwettbewerb vom Valle de Agaete zur Tamadaba-Hochebene. Auf nur 5,5 km werden 1.090 Höhenmeter überwunden.",
+          "terrain": "Steiler Bergpfad; genaue Oberflächenanteile nicht veröffentlicht.",
+          "highlights": [
+            "Valle de Agaete",
+            "Tamadaba-Massiv",
+            "Tamadaba-Kiefernwald"
+          ],
+          "aidStations": [],
+          "elevationProfile": {
+            "available": true,
+            "editionLabel": "2026",
+            "officialPage": "https://transgrancanaria.net/carreras/kv-el-gigante/",
+            "directImageUrl": null,
+            "status": "image alt label is 2026; not a confirmed 2027 profile"
+          },
+          "map": {
+            "fullRouteMapUrl": null,
+            "checkpointMapLinks": false,
+            "status": "no full route map URL verified"
+          },
+          "gpx": {
+            "officialDownloadButton": true,
+            "officialPage": "https://transgrancanaria.net/carreras/kv-el-gigante/",
+            "directUrlResolved": false,
+            "binaryDownloaded": false,
+            "metadataInspected": false,
+            "rights": "pending-explicit-permission"
+          }
+        },
+        {
+          "key": "transgrancanaria-stages-2027",
+          "catalogRouteId": null,
+          "name": "Stages – vier Etappen",
+          "dateRange": {
+            "start": "2027-02-23",
+            "end": "2027-02-27"
+          },
+          "distanceKm": 120,
+          "elevationGainM": 6886,
+          "maxTime": null,
+          "description": "Viertägiges Kombinationsformat aus Open Agáldar, KV El Gigante, Promo und Advanced. Die vier Etappen verbinden unterschiedliche Landschaftsräume Gran Canarias und werden als ein gemeinsames Stage-Erlebnis angeboten.",
+          "terrain": "Gemischte Trail- und Bergpfadabschnitte; genaue Untergrundanteile je Etappe sind in den einzelnen Streckenbeschreibungen nicht vollständig angegeben.",
+          "highlights": [
+            "Gáldar und die mittleren Höhenlagen",
+            "Valle de Agaete und Tamadaba",
+            "Pinos de Gáldar und Caldera de Tejeda",
+            "Teror bis Maspalomas"
+          ],
+          "stages": [
+            {
+              "routeKey": "transgrancanaria-open-agaldar-2027",
+              "date": "2027-02-23",
+              "distanceKm": 21.4,
+              "elevationGainM": 613
+            },
+            {
+              "routeKey": "transgrancanaria-kv-el-gigante-2027",
+              "date": "2027-02-24",
+              "distanceKm": 5.5,
+              "elevationGainM": 1090
+            },
+            {
+              "routeKey": "transgrancanaria-promo-2027",
+              "date": "2027-02-25",
+              "distanceKm": 12,
+              "elevationGainM": 869
+            },
+            {
+              "routeKey": "transgrancanaria-advanced-2027",
+              "date": "2027-02-27",
+              "distanceKm": 81.7,
+              "elevationGainM": 4314
+            }
+          ],
+          "stageDistanceSumKm": 120.6,
+          "distanceNote": "Organizer aggregate is 120 km; component technical distances sum to approximately 120.6 km. Preserve both and request clarification if exact total is required.",
+          "aid": "Use the aid-station information of the component routes; no separate combined aid schedule published.",
+          "cutoff": "Use the cut-offs of the component routes; no separate aggregate cut-off published.",
+          "elevationProfile": {
+            "available": true,
+            "editionLabel": "mixed",
+            "officialPage": "https://transgrancanaria.net/carreras/stages/",
+            "directImageUrl": null,
+            "status": "page shows component profiles; some are labelled 2026 and must not be accepted as 2027"
+          },
+          "map": {
+            "fullRouteMapUrl": null,
+            "status": "component route/checkpoint map links only"
+          },
+          "gpx": {
+            "officialDownloadButton": false,
+            "officialPage": "https://transgrancanaria.net/carreras/stages/",
+            "directUrlResolved": false,
+            "binaryDownloaded": false,
+            "metadataInspected": false,
+            "rights": "pending-explicit-permission"
+          },
+          "deduplication": "Composite route only; reuses the four component route keys and must not duplicate their geometry."
+        }
+      ],
+      "commonNotes": {
+        "surface": "Die Veranstalterseiten beschreiben Trail-, Bergpfad-, Wald- und technische Abfahrtsabschnitte, veröffentlichen aber keine belastbare Oberflächenprozentverteilung.",
+        "aid": "Verpflegungsorte und Kontrollzeiten sind für mehrere Hauptdistanzen veröffentlicht. Vollständige Speise-/Getränkemenüs sind auf den geprüften Seiten nicht für alle Stationen angegeben.",
+        "maps": "Einzelne Kontrollpunktkarten sind verlinkt; ein vollständiger öffentlicher Streckenplan wurde nicht für jede Distanz gefunden.",
+        "gpxPageNotice": "Die offiziellen Seiten erklären, dass KMZ die Distanz und Höhenmeter verändern kann und GPX für die Messung verlässlicher ist. Das ist ein technischer Hinweis, keine festgestellte Nutzungslizenz.",
+        "gpxMetadata": "Nicht geprüft, da keine GPX-Datei heruntergeladen oder verarbeitet wurde.",
+        "gpxPermission": "No explicit written app-use permission. All GPX app actions and link-only presentation remain blocked pending separate written approval."
+      }
+    },
+    {
+      "eventId": "3trail-ibiza",
+      "name": "3 Días Trail Ibiza",
+      "edition": 2027,
+      "eventDate": {
+        "start": "2027-11-26",
+        "end": "2027-11-28",
+        "status": "confirmed-by-official-Arista-calendar"
+      },
+      "officialOrganizerSource": "https://aristaeventos.es/",
+      "eventWebsite": "https://3diastrailibiza.com/",
+      "status": "2027-date-confirmed-course-pages-not-yet-updated",
+      "description": null,
+      "routes": [],
+      "note": "The official Arista 2027 calendar lists the 26–28 November 2027 date. The detailed event website still presents 2026 stage pages; no 2027 route distances, profiles, maps or GPX have been published in the pages reviewed. Do not carry 2026 routes into 2027.",
+      "historical2026ReferenceOnly": {
+        "eventPage": "https://3diastrailibiza.com/",
+        "routes": [
+          {
+            "name": "Stage 1 – Night",
+            "date": "2026-11-27",
+            "distanceKm": 10,
+            "elevationGainM": 320,
+            "elevationLossM": 320,
+            "startFinish": "Plaza de la Constitución, Ibiza Town",
+            "startTime": "19:00",
+            "summary": "Urban night trail through notable locations in Ibiza's historic centre.",
+            "gpxPage": "https://3diastrailibiza.com/nocturna-10km/",
+            "gpxLinkVisible": true,
+            "gpxRestriction": "No explicit restriction wording identified on this stage page; app use remains unlicensed."
+          },
+          {
+            "name": "Stage 2 – Ultra Trail",
+            "date": "2026-11-28",
+            "distanceKm": 77.5,
+            "elevationGainM": 2789,
+            "elevationLossM": 2593,
+            "startFinish": "Santa Eulalia del Río",
+            "startTime": "06:30",
+            "summary": "Long island trail crossing private estates and environmentally sensitive Natura 2000 areas.",
+            "gpxPage": "https://3diastrailibiza.com/ultra-trail-maraton-media-maraton-y-10k/",
+            "gpxRestriction": {
+              "exactNotice": "LOS TRACKS SE ENVIARAN VIA EMAIL UNA SEMANA ANTES. Pasamos por fincas privadas y zonas Sensibles de Xarxa Natura 2000.",
+              "meaning": "Tracks are sent by email one week before the event because the course crosses private estates and sensitive Natura 2000 areas.",
+              "scope": "2026 Stage 2 page; exact route variants and permission conditions require organizer confirmation.",
+              "appPolicy": "Do not retrieve, load, import, store, process, display or offer GPX. Link-only permission also requires separate written confirmation."
+            }
+          },
+          {
+            "name": "Stage 2 – Marathon",
+            "date": "2026-11-28",
+            "distanceKm": 45,
+            "elevationGainM": 1558,
+            "elevationLossM": 1530,
+            "start": "Portinatx",
+            "finish": "Santa Eulalia del Río",
+            "gpxPage": "https://3diastrailibiza.com/ultra-trail-maraton-media-maraton-y-10k/",
+            "gpxRestriction": "Same Stage 2 email-only track notice; 2026 only."
+          },
+          {
+            "name": "Stage 2 – Half Marathon",
+            "date": "2026-11-28",
+            "distanceKm": 23.55,
+            "elevationGainM": 690,
+            "elevationLossM": 678,
+            "start": "Cala Sant Vicent",
+            "finish": "Santa Eulalia del Río",
+            "gpxPage": "https://3diastrailibiza.com/ultra-trail-maraton-media-maraton-y-10k/",
+            "gpxRestriction": "Same Stage 2 email-only track notice; 2026 only."
+          },
+          {
+            "name": "Stage 2 – 10K Starter",
+            "date": "2026-11-28",
+            "distanceKm": 10,
+            "elevationGainM": 102,
+            "elevationLossM": 93,
+            "start": "Es Canar",
+            "finish": "Santa Eulalia del Río",
+            "gpxPage": "https://3diastrailibiza.com/ultra-trail-maraton-media-maraton-y-10k/",
+            "gpxRestriction": "Same Stage 2 email-only track notice; 2026 only."
+          },
+          {
+            "name": "Stage 3 – Daylight Trail",
+            "date": "2026-11-29",
+            "distanceKm": 10,
+            "elevationGainM": 359,
+            "elevationLossM": 359,
+            "startFinish": "Paseo S'Alamera, Santa Eulalia del Río",
+            "startTime": "09:30",
+            "summary": "Daytime island trail around Santa Eulalia; detailed terrain breakdown is not published in the page text.",
+            "gpxPage": "https://3diastrailibiza.com/diurna-10km/",
+            "gpxRestriction": {
+              "exactNotice": "LOS TRACKS ESTARÁN DISPONIBLES UNA SEMANA ANTES. Pasamos por fincas privadas y zonas Sensibles de Xarxa Natura 2000.",
+              "meaning": "Tracks become available one week before the event because the course crosses private estates and sensitive Natura 2000 areas.",
+              "scope": "2026 Stage 3 page.",
+              "appPolicy": "Do not retrieve, load, import, store, process, display or offer GPX. Link-only permission also requires separate written confirmation."
+            }
+          }
+        ],
+        "historicalOnly": true,
+        "doNotUseFor2027": true
+      }
+    }
+  ],
+  "candidatePortfolioEventsNotInCatalog": [
+    {
+      "name": "Entre Cortijos",
+      "date": "2027-03-13"
+    },
+    {
+      "name": "Salesianas Run",
+      "date": "2027-05-09"
+    },
+    {
+      "name": "Fred. Olsen Express Transgrancanaria Bike",
+      "date": "2027-05-15"
+    },
+    {
+      "name": "Artenara Trail",
+      "date": "2027-06-19"
+    },
+    {
+      "name": "Run Stay Alive",
+      "date": "2027-09-17"
+    },
+    {
+      "name": "Ruta de Los Molinos",
+      "date": "2027-10-09"
+    },
+    {
+      "name": "360º The Challenge",
+      "dateRange": {
+        "start": "2027-11-03",
+        "end": "2027-11-07"
+      }
+    }
+  ],
+  "sources": [
+    "https://aristaeventos.es/",
+    "https://aristaeventos.es/servicios/",
+    "https://transgrancanaria.net/en/",
+    "https://transgrancanaria.net/en/classic-126km/",
+    "https://transgrancanaria.net/en/advanced-84km/",
+    "https://transgrancanaria.net/en/marathon-46km/",
+    "https://transgrancanaria.net/fr/starter-21-km/",
+    "https://transgrancanaria.net/carreras/open-agaldar-21km/",
+    "https://transgrancanaria.net/carreras/promo/",
+    "https://transgrancanaria.net/carreras/kv-el-gigante/",
+    "https://transgrancanaria.net/en/youth/",
+    "https://transgrancanaria.net/en/family-trail-12km/",
+    "https://transgrancanaria.net/carreras/stages/",
+    "https://transgrancanaria.net/en/regulations/",
+    "https://transgrancanaria.net/en/contact/",
+    "https://3diastrailibiza.com/",
+    "https://3diastrailibiza.com/nocturna-10km/",
+    "https://3diastrailibiza.com/ultra-trail-maraton-media-maraton-y-10k/",
+    "https://3diastrailibiza.com/diurna-10km/",
+    "https://3diastrailibiza.com/reglamento/",
+    "https://3diastrailibiza.com/preguntas-frecuentes/"
+  ],
+  "safety": {
+    "noProtectedTextCopied": true,
+    "noMapsOrProfilesCopied": true,
+    "noLogosOrGraphicsCopied": true,
+    "noGpxFilesDownloaded": true,
+    "noGpxMetadataInspected": true,
+    "noLiveEventDataChanged": true,
+    "noAppPublication": true,
+    "note": "Only original source URLs and independently written factual summaries are stored. Historical 2026 Ibiza routes are explicitly isolated from 2027. All GPX actions remain blocked pending written permission and restriction clarification."
+  }
+}
