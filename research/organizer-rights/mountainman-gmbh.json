@@ -191,5 +191,15 @@
     "existingRouteIdsOverwritten": false,
     "legacyWintertrailRoutesPreserved": true,
     "newEventsNotAddedToLiveCatalog": true
+  },
+  "officialRightsNotices": {
+    "source": "https://mountainman.de/impressum/",
+    "checkedOn": "2026-11-28",
+    "siteContentCopyright": "The imprint states that website contents and works created by the site operators are protected by German copyright and that reproduction, adaptation, distribution and exploitation outside statutory limits require written consent from the relevant author/creator.",
+    "downloadCopyNotice": "The imprint states that downloads and copies of the website are permitted only for private, non-commercial use.",
+    "trademarkNotice": "The imprint states MOUNTAINMAN® is an EU-wide registered mark (DPMA register EM017514324).",
+    "thirdPartyPlatformNotice": "The imprint states the website uses Komoot technology and content; rights to third-party material may be held separately.",
+    "gpxSpecificRestrictionNotice": "No route-specific GPX prohibition wording was identified in the reviewed official event HTML. The general website copyright/trademark notices are not treated as a definitive GPX-file licence or a GPX-specific prohibition.",
+    "implications": "No official MOUNTAINMAN logo/mark, website description, map, profile, photo or GPX file is reproduced in the research package. App use of marks, visual assets and third-party Komoot/Outdooractive material remains blocked pending express permission from the relevant rightsholder."
   }
 }
