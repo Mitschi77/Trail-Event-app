@@ -1,0 +1,653 @@
+{
+  "schemaVersion": 1,
+  "researchType": "route-descriptions",
+  "checkedAt": "2026-11-27T02:13:53+01:00",
+  "organizer": {
+    "name": "Swiss Alps 100 Endurance Run",
+    "country": "Switzerland",
+    "officialContact": "rd@swissalps100.com",
+    "contactSource": "https://www.swissalps100.com/de/courses/kids-run",
+    "contactVerification": "email is published in the official site footer"
+  },
+  "event": {
+    "eventIdCandidate": "swiss-alps-100",
+    "edition": 2027,
+    "eventPeriod": {
+      "start": "2027-08-06",
+      "end": "2027-08-08"
+    },
+    "location": "Fiesch, Switzerland",
+    "catalogRecordFound": true,
+    "action": "research addendum only; no live event or route data changed",
+    "eventId": "swiss-alps-100",
+    "currentCatalogRouteIds": [
+      "swiss-alps-100-50-3210",
+      "swiss-alps-100-100-6242",
+      "swiss-alps-100-160-10004"
+    ]
+  },
+  "sourcePolicy": {
+    "summaries": "Independent factual summaries only; no official prose copied verbatim.",
+    "protectedAssets": "No map/profile images, logos or GPX binaries copied.",
+    "sourceLinksOnly": true
+  },
+  "sources": [
+    {
+      "id": "home",
+      "url": "https://www.swissalps100.com/de",
+      "type": "official_event_overview",
+      "verified": true
+    },
+    {
+      "id": "schedule",
+      "url": "https://www.swissalps100.com/de/info/schedule",
+      "type": "official_schedule",
+      "verified": true
+    },
+    {
+      "id": "160k",
+      "url": "https://www.swissalps100.com/courses/160k",
+      "type": "official_route_page",
+      "verified": true
+    },
+    {
+      "id": "100k",
+      "url": "https://www.swissalps100.com/courses/100k",
+      "type": "official_route_page",
+      "verified": true
+    },
+    {
+      "id": "50k",
+      "url": "https://www.swissalps100.com/courses/50k",
+      "type": "official_route_page",
+      "verified": true
+    },
+    {
+      "id": "vertical",
+      "url": "https://www.swissalps100.com/courses/vertical",
+      "type": "official_route_page",
+      "verified": true
+    },
+    {
+      "id": "matterhorning",
+      "url": "https://www.swissalps100.com/nl/courses/matterhorning",
+      "type": "official_route_page",
+      "verified": true
+    },
+    {
+      "id": "kids",
+      "url": "https://www.swissalps100.com/de/courses/kids-run",
+      "type": "official_route_page",
+      "verified": true
+    }
+  ],
+  "routeCount": 6,
+  "routes": [
+    {
+      "routeId": "swiss-alps-100-160k-2027",
+      "name": "Swiss Alps 100 160K",
+      "date": "2027-08-06",
+      "startTime": "07:30",
+      "finishCutoff": "2027-08-08T09:30",
+      "distanceKm": 159.4,
+      "elevationGainM": 10150,
+      "aidStationCount": 16,
+      "cutoffHours": 50,
+      "startFinish": "Fiesch, Switzerland",
+      "independentSummary": "Ein alpiner Ultratrail durch das Oberwallis mit langen Anstiegen, hochalpinen Übergängen und drei markanten Hängebrücken. Die Strecke führt in die Umgebung des Aletschgletschers und verbindet Bergdörfer, Höhenwege und abgelegene Abschnitte mit langen Nachtpassagen.",
+      "terrain": [
+        "hoch alpine Bergpfade",
+        "felsige und steile Bergwege",
+        "Höhenwege und alpine Übergänge"
+      ],
+      "highlights": [
+        "Aletschgletscher / UNESCO-Welterbe",
+        "Belalp–Riederalp-Brücke",
+        "Aspi-Titter-Brücke",
+        "Mühlebach–Fürgangen-Brücke",
+        "Bergseen und Hochgebirgspanoramen"
+      ],
+      "aidStations": [
+        {
+          "name": "Kühboden",
+          "km": 7,
+          "cutoff": "Fri 10:00"
+        },
+        {
+          "name": "Riederfurka",
+          "km": 15.6,
+          "cutoff": "Fri 12:00"
+        },
+        {
+          "name": "Belalp",
+          "km": 23.7,
+          "cutoff": "Fri 14:30"
+        },
+        {
+          "name": "Belalp",
+          "km": 30.7,
+          "cutoff": "Fri 17:00"
+        },
+        {
+          "name": "Riederfurka",
+          "km": 41.1,
+          "cutoff": "Fri 20:30"
+        },
+        {
+          "name": "Gletscherstube",
+          "km": 52.7,
+          "cutoff": "Fri 23:30"
+        },
+        {
+          "name": "Bellwald",
+          "km": 61.2,
+          "cutoff": "Sat 02:00"
+        },
+        {
+          "name": "Reckingen",
+          "km": 74.8,
+          "cutoff": "Sat 04:30"
+        },
+        {
+          "name": "Blitzingen",
+          "km": 80.5,
+          "cutoff": "Sat 06:00"
+        },
+        {
+          "name": "Chäserstatt",
+          "km": 88.3,
+          "cutoff": "Sat 10:00"
+        },
+        {
+          "name": "Binn",
+          "km": 102,
+          "cutoff": "Sat 14:30"
+        },
+        {
+          "name": "Breithorn",
+          "km": 110.5,
+          "cutoff": "Sat 18:00"
+        },
+        {
+          "name": "Rosswald",
+          "km": 119.1,
+          "cutoff": "Sat 20:30"
+        },
+        {
+          "name": "Breithorn",
+          "km": 131.9,
+          "cutoff": "Sun 00:30"
+        },
+        {
+          "name": "Grengiols",
+          "km": 143.1,
+          "cutoff": "Sun 04:00"
+        },
+        {
+          "name": "Mühlebach",
+          "km": 151.5,
+          "cutoff": "Sun 06:30"
+        }
+      ],
+      "catering": "16 voll ausgestattete Verpflegungsstationen laut Veranstalter; konkrete Menüs je Station auf der zugänglichen 160K-Seite nicht vollständig ausgewiesen.",
+      "map": {
+        "status": "interaktive Streckenkarte auf offizieller Kursseite",
+        "url": "https://www.swissalps100.com/courses/160k"
+      },
+      "elevationProfile": {
+        "status": "kein eigenständiger Downloadlink verifiziert; Kursseite als Quelle",
+        "url": "https://www.swissalps100.com/courses/160k"
+      },
+      "gpx": {
+        "officialDownloadPage": "https://www.swissalps100.com/courses/160k",
+        "publicDownloadLink": "not_verified",
+        "restrictionNotice": "Auf der zugänglichen Kursseite kein ausdrücklicher Sperrvermerk gefunden.",
+        "permissionStatus": "broad_written_permission_received_scope_unitemized",
+        "fileOperationsBlocked": true,
+        "officialPageLinkBlocked": true,
+        "binaryDownloaded": false,
+        "metadataInspected": false
+      },
+      "sourceIds": [
+        "home",
+        "schedule",
+        "160k"
+      ],
+      "catalogRouteId": "swiss-alps-100-160-10004"
+    },
+    {
+      "routeId": "swiss-alps-100-100k-2027",
+      "name": "Swiss Alps 100 100K",
+      "date": "2027-08-06",
+      "startTime": "17:30",
+      "finishCutoff": "2027-08-07T20:30",
+      "distanceKm": 100.8,
+      "elevationGainM": 6250,
+      "aidStationCount": 10,
+      "cutoffHours": 27,
+      "startFinish": "Fiesch, Switzerland",
+      "independentSummary": "Eine lange Hochgebirgsrunde durch das Oberwallis mit alpinen Wegen, Wiesenhängen und markanten Blicken auf den Aletschgletscher. Zwei Hängebrücken gehören zu den prägenden Streckenpunkten; die Verpflegungsfolge führt über mehrere Bergorte und Höhenstationen zurück nach Fiesch.",
+      "terrain": [
+        "hoch alpine Trails",
+        "Bergwiesen und Höhenwege",
+        "steile Auf- und Abstiege"
+      ],
+      "highlights": [
+        "Aletschgletscher",
+        "Aspi-Titter-Hängebrücke",
+        "Mühlebach–Fürgangen-Hängebrücke",
+        "Reckingen und Binn"
+      ],
+      "aidStations": [
+        {
+          "name": "Kühboden",
+          "km": 7,
+          "cutoff": "Fri 20:00"
+        },
+        {
+          "name": "Gletscherstube",
+          "km": 15.6,
+          "cutoff": "Fri 22:30"
+        },
+        {
+          "name": "Bellwald",
+          "km": 24.1,
+          "cutoff": "Sat 01:00"
+        },
+        {
+          "name": "Reckingen",
+          "km": 37.7,
+          "cutoff": "Sat 03:30"
+        },
+        {
+          "name": "Blitzingen",
+          "km": 43.4,
+          "cutoff": "Sat 04:30"
+        },
+        {
+          "name": "Chäserstatt",
+          "km": 51.2,
+          "cutoff": "Sat 07:30"
+        },
+        {
+          "name": "Binn",
+          "km": 64.9,
+          "cutoff": "Sat 11:00"
+        },
+        {
+          "name": "Breithorn",
+          "km": 73.4,
+          "cutoff": "Sat 14:00"
+        },
+        {
+          "name": "Grengiols",
+          "km": 84.6,
+          "cutoff": "Sat 16:00"
+        },
+        {
+          "name": "Mühlebach",
+          "km": 92.9,
+          "cutoff": "Sat 18:00"
+        }
+      ],
+      "catering": "10 voll ausgestattete Verpflegungsstationen laut Veranstalter; einzelne Stationen führen Drop Bags bzw. Crew/Pacer-Zugang. Vollständige Speisekarte nicht ausgewiesen.",
+      "map": {
+        "status": "interaktive Streckenkarte auf offizieller Kursseite",
+        "url": "https://www.swissalps100.com/courses/100k"
+      },
+      "elevationProfile": {
+        "status": "Höhenprofilgrafik auf offizieller Kursseite; kein separater Asset-Link verifiziert",
+        "url": "https://www.swissalps100.com/courses/100k"
+      },
+      "gpx": {
+        "officialDownloadButton": true,
+        "officialDownloadPage": "https://www.swissalps100.com/courses/100k",
+        "publicFileUrl": "not_extracted",
+        "restrictionNotice": "Auf der zugänglichen Kursseite kein ausdrücklicher Sperrvermerk gefunden.",
+        "permissionStatus": "broad_written_permission_received_scope_unitemized",
+        "fileOperationsBlocked": true,
+        "officialPageLinkBlocked": true,
+        "binaryDownloaded": false,
+        "metadataInspected": false
+      },
+      "sourceIds": [
+        "home",
+        "schedule",
+        "100k"
+      ],
+      "catalogRouteId": "swiss-alps-100-100-6242"
+    },
+    {
+      "routeId": "swiss-alps-100-50k-2027",
+      "name": "Swiss Alps 100 50K",
+      "date": "2027-08-07",
+      "startTime": "06:00",
+      "finishCutoff": "2027-08-07T21:00",
+      "distanceKm": 51.6,
+      "elevationGainM": 3210,
+      "aidStationCount": 6,
+      "cutoffHours": 15,
+      "startFinish": "Fiesch, Switzerland",
+      "independentSummary": "Ein alpiner 50-Kilometerkurs mit langen Anstiegen durch Berglandschaften und Täler des Oberwallis. Die Route bietet wiederholt Ausblicke auf den Aletschgletscher und quert zwei große Hängebrücken, bevor sie über weitere Bergorte nach Fiesch zurückführt.",
+      "terrain": [
+        "alpine Bergtrails",
+        "Bergwiesen und Täler",
+        "Höhenwege und längere Abstiege"
+      ],
+      "highlights": [
+        "Aletschgletscher",
+        "Aspi-Titter-Hängebrücke",
+        "Mühlebach–Fürgangen-Hängebrücke",
+        "Bellwald und Chäserstatt"
+      ],
+      "aidStations": [
+        {
+          "name": "Kühboden",
+          "km": 7,
+          "cutoff": "Sat 08:30"
+        },
+        {
+          "name": "Gletscherstube",
+          "km": 15.6,
+          "cutoff": "Sat 11:00"
+        },
+        {
+          "name": "Bellwald",
+          "km": 24.1,
+          "cutoff": "Sat 13:30"
+        },
+        {
+          "name": "Blitzingen",
+          "km": 29,
+          "cutoff": "Sat 14:30"
+        },
+        {
+          "name": "Chäserstatt",
+          "km": 36.9,
+          "cutoff": "Sat 16:30"
+        },
+        {
+          "name": "Mühlebach",
+          "km": 43.7,
+          "cutoff": "Sat 18:30"
+        }
+      ],
+      "catering": "Sechs voll ausgestattete Verpflegungsstationen laut Veranstalter; Speisen/Getränke werden auf der Seite nicht vollständig aufgelistet. Drop Bags nur im Zielbereich.",
+      "map": {
+        "status": "interaktive Streckenkarte auf offizieller Kursseite",
+        "url": "https://www.swissalps100.com/courses/50k"
+      },
+      "elevationProfile": {
+        "status": "Höhenprofilgrafik auf offizieller Kursseite; kein separater Asset-Link verifiziert",
+        "url": "https://www.swissalps100.com/courses/50k"
+      },
+      "gpx": {
+        "officialDownloadButton": true,
+        "officialDownloadPage": "https://www.swissalps100.com/courses/50k",
+        "publicFileUrl": "not_extracted",
+        "restrictionNotice": "Auf der zugänglichen Kursseite kein ausdrücklicher Sperrvermerk gefunden.",
+        "permissionStatus": "broad_written_permission_received_scope_unitemized",
+        "fileOperationsBlocked": true,
+        "officialPageLinkBlocked": true,
+        "binaryDownloaded": false,
+        "metadataInspected": false
+      },
+      "sourceIds": [
+        "home",
+        "schedule",
+        "50k"
+      ],
+      "catalogRouteId": "swiss-alps-100-50-3210"
+    },
+    {
+      "routeId": "swiss-alps-100-vertical-2027",
+      "name": "Swiss Alps 100 Vertical",
+      "date": "2027-08-06",
+      "startTime": "09:00",
+      "finishCutoff": "2027-08-06T13:00",
+      "distanceKm": 10,
+      "elevationGainM": 1830,
+      "aidStationCount": 1,
+      "cutoffHours": 4,
+      "start": "Fiesch, Switzerland",
+      "finish": "Eggishorn, Switzerland (2,926 m)",
+      "independentSummary": "Ein nahezu durchgehender steiler Aufstieg vom Talboden in Fiesch zum Eggishorn. Die Route nutzt steile Bergpfade, Serpentinen und alpine Wege; am Gipfel öffnet sich ein Rundblick auf Matterhorn, Jungfrau, Eiger und den Aletschgletscher. Die Talfahrt nach Fiesch ist mit der Gondel und Startnummer kostenlos.",
+      "terrain": [
+        "steile Bergtrails",
+        "Serpentinen",
+        "alpine Pfade"
+      ],
+      "highlights": [
+        "Eggishorn auf 2.926 m",
+        "360-Grad-Panorama",
+        "Aletschgletscher",
+        "kostenlose Gondelabfahrt"
+      ],
+      "aidStations": [
+        {
+          "name": "Kühboden",
+          "km": 7,
+          "cutoff": "Fri 11:30"
+        }
+      ],
+      "catering": "Eine voll ausgestattete Verpflegungsstation; genaue Speisen nicht angegeben.",
+      "map": {
+        "status": "interaktive Streckenkarte auf offizieller Kursseite",
+        "url": "https://www.swissalps100.com/courses/vertical"
+      },
+      "elevationProfile": {
+        "status": "Höhenprofilgrafik auf offizieller Kursseite",
+        "url": "https://www.swissalps100.com/courses/vertical"
+      },
+      "gpx": {
+        "officialDownloadPage": "https://www.swissalps100.com/courses/vertical",
+        "publicFileUrl": "not_verified",
+        "restrictionNotice": "Kein ausdrücklicher Sperrvermerk auf der zugänglichen Kursseite gefunden.",
+        "permissionStatus": "broad_written_permission_received_scope_unitemized",
+        "fileOperationsBlocked": true,
+        "officialPageLinkBlocked": true,
+        "binaryDownloaded": false,
+        "metadataInspected": false
+      },
+      "sourceIds": [
+        "home",
+        "schedule",
+        "vertical"
+      ]
+    },
+    {
+      "routeId": "swiss-alps-100-matterhorning-2027",
+      "name": "Matterhorning",
+      "date": "2027-08-07",
+      "startTime": "07:00",
+      "finishCutoff": "2027-08-07T22:00",
+      "distanceKm": 33.3,
+      "elevationGainM": 4692,
+      "aidStationCount": "1 per loop at start/finish",
+      "cutoffHours": 15,
+      "startFinish": "Fiesch / Fiescheralp, Switzerland",
+      "independentSummary": "Ein vierfacher, extrem steiler Wiederholungsanstieg von Fiesch zur Fiescheralp. Die Herausforderung besteht aus wiederholten Höhenmetern auf derselben Bergachse statt einer langen Rundstrecke; pro Runde ist eine Verpflegungsmöglichkeit am Start-/Zielbereich vorgesehen.",
+      "terrain": [
+        "sehr steile Bergwege",
+        "wiederholte Aufstiege und Abstiege",
+        "alpiner Höhenweg"
+      ],
+      "highlights": [
+        "Vier Anstiege Fiesch–Fiescheralp",
+        "4.692 hm – nahezu Matterhorn-Höhe",
+        "Jubiläumsformat 2027"
+      ],
+      "aidStations": [
+        {
+          "name": "Fiesch Start/Ziel – Loop 1",
+          "km": 0,
+          "cutoff": "Sat 07:00"
+        },
+        {
+          "name": "Fiesch Start/Ziel – Loop 2",
+          "km": 7.6,
+          "cutoff": "not specified"
+        },
+        {
+          "name": "Fiesch Start/Ziel – Loop 3",
+          "km": 15.2,
+          "cutoff": "not specified"
+        },
+        {
+          "name": "Fiesch Start/Ziel – Loop 4",
+          "km": 22.8,
+          "cutoff": "Sat 18:00 last-lap cutoff"
+        },
+        {
+          "name": "Finish",
+          "km": 30.4,
+          "cutoff": "Sat 22:00"
+        }
+      ],
+      "catering": "Eine Verpflegungsstation je Runde am Start-/Zielbereich laut offizieller Seite; genaue Speisen nicht angegeben.",
+      "map": {
+        "status": "interaktive Streckenkarte auf offizieller Kursseite",
+        "url": "https://www.swissalps100.com/nl/courses/matterhorning"
+      },
+      "elevationProfile": {
+        "status": "Höhenprofilgrafik auf offizieller Kursseite",
+        "url": "https://www.swissalps100.com/nl/courses/matterhorning"
+      },
+      "gpx": {
+        "officialDownloadPage": "https://www.swissalps100.com/nl/courses/matterhorning",
+        "publicFileUrl": "not_verified",
+        "restrictionNotice": "Kein ausdrücklicher Sperrvermerk auf der zugänglichen Kursseite gefunden.",
+        "permissionStatus": "broad_written_permission_received_scope_unitemized",
+        "fileOperationsBlocked": true,
+        "officialPageLinkBlocked": true,
+        "binaryDownloaded": false,
+        "metadataInspected": false
+      },
+      "sourceIds": [
+        "home",
+        "schedule",
+        "matterhorning"
+      ],
+      "unresolved": [
+        "Official route summary: 33.30 km. Aid/lap table: 4 x 7.60 km = 30.40 km. Do not overwrite until organizer confirms."
+      ]
+    },
+    {
+      "routeId": "swiss-alps-100-kids-1k-2027",
+      "name": "Gletschi Kids Run",
+      "date": "2027-08-07",
+      "startTime": "15:00",
+      "finishCutoff": "2027-08-07T15:30",
+      "distanceKm": 1,
+      "elevationGainM": 25,
+      "aidStationCount": 0,
+      "cutoffMinutes": 30,
+      "startFinish": "Sport Resort, Fiesch, Switzerland",
+      "independentSummary": "Ein kurzer Kinderlauf innerhalb des Sport-Resorts in Fiesch, aufgeteilt in drei Altersgruppen mit gestaffelten Starts. Eltern dürfen jüngere Kinder begleiten; der Lauf ist kostenlos und endet mit Medaille, Überraschungsgeschenk sowie einem kleinen Imbiss.",
+      "terrain": [
+        "Gelände innerhalb des Sport-Resorts; genaue Untergrundaufteilung nicht veröffentlicht"
+      ],
+      "highlights": [
+        "Altersgruppen 4–6, 7–9 und 10–13",
+        "Maskottchen Gletschi",
+        "kostenlose Teilnahme",
+        "Eltern dürfen jüngere Kinder begleiten"
+      ],
+      "aidStations": [],
+      "catering": "Am Ziel werden Hotdog und Getränk genannt; keine Streckenverpflegung ausgewiesen.",
+      "map": {
+        "status": "interaktive Streckenkarte/Kursüberflug auf offizieller Seite",
+        "url": "https://www.swissalps100.com/de/courses/kids-run"
+      },
+      "elevationProfile": {
+        "status": "kein separates Höhenprofil veröffentlicht"
+      },
+      "gpx": {
+        "officialDownloadButton": false,
+        "permissionStatus": "not_applicable_public_file_not_found",
+        "fileOperationsBlocked": true,
+        "officialPageLinkBlocked": true,
+        "binaryDownloaded": false,
+        "metadataInspected": false
+      },
+      "sourceIds": [
+        "home",
+        "schedule",
+        "kids"
+      ]
+    }
+  ],
+  "organizerInventory": {
+    "mainFormats": [
+      "160K",
+      "100K",
+      "50K",
+      "Vertical",
+      "Matterhorning",
+      "Gletschi Kids Run"
+    ],
+    "partnerEvent": {
+      "name": "Fly",
+      "status": "listed as partner event on official homepage; separate rights holder not established; excluded from organizer route set"
+    }
+  },
+  "unresolved": [
+    "Matterhorning official course page states 33.30 km but lap table totals 30.40 km (4 x 7.60 km).",
+    "Direct media URLs for interactive maps/elevation-profile graphics were not extracted; official route pages are retained as source URLs.",
+    "GPX file download link and binary metadata were not inspected; 50K and 100K pages expose GPX download buttons in search-rendered page content, but exact file URLs were not extracted.",
+    "The event reply grants broad permission ('You can use any material you wish') but does not itemize individual uses, route scope, GPX operations or commercial rights; clarification is pending.",
+    "The main event-date feed already contains the Swiss Alps 100 event and three route IDs: 50K (50 km / 3,210 hm), 100K (100 km / 6,242 hm), 160K (160 km / 10,004 hm). Official 2027 route pages show 51.6/3,210, 100.8/6,250 and 159.4/10,150 respectively; preserve all catalog values and do not overwrite until reconciled."
+  ],
+  "rights": {
+    "initialRequest": {
+      "date": "2026-11-19",
+      "status": "sent",
+      "messageIdHeader": "<179509582942.95.14594941735116380354@me.com>"
+    },
+    "response": {
+      "date": "2026-11-26T19:50:39Z",
+      "from": "rd@swissalps100.com",
+      "messageIdHeader": "<GV0P278MB18007B50FFBEEACC78E2BF7EF1422@GV0P278MB1800.CHEP278.PROD.OUTLOOK.COM>",
+      "exactScope": "You can use any material you wish.",
+      "interpretation": "broad written permission received for current request context; individual categories and GPX operations require confirmation",
+      "commercialPermission": "not granted / not established"
+    },
+    "clarification": {
+      "date": "2026-11-27",
+      "status": "submitted",
+      "sentCopyFiled": true,
+      "deliveryConfirmed": false,
+      "messageIdHeader": "<179574223314.114.16730177029781169680@me.com>"
+    },
+    "requestedUseCategories": [
+      "official_route_descriptions_verbatim",
+      "shortened_or_editorially_edited_official_descriptions",
+      "independent_factual_summaries",
+      "route_facts_distance_elevation_start_finish_aid_cutoffs",
+      "maps_and_route_geometry",
+      "elevation_profiles",
+      "gpx_file_fetch_load_import_store_process_map_display_user_download",
+      "link_only_to_official_gpx_download",
+      "event_names_and_event_marks",
+      "logos_and_word_device_marks",
+      "symbols_icons_pictograms_emblems_mascots",
+      "event_specific_graphics_and_visual_design"
+    ],
+    "gpxQuestions": {
+      "restrictionNoticesRequested": true,
+      "exactNoticeLocationAndAffectedRoutesRequested": true,
+      "linkOnlyVersusFileOperationsSeparated": true,
+      "allFileOperationsBlockedPendingClarification": true,
+      "linkBlockedPendingSeparateConfirmation": true,
+      "metadataInspected": false
+    },
+    "mediaPackAndBrandGuidelinesRequested": true,
+    "commercialUseAskedSeparately": true
+  },
+  "integration": {
+    "liveEventDatesChanged": false,
+    "routeDescriptionsIntegrated": false,
+    "appPublished": false,
+    "gpxEnabled": false
+  }
+}
