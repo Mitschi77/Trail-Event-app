@@ -1,0 +1,840 @@
+{
+  "schemaVersion": 1,
+  "researchType": "route-descriptions",
+  "checkedAt": "2026-11-27T02:13:53+01:00",
+  "organizer": {
+    "name": "AR Events",
+    "country": "Germany",
+    "officialWettkampfburo": "Der Laufladen – Axel Reusch",
+    "officialContact": "reusch@laufladen-sonthofen.de",
+    "contactSource": "https://www.allgaeu-panorama-marathon.de/content/impressum/",
+    "contactVerifiedOnOfficialSite": true
+  },
+  "event": {
+    "eventId": "allgau-panorama-marathon",
+    "edition": 2027,
+    "eventPeriod": {
+      "start": "2027-08-07",
+      "end": "2027-08-08"
+    },
+    "location": "Sonthofen, Germany",
+    "catalogRecordFound": true,
+    "currentEventDateFeedRoutes": [
+      "ultra-69-7-3125"
+    ],
+    "additionalRouteVariantsNotInFeed": [
+      "Marathon",
+      "Hörnerlauf",
+      "Halbmarathon",
+      "Halbmarathon Reverse",
+      "Rennergy 5K",
+      "Kids Run 600m",
+      "Kids Run 1000m"
+    ]
+  },
+  "sourcePolicy": {
+    "descriptions": "Independent factual summaries only; no official prose copied verbatim.",
+    "partnerPages": "Outdooractive pages are linked directly from the organizer's route pages and identify AR Events as verified content owner.",
+    "protectedAssets": "No logos, map images, elevation profile images or GPX binaries copied.",
+    "sourceLinksOnly": true
+  },
+  "sources": [
+    {
+      "id": "home",
+      "url": "https://www.allgaeu-panorama-marathon.de/",
+      "type": "official_event_overview",
+      "verified": true
+    },
+    {
+      "id": "routes",
+      "url": "https://www.allgaeu-panorama-marathon.de/content/strecken/",
+      "type": "official_route_index",
+      "verified": true
+    },
+    {
+      "id": "schedule",
+      "url": "https://www.allgaeu-panorama-marathon.de/content/zeitplan/",
+      "type": "official_schedule_and_cutoffs",
+      "verified": true
+    },
+    {
+      "id": "reglement",
+      "url": "https://www.allgaeu-panorama-marathon.de/content/reglement/",
+      "type": "official_rules_and_surface",
+      "verified": true
+    },
+    {
+      "id": "participant-info",
+      "url": "https://www.allgaeu-panorama-marathon.de/content/int_-participant-info/",
+      "type": "official_aid_station_information",
+      "verified": true
+    },
+    {
+      "id": "ultra",
+      "url": "https://www.allgaeu-panorama-marathon.de/content/strecken/ultra/",
+      "type": "official_route_page",
+      "verified": true
+    },
+    {
+      "id": "marathon",
+      "url": "https://www.allgaeu-panorama-marathon.de/content/strecken/marathon/",
+      "type": "official_route_page",
+      "verified": true
+    },
+    {
+      "id": "hoernerlauf",
+      "url": "https://www.allgaeu-panorama-marathon.de/content/strecken/hoernerlauf/",
+      "type": "official_route_page",
+      "verified": true
+    },
+    {
+      "id": "half",
+      "url": "https://www.allgaeu-panorama-marathon.de/content/strecken/halbmarathon/",
+      "type": "official_route_page",
+      "verified": true
+    },
+    {
+      "id": "reverse",
+      "url": "https://www.allgaeu-panorama-marathon.de/content/strecken/halbmarathon-reverse-2027/",
+      "type": "official_route_page",
+      "verified": true
+    },
+    {
+      "id": "5k",
+      "url": "https://www.allgaeu-panorama-marathon.de/content/strecken/aok-5k/",
+      "type": "official_route_page",
+      "verified": true
+    },
+    {
+      "id": "kids",
+      "url": "https://www.allgaeu-panorama-marathon.de/content/strecken/kids-run/",
+      "type": "official_route_page",
+      "verified": true
+    },
+    {
+      "id": "oa-ultra",
+      "url": "https://www.outdooractive.com/en/route/trail-running/allgaeuer-hochalpen/allgaeu-panorama-marathon-ultra/105651732/",
+      "type": "organizer_linked_verified_partner_route_map_profile",
+      "verified": true
+    },
+    {
+      "id": "oa-marathon",
+      "url": "https://www.outdooractive.com/en/route/trail-running/allgaeuer-alpen/allgaeu-panorama-marathon-marathon/105651617/",
+      "type": "organizer_linked_verified_partner_route_map_profile",
+      "verified": true
+    },
+    {
+      "id": "oa-half",
+      "url": "https://www.outdooractive.com/en/route/running/allgaeuer-alpen/allgaeu-panorama-marathon-half-marathon/105651820/",
+      "type": "organizer_linked_verified_partner_route_map_profile",
+      "verified": true
+    },
+    {
+      "id": "oa-5k",
+      "url": "https://www.outdooractive.com/en/route/running/allgaeuer-alpen/allgaeu-panorama-marathon-5k/105517083/",
+      "type": "organizer_linked_verified_partner_route_map_profile",
+      "verified": true
+    },
+    {
+      "id": "oa-kids-600",
+      "url": "https://www.outdooractive.com/en/route/running/allgaeuer-alpen/allgaeu-panorama-marathon-kids-run-600m/107382284/",
+      "type": "organizer_linked_verified_partner_route_map_profile",
+      "verified": true
+    },
+    {
+      "id": "oa-kids-1000",
+      "url": "https://www.outdooractive.com/en/route/running/allgaeuer-alpen/allgaeu-panorama-marathon-kids-run-1000m/107382473/",
+      "type": "organizer_linked_verified_partner_route_map_profile",
+      "verified": true
+    },
+    {
+      "id": "imprint",
+      "url": "https://www.allgaeu-panorama-marathon.de/content/impressum/",
+      "type": "official_imprint_and_contact",
+      "verified": true
+    }
+  ],
+  "routeCount": 8,
+  "routes": [
+    {
+      "routeId": "ultra-69-7-3125",
+      "name": "Allgäu Panorama Marathon Ultra",
+      "date": "2027-08-08",
+      "startTime": "06:00",
+      "distanceKm": 69.7,
+      "elevationGainM": 3122,
+      "elevationLossM": 3122,
+      "start": "Allgäu-Outlet, Sonthofen, Germany",
+      "finish": "Wonnemar, Sonthofen, Germany",
+      "cutoffs": [
+        {
+          "location": "Grasgehren",
+          "km": 18.2,
+          "time": "09:30"
+        },
+        {
+          "location": "Orlen Arena / Skisprungstadion Oberstdorf",
+          "km": 49,
+          "time": "14:30"
+        },
+        {
+          "location": "Wonnemar finish",
+          "km": 69.5,
+          "time": "19:00"
+        }
+      ],
+      "independentSummary": "Die lange APM-Runde führt von Sonthofen über die Hörnergruppe und Grasgehren in Richtung Kleinwalsertal und Oberstdorf. Über die Orlen Arena, Gaisalpe, Sonnenkopfgipfel und Sonthofer Hof verläuft der Kurs zurück nach Sonthofen. Die Strecke verbindet lange Berganstiege mit Wald- und Naturwegen, Schotterpassagen und längeren Talabschnitten.",
+      "terrain": [
+        "Asphalt ca. 25.93 %",
+        "Schotter ca. 32.19 %",
+        "Wald-/Naturtrail ca. 31.29 %",
+        "Pfade ca. 9.28 %",
+        "Rest sonstige Wege"
+      ],
+      "highlights": [
+        "Hörnergruppe",
+        "Grasgehren",
+        "Kleinwalsertal",
+        "Oberstdorf",
+        "Orlen Arena",
+        "Gaisalpe",
+        "Sonnenkopfgipfel",
+        "Sonthofer Hof"
+      ],
+      "aidStations": [
+        {
+          "name": "Weltcuphütte",
+          "km": 7.8,
+          "type": "water/iso"
+        },
+        {
+          "name": "Grasgehren",
+          "km": 18.2,
+          "type": "full"
+        },
+        {
+          "name": "Rohrmoos",
+          "km": 24.6,
+          "type": "water/iso"
+        },
+        {
+          "name": "Gasthof Hörnlepass",
+          "km": 32,
+          "type": "full + clothing depot"
+        },
+        {
+          "name": "Söllereck",
+          "km": 40,
+          "type": "water/iso/cola"
+        },
+        {
+          "name": "Erdinger Arena",
+          "km": 49.4,
+          "type": "full"
+        },
+        {
+          "name": "Gaisalpe",
+          "km": 54.5,
+          "type": "water/iso/cola"
+        },
+        {
+          "name": "Sonnenkopfgipfel",
+          "km": 59.5,
+          "type": "water/iso/cola"
+        },
+        {
+          "name": "Altstädter Hof",
+          "km": 61.5,
+          "type": "full"
+        },
+        {
+          "name": "Finish Wonnemar",
+          "km": 69.5,
+          "type": "full + massage"
+        }
+      ],
+      "catering": "Vier Vollverpflegungspunkte plus Ziel mit Wasser, Iso, Cola, Gels, Riegeln, Kuchen, Obst, Brot und Salz; dazwischen Wasser-/Iso-Stellen, ab Söllereck auch Cola. Ziel zusätzlich alkoholfreies Bier.",
+      "map": {
+        "status": "interactive map on organizer-linked verified partner page",
+        "url": "https://www.outdooractive.com/en/route/trail-running/allgaeuer-hochalpen/allgaeu-panorama-marathon-ultra/105651732/"
+      },
+      "elevationProfile": {
+        "status": "interactive profile on organizer-linked verified partner page",
+        "url": "https://www.outdooractive.com/en/route/trail-running/allgaeuer-hochalpen/allgaeu-panorama-marathon-ultra/105651732/"
+      },
+      "gpx": {
+        "publicExportButtonOnOutdooractive": true,
+        "officialEventPage": "https://www.allgaeu-panorama-marathon.de/content/strecken/ultra/",
+        "partnerRoutePage": "https://www.outdooractive.com/en/route/trail-running/allgaeuer-hochalpen/allgaeu-panorama-marathon-ultra/105651732/",
+        "directFileUrl": "not_extracted",
+        "permissionStatus": "not_granted",
+        "fileOperationsBlocked": true,
+        "officialGpxLinkBlocked": true,
+        "binaryDownloaded": false,
+        "metadataInspected": false
+      },
+      "sourceIds": [
+        "home",
+        "schedule",
+        "participant-info",
+        "ultra",
+        "oa-ultra"
+      ],
+      "unresolved": [
+        "Outdooractive route record: 69.7 km / 3,122 hm; existing event-date feed: 69.7 km / 3,125 hm. Preserve both until organizer confirms."
+      ]
+    },
+    {
+      "routeId": "apm-marathon-42-2-2027",
+      "name": "Allgäu Panorama Marathon",
+      "date": "2027-08-08",
+      "startTime": "08:00",
+      "distanceKm": 42.1,
+      "elevationGainM": 1383,
+      "elevationLossM": 1384,
+      "start": "Allgäu-Outlet, Sonthofen, Germany",
+      "finish": "Wonnemar, Sonthofen, Germany",
+      "cutoffs": [
+        {
+          "location": "Grasgehren",
+          "km": 18.2,
+          "time": "11:15"
+        },
+        {
+          "location": "Wonnemar finish",
+          "km": 42.2,
+          "time": "15:00"
+        }
+      ],
+      "independentSummary": "Von Sonthofen steigt die Strecke über Hüttenberg in die Hörnergruppe. Sie führt an Weltcuphütte, Berghaus Schwaben und Grasgehren vorbei, passiert die Aussichtsgipfel Ofterschwanger Horn, Rangiswanger Horn und Weiherkopf und verläuft über Lochbachtal, Bolsterlang und den Illerdamm zurück zum Ziel.",
+      "terrain": [
+        "Asphalt ca. 21.06 %",
+        "Schotter ca. 38.77 %",
+        "Wald-/Naturtrail ca. 29.96 %",
+        "Pfade ca. 7.64 %",
+        "Rest sonstige Wege"
+      ],
+      "highlights": [
+        "Hüttenberg",
+        "Ofterschwanger Horn",
+        "Rangiswanger Horn",
+        "Weiherkopf",
+        "Berghaus Schwaben",
+        "Grasgehren",
+        "Lochbachtal",
+        "Illerdamm"
+      ],
+      "aidStations": [
+        {
+          "name": "Hüttenberg",
+          "km": 3.4,
+          "type": "water/iso/fruit"
+        },
+        {
+          "name": "Weltcuphütte",
+          "km": 7.8,
+          "type": "water/iso/fruit"
+        },
+        {
+          "name": "Berghaus Schwaben",
+          "km": 14.7,
+          "type": "water/iso/fruit"
+        },
+        {
+          "name": "Grasgehren",
+          "km": 18.2,
+          "type": "full"
+        },
+        {
+          "name": "Freiburger Alpe",
+          "km": 23.8,
+          "type": "water/iso/fruit"
+        },
+        {
+          "name": "Ende Lochbachtal",
+          "km": 29.6,
+          "type": "water/iso/fruit"
+        },
+        {
+          "name": "Straßenkreuzung Bolsterlang",
+          "km": 34.1,
+          "type": "water/iso/fruit/cola"
+        },
+        {
+          "name": "Illerdamm bei Weiler",
+          "km": 37.9,
+          "type": "water/iso/fruit/cola"
+        },
+        {
+          "name": "Finish",
+          "km": 42.2,
+          "type": "full + massage"
+        }
+      ],
+      "catering": "Ein Vollverpflegungspunkt plus Ziel mit Wasser, Iso, Cola, Gels, Riegeln, Kuchen, Brot und Salz; übrige Stationen mit Wasser, Iso, Obst und gegen Ende Cola.",
+      "map": {
+        "status": "interactive map on organizer-linked verified partner page",
+        "url": "https://www.outdooractive.com/en/route/trail-running/allgaeuer-alpen/allgaeu-panorama-marathon-marathon/105651617/"
+      },
+      "elevationProfile": {
+        "status": "interactive profile on organizer-linked verified partner page",
+        "url": "https://www.outdooractive.com/en/route/trail-running/allgaeuer-alpen/allgaeu-panorama-marathon-marathon/105651617/"
+      },
+      "gpx": {
+        "publicExportButtonOnOutdooractive": true,
+        "officialEventPage": "https://www.allgaeu-panorama-marathon.de/content/strecken/marathon/",
+        "partnerRoutePage": "https://www.outdooractive.com/en/route/trail-running/allgaeuer-alpen/allgaeu-panorama-marathon-marathon/105651617/",
+        "directFileUrl": "not_extracted",
+        "permissionStatus": "not_granted",
+        "fileOperationsBlocked": true,
+        "officialGpxLinkBlocked": true,
+        "binaryDownloaded": false,
+        "metadataInspected": false
+      },
+      "sourceIds": [
+        "home",
+        "schedule",
+        "participant-info",
+        "marathon",
+        "oa-marathon"
+      ],
+      "unresolved": [
+        "Outdooractive page: 42.1 km / 1,383 hm; organizer aid table ends at 42.2 km and event text rounds to about 1,400 hm. Preserve conflict."
+      ]
+    },
+    {
+      "routeId": "apm-hoernerlauf-18-1110-2027",
+      "name": "Hörnerlauf",
+      "date": "2027-08-08",
+      "startTime": "07:00",
+      "distanceKm": 18,
+      "elevationGainM": 1110,
+      "start": "Allgäu-Outlet, Sonthofen, Germany",
+      "finish": "Grasgehren, Germany",
+      "cutoffs": [
+        {
+          "location": "Grasgehren finish",
+          "km": 18,
+          "time": "10:45"
+        }
+      ],
+      "independentSummary": "Der Hörnerlauf nutzt die ersten rund 18 Kilometer der längeren APM-Bergstrecken und endet in Grasgehren. Der Kurs führt über Hüttenberg, Weltcuphütte und Berghaus Schwaben in die Hörnergruppe. Er bietet eine kompakte Berglauf-Herausforderung mit längeren Anstiegen und alpinem Naturboden.",
+      "terrain": [
+        "Schotter",
+        "Naturboden",
+        "Bergpfade",
+        "teilweise asphaltierte Zubringer"
+      ],
+      "highlights": [
+        "Hüttenberg",
+        "Weltcuphütte",
+        "Berghaus Schwaben",
+        "Hörnergruppe",
+        "Ziel in Grasgehren"
+      ],
+      "aidStations": [
+        {
+          "name": "Hüttenberg",
+          "km": 3.4
+        },
+        {
+          "name": "Weltcuphütte",
+          "km": 7.8
+        },
+        {
+          "name": "Berghaus Schwaben",
+          "km": 14.7
+        },
+        {
+          "name": "Finish Grasgehren",
+          "km": 18
+        }
+      ],
+      "catering": "Alle Stationen führen Wasser, Iso und Obst; im Ziel zusätzlich Cola, Gels, Riegel, Kuchen, Brot und Salz.",
+      "map": {
+        "status": "no separate interactive map link found on official route page; official route page only",
+        "url": "https://www.allgaeu-panorama-marathon.de/content/strecken/hoernerlauf/"
+      },
+      "elevationProfile": {
+        "status": "not separately published/linked on accessible official page"
+      },
+      "gpx": {
+        "publicDownloadLink": "not_found",
+        "permissionStatus": "not_granted",
+        "fileOperationsBlocked": true,
+        "officialGpxLinkBlocked": true,
+        "binaryDownloaded": false,
+        "metadataInspected": false
+      },
+      "sourceIds": [
+        "home",
+        "schedule",
+        "participant-info",
+        "hoernerlauf",
+        "reglement"
+      ],
+      "unresolved": [
+        "18 km / approx. 1,110 hm is stated in the 2027 schedule as the Grasgehren checkpoint; no separate Outdooractive route record or GPX link was identified."
+      ]
+    },
+    {
+      "routeId": "apm-half-21-1-143-2027",
+      "name": "Halbmarathon",
+      "date": "2027-08-08",
+      "startTime": "09:15 / 09:25",
+      "distanceKm": 21.1,
+      "elevationGainM": 143,
+      "elevationLossM": 143,
+      "start": "Allgäu-Outlet, Sonthofen, Germany",
+      "finish": "Wonnemar, Sonthofen, Germany",
+      "cutoffs": [
+        {
+          "location": "Finish",
+          "km": 21.1,
+          "time": "13:00"
+        }
+      ],
+      "independentSummary": "Eine gut laufbare Halbmarathonstrecke von Sonthofen entlang der Iller und des Illerdamms in Richtung Oberstdorf. Der Kurs führt über Abschnitte bei Weiler, Langenwang und Fischen und bietet Ausblicke auf die Allgäuer Berge; der Rückweg führt unter anderem an der Schöllanger Burg vorbei.",
+      "terrain": [
+        "Asphalt ca. 42.86 %",
+        "Wald-/Naturtrail ca. 46.28 %",
+        "Schotter ca. 4.99 %",
+        "Pfade und Nebenwege"
+      ],
+      "highlights": [
+        "Illerufer",
+        "Illerdamm",
+        "Schöllanger Burg",
+        "Blicke Richtung Oberstdorf"
+      ],
+      "aidStations": [
+        {
+          "name": "Illerdamm bei Weiler",
+          "km": 5.5
+        },
+        {
+          "name": "Illerdamm bei Langenwang",
+          "km": 10.3
+        },
+        {
+          "name": "Illerbrücke bei Fischen",
+          "km": 15.3
+        },
+        {
+          "name": "Illerdamm bei Altstädten",
+          "km": 18.4
+        },
+        {
+          "name": "Finish",
+          "km": 21.1
+        }
+      ],
+      "catering": "Alle Stationen mit Wasser und Iso, ab Streckenhälfte zusätzlich Cola; Ziel mit Wasser, Iso, Cola, alkoholfreiem Bier, Obst und Kuchen.",
+      "map": {
+        "status": "interactive map on organizer-linked verified partner page",
+        "url": "https://www.outdooractive.com/en/route/running/allgaeuer-alpen/allgaeu-panorama-marathon-half-marathon/105651820/"
+      },
+      "elevationProfile": {
+        "status": "interactive profile on organizer-linked verified partner page",
+        "url": "https://www.outdooractive.com/en/route/running/allgaeuer-alpen/allgaeu-panorama-marathon-half-marathon/105651820/"
+      },
+      "gpx": {
+        "publicExportButtonOnOutdooractive": true,
+        "officialEventPage": "https://www.allgaeu-panorama-marathon.de/content/strecken/halbmarathon/",
+        "partnerRoutePage": "https://www.outdooractive.com/en/route/running/allgaeuer-alpen/allgaeu-panorama-marathon-half-marathon/105651820/",
+        "directFileUrl": "not_extracted",
+        "permissionStatus": "not_granted",
+        "fileOperationsBlocked": true,
+        "officialGpxLinkBlocked": true,
+        "binaryDownloaded": false,
+        "metadataInspected": false
+      },
+      "sourceIds": [
+        "home",
+        "schedule",
+        "participant-info",
+        "half",
+        "oa-half"
+      ]
+    },
+    {
+      "routeId": "apm-half-reverse-21-1-2027",
+      "name": "Halbmarathon Reverse",
+      "date": "2027-08-07",
+      "startTime": "15:00",
+      "distanceKm": 21.1,
+      "elevationGainM": null,
+      "elevationLossM": null,
+      "start": "Wonnemar, Sonthofen, Germany",
+      "finish": "Allgäu-Outlet, Sonthofen, Germany (inferred from reverse direction; organizer confirmation needed)",
+      "cutoffs": {
+        "status": "not published"
+      },
+      "independentSummary": "Die neue Jubiläumsvariante nutzt nahezu dieselbe Halbmarathonstrecke wie am Sonntag, aber in umgekehrter Richtung. Dadurch entstehen andere Blickrichtungen auf die Oberstdorfer Berge. Die Veranstaltung wird als Erlebnislauf gewertet; es gibt keine Altersklassen-Siegerehrung.",
+      "terrain": [
+        "ähnlicher Mix wie Sonntags-Halbmarathon; exakte Reverse-Geometrie nicht separat veröffentlicht"
+      ],
+      "highlights": [
+        "Gegenrichtung zum Sonntags-Halbmarathon",
+        "Illerdamm",
+        "Widdum / Schöllanger Burg",
+        "Doppel-Halbmarathon-Medaille bei Teilnahme an beiden Läufen"
+      ],
+      "aidStations": [
+        {
+          "name": "Illerdamm bei Altstädten",
+          "km": 3.1
+        },
+        {
+          "name": "Widdum / Schöllanger Burg",
+          "km": 7.5
+        },
+        {
+          "name": "Illerdamm bei Langenwang",
+          "km": 12.2
+        },
+        {
+          "name": "Illerdamm bei Weiler",
+          "km": 17.2
+        },
+        {
+          "name": "Finish",
+          "km": 21.1
+        }
+      ],
+      "catering": "Wasser und Iso an allen Stationen, ab Streckenhälfte Cola; Ziel mit Wasser, Iso, Cola, Obst und Kuchen.",
+      "map": {
+        "status": "no separate partner map identified; official route page only",
+        "url": "https://www.allgaeu-panorama-marathon.de/content/strecken/halbmarathon-reverse-2027/"
+      },
+      "elevationProfile": {
+        "status": "not separately published; reverse course page refers to nearly the same route as Sunday"
+      },
+      "gpx": {
+        "publicDownloadLink": "not_found",
+        "permissionStatus": "not_granted",
+        "fileOperationsBlocked": true,
+        "officialGpxLinkBlocked": true,
+        "binaryDownloaded": false,
+        "metadataInspected": false
+      },
+      "sourceIds": [
+        "home",
+        "schedule",
+        "reverse"
+      ],
+      "unresolved": [
+        "The official page says 'almost the same route' in reverse; exact route geometry, D+/D- and finish point are not separately confirmed. Finish at Allgäu-Outlet is inferred only from the direction reversal."
+      ]
+    },
+    {
+      "routeId": "apm-rennergy-5k-4-9-6-2027",
+      "name": "Rennergy 5K",
+      "date": "2027-08-07",
+      "startTime": "15:15",
+      "distanceKm": 4.9,
+      "elevationGainM": 6,
+      "elevationLossM": 5,
+      "start": "Wonnemar, Sonthofen, Germany",
+      "finish": "not separately specified on accessible official page",
+      "cutoffs": {
+        "status": "not published"
+      },
+      "independentSummary": "Ein kurzer, nahezu flacher Begleitlauf über knapp fünf Kilometer. Die Strecke verläuft überwiegend auf Schotter- und Waldwegen mit sehr kurzen Asphalt- und Pfadabschnitten und richtet sich an Einsteiger sowie jüngere Läufer.",
+      "terrain": [
+        "Schotter ca. 55.85 %",
+        "Wald-/Naturtrail ca. 38.81 %",
+        "Asphalt ca. 5 %",
+        "kurze Pfadabschnitte"
+      ],
+      "highlights": [
+        "Wonnemar / Veranstaltungsbereich Sonthofen",
+        "niedriges Höhenprofil",
+        "Einsteiger- und Nachwuchslauf"
+      ],
+      "aidStations": [],
+      "catering": "Kleine Zielverpflegung mit Wasser und Iso.",
+      "map": {
+        "status": "interactive map on organizer-linked verified partner page",
+        "url": "https://www.outdooractive.com/en/route/running/allgaeuer-alpen/allgaeu-panorama-marathon-5k/105517083/"
+      },
+      "elevationProfile": {
+        "status": "interactive profile on organizer-linked verified partner page",
+        "url": "https://www.outdooractive.com/en/route/running/allgaeuer-alpen/allgaeu-panorama-marathon-5k/105517083/"
+      },
+      "gpx": {
+        "publicExportButtonOnOutdooractive": true,
+        "officialEventPage": "https://www.allgaeu-panorama-marathon.de/content/strecken/aok-5k/",
+        "partnerRoutePage": "https://www.outdooractive.com/en/route/running/allgaeuer-alpen/allgaeu-panorama-marathon-5k/105517083/",
+        "directFileUrl": "not_extracted",
+        "permissionStatus": "not_granted",
+        "fileOperationsBlocked": true,
+        "officialGpxLinkBlocked": true,
+        "binaryDownloaded": false,
+        "metadataInspected": false
+      },
+      "sourceIds": [
+        "home",
+        "schedule",
+        "5k",
+        "oa-5k"
+      ]
+    },
+    {
+      "routeId": "apm-kids-run-600m-2027",
+      "name": "Kids Run U8/U10",
+      "date": "2027-08-07",
+      "startTime": "15:00",
+      "distanceKm": 0.6,
+      "elevationGainM": 3,
+      "elevationLossM": 3,
+      "startFinish": "Indoor Arena Allgäu, Sonthofen, Germany",
+      "cutoffs": {
+        "status": "not_published"
+      },
+      "independentSummary": "Ein kurzer Kinderlauf für U8 und U10 über ungefähr 600 m im Veranstaltungsbereich der Indoor Arena Allgäu. Die Strecke ist nahezu flach und führt überwiegend über befestigte Schotter- und Naturwege.",
+      "terrain": [
+        "Schotter ca. 63.35 %",
+        "Wald-/Naturtrail ca. 25.99 %",
+        "Asphalt ca. 7.07 %",
+        "kurze Pfade"
+      ],
+      "highlights": [
+        "Indoor Arena Allgäu",
+        "Kinderlauf U8/U10",
+        "Finisher-Medaille"
+      ],
+      "aidStations": [],
+      "catering": "Keine Streckenverpflegung ausgewiesen; Ziel-/Eventverpflegung nicht näher spezifiziert.",
+      "map": {
+        "status": "interactive map on organizer-linked verified partner page",
+        "url": "https://www.outdooractive.com/en/route/running/allgaeuer-alpen/allgaeu-panorama-marathon-kids-run-600m/107382284/"
+      },
+      "elevationProfile": {
+        "status": "interactive profile on organizer-linked verified partner page",
+        "url": "https://www.outdooractive.com/en/route/running/allgaeuer-alpen/allgaeu-panorama-marathon-kids-run-600m/107382284/"
+      },
+      "gpx": {
+        "publicExportButtonOnOutdooractive": true,
+        "officialEventPage": "https://www.allgaeu-panorama-marathon.de/content/strecken/kids-run/",
+        "partnerRoutePage": "https://www.outdooractive.com/en/route/running/allgaeuer-alpen/allgaeu-panorama-marathon-kids-run-600m/107382284/",
+        "directFileUrl": "not_extracted",
+        "permissionStatus": "not_granted",
+        "fileOperationsBlocked": true,
+        "officialGpxLinkBlocked": true,
+        "binaryDownloaded": false,
+        "metadataInspected": false
+      },
+      "sourceIds": [
+        "home",
+        "schedule",
+        "kids",
+        "oa-kids-600"
+      ]
+    },
+    {
+      "routeId": "apm-kids-run-1000m-2027",
+      "name": "Kids Run U12",
+      "date": "2027-08-07",
+      "startTime": "15:15",
+      "distanceKm": 1,
+      "elevationGainM": 4,
+      "elevationLossM": 4,
+      "startFinish": "Indoor Arena Allgäu, Sonthofen, Germany",
+      "cutoffs": {
+        "status": "not_published"
+      },
+      "independentSummary": "Die längere Kinderlaufvariante für U12 über rund einen Kilometer. Der fast flache Rundkurs liegt im Veranstaltungsbereich der Indoor Arena Allgäu und besteht überwiegend aus Schotter- und Naturwegen.",
+      "terrain": [
+        "Schotter ca. 76.89 %",
+        "Wald-/Naturtrail ca. 16.50 %",
+        "Asphalt ca. 4.27 %",
+        "kurze Pfade"
+      ],
+      "highlights": [
+        "Indoor Arena Allgäu",
+        "Kinderlauf U12",
+        "Finisher-Medaille"
+      ],
+      "aidStations": [],
+      "catering": "Keine Streckenverpflegung ausgewiesen; Ziel-/Eventverpflegung nicht näher spezifiziert.",
+      "map": {
+        "status": "interactive map on organizer-linked verified partner page",
+        "url": "https://www.outdooractive.com/en/route/running/allgaeuer-alpen/allgaeu-panorama-marathon-kids-run-1000m/107382473/"
+      },
+      "elevationProfile": {
+        "status": "interactive profile on organizer-linked verified partner page",
+        "url": "https://www.outdooractive.com/en/route/running/allgaeuer-alpen/allgaeu-panorama-marathon-kids-run-1000m/107382473/"
+      },
+      "gpx": {
+        "publicExportButtonOnOutdooractive": true,
+        "officialEventPage": "https://www.allgaeu-panorama-marathon.de/content/strecken/kids-run/",
+        "partnerRoutePage": "https://www.outdooractive.com/en/route/running/allgaeuer-alpen/allgaeu-panorama-marathon-kids-run-1000m/107382473/",
+        "directFileUrl": "not_extracted",
+        "permissionStatus": "not_granted",
+        "fileOperationsBlocked": true,
+        "officialGpxLinkBlocked": true,
+        "binaryDownloaded": false,
+        "metadataInspected": false
+      },
+      "sourceIds": [
+        "home",
+        "schedule",
+        "kids",
+        "oa-kids-1000"
+      ]
+    }
+  ],
+  "unresolved": [
+    "Ultra Outdooractive route: 69.7 km / 3,122 hm; existing event-date feed: 69.7 km / 3,125 hm.",
+    "Marathon Outdooractive route: 42.1 km / 1,383 hm; official aid-station route table ends at 42.2 km and event text rounds to about 1,400 hm.",
+    "Hörnerlauf: 18 km / about 1,110 hm are stated via the official 2027 schedule's Grasgehren checkpoint; no separate partner route/map/profile was found.",
+    "Halbmarathon Reverse: route is described as almost the Sunday half-marathon in reverse; exact D+/D-, finish point and cutoff are not separately confirmed.",
+    "5K finish location and 2027 cutoff are not explicitly stated in the accessible route page.",
+    "Outdooractive provides public GPX export controls, but no direct file URL was extracted; public access is not permission. No GPX files or metadata were downloaded/inspected.",
+    "Current event-date feed contains a date entry only for Ultra; no live feed changes made for other distances."
+  ],
+  "rights": {
+    "requestDate": "2026-11-27",
+    "status": "submitted",
+    "sentCopyFiled": true,
+    "deliveryConfirmed": false,
+    "messageIdHeader": "<179574246769.115.12387978182665529307@me.com>",
+    "recipient": "reusch@laufladen-sonthofen.de",
+    "contactSource": "https://www.allgaeu-panorama-marathon.de/content/impressum/",
+    "requestedUseCategories": [
+      "official_route_descriptions_verbatim",
+      "shortened_or_editorially_edited_official_descriptions",
+      "independent_factual_summaries",
+      "route_facts_distance_elevation_start_finish_aid_cutoffs",
+      "maps_and_route_geometry",
+      "elevation_profiles",
+      "gpx_file_fetch_load_import_store_process_map_display_user_download",
+      "link_only_to_official_gpx_download",
+      "event_names_and_event_marks",
+      "logos_and_word_device_marks",
+      "symbols_icons_pictograms_emblems_mascots",
+      "event_specific_graphics_and_visual_design"
+    ],
+    "gpxQuestions": {
+      "restrictionNoticesRequested": true,
+      "exactNoticeLocationAndAffectedRoutesRequested": true,
+      "fetchLoadImportStoreProcessMapDisplayDownloadSeparated": true,
+      "linkOnlyPermissionSeparated": true,
+      "technicalFailClosedPolicyExplained": true,
+      "allFileOperationsBlockedPendingPermission": true,
+      "linkBlockedPendingSeparatePermission": true,
+      "noBinaryDownloaded": true,
+      "noMetadataInspected": true
+    },
+    "projectPhase": "non-commercial independent information app under development; no official affiliation claimed",
+    "futureCommercialPermission": "asked separately; not granted",
+    "mediaPackAndBrandGuidelinesRequested": true
+  },
+  "integration": {
+    "liveEventDatesChanged": false,
+    "routeDescriptionsIntegrated": false,
+    "appPublished": false,
+    "gpxEnabled": false
+  }
+}
