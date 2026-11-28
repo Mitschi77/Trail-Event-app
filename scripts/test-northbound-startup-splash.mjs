@@ -36,6 +36,6 @@ assert.match(splash, /Promise\.resolve\(window\.connectPlannerCloud\(\)\)/, 'clo
 assert.doesNotMatch(splash, /await\s+window\.connectPlannerCloud/, 'startup never waits for cloud synchronization');
 assert.match(splash, /setTimeout\(finish, 300\)/, 'splash exits promptly without waiting for login or network');
 assert.match(worker, /startup-splash\.js/, 'service worker caches the splash controller');
-assert.match(worker, /trail-event-planner-v118/, 'service worker cache version is bumped');
+assert.match(worker, /trail-event-planner-v120/, 'service worker cache version is bumped');
 
 console.log('NORTHBOUND startup splash checks passed.');
