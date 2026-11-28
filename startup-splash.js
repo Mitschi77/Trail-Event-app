@@ -1,4 +1,4 @@
-/* NORTHBOUND startup splash: static brand mark, full iPhone viewport and safe cloud handoff. */
+/* NORTHBOUND startup splash: static brand mark, full viewport and non-blocking cloud sync. */
 (() => {
   'use strict';
   const splash = document.getElementById('northboundStartupSplash');
@@ -7,7 +7,7 @@
   document.documentElement.classList.add('northbound-startup-lock');
   document.body.classList.add('northbound-startup-lock');
 
-  // Explicit viewport dimensions cover the full iPhone screen, including its bottom edge.
+  // Cover the complete iPhone viewport, including the bottom edge.
   Object.entries({
     position: 'fixed', top: '0', right: '0', bottom: '0', left: '0',
     width: '100vw', height: '100dvh', minHeight: '100vh', maxHeight: 'none',
@@ -16,8 +16,7 @@
     property.replace(/[A-Z]/g, m => '-' + m.toLowerCase()), value, 'important'
   ));
 
-  // Keep only the NORTHBOUND logo on the splash. Athlete artwork and animation
-  // are disabled completely for now to reduce startup work and isolate delays.
+  // Logo only: athlete artwork and animation are disabled while startup is simplified.
   const style = document.createElement('style');
   style.id = 'northbound-splash-static-brand';
   style.textContent = `
@@ -41,17 +40,18 @@
     window.setTimeout(() => splash.remove(), 420);
   };
 
-  const boot = async () => {
-    try {
-      if (typeof window.connectPlannerCloud === 'function') {
-        await window.connectPlannerCloud();
-      }
-    } catch (error) {
-      console.warn('NORTHBOUND: initial cloud sync did not finish successfully.', error);
-    } finally {
-      finish();
+  // Start cloud synchronization in the background. A logged-out user, slow
+  // network or unavailable Supabase must never hold the app behind the splash.
+  try {
+    if (typeof window.connectPlannerCloud === 'function') {
+      Promise.resolve(window.connectPlannerCloud()).catch(error => {
+        console.warn('NORTHBOUND: background cloud sync did not finish successfully.', error);
+      });
     }
-  };
+  } catch (error) {
+    console.warn('NORTHBOUND: background cloud sync could not start.', error);
+  }
 
-  void boot();
+  // Allow the static logo a brief first paint, then show the locally available app.
+  window.setTimeout(finish, 300);
 })();
