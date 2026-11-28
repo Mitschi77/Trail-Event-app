@@ -1,0 +1,783 @@
+{
+  "schemaVersion": 1,
+  "researchType": "route-descriptions",
+  "organizer": {
+    "name": "siimple GmbH",
+    "brand": "3Kings3Hills",
+    "country": "Germany",
+    "officialContact": "servus@3kings-3hills.com",
+    "contactSource": "https://www.3kings-3hills.com/impressum/",
+    "contactVerified": true
+  },
+  "event": {
+    "eventId": "3kings-3hills",
+    "edition": 2027,
+    "eventPeriod": {
+      "start": "2027-07-23",
+      "end": "2027-07-24",
+      "verified": true
+    },
+    "venue": "Alter Sportplatz Haidmühle, Ludwigsreut 29, 94145 Haidmühle, Germany",
+    "region": "Bavarian Forest and Bohemian Forest; Germany/Czechia/Austria border region",
+    "routeCount": 8
+  },
+  "sourcePolicy": {
+    "descriptions": "Only independent factual summaries are stored; no long verbatim organizer text copied.",
+    "protectedAssets": "No logos, photos, map tiles, profile images or GPX binaries copied.",
+    "maps": "Official map embeds currently show placeholders or regional context; exact route geometry is not yet public."
+  },
+  "sources": [
+    {
+      "id": "homepage-2027",
+      "url": "https://www.3kings-3hills.com/",
+      "type": "official_event_homepage",
+      "verified": true
+    },
+    {
+      "id": "facts-2027",
+      "url": "https://www.3kings-3hills.com/fakten/",
+      "type": "official_2027_facts_table",
+      "verified": true,
+      "notes": "Intro says seven routes but table contains eight."
+    },
+    {
+      "id": "rules-2027",
+      "url": "https://www.3kings-3hills.com/regeln/",
+      "type": "official_2027_regulations",
+      "verified": true,
+      "notes": "Regulations explicitly say eight routes."
+    },
+    {
+      "id": "program-2027",
+      "url": "https://www.3kings-3hills.com/programm/",
+      "type": "official_2027_program",
+      "verified": true
+    },
+    {
+      "id": "imprint",
+      "url": "https://www.3kings-3hills.com/impressum/",
+      "type": "official_contact_and_imprint",
+      "verified": true
+    },
+    {
+      "id": "route-100miles",
+      "url": "https://www.3kings-3hills.com/100-miles-ultra-trail-167-km/",
+      "type": "official_route_page",
+      "verified": true
+    },
+    {
+      "id": "route-ultra-xl",
+      "url": "https://www.3kings-3hills.com/117km-ultra-xl/",
+      "type": "official_route_page",
+      "verified": true
+    },
+    {
+      "id": "route-endurance",
+      "url": "https://www.3kings-3hills.com/85-km-endurance-trail/",
+      "type": "official_route_page",
+      "verified": true
+    },
+    {
+      "id": "route-ultra",
+      "url": "https://www.3kings-3hills.com/ultra-trail/",
+      "type": "official_route_page",
+      "verified": true
+    },
+    {
+      "id": "route-marathon",
+      "url": "https://www.3kings-3hills.com/40k-marathon-trail/",
+      "type": "official_route_page",
+      "verified": true
+    },
+    {
+      "id": "route-base",
+      "url": "https://www.3kings-3hills.com/base-trail/",
+      "type": "official_route_page",
+      "verified": true
+    },
+    {
+      "id": "route-shorty",
+      "url": "https://www.3kings-3hills.com/shorty-trail/",
+      "type": "official_route_page",
+      "verified": true
+    },
+    {
+      "id": "route-traily",
+      "url": "https://www.3kings-3hills.com/3k3h-traily-trail/",
+      "type": "official_route_page",
+      "verified": true
+    }
+  ],
+  "routes": [
+    {
+      "routeId": "100-miles-ultra-168-6300",
+      "name": "100 Miles Ultra Trail",
+      "date": "2027-07-23",
+      "startTime": "14:00",
+      "distanceKm": 168,
+      "elevationGainM": 6300,
+      "timeLimitHours": 34,
+      "finishTimeLocal": "2027-07-24 24:00 (Mitternacht zum 25.07.)",
+      "itraPoints": 6,
+      "utmbIndexCategory": "100M",
+      "independentSummary": "Die lange Auftaktschleife führt von Haidmühle über Forstwege und kurze Singletrails durch den Bischofsreuter Forst, Philippsreut und den alten Kirchensteig zum Almberg. Über den Leopoldsreuter Wald und den Haidel mit Aussichtsturm geht es zurück nach Haidmühle. Nach einem Medical-Check folgt der technischere Schlussabschnitt über Dreisessel, Grenzsteig, Dreiländereck, Steinernes Meer, Riedelsbach und Klausgupf; anschließend führen Waldwiesen und Wege bei Frauenberg zurück ins Ziel.",
+      "terrain": [
+        "Singletrails",
+        "Forststraßen",
+        "Wurzelpfade",
+        "Granitblöcke",
+        "Holzstege",
+        "loser Untergrund"
+      ],
+      "terrainShare": [
+        "50% Trail",
+        "47% Forststraße",
+        "<3% Asphalt"
+      ],
+      "highlights": [
+        "Almberg",
+        "Leopoldsreut und ehemalige Schule",
+        "Haidel-Aussichtsturm",
+        "Medical-Check in Haidmühle nach rund 110 km",
+        "Dreisessel",
+        "Dreiländereck",
+        "Steinernes Meer",
+        "Klausgupf"
+      ],
+      "cutoffTimes": [
+        {
+          "point": "Haidl",
+          "time": "06:45",
+          "date": "2027-07-24"
+        },
+        {
+          "point": "Haidmühle",
+          "time": "10:00",
+          "date": "2027-07-24"
+        },
+        {
+          "point": "Riedelsbacher Wald",
+          "time": "17:30",
+          "date": "2027-07-24"
+        }
+      ],
+      "aidStations": [
+        "Schwarzenthal",
+        "Hüttenklause",
+        "Almberg",
+        "Sulzberg + Drop Bag 1",
+        "Schwendreut",
+        "Haidel",
+        "Gschwendet",
+        "Haidmühle + Drop Bag 2",
+        "Dreisessel #1",
+        "Dreisessel #2",
+        "Riedelsbach",
+        "Michelklause",
+        "Frauenberg",
+        "Zielverpflegung Haidmühle"
+      ],
+      "map": {
+        "status": "regional_placeholder_exact_route_withheld",
+        "officialPage": "https://www.3kings-3hills.com/100-miles-ultra-trail-167-km/",
+        "note": "Die eingebettete Karte zeigt derzeit nur Platzhalter bzw. Region; genaue Strecken werden laut Veranstalter aus Naturschutzgründen erst zwei Wochen vor dem Event veröffentlicht, soweit diese Notiz auf der Streckenseite vorhanden ist."
+      },
+      "elevationProfile": {
+        "status": "image_embedded_on_official_page",
+        "officialPage": "https://www.3kings-3hills.com/100-miles-ultra-trail-167-km/",
+        "directAssetUrl": null
+      },
+      "gpx": {
+        "publicDirectDownloadUrl": null,
+        "officialInfoPage": "https://www.3kings-3hills.com/100-miles-ultra-trail-167-km/",
+        "organizerInstruction": "GPX-Dateien bitte auf die Veranstalter-Website verlinken.",
+        "linkPermission": "official_website_link_only",
+        "fileOperationsAllowed": false,
+        "binaryDownloaded": false,
+        "metadataInspected": false,
+        "restrictionNotice": "Keine konkrete GPX-Lizenz-/Downloadklausel öffentlich gefunden; Detailbedingungen angefragt. Keine GPX-Datei abgerufen.",
+        "appPolicy": "Keine GPX-Datei abrufen, laden, importieren, speichern, verarbeiten, auf einer Karte darstellen oder zum Download anbieten; nur offizieller Website-Link."
+      },
+      "sourceIds": [
+        "facts-2027",
+        "rules-2027",
+        "route-100miles",
+        "program-2027"
+      ]
+    },
+    {
+      "routeId": "ultra-trail-xl-117-4400",
+      "name": "Ultra Trail XL",
+      "date": "2027-07-23",
+      "startTime": "22:00",
+      "distanceKm": 117,
+      "elevationGainM": 4400,
+      "timeLimitHours": 24,
+      "finishTimeLocal": "2027-07-24 22:00",
+      "itraPoints": 5,
+      "utmbIndexCategory": "100K",
+      "independentSummary": "Von Haidmühle führt eine erste Schleife über Forststraßen und kurze Trails durch den Bischofsreuter Forst nach Herzogsreut und über historische Säumersteige durch den Leopoldsreuter Wald. Der Haidel mit Aussichtsturm bildet einen markanten Versorgungspunkt. Nach der Rückkehr nach Haidmühle und einem Medical-Check folgt der technischere Abschnitt rund um Dreisessel und Grenzsteig, über Dreiländereck und Steinernes Meer nach Riedelsbach sowie über wurzelige Waldpfade und Klausgupf zurück.",
+      "terrain": [
+        "Singletrails",
+        "Forststraßen",
+        "Wurzelpfade",
+        "Granitblöcke",
+        "Holzstege",
+        "loser Untergrund"
+      ],
+      "terrainShare": [
+        "60% Trail",
+        "36% Forststraße",
+        "<4% Asphalt"
+      ],
+      "highlights": [
+        "Leopoldsreuter Wald",
+        "Haidel-Aussichtsturm",
+        "Medical-Check in Haidmühle nach rund 70 km",
+        "Dreisessel",
+        "Grenzsteig",
+        "Dreiländereck",
+        "Steinernes Meer",
+        "Klausgupf"
+      ],
+      "cutoffTimes": [
+        {
+          "point": "Haidl",
+          "time": "06:45",
+          "date": "2027-07-24"
+        },
+        {
+          "point": "Haidmühle",
+          "time": "10:00",
+          "date": "2027-07-24"
+        },
+        {
+          "point": "Riedelsbacher Wald",
+          "time": "17:30",
+          "date": "2027-07-24"
+        }
+      ],
+      "aidStations": [
+        "Sulzberg",
+        "Schwendreut",
+        "Haidel",
+        "Gschwendet",
+        "Haidmühle",
+        "Dreisessel #1",
+        "Dreisessel #2",
+        "Riedelsbach",
+        "Michelklause",
+        "Frauenberg",
+        "Zielverpflegung Haidmühle"
+      ],
+      "map": {
+        "status": "regional_placeholder_exact_route_withheld",
+        "officialPage": "https://www.3kings-3hills.com/117km-ultra-xl/",
+        "note": "Die eingebettete Karte zeigt derzeit nur Platzhalter bzw. Region; genaue Strecken werden laut Veranstalter aus Naturschutzgründen erst zwei Wochen vor dem Event veröffentlicht, soweit diese Notiz auf der Streckenseite vorhanden ist."
+      },
+      "elevationProfile": {
+        "status": "image_embedded_on_official_page",
+        "officialPage": "https://www.3kings-3hills.com/117km-ultra-xl/",
+        "directAssetUrl": null
+      },
+      "gpx": {
+        "publicDirectDownloadUrl": null,
+        "officialInfoPage": "https://www.3kings-3hills.com/117km-ultra-xl/",
+        "organizerInstruction": "GPX-Dateien bitte auf die Veranstalter-Website verlinken.",
+        "linkPermission": "official_website_link_only",
+        "fileOperationsAllowed": false,
+        "binaryDownloaded": false,
+        "metadataInspected": false,
+        "restrictionNotice": "Keine konkrete GPX-Lizenz-/Downloadklausel öffentlich gefunden; Detailbedingungen angefragt. Keine GPX-Datei abgerufen.",
+        "appPolicy": "Keine GPX-Datei abrufen, laden, importieren, speichern, verarbeiten, auf einer Karte darstellen oder zum Download anbieten; nur offizieller Website-Link."
+      },
+      "sourceIds": [
+        "facts-2027",
+        "rules-2027",
+        "route-ultra-xl",
+        "program-2027"
+      ]
+    },
+    {
+      "routeId": "endurance-trail-85-3000",
+      "name": "Endurance Trail",
+      "date": "2027-07-24",
+      "startTime": "05:00",
+      "distanceKm": 85,
+      "elevationGainM": 3000,
+      "timeLimitHours": 19,
+      "finishTimeLocal": "2027-07-24 24:00",
+      "itraPoints": 4,
+      "utmbIndexCategory": "100K",
+      "independentSummary": "Die erste Schleife führt von Haidmühle über Gschwendet auf Waldwegen und Trails nach Norden und nach etwa 20 km zurück. Danach steigt der Kurs über den Grenzsteig zum Dreisessel an und verläuft über steinige, teils flowige Grenztrails zum Dreiländereck und über den Bayerischen Plöckenstein und das Steinerne Meer nach Riedelsbach. Wurzelige Singletrails, Granitblöcke, Holzstege und Waldwiesen prägen den Schluss über Klausgupf und Frauenberg.",
+      "terrain": [
+        "Waldwege",
+        "Singletrails",
+        "steinige Grenztrails",
+        "Wurzelpfade",
+        "Granitblöcke",
+        "Holzstege",
+        "Waldwiesen"
+      ],
+      "terrainShare": [
+        "90% Trail",
+        "10% Forststraße",
+        "<1% Asphalt"
+      ],
+      "highlights": [
+        "Gschwendet-Schleife",
+        "Dreisessel (1.333 m)",
+        "Grenzsteig und Dreiländereck",
+        "Bayerischer Plöckenstein",
+        "Steinernes Meer",
+        "Klausgupf",
+        "Brennerin-Hütte"
+      ],
+      "cutoffTimes": [
+        {
+          "point": "Haidl",
+          "time": "07:30",
+          "date": "2027-07-24"
+        },
+        {
+          "point": "Haidmühle",
+          "time": "10:45",
+          "date": "2027-07-24"
+        },
+        {
+          "point": "Riedelsbach",
+          "time": "17:30",
+          "date": "2027-07-24"
+        }
+      ],
+      "aidStations": [
+        "Haidl",
+        "Gschwendet",
+        "Haidmühle",
+        "Dreisessel #1",
+        "Dreisessel #2",
+        "Riedelsbach",
+        "Bierstrassl",
+        "Michelklause",
+        "Frauenberg",
+        "Zielverpflegung Haidmühle"
+      ],
+      "map": {
+        "status": "placeholder_exact_route_not_available",
+        "officialPage": "https://www.3kings-3hills.com/85-km-endurance-trail/",
+        "note": "Die eingebettete Karte zeigt derzeit nur Platzhalter bzw. Region; genaue Strecken werden laut Veranstalter aus Naturschutzgründen erst zwei Wochen vor dem Event veröffentlicht, soweit diese Notiz auf der Streckenseite vorhanden ist."
+      },
+      "elevationProfile": {
+        "status": "not_found_as_separate_profile",
+        "officialPage": "https://www.3kings-3hills.com/85-km-endurance-trail/",
+        "directAssetUrl": null
+      },
+      "gpx": {
+        "publicDirectDownloadUrl": null,
+        "officialInfoPage": "https://www.3kings-3hills.com/85-km-endurance-trail/",
+        "organizerInstruction": "GPX-Dateien bitte auf die Veranstalter-Website verlinken.",
+        "linkPermission": "official_website_link_only",
+        "fileOperationsAllowed": false,
+        "binaryDownloaded": false,
+        "metadataInspected": false,
+        "restrictionNotice": "Keine konkrete GPX-Lizenz-/Downloadklausel öffentlich gefunden; Detailbedingungen angefragt. Keine GPX-Datei abgerufen.",
+        "appPolicy": "Keine GPX-Datei abrufen, laden, importieren, speichern, verarbeiten, auf einer Karte darstellen oder zum Download anbieten; nur offizieller Website-Link."
+      },
+      "sourceIds": [
+        "facts-2027",
+        "rules-2027",
+        "route-endurance",
+        "program-2027"
+      ]
+    },
+    {
+      "routeId": "ultra-58-2400",
+      "name": "Ultra Trail",
+      "date": "2027-07-24",
+      "startTime": "07:30",
+      "distanceKm": 58,
+      "elevationGainM": 2400,
+      "timeLimitHours": 14.5,
+      "finishTimeLocal": "2027-07-24 22:00",
+      "itraPoints": 3,
+      "utmbIndexCategory": "50K",
+      "independentSummary": "Von Haidmühle steigt die Strecke auf dem Grenzsteig zunächst zum Spicak und weiter zum Dreisessel an. Anschließend führt sie auf steinigen, überwiegend flowigen Grenztrails über das Dreiländereck und das Steinerne Meer nach Riedelsbach. Wurzelige Waldpfade, Granitblöcke, Holzstege und loser Untergrund prägen den Schluss über Klausgupf und Frauenberg zurück nach Haidmühle.",
+      "terrain": [
+        "steinige Trails",
+        "flowige Grenzpfade",
+        "Wurzelpfade",
+        "Granitblöcke",
+        "Holzstege",
+        "loser Untergrund"
+      ],
+      "terrainShare": [
+        "90% Trail",
+        "10% Forststraße",
+        "<1% Asphalt"
+      ],
+      "highlights": [
+        "Spicak",
+        "Dreisessel (1.333 m)",
+        "Grenzsteig",
+        "Dreiländereck",
+        "Steinernes Meer",
+        "Klausgupf",
+        "Brennerin-Hütte"
+      ],
+      "cutoffTimes": [
+        {
+          "point": "Dreisessel #2",
+          "time": "11:00",
+          "date": "2027-07-24"
+        },
+        {
+          "point": "Riedelsbacher Wald",
+          "time": "14:30",
+          "date": "2027-07-24"
+        }
+      ],
+      "aidStations": [
+        "Dreisessel #1",
+        "Dreisessel #2",
+        "Riedelsbach",
+        "Michelklause",
+        "Frauenberg",
+        "Zielverpflegung Haidmühle"
+      ],
+      "map": {
+        "status": "regional_placeholder_exact_route_withheld",
+        "officialPage": "https://www.3kings-3hills.com/ultra-trail/",
+        "note": "Die eingebettete Karte zeigt derzeit nur Platzhalter bzw. Region; genaue Strecken werden laut Veranstalter aus Naturschutzgründen erst zwei Wochen vor dem Event veröffentlicht, soweit diese Notiz auf der Streckenseite vorhanden ist."
+      },
+      "elevationProfile": {
+        "status": "image_embedded_on_official_page",
+        "officialPage": "https://www.3kings-3hills.com/ultra-trail/",
+        "directAssetUrl": null
+      },
+      "gpx": {
+        "publicDirectDownloadUrl": null,
+        "officialInfoPage": "https://www.3kings-3hills.com/ultra-trail/",
+        "organizerInstruction": "GPX-Dateien bitte auf die Veranstalter-Website verlinken.",
+        "linkPermission": "official_website_link_only",
+        "fileOperationsAllowed": false,
+        "binaryDownloaded": false,
+        "metadataInspected": false,
+        "restrictionNotice": "Keine konkrete GPX-Lizenz-/Downloadklausel öffentlich gefunden; Detailbedingungen angefragt. Keine GPX-Datei abgerufen.",
+        "appPolicy": "Keine GPX-Datei abrufen, laden, importieren, speichern, verarbeiten, auf einer Karte darstellen oder zum Download anbieten; nur offizieller Website-Link."
+      },
+      "sourceIds": [
+        "facts-2027",
+        "rules-2027",
+        "route-ultra"
+      ]
+    },
+    {
+      "routeId": "marathon-trail-40-1700",
+      "name": "Marathon Trail",
+      "date": "2027-07-24",
+      "startTime": "09:30",
+      "distanceKm": 40,
+      "elevationGainM": 1700,
+      "timeLimitHours": 10.5,
+      "finishTimeLocal": "2027-07-24 20:00",
+      "itraPoints": 2,
+      "utmbIndexCategory": "50K",
+      "independentSummary": "Der Kurs steigt von Haidmühle über den Grenzsteig zunächst zum Spicak und zum Dreisessel auf. Auf steinigen, meist flüssig laufbaren Trails geht es am ehemaligen Eisernen Vorhang entlang zum Dreiländereck und über das Steinerne Meer nach Riedelsbach. Wurzelige Singletrails, Granitblöcke, Holzstege und loser Untergrund prägen den Abschnitt über Klausgupf und Frauenberg zurück zum Haidmühler Filz.",
+      "terrain": [
+        "steinige Trails",
+        "Wurzelpfade",
+        "Granitblöcke",
+        "Holzstege",
+        "loser Untergrund"
+      ],
+      "terrainShare": [
+        "90% Trail",
+        "10% Forststraße",
+        "<1% Asphalt"
+      ],
+      "highlights": [
+        "Spicak",
+        "Dreisessel",
+        "Grenzsteig",
+        "Dreiländereck",
+        "Steinernes Meer",
+        "Klausgupf",
+        "Brennerin-Hütte"
+      ],
+      "cutoffTimes": [
+        {
+          "point": "Riedelsbacher Wald",
+          "time": "14:30",
+          "date": "2027-07-24"
+        }
+      ],
+      "aidStations": [
+        "Dreisessel #1",
+        "Dreisessel #2",
+        "Riedelsbach",
+        "Frauenberg",
+        "Zielverpflegung Haidmühle"
+      ],
+      "map": {
+        "status": "regional_placeholder_exact_route_withheld",
+        "officialPage": "https://www.3kings-3hills.com/40k-marathon-trail/",
+        "note": "Die eingebettete Karte zeigt derzeit nur Platzhalter bzw. Region; genaue Strecken werden laut Veranstalter aus Naturschutzgründen erst zwei Wochen vor dem Event veröffentlicht, soweit diese Notiz auf der Streckenseite vorhanden ist."
+      },
+      "elevationProfile": {
+        "status": "image_embedded_on_official_page",
+        "officialPage": "https://www.3kings-3hills.com/40k-marathon-trail/",
+        "directAssetUrl": null
+      },
+      "gpx": {
+        "publicDirectDownloadUrl": null,
+        "officialInfoPage": "https://www.3kings-3hills.com/40k-marathon-trail/",
+        "organizerInstruction": "GPX-Dateien bitte auf die Veranstalter-Website verlinken.",
+        "linkPermission": "official_website_link_only",
+        "fileOperationsAllowed": false,
+        "binaryDownloaded": false,
+        "metadataInspected": false,
+        "restrictionNotice": "Keine konkrete GPX-Lizenz-/Downloadklausel öffentlich gefunden; Detailbedingungen angefragt. Keine GPX-Datei abgerufen.",
+        "appPolicy": "Keine GPX-Datei abrufen, laden, importieren, speichern, verarbeiten, auf einer Karte darstellen oder zum Download anbieten; nur offizieller Website-Link."
+      },
+      "sourceIds": [
+        "facts-2027",
+        "rules-2027",
+        "route-marathon"
+      ]
+    },
+    {
+      "routeId": "base-trail-26-900",
+      "name": "Base Trail",
+      "date": "2027-07-24",
+      "startTime": "11:30",
+      "distanceKm": 26,
+      "elevationGainM": 900,
+      "timeLimitHours": 7,
+      "finishTimeLocal": "2027-07-24 18:30",
+      "itraPoints": 1,
+      "utmbIndexCategory": "20K",
+      "independentSummary": "Vom Start in Haidmühle führt der Kurs über den Urwald am Dreisessel und den historischen Grenzsteig zunächst zum Spicak und weiter zum Dreisessel. Der Trail verläuft über das Dreiländereck und das Steinerne Meer auf dem Adalbert-Stifter-Steig nach Riedelsbach. Danach folgen wurzelige Waldpfade, ein Abstieg Richtung Frauenberg und wechselnde Passagen aus Wurzeln, Granit, Forstwegen und losem Untergrund zurück zum Ziel.",
+      "terrain": [
+        "Trail",
+        "Wurzelpfade",
+        "Granitblöcke",
+        "Forstweg-Passagen",
+        "loser Untergrund"
+      ],
+      "terrainShare": [
+        "95% Trail",
+        "5% Forststraße",
+        "<1% Asphalt"
+      ],
+      "highlights": [
+        "Urwald am Dreisessel",
+        "Spicak",
+        "Dreisessel",
+        "Dreiländereck",
+        "Steinernes Meer",
+        "Adalbert-Stifter-Steig",
+        "Riedelsbacher Wald"
+      ],
+      "cutoffTimes": [],
+      "aidStations": [
+        "Dreisessel #1",
+        "Frauenberg",
+        "Zielverpflegung Haidmühle"
+      ],
+      "map": {
+        "status": "regional_placeholder_exact_route_withheld",
+        "officialPage": "https://www.3kings-3hills.com/base-trail/",
+        "note": "Die eingebettete Karte zeigt derzeit nur Platzhalter bzw. Region; genaue Strecken werden laut Veranstalter aus Naturschutzgründen erst zwei Wochen vor dem Event veröffentlicht, soweit diese Notiz auf der Streckenseite vorhanden ist."
+      },
+      "elevationProfile": {
+        "status": "not_found_as_separate_profile",
+        "officialPage": "https://www.3kings-3hills.com/base-trail/",
+        "directAssetUrl": null
+      },
+      "gpx": {
+        "publicDirectDownloadUrl": null,
+        "officialInfoPage": "https://www.3kings-3hills.com/base-trail/",
+        "organizerInstruction": "GPX-Dateien bitte auf die Veranstalter-Website verlinken.",
+        "linkPermission": "official_website_link_only",
+        "fileOperationsAllowed": false,
+        "binaryDownloaded": false,
+        "metadataInspected": false,
+        "restrictionNotice": "Keine konkrete GPX-Lizenz-/Downloadklausel öffentlich gefunden; Detailbedingungen angefragt. Keine GPX-Datei abgerufen.",
+        "appPolicy": "Keine GPX-Datei abrufen, laden, importieren, speichern, verarbeiten, auf einer Karte darstellen oder zum Download anbieten; nur offizieller Website-Link."
+      },
+      "sourceIds": [
+        "facts-2027",
+        "rules-2027",
+        "route-base"
+      ],
+      "cutoffStatus": "Keine Zwischen-Cut-offs auf der Streckenseite angegeben; die Faktenübersicht nennt 7 Stunden Gesamtzeitlimit, passend zum Zielschluss 18:30 ab 11:30."
+    },
+    {
+      "routeId": "shorty-trail-16-700",
+      "name": "Shorty Trail",
+      "date": "2027-07-24",
+      "startTime": "12:30",
+      "distanceKm": 16,
+      "elevationGainM": 700,
+      "timeLimitHours": 6,
+      "finishTimeLocal": "2027-07-24 18:00",
+      "itraPoints": 0,
+      "utmbIndexCategory": null,
+      "independentSummary": "Nach wenigen hundert Metern erreicht der Kurs den Goldsteig und führt durch den Urwald am Dreisessel vorbei an Wasserfällen und der Kreuzbachklause zum Grenzsteig. Ein steiler Anstieg führt zum Hochstein; danach folgt ein etwa drei Kilometer langer Abstieg mit Wurzeln, Granit und flüssigeren Trailpassagen zurück nach Haidmühle.",
+      "terrain": [
+        "Goldsteig",
+        "Waldtrail",
+        "Wasserfallpassagen",
+        "Wurzeln",
+        "Granit",
+        "flowige Trails"
+      ],
+      "terrainShare": [
+        "85% Trail",
+        "15% Forststraße",
+        "<1% Asphalt"
+      ],
+      "highlights": [
+        "Goldsteig",
+        "Urwald am Dreisessel",
+        "Wasserfälle",
+        "Kreuzbachklause",
+        "Grenzsteig",
+        "Hochstein (1.333 m)"
+      ],
+      "cutoffTimes": [],
+      "aidStations": [
+        "Dreisessel #1",
+        "Frauenberg",
+        "Zielverpflegung Haidmühle"
+      ],
+      "map": {
+        "status": "regional_placeholder_exact_route_withheld",
+        "officialPage": "https://www.3kings-3hills.com/shorty-trail/",
+        "note": "Die eingebettete Karte zeigt derzeit nur Platzhalter bzw. Region; genaue Strecken werden laut Veranstalter aus Naturschutzgründen erst zwei Wochen vor dem Event veröffentlicht, soweit diese Notiz auf der Streckenseite vorhanden ist."
+      },
+      "elevationProfile": {
+        "status": "not_found_as_separate_profile",
+        "officialPage": "https://www.3kings-3hills.com/shorty-trail/",
+        "directAssetUrl": null
+      },
+      "gpx": {
+        "publicDirectDownloadUrl": null,
+        "officialInfoPage": "https://www.3kings-3hills.com/shorty-trail/",
+        "organizerInstruction": "GPX-Dateien bitte auf die Veranstalter-Website verlinken.",
+        "linkPermission": "official_website_link_only",
+        "fileOperationsAllowed": false,
+        "binaryDownloaded": false,
+        "metadataInspected": false,
+        "restrictionNotice": "Keine konkrete GPX-Lizenz-/Downloadklausel öffentlich gefunden; Detailbedingungen angefragt. Keine GPX-Datei abgerufen.",
+        "appPolicy": "Keine GPX-Datei abrufen, laden, importieren, speichern, verarbeiten, auf einer Karte darstellen oder zum Download anbieten; nur offizieller Website-Link."
+      },
+      "sourceIds": [
+        "facts-2027",
+        "rules-2027",
+        "route-shorty"
+      ],
+      "cutoffStatus": "Streckenseite nennt keine Zwischen-Cut-offs und Zielschluss 18:00; Faktenübersicht nennt 6 Stunden, was ab 12:30 rechnerisch 18:30 ergibt. Zeitlimit/Zielschluss beim Veranstalter bestätigen."
+    },
+    {
+      "routeId": "traily-trail-5-100",
+      "name": "Traily Trail",
+      "date": "2027-07-24",
+      "startTime": "15:30",
+      "distanceKm": 5,
+      "elevationGainM": 100,
+      "timeLimitHours": null,
+      "finishTimeLocal": "2027-07-24 17:00",
+      "itraPoints": 0,
+      "utmbIndexCategory": null,
+      "independentSummary": "Die kurze, nahezu flache Einsteigerrunde verläuft auf festen schmalen Forstwegen und kleinen Pfaden, teilweise entlang eines Bachlaufs. Der Veranstalter beschreibt sie als niedrigschwelligen Einstieg ins Trailrunning.",
+      "terrain": [
+        "feste Forstwege",
+        "schmale Pfade",
+        "Bachlauf"
+      ],
+      "terrainShare": [
+        "50% Trail",
+        "50% Forststraße"
+      ],
+      "highlights": [
+        "Bachlauf",
+        "Einsteigerformat"
+      ],
+      "cutoffTimes": [],
+      "aidStations": [
+        "Zielverpflegung Haidmühle"
+      ],
+      "map": {
+        "status": "regional_placeholder_exact_route_withheld",
+        "officialPage": "https://www.3kings-3hills.com/3k3h-traily-trail/",
+        "note": "Die eingebettete Karte zeigt derzeit nur Platzhalter bzw. Region; genaue Strecken werden laut Veranstalter aus Naturschutzgründen erst zwei Wochen vor dem Event veröffentlicht, soweit diese Notiz auf der Streckenseite vorhanden ist."
+      },
+      "elevationProfile": {
+        "status": "not_found_as_separate_profile",
+        "officialPage": "https://www.3kings-3hills.com/3k3h-traily-trail/",
+        "directAssetUrl": null
+      },
+      "gpx": {
+        "publicDirectDownloadUrl": null,
+        "officialInfoPage": "https://www.3kings-3hills.com/3k3h-traily-trail/",
+        "organizerInstruction": "GPX-Dateien bitte auf die Veranstalter-Website verlinken.",
+        "linkPermission": "official_website_link_only",
+        "fileOperationsAllowed": false,
+        "binaryDownloaded": false,
+        "metadataInspected": false,
+        "restrictionNotice": "Keine konkrete GPX-Lizenz-/Downloadklausel öffentlich gefunden; Detailbedingungen angefragt. Keine GPX-Datei abgerufen.",
+        "appPolicy": "Keine GPX-Datei abrufen, laden, importieren, speichern, verarbeiten, auf einer Karte darstellen oder zum Download anbieten; nur offizieller Website-Link."
+      },
+      "sourceIds": [
+        "facts-2027",
+        "rules-2027",
+        "route-traily"
+      ],
+      "cutoffStatus": "Kein Cut-off angegeben; Zielschluss 17:00."
+    }
+  ],
+  "globalAidPolicy": {
+    "noDisposableCupsAtAidStations": true,
+    "minimumCarriedDrinkCapacityLitres": 1,
+    "sourceId": "homepage-2027",
+    "notes": "Official homepage says no cups are provided at aid stations and a drinking vessel of at least one litre must be carried."
+  },
+  "dataQuality": [
+    "The 2027 facts page intro says seven routes, but its table has eight rows; the regulations and homepage also list eight.",
+    "Current main catalog has eight route entries but duplicates 117 km and 168 km on both days, omits 16 km and 5 km, uses a stale 54 km Ultra ID, and lists 4,467 hm for the 117 km route instead of the official 4,400 hm.",
+    "Shorty: facts page lists 6 hours, while the route page shows no cut-off and target finish 18:00 from a 12:30 start (5.5 hours). Clarification needed.",
+    "Base: route page says no cut-off; facts page lists 7 hours, matching its 18:30 finish from 11:30. Treated as no intermediate cutoff, with overall time limit from facts page.",
+    "Exact route geometry is explicitly withheld until two weeks before the event for conservation reasons on seven route pages. Endurance map is a placeholder but the same explicit notice was not found on its page.",
+    "Elevation profile images are present on 100 Miles, XL, Ultra and Marathon pages; no separate profile heading/link was found for Endurance, Base, Shorty or Traily.",
+    "No public direct GPX URL was found. No GPX binary was downloaded and no GPX metadata was inspected."
+  ],
+  "rights": {
+    "status": "partial_written_permission_pending_itemised_confirmation",
+    "initialReply": {
+      "date": "2026-11-20 08:19 (quoted in user's sent reply)",
+      "sender": "Rainer Jungwirth <r.jungwirth@siimple.de>",
+      "messageIdHeader": "<3D235842-35DB-4B0E-9540-DB3DA77808F4@siimple.de>",
+      "evidence": "Quoted in user's sent message from 2026-11-24; original reply not separately found in Inbox.",
+      "summary": "Written reply permits embedding logo, event data, route descriptions, elevation profiles, maps and photos; prohibits any impression of an official organizer page; asks that GPX files be linked to the organizer website."
+    },
+    "followUp": {
+      "date": "2026-11-25",
+      "to": "servus@3kings-3hills.com",
+      "status": "submitted",
+      "sentCopyFiled": true,
+      "deliveryConfirmed": false,
+      "messageIdHeader": "<179557093587.119.14301383713978174225@me.com>",
+      "asks": "Itemised permissions for all 12 categories, GPX restriction notices and link-only versus file operations, noncommercial project phase, separate future commercial licensing, media pack and brand guidelines."
+    },
+    "noOfficialAffiliationClaimed": true,
+    "commercialUse": "not granted; separate license required",
+    "brandConstraint": "Must not create the impression of an official organizer website or affiliation."
+  },
+  "integration": {
+    "mainCatalogUpdated": false,
+    "liveDataChanged": false,
+    "appPublished": false,
+    "gpxFileOperationsEnabled": false
+  }
+}
