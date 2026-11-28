@@ -32,8 +32,9 @@ assert.match(splash, /height: '100dvh'/, 'splash uses the dynamic iPhone viewpor
 assert.match(splash, /width: '100vw'/, 'splash spans the full viewport width');
 assert.match(splash, /bottom: '0'/, 'splash explicitly covers the bottom edge');
 assert.match(splash, /body\.classList\.add\('northbound-startup-lock'\)/, 'body scrolling is locked while splash is visible');
-assert.match(splash, /await window\.connectPlannerCloud\(\)/, 'startup waits for cloud initialization');
-assert.match(splash, /finally\s*\{\s*finish\(\)/, 'splash is removed after cloud initialization settles');
+assert.match(splash, /Promise\.resolve\(window\.connectPlannerCloud\(\)\)/, 'cloud synchronization starts in the background');
+assert.doesNotMatch(splash, /await\s+window\.connectPlannerCloud/, 'startup never waits for cloud synchronization');
+assert.match(splash, /setTimeout\(finish, 300\)/, 'splash exits promptly without waiting for login or network');
 assert.match(worker, /startup-splash\.js/, 'service worker caches the splash controller');
 assert.match(worker, /trail-event-planner-v118/, 'service worker cache version is bumped');
 
