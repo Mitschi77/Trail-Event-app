@@ -24,9 +24,10 @@ assert.match(html, /nb-splash-athlete runner/, 'trail runner animation is presen
 assert.match(html, /nb-splash-athlete cyclist/, 'road cyclist animation is present');
 assert.ok(html.indexOf('northboundStartupSplash') < html.indexOf('<header>'), 'splash is mounted before app content');
 
-assert.match(splash, /nb-splash-logo-first/, 'startup begins in logo-first mode');
-assert.match(splash, /opacity:0!important;visibility:hidden!important/, 'athletes are hidden for the first paint');
-assert.match(splash, /setTimeout\(\(\) => splash\.classList\.remove\('nb-splash-logo-first'\), 950\)/, 'animation is revealed after the logo-first pause');
+assert.match(splash, /\.nb-splash-athlete/, 'athlete elements are targeted');
+assert.match(splash, /display:none!important;visibility:hidden!important;animation:none!important/, 'athlete artwork and animations are fully disabled');
+assert.doesNotMatch(splash, /nb-splash-logo-first|nbRunnerStride|nbCyclistPedal/, 'no delayed athlete animation remains');
+assert.match(splash, /northbound-splash-static-brand/, 'splash uses the static brand-only presentation');
 assert.match(splash, /height: '100dvh'/, 'splash uses the dynamic iPhone viewport height');
 assert.match(splash, /width: '100vw'/, 'splash spans the full viewport width');
 assert.match(splash, /bottom: '0'/, 'splash explicitly covers the bottom edge');
