@@ -199,8 +199,8 @@
           "name": "12H Extrem",
           "start": "09:00",
           "end": "21:00",
-          "maxPublishedExample": "16 loops = 120 km / 1,760 hm",
-          "fixedDistance": false
+          "fixedDistance": false,
+          "publishedExample": "16 loops = 120 km / 1,760 hm"
         },
         {
           "name": "6H Challenge",
@@ -782,9 +782,9 @@
         "note": "Only completed loops at time expiry count; an unfinished loop may be completed but is not counted."
       },
       "map": {
-        "status": "official_komoot_link",
-        "url": "https://www.komoot.com/",
-        "note": "The organizer's route page links to Komoot; the precise route URL was not extracted in this run."
+        "status": "organizer_page_links_to_komoot",
+        "url": null,
+        "note": "The organizer page recommends a Komoot route download and mentions a GPX track, but the exact route URL was not extracted; no generic Komoot URL is stored as a substitute."
       },
       "elevationProfile": {
         "status": "not_found_as_separate_public_profile"
