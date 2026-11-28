@@ -1,53 +1,31 @@
-/* NORTHBOUND startup splash: logo-first reveal, full-screen iOS coverage and safe cloud handoff. */
+/* NORTHBOUND startup splash: static brand mark, full viewport and non-blocking cloud sync. */
 (() => {
   'use strict';
   const splash = document.getElementById('northboundStartupSplash');
   if (!splash) return;
 
   document.documentElement.classList.add('northbound-startup-lock');
+  document.body.classList.add('northbound-startup-lock');
 
-  // Keep the splash stretched between all viewport edges. Avoid a fixed 100dvh
-  // height, which can leave the bottom of the iPhone visual viewport uncovered.
-  splash.style.setProperty('position', 'fixed', 'important');
-  splash.style.setProperty('inset', '0', 'important');
-  splash.style.setProperty('height', 'auto', 'important');
-  splash.style.setProperty('min-height', '100vh', 'important');
-  splash.style.setProperty('width', 'auto', 'important');
-  splash.style.setProperty('z-index', '2147483647', 'important');
-  splash.classList.add('nb-splash-logo-first');
+  // Cover the complete iPhone viewport, including the bottom edge.
+  Object.entries({
+    position: 'fixed', top: '0', right: '0', bottom: '0', left: '0',
+    width: '100vw', height: '100dvh', minHeight: '100vh', maxHeight: 'none',
+    boxSizing: 'border-box', overflow: 'hidden', zIndex: '2147483647', transform: 'none'
+  }).forEach(([property, value]) => splash.style.setProperty(
+    property.replace(/[A-Z]/g, m => '-' + m.toLowerCase()), value, 'important'
+  ));
 
-  // The first paint contains the NORTHBOUND mark only. Bring in the athletes
-  // after the logo has appeared, rather than making the animation part of startup.
+  // Logo only: athlete artwork and animation are disabled while startup is simplified.
   const style = document.createElement('style');
-  style.id = 'northbound-splash-art-direction';
+  style.id = 'northbound-splash-static-brand';
   style.textContent = `
-    #northboundStartupSplash.nb-splash-logo-first .nb-splash-athlete{
-      opacity:0!important;visibility:hidden!important;transition:opacity .45s ease,visibility .45s ease!important
+    html.northbound-startup-lock,html.northbound-startup-lock body{
+      overflow:hidden!important;overscroll-behavior:none!important
     }
+    body.northbound-startup-lock{position:relative!important}
     #northboundStartupSplash .nb-splash-athlete{
-      filter:drop-shadow(0 10px 18px #020912aa)!important;
-      animation-timing-function:linear!important
-    }
-    #northboundStartupSplash .nb-splash-athlete.runner{
-      width:clamp(150px,36vw,220px)!important;animation-duration:8.5s!important
-    }
-    #northboundStartupSplash .nb-splash-athlete.cyclist{
-      width:clamp(190px,44vw,280px)!important;animation-duration:10s!important
-    }
-    #northboundStartupSplash .nb-runner-motion{
-      transform-origin:120px 92px;animation:nbRunnerStride .52s ease-in-out infinite alternate
-    }
-    #northboundStartupSplash .nb-cyclist-rider{
-      transform-origin:175px 82px;animation:nbCyclistPedal .72s ease-in-out infinite alternate
-    }
-    #northboundStartupSplash:not(.nb-splash-logo-first) .nb-splash-athlete{
-      opacity:1!important;visibility:visible!important
-    }
-    @keyframes nbRunnerStride{from{transform:translateY(2px) rotate(-1.8deg)}to{transform:translateY(-3px) rotate(1.8deg)}}
-    @keyframes nbCyclistPedal{from{transform:translateY(0) rotate(-.6deg)}to{transform:translateY(-1.5px) rotate(.6deg)}}
-    @media(prefers-reduced-motion:reduce){
-      #northboundStartupSplash .nb-runner-motion,#northboundStartupSplash .nb-cyclist-rider{animation:none!important}
-      #northboundStartupSplash .nb-splash-athlete{transition:none!important}
+      display:none!important;visibility:hidden!important;animation:none!important
     }
   `;
   document.head.appendChild(style);
@@ -58,23 +36,22 @@
     finished = true;
     splash.classList.add('is-leaving');
     document.documentElement.classList.remove('northbound-startup-lock');
+    document.body.classList.remove('northbound-startup-lock');
     window.setTimeout(() => splash.remove(), 420);
   };
 
-  // Reveal the motion only after the logo has had time to render.
-  window.setTimeout(() => splash.classList.remove('nb-splash-logo-first'), 950);
-
-  const boot = async () => {
-    try {
-      if (typeof window.connectPlannerCloud === 'function') {
-        await window.connectPlannerCloud();
-      }
-    } catch (error) {
-      console.warn('NORTHBOUND: initial cloud sync did not finish successfully.', error);
-    } finally {
-      finish();
+  // Start cloud synchronization in the background. A logged-out user, slow
+  // network or unavailable Supabase must never hold the app behind the splash.
+  try {
+    if (typeof window.connectPlannerCloud === 'function') {
+      Promise.resolve(window.connectPlannerCloud()).catch(error => {
+        console.warn('NORTHBOUND: background cloud sync did not finish successfully.', error);
+      });
     }
-  };
+  } catch (error) {
+    console.warn('NORTHBOUND: background cloud sync could not start.', error);
+  }
 
-  void boot();
+  // Allow the static logo a brief first paint, then show the locally available app.
+  window.setTimeout(finish, 300);
 })();

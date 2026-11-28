@@ -24,14 +24,18 @@ assert.match(html, /nb-splash-athlete runner/, 'trail runner animation is presen
 assert.match(html, /nb-splash-athlete cyclist/, 'road cyclist animation is present');
 assert.ok(html.indexOf('northboundStartupSplash') < html.indexOf('<header>'), 'splash is mounted before app content');
 
-assert.match(splash, /nb-splash-logo-first/, 'startup begins in logo-first mode');
-assert.match(splash, /opacity:0!important;visibility:hidden!important/, 'athletes are hidden for the first paint');
-assert.match(splash, /setTimeout\(\(\) => splash\.classList\.remove\('nb-splash-logo-first'\), 950\)/, 'animation is revealed after the logo-first pause');
-assert.match(splash, /setProperty\('inset', '0', 'important'\)/, 'splash covers all viewport edges');
-assert.match(splash, /setProperty\('height', 'auto', 'important'\)/, 'splash avoids a clipped fixed viewport height');
-assert.match(splash, /await window\.connectPlannerCloud\(\)/, 'startup waits for cloud initialization');
-assert.match(splash, /finally\s*\{\s*finish\(\)/, 'splash is removed after cloud initialization settles');
+assert.match(splash, /\.nb-splash-athlete/, 'athlete elements are targeted');
+assert.match(splash, /display:none!important;visibility:hidden!important;animation:none!important/, 'athlete artwork and animations are fully disabled');
+assert.doesNotMatch(splash, /nb-splash-logo-first|nbRunnerStride|nbCyclistPedal/, 'no delayed athlete animation remains');
+assert.match(splash, /northbound-splash-static-brand/, 'splash uses the static brand-only presentation');
+assert.match(splash, /height: '100dvh'/, 'splash uses the dynamic iPhone viewport height');
+assert.match(splash, /width: '100vw'/, 'splash spans the full viewport width');
+assert.match(splash, /bottom: '0'/, 'splash explicitly covers the bottom edge');
+assert.match(splash, /body\.classList\.add\('northbound-startup-lock'\)/, 'body scrolling is locked while splash is visible');
+assert.match(splash, /Promise\.resolve\(window\.connectPlannerCloud\(\)\)/, 'cloud synchronization starts in the background');
+assert.doesNotMatch(splash, /await\s+window\.connectPlannerCloud/, 'startup never waits for cloud synchronization');
+assert.match(splash, /setTimeout\(finish, 300\)/, 'splash exits promptly without waiting for login or network');
 assert.match(worker, /startup-splash\.js/, 'service worker caches the splash controller');
-assert.match(worker, /trail-event-planner-v118/, 'service worker cache version is bumped');
+assert.match(worker, /trail-event-planner-v120/, 'service worker cache version is bumped');
 
 console.log('NORTHBOUND startup splash checks passed.');
