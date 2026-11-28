@@ -1,0 +1,82 @@
+{
+  "schemaVersion": 1,
+  "organizerId": "salty-gmbh",
+  "organizerName": "SALTY GmbH",
+  "officialContacts": [
+    {
+      "email": "otf@saltytrailrunning.com",
+      "source": "https://saltytrailrunning.com/en-de/pages/otf",
+      "verifiedOnOfficialSite": true
+    },
+    {
+      "email": "sat@saltytrailrunning.com",
+      "source": "https://saltytrailrunning.com/en-de/pages/sat",
+      "verifiedOnOfficialSite": true
+    },
+    {
+      "email": "dh@saltytrailrunning.com",
+      "source": "existing official organizer reply; staff response, not independently listed on public contact page"
+    }
+  ],
+  "bundledEvents": [
+    "oberaudorf-trailfestival",
+    "schnalstal-alpine-trail",
+    "sat-trail-camp"
+  ],
+  "requestedUseCategories": [
+    "official_route_descriptions_verbatim",
+    "shortened_or_editorially_edited_official_descriptions",
+    "independent_factual_summaries",
+    "route_facts_distance_elevation_start_finish_aid_cutoffs",
+    "maps_and_route_geometry",
+    "elevation_profiles",
+    "gpx_file_fetch_load_import_store_process_map_display_user_download",
+    "link_only_to_official_gpx_download",
+    "event_names_and_event_marks",
+    "logos_and_word_device_marks",
+    "symbols_icons_pictograms_emblems_mascots",
+    "event_specific_graphics_and_visual_design"
+  ],
+  "emailHistory": [
+    {
+      "date": "2026-11-19",
+      "type": "initial_otf_request",
+      "status": "sent"
+    },
+    {
+      "date": "2026-11-26",
+      "type": "organizer_reply",
+      "from": "dh@saltytrailrunning.com",
+      "status": "received",
+      "request": "Asked for app name and address."
+    },
+    {
+      "date": "2026-11-27",
+      "type": "bundled_itemised_followup",
+      "status": "submitted",
+      "to": "dh@saltytrailrunning.com",
+      "cc": [
+        "otf@saltytrailrunning.com",
+        "sat@saltytrailrunning.com"
+      ],
+      "sentCopyFiled": true,
+      "deliveryConfirmed": false,
+      "messageIdHeader": "<179574224179.57.12348423308967523249@me.com>"
+    }
+  ],
+  "permissionAssessment": {
+    "currentPhase": "non-commercial independent information app under development",
+    "writtenPermission": "pending",
+    "commercialPermission": "not granted"
+  },
+  "gpxPolicy": {
+    "restrictionDisclosureRequested": true,
+    "exactNoticeLocationAndAffectedRoutesRequested": true,
+    "fetchLoadImportStoreProcessMapDisplayDownload": "blocked_pending_explicit_permission",
+    "officialLink": "blocked_pending_separate_permission",
+    "noBinaryDownloaded": true,
+    "noMetadataInspected": true
+  },
+  "mediaPackRequested": true,
+  "brandGuidelinesRequested": true
+}
