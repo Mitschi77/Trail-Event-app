@@ -1,0 +1,423 @@
+{
+  "schemaVersion": 1,
+  "updatedAt": "2026-11-26",
+  "organizerId": "asd-sentierouno-s1trail",
+  "organizerName": "ASD SentieroUNO / S1 Trail",
+  "officialWebsite": "https://www.s1trail.com/",
+  "officialContact": {
+    "email": "info@s1trail.com",
+    "source": "https://www.alpeadriaultra.com/en/privacy-policy/",
+    "verification": "Published on the official Alpe Adria Ultra Trail privacy page, last updated 13 October 2026; also published in an official S1 Trail regulation PDF hosted on s1trail.com.",
+    "verifiedAt": "2026-11-26"
+  },
+  "eventGroup": {
+    "cataloguedEvent": [
+      {
+        "eventId": "la-corsa-della-bora",
+        "edition": 2027,
+        "routes": 7
+      }
+    ],
+    "additional2027Events": [
+      {
+        "eventId": "alpe-adria-winter-2027",
+        "name": "Alpe Adria Winter",
+        "date": "2027-02-07",
+        "routes": 4
+      },
+      {
+        "eventId": "alpe-adria-summer-2027",
+        "name": "Alpe Adria Summer",
+        "dates": [
+          "2027-06-18",
+          "2027-06-20"
+        ],
+        "routes": 5
+      },
+      {
+        "eventId": "sardon-run-2027",
+        "name": "Sardon Run",
+        "date": "2027-08-21",
+        "routeStatus": "final route list pending; Sardonzin redesign announced; 100 km non-stop in preparation"
+      },
+      {
+        "eventId": "caven-run-2027-preview",
+        "name": "Čaven Run",
+        "date": null,
+        "routeStatus": "2027 preview: 60 km ultra and new Čaven Vrh; final date/routes pending",
+        "jointOrganisers": [
+          "Triatlon klub GPS",
+          "ASD SentieroUNO"
+        ],
+        "officialEventContact": "info@caven.run"
+      }
+    ],
+    "relatedSeriesWithoutConfirmed2027Edition": []
+  },
+  "correspondence": [
+    {
+      "date": "2026-11-19T13:53:17Z",
+      "type": "initial_enquiry",
+      "recipient": "susanna@s1trail.com",
+      "status": "sent_copy_found",
+      "subject": "Richiesta di autorizzazione per contenuti ufficiali – La Corsa della Bora",
+      "officialAddressVerification": "not verified in this run; do not rely on this address as the licensing contact"
+    },
+    {
+      "date": "2026-11-21T01:44:04Z",
+      "type": "itemised_rights_request",
+      "recipient": "info@s1trail.com",
+      "status": "submitted_and_sent_copy_filed",
+      "subject": "Itemised permission request – La Corsa della Bora 2027 – independent non-commercial app",
+      "messageIdHeader": "<179522544428.114.9312026397201973034@me.com>",
+      "officialAddressVerification": "verified from official S1 Trail/Alpe Adria sources",
+      "deliveryConfirmed": false,
+      "responseFound": false
+    },
+    {
+      "date": "2026-11-26",
+      "type": "addendum_extending_scope_to_alpe_adria",
+      "recipient": "info@s1trail.com",
+      "status": "submitted_and_sent_copy_filed",
+      "subject": "Re: Itemised permission request – La Corsa della Bora 2027 – independent non-commercial app",
+      "messageIdHeader": "<179565589095.118.1677682276795876121@me.com>",
+      "replyToMessageId": "YdnVnqfUaqFxpwcdP8WLaeRYbbG7BWSP4LpsIpQUdPxbIm1lc3NhZ2UiLCJTZW50IE1lc3NhZ2VzIiwxMjc5MTY5MDQ3LDE2ODVd",
+      "deliveryConfirmed": false,
+      "responseFound": false,
+      "note": "Follow-up sent in the existing thread after checking Sent and Inbox; no duplicate first request was sent."
+    },
+    {
+      "date": "2026-11-26",
+      "type": "scope_correction_sardon_and_caven",
+      "recipient": "info@s1trail.com",
+      "status": "submitted_and_sent_copy_filed",
+      "subject": "Re: Itemised permission request – La Corsa della Bora 2027 – independent non-commercial app",
+      "messageIdHeader": "<179565624119.118.436474513108950591@me.com>",
+      "deliveryConfirmed": false,
+      "responseFound": false,
+      "note": "Corrects the earlier statement that no Sardon 2027 date was found; adds Sardon Run 2027 (21 August) and asks who controls rights for jointly organised Čaven Run."
+    },
+    {
+      "date": "2026-11-26",
+      "type": "joint_caven_run_rights_request",
+      "recipient": "info@caven.run",
+      "status": "auto_discarded_by_mail_system",
+      "subject": "Permission request – Čaven Run 2027 – independent non-commercial running app",
+      "messageIdHeader": "<179565625745.77.14680370253005531148@me.com>",
+      "deliveryConfirmed": false,
+      "responseFound": false,
+      "note": "One bundled request addressed to the official Čaven Run event contact for both joint organisers Triatlon klub GPS and ASD SentieroUNO; asks the contact to forward to all relevant rights holders.",
+      "autoResponseAt": "2026-11-26T01:24:27Z",
+      "autoResponseMessage": "The official info@caven.run mailbox states that incoming email is automatically discarded and directs correspondents to https://www.s1trail.com/contact/ and https://wa.me/39040411341.",
+      "humanRightsReplyFound": false
+    }
+  ],
+  "inboxCheck": {
+    "checkedAt": "2026-11-26",
+    "queries": [
+      "FROM info@s1trail.com since 21-Nov-2026",
+      "FROM susanna@s1trail.com since 19-Nov-2026"
+    ],
+    "newReplyFound": false
+  },
+  "requestedUseCategories": [
+    "official_route_descriptions_verbatim",
+    "shortened_or_editorially_edited_official_route_descriptions",
+    "independent_factual_summaries_based_on_permitted_information",
+    "route_facts_distance_elevation_start_finish_checkpoints_cutoffs",
+    "maps_and_route_lines",
+    "elevation_profiles",
+    "gpx_file_fetch",
+    "gpx_file_load_import",
+    "gpx_file_storage",
+    "gpx_file_processing_analysis",
+    "gpx_file_in_app_map_display",
+    "gpx_file_user_download",
+    "separate_link_to_official_gpx_information_download_page",
+    "event_names_and_event_marks",
+    "logos_and_word_image_marks",
+    "symbols_icons_pictograms_emblems_mascots",
+    "event_specific_graphics_and_visual_design"
+  ],
+  "commercialUse": {
+    "currentPhase": "non-commercial independent information app under development",
+    "noAffiliationClaimed": true,
+    "futureCommercialUseAskedSeparately": true,
+    "commercialPermissionGranted": false,
+    "separateFutureLicenceRequired": true
+  },
+  "mediaAndBranding": {
+    "mediaKitRequested": true,
+    "approvedLogoFilesRequested": true,
+    "brandGuidelinesRequested": true,
+    "usageRulesRequested": [
+      "size",
+      "colour",
+      "placement",
+      "clear_space",
+      "attribution",
+      "source_credit",
+      "duration",
+      "permitted_contexts",
+      "excluded_materials",
+      "conditional_uses"
+    ]
+  },
+  "gpxRestrictions": {
+    "defaultPolicy": "deny",
+    "noBinaryDownloaded": true,
+    "metadataInspected": false,
+    "appMustBlock": [
+      "fetch",
+      "load",
+      "import",
+      "store",
+      "process",
+      "in_app_map_display",
+      "user_download"
+    ],
+    "officialGpxLinkAllowed": false,
+    "officialRouteInformationPageSourceLink": "May be stored as an original source reference; no protected content is reproduced.",
+    "separateLinkPermission": "pending; do not expose GPX download-page links in the app until separately confirmed.",
+    "appMessage": "GPX durch Veranstalter eingeschränkt – kein Download möglich",
+    "corsaDellaBora": {
+      "eventId": "la-corsa-della-bora",
+      "routes": [
+        {
+          "routeId": "bora-ultra-105-3837",
+          "name": "S1 Bora Ultra",
+          "source": "https://www.s1trail.com/en/s1-bora-ultra-116-km/"
+        },
+        {
+          "routeId": "trieste-ultra-61-2-2323",
+          "name": "S1 Trieste Ultra",
+          "source": "https://www.s1trail.com/de/s1-bora-ultra/"
+        },
+        {
+          "routeId": "transkarst-ultra-59-1814",
+          "name": "S1 TransKarst Ultra",
+          "source": "https://www.s1trail.com/en/s1-trail/"
+        },
+        {
+          "routeId": "explorer-85-2993",
+          "name": "S1 Borderless Trail",
+          "source": "https://www.s1trail.com/en/s1-borderless-trail/"
+        },
+        {
+          "routeId": "half-trail-23-3-700",
+          "name": "S1 Half Trail",
+          "source": "https://www.s1trail.com/s1-half/"
+        },
+        {
+          "routeId": "s1-family-hike-trail-14-8-419-2027",
+          "name": "S1 Family Hike & Trail",
+          "source": "https://www.s1trail.com/s1-family-hike-2/"
+        },
+        {
+          "routeId": "s1-borin-5-5-186-2027",
+          "name": "S1 Borin",
+          "source": "https://www.s1trail.com/borin/"
+        }
+      ],
+      "notice": "Official 2027 route pages state that final GPX is withheld until the week before the race because routes may change for safety and some sections cross private land open only under race-day arrangements.",
+      "affectedRoutes": "all seven La Corsa della Bora 2027 routes",
+      "officialPublicGpxAvailableNow": false,
+      "metadataInspected": false,
+      "linkPermission": "not confirmed; separate permission requested"
+    },
+    "alpeAdriaUltraTrail": {
+      "eventIds": [
+        "alpe-adria-winter-2027",
+        "alpe-adria-summer-2027"
+      ],
+      "routes": [
+        {
+          "routeId": "dogna-crossing-25-2027",
+          "name": "Dogna Crossing 25",
+          "noticeSource": "https://tracedetrail.fr/en/trace/351885",
+          "exactNotices": [
+            "Warning ! This track is only accessible on the day of the competition",
+            "The organizer does not want the gpx file to be downloaded"
+          ]
+        },
+        {
+          "routeId": "saisera-crossing-18-2027",
+          "name": "Saisera Crossing 18",
+          "noticeSource": "https://tracedetrail.fr/en/trace/351930",
+          "exactNotices": [
+            "Warning ! This track is only accessible on the day of the competition",
+            "The organizer does not want the gpx file to be downloaded"
+          ]
+        },
+        {
+          "routeId": "valbruna-10-2027",
+          "name": "Valbruna 10",
+          "noticeSource": "https://www.alpeadriaultra.com/en/valbruna-10/",
+          "exactNotices": [],
+          "traceDeTrailNotice": "not independently verified"
+        },
+        {
+          "routeId": "grego-8-2027",
+          "name": "Grego 8",
+          "noticeSource": "https://www.alpeadriaultra.com/en/grego-8/",
+          "exactNotices": [],
+          "traceDeTrailNotice": "not independently verified"
+        },
+        {
+          "routeId": "alpe-adria-ultra-120-2027",
+          "name": "Alpe Adria Ultra 120",
+          "noticeSource": "https://tracedetrail.fr/en/trace/351952",
+          "exactNotices": [
+            "Warning ! This track is only accessible on the day of the competition",
+            "The organizer does not want the gpx file to be downloaded"
+          ]
+        },
+        {
+          "routeId": "montasio-55-2027",
+          "name": "Montasio 55",
+          "noticeSource": "https://tracedetrail.fr/en/trace/351955",
+          "exactNotices": [
+            "Warning ! This track is only accessible on the day of the competition",
+            "The organizer does not want the gpx file to be downloaded"
+          ]
+        },
+        {
+          "routeId": "jof-trail-31-2027",
+          "name": "Jôf Trail 31",
+          "noticeSource": "https://tracedetrail.fr/en/trace/351956",
+          "exactNotices": [
+            "Warning ! This track is only accessible on the day of the competition",
+            "The organizer does not want the gpx file to be downloaded"
+          ]
+        },
+        {
+          "routeId": "lussari-24-2027",
+          "name": "Lussari 24",
+          "noticeSource": "https://www.alpeadriaultra.com/en/lussari-24/",
+          "exactNotices": [],
+          "traceDeTrailNotice": "not independently verified"
+        },
+        {
+          "routeId": "oitzinger-12-2027",
+          "name": "Oitzinger 12",
+          "noticeSource": "https://www.alpeadriaultra.com/en/oitzinger-12/",
+          "exactNotices": [],
+          "traceDeTrailNotice": "not independently verified"
+        }
+      ],
+      "sharedOfficialNotice": "Official route pages state that GPX is withheld until five days before the race because of possible last-minute safety changes and private-land sections opened only under race-day arrangements.",
+      "affectedRoutes": "all nine Alpe Adria Ultra Trail 2027 routes",
+      "officialPublicGpxAvailableNow": false,
+      "metadataInspected": false,
+      "linkPermission": "not confirmed; separate permission requested"
+    },
+    "sardonRun2027": {
+      "eventId": "sardon-run-2027",
+      "routes2027": "not yet finalised; do not reuse 2026 route files or distances as 2027 data",
+      "officialNoticeStatus": "no route-specific 2027 GPX restriction notice verified yet",
+      "official2026GpsLink": "A GPS-track download link is visible on the official 2026 Sardon Ultra Stage page; it was not opened or downloaded.",
+      "sourceUrls": [
+        "https://www.sardon.run/de/",
+        "https://www.sardon.run/sardon-ultra-stage/"
+      ],
+      "permissionStatus": "not_granted",
+      "binaryDownloaded": false,
+      "metadataInspected": false,
+      "appMustBlock": [
+        "fetch",
+        "load",
+        "import",
+        "store",
+        "process",
+        "in_app_map_display",
+        "user_download"
+      ],
+      "officialGpxLink": false,
+      "appMessage": "GPX gesperrt – keine ausdrückliche Freigabe dokumentiert; kein Download möglich."
+    },
+    "cavenRun2027": {
+      "eventId": "caven-run-2027-preview",
+      "routes2027": "not finalised; official preview mentions a 60 km ultra and a new Čaven Vrh, no event date found",
+      "jointOrganisers": [
+        "Triatlon klub GPS",
+        "ASD SentieroUNO"
+      ],
+      "officialEventContact": "info@caven.run",
+      "officialMapIframes2026": [
+        "https://tracedetrail.fr/en/iframe/10661",
+        "https://tracedetrail.fr/en/iframe/10662",
+        "https://tracedetrail.fr/fr/iframe/10845"
+      ],
+      "officialNoticeStatus": "no explicit GPX restriction notice found in accessible official page text; direct Trace de Trail pages were not accessible and GPX metadata was not inspected",
+      "permissionStatus": "not_granted",
+      "binaryDownloaded": false,
+      "metadataInspected": false,
+      "appMustBlock": [
+        "fetch",
+        "load",
+        "import",
+        "store",
+        "process",
+        "in_app_map_display",
+        "user_download"
+      ],
+      "officialGpxLink": false,
+      "appMessage": "GPX gesperrt – keine ausdrückliche Freigabe dokumentiert; kein Download möglich.",
+      "mailboxStatus": "info@caven.run auto-discards incoming email; no substantive rights reply",
+      "alternativeOfficialChannels": [
+        "https://www.s1trail.com/contact/",
+        "https://wa.me/39040411341"
+      ],
+      "rightsHolderStatus": "open; Triatlon klub GPS direct email not verified"
+    }
+  },
+  "routePermissionDefaults": {
+    "status": "pending",
+    "all12Categories": false,
+    "allGpxFileOperations": false,
+    "gpxOfficialLink": false,
+    "commercialUse": false,
+    "routeSpecificWrittenPermissionRequired": true
+  },
+  "response": {
+    "status": "no_substantive_rights_reply_as_of_2026-11-26; Caven mailbox auto-discard notice received",
+    "routeSpecificPermissions": [],
+    "restrictionsConfirmedByOrganizer": [],
+    "autoResponses": [
+      {
+        "date": "2026-11-26T01:24:27Z",
+        "from": "info@caven.run",
+        "summary": "Automatic notice says email is discarded; directs to official S1 Trail contact page and WhatsApp. Not a rights decision."
+      }
+    ]
+  },
+  "integration": {
+    "liveEventDatesChanged": false,
+    "routeDescriptionsLoadedIntoApp": false,
+    "gpxRightsRuntimeChanged": false,
+    "appPublished": false
+  },
+  "requestedMaterialCategories": [
+    "official_route_descriptions_verbatim",
+    "shortened_or_editorially_edited_official_route_descriptions",
+    "independent_factual_summaries_based_on_permitted_information",
+    "route_facts_distance_and_elevation",
+    "maps_and_route_lines",
+    "elevation_profiles",
+    "gpx_files_embedded_or_displayed_in_app_and_user_download",
+    "separate_link_to_official_gpx_download_page",
+    "event_names_and_event_marks",
+    "logos_and_word_image_marks",
+    "symbols_icons_pictograms_emblems_mascots",
+    "other_event_specific_graphics_and_visual_design"
+  ],
+  "gpxFileOperationsAskedSeparately": [
+    "access_or_fetch",
+    "load_or_import",
+    "store",
+    "process_or_analyse",
+    "display_on_app_map",
+    "offer_for_user_download",
+    "link_only_to_official_gpx_page"
+  ]
+}

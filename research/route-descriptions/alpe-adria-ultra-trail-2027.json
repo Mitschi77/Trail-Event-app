@@ -1,0 +1,1015 @@
+{
+  "schemaVersion": 1,
+  "preparedAt": "2026-11-26",
+  "organizer": {
+    "id": "asd-sentierouno-s1trail",
+    "name": "ASD SentieroUNO",
+    "brand": "S1 Trail",
+    "country": "Italy",
+    "officialWebsite": "https://www.alpeadriaultra.com/en/",
+    "contactEmail": "info@s1trail.com",
+    "contactSource": "https://www.alpeadriaultra.com/en/privacy-policy/",
+    "contactVerified": true
+  },
+  "researchScope": {
+    "catalogEventIdsOnMain": [
+      "la-corsa-della-bora"
+    ],
+    "alpeAdriaInMainCatalog": false,
+    "note": "The current main event-dates.json contains La Corsa della Bora only; no Alpe Adria Ultra Trail, Sardon Run or Čaven Run event record was found. This package is research-only and does not create live event records.",
+    "organizerEventFamilies": [
+      {
+        "name": "La Corsa della Bora",
+        "edition": 2027,
+        "dates": [
+          "2027-01-09",
+          "2027-01-10"
+        ],
+        "routeCount": 7,
+        "existingResearchPRs": [
+          212,
+          241
+        ],
+        "catalogRouteCount": 5,
+        "note": "Seven official routes are documented in existing draft PRs; two routes are not yet in the main event record."
+      },
+      {
+        "name": "Alpe Adria Winter",
+        "edition": 2027,
+        "date": "2027-02-07",
+        "routeCount": 4
+      },
+      {
+        "name": "Alpe Adria Summer",
+        "edition": 2027,
+        "dates": [
+          "2027-06-18",
+          "2027-06-20"
+        ],
+        "routeCount": 5
+      },
+      {
+        "name": "Sardon Run",
+        "edition": 2027,
+        "date": "2027-08-21",
+        "routeCount": "not yet finalised",
+        "status2027": "date officially confirmed; Sardonzin redesign and route changes announced; a 100 km non-stop format is in preparation; final route list, distances and elevation are not yet published.",
+        "historical2026Routes": [
+          7,
+          17,
+          22,
+          48.4,
+          71
+        ],
+        "note": "Do not carry 2026 route data forward as 2027 without organiser confirmation."
+      },
+      {
+        "name": "Čaven Run",
+        "edition": 2027,
+        "date": null,
+        "status2027": "official preview announces a 60 km ultra and a new Čaven Vrh; no 2027 date or final route specifications found.",
+        "jointOrganisers": [
+          "Triatlon klub GPS",
+          "ASD SentieroUNO"
+        ],
+        "officialEventContact": "info@caven.run",
+        "note": "2026 rules name both organisations as joint organisers; permission for shared event materials must be confirmed with the appropriate rights holder(s)."
+      }
+    ]
+  },
+  "authorityPolicy": "The organizer's Official Race Data 2027 page states that it prevails when sources differ and replaces older/external figures. Route names are rounded commercial distances; measured distances are preserved separately where published.",
+  "rightsPolicy": {
+    "officialTextCopied": false,
+    "ownFactualSummaries": true,
+    "protectedMapsOrImagesCopied": false,
+    "gpxBinaryDownloaded": false,
+    "permissionStatus": "pending",
+    "appPublicationAllowed": false
+  },
+  "sources": [
+    {
+      "url": "https://www.alpeadriaultra.com/en/",
+      "type": "official_event_overview"
+    },
+    {
+      "url": "https://www.alpeadriaultra.com/en/dati-ufficiali-2027/",
+      "type": "official_2027_race_data"
+    },
+    {
+      "url": "https://www.alpeadriaultra.com/en/programma/",
+      "type": "official_programme"
+    },
+    {
+      "url": "https://www.alpeadriaultra.com/en/faq/",
+      "type": "official_faq"
+    },
+    {
+      "url": "https://www.alpeadriaultra.com/en/regolamento/",
+      "type": "official_regulations"
+    },
+    {
+      "url": "https://www.alpeadriaultra.com/en/privacy-policy/",
+      "type": "official_contact_source"
+    },
+    {
+      "url": "https://www.s1trail.com/en/alpi-adriatico-quattro-gare-2026-2027/",
+      "type": "official_organizer_event_group_overview"
+    },
+    {
+      "url": "https://www.sardon.run/de/",
+      "type": "official_Sardon_Run_event_page",
+      "authority": "ASD SentieroUNO",
+      "verified": true,
+      "notes": "Confirms next edition on 21 August 2027; 2027 route changes announced but final route list not yet published."
+    },
+    {
+      "url": "https://www.sardon.run/sardon-ultra-stage/",
+      "type": "official_Sardon_Ultra_Stage_page",
+      "authority": "ASD SentieroUNO",
+      "verified": true,
+      "notes": "States that a 100 km non-stop format is in preparation for 2027; 2026 route set is historical."
+    },
+    {
+      "url": "https://www.caven.run/sl/",
+      "type": "official_Caven_Run_event_page",
+      "authority": "joint organisers",
+      "verified": true,
+      "notes": "Announces 2027 preview: 60 km ultra and new Caven Vrh; no date/final route specs found."
+    }
+  ],
+  "events": [
+    {
+      "eventId": "alpe-adria-winter-2027",
+      "name": "Alpe Adria Winter",
+      "date": "2027-02-07",
+      "routeIds": [
+        "dogna-crossing-25-2027",
+        "saisera-crossing-18-2027",
+        "valbruna-10-2027",
+        "grego-8-2027"
+      ]
+    },
+    {
+      "eventId": "alpe-adria-summer-2027",
+      "name": "Alpe Adria Summer",
+      "dates": [
+        "2027-06-18",
+        "2027-06-20"
+      ],
+      "routeIds": [
+        "alpe-adria-ultra-120-2027",
+        "montasio-55-2027",
+        "jof-trail-31-2027",
+        "lussari-24-2027",
+        "oitzinger-12-2027"
+      ]
+    }
+  ],
+  "routeCount": 9,
+  "routes": [
+    {
+      "routeId": "dogna-crossing-25-2027",
+      "eventId": "alpe-adria-winter-2027",
+      "name": "Dogna Crossing 25",
+      "date": "2027-02-07",
+      "startTime": "08:45",
+      "start": "Dogna village centre",
+      "finish": "Kile Alpine Resort",
+      "distanceNameKm": 25,
+      "distanceMeasuredKm": 25,
+      "elevationGainM": 1393,
+      "elevationLossM": 808,
+      "courseType": "point-to-point",
+      "timeLimitMinutes": 363,
+      "latestFinish": "14:48",
+      "timeGates": [
+        {
+          "point": "Rio Forchia",
+          "km": 10,
+          "time": "11:35"
+        }
+      ],
+      "aidPoints": [
+        {
+          "point": "Rifugio Grego",
+          "km": 18.4,
+          "type": "food supply"
+        }
+      ],
+      "summary": "Winter crossing from Val Dogna into Val Saisera. The course follows an almost 16 km valley road that may be snow-covered and groomed by snowmobile, then a forest track with repeated short climbs and descents to Rifugio Grego before descending to Kile Alpine Resort. Snow depth changes the character substantially from year to year.",
+      "terrain": [
+        "snow-covered road or tarmac road depending on winter conditions",
+        "groomed forest track",
+        "rolling forest track",
+        "descent trail"
+      ],
+      "highlights": [
+        "Val Dogna",
+        "Rifugio Grego",
+        "Val Saisera",
+        "views towards Montasio, Mangart and Monte Lussari"
+      ],
+      "mandatoryEquipment": [
+        "food and water for 4 hours",
+        "personal cup",
+        "foil survival blanket",
+        "mobile phone",
+        "microspikes mandatory"
+      ],
+      "mapProfile": {
+        "status": "official route page links interactive map and elevation profile",
+        "officialPage": "https://www.alpeadriaultra.com/en/dogna-25/",
+        "traceDeTrail": "https://tracedetrail.fr/en/trace/351885",
+        "traceStatus": "work in progress (temporary)"
+      },
+      "gpx": {
+        "permissionStatus": "not_granted",
+        "officialPageSays": "The GPX is withheld until five days before the race because the course may change for safety reasons and some sections cross private land opened only under race-day arrangements.",
+        "binaryDownloaded": false,
+        "metadataInspected": false,
+        "fileFetch": false,
+        "loadImport": false,
+        "store": false,
+        "process": false,
+        "mapDisplay": false,
+        "userDownload": false,
+        "officialGpxLink": false,
+        "appMessage": "GPX durch Veranstalter eingeschränkt – kein Download möglich",
+        "linkPermission": "not_confirmed; do not link to GPX download page until separately approved",
+        "traceDeTrailNoticeExact": [
+          "Warning ! This track is only accessible on the day of the competition",
+          "The organizer does not want the gpx file to be downloaded"
+        ],
+        "noticeSource": "https://tracedetrail.fr/en/trace/351885",
+        "affectedRoute": "Dogna Crossing 25"
+      },
+      "sourceUrls": [
+        "https://www.alpeadriaultra.com/en/dati-ufficiali-2027/",
+        "https://www.alpeadriaultra.com/en/dogna-25/",
+        "https://tracedetrail.fr/en/trace/351885",
+        "https://www.alpeadriaultra.com/en/regolamento/"
+      ]
+    },
+    {
+      "routeId": "saisera-crossing-18-2027",
+      "eventId": "alpe-adria-winter-2027",
+      "name": "Saisera Crossing 18",
+      "date": "2027-02-07",
+      "startTime": "10:30",
+      "start": "Valbruna village (grocery shop)",
+      "finish": "Kile Alpine Resort",
+      "distanceNameKm": 18,
+      "distanceMeasuredKm": 18,
+      "elevationGainM": 741,
+      "elevationLossM": 523,
+      "traceTemporaryMeasured": {
+        "distanceKm": 17.98,
+        "elevationGainM": 738,
+        "elevationLossM": 520
+      },
+      "courseType": "point-to-point",
+      "timeLimitMinutes": 307,
+      "latestFinish": "15:37",
+      "timeGates": [],
+      "aidPoints": [
+        {
+          "point": "P2 Saisera",
+          "km": 4.1,
+          "type": "food supply"
+        },
+        {
+          "point": "Kile Alpine Resort",
+          "km": 9.9,
+          "type": "course pass-through; aid not separately specified"
+        },
+        {
+          "point": "Rifugio Grego",
+          "km": 12.1,
+          "type": "course pass-through; aid not separately specified"
+        }
+      ],
+      "summary": "Point-to-point crossing of Val Saisera in three phases: a faster opening, a harder climbing middle section and a quick final run back to Kile Alpine Resort. It combines the runnable character of Valbruna 10 with the steeper climb associated with Grego 8.",
+      "terrain": [
+        "winter singletrack",
+        "snow-covered valley trail",
+        "steeper middle climb",
+        "fast descending trail"
+      ],
+      "highlights": [
+        "Valbruna village",
+        "P2 Saisera",
+        "Kile Alpine Resort",
+        "Rifugio Grego",
+        "Val Saisera"
+      ],
+      "mandatoryEquipment": [
+        "food and water for 4 hours",
+        "personal cup",
+        "foil survival blanket",
+        "mobile phone",
+        "microspikes mandatory"
+      ],
+      "mapProfile": {
+        "status": "official route page links interactive map and elevation profile",
+        "officialPage": "https://www.alpeadriaultra.com/en/saisera-18/",
+        "traceDeTrail": "https://tracedetrail.fr/en/trace/351930",
+        "traceStatus": "work in progress (temporary)"
+      },
+      "gpx": {
+        "permissionStatus": "not_granted",
+        "officialPageSays": "The GPX is withheld until five days before the race because the course may change for safety reasons and some sections cross private land opened only under race-day arrangements.",
+        "binaryDownloaded": false,
+        "metadataInspected": false,
+        "fileFetch": false,
+        "loadImport": false,
+        "store": false,
+        "process": false,
+        "mapDisplay": false,
+        "userDownload": false,
+        "officialGpxLink": false,
+        "appMessage": "GPX durch Veranstalter eingeschränkt – kein Download möglich",
+        "linkPermission": "not_confirmed; do not link to GPX download page until separately approved",
+        "traceDeTrailNoticeExact": [
+          "Warning ! This track is only accessible on the day of the competition",
+          "The organizer does not want the gpx file to be downloaded"
+        ],
+        "noticeSource": "https://tracedetrail.fr/en/trace/351930",
+        "affectedRoute": "Saisera Crossing 18"
+      },
+      "sourceUrls": [
+        "https://www.alpeadriaultra.com/en/dati-ufficiali-2027/",
+        "https://www.alpeadriaultra.com/en/saisera-18/",
+        "https://tracedetrail.fr/en/trace/351930",
+        "https://www.alpeadriaultra.com/en/regolamento/"
+      ]
+    },
+    {
+      "routeId": "valbruna-10-2027",
+      "eventId": "alpe-adria-winter-2027",
+      "name": "Valbruna 10",
+      "date": "2027-02-07",
+      "startTime": "10:30",
+      "start": "Valbruna village (grocery shop)",
+      "finish": "Kile Alpine Resort",
+      "distanceNameKm": 10,
+      "distanceMeasuredKm": 10,
+      "elevationGainM": 305,
+      "elevationLossM": 87,
+      "courseType": "point-to-point",
+      "timeLimitMinutes": 152,
+      "latestFinish": "13:02",
+      "timeGates": [],
+      "aidPoints": [
+        {
+          "point": "P2 Saisera",
+          "km": 4.1,
+          "type": "food supply"
+        }
+      ],
+      "summary": "The course follows the Winter Wild Track from Valbruna through the length of Val Saisera to its highest point and finishes at Kile Alpine Resort. It is the most accessible winter route, with modest climbing and scenic singletrack through old forest.",
+      "terrain": [
+        "winter singletrack",
+        "forest trail",
+        "snow-covered path depending on conditions"
+      ],
+      "highlights": [
+        "Valbruna village",
+        "Winter Wild Track",
+        "ancient forests of Valbruna",
+        "Val Saisera",
+        "Kile Alpine Resort"
+      ],
+      "mandatoryEquipment": [
+        "water for the distance",
+        "personal cup",
+        "foil survival blanket",
+        "mobile phone",
+        "grippy trail shoes",
+        "microspikes only if announced by the organizer in the week before the race"
+      ],
+      "mapProfile": {
+        "status": "official route page embeds/links Trace de Trail interactive map and elevation profile",
+        "officialPage": "https://www.alpeadriaultra.com/en/valbruna-10/",
+        "traceDeTrailDirectPage": "not identified; official page contains map/profile link"
+      },
+      "gpx": {
+        "permissionStatus": "not_granted",
+        "officialPageSays": "The GPX is withheld until five days before the race because the course may change for safety reasons and some sections cross private land opened only under race-day arrangements.",
+        "binaryDownloaded": false,
+        "metadataInspected": false,
+        "fileFetch": false,
+        "loadImport": false,
+        "store": false,
+        "process": false,
+        "mapDisplay": false,
+        "userDownload": false,
+        "officialGpxLink": false,
+        "appMessage": "GPX durch Veranstalter eingeschränkt – kein Download möglich",
+        "linkPermission": "not_confirmed; do not link to GPX download page until separately approved",
+        "traceDeTrailNoticeStatus": "not independently verified on a direct route page"
+      },
+      "sourceUrls": [
+        "https://www.alpeadriaultra.com/en/dati-ufficiali-2027/",
+        "https://www.alpeadriaultra.com/en/valbruna-10/",
+        "https://www.alpeadriaultra.com/en/regolamento/"
+      ]
+    },
+    {
+      "routeId": "grego-8-2027",
+      "eventId": "alpe-adria-winter-2027",
+      "name": "Grego 8",
+      "date": "2027-02-07",
+      "startTime": "09:30",
+      "start": "Kile Alpine Resort",
+      "finish": "Kile Alpine Resort",
+      "distanceNameKm": 8,
+      "distanceMeasuredKm": 8,
+      "elevationGainM": 436,
+      "elevationLossM": 436,
+      "courseType": "loop",
+      "timeLimitMinutes": 234,
+      "latestFinishCompetitive": "13:24",
+      "latestFinishNonCompetitive": "15:24",
+      "timeGates": [],
+      "aidPoints": [],
+      "aidStatus": "No route-specific refreshment point identified in accessible route-page text; official checkpoint table is linked and should be checked again when available.",
+      "summary": "Short but steep loop from Kile Alpine Resort. The route climbs about 436 metres in its first two kilometres to Rifugio Grego, then descends on a forest track for almost six kilometres. Competitive and non-competitive formats use different latest-finish times.",
+      "terrain": [
+        "steep uphill trail",
+        "forest track descent",
+        "winter snow or ice depending on conditions"
+      ],
+      "highlights": [
+        "Kile Alpine Resort",
+        "Rifugio Grego",
+        "short steep climb",
+        "fast forest-track descent"
+      ],
+      "mandatoryEquipment": [
+        "water for the distance",
+        "personal cup",
+        "foil survival blanket",
+        "mobile phone",
+        "grippy trail shoes",
+        "microspikes mandatory"
+      ],
+      "mapProfile": {
+        "status": "official route page embeds/links Trace de Trail interactive map and elevation profile",
+        "officialPage": "https://www.alpeadriaultra.com/en/grego-8/",
+        "traceDeTrailDirectPage": "not identified; official page contains map/profile link"
+      },
+      "gpx": {
+        "permissionStatus": "not_granted",
+        "officialPageSays": "The GPX is withheld until five days before the race because the course may change for safety reasons and some sections cross private land opened only under race-day arrangements.",
+        "binaryDownloaded": false,
+        "metadataInspected": false,
+        "fileFetch": false,
+        "loadImport": false,
+        "store": false,
+        "process": false,
+        "mapDisplay": false,
+        "userDownload": false,
+        "officialGpxLink": false,
+        "appMessage": "GPX durch Veranstalter eingeschränkt – kein Download möglich",
+        "linkPermission": "not_confirmed; do not link to GPX download page until separately approved",
+        "traceDeTrailNoticeStatus": "not independently verified on a direct route page"
+      },
+      "sourceUrls": [
+        "https://www.alpeadriaultra.com/en/dati-ufficiali-2027/",
+        "https://www.alpeadriaultra.com/en/grego-8/",
+        "https://www.alpeadriaultra.com/en/regolamento/"
+      ]
+    },
+    {
+      "routeId": "alpe-adria-ultra-120-2027",
+      "eventId": "alpe-adria-summer-2027",
+      "name": "Alpe Adria Ultra 120",
+      "date": "2027-06-18",
+      "startTime": "10:00",
+      "start": "Kile Alpine Resort",
+      "finish": "Kile Alpine Resort",
+      "distanceNameKm": 120,
+      "distanceMeasuredKm": 117.9,
+      "traceTemporaryMeasuredKm": 117.92,
+      "elevationGainM": 8031,
+      "elevationLossM": 8031,
+      "courseType": "loop",
+      "timeLimitMinutes": 2880,
+      "latestFinish": "2027-06-20 10:00",
+      "timeGates": [
+        {
+          "point": "Val Aupa Life Base",
+          "km": 60.3,
+          "time": "2027-06-19 07:10"
+        },
+        {
+          "point": "Dogna Life Base",
+          "km": 86.9,
+          "time": "2027-06-19 19:15"
+        }
+      ],
+      "aidPoints": [
+        {
+          "point": "Ristoro Oitzinger",
+          "km": 3.9,
+          "type": "water"
+        },
+        {
+          "point": "Valbruna",
+          "km": 6.4,
+          "type": "water"
+        },
+        {
+          "point": "Ugovizza",
+          "km": 13.3,
+          "type": "food supply"
+        },
+        {
+          "point": "Rifugio Michele Gortani",
+          "km": 18.1,
+          "type": "source/water point; exact supply type unclear"
+        },
+        {
+          "point": "Egger Alm",
+          "km": 32.4,
+          "type": "food supply"
+        },
+        {
+          "point": "Al Forcello",
+          "km": 45.5,
+          "type": "food supply"
+        },
+        {
+          "point": "Val Aupa Life Base",
+          "km": 60.3,
+          "type": "food supply and drop bag"
+        },
+        {
+          "point": "Torgul",
+          "km": 80.7,
+          "type": "drink supply"
+        },
+        {
+          "point": "Dogna Life Base",
+          "km": 86.9,
+          "type": "food supply and drop bag"
+        },
+        {
+          "point": "San Leopoldo",
+          "km": 97.8,
+          "type": "water"
+        },
+        {
+          "point": "Chiout",
+          "km": 104.6,
+          "type": "food supply"
+        },
+        {
+          "point": "Montasio",
+          "km": 108.9,
+          "type": "water"
+        }
+      ],
+      "summary": "A 117.9 km alpine loop through the Julian Alps and across the Italy–Austria border. From Val Saisera the course passes Valbruna and Ugovizza, climbs to the Carnic ridge and crosses into Austria, follows the Karnischer Höhenweg via Egger Alm and Nassfeld, then returns through Val Aupa and the Prealpi Giulie before reaching Dogna and following the Jôf route back to Kile Alpine Resort. The route mixes runnable sections with long climbs, scree and technical alpine ground.",
+      "terrain": [
+        "alpine trails",
+        "forest roads and paths",
+        "ridge trail",
+        "scree",
+        "technical mountain terrain",
+        "night sections"
+      ],
+      "highlights": [
+        "Val Saisera",
+        "Valbruna",
+        "Ugovizza",
+        "Monte Cocco",
+        "Forcella di Fontana Fredda",
+        "Egger Alm",
+        "Karnischer Höhenweg",
+        "Nassfeld / Passo di Pramollo",
+        "Auernig ridge (1,851 m)",
+        "Val Aupa",
+        "Prealpi Giulie Regional Natural Park",
+        "Dogna",
+        "Jôf di Montasio"
+      ],
+      "mandatoryEquipment": [
+        "food and water for 6 hours",
+        "survival blanket",
+        "charged mobile phone",
+        "long trousers",
+        "long-sleeved top",
+        "personal cup",
+        "waterproof jacket rated 15,000 mmH2O",
+        "head torch and spare batteries",
+        "valid identity document"
+      ],
+      "mapProfile": {
+        "status": "official route page links interactive Trace de Trail map, elevation profile and checkpoint table",
+        "officialPage": "https://www.alpeadriaultra.com/en/alpe-adria-ultra-120/",
+        "traceDeTrail": "https://tracedetrail.fr/en/trace/351952",
+        "traceStatus": "work in progress (temporary)"
+      },
+      "gpx": {
+        "permissionStatus": "not_granted",
+        "officialPageSays": "The GPX is withheld until five days before the race because the course may change for safety reasons and some sections cross private land opened only under race-day arrangements.",
+        "binaryDownloaded": false,
+        "metadataInspected": false,
+        "fileFetch": false,
+        "loadImport": false,
+        "store": false,
+        "process": false,
+        "mapDisplay": false,
+        "userDownload": false,
+        "officialGpxLink": false,
+        "appMessage": "GPX durch Veranstalter eingeschränkt – kein Download möglich",
+        "linkPermission": "not_confirmed; do not link to GPX download page until separately approved",
+        "traceDeTrailNoticeExact": [
+          "Warning ! This track is only accessible on the day of the competition",
+          "The organizer does not want the gpx file to be downloaded"
+        ],
+        "noticeSource": "https://tracedetrail.fr/en/trace/351952",
+        "affectedRoute": "Alpe Adria Ultra 120"
+      },
+      "sourceUrls": [
+        "https://www.alpeadriaultra.com/en/dati-ufficiali-2027/",
+        "https://www.alpeadriaultra.com/en/alpe-adria-ultra-120/",
+        "https://tracedetrail.fr/en/trace/351952",
+        "https://www.alpeadriaultra.com/en/regolamento/",
+        "https://www.alpeadriaultra.com/en/programma/"
+      ]
+    },
+    {
+      "routeId": "montasio-55-2027",
+      "eventId": "alpe-adria-summer-2027",
+      "name": "Montasio 55",
+      "date": "2027-06-19",
+      "startTime": "06:30",
+      "start": "Dogna",
+      "finish": "Kile Alpine Resort",
+      "distanceNameKm": 55,
+      "distanceMeasuredKm": 54.89,
+      "elevationGainM": 3892,
+      "elevationLossM": 3313,
+      "courseType": "point-to-point",
+      "timeLimitMinutes": 1097,
+      "latestFinish": "2027-06-20 00:47",
+      "timeGates": [
+        {
+          "point": "Chiout",
+          "km": 17.4,
+          "time": "14:30"
+        },
+        {
+          "point": "Kile Alpine Resort Life Base",
+          "km": 30.6,
+          "time": "18:10"
+        }
+      ],
+      "aidPoints": [
+        {
+          "point": "San Leopoldo",
+          "km": 10.5,
+          "type": "water"
+        },
+        {
+          "point": "Chiout",
+          "km": 17.4,
+          "type": "food supply"
+        },
+        {
+          "point": "Montasio",
+          "km": 21.6,
+          "type": "water"
+        },
+        {
+          "point": "Kile Alpine Resort Life Base",
+          "km": 30.6,
+          "type": "food supply"
+        },
+        {
+          "point": "Oitzinger",
+          "km": 37.1,
+          "type": "food supply"
+        },
+        {
+          "point": "Lussari",
+          "km": 44,
+          "type": "water"
+        },
+        {
+          "point": "Valbruna",
+          "km": 48.2,
+          "type": "food supply"
+        }
+      ],
+      "summary": "Point-to-point alpine route from Dogna to Kile Alpine Resort. The first 30.6 km follow the demanding Jôf Trail course to the only life base; the second half joins the Lussari route, climbs towards Monte Santo Lussari, descends steeply towards Valbruna and finishes with a gentler climb back to Kile. Technical uphill sections alternate with smoother, runnable descents.",
+      "terrain": [
+        "steep technical alpine climbs",
+        "mountain paths",
+        "runnable descent sections",
+        "forest paths and tracks"
+      ],
+      "highlights": [
+        "Dogna",
+        "San Leopoldo",
+        "Chiout",
+        "Jôf di Montasio",
+        "Kile Alpine Resort Life Base",
+        "Monte Santo Lussari",
+        "Valbruna",
+        "Val Saisera"
+      ],
+      "mandatoryEquipment": [
+        "food and water for 6 hours",
+        "survival blanket",
+        "head torch and spare batteries",
+        "charged mobile phone",
+        "long trousers",
+        "long-sleeved top",
+        "personal cup",
+        "waterproof jacket rated 15,000 mmH2O"
+      ],
+      "mapProfile": {
+        "status": "official route page links interactive Trace de Trail map, elevation profile and checkpoint table",
+        "officialPage": "https://www.alpeadriaultra.com/en/montasio-55/",
+        "traceDeTrail": "https://tracedetrail.fr/en/trace/351955",
+        "traceStatus": "work in progress (temporary)"
+      },
+      "gpx": {
+        "permissionStatus": "not_granted",
+        "officialPageSays": "The GPX is withheld until five days before the race because the course may change for safety reasons and some sections cross private land opened only under race-day arrangements.",
+        "binaryDownloaded": false,
+        "metadataInspected": false,
+        "fileFetch": false,
+        "loadImport": false,
+        "store": false,
+        "process": false,
+        "mapDisplay": false,
+        "userDownload": false,
+        "officialGpxLink": false,
+        "appMessage": "GPX durch Veranstalter eingeschränkt – kein Download möglich",
+        "linkPermission": "not_confirmed; do not link to GPX download page until separately approved",
+        "traceDeTrailNoticeExact": [
+          "Warning ! This track is only accessible on the day of the competition",
+          "The organizer does not want the gpx file to be downloaded"
+        ],
+        "noticeSource": "https://tracedetrail.fr/en/trace/351955",
+        "affectedRoute": "Montasio 55"
+      },
+      "sourceUrls": [
+        "https://www.alpeadriaultra.com/en/dati-ufficiali-2027/",
+        "https://www.alpeadriaultra.com/en/montasio-55/",
+        "https://tracedetrail.fr/en/trace/351955",
+        "https://www.alpeadriaultra.com/en/regolamento/",
+        "https://www.alpeadriaultra.com/en/programma/"
+      ]
+    },
+    {
+      "routeId": "jof-trail-31-2027",
+      "eventId": "alpe-adria-summer-2027",
+      "name": "Jôf Trail 31",
+      "date": "2027-06-19",
+      "startTime": "06:30",
+      "start": "Dogna",
+      "finish": "Kile Alpine Resort",
+      "distanceNameKm": 31,
+      "distanceMeasuredKm": 30.51,
+      "elevationGainM": 2690,
+      "elevationLossM": 2111,
+      "courseType": "point-to-point",
+      "timeLimitMinutes": 732,
+      "latestFinish": "18:42",
+      "timeGates": [
+        {
+          "point": "Chiout",
+          "km": 17.4,
+          "time": "14:45"
+        }
+      ],
+      "aidPoints": [
+        {
+          "point": "San Leopoldo",
+          "km": 10.5,
+          "type": "water"
+        },
+        {
+          "point": "Chiout",
+          "km": 17.4,
+          "type": "food supply"
+        },
+        {
+          "point": "Montasio",
+          "km": 21.6,
+          "type": "water"
+        }
+      ],
+      "summary": "A demanding point-to-point alpine route from Dogna to Kile Alpine Resort. The opening six kilometres climb more than 1,900 metres and are described by the organizer as very technical and mountaineering in character. After the exposed high section, the course becomes faster and more runnable towards the finish.",
+      "terrain": [
+        "exposed alpine terrain",
+        "very steep technical ascent",
+        "mountain paths",
+        "faster runnable trail in the second half"
+      ],
+      "highlights": [
+        "Dogna",
+        "Jôf di Dogna",
+        "Sella Bieliga",
+        "Rifugio Grego",
+        "Jôf di Montasio",
+        "Kile Alpine Resort"
+      ],
+      "mandatoryEquipment": [
+        "food and water for 6 hours",
+        "survival blanket",
+        "charged mobile phone",
+        "long trousers",
+        "long-sleeved top",
+        "personal cup",
+        "waterproof jacket rated 15,000 mmH2O"
+      ],
+      "mapProfile": {
+        "status": "official route page links interactive Trace de Trail map, elevation profile and checkpoint table",
+        "officialPage": "https://www.alpeadriaultra.com/en/jof-trail-31/",
+        "traceDeTrail": "https://tracedetrail.fr/en/trace/351956",
+        "traceStatus": "official route"
+      },
+      "gpx": {
+        "permissionStatus": "not_granted",
+        "officialPageSays": "The GPX is withheld until five days before the race because the course may change for safety reasons and some sections cross private land opened only under race-day arrangements.",
+        "binaryDownloaded": false,
+        "metadataInspected": false,
+        "fileFetch": false,
+        "loadImport": false,
+        "store": false,
+        "process": false,
+        "mapDisplay": false,
+        "userDownload": false,
+        "officialGpxLink": false,
+        "appMessage": "GPX durch Veranstalter eingeschränkt – kein Download möglich",
+        "linkPermission": "not_confirmed; do not link to GPX download page until separately approved",
+        "traceDeTrailNoticeExact": [
+          "Warning ! This track is only accessible on the day of the competition",
+          "The organizer does not want the gpx file to be downloaded"
+        ],
+        "noticeSource": "https://tracedetrail.fr/en/trace/351956",
+        "affectedRoute": "Jôf Trail 31"
+      },
+      "sourceUrls": [
+        "https://www.alpeadriaultra.com/en/dati-ufficiali-2027/",
+        "https://www.alpeadriaultra.com/en/jof-trail-31/",
+        "https://tracedetrail.fr/en/trace/351956",
+        "https://www.alpeadriaultra.com/en/regolamento/",
+        "https://www.alpeadriaultra.com/en/programma/"
+      ]
+    },
+    {
+      "routeId": "lussari-24-2027",
+      "eventId": "alpe-adria-summer-2027",
+      "name": "Lussari 24",
+      "date": "2027-06-19",
+      "startTime": "08:30",
+      "start": "Kile Alpine Resort",
+      "finish": "Kile Alpine Resort",
+      "distanceNameKm": 24,
+      "distanceMeasuredKm": 24,
+      "elevationGainM": 1203,
+      "elevationLossM": 1203,
+      "courseType": "loop",
+      "timeLimitMinutes": 486,
+      "latestFinish": "16:36",
+      "timeGates": [],
+      "aidPoints": [],
+      "aidStatus": "No named refreshment point found in accessible route-page text; official checkpoint table is linked and should be rechecked.",
+      "summary": "A new 2027 loop returning to Monte Santo Lussari. The ascent is largely on gravel, forest tracks and sections of tarmacked military road; the descent runs across ski slopes and through woods on soft but sometimes demanding ground. The route returns via Valbruna and a final gentle climb to Kile Alpine Resort.",
+      "terrain": [
+        "gravel",
+        "forest tracks",
+        "tarmacked military road",
+        "ski slopes",
+        "woodland trail"
+      ],
+      "highlights": [
+        "Monte Santo Lussari",
+        "summit views over Val Saisera",
+        "descent through woods and ski slopes",
+        "Valbruna",
+        "Kile Alpine Resort"
+      ],
+      "mandatoryEquipment": [
+        "food and water for 2 hours",
+        "survival blanket",
+        "personal cup",
+        "charged mobile phone"
+      ],
+      "mapProfile": {
+        "status": "official route page embeds/links Trace de Trail interactive map and elevation profile",
+        "officialPage": "https://www.alpeadriaultra.com/en/lussari-24/",
+        "traceDeTrailDirectPage": "not identified; official page contains map/profile link"
+      },
+      "gpx": {
+        "permissionStatus": "not_granted",
+        "officialPageSays": "The GPX is withheld until five days before the race because the course may change for safety reasons and some sections cross private land opened only under race-day arrangements.",
+        "binaryDownloaded": false,
+        "metadataInspected": false,
+        "fileFetch": false,
+        "loadImport": false,
+        "store": false,
+        "process": false,
+        "mapDisplay": false,
+        "userDownload": false,
+        "officialGpxLink": false,
+        "appMessage": "GPX durch Veranstalter eingeschränkt – kein Download möglich",
+        "linkPermission": "not_confirmed; do not link to GPX download page until separately approved",
+        "traceDeTrailNoticeStatus": "not independently verified on a direct route page"
+      },
+      "sourceUrls": [
+        "https://www.alpeadriaultra.com/en/dati-ufficiali-2027/",
+        "https://www.alpeadriaultra.com/en/lussari-24/",
+        "https://www.alpeadriaultra.com/en/regolamento/"
+      ]
+    },
+    {
+      "routeId": "oitzinger-12-2027",
+      "eventId": "alpe-adria-summer-2027",
+      "name": "Oitzinger 12",
+      "date": "2027-06-19",
+      "startTime": "08:30",
+      "start": "Kile Alpine Resort",
+      "finish": "Kile Alpine Resort",
+      "distanceNameKm": 12,
+      "distanceMeasuredKm": 12,
+      "elevationGainM": 268,
+      "elevationLossM": 268,
+      "courseType": "loop",
+      "timeLimitMinutes": 176,
+      "latestFinish": "11:26",
+      "timeGates": [],
+      "aidPoints": [],
+      "aidStatus": "No named refreshment point found in accessible route-page text; official checkpoint table is linked and should be rechecked.",
+      "summary": "A mostly flat loop through Val Saisera, extending to Prati Oitzinger. The course is designed to be runnable, mainly on gravel forest roads, tracks and scenic paths, with some sections following the bed of the Saisera stream.",
+      "terrain": [
+        "gravel forest roads",
+        "tracks",
+        "scenic paths",
+        "sections along the Saisera stream bed"
+      ],
+      "highlights": [
+        "Val Saisera",
+        "Prati Oitzinger",
+        "Saisera stream",
+        "Risonanze concert"
+      ],
+      "mandatoryEquipment": [
+        "food and water for 2 hours",
+        "survival blanket",
+        "personal cup",
+        "charged mobile phone"
+      ],
+      "mapProfile": {
+        "status": "official route page embeds/links Trace de Trail interactive map and elevation profile",
+        "officialPage": "https://www.alpeadriaultra.com/en/oitzinger-12/",
+        "traceDeTrailDirectPage": "not identified; official page contains map/profile link"
+      },
+      "gpx": {
+        "permissionStatus": "not_granted",
+        "officialPageSays": "The GPX is withheld until five days before the race because the course may change for safety reasons and some sections cross private land opened only under race-day arrangements.",
+        "binaryDownloaded": false,
+        "metadataInspected": false,
+        "fileFetch": false,
+        "loadImport": false,
+        "store": false,
+        "process": false,
+        "mapDisplay": false,
+        "userDownload": false,
+        "officialGpxLink": false,
+        "appMessage": "GPX durch Veranstalter eingeschränkt – kein Download möglich",
+        "linkPermission": "not_confirmed; do not link to GPX download page until separately approved",
+        "traceDeTrailNoticeStatus": "not independently verified on a direct route page"
+      },
+      "sourceUrls": [
+        "https://www.alpeadriaultra.com/en/dati-ufficiali-2027/",
+        "https://www.alpeadriaultra.com/en/oitzinger-12/",
+        "https://www.alpeadriaultra.com/en/regolamento/"
+      ]
+    }
+  ],
+  "unresolved": [
+    "Trace de Trail pages for Dogna Crossing 25, Saisera Crossing 18, Alpe Adria Ultra 120 and Montasio 55 are marked Work in progress (temporary). Their measured values differ slightly from the organizer's Official Race Data 2027 page. The organizer says the official data page prevails; official table values are retained and Trace de Trail values are preserved only as temporary comparison values.",
+    "Jôf Trail 31 uses a rounded commercial name; the measured certified route is 30.51 km.",
+    "Direct Trace de Trail route pages and their explicit GPX notices were found for five routes only. For Valbruna 10, Grego 8, Lussari 24 and Oitzinger 12, the official pages link/embeds maps, profiles and checkpoint tables, but a separate direct route page with its own GPX notice was not independently verified in this run.",
+    "The organizer says GPX becomes available five days before each Alpe Adria race. No 2027 GPX binary was downloaded; metadata was not inspected.",
+    "Complete named aid-point details were not available in the accessible text for Grego 8, Lussari 24 or Oitzinger 12; their official checkpoint tables remain linked for later review.",
+    "Sardon Run 2027 is dated 21 August 2027, but the organiser has not yet published the final 2027 route list; 2026 routes (7, 17, 22, 48.4 and 71 km) are historical only. A 100 km non-stop format is in preparation, not confirmed as a final route.",
+    "Čaven Run 2027 preview announces a 60 km ultra and a new Čaven Vrh but no date or final route specifications. The event is jointly organised by Triatlon klub GPS and ASD SentieroUNO; separate rights-holder approval may be needed."
+  ],
+  "integration": {
+    "liveEventDatesChanged": false,
+    "eventsAddedToMain": false,
+    "runtimeDataChanged": false,
+    "appPublished": false,
+    "routeGpxEnabled": false,
+    "preparedForReview": true
+  }
+}
